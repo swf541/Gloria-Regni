@@ -1,0 +1,27 @@
+decisions = {
+
+	employ_levite_priest = {
+		potential = {
+			religion_group = jewish_group
+		}
+		allow = {
+			piety = 5
+			religion_group = jewish_group
+		}
+		effect = {
+			piety = -5
+			create_random_priest = {
+				add_trait=levite
+				random_traits = yes
+				dynasty = 200010
+				female = no
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

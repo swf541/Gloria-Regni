@@ -1,0 +1,873 @@
+##########################################
+###Zoroastrian decisions by Maestro Ugo###
+##########################################
+
+decisions = {
+
+#####Convert to Zoroastrianism
+	convert_to_zoroastrianism = {
+	potential = {
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = muslim
+			culture_group = iranian
+			NOT = {trait = zealous}
+			NOT = {piety = 50}
+		}
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					any_demesne_province = {
+					religion_group = zoroastrian_group
+						}
+					NOT = { religion_authority = 0.35 }
+					}
+				NOT = { religion_authority = 0.20 }
+			}
+			prisoner = no
+		}
+		effect = {
+			religion = zoroastrian
+			piety = -200
+			wealth = -100
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 2.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+	patron_deity_zor = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				has_character_modifier = patron_spenta_mainyu
+				has_character_modifier = patron_anahita
+				has_character_modifier = patron_mithra
+				has_character_modifier = patron_sraosha
+				has_character_modifier = patron_tishtrya
+				has_character_modifier = patron_werethrayna		
+				has_character_modifier = patron_zurvan
+			}
+            NOT = { religion = yazidi }
+			NOT = { religion = manichean }
+			religion_group = zoroastrian_group
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_ZOR.3 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factOR = 1
+			modifier = {
+				factOR = 0.1
+			}
+			modifier = {
+				factOR = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factOR = 0.1
+				trait = cynical
+			}
+		}
+	}
+###Sacrifices
+	make_sacrifice_mithra = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_female = no
+			prisoner = no
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			OR = {
+				NOT = { has_character_flag = made_sacrifice_1 }
+				had_character_flag = { flag = made_sacrifice_1 days = 1825 }
+			}
+			war = no
+		}
+		allow = {
+			prisoner = no
+			piety = 100
+		}
+		effect = {
+			scaled_wealth = -0.3
+			piety = -30
+			clr_character_flag = made_sacrifice_1
+			set_character_flag = made_sacrifice_1
+			add_character_modifier = {
+				name = zoroastrian_sacrifice_mithra
+				duration = 365
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					piety = 100
+				}
+			}
+		}
+	}
+
+	make_sacrifice_parendi = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_female = no
+			prisoner = no
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			OR = {
+				NOT = { has_character_flag = made_sacrifice_1 }
+				had_character_flag = { flag = made_sacrifice_1 days = 1825 }
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			piety = 100
+		}
+		effect = {
+			scaled_wealth = -0.3
+			piety = -30
+			clr_character_flag = made_sacrifice_1
+			set_character_flag = made_sacrifice_1
+			add_character_modifier = {
+				name = zoroastrian_sacrifice_parendi
+				duration = 365
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					piety = 100
+				}
+			}
+		}
+	}
+
+	make_sacrifice_chisti = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_female = no
+			prisoner = no
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			OR = {
+				NOT = { has_character_flag = made_sacrifice_1 }
+				had_character_flag = { flag = made_sacrifice_1 days = 1825 }
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			piety = 100
+		}
+		effect = {
+			scaled_wealth = -0.3
+			piety = -30
+			clr_character_flag = made_sacrifice_1
+			set_character_flag = made_sacrifice_1
+			add_character_modifier = {
+				name = zoroastrian_sacrifice_chisti
+				duration = 365
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					piety = 100
+				}
+			}
+		}
+	}
+#####Rebuild Persepolis
+	rebuild_persepolis = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = persepolis_rebuilt }
+			NOT = { has_global_flag = rebuilding_persepolis }
+		}
+		allow = {
+			wealth = 500
+			has_landed_title = b_perozabad
+			OR = {
+				has_landed_title = k_persia
+				has_landed_title = e_persia
+				}
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			province_event = { id = 1000094010 }
+			set_global_flag = rebuilding_persepolis
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+#####Rebuild Ctesiphon Province
+	rebuild_ctesiphon = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = rebuilding_ctesiphon }
+		}
+		allow = {
+			wealth = 1000
+			has_landed_title = b_baqubah 
+			OR = {
+				has_landed_title = k_persia
+				has_landed_title = e_persia
+				}
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			set_global_flag = rebuilding_ctesiphon
+			b_baqubah  = { set_name = Ctesiphon }
+			c_baghdad = { set_name = Ctesiphon }
+			b_iskandariya = { set_name = Seleucia }
+			d_baghdad = { set_name = Ctesiphon-Seleucia }
+			693 = {
+				build_holding = {
+		   			title = b_babel
+		 			type = city
+		  			holder = FROMFROM
+				}	
+			}
+			b_babel = { set_name = Veh-Ardashir }	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+	rebuild_nahrawan_canal = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = rebuild_nahrawan_canal_set }
+		}
+		allow = {
+			wealth = 1000
+			completely_controls = e_persia
+			OR = {
+				has_landed_title = k_persia
+				has_landed_title = e_persia
+				}
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			set_global_flag = rebuild_nahrawan_canal_set 
+
+			690 = {
+				add_province_modifier = { name = "nahrawan_canal" duration = -1 }
+			}
+			693 = {
+				add_province_modifier = { name = "nahrawan_canal" duration = -1 }
+			}
+			695 = {
+				add_province_modifier = { name = "nahrawan_canal" duration = -1 }
+			}
+			696 = {
+				add_province_modifier = { name = "nahrawan_canal" duration = -1 }
+			}			
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+	rebuild_ctesiphon_library  = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = ctesiphon_library }
+		}
+		allow = {
+			wealth = 1000
+			completely_controls = e_persia
+			OR = {
+				has_landed_title = k_persia
+				has_landed_title = e_persia
+				}
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			set_global_flag = ctesiphon_library 
+			wealth = -1000
+			693 = {
+				add_province_modifier = { name = "ctesiphon_library" duration = -1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+
+#####Cleansing ritual
+	undergo_cleansing_ritual = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_female = no
+			prisoner = no
+			religion_group = zoroastrian_group
+			OR = {
+				NOT = { has_character_flag = undergoing_cleansing_ritual }
+				had_character_flag = { flag = undergoing_cleansing_ritual days = 1825 }
+			}
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			scaled_wealth = 0.30
+			prisoner = no
+		}
+		effect = {
+			scaled_wealth = -0.30
+			piety = 25
+			clr_character_flag = undergoing_cleansing_ritual
+			set_character_flag = undergoing_cleansing_ritual
+			add_character_modifier = {
+				name = zoroastrian_cleansing
+				duration = 365
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 10.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+			modifier = {
+				factor = 0
+				piety = 100
+			}
+		}
+	}
+	reestablish_old_provinces = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = renamed_persia }
+			completely_controls = e_persia
+		}
+		allow = {
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			set_global_flag = renamed_persia 
+			d_khorasan = { set_name = Abarshahr }
+			d_baluchistan = { set_name = Makran }
+			d_zabulistan  = { set_name = Paratan }
+			d_mazandaran = { set_name = Padishkhwargar }
+			d_fars = { set_name = Pars }
+			d_sistan = { set_name = Sakastan }
+			d_samarkand = { set_name = Sogdia }
+			d_esfahan = { set_name = Spahan }
+			d_baluchistan = { set_name = Turan }
+			d_baghdad = { set_name = Ctesiphon-Seleucia }
+			d_kerman = { set_name = Carmania }
+			d_khiva = { set_name = Khwarezm }
+			d_azerbaijan = { set_name = Atropatene }
+			d_mosul = { set_name = Assyria }
+			d_jazira = { set_name = Adiabene }
+			d_dihistan = { set_name = Dahae }
+			d_tabriz = { set_name = Balasagan }
+			d_hamadan = { set_name = Rayy }
+			d_tigris = { set_name = Meshan }
+			d_kermanshah = { set_name = Aturpatakan }
+			d_merv = { set_name = Aria }
+			d_basra = { set_name = Mazan }
+			k_mesopotamia = { set_name = Khvarvaran }
+			k_khiva = { set_name = Sogdia }
+			k_afghanistan = { set_name = Bactria }
+			k_baluchistan = { set_name = Gedrosia }
+			k_persia = { set_name = Eranshahr }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+	fund_shahnameh = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			or = {
+				religion_group = zoroastrian_group
+				religion_group = muslim
+			}
+			NOT = { has_global_flag = shahnameh }
+			culture = persian
+		}
+		allow = {
+			war = no
+			prisoner = not
+			completely_controls = k_persia		
+		}
+		effect = {
+			prestige = 50
+			set_global_flag = shahnameh
+			
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+	fund_shahnameh_addition = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			has_global_flag = shahnameh
+			completely_controls = e_persia
+			not = { has_character_flag = commissioned_shahnameh_addition }
+		}
+		allow = {
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			set_character_flag = commissioned_shahnameh_addition
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+
+	restore_arsacid_armenia = {
+	is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion_group = zoroastrian
+			not = { religion = manichean }
+			k_armenia = {
+				has_holder = no
+			}
+			has_landed_title = e_persia
+		}
+		allow = {
+			completely_controls = k_armenia
+			piety = 500
+			prestige = 500
+		}
+		effect = {
+			hidden_tooltip = {
+				create_random_soldier = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = 200011 
+					female = no
+					age = 22
+				}
+				new_character = {
+					k_armenia = {
+						grant_title = PREV
+					}
+				}
+			}
+			prestige = 1000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	create_israel_persia = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion_group = zoroastrian
+			not = { religion = manichean }
+			k_israel = {
+				has_holder = no
+			}
+			has_landed_title = e_persia
+		}
+		allow = {
+			completely_controls = d_jerusalem
+			completely_controls = d_ascalon
+			completely_controls = d_galilee
+			completely_controls = d_oultrejourdain
+			piety = 500
+			prestige = 500
+			OR = {
+				trait = cynical
+				trait = sympathy_judaism 
+				trait = just
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				create_random_soldier = {
+					random_traits = yes
+					religion = karaite
+					culture = mizrahi
+					dynasty = random
+					female = no
+					age = 30
+				}
+				new_character = {
+					k_israel = {
+						grant_title = PREV
+					}
+				}
+			}
+			prestige = 1000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	celebrate_nowruz = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = zoroastrian_group
+			prisoner = no
+			not = { religion = manichean }
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_nowruz_feast_timer
+				liege = { has_character_flag = holding_nowruz_feast }
+				has_character_flag = holding_nowruz_feast
+				has_character_flag = planning_nowruz_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_nowruz_feast
+			custom_tooltip = {
+				text = prepare_nowruz_feast
+				hidden_tooltip = { 
+					character_event = { id = ZOR.700 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	form_guardians_of_light = {
+		potential = {
+			religion = manichean 
+			completely_controls = d_samarkand
+			NOT = { has_global_flag = guardians_of_light_founded }
+			has_global_flag = archegos_restored 
+		}
+		allow = {
+			war = no
+			piety = 500
+			wealth = 250
+		}
+
+		effect = {
+			#narrative_event = { id = RoM.26091 }
+			set_global_flag = guardians_of_light_founded
+			prestige = 500
+			scaled_wealth = -1
+			activate_title = { title = d_guardians_of_light status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_guardians_of_light = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

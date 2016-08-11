@@ -1,0 +1,339 @@
+#Swahili Merchant Appears
+character_event = {
+	id = conv.396001
+	desc = EVTDESC_conv.396001
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = swahili
+			dynasty = culture
+			religion = ROOT
+			female = no
+			age = 25
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+		}
+	}
+}
+
+#Swahili Mercenary Appears
+character_event = {
+	id = conv.396002
+	desc = EVTDESC_conv.396002
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = swahili
+			dynasty = culture
+			religion = ROOT
+			female = no
+			age = 25
+			trait = skilled_tactician
+			attributes = {
+				martial = 10
+			}
+		}
+	}
+}
+
+#Chinese Merchant Appears
+character_event = {
+	id = conv.396003
+	desc = EVTDESC_conv.396003
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			OR = {
+				region = world_steppe
+				region = world_persia
+			}
+			not = { region = world_steppe_west }
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = han
+			dynasty = culture
+			religion = buddhist
+			female = no
+			age = 25
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+		}
+	}
+}
+
+#Chinese Mercenary Appears
+character_event = {
+	id = conv.396004
+	desc = EVTDESC_conv.396004
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			OR = {
+				region = world_steppe
+				region = world_persia
+			}
+			not = { region = world_steppe_west }
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = han
+			dynasty = culture
+			religion = buddhist
+			female = no
+			age = 25
+			trait = skilled_tactician
+			attributes = {
+				martial = 10
+			}
+		}
+	}
+}
+
+#Chinese Scholar Appears
+character_event = {
+	id = conv.396005
+	desc = EVTDESC_conv.396005
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			OR = {
+				region = world_steppe
+				region = world_persia
+			}
+			not = { region = world_steppe_west }
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = han
+			dynasty = culture
+			religion = buddhist
+			female = no
+			age = 25
+			trait = scholar
+			attributes = {
+				learning = 10
+			}
+		}
+	}
+}
+
+#Chinese Merchant Appears
+character_event = {
+	id = conv.396006
+	desc = EVTDESC_conv.396003
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			OR = {
+				region = world_steppe
+				region = world_persia
+			}
+			not = { region = world_steppe_west }
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = tangut
+			dynasty = culture
+			religion = buddhist
+			female = no
+			age = 25
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+		}
+	}
+}
+
+#Chinese Mercenary Appears
+character_event = {
+	id = conv.396007
+	desc = EVTDESC_conv.396004
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		any_demesne_province = {
+			OR = {
+				region = world_steppe
+				region = world_persia
+			}
+			not = { region = world_steppe_west }
+			trade_route = indian_ocean
+		}
+
+		NOT = { 
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_200
+		create_character = {
+			random_traits = yes
+			culture = tangut
+			dynasty = culture
+			religion = buddhist
+			female = no
+			age = 25
+			trait = skilled_tactician
+			attributes = {
+				martial = 10
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+namespace = ExIs
+#The HaMashiakh has come!
+narrative_event = {
+	id = ExIs.101
+	title = EVTNAME_ExIs_101
+	desc = EVTDESC_ExIs_101
+	picture = GFX_evt_throne_room
+	border = GFX_event_narrative_frame_religion
+	
+	trigger = {
+		has_landed_title = k_israel
+		is_ruler = yes
+		not = { has_global_flag = hamashiakh_appears }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = EVTOPTA_ExIs_101
+		add_trait = hamashiakh		
+	}
+}	
+
+character_event = {
+	id = ExIs.6001
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_global_flag = hamashiakh_appears
+		OR = {
+			mother = { trait = hamashiakh }
+			father = { trait = hamashiakh }
+			mother = { trait = ben_hamashiakh }
+			father = { trait = ben_hamashiakh } 
+		}
+		NOT = { trait = ben_hamashiakh }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		add_trait = ben_hamashiakh
+	}
+}

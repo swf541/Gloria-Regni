@@ -1,0 +1,33 @@
+# 88 - Münster
+
+# County Title
+title = c_munster
+
+# Settlements
+max_settlements = 4
+b_essen = tribal
+b_munster = temple
+
+#b_greven = castle
+#b_gutersloh = castle
+#b_steinfurt = castle
+#b_gronau = castle
+#b_ahlen = castle
+
+# Misc
+culture = old_saxon
+religion = germanic_pagan
+
+# History
+790.1.1 = {
+	culture = german
+	religion = imperial
+	
+	b_essen = castle
+	b_dortmund = city
+	capital = b_munster
+}
+
+1054.7.6 = { religion = catholic }
+
+

@@ -1,0 +1,133 @@
+namespace = SMO
+character_event = {		#Arrival at the Samo-Thrace Temple Complex
+	id = SMO.1
+	title = "EVTNAMESMO.1"
+	desc = "EVTDESCSMO.1"
+	picture = "GFX_evt_small_town_latin"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.1" # 
+		piety = 10
+		character_event = { id = SMO.2 }
+	}
+}
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.2
+	title = "EVTNAMESMO.2"
+	desc = "EVTDESCSMO.2"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.2" # 
+		piety = 10		
+		character_event = { id = SMO.3 }
+	}
+}
+
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.3
+	title = "EVTNAMESMO.3"
+	desc = "EVTDESCSMO.3"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.3" # 
+		piety = 10
+		character_event = { id = SMO.4 }
+	}
+}
+
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.4
+	title = "EVTNAMESMO.4"
+	desc = "EVTDESCSMO.4"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.4" # 
+		piety = 10
+		character_event = { id = SMO.5 }
+	}
+}
+
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.5
+	title = "EVTNAMESMO.5"
+	desc = "EVTDESCSMO.5"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.5" # 
+		piety = 10
+		character_event = { id = SMO.6 }
+	}
+}
+
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.6
+	title = "EVTNAMESMO.6"
+	desc = "EVTDESCSMO.6"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.6" # 
+		piety = 10
+		character_event = { id = SMO.7 }
+	}
+	option = {
+		name = "EVTOPTBSMO.6" # 
+		prestige = 10
+		character_event = { id = SMO.7 }
+	}
+}
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.7
+	title = "EVTNAMESMO.7"
+	desc = "EVTDESCSMO.7"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASMO.7" # 
+		piety = 10
+		character_event = { id = SMO.8 }
+	}
+}
+
+character_event = {		#Stage 1 of Initiation: Myesis Part 1
+	id = SMO.8
+	title = "EVTNAMESMO.8"
+	desc = "EVTDESCSMO.8"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBSMO.8" # 
+		piety = 50
+		prestige = 10
+		add_trait = samo_thracian_initiate
+		remove_trait = on_pilgrimage
+	}
+	option = {
+		name = "EVTOPTASMO.8" # 
+		prestige = 50
+		piety = 50
+		wealth = -100
+		add_trait = samo_thracian_initiate
+		remove_trait = on_pilgrimage
+	}
+}

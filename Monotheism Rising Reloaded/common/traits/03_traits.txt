@@ -1,0 +1,173 @@
+levite = {
+	potential = { religion_group = jewish_group }
+	agnatic = yes
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	dynasty_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+samo_thracian_initiate = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+cult_of_serapis_initiate = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+mystai_eleusinian = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+greater_mystai_eleusinian = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+cult_of_trophonius_initiate = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+intitiate_mysteries_of_the_god_of_seven_rays = {
+	potential = { 
+		or = { 
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+	random = no	
+	customizer = no
+	
+	religious = yes
+	monthly_character_piety = 0.1
+	
+	liege_opinion = 10
+	church_opinion = 10
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+hamashiakh = {
+	potential = { religion_group = jewish_group }
+	
+	customizer = no
+	monthly_character_piety = 0.1
+	
+	church_opinion = 20
+	vassal_opinion = 20
+	dynasty_opinion = 20
+	muslim_opinion = -30
+	christian_opinion = -30
+}
+
+ben_hamashiakh = {
+	potential = { religion_group = jewish_group }
+	
+	customizer = no
+	monthly_character_piety = 0.1
+	
+	religious = yes
+	
+	liege_opinion = 10
+	church_opinion = 10
+	vassal_opinion = 10
+	dynasty_opinion = 10
+	muslim_opinion = -20
+	christian_opinion = -20
+}
+
+lohem_kodesh  = {
+	opposites = {
+		crusader
+		mujahid
+	}
+	
+	martial = 2
+	combat_rating = 1
+	
+	jewish_opinion = 5
+	same_opinion_if_same_religion = 15
+	
+	ai_zeal = 10
+
+}

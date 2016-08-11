@@ -1,0 +1,387 @@
+decisions = {
+	organize_zhayedan_1 = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			NOT = { has_global_flag = zhayedan_founded_1 }
+			NOT = { has_global_flag = zhayedan_founded_2 }
+		}
+		allow = {
+			has_landed_title = k_persia
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = zhayedan_founded_1
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_zhayedan_1 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_zhayedan_1 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	organize_zhayedan_2 = {
+		is_high_prio = yes
+		potential = {
+			has_global_flag = zoroastrian_priesthood_founded
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = zhayedan_founded_2 }
+		}
+		allow = {
+			has_landed_title = e_persia
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = zhayedan_founded_2
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_zhayedan_2 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_zhayedan_2 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	organize_mithra_grivpanvar = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = mithra_grivpanvar_founded }
+		}
+		allow = {
+			or = {
+				has_landed_title = k_armenia
+				has_landed_title = k_georgia
+				#has_landed_title = k_aghbania
+			}
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = mithra_grivpanvar_founded
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_mithra_grivpanvar status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_mithra_grivpanvar = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	organize_anahita_zhayedan = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = zoroastrian_group
+			NOT = { has_global_flag = anahita_zhayedan_founded }
+		}
+		allow = {
+			has_landed_title = k_khiva	#Sogdiana
+			
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_anahita_zhayedan status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_anahita_zhayedan = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	organize_zurvan_zhayedan = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion = zurvanite
+
+			NOT = { has_global_flag = zurvan_zhayedan_founded }
+		}
+		allow = {
+			num_of_king_titles = 1			
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = zurvan_zhayedan_founded
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_zurvan_zhayedan status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_zurvan_zhayedan = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	organize_lions_solomon = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = jewish_group
+			NOT = { has_global_flag = lions_solomon_founded }
+		}
+		allow = {
+			or = {
+				has_landed_title = k_abyssinia
+			}
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = lions_solomon_founded
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_lions_solomon status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_lions_solomon = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	organize_maccabean_guard = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = jewish_group
+			has_landed_title = k_israel
+			has_global_flag = third_temple_built
+			NOT = { has_global_flag = maccabean_guard_founded }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = maccabean_guard_founded
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_maccabean_guard status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_maccabean_guard = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	organize_knights_khazaria = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = jewish_group
+			has_landed_title = k_khazaria
+			NOT = { has_global_flag = knights_khazaria_founded }
+			religion_authority = 0.6
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = knights_khazaria_founded
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_knights_khazaria status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_knights_khazaria = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	organize_knights_goshen = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			religion_group = jewish_group
+			has_landed_title = d_damietta
+			NOT = { has_global_flag = goshen_formed }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+		}
+		effect = {
+			set_global_flag = goshen_formed
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_knights_goshen status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_knights_goshen = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

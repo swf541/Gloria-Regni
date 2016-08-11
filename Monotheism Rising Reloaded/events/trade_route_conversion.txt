@@ -1,0 +1,298 @@
+namespace = conv
+
+
+# Chaplain has a chance of converting the Pagan lord
+character_event = {
+	id = conv.39651
+	desc = EVTDESC39651
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_character_flag = missionary_non_sanctioned
+		location = {
+			owner = {
+				is_adult = yes
+				NOT = { trait = incapable }
+				NOT = { character = ROOT }
+				NOT = { religion = ROOT }
+				NOT = { religion_group = muslim }
+				NOT = { religion_group = ROOT }
+				controls_religion = no
+				# at_location = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 0.75
+			learning = 10
+		}
+		modifier = {
+			factor = 0.75
+			learning = 11
+		}
+		modifier = {
+			factor = 0.75
+			learning = 12
+		}
+		modifier = {
+			factor = 0.75
+			learning = 13
+		}
+		modifier = {
+			factor = 0.75
+			religion_authority = 0.6
+		}
+		modifier = {
+			factor = 0.75
+			religion_authority = 0.8
+		}
+		# Local Pagan religion authority
+		modifier = {
+			factor = 0.75
+			location = {
+				owner = {
+					NOT = { religion_authority = 0.2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			location = {
+				owner = {
+					NOT = { religion_authority = 0.4 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			location = {
+				owner = {
+					religion_authority = 0.6
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			location = {
+				owner = {
+					religion_authority = 0.8
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA39651
+		hidden_tooltip = {
+			location = {
+				owner = {
+					character_event = { id = 39601 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+# Chaplain converts Pagan courtier
+character_event = {
+	id = conv.39652
+	desc = EVTDESC39652
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	prisoner = no
+	
+	trigger = {
+				has_character_flag = missionary_non_sanctioned
+		location = {
+			owner = {
+				NOT = { character = ROOT }
+				NOT = { religion = ROOT }
+				NOT = { religion_group = muslim }
+				NOT = { religion_group = ROOT }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 0.75
+			learning = 10
+		}
+		modifier = {
+			factor = 0.75
+			learning = 11
+		}
+		modifier = {
+			factor = 0.75
+			learning = 12
+		}
+		modifier = {
+			factor = 0.75
+			learning = 13
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion_authority = 0.4 }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion_authority = 0.2 }
+		}
+		modifier = {
+			factor = 0.75
+			religion_authority = 0.6
+		}
+		modifier = {
+			factor = 0.75
+			religion_authority = 0.8
+		}
+	}
+	
+	option = {
+		name = EVTOPTA39652
+		hidden_tooltip = {
+			location = {
+				owner = {
+					random_courtier = {
+						limit = { 
+							age = 10
+							prisoner = no
+							at_location = ROOT
+							NOT = { trait = incapable }
+							ai = yes
+							religion_group = pagan_group
+						}
+						character_event = { id = 39610 days = 1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# Chaplain squabbles with other chaplain
+character_event = {
+	id = conv.39653
+	desc = EVTDESC39653
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	prisoner = no
+	
+	trigger = {
+				has_character_flag = missionary_non_sanctioned
+		location = {
+			owner = {
+				NOT = { character = ROOT }
+				NOT = { religion = ROOT }
+				NOT = { religion_group = muslim }
+				NOT = { religion_group = ROOT }
+			}
+		}
+		any_playable_ruler = {
+			any_courtier = {
+						has_character_flag = missionary_non_sanctioned
+				has_character_flag = preacher_arrives
+				at_location = ROOT
+				NOT = { character = ROOT }
+				NOT = { same_liege = ROOT }
+			}
+		}			
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = EVTOPTA39653
+		hidden_tooltip = {
+			random_playable_ruler = {
+				limit = {
+					any_courtier = {
+								has_character_flag = missionary_non_sanctioned
+						has_character_flag = preacher_arrives
+						at_location = ROOT
+						NOT = { character = ROOT }
+						NOT = { same_liege = ROOT }
+					}
+				}
+				random_courtier = {
+					limit = {
+								has_character_flag = missionary_non_sanctioned
+						has_character_flag = preacher_arrives
+						at_location = ROOT
+						NOT = { character = ROOT }
+						NOT = { same_liege = ROOT }
+					}
+					character_event = { id = 39611 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+# Clear preacher_arrives flag
+character_event = {
+	id = conv.39654
+	hide_window = yes
+	
+	min_age = 16
+	
+	trigger = {
+		has_character_flag = preacher_arrives
+		NOT = { has_character_flag = missionary_non_sanctioned }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = preacher_arrives
+	}
+}

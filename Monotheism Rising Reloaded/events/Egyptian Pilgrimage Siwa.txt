@@ -1,0 +1,660 @@
+# Egyptian Pilgrimage
+namespace = EGY
+character_event = {
+	id = EGY.10163
+	title = EVTNAME_EGY.10163
+	desc = EVTDESCEGY.10163
+	picture = GFX_evt_merchant_caravan
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10163
+                hidden_tooltip = {
+			character_event = { id = EGY.10164 }
+                }
+	}
+}
+
+
+# Departure
+
+character_event = {
+	id = EGY.10164
+	desc = EVTDESCEGY.10164
+	title = EVTNAME_EGY.10164
+	picture = GFX_evt_merchant_caravan
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10164
+                hidden_tooltip = {
+			set_character_flag = egyptian_pilgrimage
+                }
+	}
+}	
+
+# Good Arrival
+
+narrative_event = {
+	id = EGY.10165
+        title = EVTNAMEEGY.10165
+	desc = EVTDESCEGY.10165
+	picture = GFX_evt_religious_exultation
+
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage
+                NOT = { has_character_flag = bad_egyptian_pilgrimage }
+				NOT = { has_character_flag = good_egyptian_pilgrimage }
+        }
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+        option = {
+                name = OPTEGY.10165
+                hidden_tooltip = {
+			clr_character_flag = egyptian_pilgrimage
+                        set_character_flag = good_egyptian_pilgrimage
+                        character_event = { id = EGY.10167 days = 10 }
+                }
+	}
+}
+
+# Bad Arrival
+
+narrative_event = {
+	id = EGY.10166
+        title = EVTNAMEEGY.10166
+	desc = EVTDESCEGY.10166
+	picture = GFX_evt_market
+
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage				
+			    NOT = { has_character_flag = bad_egyptian_pilgrimage }
+                NOT = { has_character_flag = good_egyptian_pilgrimage }                	
+        }
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+        option = {
+                name = OPTEGY.10166
+                hidden_tooltip = {
+			clr_character_flag = egyptian_pilgrimage
+                        set_character_flag = bad_egyptian_pilgrimage
+                        character_event = { id = EGY.10168 days = 10 }
+                }
+	}
+}
+
+# Good Journey
+
+character_event = {
+	id = EGY.10167
+	desc = EVTDESCEGY.10167
+	title = EVTNAMEEGY.10167
+	picture = GFX_evt_imam
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10167
+                add_trait = pilgrim
+                piety = 100
+				hidden_tooltip = { 
+                        character_event = { id = EGY.10174 } 
+                }
+		clr_character_flag = egyptian_pilgrimage
+        }
+}
+
+# Bad Journey
+
+character_event = {
+	id = EGY.10168
+	desc = EVTDESCEGY.10168
+	title = EVTNAMEEGY.10168
+	picture = GFX_evt_imam
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10168
+                add_trait = pilgrim
+                piety = -100
+				hidden_tooltip = { 
+                        character_event = { id = EGY.10174 } 
+                }
+		clr_character_flag = egyptian_pilgrimage
+        }
+}
+
+# Pilgrimage Bandits
+
+character_event = {
+	id = EGY.10169
+	title = EVTNAMEEGY.10169
+	desc = EVTDESCEGY.10169
+	picture = GFX_evt_moors
+
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage
+                NOT = { has_character_flag = pilgrimage_bandits }
+        }
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+        option = {
+                name = OPTAEGY.100169
+                set_character_flag = pilgrimage_bandits
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = brave
+			}
+			modifier = {
+				factor = 0
+				trait = craven
+			}			
+		}
+                random_list = {
+			50 = { hidden_tooltip = { character_event = { id = EGY.10170 } } }
+			30 = {	add_trait = brave hidden_tooltip = { ROOT = { character_event = { id = EGY.10170 } } } }
+			20 = {	death = { death_reason = death_battle } }
+		}		
+	}
+        option = {
+                name = OPTBEGY.1000169
+                set_character_flag = pilgrimage_bandits
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 0
+				trait = brave
+			}
+			modifier = {
+				factor = 5
+				trait = craven
+			}
+               }			
+               random_list = {
+			70 = { hidden_tooltip = { character_event = { id = EGY.10171 } } }
+			30 = { add_trait = craven hidden_tooltip = { ROOT = { character_event = { id = EGY.10171 } } }	
+                  }		
+	    }
+      }
+}
+
+
+character_event = {
+	id = EGY.10170
+	desc = EVTDESCEGY.10170
+	title = EVTNAMEEGY.10170
+	picture = GFX_evt_melee
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10170
+                prestige = 50
+        }
+}
+
+
+character_event = {
+	id = EGY.10171
+	desc = EVTDESCEGY.10171
+	title = EVTNAMEEGY.10171
+	picture = GFX_evt_moors
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTEGY.10171
+                prestige = -50
+        }
+}
+
+# Pilgrimage Oasis
+
+character_event = {
+	id = EGY.10172
+	title = EVTNAMEEGY.10172
+	desc = EVTDESCEGY.10172
+	picture = GFX_evt_fishing
+
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage
+                NOT = { has_character_flag = pilgrimage_oasis }
+        }
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+        option = {
+                name = OPTAEGY.100172
+                set_character_flag = pilgrimage_oasis
+                add_character_modifier = {
+                        name = desert_heat
+                        duration = 30
+                }
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = strong
+			}
+			modifier = {
+				factor = 0
+				trait = ill
+			}
+                }			
+	}
+        option = {
+                name = OPTBEGY.1000172
+                set_character_flag = pilgrimage_oasis
+                add_character_modifier = {
+                        name = fresh_water
+                        duration = 30
+                }
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = ill
+			}
+			modifier = {
+				factor = 0
+				trait = strong
+			}	
+                }						
+	}
+}	 
+
+
+# Pilgrimage Oracle Delphi
+
+character_event = {
+	id = EGY.10173
+	title = EVTNAMEEGY.10173
+	desc = EVTDESCEGY.10173
+	picture = GFX_evt_desert
+
+        is_triggered_only = yes
+
+        option = {
+                name = OPTAEGY.100173
+                set_character_flag = pilgrimage_prophecy
+                custom_tooltip = {
+                       name = pilgrimage_prophecy
+                }
+                hidden_tooltip = { 
+                        character_event = { id = EGY.10174 } 
+                }		
+	}
+}  
+	
+
+character_event = {
+	id = EGY.10174
+	desc = EVTDESCEGY.10174
+	title = EVTNAMEEGY.10174
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask military advice
+                name = OPTEGYa.10174
+                hidden_tooltip = { 
+				random_list = {
+				50 = {
+					character_event = { id = EGY.10178 } 
+				}
+				50 = {
+					character_event = { id = EGY.10179 } 
+				}
+			}
+        }
+		}
+		option = {	#Ask fertility advice
+                name = OPTEGYb.10174
+                hidden_tooltip = { 
+				random_list = {
+				50 = {
+					character_event = { id = EGY.10180 } 
+				}
+				50 = {
+					character_event = { id = EGY.10181 } 
+				}
+			}
+        }
+		}
+		option = {	#Ask fertility advice
+                name = OPTEGYc.10174
+                hidden_tooltip = { 
+				random_list = {
+				50 = {
+					character_event = { id = EGY.10182 } 
+				}
+				50 = {
+					character_event = { id = EGY.10183 } 
+				}
+			}
+        }
+		}
+}
+
+
+# Pilgrimage Samaritan
+
+character_event = {
+	id = EGY.10176
+	title = EVTNAMEEGY.10176
+	desc = EVTDESCEGY.10176
+	picture = GFX_evt_bloody_man
+
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage
+                NOT = { has_character_flag = pilgrimage_samaritan }
+        }
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+        option = {
+                name = OPTAEGY.100176
+                set_character_flag = pilgrimage_samaritan
+                piety = 50
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+			modifier = {
+				factor = 0
+				trait = cruel
+			}
+                }			
+	}
+        option = {
+                name = OPTBEGY.1000176
+                set_character_flag = pilgrimage_samaritan
+                piety = -50
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = cruel
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}	
+                }						
+	}
+} 
+
+# Pilgrimage Beggar
+
+character_event = {
+	id = EGY.10177
+	title = EVTNAMEEGY.10177
+	desc = EVTDESCEGY.10177
+	picture = GFX_evt_market
+        trigger = {
+	        has_character_flag = egyptian_pilgrimage
+                NOT = { has_character_flag = pilgrimage_beggar }
+        }
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+        option = {
+                name = OPTAEGY.100177
+                set_character_flag = pilgrimage_beggar					
+                piety = 50
+                wealth = -20
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+			modifier = {
+				factor = 0
+				trait = cruel
+			}
+                }			
+	}
+        option = {
+                name = OPTBEGY.1000178
+                set_character_flag = pilgrimage_beggar
+                prestige = 50
+                piety = -50
+                ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = cruel
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}	
+                }					
+	}
+}  
+
+character_event = {		#Good outcome
+	id = EGY.10178
+	desc = EVTDESCEGY.10178
+	title = EVTNAMEEGY.10178
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask military advice
+                name = OPTEGYa.10178
+                hidden_tooltip = { 
+				random_list = {
+				25 = {
+					add_trait = brave
+
+				}
+				25 = {
+					add_trait = ambitious
+				}
+				25 = {
+					change_martial = 2
+				}
+				25 = {
+					add_trait = zealous
+				}
+			}
+        }
+	}
+}
+character_event = {		#Bad outcome
+	id = EGY.10179
+	title = EVTNAMEEGY.10179
+	desc = EVTDESCEGY.10179
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask military advice
+                name = OPTEGYa.10179
+                hidden_tooltip = { 
+				random_list = {
+				5 = {
+					add_trait = brave
+
+				}
+				25 = {
+					add_trait = craven
+				}
+				25 = {
+					change_martial = -1
+				}
+				5 = {
+					add_trait = cynical
+				}
+				20 = {
+					add_trait = stressed
+				}
+				20 = {
+					add_trait = depressed
+				}
+			}
+        }
+	}
+	    option = {	#Ask military advice
+            name = OPTEGYb.10179
+			add_trait = cynical
+			piety = -100
+    
+	}
+}
+character_event = {		#Good outcome
+	id = EGY.10180
+	desc = EVTDESCEGY.10180
+	title = EVTNAMEEGY.10180
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask fertility advice
+                name = OPTEGYa.10180
+                hidden_tooltip = { 
+				random_list = {
+				25 = {
+					add_trait = strong
+
+				}
+				25 = {
+					add_trait = lustful
+				}
+				25 = {
+					fertility = 0.5
+				}
+				25 = {
+					add_trait = zealous
+				}
+			}
+        }
+	}
+}
+character_event = {		#Bad outcome
+	id = EGY.10181
+	desc = EVTDESCEGY.10181
+	title = EVTNAMEEGY.10181
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask fertility advice
+                name = OPTEGYa.10181
+                hidden_tooltip = { 
+				random_list = {
+				25 = {
+					add_trait = craven
+				}
+				25 = {
+					fertility = -0.25
+				}
+				5 = {
+					add_trait = cynical
+				}
+				20 = {
+					add_trait = stressed
+				}
+				25 = {
+					add_trait = depressed
+				}
+			}
+        }
+	}
+	    option = {	#Ask military advice
+            name = OPTEGYb.10181
+			add_trait = cynical
+			piety = -100
+    
+	}
+}
+character_event = {		#Good outcome
+	id = EGY.10182
+	desc = EVTDESCEGY.10182
+	title = EVTNAMEEGY.10182
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask economic advice
+                name = OPTEGYa.10182
+                hidden_tooltip = { 
+				random_list = {
+				25 = {
+					add_trait = diligent
+
+				}
+				25 = {
+					add_trait = temperate
+				}
+				25 = {
+					change_stewardship = 2
+				}
+				25 = {
+					add_trait = zealous
+				}
+			}
+        }
+	}
+}
+character_event = {		#Bad outcome
+	id = EGY.10183
+	desc = EVTDESCEGY.10183
+	title = EVTNAMEEGY.10183
+	picture = GFX_evt_religious_exultation
+
+        is_triggered_only = yes
+
+        option = {	#Ask fertility advice
+                name = OPTEGYa.10183
+                hidden_tooltip = { 
+				random_list = {
+				25 = {
+					add_trait = craven
+				}
+				25 = {
+					change_stewardship = -1
+				}
+				5 = {
+					add_trait = cynical
+				}
+				20 = {
+					add_trait = stressed
+				}
+				25 = {
+					add_trait = depressed
+				}
+			}
+        }
+	}
+	    option = {	#Ask military advice
+            name = OPTEGYb.10181
+			add_trait = cynical
+			piety = -100
+    
+	}
+}

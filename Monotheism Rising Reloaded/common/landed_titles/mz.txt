@@ -1,0 +1,255 @@
+d_guardians_of_light = {
+
+	color={ 170 50 60 }
+
+	graphical_culture = holygfx
+
+	capital = 903
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = manichean
+
+	culture = persian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+d_zurvan_zhayedan= {
+	
+	color={ 18 10 150 }
+	
+	
+	capital = 693 # Nahavand
+
+	title = "SPAHBED"
+	foa = "CAPTAIN_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	mercenary_type = knights_templar_composition
+	
+	# Parent Religion 
+	religion = zoroastrian
+	
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+
+	strength_growth_per_century = 1.0
+
+	modifier = d_zhayedan_modifier_1
+}
+d_anahita_zhayedan = {
+	
+	color={ 18 10 150 }
+	
+	
+	capital = 903 # Nahavand
+
+	title = "SPAHBED"
+	foa = "CAPTAIN_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	mercenary_type = knights_templar_composition
+	
+	# Parent Religion 
+	religion = zoroastrian
+	
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+
+	strength_growth_per_century = 1.0
+
+	modifier = d_zhayedan_modifier_1
+}
+d_mithra_grivpanvar = {
+	
+	color={ 128 100 0 }
+	
+	
+	capital = 682 # Nahavand
+
+	title = "SPAHBED"
+	foa = "CAPTAIN_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	mercenary_type = knights_templar_composition
+	
+	# Parent Religion 
+	religion = zoroastrian
+	
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+
+	strength_growth_per_century = 1.0
+
+	modifier = d_zhayedan_modifier_1
+}
+
+d_zhayedan_1 = {
+	
+	color={ 128 0 0 }
+	
+	
+	capital = 658 # Nahavand
+
+	title = "SPAHBED"
+	foa = "CAPTAIN_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	mercenary_type = knights_templar_composition
+	
+	# Parent Religion 
+	religion = zoroastrian
+	
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+
+	strength_growth_per_century = 1.0
+
+	modifier = d_zhayedan_modifier_1
+}
+d_zhayedan_2 = {
+	
+	color={ 128 0 0 }
+	
+	
+	capital = 658 # Nahavand
+
+	title = "SPAHBED"
+	foa = "CAPTAIN_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	mercenary_type = knights_templar_composition
+	
+	# Parent Religion 
+	religion = zoroastrian
+	
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+
+	strength_growth_per_century = 1.0
+
+	modifier = d_zhayedan_modifier_2
+}
+
+k_governate_persia = {
+
+	color={ 0 255 255 }
+	color2={ 0 255 255 }
+	
+	capital = 903 # Samarkand
+	
+	title = "Shah"
+	foa = "GRANDMASTER_FOA"
+	short_name = yes
+	location_ruler_title = yes
+	
+	# Always exists
+	landless = yes
+	
+	
+	religion = zoroastrian
+
+	culture = persian
+	
+	# Cannot be held as a secondary title
+	primary = no
+	
+	dynasty_title_names = yes	# Will not be named "Seljuk", etc.
+	
+}
+
+e_macedonia = {	#Empire of Greece
+	color = { 111 129 213 }
+	color2 = { 208 9 9 }
+
+	capital = 490 # Thessalonike
+	culture = greek
+
+	has_top_de_jure_capital = yes
+
+	purple_born_heirs = yes
+	
+	allow = {
+		ai = no
+		tier = king
+		independent = yes
+		not = { has_landed_title = e_byzantium }
+		not = { has_landed_title = e_roman_empire }		
+                OR = {
+                   religion = hellenic_pagan
+				   religion = hellenic_pagan_reformed
+				   religion = sol_invictus
+                } 
+		completely_controls = d_thrace
+		completely_controls = d_thessalonika
+		completely_controls = d_adrianopolis
+		completely_controls = k_bulgaria
+	}
+}
+
+k_macedonia = {
+	color = { 111 129 213 }
+	color2 = { 208 9 9 }
+
+	capital = 490 # Thessalonike
+	culture = greek
+
+	has_top_de_jure_capital = yes
+
+	purple_born_heirs = yes
+	
+	allow = {
+		ai = no
+		tier = duke
+		independent = yes
+		not = { has_landed_title = e_byzantium }
+		not = { has_landed_title = e_roman_empire }
+                OR = {
+                   religion = hellenic_pagan
+				   religion = hellenic_pagan_reformed
+				   religion = sol_invictus
+                } 
+		has_landed_title = d_thessalonika
+		completely_controls = d_thrace
+		completely_controls = d_thessalonika
+		completely_controls = d_adrianopolis
+	}
+}

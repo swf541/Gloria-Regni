@@ -1,0 +1,53 @@
+on_startup = {
+	events = {
+		PA.1043512	#Heresy Setup in Post 1054
+	}
+}
+on_birth = {
+	random_events = {
+		1 = MET.10000 # Reincarnation?
+	}
+}
+
+on_yearly_pulse = {
+	random_events = {
+		15 = JS.101
+		15 = JS.103
+		15 = JS.105
+		15 = JS.107
+		15 = JS.109
+		15 = JS.111
+		10 = KS.101
+		
+		12 = conv.1	
+		12 = conv.2
+		12 = conv.3	
+		12 = conv.4	
+		12 = conv.5	
+		
+		# Reincarnation: Memories of the previous life
+		1000 = RoI.10020
+		1000 = RoI.10021
+		1000 = RoI.10022
+	}
+}
+	
+on_five_year_pulse = {
+	random_events = {
+		#----  misc traits needing revision below...
+
+		#Silk Road Pulse
+		5 = conv.1	
+		5 = conv.2
+		5 = conv.3	
+		5 = conv.4	
+		5 = conv.5		
+	}
+}
+
+on_yearly_childhood_pulse = {
+	events = {
+		ExIs.115	#Bar Mitzvah
+		ExIs.117	#Bat Mitzvah
+	}
+}

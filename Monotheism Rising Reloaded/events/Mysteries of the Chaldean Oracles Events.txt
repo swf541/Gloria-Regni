@@ -1,0 +1,120 @@
+namespace = CHE
+character_event = {		#Arrival at the Temple
+	id = CHE.1
+	title = "EVTNAMECHE.1"
+	desc = "EVTDESCCHE.1"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.1" # 
+		piety = 10
+		character_event = { id = CHE.2 }
+	}
+}
+character_event = {		#The Intellectual and Material Realms	
+	id = CHE.2
+	title = "EVTNAMECHE.2"
+	desc = "EVTDESCCHE.2"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.2" # 
+		piety = 10		
+		character_event = { id = CHE.3 }
+	}
+}
+
+character_event = {		#Revelation of the First Paternal Intellect (Hecate, the mediating World-Soul)		
+	id = CHE.3
+	title = "EVTNAMECHE.3"
+	desc = "EVTDESCCHE.3"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.3" # 
+		piety = 10
+		character_event = { id = CHE.4 }
+	}
+}
+
+character_event = {		#Revelation of the Second Paternal Intellect (The Demiurgic Intellect, creator of the material world)	
+	id = CHE.4
+	title = "EVTNAMECHE.4"
+	desc = "EVTDESCCHE.4"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.4" # 
+		piety = 10
+		character_event = { id = CHE.5 }
+	}
+}
+
+character_event = {		#The State of Humanity as a Dense Shell furtherest from the First Intellect/ Threat of Demons		
+	id = CHE.5
+	title = "EVTNAMECHE.5"
+	desc = "EVTDESCCHE.5"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.5" # 
+		piety = 10
+		character_event = { id = CHE.6 }
+	}
+}
+
+character_event = {		#The Solution: Liberation of the Soul from the body via asceticism and rituals 
+	id = CHE.6
+	title = "EVTNAMECHE.6"
+	desc = "EVTDESCCHE.6"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.6" # 
+		piety = 10
+		character_event = { id = CHE.7 }
+	}
+}
+character_event = {		#Sacrifice to the First Father
+	id = CHE.7
+	title = "EVTNAMECHE.7"
+	desc = "EVTDESCCHE.7"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTACHE.7" # 
+		piety = 10
+		character_event = { id = CHE.8 }
+	}
+}
+
+character_event = {		#Ending of Teachings and Initiation
+	id = CHE.8
+	title = "EVTNAMECHE.8"
+	desc = "EVTDESCCHE.8"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBCHE.8" # 
+		piety = 50
+		prestige = 10
+		add_trait = intitiate_mysteries_of_the_god_of_seven_rays
+		remove_trait = on_pilgrimage
+	}
+}
