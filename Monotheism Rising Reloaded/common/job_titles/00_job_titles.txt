@@ -11,7 +11,7 @@
 
 job_chancellor = {
 	is_chancellor = yes
-	is_voter = yes
+	is_voter = no
 	attribute = diplomacy
 	dignity = 0.33
 	opinion_effect = 10
@@ -51,7 +51,7 @@ job_chancellor = {
 
 job_marshal = {
 	is_marshal = yes
-	is_voter = yes
+	is_voter = no
 	attribute = martial
 	dignity = 0.33
 	opinion_effect = 10
@@ -92,7 +92,7 @@ job_marshal = {
 
 job_treasurer = {
 	is_treasurer = yes
-	is_voter = yes
+	is_voter = no
 	attribute = stewardship
 	dignity = 0.2
 	opinion_effect = 10
@@ -134,7 +134,7 @@ job_treasurer = {
 
 job_spymaster = {
 	is_spymaster = yes
-	is_voter = yes
+	is_voter = no
 	attribute = intrigue
 	dignity = 0.1
 	opinion_effect = 10
@@ -172,7 +172,7 @@ job_spymaster = {
 
 job_spiritual = {
 	is_spiritual = yes
-	is_voter = yes
+	is_voter = no
 	attribute = learning
 	dignity = 0.15
 	opinion_effect = 10
