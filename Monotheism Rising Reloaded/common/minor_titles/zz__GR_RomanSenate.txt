@@ -1,0 +1,49 @@
+title_senator = {
+	dignity = 0.1
+	realm_in_name = yes
+	revoke_allowed = yes
+	grant_limit = 30
+	opinion_effect = 15
+	is_voter = yes
+	
+	monthly_salary = 0.01
+	monthly_prestige = 1
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		OR = {
+			primary_title = { temporary = no }
+			NOT = {
+				primary_title = {
+					always = yes
+				}
+			}
+		}
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = emperor
+			}
+		}
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+		}
+
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
