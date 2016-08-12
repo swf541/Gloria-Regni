@@ -304,7 +304,7 @@ province_event = {
 				culture = alan
 			}
 
-					religion = tengri_pagan
+					religion = ossetian_pagan
 
 			
 		}
@@ -561,13 +561,7 @@ province_event = {
 			limit = {
 				culture = somali
 			}
-			religion = waaqafeena_pagan
-		}
-		if = { #IMPERIAL + russian (prefer Iconoclast)
-			limit = {
-				culture = toubou
-			}
-			religion = nilotic_pagan
+			religion = east_african_pagan
 		}
 		if = { #IMPERIAL + russian (prefer Iconoclast)
 			limit = {
