@@ -1,8 +1,8 @@
-# Byzantine Titles
+# Gloria Regni Roman and Byzantine Senate Titles
 title_senator_roman = {
 	dignity = 0.25
 	realm_in_name = yes
-	grant_limit = 30
+	grant_limit = 28
 	opinion_effect = 15
 	revoke_allowed = yes
 	is_voter = yes
@@ -23,10 +23,73 @@ title_senator_roman = {
 			has_landed_title = e_roman_empire
 			has_landed_title = e_wre
 		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_drafter_of_laws = {
+	dignity = 0.3
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 20
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.15
+	monthly_prestige = 0.75
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+	}
+	
+	allowed_to_grant = {
 		OR = {
-			religion_group = christian
-			religion_group = jewish_group
-			religion_group = pagan_group
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_protomagistros = {
+	dignity = 0.35
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 25
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.2
+	monthly_prestige = 1
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
 		}
 	}
 	
