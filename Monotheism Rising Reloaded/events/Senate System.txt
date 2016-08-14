@@ -1,0 +1,19 @@
+namespace = SEN
+character_event = {
+	id = SEN.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+        }     
+
+        immediate = {
+		set_global_flag = senate_setup
+	}
+	
+	option = {
+		name = ok
+	}
+}

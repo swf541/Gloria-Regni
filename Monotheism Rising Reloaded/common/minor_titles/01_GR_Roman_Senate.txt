@@ -20,6 +20,7 @@ title_senator = {
 	
 	allowed_to_grant = {
 		OR = {
+			has_global_flag = senate_setup
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 			has_landed_title = e_wre
@@ -55,6 +56,7 @@ title_drafter_of_laws = {
 	
 	allowed_to_grant = {
 		OR = {
+			has_global_flag = senate_setup
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 			has_landed_title = e_wre
@@ -90,6 +92,7 @@ title_protomagistros = {
 	
 	allowed_to_grant = {
 		OR = {
+			has_global_flag = senate_setup
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 			has_landed_title = e_wre

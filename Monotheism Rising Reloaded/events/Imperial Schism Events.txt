@@ -530,10 +530,6 @@ character_event = {
 	trigger = {
                year = 1054
         }     
-	
-	mean_time_to_happen = {
-		days = 1
-	}
 
         immediate = {
 		set_parent_religion = { religion = iconoclast parent = orthodox }
