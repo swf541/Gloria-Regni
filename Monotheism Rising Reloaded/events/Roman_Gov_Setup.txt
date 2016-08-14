@@ -15,9 +15,9 @@ character_event = {
         }     
 
         immediate = {
-			any_courtier = {
+			any_realm_character = {
 				limit = { government = feudal_government }
-					set_government = roman_government
+					set_government_type = roman_government
 				}
 			}
 	
