@@ -22,6 +22,14 @@ feudal_governments = {
 				NOT = { religion = norse_pagan_reformed }
 				NOT = { religion = hellenic_pagan_reformed }
 			}
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+				top_liege = { has_landed_title = e_wre }
+				top_liege = { has_landed_title = e_roman_empire }
+				top_liege = { has_landed_title = e_byzantium }
+			}
 			NOT = {	religion_group = muslim	}
 			is_patrician = no
 		}
@@ -87,5 +95,45 @@ feudal_governments = {
 			tribal_government
 		}
 	}
-	
+	roman_government = {
+		preferred_holdings = { CITY }
+		allowed_holdings = { 
+			CITY
+			CASTLE 
+			FORT
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			muslim_government
+			feudal_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_roman"
+		potential = {
+			OR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+				top_liege = { has_landed_title = e_wre }
+				top_liege = { has_landed_title = e_roman_empire }
+				top_liege = { has_landed_title = e_byzantium }
+			}
+			is_patrician = no
+		}
+		
+		color = { 191 33 27 }
+		
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+	}	
 }
