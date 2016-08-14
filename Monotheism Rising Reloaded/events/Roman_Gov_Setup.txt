@@ -1,0 +1,27 @@
+namespace = ROMEGOV
+character_event = {
+	id = ROMEGOV.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			OR = {
+				has_landed_title = e_byzantium }
+				has_landed_title = e_roman_empire }
+				has_landed_title = e_wre }
+			}
+        }     
+
+        immediate = {
+			any_courtier = {
+				limit = { government = feudal_government }
+					set_government = roman_government
+				}
+			}
+	
+	option = {
+		name = ok
+	}
+}
