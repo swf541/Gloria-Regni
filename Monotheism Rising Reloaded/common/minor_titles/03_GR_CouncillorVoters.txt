@@ -1,0 +1,41 @@
+# This title is used for allowing the regular five council members to still vote if they are not in the Roman Empire, the ERE, or WRE
+
+title_councillor = {
+	dignity = 0.25
+	realm_in_name = yes
+	grant_limit = 5
+	opinion_effect = 15
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.50
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		or = {
+			has_job_title = job_chancellor
+			has_job_title = job_marshal
+			has_job_title = job_treasurer
+			has_job_title = job_spymaster
+			has_job_title = job_spiritual
+		}
+	}
+	
+	allowed_to_grant = {
+		NOR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
