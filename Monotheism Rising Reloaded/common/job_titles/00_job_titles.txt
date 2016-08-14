@@ -33,12 +33,15 @@ job_chancellor = {
 		}
 	}
 	gain_effect = {
+		give_minor_title = title_councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
+		remove_title = title_councillor
 	}
 	retire_effect = {
+		remove_title = title_councillor
 	}
 	
 	action = action_improve_relations
@@ -73,12 +76,15 @@ job_marshal = {
 		}
 	}
 	gain_effect = {
+		give_minor_title = title_councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
+		remove_title = title_councillor
 	}
 	retire_effect = {
+		remove_title = title_councillor
 	}
 	
 	action = action_assist_arrest
@@ -114,12 +120,15 @@ job_treasurer = {
 		}
 	}
 	gain_effect = {
+		give_minor_title = title_councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
+		remove_title = title_councillor
 	}
 	retire_effect = {
+		remove_title = title_councillor
 	}
 	
 	action = action_squeeze_peasants
@@ -155,12 +164,15 @@ job_spymaster = {
 		}
 	}
 	gain_effect = {
+		give_minor_title = title_councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
+		remove_title = title_councillor
 	}
 	retire_effect = {
+		remove_title = title_councillor
 	}
 	
 	action = action_uncover_plots
@@ -192,12 +204,15 @@ job_spiritual = {
 		}
 	}
 	gain_effect = {
+		give_minor_title = title_councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
+		remove_title = title_councillor
 	}
 	retire_effect = {
+		remove_title = title_councillor
 	}
 	dismiss_trigger = {
 		FROM = {

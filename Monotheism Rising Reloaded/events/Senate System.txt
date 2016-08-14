@@ -33,3 +33,26 @@ character_event = {
 		name = ok
 	}
 }
+#
+#character_event = {
+#	id = SEN.2
+#
+#       hide_window = yes
+#	
+#		trigger = {
+#			is_councillor = yes
+#			not = { has_minor_title = title_councillor }
+#        }     
+#
+#		mean_time_to_happen = {
+#			days = 1
+#		}
+#		
+#       immediate = {
+#				give_minor_title = title_councillor
+#			}
+#	
+#	option = {
+#		name = ok
+#	}
+#}
