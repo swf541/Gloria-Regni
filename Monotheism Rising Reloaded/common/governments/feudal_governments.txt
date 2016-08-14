@@ -26,10 +26,11 @@ feudal_governments = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
 				has_landed_title = e_wre
-				top_liege = { has_landed_title = e_wre }
-				top_liege = { has_landed_title = e_roman_empire }
-				top_liege = { has_landed_title = e_byzantium }
 			}
+			NOT = {	top_liege = { has_landed_title = e_wre } }
+			NOT = {	top_liege = { has_landed_title = e_roman_empire } }
+			NOT = {	top_liege = { has_landed_title = e_byzantium } }
+			NOT = { liege = { government = roman_government } }
 			NOT = {	religion_group = muslim	}
 			is_patrician = no
 		}
@@ -114,6 +115,7 @@ feudal_governments = {
 		}
 		frame_suffix = "_roman"
 		potential = {
+			is_ruler = yes
 			OR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
@@ -121,6 +123,7 @@ feudal_governments = {
 				top_liege = { has_landed_title = e_wre }
 				top_liege = { has_landed_title = e_roman_empire }
 				top_liege = { has_landed_title = e_byzantium }
+				has_law = imperial_administration
 			}
 			is_patrician = no
 		}
