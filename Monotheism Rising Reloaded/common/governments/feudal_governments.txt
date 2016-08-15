@@ -110,9 +110,7 @@ feudal_governments = {
 			muslim_government
 			feudal_government
 		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
+
 		frame_suffix = "_roman"
 		potential = {
 			is_ruler = yes
@@ -130,7 +128,23 @@ feudal_governments = {
 		color = { 200 0 50 }
 		
 		dukes_called_kings = yes
-		barons_need_dynasty = yes
+		barons_need_dynasty = no
+		can_revoke_without_reason = yes
+		free_retract_vassalage = yes
+		forced_contract = {
+			roman_government
+			feudal_government
+			muslim_government
+		}
+		
+		character_modifier = {
+			demesne_size = 10
+			levy_size = -0.9
+			retinuesize_perc = 10
+			arrest_chance_modifier = 1.2
+			global_tax_modifier = 1
+			global_supply_limit = 1
+		}
 
 		can_build_tribal = no
 		
