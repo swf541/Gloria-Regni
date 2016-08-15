@@ -1,0 +1,77 @@
+law_groups = {
+	 standing_army_roman = {
+		law_type = realm
+	}
+}
+
+laws = {
+	standing_army_roman_0 = {
+		group = standing_army_roman
+		allow = {
+			has_law = standing_army_roman_1
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = hellenic_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+			
+		}
+		effect = {			
+			hidden_tooltip = {
+				revoke_law = standing_army_roman_1
+			}
+		}
+		demesne_size = 10
+		levy_size = -0.9
+		retinuesize_perc = 10
+		arrest_chance_modifier = 1.2
+		global_tax_modifier = 1
+		global_supply_limit = 1
+	}
+	standing_army_roman_1 = {
+		group = interpretatio_romana
+		allow = {
+			OR = {
+				has_law = standing_army_roman_1
+				has_law = standing_army_roman_0
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = hellenic_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = standing_army_roman_0
+			}
+		demesne_size = 10
+		levy_size = -0.5
+		retinuesize_perc = 7
+		arrest_chance_modifier = 1.2
+		global_tax_modifier = 1.25
+		global_supply_limit = 1
+		}
+	}
+}
