@@ -131,12 +131,6 @@ feudal_governments = {
 		barons_need_dynasty = no
 		can_revoke_without_reason = yes
 		free_retract_vassalage = yes
-		forced_contract = {
-			roman_government
-			feudal_government
-			muslim_government
-		}
-		
 		character_modifier = {
 			demesne_size = 10
 			levy_size = -0.9
@@ -145,6 +139,13 @@ feudal_governments = {
 			global_tax_modifier = 1
 			global_supply_limit = 1
 		}
+		forced_contract = {
+			roman_government
+			feudal_government
+			muslim_government
+		}
+		
+
 
 		can_build_tribal = no
 		

@@ -1,0 +1,27 @@
+##################################################
+#
+# STRATEGIC EFFECTS - A.K.A. "TRIGGERED MODIFIERS"
+#
+##################################################
+
+# Bankruptcy
+standing_army_roman = {
+	potential = {
+		is_ruler = yes
+		government = roman_government
+	}
+	
+	trigger = {
+	}
+	
+	icon = 24
+	
+	demesne_size = 10
+	levy_size = -0.9
+	retinuesize_perc = 10
+	arrest_chance_modifier = 1.2
+	global_tax_modifier = 1
+	global_supply_limit = 1
+	
+	active = no
+}
