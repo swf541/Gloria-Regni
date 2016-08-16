@@ -12,7 +12,9 @@ laws = {
 		}
 		potential = {
 			has_dlc = "Zeus"
-			government = roman_government
+			holder_scope = {
+				government = roman_government
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -31,12 +33,9 @@ laws = {
 				revoke_law = standing_army_roman_1
 			}
 		}
-		demesne_size = 10
+		
 		levy_size = -0.9
 		retinuesize_perc = 10
-		arrest_chance_modifier = 1.2
-		global_tax_modifier = 1
-		global_supply_limit = 1
 	}
 	standing_army_roman_1 = {
 		group = standing_army_roman
@@ -48,7 +47,9 @@ laws = {
 		}
 		potential = {
 			has_dlc = "Zeus"
-			government = roman_government
+			holder_scope = {
+				government = roman_government
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -66,12 +67,8 @@ laws = {
 			hidden_tooltip = {
 				revoke_law = standing_army_roman_0
 			}
-		demesne_size = 10
 		levy_size = -0.5
 		retinuesize_perc = 7
-		arrest_chance_modifier = 1.2
-		global_tax_modifier = 1.25
-		global_supply_limit = 1
 		}
 	}
 }

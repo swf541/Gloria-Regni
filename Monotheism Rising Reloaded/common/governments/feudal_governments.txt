@@ -27,10 +27,10 @@ feudal_governments = {
 				has_landed_title = e_roman_empire
 				has_landed_title = e_wre
 			}
-			NOT = {	top_liege = { has_landed_title = e_wre } }
-			NOT = {	top_liege = { has_landed_title = e_roman_empire } }
-			NOT = {	top_liege = { has_landed_title = e_byzantium } }
-			NOT = { liege = { government = roman_government } }
+			#NOT = {	top_liege = { has_landed_title = e_wre } }
+			#NOT = {	top_liege = { has_landed_title = e_roman_empire } }
+			#NOT = {	top_liege = { has_landed_title = e_byzantium } }
+			#NOT = { liege = { government = roman_government } }
 			NOT = {	religion_group = muslim	}
 			is_patrician = no
 		}

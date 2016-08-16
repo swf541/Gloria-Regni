@@ -3,6 +3,8 @@ on_startup = {
 		PA.1043512	#Heresy Setup in Post 1054
 		SEN.1
 		ROMEGOV.1
+		ROMEGOV.2
+		ROMEGOV.3
 	}
 }
 on_birth = {
@@ -51,5 +53,38 @@ on_yearly_childhood_pulse = {
 	events = {
 		ExIs.115	#Bar Mitzvah
 		ExIs.117	#Bat Mitzvah
+	}
+}
+
+on_new_holder = {
+	events = {
+		ROMEGOV.4
+		ROMEGOV.2
+		ROMEGOV.3
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_inheritance = {
+	events = {
+		ROMEGOV.4
+		ROMEGOV.2
+		ROMEGOV.3
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		ROMEGOV.4
+		ROMEGOV.2
+		ROMEGOV.3
+	}
+}
+
+on_law_vote_passed = {
+	events = {
+		ROMEGOV.2
+		ROMEGOV.3
 	}
 }
