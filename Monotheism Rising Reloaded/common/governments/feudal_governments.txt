@@ -88,6 +88,7 @@ feudal_governments = {
 		allows_matrilineal_marriage = no
 		free_retract_vassalage = yes
 
+
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 
 		can_build_tribal = no
@@ -129,7 +130,7 @@ feudal_governments = {
 		
 		dukes_called_kings = yes
 		barons_need_dynasty = no
-		can_revoke_without_reason = yes
+#		can_revoke_without_reason = yes
 		free_retract_vassalage = yes
 		character_modifier = {
 			demesne_size = 10
@@ -143,6 +144,14 @@ feudal_governments = {
 			roman_government
 			feudal_government
 			muslim_government
+		}
+		
+		free_revoke_on_tiers = {
+			baron
+			count
+			duke
+			king
+			emperor
 		}
 		
 
