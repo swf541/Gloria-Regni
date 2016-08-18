@@ -1,0 +1,66 @@
+
+namespace = LoE
+### Roman Empire Restored
+
+# The Restoration of Egypt
+narrative_event = {
+	id = LoE.20
+	title = EVTNAMELoE.20
+	desc = EVTDESCLoE.20
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = EVTOPTALoE.20
+		hidden_tooltip = {
+			primary_title = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = e_egypt
+				}
+			}
+		}
+		e_egypt = {
+			grant_title = ROOT
+			make_primary_title = yes
+			copy_title_laws = k_egypt
+			copy_title_history = k_egypt
+		}
+		k_egypt = {
+			destroy_landed_title = THIS
+		}
+		hidden_tooltip = {
+			activate_title = { title = k_egypt status = no }
+			any_playable_ruler = {
+				limit = {
+					NOT = { has_landed_title = k_egypt }
+					ai = no
+				}
+				narrative_event = { id = LoE.21 }
+			}
+		}
+		give_nickname = nick_the_glorious
+	}
+}
+
+# Informed about Restoration of Rome
+narrative_event = {
+	id = LoE.21
+	title = EVTNAMELoE.21
+	desc = EVTDESCLoE.21
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoE.21
+		trigger = {
+			
+		}
+	}
+}
