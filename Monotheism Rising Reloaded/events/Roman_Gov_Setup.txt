@@ -35,7 +35,6 @@ character_event = {
 		
 		trigger = {
 			has_law = standing_army_roman_0
-			independent = yes
         } 
 
         immediate = {
@@ -63,7 +62,6 @@ character_event = {
 
 		trigger = {
 			has_law = standing_army_roman_1
-			independent = yes
         } 
         immediate = {
 			any_realm_province = {
