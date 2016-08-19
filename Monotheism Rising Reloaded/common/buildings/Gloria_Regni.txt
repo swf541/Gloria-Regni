@@ -28,7 +28,7 @@ city = {
 	}
 #Stable, gives light cavalry and some heavy cavalry
 	ct_stable_1 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		gold_cost = 100
 		build_time = 365
@@ -38,10 +38,10 @@ city = {
 		extra_tech_building_start = 0.4
 	}
 	ct_stable_2 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_stable_1
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_stable_1
 		gold_cost = 120
 		build_time = 547
 		light_cavalry = 45
@@ -50,10 +50,10 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 	ct_stable_3 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_stable_2
+		prerequisites = { ct_wall_2 }
+		upgrades_from = ct_stable_2
 		gold_cost = 200
 		build_time = 730
 		light_cavalry = 55
@@ -62,9 +62,9 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_4 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		upgrades_from = ca_stable_3
+		upgrades_from = ct_stable_3
 		gold_cost = 300
 		build_time = 1095
 		light_cavalry = 55
@@ -74,9 +74,9 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_5 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-		upgrades_from = ca_stable_4
+		upgrades_from = ct_stable_4
 		gold_cost = 400
 		build_time = 2190
 		light_cavalry = 55
@@ -86,9 +86,9 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_6 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
-		upgrades_from = ca_stable_5
+		upgrades_from = ct_stable_5
 		gold_cost = 500
 		build_time = 2190
 		light_cavalry = 55
@@ -115,7 +115,7 @@ city = {
 	}
 	# Militia barracks, gives light infantry and archers.
 	ct_militia_barracks_1 = {
-		desc = ca_militia_barracks_1_desc
+		desc = ct_militia_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		gold_cost = 100
 		build_time = 365
@@ -126,10 +126,10 @@ city = {
 		extra_tech_building_start = 1.0
 	}
 	ct_militia_barracks_2 = {
-		desc = ca_militia_barracks_2_desc
+		desc = ct_militia_barracks_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_militia_barracks_1
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_militia_barracks_1
 		gold_cost = 120
 		build_time = 547
 		light_infantry = 50
@@ -139,9 +139,9 @@ city = {
 		extra_tech_building_start = 2.0
 	}
 	ct_militia_barracks_3 = {
-		desc = ca_militia_barracks_3_desc
+		desc = ct_militia_barracks_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ca_militia_barracks_2
+		upgrades_from = ct_militia_barracks_2
 		gold_cost = 200
 		build_time = 1095
 		light_infantry = 20
@@ -151,9 +151,9 @@ city = {
 		extra_tech_building_start = 0.5
 	}
 	ct_militia_barracks_4 = {
-		desc = ca_militia_barracks_3_desc
+		desc = ct_militia_barracks_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		upgrades_from = ca_militia_barracks_3
+		upgrades_from = ct_militia_barracks_3
 		gold_cost = 300
 		build_time = 1095
 		light_infantry = 30
@@ -199,7 +199,7 @@ city = {
 		local_revolt_risk = 0.05
 		ai_creation_factor = 97
 		
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 5
 	}
 	# Byzantine Cataphracts
 	ct_culture_group_byzantine_1 = {
@@ -208,7 +208,7 @@ city = {
 			FROM = { culture_group = byzantine }
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ct_wall_2 }
 		gold_cost = 200
 		build_time = 730
 		knights = 10
@@ -272,7 +272,7 @@ city = {
 	}
 	ct_shipyard_4_rom = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
 		}
 		desc = ct_shipyard_4_rom_desc
 		port = yes
@@ -287,7 +287,8 @@ city = {
 	}
 	ct_shipyard_7_rom = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
+			FROMFROM = { has_global_flag = rome_city_restored }
 		}
 		desc = ct_shipyard_7_rom_desc
 		port = yes
@@ -298,11 +299,12 @@ city = {
 		galleys = 50
 		ai_creation_factor = 97
 		
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 5
+		
 	}
 	ct_wall_4_rom = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
 		}
 		desc = ct_wall_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
@@ -314,11 +316,11 @@ city = {
 		tax_income = 0.2
 		ai_creation_factor = 87
 
-		extra_tech_building_start = 0.2
 	}
 	ct_wall_7_rom = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
+			FROMFROM = { has_global_flag = rome_city_restored }
 		}
 		desc = ct_wall_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
@@ -329,12 +331,14 @@ city = {
 		levy_size = 0.05
 		tax_income = 0.2
 		ai_creation_factor = 87
+		
+		extra_tech_building_start = 5
 
-		extra_tech_building_start = 0.2
 	}
 	ct_great_palace_rom = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
+			FROMFROM = { has_global_flag = rome_great_palace }
 		}
 		desc = ct_great_palace_rom_desc
 		gold_cost = 100
@@ -342,24 +346,12 @@ city = {
 		tax_income = 10
 		ai_creation_factor = 97
 		
-		extra_tech_building_start = 0.2
-	}
-	ct_hippodrome_7  = {
-		potential = {
-			FROMFROM = { title = b_rome }
-		}
-		desc = ct_hippodrome_desc
-		gold_cost = 100
-		build_time = 1460
-		levy_size = 0.4
-		local_revolt_risk = 0.05
-		ai_creation_factor = 97
+		extra_tech_building_start = 5
 		
-		extra_tech_building_start = 0.2
 	}
 	ct_circus_maximus_1 = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
 		}
 		desc = ct_circus_maximus_7_desc
 		gold_cost = 100
@@ -369,19 +361,23 @@ city = {
 	
 	ct_circus_maximus_7 = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
+			FROMFROM = { has_global_flag = rome_city_restored }
 		}
 		desc = ct_circus_maximus_7_desc
+		upgrades_from = ct_circus_maximus_1
 		gold_cost = 100
 		build_time = 1460
 		levy_size = 0.5
 		local_revolt_risk = 0.05
 		ai_creation_factor = 97	
+		
+		extra_tech_building_start = 5
 	}
 	
 	ct_colosseum_1 = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
 		}
 		desc = ct_colosseum_1_desc
 		gold_cost = 100
@@ -390,13 +386,17 @@ city = {
 	}
 	ct_colosseum_7 = {
 		potential = {
-			FROMFROM = { title = b_rome }
+			FROMFROM = { title = b_sutri }
+			FROMFROM = { has_global_flag = rome_city_restored }
 		}
 		desc = ct_colosseum_7_desc
+		upgrades_from = ct_colosseum_1
 		gold_cost = 100
 		build_time = 1460
 		levy_size = 0.3
 		ai_creation_factor = 97		
+		
+		extra_tech_building_start = 5
 	}
 }
 

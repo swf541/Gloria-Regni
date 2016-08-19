@@ -15,15 +15,14 @@ decisions = {
 			completely_controls = k_italy
 			completely_controls = k_sicily
 			completely_controls = k_croatia
-			has_law = imperial_administration
 			OR = {
 				AND = {
 					spouse = { any_dynasty_member = { has_landed_title = e_byzantium } }
-					e_byzantium = { holder_scope = { opinion = { who = ROOT value = 80 } } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 50 } } }
 				}
 				AND = {
-					any_child = { spouse = { any_dynasty_member = { has_landed_title = e_byzantium } } }
-					e_byzantium = { holder_scope = { opinion = { who = ROOT value = 80 } } }
+					current_heir = { spouse = { any_dynasty_member = { has_landed_title = e_byzantium } } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 50 } } }
 				}
 			}
 		}
@@ -73,7 +72,7 @@ decisions = {
 		effect = {
 			set_global_flag = rome_wall_restored
 			wealth = -2000
-			b_rome = { add_building = ct_con_wall_6 }
+			b_sutri = { add_building = ct_con_wall_6 }
 			
 		}
 		ai_will_do = {
@@ -102,49 +101,49 @@ decisions = {
 		}
 		effect = {
 			set_global_flag = rome_city_restored
-			wealth = -2000
-			b_rome = { remove_building = ct_shipyard_4_rom }
-			b_rome = { remove_building = ct_colosseum_1 }
-			b_rome = { remove_building = ct_hippodrome_1 }
-			b_rome = { remove_building = ct_wall_4_rom }
-			b_rome = { add_building = ct_colosseum_7 }
-			b_rome = { add_building = ct_hippodrome_7 }
-			b_rome = { add_building = ct_shipyard_1 }
-			b_rome = { add_building = ct_shipyard_2 }
-			b_rome = { add_building = ct_shipyard_3 }
-			b_rome = { add_building = ct_shipyard_4 }
-			b_rome = { add_building = ct_shipyard_7_rom }
-			b_rome = { add_building = ct_training_grounds_1 }
-			b_rome = { add_building = ct_training_grounds_2 }
-			b_rome = { add_building = ct_stable_1 }
-			b_rome = { add_building = ct_barracks_1 }
-			b_rome = { add_building = ct_barracks_2 }
-			b_rome = { add_building = ct_militia_barracks_1 }
-			b_rome = { add_building = ct_militia_barracks_2 }
-			b_rome = { add_building = ct_wall_1 }
-			b_rome = { add_building = ct_wall_2 }
-			b_rome = { add_building = ct_wall_3 } 
-			b_rome = { add_building = ct_wall_4 }
-			b_rome = { add_building = ct_wall_5 }
-			b_rome = { add_building = ct_wall_7_rom }
-			b_rome = { add_building = ct_wall_q_1 }
-			b_rome = { add_building = ct_wall_q_2 }
-			b_rome = { add_building = ct_wall_q_3 }
-			b_rome = { add_building = ct_guard_1 }
-			b_rome = { add_building = ct_guard_2 }
-			b_rome = { add_building = ct_guard_3 }
-			b_rome = { add_building = ct_guard_4 }
-			b_rome = { add_building = ct_marketplace_1 }
-			b_rome = { add_building = ct_marketplace_2 }
-			b_rome = { add_building = ct_marketplace_3 }
-			b_rome = { add_building = ct_marketplace_4 }
-			b_rome = { add_building = ct_port_1 }
-			b_rome = { add_building = ct_port_2 }
-			b_rome = { add_building = ct_port_3 }
-			b_rome = { add_building = ct_port_4 }
-			b_rome = { add_building = ct_university_1 }
-			b_rome = { add_building = ct_university_2 }
-			b_rome = { add_building = ct_university_3 }
+			wealth = -5000
+			b_sutri = { remove_building = ct_shipyard_4_rom }
+			b_sutri = { remove_building = ct_colosseum_1 }
+			b_sutri = { remove_building = ct_hippodrome_1 }
+			b_sutri = { remove_building = ct_wall_4_rom }
+			b_sutri = { add_building = ct_colosseum_7 }
+			b_sutri = { add_building = ct_hippodrome_7 }
+			b_sutri = { add_building = ct_shipyard_1 }
+			b_sutri = { add_building = ct_shipyard_2 }
+			b_sutri = { add_building = ct_shipyard_3 }
+			b_sutri = { add_building = ct_shipyard_4 }
+			b_sutri = { add_building = ct_shipyard_7_rom }
+			b_sutri = { add_building = ct_training_grounds_1 }
+			b_sutri = { add_building = ct_training_grounds_2 }
+			b_sutri = { add_building = ct_stable_1 }
+			b_sutri = { add_building = ct_barracks_1 }
+			b_sutri = { add_building = ct_barracks_2 }
+			b_sutri = { add_building = ct_militia_barracks_1 }
+			b_sutri = { add_building = ct_militia_barracks_2 }
+			b_sutri = { add_building = ct_wall_1 }
+			b_sutri = { add_building = ct_wall_2 }
+			b_sutri = { add_building = ct_wall_3 } 
+			b_sutri = { add_building = ct_wall_4 }
+			b_sutri = { add_building = ct_wall_5 }
+			b_sutri = { add_building = ct_wall_7_rom }
+			b_sutri = { add_building = ct_wall_q_1 }
+			b_sutri = { add_building = ct_wall_q_2 }
+			b_sutri = { add_building = ct_wall_q_3 }
+			b_sutri = { add_building = ct_guard_1 }
+			b_sutri = { add_building = ct_guard_2 }
+			b_sutri = { add_building = ct_guard_3 }
+			b_sutri = { add_building = ct_guard_4 }
+			b_sutri = { add_building = ct_marketplace_1 }
+			b_sutri = { add_building = ct_marketplace_2 }
+			b_sutri = { add_building = ct_marketplace_3 }
+			b_sutri = { add_building = ct_marketplace_4 }
+			b_sutri = { add_building = ct_port_1 }
+			b_sutri = { add_building = ct_port_2 }
+			b_sutri = { add_building = ct_port_3 }
+			b_sutri = { add_building = ct_port_4 }
+			b_sutri = { add_building = ct_university_1 }
+			b_sutri = { add_building = ct_university_2 }
+			b_sutri = { add_building = ct_university_3 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -172,7 +171,7 @@ decisions = {
 		effect = {
 			set_global_flag = rome_great_palace
 			wealth = -2000
-			b_rome = { add_building = ct_great_palace_rom }
+			b_sutri = { add_building = ct_great_palace_rom }
 		}
 		ai_will_do = {
 			factor = 1
