@@ -344,18 +344,6 @@ city = {
 		
 		extra_tech_building_start = 0.2
 	}
-	ct_palace_boukoleon  = {
-		potential = {
-			FROMFROM = { title = b_rome }
-		}
-		desc = ct_palace_boukoleon_desc
-		gold_cost = 100
-		build_time = 1460
-		levy_size = 0.5
-		ai_creation_factor = 97
-		
-		extra_tech_building_start = 0.2
-	}
 	ct_hippodrome_7  = {
 		potential = {
 			FROMFROM = { title = b_rome }
