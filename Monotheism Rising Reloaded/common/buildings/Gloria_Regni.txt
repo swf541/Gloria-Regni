@@ -203,7 +203,7 @@ city = {
 	}
 	# Byzantine Cataphracts
 	ct_culture_group_byzantine_1 = {
-		desc = ca_culture_group_byzantine_1_desc
+		desc = ct_culture_group_byzantine_1_desc
 		potential = {
 			FROM = { culture_group = byzantine }
 		}
@@ -220,12 +220,12 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 	ct_culture_group_byzantine_2 = {
-		desc = ca_culture_group_byzantine_1_desc
+		desc = ct_culture_group_byzantine_1_desc
 		potential = {
 			FROM = { culture_group = byzantine }
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		upgrades_from = ca_culture_group_byzantine_1
+		upgrades_from = ct_culture_group_byzantine_1
 		gold_cost = 300
 		build_time = 1095
 		knights = 15
@@ -237,12 +237,12 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 	ct_culture_group_byzantine_3 = {
-		desc = ca_culture_group_byzantine_1_desc
+		desc = ct_culture_group_byzantine_1_desc
 		potential = {
 			FROM = { culture_group = byzantine }
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		upgrades_from = ca_culture_group_byzantine_2
+		upgrades_from = ct_culture_group_byzantine_2
 		gold_cost = 400
 		build_time = 2190
 		knights = 15
@@ -254,12 +254,12 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 	ct_culture_group_byzantine_4 = {
-		desc = ca_culture_group_byzantine_1_desc
+		desc = ct_culture_group_byzantine_1_desc
 		potential = {
 			FROM = { culture_group = byzantine }
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		upgrades_from = ca_culture_group_byzantine_3
+		upgrades_from = ct_culture_group_byzantine_3
 		gold_cost = 500
 		build_time = 2190
 		knights = 20
@@ -277,7 +277,6 @@ city = {
 		desc = ct_shipyard_4_rom_desc
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
-		upgrades_from = ct_shipyard_3
 		gold_cost = 1000000
 		build_time = 5000 #3y
 		galleys = 10
@@ -293,7 +292,7 @@ city = {
 		desc = ct_shipyard_7_rom_desc
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
-		upgrades_from = ct_shipyard_4_rom
+		upgrades_from = ct_shipyard_4
 		gold_cost = 1000000
 		build_time = 5000 #3y
 		galleys = 50
@@ -308,7 +307,6 @@ city = {
 		}
 		desc = ct_wall_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		upgrades_from = ct_wall_3
 		gold_cost = 1000000
 		build_time = 5000 #3y
 		fort_level = 1.0
@@ -324,7 +322,7 @@ city = {
 		}
 		desc = ct_wall_6_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		upgrades_from = ct_wall_4_rom
+		upgrades_from = ct_wall_5
 		gold_cost = 1000000
 		build_time = 5000 #3y
 		fort_level = 1.0
