@@ -28,7 +28,7 @@ city = {
 	}
 #Stable, gives light cavalry and some heavy cavalry
 	ct_stable_1 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		gold_cost = 100
 		build_time = 365
@@ -38,7 +38,7 @@ city = {
 		extra_tech_building_start = 0.4
 	}
 	ct_stable_2 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		prerequisites = { ct_wall_1 }
 		upgrades_from = ct_stable_1
@@ -50,7 +50,7 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 	ct_stable_3 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		prerequisites = { ct_wall_2 }
 		upgrades_from = ct_stable_2
@@ -62,7 +62,7 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_4 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		upgrades_from = ct_stable_3
 		gold_cost = 300
@@ -74,7 +74,7 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_5 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		upgrades_from = ct_stable_4
 		gold_cost = 400
@@ -86,7 +86,7 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	ct_stable_6 = {
-		desc = ca_stable_1_desc
+		desc = ct_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		upgrades_from = ct_stable_5
 		gold_cost = 500
@@ -115,7 +115,7 @@ city = {
 	}
 	# Militia barracks, gives light infantry and archers.
 	ct_militia_barracks_1 = {
-		desc = ca_militia_barracks_1_desc
+		desc = ct_militia_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		gold_cost = 100
 		build_time = 365
@@ -126,7 +126,7 @@ city = {
 		extra_tech_building_start = 1.0
 	}
 	ct_militia_barracks_2 = {
-		desc = ca_militia_barracks_2_desc
+		desc = ct_militia_barracks_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		prerequisites = { ct_wall_1 }
 		upgrades_from = ct_militia_barracks_1
@@ -139,7 +139,7 @@ city = {
 		extra_tech_building_start = 2.0
 	}
 	ct_militia_barracks_3 = {
-		desc = ca_militia_barracks_3_desc
+		desc = ct_militia_barracks_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		upgrades_from = ct_militia_barracks_2
 		gold_cost = 200
@@ -151,7 +151,7 @@ city = {
 		extra_tech_building_start = 0.5
 	}
 	ct_militia_barracks_4 = {
-		desc = ca_militia_barracks_3_desc
+		desc = ct_militia_barracks_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		upgrades_from = ct_militia_barracks_3
 		gold_cost = 300
@@ -324,7 +324,7 @@ city = {
 		}
 		desc = ct_wall_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		upgrades_from = ct_wall_7_rom
+		upgrades_from = ct_wall_4_rom
 		gold_cost = 1000000
 		build_time = 5000 #3y
 		fort_level = 1.0
@@ -353,7 +353,7 @@ city = {
 		potential = {
 			FROMFROM = { title = b_sutri }
 		}
-		desc = ct_circus_maximus_1_desc
+		desc = ct_circus_maximus_7_desc
 		gold_cost = 100
 		build_time = 1460
 		ai_creation_factor = 97	
