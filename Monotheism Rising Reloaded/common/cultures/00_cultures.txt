@@ -1164,10 +1164,116 @@ latin = {
 
 		modifier = default_culture_modifier
 	}
+		british = {
+		graphical_cultures = { celticgfx }
+		
+		color = { 0.85 0.35 0.65 }
+		male_names = {
+			Aurelius Aurelianus Ausonius Ambrosinus Allectus Antoninus Antonius Antonianus Arthuis Artorius
+			Agitius_Aetius Agitius_Aegidius Albanus Amphibalus Alecto Augustinus_Augustine Arvirargus Austus
+			Adatuucus Adminius Aesibuas Albiso Aledus Amminus Analeugus Anavionus Andecarus Andoco Annamoris
+			Arcuttius Atavacus Atgivios Atrectus Atto Audagus Addedomaros
+			Boduocus Bericus Bagdemagus Bledericus_Blderic Bassianus Belalucius Belator Beliatus Belicianus
+			Bellaus Bellettus Bellicus Biccus Birginus Bitilus Bitucus Bitudacus Blatero Boduogenus Brigio
+			Brigionus Brigomaglos Brocchus Briocus Bucaddus
+			Chrysanthus Claudius Carausius Constantinus_Constantine Constantius Cogidubnus Carsicios Commius
+			Cuneglas Coel_Cole Caratacus_Caradoc Conanus_Conan Cunomorus Cado_Cadwy Caunus Clementius_Clement
+			Caius_Gaius Coilus Cassibelanus Cadar Cunobelinus Calgavus Camulorix Carnucus Cartivel Catus
+			Cassivellaunus Catidiosus Catonius Catugnavus Cennosus Cistumucus Corio Cunedecanes Cunobarrus
+			Daniel David Drustanus_Tristan Dionotus_Donatus Dagvaldus Danimacus Deomiorix Dias Divixtus Docca
+			Dogigenius Docilinus Docimedis Dubnovellaunos Duro
+			Eppillus Esuprastus Elafius Elvodugus_Elfodd Eluanus Eburacio Eisu Enemnogenus Enestinus Esico
+			Epaticcus Excingus Exsibuus
+			Faustus Festus Fastidius Frymiacus
+			Gratianus Garmanos Germanus Galeas_galahad Gilas Gregorius Gerontius_Gerontius Gracianus Gaheris
+			Guiderius Georgius Gauorignus Gavo
+			Hilarius Hildutus Honoroius Hisauus
+			Isidorus Icotasgus Isarninus Iviacus
+			Julius Justinus_Justin
+			Lupus Leudonus_Lot Lucius Lucas Leodegranus Lestinus Lanuccus Linus Litegenus Litullus Lossio
+			Loubus Lucanus Luccus Lovernianus Lucianus Lugotoric
+			Marcus Martinus Maximus Magnentius Melvasius_Melwas Maglocunus_Maelgwn Merlinus Mauric_Maurice
+			Marius Moderatus_Moderatus Malgo Mellitus Maccis Maglorius Mallianus Mato Maviloduus Methianus
+			Minconis Miccio Minianus Moguntius Morirex Morivassus Motius Munatius Moxius
+			Nennius Nazarius Nectovelius Nemmonius Netacius
+			Obinus Ollocus Olondus Ovincus Orbiotalus
+			Pacatianus Pelagius Prasutagus Paulus_Paul Petrus_Peter Porrex Palladius Patricius Pertacus 
+			Petiacus Pisso Prasto
+			Quintus Qunavo
+			Restitutus Romeaus Regalis Rentius Riacus Riomandus Riovassus Rues
+			Sanctus Sanctius Scavo Samson Sergius Samuil_samuel Solomanus_Soloman Severus Sulgenius Santinus
+			Stephanus_Stephen Satavacus Scotius Searagillus Searigis Segovax Sediacus Scoruilos Senecio
+			Senicianus Senilis Sennianus Senorix Serano Senuacus Sintorix Solimarus Solinus Suagrius Suasso
+			Suetius Sudrenus Sulio Syagrius 
+			Tuccianus Theodosius Tincomarus Theonus Tadus Tysilio Trahern Tenvantius Theodvinus Tamesubugus
+			Tasciovanus Tasulus Tatirum Tigirsenos Tincommius Tocitamus Tossodio Trenico Troucisso Thomasinus
+			Urbanus Uthyr_Uther Uricalus Uxperus Urilucolus
+			Valerianus Victorinus Vortiporius Vortimorus Vodinus Volisios Vellocatus Valentinus Valaunecus
+			Vannus Varasius Vassedo Vatto Vedauonis Vepoc Venutius Vernico Verruinius Vodunius
+		}
+		female_names = {
+			Aurelia Anna Aessicunia Alauna
+			Boudica_boudica Brigidda_brigid Beatrix Berenica Banna Britivenda Billicia
+			Constantia Cartimandua Catharina Claudiana Clementina Christiana Cantissena Cunovinna Cunsa
+			Cingetissa Conna Corotica Corocca
+			Deiana_Diana Debora Drusilla Doris Docillina Diseta
+			Elisabeth Enica Exuperata
+			Gueneuereia_Guinevere Gleva
+			Helena
+			Isidora
+			Justina Johanna Juliana
+			Locinna Lovernisca Lucilia
+			Margarita Maria Marcia Mariana Monica Magunna Matugena Minura
+			Natalia Narina
+			Philippa Patricia Placidia Prudentia Petronilla Paltucca
+			Renata Romana Ria Rosula
+			Sabrina Seraphina Sibylla Sperantia Sedebelia Satavile Senecita Senila Senna Senovara Sentica
+			Senuna Sulicena
+			Theodora Theana Therasia Titocuna Totia
+			Ursa
+			Victoria Viviana Vallaunis Vassura Vatta Belbutena Veldicca Vellibia Veloriga Velua Velugna
+			Velvinna Vendicina Venibelia Verctissa Vinoma Vorvena Vrocata
+		}
+		from_dynasty_prefix = "of "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 15
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 10
+	}
 }
 
 byzantine = {
 	graphical_cultures =  { easterngfx }
+	
+	dacian = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.7 0.4 0.3 } 
+
+		male_names = {
+			Bastiza Bikilis Brasus Burebista Comosicus Cotiso Dablosa Daizus 
+			Damanais Dapyg Dardanos Decaeneus Decebalus Dicomes Diegis Diurpaneus 
+			Driglisa Dromichaetes Komakiza Komozoi Mucapor Mucatra Natoporus Oroles 
+			Petoporus Pieporus Rescuturme Rigozus Scorylo Tarbus Thiamarkos Tiati 
+			Tsinna Tsiru Vezina Zyraxes		
+		}
+		female_names = {
+			Brasia Comosia Cotisa Daiza Damanaia Dardana Diegia Diurpanea 
+			Komozia Natopora Orola Petopora Piepora Scoryla Tarba Vezineia 
+			Zia Zyraxa		
+		}
+  
+		from_dynasty_prefix = "of "
+	
+		modifier = default_culture_modifier
+	}
 	
 	thracian = {
 		graphical_cultures = { easternslavicgfx }
