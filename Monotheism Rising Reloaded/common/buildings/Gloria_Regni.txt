@@ -98,11 +98,11 @@ city = {
 		extra_tech_building_start = 0.2
 	}
 	
-	ct_shipyard_5_byz = {
+	ct_shipyard_7_byz = {
 		potential = {
 			FROMFROM = { title = b_constantinople }
 		}
-		desc = ct_shipyard_5_byz_desc
+		desc = ct_shipyard_7_byz_desc
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
 		upgrades_from = ct_shipyard_4
@@ -162,7 +162,7 @@ city = {
 
 		extra_tech_building_start = 0.5
 	}
-	
+
 	ct_great_palace_byz = {
 		potential = {
 			FROMFROM = { title = b_constantinople }
@@ -317,12 +317,12 @@ city = {
 		ai_creation_factor = 87
 
 	}
-	ct_wall_7_rom = {
+	ct_wall_6_rom = {
 		potential = {
 			FROMFROM = { title = b_sutri }
 			FROMFROM = { has_global_flag = rome_city_restored }
 		}
-		desc = ct_wall_4_desc
+		desc = ct_wall_6_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
 		upgrades_from = ct_wall_4_rom
 		gold_cost = 1000000
