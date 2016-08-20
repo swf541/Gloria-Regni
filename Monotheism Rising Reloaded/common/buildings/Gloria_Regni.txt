@@ -14,6 +14,64 @@
 # City
 city = {
 #Stable, gives light cavalry and some heavy cavalry
+	ct_con_wall_6 = { # Theodosian Walls
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_wall_5
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_great_palace_byz = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_great_palace_byz_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_boukoleon = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_boukoleon_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_hippodrome = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_hippodrome_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_kontoskalion = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_hippodrome_desc
+		upgrades_from = ct_shipyard_4
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
 	ct_stable_1 = {
 		desc = ca_stable_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
@@ -148,45 +206,6 @@ city = {
 		ai_creation_factor = 98
 
 		extra_tech_building_start = 0.5
-	}
-
-	ct_great_palace_byz = {
-		potential = {
-			FROMFROM = { title = b_constantinople }
-		}
-		desc = ct_great_palace_byz_desc
-		gold_cost = 100
-		build_time = 1460
-		#levy_size = 0.05
-		tax_income = 10
-		ai_creation_factor = 97
-		
-		extra_tech_building_start = 0.2
-	}
-	ct_palace_boukoleon  = {
-		potential = {
-			FROMFROM = { title = b_constantinople }
-		}
-		desc = ct_palace_boukoleon_desc
-		gold_cost = 100
-		build_time = 1460
-		levy_size = 0.3
-		ai_creation_factor = 97
-		
-		extra_tech_building_start = 0.2
-	}
-	ct_hippodrome  = {
-		potential = {
-			FROMFROM = { title = b_constantinople }
-		}
-		desc = ct_hippodrome_desc
-		gold_cost = 100
-		build_time = 1460
-		levy_size = 0.4
-		local_revolt_risk = 0.05
-		ai_creation_factor = 97
-		
-		extra_tech_building_start = 5
 	}
 	# Byzantine Cataphracts
 	ct_culture_group_byzantine_1 = {
