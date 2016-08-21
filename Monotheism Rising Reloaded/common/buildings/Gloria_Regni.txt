@@ -23,9 +23,127 @@ city = {
 		gold_cost = 150
 		build_time = 1460 #4y
 		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
 		ai_creation_factor = 86
 
 		extra_tech_building_start = 0.0
+	}
+	ct_rom_wall_4 = { # Theodosian Walls
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_rom_wall_6 = { # Theodosian Walls
+		potential = {
+			has_global_flag = rome_wall_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_rom_wall_4
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_colosseum_1 = { 
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_colosseum_2 = { 
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	
+	ct_circus_maximus_1 = { 
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_circus_maximus_2 = { 
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_shipyard_4_rom = {
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}	
+	
+	ct_shipyard_5_rom = {
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_shipyard_4_rom
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}		
+	ct_great_palace_rom = { 
+		potential = {
+			has_global_flag = rome_great_palace
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 100
 	}
 	ct_great_palace_byz = {
 		potential = {
@@ -65,7 +183,6 @@ city = {
 			FROMFROM = { title = b_constantinople }
 		}
 		desc = ct_hippodrome_desc
-		upgrades_from = ct_shipyard_4
 		gold_cost = 150
 		build_time = 1460 #4y
 		ai_creation_factor = 86

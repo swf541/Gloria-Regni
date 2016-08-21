@@ -19,6 +19,16 @@ character_event = {
 				limit = { government = feudal_government }
 					set_government_type = roman_government
 				}
+				b_constantinople = { add_building = ct_con_wall_6 }
+				b_constantinople = { add_building = ct_great_palace_byz }
+				b_constantinople = { add_building = ct_boukoleon }
+				b_constantinople = { add_building = ct_hippodrome }
+				b_constantinople = { add_building = ct_kontoskalion }
+				b_sutri = { add_building = ct_shipyard_4_rom }
+				b_sutri = { add_building = ct_circus_maximus_1 }	
+				b_sutri = { add_building = ct_colosseum_1 }
+				b_sutri = { add_building = ct_rom_wall_4 }
+				
 			}
 	
 	option = {
