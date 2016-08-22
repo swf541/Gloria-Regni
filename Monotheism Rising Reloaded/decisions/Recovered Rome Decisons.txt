@@ -11,11 +11,11 @@ decisions = {
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
-			NOT = { has_global_flag = rome_wall_restored }
-			completely_controls = d_latium
 		}
 		allow = {
 			wealth = 2000
+			NOT = { has_global_flag = rome_wall_restored }
+			completely_controls = c_roma
 		}
 		effect = {
 			set_global_flag = rome_wall_restored
