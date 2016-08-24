@@ -1,0 +1,1038 @@
+decisions = {
+	restore_province_hispania_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_hispania_restored }
+		}
+		allow = {
+			completely_controls = k_castille
+			completely_controls = k_aragon
+			completely_controls = k_navarra
+			completely_controls = k_asturias
+			completely_controls = k_spanish_galicia
+			completely_controls = k_portugal
+			completely_controls = k_andalusia
+		}
+		effect = {
+			set_global_flag = provnce_hispania_restored
+			
+			destroy_landed_title = k_castille
+			destroy_landed_title = k_aragon
+			destroy_landed_title = k_navarra
+			destroy_landed_title = k_asturias
+			destroy_landed_title = k_spanish_galicia
+			destroy_landed_title = k_portugal
+			destroy_landed_title = k_andalusia			
+			
+			d_castilla = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_castilla
+			}
+			d_aragon = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_aragon
+			}
+			d_barcelona = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_barcelona
+			}
+			d_valencia = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_valencia
+			}
+			d_mallorca = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_mallorca
+			}
+			d_navarra = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_navarra
+			}
+			d_asturias = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_asturias
+			}
+			d_leon = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_leon
+			}
+			d_galicia = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_galicia
+			}
+			d_porto = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_porto
+			}
+			d_beja = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_beja
+			}
+			d_algarve = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_algarve
+			}
+			d_cordoba = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_cordoba
+			}
+			d_murcia = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_murcia
+			}
+			d_granada = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_granada
+			}
+			d_sevilla = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_sevilla
+			}
+			d_badajozs = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_badajozs
+			}
+			d_toledo = {
+				de_jure_liege = k_hispania
+				destroy_landed_title = d_toledo
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_britannia_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_britannia_restored }
+		}
+		allow = {
+			completely_controls = k_england
+			completely_controls = k_wales
+		}
+		effect = {
+			set_global_flag = provnce_britannia_restored
+			
+			destroy_landed_title = k_england
+			destroy_landed_title = k_wales		
+			
+			d_northumberland = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_northumberland
+			}
+			d_lancaster = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_lancaster
+			}
+			d_york = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_york
+			}
+			d_norfolk = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_norfolk
+			}
+			d_bedford = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_bedford
+			}
+			d_hereford = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_hereford
+			}
+			d_gloucester = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_gloucester
+			}
+			d_canterbury = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_canterbury
+			}
+			d_somerset = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_somerset
+			}
+			d_gwynedd = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_gwynedd
+			}
+			d_powys = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_powys
+			}
+			d_deheubarth = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_deheubarth
+			}
+			d_cornwall = {
+				de_jure_liege = k_britannia
+				destroy_landed_title = d_cornwall
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_africa_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_africae_restored }
+		}
+		allow = {
+			completely_controls = d_tunis
+			completely_controls = d_tripolitania
+			completely_controls = d_alger
+			completely_controls = d_kabylia
+			completely_controls = d_tlemcen
+		}
+		effect = {
+			set_global_flag = provnce_africae_restored
+			
+			destroy_landed_title = k_africa	
+			
+			d_tunis = {
+				de_jure_liege = k_africae
+				destroy_landed_title = d_tunis
+			}
+			d_tripolitania = {
+				de_jure_liege = k_africae
+				destroy_landed_title = d_tripolitania
+			}
+			d_kabylia = {
+				de_jure_liege = k_africae
+				destroy_landed_title = d_kabylia
+			}
+			d_alger = {
+				de_jure_liege = k_africae
+				destroy_landed_title = d_alger
+			}
+			d_tlemcen = {
+				de_jure_liege = k_africae
+				destroy_landed_title = d_tlemcen
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_viennensis_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_viennensis_restored }
+		}
+		allow = {
+			completely_controls = k_aquitaine
+			completely_controls = d_berry
+			completely_controls = d_poitou
+			completely_controls = d_provence
+			completely_controls = d_savoie
+			completely_controls = d_dauphine
+		}
+		effect = {
+			set_global_flag = provnce_viennensis_restored
+			
+			destroy_landed_title = k_aquitaine	
+			
+			d_aquitaine = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_aquitaine
+			}
+			d_toulouse = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_toulouse
+			}
+			d_gascogne = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_gascogne
+			}
+			d_poitou = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_poitou
+			}
+			d_auvergne = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_auvergne
+			}
+			d_bourbon = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_bourbon
+			}
+			d_berry = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_berry
+			}
+			d_provence = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_provence
+			}
+			d_savoie = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_savoie
+			}
+			d_dauphine = {
+				de_jure_liege = k_viennensis
+				destroy_landed_title = d_dauphine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_gallia_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_gallia_restored }
+		}
+		allow = {
+			completely_controls = d_brittany
+			completely_controls = d_anjou
+			completely_controls = d_normandy
+			completely_controls = d_orleans
+			completely_controls = d_valois
+			completely_controls = d_champagne
+			completely_controls = d_burgundy
+			completely_controls = d_upper_burgundy
+			completely_controls = d_upper_lorraine
+			completely_controls = d_alsace
+			completely_controls = d_lower_lorraine
+			completely_controls = d_luxembourg
+			completely_controls = d_brabant
+			completely_controls = d_flanders
+		}
+		effect = {
+			set_global_flag = provnce_gallia_restored
+			
+			destroy_landed_title = k_brittany
+			destroy_landed_title = k_france		
+			destroy_landed_title = k_lotharingia
+			
+			d_brittany = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_brittany
+			}
+			d_anjou = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_anjou
+			}
+			d_normandy = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_normandy
+			}
+			d_orleans = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_orleans
+			}
+			d_valois = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_valois
+			}
+			d_champagne = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_champagne
+			}
+			d_burgundy = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_burgundy
+			}
+			d_provence = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_provence
+			}
+			d_upper_burgundy = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_upper_burgundy
+			}
+			d_upper_lorraine = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_upper_lorraine
+			}
+			d_alsace = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_alsace
+			}
+			d_luxembourg = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_luxembourg
+			}
+			d_brabant = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_brabant
+			}
+			d_flanders = {
+				de_jure_liege = k_gallia
+				destroy_landed_title = d_flanders
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_italia_annonaria_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = k_italia_annonaria }
+		}
+		allow = {
+			completely_controls = d_ferrara
+			completely_controls = d_modena
+			completely_controls = d_susa
+			completely_controls = d_lombardia
+			completely_controls = d_genoa
+			completely_controls = d_verona
+			completely_controls = d_carinthia
+			completely_controls = d_venice
+			completely_controls = d_tyrol
+		}
+		effect = {
+			set_global_flag = provnce_italia_annonaria_restored
+			
+			destroy_landed_title = k_italy
+			
+			d_ferrara = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_ferrara
+			}
+			d_modena = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_modena
+			}
+			d_genoa = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_genoa
+			}
+			d_lombardia = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_lombardia
+			}
+			d_susa = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_susa
+			}
+			d_verona = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_verona
+			}
+			d_carinthia = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_carinthia
+			}
+			d_venice = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_venice
+			}
+			d_tyrol = {
+				de_jure_liege = k_italia_annonaria
+				destroy_landed_title = d_tyrol
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_illyricum_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_illyricum_restored }
+		}
+		allow = {
+			completely_controls = d_bavaria
+			completely_controls = d_osterreich
+			completely_controls = d_esztergom
+			completely_controls = d_pecs
+			completely_controls = d_slavonia
+			completely_controls = d_bosnia
+			completely_controls = d_croatia
+			completely_controls = d_dalmatia
+		}
+		effect = {
+			set_global_flag = provnce_illyricum_restored
+			
+			destroy_landed_title = k_bavaria
+			destroy_landed_title = k_croatia
+			
+			d_bavaria = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_bavaria
+			}
+			d_osterreich = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_osterreich
+			}
+			d_esztergom = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_esztergom
+			}
+			d_pecs = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_pecs
+			}
+			d_slavonia = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_slavonia
+			}
+			d_bosnia = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_bosnia
+			}
+			d_croatia = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_croatia
+			}
+			d_dalmatia = {
+				de_jure_liege = k_illyricum
+				destroy_landed_title = d_dalmatia
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_italia_suburbicaria_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_italia_suburbicaria_restored }
+		}
+		allow = {
+			completely_controls = d_toscana
+			completely_controls = d_pisa
+			completely_controls = d_ancona
+			completely_controls = d_spoleto
+			completely_controls = d_latium
+			completely_controls = d_sardinia
+			completely_controls = d_benevento
+			completely_controls = d_capua
+			completely_controls = d_apulia
+			completely_controls = d_salerno
+			completely_controls = d_calabria
+			completely_controls = d_sicily
+		}
+		effect = {
+			set_global_flag = provnce_italia_suburbicaria_restored
+			
+			destroy_landed_title = k_sicily
+			
+			d_toscana = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_toscana
+			}
+			d_pisa = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_pisa
+			}
+			d_ancona = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_ancona
+			}
+			d_spoleto = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_spoleto
+			}
+			d_latium = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_latium
+			}
+			d_sardinia = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_sardinia
+			}
+			d_benevento = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_benevento
+			}
+			d_capua = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_capua
+			}
+			d_apulia = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_apulia
+			}
+			d_salerno = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_salerno
+			}
+			d_calabria = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_calabria
+			}
+			d_sicily = {
+				de_jure_liege = k_italia_suburbicaria
+				destroy_landed_title = d_sicily
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_aegyptus_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+		}
+		allow = {
+			completely_controls = d_alexandria
+			completely_controls = d_damietta
+			completely_controls = d_cairo
+			completely_controls = d_aswan
+			completely_controls = d_cyrenaica
+			NOT = { has_global_flag = provnce_aegyptus_restored }
+		}
+		effect = {
+			set_global_flag = provnce_aegyptus_restored
+			
+			destroy_landed_title = k_egypt
+			
+			d_alexandria = {
+				de_jure_liege = k_aegyptus
+				destroy_landed_title = d_alexandria
+			}
+			d_damietta = {
+				de_jure_liege = k_aegyptus
+				destroy_landed_title = d_damietta
+			}
+			d_cairo = {
+				de_jure_liege = k_aegyptus
+				destroy_landed_title = d_cairo
+			}
+			d_aswan = {
+				de_jure_liege = k_aegyptus
+				destroy_landed_title = d_aswan
+			}
+			d_cyrenaica = {
+				de_jure_liege = k_aegyptus
+				destroy_landed_title = d_cyrenaica
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_oriens_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_oriens_restored }
+		}
+		allow = {
+			completely_controls = d_sinai
+			completely_controls = d_oultrejourdain
+			completely_controls = d_ascalon
+			completely_controls = d_jerusalem
+			completely_controls = d_galilee
+			completely_controls = d_aleppo
+			completely_controls = d_antioch
+			completely_controls = d_tripoli
+			completely_controls = d_damascus
+			completely_controls = d_syria
+			completely_controls = d_jazira
+			completely_controls = d_edessa
+			completely_controls = d_armenia_minor
+			completely_controls = d_cyprus
+		}
+		effect = {
+			set_global_flag = provnce_oriens_restored
+			
+			destroy_landed_title = k_syria
+			destroy_landed_title = k_jerusalem
+			
+			d_sinai = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_sinai
+			}
+			d_oultrejourdain = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_oultrejourdain
+			}
+			d_jerusalem = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_jerusalem
+			}
+			d_ascalon = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_ascalon
+			}
+			d_galilee = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_galilee
+			}
+			d_aleppo = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_aleppo
+			}
+			d_antioch = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_antioch
+			}
+			d_tripoli = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_tripoli
+			}
+			d_damascus = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_damascus
+			}
+			d_syria = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_syria
+			}
+			d_jazira = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_jazira
+			}
+			d_edessa = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_edessa
+			}
+			d_armenia_minor = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_armenia_minor
+			}
+			d_cyprus = {
+				de_jure_liege = k_oriens
+				destroy_landed_title = d_cyprus
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_asiana_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_asiana_restored }
+		}
+		allow = {
+			completely_controls = d_anatolia
+			completely_controls = d_thracesia
+			completely_controls = d_cibyrrhaeot
+			completely_controls = d_samos
+			completely_controls = d_aegean_islands
+		}
+		effect = {
+			set_global_flag = provnce_asiana_restored
+			
+			d_anatolia = {
+				de_jure_liege = k_asiana
+				destroy_landed_title = d_anatolia
+			}
+			d_thracesia = {
+				de_jure_liege = k_asiana
+				destroy_landed_title = d_thracesia
+			}
+			d_cibyrrhaeot = {
+				de_jure_liege = k_asiana
+				destroy_landed_title = d_cibyrrhaeot
+			}
+			d_samos = {
+				de_jure_liege = k_asiana
+				destroy_landed_title = d_samos
+			}
+			d_aegean_islands = {
+				de_jure_liege = k_asiana
+				destroy_landed_title = d_aegean_islands
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_pontus_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_pontus_restored }
+		}
+		allow = {
+			completely_controls = d_nikaea
+			completely_controls = d_paphlagonia
+			completely_controls = d_charsianon
+			completely_controls = d_armeniacon
+			completely_controls = d_trebizond
+			completely_controls = d_coloneia
+			completely_controls = d_mesopotamia
+		}
+		effect = {
+			set_global_flag = provnce_pontus_restored
+			
+			d_nikaea = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_nikaea
+			}
+			d_paphlagonia = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_paphlagonia
+			}
+			d_charsianon = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_charsianon
+			}
+			d_armeniacon = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_armeniacon
+			}
+			d_trebizond = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_trebizond
+			}
+			d_coloneia = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_coloneia
+			}
+			d_mesopotamia = {
+				de_jure_liege = k_pontus
+				destroy_landed_title = d_mesopotamia
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_thraciae_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_thraciae_restored }
+		}
+		allow = {
+			completely_controls = d_thrace
+			completely_controls = d_adrianopolis
+			completely_controls = d_turnovo
+			completely_controls = d_karvuna
+		}
+		effect = {
+			set_global_flag = provnce_thraciae_restored
+			
+			destroy_landed_title = k_bulgaria
+			
+			d_thrace = {
+				de_jure_liege = k_thraciae
+				destroy_landed_title = d_thrace
+			}
+			d_adrianopolis = {
+				de_jure_liege = k_thraciae
+				destroy_landed_title = d_adrianopolis
+			}
+			d_turnovo = {
+				de_jure_liege = k_thraciae
+				destroy_landed_title = d_turnovo
+			}
+			d_karvuna = {
+				de_jure_liege = k_thraciae
+				destroy_landed_title = d_karvuna
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_daciae_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_daciae_restored }
+		}
+		allow = {
+			completely_controls = d_vidin
+			completely_controls = d_dioclea
+			completely_controls = d_rashka
+		}
+		effect = {
+			set_global_flag = provnce_daciae_restored
+			
+			destroy_landed_title = k_serbia
+			
+			d_vidin = {
+				de_jure_liege = k_daciae
+				destroy_landed_title = d_vidin
+			}
+			d_dioclea = {
+				de_jure_liege = k_daciae
+				destroy_landed_title = d_dioclea
+			}
+			d_rashka = {
+				de_jure_liege = k_daciae
+				destroy_landed_title = d_rashka
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_province_macedonia_ere = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = provnce_macedonia_restored }
+		}
+		allow = {
+			completely_controls = d_dyrrachion
+			completely_controls = d_thessalonika
+			completely_controls = d_epirus
+			completely_controls = d_athens
+			completely_controls = d_achaia
+			completely_controls = d_krete
+		}
+		effect = {
+			set_global_flag = provnce_macedonia_restored
+			
+			destroy_landed_title = k_byzantium
+			
+			d_dyrrachion = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_dyrrachion
+			}
+			d_thessalonika = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_thessalonika
+			}
+			d_epirus = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_epirus
+			}
+			d_athens = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_athens
+			}
+			d_achaia = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_achaia
+			}
+			d_krete = {
+				de_jure_liege = k_macedonia
+				destroy_landed_title = d_krete
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

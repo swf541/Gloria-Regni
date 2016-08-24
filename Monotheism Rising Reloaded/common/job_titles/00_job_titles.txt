@@ -34,6 +34,7 @@ job_chancellor = {
 	}
 	gain_effect = {
 		give_minor_title = title_councillor
+		set_character_flag = governor_canidate
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -77,6 +78,7 @@ job_marshal = {
 	}
 	gain_effect = {
 		give_minor_title = title_councillor
+		set_character_flag = governor_canidate
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -121,6 +123,7 @@ job_treasurer = {
 	}
 	gain_effect = {
 		give_minor_title = title_councillor
+		set_character_flag = governor_canidate
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -165,6 +168,7 @@ job_spymaster = {
 	}
 	gain_effect = {
 		give_minor_title = title_councillor
+		set_character_flag = governor_canidate
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -205,6 +209,7 @@ job_spiritual = {
 	}
 	gain_effect = {
 		give_minor_title = title_councillor
+		set_character_flag = governor_canidate
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
