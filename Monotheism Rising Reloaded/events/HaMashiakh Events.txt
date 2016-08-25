@@ -19,13 +19,16 @@ narrative_event = {
 	
 	option = { 
 		name = EVTOPTA_ExIs_101
-		add_trait = hamashiakh		
+		add_trait = hamashiakh	
+		set_global_flag = hamashiakh_appears		
 	}
 }	
 
 character_event = {
 	id = ExIs.6001
 	hide_window = yes
+	
+	is_triggered_only = yes
 	
 	trigger = {
 		has_dlc = "The Old Gods"
@@ -37,10 +40,6 @@ character_event = {
 			father = { trait = ben_hamashiakh } 
 		}
 		NOT = { trait = ben_hamashiakh }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	immediate = {

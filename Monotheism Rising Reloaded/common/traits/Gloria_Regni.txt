@@ -1,0 +1,22 @@
+
+blue_deme = {
+	opposites = {
+		green_deme
+	}
+	same_trait_opinion = 10
+	opposite_opinion = -10
+	
+	customizer = no
+	random = no
+}
+green_deme = {
+	opposites = {
+		blue_deme
+	}
+
+	same_trait_opinion = 10
+	opposite_opinion = -10
+	
+	customizer = no
+	random = no
+}

@@ -144,9 +144,103 @@ character_event = {
         immediate = {
 			set_character_flag = governor_canidate
 		}
-	
-	option = {
-		name = ok
+}
+
+character_event = {
+	id = ROMEGOV.6
+
+        hide_window = yes
+		
+		is_triggered_only = yes
+
+		trigger = {
+			or = {
+				primary_title = {
+					is_vice_royalty = yes 
+				}
+				has_character_flag = roman_governor
+			}
+			top_liege = { government = roman_government }
+			independent = no
+        } 
+        immediate = {
+			if = {
+				limit = {
+					any_child = { is_heir = yes }
+				}
+				
+				inherit = ROOT
+				set_character_flag = roman_governor
+				top_liege = {
+					character_event = { id = ROMEGOV.7 }
+				}
+			}
+
+			if = {
+				limit = {
+					num_of_children = 0
+				}			
+				random_realm_character = {
+					limit = {
+						has_character_flag = governor_canidate
+						is_landed = no
+					}
+					inherit = ROOT
+				}
+			}
 	}
 }
 
+character_event = {
+	id = ROMEGOV.7
+		
+	is_triggered_only = yes
+
+	trigger = {
+    } 
+	option = {
+		name = "EVTOPTAROMEGOV.7" # 
+	}
+	
+	option = {
+		name = "EVTOPTBROMEGOV.7" # 
+		random_realm_character = {
+			limit = {
+				has_character_flag = governor_canidate
+				is_landed = no
+			}
+			inherit = FROM
+			set_character_flag = roman_governor
+		}
+	}
+}
+
+character_event = {
+	id = ROMEGOV.8
+
+        hide_window = yes
+		
+		is_triggered_only = yes
+
+		trigger = {
+			father_even_if_dead = { trait = blue_deme }
+        } 
+        immediate = {
+			add_trait = blue_deme
+		}
+}
+
+character_event = {
+	id = ROMEGOV.8
+
+        hide_window = yes
+		
+		is_triggered_only = yes
+
+		trigger = {
+			father_even_if_dead = { trait = green_deme }
+        } 
+        immediate = {
+			add_trait = green_deme
+		}
+}
