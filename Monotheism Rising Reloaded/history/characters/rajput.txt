@@ -5764,6 +5764,21 @@
 	}
 }
 
+242020 = {
+	name="Jam Unar"
+	dynasty=1042086 # Samma
+	religion="hindu"
+	culture="rajput"
+	trait="kshatriya"
+	trait="shaktist_hindu" # actually Ashapura Mata
+	1310.1.1={
+		birth=yes
+	}
+	1338.6.1={
+		death=yes
+	}
+}
+
 188147 = {
     name="Isuka"
     dynasty=1042081 #Chahamana of Dholpur
@@ -12355,6 +12370,85 @@
 		birth=yes
 	}
 	1240.1.1={
+		death=yes
+	}
+}
+
+188892 = {
+	name="Bandpal" 
+	dynasty=214015 # Khanzada
+	religion="hindu"
+	culture="rajput"
+	trait="kshatriya"
+	trait="shaivist_hindu"	
+	1216.1.1={
+		birth=yes
+	}
+	1270.1.1={
+		death=yes
+	}
+}
+
+188893 = {
+	name="Aintipal" 
+	dynasty=214015 # Khanzada
+	religion="hindu"
+	culture="rajput"
+	father=188892
+	trait="kshatriya"
+	trait="shaivist_hindu"
+	1240.1.1={
+		birth=yes
+	}
+	1282.1.1={
+		death=yes
+	}
+}
+
+188894 = {
+	name="Adhanpal" 
+	dynasty=214015 # Khanzada
+	religion="hindu"
+	culture="rajput"
+	father=188893
+	trait="kshatriya"
+	trait="shaivist_hindu"
+	1270.1.1={
+		birth=yes
+	}
+	1329.1.1={
+		death=yes
+	}
+}
+
+188895 = {
+	name="Insaraj" 
+	dynasty=214015 # Khanzada
+	religion="hindu"
+	culture="rajput"
+	father=188894
+	trait="kshatriya"
+	trait="shaivist_hindu"
+	1300.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188896 = {
+	name="Lakhanpal" 
+	dynasty=214015 # Khanzada
+	religion="hindu"
+	culture="rajput"
+	father=188895
+	trait="kshatriya"
+	trait="shaivist_hindu"
+	1330.1.1={
+		birth=yes
+	}
+	1380.1.1={
 		death=yes
 	}
 }

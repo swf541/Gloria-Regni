@@ -20,6 +20,9 @@ on_birth = {
 }
 
 on_yearly_pulse = {
+	events = {
+		ROMEGOV.9
+	}
 	random_events = {
 		15 = JS.101
 		15 = JS.103

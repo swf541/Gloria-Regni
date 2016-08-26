@@ -7680,6 +7680,9 @@
 	1161.1.2 = {
 		birth="1161.1.2"
 	}
+	1176.1.1 = {
+		trait="disfigured"
+	}
 	1185.3.16 = {
 		death="1185.3.16"
 	}
@@ -15096,28 +15099,6 @@
 	}
 	1350.1.2 = {
 		death="1350.1.2"
-	}
-}
-
-454573 = {
-	name="Isabelle"
-	dynasty=4002
-	female=yes
-	martial=5
-	diplomacy=5
-	intrigue=8
-	stewardship=7
-	religion="catholic"
-	culture="frankish"
-	trait="lustful"
-	trait="amateurish_plotter"
-	father=161666
-	mother=161663
-	1292.1.1 = {
-		birth="1292.1.1"
-	}
-	1334.12.5 = {
-		death="1334.12.5"
 	}
 }
 
@@ -35718,11 +35699,11 @@
 	culture="frankish"
 	father=40102 #Audouin
 	mother=127054 #Alaisia de Gascogne
-	1050.1.1 = {
-		birth="1050.1.1"
+	1025.1.1 = { # ??
+		birth=yes 
 	}
 	1060.4.4 = {
-		death="1060.4.4"
+		death=yes
 	}
 }
 
@@ -39280,18 +39261,29 @@
 
 34592 = {
 	name="Conon" 
-	dynasty=102030
+	dynasty=102030 # of Bethune
 	religion="catholic"
 	culture="frankish"
 	father=93505	
 	1150.1.1={
-		birth="1150.1.1"
+		birth=yes
 	}	
+	1190.1.1={
+		trait=crusader
+	}
+	1204.5.16={
+		employer=205523
+	}
+	1205.6.1={
+		employer=205525
+	}
+	1216.6.11={
+		employer=205725 #Pierre I de Courtenay
+	}
 	1220.12.17={	
-		death="1220.12.17"
+		death=yes
 	}
 }
-
 34593 = {
 	name="Conon" 
 	dynasty=102030
@@ -42080,11 +42072,11 @@
 	female=yes
 	religion="catholic"
 	culture="frankish"
-	1280.1.1 = {
-		birth="1280.1.1"
+	1270.1.1 = {
+		birth=yes
 	}
 	1329.1.1 = {
-		death="1329.1.1"
+		death=yes
 	}
 }
 

@@ -765,7 +765,7 @@
 	dynasty=8601
 
 	father=70003
-	trait=bastard
+	trait=legit_bastard
 
 	religion=imperial
 	culture=visigothic
@@ -3756,24 +3756,15 @@
 107670={
 	name="Garçi" # AKA: García I 'el de las Manos Blancas'
 	dynasty=776
-
 	father=107680
 	mother=107681
-
 	religion=imperial
 	culture=visigothic
-
-	martial=6
-	diplomacy=5
-	intrigue=5
-	stewardship=6
-
 	trait=underhanded_rogue
-
 	933.1.1={
 		birth=yes
 	}
-	958.1.1={
+	960.1.1={
 		add_spouse=107671
 	}
 	995.12.30={

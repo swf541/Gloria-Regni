@@ -2,10 +2,6 @@
 	name="Oanez"
 	female = yes
 	dynasty=311
-	martial=5
-	diplomacy=6
-	intrigue=8
-	stewardship=6
 	religion="catholic"
 	culture="breton"
 	trait="gluttonous"
@@ -13,11 +9,11 @@
 	trait="flamboyant_schemer"
 	father=10042
 	mother=10043
-	1010.1.2={
-		birth="1010.1.2"
+	1021.1.1={
+		birth=yes
 	}
-	1055.1.2={
-		death="1055.1.2"
+	1055.1.1={
+		death=yes
 	}
 }
 
@@ -25,22 +21,18 @@
 	name="Alan"
 	# AKA: Alan 'Caignart'
 	dynasty=311
-	martial=6
-	diplomacy=6
-	intrigue=8
-	stewardship=6
 	religion="catholic"
 	culture="breton"
 	trait="misguided_warrior"
 	father=159678
-	992.1.2={
-		birth="992.1.2"
+	992.1.1={
+		birth=yes
 	}
-	1026.1.2={
+	1015.1.1={
 		add_spouse=10043
 	}
-	1058.1.2={
-		death="1058.1.2"
+	1058.1.1={
+		death=yes
 	}
 }
 
@@ -147,26 +139,17 @@
 }
 
 10051 = {
-	name="Adelindis"
-	# AKA: Adelendis
-	female = yes
+	name="Budic"
 	dynasty=311
-	martial=6
-	diplomacy=4
-	intrigue=7
-	stewardship=4
 	religion="catholic"
 	culture="breton"
-	trait="patient"
-	trait="charitable"
-	trait="indulgent_wastrel"
 	father=10042
 	mother=10043
-	1035.1.2={
-		birth="1035.1.2"
+	1018.1.1={
+		birth=yes
 	}
-	1085.1.2={
-		death="1085.1.2"
+	1091.1.1={
+		death=yes
 	}
 }
 
@@ -174,10 +157,6 @@
 	name="Guérech"
 	# AKA: Guerech
 	dynasty=311
-	martial=8
-	diplomacy=4
-	intrigue=7
-	stewardship=4
 	religion="catholic"
 	culture="breton"
 	trait="temperate"
@@ -185,11 +164,11 @@
 	trait="martial_cleric"
 	father=10042
 	mother=10043
-	1031.1.2={
-		birth="1031.1.2"
+	1017.1.1={
+		birth=yes
 	}
-	1079.1.2={
-		death="1079.1.2"
+	1079.1.1={
+		death=yes
 	}
 }
 
@@ -197,10 +176,6 @@
 	name="Bernez"
 	# AKA: Benead
 	dynasty=311
-	martial=6
-	diplomacy=4
-	intrigue=7
-	stewardship=4
 	religion="catholic"
 	culture="breton"
 	trait="lisp"
@@ -208,11 +183,14 @@
 	trait="martial_cleric"
 	father=10042
 	mother=10043
-	1040.1.2={
-		birth="1040.1.2"
+	1020.1.1={
+		birth=yes
 	}
-	1115.1.2={
-		death="1115.1.2"
+	1066.1.1={
+		trait="monk"
+	}
+	1115.1.1={
+		death=yes
 	}
 }
 
@@ -220,23 +198,23 @@
 	name="Hodierne"
 	female = yes
 	dynasty=311
-	martial=6
-	diplomacy=8
-	intrigue=4
-	stewardship=4
 	religion="catholic"
 	culture="breton"
 	trait="humble"
 	trait="martial_cleric"
 	father=10042
 	mother=10043
-	1025.1.2={
-		birth="1025.1.2"
+	1019.1.1={
+		birth=yes
 	}
-	1075.1.2={
-		death="1075.1.2"
+	1049.1.1={
+		trait="nun"
+	}
+	1075.1.1={
+		death=yes
 	}
 }
+
 
 10056 = {
 	name="Judikael"
@@ -340,14 +318,14 @@
 	trait="charismatic_negotiator"
 	father=10042
 	mother=10043
-	1030.1.2={
-		birth="1030.1.2"
+	1016.1.1={
+		birth=yes
 	}
-	1058.1.2={
+	1058.1.1={
 		add_spouse=347
 	}
 	1084.4.13={
-		death="1084.4.13"
+		death=yes
 	}
 }
 
@@ -513,6 +491,8 @@
 	dynasty=22006
 	religion=imperial
 	culture=breton
+	father = 340
+	mother = 379
 	980.1.1 = {
 		birth=yes
 	}
@@ -595,14 +575,14 @@
 	culture="breton"
 	father=342
 	mother=257
-	999.1.2={
-		birth="999.1.2"
+	999.1.1={
+		birth=yes
 	}
-	1020.1.2={
+	1037.1.1={
 		add_spouse=10041
 	}
 	1079.1.7={
-		death="1079.1.7"
+		death=yes
 	}
 }
 
@@ -636,11 +616,11 @@
 	culture="breton"
 	father=346 #Éon I de Penthièvre
 	mother=10041 #Oanez de Cornouaille
-	1025.1.1={
-		birth="1025.1.1"
+	1038.1.1={
+		birth=yes
 	}
 	1093.4.24={
-		death="1093.4.24"
+		death=yes
 	}
 }
 
@@ -1724,11 +1704,11 @@
 	culture="breton"
 	father=350 #Jafrez Boretel
 	#unknow mother
-	1045.1.1={
-		birth="1045.1.1"
+	1054.1.1={
+		birth=yes
 	}
 	1098.2.9 = {
-		death="1098.2.9"
+		death=yes
 	}
 }
 

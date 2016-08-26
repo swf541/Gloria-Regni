@@ -4376,7 +4376,7 @@
 
 20450 = {
 	name="Fedor"
-	dynasty=100587
+	dynasty=100586
 	martial=4
 	diplomacy=6
 	intrigue=8
@@ -9441,17 +9441,20 @@
 }
 
 473511 = {
-	name="Maria"
-	# AKA: Marija
-	female = yes
-	religion="orthodox"
-	culture="russian"
-	1310.1.2={
-		birth="1310.1.2"
-	}
-	1360.1.2={
-		death="1360.1.2"
-	}
+   name="Marija" #wife of Narimantas of Novgorod
+   # AKA: Marija
+   female = yes
+   dynasty=11100
+   religion="orthodox"
+   culture="mongol"
+   father=125512
+   mother=166946
+   1310.1.2={
+     birth=yes
+   }
+   1360.1.2={
+     death=yes
+   }
 }
 
 473512 = {

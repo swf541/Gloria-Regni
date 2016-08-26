@@ -105,22 +105,18 @@ province_event = {
         if = { #IMPERIAL + british (prefer Pelagianism)
 			limit = {
 				religion_group = christian
-				OR = {
-                                        culture = britonic
-                                        culture = british
-                                }
+				culture = british
 			}
 			religion = celtic_pagan
 		}
         if = { #IMPERIAL + british (prefer Pelagianism)
 			limit = {
 				OR = {
-					culture_group = east_germanic
 					culture_group = west_germanic
 					culture_group = central_germanic
                 }
 			}
-			religion = german_pagan
+			religion = germanic_pagan
 		}
                 if = { #IMPERIAL + occitan (prefer Pelagianism)
 			limit = {
@@ -138,10 +134,10 @@ province_event = {
 				}
 			}
 		}
-		if = { #IMPERIAL + canaanite (prefer Sabellianism)
+		if = { #IMPERIAL + israelite (prefer Sabellianism)
 			limit = {
 				religion_group = christian
-				culture_group = canaanite
+				culture_group = israelite
 			}
 			random_list = {
 				60 = {
@@ -158,10 +154,56 @@ province_event = {
 				}
 			}
 		}
-		if = { #IMPERIAL + canaanite (prefer Sabellianism)
+		if = { #IMPERIAL + israelite (prefer Sabellianism)
 			limit = {
 				not = { religion_group = christian }
-				culture_group = canaanite
+				culture_group = israelite
+			}
+			random_list = {
+				20 = {
+					religion = nestorian
+				}
+				20 = {
+					religion = syriac
+				}
+				20 = {
+					religion = jewish
+				}
+				10 = {
+					religion = ashurism_pagan
+				}
+				10 = {
+					religion = zoroastrian
+				}
+				10 = {
+					religion = hellenic_pagan
+				}
+			}
+		}
+		if = { #IMPERIAL + post_babylonian (prefer Sabellianism)
+			limit = {
+				religion_group = christian
+				culture_group = post_babylonian
+			}
+			random_list = {
+				60 = {
+					religion = jewish
+				}
+				10 = {
+					religion = ashurism_pagan
+				}
+				10 = {
+					religion = zoroastrian
+				}
+				10 = {
+					religion = hellenic_pagan
+				}
+			}
+		}
+		if = { #IMPERIAL + post_babylonian (prefer Sabellianism)
+			limit = {
+				not = { religion_group = christian }
+				culture_group = post_babylonian
 			}
 			random_list = {
 				20 = {
@@ -200,7 +242,7 @@ province_event = {
 					religion = hellenic_pagan
 				}
 				40 = {
-					religion = german_pagan
+					religion = germanic_pagan
 				}
 				20 = {
 					religion = jewish
@@ -221,7 +263,7 @@ province_event = {
 					religion = hellenic_pagan
 				}
 				20 = {
-					religion = german_pagan
+					religion = germanic_pagan
 				}
 				20 = {
 					religion = jewish
@@ -242,29 +284,29 @@ province_event = {
 					religion = hellenic_pagan
 				}
 				20 = {
-					religion = german_pagan
+					religion = germanic_pagan
 				}
 				20 = {
 					religion = jewish
 				}
 			}
 		}		
-		if = { #IMPERIAL + frankish (prefer Arian)
-			limit = {
-				or = {
-					culture = circassian
-					culture = nakh
-				}
-			}
-			random_list = {
-				80 = {
-					religion = vainakh_pagan
-				}
-				20 = {
-					religion = tengri_pagan
-				}
-			}
-		}
+		#if = { #IMPERIAL + frankish (prefer Arian)
+		#	limit = {
+		#		or = {
+		#			culture = #circassian
+		#			culture = #nakh
+		#		}
+		#	}
+		#	random_list = {
+		#		80 = {
+		#			religion = vainakh_pagan
+		#		}
+		#		20 = {
+		#			religion = tengri_pagan
+		#		}
+		#	}
+		#}
 		if = { #IMPERIAL + frankish (prefer Arian)
 			limit = {
 				culture = armenian
@@ -286,7 +328,7 @@ province_event = {
 			}
 			random_list = {
 				60 = {
-					religion = apostolic
+					religion = miaphysite
 				}
 				10 = {
 					religion = paulician
@@ -313,7 +355,7 @@ province_event = {
 				culture = gothic
 			}
 
-					religion = german_pagan
+					religion = germanic_pagan
 
 			
 		}
@@ -325,8 +367,8 @@ province_event = {
 				}
 				religion_group = christian
 				not = {
-					culture = circassian
-					culture = nakh
+					culture = #circassian
+					culture = #nakh
 					culture = armenian
 					culture = alan
 					culture = coptic
@@ -355,8 +397,8 @@ province_event = {
 				religion_group = muslim
 				year = 1054
 				not = {
-					culture = circassian
-					culture = nakh
+					culture = #circassian
+					culture = #nakh
 					culture = armenian
 					culture = alan
 					culture = coptic
@@ -388,8 +430,8 @@ province_event = {
 				religion_group = muslim
 				not = { year = 1054 }
 				not = {
-					culture = circassian
-					culture = nakh
+					culture = #circassian
+					culture = #nakh
 					culture = armenian
 					culture = alan
 					culture = coptic
@@ -440,7 +482,7 @@ province_event = {
 			}
 			random_list = {
 				20 = {
-					religion = german_pagan
+					religion = germanic_pagan
 				}
 				60 = {
 					religion = hellenic_pagan
@@ -514,14 +556,11 @@ province_event = {
 				50 = {
 					religion = tengri_pagan
 				}
-				10 = {
+				20 = {
 					religion = slavic_pagan
 				}
-				20 = {
+				30 = {
 					religion = hellenic_pagan
-				}
-				20 = {
-					religion = samo_thracian
 				}
 			}
 		}
@@ -533,7 +572,7 @@ province_event = {
 			}
 			random_list = {
 				50 = {
-					religion = sabaean_pagan
+					religion = semitic_pagan
 				}
 				50 = {
 					religion = jewish
@@ -547,7 +586,7 @@ province_event = {
 			}
 			random_list = {
 				20 = {
-					religion = sabaean_pagan
+					religion = semitic_pagan
 				}
 				30 = {
 					religion = jewish
@@ -725,7 +764,7 @@ province_event = {
 			}
 			random_list = {
 				60 = {
-					religion = berber_pagan
+					religion = west_african_pagan #Berber Pagan			
 				}
 				20 = {
 					religion = hellenic_pagan
@@ -746,7 +785,7 @@ province_event = {
 			}
 			random_list = {
 				20 = {
-					religion = berber_pagan
+					religion = west_african_pagan #Berber Pagan
 				}
 				10 = {
 					religion = hellenic_pagan
@@ -770,7 +809,7 @@ province_event = {
 			}
 			random_list = {
 				20 = {
-					religion = berber_pagan
+					religion = west_african_pagan #Berber Pagan
 				}
 				10 = {
 					religion = hellenic_pagan
@@ -878,7 +917,7 @@ province_event = {
 					religion = hindu
 				}
 				60 = {
-					religion = samittiya_buddhist
+					religion = buddhist
                 }
 			}		
 		}
@@ -1029,44 +1068,44 @@ province_event = {
 
 			}		
 		}			
-		if = { #IMPERIAL + gallic (prefer Pelagianism)
-			limit = {
-				culture = awaral
-				
-				not = { religion_group = christian }
-				not = { year = 1054 }
-			}
-			random_list = {
-				20 = {
-					religion = tengri_pagan
-				}
-				20 = {
-					religion = zoroastrian
-				}
-				60 = {
-					religion = imperial
-				}
-			}		
-		}		
-		if = { #IMPERIAL + gallic (prefer Pelagianism)
-			limit = {
-				culture = awaral
-				
-				not = { religion_group = christian }
-				year = 1054 
-			}
-			random_list = {
-				20 = {
-					religion = tengri_pagan
-				}
-				20 = {
-					religion = zoroastrian
-				}
-				60 = {
-					religion = orthodox
-				}
-			}		
-		}
+		#if = { #IMPERIAL + gallic (prefer Pelagianism)
+		#	limit = {
+		#		culture = awaral
+		#		
+		#		not = { religion_group = christian }
+		#		not = { year = 1054 }
+		#	}
+		#	random_list = {
+		#		20 = {
+		#			religion = tengri_pagan
+		#		}
+		#		20 = {
+		#			religion = zoroastrian
+		#		}
+		#		60 = {
+		#			religion = imperial
+		#		}
+		#	}		
+		#}		
+		#if = { #IMPERIAL + gallic (prefer Pelagianism)
+		#	limit = {
+		#		culture = awaral
+		#		
+		#		not = { religion_group = christian }
+		#		year = 1054 
+		#	}
+		#	random_list = {
+		#		20 = {
+		#			religion = tengri_pagan
+		#		}
+		#		20 = {
+		#			religion = zoroastrian
+		#		}
+		#		60 = {
+		#			religion = orthodox
+		#		}
+		#	}		
+		#}
 		if = { #IMPERIAL + gallic (prefer Pelagianism)
 			limit = {
 				culture = avar
@@ -1183,11 +1222,8 @@ province_event = {
 				not = { religion_group = christian	}
 			}
 			random_list = {
-				25 = {
-					religion = sabaean_pagan
-				}
-				25 = {
-					religion = arabic_pagan 
+				50 = {
+					religion = semitic_pagan
 				}
 				25 = {
 					religion = nestorian
@@ -1206,13 +1242,10 @@ province_event = {
 				religion_group = christian	
 			}
 			random_list = {
-				33 = {
-					religion = sabaean_pagan
+				66 = {
+					religion = semitic_pagan
 				}
 				34 = {
-					religion = arabic_pagan 
-				}
-				33 = {
 					religion = jewish
 				}
 			}	

@@ -852,8 +852,8 @@
 	trait="zealous"
 	trait="martial_cleric"
 	father=3000
-	981.1.2={
-		birth="981.1.2"
+	971.1.2={
+		birth=yes
 	}
 	1024.1.2={
 		death="1024.1.2"
@@ -1088,4 +1088,18 @@
 	1225.1.1={
 		death=yes
 	}
+}
+
+166986 = {
+   name="Mailaiti" # concubine of Khutughtu Khan
+   female=yes
+   dynasty=1042185
+   religion="tengri_pagan"
+   culture="karluk"
+   1301.1.1 = {
+     birth=yes
+   }
+   1330.1.1 = {
+     death=yes
+   }
 }

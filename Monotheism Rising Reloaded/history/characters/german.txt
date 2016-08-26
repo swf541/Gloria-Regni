@@ -2361,10 +2361,10 @@
 	father=1306
 	mother=1284
 	948.1.2 = {
-		birth="948.1.2"
+		birth=yes
 	}
-	976.1.2 = {
-		death="976.1.2"
+	1004.11.4 = {
+		death=yes
 	}
 }
 
@@ -17010,22 +17010,6 @@
 	}
 }
 
-30714 = {
-	name="Elisabeth" 
-	female=yes
-	dynasty=263 #von Nassau
-	religion="catholic"
-	culture="german"
-	father=212372
-	mother=30027
-	1223.1.1 = {
-		birth="1223.1.1"
-	}
-	1295.1.6 = {
-		death="1295.1.6"
-	}
-}
-
 30715 = {
 	name="Katharina" 
 	female=yes
@@ -23407,7 +23391,7 @@
 	1255.1.1 = {
 		birth="1255.1.1"
 	}
-	1290.1.1 = {
+	1271.1.1 = {
 		add_spouse=462361
 	}
 	1298.6.23 = {
@@ -23742,7 +23726,7 @@
 }
 
 462376 = {
-	name="Adelheid"
+	name="Mechtild"
 	female=yes
 	dynasty=263
 	martial=3
@@ -23755,11 +23739,11 @@
 	trait="scholarly_theologian"
 	father=462360
 	mother=462361
-	1290.1.1 = {
-		birth="1290.1.1"
+	1278.1.1 = {
+		birth=yes
 	}
-	1324.1.1 = {
-		death="1324.1.1"
+	1323.6.19 = {
+		death=yes
 	}
 }
 
@@ -25063,7 +25047,7 @@
 		birth="1274.1.2"
 	}
 	1294.1.2 = {
-		add_spouse=462377
+		add_spouse=462376
 	}
 	1317.1.12 = {
 		death="1317.1.12"
@@ -25082,7 +25066,7 @@
 	trait="brave"
 	trait="tough_soldier"
 	father=462736
-	mother=462377
+	mother=462376
 	1300.1.2 = {
 		birth="1300.1.2"
 	}
@@ -25280,7 +25264,7 @@
 	trait="temperate"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462377
+	mother=462376
 	1306.8.8 = {
 		birth="1306.8.8"
 	}
@@ -25360,7 +25344,7 @@
 }
 
 462753 = {
-	name="Rudolf"
+	name="Ruprecht"
 	dynasty=217
 	martial=7
 	diplomacy=5
@@ -25371,7 +25355,7 @@
 	trait="diligent"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462377
+	mother=462376
 	1309.1.2 = {
 		birth="1309.1.2"
 	}
@@ -25394,7 +25378,7 @@
 	trait="lustful"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462377
+	mother=462376
 	1312.1.2 = {
 		birth="1312.1.2"
 	}
@@ -29513,7 +29497,7 @@
 }
 
 7538 = {
-	name="Elizabeth"
+	name="Elisabeth"
 	female=yes
 	dynasty=263
 	religion="catholic"
@@ -31963,7 +31947,7 @@
 }
 
 7985 = {
-	name="Guelph"
+	name="Welf"
 	dynasty=650
 	martial=5
 	diplomacy=6
@@ -32069,7 +32053,7 @@
 }
 
 7990 = {
-	name="Guelph"
+	name="Welf"
 	dynasty=650
 	martial=5
 	diplomacy=6
@@ -45606,7 +45590,7 @@
 	dynasty=651
 	religion="imperial"
 	culture="german"
-	father=168184
+	father=168184 # source?
 	760.1.1 = {
 		birth="760.1.1"
 	}

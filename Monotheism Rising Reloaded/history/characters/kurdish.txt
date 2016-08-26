@@ -1032,11 +1032,11 @@
 	religion="sunni"
 	culture="kurdish"
 	father=159161
-	930.1.1={
-		birth="930.1.1"
+	950.1.1={
+		birth=yes
 	}
 	1031.1.1={
-		death="1031.1.1"
+		death=yes
 	}
 }
 159164 = { 
@@ -1379,42 +1379,29 @@
 		death="1100.1.1"
 	}
 }
-159546 = {
-	name="Vonon"
-	dynasty=100685
-	religion="zoroastrian"
-	culture="kurdish"
-	2.11.1={
-		birth="2.11.1"
-	}
-	50.8.29={
-		death="50.8.29"
-	}
-}
 159547 = {
-	name="Balaxš" #Balash
+	name="Vonones" # II
 	dynasty=100685
 	religion="zoroastrian"
 	culture="kurdish"
-	father=159546
-	30.11.1={
-		birth="30.11.1"
+	2.1.1={
+		birth=yes # probably BC
 	}
-	104.1.29={
-		death="104.1.29"
+	51.6.1={
+		death=yes
 	}
 }
 159548 = {
-	name="Mehrdad" #Mehrdad
+	name="Mehrdad" #Mithridates IV
 	dynasty=100685
 	religion="zoroastrian"
 	culture="kurdish"
-	father=159547
-	60.11.1={
-		birth="60.11.1"
+	father=159547 # different opinions
+	52.1.1={
+		birth=yes
 	}
 	140.8.29={
-		death="140.8.29"
+		death=yes
 	}
 }
 159549 = {
@@ -1431,7 +1418,7 @@
 	}
 }
 159550 = {
-	name="Balaxš" #Valakhsh
+	name="Balaxš" # Vologases V
 	dynasty=100685
 	religion="zoroastrian"
 	culture="kurdish"
@@ -1445,10 +1432,10 @@
 }
 159551 = {
 	name="Erdewan" #Ardavan
-	dynasty=100685
+	dynasty=1029098
 	religion="zoroastrian"
 	culture="kurdish"
-	father=159547
+	# father=159547 no source
 	70.11.1={
 		birth="70.11.1"
 	}
@@ -1885,6 +1872,218 @@
 		birth=yes
 	}
 	800.1.1={
+		death=yes
+	}
+}
+
+166942 = {
+   name="Absh" #wife of Hyaxemet, son of Hulagu
+   female=yes
+   dynasty=7333
+   religion="sunni"
+   culture="kurdish"
+   father=93203
+   1238.1.1={
+     birth=yes
+   }
+   1287.1.1={
+     death=yes
+   }
+}
+
+214051 = {
+	name="Pacorus" # II
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159547
+	35.1.1={
+		birth=yes
+	}
+	105.1.1={
+		death=yes
+	}
+}
+
+214052 = {
+	name="Axidares"
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214051
+	60.1.1={
+		birth=yes
+	}
+	113.1.1={
+		death=yes
+	}
+}
+
+214053 = {
+	name="Parthamasiris"
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214051
+	65.1.1={
+		birth=yes
+	}
+	114.1.1={
+		death=yes
+	}
+}
+
+214054 = {
+	name="Meredates"
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214051
+	70.1.1={
+		birth=yes
+	}
+	151.1.1={
+		death=yes
+	}
+}
+
+214055 = {
+	name="Balaxš" # Vologases I
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159547
+	20.1.1={
+		birth=yes
+	}
+	78.1.1={
+		death=yes
+	}
+}
+
+214056 = {
+	name="Vardanes" # II
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214055
+	40.1.1={
+		birth=yes
+	}
+	65.1.1={
+		death=yes
+	}
+}
+
+214057 = {
+	name="Balaxš" # Vologases II
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214055
+	39.1.1={
+		birth=yes
+	}
+	80.1.1={
+		death=yes
+	}
+}
+
+214058 = {
+	name="Osroes" # I
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159547
+	45.1.1={
+		birth=yes
+	}
+	130.1.1={
+		death=yes
+	}
+}
+
+214059 = {
+	name="Tiridates" # I
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159547
+	32.1.1={
+		birth=yes
+	}
+	88.1.1={
+		death=yes
+	}
+}
+
+214060 = {
+	name="Balaxš" # Vologases III
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214057
+	80.1.1={
+		birth=yes
+	}
+	148.1.1={
+		death=yes
+	}
+}
+
+214061 = {
+	name="Xusrew" # Khosrov I
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159550
+	165.1.1={
+		birth=yes
+	}
+	217.1.1={
+		death=yes
+	}
+}
+
+159579 = { 
+	name="Balaxš" # Vologases VI
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159550
+	180.11.1={
+		birth=yes
+	}
+	230.8.29={
+		death=yes
+	}
+}
+
+214062 = {
+	name="Erdewan" #Artabanus V
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=159550
+	175.1.1={
+		birth=yes
+	}
+	224.4.28={
+		death=yes
+	}
+}
+
+214063 = {
+	name="Sura"
+	female=yes
+	dynasty=100685
+	religion="zoroastrian"
+	culture="kurdish"
+	father=214062
+	213.1.1={
+		birth=yes
+	}
+	270.1.1={
 		death=yes
 	}
 }

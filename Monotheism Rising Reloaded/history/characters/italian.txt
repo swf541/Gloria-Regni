@@ -2450,19 +2450,18 @@
 	religion="catholic"
 	culture="italian"
 	trait="honest"
-	trait="gluttonous"
 	trait="humble"
 	trait="martial_cleric"
 	father=213520
 	mother=213527
-	1150.1.2 = {
-		birth="1150.1.2"
+	1144.1.2 = {
+		birth=yes
 	}
 	1168.1.2 = {
 		add_spouse=223522
 	}
 	1177.1.6 = {
-		death="1177.1.6"
+		death=yes
 	}
 }
 
@@ -12110,19 +12109,14 @@
 71006 = {
 	name="Tommaso"
 	dynasty=8682
-	martial=8
-	diplomacy=6
-	intrigue=5
-	stewardship=6
+	father=214104
 	religion="catholic"
 	culture="italian"
-	trait="tough_soldier"
-	trait="gregarious"
 	1218.1.1 = {
-		birth="1218.1.1"
+		birth=yes
 	}
 	1273.3.15 = {
-		death="1273.3.15"
+		death=yes
 	}
 }
 
@@ -39916,8 +39910,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184039
-	mother=184040
+	father=184042
+	mother=184043
 	920.1.1={
 		birth=920.1.1
 	}
@@ -39945,8 +39939,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184039
-	mother=184040
+	father=184042
+	mother=184043
 	925.1.1={
 		birth=925.1.1
 	}
@@ -39961,8 +39955,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184039
-	mother=184040
+	father=184042
+	mother=184043
 	927.1.1={
 		birth=927.1.1
 	}
@@ -42802,17 +42796,14 @@
 	}#Traveled to the Ilkhanate
 	1266.1.1={
 		employer = 217266
+		effect={add_friend=217266}
 	}#First meeting with Kublai
 	1269.1.1={
 		employer = 32127
 	}#Return to Venice
-	1266.1.1={
-		employer = 217266
-		effect={add_friend=217266}
-	}#Return to Kublai's Court
 	1295.1.1={
 		employer = 32130
-	}#Return to Venice
+	}
 	1309.1.1={
 		death=yes
 	}
@@ -42922,6 +42913,281 @@
 		birth=yes
 	}
 	1365.1.1={
+		death=yes
+	}
+}
+
+214090 = {
+	name="Leonardo"
+	dynasty=214020 # Fibonacci
+	religion="catholic"
+	culture="italian"
+	trait=genius
+	trait=scholar
+	trait=erudite
+	learning=12
+	1170.1.1={
+		birth=yes
+		employer=71168
+	}
+	1174.1.1={ employer=167443 }
+	1190.1.1={ employer=167512 }
+	1215.1.1={ employer=167410 }
+	1220.1.1={ employer=180026 }
+	1222.1.1={ employer=71166  }
+	1230.1.1={ employer=167453 }	
+	1245.1.1={
+		death=yes
+	}
+}
+
+214091 = {
+	name="Durante" # Dante
+	dynasty=214021 # degli Alighieri
+	religion="catholic"
+	culture="italian"
+	trait=genius
+	trait=poet
+	trait=mastermind_theologian
+	trait=erudite
+	learning=12
+	1265.6.1={
+		birth=yes
+		employer=7636
+	}
+	1266.2.26={ employer=455406 }
+	1280.1.1= { employer=73411 }
+	1300.1.1= { employer=73412	}
+	1302.3.1= { employer=70802 } # Verona
+	1308.1.1= { employer=412072 } # Parma
+	1318.1.1= { employer=73551 } # Ravenna 
+	1321.9.13={
+		death=yes
+	}
+}
+
+214092 = {
+	name="Franceso" # Petrarch
+	dynasty=214022
+	religion="catholic"
+	culture="italian"
+	trait=genius
+	trait=poet
+	trait=scholar
+	trait=erudite
+	learning=12
+	1304.7.20={
+		birth=yes
+		employer=73412 # Florence
+	}
+	1309.1.1 = { employer=71837 } # Papacy
+	1314.4.20 ={ employer=71838 }
+	1334.12.20={ employer=478501}
+	1374.7.19={
+		death=yes
+	}
+}
+
+214093 = {
+	name="Giovanni"
+	dynasty=214023 # Boccaccio
+	religion="catholic"
+	culture="italian"
+	trait=genius
+	trait=poet
+	trait=scholar
+	trait=erudite
+	learning=12
+	1313.1.1={
+		birth=yes
+		employer=461700 # Florence/Naples
+	}
+	1375.12.21={
+		death=yes
+	}
+}
+
+214094 = {
+	name="Tomasso" # St Thomas Aquinas
+	dynasty=8682
+	father=214095
+	religion="catholic"
+	culture="italian"
+	trait=genius
+	trait=scholar
+	trait=erudite
+	learning=15
+	1225.1.1={
+		birth=yes
+	}
+	1274.3.7={
+		death=yes
+	}
+}
+
+214095 = {
+	name="Landolfo"
+	dynasty=8682
+	father=214096
+	religion="catholic"
+	culture="italian"
+	1160.1.1={
+		birth=yes
+	}
+	1245.12.24={
+		death=yes
+	}
+}
+
+214096 = {
+	name="Aimone"
+	dynasty=8682
+	father=214097
+	religion="catholic"
+	culture="italian"
+	1135.1.1={
+		birth=yes
+	}
+	1195.1.1={
+		death=yes
+	}
+}
+
+214097 = {
+	name="Rinaldo"
+	dynasty=8682
+	father=214098
+	religion="catholic"
+	culture="italian"
+	1100.1.1={
+		birth=yes
+	}
+	1160.1.1={
+		death=yes
+	}
+}
+
+214098 = {
+	name="Landone" # IV
+	dynasty=8682
+	father=214099
+	religion="catholic"
+	culture="italian"
+	1080.1.1={
+		birth=yes
+	}
+	1137.1.1={
+		death=yes
+	}
+}
+
+214099 = {
+	name="Landone" # III
+	dynasty=8682
+	father=214105
+	culture="italian"
+	religion="catholic"
+	1055.1.1={
+		birth=yes
+	}
+	1123.1.1={
+		death=yes
+	}
+}
+
+214100 = {
+	name="Pandolfo"
+	dynasty=8682
+	father=214098
+	religion="catholic"
+	culture="italian"
+	1105.1.1={
+		birth=yes
+	}
+	1157.1.1={
+		death=yes
+	}
+}
+
+214101 = {
+	name="Landolfo"
+	dynasty=8682
+	father=214100
+	religion="catholic"
+	culture="italian"
+	1130.1.1={
+		birth=yes
+	}
+	1196.10.6={
+		death=yes
+	}
+}
+
+214102 = {
+	name="Adenolfo" # II
+	dynasty=8682
+	father=214101
+	religion="catholic"
+	culture="italian"
+	1150.1.1={
+		birth=yes
+	}
+	1210.1.1={
+		death=yes
+	}
+}
+
+214103 = {
+	name="Tomasso"
+	dynasty=8682
+	father=214102
+	religion="catholic"
+	culture="italian"
+	1175.1.1={
+		birth=yes
+	}
+	1251.1.1={
+		death=yes
+	}
+}
+
+214104 = {
+	name="Adenolfo" # III
+	dynasty=8682
+	father=214103
+	religion="catholic"
+	culture="italian"
+	1200.1.1={
+		birth=yes
+	}
+	1263.1.1={
+		death=yes
+	}
+}
+
+214105 = {
+	name="Landone" # II
+	dynasty=8682
+	father=214106
+	culture="italian"
+	religion="catholic"
+	1030.1.1={
+		birth=yes
+	}
+	1093.1.1={
+		death=yes
+	}
+}
+
+214106 = {
+	name="Atenolfo" # II
+	dynasty=8682
+	culture="italian"
+	religion="catholic"
+	1000.1.1={
+		birth=yes
+	}
+	1062.2.2={
 		death=yes
 	}
 }

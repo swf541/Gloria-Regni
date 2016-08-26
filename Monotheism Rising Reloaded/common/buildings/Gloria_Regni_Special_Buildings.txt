@@ -328,7 +328,10 @@ city = {
 	ct_culture_group_byzantine_1 = {
 		desc = ct_culture_group_byzantine_1_desc
 		potential = {
-			FROM = { culture_group = byzantine }
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		prerequisites = { ct_wall_2 }
@@ -345,7 +348,10 @@ city = {
 	ct_culture_group_byzantine_2 = {
 		desc = ct_culture_group_byzantine_1_desc
 		potential = {
-			FROM = { culture_group = byzantine }
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		upgrades_from = ct_culture_group_byzantine_1
@@ -362,7 +368,10 @@ city = {
 	ct_culture_group_byzantine_3 = {
 		desc = ct_culture_group_byzantine_1_desc
 		potential = {
-			FROM = { culture_group = byzantine }
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		upgrades_from = ct_culture_group_byzantine_2
@@ -379,7 +388,10 @@ city = {
 	ct_culture_group_byzantine_4 = {
 		desc = ct_culture_group_byzantine_1_desc
 		potential = {
-			FROM = { culture_group = byzantine }
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		upgrades_from = ct_culture_group_byzantine_3
@@ -393,5 +405,6 @@ city = {
 		
 		extra_tech_building_start = 0.8
 	}
+
 }
 

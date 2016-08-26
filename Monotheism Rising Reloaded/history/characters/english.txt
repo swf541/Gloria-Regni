@@ -1601,14 +1601,14 @@
 	trait="martial_cleric"
 	father=204596
 	mother=551
-	1104.1.2 = {
-		birth="1104.1.2"
+	1104.1.1 = {
+		birth=yes
 	}
 	1121.1.1 = {
 		add_spouse=204591
 	}
 	1168.4.5 = {
-		death="1168.4.5"
+		death=yes
 	}
 }
 
@@ -1785,10 +1785,13 @@
 	trait="honest"
 	trait="thrifty_clerk"
 	1120.1.2 = {
-		birth="1120.1.2"
+		birth=yes
+	}
+	1145.1.1={
+		add_spouse=204621
 	}
 	1170.1.2 = {
-		death="1170.1.2"
+		death=yes
 	}
 }
 
@@ -1805,11 +1808,11 @@
 	trait="lisp"
 	trait="scholarly_theologian"
 	father=204622
-	1120.1.2 = {
-		birth="1120.1.2"
+	1122.1.2 = {
+		birth=yes
 	}
-	1176.1.2 = {
-		death="1176.1.2"
+	1197.4.6 = {
+		death=yes
 	}
 }
 
@@ -5676,25 +5679,25 @@
 
 454511 = {
 	name="Edmund"
-	dynasty=100073
+	dynasty=106
 	martial=7
 	diplomacy=8
 	intrigue=4
 	stewardship=5
 	religion="catholic"
 	culture="english"
-	trait="deceitful"
-	trait="naive_appeaser"
+	add_trait="deceitful"
+	add_trait="naive_appeaser"
 	father=454520
 	mother=455527
-	1301.8.1 = {
-		birth="1301.8.1"
+	1301.8.5 = {
+		birth=yes
 	}
 	1318.1.1 = {
 		add_spouse = 454512
 	}
 	1330.3.19 = {
-		death="1330.3.19"
+		death=yes
 	}
 }
 
@@ -5720,42 +5723,42 @@
 
 454513 = {
 	name="John"
-	dynasty=100073
+	dynasty=106
 	martial=8
 	diplomacy=8
 	intrigue=4
 	stewardship=5
 	religion="catholic"
 	culture="english"
-	trait="thrifty_clerk"
+	add_trait="thrifty_clerk"
 	father=454511
 	mother=454512
-	1330.1.2 = {
-		birth="1330.1.2"
+	1330.4.7 = {
+		birth=yes
 	}
-	1380.1.2 = {
-		death="1380.1.2"
+	1352.12.26 = {
+		death=yes
 	}
 }
 
 454514 = {
 	name="Margaret"
 	female = yes
-	dynasty=100073
+	dynasty=106
 	martial=7
 	diplomacy=7
 	intrigue=4
 	stewardship=5
 	religion="catholic"
 	culture="english"
-	trait="thrifty_clerk"
+	add_trait="thrifty_clerk"
 	father=454511
 	mother=454512
 	1327.1.2 = {
-		birth="1327.1.2"
+		birth=yes
 	}
-	1377.1.2 = {
-		death="1377.1.2"
+	1352.1.2 = {
+		death=yes
 	}
 }
 
@@ -5873,18 +5876,22 @@
 	stewardship=7
 	religion="catholic"
 	culture="english"
-	trait="cynical"
-	trait="tough_soldier"
+	add_trait="brave"
+	add_trait="zealous"
+	add_trait="tough_soldier"
 	father=454522
 	mother = 454536
 	1245.1.16 = {
-		birth="1245.1.16"
+		birth=yes
+	}
+	1271.1.1 = {
+		add_trait="crusader"
 	}
 	1276.2.3 = {
 		add_spouse = 454524
 	}
 	1296.6.5 = {
-		death="1296.6.5"
+		death=yes
 	}
 }
 
@@ -6068,25 +6075,25 @@
 
 454550 = {
 	name="Thomas"
-	dynasty=105
+	dynasty=106
 	martial=8
 	diplomacy=8
 	intrigue=4
 	stewardship=5
 	religion="catholic"
 	culture="english"
-	trait="patient"
-	trait="flamboyant_schemer"
+	add_trait="patient"
+	add_trait="flamboyant_schemer"
 	father=454520
 	mother=455527
 	1300.6.1 = {
-		birth="1300.6.1"
+		birth=yes
 	}
 	1319.1.2 = {
 		add_spouse=454551
 	}
 	1338.8.4 = {
-		death="1338.8.4"
+		death=yes
 	}
 }
 
@@ -6113,46 +6120,46 @@
 454552 = {
 	name="Margaret"
 	female = yes
-	dynasty=105
+	dynasty=106
 	martial=4
 	diplomacy=6
 	intrigue=6
 	stewardship=8
 	religion="catholic"
 	culture="english"
-	trait="arbitrary"
-	trait="underhanded_rogue"
+	add_trait="twin"
+	add_trait="arbitrary"
+	add_trait="underhanded_rogue"
 	father=454550
 	mother=454551
 	1320.1.2 = {
-		birth="1320.1.2"
+		birth=yes
 	}
-	1370.1.2 = {
-		death="1370.1.2"
+	1399.3.24 = {
+		death=yes
 	}
 }
 
 454553 = {
 	name="Alice"
-	# AKA: Alice 
 	female = yes
-	dynasty=105
+	dynasty=106
 	martial=7
 	diplomacy=6
 	intrigue=5
 	stewardship=7
 	religion="catholic"
 	culture="english"
-	trait="greedy"
-	trait="wroth"
-	trait="martial_cleric"
+	add_trait="greedy"
+	add_trait="wroth"
+	add_trait="martial_cleric"
 	father=454550
 	mother=454551
-	1325.1.2 = {
-		birth="1325.1.2"
+	1324.1.2 = {
+		birth=yes
 	}
-	1375.1.2 = {
-		death="1375.1.2"
+	1352.1.2 = {
+		death=yes
 	}
 }
 
@@ -6823,7 +6830,7 @@
 }
 
 454604 = {
-	name="Idoine"
+	name="Idonea"
 	female = yes
 	dynasty=4010
 	martial=5
@@ -6832,15 +6839,15 @@
 	stewardship=6
 	religion="catholic"
 	culture="english"
-	trait="chaste"
-	trait="fortune_builder"
+	add_trait="chaste"
+	add_trait="fortune_builder"
 	father=454600
 	mother=454601
-	1313.1.1 = {
-		birth="1313.1.1"
+	1300.1.1 = {
+		birth=yes
 	}
-	1363.1.1 = {
-		death="1363.1.1"
+	1365.8.24 = {
+		death=yes
 	}
 }
 
@@ -7539,8 +7546,9 @@
 	culture="english"
 	father=204596
 	mother=551 
+	trait=twin
 	1104.1.1 = {
-		birth="1104.1.1"
+		birth=yes
 	}
 	1138.1.1 = {
 		add_spouse = 7442
@@ -11123,7 +11131,7 @@
 	dynasty=101709
 	religion="catholic"
 	culture="english"
-	father=161636
+	father=161637
 	1280.1.1 = {
 		birth="1280.1.1"
 	}
@@ -11143,7 +11151,7 @@
 	1287.4.25 = {
 		birth="1287.4.25"
 	}
-	1306.1.1 = {
+	1301.9.20 = {
 		add_spouse=161641
 	}
 	1330.11.29 = {
@@ -11157,11 +11165,11 @@
 	female=yes
 	religion="catholic"
 	culture="english"
-	1290.1.1 = {
-		birth="1290.1.1"
+	1286.2.1 = {
+		birth=yes
 	}
-	1356.1.1 = {
-		death="1356.1.1"
+	1356.10.19 = {
+		death=yes
 	}
 }
 
@@ -11172,11 +11180,11 @@
 	culture="english"
 	father=161640
 	mother=161641
-	1307.1.1 = {
-		birth="1307.1.1"
+	1302.6.1 = {
+		birth=yes
 	}
 	1331.12.16 = {
-		death="1331.12.16"
+		death=yes
 	}
 }
 
@@ -11246,11 +11254,11 @@
 	culture="english"
 	father=161640
 	mother=161641
-	1311.1.1 = {
-		birth="1311.1.1"
+	1314.1.1 = {
+		birth=yes
 	}
 	1369.8.4 = {
-		death="1369.8.4"
+		death=yes
 	}
 }
 
@@ -11262,11 +11270,11 @@
 	culture="english"
 	father=161640
 	mother=161641
-	1313.1.1 = {
-		birth="1313.1.1"
+	1317.1.1 = {
+		birth=yes
 	}
 	1348.1.1 = {
-		death="1348.1.1"
+		death=yes
 	}
 }
 
@@ -11278,11 +11286,11 @@
 	culture="english"
 	father=161640
 	mother=161641
-	1314.1.1 = {
-		birth="1314.1.1"
+	1318.1.1 = {
+		birth=yes
 	}
 	1347.1.1 = {
-		death="1347.1.1"
+		death=yes
 	}
 }
 
@@ -11355,11 +11363,11 @@
 	culture="english"
 	father=161640
 	mother=161641
-	1313.1.1 = {
-		birth="1313.1.1"
+	1315.1.1 = {
+		birth=yes
 	}
 	1345.1.1 = {
-		death="1345.1.1"
+		death=yes
 	}
 }
 
@@ -12971,6 +12979,653 @@
 		add_spouse=161670
 	}
 	1376.1.24={
+		death=yes
+	}
+}
+
+188888 = {
+	name="John" # first name unknown
+	dynasty=101600 # Comyn
+	religion="catholic"
+	culture="english"
+	father=188890
+	1099.1.1={
+		birth=yes
+	}
+	1142.1.1={
+		death=yes
+	}
+}
+
+188889 = {
+	name="William"
+	dynasty=101600 # Comyn
+	religion="catholic"
+	culture="english"
+	father=188890
+	1096.1.1={
+		birth=yes
+	}
+	1159.1.1={
+		death=yes
+	}
+}
+
+188890 = {
+	name="Walter" # name unknown
+	dynasty=101600 # Comyn
+	religion="catholic"
+	culture="english"
+	father=188891 # conjecture
+	1066.1.1={
+		birth=yes
+	}
+	1112.1.1={
+		death=yes
+	}
+}
+
+453502 = {  	
+	name="Elizabeth"
+	female = yes
+	dynasty=4034
+	martial=5
+	diplomacy=7
+	intrigue=5
+	stewardship=5
+	religion="catholic"
+	culture="english"
+	trait="amateurish_plotter"
+	father=454106
+	mother=454108
+	1280.1.2={
+		birth=yes
+	}
+	1327.1.2={
+		death=yes
+	}
+}
+
+454573 = {
+	name="Isabelle"
+	dynasty=4002
+	female=yes
+	martial=5
+	diplomacy=5
+	intrigue=8
+	stewardship=7
+	religion="catholic"
+	culture="english"
+	add_trait="lustful"
+	add_trait="amateurish_plotter"
+	father=161666
+	mother=161663
+	1292.1.1 = {
+		birth=yes
+	}
+	1334.12.5 = {
+		death=yes
+	}
+}
+
+183075 = {
+	name="Edward"
+	dynasty=106 # or 105
+	religion="catholic"
+	culture="english"
+	add_trait="deceitful"
+	add_trait="underhanded_rogue"
+	father=454550
+	mother=454551
+	1321.1.2 = {
+		birth=yes
+	}
+	1334.1.2 = {
+		death=yes
+	}
+}
+
+183076 = {
+	name="Edmund"
+	dynasty=106 # or 100073
+	religion="catholic"
+	culture="english"
+	add_trait="ill"
+	add_trait="amateurish_plotter"
+	father=454511
+	mother=454512
+	1326.1.2 = {
+		birth=yes
+	}
+	1331.10.2 = {
+		death=yes
+	}
+}
+
+# House de Percy
+
+183077 = {
+	name="Henry"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="strong"
+	add_trait="fortune_builder"
+	1273.1.2 = {
+		birth=yes
+	}
+	1314.1.2 = {
+		death=yes
+	}
+}
+
+183078 = {
+	name="Henry"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="cynical"
+	add_trait="tough_soldier"
+	father=183077
+	1299.1.2 = {
+		birth=yes
+	}
+	1316.1.2 = {
+		add_spouse = 454604
+	}
+	1352.1.2 = {
+		death=yes
+	}
+}
+
+183079 = {
+	name="William"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="diligent"
+	add_trait="martial_cleric"
+	father=183077
+	1303.1.2 = {
+		birth=yes
+	}
+	1355.1.2 = {
+		death=yes
+	}
+}
+
+183080 = {
+	name="Henry"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="brave"
+	add_trait="tough_soldier"
+	father=183078
+	mother=454604
+	1321.1.2 = {
+		birth=yes
+	}
+	1368.5.18 = {
+		death=yes
+	}
+}
+
+183081 = {
+	name="Thomas"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="quick"
+	add_trait="scholarly_theologian"
+	father=183078
+	mother=454604
+	1322.1.2 = {
+		birth=yes
+	}
+	1369.8.8 = {
+		death=yes
+	}
+}
+
+183082 = {
+	name="Roger"
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="slothful"
+	add_trait="indulgent_wastrel"
+	father=183078
+	mother=454604
+	1324.1.2 = {
+		birth=yes
+	}
+	1374.1.2 = {
+		death=yes
+	}
+}
+
+183083 = {
+	name="Maud"
+	female = yes
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="fair"
+	add_trait="flamboyant_schemer"
+	father=183078
+	mother=454604
+	1325.1.2 = {
+		birth=yes
+	}
+	1375.1.2 = {
+		death=yes
+	}
+}
+
+183084 = {
+	name="Eleanor"
+	female = yes
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="cruel"
+	add_trait="intricate_webweaver"
+	father=183078
+	mother=454604
+	1328.1.2 = {
+		birth=yes
+	}
+	1378.1.2 = {
+		death=yes
+	}
+}
+
+183085 = {
+	name="Isabel"
+	female = yes
+	dynasty=4000
+	religion="catholic"
+	culture="english"
+	add_trait="greedy"
+	add_trait="thrifty_clerk"
+	father=183078
+	mother=454604
+	1329.1.2 = {
+		birth=yes
+	}
+	1379.1.2 = {
+		death=yes
+	}
+}
+
+# House de Neville
+
+183086 = {
+	name="Ralph"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="envious"
+	add_trait="midas_touched"
+	1262.10.18 = {
+		birth=yes
+	}
+	1280.1.2 = {
+		add_spouse = 183087
+	}
+	1331.4.18 = {
+		death=yes
+	}
+}
+
+183087 = {
+	name="Euphemia"
+	female = yes
+	religion="catholic"
+	culture="english"
+	add_trait="fair"
+	add_trait="thrifty_clerk"
+	1264.1.2 = {
+		birth=yes
+	}
+	1312.1.2 = {
+		death=yes
+	}
+}
+
+183088 = {
+	name="Joan"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="greedy"
+	add_trait="amateurish_plotter"
+	father=183086
+	mother=183087
+	1283.1.2 = {
+		birth=yes
+	}
+	1324.1.2 = {
+		death=yes
+	}
+}
+
+183089 = {
+	name="Anastasia"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="deceitful"
+	add_trait="naive_appeaser"
+	father=183086
+	mother=183087
+	1285.1.2 = {
+		birth=yes
+	}
+	1339.1.2 = {
+		death=yes
+	}
+}
+
+183090 = {
+	name="Robert"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="just"
+	add_trait="tough_soldier"
+	father=183086
+	mother=183087
+	1287.1.2 = {
+		birth=yes
+	}
+	1319.6.2 = {
+		death=yes
+	}
+}
+
+183091 = {
+	name="Ida"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="temperate"
+	add_trait="thrifty_clerk"
+	father=183086
+	mother=183087
+	1289.1.2 = {
+		birth=yes
+	}
+	1330.1.2 = {
+		death=yes
+	}
+}
+
+183092 = {
+	name="Ralph"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="twin"
+	add_trait="brave"
+	add_trait="tough_soldier"
+	father=183086
+	mother=183087
+	1291.1.2 = {
+		birth=yes
+	}
+	1326.1.14 = {
+		add_spouse = 183102
+	}
+	1367.8.5 = {
+		death=yes
+	}
+}
+
+183093 = {
+	name="Euphemia"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="twin"
+	add_trait="temperate"
+	add_trait="scholarly_theologian"
+	father=183086
+	mother=183087
+	1291.1.2 = {
+		birth=yes
+	}
+	1309.1.2 = {
+		death=yes
+	}
+}
+
+183094 = {
+	name="Alice"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="arbitrary"
+	add_trait="flamboyant_schemer"
+	father=183086
+	mother=183087
+	1293.1.2 = {
+		birth=yes
+	}
+	1362.1.2 = {
+		death=yes
+	}
+}
+
+183095 = {
+	name="Alexander"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="wroth"
+	add_trait="amateurish_plotter"
+	father=183086
+	mother=183087
+	1297.1.2 = {
+		birth=yes
+	}
+	1366.3.15 = {
+		death=yes
+	}
+}
+
+183096 = {
+	name="John"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="strong"
+	add_trait="martial_cleric"
+	father=183086
+	mother=183087
+	1299.1.2 = {
+		birth=yes
+	}
+	1333.7.19 = {
+		death=yes
+	}
+}
+
+183097 = {
+	name="Mary"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="lustful"
+	add_trait="amateurish_plotter"
+	father=183086
+	mother=183087
+	1301.1.2 = {
+		birth=yes
+	}
+	1324.1.2 = {
+		death=yes
+	}
+}
+
+183098 = {
+	name="William"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="quick"
+	add_trait="charismatic_negotiator"
+	father=183086
+	mother=183087
+	1303.1.2 = {
+		birth=yes
+	}
+	1352.1.2 = {
+		death=yes
+	}
+}
+
+183099 = {
+	name="Margaret"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="ambitious"
+	add_trait="indulgent_wastrel"
+	father=183086
+	mother=183087
+	1305.1.2 = {
+		birth=yes
+	}
+	1332.1.2 = {
+		death=yes
+	}
+}
+
+183100 = {
+	name="Thomas"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="craven"
+	add_trait="misguided_warrior"
+	father=183086
+	mother=183087
+	1306.1.2 = {
+		birth=yes
+	}
+	1349.6.2 = {
+		death=yes
+	}
+}
+
+183101 = {
+	name="Avelina"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="lisp"
+	add_trait="thrifty_clerk"
+	father=183086
+	mother=183087
+	1307.1.2 = {
+		birth=yes
+	}
+	1368.6.2 = {
+		death=yes
+	}
+}
+
+183102 = {
+	name="Alice"
+	female = yes
+	religion="catholic"
+	culture="english"
+	add_trait="lustful"
+	add_trait="fortune_builder"
+	1310.1.2 = {
+		birth=yes
+	}
+	1360.1.2 = {
+		death=yes
+	}
+}
+
+183103 = {
+	name="John"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="cruel"
+	add_trait="skilled_tactician"
+	father=183092
+	mother=183102
+	1328.1.2 = {
+		birth=yes
+	}
+	1388.10.17 = {
+		death=yes
+	}
+}
+
+183104 = {
+	name="Margaret"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="quick"
+	add_trait="charismatic_negotiator"
+	father=183092
+	mother=183102
+	1329.2.12 = {
+		birth=yes
+	}
+	1372.5.12 = {
+		death=yes
+	}
+}
+
+183105 = {
+	name="Catherine"
+	female = yes
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="cynical"
+	add_trait="martial_cleric"
+	father=183092
+	mother=183102
+	1330.1.2 = {
+		birth=yes
+	}
+	1361.9.1 = {
+		death=yes
+	}
+}
+
+183106 = {
+	name="Ralph"
+	dynasty=4004
+	religion="catholic"
+	culture="english"
+	add_trait="deceitful"
+	add_trait="amateurish_plotter"
+	father=183092
+	mother=183102
+	1332.1.2 = {
+		birth=yes
+	}
+	1380.1.2 = {
 		death=yes
 	}
 }

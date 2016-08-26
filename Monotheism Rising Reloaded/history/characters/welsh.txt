@@ -6272,6 +6272,7 @@
 		death="428.1.1"
 	}
 }
+
 159813 = {
 	name="Tudwal" # 
 	dynasty=1029129 #Gwent
@@ -9263,5 +9264,22 @@
 	}
 	680.1.1={
 		death="680.1.1"
+	}
+}
+
+214043 = { 
+	name="Asser"
+	religion="imperial"
+	culture="welsh"
+	learning = 8
+	trait=monk
+	trait=scholar
+	trait=mastermind_theologian
+	845.1.1={
+		birth=yes
+		employer=159109
+	}
+	909.1.1={
+		death=yes
 	}
 }

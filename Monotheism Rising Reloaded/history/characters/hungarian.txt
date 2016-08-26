@@ -9517,58 +9517,30 @@
 				owner = ROOT
 				#leader = ROOT
 				troops = {
-					light_cavalry = { 936 936 }
-					horse_archers = { 472 472 }
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
 				attrition = 0.5
 			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
-				trait = skilled_tactician
+				attrition = 0.5
 			}
-			new_character = {
-				spawn_unit = {
-					province = 544 # Korsun
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_cavalry = { 936 936 }
-						horse_archers = { 472 472 }
-					}
-					attrition = 0.5
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 544 # Korsun
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_cavalry = { 936 936 }
-						horse_archers = { 472 472 }
-					}
-					attrition = 0.5
-				}
+				attrition = 0.5
 			}
 		}
 	}

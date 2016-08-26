@@ -206,8 +206,7 @@
 }
 
 988 = {  	
-	name="Duncan"
-	# AKA: Donnchad
+	name="Duncan" # Donnchad II
 	dynasty=1687
 	martial=8
 	diplomacy=7
@@ -219,10 +218,13 @@
 	father=984
 	mother=102505
 	1060.1.1={
-		birth="1060.1.1"
+		birth=yes
+	}
+	1088.1.1={
+		add_spouse=969
 	}
 	1094.11.12={
-		death="1094.11.12"
+		death=yes
 	}
 }
 
@@ -720,7 +722,7 @@
 
 7391 = {  	
 	name="Angus"
-	dynasty=25046
+	dynasty=3101 # MacDonald
 	martial=7
 	diplomacy=6
 	intrigue=6
@@ -729,11 +731,12 @@
 	culture="scottish"
 	trait="tough_soldier"
 	father=220031
-	1200.1.1={
-		birth="1200.1.1"
+	1215.1.1={
+		birth=yes
 	}
 	1296.1.1={
-		death="1296.1.1"
+		death=yes
+		give_nickname=nick_the_great
 	}
 }
 
@@ -1073,11 +1076,12 @@
 	culture="scottish"
 	trait="skilled_tactician"
 	father=988
+	mother=969
 	1091.1.1={
-		birth="1091.1.1"
+		birth=yes
 	}
 	1154.1.13={
-		death="1154.1.13"
+		death=yes
 	}
 }
 
@@ -1093,18 +1097,17 @@
 	trait="proud"
 	trait="diligent"
 	trait="tough_soldier"
-	father=202969
+	father=202969 # questionable, possibly grandson of Angus III Moray
 	1150.1.1={
-		birth="1150.1.1"
+		birth=yes
 	}
 	1174.1.1={
 		add_spouse=202972
 	}
 	1187.7.1={
-		death="1187.7.1"
+		death=yes
 	}
 }
-
 
 202972 = {  	
 	name="Gruoch"
@@ -2228,21 +2231,22 @@
 	stewardship=8
 	religion="catholic"
 	culture="scottish"
+	father=188870
 	1113.1.1={
-		birth="1113.1.1"
+		birth=yes
 	}
 	1133.1.11={
 		add_spouse = 220026
 	}
 	1164.1.1={
-		death="1164.1.1"
+		death=yes
 	}
 }
 
 220028 = {  	
 	name="Fiona"
 	female = yes
-	dynasty=100040
+	dynasty=101901 # Mac Uilleim
 	martial=4
 	diplomacy=5
 	intrigue=5
@@ -2251,11 +2255,12 @@
 	culture="scottish"
 	trait="gluttonous"
 	trait="scholarly_theologian"
-	1155.1.13={
-		birth="1155.1.13"
+	father=202969 # possibly
+	1150.1.13={
+		birth=yes
 	}
 	1205.1.13={
-		death="1205.1.13"
+		death=yes
 	}
 }
 
@@ -2271,11 +2276,11 @@
 	trait="tough_soldier"
 	father=220019
 	mother=220028
-	1169.1.1={
-		birth="1169.1.1"
+	1179.1.1={
+		birth=yes
 	}
-	1219.1.1={
-		death="1219.1.1"
+	1247.1.1={
+		death=yes
 	}
 }
 
@@ -2319,9 +2324,9 @@
 }
 
 220038 = {  	
-	name="Gormelia"
+	name="Hvorflaed" # or Gormelia
 	female = yes
-	dynasty=3114
+	dynasty=3104
 	martial=7
 	diplomacy=6
 	intrigue=7
@@ -2331,11 +2336,12 @@
 	trait="thrifty_clerk"
 	trait="wroth"
 	father = 83589 #'Malcolm Macheth'
+	mother=188871
 	1140.1.1={
-		birth="1140.1.1"
+		birth=yes
 	}
 	1215.7.1={
-		death="1215.7.1"
+		death=yes
 	}
 }
 
@@ -2790,7 +2796,7 @@
 
 420019 = {  	
 	name="John"
-	dynasty=25046
+	dynasty=3101 # MacDonald
 	martial=5
 	diplomacy=4
 	intrigue=4
@@ -2800,10 +2806,10 @@
 	trait="tough_soldier"
 	father=453055
 	1326.1.1={
-		birth="1326.1.1"
+		birth=yes
 	}
-	1376.1.1={
-		death="1376.1.1"
+	1386.1.1={
+		death=yes
 	}
 }
 
@@ -3295,10 +3301,10 @@
 	trait="amateurish_plotter"
 	father=453023
 	1263.1.1={
-		birth="1263.1.1"
+		birth=yes
 	}
-	1302.1.2={
-		death="1302.1.2"
+	1296.12.12={
+		death=yes
 	}
 }
 
@@ -3727,10 +3733,9 @@
 }
 
 453054 = {  	
-	name="Fiona"
-	# AKA: Mary Og
+	name="Fiona" # AKA: Mary Og
 	female = yes
-	dynasty=25046
+	dynasty=3101 # MacDonald
 	martial=6
 	diplomacy=4
 	intrigue=4
@@ -3741,17 +3746,16 @@
 	trait="amateurish_plotter"
 	father=453055
 	1316.1.1={
-		birth="1316.1.1"
+		birth=yes
 	}
 	1366.1.1={
-		death="1366.1.1"
+		death=yes
 	}
 }
 
 453055 = {  	
-	name="Angus"
-	# AKA: Aongas Og
-	dynasty=25046
+	name="Angus" # AKA: Aongas Og
+	dynasty=3101 # MacDonald
 	martial=5
 	diplomacy=4
 	intrigue=4
@@ -3761,18 +3765,20 @@
 	trait="lustful"
 	trait="tough_soldier"
 	father = 7391
-	1290.1.1={
-		birth="1290.1.1"
+	1280.1.1={
+		birth=yes
+	}
+	1299.1.1={
+		give_nickname=nick_the_young
 	}
 	1330.1.1={
-		death="1330.1.1"
+		death=yes
 	}
 }
 
 453056 = {  	
-	name="John"
-	# AKA: Iain Og
-	dynasty=25046
+	name="John" # AKA: Iain Og
+	dynasty=3101 # MacDonald
 	martial=5
 	diplomacy=5
 	intrigue=5
@@ -3785,8 +3791,8 @@
 	1329.1.1={
 		birth="1329.1.1"
 	}
-	1379.1.1={
-		death="1379.1.1"
+	1368.1.1={
+		death=yes
 	}
 }
 
@@ -3824,14 +3830,14 @@
 	trait="brave"
 	trait="tough_soldier"
 	father=453060
-	1295.1.1={
-		birth="1295.1.1"
+	1290.1.1={
+		birth=yes
 	}
-	1311.1.1={
+	1307.1.1={
 		add_spouse = 453059
 	}
 	1332.7.20={
-		death="1332.7.20"
+		death=yes
 	}
 }
 
@@ -3849,11 +3855,11 @@
 	trait="patient"
 	trait="tough_soldier"
 	father=453029
-	1295.1.1={
-		birth="1295.1.1"
+	1290.1.1={
+		birth=yes
 	}
 	1345.1.1={
-		death="1345.1.1"
+		death=yes
 	}
 }
 
@@ -4242,27 +4248,6 @@
 	}
 }
 
-453502 = {  	
-	name="Elspeth"
-	female = yes
-	dynasty=4034
-	martial=5
-	diplomacy=7
-	intrigue=5
-	stewardship=5
-	religion="catholic"
-	culture="scottish"
-	trait="amateurish_plotter"
-	father=454106
-	mother=454108
-	1280.1.2={
-		birth="1280.1.2"
-	}
-	1327.1.2={
-		death="1327.1.2"
-	}
-}
-
 453503 = {  	
 	name="Maud"
 	female = yes
@@ -4276,12 +4261,12 @@
 	trait="humble"
 	trait="amateurish_plotter"
 	father=453501
-	mother=453024
-	1296.1.2={
-		birth="1296.1.2"
+	mother=453502
+	1310.1.2={
+		birth=yes
 	}
 	1346.1.2={
-		death="1346.1.2"
+		death=yes
 	}
 }
 
@@ -5319,14 +5304,14 @@
 	culture="scottish"
 	father=7361
 	mother=7360
-	1280.1.1={
-		birth="1280.1.1"
+	1276.1.1={
+		birth=yes
 	}
-	1296.1.1={
+	1292.1.1={
 		add_spouse = 7365
 	}
 	1306.2.10={
-		death="1306.2.10"
+		death=yes
 	}
 }
 
@@ -5353,13 +5338,13 @@
 	culture="scottish"
 	father=7362
 	1230.1.1={
-		birth="1230.1.1"
+		birth=yes
 	}
-	1279.1.1={
+	1275.1.1={
 		add_spouse = 7360
 	}
 	1302.1.1={
-		death="1302.1.1"
+		death=yes
 	}
 }
 
@@ -6011,8 +5996,7 @@
 }
 
 82030 = {  	
-	name="Malise"
-	# AKA: Mael
+	name="Malise" # AKA: Mael
 	dynasty=9101
 	martial=7
 	diplomacy=5
@@ -6022,13 +6006,16 @@
 	culture="scottish"
 	father=82023
 	1221.5.1={
-		birth="1221.5.1"
+		birth=yes
 	}
 	1244.1.1={
 		add_spouse = 7345
 	}
+	1266.1.1={
+		add_spouse = 188875 # Mary MacDougall
+	}
 	1271.9.1={
-		death="1271.9.1"
+		death=yes
 	}
 }
 
@@ -6389,10 +6376,13 @@
 	culture="scottish"
 	father=83588
 	1115.1.1={
-		birth="1115.1.1"
+		birth=yes
+	}
+	1138.1.1={
+		add_spouse=188871 # sister of Somerled
 	}
 	1168.10.23={
-		death="1168.10.23"
+		death=yes
 	}
 }
 
@@ -6405,12 +6395,13 @@
 	stewardship=5
 	religion="catholic"
 	culture="scottish"
-	father=83589
+	father=83589 # might be his grandfather
+	mother=188871
 	1145.1.1={
-		birth="1145.1.1"
+		birth=yes
 	}
 	1186.7.1={
-		death="1186.7.1"
+		death=yes
 	}
 }
 
@@ -7151,14 +7142,15 @@
 	stewardship=5
 	religion="catholic"
 	culture="scottish"
+	father=188888
 	1125.1.1={
-		birth="1125.1.1"
+		birth=yes
 	}
 	1146.1.1={
 		add_spouse = 7387
 	}
 	1182.1.1={
-		death="1182.1.1"
+		death=yes
 	}
 }
 
@@ -7537,10 +7529,9 @@
 	}
 }
 
-
 232683 = {
-	name="Dugald"
-	dynasty=25046
+	name="Dugald" # founder of MacDougall clan
+	dynasty=3109 # MacDougall
 	martial=6
 	diplomacy=4
 	intrigue=4
@@ -7551,16 +7542,16 @@
 	father=220027
 	mother=220026
 	1149.1.1={
-		birth="1149.1.1"
+		birth=yes
 	}
 	1200.1.1={
-		death="1200.1.1"
+		death=yes
 	}
 }
 
 232684 = {
 	name="Duncan"
-	dynasty=25046
+	dynasty=3109 # MacDougall
 	martial=5
 	diplomacy=5
 	intrigue=5
@@ -7571,17 +7562,16 @@
 	trait="thrifty_clerk"
 	father=232683
 	1172.1.1={
-		birth="1172.1.1"
+		birth=yes
 	}
-	1237.1.1={
-		death="1237.1.1"
+	1246.1.1={
+		death=yes
 	}
 }
 
 232685 = {
-	name="Dugald"
-	# AKA: Dubhghall 'Screech'
-	dynasty=25046
+	name="Dugald" # AKA: Dubhghall 'Screech'
+	dynasty=3109 # MacDougall
 	martial=6
 	diplomacy=4
 	intrigue=4
@@ -7592,10 +7582,10 @@
 	trait="tough_soldier"
 	father=232683
 	1173.1.1={
-		birth="1173.1.1"
+		birth=yes
 	}
 	1225.1.1={
-		death="1225.1.1"
+		death=yes
 	}
 }
 
@@ -7643,17 +7633,17 @@
 
 7278 = {
 	name="Ewan"
-	dynasty=25046
+	dynasty=3109 # MacDougall
 	religion="catholic"
 	culture="scottish"
 	trait="charitable"
 	trait="thrifty_clerk"
 	father=232684
 	1200.1.1={
-		birth="1200.1.1"
+		birth=yes
 	}
-	1266.1.1={
-		death="1266.1.1"
+	1268.6.1={
+		death=yes
 	}
 }
 
@@ -9304,6 +9294,299 @@
 		birth=yes
 	}
 	1178.1.1={
+		death=yes
+	}
+}
+
+188870 = {
+	name="Gilbride"
+	dynasty=25046 # Somhairle
+	religion="catholic"
+	culture="scottish"
+	1089.1.1={
+		birth=yes
+	}
+	1136.1.1={
+		death=yes
+	}
+}
+
+188871 = {
+	name="Effie" # first name unknown
+	female=yes
+	dynasty=25046 # Somhairle
+	religion="catholic"
+	culture="scottish"
+	father=188870
+	1118.1.1={
+		birth=yes
+	}
+	1152.1.1={
+		death=yes
+	}
+}
+
+188872 = {
+	name="Olaf"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=232683
+	1176.1.1={
+		birth=yes
+	}
+	1228.1.1={
+		death=yes
+	}
+}
+
+188873 = {
+	name="Raynald"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=232683
+	1176.1.1={
+		birth=yes
+	}
+	1228.1.1={
+		death=yes
+	}
+}
+
+188874 = {
+	name="Alexander"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=7278
+	1240.1.1={
+		birth=yes
+	}
+	1268.1.1={
+		add_spouse=188879
+	}
+	1308.6.1={
+		employer=454510 # King of England
+	}
+	1310.1.1={
+		death=yes
+	}
+}
+
+188875 = {
+	name="Mary"
+	female=yes
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=7278
+	1243.1.1={
+		birth=yes
+	}
+	1301.1.1={
+		death=yes
+	}
+}
+
+188877 = {
+	name="John"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188874
+	mother=188879
+	1270.1.1={
+		birth=yes
+	}
+	1308.6.1={
+		employer=454510 # King of England
+	}
+	1316.1.1={
+		death=yes
+	}
+}
+
+188878 = {
+	name="Ewan"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188874
+	mother=188879
+	1273.1.1={
+		birth=yes
+	}
+	1326.1.1={
+		death=yes
+	}
+}
+
+188879 = {
+	name="Malina" # name unknown
+	female=yes
+	dynasty=101600 # Comyn
+	religion="catholic"
+	culture="scottish"
+	father=7362
+	1237.1.1={
+		birth=yes
+	}
+	1326.1.1={
+		death=yes
+	}
+}
+
+188880 = {
+	name="Ewan"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188877
+	1298.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188881 = {
+	name="Alan"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188877
+	1300.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188882 = {
+	name="Somhairle"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188877
+	1303.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188883 = {
+	name="Alexander"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188877
+	1305.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188884 = {
+	name="Mary"
+	female=yes
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188877
+	1307.1.1={
+		birth=yes
+	}
+	1350.1.1={
+		death=yes
+	}
+}
+
+188885 = {
+	name="John"
+	dynasty=3109 # MacDougall
+	religion="catholic"
+	culture="scottish"
+	father=188881
+	1325.1.1={
+		birth=yes
+		effect = { add_weak_claim = c_argyll }
+	}
+	1373.1.1={
+		death=yes
+	}
+}
+
+188886 = {
+	name="Alexander"
+	dynasty=3101 # MacDonald
+	religion="catholic"
+	culture="scottish"
+	father=7391
+	1275.1.1={
+		birth=yes
+	}
+	1296.1.1={
+		give_nickname=nick_the_young
+	}
+	1299.1.1={
+		death=yes
+	}
+}
+
+188887 = {
+	name="Ruairi"
+	dynasty=25024 # Macruari
+	religion="catholic"
+	culture="scottish"
+	father=332013
+	1248.1.1={
+		birth=yes
+	}
+	1303.1.1={
+		death=yes
+	}
+}
+
+332013 = {
+	name="Ailean"
+	dynasty=25024
+	martial=1
+	diplomacy=2
+	intrigue=2
+	stewardship=1
+	religion="catholic"
+	culture="scottish"
+	father=220030
+	1219.1.1={
+		birth=yes
+	}
+	1284.1.1={
+		death=yes
+	}
+}
+
+332012 = {
+	name="Dubhghall"
+	dynasty=25024
+	martial=7
+	diplomacy=2
+	intrigue=2
+	stewardship=2
+	religion="catholic"
+	culture="scottish"
+	trait="tough_soldier"
+	father=220030
+	1214.1.1={
+		birth=yes
+	}
+	1260.1.1={
 		death=yes
 	}
 }

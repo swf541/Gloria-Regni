@@ -244,3 +244,38 @@ character_event = {
 			add_trait = green_deme
 		}
 }
+
+character_event = {
+	id = ROMEGOV.9
+
+        hide_window = yes
+		
+		is_triggered_only = yes
+
+		trigger = {
+			has_landed_title = e_wre
+			NOT = { e_byzantium = { holder_scope = { has_non_aggression_pact_with = ROOT } }
+			NOT = { war_with = e_byzantium }
+			
+        } 
+        immediate = {
+			save_event_target_as = target_west_ruler
+			e_byzantium = { holder_scope = { save_event_target_as = target_east_ruler } }
+			
+			opinion = {
+				modifier = in_non_aggression_pact
+				years = 25
+				who = event_target:target_east_ruler
+				origin_description = EVTTITLE_ZE_8001
+			}
+			event_target:target_east_ruler = {
+				opinion = {
+					modifier = in_non_aggression_pact
+					years = 25
+					who = event_target:target_west_ruler
+					origin_description = EVTTITLE_ZE_8001
+				}
+			}
+			add_alliance = { who = event_target:target_east_ruler years = 25 }
+		}
+}

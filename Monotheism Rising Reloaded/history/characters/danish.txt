@@ -35,23 +35,20 @@
 	father=101535 # Ulf Torgilsson
 	mother=101509 # Estrid
 	1019.1.1={
-		birth="1019.1.1"
+		birth=yes
 		add_claim = k_england
 	}
 	1046.1.1={
 		add_spouse=100513 # Gyda Anundsdottor
 	}
-	1048.1.1={
+	1052.1.1={
 		add_spouse=102516 # Gunhild Sveinsdatter
 	}
-	1051.1.1={
+	1054.1.1={
 		remove_spouse=102516 # Gunhild Sveinsdatter
 	}
-	1069.1.1={
-		add_spouse=102551 # Thora Torbergsdatter (Arnung)
-	}
 	1076.4.28={
-		death="1076.4.28"
+		death=yes
 	}
 }
 
@@ -332,17 +329,16 @@
 	trait="humble"
 	trait="charismatic_negotiator"
 	father=101515 # Svend Estridsson
-	1048.9.1={
-		birth="1048.9.1"
+	1042.9.1={
+		birth=yes
 	}
-	1070.1.1={
-		death="1070.1.1"
+	1067.1.1={
+		death=yes
 	}
 }
 
 101528 = {
-	name="Knud Magnus"
-	# AKA: Knud Magnus
+	name="Knud"	# AKA: Knud Magnus
 	dynasty=487
 	martial=8
 	diplomacy=4
@@ -354,11 +350,11 @@
 	trait="legit_bastard"
 	trait="tough_soldier"
 	father=101515 # Svend Estridsson
-	1041.1.1={
-		birth="1041.1.1"
+	1039.1.1={
+		birth=yes
 	}
 	1058.1.1={
-		death="1058.1.1"
+		death=yes
 	}
 }
 
@@ -641,8 +637,7 @@
 }
 
 101550 = {
-	name="Ingegerd"
-	# AKA: Ingegerd Knudsdatter
+	name="Ingegerd"	# AKA: Ingegerd Knudsdatter
 	female=yes
 	dynasty=487
 	martial=4
@@ -651,32 +646,33 @@
 	stewardship=6
 	religion="catholic"
 	culture="danish"
+	add_trait="twin"
 	trait="thrifty_clerk"
 	father=101519 	# Knud the Holy of Denmark
 	mother=369	# Adele of Flandres
-	1083.1.1={
-		birth="1083.1.1"
+	1086.1.1={
+		birth=yes
 	}
 	1135.1.1={
-		death="1135.1.1"
+		death=yes
 	}
 }
 
 101551 = {
-	name="Cecilia"
-	# AKA: Cecilia Knudsdatter
+	name="Cecilia" # AKA: Cecilia Knudsdatter
 	female=yes
 	dynasty=487
 	religion="catholic"
 	culture="danish"
 	trait="thrifty_clerk"
+	add_trait="twin"
 	father=101519 	# Knud the Holy of Denmark
 	mother=369	# Adele of Flandres
-	1087.1.1={
-		birth="1087.1.1"
+	1086.1.1={
+		birth=yes
 	}
 	1131.1.1={
-		death="1131.1.1"
+		death=yes
 	}
 }
 
@@ -3788,6 +3784,91 @@
 		birth=yes
 	}
 	1062.1.1 = {
+		death=yes
+	}
+}
+
+183002 = {
+	name="Sigurd"
+	dynasty=487
+	martial=6
+	diplomacy=4
+	intrigue=5
+	stewardship=4
+	religion="catholic"
+	culture="danish"
+	add_trait="legit_bastard"
+	add_trait="tough_soldier"
+	father=101515 #Svend Estridsson
+	1060.1.2={
+		birth=yes
+	}
+	1089.1.2={
+		death=yes
+	}
+}
+
+183003 = {
+	name="Gorm"
+	# AKA: Guttorm
+	dynasty=487
+	martial=5
+	diplomacy=4
+	intrigue=3
+	stewardship=6
+	religion="catholic"
+	culture="danish"
+	add_trait="twin"
+	add_trait="legit_bastard"
+	add_trait="thrifty_clerk"
+	father=101515 #Svend Estridsson
+	1063.1.2={
+		birth=yes
+	}
+	1091.1.2={
+		death=yes
+	}
+}
+
+183004 = {
+	name="Ømund"
+	# AKA: Eymund
+	dynasty=487
+	martial=7
+	diplomacy=5
+	intrigue=4
+	stewardship=4
+	religion="catholic"
+	culture="danish"
+	add_trait="twin"
+	add_trait="legit_bastard"
+	add_trait="martial_cleric"
+	father=101515 #Svend Estridsson
+	1063.1.2={
+		birth=yes
+	}
+	1099.1.2={
+		death=yes
+	}
+}
+
+183005 = {
+	name="Ulf"
+	# AKA: Ubbe
+	dynasty=487
+	martial=3
+	diplomacy=4
+	intrigue=4
+	stewardship=2
+	religion="catholic"
+	culture="danish"
+	add_trait="legit_bastard"
+	add_trait="indulgent_wastrel"
+	father=101515 #Svend Estridsson
+	1065.1.2={
+		birth=yes
+	}
+	1104.1.2={
 		death=yes
 	}
 }
