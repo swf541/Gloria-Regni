@@ -1,0 +1,633 @@
+namespace = RAL
+
+##################################
+# Rise of the Normans
+##################################
+
+# Rallo distinguishes himself in a Turkish court
+character_event = {
+	id = RAL.60200
+	desc = EVTDESCRAL.60200
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	only_playable = yes
+	culture = norse
+	
+	trigger = {
+		year = 840
+		NOT = { year = 900 }
+		
+		higher_tier_than = count
+		
+		NOT = { has_global_flag = rallo_spawned }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		create_random_soldier = {
+			random_traits = no
+			dynasty=752
+			name = Hrolfr
+			culture = norse
+			religion = ROOT
+			age = 18
+			attributes = {
+				martial=7
+				diplomacy=6
+				intrigue=8
+				stewardship=7
+				learning=5
+			}
+			health = 7
+			fertility = 0.8
+			trait=lustful
+			trait=proud
+			trait=strong
+			trait=brave
+			trait=brilliant_strategist
+			trait=viking
+			trait = adventurer
+		}
+		new_character = {
+			character_event = {
+				id = RAL.60201
+				days = 3285
+				random = 730
+			}
+			set_character_flag = rallo_himself
+		}
+	}
+	
+	option = { # A most capable young man
+		name = EVTOPTARUS.RAL.60200
+		
+		set_global_flag = rallo_spawned
+		set_global_flag = rallo_spawned_by_event
+		
+		tooltip = {
+			create_random_soldier = {
+				random_traits = no
+				dynasty=752
+				name = Hrolfr
+				culture = norse
+				religion = ROOT
+				age = 18
+				attributes = {
+					martial=7
+					diplomacy=6
+					intrigue=8
+					stewardship=7
+					learning=5
+				}
+				health = 7
+				fertility = 0.8
+				trait=lustful
+				trait=proud
+				trait=strong
+				trait=brave
+				trait=brilliant_strategist
+				trait=viking
+				trait = adventurer
+			}
+		}
+	}
+}
+
+# Rallo and his men consider starting an adventure
+character_event = {
+	id = RAL.60201
+	desc = EVTDESCRAL.60201
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+		
+		OR = {
+			100 = { # Normandy
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			103 = { # Leon
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			76 = { # Yperen
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+	}
+	
+	option = { # Normandy it is!
+		name = EVTOPTARAL.60201
+		trigger = {
+			100 = { # Normandy
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		100 = {
+			province_event = {
+				id = RAL.60202
+				days = 2
+			}
+		}
+	}
+	option = { # Leon
+		name = EVTOPTBRAL.60201
+		trigger = {
+			103 = { # Leon
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		103 = {
+			province_event = {
+				id = RAL.60202
+				days = 2
+			}
+		}
+	}
+	option = { # Yperen
+		name = EVTOPTCRAL.60201
+		trigger = {
+			76 = { # Yperen
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		76 = {
+			province_event = {
+				id = RAL.60202
+				days = 2
+			}
+		}
+	}
+}
+
+# Ping the target province
+province_event = {
+	id = RAL.60202
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = yes
+				}
+			}
+			FROM = {
+				character_event = {
+					id = RAL.60204
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = no
+				}
+			}
+			FROM = {
+				character_event = {
+					id = RAL.60203
+				}
+			}
+		}
+	}
+}
+
+# The landless Rallo and his men start an adventure
+character_event = {
+	id = RAL.60203
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = RAL.60205
+				days = 1
+			}
+		}
+		
+		liege = {
+			capital_scope = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								set_defacto_liege = ROOT
+								create_title = {
+									tier = DUKE
+									landless = yes
+									temporary = yes
+									culture = ROOT
+									name = "CLAIMANT_ADVENTURE"
+									holder = ROOT
+								}
+								
+								set_character_flag = duchy_adventurer
+							
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								war = {
+									target = PREV
+									casus_belli = duchy_adventure
+									thirdparty_title = PREVPREVPREV
+									tier = DUKE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# Create some characters
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		#log = "RAL.60203: Rallo starts his first war as a landless character!"
+	}
+}
+
+# The landed Rallo and his men start an adventure
+character_event = {
+	id = RAL.60204
+	desc = EVTDESCRAL.60204
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = RAL.60205
+				days = 1
+			}
+		}
+		
+		FROM = {
+			owner = {
+				top_liege = {
+					ROOT = {
+						capital_scope = {
+							ROOT = {
+								set_character_flag = duchy_adventurer
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+							}
+						}
+						
+						war = {
+							target = PREV
+							casus_belli = duchy_adventure
+							thirdparty_title = PREVPREVPREV
+							tier = DUKE
+						}
+					}
+				}
+			}
+		}
+		
+		# Create some characters
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		#log = "RAL.60204: Rallo starts his first war as a landed character!"
+	}
+	
+	option = {
+		name = EVTOPTARAL.60204
+	}
+}
+
+# Notify Rallo's old liege
+character_event = {
+	id = RAL.60205
+	desc = EVTDESCRAL.60205
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_ruler = yes } # The DoW worked and the adventurer has a temporary title
+	}
+	
+	option = {
+		name = EVTOPTARAL.60205
+	}
+}
+
+# Rallo is successful!
+# Fired from the duchy_adventure CB
+narrative_event = {
+	id = RAL.60206
+	title = EVTNAMERAL.60206
+	desc = EVTDESCRAL.60206
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					liege = {
+						ai = yes
+					}
+				}
+			}
+			set_defacto_liege = ROOT
+		}
+		
+		prestige = 1000
+		
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+			}
+		}
+		
+		#log = "RAL.60206: Rallo wins his first war!"
+	}
+	
+	option = {
+		name = EVTOPTARAL.60206
+		trigger = {
+			has_character_flag = rallo_himself
+		}
+	}
+	option = {
+		name = EVTOPTBRAL.60206
+		trigger = {
+			NOT = { has_character_flag = rallo_himself }
+			OR = {
+				culture = turkish
+				culture = karluk
+				culture = cuman
+				culture = pecheneg
+			}
+		}
+	}
+	option = {
+		name = EVTOPTCRAL.60206
+		trigger = {
+			NOT = { has_character_flag = rallo_himself }
+			NOT = {
+				OR = {
+					culture = turkish
+					culture = karluk
+					culture = cuman
+					culture = pecheneg
+				}
+			}
+		}
+	}
+}

@@ -1625,6 +1625,18 @@
 	father=225000
 	1171.1.1={
 		birth="1171.1.1"
+		effect = { set_character_flag = is_kaykhusraw }
+	}
+	1196.1.1 = {
+		religion = orthodox
+		employer = 215503
+	}
+	1204.5.16={
+		employer = 215674
+	}
+	1205.1.1 = {
+		religion = sunni
+		trait="sympathy_christendom"
 	}
 	1211.1.1={
 		death="1211.1.1"

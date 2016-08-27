@@ -1,0 +1,667 @@
+namespace = DYR
+
+##################################
+# Rise of Kieven Rus
+##################################
+
+# Seljuk distinguishes himself in a Turkish court
+character_event = {
+	id = DYR.60200
+	desc = EVTDESCDYR.60200
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	only_playable = yes
+	culture = norse
+	
+	trigger = {
+		year = 840
+		NOT = { year = 900 }
+		
+		higher_tier_than = count
+		
+		NOT = { has_global_flag = dyre_spawned }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		create_random_soldier = {
+			random_traits = no
+			dynasty=705
+			name = Dyre
+			culture = norse
+			religion = ROOT
+			age = 18
+			attributes = {
+				martial=9
+				diplomacy=9
+				stewardship=6
+			}
+			health = 7
+			fertility = 0.8
+			diplomacy=9
+			stewardship=6
+			trait=ambitious
+			trait=cynical
+			trait=greedy
+			trait=gregarious
+			trait=grey_eminence
+			trait=brave
+			trait=heavy_infantry_leader
+			trait=genius
+			trait = adventurer
+		}
+		new_character = {
+			character_event = {
+				id = DYR.60201
+				days = 3285
+				random = 730
+			}
+			set_character_flag = dyre_himself
+		}
+	}
+	
+	option = { # A most capable young man
+		name = EVTOPTARUS.DYR.60200
+		
+		set_global_flag = dyre_spawned
+		set_global_flag = dyre_spawned_by_event
+		
+		tooltip = {
+			create_random_soldier = {
+				random_traits = no
+				dynasty=705
+				name = Dyre
+				culture = norse
+				religion = ROOT
+				age = 18
+				attributes = {
+					martial=9
+					diplomacy=9
+					stewardship=6
+				}
+				health = 7
+				fertility = 0.8
+				diplomacy=9
+				stewardship=6
+				trait=ambitious
+				trait=cynical
+				trait=greedy
+				trait=gregarious
+				trait=grey_eminence
+				trait=brave
+				trait=heavy_infantry_leader
+				trait=genius
+				trait = adventurer
+			}
+		}
+	}
+}
+
+# Seljuk and his men consider starting an adventure
+character_event = {
+	id = DYR.60201
+	desc = EVTDESCDYR.60201
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+		
+		OR = {
+			547 = { # Kiev
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			553 = { # Lyubech
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			550 = { # Minsk
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+	}
+	
+	option = { # Novgorod it is!
+		name = EVTOPTADYR.60201
+		trigger = {
+			547 = { # Kiev
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 10000
+		}
+		
+		547 = {
+			province_event = {
+				id = DYR.60202
+				days = 2
+			}
+		}
+	}
+	option = { # Ladoga
+		name = EVTOPTBDYR.60201
+		trigger = {
+			553 = { # Lyubech
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		553 = {
+			province_event = {
+				id = DYR.60202
+				days = 2
+			}
+		}
+	}
+	option = { # Minsk
+		name = EVTOPTCDYR.60201
+		trigger = {
+			550 = { # Minsk
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		550 = {
+			province_event = {
+				id = DYR.60202
+				days = 2
+			}
+		}
+	}
+}
+
+# Ping the target province
+province_event = {
+	id = DYR.60202
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = yes
+				}
+			}
+			FROM = {
+				character_event = {
+					id = DYR.60204
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = no
+				}
+			}
+			FROM = {
+				character_event = {
+					id = DYR.60203
+				}
+			}
+		}
+	}
+}
+
+# The landless Seljuk and his men start an adventure
+character_event = {
+	id = DYR.60203
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = DYR.60205
+				days = 1
+			}
+		}
+		
+		liege = {
+			capital_scope = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								set_defacto_liege = ROOT
+								create_title = {
+									tier = DUKE
+									landless = yes
+									temporary = yes
+									culture = ROOT
+									name = "CLAIMANT_ADVENTURE"
+									holder = ROOT
+								}
+								
+								set_character_flag = duchy_adventurer
+							
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								war = {
+									target = PREV
+									casus_belli = duchy_adventure
+									thirdparty_title = PREVPREVPREV
+									tier = DUKE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# Create some characters
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		#log = "DYR.60203: Seljuk starts his first war as a landless character!"
+	}
+}
+
+# The landed Seljuk and his men start an adventure
+character_event = {
+	id = DYR.60204
+	desc = EVTDESCDYR.60204
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = DYR.60205
+				days = 1
+			}
+		}
+		
+		FROM = {
+			owner = {
+				top_liege = {
+					ROOT = {
+						capital_scope = {
+							ROOT = {
+								set_character_flag = duchy_adventurer
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+							}
+						}
+						
+						war = {
+							target = PREV
+							casus_belli = duchy_adventure
+							thirdparty_title = PREVPREVPREV
+							tier = DUKE
+						}
+					}
+				}
+			}
+		}
+		
+		# Create some characters
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		#log = "DYR.60204: Seljuk starts his first war as a landed character!"
+	}
+	
+	option = {
+		name = EVTOPTADYR.60204
+	}
+}
+
+# Notify Seljuk's old liege
+character_event = {
+	id = DYR.60205
+	desc = EVTDESCDYR.60205
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_ruler = yes } # The DoW worked and the adventurer has a temporary title
+	}
+	
+	option = {
+		name = EVTOPTADYR.60205
+	}
+}
+
+# Seljuk is successful!
+# Fired from the duchy_adventure CB
+narrative_event = {
+	id = DYR.60206
+	title = EVTNAMEDYR.60206
+	desc = EVTDESCDYR.60206
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					liege = {
+						ai = yes
+					}
+				}
+			}
+			set_defacto_liege = ROOT
+		}
+		
+		prestige = 1000
+		
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+			}
+		}
+		
+		#log = "DYR.60206: Seljuk wins his first war!"
+	}
+	
+	option = {
+		name = EVTOPTADYR.60206
+		trigger = {
+			has_character_flag = dyre_himself
+		}
+	}
+	option = {
+		name = EVTOPTBDYR.60206
+		trigger = {
+			NOT = { has_character_flag = dyre_himself }
+			OR = {
+				culture = turkish
+				culture = karluk
+				culture = cuman
+				culture = pecheneg
+			}
+		}
+	}
+	option = {
+		name = EVTOPTCDYR.60206
+		trigger = {
+			NOT = { has_character_flag = dyre_himself }
+			NOT = {
+				OR = {
+					culture = turkish
+					culture = karluk
+					culture = cuman
+					culture = pecheneg
+				}
+			}
+		}
+	}
+}

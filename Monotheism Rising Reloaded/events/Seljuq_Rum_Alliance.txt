@@ -1,0 +1,103 @@
+namespace = SJQ
+narrative_event = {
+	id = SJQ.2001
+	title =EVTNAME_SJQ_2001
+	desc =EVTDESC_SJQ_2001
+	major =no
+	
+	picture = "GFX_evt_emissary_kneeling_before_throne"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_character_flag = is_kaykhusraw
+		has_landed_title = k_rum
+		religion = sunni
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_SJQ_2001"
+		save_event_target_as = kaykhusraw
+		k_hungary = {
+			narrative_event = { id = SJQ.2002 }
+		}
+	}
+
+	option = {
+		name = "EVTOPTB_SJQ_2001"
+	}
+}
+
+narrative_event = {
+	id = SJQ.2002
+	title =EVTNAME_SJQ_2002
+	desc =EVTDESC_SJQ_2002
+	major =no
+	
+	picture = "GFX_evt_emissary_kneeling_before_throne"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_SJQ_2001"
+		k_rum = {
+			narrative_event = { id = SJQ.2003 }
+		}
+		any_child = {
+			limit = {
+				has_character_flag = is_anna_maria
+			}
+			add_betrothal = event_target:kaykhusraw
+			add_alliance = { who = event_target:kaykhusraw years = 20 }
+		}
+	}
+
+	option = {
+		name = "EVTOPTB_SJQ_2001"
+		k_rum = {
+			narrative_event = { id = SJQ.2004 }
+		}
+	}
+}
+
+narrative_event = {
+	id = SJQ.2003
+	title =EVTNAME_SJQ_2003
+	desc =EVTDESC_SJQ_2003
+	major = yes
+	
+	picture = "GFX_evt_emissary_kneeling_before_throne"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_SJQ_2003"
+		religion = catholic
+		any_child = {
+			religion = catholic
+		}
+		capital_scope = { religion = catholic }
+	}
+}
+
+narrative_event = {
+	id = SJQ.2004
+	title =EVTNAME_SJQ_2004
+	desc =EVTDESC_SJQ_2004
+	major =no
+	
+	picture = "GFX_evt_emissary_kneeling_before_throne"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_SJQ_2004"
+	}
+}
