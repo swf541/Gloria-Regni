@@ -202,9 +202,6 @@
 	1010.1.1={
 		birth="1010.1.1"
 	}
-	1066.1.1 = {
-		add_claim = c_rohana
-	}
 	1069.1.1={
 		death="1069.1.1"
 	}
@@ -1069,7 +1066,7 @@
 	}
 	1327.1.1={
 		remove_trait=bastard
-		add_trait=legit_bastard
+		add_trait=legitimate_bastard
 	}
 	1345.1.1={
 		death="1345.1.1"
@@ -1099,7 +1096,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189139
+	father=180139
 	1120.1.1={
 		birth="1120.1.1"
 	}
@@ -1114,7 +1111,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189140
+	father=180140
 	1160.1.1={
 		birth="1160.1.1"
 	}
@@ -1132,7 +1129,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189141
+	father=180141
 	1200.1.1={
 		birth="1200.1.1"
 	}
@@ -1150,7 +1147,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189142
+	father=180142
 	1230.1.1={
 		birth="1230.1.1"
 	}
@@ -1165,7 +1162,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189143
+	father=180143
 	1256.1.1={
 		birth="1256.1.1"
 	}
@@ -1180,7 +1177,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189144
+	father=180144
 	1272.1.1={
 		birth="1272.1.1"
 	}
@@ -1195,7 +1192,7 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu
-	father=189145
+	father=180145
 	1290.1.1={
 		birth="1290.1.1"
 	}
@@ -1720,15 +1717,4 @@
 	804.1.1={
 		death="804.1.1"
 	}
-}
-
-217390 = {
-	name = Lokissara
-	dynasty = 1029182 # Fictitious dynasty assignment. Leader of mercenary army.
-	religion="hindu"
-	culture="tamil"
-	trait=kshatriya
-	trait=shaivist_hindu
-	1186.1.1 = { birth = yes }
-	1210.10.1 = { death = { death_reason = death_execution } }
 }

@@ -1,0 +1,125 @@
+2001006000  = { #Fictional
+	name="Kuluk"
+	dynasty=2001002003
+	religion="tengri_pagan"
+	culture="alan"
+	trait=sympathy_christendom
+	trait=sympathy_judaism
+	890.1.1={
+		birth=yes
+	}
+	935.1.1 = {
+		wealth = 100
+		prestige = 500
+		effect = {
+			spawn_unit = {
+				province = 603 # Alania
+				owner = ROOT
+				troops = {
+					light_cavalry = { 800 800 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	944.1.1={
+		death=yes
+	}
+}
+2001006001  = { #Fictional
+	name="Candak"
+	dynasty=2001002001
+	religion="imperial"
+	culture="alan"
+	877.1.1={
+		birth=yes
+	}
+	936.1.1={
+		death=yes
+	}
+}
+2001006002  = { #Fictional
+	name="Suarn"
+	dynasty=2001002002
+	religion="imperial"
+	culture="alan"
+	909.1.1={
+		birth=yes
+	}
+	972.1.1={
+		death=yes
+	}
+}
+2001010178  = { #Fictional
+	name="Alda"
+	female=yes
+	dynasty=2001002003
+	religion="tengri_pagan"
+	culture="alan"
+	father=2001006000
+	919.1.1={
+		birth=yes
+	}
+	974.1.1={
+		death=yes
+	}
+}
+2001010179  = { #Fictional
+	name="Ælbeg"
+	dynasty=2001002003
+	religion="tengri_pagan"
+	culture="alan"
+	father=2001006000
+	917.1.1={
+		birth=yes
+	}
+	976.1.1={
+		death=yes
+	}
+}
+183249 = {
+	name="Kavtia"
+	dynasty=1029057
+	father=183232
+	religion="jewish"
+	culture="alan"
+	trait="sympathy_christendom"
+	trait="sympathy_pagans"
+	880.1.1={
+		birth=yes
+	}
+	935.1.1 = {
+		wealth = 200
+		prestige = 200
+		effect = {
+			spawn_unit = {
+				province = 606 # Yegorlyk
+				owner = ROOT
+				troops = {
+					light_cavalry = { 100 100 }
+					light_infantry = { 300 300 }
+					archers = { 100 100 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	945.1.1={
+		death=yes
+	}
+}
+1843250 = {
+	name="Kuluk"
+	dynasty=1029057
+	father=183249
+	religion="jewish"
+	culture="alan"
+	trait="sympathy_christendom"
+	trait="sympathy_pagans"
+	909.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}

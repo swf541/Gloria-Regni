@@ -244,7 +244,7 @@
 	971.1.1={
 		birth=yes
 	}
-	1040.1.1={
+	1019.1.1={
 		death=yes
 	}
 }
@@ -495,8 +495,8 @@
 	1030.1.1={
 		birth="1030.1.1"
 	}
-	1085.1.1={
-		death="1085.1.1" # Extended lifespan from 1080.1.1 to cover ruling of titles until Janmejaya's rule in 1085.1.1.
+	1080.1.1={
+		death="1080.1.1"
 	}
 }
 189197 = {
@@ -787,10 +787,10 @@
 189216 = {
 	name="Gayada"
 	dynasty=1029199
-	religion="hindu"
+	religion="buddhist"
 	culture="oriya"
-	trait=kshatriya
-	trait=shaivist_hindu
+	trait="kshatriya"
+	trait="mahayana_buddhist"
 	father=189215
 	880.1.1={
 		birth=yes
@@ -2689,9 +2689,6 @@
 	trait=shaivist_hindu
 	1120.1.1={
 		birth=yes
-	}
-	1150.1.1 = {
-		add_spouse = 217378 # Presumed marriage to the sister of Parakramabahu I
 	}
 	1192.1.1={
 		death=yes

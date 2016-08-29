@@ -1,0 +1,103 @@
+
+2001010187 = {
+	name="Kutan" # fictional
+	dynasty=852
+	religion="tengri_pagan"
+	culture="cuman"
+	trait=brave
+	trait=strong
+	880.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}
+2001010188 = {
+	name="Gulçiçek" # fictional
+	female=yes
+	dynasty=852
+	religion="tengri_pagan"
+	culture="cuman"
+	father=2001010187
+	900.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}
+2001010189 = {
+	name="Togli" # fictional
+	dynasty=852
+	religion="tengri_pagan"
+	culture="cuman"
+	father=2001010187
+	910.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}
+
+1014560511 = {
+	name="Tolun" # fictional
+	dynasty=100153013
+	religion="nestorian"
+	culture="cuman"
+	trait=sympathy_pagans
+	890.1.1={
+		birth=yes
+	}
+	960.1.1={
+		death=yes
+	}
+}
+1014560512 = {
+	name="Sugr" # fictional
+	dynasty=100153013
+	religion="nestorian"
+	culture="cuman"
+	trait=sympathy_pagans
+	father=1014560511
+	919.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}
+2001010186 = {
+	name="Atrak" # fictional
+	dynasty=1042045
+	religion="tengri_pagan"
+	culture="cuman"
+	trait=zealous
+	trait=tough_soldier
+	trait=brave
+	trait=strong
+	900.1.1={
+		birth=yes
+	}
+	924.1.1={
+		add_spouse=2001010188
+	}
+	935.1.1 = {
+		wealth = 200
+		prestige = 300
+		effect = {
+			spawn_unit = {
+				province = 1433 # Kazakh
+				owner = ROOT
+				troops = {
+					light_cavalry = { 800 800 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	980.1.1={
+		death=yes
+	}
+}

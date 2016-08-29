@@ -519,7 +519,7 @@
 			spawn_unit = {
 				province = 62 # Leicester
 				owner = ROOT
-				#leader = ROOT
+				leader = ROOT
 				troops = {
 					heavy_infantry = { 100 100 }
 				}
@@ -528,7 +528,7 @@
 			spawn_unit = {
 				province = 62 # Leicester
 				owner = ROOT
-				#leader = 130 # Leofwine
+				leader = 130 # Leofwine
 				troops = {
 					heavy_infantry = { 50 50 }
 				}
@@ -537,7 +537,7 @@
 			spawn_unit = {
 				province = 62 # Leicester
 				owner = ROOT
-				#leader = 132 # Gyrth
+				leader = 132 # Gyrth
 				troops = {
 					heavy_infantry = { 50 50 }
 				}
@@ -704,8 +704,8 @@
 	trait="tough_soldier"
 	father=120
 	mother=101534
-	1023.1.1={
-		birth=yes
+	1021.1.1={
+		birth="1021.1.1"
 	}
 	1052.9.29={
 		death="1052.9.29"
@@ -1300,6 +1300,26 @@
 	}
 }
 
+5684 = {
+	name="Ealdred"
+	dynasty=100073
+	martial=8
+	diplomacy=6
+	intrigue=4
+	stewardship=8
+	religion="imperial"
+	culture="saxon"
+	trait="lustful"
+	trait="temperate"
+	trait="fortune_builder"
+	1002.1.2={
+		birth="1002.1.2"
+	}
+	1052.1.2={
+		death="1052.1.2"
+	}
+}
+
 6890 = {
 	name=Ecgwyn # Fantasy
 	female=yes
@@ -1608,9 +1628,18 @@
 33350 = {
 	name="Æthelstan"
 	dynasty=100072
+	dna = bcedirmbfcy
+	properties = aj00bb00000
 	religion="imperial"
 	culture="saxon"
 	father = 100
+	stewardship=11
+	trait=celibate
+	trait=zealous
+	trait=scholarly_theologian
+	trait=brave
+	trait=just
+	trait=proud
 	893.1.1={
 		birth="893.1.1"
 	}
@@ -2006,8 +2035,8 @@
 	culture="saxon"
 	father=120
 	mother=101534
-	1031.1.1={
-		birth=yes
+	1032.1.1={
+		birth="1032.1.1"
 	}
 	1082.1.1={
 		death="1082.1.1"
@@ -2842,8 +2871,8 @@
 	591.1.1={
 		birth="591.1.1"
 	}
-	640.1.28={
-		death=yes
+	640.1.1={
+		death="640.1.1"
 	}
 }
 205034 = {
@@ -3781,11 +3810,11 @@
 	culture="saxon"
 	father=205072
 	mother=205074
-	765.1.1={
-		birth=yes
+	762.1.1={
+		birth="762.1.1"
 	}
 	805.1.1={
-		death=yes
+		death="805.1.1"
 	}
 }
 205079 = {
@@ -4328,12 +4357,12 @@
 	dynasty=1047006
 	religion="norse_pagan"
 	culture="saxon"
-	father=205144
-	555.1.1={
-		birth=yes
+	father=205145
+	570.1.1={
+		birth="570.1.1"
 	}
 	611.1.1={
-		death=yes
+		death="611.1.1"
 	}
 }
 205147 = {
@@ -4358,8 +4387,8 @@
 	595.1.1={
 		birth="595.1.1"
 	}
-	674.1.1={
-		death=yes
+	648.1.1={
+		death="648.1.1"
 	}
 }
 205149 = {
@@ -4536,7 +4565,7 @@
 	dynasty=1047006
 	religion="imperial"
 	culture="saxon"
-	father=205158
+	father=205156
 	620.1.1={
 		birth="620.1.1"
 	}
@@ -4837,10 +4866,10 @@
 	culture="saxon"
 	father=205183
 	690.1.1={
-		birth=yes
+		birth="690.1.1"
 	}
-	756.1.1={
-		death=yes
+	740.1.1={
+		death="740.1.1"
 	}
 }
 205186 = {
@@ -4875,7 +4904,7 @@
 	religion="imperial"
 	culture="saxon"
 	father=205187
-	mother=205191
+	father=205191
 	730.1.1={
 		birth="730.1.1"
 	}
@@ -5318,10 +5347,10 @@
 	culture="saxon"
 	father=194096
 	550.1.1={
-		birth=yes
+		birth="550.1.1"
 	}
-	616.1.1={
-		death=yes
+	615.1.1={
+		death="615.1.1"
 	}
 }
 194098 = {
@@ -5331,10 +5360,10 @@
 	culture="saxon"
 	father=194097
 	570.1.1={
-		birth=yes
+		birth="570.1.1"
 	}
-	617.1.1={
-		death=yes
+	616.1.1={
+		death="616.1.1"
 	}
 }
 194099 = {
@@ -5342,12 +5371,12 @@
 	dynasty=1047012
 	religion="norse_pagan"
 	culture="saxon"
-	father=194097
+	father=194098
 	575.1.1={
-		birth=yes
+		birth="575.1.1"
 	}
-	617.1.1={
-		death=yes
+	616.1.1={
+		death="616.1.1"
 	}
 }
 194100 = {
@@ -5356,11 +5385,11 @@
 	religion="norse_pagan"
 	culture="saxon"
 	father=194099
-	592.1.1={
-		birth=yes
+	600.1.1={
+		birth="600.1.1"
 	}
 	653.1.1={
-		death=yes
+		death="653.1.1"
 	}
 }
 194101 = {
@@ -5368,13 +5397,12 @@
 	dynasty=1047012
 	religion="imperial"
 	culture="saxon"
-	father=194100 
-	608.1.1={
-		birth=yes
+	father=194100
+	605.1.1={
+		birth="605.1.1"
 	}
 	660.1.1={
-		death=yes
-		give_nickname = nick_the_good 
+		death="660.1.1"
 	}
 }
 194102 = {
@@ -5382,12 +5410,12 @@
 	dynasty=1047012
 	religion="imperial"
 	culture="saxon"
-	father=194101 # doubtful
-	624.1.1={
-		birth=yes
+	father=194101
+	620.1.1={
+		birth="620.1.1"
 	}
 	664.1.1={
-		death=yes
+		death="664.1.1"
 	}
 }
 194103 = {
@@ -5395,12 +5423,12 @@
 	dynasty=1047012
 	religion="norse_pagan"
 	culture="saxon"
-	father=194102 # actually his cousin
-	640.1.1={
-		birth=yes
+	father=194102
+	630.1.1={
+		birth="630.1.1"
 	}
 	683.1.1={
-		death=yes
+		death="683.1.1"
 	}
 }
 205256 = {
@@ -5408,12 +5436,12 @@
 	dynasty=1047012
 	religion="imperial"
 	culture="saxon"
-	father=194102 # actually his cousin
-	642.1.1={
-		birth=yes
+	father=194102
+	635.1.1={
+		birth="635.1.1"
 	}
 	694.1.1={
-		death=yes
+		death="694.1.1"
 	}
 }
 205257 = {
@@ -5811,9 +5839,6 @@
 	590.1.1={
 		birth="590.1.1"
 	}
-	617.1.1 = {
-		add_spouse = 166558
-	}
 	634.1.1={
 		death="634.1.1"
 	}
@@ -6011,7 +6036,7 @@
 	}
 }
 205226 = {
-	name="Oswine"
+	name="Oswulf"
 	dynasty=1047021
 	religion="imperial"
 	culture="saxon"
@@ -6045,7 +6070,7 @@
 	dynasty=1047021
 	religion="imperial"
 	culture="saxon"
-	father=205225
+	father=205226
 	745.1.1={
 		birth="745.1.1"
 	}
@@ -6298,10 +6323,10 @@
 	culture="saxon"
 	father=205245
 	730.1.1={
-		birth=yes
+		birth="730.1.1"
 	}
-	810.1.1={
-		death=yes
+	806.1.1={
+		death="806.1.1"
 	}
 }
 205247 = {
@@ -6445,348 +6470,164 @@
 		death="835.1.1"
 	}
 }
-
-214037 = {
-	name="Aldfrith"
-	dynasty=214019
+2001010100 = {
+	name="Æthelstan the half-king"
+	dynasty=100072
 	religion="imperial"
 	culture="saxon"
-	father=214038
-	730.1.1={
-		birth=yes
-	}
-	796.1.1={
-		death=yes
-	}
-}
-
-214038 = {
-	name="Eatta"
-	dynasty=214019
-	religion="imperial"
-	culture="saxon"
-	father=214039
-	700.1.1={
-		birth=yes
-	}
-	765.1.1={
-		death=yes
-	}
-}
-
-214039 = {
-	name="Eanfrith"
-	dynasty=214019
-	religion="imperial"
-	culture="saxon"
-	father=214040
-	675.1.1={
-		birth=yes
-	}
-	740.1.1={
-		death=yes
-	}
-}
-
-214040 = {
-	name="Biscop"
-	dynasty=214019
-	religion="imperial"
-	culture="saxon"
-	father=214041
-	650.1.1={
-		birth=yes
-	}
-	700.1.1={
-		death=yes
-	}
-}
-
-214041 = {
-	name="Beda"
-	dynasty=214019
-	religion="imperial"
-	culture="saxon"
-	father=214042
-	625.1.1={
-		birth=yes
-	}
-	675.1.1={
-		death=yes
-	}
-}
-
-214042 = {
-	name="Blæcca"
-	dynasty=214019
-	religion="norse_pagan"
-	culture="saxon"
-	# father= unknown relationship to earlier Lindsey kings
-	600.1.1={
-		birth=yes
-	}
-	629.1.1={
-		religion="imperial"
-	}
-	650.1.1={
-		death=yes
-	}
-}
-
-214035 = { # Bishop of Lindsey
-	name="Ceolwulf" 
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	725.1.1={
-		birth=yes
-	}
-	796.1.1={
-		death=yes
-	}
-}
-
-214036 = { # Bishop of Lindsey
-	name="Eadbald"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	810.1.1={
-		birth=yes
-	}
-	869.1.1={
-		death=yes
-	}
-}
-
-214033 = { # Bishop of London
-	name="Wigheah"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	709.1.1={
-		birth=yes
-	}
-	776.1.1={
-		death=yes
-	}
-}
-
-214034 = { # Bishop of London
-	name="Swithwulf"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	825.1.1={
-		birth=yes
-	}
-	882.1.1={
-		death=yes
-	}
-}
-
-214031 = { # Bishop of Lichfield
-	name="Cuthfrith"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	715.1.1={
-		birth=yes
-	}
-	769.6.1={
-		death=yes
-	}
-}
-
-214032 = { # Bishop of Lichfield
-	name="Wulfsige"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	820.1.1={
-		birth=yes
-	}
-	868.1.1={
-		death=yes
-	}
-}
-
-188915 = { # Bishop of York
-	name="Æthelbert"
-	religion="imperial"
-	culture="saxon"
-	learning = 12
-	trait=erudite
-	trait=scholarly_theologian
-	715.1.1={
-		birth=yes
-	}
-	780.11.8={
-		death=yes
-	}
-}
-
-188916 = { # Bishop of York
-	name="Wulfhere"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	820.1.1={
-		birth=yes
-	}
 	900.1.1={
-		death=yes
+		birth="900.1.1"
+	}
+	956.1.1={
+		death="956.1.1"
 	}
 }
-
-188917 = { # Bishop of York
-	name="Ealdred"
-	religion="catholic"
-	culture="saxon"
-	learning = 7
-	diplomacy = 8
-	martial = 5
-	trait=erudite
-	1000.1.1={
-		birth=yes
-	}
-	1069.9.11={
-		death=yes
-	}
-}
-
-188918 = { # Carolingian scholar
-	name="Alcuin"
+2001010111 = {
+	name="Æthelweard"
+	dynasty=100072
 	religion="imperial"
 	culture="saxon"
-	learning = 13
-	trait=erudite
-	trait=scholar
-	trait=mastermind_theologian
-	735.1.1={
-		birth=yes
+	father=7627
+	880.1.1={
+		birth="880.1.1"
 	}
-	767.1.1={
-		employer=188915
-	}
-	804.5.19={
-		death=yes
+	922.1.1={
+		death="922.1.1"
 	}
 }
-
-188919 = { # Bishop of Sherborne
-	name="Herewald"
+2001010112 = {
+	name="Æthelweard"
+	dynasty=100072
 	religion="imperial"
 	culture="saxon"
-	learning = 8
-	700.1.1={
-		birth=yes
+	father=2001010111
+	901.1.1={
+		birth="901.1.1"
 	}
-	770.1.1={
-		death=yes
+	937.1.1={
+		death="937.1.1"
 	}
 }
-
-214030 = { # Bishop of Sherborne
-	name="Heahmund"
+2001010113 = {
+	name="Ælfwine"
+	dynasty=100072
 	religion="imperial"
 	culture="saxon"
-	learning = 8
-	830.1.1={
-		birth=yes
+	father=2001010111
+	903.1.1={
+		birth="901.1.1"
 	}
-	871.3.22={
-		death=yes
-	}
-}
-
-214044 = { # Bishop of Hereford
-	name="Deorlaf"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	825.1.1={
-		birth=yes
-	}
-	886.1.1={
-		death=yes
+	937.1.1={
+		death="937.1.1"
 	}
 }
-
-214045 = { # Bishop of Lindisfarne
-	name="Cynewulf"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	709.1.1={
-		birth=yes
+2001010117 = {
+	name="Ealhhelm"
+	dynasty=1047011
+	religion=imperial
+	culture=saxon
+	908.1.1 = {
+		birth = yes
 	}
-	783.1.1={
-		death=yes
-	}
-}
-
-214046 = { # Bishop of Selsey
-	name="Oswald"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	719.1.1={
-		birth=yes
-	}
-	776.1.1={
-		death=yes
+	955.1.1 = {
+		death = yes
 	}
 }
-
-214047 = { # Bishop of Selsey
-	name="Æthelric"
-	religion="catholic"
-	culture="saxon"
-	learning = 8
-	1020.1.1={
-		birth=yes
+2001010121 = {
+	name="Burgheard"
+	dynasty=100061
+	religion=imperial
+	culture=saxon
+	908.1.1 = {
+		birth = 908.1.1
 	}
-	1076.1.1={
-		death=yes
-	}
-}
-
-214048 = { # Bishop of Rochester
-	name="Diora"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	722.1.1={
-		birth=yes
-	}
-	783.1.1={
-		death=yes
+	980.1.1 = {
+		death = 980.1.1
 	}
 }
-
-214049 = { # Bishop of Rochester
-	name="Cuthwulf"
-	religion="imperial"
-	culture="saxon"
-	learning = 8
-	820.1.1={
-		birth=yes
+2001010122 = {
+	name="Cenfus"
+	dynasty=100058
+	religion=imperial
+	culture=saxon
+	909.1.1 = {
+		birth = 909.1.1
 	}
-	874.1.1={
-		death=yes
+	976.1.1 = {
+		death = 976.1.1
 	}
 }
-
-214050 = { # Bishop of Rochester
-	name="Siward"
-	religion="catholic"
-	culture="saxon"
-	learning = 8
-	1021.1.1={
-		birth=yes
+2001010123 = {
+	name="Ælfweard"
+	dynasty=100063
+	religion=imperial
+	culture=saxon
+	909.1.1 = {
+		birth = 909.1.1
 	}
-	1075.1.1={
-		death=yes
+	976.1.1 = {
+		death = 976.1.1
+	}
+}
+2001010124 = {
+	name="Cuthberht"
+	dynasty=100067
+	religion=imperial
+	culture=saxon
+	909.1.1 = {
+		birth = 909.1.1
+	}
+	976.1.1 = {
+		death = 976.1.1
+	}
+}
+2001010125 = {
+	name="Beorhtmær"
+	dynasty=100021
+	religion=imperial
+	culture=saxon
+	909.1.1 = {
+		birth = 909.1.1
+	}
+	976.1.1 = {
+		death = 976.1.1
+	}
+}
+2001010126 = {
+	name="Wulfhelm"
+	dynasty=560
+	religion=imperial
+	culture=saxon
+	trait=brave
+	trait=tough_soldier
+	906.1.1 = {
+		birth = 906.1.1
+	}
+	976.1.1 = {
+		death = 976.1.1
+	}
+}
+2001010127 = {
+	name="Balthere"
+	dynasty=562
+	religion=imperial
+	culture=saxon
+	905.1.1 = {
+		birth = 905.1.1
+	}
+	976.1.1 = {
+		death = 976.1.1
+	}
+}
+2001010128 = {
+	name="Cearl"
+	dynasty=814
+	religion=imperial
+	culture=saxon
+	909.1.1 = {
+		birth = 909.1.1
+	}
+	976.1.1 = {
+		death = 976.1.1
 	}
 }

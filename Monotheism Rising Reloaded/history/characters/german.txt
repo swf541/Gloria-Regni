@@ -359,6 +359,7 @@
 	stewardship=6
 	religion="imperial"
 	culture="german"
+	
 	father=10097
 	mother=7816
 	915.1.1 = {
@@ -1092,7 +1093,7 @@
 		birth="1007.1.1"
 	}
 	1057.8.3 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: Friedrich
 	}
 	1058.3.29 = {
@@ -1960,7 +1961,12 @@
 	stewardship=4
 	religion="imperial"
 	culture="german"
-	trait="tough_soldier"
+	trait="skilled_tactician"
+	trait="falconer"
+	trait="proud"
+	trait="lustful"
+	trait="dilligent"
+	trait="brave"
 	father=7908
 	mother=7912
 	877.1.1 = {
@@ -1969,7 +1975,7 @@
 	898.1.1 = {
 		add_spouse=1281
 	}	
-	936.1.1 = {
+	934.1.1 = {
 		give_nickname=nick_the_fowler
 	}
 	936.7.2 = {
@@ -2010,6 +2016,7 @@
 	trait="greedy"
 	trait="diligent"
 	trait="envious"
+	trait="patient"
 	trait="skilled_tactician"
 	father=1280
 	mother=1281
@@ -2361,10 +2368,10 @@
 	father=1306
 	mother=1284
 	948.1.2 = {
-		birth=yes
+		birth="948.1.2"
 	}
-	1004.11.4 = {
-		death=yes
+	976.1.2 = {
+		death="976.1.2"
 	}
 }
 
@@ -2491,8 +2498,6 @@
 1316 = {
 	name="Heinrich" #Heinrich IV
 	dynasty=651
-	dna = ajbgarbifau
-	properties = ae00c0000000
 	martial=5
 	diplomacy=5
 	intrigue=8
@@ -2705,7 +2710,7 @@
 		birth="972.1.1"
 	}
 	996.5.3 = {
-	name="Gregorius"
+	name="Gregory"
 	# AKA: Bruno
 	}
 	999.2.18 = {
@@ -3162,9 +3167,6 @@
 	mother=1423
 	1048.1.1 = {
 		birth="1048.1.1"
-	}
-	1066.1.1 = {
-		add_spouse = 179997
 	}
 	1089.9.5 = {
 		death="1089.9.5"
@@ -8804,8 +8806,6 @@
 	name="Friedrich" # II E.of HRE (1197-1250), k.of Sicily (1198-1250), d. of Swabia (1212-1216)
 	# AKA: Frederick
 	dynasty=529
-	dna = agbceeccebr
-	properties = aj0bh0000000
 	martial=6
 	diplomacy=7
 	intrigue=7
@@ -16236,7 +16236,7 @@
 }
 
 30628 = {
-	name="Mathilde" 
+	name="Mathilda" 
 	female=yes
 	dynasty=285
 	religion="catholic"
@@ -16246,8 +16246,8 @@
 	1242.1.1 = {
 		birth="1242.1.1"
 	}
-	1263.1.1 = {
-		death="1263.1.1"
+	1279.1.1 = {
+		death="1279.1.1"
 	}
 }
 
@@ -17007,6 +17007,22 @@
 	}
 	1313.1.1 = {
 		death="1313.1.1"
+	}
+}
+
+30714 = {
+	name="Elisabeth" 
+	female=yes
+	dynasty=263 #von Nassau
+	religion="catholic"
+	culture="german"
+	father=212372
+	mother=30027
+	1223.1.1 = {
+		birth="1223.1.1"
+	}
+	1295.1.6 = {
+		death="1295.1.6"
 	}
 }
 
@@ -23391,7 +23407,7 @@
 	1255.1.1 = {
 		birth="1255.1.1"
 	}
-	1271.1.1 = {
+	1290.1.1 = {
 		add_spouse=462361
 	}
 	1298.6.23 = {
@@ -23623,7 +23639,6 @@
 
 462371 = {
 	name="Elisabeth"
-	female = yes
 	dynasty=263
 	martial=6
 	diplomacy=6
@@ -23726,7 +23741,7 @@
 }
 
 462376 = {
-	name="Mechtild"
+	name="Adelheid"
 	female=yes
 	dynasty=263
 	martial=3
@@ -23739,11 +23754,11 @@
 	trait="scholarly_theologian"
 	father=462360
 	mother=462361
-	1278.1.1 = {
-		birth=yes
+	1290.1.1 = {
+		birth="1290.1.1"
 	}
-	1323.6.19 = {
-		death=yes
+	1324.1.1 = {
+		death="1324.1.1"
 	}
 }
 
@@ -25047,7 +25062,7 @@
 		birth="1274.1.2"
 	}
 	1294.1.2 = {
-		add_spouse=462376
+		add_spouse=462377
 	}
 	1317.1.12 = {
 		death="1317.1.12"
@@ -25066,7 +25081,7 @@
 	trait="brave"
 	trait="tough_soldier"
 	father=462736
-	mother=462376
+	mother=462377
 	1300.1.2 = {
 		birth="1300.1.2"
 	}
@@ -25264,7 +25279,7 @@
 	trait="temperate"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462376
+	mother=462377
 	1306.8.8 = {
 		birth="1306.8.8"
 	}
@@ -25344,7 +25359,7 @@
 }
 
 462753 = {
-	name="Ruprecht"
+	name="Rudolf"
 	dynasty=217
 	martial=7
 	diplomacy=5
@@ -25355,7 +25370,7 @@
 	trait="diligent"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462376
+	mother=462377
 	1309.1.2 = {
 		birth="1309.1.2"
 	}
@@ -25378,7 +25393,7 @@
 	trait="lustful"
 	trait="charismatic_negotiator"
 	father=462736
-	mother=462376
+	mother=462377
 	1312.1.2 = {
 		birth="1312.1.2"
 	}
@@ -26947,8 +26962,8 @@
 	trait="amateurish_plotter"
 	father=462930
 	mother=462931
-	1331.1.1 = {
-		birth=yes
+	1325.1.1 = {
+		birth="1325.1.1"
 	}
 	1360.1.1 = {
 		death="1360.1.1"
@@ -26990,7 +27005,7 @@
 	trait="thrifty_clerk"
 	father=462930
 	mother=462931
-	1330.1.1 = {
+	1326.1.1 = {
 		birth="1326.1.1"
 	}
 	1367.1.1 = {
@@ -29497,7 +29512,7 @@
 }
 
 7538 = {
-	name="Elisabeth"
+	name="Elizabeth"
 	female=yes
 	dynasty=263
 	religion="catholic"
@@ -30925,7 +30940,7 @@
 		birth="1005.1.1"
 	}
 	1046.12.20 = {
-	name="Clemens"
+	name="Clement"
 	# AKA: Suidger
 	}
 	1047.10.9 = {
@@ -31634,6 +31649,7 @@
 	stewardship=7
 	religion="imperial"
 	culture="german"
+	properties="beb0e00a00"
 	trait="wroth"
 	trait="flamboyant_schemer"
 	father=7961
@@ -31808,12 +31824,19 @@
 	diplomacy=6
 	intrigue=7
 	stewardship=4
+	trait="flamboyant_schemer"
+	trait="temperate"
+	trait="proud"
 	religion="imperial"
 	culture="german"
+	properties="beb0e00a00"
 	father=10097
 	mother=7816
 	910.1.1 = {
 		birth="910.1.1"
+	}
+	933.1.1 = {
+		add_claim = k_italy
 	}
 	953.1.1 = {
 		death="953.1.1"
@@ -31947,7 +31970,7 @@
 }
 
 7985 = {
-	name="Welf"
+	name="Guelph"
 	dynasty=650
 	martial=5
 	diplomacy=6
@@ -32053,7 +32076,7 @@
 }
 
 7990 = {
-	name="Welf"
+	name="Guelph"
 	dynasty=650
 	martial=5
 	diplomacy=6
@@ -32102,7 +32125,7 @@
 	stewardship=8
 	religion="imperial"
 	culture="german"
-	trait="gluttonous"
+	trait=lustful
 	trait="martial_cleric"
 	father=7991
 	895.1.1 = {
@@ -32189,8 +32212,6 @@
 	name="Ludwig"
 	# AKA: Ludwig 'der Deutsche'
 	dynasty=25061
-	dna = bagmeomdaai
-	properties = aj0abb000000
 	martial=6
 	diplomacy=5
 	intrigue=7
@@ -45590,7 +45611,7 @@
 	dynasty=651
 	religion="imperial"
 	culture="german"
-	father=168184 # source?
+	father=168184
 	760.1.1 = {
 		birth="760.1.1"
 	}
@@ -46275,7 +46296,7 @@
 	female=yes
 	religion="catholic"
 	culture="german"
-	1150.1.1={
+	1160.1.1={
 		birth="1160.1.1"
 	}
 	1220.1.1={
@@ -46290,8 +46311,8 @@
 	culture="german"
 	father=167100
 	mother=167101
-	1170.1.1={
-		birth = yes
+	1190.1.1={
+		birth="1190.1.1"
 	}
 	1244.1.1={
 		death="1244.1.1"
@@ -47066,6 +47087,7 @@
 	religion="catholic"
 	culture="german"
 	father=167147
+	mother=167230
 	1278.1.1={
 		birth="1278.1.1"
 	}
@@ -47081,7 +47103,6 @@
 	religion="catholic"
 	culture="german"
 	father=167149
-	mother=167230
 	1280.1.1={
 		birth="1280.1.1"
 	}
@@ -49500,7 +49521,7 @@
 	religion="imperial"
 	culture="german"
 	father=167750
-	mother=167754
+	mother=166754
 	790.1.1={
 		birth="790.1.1"
 	}
@@ -49517,7 +49538,7 @@
 	religion="imperial"
 	culture="german"
 	father=167750
-	mother=167754
+	mother=166754
 	800.1.1={
 		birth="800.1.1"
 	}
@@ -49535,7 +49556,7 @@
 	religion="imperial"
 	culture="german"
 	father=167750
-	mother=167754
+	mother=166754
 	802.1.1={
 		birth="802.1.1"
 	}
@@ -49733,7 +49754,7 @@
 	religion="imperial"
 	culture="german"
 	father=167750
-	mother=167754
+	mother=166754
 	791.1.1={
 		birth="791.1.1"
 	}
@@ -52080,7 +52101,7 @@
 		birth="470.1.1"
 	}
 	530.1.1 = {
-	name="Bonifatius"
+	name="Boniface"
 	# AKA: Athalaric
 	}
 	532.1.1 = {
@@ -52604,6 +52625,7 @@
 	dynasty=9601
 	religion="imperial"
 	culture="german"
+	properties="bcb0c00000"
 	father=168560
 	trait="skilled_tactician"
 	trait="brave"
@@ -54655,4 +54677,3 @@
 		death=yes
 	}
 }
-

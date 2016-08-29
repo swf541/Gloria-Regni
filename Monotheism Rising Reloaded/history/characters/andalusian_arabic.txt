@@ -3278,7 +3278,7 @@
 	name="Isa" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	720.1.1={
 		birth="720.1.1" #Unknown
 	}
@@ -3290,7 +3290,7 @@
 	name="Shuayb" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159521
 	740.1.1={
 		birth="740.1.1" #Unknown
@@ -3303,7 +3303,7 @@
 	name="Hafs" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159522
 	760.1.1={
 		birth="760.1.1" #Unknown
@@ -3316,7 +3316,7 @@
 	name="Umar" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159523
 	780.1.1={
 		birth="780.1.1" #Unknown
@@ -3332,7 +3332,7 @@
 	name="Shuayb" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159524
 	810.1.1={
 		birth="810.1.1" #Unknown
@@ -3345,7 +3345,7 @@
 	name="Umar" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159525
 	830.1.1={
 		birth="830.1.1" #Unknown
@@ -3358,7 +3358,7 @@
 	name="Muhammad" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159525
 	835.1.1={
 		birth="835.1.1" #Unknown
@@ -3371,7 +3371,7 @@
 	name="Yusuf" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159526
 	860.1.1={
 		birth="860.1.1" #Unknown
@@ -3384,10 +3384,30 @@
 	name="Ahmad" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
+	trait=sympathy_christendom
+	trait=greedy
+	trait=brave
+	trait=tough_soldier
 	father=159526
 	860.1.1={
 		birth="860.1.1" #Unknown
+	}
+	935.1.1 = {
+		# Muslim pirates
+		wealth = 300
+		prestige = 500
+		effect = {
+			spawn_unit = {
+				province = 480 # Chandax
+				owner = ROOT
+				troops = {
+					light_infantry = { 700 700 }
+					archers = { 300 300 }
+				}
+				attrition = 0.5
+			}
+		}
 	}
 	940.1.1={
 		death="940.1.1"
@@ -3397,7 +3417,7 @@
 	name="Ali" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159528
 	900.1.1={
 		birth="900.1.1" #Unknown
@@ -3410,7 +3430,7 @@
 	name="Shuayb" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159529
 	900.1.1={
 		birth="900.1.1" #Unknown
@@ -3423,7 +3443,7 @@
 	name="Ali" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159529
 	905.1.1={
 		birth="905.1.1" #Unknown
@@ -3436,7 +3456,7 @@
 	name="Abd al-Aziz" #
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159531
 	920.1.1={
 		birth="920.1.1" #Unknown
@@ -3449,7 +3469,7 @@
 	name="Al-Numan" # Anemas
 	dynasty=1029093
 	religion="sunni"
-	culture="maghreb_arabic"
+	culture="andalusian_arabic"
 	father=159531
 	940.1.1={
 		birth="940.1.1" #Unknown

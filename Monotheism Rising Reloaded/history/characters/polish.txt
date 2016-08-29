@@ -1221,8 +1221,6 @@
 471500 = {
 	name="Kazimierz"
 	dynasty=699
-	dna = bdlkbriiaaz
-	properties = aj0bbc000000
 	martial=7
 	diplomacy=8
 	intrigue=7
@@ -2261,6 +2259,7 @@
 	culture="polish"
 	father=82236
 	trait="brave"
+	trait=patient
 	trait="tough_soldier"
 	900.1.2={
 		birth="900.1.2"
@@ -2276,9 +2275,10 @@
 	martial=7
 	diplomacy=7
 	stewardship=8
-	religion="imperial"
+	religion="slavic_pagan"
 	culture="polish"
 	trait="quick"
+	trait="brave"
 	father=752
 	922.1.1={
 		birth="922.1.1"
@@ -2395,7 +2395,7 @@
 	name="Adleta"
 	female = yes
 	dynasty=699
-	religion="imperial"
+	religion="slavic_pagan"
 	culture="polish"
 	father=752
 	934.1.2={
@@ -4847,8 +4847,8 @@
 	900.1.1={
 		dynasty=699 #Piast
 	}
-	940.1.1={
-		death="940.1.1"
+	930.1.1={
+		death="930.1.1"
 	}
 
 
@@ -5229,7 +5229,7 @@
 	name="Ostrowod"
 	dynasty=9124
 	father=82259
-	religion="slavic_pagan"
+	religion="imperial"
 	culture="polish"
 	905.1.1={
 		birth="905.1.1"

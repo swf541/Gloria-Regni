@@ -1,0 +1,132 @@
+decisions = {
+	join_blue_deme = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+				top_liege = { has_landed_title = e_byzantium }
+				top_liege = { has_landed_title = e_wre }
+				top_liege = { has_landed_title = e_roman_empire }
+				employer = { has_landed_title = e_byzantium }
+				employer = { has_landed_title = e_wre }
+				employer = { has_landed_title = e_roman_empire }
+				employer = { top_liege = { has_landed_title = e_byzantium } }
+				employer = { top_liege = { has_landed_title = e_wre } }
+				employer = { top_liege = { has_landed_title = e_roman_empire } }				
+				host = { has_landed_title = e_byzantium }
+				host = { has_landed_title = e_wre }
+				host = { has_landed_title = e_roman_empire }
+				host = { top_liege = { has_landed_title = e_byzantium } }
+				host = { top_liege = { has_landed_title = e_wre } }
+				host = { top_liege = { has_landed_title = e_roman_empire } }
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { trait = blue_deme }
+			NOT = { trait = green_deme }
+		}
+		allow = {
+			wealth = 20
+		}
+		effect = {
+			add_trait = blue_deme
+		}
+		ai_will_do = {
+			factor = 0.50
+		}
+	}
+	join_green_deme = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+				top_liege = { has_landed_title = e_byzantium }
+				top_liege = { has_landed_title = e_wre }
+				top_liege = { has_landed_title = e_roman_empire }
+				employer = { has_landed_title = e_byzantium }
+				employer = { has_landed_title = e_wre }
+				employer = { has_landed_title = e_roman_empire }
+				employer = { top_liege = { has_landed_title = e_byzantium } }
+				employer = { top_liege = { has_landed_title = e_wre } }
+				employer = { top_liege = { has_landed_title = e_roman_empire } }				
+				host = { has_landed_title = e_byzantium }
+				host = { has_landed_title = e_wre }
+				host = { has_landed_title = e_roman_empire }
+				host = { top_liege = { has_landed_title = e_byzantium } }
+				host = { top_liege = { has_landed_title = e_wre } }
+				host = { top_liege = { has_landed_title = e_roman_empire } }
+			}
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { trait = blue_deme }
+			NOT = { trait = green_deme }
+		}
+		allow = {
+			wealth = 20
+		}
+		effect = {
+			add_trait = green_deme
+		}
+		ai_will_do = {
+			factor = 0.50
+		}
+	}
+
+	attend_chariot_race = {
+		potential = {
+			or = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_wre
+				has_landed_title = e_roman_empire
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_chariot_timer
+				has_character_flag = attending_chariot_race
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = attending_chariot_race
+			custom_tooltip = {
+				text = attending_chariot_race
+				hidden_tooltip = {
+					any_realm_character = {
+						character_event = { id = DEMES.400 } 
+					}
+					character_event = { id = DEMES.500 days = 10 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}	
+}

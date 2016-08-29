@@ -4376,7 +4376,7 @@
 
 20450 = {
 	name="Fedor"
-	dynasty=100586
+	dynasty=100587
 	martial=4
 	diplomacy=6
 	intrigue=8
@@ -7410,6 +7410,7 @@
 
 472301 = {
 	name="Iurii"
+	dynasty=100387
 	martial=5
 	diplomacy=6
 	intrigue=4
@@ -9441,20 +9442,17 @@
 }
 
 473511 = {
-   name="Marija" #wife of Narimantas of Novgorod
-   # AKA: Marija
-   female = yes
-   dynasty=11100
-   religion="orthodox"
-   culture="mongol"
-   father=125512
-   mother=166946
-   1310.1.2={
-     birth=yes
-   }
-   1360.1.2={
-     death=yes
-   }
+	name="Maria"
+	# AKA: Marija
+	female = yes
+	religion="orthodox"
+	culture="russian"
+	1310.1.2={
+		birth="1310.1.2"
+	}
+	1360.1.2={
+		death="1360.1.2"
+	}
 }
 
 473512 = {
@@ -9549,9 +9547,18 @@
 601 = {
 	name="Olga"
 	female = yes
-	religion="imperial"
+	dynasty=9125
+	religion="slavic_pagan"
 	culture="russian"
-	890.1.2={
+	stewardship = 8
+	trait=intricate_webweaver
+	trait=ambitious
+	trait=patient
+	trait=wroth
+	trait=proud
+	trait=sympathy_christendom
+	father=82269
+	899.1.2={
 		birth="890.1.2"
 	}
 	969.1.2={
@@ -9563,13 +9570,13 @@
 	name="Sviatoslav"
 	# AKA: Svyatoslav
 	dynasty=705
-	religion="norse_pagan"
+	religion="slavic_pagan"
 	culture="russian"
 	trait="tough_soldier"
 	father=600
 	mother=601
-	942.1.2={
-		birth="942.1.2"
+	934.1.1={
+		birth="934.1.1"
 	}
 	957.1.2={
 	add_spouse=599
@@ -11761,13 +11768,13 @@
 		death = yes
 	}
 }
-194144 = {#MARKUSOLSEN
+194144 = {
 	name = "Svetozar"
 	dynasty = 1029138
 	religion = slavic_pagan
 	culture = ilmenian
 	father = 194137
-	802.1.1 = {#up from 810
+	810.1.1 = {
 		birth = yes
 	}
 	866.1.1 = {
@@ -11809,44 +11816,6 @@
 		birth = yes
 	}
 	1258.1.2={
-		death = yes
-	}
-}
-194184 = {
-	name="Vselovod"
-	dynasty=101803 # Mstislavich
-	religion="orthodox"
-	culture="russian"
-	1188.1.1={
-		birth = yes
-	}
-	1234.1.1={
-		death = yes
-	}
-}
-194185 = {
-	name="Vselovod"
-	dynasty=101803 # Mstislavich
-	religion="orthodox"
-	culture="russian"
-	father = 194184
-	1210.5.5={
-		birth = yes
-	}
-	1260.5.1={
-		death = yes
-	}
-}
-194186 = {
-	name="Yaropolk"
-	dynasty=101803 # Mstislavich
-	religion="orthodox"
-	culture="russian"
-	father = 194184
-	1212.4.5={
-		birth = yes
-	}
-	1261.3.1={
 		death = yes
 	}
 }

@@ -1,0 +1,192 @@
+180761001 = {
+	name="Buya"
+	dynasty=1029008
+	religion="zoroastrian"
+	culture="kurdish"
+	869.2.4={
+		birth="869.2.4"
+	}
+	929.2.1={
+		death="929.2.1"
+	}
+}
+
+180761002 = {
+	name="Ali Ibn Buya"
+	dynasty=1029008
+	martial=5
+	religion="shiite"
+	properties="bbddea"
+	culture="kurdish"
+	father=180761001
+	trait="ambitious"
+	trait="brave"
+	trait="charismatic_negotiator"
+	trait="sympathy_zoroastrianism"
+	891.6.7={
+		birth="891.6.7"
+	}
+	934.1.1={
+		# Loyal troops
+		effect = {
+				wealth = 200
+				spawn_unit = {
+				province = 643 # Fars
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_cavalry = { 100 100 }
+					heavy_infantry = { 400 400 }
+					archers = { 200 200 }
+				}
+				attrition = 1.0
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = zoroastrian
+				culture = ROOT
+				female = no
+				age = 23
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 643 # Fars
+					owner = ROOT
+					leader = THIS
+					troops = {
+						light_cavalry = { 100 100 }
+						heavy_infantry = { 400 400 }
+						archers = { 200 200 }
+					}
+					attrition = 1.0
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = root
+				culture = ROOT
+				female = no
+				age = 27
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 643 # Fars
+					owner = ROOT
+					leader = THIS
+					troops = {
+						light_cavalry = { 100 100 }
+						heavy_infantry = { 400 400 }
+						archers = { 200 200 }
+					}
+					attrition = 1.0
+				}
+			}
+		}
+	}
+	949.12.1={
+		death="970.12.1"
+	}
+}
+180761003 = {
+	name="Rukn al-Dawla"
+	dynasty=1029008
+	religion="shiite"
+	culture="kurdish"
+	father=180761001
+	trait="patient"
+	trait="underhanded_rogue"
+	899.7.7={
+		birth="899.7.7"
+	}
+	935.1.1={
+		employer=14403101
+	}
+	976.9.9={
+		death="976.9.9"
+	}
+}
+1600005 = {
+	name="Muhammad Musafir"
+	dynasty=1042062
+	religion="shiite"
+	culture="kurdish"
+	trait=deceitful
+	trait=cruel
+	trait=underhanded_rogue
+	trait=dilligent
+	trait=greedy
+   	898.1.1={
+		birth=yes
+	}
+	952.1.1={
+		death=yes
+	}
+}
+1600006 = {
+	name="Wahsudan ibn Muhammad"
+	dynasty=1042062
+	religion="shiite"
+	culture="kurdish"
+		father=1600005
+ 	921.1.1={
+		birth=yes
+	}
+	967.1.1={
+		death=yes
+	}
+}
+1600007 = {
+	name="Marzuban ibn Muhammad"
+	dynasty=1042062
+	religion="shiite"
+	culture="kurdish"
+		father=1600005
+ 	924.1.1={
+		birth=yes
+	}
+	957.1.1={
+		death=yes
+	}
+}
+
+1004460189 = {
+	name="Ahmad"
+	dynasty=1029008
+	religion="shiite"
+	culture="kurdish"
+	trait=skilled_tactician
+	trait=content
+	father=180761001
+	901.1.1={
+		birth=yes
+	}
+	980.1.1={
+		death=yes
+	}
+}
+
+1004460190 = {
+	name="Kama"
+	female=yes
+	dynasty=1029008
+	religion="shiite"
+	culture="kurdish"
+	father=180761001
+	trait=fortune_builder
+	903.1.1={
+		birth=yes
+	}
+	956.9.9={
+		death=yes
+	}
+}

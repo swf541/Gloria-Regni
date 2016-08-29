@@ -1,0 +1,213 @@
+2001010017 = {
+	name="Abu Bakr"
+	dynasty=2000002010
+	culture="khazar"
+	religion="sunni"
+	trait=ambitious
+	trait=cruel
+	trait=sympathy_judaism
+	872.1.1={
+		birth=yes
+	}
+	932.1.1={
+		add_claim = k_mesopotamia
+	}
+	942.1.1={
+		death=yes
+	}
+}
+2001010076 = {
+	name="Gyula"
+	dynasty=1029160
+	religion="tengri_pagan"
+	properties="fbgcaf"
+	culture="khazar"
+	trait=ambitious
+	trait=brave
+	trait=skilled_tactician
+	father=188123672
+	900.1.1={
+		birth="900.1.1"
+	}
+	955.1.1={
+		death="955.1.1"
+	}
+}
+2001010077 = {
+	name="Prokui"
+	dynasty=1029160
+	religion="tengri_pagan"
+	culture="khazar"
+	father=2001010076
+	934.1.1={
+		birth="934.1.1"
+	}
+	1003.1.1={
+		death="1003.1.1"
+	}
+}
+2001010078 = {
+	name="Ibrahim"
+	dynasty=1029160
+	religion="jewish"
+	culture="khazar"
+	father=188123672
+	905.1.1={
+		birth="905.1.1"
+	}
+	935.1.1={
+		add_claim=d_transylvania
+	}
+	955.1.1={
+		death="955.1.1"
+	}
+}
+2001010182 = {
+	name="Barsbek"
+	dynasty=12269
+	religion="jewish"
+	culture="khazar"
+	trait=fortune_builder
+	900.1.1={
+		birth="905.1.1"
+	}
+	975.1.1={
+		death="955.1.1"
+	}
+}
+2001010190 = {
+	name="Saru"
+	dynasty=0
+	religion="sunni"
+	culture="khazar"
+	trait=skilled_tactician
+	trait=brave
+	900.1.1={
+		birth="905.1.1"
+	}
+	935.1.1={
+		employer=146190
+	}
+	975.1.1={
+		death="975.1.1"
+	}
+}
+1004460059 = {
+	name="Ezra"
+	dynasty=1029161
+	religion="tengri_pagan"
+	culture="khazar"
+	trait=sympathy_judaism
+	906.1.1={
+		birth=yes
+	}
+	975.1.1={
+		death=yes
+	}
+}
+1004460060 = {
+	name="Kibar"
+	dynasty=1029163
+	religion="jewish"
+	culture="khazar"
+	904.1.1={
+		birth="904.1.1"
+	}
+	975.1.1={
+		death="975.1.1"
+	}
+}
+1004460061 = {
+	name="Bastu"
+	dynasty=1029162
+	religion="jewish"
+	culture="khazar"
+	880.1.1={
+		birth=yes
+	}
+	955.1.1={
+		death=yes
+	}
+}
+
+1004467059 = {
+	name="Bagha"
+	dynasty=1029161
+	religion="tengri_pagan"
+	culture="khazar"
+	father=1004460059 
+	926.1.1={
+		birth=yes
+	}
+	987.1.1={
+		death=yes
+	}
+}
+2001017182 = {
+	name="Samsam"
+	dynasty=12269
+	religion="jewish"
+	culture="khazar"
+	father=2001010182
+	928.1.1={
+		birth=yes
+	}
+	975.1.1={
+		death=yes
+	}
+}
+2001017183 = {
+	name="Shurkka"
+	female=yes
+	dynasty=12269
+	religion="jewish"
+	culture="khazar"
+	father=2001010182
+	931.1.1={
+		birth=yes
+	}
+	985.1.1={
+		death=yes
+	}
+}
+
+1004460361 = {
+	name="Yavdi"
+	dynasty=1029162
+	religion="jewish"
+	culture="khazar"
+	father=1004460061
+	906.1.1={
+		birth=yes
+	}
+	975.1.1={
+		death=yes
+	}
+}
+1004460362 = {
+	name="Ayten"
+	female=yes
+	dynasty=1029162
+	religion="jewish"
+	culture="khazar"
+	father=1004460061
+	915.1.1={
+		birth=yes
+	}
+	985.1.1={
+		death=yes
+	}
+}
+
+188123672 = {
+	name="Bulan"
+	dynasty=1029160
+	religion="tengri_pagan"
+	culture="khazar"
+	850.1.1={
+		birth=yes
+	}
+	934.1.1={
+		death=yes
+	}
+}

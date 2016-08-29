@@ -1,0 +1,200 @@
+1004460050= {	
+	name="Feraz"	
+	dynasty=1042134
+	religion="sunni"	
+	culture="baloch"
+	trait=sympathy_zoroastrianism
+	trait=cynical
+	trait=tough_soldier
+	trait=content
+	father=6899
+	870.1.1 = {		
+		birth=yes
+	}
+	949.1.1 = {		
+		death=yes
+	}
+}
+1234578018 = {
+	name="Muin bin Ahmad"
+	dynasty=100153027
+	religion="sunni"
+	culture="baloch"
+	trait=trusting
+	trait=tough_soldier
+	870.1.1={
+		birth=yes
+	}
+	935.1.1 = {
+		wealth = 100
+		prestige = 200
+		effect = {
+			spawn_unit = {
+				province = 1184 # Kalat
+				owner = ROOT
+				troops = {
+					light_infantry = { 300 300 }
+					heavy_infantry = { 100 100 }
+					archers = { 100 100 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	936.1.1={
+		death=yes
+	}
+}
+1234578019 = {
+	name="Husayn"
+	dynasty=100153027
+	religion="sunni"
+	culture="baloch"
+	father=1234578018
+	trait=mountain_expert
+	trait=tough_soldier
+	900.1.1={
+		birth=yes
+	}
+	970.1.1={
+		death=yes
+	}
+}
+1234578023 = {
+	name="Abul Qasim"
+	dynasty=100153026
+	religion="kharijite"
+	culture="baloch"
+	trait=ambitious
+	trait=greedy
+	trait=deceitful
+	trait=zealous
+	897.1.1={
+		birth=yes
+	}
+	930.1.1={
+		add_claim=d_baluchistan
+	}
+	935.1.1 = {
+		wealth = 200
+		prestige = 200
+		effect = {
+			spawn_unit = {
+				province = 1139 # Makran
+				owner = ROOT
+				troops = {
+					archers = { 300 300 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	970.1.1={
+		death=yes
+	}
+}
+1004461250 = {	
+	name="Bahram"	
+	dynasty=1042134
+	religion="sunni"	
+	culture="baloch"
+	trait=sympathy_zoroastrianism
+	father=1004460050
+	899.1.1 = {		
+		birth=yes
+	}
+	969.1.1 = {		
+		death=yes
+	}
+}
+188123661 = {
+	name="Ferzad" # fictitious holder of Jask
+	dynasty=858
+	religion="zoroastrian"
+	culture="baloch"
+	father=188663
+	790.1.1={
+		birth=yes
+	}
+	865.1.1={
+		death=yes
+	}
+}
+188123662 = {
+	name="Bahram" # fictitious holder of Jask
+	dynasty=858
+	religion="sunni"
+	culture="baloch"
+	father=188123661
+	trait=sympathy_zoroastrianism
+	825.1.1={
+		birth=yes
+	}
+	900.1.1={
+		death=yes
+	}
+}
+188123663 = {
+	name="Mashkye" # fictitious holder of Jask
+	dynasty=858
+	religion="sunni"
+	culture="baloch"
+	father=188123662
+	trait=sympathy_zoroastrianism
+	870.1.1={
+		birth=yes
+	}
+	935.1.1={
+		death=yes
+	}
+}
+188123664 = {
+	name="Mudar Bin Raja"
+	dynasty=858
+	religion="sunni"
+	culture="baloch"
+	father=188123663
+	trait=sympathy_zoroastrianism
+	trait=sympathy_indian
+	trait=fortune_builder
+	900.1.1={
+		birth=yes
+	}
+	934.1.1={
+		add_claim=c_jask
+		add_claim=c_saravan
+	}
+	935.1.1 = {
+		wealth = 300
+		effect = {
+			spawn_unit = {
+				province = 899 # Tis
+				owner = ROOT
+				troops = {
+					archers = { 200 200 }
+					light_infantry = { 100 100 }
+					pikemen = { 100 100 }
+					heavy_infantry = { 100 100 }
+					}
+				attrition = 0.5
+			}
+		}
+	}
+	970.1.1={
+		death=yes
+	}
+}
+188123665 = {
+	name="Vandad"
+	dynasty=858
+	religion="zoroastrian"
+	culture="baloch"
+	father=188123663
+	trait=tough_soldier
+	906.1.1={
+		birth=yes
+	}
+	960.1.1={
+		death=yes
+	}
+}

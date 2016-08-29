@@ -928,20 +928,22 @@
 	diplomacy=6
 	intrigue=5
 	stewardship=6
+	learning=7
 	religion="imperial"
 	culture="bohemian"
 	trait="temperate"
 	trait="skilled_tactician"
+	trait=sympathy_pagans
+	trait=humble
+	trait=trusting
+	trait=brave
 	father=504
 	mother=505
 	907.1.1={
 		birth="907.1.1"
 	}
-	935.9.28={
-		death={
-			death_reason = death_murder
-			killer = 508
-		}
+	936.1.1={
+		death="936.16.16"
 	}
 }
 
@@ -975,10 +977,11 @@
 	religion="imperial"
 	culture="bohemian"
 	trait="lisp"
-	trait="kinslayer"
 	trait="envious"
+	trait=ambitious
+	trait=cynical
 	trait="flamboyant_schemer"
-	give_nickname = nick_the_cruel
+	trait=sympathy_pagans
 	father=504
 	mother=505
 	915.1.1={
@@ -3131,7 +3134,7 @@
 	trait="brave"
 	trait="just"
 	trait="diligent"
-	trait="temperate"
+	trait="temparate"
 	father=168360
 	mother=168361
 	956.1.1={
@@ -3263,7 +3266,6 @@
 		death=yes
 	}
 }
-
 146178 = {
 	name="Svetimir"
 	dynasty=7508
@@ -3277,4 +3279,3 @@
 		death=yes
 	}
 }
-

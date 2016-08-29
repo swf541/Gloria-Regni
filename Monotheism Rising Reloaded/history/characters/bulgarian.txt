@@ -128,7 +128,6 @@
 	}
 }
 
-
 217502 = {
 	name="Kaloyan" #Kaloyan I
 	dynasty=185
@@ -213,9 +212,6 @@
 	mother=217504
 	1181.1.1={
 		birth="1181.1.1"
-	}
-	1208.1.1 = {
-		add_spouse=31184
 	}
 	1218.1.2={
 		death="1218.1.2"
@@ -551,10 +547,7 @@
 		add_spouse=34419 #Maria Kantakouzenos
 	}
 	1277.9.1={
-		death = {
-			death_reason = death_battle
-			killer = 31192
-		}
+		death="1277.9.1"
 	}
 }
 
@@ -611,8 +604,6 @@
 	dynasty=7204
 	religion="orthodox"
 	culture="bulgarian"
-	trait="peasant_leader"
-	trait="skilled_tactician"
 	1240.1.1={
 		birth="1240.1.1"
 	}
@@ -620,10 +611,7 @@
 		add_spouse=34419
 	}
 	1280.1.1={
-		death = {
-			death_reason = death_murder
-			killer = 125518
-		}
+		death="1280.1.1"
 	}
 }
 
@@ -634,16 +622,15 @@
 	religion="orthodox"
 	culture="bulgarian"
 	father=467530
-	mother=170494
-	1260.1.1={
-		birth=yes
+	1265.1.1={
+		birth="1265.1.1"
 	}
 	#married Efrosina ??
 	1320.1.1={
 		add_spouse=465515
 	} 
 	1322.1.1={
-		death=yes
+		death="1322.1.1"
 	}
 }
 
@@ -654,13 +641,12 @@
 	religion="orthodox"
 	culture="bulgarian"
 	father=467530
-	mother=170494
-	1261.1.1={
-		birth=yes
+	1263.1.1={
+		birth="1263.1.1"
 	}
 	#married 125519 Chaka son of Nogai Khan
 	1300.1.1={
-		death=yes
+		death="1300.1.1"
 	}
 }
 
@@ -1254,6 +1240,10 @@
 467530 = {
 	name="Georgi"
 	dynasty=40
+	martial=7
+	diplomacy=7
+	intrigue=6
+	stewardship=6
 	religion="orthodox"
 	culture="bulgarian"
 	trait="flamboyant_schemer"
@@ -1261,32 +1251,11 @@
 	1240.1.1={
 		birth="1240.1.1"
 	}
-	1259.1.1={
-		add_spouse=170494
-	}
-	1280.1.1={
-		remove_spouse=170494
+	1266.1.1={
 		add_spouse=31183
-	}
-	1283.1.1={
-		remove_spouse=31183
-		add_spouse=170494
 	}
 	1308.1.1={
 		death="1308.1.1"
-	}
-}
-
-170494 = {
-	name="Maria"
-	female=yes
-	religion="orthodox"
-	culture="bulgarian"
-	1243.1.1={
-		birth=yes
-	}
-	1310.1.1={
-		death=yes
 	}
 }
 
@@ -1294,18 +1263,22 @@
 	name="Anna"
 	female = yes
 	dynasty=40
+	martial=5
+	diplomacy=5
+	intrigue=7
+	stewardship=8
 	religion="orthodox"
 	culture="bulgarian"
 	trait="patient"
 	trait="stutter"
 	trait="flamboyant_schemer"
 	father=467530
-	mother=170494
-	1262.1.1={
-		birth=yes
+	mother=31183
+	1265.1.1={
+		birth="1265.1.1"
 	}
 	1299.1.1={
-		death=yes
+		death="1299.1.1"
 	}
 }
 
@@ -1443,17 +1416,21 @@
 468550 = {
 	name="Ivan"
 	dynasty=40
+	martial=4
+	diplomacy=5
+	intrigue=7
+	stewardship=6
 	religion="orthodox"
 	culture="bulgarian"
 	trait="zealous"
 	trait="tough_soldier"
 	father=468555
 	mother=467542
-	1302.1.1={
-		birth=yes
+	1300.1.2={
+		birth="1300.1.2"
 	}
-	1350.1.1={
-		death=yes
+	1350.1.2={
+		death="1350.1.2"
 	}
 }
 
@@ -1658,12 +1635,19 @@
 	religion="imperial"
 	culture="bulgarian"
 	trait="wroth"
-	trait="patient"
+	trait="dilligent"
+	trait="charitable"
 	trait="honest"
 	trait="flamboyant_schemer"
 	father=712
 	912.1.1={
 		birth="912.1.1"
+	}
+	924.1.1={
+		add_claim=d_rashka
+	}
+	927.1.1={
+		add_spouse=2001010090
 	}
 	969.1.30={
 		death="969.1.30"
@@ -2233,7 +2217,7 @@
 
 168291 = {
 	name="Petar"
-	dynasty=38
+	dynasty=9585
 	trait="charismatic_negotiator"
 	religion="imperial"
 	culture="bulgarian"
@@ -2244,3 +2228,5 @@
 		death="889.1.1"
 	}
 }
+
+

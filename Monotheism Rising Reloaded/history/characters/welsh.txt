@@ -1858,6 +1858,7 @@
 	religion="imperial"
 	culture="welsh"
 	trait="just"
+	trait="ambitious"
 	give_nickname=nick_the_good
 	father=81824 #Cadell ap Rhodri
 	880.1.1={
@@ -5519,6 +5520,9 @@
 	904.1.1={
 		add_spouse=81823
 	}
+	935.1.1 = {
+		add_claim = d_gwynedd
+	}
 	940.1.1={
 		death="940.1.1"
 	}
@@ -6272,7 +6276,6 @@
 		death="428.1.1"
 	}
 }
-
 159813 = {
 	name="Tudwal" # 
 	dynasty=1029129 #Gwent
@@ -7571,6 +7574,9 @@
 	895.1.1={
 		birth="895.1.1"
 	}
+	934.1.1 = {
+		add_spouse=2001010114
+	}
 	937.1.1={
 		death="937.1.1"
 	}
@@ -7598,7 +7604,7 @@
 166440 = {  	
 	name="Dyfnwal"
 	# AKA: Dyfnwal map Eochaid
-	dynasty=816
+	dynasty=100047
 	martial=4
 	diplomacy=6
 	intrigue=5
@@ -7608,9 +7614,6 @@
 	father=166441
 	861.1.1={
 		birth="861.1.1"
-	}
-	889.1.1={
-		dynasty=100047
 	}
 	916.1.1={
 		death="916.1.1"
@@ -8030,7 +8033,7 @@
 184119 = {
 	name="Iorwerth"
 	dynasty=1047018 #Ternyllwg
-	religion="catholic"
+	religion="imperial"
 	culture="welsh"
 	father=159068 #Tegonwy Gruffyd of Powys
 	740.1.1={
@@ -9225,10 +9228,10 @@
 		death="652.1.1"
 	}
 }
-205140 = { 
+205140 = {
 	name="Hywel" # ap Caradog
 	dynasty=14284 #Rhos
-	father=159022
+	father=160046
 	religion="imperial"
 	culture="welsh"
 	750.1.1={
@@ -9267,19 +9270,3 @@
 	}
 }
 
-214043 = { 
-	name="Asser"
-	religion="imperial"
-	culture="welsh"
-	learning = 8
-	trait=monk
-	trait=scholar
-	trait=mastermind_theologian
-	845.1.1={
-		birth=yes
-		employer=159109
-	}
-	909.1.1={
-		death=yes
-	}
-}

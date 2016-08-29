@@ -824,32 +824,6 @@
 	}
 }
 
-3200={
-	name="Abd-al-Rahman"
-	dynasty=597
-
-	father=73686
-	
-	martial=6
-	diplomacy=7
-	intrigue=4
-	stewardship=5
-	
-	religion=sunni
-	culture=bedouin_arabic
-
-	trait=patient
-	trait=sayyid
-	trait=scholarly_theologian
-
-	891.1.7={
-		birth=yes
-	}
-	961.10.15={
-		death=yes
-	}
-}
-
 3202 = {
 	name="al-Hakam"
 	dynasty=597
@@ -858,10 +832,14 @@
 	intrigue=5
 	stewardship=5
 	religion="sunni"
-	culture="bedouin_arabic"
-	trait="kind"
+	culture="andalusian_arabic"
+	trait=kind
+	trait=just
+	trait=lustful
+	trait=proud
 	trait="sayyid"
 	trait="scholarly_theologian"
+	trait=homosexual
 	father=3200
 	915.1.13={
 		birth="915.1.13"
@@ -930,6 +908,34 @@
 	}
 	1100.1.2={
 		death="1100.1.2"
+	}
+}
+
+3200={
+	name="Abd-al-Rahman"
+	dynasty=597
+
+	father=73686
+	
+	martial=6
+	diplomacy=7
+	intrigue=4
+	stewardship=5
+	
+	religion=sunni
+	culture=andalusian_arabic
+
+	trait=patient
+	trait=just
+	trait=ambitious
+	trait=sayyid
+	trait=scholarly_theologian
+
+	891.1.7={
+		birth=yes
+	}
+	961.10.15={
+		death=yes
 	}
 }
 
@@ -1257,9 +1263,9 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="humble"
-	father=45040
+	father=45036
 	1060.1.1={
-		birth="1032.3.7"
+		birth="1060.1.1"
 	}
 	1110.1.1={
 		death="1110.1.1"
@@ -1425,10 +1431,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=159422
 	1000.1.1={
 		birth="1000.1.1"
-		add_claim = d_shiite
 	}
 	1050.1.1={
 		death="1050.1.1"
@@ -1445,10 +1451,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45048
 	1040.1.1={
 		birth="1040.1.1"
-		add_claim = d_shiite
 	}
 	1068.1.1={
 		death="1068.1.1"
@@ -1465,10 +1471,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45048
 	1045.1.1={
 		birth="1045.1.1"
-		add_claim = d_shiite
 	}
 	1099.1.1={
 		death="1099.1.1"
@@ -1557,10 +1563,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45050
 	1080.1.1={
 		birth="1080.1.1"
-		add_claim = d_shiite
 	}
 	1137.1.1={
 		death="1137.1.1"
@@ -1577,10 +1583,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45050
 	1075.1.1={
 		birth="1075.1.1"
-		add_claim = d_shiite
 	}
 	1115.1.1={
 		death="1115.1.1"
@@ -1597,10 +1603,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45050
 	1076.1.1={
 		birth="1076.1.1"
-		add_claim = d_shiite
 	}
 	1115.1.1={
 		death="1115.1.1"
@@ -1618,10 +1624,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45056
 	1100.1.1={
 		birth="1100.1.1"
-		add_claim = d_shiite
 	}
 	1138.1.1={
 		death="1138.1.1"
@@ -1638,10 +1644,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=45057
 	1110.1.1={
 		birth="1110.1.1"
-		add_claim = d_shiite
 	}
 	1171.1.1={
 		death="1171.1.1"
@@ -2225,8 +2231,6 @@
 34002 = {
 	name="Al-Mansur"
 	dynasty=101727
-	dna = beegiscaaad
-	properties = ml0ag0000000
 	religion="sunni"
 	culture="bedouin_arabic"
 	father=34000
@@ -2236,6 +2240,12 @@
 	}
 	732.1.1={
 		add_spouse=188746
+	}
+	769.1.1 = {
+		add_claim = k_sindh  # Vassal but de facto independent
+		add_claim = k_armenia  # Vassal but de facto independent
+		add_claim = d_khiva  # Vassal but de facto independent
+		add_claim = d_khorasan  # Vassal but de facto independent
 	}
 	775.1.1={
 		death=yes
@@ -2420,8 +2430,6 @@
 34014 = {
 	name="Al-Mu'tazz"
 	dynasty=101727
-	dna = csdeypeevjm
-	properties = eo0bb0000000
 	religion="sunni"
 	culture="bedouin_arabic"
 	father=34010
@@ -2438,9 +2446,9 @@
 	}
 	866.1.1={
 		add_claim = k_egypt # Tulunids
-		add_claim = k_baluchistan # Saffarids
 		add_claim = d_hamadan # Dulafids
 		add_claim = d_khorasan # Tahirids
+		add_claim = d_birjand # Saffarids
 		add_claim = d_medina # Hashimids
 		add_claim = d_aleppo # Bursaqids
 		add_claim = d_tripoli # Sulaymanids
@@ -2539,8 +2547,13 @@
 	culture="bedouin_arabic"
 	father=34018
 	trait="sayyid"
+	trait=cruel
+	trait=drunkard
 	899.1.1={
 		birth="899.1.1"
+	}
+	934.1.1={
+		trait="blinded"
 	}
 	950.1.1={
 		death="950.1.1"
@@ -2569,14 +2582,23 @@
 	culture="bedouin_arabic"
 	father=34021
 	trait="sayyid"
+	trait=scholarly_theologian
+	trait=content
+	trait=just
+	trait=humble
+	trait=kind
 	912.1.1={
 		birth="912.1.1"
+	}
+	935.1.1={
+		add_claim = d_damascus
+		add_claim = d_aleppo
+		add_claim = d_mosul
 	}
 	940.1.1={
 		death="940.1.1"
 	}
 }
-
 34023 = {
 	name="Al-Muttaqi"
 	dynasty=101727
@@ -5766,7 +5788,7 @@
 	name="Ubayd-Allah"
 	dynasty = 597
 	religion="sunni"
-	culture="bedouin_arabic"
+	culture="andalusian_arabic"
 	father=3200
 	trait=sayyid
 	927.1.1={
@@ -5980,8 +6002,6 @@
 73679={
 	name="Abd-al-Rahman"
 	dynasty=597
-	dna = cmedkpffaax
-	properties = mj0afa000000
 
 	father=163000
 
@@ -7419,10 +7439,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=159418
 	1045.1.1={
 		birth="1045.1.1" #Unknown
-		add_claim = d_shiite
 	}
 	1100.1.1={
 		death="1100.1.1"
@@ -7434,10 +7454,10 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	trait="sayyid"
+	add_claim = d_shiite
 	father=159419
 	1100.1.1={
 		birth="1100.1.1" #Unknown
-		add_claim = d_shiite
 	}
 	1171.1.1={
 		death="1171.1.1"
@@ -7900,15 +7920,25 @@
 74035 = {
 	name="Samir"
 	dynasty=12275
-
 	culture="bedouin_arabic"
 	religion="sunni"
-
 	848.1.1={
 		birth="848.1.1"
 	}
 	899.1.1={
 		death="899.1.1"
+	}
+}
+2001010016 = {
+	name="Mukhtar"
+	dynasty=12275
+	culture="bedouin_arabic"
+	religion="sunni"
+	905.1.1={
+		birth="905.1.1"
+	}
+	975.1.1={
+		death="975.1.1"
 	}
 }
 74036 = {
@@ -7986,7 +8016,6 @@
 74041 = {
 	name="Mohammad"
 	dynasty=1056
-
 	culture="bedouin_arabic"
 	religion="shiite"
 	trait="sayyid"
@@ -9003,9 +9032,8 @@
 160018 = {
 	name="Hasan"
 	dynasty=1056
-
 	culture="bedouin_arabic"
-	religion="shiite"
+	religion="hurufi"
 	trait="sayyid"
 	father = 160017
 	900.1.1={
@@ -9389,10 +9417,10 @@
 	culture="bedouin_arabic"
 	father=145617
 	862.1.1={
-		birth="862.1.1"
+		birth=yes
 	}
-	928.1.2={
-		death="928.1.2"
+	937.1.1={
+		death=yes
 	}
 }
 
@@ -11900,7 +11928,7 @@
 	dynasty=1042147
 	religion="sunni"
 	culture="bedouin_arabic"
-	710.1.1={
+	730.1.1={
 		birth=yes
 	}
 	780.1.1={
@@ -12578,8 +12606,8 @@
 	769.1.1={
 		add_claim = d_tripolitania
 	}
-	771.11.27={
-		death=yes
+	771.1.1={
+		death="771.1.1"
 	}
 }
 210015 = {
@@ -12721,97 +12749,5 @@
 	}
 	779.1.1={
 		death=yes
-	}
-}
-
-168728={
-	name=Aisa
-	dynasty=1046037
-
-	religion=sunni
-	culture=bedouin_arabic
-
-	710.1.1={
-		birth=yes
-	}
-	736.1.1={
-		add_spouse=168721
-	}
-	755.1.1={
-		death=yes
-	}
-}
-
-168729 = {
-	name="Umar"
-	dynasty=1046038
-
-	religion="sunni"
-	culture="bedouin_arabic"
-
-	720.1.1={
-		birth=yes
-	}
-	755.1.1={
-		add_spouse=168721
-	}
-	770.1.1 = {
-		death=yes
-	}
-}
-
-168731={
-	name="Ibrahim" 
-	dynasty=1046037
-
-	father=168728
-	mother=168721
-
-	religion="sunni"
-	culture="bedouin_arabic"
-
-	737.1.1 = {
-		birth=yes
-	}	
-	790.1.1 = {
-		death=yes
-	}
-}
-
-168732={
-	name="Ishaq" 
-	dynasty=1046037
-
-	father=168728
-	mother=168721
-
-	religion=sunni
-	culture=bedouin_arabic
-
-	740.1.1={
-		birth=yes
-	}	
-	797.1.1={
-		death=yes
-	}
-}
-217320 = {
-	name = Qutayba
-	dynasty = 1051142
-	religion = sunni
-	culture = bedouin_arabic
-	
-	trait = brilliant_strategist
-	trait = diligent
-	trait = brave
-	trait = quick
-	
-	669.4.17 = {
-		birth = yes
-	}
-	715.9.22 = {
-		death = {
-			death_reason = death_battle
-		}
 	}
 }

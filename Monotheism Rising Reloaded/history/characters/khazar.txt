@@ -157,9 +157,6 @@
 	father = 146195
 	culture="khazar"
 	religion="tengri_pagan"
-	
-	trait = skilled_tactician
-	trait = quick
 
 	699.1.1={
 		birth="699.1.1"
@@ -272,23 +269,6 @@
 
 	840.1.1={
 		birth="840.1.1"
-	}
-	886.1.1={
-		death="886.1.1"
-	}
-}
-194369 = {
-	name="Yeldem"
-	female=yes
-	dynasty=12269
-
-	father = 74016
-
-	culture="khazar"
-	religion="jewish" 
-
-	846.1.1={
-		birth=yes
 	}
 	886.1.1={
 		death="886.1.1"
@@ -426,34 +406,18 @@
 	}
 	867.1.1 = {
 		# Boost the initial strength of the Khazars
+		wealth = 1000
 		effect = {
 			spawn_unit = {
 				province = 620 # Itil
 				owner = ROOT
-				#leader = ROOT
+				leader = ROOT
 				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
-				}
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 620 # Itil
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
-				}
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 620 # Itil
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
+					light_infantry = { 1903 1903 }
+					heavy_infantry = { 200 200 }
+					light_cavalry = { 7 7 }
+					archers = { 451 451 }
+					horse_archers = { 4 4 }
 				}
 				attrition = 0.5
 			}
@@ -486,34 +450,7 @@
 	dynasty=1042041
 	religion=jewish
 	culture=khazar
-	833.8.25={
-		birth=yes
-	}
-	889.1.1={
-		death=yes
-	}
-}
-194370 = {
-	name=Itakh	# fictional
-	dynasty=1042041
-	religion=jewish
-	culture=khazar
-	father=180226
-	853.8.25={
-		birth=yes
-	}
-	889.1.1={
-		death=yes
-	}
-}
-194371 = {
-	name=Ayten	# fictional
-	female=yes
-	dynasty=1042041
-	religion=jewish
-	culture=khazar
-	father=180226
-	855.8.25={
+	843.8.25={
 		birth=yes
 	}
 	889.1.1={
@@ -547,34 +484,7 @@
 	trait=content
 	trait=cynical
 	trait=scholarly_theologian
-	1025.1.1={
-		birth=yes
-	}
-	1089.1.1={
-		death=yes
-	}
-}
-194391 = {
-	name=Ezra
-	dynasty=100620
-	religion=jewish
-	culture=khazar
-	father=20663
 	1045.1.1={
-		birth=yes
-	}
-	1089.1.1={
-		death=yes
-	}
-}
-194392 = {
-	name=Sirin
-	female=yes
-	dynasty=100620
-	religion=jewish
-	culture=khazar
-	father=20663
-	1047.1.1={
 		birth=yes
 	}
 	1089.1.1={
@@ -732,8 +642,35 @@
 	culture="khazar"
 	religion="jewish"
 	father = 146189
+	trait=skilled_tactician
+	trait=gregarious
+	trait=patient
+	trait=kind
+	trait=greedy
+	trait=proud
 	908.1.1={
 		birth=yes
+	}
+	934.1.1={
+		add_spouse=2001010180 
+	}
+	935.1.1 = {
+		# Arsiyah
+		wealth = 500
+		prestige = 400
+		effect = {
+			spawn_unit = {
+				province = 620 # Itil
+				owner = ROOT
+				leader = 2001010190
+				troops = {
+					light_cavalry = { 900 900 }
+					knights = { 300 300 }
+					horse_archers = { 300 300 }
+				}
+				attrition = 0.5
+			}
+		}
 	}
 	945.1.1={
 		death=yes
@@ -748,6 +685,9 @@
 	father = 146190
 	925.1.1={
 		birth=yes
+	}
+	935.1.1={
+		add_spouse=2001010178 
 	}
 	969.1.1={
 		death=yes
@@ -908,47 +848,16 @@
 	}
 }
 
-146203 = {  
+146203 = {
 	name="Sartäç"
 	dynasty=1022381
 	culture="khazar"
 	religion="tengri_pagan"
 
-	733.1.1={ #down from 743
+	743.1.1={
 		birth=yes
 	}
 	796.1.1={
-		death=yes
-	}
-}
-
-194347 = {
-	name="Yabghu"
-	dynasty=1022381
-	father = 146203
-	culture="khazar"
-	religion="tengri_pagan"
-
-	750.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-
-194355 = {
-	name="Gulay"
-	female = yes
-	dynasty=1022381
-	father = 146203
-	culture="khazar"
-	religion="tengri_pagan"
-
-	752.1.1={
-		birth=yes
-	}
-	799.1.1={
 		death=yes
 	}
 }
@@ -959,42 +868,10 @@
 	culture="khazar"
 	religion="tengri_pagan"
 
-	731.1.1={
+	741.1.1={
 		birth=yes
 	}
 	793.1.1={
 		death=yes
 	}
 }
-
-194346 = {
-	name="Bastu"
-	dynasty=1022382
-	father = 146204
-	culture="khazar"
-	religion="tengri_pagan"
-
-	750.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-194356 = {
-	name="Tura"
-	dynasty=1022382
-	female = yes
-	father = 146204
-	culture="khazar"
-	religion="tengri_pagan"
-
-	751.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-
-

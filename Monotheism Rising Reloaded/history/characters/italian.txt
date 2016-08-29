@@ -79,11 +79,20 @@
 	religion="imperial"
 	culture="italian"
 	trait="flamboyant_schemer"
+	trait=ambitious
 	father=1106
 	mother=167929
 	900.1.1 = {
 		birth="900.1.1"
 	}
+	929.1.1 = {
+		add_spouse=1004460018
+	}
+	935.1.1 = {
+		effect = {
+			add_rival = 7923
+	}
+}
 	966.7.6 = {
 		death="966.7.6"
 	}
@@ -101,8 +110,9 @@
 	trait="clubfooted"
 	trait="underhanded_rogue"
 	father=1108
-	922.1.2 = {
-		birth="922.1.2"
+	mother=1004460018
+	934.1.1 = {
+		birth="934.1.1"
 	}
 	972.1.2 = {
 		death="972.1.2"
@@ -899,7 +909,7 @@
 		birth="1022.1.1"
 	}
 	1073.4.21 = {
-		name="Gregorius"
+		name="Gregory"
 		# AKA: Hildebrand
 	}
 	1085.5.25 = {
@@ -942,7 +952,7 @@
 		birth="1062.1.1"
 	}
 	1099.7.29 = {
-	name="Paschalis"
+	name="Paschal"
 	# AKA: Rainero
 	}
 	1118.1.21 = {
@@ -1088,6 +1098,7 @@
 
 20315 = {
 	name="Raimondo"
+	dynasty=13025
 	martial=5
 	diplomacy=7
 	intrigue=7
@@ -1425,6 +1436,7 @@
 
 213009 = {
 	name="Carlo"
+	dynasty=100321
 	martial=5
 	diplomacy=7
 	intrigue=6
@@ -2450,18 +2462,19 @@
 	religion="catholic"
 	culture="italian"
 	trait="honest"
+	trait="gluttonous"
 	trait="humble"
 	trait="martial_cleric"
 	father=213520
 	mother=213527
-	1144.1.2 = {
-		birth=yes
+	1150.1.2 = {
+		birth="1150.1.2"
 	}
 	1168.1.2 = {
 		add_spouse=223522
 	}
 	1177.1.6 = {
-		death=yes
+		death="1177.1.6"
 	}
 }
 
@@ -2574,7 +2587,7 @@
 		birth="1120.1.1"
 	}
 	1185.5.25 = {
-		name="Urbanus"
+		name="Urban"
 	}
 	1187.10.20 = {
 		death="1187.10.20"
@@ -5359,12 +5372,12 @@
 	culture="italian"
 
 	father = 91353 # Corrado Spinola
-	mother = 167545 # Argentina Fieschi, d. of Opizzone Fieeschi and Simona.
+	# Argentina Fieschi, d. of Opizzone Fieeschi and Simona.
 	
 	1260.1.1 = {
 		birth="1260.1.1"
 	}
-	1285.1.1 = {
+	1385.1.1 = {
 		add_spouse=71188 # Violante di Saluzzo, d. of Tommaso I, marchese di Saluzzo and Aloisia di Ceva
 	}
 	1315.1.1 = {
@@ -8529,6 +8542,9 @@
 	1163.1.1 = {
 		birth="1163.1.1"
 	}
+	1200.1.1 = {
+		employer=223597
+	}
 	1223.1.1 = {
 		death="1223.1.1"
 	}
@@ -9253,7 +9269,7 @@
 		birth="1215.1.1"
 	}
 	1268.11.29 = {
-		name="Gregorius"
+		name="Gregory"
 	}
 	1276.1.10 = {
 		death="1276.1.10"
@@ -10317,7 +10333,7 @@
 		birth="1110.1.1"
 	}
 	1191.3.20 = {
-		name=Caelestinus
+		name=Celestine
 	# AKA: Giancinto
 	}
 	1198.1.8 = {
@@ -10558,7 +10574,7 @@
 		birth="1204.1.1"
 	}
 	1277.5.20 = {
-		name=Nicolaus
+		name=Nicholas
 	# AKA: Giovanni
 	}
 	1280.8.22 = {
@@ -12109,14 +12125,19 @@
 71006 = {
 	name="Tommaso"
 	dynasty=8682
-	father=214104
+	martial=8
+	diplomacy=6
+	intrigue=5
+	stewardship=6
 	religion="catholic"
 	culture="italian"
+	trait="tough_soldier"
+	trait="gregarious"
 	1218.1.1 = {
-		birth=yes
+		birth="1218.1.1"
 	}
 	1273.3.15 = {
-		death=yes
+		death="1273.3.15"
 	}
 }
 
@@ -18527,7 +18548,7 @@
 		birth="1070.1.1"
 	}
 	1130.2.13 = {
-	name="Innocentius"
+	name="Innocent"
 	# AKA: Gregorio
 	}
 	1143.9.24 = {
@@ -18620,7 +18641,7 @@
 		birth="1071.1.1"
 	}
 	1143.9.24 = {
-	name="Caelestinus"
+	name="Celestine"
 	# AKA: Guido
 	}
 	1144.3.8 = {
@@ -18669,7 +18690,7 @@
 		birth="1080.1.1"
 	}
 	1145.2.15 = {
-	name="Eugenius"
+	name="Eugene"
 	# AKA: Bernardo
 	}
 	1153.7.8 = {
@@ -18768,7 +18789,7 @@
 		birth="1105.1.1"
 	}
 	1187.10.20 = {
-	name="Gregorius"
+	name="Gregory"
 	# AKA: Alberto
 	}
 	1187.12.17 = {
@@ -18793,7 +18814,7 @@
 		birth="1130.1.1"
 	}
 	1187.12.17 = {
-	name="Clemens"
+	name="Clement"
 	# AKA: Paolino
 	}
 	1191.3.20 = {
@@ -18818,7 +18839,7 @@
 		birth="1161.1.1"
 	}
 	1198.1.8 = {
-		name="Innocentius"
+		name="Innocent"
 	}
 	1216.7.16 = {
 		death="1216.7.16"
@@ -18947,7 +18968,7 @@
 		birth="1170.1.1"
 	}
 	1227.3.18 = {
-	name="Gregorius"
+	name="Gregory"
 	# AKA: Ugolino
 	}
 	1241.8.22 = {
@@ -18972,7 +18993,7 @@
 		birth="1176.1.1"
 	}
 	1241.8.22 = {
-	name="Caelestinus"
+	name="Celestine"
 	# AKA: Goffredo
 	trait="stressed"
 	}
@@ -18999,7 +19020,7 @@
 		birth="1182.1.1"
 	}
 	1241.11.10 = {
-	name="Innocentius"
+	name="Innocent"
 	# AKA: Sinibaldo
 	}
 	1254.12.7 = {
@@ -19065,7 +19086,7 @@
 		birth="1229.1.1"
 	}
 	1276.6.22 = {
-		name="Hadrianus"
+		name="Adrian"
 	}
 	1276.8.18 = {
 		death="1276.8.18"
@@ -19114,7 +19135,7 @@
 		birth="1227.9.30"
 	}
 	1287.4.3 = {
-		name="Nicolaus"
+		name="Nicholas"
 	}
 	1292.4.4 = {
 		death="1292.4.4"
@@ -19138,13 +19159,13 @@
 		birth="1215.1.1"
 	}
 	1292.4.4 = {
-		name="Caelestinus"
+		name="Celestine"
 	}
 	1294.12.13 = {
 		name="Pietro"
 	}
 	1296.5.19 = {
-		name="Caelestinus"
+		name="Celestine"
 		give_nickname=nick_the_saint
 		death="1296.5.19"
 	}
@@ -19167,7 +19188,7 @@
 		birth="1235.1.1"
 	}
 	1294.12.13 = {
-	name="Bonifatius"
+	name="Boniface"
 	# AKA: Benedetto
 	}
 	1303.10.11 = {
@@ -19194,7 +19215,7 @@
 		birth="1240.1.1"
 	}
 	1303.10.11 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: Nicola
 	}
 	1304.7.7 = {
@@ -19814,7 +19835,7 @@
 		birth="1000.1.1"
 	}
 	1045.5.1 = {
-	name="Gregorius"
+	name="Gregory"
 	# AKA: Johannes
 	}
 	1048.1.1 = {
@@ -19838,7 +19859,7 @@
 		birth="1000.1.1"
 	}
 	1045.1.20 = {
-	name="Silvester"
+	name="Sylvester"
 	# AKA: Giovanni
 	}
 	1062.1.1 = {
@@ -19887,7 +19908,7 @@
 		birth="919.1.1"
 	}
 	1003.12.6 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Fasanius
 	}
 	1009.7.1 = {
@@ -19912,7 +19933,7 @@
 		birth="909.1.1"
 	}
 	1003.5.12 = {
-	name="Ioannes"
+	name="John"
 	# AKA: John Sicco
 	}
 	1003.12.6 = {
@@ -19936,7 +19957,7 @@
 		birth="910.1.1"
 	}
 	984.8.20 = {
-	name="Ioannes"
+	name="John"
 	}
 	996.5.3 = {
 		death="996.5.3"
@@ -19959,7 +19980,7 @@
 		birth="912.1.1"
 	}
 	983.7.10 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Pietro
 	}
 	984.8.20 = {
@@ -19983,7 +20004,7 @@
 		birth="910.1.1"
 	}
 	972.9.6 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: Hildebrand
 	}
 	974.7.1 = {
@@ -20007,7 +20028,7 @@
 		birth="910.1.1"
 	}
 	965.3.1 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Giovanni
 	}
 	972.9.6 = {
@@ -20055,7 +20076,7 @@
 		birth="910.1.1"
 	}
 	964.4.14 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: John
 	}
 	964.6.23 = {
@@ -20103,7 +20124,7 @@
 		birth="880.1.1"
 	}
 	942.10.1 = {
-	name="Marinus"
+	name="Martin"
 	# AKA: John
 	}
 	946.5.1 = {
@@ -20127,7 +20148,7 @@
 		birth="880.1.1"
 	}
 	939.7.13 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: John
 	}
 	942.10.1 = {
@@ -20175,7 +20196,7 @@
 		birth="870.1.1"
 	}
 	929.1.1 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: Stephanus
 	}
 	931.3.15 = {
@@ -20223,7 +20244,7 @@
 		birth="870.1.1"
 	}
 	914.3.1 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Johannes
 	}
 	928.5.1 = {
@@ -20247,7 +20268,7 @@
 		birth="870.1.1"
 	}
 	913.7.1 = {
-	name="Landus"
+	name="Lando"
 	# AKA: Johannes
 	}
 	914.3.1 = {
@@ -20319,7 +20340,7 @@
 		birth="840.1.1"
 	}
 	900.1.1 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: Mammalus
 	}
 	903.7.1 = {
@@ -20343,7 +20364,7 @@
 		birth="840.1.1"
 	}
 	897.12.1 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Mammalus
 	}
 	900.1.1 = {
@@ -20367,7 +20388,7 @@
 		birth="840.1.1"
 	}
 	897.11.1 = {
-	name="Theodorus"
+	name="Theodore"
 	# AKA: Theodorus
 	}
 	897.12.1 = {
@@ -20415,7 +20436,7 @@
 		birth="840.1.1"
 	}
 	896.5.1 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: John
 	}
 	897.8.1 = {
@@ -20439,7 +20460,7 @@
 		birth="840.1.1"
 	}
 	896.4.4 = {
-	name="Bonifatius"
+	name="Boniface"
 	# AKA: John
 	}
 	896.5.1 = {
@@ -20487,7 +20508,7 @@
 		birth="816.1.1"
 	}
 	885.9.1 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: John
 	}
 	891.9.14 = {
@@ -20511,7 +20532,7 @@
 		birth="816.1.1"
 	}
 	884.5.15 = {
-	name="Hadrianus"
+	name="Adrian"
 	# AKA: John
 	}
 	885.9.1 = {
@@ -20535,7 +20556,7 @@
 		birth="816.1.1"
 	}
 	882.12.16 = {
-	name="Marinus"
+	name="Martin"
 	# AKA: John
 	}
 	884.5.15 = {
@@ -20559,7 +20580,7 @@
 		birth="816.1.1"
 	}
 	872.12.14 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Martin
 	}
 	882.12.16 = {
@@ -20583,7 +20604,7 @@
 		birth="792.1.1"
 	}
 	867.11.13 = {
-	name="Hadrianus"
+	name="Adrian"
 	# AKA: Martin
 	}
 	872.12.14 = {
@@ -20607,7 +20628,7 @@
 		birth="800.1.1"
 	}
 	858.4.17 = {
-	name="Nicolaus"
+	name="Nicholas"
 	# AKA: Martin
 	}
 	867.11.13 = {
@@ -20631,7 +20652,7 @@
 		birth="790.1.1"
 	}
 	855.7.17 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: Martin
 	}
 	858.4.17 = {
@@ -20703,7 +20724,7 @@
 		birth="770.1.1"
 	}
 	827.9.16 = {
-	name="Gregorius"
+	name="Gregory"
 	# AKA: Martin
 	}
 	844.1.11 = {
@@ -20727,7 +20748,7 @@
 		birth="770.1.1"
 	}
 	827.8.27 = {
-	name="Valentinus"
+	name="Valentine"
 	# AKA: Martin
 	}
 	827.9.16 = {
@@ -20751,7 +20772,7 @@
 		birth="770.1.1"
 	}
 	824.2.11 = {
-	name="Eugenius"
+	name="Eugene"
 	# AKA: Martin
 	}
 	827.8.27 = {
@@ -20775,7 +20796,7 @@
 		birth="750.1.1"
 	}
 	817.1.24 = {
-	name="Paschalis"
+	name="Paschal"
 	# AKA: Pascal
 	}
 	824.2.11 = {
@@ -20799,7 +20820,7 @@
 		birth="750.1.1"
 	}
 	816.6.12 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: Pascal
 	}
 	817.1.24 = {
@@ -20847,7 +20868,7 @@
 		birth="700.1.1"
 	}
 	772.1.24 = {
-	name="Hadrianus"
+	name="Adrian"
 	# AKA: Theodore
 	}
 	795.12.25 = {
@@ -20871,7 +20892,7 @@
 		birth="700.1.1"
 	}
 	767.6.28 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: Theodore
 	}
 	772.1.24 = {
@@ -20895,7 +20916,7 @@
 		birth="700.1.1"
 	}
 	757.4.29 = {
-	name="Paulus"
+	name="Paul"
 	# AKA: Theodore
 	}
 	767.6.28 = {
@@ -20919,7 +20940,7 @@
 		birth="700.1.1"
 	}
 	752.3.22 = {
-	name="Stephanus"
+	name="Stephen"
 	# AKA: Theodore
 	}
 	757.4.29 = {
@@ -20989,6 +21010,9 @@
 	890.1.1 = {
 		birth="890.1.1"
 	}
+	932.1.1 = {
+		add_claim=c_orvieto
+	}
 	937.1.1 = {
 		death="937.1.1"
 	}
@@ -21034,7 +21058,7 @@
 		birth="910.1.1"
 	}
 	931.3.15 = {
-	name="Ioannes"
+	name="John"
 	}
 	935.12.20 = {
 		death="935.12.20"
@@ -21074,14 +21098,27 @@
 	stewardship=8
 	religion="imperial"
 	culture="italian"
-	trait="diligent"
-	trait="patient"
-	trait="zealous"
+	trait="temperate"
+	trait="cynical"
 	trait="charismatic_negotiator"
+	trait=ambitious
 	father=7918
 	mother=7915
 	912.1.1 = {
 		birth="912.1.1"
+	}
+	935.1.1 = {
+		effect = {
+			add_rival = 7923
+			add_rival = 7915
+	}
+}
+	935.1.1 = {
+		effect = {
+				wealth = 200
+				prestige = 200
+				piety = 200
+		}
 	}
 	936.1.1 = {
 		add_spouse=7928
@@ -21181,7 +21218,7 @@
 }
 
 7930 = {
-	name="Benedictus"
+	name="Benedict"
 	dynasty=100349
 	martial=6
 	diplomacy=7
@@ -21222,7 +21259,7 @@
 		birth="937.1.1"
 	}
 	955.12.16 = {
-	name="Ioannes"
+	name="John"
 	# AKA: Octavianus
 	}
 	964.5.14 = {
@@ -21271,7 +21308,7 @@
 		birth="956.1.1"
 	}
 	1012.5.12 = {
-	name=Benedictus
+	name=Benedict
 	# AKA: Theophylact
 	}
 	1024.8.9 = {
@@ -21298,7 +21335,7 @@
 		birth="957.1.1"
 	}
 	1024.8.9 = {
-	name=Ioannes
+	name=John
 	# AKA: Romanus
 	}
 	1032.10.1 = {
@@ -21369,7 +21406,7 @@
 		birth="1012.1.1"
 	}
 	1032.10.1 = {
-	name="Benedictus"
+	name="Benedict"
 	# AKA: Theophylactus
 	}
 	1056.1.1 = {
@@ -22203,7 +22240,7 @@
 	
 	# invented family ties
 	father = 91353 # Corrado Spinola
-	mother = 167545 # Argentina Fieschi, d. of Opizzone Fieeschi and Simona.
+	# Argentina Fieschi, d. of Opizzone Fieeschi and Simona.
 	
 	1264.1.1 = {
 		birth="1264.1.1"
@@ -28672,7 +28709,7 @@
 	1108.1.2 = {
 		birth="1108.1.2"
 	}
-	1139.1.2 = {
+	1139.1.2. = {
 		death="1139.1.2"
 	}
 }
@@ -29042,7 +29079,7 @@
 
 170072= {
 	name="Francesca"
-	dynasty=13070
+	dynasty=13007
 	female=yes
 	religion="catholic"
 	culture="italian"
@@ -29245,7 +29282,7 @@
 	religion="catholic"
 	culture="italian"
 	
-	father = 91351 # Obizzo Spinola
+	father = 91350 # Obizzo Spinola
 	mother = 91352 # Béatrice, daughter of Margherita di Antiochia
 	
 	1245.1.1 = {
@@ -29793,8 +29830,8 @@
 	father = 91345 # Oberto I Spinola, consul of Genoa
 	# Sybilla della Volta
 	
-	1185.3.5 = {
-		birth = yes # unknown
+	1200.1.1={
+		birth="1200.1.1" # unknown
 	}
 	# spouse Sibilla Zaccaria
 	1260.1.1={
@@ -33883,10 +33920,10 @@
 	culture="italian"
 	father=182017
 	1240.1.1= {
-		birth=yes
+		birth="1240.1.1"
 	}
 	1301.1.1 = {
-		death=yes
+		death="1301.1"
 	}
 }
 182021 = {
@@ -34480,7 +34517,6 @@
 	religion="catholic"
 	culture="italian"
 	father=180007
-	mother=180502
 	1071.1.1={
 		birth="1071.1.1"
 	}
@@ -36720,8 +36756,7 @@
 	religion="catholic"
 	culture="italian"
 	father=91353
-	mother=167545
-	1280.1.1={
+	1290.1.1={
 		birth="1290.1.1"
 	}
 	1349.1.1={
@@ -37749,7 +37784,6 @@
 	culture="italian"
 		
 	father = 71150 # Emmanuele Doria
-	mother = 71149 # Giorgia de Lacon
 	
 	1210.1.1={
 		birth="1210.1.1"
@@ -38955,7 +38989,7 @@
 		birth="1080.1.1"
 	}
 	1100.1.1 = {
-		add_spouse=167674
+		add_spouse=167664
 	}
 	1135.1.1 = {
 		death="1135.1.1"
@@ -39910,8 +39944,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184042
-	mother=184043
+	father=184039
+	mother=184040
 	920.1.1={
 		birth=920.1.1
 	}
@@ -39939,8 +39973,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184042
-	mother=184043
+	father=184039
+	mother=184040
 	925.1.1={
 		birth=925.1.1
 	}
@@ -39955,8 +39989,8 @@
 	dynasty=1042813
 	religion=imperial
 	culture=italian
-	father=184042
-	mother=184043
+	father=184039
+	mother=184040
 	927.1.1={
 		birth=927.1.1
 	}
@@ -40699,6 +40733,9 @@
 	931.1.1 = {
 		trait=blinded
 	}
+	932.1.1 = {
+		employer=7919
+	}
 	938.1.1 = {
 		death="938.1.1"
 	}
@@ -40732,7 +40769,6 @@
 	924.1.1 = {
 		birth="924.1.1"
 	}
-	
 	940.1.1 = {
 		death="940.1.1"
 	}
@@ -40751,7 +40787,6 @@
 	925.1.1 = {
 		birth="925.1.1"
 	}
-	
 	945.1.14 = {
 		death="945.1.14"
 	}
@@ -42646,548 +42681,6 @@
 		birth=yes
 	}
 	789.1.1={
-		death=yes
-	}
-}
-
-
-194178 = {
-	name="Napoleone"
-	dynasty = 100321
-	religion = catholic
-	culture = italian
-	father = 213009
-	1180.1.1 = {
-		birth = yes
-	}
-	1245.1.1 = {
-		death = yes
-	}
-}
-
-194179 = {
-	name="Giacomo"
-	dynasty = 100355
-	religion = catholic
-	culture = italian
-	father = 213022
-	1185.1.1 = {
-		birth = yes
-	}
-	1245.1.1 = {
-		death = yes
-	}
-}
-
-194180 = {
-	name="Alberto"
-	dynasty = 100322
-	religion = catholic
-	culture = italian
-	father = 213012
-	1183.1.1 = {
-		birth = yes
-	}
-	1245.1.1 = {
-		death = yes
-	}
-}
-
-194181 = {
-	name="Iacopo"
-	dynasty = 100320
-	religion = catholic
-	culture = italian
-	father = 213008
-	1182.1.1 = {
-		birth = yes
-	}
-	1245.1.1 = {
-		death = yes
-	}
-}
-#Polo family
-166623 = {
-	name="Lorenzo" #father of Niccolo and Maffeo
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	1208.1.1={
-		birth=yes
-		employer = 32120
-	}
-	1259.1.1={
-		death=yes
-	}
-}
-166624 = {
-	name="Niccolò"
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166623
-	add_trait="quick"
-	add_trait="gregarious"
-	add_trait="socializer"
-	add_trait="fortune_builder"
-	add_trait="diligent"
-	add_trait="patient"
-	add_trait="ambitious"
-	add_trait="adventurer"
-	1230.1.1={
-		birth=yes
-		employer = 32124
-	}
-	1250.1.1={
-		add_spouse = 166626
-	}
-	1255.1.1={
-		employer = 91068
-	}#Traveled to the Latin Empire
-	1260.1.1={
-		employer = 125504
-	}#Traveled to the Golden Horde
-	1264.1.1={
-		employer = 478011
-	}#Traveled to the Ilkhanate
-	1266.1.1={
-		employer = 217266
-	}#First meeting with Kublai
-	1269.1.1={
-		employer = 32127
-	}#Return to Venice
-	1266.1.1={
-		employer = 217266
-		effect={add_friend=217266}
-	}#Return to Kublai's Court
-	1295.1.1={
-		employer = 32130
-	}#Return to Venice
-	1296.1.1={
-		death=yes
-	}
-}
-166625 = {
-	name="Maffeo"
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166623
-	add_trait="charismatic_negotiator"
-	add_trait="quick"
-	add_trait="socializer"
-	add_trait="fortune_builder"
-	add_trait="diligent"
-	add_trait="patient"
-	add_trait="ambitious"
-	add_trait="adventurer"
-	1232.1.1={
-		birth=yes
-		employer = 32124
-	}
-	1255.1.1={
-		employer = 91068
-	}#Traveled to the Latin Empire
-	1260.1.1={
-		employer = 125504
-	}#Traveled to the Golden Horde
-	1264.1.1={
-		employer = 478011
-	}#Traveled to the Ilkhanate
-	1266.1.1={
-		employer = 217266
-		effect={add_friend=217266}
-	}#First meeting with Kublai
-	1269.1.1={
-		employer = 32127
-	}#Return to Venice
-	1295.1.1={
-		employer = 32130
-	}
-	1309.1.1={
-		death=yes
-	}
-}
-166626 = {
-	name="Nicole Anna" #mother of Marco Polo
-	female=yes
-	dynasty=1040022
-	religion="catholic"
-	culture="italian"
-	1233.1.1={
-		birth=yes
-		employer = 32120
-	}
-	1260.1.1={
-		death=yes
-	}
-}
-166627 = {
-	name="Marco"
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166624
-	mother=166626
-	add_trait="grey_eminence"
-	add_trait="charitable"
-	add_trait="genius"
-	add_trait="siege_leader"
-	add_trait="gregarious"
-	add_trait="socializer"
-	add_trait="diligent"
-	add_trait="patient"
-	add_trait="ambitious"
-	add_trait="adventurer"
-	1254.9.15={
-		birth=yes
-		employer = 32126
-	}
-	1266.1.1={
-		employer = 217266
-		effect={add_friend=217266}
-	}#Journey to Kublai's Court
-	1295.1.1={
-		employer = 32130
-	}#Return to Venice
-	1300.1.1={
-		add_spouse = 166628
-	}
-	1324.1.9={
-		death=yes
-	}
-}
-166628 = {
-	name="Donata" #wife of Marco Polo
-	female=yes
-	dynasty=1040023
-	religion="catholic"
-	culture="italian"
-	1273.1.1={
-		birth=yes
-		employer = 32127
-	}
-	1342.1.1={
-		death=yes
-	}
-}
-166629 = {
-	name="Fantina"
-	female=yes
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166627
-	mother=166628
-	1301.1.1={
-		birth=yes
-	}
-	1354.1.1={
-		death=yes
-	}
-}
-166630 = {
-	name="Bellela"
-	female=yes
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166627
-	mother=166628
-	1303.1.1={
-		birth=yes
-	}
-	1359.1.1={
-		death=yes
-	}
-}
-166631 = {
-	name="Moreta"
-	female=yes
-	dynasty=1040021
-	religion="catholic"
-	culture="italian"
-	father=166627
-	mother=166628
-	1306.1.1={
-		birth=yes
-	}
-	1365.1.1={
-		death=yes
-	}
-}
-
-214090 = {
-	name="Leonardo"
-	dynasty=214020 # Fibonacci
-	religion="catholic"
-	culture="italian"
-	trait=genius
-	trait=scholar
-	trait=erudite
-	learning=12
-	1170.1.1={
-		birth=yes
-		employer=71168
-	}
-	1174.1.1={ employer=167443 }
-	1190.1.1={ employer=167512 }
-	1215.1.1={ employer=167410 }
-	1220.1.1={ employer=180026 }
-	1222.1.1={ employer=71166  }
-	1230.1.1={ employer=167453 }	
-	1245.1.1={
-		death=yes
-	}
-}
-
-214091 = {
-	name="Durante" # Dante
-	dynasty=214021 # degli Alighieri
-	religion="catholic"
-	culture="italian"
-	trait=genius
-	trait=poet
-	trait=mastermind_theologian
-	trait=erudite
-	learning=12
-	1265.6.1={
-		birth=yes
-		employer=7636
-	}
-	1266.2.26={ employer=455406 }
-	1280.1.1= { employer=73411 }
-	1300.1.1= { employer=73412	}
-	1302.3.1= { employer=70802 } # Verona
-	1308.1.1= { employer=412072 } # Parma
-	1318.1.1= { employer=73551 } # Ravenna 
-	1321.9.13={
-		death=yes
-	}
-}
-
-214092 = {
-	name="Franceso" # Petrarch
-	dynasty=214022
-	religion="catholic"
-	culture="italian"
-	trait=genius
-	trait=poet
-	trait=scholar
-	trait=erudite
-	learning=12
-	1304.7.20={
-		birth=yes
-		employer=73412 # Florence
-	}
-	1309.1.1 = { employer=71837 } # Papacy
-	1314.4.20 ={ employer=71838 }
-	1334.12.20={ employer=478501}
-	1374.7.19={
-		death=yes
-	}
-}
-
-214093 = {
-	name="Giovanni"
-	dynasty=214023 # Boccaccio
-	religion="catholic"
-	culture="italian"
-	trait=genius
-	trait=poet
-	trait=scholar
-	trait=erudite
-	learning=12
-	1313.1.1={
-		birth=yes
-		employer=461700 # Florence/Naples
-	}
-	1375.12.21={
-		death=yes
-	}
-}
-
-214094 = {
-	name="Tomasso" # St Thomas Aquinas
-	dynasty=8682
-	father=214095
-	religion="catholic"
-	culture="italian"
-	trait=genius
-	trait=scholar
-	trait=erudite
-	learning=15
-	1225.1.1={
-		birth=yes
-	}
-	1274.3.7={
-		death=yes
-	}
-}
-
-214095 = {
-	name="Landolfo"
-	dynasty=8682
-	father=214096
-	religion="catholic"
-	culture="italian"
-	1160.1.1={
-		birth=yes
-	}
-	1245.12.24={
-		death=yes
-	}
-}
-
-214096 = {
-	name="Aimone"
-	dynasty=8682
-	father=214097
-	religion="catholic"
-	culture="italian"
-	1135.1.1={
-		birth=yes
-	}
-	1195.1.1={
-		death=yes
-	}
-}
-
-214097 = {
-	name="Rinaldo"
-	dynasty=8682
-	father=214098
-	religion="catholic"
-	culture="italian"
-	1100.1.1={
-		birth=yes
-	}
-	1160.1.1={
-		death=yes
-	}
-}
-
-214098 = {
-	name="Landone" # IV
-	dynasty=8682
-	father=214099
-	religion="catholic"
-	culture="italian"
-	1080.1.1={
-		birth=yes
-	}
-	1137.1.1={
-		death=yes
-	}
-}
-
-214099 = {
-	name="Landone" # III
-	dynasty=8682
-	father=214105
-	culture="italian"
-	religion="catholic"
-	1055.1.1={
-		birth=yes
-	}
-	1123.1.1={
-		death=yes
-	}
-}
-
-214100 = {
-	name="Pandolfo"
-	dynasty=8682
-	father=214098
-	religion="catholic"
-	culture="italian"
-	1105.1.1={
-		birth=yes
-	}
-	1157.1.1={
-		death=yes
-	}
-}
-
-214101 = {
-	name="Landolfo"
-	dynasty=8682
-	father=214100
-	religion="catholic"
-	culture="italian"
-	1130.1.1={
-		birth=yes
-	}
-	1196.10.6={
-		death=yes
-	}
-}
-
-214102 = {
-	name="Adenolfo" # II
-	dynasty=8682
-	father=214101
-	religion="catholic"
-	culture="italian"
-	1150.1.1={
-		birth=yes
-	}
-	1210.1.1={
-		death=yes
-	}
-}
-
-214103 = {
-	name="Tomasso"
-	dynasty=8682
-	father=214102
-	religion="catholic"
-	culture="italian"
-	1175.1.1={
-		birth=yes
-	}
-	1251.1.1={
-		death=yes
-	}
-}
-
-214104 = {
-	name="Adenolfo" # III
-	dynasty=8682
-	father=214103
-	religion="catholic"
-	culture="italian"
-	1200.1.1={
-		birth=yes
-	}
-	1263.1.1={
-		death=yes
-	}
-}
-
-214105 = {
-	name="Landone" # II
-	dynasty=8682
-	father=214106
-	culture="italian"
-	religion="catholic"
-	1030.1.1={
-		birth=yes
-	}
-	1093.1.1={
-		death=yes
-	}
-}
-
-214106 = {
-	name="Atenolfo" # II
-	dynasty=8682
-	culture="italian"
-	religion="catholic"
-	1000.1.1={
-		birth=yes
-	}
-	1062.2.2={
 		death=yes
 	}
 }

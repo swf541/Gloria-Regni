@@ -1,0 +1,116 @@
+2001010084 = {
+	name="Boyan"
+	dynasty=8636
+	religion="bogomilist"
+	properties="efgbag"
+	culture="bulgarian"
+	trait="possessed"
+	trait="wroth"
+	trait="mystic"
+	trait="strong"
+	trait="lustful"
+	trait="temperate"
+	trait="cynical"
+	trait="scholarly_theologian"
+	father=712
+	915.1.1={
+		birth="915.1.1"
+	}
+	927.1.1={
+		add_claim = k_bulgaria
+	}
+	935.1.1={
+		effect =  { add_character_modifier = { name = wolf_blood duration = -1 } }
+} 
+	968.1.1={
+		death="968.1.1"
+	}
+}
+2001010085 = {
+	name="Nikola"
+	dynasty=101561
+	religion="imperial"
+	properties="caddad"
+	culture="bulgarian"
+	trait="charismatic_negotiator"
+	913.1.1={
+		birth="913.1.1"
+	}
+	978.1.1={
+		death="978.1.1"
+	}
+}
+2001010089 = {
+	name="Samuel"
+	dynasty=8636
+	religion="imperial"
+	properties="aabbcc"
+	culture="bulgarian"
+	900.1.1={
+		birth="900.1.1"
+	}
+	970.1.1={
+		death="970.1.1"
+	}
+}
+2001010093 = {
+	name="Ivan"
+	dynasty=8636
+	religion="imperial"
+	properties="bagefg"
+	culture="bulgarian"
+	trait="ambitious"
+	trait="deceitful"
+	trait="misguided_warrior"
+	father=712
+	913.1.1={
+		birth="913.1.1"
+	}
+	927.1.1={
+		add_claim = k_bulgaria
+	}
+	935.1.1={
+		employer= 1706
+	}
+	968.1.1={
+		death="968.1.1"
+	}
+}
+2001010104 = {
+	name = "Cosmas"
+	dynasty = 0
+	religion ="imperial"
+	culture ="bulgarian"
+	learning=10
+	trait = zealous
+	trait = mastermind_theologian
+	trait=scholar
+	865.1.1 = {
+		birth = yes
+	}
+	935.1.1 = {
+		employer = 714 # Petar
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+2001010105 = {
+	name = "George Sursuvul"
+	dynasty = 591
+	religion ="imperial"
+	culture ="bulgarian"
+	Diplomacy=10
+	trait = content
+	trait = grey_eminence
+	trait = gregarious
+	855.1.1 = {
+		birth = yes
+	}
+	935.1.1 = {
+		employer = 714 # Petar
+	}
+	945.1.1 = {
+		death = yes
+	}
+}

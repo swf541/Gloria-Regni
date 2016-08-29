@@ -394,6 +394,7 @@
 	}
 }
 
+
 157205 = {
 	name="Henrik"
 	dynasty=1031017
@@ -416,50 +417,14 @@
 	trait = "diligent"
 	trait = "cynical"
 	
-	1037.6.29={
-		birth=yes
-	}
-	1066.1.1={
-		employer = 20015
-		add_spouse = 157240
-	}
-	1066.9.16={
-		death=yes
-	}
-}
-
-157240 = {
-	name="Emilie"
-	dynasty=1031030
-	female = yes
-	
-	religion="norse_pagan"
-	culture="italian"
-	
-	dna="cebaggbdaap"
-	properties="0i0cad"
-	
-	martial = 8
-	diplomacy = 6
-	intrigue = 9
-	stewardship = 3
-	learning = 9
-	
-	trait = "elusive_shadow"
-	trait = "fair"
-	trait = "gregarious"
-	trait = "lustful"
-	trait = "proud"
-	trait = "cynical"
-	
-	1049.8.21={
-		birth=yes
+	1050.6.29={
+		birth="1050.6.29"
 	}
 	1066.1.1={
 		employer = 20015
 	}
 	1066.9.16={
-		death=yes
+		death="1066.9.16"
 	}
 }
 
@@ -828,7 +793,7 @@
 	name="Henrik"
 	dynasty=862 #Vogelius
 	religion="norse_pagan"
-	culture="norse"
+	culture="swedish"
 	father=157229
 	
 	trait = "lustful"
@@ -855,8 +820,6 @@
 	
 	trait = "cynical"
 	trait = "possessed"
-	
-	disallow_random_traits = yes
 
 	1033.2.7={
 		birth="1033.2.7"
@@ -875,17 +838,15 @@
 	religion="norse_pagan"
 	culture="swedish"
 	
-	trait = tough_soldier
-	trait = poet
-	trait = scholar
-	trait = cynical
-	trait = ambitious
-	trait = strategist
+	trait = "poet"
+	trait = "lustful"
+	trait = "cynical"
+	trait = "ambitious"
 	
 	disallow_random_traits = yes
 
 	1033.2.7={
-		birth="1033.3.3"
+		birth="1033.2.7"
 	}
 	1066.1.1={
 		employer = 100546 #Uppsala
@@ -897,7 +858,7 @@
 
 157223 = {
 	name="Rufus"
-	dynasty=1043303 #Trönde
+	dynasty=1043303863 #Trönde
 	religion="norse_pagan"
 	culture="norse"
 	
@@ -907,7 +868,7 @@
 		birth="1033.2.7"
 	}
 	1066.1.1={
-		employer = 102532 #Nordtröndelag...
+		employer = 102531 #Tröndelag...
 	}
 	1066.9.16={
 		death="1066.9.16"
@@ -1061,21 +1022,16 @@
 	dynasty=870 #Tisander
 	religion="catholic"
 	culture="german"
-	properties = ce0ddd00000
 	
 	trait = "thrifty_clerk"
 	trait = "honest"
 	trait = "diligent"
 	trait = "patient"
 	trait = "greedy"
-	trait = "just"
+	trait = "cruel"
 	trait = "organizer"
 	trait = "twin"
-	trait = "administrator"
-	trait = "humble"
-	
-	disallow_random_traits = yes
-	
+
 	1033.2.7={
 		birth="1033.2.7"
 	}
@@ -1101,8 +1057,6 @@
 	trait = "charitable"
 	trait = "slothful"
 	trait = "trickster"
-	
-	disallow_random_traits = yes
 
 	1033.2.7={
 		birth="1033.2.7"
@@ -1115,486 +1069,51 @@
 	}
 }
 
+157232 = {
+	name="Karl"
+	dynasty=0 # Father to get "Karlsson" for 157308
+	religion="norse_pagan"
+	culture="norse"
+	
+	1007.2.1={
+		birth="1007.2.1"
+	}
+	1066.1.1={
+		employer = 20005 #Dalarna
+	}
+	1066.1.2={
+		death="1063.9.16"
+	}
+}
+
 157233 = {
 	name= "Magnus"
 	dynasty=872
 	religion="norse_pagan"
 	culture="norse"
+	father = 157232
 	
-	trait = mastermind_theologian
-	trait = homosexual
-	trait = patient
-	trait = quick
-	trait = kind
-	trait = cynical
-	trait = lustful
-	dna="afjgbrcdebk"
-	properties="ae00jd000000"
-	
-	disallow_random_traits = yes
+	trait = "scholarly_theologian"
+	trait = "lustful"
+	trait = "kind"
+	trait = "patient"
+	trait = "homosexual"
+	trait = "quick"
 	
 	1043.5.9={
 		birth="1043.5.9"
 	}
 	1066.1.1={
-		employer = 100546 #Uppsala
+		employer = 20005 #Dalarna
 	}
 	1066.9.16={
 		death="1066.9.16"
 	}
 }
-194335 = {
-	name="Peter"
-	dynasty=875 # Skager
-	religion="buddhist"
-	culture="cuman"
-	dna="cjihinfcbcm"
-	properties="kd0aod000000"
-	
-	diplomacy = 5
-	martial = 9
-	stewardship = 5
-	intrigue = 5
-	learning = 5
 
-	trait = skilled_tactician
-	trait = diligent
-	trait = depressed
-	trait = wounded
-	trait = ambitious
-	trait = trusting
-	trait = gamer
-	trait = patient
-	trait = honest
-	
-	disallow_random_traits = yes
 
-	1043.11.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 217185 #Gobi
-		culture = khitan
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194336 = {
-	name="Daniel"
-	dynasty=876 # Sjöberg
-	religion="catholic"
-	culture="swedish"
-	dna="cjhcebcdaci"
-	properties="ca0ejd0b000"
-	
-	diplomacy = 5
-	martial = 9
-	stewardship = 5
-	intrigue = 5
-	learning = 5
 
-	trait = fortune_builder
-	trait = schemer
-	trait = cynical
-	trait = ambitious
-	trait = proud
-	trait = wounded
-	
-	disallow_random_traits = yes
 
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 100546 # Uppland
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194337 = {
-	name="Olga"
-	dynasty=877 # Koter
-	religion="catholic"
-	culture="polish"
-	dna="aemedoeecch"
-	properties="cb0dgk00000"
-	female=yes
-	
-	diplomacy = 7
-	martial = 5
-	stewardship = 5
-	intrigue = 5
-	learning = 5
-
-	trait = intricate_webweaver
-	trait = deceitful
-	trait = schemer
-	trait = lustful
-	trait = paranoid
-	
-	disallow_random_traits = yes
-
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 764 # Warsaw
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194338 = {
-	name="Anna"
-	dynasty=878 # Jenelius
-	religion="catholic"
-	culture="irish"
-	dna="ddjcfufdfcx"
-	properties="ce0dak00000"
-	female=yes
-	
-	trait = underhanded_rogue
-	trait = poet
-	trait = gamer
-	trait = fair
-	
-	disallow_random_traits = yes
-
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 6120 # Cill Dara
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194339 = {
-	name="Eira"
-	dynasty=879 # von Eikenschild
-	religion="catholic"
-	culture="german"
-	female=yes
-	
-	trait = intricate_webweaver
-	trait = hedonist
-	trait = scarred
-	trait = strong
-	trait = wroth
-	trait = proud
-	trait = ambitious
-	trait = cynical
-	
-	disallow_random_traits = yes
-
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 101546 # Bornholm
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194340 = {
-	name="Carl"
-	dynasty=880 # von Carenwall
-	religion="catholic"
-	culture="german"
-	
-	trait = tough_soldier
-	trait = lustful
-	trait = cynical
-	trait = hedonist
-	
-	disallow_random_traits = yes
-
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 201530 # Fyn
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194341 = {
-	name="Ilya"
-	dynasty=881 # Woewodskij
-	religion="jewish"
-	culture="polish"
-	
-	diplomacy = 7
-	martial = 5
-	stewardship = 6
-	intrigue = 2
-	learning = 9
-
-	trait = tough_soldier
-	trait = ambitious
-	
-	disallow_random_traits = yes
-
-	1033.2.7 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 8400 # Lübeck/Liubice
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194342 = {
-	name="Joel"
-	dynasty=882 #Brock
-	religion=norse_pagan
-	culture=norse
-	dna="ajigcweddbz"
-	father=157229
-
-	trait = scholarly_theologian
-	trait = slothful
-	trait = kind
-	trait = patient
-	trait = craven
-	trait = shy
-	trait = content
- 
-	1040.2.19 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 168643 #Skåne
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194343 = {
-	name="Alexander"
-	dynasty=873 # Oltner
-	religion="catholic"
-	culture="swedish"
-	dna="chjbjjfegbg"
-	properties="ae0aha00000"
-	
-	diplomacy = 0
-	
-	trait = charismatic_negotiator
-	trait = gamer
-	trait = gluttonous
-	trait = kind
-	trait = patient
-	trait = trusting
-	trait = content
-	trait = honest
-	trait = gregarious
-	trait = cynical
-	
-	disallow_random_traits = yes
-
-	1041.9.15 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 100536 # Visby
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-194344 = {
-	name="Leonardo"
-	dynasty=874 # Larzone
-	religion="catholic"
-	culture="italian"
-	properties="ed0did0d000"
-	
-	diplomacy = 5
-	martial = 2
-	stewardship = 2
-	intrigue = 1
-	learning = 4
-
-	trait = flamboyant_schemer
-	trait = fair
-	trait = kinslayer
-	trait = seducer
-	trait = schemer
-	trait = hedonist
-	trait = lustful
-	trait = arbitrary
-	trait = gregarious
-	trait = cynical
-	trait = deceitful
-	trait = craven
-	trait = cruel
-	trait = wounded
-	
-	disallow_random_traits = yes
-
-	1033.3.3 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 7757 # Tuscany/Firenze
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-
-217397 = {
-	name = Victor
-	dynasty = 883
-	religion = finnish_pagan
-	culture = finnish
-	dna = caafgwijgbq
-	properties = ec0chd000000
-	
-	trait = elusive_shadow
-	trait = deceitful
-	trait = cynical
-	trait = patient
-	trait = envious
-	trait = gregarious
-	trait = lustful
-	trait = hedonist
-	trait = fair
-	
-	1041.8.20 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 28004 
-	}
-	1066.9.16 = {
-		death = yes
-	}
-	
-}
-
-217398 = {
-	name = Anna
-	dynasty = 1053017 #Norrevik
-	religion = catholic
-	culture = swedish
-	dna="bhjjhaibgbi"
-	properties="aa0bec000000"
-	female = yes
-	
-	trait = midas_touched
-	trait = honest
-	trait = just
-	trait = patient
-	trait = gregarious
-	trait = stubborn
-	trait = fair
-	
-	1041.8.20 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 20014 
-	}
-	1066.9.16 = {
-		death = yes
-	}
-	
-}
-
-217399 = {
-	name = Markus
-	dynasty = 1053018 #Olsén
-	religion = catholic
-	culture = lappish
-	dna="acigbwbbfcg"
-	properties="ma0ehd00000000"
-	
-	trait = deceitful
-	trait = cynical
-	trait = envious
-	trait = strong
-	trait = lustful
-	trait = intricate_webweaver
-	
-	1034.9.17 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 102575
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
-
-217400 = {
-	name = Milla
-	dynasty = 1053019
-	religion = finnish_pagan
-	culture = finnish
-	dna = "defbgvhcecb"
-	properties = "cj0egk00000000"
-	female = yes
-
-	trait = charismatic_negotiator
-	trait = poet
-	trait = gardener
-	trait = patient
-	trait = shy
-	trait = lustful
-	trait = shrewd
-	trait = brave
-	trait = honest
-	trait = proud
-	trait = scarred
-
-	1041.8.20 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 28618 #Kemi
-	}
-	1066.9.16 = {
-		death = yes
-	}	
-}
-
-217401 = {
-	name = Mathilda
-	dynasty = 1053020 #Bjarnehed
-	religion = catholic
-	culture = swedish
-	dna = ahbeghjfeco
-	properties = ad0bfc00000000
-	female = yes
-
-	trait = scholarly_theologian
-	trait = quick
-	trait = scholar
-	trait = diligent
-	trait = kind
-	trait = wroth
-	trait = trusting
-	trait = erudite
-
-	1042.9.13 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 100522
-	}
-	1066.9.16 = {
-		death = yes
-	}
-}
 
 # Sword of Islam AAR Winners
 
@@ -1796,311 +1315,4 @@
 	}
 }
 
-# Royal Edition Courtiers
-217293 = {
-	name = "Uhtred"
-	dynasty = 1051126 # of Bebbanburg
-	dna="elmxzqfgfnj"
-	properties="ce0dbd000000"
-	religion = norse_pagan
-	culture = norse
-	
-	diplomacy = 3
-	martial = 6
-	stewardship = 3
-	intrigue = 2
-	learning = 4
-	
-	trait = brave
-	trait = proud
-	trait = temperate
-	trait = arbitrary
-	trait = cynical
-	trait = tough_soldier
-	
-	disallow_random_traits = yes
-	
-	844.5.17 = {
-		birth = yes
-	}
-	867.1.1 = {
-		employer = 163110
-	}
-	867.1.2 = {
-		death = yes
-	}
-}
-217294 = {
-	name = Augusta
-	dynasty = 1051127 # Corvina
-	dna="agdearbadat"
-	properties="ci0edk000000"
-	female = yes
-	religion = imperial
-	culture = italian
-	
-	diplomacy = 2
-	martial = 3
-	stewardship = 5
-	intrigue = 3
-	learning = 5
-	
-	trait = genius
-	trait = homosexual
-	trait = gregarious
-	trait = cynical
-	trait = ambitious
-	trait = deceitful
-	trait = arbitrary
-	trait = stressed
-	trait = grey_eminence
-	
-	disallow_random_traits = yes
-	
-	749.4.17 = {
-		birth = yes
-	}
-	769.1.1 = {
-		employer = 145879
-	}
-	769.1.2 = {
-		death = yes
-	}
-}
-217295 = {
-	name = Christopher
-	dynasty = 1051128 # Todd
-	dna="cegccycbabr"
-	properties="aj0bfd000000"
-	religion = imperial
-	culture = pictish
-	
-	diplomacy = 4
-	martial = 3
-	stewardship = 5
-	intrigue = 4
-	learning = 3
-	
-	trait = quick
-	trait = duelist
-	trait = honest
-	trait = shy
-	trait = just
-	trait = tough_soldier
-	
-	disallow_random_traits = yes
-	
-	747.11.18 = {
-		birth = yes
-	}
-	769.1.1 = {
-		employer = 166614
-	}
-	769.1.2 = {
-		death = yes
-	}
-}
-217296 = {
-	name = Zhenye
-	dynasty = 1051129 # Blackbird
-	religion = slavic_pagan
-	culture = volhynian
-	
-	diplomacy = 3
-	martial = 3
-	stewardship = 3
-	intrigue = 3
-	learning = 3
-	
-	trait = strong
-	trait = genius
-	trait = fair
-	trait = brave
-	trait = charitable
-	trait = gamer
-	trait = strategist
-	trait = wounded
-	trait = grey_eminence
-	
-	disallow_random_traits = yes
-	
-	750.6.28 = {
-		birth = yes
-	}
-	769.1.1 = {
-		employer = 194139 
-	}
-	769.1.2 = {
-		death = yes
-	}
-}
-217297 = {
-	name = William
-	dynasty = 1051130 # Turnbull
-	dna="bfjcawjdhcy"
-	properties="cb0dfk000000"
-	religion = catholic
-	culture = scottish
-	
-	diplomacy = 2 
-	martial = 6
-	stewardship = 3
-	intrigue = 7
-	learning = 4
-	
-	trait = strong
-	trait = brave
-	trait = arbitrary
-	trait = wroth
-	trait = tough_soldier
-	
-	disallow_random_traits = yes
 
-	1294.8.21 = {
-		birth = yes
-	}
-	1294.8.21 = {
-		employer = 453600
-	}
-	1298.1.1={
-		employer = 453603
-	}
-	1330.8.25={
-		employer = 453605
-	}
-	1333.1.1={
-		employer = 453607
-	}
-	1338.1.1 = {
-		death = yes
-	}
-}
-217300 = {
-	name = Thomas
-	dynasty = 1051131 # Byrrnesson
-	dna="aggigdcefag"
-	properties="tg0egk000000"
-	religion = norse_pagan
-	culture = norse
-	
-	diplomacy = 4
-	martial = 3
-	stewardship = 5
-	intrigue = 4
-	learning = 3
-	
-	trait = quick
-	trait = hunter
-	trait = patient
-	trait = brave
-	trait = ambitious
-	trait = lustful
-	trait = skilled_tactician
-	
-	disallow_random_traits = yes
-	
-	743.11.21 = {
-		birth = yes
-	}
-	769.1.1 = {
-		employer = 194012
-	}
-	769.1.2 ={
-		death = yes
-	}
-}
-217301 = {
-	name = Henri
-	dynasty = 1051132 # d'Aubergine
-	dna="cdibebiicbq"
-	properties="cd0ebk000000"
-	religion = imperial
-	culture = old_frankish
-	
-	diplomacy = 4
-	martial = 3
-	stewardship = 5
-	intrigue = 4
-	learning = 3
-	
-	trait = charismatic_negotiator
-	
-	health = 7
-	
-	738.5.10 = {
-		birth = yes
-	}
-	769.1.1 = {
-		employer = 91491
-	}
-	769.1.2 = {
-		death = yes
-	}
-}
-217332 = {
-	name = Mohammed
-	dynasty = 1051146 # Hanaya
-	dna="akedgsmfaaz"
-	properties="jm0egk000000"
-	religion = sunni
-	culture = bedouin_arabic
-	
-	trait = mirza
-	
-	846.5.12 = {
-		birth = yes
-	}
-	867.1.1 = {
-		employer = 155149 # Acre
-	}
-	867.1.2 = {
-		death = yes
-	}
-}
-217333 = {
-	name = Wyatt
-	dynasty = 1051147 # Mateski
-	dna="cfajirabaar"
-	properties="cm0ehk000000"
-	religion = imperial
-	culture = greek
-	
-	850.3.17 = {
-		birth = yes
-	}
-	867.1.1 = {
-		employer = 145111 # Nikaea
-	}
-	867.1.2 = {
-		death = yes
-	}
-}
-217334 = {
-	name = Bruce
-	dynasty = 1051148 # Bruce
-	dna="cccahabbdcp"
-	properties="cdpiei000000"
-	religion = catholic
-	culture = scottish
-	
-	trait = intricate_webweaver
-	trait = schemer
-	trait = gardener
-	trait = cynical
-	
-	diplomacy = 5
-	martial = 5
-	stewardship = 5
-	intrigue = 8
-	learning = 5
-	
-	1045.2.18 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = 131002 # Fife
-	}
-	1066.9.16={
-		death="1066.9.16"
-	}
-}

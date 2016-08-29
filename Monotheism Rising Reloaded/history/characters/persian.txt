@@ -336,15 +336,16 @@
 }
 
 20703 = {
-	name="Unsur al-Ma'ali"
+	name="Keikavus"
 	# AKA: Unsur al
 	dynasty=101689
 	martial=7
 	diplomacy=8
 	intrigue=7
 	stewardship=7
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
+	father=14403106
 	trait="thrifty_clerk"
 	trait="scholar"
 	1021.1.1={
@@ -355,134 +356,9 @@
 	}
 }
 
-220996 = {
-	name="Shahriyar"
-	dynasty=7331
-	father=160295
-	martial=5
-	diplomacy=4
-	intrigue=3
-	stewardship=8
-	trait="thrifty_clerk"
-	trait="charitable"
-	religion="zoroastrian"
-	culture="persian"
-	897.7.19={
-		birth=yes
-	}
-	970.12.10={
-		death=yes
-	}
-}
-
-220995 = {
-	name="Rostam"
-	dynasty=7331
-	father=160295
-	martial=7
-	diplomacy=3
-	intrigue=8
-	stewardship=4
-	trait="tough_soldier"
-	trait="arbitrary"
-	religion="shiite"
-	culture="persian"
-	901.2.28={
-		birth=yes
-	}
-	979.10.12={
-		death=yes
-	}
-}
-
-220994 = {
-	name="Al-Marzuban"
-	dynasty=7331
-	father=220995
-	martial=2
-	diplomacy=4
-	intrigue=3
-	stewardship=6
-	learning=9
-	trait="charismatic_negotiator"
-	trait="just"
-	religion="shiite"
-	culture="persian"
-	931.9.12={
-		birth=yes
-	}
-	1006.10.12={
-		death=yes
-	}
-}
-
-
-220992 = {
-	name="Vandarin"
-	dynasty=7331
-	father=220995 #fictional connection
-	martial=4
-	diplomacy=5
-	intrigue=7
-	stewardship=2
-	learning=2
-	trait="charismatic_negotiator"
-	trait="kind"
-	religion="shiite"
-	culture="persian"
-	934.9.12={
-		birth=yes
-	}
-	997.10.12={
-		death=yes
-	}
-}
-
-220993 = {
-	name="Abu Ja'far Muhammad"
-	dynasty=7331
-	father=220992
-	martial=2
-	diplomacy=8
-	intrigue=4
-	stewardship=6
-	learning=4
-	trait="charismatic_negotiator"
-	trait="honest"
-	religion="shiite"
-	culture="persian"
-	964.4.20={
-		birth=yes
-	}
-	1029.11.21={
-		death=yes
-	}
-}
-
-220991 = {
-	name="Sharyab" #Fictional character
-	dynasty=7331
-	father=220992
-	martial=2
-	diplomacy=2
-	intrigue=3
-	stewardship=1
-	learning=1
-	trait="indulgent_wastrel"
-	religion="shiite"
-	culture="persian"
-	971.8.12={
-		birth=yes
-	}
-	1062.11.9={
-		death=yes
-	}
-}
-
 20704 = {
 	name="Qarin"
 	dynasty=7331
-	father=220991
 	martial=7
 	diplomacy=8
 	intrigue=7
@@ -981,7 +857,7 @@
 			spawn_unit = {
 				province = 633 # Gurgan
 				owner = ROOT
-				#leader = ROOT
+				leader = ROOT
 				troops = {
 					light_infantry = { 625 625 }
 					heavy_infantry = { 479 479 }
@@ -1009,7 +885,7 @@
 				spawn_unit = {
 					province = 633 # Gurgan
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
 						light_infantry = { 625 625 }
 						heavy_infantry = { 479 479 }
@@ -1038,7 +914,7 @@
 				spawn_unit = {
 					province = 633 # Gurgan
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
 						light_infantry = { 625 625 }
 						heavy_infantry = { 479 479 }
@@ -1404,26 +1280,99 @@
 		death="1346.1.1"
 	}
 }
-
-93132 = {
-	name="Shansabani"
+93132001 = {
+	name="Amir Suri"
 	dynasty=791
-	religion="sunni"
+	properties="cbadeg"
+	religion="zun_pagan"
 	culture="persian"
-	930.1.1={
-		birth="930.1.1"
+	trait = skilled_tactician
+	trait=brave
+	trait=strong
+	trait=proud
+	trait=greedy
+	trait=just
+	trait=sympathy_indian
+	trait=sympathy_islam
+	910.1.1={
+		birth=yes
 	}
-	980.1.1={
-		death="980.1.1"
+	935.1.1={
+		# Last light of the Zun
+		effect = {
+				wealth = 200
+				spawn_unit = {
+				province = 907 # Mandesh
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					heavy_infantry = { 500 500 }
+					archers = { 200 200 }
+				}
+				attrition = 1.0
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 23
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 907 # Mandesh
+					owner = ROOT
+					leader = THIS
+					troops = {
+						heavy_infantry = { 500 500 }
+						archers = { 200 200 }
+					}
+					attrition = 1.0
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 27
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 907 # Mandesh
+					owner = ROOT
+					leader = THIS
+					troops = {
+						heavy_infantry = { 500 500 }
+						archers = { 200 200 }
+					}
+					attrition = 1.0
+				}
+			}
+		}
+	}
+	995.1.1={
+		death=yes
 	}
 }
 
 93133 = {
 	name="Muhammad"
 	dynasty=791
-	religion="sunni"
+	religion="zun_pagan"
 	culture="persian"
-	father=93132
+	father=93132001
+	mother=1004460096
 	960.1.1={
 		birth="960.1.1"
 	}
@@ -2266,6 +2215,32 @@
 	}
 }
 
+93194= {
+	name="Sorgan Sira"
+	dynasty=101912
+	religion="tengri_pagan"
+	culture="mongol"
+	1200.1.1={
+		birth="1200.1.1"
+	}
+	1250.1.1={
+		death="1250.1.1"
+	}
+}
+
+93195= {
+	name="Sorgan Sira"
+	dynasty=101912
+	religion="tengri_pagan"
+	culture="mongol"
+	1224.1.1={
+		birth="1224.1.1"
+	}
+	1277.1.1={
+		death="1277.1.1"
+	}
+}
+
 93258 = {
 	name="Baraq Hajib"
 	dynasty=7337
@@ -2911,7 +2886,7 @@
 93303 = {
 	name="Sadr al-Din Musa"
 	dynasty=7340
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
 	father=93300
 	mother=93302
@@ -2940,7 +2915,7 @@
 			spawn_unit = {
 				province = 902 # Dashhowuz
 				owner = ROOT
-				#leader = ROOT
+				leader = ROOT
 				troops = {
 					light_infantry = { 277 277 }
 					heavy_infantry = { 244 244 }
@@ -2965,7 +2940,7 @@
 				spawn_unit = {
 					province = 902 # Dashhowuz
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
 						light_infantry = { 277 277 }
 						heavy_infantry = { 244 244 }
@@ -2991,7 +2966,7 @@
 				spawn_unit = {
 					province = 902 # Dashhowuz
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
 						light_infantry = { 277 277 }
 						heavy_infantry = { 244 244 }
@@ -3047,15 +3022,15 @@
 			spawn_unit = {
 				province = 906 # Birjand
 				owner = ROOT
-				#leader = ROOT
+				leader = ROOT
 				troops = {
-					light_infantry = { 99 99 }
-					heavy_infantry = { 83 83 }
-					pikemen = { 20 20 }
-					archers = { 47 47 }
-					light_cavalry = { 37 37 }
-					knights = { 16 16 }
-					horse_archers = { 23 23 }
+					light_infantry = { 1992 1992 }
+					heavy_infantry = { 1664 1664 }
+					pikemen = { 397 397 }
+					archers = { 969 969 }
+					light_cavalry = { 755 755 }
+					knights = { 46 46 }
+					horse_archers = { 90 90 }
 				}
 				attrition = 1.0
 			}
@@ -3075,15 +3050,15 @@
 				spawn_unit = {
 					province = 906 # Birjand
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
-						light_infantry = { 99 99 }
-						heavy_infantry = { 83 83 }
-						pikemen = { 20 20 }
-						archers = { 47 47 }
-						light_cavalry = { 37 37 }
-						knights = { 16 16 }
-						horse_archers = { 23 23 }
+						light_infantry = { 1992 1992 }
+						heavy_infantry = { 1664 1664 }
+						pikemen = { 397 397 }
+						archers = { 969 969 }
+						light_cavalry = { 755 755 }
+						knights = { 46 46 }
+						horse_archers = { 90 90 }
 					}
 					attrition = 1.0
 				}
@@ -3104,15 +3079,15 @@
 				spawn_unit = {
 					province = 906 # Birjand
 					owner = ROOT
-					#leader = THIS
+					leader = THIS
 					troops = {
-						light_infantry = { 99 99 }
-						heavy_infantry = { 83 83 }
-						pikemen = { 20 20 }
-						archers = { 47 47 }
-						light_cavalry = { 37 37 }
-						knights = { 16 16 }
-						horse_archers = { 23 23 }
+						light_infantry = { 1992 1992 }
+						heavy_infantry = { 1664 1664 }
+						pikemen = { 397 397 }
+						archers = { 969 969 }
+						light_cavalry = { 755 755 }
+						knights = { 46 46 }
+						horse_archers = { 90 90 }
 					}
 					attrition = 1.0
 				}
@@ -3153,6 +3128,35 @@
 	}
 	928.1.1={
 		death="928.1.1"
+	}
+}
+74034 = {
+	name="Shabaz"
+	dynasty=12274
+
+	father=74031
+
+	culture="persian"
+	religion="zoroastrian"
+
+	846.1.1={
+		birth="846.1.1"
+	}
+	901.1.1={
+		death="901.1.1"
+	}
+}
+159579 = { 
+	name="Balash" # VI of Parthia
+	dynasty=100685
+	religion="zoroastrian"
+	culture="persian"
+	father=159550
+	180.11.1={
+		birth="180.11.1"
+	}
+	230.8.29={
+		death="230.8.29"
 	}
 }
 159599 = { 
@@ -3231,6 +3235,20 @@
 		birth=yes
 	}
 	864.1.1={
+		death=yes
+	}
+}
+
+16315401 = {
+	name="Nasr"
+	dynasty=810
+	trait="fortune_builder"
+	religion="sunni"
+	culture="persian"
+	906.1.1={
+		birth=yes
+	}
+	943.1.1={
 		death=yes
 	}
 }
@@ -3978,6 +3996,57 @@
 		death=yes
 	}
 }
+188656 = {
+	name="Ferîd" # fictitious holder of Kermanshah
+	dynasty=1042128 # Kermanibid
+	religion="sunni"
+	culture="kurdish"
+	748.1.1={
+		birth=yes
+	}
+	805.1.1={
+		death=yes
+	}
+}
+
+188657 = {
+	name="Mistefa" # fictitious holder of Kurdistan
+	dynasty=1042129 
+	religion="sunni"
+	culture="kurdish"
+	745.1.1={
+		birth=yes
+	}
+	800.1.1={
+		death=yes
+	}
+}
+
+188658 = {
+	name="Revend" # fictitious holder of Oromeih
+	dynasty=1042130 
+	religion="sunni"
+	culture="kurdish"
+	740.1.1={
+		birth=yes
+	}
+	800.1.1={
+		death=yes
+	}
+}
+
+188659 = {
+	name="Pîroz" # fictitious holder of Kirkuk
+	dynasty=1042131 
+	religion="sunni"
+	culture="kurdish"
+	731.1.1={
+		birth=yes
+	}
+	800.1.1={
+		death=yes
+	}
+}
 188580 = {
 	name="Afrig"
 	dynasty=1042112 # Afrighid
@@ -4238,6 +4307,7 @@
 	religion="sunni"
 	culture="persian"
 	father=188597
+	trait=sympathy_zoroastrianism
 	825.1.1={
 		birth=yes
 	}
@@ -5248,7 +5318,18 @@
 	}
 }
 
-188666 = {
+188681 = {
+	name="Hashim"
+	dynasty=1042148
+	religion="mazdaki" # Khurramite
+	culture="persian"
+	731.1.1={
+		birth=yes
+	}
+	783.1.1={
+		death=yes
+	}
+}188666 = {
 	name="Kamran" # fictitious count of Khozistan
 	dynasty=1042141
 	religion="mazdaki"
@@ -5540,6 +5621,20 @@
 		death=yes
 	}
 }
+160295001 = {
+	name="Shahriyar"
+	dynasty=7331 # Bavandid 
+	religion="zoroastrian"
+	culture="persian"
+	father=160295
+	trait=fortune_builder
+	901.7.6={
+		birth=yes
+	}
+	970.4.7={
+		death=yes
+	}
+}
 160286 = {
 	name="Sorkhab" 
 	dynasty=7331 # Bavandid 
@@ -5594,16 +5689,16 @@
 		death=yes
 	}
 }
-160298 = {  
+160298 = {
 	name="Karen" #unhistorical
 	dynasty=7511
 	religion="zoroastrian"
 	culture="persian"
 	father=160299
-	680.1.1={ #postponed from 660
+	660.1.1={
 		birth=yes
 	}
-	742.1.1={ #postponed from 737
+	737.1.1={
 		death=yes
 	}
 }
@@ -5747,6 +5842,19 @@
 		birth=yes
 	}
 	330.1.1={
+		death=yes
+	}
+}
+188774 = {
+	name="Wakhushakk" # fictional Sogdian ruler
+	dynasty=1042188 # Sogdia
+	religion="zoroastrian"
+	culture="persian"
+	trait=sympathy_pagans
+	743.1.1={
+		birth=yes
+	}
+	800.1.1={
 		death=yes
 	}
 }

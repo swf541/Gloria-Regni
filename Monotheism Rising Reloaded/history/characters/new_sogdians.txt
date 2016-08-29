@@ -1,0 +1,150 @@
+14403106 = {
+	name="Muhammad Ibn Ilyas"
+	dynasty=204505702
+	religion="sunni"
+	properties="eggbad"
+	culture="sogdian"
+	trait="tough_soldier"
+	trait="deceitful"
+	trait=defensive_leader
+   	904.1.1={
+		birth=yes
+	}
+	932.1.1={
+		add_claim = c_zaranj
+		add_claim = c_bam
+	}
+	934.1.1={
+		# Sogdians
+		effect = {
+				wealth = 200
+				prestige = 300
+				spawn_unit = {
+				province = 639 # Kerman
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					horse_archers = { 550 550 }
+				}
+				attrition = 1.0
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = zoroastrian
+				culture = ROOT
+				female = no
+				age = 23
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 639 # Kerman
+					owner = ROOT
+					leader = THIS
+					troops = {
+						horse_archers = { 250 250 }
+					}
+					attrition = 1.0
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = nestorian
+				culture = ROOT
+				female = no
+				age = 27
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 639 # Kerman
+					owner = ROOT
+					leader = THIS
+					troops = {
+						horse_archers = { 250 250 }
+					}
+					attrition = 1.0
+				}
+			}
+		}
+	}
+	968.1.1={
+		death=yes
+	}
+}
+
+1004461090 = {
+	name = Abu Ishaq Ibrahim
+	dynasty = 1051143
+	religion = sunni
+	culture = sogdian
+	father = 217330
+	trait=sympathy_zoroastrianism
+	870.1.1 = {
+		birth = yes
+	}
+	913.1.11 = {
+		death = yes
+	}
+}
+1004460191 = {
+	name = Khosrow
+	dynasty = 1051143
+	religion = zoroastrian
+	culture = sogdian
+	father = 1004461090
+	902.1.1 = {
+		birth = yes
+	}
+	945.1.11 = {
+		death = yes
+	}
+}
+1004460192 = {
+	name = Irkin
+	dynasty = 1051143
+	religion = nestorian
+	culture = sogdian
+	father = 1004461090
+	
+	904.1.1 = {
+		birth = yes
+	}
+	949.1.11 = {
+		death = yes
+	}
+}
+1004462193 = {
+	name="Artivan"
+	dynasty=1040057
+	religion="buddhist"
+	culture="sogdian"
+	father=166694
+	870.1.1={
+		birth=yes
+	}
+	935.1.1={
+		death=yes
+	}
+}
+1004462194 = {
+	name="Shahrokh"
+	dynasty=1040057
+	religion="buddhist"
+	culture="sogdian"
+	father=1004460193
+	902.1.1={
+		birth=yes
+	}
+	979.1.1={
+		death=yes
+	}
+}
