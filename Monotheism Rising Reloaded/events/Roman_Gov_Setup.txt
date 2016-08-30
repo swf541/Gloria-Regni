@@ -138,12 +138,16 @@ character_event = {
 				liege = { government = roman_government }
 				employer = { government = roman_government }
 				father_even_if_dead = { has_character_flag = governor_canidate }
-				father_even_if_dead = { had_character_flag = governor_canidate }
 			}
         } 
+		
         immediate = {
 			set_character_flag = governor_canidate
 		}
+		
+	option = {
+		name = ok
+	}
 }
 
 character_event = {
@@ -254,10 +258,9 @@ character_event = {
 
 		trigger = {
 			has_landed_title = e_wre
-			NOT = { e_byzantium = { holder_scope = { has_non_aggression_pact_with = ROOT } }
+			NOT = { e_byzantium = { holder_scope = { has_non_aggression_pact_with = ROOT } } }
 			NOT = { war_with = e_byzantium }
-			
-        } 
+		} 
         immediate = {
 			save_event_target_as = target_west_ruler
 			e_byzantium = { holder_scope = { save_event_target_as = target_east_ruler } }
@@ -266,16 +269,44 @@ character_event = {
 				modifier = in_non_aggression_pact
 				years = 25
 				who = event_target:target_east_ruler
-				origin_description = EVTTITLE_ZE_8001
 			}
 			event_target:target_east_ruler = {
 				opinion = {
 					modifier = in_non_aggression_pact
 					years = 25
 					who = event_target:target_west_ruler
-					origin_description = EVTTITLE_ZE_8001
 				}
 			}
 			add_alliance = { who = event_target:target_east_ruler years = 25 }
 		}
+}
+
+province_event = {
+	id = ROMEGOV.10
+
+        hide_window = yes
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		trigger = {
+			or = {
+				has_province_modifier = themata 
+				has_province_modifier = pronoia 
+				has_province_modifier = themata_r 
+				has_province_modifier = pronoia_r 
+			}
+			holder_scope = { not = { has_law = standing_army_roman_1 } }
+			holder_scope = { not = { has_law = standing_army_roman_0 } }
+        } 
+        immediate = {
+			remove_province_modifier = pronoia 
+			remove_province_modifier = themata 		
+			remove_province_modifier = pronoia_r
+			remove_province_modifier = themata_r				
+		}
+	
+	option = {
+		name = ok
+	}
 }

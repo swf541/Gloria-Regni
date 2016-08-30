@@ -22,6 +22,13 @@ republic_governments = {
 		frame_suffix = "_merchantrepublic"
 		title_prefix = "city_"
 		potential = {
+			NOT = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+			}
+			NOT = { tier = emperor }
+			NOT = { num_of_emperor_titles = 1 }
 			NAND = {
 				controls_religion = yes
 				NOT = { religion_group = muslim }
@@ -101,6 +108,13 @@ republic_governments = {
 		frame_suffix = "_republic"
 		title_prefix = "city_"
 		potential = {
+			NOT = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+			}
+			NOT = { tier = emperor }
+			NOT = { num_of_emperor_titles = 1 }
 			NAND = {
 				controls_religion = yes
 				NOT = { religion_group = muslim }

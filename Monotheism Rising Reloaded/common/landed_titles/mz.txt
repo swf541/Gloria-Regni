@@ -224,32 +224,3 @@ e_macedonia = {	#Empire of Greece
 		completely_controls = k_bulgaria
 	}
 }
-
-k_macedonia = {
-	color = { 111 129 213 }
-	color2 = { 208 9 9 }
-
-	capital = 490 # Thessalonike
-	culture = greek
-
-	has_top_de_jure_capital = yes
-
-	purple_born_heirs = yes
-	
-	allow = {
-		ai = no
-		tier = duke
-		independent = yes
-		not = { has_landed_title = e_byzantium }
-		not = { has_landed_title = e_roman_empire }
-                OR = {
-                   religion = hellenic_pagan
-				   religion = hellenic_pagan_reformed
-				   religion = sol_invictus
-                } 
-		has_landed_title = d_thessalonika
-		completely_controls = d_thrace
-		completely_controls = d_thessalonika
-		completely_controls = d_adrianopolis
-	}
-}

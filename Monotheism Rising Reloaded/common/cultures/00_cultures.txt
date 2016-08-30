@@ -672,7 +672,7 @@ latin = {
 		modifier = default_culture_modifier
 	}
 	dalmatian = {
-		graphical_culture = italiangfx
+		graphical_cultures = { italiangfx }
 			
 		color = { 0.75 0.75 0.6 }
 
@@ -707,7 +707,7 @@ latin = {
 		}	
 		
 	african_latin = {
-		graphical_culture = arabicgfx
+		graphical_cultures = { arabicgfx }
 		second_graphical_culture = muslimgfx
         
 		color = { 0.9 0.73 0.5 }
@@ -754,7 +754,7 @@ latin = {
 		}	
 	
 	galloroman = {
-		graphical_culture = frankishgfx
+		graphical_cultures = { frankishgfx }
 		
 		color = { 0.45 0.75 0.45 }
 
@@ -1342,7 +1342,7 @@ byzantine = {
 		dynasty_title_names = yes
 	}
 	assyrian = { 
-		graphical_culture = muslimgfx #arabicgfx
+		graphical_cultures = { muslimgfx } #arabicgfx
 		
 		color = { 0.4 0.3 0.6 }
 
@@ -3097,7 +3097,7 @@ east_african = {
 	graphical_cultures = { muslimgfx }
 
 	coptic = {
-		graphical_culture = muslimgfx #africangfx
+		graphical_cultures = { muslimgfx }
 		
 		color = { 0.8 0.4 0.4 }
 
@@ -3115,7 +3115,7 @@ east_african = {
 	}	
 	
 	beja = {
-	graphical_culture = africangfx
+	graphical_cultures = { africangfx }
 	color = { 0.75 0.9 0.85 }
 	male_names = {
 		Abdak Abdul Abdullah_Abdullah Adam Ahmed Ali-Baba Ali_Ali Ankwaana Ar Aririit Baba Balami Balwia Baraka Barnaba Bishar Danimay Digna Dura Fias Haddan Hashim Hitatih Hukwuma Ishaq_Isaac Kahil Kajart Kanun Karrar Kharamadoye Khawr Kilar Kilaz Kuk Kurib Kwassaana Kwina Kwire Marwan Matiaat Mohammed Mortada Muha Musa Ni Nos Omar Omda Ood Oofaash Osman Qamhat Salah Salih Shaat Shallagea Suluman_Solomon Surkina Taha Tak Tigre Tirik Ufash Uthman Yaas Yahya_John Yaqub_Jacob Yin Yusuf_Joseph

@@ -4,6 +4,52 @@
 
 decisions = {
 
+	patrons_zor = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+			}
+			NOT = {
+				has_character_modifier = patron_vohu_manah
+				has_character_modifier = patron_khshathra_vairya
+				has_character_modifier = patron_haurvatat
+				has_character_modifier = patron_asha_vahishta
+				has_character_modifier = patron_armaiti
+				has_character_modifier = patron_ameretat		
+			}
+            NOT = { religion = yazidi }
+			religion_group = zoroastrian_group
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_ZOR.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factOR = 1
+			modifier = {
+				factOR = 0.1
+			}
+			modifier = {
+				factOR = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factOR = 0.1
+				trait = cynical
+			}
+		}
+	}
+
 #####Convert to Zoroastrianism
 	convert_to_zoroastrianism = {
 	potential = {

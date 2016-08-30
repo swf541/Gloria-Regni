@@ -1,163 +1,4 @@
 namespace = DEMES
-character_event = {
-	id = DEMES.1
-	desc = EVTDESCDEMES.1
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-		trigger = {
-			trait = blue_deme
-			any_friend = { trait = green_deme }
-        }     
-	
-	option = {
-	name = EVTOPTADEMES.1
-		add_trait = green_deme
-		remove_trait = blue_deme
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-	}
-	option = {
-	name = EVTOPTBDEMES.1
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.2
-	desc = EVTDESCDEMES.2
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	trigger = {
-		trait = green_deme
-		any_friend = { trait = blue_deme }
-    }     
-	
-	option = {
-	name = EVTOPTADEMES.2
-		add_trait = blue_deme 
-		remove_trait = green_deme
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-	}
-	option = {
-	name = EVTOPTBDEMES.2
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.3
-	desc = EVTDESCDEMES.3
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-		trigger = {
-			trait = blue_deme
-			any_friend = { trait = green_deme }
-        }     
-	
-	option = {
-	name = EVTOPTADEMES.3
-		add_trait = green_deme
-		remove_trait = blue_deme
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-	}
-	option = {
-	name = EVTOPTBDEMES.3
-		any_friend = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-		any_friend = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.4
-	desc = EVTDESCDEMES.4
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	trigger = {
-		trait = green_deme
-		any_spouse = { trait = blue_deme }
-    }     
-	
-	option = {
-	name = EVTOPTADEMES.4
-		add_trait = blue_deme 
-		remove_trait = green_deme
-		any_spouse = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-		any_spouse = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-	}
-	option = {
-	name = EVTOPTBDEMES.4
-		any_spouse = { 
-			limit = { trait = blue_deme }
-			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-		}
-		any_spouse = { 
-			limit = { trait = green_deme }
-			opinion = { modifier = opinion_happy who = ROOT years = 5 }
-		}
-	}
-}
 
 character_event = {
 	id = DEMES.400
@@ -167,9 +8,6 @@ character_event = {
 	
 	is_triggered_only = yes
 	
-	mean_time_to_happen = {
-		months = 230
-	}
 	
 	option = { # Attend Chariot Race
 		name = EVTOPTADEMES.500
@@ -190,16 +28,6 @@ character_event = {
 
 	is_triggered_only = yes
 	
-	trigger = {
-		has_dlc = "Legacy of Rome"
-		in_command = no
-		OR = {
-			has_landed_title = e_byzantium
-			has_landed_title = e_roman_empire
-		}
-		NOT = { has_global_flag = hippodrome_scheme_ongoing }
-		NOT = { is_inaccessible_trigger = yes }
-	}
 	
 	immediate = {
 		random_list = {
@@ -209,162 +37,59 @@ character_event = {
 					limit = { 
 						has_character_flag = attending_chariot_race
 					}
-					set_character_flag = { peaceful_race }
+					set_character_flag =  peaceful_race 
 					character_event = { id = DEMES.900 days = 20  }
 				}
-				random_realm_character = {
+				any_realm_character = {
 					limit = {
 						has_character_flag = attending_chariot_race
 						NOT = { has_character_flag = feast_drunkard }
 						trait = drunkard
 					}
 					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }	
-						trait = drunkard
+					random = {
+						chance = 25
+						character_event = { id = DEMES.720 }
 					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
 				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }
-						trait = drunkard
-					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}
-				random_realm_character = {
+				any_realm_character = {
 					limit = {
 						has_character_flag = attending_chariot_race
 						NOT = { has_character_flag = feast_wroth }
 						trait = wroth
 					}
 					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
+					random = {
+						chance = 10
+						character_event = { id = DEMES.820 }
+					}
 				}				
 			}
 			35 = {
 				character_event = { id = DEMES.900 days = 20  }
 				any_realm_character = {
-					limit = { 
-						has_character_flag = attending_chariot_race
-					}
-					set_character_flag = { restless_race }
-					character_event = { id = DEMES.900 days = 20  }
-				}
-				random_realm_character = {
 					limit = {
 						has_character_flag = attending_chariot_race
 						NOT = { has_character_flag = feast_drunkard }
 						trait = drunkard
 					}
 					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
+					random = {
+						chance = 50
+						character_event = { id = DEMES.720 }
+					}
 				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }
-						trait = drunkard
-					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }
-						trait = drunkard
-					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }
-						trait = drunkard
-					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}	
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_drunkard }
-						trait = drunkard
-					}
-					set_character_flag = feast_drunkard
-					character_event = { id = DEMES.720 }
-				}	
-				random_realm_character = {
+				any_realm_character = {
 					limit = {
 						has_character_flag = attending_chariot_race
 						NOT = { has_character_flag = feast_wroth }
 						trait = wroth
 					}
 					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
+					random = {
+						chance = 50
+						character_event = { id = DEMES.820 }
 					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
-					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
-					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
-					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
-					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
-				}
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = feast_wroth }
-						trait = wroth
-					}
-					set_character_flag = feast_wroth
-					character_event = { id = DEMES.820 }
 				}				
 			}
 			15 = {
@@ -372,287 +97,51 @@ character_event = {
 					limit = { 
 						has_character_flag = attending_chariot_race
 					}
-					set_character_flag = { rioting_race }
+					set_character_flag = rioting_race 
 					character_event = { id = DEMES.900 days = 20  }
 				}
+				any_realm_character = {
+					limit = {
+						independent = no
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = rioter }
+						OR = {
+							trait = wroth
+							trait = drunkard
+							trait = possessed
+							trait = lunatic
+							trait = lustful
+							trait = greedy
+						}
+					}
+					set_character_flag = rioter
+					random = { 
+						chance = 35
+						character_event = { id = DEMES.920 }
+					}
+				}					
+				
 				random_list = {
-					35 = { 
+					35 = {
 						random_realm_character = {
 							limit = {
 								has_character_flag = attending_chariot_race
-								NOT = { has_character_flag = attempting_rebellion }
-								has_minor_title = title_senator
-								top_liege = { NOT = { reverse_opion = -20 } }
+								is_voter = yes
+
 							}
-							set_character_flag = attempting_rebellion
-							save_event_target_as:senator_rebel
-							random_realm_character = {
-								limit = {
-									is_pretender = yes
-								}
-								save_event_target_as:riot_king
+							save_event_target_as = senator_rebel
+						}
+						random_realm_character = {
+							limit = {
+								is_pretender = yes
 							}
-							character_event = { id = DEMES.960 }
+							save_event_target_as = riot_king
+						}
+						character_event = { id = DEMES.960 }
 						}	
-					}
 					65 = { }
 				
 				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}	
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}
-				random_realm_character = {
-					limit = {
-						independent = no
-						has_character_flag = attending_chariot_race
-						NOT = { has_character_flag = rioter }
-						OR = {
-							trait = wroth
-							trait = drunkard
-							trait = possessed
-							trait = lunatic
-							trait = lustful
-							trait = greedy
-						}
-					}
-					set_character_flag = rioter
-					character_event = { id = DEMES.920 }
-				}				
 			}
 		}
 	}
@@ -662,38 +151,38 @@ character_event = {
 		wealth = -25
 		random_list = {
 			50 = {
-				character_event = { id = DEMES.503   }
+				character_event = { id = DEMES.503   }	#503
 				
 				any_realm_character = {
 					limit = { 
 						trait = blue_deme 
 						has_character_flag = attending_chariot_race
 					}
-					character_event = { id = DEMES.502 } 
+					character_event = { id = DEMES.502 } #502
 				}
 				any_realm_character = {
 					limit = { 
 						trait = green_deme
 						has_character_flag = attending_chariot_race						
 					}
-					character_event = { id = DEMES.503 } 
+					character_event = { id = DEMES.503 } #503
 				}
 			}
 			50 = {
-				character_event = { id = DEMES.504 }
+				character_event = { id = DEMES.504 }	#504
 				any_realm_character = {
 					limit = { 
 						trait = blue_deme 
 						has_character_flag = attending_chariot_race
 					}
-					character_event = { id = DEMES.501 } 
+					character_event = { id = DEMES.501 } #501
 				}
 				any_realm_character = {
 					limit = { 
 						trait = green_deme
 						has_character_flag = attending_chariot_race						
 					}
-					character_event = { id = DEMES.504 } 
+					character_event = { id = DEMES.504 } #504
 				}
 			}
 		}
@@ -703,700 +192,40 @@ character_event = {
 		wealth = -25
 		random_list = {
 			50 = {
-				character_event = { id = DEMES.501 }
+				character_event = { id = DEMES.501 }	#501
 				any_realm_character = {
 					limit = { 
 						trait = blue_deme 
 						has_character_flag = attending_chariot_race
 					}
-					character_event = { id = DEMES.501 } 
+					character_event = { id = DEMES.501 } #501
 				}
 				any_realm_character = {
 					limit = { 
 						trait = green_deme
 						has_character_flag = attending_chariot_race						
 					}
-					character_event = { id = DEMES.504 } 
+					character_event = { id = DEMES.504 } #504
 				}
 			}
 			50 = {
-				character_event = { id = DEMES.502 }
+				character_event = { id = DEMES.502 }	#502
 				any_realm_character = {
 					limit = { 
 						trait = blue_deme 
 						has_character_flag = attending_chariot_race
 					}
-					character_event = { id = DEMES.502 } 
+					character_event = { id = DEMES.502 } 	#502
 				}
 				any_realm_character = {
 					limit = { 
 						trait = green_deme 
 						has_character_flag = attending_chariot_race
 					}
-					character_event = { id = DEMES.503 } 
+					character_event = { id = DEMES.503 } #503 
 				}
 			}
 		}
 	}
 }
 
-# Blue Victorious (With Your Support)
-character_event = {
-	id = DEMES.501
-	desc = EVTDESCDEMES.501
-	picture = GFX_evt_hippodrome_byzantine
-	
-	hide_from = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.501
-		wealth = 50
-		prestige = 50
-	}
-}
-
-# Blue Loses (With Your Support)
-character_event = {
-	id = DEMES.502
-	desc = EVTDESCDEMES.502
-	picture = GFX_evt_hippodrome_byzantine
-	
-	hide_from = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.502
-		prestige = -25
-	}
-}
-
-# Green Victorious (With Your Support)
-character_event = {
-	id = DEMES.503
-	desc = EVTDESCDEMES.503
-	picture = GFX_evt_hippodrome_byzantine
-	
-	hide_from = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.503
-		wealth = 50
-		prestige = 50
-	}
-}
-
-# Green Loses (With Your Support)
-character_event = {
-	id = DEMES.504
-	desc = EVTDESCDEMES.504
-	picture = GFX_evt_hippodrome_byzantine
-	
-	hide_from = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.504
-		prestige = -25
-	}
-}
-
-# Drunkard (Guest)
-character_event = {
-	id = DEMES.720
-	desc = EVTDESC_DEMES_650
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	hide_from = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		has_dlc = "The Old Gods"
-		has_character_flag = ameysia_feast_vassal
-		
-		liege = { 
-			has_character_flag = attending_chariot_race
-			
-		}
-		trait = drunkard
-	}
-	
-	option = {
-		name = EVTOPTA_TOG_650
-		tooltip_info = drunkard
-		set_character_flag = feast_drunkard
-		hidden_tooltip = {
-			liege = {
-				set_character_flag = feast_drunkard
-				character_event = { id = DEMES.721 }
-				any_vassal = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { character = ROOT }
-					}
-					character_event = { id = DEMES.721 }
-				}
-			}
-		}
-		tooltip = {
-			liege = {
-				if = {
-					limit = { NOT = { trait = drunkard } }
-					opinion = {
-						modifier = opinion_feast_scandal
-						who = ROOT
-					}
-				}
-				if = {
-					limit = { 
-						trait = drunkard 
-						ROOT = { trait = green_deme }
-						trait = green_deme
-					}
-					opinion = {
-						modifier = opinion_drinking_buddy
-						who = ROOT
-					}
-				}
-				if = {
-					limit = { 
-						trait = drunkard 
-						ROOT = { trait = blue_deme }
-						trait = blue_deme
-					}
-					opinion = {
-						modifier = opinion_drinking_buddy
-						who = ROOT
-					}
-				}
-
-				any_vassal = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { character = ROOT }
-						NOT = { trait = drunkard }
-					}
-					opinion = {
-						modifier = opinion_feast_scandal
-						who = ROOT
-					}
-				}
-				any_vassal = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						NOT = { character = ROOT }
-						trait = drunkard
-					}
-					opinion = {
-						modifier = opinion_drinking_buddy
-						who = ROOT
-					}
-				}
-			}
-		}
-	}
-}
-
-# Drunkard (Host and Other Guests)
-character_event = {
-	id = DEMES.721
-	desc = EVTDESC_DEMES_651
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA_TOG_651
-		trigger = { 
-			OR = {
-				NOT = { trait = drunkard } 
-				AND = {
-					trait = drunkard 
-					FROM = { trait = green_deme }
-					trait = blue_deme				
-				}
-				
-				AND = {
-					trait = drunkard 
-					FROM = { trait = blue_deme }
-					trait = green_deme					
-				}
-			}
-		}
-		opinion = {
-			modifier = opinion_feast_scandal
-			who = FROM
-		}
-	}
-	option = {
-		name = EVTOPTB_TOG_651
-		tooltip_info = drunkard
-		trigger = { 
-			OR = {
-				AND = {
-					trait = drunkard 
-					FROM = { trait = blue_deme }
-					trait = blue_deme
-				}
-				AND = {
-					trait = drunkard 
-					FROM = { trait = green_deme }
-					trait = green_deme			
-				}
-			}
-		}
-		opinion = {
-			modifier = opinion_drinking_buddy
-			who = FROM
-		}
-	}
-	option = {	# Start a Brawl
-		name = EVTOPTC_TOG_651
-		tooltip_info = drunkard
-		trigger = {
-			or = {
-				has_character_flag = restless_race
-				has_character_flag = rioting_race
-			}
-			OR = {
-				AND = {
-					trait = drunkard 
-					FROM = { trait = blue_deme }
-					trait = green_deme
-				}
-				AND = {
-					trait = drunkard 
-					FROM = { trait = green_deme }
-					trait = blue_deme			
-				}
-				trait = wroth
-			}
-		}
-		FROM = { character_event = { id = DEMES.670 } }
-	}
-}
-
-character_event = {	#Start of Brawl
-	id = DEMES.670
-	desc = EVTDESC_DEMES.670
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA_DEMES.670
-		trigger = {
-			combat_rating_diff = {
-				character = FROM
-				value = 3
-			}
-		}
-		character_event = { id = DEMES.671 }	#Win Brawl
-		FROM = { character_event = { id = DEMES.672 } } #Lose Brawl
-	}
-	option = {
-		name = EVTOPTA_DEMES.670
-		trigger = {
-			NOT = {
-				combat_rating_diff = {
-					character = FROM
-					value = 3
-				}
-			}
-		}
-		random_list = {
-			50 = {
-				character_event = { id = DEMES.671 }	#Win Brawl
-				FROM = { character_event = { id = DEMES.672 } } #Lose Brawl
-			}
-			50 = {
-				FROM = { character_event = { id = DEMES.671 } }	#Win Brawl
-				character_event = { id = DEMES.672 }  #Lose Brawl		
-			}
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.672
-	desc = EVTDESCDEMES.672
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.672
-		prestige = 20
-		if = {
-			limit = {
-				trait = blue_deme
-			}
-			any_realm_character = { 
-				limit = { trait = blue_deme }
-				opinion = { modifier = opinion_happy who = ROOT years = 5 }
-			}
-			any_realm_character = { 
-				limit = { trait = green_deme }
-				opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-			}
-		}
-		if = {
-			limit = {
-				trait = green_deme
-			}
-			any_realm_character = { 
-				limit = { trait = green_deme }
-				opinion = { modifier = opinion_happy who = ROOT years = 5 }
-			}
-			any_realm_character = { 
-				limit = { trait = blue_deme }
-				opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-			}
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.671
-	desc = EVTDESCDEMES.671
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.671
-		prestige = -20
-		if = {
-			limit = {
-				trait = blue_deme
-			}
-			any_realm_character = { 
-				limit = { trait = blue_deme }
-				opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-			}
-		}
-		if = {
-			limit = {
-				trait = green_deme
-			}
-			any_realm_character = { 
-				limit = { trait = green_deme }
-				opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
-			}
-		}
-	}
-}
-
-character_event = {
-	id = DEMES.900
-	desc = EVTDESCDEMES.900
-
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.671
-		clr_character_flag = attending_chariot_race
-		clr_character_flag = peaceful_race
-		clr_character_flag = restless_race
-		clr_character_flag = rioting_race
-		clr_character_flag = feast_drunkard
-		clr_character_flag = feast_gluttonous
-		clr_character_flag = feast_lunatic
-		clr_character_flag = feast_lustful
-		clr_character_flag = feast_homosexual
-		clr_character_flag = do_not_disturb
-	}
-}
-
-character_event = {
-	id = DEMES.990
-	desc = EVTDESCDEMES.990
-	
-	picture = GFX_evt_hippodrome_byzantine
-	border = GFX_event_normal_frame_war
-	
-    is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTADEMES.990
-		imprison = FROM
-		clr_character_flag = attending_chariot_race
-		clr_character_flag = peaceful_race
-		clr_character_flag = restless_race
-		clr_character_flag = rioting_race
-		clr_character_flag = feast_drunkard
-		clr_character_flag = feast_gluttonous
-		clr_character_flag = feast_lunatic
-		clr_character_flag = feast_lustful
-		clr_character_flag = feast_homosexual
-		clr_character_flag = do_not_disturb
-	}
-	option = {
-		name = EVTOPTADEMES.990
-
-		clr_character_flag = attending_chariot_race
-		clr_character_flag = peaceful_race
-		clr_character_flag = restless_race
-		clr_character_flag = rioting_race
-		clr_character_flag = feast_drunkard
-		clr_character_flag = feast_gluttonous
-		clr_character_flag = feast_lunatic
-		clr_character_flag = feast_lustful
-		clr_character_flag = feast_homosexual
-		clr_character_flag = do_not_disturb
-	}		
-}
-#Picking a Fight
-character_event = {
-	id = DEMES.820
-	desc = EVTDESC_DEMES_650
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	hide_from = yes
-	is_triggered_only = yes
-	
-	trigger = {
-
-	}
-	
-	option = {
-		name = EVTOPTA_DEMES.820
-			if = {
-				limit = { trait = blue_deme }
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						trait = green_deme
-						age = 16
-						NOT = { character = ROOT }
-					}
-					character_event = { id = DEMES.821 }
-				}
-			}
-			if = {
-				limit = { trait = green }
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						trait = blue_deme
-						age = 16
-						NOT = { character = ROOT }
-					}
-					character_event = { id = DEMES.821 }
-				}
-			}
-		}
-	}
-
-# Wroth Character Attacks You
-character_event = {
-	id = DEMES.821
-	desc = EVTDESC_DEMES_651
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	is_triggered_only = yes
-	
-	option = {	# Brawl Starts
-		name = EVTOPTC_TOG_651
-		FROM = { character_event = { id = DEMES.670 } }
-	}
-}
-
-character_event = {
-	id = DEMES.920
-	desc = EVTDESC_DEMES.920
-	picture = GFX_evt_drunk
-	border = GFX_event_normal_frame_religion
-	
-	is_triggered_only = yes
-	
-	option = {	# Vandalism
-		name = EVTOPTC_TOG_651
-		random_list = {
-				25 = {
-					character_event = { id = DEMES.990 }
-				}
-				75 = {
-				
-				}
-			}
-	}
-	option = {	# Start a Duel with an Opposing Deme
-		name = EVTOPTC_TOG_651
-			if = {
-				limit = { trait = blue_deme }
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						trait = green_deme
-						age = 16
-						NOT = { character = ROOT }
-					}
-					character_event = { id = WoL.11000 }
-				}
-			}
-			if = {
-				limit = { trait = green }
-				random_realm_character = {
-					limit = {
-						has_character_flag = attending_chariot_race
-						trait = blue_deme
-						age = 16
-						NOT = { character = ROOT }
-					}
-					character_event = { id = WoL.11000 }
-				}
-			}
-			random_list = {
-				25 = {
-					character_event = { id = DEMES.990 }
-				}
-				75 = {
-				
-				}
-			}
-	}
-}
-character_event = {
-	id = DEMES.960
-	desc = EVTDESC37011
-	picture = GFX_evt_large_army
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA37011 # Interesting
-		
-		hidden_tooltip = {
-			top_liege = { character_event = { id = DEMES.961 } } # Notify the old liege
-		}
-	}
-}
-
-# The old liege is notified
-character_event = {
-	id = DEMES.961
-	desc = EVTDESC37012
-	picture = GFX_evt_large_army
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA37012 # Kill em all
-		
-		opinion = {
-			who = FROM
-			modifier = opinion_traitor
-		}
-		
-		random_list = {
-		75 = {
-			event_target:riot_king = { death = { death_reason = death_execution killer = ROOT } }
-			any_realm_character = {
-				limit = {
-					has_character_flag = attempting_rebellion
-				}
-				death = { death_reason = death_execution killer = ROOT }
-			}
-		}
-		25 = {
-			event_target:riot_king = { character_event = { id = 37015 } } # The event that actually fires the revolt
-			}
-		}
-	}
-}
-
-# The pretender launches the attack
-character_event = {
-	id = DEMES.970
-	
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		independent = no
-		is_ruler = no
-		prisoner = no
-		NOT = { trait = incapable }
-	}
-	
-	immediate = {
-		event_target:senator_rebel = {
-			capital_scope = {
-				ROOT = {
-					set_defacto_liege = ROOT
-					create_title = {
-						tier = DUKE
-						landless = yes
-						temporary = yes
-						culture = ROOT
-						name = "CLAIMANT_ADVENTURE"
-						holder = ROOT
-					}
-				}
-			}
-		}
-					event_target:riot_king = {
-						set_character_flag = claimant_adventurer
-							496 = {
-								spawn_unit = {
-									province = 496
-									home = 496
-									owner = THIS
-									leader = THIS
-									match_character = THIS
-									match_mult = 0.125
-									match_min = 300
-									match_max = 5000
-									attrition = 0.25
-									earmark = claimant_adventure
-									disband_on_peace = yes
-								}
-								spawn_unit = {
-									province = 496
-									home = 496
-									owner = THIS
-									match_character = THIS
-									match_mult = 0.125
-									match_min = 300
-									match_max = 5000
-									attrition = 0.25
-									earmark = claimant_adventure
-									disband_on_peace = yes
-								}
-								spawn_unit = {
-									province = 496
-									home = 496
-									owner = THIS
-									match_character = THIS
-									match_mult = 0.125
-									match_min = 300
-									match_max = 5000
-									attrition = 0.25
-									earmark = claimant_adventure
-									disband_on_peace = yes
-								}
-						}
-					
-				
-			}
-		}
-	}

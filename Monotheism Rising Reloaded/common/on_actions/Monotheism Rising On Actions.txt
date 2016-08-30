@@ -70,32 +70,32 @@ on_yearly_childhood_pulse = {
 	}
 }
 
-on_new_holder = {
-	events = {
-		ROMEGOV.4
-		ROMEGOV.2
-		ROMEGOV.3
-		ROMEGOV.5
-	}
-}
+#on_new_holder = {
+#	events = {
+#		ROMEGOV.4
+#		ROMEGOV.2
+#		ROMEGOV.3
+#		ROMEGOV.5
+#	}
+#}
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
-on_new_holder_inheritance = {
-	events = {
-		ROMEGOV.4
-		ROMEGOV.2
-		ROMEGOV.3
-	}
-}
+#on_new_holder_inheritance = {
+#	events = {
+#		ROMEGOV.4
+#		ROMEGOV.2
+#		ROMEGOV.3
+#	}
+#}
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
-on_new_holder_usurpation = {
-	events = {
-		ROMEGOV.4
-		ROMEGOV.2
-		ROMEGOV.3
-	}
-}
+#on_new_holder_usurpation = {
+#	events = {
+#		ROMEGOV.4
+#		ROMEGOV.2
+#		ROMEGOV.3
+#	}
+#}
 
 on_law_vote_passed = {
 	events = {
