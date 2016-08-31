@@ -708,7 +708,7 @@
 	name="Abdullah" # Rabi Abdullah - the Eleventh Ismaili Imam and first Fatimid Caliph
 	dynasty=589
 	religion="shiite"
-	culture=bedouin_arabic
+	culture="egyptian_arabic"
 	father=33920
 	trait="sayyid"
 	870.1.1={
@@ -722,11 +722,9 @@
 	name="al-Qaim" 
 	dynasty=589
 	religion="shiite"
-	culture=bedouin_arabic
+	culture="egyptian_arabic"
 	father=32900
 	trait="sayyid"
-	trait="tough_soldier"
-	trait="zealous"
 	893.1.1={
 		birth="893.1.1"
 	}
@@ -738,7 +736,7 @@
 	name="al-Mansur" 
 	dynasty=589
 	religion="shiite"
-	culture="maghreb_arabic"
+	culture="egyptian_arabic"
 	father=32901
 	trait="sayyid"
 	913.1.1={
@@ -753,7 +751,7 @@
 	name="al-Muizz" 
 	dynasty=589
 	religion="shiite"
-	culture="maghreb_arabic"
+	culture="egyptian_arabic"
 	father=32902
 	trait="sayyid"
 	932.1.1={
@@ -915,6 +913,8 @@
 3096 = {
 	name="al-Mustansir"
 	dynasty=589
+	dna = alhdhmkiaag
+	properties = ak00bc000000
 	martial=6
 	diplomacy=8
 	intrigue=6

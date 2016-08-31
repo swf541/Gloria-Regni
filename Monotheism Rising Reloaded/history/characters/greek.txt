@@ -1,6 +1,8 @@
 1700 = {
 	name="Basileios"
 	dynasty=644
+	dna = dageigbabbe
+	properties = am0aj0000000
 	martial=6
 	diplomacy=8
 	intrigue=8
@@ -935,7 +937,7 @@
 }
 
 1702 = {
-	name="Leo"
+	name="Leon"
 	# AKA: Leo
 	dynasty=644
 	religion="imperial"
@@ -1505,7 +1507,7 @@
 	father=1752
 	mother=4511
 	1056.1.1={
-		birth="1056.1.1"
+		birth=yes
 	}
 	1071.1.1={
 		trait="midas_touched"
@@ -1519,8 +1521,11 @@
 	1081.12.10={
 		remove_claim = e_byzantium
 	}
+	1107.1.1={
+		trait = gout
+	}
 	1118.8.15={
-		death="1118.8.15"
+		death=yes
 	}
 }
 
@@ -2828,10 +2833,6 @@
 20534 = {
 	name="Bardas"
 	dynasty=641
-	martial=5
-	diplomacy=5
-	intrigue=8
-	stewardship=8
 	religion="orthodox"
 	culture="greek"
 	trait="patient"
@@ -2840,16 +2841,16 @@
 	father=41320
 	mother=159535
 	1010.1.1={
-		birth="1010.1.1"
+		birth=yes
 	}
 	1025.1.1={
 		trait="blinded"
 	}
-	1050.1.1={
+	1054.1.1={
 		add_spouse=159288
 	}
 	1067.1.1={
-		death="1067.1.1"
+		death=yes
 	}
 }
 
@@ -4240,7 +4241,7 @@
 
 215513 = {
 	name="Isaakios"
-	dynasty=195
+	dynasty=20075
 	religion="orthodox"
 	culture="greek"
 	father=215508
@@ -6371,7 +6372,7 @@
 	religion="imperial"
 	culture="greek"
 	father=41317
-	913.1.1={
+	912.1.1={
 		birth="912.1.1"
 	}
 	970.1.1={
@@ -9116,7 +9117,7 @@
 		birth="669.1.1"
 	}
 	695.11.1={
-		trait="scarred"
+		trait="disfigured"
 	}
 	703.1.1={
 		add_spouse=146185
@@ -10708,7 +10709,7 @@
 }
 
 7605 = {
-	name="Hegesippus"
+	name="Eleutherius"
 	religion="imperial"
 	culture="greek"
 	trait="diligent"
@@ -10728,15 +10729,11 @@
 }
 
 7606 = {
-	name="Caius"
+	name="Soterius"
 	religion="imperial"
 	culture="greek"
 	120.1.1={
 		birth="120.1.1"
-	}
-	167.4.20={
-	name = "Soter"
-	# AKA: Caius
 	}
 	174.1.1={
 		death="174.1.1"
@@ -10744,7 +10741,7 @@
 }
 
 7607 = {
-	name="Polycarp"
+	name="Anicetus"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10768,7 +10765,7 @@
 }
 
 7608 = {
-	name="Hermas"
+	name="Pius"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10792,7 +10789,7 @@
 }
 
 7609 = {
-	name="Irenaeus"
+	name="Hyginus"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10816,7 +10813,7 @@
 }
 
 7610 = {
-	name="Antonius"
+	name="Telesphorus"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10864,7 +10861,7 @@
 }
 
 7612 = {
-	name="Hadrian"
+	name="Alexander"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10888,7 +10885,7 @@
 }
 
 7613 = {
-	name="Yeshua"
+	name="Evaristus"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10912,7 +10909,7 @@
 }
 
 7614 = {
-	name="Tertullian"
+	name="Clemens"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10927,7 +10924,7 @@
 		birth="20.1.1"
 	}
 	92.1.1={
-	name = "Clement"
+	name = "Clemens"
 	# AKA: Tertullian
 	}
 	99.1.1={
@@ -10936,7 +10933,7 @@
 }
 
 7615 = {
-	name="Cletus"
+	name="Anacletus"
 	martial=6
 	diplomacy=7
 	intrigue=8
@@ -10991,7 +10988,7 @@
 		birth="679.1.1"
 	}
 	741.11.28={
-	name = "Zachary"
+	name = "Zacharias"
 	# AKA: Zacharias
 	}
 	752.3.14={
@@ -11015,7 +11012,7 @@
 		birth="690.1.1"
 	}
 	731.2.11={
-	name = "Gregory"
+	name = "Gregorius"
 	# AKA: Zacharias
 	}
 	741.11.28={
@@ -11039,7 +11036,7 @@
 		birth="664.1.1"
 	}
 	708.2.4={
-	name = "Constantine"
+	name = "Constantinus"
 	# AKA: Constantinus
 	}
 	715.4.9={
@@ -11087,7 +11084,7 @@
 		birth="650.1.1"
 	}
 	705.1.11={
-	name = "John"
+	name = "Ioannes"
 	# AKA: Plato
 	}
 	707.10.18={
@@ -11111,7 +11108,7 @@
 		birth="655.1.1"
 	}
 	701.9.8={
-	name = "John"
+	name = "Ioannes"
 	# AKA: Plato
 	}
 	705.1.11={
@@ -11183,7 +11180,7 @@
 		birth="635.1.1"
 	}
 	685.5.8={
-	name = "John"
+	name = "Ioannes"
 	# AKA: Plato
 	}
 	686.8.2={
@@ -11203,15 +11200,15 @@
 	trait="patient"
 	trait="zealous"
 	trait="charismatic_negotiator"
-	577.1.1={
-		birth="577.1.1"
+	598.1.1={
+		birth=yes
 	}
 	678.4.11={
 	name = "Agatho"
 	# AKA: Paulus
 	}
 	681.1.10={
-		death="681.1.10"
+		death=yes
 	}
 }
 
@@ -11227,8 +11224,8 @@
 	trait="patient"
 	trait="zealous"
 	trait="charismatic_negotiator"
-	577.1.1={
-		birth="577.1.1"
+	610.1.1={
+		birth=yes
 	}
 	676.6.17={
 	name = "Donus"
@@ -11255,7 +11252,7 @@
 		birth="577.1.1"
 	}
 	642.10.12={
-	name = "Theodore"
+	name = "Theodorus"
 	# AKA: Rufinianus
 	}
 	649.5.14={
@@ -11279,7 +11276,7 @@
 		birth="550.1.1"
 	}
 	606.2.22={
-	name = "Boniface"
+	name = "Bonifatius"
 	# AKA: John
 	}
 	607.11.12={
@@ -13381,12 +13378,13 @@
 1714 = {
 	name="Ioannes"
 	# AKA: Ioannes Tzimisces
-	dynasty=640
+	dynasty=8637
 	martial=9
 	religion="imperial"
 	culture="greek"
 	trait="brilliant_strategist"
-	father=20564
+	father=20519
+	mother=20520
 	925.1.1={
 		birth="925.1.1"
 	}
@@ -13400,6 +13398,7 @@
 		death="976.1.10"
 	}
 }
+
 34382 = {
 	name="Alexios"
 	dynasty=101079
@@ -15742,8 +15741,6 @@
 	religion="imperial"
 	culture="greek"
 	father = 163085
-	trait=cynical
-	trait=ambitious
 	910.1.1={
 		birth="910.1.1"
 	}
@@ -15954,7 +15951,7 @@
 	dynasty=1029094
 	religion="orthodox"
 	culture="greek"
-	father=159452
+	father=159542
 	1130.1.1={
 		birth="1130.1.1" #Unknown
 	}
@@ -15967,7 +15964,7 @@
 	dynasty=1029094
 	religion="orthodox"
 	culture="greek"
-	father=159452
+	father=159542
 	1150.1.1={
 		birth="1150.1.1" #Unknown
 	}
@@ -15980,7 +15977,7 @@
 	dynasty=1029095
 	religion="orthodox"
 	culture="greek"
-	father=159452
+	father=159542
 	1135.1.1={
 		birth="1135.1.1" #Unknown
 	}
@@ -17014,11 +17011,6 @@
 	dynasty=640
 	religion="imperial"
 	culture="greek"
-	martial=8
-	trait="patient"
-	trait=brave
-	trait=proud
-	trait=cynical
 	trait="brilliant_strategist"
 	father=145172
 	890.1.1={
@@ -17245,10 +17237,10 @@
 	religion="imperial"
 	culture="greek"
 	844.1.1={
-		birth="843.1.1"
+		birth=yes
 	}
 	907.1.1={
-		death="907.1.1"
+		death=yes
 	}
 }
 
@@ -17519,7 +17511,7 @@
 		birth="896.1.1"
 	}
 	963.4.18={
-		death="963.18.4"
+		death="963.4.18"
 	}
 }
 
@@ -18589,7 +18581,7 @@
 }
 
 145291 = {
-	name="Linos"
+	name="Linus"
 	religion="imperial"
 	culture="greek"
 	trait="diligent"
@@ -18609,7 +18601,7 @@
 }
 
 145292 = {
-	name="Simon"
+	name="Petrus"
 	religion="imperial"
 	culture="greek"
 	trait="diligent"
@@ -18618,10 +18610,6 @@
 	trait="mastermind_theologian"
 	3.1.1={
 		birth="3.1.1"
-	}
-	30.1.1={
-	name = "Peter"
-	# AKA: Simon
 	}
 	64.10.13={
 		death="64.10.13"
@@ -20655,10 +20643,10 @@
 	culture="greek"
 	father=145932
 	850.1.1={
-		birth="850.1.1"
+		birth=yes
 	}
 	912.1.1={
-		death="910.1.1"
+		death=yes
 	}
 }
 200121={
@@ -20706,7 +20694,7 @@
 	500.1.1={
 		birth=yes
 	}
-	493.1.1 = {
+	540.1.1 = {
 		add_spouse=168789
 	}
 	551.1.1={
@@ -20776,4 +20764,125 @@
 	1205.1.2={
 		death=yes
 	}
+}
+
+200238={
+	name="Ardabastos"
+	dynasty=1046033
+
+	father=168718
+	mother=168715
+
+	religion=imperial
+	culture=greek
+
+	600.1.1={
+		birth=yes
+	}
+	650.1.1={
+		add_spouse=200239
+	}
+	655.1.1={
+		death=yes
+	}
+}
+
+168714 = {
+	name="Petros" 
+	dynasty=1022184
+
+	father=168719
+
+	religion="imperial"
+	culture="greek"
+
+	541.1.1 = {
+		birth=yes
+	}
+	
+	593.1.1 = {
+		death=yes
+	}
+}
+
+168715 = {
+	name="Iouliana"
+	female=yes
+	dynasty=1022184
+
+	father=168714
+
+	religion="imperial"
+	culture="greek"
+
+	582.1.1 = {
+		birth=yes
+	}
+	640.1.1 = {
+		death=yes
+	}
+}
+
+168719 = {
+	name="Pavlos"
+	dynasty=1022184
+
+	religion="imperial"
+	culture="greek"
+
+	520.1.1={
+		birth=yes
+	}	
+	570.1.1={
+		death=yes
+	}
+}
+
+166943 = {
+   name="Maria" #Concubine of Abaqa Khan
+   female=yes
+   dynasty=48
+   religion="orthodox"
+   culture="greek"
+   father=465527
+   add_trait="bastard"
+   1249.1.1={
+     birth=yes
+   }
+   1267.1.1={
+     effect={add_friend=125522}
+   }
+   1302.1.1={
+     death=yes
+   }
+}
+166944 = {
+   name="Euphrosyne" #Concubine of Nogai Khan
+   female=yes
+   dynasty=48
+   religion="orthodox"
+   culture="greek"
+   father=465527
+   add_trait="bastard"
+   1245.1.1={
+     birth=yes
+   }
+   1295.1.1={
+     death=yes
+   }
+}
+166946 = {
+   name="Maria" #wife of Toqta Khan
+   female=yes
+   dynasty=48
+   religion="orthodox"
+   culture="greek"
+   father=465527
+   add_trait="bastard"
+   1275.1.1={
+     birth=yes
+   }   
+   1329.1.1={
+     death=yes
+   }
 }

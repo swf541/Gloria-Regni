@@ -201,7 +201,7 @@
 	dynasty=75 #Totadona was from the family of the old Counts of Coimbra
 	religion="imperial"
 	culture="portuguese"
-	father=73881
+	father=217303
 	967.1.1={
 		birth="967.1.1"
 	}
@@ -1218,7 +1218,6 @@
 70245 = {
 	name="Mendo"
 	dynasty=75 
-	father=73882
 	religion="catholic"
 	culture="portuguese"
 	1040.1.1={
@@ -1228,7 +1227,7 @@
 		add_spouse=109631
 	}
 	1066.1.1={
-		employer=109628
+		employer=109610
 	}
 	1090.1.1={
 		death="1090.1.1"
@@ -1246,7 +1245,7 @@
 		birth="1030.1.1"
 	}
 	1066.1.1={
-		employer=109628
+		employer=109610
 	}
 	1080.1.1={
 		death="1080.1.1"
@@ -1281,7 +1280,7 @@
 		add_spouse=70247
 	}
 	1066.1.1={
-		employer=109628
+		employer=109610
 	}
 	1080.1.1={
 		death="1080.1.1"
@@ -1298,7 +1297,7 @@
 		birth="1215.1.1"
 	}
 	1276.8.18={
-		name="John"
+		name="Ioannes"
 	# AKA: Pedro
 	}
 	1277.5.20={
@@ -2491,8 +2490,8 @@
 	culture="portuguese"
 	father=142027
 	mother=142026
-	1191.1.1={
-		birth="1191.1.1"
+	1175.1.1 = {
+		birth = yes
 	}
 	1246.1.1={
 		death="1246.1.1"
@@ -20015,14 +20014,11 @@
 	name="Urraca"
 	female=yes
 	dynasty=8618
-
-	father=108530
-	mother=108531
-
 	religion=catholic
 	culture=portuguese
-	
-	1035.1.1={
+	father=108530
+	mother=108531
+	1042.1.1={
 		birth=yes
 	}
 	1085.1.1={
@@ -22812,7 +22808,7 @@
 	religion=catholic
 	culture=portuguese
 
-	1122.1.1={
+	1108.1.1={
 		birth=yes
 	}
 	1160.1.1={
@@ -22827,10 +22823,10 @@
 	religion=catholic
 	culture=portuguese
 
-	1105.1.1={
+	1085.1.1={
 		birth=yes
 	}
-	1140.1.1={
+	1122.1.1={
 		add_spouse=72877
 	}
 	1145.1.1={
@@ -23409,14 +23405,11 @@
 	name="Cristina"
 	female=yes
 	dynasty=8618
-
-	father=108530
-	mother=108531
-
 	religion=catholic
 	culture=portuguese
-
-	1029.1.1={
+	father=108530
+	mother=108531
+	1041.1.1={
 		birth=yes
 	}
 	1079.1.1={
@@ -23426,17 +23419,14 @@
 108530={
 	name="Fernando"
 	dynasty=8618
-
-	father=108550
-	mother=108551
-
 	religion=imperial
 	culture=portuguese
-
+	father=108550
+	mother=108551
 	1002.1.1={
 		birth=yes
 	}
-	1028.1.1={
+	1040.1.1={
 		add_spouse=108531
 	}
 	1052.1.1={

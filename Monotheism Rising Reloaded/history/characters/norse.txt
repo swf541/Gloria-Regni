@@ -40,32 +40,15 @@
 600 = {
 	name="Yngvar" # AKA Igor
 	dynasty=705
-	religion=slavic_pagan
-	culture=russian
-	diplomacy=5
-	stewardship = 6
-	martial = 7
-	trait=cruel
-	trait=deceitful
-	trait=greedy
-	trait=proud
-	trait=brave
-	trait=thrifty_clerk
-	trait=viking
+	religion=norse_pagan
+	culture=norse
 	father=40605
 	mother=6863
-	878.1.1={
+	875.1.1={
 		birth=yes
 	}
 	920.1.1={
 		add_spouse=601
-	}
-	935.1.1 = {
-		effect = {
-				wealth = 350
-				piety = 200
-				prestige = 200
-		}
 	}
 	945.1.1={
 		death=yes
@@ -99,76 +82,11 @@
 	diplomacy=7
 	intrigue=7
 	stewardship=7
-	religion="norse_pagan"
+	religion="imperial"
 	culture=norse
-	trait=strong
 	father=5789
 	926.1.2={
 		birth=yes
-	}
-	935.1.1 = {
-		effect = {
-				spawn_unit = {
-				province = 45 # Argyll
-				owner = ROOT
-				troops = {
-					light_infantry = { 500 500 }
-					heavy_infantry = { 300 300 }
-					archers = { 200 300 }
-				}
-				attrition = 1.0
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 45 # Argyll
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 500 500 }
-						heavy_infantry = { 300 300 }
-						archers = { 200 300 }
-					}
-					attrition = 1.0
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 45 # Argyll
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 500 500 }
-						heavy_infantry = { 300 300 }
-						archers = { 200 300 }
-					}
-					attrition = 1.0
-				}
-			}
-		}
 	}
 	953.1.1={
 		add_spouse=131520
@@ -577,7 +495,7 @@
 			spawn_unit = {
 				province = 106 # Nantes
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 217 217 }
 					heavy_infantry = { 168 168 }
@@ -688,6 +606,8 @@
 40605 = {
 	name="Rurik" # Rurik, legendary founder of Rus. Probably known as Hrörekr by his Norse contemporaries.
 	dynasty=705
+	dna = tczeyfghtom
+	properties = th0ebd000000
 	religion="norse_pagan"
 	culture=norse
 	diplomacy = 12
@@ -711,7 +631,7 @@
 			spawn_unit = {
 				province = 414
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 507 507 }
 					heavy_infantry = { 50 50 }
@@ -1510,23 +1430,6 @@
 	}
 }
 
-2001010142 = {
-	name="Canute"
-	dynasty=490
-	religion="norse_pagan"
-	culture=norse
-	trait="viking"
-	trait="tough_soldier"
-	father=101500 # Gorm the Old
-	mother=101501 # Thyra Dannebod
-	904.1.1={
-		birth="904.1.1"
-	}
-	958.1.1={
-		death="958.1.1"
-	}
-}
-
 101502 = {
 	name="Haraldr" # Blåtand
 	dynasty=490
@@ -1542,8 +1445,8 @@
 	father=101500 # Gorm the Old
 	mother=101501 # Thyra Dannebod
 	give_nickname=nick_bluetooth
-	932.1.1={
-		birth="934.1.1"
+	920.1.1={
+		birth="920.1.1"
 	}
 	965.1.1={
 		religion="imperial"
@@ -2058,18 +1961,17 @@
 }
 
 102507 = {
-	name="Eric Bloodaxe"
+	name="Eirikr"
 	dynasty=499
 	martial=7
 	diplomacy=5
 	intrigue=8
 	stewardship=5
-	religion="norse_pagan"
+	religion="imperial"
 	culture=norse
 	trait="lustful"
 	trait="diligent"
 	trait="deceitful"
-	trait="cynical"
 	trait="envious"
 	trait="kinslayer"
 	trait="skilled_tactician"
@@ -2080,73 +1982,6 @@
 	}
 	934.1.1={
 		add_spouse=101504
-	}
-	935.1.1 = {
-		add_claim = k_norway
-		add_claim = d_northumberland
-		effect = {
-				spawn_unit = {
-				province = 36 # Orkney
-				owner = ROOT
-				leader = ROOT
-				troops = {
-					light_infantry = { 800 800 }
-					heavy_infantry = { 400 400 }
-					archers = { 300 300 }
-				}
-				attrition = 1.0
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 36 # Orkney
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 800 800 }
-						heavy_infantry = { 400 400 }
-						archers = { 300 300 }
-					}
-					attrition = 1.0
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 36 # Orkney
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 800 800 }
-						heavy_infantry = { 400 400 }
-						archers = { 300 300 }
-					}
-					attrition = 1.0
-				}
-			}
-		}
 	}
 	954.1.1={
 		death="954.1.1"
@@ -3025,7 +2860,7 @@
 			spawn_unit = {
 				province = 272 # Akershus
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 115 115 }
 					heavy_infantry = { 6 6 }
@@ -3097,20 +2932,11 @@
 144001 = {
 	name="Hakon"
 	dynasty=499
-	dna="bhjaavafacj"
-	properties="0b00d0"
 	religion="imperial"
-	culture=norse
-    trait=content
-	trait=chaste
-	trait=tough_soldier
-	trait=trusting
-	trait=just
-	trait=trickster
-	trait=sympathy_pagans
+	culture=norse	
 	father = 144000
-	919.1.1={
-		birth="919.1.1"
+	920.1.1={
+		birth="920.1.1"
 	}
 	961.1.1={
 		death="961.1.1"
@@ -3135,7 +2961,7 @@
 144003 = {
 	name="Tryggve"
 	dynasty=499
-	religion="norse_pagan"
+	religion="imperial"
 	culture=norse	
 	father = 144002
 	925.1.1={
@@ -3167,7 +2993,7 @@
 144005 = {
 	name="Björn"
 	dynasty=499
-	religion="norse_pagan"
+	religion="imperial"
 	culture=norse	
 	father = 144000
 	mother = 161305
@@ -3182,7 +3008,7 @@
 144006 = {
 	name="Guðröðr"
 	dynasty=499
-	religion="norse_pagan"
+	religion="imperial"
 	culture=norse	
 	father = 144005
 	907.1.1={
@@ -3828,7 +3654,7 @@
 			spawn_unit = {
 				province = 57 # York
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 1292 1292 }
 					heavy_infantry = { 245 245 }
@@ -3942,6 +3768,8 @@
 163112 = {
 	name="Halfdan" # Ragnarsson 'Hvitserk'
 	dynasty=7514
+	dna = tctbpftnsvn
+	properties = tg0djd000000
 	religion="norse_pagan"
 	culture=norse
 	martial=7
@@ -3973,7 +3801,7 @@
 			spawn_unit = {
 				province = 57 # York
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 1118 1118 }
 					heavy_infantry = { 1723 1723 }
@@ -4113,7 +3941,7 @@
 			spawn_unit = {
 				province = 547
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 722 722 }
 					heavy_infantry = { 156 156 }
@@ -4605,7 +4433,7 @@
 	dynasty=1029
 	religion="norse_pagan"
 	culture="norse"
-	father=166715
+	father=167715
 	840.1.1={
 		birth="840.1.1"
 	}
@@ -4654,7 +4482,7 @@
 	dynasty=1030
 	religion="norse_pagan"
 	culture="norse"
-	father=166718
+	father=167718
 	845.1.1={
 		birth="845.1.1"
 	}
@@ -6686,7 +6514,6 @@
 }
 194038 = {
 	name = "Rögnfrið"
-	dynasty = 102013
 	religion = norse_pagan
 	culture = norse
 	female = yes
@@ -7051,6 +6878,65 @@
 		birth = yes
 	}
 	799.1.1 = {
+		death = yes
+	}
+}
+
+214079 = {
+	name = "Þorsteinn"
+	dynasty = 1043504
+	religion = norse_pagan
+	culture = norse
+	father=186504
+	875.1.1 = {
+		birth = yes
+	}
+	945.1.1 = {
+		death = yes
+	}
+}
+
+214080 = {
+	name = "Þorkell"
+	dynasty = 1043504
+	religion = norse_pagan
+	culture = norse
+	father=214079
+	905.1.1 = {
+		birth = yes
+	}
+	984.1.1 = {
+		death = yes
+	}
+}
+
+214081 = {
+	name = "Þormóðr"
+	dynasty = 1043504
+	religion = norse_pagan
+	culture = norse
+	father=214080
+	940.1.1 = {
+		birth = yes
+	}
+	1000.1.1 = {
+		religion = imperial
+	}
+	1020.1.1 = {
+		death = yes
+	}
+}
+
+214082 = {
+	name = "Hamal"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214081
+	980.1.1 = {
+		birth = yes
+	}
+	1055.1.1 = {
 		death = yes
 	}
 }

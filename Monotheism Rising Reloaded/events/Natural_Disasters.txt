@@ -1,0 +1,58 @@
+namespace = DIS.1
+
+province_event = {	#Minor Flooding
+	id = DIS.1
+
+	is_triggered_only = yes
+	
+	trigger = {
+		or = {
+			port = yes
+			borders_major_river = yes
+		}
+	} 
+	immediate = {
+			change_variable = { which = prosperity_value value = -1 }
+			add_province_modifier = { name = minor_flooding duration = 6 }
+			#Destroy Building or Two
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+province_event = {	#Major Flooding
+	id = DIS.2
+
+	is_triggered_only = yes
+	
+	trigger = {
+		or = {
+			port = yes
+			borders_major_river = yes
+		}
+	} 
+	immediate = {
+		change_variable = { which = prosperity_value value = -2 }
+		add_province_modifier = { name = major_flooding duration = 12 }
+		#Destroy a good bit of buildings
+		random = { 
+			chance = 75
+			random_neighbor_province = {
+				limit = {
+					or = {
+						port = yes
+						borders_major_river = yes
+					}					
+				}
+			province_event = { id = DIS.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = ok
+	}
+}
+

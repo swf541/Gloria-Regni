@@ -412,7 +412,8 @@
 	name="Robert" #Guiscard
 	# AKA: Robert 'Guiscard'
 	dynasty=678
-	properties="ch00e0"
+	dna = cdbcdogibck
+	properties = 0c0cbd000000
 	martial=9
 	diplomacy=4
 	intrigue=6
@@ -1020,8 +1021,8 @@
 	name="William"
 	# AKA: William 'the Conqueror'
 	dynasty=752
-	dna="epdbiohgukk"
-	properties="ae0000"
+	dna = cagfktibaal
+	properties = fj0dcd000000
 	martial=7
 	diplomacy=7
 	intrigue=10
@@ -1064,10 +1065,10 @@
 			spawn_unit = {
 				province = 97 # Rouen
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 566 566 }
+					heavy_infantry = { 766 766 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
@@ -1078,10 +1079,10 @@
 			spawn_unit = {
 				province = 97 # Rouen
 				owner = ROOT
-				leader = 148 # Odo of Bayeux
+				#leader = 148 # Odo of Bayeux
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 566 566 }
+					heavy_infantry = { 766 766 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
@@ -1092,10 +1093,10 @@
 			spawn_unit = {
 				province = 97 # Rouen
 				owner = ROOT
-				leader = 6818 # William of Eu
+				#leader = 6818 # William of Eu
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 566 566 }
+					heavy_infantry = { 766 766 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
@@ -1106,10 +1107,10 @@
 			spawn_unit = {
 				province = 97 # Rouen
 				owner = ROOT
-				leader = 150 # Robert of Mortain
+				#leader = 150 # Robert of Mortain
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 566 566 }
+					heavy_infantry = { 766 766 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
@@ -1163,10 +1164,13 @@
 	father=140
 	mother=367
 	1064.1.1 = {
-		birth="1064.1.1"
+		birth=yes
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1074.1.1 = {
-		death="1074.1.1"
+		death=yes
 	}
 }
 
@@ -1190,6 +1194,7 @@
 	1054.1.1 = {
 		birth="1054.1.1"
 	}
+	1087.9.9 = { add_claim = k_england }
 	1096.1.1 = {
 		trait="crusader"
 	}
@@ -1215,10 +1220,13 @@
 	father=140
 	mother=367
 	1061.1.1 = {
-		birth="1061.1.1"
+		birth=yes
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1090.8.13 = {
-		death="1090.8.13"
+		death=yes
 	}
 }
 
@@ -1238,6 +1246,9 @@
 	mother=367
 	1055.1.1 = {
 		birth="1055.1.1"
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1081.1.1 = {
 		death="1081.1.1"
@@ -1265,6 +1276,9 @@
 	1056.1.1 = {
 		birth="1056.1.1"
 	}
+	1087.9.9 = {
+		add_claim = k_england
+	}
 	1100.8.3 = {
 		death="1100.8.3"
 	}
@@ -1286,6 +1300,9 @@
 	mother=367
 	1057.1.1 = {
 		birth="1057.1.1"
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1126.7.30 = {
 		death="1126.7.30"
@@ -1890,7 +1907,8 @@
 	religion="catholic"
 	culture="norman"
 	trait="tough_soldier"
-	father=144700
+	#father=144700
+	father = 190000
 	1054.1.1 = {
 		birth=yes
 	}
@@ -1909,7 +1927,8 @@
 	religion="catholic"
 	culture="norman"
 	trait="martial_cleric"
-	father=144700
+	#father=144700
+	father = 190000
 	1056.1.1 = {
 		birth="1056.1.1"
 	}
@@ -1986,7 +2005,10 @@
 	father=140
 	mother=367
 	1068.9.1 = {
-		birth="1068.9.1"
+		birth=yes
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1100.11.11 = {
 		add_spouse=202995
@@ -1995,7 +2017,7 @@
 		add_spouse=206857 #Adelheid Reginar
 	}
 	1135.12.1 = {
-		death="1135.12.1"
+		death=yes
 	}
 }
 
@@ -2202,11 +2224,14 @@
 	trait="amateurish_plotter"
 	father=140
 	mother=367
-	1062.1.1 = {
-		birth="1062.1.1"
+	1067.1.1 = {
+		birth=yes
+	}
+	1087.9.9 = {
+		add_claim = k_england
 	}
 	1137.3.8 = {
-		death="1137.3.8"
+		death=yes
 	}
 }
 
@@ -2755,7 +2780,7 @@
 }
 
 244 = {
-	name="Vilhjálmr Langaspjót"
+	name="William"
 	dynasty=752
 	martial=8
 	diplomacy=7
@@ -2765,16 +2790,11 @@
 	culture="norman"
 	trait="gluttonous"
 	trait="harelip"
-	trait=brave
 	trait="underhanded_rogue"
-	trait=sympathy_pagans
 	father=242
 	mother=241
 	914.1.2 = {
 		birth="914.1.2"
-	}
-	935.1.1={
-		add_claim=d_brittany
 	}
 	942.12.17 = {
 		death="942.12.17"
@@ -4930,64 +4950,6 @@
 	}
 }
 
-5686 = {
-	name="Thomas"
-	dynasty=100073
-	martial=6
-	diplomacy=6
-	intrigue=6
-	stewardship=4
-	religion="catholic"
-	culture="norman"
-	trait="ill"
-	trait="scholarly_theologian"
-	1038.1.2 = {
-		birth="1038.1.2"
-	}
-	1088.1.2 = {
-		death="1088.1.2"
-	}
-}
-
-5688 = {
-	name="Gerard"
-	dynasty=100073
-	martial=8
-	diplomacy=8
-	intrigue=4
-	stewardship=4
-	religion="catholic"
-	culture="norman"
-	trait="patient"
-	trait="martial_cleric"
-	1052.1.2 = {
-		birth="1052.1.2"
-	}
-	1102.1.2 = {
-		death="1102.1.2"
-	}
-}
-
-5690 = {
-	name="Thomas"
-	dynasty=100073
-	martial=8
-	diplomacy=6
-	intrigue=6
-	stewardship=6
-	religion="catholic"
-	culture="norman"
-	trait="proud"
-	trait="cynical"
-	trait="scholarly_theologian"
-	1042.1.2 = {
-		birth="1042.1.2"
-	}
-	1092.1.2 = {
-		death="1092.1.2"
-	}
-}
-
 6513 = {
 	name="Cundo" #Condoha Vagéna d'Eu
 	female=yes
@@ -5915,14 +5877,14 @@
 	trait="brilliant_strategist"
 	father=1120
 	mother=10008
-	1007.1.2 = {
-		birth="1007.1.2"
+	1018.1.2 = {
+		birth=yes
 	}
-	1070.1.1={
-		add_spouse=200365
-	}
-	1063.1.2 = {
-		death="1063.1.2"
+	#1070.1.1={
+	#	add_spouse=200365
+	#}
+	1071.1.2 = {
+		death=yes
 	}
 }
 
@@ -8240,7 +8202,7 @@
 	dynasty=678
 
 	father=85002
-	mother=200365
+	#mother=200365
 
 	religion=catholic
 	culture=norman

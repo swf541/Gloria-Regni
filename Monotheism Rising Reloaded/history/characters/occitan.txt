@@ -1284,6 +1284,7 @@
 	stewardship=7
 	religion="catholic"
 	culture="occitan"
+	trait=fair
 	trait="diligent"
 	trait="just"
 	trait="proud"
@@ -1500,8 +1501,8 @@
 	trait="amateurish_plotter"
 	father=234
 	mother=127017
-	1015.1.1 = {
-		birth="1015.1.1"
+	1010.1.1 = {
+		birth="1010.1.1"
 	}
 	1039.3.10 = {
 		death="1039.3.10"
@@ -1524,10 +1525,6 @@
 	father=90127
 	900.1.1 = {
 		birth="900.1.1"
-	}
-	934.1.1 = {
-		add_claim=c_tourraine
-		add_claim=c_bourges
 	}
 	935.1.1 = {
 		add_spouse=243
@@ -1746,8 +1743,8 @@
 	trait="cynical"
 	father=234
 	mother=275
-	1023.1.1 = {
-		birth="1023.1.1"
+	1025.1.1 = {
+		birth="1025.1.1"
 	}
 	1058.12.1 = {
 		add_spouse=327
@@ -2589,13 +2586,13 @@
 	father=40807
 	mother=71637
 	1140.1.1 = {
-		birth="1140.1.1"
+		birth=yes
 	}
-	1166.1.1 = {
+	1161.11.17 = {
 		add_spouse=221529
 	}
 	1166.1.1 = {
-		death="1166.1.1"
+		death=yes
 	}
 }
 
@@ -3035,7 +3032,7 @@
 	trait="detached_priest"
 	}
 	1264.10.2 = {
-	name="Clement"
+	name="Clemens"
 	# AKA: Gui
 	}
 	1268.11.29 = {
@@ -3062,7 +3059,7 @@
 		birth="1264.1.1"
 	}
 	1304.7.7 = {
-		name="Clement"
+		name="Clemens"
 	}
 	1309.3.1 = {
 		capital="c_venaissin"
@@ -3682,8 +3679,8 @@
 	culture="occitan"
 	father=205601 #Boson IV de Périgord
 	mother=205556 # Brunichilde de Foix
-	1141.1.1 = {
-		birth="1141.1.1"
+	1135.1.1 = {
+		birth=yes
 	}
 	#married Archambaud V de Comborn 205605
 	1185.1.1 = {
@@ -12507,8 +12504,8 @@
 	trait="amateurish_plotter"
 	father=234
 	mother=275
-	1020.1.2 = {
-		birth="1020.1.2"
+	1026.1.2 = {
+		birth="1026.1.2"
 	}
 	1070.1.2 = {
 		death="1070.1.2"

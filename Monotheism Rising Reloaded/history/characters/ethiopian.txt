@@ -1675,74 +1675,9 @@
 	dynasty=1022242
 	religion="jewish"
 	culture="ethiopian"
-	trait=tough_soldier
 	father=145647
 	892.1.1={
 		birth="892.1.1"
-	}
-	935.1.1={
-		# Pagan allies
-		effect = {
-				wealth = 400
-				spawn_unit = {
-				province = 1380 # Semien
-				owner = ROOT
-				leader = ROOT
-				troops = {
-					light_infantry = { 500 500 }
-					archers = { 300 300 }
-					}
-				attrition = 1.0
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = "pagan"
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 1380 # Semien
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 500 500 }
-						archers = { 300 300 }
-					}
-					attrition = 1.0
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = "pagan"
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 1380 # Semien
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 500 500 }
-						archers = { 300 300 }
-					}
-					attrition = 1.0
-				}
-			}
-		}
 	}
 	949.1.1={
 		death="949.1.1"

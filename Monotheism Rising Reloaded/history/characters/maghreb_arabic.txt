@@ -2289,8 +2289,6 @@
 	religion=sunni
 	culture=maghreb_arabic
 
-	father=32991
-
 	1057.1.1={
 		birth=yes
 	}
@@ -6943,19 +6941,6 @@
 	900.1.1={
 		birth="900.1.1" #Unknown
 	}
-	935.1.1 = {
-		wealth = 300
-		effect = {
-			spawn_unit = {
-				province = 918 # Sijilmasa
-				owner = ROOT
-				troops = {
-					light_cavalry = { 500 500 }
-				}
-				attrition = 0.5
-			}
-		}
-	}
 	950.1.1={
 		death="950.1.1"
 	}
@@ -7274,8 +7259,8 @@
 	culture="maghreb_arabic"
 	trait="sayyid"
 	father=159515
-	918.1.2={
-		birth="918.1.2"
+	920.1.2={
+		birth="920.1.2"
 	}
 	948.12.16={
 		death="948.12.16"
@@ -7784,29 +7769,8 @@
 	religion="sunni"
 	culture="maghreb_arabic"
 	father=168267
-	trait=sympathy_christendom
-	trait=thrifty_clerk
-	trait=brave
 	880.1.1 = {
 		birth="880.1.1"
-	}
-	934.1.1 = {
-		add_claim=c_cebta
-		add_claim=c_tangier
-	}
-	935.1.1 = {
-		wealth = 300
-		effect = {
-			spawn_unit = {
-				province = 838 # El Rif
-				owner = ROOT
-				troops = {
-					light_cavalry = { 800 800 }
-					camel_cavalry = { 200 200 }
-				}
-				attrition = 0.5
-			}
-		}
 	}
 	940.1.1 = {
 		death="940.1.1"
@@ -7972,29 +7936,11 @@
 168280 = {
 	name="Abdullah"
 	dynasty=9576
-	religion="kharijite"
+	religion="sunni"
 	culture="maghreb_arabic"
 	father=168279
-	trait=sympathy_judaism
-	trait=sympathy_christendom
-	trait=sympathy_pagans
-	trait=tough_soldier
 	895.1.1 = {
 		birth="895.1.1"
-	}
-	935.1.1 = {
-		wealth = 100
-		effect = {
-			spawn_unit = {
-				province = 844 # Massat
-				owner = ROOT
-				troops = {
-					light_infantry = { 1000 1000 }
-					archers = { 300 300 }
-				}
-				attrition = 0.5
-			}
-		}
 	}
 	961.1.1 = {
 		death="961.1.1"

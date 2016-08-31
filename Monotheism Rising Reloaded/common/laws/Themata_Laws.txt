@@ -14,6 +14,7 @@ laws = {
 			has_dlc = "Zeus"
 			holder_scope = {
 				government = roman_government
+				independent = yes
 			}
 		}
 		revoke_allowed = {
@@ -26,7 +27,7 @@ laws = {
 			factor = 0
 		}
 		pass_effect = {
-			
+			character_event = { id = ROMEGOV.2 } 
 		}
 		effect = {			
 			hidden_tooltip = {
@@ -49,6 +50,7 @@ laws = {
 			has_dlc = "Zeus"
 			holder_scope = {
 				government = roman_government
+				independent = yes
 			}
 		}
 		revoke_allowed = {
@@ -61,6 +63,7 @@ laws = {
 			factor = 0
 		}
 		pass_effect = {
+			character_event = { id = ROMEGOV.3 } 
 		}
 		effect = {
 			

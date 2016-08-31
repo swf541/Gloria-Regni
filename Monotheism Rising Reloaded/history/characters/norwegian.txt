@@ -189,7 +189,7 @@
 			spawn_unit = {
 				province = 57 # York
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
 					light_infantry = { 1334 1334 }
 					heavy_infantry = { 1381 1381 }
@@ -202,7 +202,7 @@
 			spawn_unit = {
 				province = 57 # York
 				owner = ROOT
-				leader = 124 # Tostig
+				#leader = 124 # Tostig
 				troops = {
 					light_infantry = { 1334 1334 }
 					heavy_infantry = { 1381 1381 }
@@ -215,7 +215,7 @@
 			spawn_unit = {
 				province = 57 # York
 				owner = ROOT
-				leader = 102534 # Olav Kyrre
+				#leader = 102534 # Olav Kyrre
 				troops = {
 					light_infantry = { 1334 1334 }
 					heavy_infantry = { 1381 1381 }
@@ -2727,7 +2727,7 @@
 
 232686 = {
 	name="Uspak"
-	dynasty=25046
+	dynasty=3109 # MacDougall
 	martial=7
 	diplomacy=4
 	intrigue=6
@@ -2736,12 +2736,13 @@
 	culture="norwegian"
 	trait="brave"
 	trait="tough_soldier"
+	trait=legit_bastard
 	father=232683
 	1174.1.1={
-		birth="1174.1.1"
+		birth=yes
 	}
 	1229.1.1={
-		death="1229.1.1"
+		death=yes
 	}
 }
 
@@ -4261,13 +4262,15 @@
 	culture="norwegian"
 	father=220046
 	1195.1.1={
-		birth="1195.1.1"
+		birth=yes
+	}
+	1263.1.1={
+		add_spouse=188875
 	}
 	1265.1.1={
-		death="1265.1.1"
+		death=yes
 	}
 }
-
 7393 = {
 	name="Ragnall"
 	dynasty=556
@@ -5094,5 +5097,178 @@
 	}
 	1138.1.1={
 		death="1138.1.1"
+	}
+}
+194313 = {
+	name="Arnvid"
+	dynasty=1045068 # av Rogen
+	religion=catholic
+	culture=norwegian
+	1191.1.1 = {
+			birth = yes
+	}
+	1260.1.1 = {
+			death = yes
+	}
+}
+194314 = {
+	name="Haldor"
+	dynasty=1045069 # av Bergen
+	religion=catholic
+	culture=norwegian
+	1198.1.1 = {
+			birth = yes
+	}
+	1260.1.1 = {
+			death = yes
+	}
+}
+194315 = {
+	name="Haldor"
+	dynasty=1045070 # av Eidsborg
+	religion=catholic
+	culture=norwegian
+	1198.1.1 = {
+			birth = yes
+	}
+	1260.1.1 = {
+			death = yes
+	}
+}
+194316 = {
+	name="Torgil"
+	dynasty=1045071 # av Finnmark
+	religion=catholic
+	culture=norwegian
+	1196.1.1 = {
+			birth = yes
+	}
+	1260.1.1 = {
+			death = yes
+	}
+}
+194317 = {
+	name="Ragnar"
+	dynasty=1045072 # av Røst
+	religion=catholic
+	culture=norwegian
+	1196.1.1 = {
+			birth = yes
+	}
+	1260.1.1 = {
+			death = yes
+	}
+}
+
+188876 = {
+	name="Godred"
+	dynasty=556 # Crovan
+	religion="catholic"
+	culture="norwegian"
+	father=7392
+	trait=legit_bastard
+	1241.1.1={
+		birth=yes
+	}
+	1279.1.1={
+		death=yes
+	}
+}
+
+214083 = {
+	name = "Mar"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214082
+	1005.1.1 = {
+		birth = yes
+	}
+	1070.1.1 = {
+		death = yes
+	}
+}
+
+214084 = {
+	name = "Thormod"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214082
+	1008.1.1 = {
+		birth = yes
+	}
+	1067.1.1 = {
+		death = yes
+	}
+}
+
+214085 = {
+	name = "Torfi"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214082
+	1011.1.1 = {
+		birth = yes
+	}
+	1060.1.1 = {
+		death = yes
+	}
+}
+
+214086 = {
+	name = "Sigurd"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214083
+	1035.1.1 = {
+		birth = yes
+	}
+	1085.1.1 = {
+		death = yes
+	}
+}
+
+214087 = {
+	name = "Hamal"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214083
+	1040.1.1 = {
+		birth = yes
+	}
+	1095.1.1 = {
+		death = yes
+	}
+}
+
+214088 = {
+	name = "Gudmund"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214087
+	1065.1.1 = {
+		birth = yes
+	}
+	1110.1.1 = {
+		death = yes
+	}
+}
+
+214089 = {
+	name = "Thormod"
+	dynasty = 1043504
+	religion = catholic
+	culture = norse
+	father=214088
+	1090.1.1 = {
+		birth = yes
+	}
+	1145.1.1 = {
+		death = yes
 	}
 }

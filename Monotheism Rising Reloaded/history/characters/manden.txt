@@ -746,23 +746,10 @@
 	religion="sunni"
 	culture="manden"
 	father=161049
-	trait=sympathy_pagans
 	900.1.1={
 		birth="900.1.1"
 	}
-	935.1.1 = {
-		wealth = 300
-		effect = {
-			spawn_unit = {
-				province = 914 # Massat
-				owner = ROOT
-				troops = {
-					light_cavalry = { 800 800 }
-					}
-				attrition = 0.5
-			}
-		}
-	}
+	
 	940.1.1={
 		death="940.1.1"
 	}
@@ -2126,17 +2113,11 @@
 184017 = {
 	name="Djibril"
 	dynasty=1030000
-	religion=west_african_pagan
+	religion="sunni"
 	culture="manden"
 	father=184016
-	trait=sympathy_islam
 	905.1.1={
 		birth="905.1.1"
-	}
-	935.1.1 = {
-		wealth = 150
-		piety = 200
-		prestige = 300
 	}
 	960.1.1={
 		death="960.1.1"
@@ -2146,7 +2127,7 @@
 184018 = {
 	name="Adama"
 	dynasty=1030000
-	religion=west_african_pagan
+	religion="sunni"
 	culture="manden"
 	father=184017
 	925.1.1={

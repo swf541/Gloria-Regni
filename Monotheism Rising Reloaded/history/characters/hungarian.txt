@@ -25,7 +25,33 @@
 	name="Csák"
 	religion=tengri_pagan
 	culture=hungarian
+	820.1.1={
+		birth=yes
+	}
+	897.1.1={
+		death=yes
+	}
+}
+
+194365 = {
+	name="Géza"
+	religion=tengri_pagan
+	culture=hungarian
+	father=6847
 	840.1.1={
+		birth=yes
+	}
+	897.1.1={
+		death=yes
+	}
+}
+194366 = {
+	name="Ibolya"
+	female = yes
+	religion=tengri_pagan
+	culture=hungarian
+	father=6847
+	845.1.1={
 		birth=yes
 	}
 	897.1.1={
@@ -2587,14 +2613,13 @@
 	religion="tengri_pagan"
 	culture="hungarian"
 	trait="proud"
-	trait="strong"
 	trait="underhanded_rogue"
 	father=159135
 	931.1.1 = {
 		birth="931.1.1"
 	}
-	934.1.1 = {
-		add_spouse=2001010094
+	947.1.1 = {
+		add_spouse=483
 	}
 	972.1.1 = {
 		death="972.1.1"
@@ -9435,90 +9460,9 @@
 	religion="tengri_pagan"
 	culture="hungarian"
 	father=159136
-	martial=7
-	trait=lisp
-	trait=brave
-	trait=just
-	trait=zealous
-	trait=greedy
-	trait=envious
-	trait=charismatic_negotiator
 	880.1.2={
 		birth="880.1.2"
 	}
-	927.1.1={
-		add_claim = d_temes
-		add_claim = d_ungvar
-		effect = {
-				spawn_unit = {
-				province = 444 # Esztergom
-				owner = ROOT
-				leader = ROOT
-				troops = {
-					light_infantry = { 1500 1500 }
-					heavy_infantry = { 500 500 }
-					archers = { 300 300 }
-					light_cavalry = { 500 500 }
-					horse_archers = { 200 200 }
-				}
-				attrition = 1.0
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 444 # Esztergom
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						archers = { 300 300 }
-						light_cavalry = { 500 500 }
-						horse_archers = { 200 200 }
-					}
-					attrition = 1.0
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 444 # Esztergom
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						archers = { 300 300 }
-						light_cavalry = { 500 500 }
-						horse_archers = { 200 200 }
-					}
-					attrition = 1.0
-				}
-			}
-		}
-	} 
 	955.1.2={
 		death="955.1.2"
 	}
@@ -9571,63 +9515,32 @@
 			spawn_unit = {
 				province = 544 # Korsun
 				owner = ROOT
-				leader = ROOT
+				#leader = ROOT
 				troops = {
-					light_infantry = { 1626 1626 }
-					heavy_infantry = { 75 75 }
-					archers = { 325 325 }
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
 				attrition = 0.5
 			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
-				trait = skilled_tactician
+				attrition = 0.5
 			}
-			new_character = {
-				spawn_unit = {
-					province = 544 # Korsun
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 1626 1626 }
-						heavy_infantry = { 75 75 }
-						archers = { 325 325 }
-					}
-					attrition = 0.5
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_cavalry = { 2250 2250 }
+					horse_archers = { 750 750 }
 				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 544 # Korsun
-					owner = ROOT
-					leader = THIS
-					troops = {
-						light_infantry = { 1626 1626 }
-						heavy_infantry = { 75 75 }
-						archers = { 325 325 }
-					}
-					attrition = 0.5
-				}
+				attrition = 0.5
 			}
 		}
 	}
@@ -9664,7 +9577,6 @@
 		death="920.1.1"
 	}
 }
-
 146214 = {
 	name="Jenö"
 	dynasty=1022386
@@ -9686,6 +9598,20 @@
 	religion="tengri_pagan"
 	father = 146214
 	758.1.1={
+		birth=yes
+	}
+	819.1.1={
+		death=yes
+	}
+}
+
+194345 = {
+	name="Elek"
+	dynasty=1022386
+	culture="hungarian"
+	religion="tengri_pagan"
+	father = 146214
+	760.1.1={
 		birth=yes
 	}
 	819.1.1={
@@ -9916,4 +9842,30 @@
 		death=yes
 	}
 }
-
+194367 = {
+	name="Csaba"
+	dynasty=1022386
+	culture="hungarian"
+	religion="tengri_pagan"
+	father = 146231
+	840.1.1={
+		birth=yes
+	}
+	890.1.1={
+		death=yes
+	}
+}
+194368 = {
+	name="Hajnal"
+	female = yes
+	dynasty=1022386
+	culture="hungarian"
+	religion="tengri_pagan"
+	father = 146231
+	845.1.1={
+		birth=yes
+	}
+	890.1.1={
+		death=yes
+	}
+}
