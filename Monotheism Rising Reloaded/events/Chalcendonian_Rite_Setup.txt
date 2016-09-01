@@ -1,0 +1,91 @@
+namespace = RITE
+character_event = {
+	id = RITE.1
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = imperial
+	}     
+
+	immediate = {
+		if = {
+			limit = {
+				culture_group = byzantine_group
+				NOT = { location = { region = world_middle_east } }
+			}
+			add_trait = byzantine_rite
+		}
+		if = {
+			limit = {
+				location = { region = custom_ambrosia }
+			}
+			add_trait = ambrosian_rite
+		}
+		if = {
+			limit = {
+				OR = {
+					culture = irish
+					culture = scottish
+					culture = pictish
+				}
+			}
+			add_trait = celtic_rite
+		}
+		if = {
+			limit = {
+				OR = {
+					culture = visigothic
+					location = { region = world_europe_west_iberia }
+				}
+			}
+			add_trait = mozarabic_rite
+		}
+		if = {
+			limit = {
+				OR = {
+					culture = african_latin
+					location = { region = custom_world_africa_north }
+				}
+			}
+			add_trait = african_rite
+		}
+		if = {
+			limit = {
+				location = { region = world_middle_east }
+			}
+			add_trait = antiochene_rite
+		}
+
+		if = {
+			limit = {
+				location = { region = custom_aquileia }
+			}
+			add_trait = antiochene_rite
+		}		
+		if = {
+			limit = {
+				NOR = {
+					location = { region = custom_aquileia }
+					location = { region = world_middle_east }
+					location = { region = custom_world_africa_north }
+					culture = african_latin
+					culture = visigothic
+					location = { region = world_europe_west_iberia }
+					culture = irish
+					culture = scottish
+					culture = pictish
+					location = { region = custom_ambrosia }
+					culture_group = byzantine_group
+				}
+			}
+			add_trait = roman_rite
+		}	
+	}
+	
+	option = {
+		name = ok
+	}
+}

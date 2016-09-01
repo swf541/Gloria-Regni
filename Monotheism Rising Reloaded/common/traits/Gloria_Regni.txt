@@ -20,3 +20,167 @@ green_deme = {
 	customizer = no
 	random = no
 }
+
+roman_rite = {
+	opposites = {
+		byzantine_rite
+		celtic_rite
+		ambrosian_rite
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+byzantine_rite = {
+	opposites = {
+		roman_rite
+		celtic_rite
+		ambrosian_rite		
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+celtic_rite = {
+	opposites = {
+		byzantine_rite
+		roman_rite
+		ambrosian_rite		
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+ambrosian_rite = {
+	opposites = {
+		celtic_rite
+		byzantine_rite
+		roman_rite	
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+antiochene_rite = {
+	opposites = {
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+alexandrian_rite = {
+	opposites = {
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+mozarabic_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+african_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		aquileian_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+aquileian_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+	}
+
+	same_trait_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}

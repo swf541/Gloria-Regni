@@ -1,0 +1,28 @@
+decisions = {
+	select_liturgical_rite = {
+		potential = {
+			religion = imperial
+			NOR = {
+				trait = roman_rite
+				trait = ambrosian_rite
+				trait = byzantine_rite
+				trait = celtic_rite
+				trait = alexandrian_rite
+				trait = mozarabic_rite
+				trait = antiochene_rite
+				trait = african_rite
+				trait = aquileian_rite
+			}
+		}
+		allow = {
+			war = no
+			has_regent = no
+		}
+		effect = {
+			character_event = { id = RITE.2 } 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}
