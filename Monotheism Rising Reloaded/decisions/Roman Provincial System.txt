@@ -24,14 +24,34 @@ decisions = {
 		}
 		effect = {
 			set_global_flag = provnce_hispania_restored
+
+			k_castille = {
+				destroy_landed_title = k_castille
+			}		
+
+			k_aragon = {
+				destroy_landed_title = k_aragon
+			}		
+
+			k_navarra = {
+				destroy_landed_title = k_navarra
+			}					
 			
-			destroy_landed_title = k_castille
-			destroy_landed_title = k_aragon
-			destroy_landed_title = k_navarra
-			destroy_landed_title = k_asturias
-			destroy_landed_title = k_spanish_galicia
-			destroy_landed_title = k_portugal
-			destroy_landed_title = k_andalusia			
+			k_asturias = {
+				destroy_landed_title = k_asturias
+			}	
+
+			k_spanish_galicia = {
+				destroy_landed_title = k_spanish_galicia
+			}	
+
+			k_portugal = {
+				destroy_landed_title = k_portugal
+			}	
+
+			k_andalusia = {
+				destroy_landed_title = k_andalusia
+			}				
 			
 			d_castilla = {
 				de_jure_liege = k_hispania
@@ -130,9 +150,14 @@ decisions = {
 		}
 		effect = {
 			set_global_flag = provnce_britannia_restored
-			
-			destroy_landed_title = k_england
-			destroy_landed_title = k_wales		
+
+			k_england = {
+				destroy_landed_title = k_england
+			}
+
+			k_wales = {
+				destroy_landed_title = k_wales
+			}			
 			
 			d_northumberland = {
 				de_jure_liege = k_britannia
@@ -215,7 +240,9 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_africae_restored
 			
-			destroy_landed_title = k_africa	
+			k_africa = {
+				destroy_landed_title = k_africa
+			}
 			
 			d_tunis = {
 				de_jure_liege = k_africae
@@ -268,6 +295,10 @@ decisions = {
 			set_global_flag = provnce_viennensis_restored
 			
 			destroy_landed_title = k_aquitaine	
+			
+			k_aquitaine = {
+				destroy_landed_title = k_aquitaine
+			}
 			
 			d_aquitaine = {
 				de_jure_liege = k_viennensis
@@ -347,9 +378,17 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_gallia_restored
 			
-			destroy_landed_title = k_brittany
-			destroy_landed_title = k_france		
-			destroy_landed_title = k_lotharingia
+			k_brittany = {
+				destroy_landed_title = k_brittany
+			}
+			
+			k_france = {
+				destroy_landed_title = k_france
+			}
+			
+			k_lotharingia = {
+				destroy_landed_title = k_lotharingia
+			}
 			
 			d_brittany = {
 				de_jure_liege = k_gallia
@@ -440,7 +479,9 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_italia_annonaria_restored
 			
-			destroy_landed_title = k_italy
+			k_italy = {
+				destroy_landed_title = k_italy
+			}
 			
 			d_ferrara = {
 				de_jure_liege = k_italia_annonaria
@@ -513,6 +554,14 @@ decisions = {
 			destroy_landed_title = k_bavaria
 			destroy_landed_title = k_croatia
 			
+			k_bavaria = {
+				destroy_landed_title = k_bavaria
+			}
+			
+			k_croatia = {
+				destroy_landed_title = k_croatia
+			}
+			
 			d_bavaria = {
 				de_jure_liege = k_illyricum
 				destroy_landed_title = d_bavaria
@@ -581,7 +630,9 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_italia_suburbicaria_restored
 			
-			destroy_landed_title = k_sicily
+			k_sicily = {
+				destroy_landed_title = k_sicily
+			}
 			
 			d_toscana = {
 				de_jure_liege = k_italia_suburbicaria
@@ -658,9 +709,11 @@ decisions = {
 			NOT = { has_global_flag = provnce_aegyptus_restored }
 		}
 		effect = {
-			set_global_flag = provnce_aegyptus_restored
+			set_global_flag = provnce_aegyptus_restoreds
 			
-			destroy_landed_title = k_egypt
+			k_egypt = {
+				destroy_landed_title = k_egypt
+			}
 			
 			d_alexandria = {
 				de_jure_liege = k_aegyptus
@@ -720,8 +773,13 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_oriens_restored
 			
-			destroy_landed_title = k_syria
-			destroy_landed_title = k_jerusalem
+			k_syria = {
+				destroy_landed_title = k_syria
+			}
+			
+			k_jerusalem = {
+				destroy_landed_title = k_jerusalem
+			}
 			
 			d_sinai = {
 				de_jure_liege = k_oriens
@@ -915,7 +973,9 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_thraciae_restored
 			
-			destroy_landed_title = k_bulgaria
+			k_bulgaria = {
+				destroy_landed_title = k_bulgaria
+			}
 			
 			d_thrace = {
 				de_jure_liege = k_thraciae
@@ -960,7 +1020,9 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_daciae_restored
 			
-			destroy_landed_title = k_serbia
+			k_serbia = {
+				destroy_landed_title = k_serbia
+			}
 			
 			d_vidin = {
 				de_jure_liege = k_daciae
@@ -1004,8 +1066,10 @@ decisions = {
 		effect = {
 			set_global_flag = provnce_macedonia_restored
 			
-			destroy_landed_title = k_byzantium
 			
+			k_byzantium = {
+				destroy_landed_title = k_byzantium
+			}
 			d_dyrrachion = {
 				de_jure_liege = k_macedonia
 				destroy_landed_title = d_dyrrachion
