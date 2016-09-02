@@ -9,7 +9,7 @@ rome_imperial_reconquest_kingdom = {
 	allowed_to_target_tributaries = no
 	allowed_to_target_suzerains = no
 	
-		infamy_modifier = 0.25
+	infamy_modifier = 0.15
 
 	can_use = {
 		ROOT = {
@@ -153,6 +153,9 @@ rome_imperial_reconquest_kingdom = {
 	defender_ai_defeat_worth = {
 		factor = 100
 	}
+	ai_will_do = { 
+		factor = 5
+	}
 }
 
 
@@ -288,6 +291,9 @@ ere_imperial_reconquest_kingdom = {
 	
 	defender_ai_defeat_worth = {
 		factor = 100
+	}
+	ai_will_do = { 
+		factor = 5
 	}
 }
 
@@ -435,6 +441,9 @@ wre_imperial_reconquest_kingdom = {
 	
 	defender_ai_defeat_worth = {
 		factor = 100
+	}
+	ai_will_do = { 
+		factor = 5
 	}
 }
 

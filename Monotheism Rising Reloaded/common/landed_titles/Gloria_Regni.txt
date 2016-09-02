@@ -27,11 +27,15 @@ e_wre = {
 	dignity = 100 # Counted as having this many more counties than it does
 	
 	dynasty_title_names = no # Will not be named "Seljuk", etc.
-}
+
 
 	k_hispania = {
 		color={ 200 0 50 }
 		color2={ 255 255 20 }
+		
+		allow = {
+			has_global_flag = provnce_hispania_restored
+		}
 		culture = roman
 	}
 	
@@ -40,6 +44,10 @@ e_wre = {
 		color2={ 255 255 20 }
 		
 		capital = 112
+		
+		allow = {
+			has_global_flag = provnce_britannia_restored
+		}
 				
 		culture = roman
 	}
@@ -50,6 +58,10 @@ e_wre = {
 		
 		capital = 817 
 		
+		allow = {
+			has_global_flag = provnce_africae_restored
+		}
+		
 		culture = roman
 	}
 	
@@ -58,6 +70,10 @@ e_wre = {
 		color2={ 255 255 20 }
 				
 		capital = 228 
+		
+		allow = {
+			has_global_flag = provnce_viennensis_restored
+		}
 		
 		culture = roman
 	}
@@ -68,12 +84,20 @@ e_wre = {
 		
 		capital = 112
 		
+		allow = {
+			has_global_flag = provnce_gallia_restored
+		}
+		
 		culture = roman
 	}
 	
 	k_italia_annonaria = {
 		color={ 200 0 50 }
 		color2={ 255 255 20 }
+	
+		allow = {
+			has_global_flag = provnce_italia_annonaria_restored
+		}	
 		
 		culture = roman
 	}
@@ -81,6 +105,10 @@ e_wre = {
 	k_illyricum = {
 		color={ 200 0 50 }
 		color2={ 255 255 20 }
+		
+		allow = {
+			has_global_flag = provnce_illyricum_restored
+		}	
 		
 		culture = roman
 	}
@@ -91,68 +119,14 @@ e_wre = {
 		
 		capital = 333 # Rome
 		
+		allow = {
+			has_global_flag = provnce_italia_suburbicaria_restored
+		}	
+		
 		culture = roman
 	}
+}
 	
-	k_aegyptus = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 802 
-		
-		culture = roman
-	}
-	
-	k_oriens = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 764
-		
-		culture = roman
-	}
-	
-	k_asiana = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 746
-		
-		culture = roman
-	}
-	
-	k_pontus = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 750
-		
-		culture = roman
-	}
-	
-	k_thraciae = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 496
-		
-		culture = roman
-	}
-	
-	k_daciae = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		culture = roman
-	}
-	
-	k_macedonia = {
-		color={ 200 0 50 }
-		color2={ 255 255 20 }
-		
-		capital = 490
-		
-		culture = roman
-	}
+
 	
 	

@@ -4661,6 +4661,95 @@ e_byzantium = {
 		}
 	}
 	
+	k_aegyptus = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 802 
+		
+		allow = {
+			has_global_flag = provnce_aegyptus_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_oriens = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 764
+		
+		allow = {
+			has_global_flag = provnce_oriens_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_asiana = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 746
+		
+		allow = {
+			has_global_flag = provnce_asiana_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_pontus = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 750
+		
+		allow = {
+			has_global_flag = provnce_pontus_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_thraciae = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 496
+		
+		allow = {
+			has_global_flag = provnce_thraciae_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_daciae = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		allow = {
+			has_global_flag = provnce_daciae_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_macedonia = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 490
+		
+		allow = {
+			has_global_flag = provnce_macedonia_restored
+		}	
+		
+		culture = roman
+	}
+	
 	k_cyprus = {
 		color = { 85 138 236 }
 		capital = 757 # Famagusta

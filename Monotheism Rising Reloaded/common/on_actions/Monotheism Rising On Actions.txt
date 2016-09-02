@@ -76,14 +76,11 @@ on_yearly_childhood_pulse = {
 	}
 }
 
-#on_new_holder = {
-#	events = {
-#		ROMEGOV.4
-#		ROMEGOV.2
-#		ROMEGOV.3
-#		ROMEGOV.5
-#	}
-#}
+on_new_holder = {
+	events = {
+		ROMEGOV.1
+	}
+}
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 #on_new_holder_inheritance = {

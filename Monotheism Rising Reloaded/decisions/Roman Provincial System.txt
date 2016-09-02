@@ -424,7 +424,7 @@ decisions = {
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
-			NOT = { has_global_flag = k_italia_annonaria }
+			NOT = { has_global_flag = provnce_italia_annonaria_restored }
 		}
 		allow = {
 			completely_controls = d_ferrara
