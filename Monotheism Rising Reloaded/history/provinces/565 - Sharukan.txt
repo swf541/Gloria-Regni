@@ -17,13 +17,18 @@ b_kharka = tribal
 #b_lyubotin = castle
 
 # Misc
-culture = hungarian
-religion = tengri_pagan
+
+culture = severian
+religion = slavic_pagan
+
 terrain = steppe
 
 # History
 
-833.1.1 = { culture = khazar }
+833.1.1 = { 
+	culture = khazar 
+	religion = tengri_pagan
+}
 
 1227.1.1 = { religion = sunni } 
 

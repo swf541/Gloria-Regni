@@ -17,11 +17,16 @@ b_korsun = tribal
 #b_mirov = castle
 
 # Misc
-culture = hungarian
-religion = tengri_pagan
+culture = volhynian
+religion = slavic_pagan
+
 terrain = steppe
 
 # History
+800.1.1 = {
+	culture = hungarian
+	religion = tengri_pagan
+}
 892.1.1 = { culture = pecheneg }
 
 988.1.1 = {

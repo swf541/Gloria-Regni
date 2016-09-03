@@ -33,7 +33,7 @@ job_chancellor = {
 		}
 	}
 	gain_effect = {
-		give_minor_title = title_councillor
+		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
 	}
 	lose_effect = {
@@ -77,7 +77,7 @@ job_marshal = {
 		}
 	}
 	gain_effect = {
-		give_minor_title = title_councillor
+		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
 	}
 	lose_effect = {
@@ -122,7 +122,7 @@ job_treasurer = {
 		}
 	}
 	gain_effect = {
-		give_minor_title = title_councillor
+		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
 	}
 	lose_effect = {
@@ -167,7 +167,7 @@ job_spymaster = {
 		}
 	}
 	gain_effect = {
-		give_minor_title = title_councillor
+		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
 	}
 	lose_effect = {
@@ -208,7 +208,7 @@ job_spiritual = {
 		}
 	}
 	gain_effect = {
-		give_minor_title = title_councillor
+		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
 	}
 	lose_effect = {

@@ -320,3 +320,24 @@ province_event = {
 		name = ok
 	}
 }
+
+character_event = {
+	id = ROMEGOV.11
+
+        hide_window = yes
+		
+		is_triggered_only = yes
+
+        immediate = {
+			if = {
+				limit = { 
+					NOT = { government = roman_government }
+				}
+				give_minor_title = title_councillor
+			}		
+		}
+	
+	option = {
+		name = ok
+	}
+}

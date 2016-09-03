@@ -28,7 +28,7 @@ province_event = {
 			NOT = { holding_type = nomad }
 		}
 		
-		NOT = { religion_authority = 0.25 }
+		NOT = { religion_authority = 0.20 }
 	}
 	
 	mean_time_to_happen = {
@@ -42,6 +42,10 @@ province_event = {
 			}
 		}
 		modifier = {
+			factor = 0.25
+			NOT = { religion_authority = 0.15 }
+		}
+		modifier = {
 			factor = 0.5
 			NOT = { religion_authority = 0.2 }
 		}
@@ -52,10 +56,6 @@ province_event = {
 		modifier = {
 			factor = 0.75
 			NOT = { religion_authority = 0.4 }
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { religion_authority = 0.5 }
 		}
 		
 		modifier = {

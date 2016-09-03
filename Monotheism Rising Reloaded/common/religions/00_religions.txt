@@ -1853,6 +1853,31 @@ pagan_group = {
 		
 		dislike_tribal_organization = yes
 	}
+	
+	zalmoxism = {
+		graphical_culture = westerngfx
+
+		icon = 49
+		heresy_icon = 50
+		
+		color = { 0.1 0.5 0.8 }
+		
+		crusade_name = "CRUSADE"
+		scripture_name = THE_LEGENDS
+		god_names = {
+			GOD_ZALMOXIS
+		}
+		
+		can_grant_divorce = yes
+		can_grant_claim = yes
+		can_call_crusade = no
+		allow_looting = yes
+		#peace_prestige_loss = yes # Lose Prestige while at peace
+		raised_vassal_opinion_loss = no
+		
+		max_consorts = 3
+		
+	}
 
 	zun_pagan_reformed = {
 		graphical_culture = muslimgfx
