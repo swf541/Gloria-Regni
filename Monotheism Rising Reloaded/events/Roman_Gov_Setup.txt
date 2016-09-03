@@ -341,3 +341,23 @@ character_event = {
 		name = ok
 	}
 }
+
+character_event = {
+	id = ROMEGOV.12
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			has_landed_title = d_imperial
+        }     
+
+        immediate = {
+			 set_variable = { which = schism value = 1 }
+		}
+	
+	option = {
+		name = ok
+	}
+}

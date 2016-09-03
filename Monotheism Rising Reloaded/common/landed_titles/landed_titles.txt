@@ -5208,6 +5208,7 @@ e_byzantium = {
 				top_de_jure_capital = yes
 
 				holy_site = orthodox
+				holy_site = imperial
 				
 				b_constantinople = {
 				}
@@ -6771,6 +6772,31 @@ e_byzantium = {
 			}
 		}
 	}
+	k_africae = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 817 
+		
+		allow = {
+			has_global_flag = provnce_africae_restored
+		}
+		
+		culture = roman
+	}
+	k_bulgaria_2 = {
+		color={ 113 88 101 }
+		color2={ 255 255 255 }
+			
+		culture = bulgarian
+			
+		capital = 499 # Tyrnovo
+		
+		allow = {
+			has_global_flag = latin_bulgaria
+		}	
+
+	}
 	k_bulgaria = {
 		color={ 113 88 101 }
 		color2={ 255 255 255 }
@@ -6783,6 +6809,10 @@ e_byzantium = {
 		catholic = 100 # Crusade target weight
 		slavic_pagan_reformed = 50 # Crusade target weight
 		tengri_pagan_reformed = 50
+		
+		allow = {
+			NOT = { has_global_flag = latin_bulgaria }
+		}	
 		
 		d_vidin = {
 			color={ 122 103 58 }
@@ -7471,6 +7501,20 @@ e_byzantium = {
 			}
 		}
 	}
+
+	k_sicily_2 = {
+		color = { 180 160 80 }
+		color2={ 255 255 255 }
+		
+		capital = 334 #	Napoli
+		
+		culture = italian
+		
+		allow = {
+			has_global_flag = greek_sicily
+		}	
+
+	}
 	
 	k_sicily = {
 		color = { 180 160 80 }
@@ -7483,6 +7527,10 @@ e_byzantium = {
 		catholic = 500 # Crusade target weight
 		orthodox = 50
 		muslim = 10
+		
+		allow = {
+			NOT = { has_global_flag = greek_sicily }
+		}	
 		
 		d_benevento = {
 			color = { 209 170 75 }
@@ -9052,6 +9100,7 @@ e_italy = {
 				holy_site = pagan
 				holy_site = hellenic_pagan_reformed
 				holy_site = sol_invictus
+				holy_site = imperial
 				
 				b_roma = {
 					pentarchy = yes
@@ -25033,6 +25082,7 @@ e_arabia = {
 				holy_site = hellenic_pagan
 				holy_site = nestorian
 				holy_site = hellenic_pagan_reformed
+				holy_site = imperial
 				
 				b_alexandria = {
 					pentarchy = yes
@@ -25747,6 +25797,7 @@ e_arabia = {
 				holy_site = ibadi
 				holy_site = grand_sanhedrin
 				holy_site = temple_judaism
+				holy_site = imperial
 				
 				b_mirabel = {
 				}
@@ -26055,6 +26106,7 @@ e_arabia = {
 				holy_site = miaphysite
 				holy_site = monophysite
 				holy_site = nestorian
+				holy_site = imperial
 				
 				b_antiocheia = {
 					pentarchy = yes
