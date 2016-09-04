@@ -16,10 +16,13 @@ b_lewes = city
 #b_bodiam = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+800.1.1 = {
+	culture = saxon
+}
 
 1054.7.6 = { religion = catholic }
 

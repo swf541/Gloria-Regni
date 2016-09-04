@@ -16,10 +16,13 @@ b_st_albans = temple
 #b_watford = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+800.1.1 = {
+	culture = saxon
+}
 
 867.1.1 = { 
 	b_bedford = ca_keep_1

@@ -15,11 +15,14 @@ b_tottenham = castle
 #b_chelsea = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
-
 # History
+900.1.1 = {
+	culture = saxon
+}
+
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }

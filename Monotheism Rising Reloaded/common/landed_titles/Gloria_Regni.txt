@@ -110,5 +110,31 @@ e_wre = {
 	}
 }
 
+d_visigoth_nobles = {
+	color={ 80 188 230 }
+	color2={ 255 255 255 }
+
+	capital = 155 
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = visigothic
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = varangian_guard_composition
+}
 	
 	

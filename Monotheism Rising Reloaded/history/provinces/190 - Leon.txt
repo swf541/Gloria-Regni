@@ -15,24 +15,46 @@ b_sanpedrodeperix = castle
 #b_cistierna = castle
 
 # Misc
-culture = visigothic
+culture = hispanic
 religion = imperial
 
 # History
 
-867.1.1 = { 
+700.1.1 = {
 	b_leon = ca_town_1
 	b_leon = ca_keep_1
+	b_leon = ca_keep_2
 	b_leon = ca_stable_1
+	b_leon = ca_stable_2
 	b_leon = ca_militia_barracks_1
+	b_leon = ca_militia_barracks_2
 	b_leon = ca_wall_1
 	b_leon = ca_wall_2
+	b_leon = ca_barracks_1
+	b_leon = ca_barracks_2
 	b_sanpedrodeperix = ca_town_1
 	b_sanpedrodeperix = ca_keep_1
+	b_sanpedrodeperix = ca_keep_2
 	b_sanpedrodeperix = ca_stable_1
+	b_sanpedrodeperix = ca_stable_2
 	b_sanpedrodeperix = ca_militia_barracks_1
+	b_sanpedrodeperix = ca_militia_barracks_2
 	b_sanpedrodeperix = ca_wall_1
 	b_sanpedrodeperix = ca_wall_2
+	b_sanpedrodeperix = ca_barracks_1
+	b_sanpedrodeperix = ca_barracks_2
+	b_villablino = ct_wall_1
+	b_villablino = ct_wall_2
+	b_villablino = ct_guard_1
+	b_villablino = ct_guard_2
+	b_villablino = ct_barracks_1
+	b_villablino = ct_barracks_2
+	b_villablino = ct_training_grounds_1
+	b_villablino = ct_training_grounds_2
+	b_villablino = ct_militia_barracks_1
+	b_villablino = ct_militia_barracks_2
+	b_villablino = ct_stable_1
+	b_villablino = ct_stable_2
 }
 
 950.1.1 = { culture = castillan }
