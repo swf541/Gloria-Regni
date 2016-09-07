@@ -8,7 +8,7 @@ character_event = {
     is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTADEMES.671
+		name = EVTOPTADEMES.900
 		clr_character_flag = attending_chariot_race
 		clr_character_flag = peaceful_race
 		clr_character_flag = restless_race
@@ -99,7 +99,7 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "The Old Gods"
-		has_character_flag = ameysia_feast_vassal
+		has_character_flag = attending_chariot_race
 		
 		liege = { 
 			has_character_flag = attending_chariot_race
@@ -428,10 +428,6 @@ character_event = {
 	hide_from = yes
 	is_triggered_only = yes
 	
-	trigger = {
-
-	}
-	
 	option = {
 		name = EVTOPTA_DEMES.820
 			if = {
@@ -485,7 +481,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {	# Vandalism
-		name = EVTOPTC_TOG_651
+		name = EVTOPTA_DEMES.920
 		random_list = {
 				25 = {
 					character_event = { id = DEMES.990 }
@@ -496,7 +492,7 @@ character_event = {
 			}
 	}
 	option = {	# Start a Duel with an Opposing Deme
-		name = EVTOPTC_TOG_651
+		name = EVTOPTB_DEMES.920
 			if = {
 				limit = { trait = blue_deme }
 				random_realm_character = {

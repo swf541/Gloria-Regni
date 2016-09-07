@@ -10,12 +10,12 @@ character_event = {
 	
 	
 	option = { # Attend Chariot Race
-		name = EVTOPTADEMES.500
+		name = EVTOPTADEMES.400
 		wealth = -25
 		set_character_flag = attending_chariot_race
 	}
 	option = { # Do Not Attend
-		name = EVTOPTBDEMES.500
+		name = EVTOPTBDEMES.400
 		prestige = -10
 	}
 }

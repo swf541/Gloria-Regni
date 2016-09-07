@@ -51,14 +51,14 @@ spriteTypes = {
 		}
 	spriteType = {
 		name = "GFX_trait_ben_hamashiakh"
-		texturefile = "gfx/traits/intitiate_ben_hamashiakh.tga"
+		texturefile = "gfx/traits/ben_hamashiakh.tga"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 		}
 	spriteType = {
 		name = "GFX_trait_hamashiakh"
-		texturefile = "gfx/traits/intitiate_hamashiakh.tga"
+		texturefile = "gfx/traits/hamashiakh.tga"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -66,6 +66,20 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_trait_lohem_kodesh"
 		texturefile = "gfx/traits/lohem_kodesh.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		}
+	spriteType = {
+		name = "GFX_trait_blue_deme"
+		texturefile = "gfx/traits/blue_deme.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		}
+	spriteType = {
+		name = "GFX_trait_green_deme"
+		texturefile = "gfx/traits/green_deme.tga"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
