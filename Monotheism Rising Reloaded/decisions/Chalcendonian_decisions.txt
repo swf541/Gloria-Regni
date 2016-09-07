@@ -99,9 +99,9 @@ decisions = {
 			}
 			d_imperial = { change_variable = { which = schism value = 20 } }
 		}
-	}
-	ai_will_do = {
-		factor = 0.25
+		ai_will_do = {
+			factor = 0.25
+		}
 	}
 	put_sicily_under_the_pope = {
 		potential = {
@@ -155,8 +155,9 @@ decisions = {
 			}
 			d_imperial = { change_variable = { which = schism value = 20 } }
 		}
+		ai_will_do = {
+			factor = 0.25
+		}
 	}
-	ai_will_do = {
-		factor = 0.25
-	}
+
 }

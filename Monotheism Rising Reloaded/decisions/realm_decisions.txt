@@ -6,8 +6,11 @@ decisions = {
 		
 		potential = {
 			is_playable = yes
-			NOT = {
+			NOR = {
 				has_character_flag = epic_tournament
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
 			}
 			OR = {
 				religion_group = christian
@@ -2891,6 +2894,72 @@ decisions = {
 			factor = 0
 		}
 	}
+	claim_rome = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			has_dlc = "Legacy of Rome"
+			has_landed_title = e_wre
+			NOT = { has_landed_title = c_roma }
+			any_realm_lord = { 
+				ai = yes
+				has_landed_title = c_roma 
+			}
+		}
+		allow = {
+			NOT = { has_landed_title = c_roma }
+			any_realm_lord = { 
+				has_landed_title = c_roma 
+			}
+		}
+		effect = {
+			ROOT = {
+				c_roma = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
+	make_byzantion_capital = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			ai = no
+			has_dlc = "Legacy of Rome"
+			has_landed_title = e_roman_empire
+			capital_scope = {
+				NOT = { province_id = 496 }
+			}
+			any_realm_lord = { 
+				ai = yes
+				has_landed_title = c_byzantion 
+			}
+		}
+		allow = {
+			has_landed_title = e_roman_empire
+			any_realm_lord = { has_landed_title = c_byzantion }
+		}
+		effect = {
+			ROOT = {
+				c_byzantion = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+			}
+			e_roman_empire = {
+				capital = 496
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }
 
