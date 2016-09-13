@@ -1,0 +1,1980 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Yazidi          #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPyazidi
+
+###########################################
+# Tawusgaren  HPyazidi.1000-HPyazidi.1099 #
+###########################################
+
+# Invite vassals to festival
+character_event = {
+	id = HPyazidi.1000
+	desc = EVTDESC_HRP_1000
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1000
+		any_vassal = {
+			limit = {
+				prisoner = no
+				war = no
+				in_command = no
+				NOT = { trait = incapable }
+				age = 16
+				NOT = { has_character_flag = do_not_disturb }
+			}
+			letter_event = {
+				id = HPyazidi.1001
+				tooltip = EVTTOOLTIP1_RoI_1000
+			}
+		}
+		hidden_tooltip = { character_event = { id = HPyazidi.1020 days = 12 } }
+	}
+}
+
+# Vassal receives invitation
+letter_event = {
+	id = HPyazidi.1001
+	desc = EVTDESC_HRP_1001
+	picture = GFX_evt_emissary
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1001 #Travel to the feast
+		ai_chance = {
+			factor = 2
+			modifier  = {
+				factor = 0.1
+				ai = yes
+				trait = in_hiding
+			}
+			modifier  = {
+				factor = 2
+				opinion = { who = from value = -30 }
+			}
+			modifier  = {
+				factor = 5
+				opinion = { who = from value = -15 }
+			}
+			modifier  = {
+				factor = 5
+				opinion = { who = from value = 0 }
+			}
+		}
+		set_character_flag = do_not_disturb
+		hidden_tooltip = { character_event = { id = HPyazidi.1005 days = 12 } } # Hidden - arrives at feast
+		hidden_tooltip = { character_event = { id = HPyazidi.1099 days = 42 } } # Safety event for clearing all flags
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+		}
+	}
+	option = {
+		name = EVTOPTB_RoI_1001 #Refuse invitation
+		ai_chance = {
+			factor = 1
+			modifier  = {
+				factor = 0
+				opinion = { who = FROM value = 25 }
+				NOT = { trait = in_hiding }
+			}
+			modifier  = {
+				factor = 5
+				NOT = {
+					religion = yazidi
+				}
+			}
+		}
+		FROM = {
+			letter_event = {
+				id = HPyazidi.1002
+				#days = 3
+				tooltip = EVTTOOLTIP1_RoI_2001
+			}
+		}
+	}
+}
+
+# If vassal refuses to come to the feast
+letter_event = {
+	id = HPyazidi.1002
+	desc = EVTDESC_HRP_1002
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1002 
+		opinion = {
+			modifier = opinion_dislike
+			who = FROM
+			years = 2
+		}
+	}
+}
+
+# Festival begins
+character_event = {
+	id = HPyazidi.1020
+	desc = EVTDESC_HRP_1020
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1020
+		set_character_flag = peacock_feast_begun
+		hidden_tooltip = { character_event = { id = HPyazidi.1095 days = 30 } } # End festival
+		hidden_tooltip = { character_event = { id = HPyazidi.1099 days = 31 } } # Clearing all flags and modifiers after feast
+		hidden_tooltip = {
+			character_event = { 
+				id = HPyazidi.1030
+				days = 5 
+			} # Presentation of the Senjaq
+			character_event = {
+				id = HPyazidi.1040
+				days = 10
+			} # Veneration of the Senjaq
+			character_event = {
+				id = HPyazidi.1050
+				days = 15
+			} # Taxes on the Pious
+			character_event = { 
+				id = HPyazidi.1090
+				days = 20 
+			} # Sermon
+		}
+		any_courtier = {
+			limit = {
+				is_adult = yes
+				is_ruler = no
+				NOT = { trait = incapable }
+				religion = yazidi
+			}
+			set_character_flag = attending_peacock_feast
+			character_event = { id = HPyazidi.1030 days = 5 } # Presentation of the Senjaq
+			character_event = { id = HPyazidi.1040 days = 10 } # Veneration of the Senjaq
+			character_event = { id = HPyazidi.1050 days = 15 } # Taxes on the Pious
+			character_event = { id = HPyazidi.1090 days = 20 } # Sermon
+			hidden_tooltip = { character_event = { id = HPyazidi.1099 days = 31 } } # Clearing all flags and modifiers after feast
+		}
+	}
+}
+
+# Vassal arrives at festival
+character_event = {
+	id = HPyazidi.1005
+	desc = EVTDESC_HRP_1020
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1020
+		hidden_tooltip = {
+			if = {
+				limit = {
+					religion = yazidi
+				}
+				character_event = { 
+					id = HPyazidi.1030 
+					days = 5 
+				} # Presentation of the Senjaq
+				character_event = { 
+					id = HPyazidi.1040 
+					days = 10 
+				} # Veneration of the Senjaq
+				character_event = { 
+					id = HPyazidi.1050 
+					days = 15 
+				} # Taxes on the Pious
+			}
+			character_event = { 
+				id = HPyazidi.1090 
+				days = 20 
+			} # Sermon
+		}
+	}
+}
+
+# Festival ends
+character_event = {
+	id = HPyazidi.1095
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		character_event = { id = HPyazidi.1096 }
+		any_vassal = {
+			limit = {
+				has_character_flag = attending_peacock_feast
+				ROOT = { is_liege_of = THIS }
+			}
+			character_event = { id = HPyazidi.1098 }
+		}
+	}
+}
+
+# Festival is over - host
+character_event = {
+	id = HPyazidi.1096
+	desc = EVTDESC_HRP_1096
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1096
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 1825
+			hidden = yes
+		}
+		remove_character_modifier = holding_peacock_feast
+		clr_character_flag = peacock_feast_begun
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Festival is over - guest
+character_event = {
+	id = HPyazidi.1098
+	desc = EVTDESC_HRP_1096
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1096
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 365
+			hidden = yes
+		}
+		opinion = {
+			modifier = opinion_enjoyed_feast
+			who = FROM
+			years = 2
+		}
+		clr_character_flag = attending_peacock_feast
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Clear all character flags and modifiers - safety catch
+character_event = {
+	id = HPyazidi.1099
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_character_modifier = holding_peacock_feast
+		clr_character_flag = attending_peacock_feast
+		clr_character_flag = peacock_feast_begun
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Presentation of the Senjaq
+character_event = {
+	id = HPyazidi.1030
+	title = EVTTITLE_HRP_1030
+	desc = EVTDESC_HRP_1030
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	capable_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1030
+		trigger = {
+               		piety = 300
+        	}
+		piety = 30
+		hidden_tooltip = {
+			random_list = {
+				10 = { character_event = { id = HPyazidi.1031 } } # Drop the senjaq
+				10 = { character_event = { id = HPyazidi.1035 } } # Character becomes possessed
+				10 = { character_event = { id = HPyazidi.1037 } } # Character becomes zealous
+				10 = { character_event = { id = HPyazidi.1039 } } # Character becomes stronger
+				300 = {} # No event
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1030
+		piety = 10
+		decadence = -1
+	}
+}
+
+# Weak or old character drops the senjaq
+character_event = {
+	id = HPyazidi.1031
+	desc = EVTDESC_HRP_1031
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			age = 50
+			trait = weak
+			trait = ill
+			trait = pneumonic
+			trait = infirm
+			trait = has_tuberculosis
+			trait = has_typhoid_fever
+			trait = has_typhus
+			trait = has_bubonic_plague
+			trait = has_measles
+			trait = has_small_pox
+			trait = syphilitic
+			trait = leper
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_1031
+		prestige = -200
+		piety = -200
+		hidden_tooltip = {
+			random = {
+	                        chance = 20
+	                        character_event = { id = 6100 }
+
+        	        }
+		}
+	}
+}
+
+
+# Character becomes possessed by senjaq
+character_event = {
+	id = HPyazidi.1035
+	desc = EVTDESC_HRP_1035
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = possessed }
+		trait = zealous
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_1035
+		add_trait = possessed
+		hidden_tooltip = {
+			random_list = {
+				10 = { character_event = { id = HPyazidi.1111 } } # Melek Taus
+				10 = { character_event = { id = HPyazidi.1112 } } # Melek Israfel
+				10 = { character_event = { id = HPyazidi.1113 } } # Melek Azrael
+				10 = { character_event = { id = HPyazidi.1114 } } # Melek Mihael
+				10 = { character_event = { id = HPyazidi.1115 } } # Melek Dardael
+				10 = { character_event = { id = HPyazidi.1116 } } # Melek Samael
+				10 = { character_event = { id = HPyazidi.1117 } } # Melek Nurael
+				100 = {} # No event
+			}
+		}
+	}
+}
+
+# Character becomes zealous
+character_event = {
+	id = HPyazidi.1037
+	desc = EVTDESC_HRP_1037
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = zealous }
+		NOT = { trait = cynical }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_1037
+		add_trait = zealous
+		decadence = -5
+	}
+}
+
+# Character becomes stronger
+character_event = {
+	id = HPyazidi.1039
+	desc = EVTDESC_HRP_1039
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = strong }
+		NOT = { trait = weak }
+		NOT = { trait = slothful }
+		NOT = { health_traits = 1 }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_1039
+		add_trait = strong
+		decadence = -2
+	}
+}
+
+# Veneration of the Senjaq
+character_event = {
+	id = HPyazidi.1040
+	title = EVTTITLE_HRP_1040
+	desc = EVTDESC_HRP_1040
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	capable_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1040
+		piety = 15
+		decadence = -1
+		hidden_tooltip = {
+			random_list = {
+				30 = { character_event = { id = 38260 } } # Become Humble
+				30 = { prestige = 50 } 			  # Gain Prestige
+				40 = {} # No event
+			}
+		}
+	}
+}
+
+# Donation of Money
+character_event = {
+	id = HPyazidi.1050
+	title = EVTTITLE_HRP_1050
+	desc = EVTDESC_HRP_1050
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	capable_only = yes
+	
+	option = { # GIVE A LOT
+		name = EVTOPTA_HRP_1050
+		trigger = {
+			NOT = { trait = greedy }
+		}
+		piety = 100
+		scaled_wealth = -0.25
+		decadence = -3
+		add_trait = charitable
+	}
+	option = { # GIVE SOME
+		name = EVTOPTB_HRP_1050
+		piety = 10
+		scaled_wealth = -0.05
+		decadence = -1
+		if = {
+			limit = { trait = charitable }
+			remove_trait = charitable
+		}
+	}
+	option = { # BUGGER THAT
+		name = EVTOPTC_HRP_1050
+		trigger = {
+			NOT = { trait = charitable }
+		}
+		piety = -50
+		add_trait = greedy
+	}
+}
+
+# Sermon - host and guests
+character_event = {
+	id = HPyazidi.1090
+	desc = EVTDESC_HRP_1090
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1090
+		piety = 20
+		decadence = -1
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 365
+			hidden = yes
+		}
+	}
+}
+
+##################################
+# YAZIDI - KOASASA
+# HPyazidi.1110 - 1119
+##################################
+# Character is a KOASASA
+narrative_event = {
+        id = HPyazidi.1110
+        title = EVTNAME_HRP_1110
+        desc = EVTDESC_HRP_1110
+        picture = GFX_evt_imam
+        border = GFX_event_narrative_frame_religion
+	is_female = no
+	min_age = 16
+        prisoner = no
+        capable_only = yes
+	
+	trigger = {
+		religion = yazidi
+		piety = 2000
+		prestige = 2000
+		NOT = {
+			trait = koasasa_taus
+			trait = koasasa_israfel
+			trait = koasasa_azrael
+			trait = koasasa_mihael
+			trait = koasasa_dardael
+			trait = koasasa_samael
+			trait = koasasa_nurael
+		}
+
+	}
+
+        mean_time_to_happen = {
+                months = 2500
+		
+		modifier = {
+                        factor = 0.9
+                        trait = quick
+                }
+		modifier = {
+                        factor = 0.8
+                        trait = strong
+                }
+		modifier = {
+                        factor = 0.8
+                        trait = genius
+                }
+		modifier = {
+                        factor = 0.5
+                        trait = possessed
+                }
+        }
+	
+	option = {
+		name = EVTOPTA_HRP_1110
+		hidden_tooltip = {
+			random_list = {
+				10 = { character_event = { id = HPyazidi.1111 } } # Melek Taus
+				10 = { character_event = { id = HPyazidi.1112 } } # Melek Israfel
+				10 = { character_event = { id = HPyazidi.1113 } } # Melek Azrael
+				10 = { character_event = { id = HPyazidi.1114 } } # Melek Mihael
+				10 = { character_event = { id = HPyazidi.1115 } } # Melek Dardael
+				10 = { character_event = { id = HPyazidi.1116 } } # Melek Samael
+				10 = { character_event = { id = HPyazidi.1117 } } # Melek Nurael
+			}
+		}
+	}
+}
+character_event = {
+	id = HPyazidi.1111
+	desc = EVTDESC_HRP_1111
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_taus
+	}
+}
+character_event = {
+	id = HPyazidi.1112
+	desc = EVTDESC_HRP_1112
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_israfel
+	}
+}
+character_event = {
+	id = HPyazidi.1113
+	desc = EVTDESC_HRP_1113
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_azrael
+	}
+}
+character_event = {
+	id = HPyazidi.1114
+	desc = EVTDESC_HRP_1114
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_mihael
+	}
+}
+character_event = {
+	id = HPyazidi.1115
+	desc = EVTDESC_HRP_1115
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_dardael
+	}
+}
+character_event = {
+	id = HPyazidi.1116
+	desc = EVTDESC_HRP_1116
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_samael
+	}
+}
+character_event = {
+	id = HPyazidi.1117
+	desc = EVTDESC_HRP_1117
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1111
+		add_trait = koasasa_nurael
+	}
+}
+character_event = {
+        id = HPyazidi.1120
+        desc = EVTDESC_HRP_1120
+        picture = GFX_evt_bishop
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_1120
+                add_character_modifier = {
+                        name = patron_taus
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_1120
+                add_character_modifier = {
+                        name = patron_israfel
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTC_HRP_1120
+                add_character_modifier = {
+                        name = patron_azrael
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_1120
+                hidden_tooltip = { character_event = { id = HPyazidi.1121 } }
+        }
+}
+character_event = {
+        id = HPyazidi.1121
+        desc = EVTDESC_HRP_1120
+        picture = GFX_evt_bishop
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_1121
+                add_character_modifier = {
+                        name = patron_mihael
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_1121
+                add_character_modifier = {
+                        name = patron_dardael
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_1120
+                hidden_tooltip = { character_event = { id = HPyazidi.1122 } }
+        }
+}
+character_event = {
+        id = HPyazidi.1122
+        desc = EVTDESC_HRP_1120
+        picture = GFX_evt_bishop
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_1122
+                add_character_modifier = {
+                        name = patron_samael
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_1122
+                add_character_modifier = {
+                        name = patron_nurael
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_1120
+                hidden_tooltip = { character_event = { id = HPyazidi.1120 } }
+        }
+}
+###########################################
+# Reincarnation Events - Modded for Yazidi
+###########################################
+# by Henrik Fåhraeus
+# I just tweaked for Muslim Localizations
+###########################################
+
+# [on_birth] Child might be a reincarnation
+character_event = {
+	id = HPyazidi.1500
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_men = yes
+	
+	trigger = {
+		has_dlc = "Rajas of India"
+		religion = yazidi
+		OR = {
+			father = {
+				ai = no
+				is_reincarnated = no
+				father_even_if_dead = {
+					OR = {
+						is_alive = no
+						father_even_if_dead = {
+							is_alive = no
+						}
+					}
+				}
+				NOT = {
+					any_sibling = {
+						is_reincarnated = yes
+					}
+				}
+			}
+			mother = {
+				ai = no
+				is_reincarnated = no
+				father_even_if_dead = {
+					OR = {
+						is_alive = no
+						father_even_if_dead = {
+							is_alive = no
+						}
+					}
+				}
+				NOT = {
+					any_sibling = {
+						is_reincarnated = yes
+					}
+				}
+			}
+		}
+		NOT = {
+			any_sibling = {
+				is_reincarnated = yes
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				father = { 
+					ai = no
+				}
+			}
+			if = {
+				limit = {
+					father = {
+						father_even_if_dead = {
+							father_even_if_dead = {
+								is_alive = no
+							}
+						}
+					}
+				}
+				father = {
+					father_even_if_dead = {
+						father_even_if_dead = {
+							ROOT = {
+								set_reincarnation = THIS
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_reincarnated = no
+				}
+				father = {
+					father_even_if_dead = {
+						ROOT = {
+							set_reincarnation = THIS
+						}
+					}
+				}
+			}
+			
+			father = {
+				character_event = {
+					id = HPyazidi.1501
+					days = 3
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = { ai = no }
+				is_reincarnated = no
+			}
+			if = {
+				limit = {
+					mother = {
+						father_even_if_dead = {
+							father_even_if_dead = {
+								is_alive = no
+							}
+						}
+					}
+				}
+				mother = {
+					father_even_if_dead = {
+						father_even_if_dead = {
+							ROOT = {
+								set_reincarnation = THIS
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_reincarnated = no
+				}
+				mother = {
+					father_even_if_dead = {
+						ROOT = {
+							set_reincarnation = THIS
+						}
+					}
+				}
+			}
+			
+			mother = {
+				character_event = {
+					id = RoI.10001
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Player notices the similarities
+character_event = {
+	id = HPyazidi.1501
+	desc = EVTDESC_HRP_4501
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4501 # Yes, clearly
+		
+		hidden_tooltip = {
+			FROM = {
+				add_trait = reincarnation
+				character_event = {
+					id = HPyazidi.1502
+					days = 912
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_HRP_4501 # Nonsense!
+		add_trait = cynical
+		hidden_tooltip = {
+			FROM = {
+				set_reincarnation = 0
+			}
+		}
+	}
+}
+
+# Reincarnation: Toddler thinks of the past life
+character_event = {
+	id = HPyazidi.1502
+	desc = EVTDESC_HRP_4502
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4502
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = HPyazidi.1503
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Toddler speaks of the past life
+character_event = {
+	id = HPyazidi.1503
+	desc = EVTDESC_HRP_4503
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4503
+		hidden_tooltip = {
+			FROM = {
+				set_character_flag = reincarnation_education
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_4503
+	}
+}
+
+# [on_yearly_childhood_pulse] Reincarnation: Youth picks up a personality trait from the previous life
+character_event = {
+	id = HPyazidi.1510
+	desc = EVTDESC_HRP_4510
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yazidi
+		has_dlc = "Rajas of India"
+		has_character_flag = reincarnation_education
+		NOT = { personality_traits = 5 }
+		reincarnation_scope = {
+			ROOT = {
+				can_copy_personality_trait_from = PREV
+			}
+		}
+	}
+	
+	option = {
+		name = EVTTITLE_HRP_4510
+		reincarnation_scope = {
+			ROOT = {
+				copy_random_personality_trait = PREV
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					father = {
+						ai = no
+					}
+				}
+				father = {
+					character_event = {
+						id = HPyazidi.1511
+						days = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					mother = {
+						ai = no
+					}
+				}
+				mother = {
+					character_event = {
+						id = HPyazidi.1511
+						days = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					guardian = {
+						ai = no
+					}
+				}
+				guardian = {
+					character_event = {
+						id = HPyazidi.1511
+						days = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Notification of a youth picking up a personality trait from the previous life
+character_event = {
+	id = HPyazidi.1511
+	desc = EVTDESC_RHRP_4511
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4511
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers his murderer
+character_event = {
+	id = HPyazidi.1520
+	desc = EVTDESC_HRP_4520
+	picture = GFX_evt_shadow
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			OR = {
+				death_reason = death_murder
+				death_reason = death_murder_unknown
+				death_reason = death_execution
+			}
+			killer = {
+				always = yes
+			}
+		}
+		NOT = { has_character_flag = reinc_remembered_killer }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4520
+		
+		set_character_flag = reinc_remembered_killer
+		
+		if = {
+			limit = {
+				reincarnation_scope = {
+					killer = {
+						is_alive = yes
+					}
+				}
+			}
+			reincarnation_scope = {
+				killer = {
+					reverse_opinion = {
+						who = ROOT
+						years = 100
+						modifier = opinion_dishonorable
+					}
+				}
+			}
+		}
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers spouse
+character_event = {
+	id = HPyazidi.1521
+	desc = EVTDESC_HRP_4521
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			spouse_even_if_dead = {
+				always = yes
+			} 
+		}
+		NOT = { has_character_flag = reinc_remembered_spouse }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4521
+		
+		set_character_flag = reinc_remembered_spouse
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers birth of oldest child
+character_event = {
+	id = HPyazidi.1522
+	desc = EVTDESC_HRP_4522
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			num_of_children = 1
+		}
+		NOT = { has_character_flag = reinc_remembered_oldest_child }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4522
+		
+		set_character_flag = reinc_remembered_oldest_child
+	}
+}
+# Yazidi pilgrimage Event Chain
+# 6 Day pilgrimage in Lalish, north of Mosul
+# Mostly taken from HPyazidi pilgrim chain
+
+# Confirm decision and check religion
+
+character_event = {
+	id = HPyazidi.1600
+	desc = EVTDESC_HRP_1600
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1600
+		set_character_flag = pilgrimage_to_lalish
+		hidden_tooltip = {
+			character_event = { id = HPyazidi.1601 days = 7 }
+		}
+		if = {
+			limit = { ai = no }
+			chronicle = {
+				entry = CHRONICLE_PILGRIMAGE_TO_LALISH
+				picture = GFX_evt_pilgrims_epic_journey
+			}
+		}
+	}
+}
+# Setting out (also selects events for road)
+character_event = {
+	id = HPyazidi.1601
+	desc = EVTDESC_HRP_1601
+	picture = GFX_evt_pilgrims_epic_journey
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1601
+		clr_character_flag = preparing_pilgrimage
+		hidden_tooltip = {
+			add_trait = on_pilgrimage_yazidi
+			set_character_flag = good_pilgrimage
+			narrative_event = { id = HPyazidi.1620 days = 30 }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					location = {
+						distance = {
+							where = 697	# Mosul
+							value = 400	# Longer journey - More events
+						}
+					}
+				}
+				#narrative_event = { id = HPyazidi.1620 days = 42 }
+				random_list = {
+					10 = {  character_event = { id = HPyazidi.1621 days = 5 random = 9 } } # List for longer journeys only
+					10 = {  character_event = { id = HPyazidi.1622 days = 5 random = 9 } }
+					10 = {  narrative_event = { id = HPyazidi.1623 days = 5 random = 9 } }
+					10 = {  character_event = { id = HPyazidi.1624 days = 5 random = 9 } }
+					10 = {  character_event = { id = HPyazidi.1625 days = 5 random = 9 } }
+					10 = {  character_event = { id = HPyazidi.1626 days = 5 random = 9 } }
+					10 = {  character_event = { id = HPyazidi.1627 days = 5 random = 9 } }
+					30 = { } # No event
+				}
+			}
+			if = {
+				limit = {
+					location = {
+						distance = {
+							where = 697	# Mosul
+							NOT = { value = 400	} # Short journey - Less events
+						}
+					}
+				}
+				#narrative_event = { id = HPyazidi.1620 days = 24 }
+				random_list = {
+						5 = {  character_event = { id = HPyazidi.1621 days = 5 random = 9 } } # List always checked
+						5 = {  character_event = { id = HPyazidi.1622 days = 5 random = 9 } }
+						5 = {  narrative_event = { id = HPyazidi.1623 days = 5 random = 9 } }
+						5 = {  character_event = { id = HPyazidi.1624 days = 5 random = 9 } }
+						5 = {  character_event = { id = HPyazidi.1625 days = 5 random = 9 } }
+						5 = {  character_event = { id = HPyazidi.1626 days = 5 random = 9 } }
+						5 = {  character_event = { id = HPyazidi.1627 days = 5 random = 9 } }
+						60 = { } # No event
+				}
+			}
+		}
+	}
+}
+
+# Trouble on road - weather
+character_event = {
+	id = HPyazidi.1621
+	desc = EVTDESC_HRP_1621
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1621
+		ai_chance = {
+			factor = 10
+		}
+		piety = 5
+		random_list = {
+			10 = {
+				add_trait = pneumonic
+			}
+			30 = {
+				add_trait = ill
+			}
+			60 = {
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1621
+		ai_chance = {
+			factor = 90
+		}
+		if = {
+			limit = { NOT = { trait = cynical } }
+			add_trait = cynical
+		}
+		set_character_flag = bad_pilgrimage
+		clr_character_flag = good_pilgrimage
+		random_list = {
+			5 = {
+				add_trait = pneumonic
+			}
+			15 = {
+				add_trait = ill
+			}
+			80 = {
+			}
+		}
+	}
+}
+
+# Trouble on road - lost
+character_event = {
+	id = HPyazidi.1622
+	desc = EVTDESC_HRP_1622
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1622
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = { NOT = { trait = wroth } }
+			random = {
+				chance = 30
+				add_trait = wroth
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1622
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = { NOT = { trait = patient } }
+			random = {
+				chance = 30
+				add_trait = patient
+			}
+		}
+	}
+}
+
+# Trouble on road - inn on fire
+narrative_event = {
+	id = HPyazidi.1623
+	title = EVTNAME_HRP_1623
+	desc = EVTDESC_HRP_1623
+	picture = GFX_evt_burning_house
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1623
+		ai_chance = {
+			factor = 80
+		}
+		random = {
+			chance = 10
+			add_trait = wounded
+			}
+		if = {
+			limit = { NOT = { trait = brave } }
+			random = {
+				chance = 30
+				add_trait = brave
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1623
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = { NOT = { trait = craven } }
+			add_trait = craven
+		}
+	}
+}
+
+# Danger on road - robbers
+character_event = {
+	id = HPyazidi.1624
+	desc = EVTDESC_HRP_1624
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1624
+		ai_chance = {
+			factor = 90
+		}
+		wealth = -10
+	}
+	option = {
+		name = EVTOPTB_HRP_1624
+		tooltip_info = martial
+		trigger = {
+			martial = 10
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = { NOT = { trait = brave } }
+			add_trait = brave
+		}
+		random = {
+				chance = 10
+				add_trait = wounded
+		}
+	}
+}
+
+# Danger on road  - broken bridge
+character_event = {
+	id = HPyazidi.1625
+	desc = EVTDESC_HRP_1625
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1625
+		ai_chance = {
+			factor = 10
+		}
+		random = {
+			chance = 20
+			add_trait = wounded
+			set_character_flag = bad_pilgrimage
+			clr_character_flag = good_pilgrimage
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1625
+		ai_chance = {
+			factor = 45
+		}
+		wealth = -10
+	}
+	option = {
+		name = EVTOPTC_HRP_1625
+		ai_chance = {
+			factor = 45
+		}
+		wealth = -30
+		if = {
+			limit = { NOT = { trait = charitable } }
+			add_trait = charitable
+		}
+	}
+}
+
+# Philosophical ponderings
+character_event = {
+	id = HPyazidi.1626
+	desc = EVTDESC_HRP_1626
+	picture = GFX_evt_pilgrims_epic_journey
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1626
+		random_list = {
+			10 = {
+				modifier = {
+					factor = 0
+					has_dlc = "Way of Life"
+				}
+				modifier = {
+					factor = 0
+					lifestyle_traits = 1
+				}
+				add_trait = scholar
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_dlc = "Way of Life"
+				}
+				modifier = {
+					factor = 0
+					lifestyle_traits = 1
+				}
+				add_trait = mystic
+			}
+			10 = {
+				add_trait = poet
+			}
+			10 = {
+				add_trait = zealous
+			}
+			10 = {
+				add_trait = depressed
+			}
+			50 = {
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1626
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = {
+				chance = 20
+				add_trait = cynical
+			}
+		}
+	}
+}
+# Falls ill from trials on journey
+character_event = {
+	id = HPyazidi.1627
+	desc = EVTDESC_HRP_1627
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1627
+		ai_chance = {
+			factor = 10
+		}
+		piety = 10
+		random = {
+			chance = 40
+			add_trait = ill
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1627
+		ai_chance = {
+			factor = 90
+		}
+		random = {
+			chance = 20
+			add_trait = ill
+		}
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = {
+				chance = 50
+				add_trait = cynical
+			}
+		}
+	}
+}
+##################################
+# Arrived!
+##################################
+narrative_event = {
+	id = HPyazidi.1620
+	title = EVTNAME_HRP_1620
+	desc = EVTDESC_HRP_1620
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1620
+		if = {
+			limit = {
+				trait = decadent
+			}
+			remove_trait = decadent
+		}
+		hidden_tooltip = { 
+			random_list = {
+				10 = { character_event = { id = HPyazidi.1635 days = 1 } }
+				10 = { character_event = { id = HPyazidi.1636 days = 1 } }
+				10 = { character_event = { id = HPyazidi.1637 days = 1 } }
+				10 = { character_event = { id = HPyazidi.1638 days = 1 } }
+				10 = { character_event = { id = HPyazidi.1639 days = 1 } }
+				50 = { }
+			}
+			#List of things to happen
+			narrative_event = { id = HPyazidi.1640 days = 2 }
+			narrative_event = { id = HPyazidi.1641 days = 3 }
+			narrative_event = { id = HPyazidi.1642 days = 4 }
+			narrative_event = { id = HPyazidi.1643 days = 5 }
+			narrative_event = { id = HPyazidi.1644 days = 6 }
+			narrative_event = { id = HPyazidi.1650 days = 8 } #Depart
+		}	
+	}
+}
+
+# Stimulated to theological learning
+character_event = {
+	id = HPyazidi.1636
+	desc = EVTDESC_HRP_1636
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1636
+		if = {
+			limit = { NOT = { lifestyle_traits = 1 } }
+			add_trait = scholar
+		}
+		if = {
+			limit = { NOT = { trait = zealous } }
+			random = {
+				chance = 20
+				add_trait = zealous
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1636
+		decadence = -1
+	}
+}
+
+# Strong religious experience
+character_event = {
+	id = HPyazidi.1637
+	desc = EVTDESC_HRP_1637
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1637
+		decadence = -2
+		if = {
+			limit = { NOT = { trait = zealous } }
+			add_trait = zealous
+		}
+		clr_character_flag = bad_pilgrimage
+		set_character_flag = good_pilgrimage
+	}
+}
+
+# Disappointed in the place
+character_event = {
+	id = HPyazidi.1638
+	desc = EVTDESC_HRP_1638
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1638
+		if = {
+			limit = { NOT = { trait = cynical } }
+			add_trait = cynical
+		}
+		clr_character_flag = good_pilgrimage
+		set_character_flag = bad_pilgrimage
+		}
+}
+
+# Mastermind theologian impresses everyone
+character_event = {
+	id = HPyazidi.1639
+	desc = EVTDESC_HRP_1639
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	trigger = {
+		trait = mastermind_theologian
+	}
+
+	option = {
+		name = EVTOPTA_HRP_1639
+		prestige = 30
+		decadence = -1
+		}
+}
+# Generally impressed
+character_event = {
+	id = HPyazidi.1635
+	desc = EVTDESC_HRP_1635
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1635
+		decadence = -1
+		clr_character_flag = bad_pilgrimage
+		set_character_flag = good_pilgrimage
+	}
+}
+# MAIN EVENT
+narrative_event = {
+	id = HPyazidi.1640
+	desc = EVTDESC_HRP_1640
+	title = EVTNAME_HRP_1640
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1640
+		trigger = { 
+			NOT = { trait = shy }
+		}
+		piety = 10
+		decadence = -1
+		random_list = {
+			40 = { add_trait = ill }
+			60 = {}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1640
+		random_list = {
+			60 = { add_trait = shy }
+			40 = { }
+		}
+	}
+}
+narrative_event = {
+	id = HPyazidi.1641
+	desc = EVTDESC_HRP_1641
+	title = EVTNAME_HRP_1641
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1641
+		piety = -50
+		decadence = -1
+	}
+	option = {
+		name = EVTOPTB_HRP_1641
+		piety = 10
+	}
+}
+narrative_event = {
+	id = HPyazidi.1642
+	desc = EVTDESC_HRP_1642
+	title = EVTNAME_HRP_1642
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1642
+		random_list = {
+			5 = { health = 1 }
+			95 = { }
+		}
+	}
+}
+narrative_event = {
+	id = HPyazidi.1643
+	desc = EVTDESC_HRP_1643
+	title = EVTNAME_HRP_1643
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1643
+		piety = -50
+		cash = -50
+		decadence = -1
+	}
+	option = {
+		name = EVTOPTB_HRP_1641
+		piety = 10
+	}
+}
+narrative_event = {
+	id = HPyazidi.1644
+	desc = EVTDESC_HRP_1644
+	title = EVTNAME_HRP_1644
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1644
+		add_trait = charitable
+		wealth = -100
+		decadence = -1
+		hidden_tooltip = {
+			random_list = {
+				10 = { narrative_event = { id = HPyazidi.1645 } }
+				90 = { narrative_event = { id = HPyazidi.1646} }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1644
+		piety = -50
+		hidden_tooltip = { narrative_event = { id = HPyazidi.1646 } }
+	}
+}
+narrative_event = {
+	id = HPyazidi.1645
+	desc = EVTDESC_HRP_1645
+	title = EVTNAME_HRP_1645
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1644
+		prestige = 100
+		decadence = -2
+		clr_character_flag = bad_pilgrimage
+		set_character_flag = good_pilgrimage
+		hidden_tooltip = { narrative_event = { id = HPyazidi.1646 } }
+	}
+}
+narrative_event = {
+	id = HPyazidi.1646
+	desc = EVTDESC_HRP_1646
+	title = EVTNAME_HRP_1646
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1646
+		random_list = { 
+			5 = { add_trait = drunkard }
+			5 = { 
+				add_trait = ill 
+				clr_character_flag = good_pilgrimage
+				set_character_flag = bad_pilgrimage
+				
+			}
+			10 = { decadence = 1 }
+			80 = { prestige = 50 }
+		}
+	}
+}
+#DEPART
+narrative_event = {
+	id = HPyazidi.1650
+	desc = EVTDESC_HRP_1650
+	title = EVTNAME_HRP_1650
+	picture = GFX_evt_yazidi_pil
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1650
+		if = {
+			limit = { NOT = { has_character_flag = bad_pilgrimage } }
+			character_event = { id = HPyazidi.1651 days = 30 }
+		}
+		if = {
+			limit = { has_character_flag = bad_pilgrimage }
+			character_event = { id = HPyazidi.1652 days = 30 }
+		}
+	}
+}
+# Good pilgrimage
+character_event = {
+	id = HPyazidi.1651
+	desc = EVTDESC_SoA_5091
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_SoA_5091
+		clr_character_flag = pilgrimage_to_lalish
+		clr_character_flag = good_pilgrimage
+		clr_character_flag = do_not_disturb
+		add_trait = yazidi_pilgrim
+		hidden_tooltip = { remove_trait = on_pilgrimage_yazidi }
+		piety = 30
+	}
+}
+
+# Disappointing pilgrimage
+character_event = {
+	id = HPyazidi.1651
+	desc = EVTDESC_SoA_5092
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_SoA_5092
+		clr_character_flag = pilgrimage_to_lalish
+		clr_character_flag = bad_pilgrimage
+		clr_character_flag = do_not_disturb
+		add_trait = yazidi_pilgrim
+		hidden_tooltip = { remove_trait = on_pilgrimage_yazidi }
+		piety = -50
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = {
+				chance = 20
+				add_trait = cynical
+			}
+		}
+	}
+}

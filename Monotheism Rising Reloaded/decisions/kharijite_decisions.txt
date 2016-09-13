@@ -1,0 +1,353 @@
+targetted_decisions = {
+	declare_as_kafir = {
+		filter = sub_realm
+		ai_target_filter = sub_realm
+		
+		from_potential = {
+			religion = kharijite
+			NOT = { trait = kharijite_kafir }
+			
+		}
+		potential = { 
+			religion = kharijite
+			trait = decadent
+			NOT = { trait = kharijite_kafir }
+			NOT = { is_liege_of = FROM }
+		}
+		allow = {
+			FROM = { piety = 50 }
+		}
+		effect = {
+			letter_event = { id = HPkharijite.5001 tooltip = EVTTOOLTIP_HRP_5001 }
+			FROM = {
+				opinion = {
+					modifier = opinion_takfir
+					who = ROOT
+					months = 240
+				}
+			}	
+		}
+		revoke_allowed = {
+			always = no
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	accuse_as_kafir = {
+		filter = realm
+		ai_target_filter = realm
+		
+		from_potential = {
+			religion = kharijite
+		}
+		potential = {
+			is_liege_of = FROM
+			NOT = { trait = kharijite_kafir }
+			OR = {
+				AND = {
+					OR = {
+						trait = greedy
+						trait = slothful
+						trait = cynical
+						trait = gluttonous
+						trait = arbitrary
+					}
+					decadence = 50
+				}
+				OR = {
+					trait = decadent
+					trait = drunkard
+					trait = hedonist
+				}
+				OR = {
+					NOT = { piety = 0 }
+				}
+			}
+		}
+		allow = {
+			FROM = { piety = 100 } 
+		}
+		effect = {
+			letter_event = { id = HPkharijite.5000 tooltip = EVTTOOLTIP_HRP_5000 }
+			primary_title = { add_claim = FROM }
+		}
+		revoke_allowed = {
+			always = no
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	public_execution = {
+		filter = court
+		ai_target_filter = court
+		
+		from_potential = {
+			religion = kharijite
+		}
+		potential = {
+			#at_location = from
+			host = { character = FROM }
+			prisoner = yes
+			OR = {
+				NOT = { religion = kharijite }
+				trait = kharijite_kafir
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			#character_event = { id = HPkharijite.5200 days = 3 tooltip = EVTTOOLTIP_HRP_5200 }
+			FROM = { character_event = { id = HPkharijite.5299 tooltip = EVTTOOLTIP_HRP_5200 } }
+				
+		}
+		revoke_allowed = {
+			always = no
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}
+
+decisions = {
+	kafir_clear_glut = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = gluttonous
+			religion = kharijite
+		}
+		allow = {
+			piety = 250
+			NOT = { has_character_modifier = strong_fast }
+		}
+		effect = {
+			character_event = { id = HPkharijite.5100 }
+			piety = -250
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_greed = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = greedy
+			religion = kharijite
+		}
+		allow = {
+			piety = 250
+		}
+		effect = {
+			character_event = { id = HPkharijite.5102 }
+			piety = -250
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_sloth = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = slothful
+			religion = kharijite
+		}
+		allow = {
+			piety = 250
+		}
+		effect = {
+			character_event = { id = HPkharijite.5103 }
+			piety = -250
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_arbitrary = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = arbitrary
+			religion = kharijite
+		}
+		allow = {
+			piety = 250
+		}
+		effect = {
+			character_event = { id = HPkharijite.5104 }
+			piety = -250
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_cynical = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = cynical
+			religion = kharijite
+		}
+		allow = {
+			piety = 250
+		}
+		effect = {
+			character_event = { id = HPkharijite.5105 }
+			piety = -250
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_drunk = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = drunkard
+			religion = kharijite
+		}
+		allow = {
+			piety = 500
+		}
+		effect = {
+			character_event = { id = HPkharijite.5110 }
+			piety = -500
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_hed = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = hedonist
+			religion = kharijite
+		}
+		allow = {
+			piety = 500
+		}
+		effect = {
+			character_event = { id = HPkharijite.5111 }
+			piety = -500
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_dec = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			trait = decadent
+			religion = kharijite
+		}
+		allow = {
+			piety = 500
+		}
+		effect = {
+			character_event = { id = HPkharijite.5112 }
+			piety = -500
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	kafir_clear_name = {
+		is_high_prio = yes
+		potential = {
+			trait = kharijite_kafir
+			NOT = {
+				trait = decadent
+				trait = hedonist
+				trait = drunkard
+				trait = slothful
+				trait = greedy
+				trait = arbitrary
+				trait = cynical
+				trait = gluttonous
+			}
+			religion = kharijite
+		}
+		allow = {
+			piety = 200
+		}
+		effect = {
+			character_event = { id = HPkharijite.5115 }
+			piety = -200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	raise_zealot_units = {
+		is_high_prio = yes
+		is_mercenary = yes
+		potential = {
+			religion = kharijite
+			NOT = { trait = kharijite_kafir }
+		}
+		allow = {
+			war = yes
+			piety = 250
+			wealth = 0
+		}
+		effect = {
+			piety = -250
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				troops = {
+					archers = { 500 500 }
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 300 300 }
+					light_cavalry = { 200 200 }
+				}
+				attrition = 1.0
+				disband_on_peace = yes
+				maintenance_multiplier = 0.25
+			}
+		}
+		ai_will_do = {
+			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
+		}
+	}
+	restore_order_samarra = {
+		is_high_prio = yes
+		potential = {
+			has_landed_title = d_sunni
+			has_global_flag = anarchy_at_samarra
+		}
+		allow = {
+			OR = {
+				diplomacy = 12
+				intrigue = 12
+				martial = 12
+				has_character_flag = decadence_revolter
+			}
+		}
+		effect = {
+			piety = 50
+			#clr_global_flag = anarchy_at_samarra
+			remove_trait = anarchy_at_samarra_trait
+			narrative_event = { id = HPkharijite.5902 }
+		}
+		ai_will_do = {
+			factor = 100 
+		}
+	}
+}

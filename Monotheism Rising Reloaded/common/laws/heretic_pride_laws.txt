@@ -1,0 +1,487 @@
+# Demesne type (de facto) laws (set for the PRIMARY title in a demesne but affects the whole demesne)
+
+laws = {
+	######################################
+	# HERETIC PRIDE
+	# Bureaucratic Infighting
+	# Used with Kharijite and Anarchy at Samarra
+	######################################
+	bi_0 = {
+		group = bureaucratic_infighting
+		vassal_limit = -20
+		potential = {
+			OR = {
+				NOT = { tier = baron }
+				holder_scope = { is_patrician = yes }
+			}
+			holder_scope = { 
+				religion_group = muslim 
+				independent = yes
+				NOT = { is_tribal = yes }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = bi_0
+				revoke_law = bi_1
+			}
+		}
+	}
+	bi_1 = {
+		group = bureaucratic_infighting
+		default = yes
+		allow = {
+			holder_scope = { NOT = { trait = kharijite_kafir } }
+			holder_scope = { NOT = { trait = anarchy_at_samarra_trait } }
+		}
+		potential = {
+			OR = {
+				NOT = { tier = baron }
+				holder_scope = { is_patrician = yes }
+			}
+			holder_scope = { 
+				religion_group = muslim 
+				independent = yes
+				NOT = { is_tribal = yes }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = bi_0
+				revoke_law = bi_1
+			}
+		}
+		
+	}
+	# Waldensian
+	wald_0 = {
+		group = wald
+		default = yes
+		levy_size = -0.2
+		temple_opinion = -20
+		feudal_opinion = 10
+		potential = {
+			holder_scope = { 
+				religion = waldensian 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 500
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -500
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = wald_0
+				revoke_law = wald_1
+			}
+		}
+	}
+	wald_1 = {
+		group = wald
+		levy_size = 0.2
+		feudal_opinion = -10
+		temple_opinion = 20
+		global_tax_modifier = -0.2
+		potential = {
+			holder_scope = { 
+				religion = waldensian 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 500
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -500
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = wald_0
+				revoke_law = wald_1
+			}
+		}
+	}
+	# FRATICELLI
+	frat_0 = {
+		group = frat
+		default = yes
+		global_tax_modifier = -0.2
+		temple_opinion = 30
+		potential = {
+			holder_scope = { 
+				religion = fraticelli 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 500
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -500
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = frat_0
+				revoke_law = frat_1
+				revoke_law = frat_2
+			}
+		}
+	}
+	frat_1 = {
+		group = frat
+		levy_size = 0.3
+		feudal_opinion = -10
+		potential = {
+			holder_scope = { 
+				religion = fraticelli 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 500
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -500
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = frat_0
+				revoke_law = frat_1
+				revoke_law = frat_2
+			}
+		}
+	}
+	frat_2 = {
+		group = frat
+		temple_opinion = -30
+		vassal_limit = 10
+		potential = {
+			holder_scope = { 
+				religion = fraticelli 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 500
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -500
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = frat_0
+				revoke_law = frat_1
+				revoke_law = frat_2
+			}
+		}
+	}
+	#MAZDAKI
+	maz_0 = {
+		group = maz
+		#default = yes
+		demesne_size = -2
+		global_revolt_risk = 0.1
+		feudal_opinion = 5
+		potential = {
+			holder_scope = { 
+				religion = mazdaki 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 50
+				has_law = maz_1
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -50
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = maz_0
+				revoke_law = maz_1
+				revoke_law = maz_2
+				revoke_law = maz_3
+				revoke_law = maz_4
+			}
+		}
+	}
+	maz_1 = {
+		group = maz
+		default = yes
+		#demesne_size = -2
+		global_revolt_risk = 0.05
+		feudal_opinion = -5
+		global_tax_modifier = -0.1
+		potential = {
+			holder_scope = { 
+				religion = mazdaki 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 50
+				OR = {
+					has_law = maz_0
+					has_law = maz_2
+				}
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -50
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = maz_0
+				revoke_law = maz_1
+				revoke_law = maz_2
+				revoke_law = maz_3
+				revoke_law = maz_4
+			}
+		}
+	}
+	maz_2 = {
+		group = maz
+		demesne_size = 1
+		#global_revolt_risk = 0.05
+		feudal_opinion = -10
+		global_tax_modifier = -0.2
+		potential = {
+			holder_scope = { 
+				religion = mazdaki 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 50
+				OR = {
+					has_law = maz_1
+					has_law = maz_3
+				}
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -50
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = maz_0
+				revoke_law = maz_1
+				revoke_law = maz_2
+				revoke_law = maz_3
+				revoke_law = maz_4
+			}
+		}
+	}	
+	maz_3 = {
+		group = maz
+		demesne_size = 2
+		global_revolt_risk = -0.05
+		feudal_opinion = -15
+		global_tax_modifier = -0.3
+		potential = {
+			holder_scope = { 
+				religion = mazdaki 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 50
+				OR = {
+					has_law = maz_2
+					has_law = maz_4
+				}
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -50
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = maz_0
+				revoke_law = maz_1
+				revoke_law = maz_2
+				revoke_law = maz_3
+				revoke_law = maz_4
+			}
+		}
+	}
+	maz_4 = {
+		group = maz
+		demesne_size = 3
+		global_revolt_risk = -0.1
+		feudal_opinion = -20
+		global_tax_modifier = -0.4
+		potential = {
+			holder_scope = { 
+				religion = mazdaki 
+				independent = yes
+			}
+		}
+		allow = {
+			holder_scope = {
+				piety = 50
+				has_law = maz_3
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				piety = -50
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = maz_0
+				revoke_law = maz_1
+				revoke_law = maz_2
+				revoke_law = maz_3
+				revoke_law = maz_4
+			}
+		}
+	}
+	
+	
+}

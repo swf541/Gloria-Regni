@@ -1,0 +1,161 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# YAZIDI Koasasa
+
+koasasa_taus = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+	diplomacy = 5
+        martial = 1
+        stewardship = 5
+        learning = 4
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_israfel = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+	diplomacy = 2
+        martial = 1
+        stewardship = 5
+        intrigue = 5
+        learning = 2
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_azrael = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+        martial = 5
+        stewardship = 2
+        intrigue = 5
+        learning = 3
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_mihael = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+        martial = 10
+        learning = 5
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_dardael = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+	diplomacy = 3
+        martial = 1
+        stewardship = 4
+        intrigue = 3
+        learning = 4
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_samael = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+	diplomacy = 3
+        martial = 2
+        intrigue = 5
+        learning = 5
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+koasasa_nurael = {
+        potential = {
+                religion = yazidi
+        }
+
+        same_opinion = 20
+	same_religion_opinion = 50
+
+	diplomacy = 2
+        martial = 3
+        stewardship = 5
+        learning = 5
+
+	religious = yes
+        customizer = no
+        random = no
+	male_compliment = COMPL_KOASASA
+	male_insult = INSULT_DEMONIC
+}
+on_pilgrimage_yazidi = {
+	potential = {
+		religion = yazidi
+		NOT = { trait = yazidi_pilgrim }
+	}
+	
+	monthly_character_piety = 0.2
+	same_religion_opinion = 10
+	
+	pilgrimage = yes    # Will need a regent, but can still be guardian to children
+	customizer = no
+}
+yazidi_pilgrim = {
+	potential = {
+		religion = yazidi
+	}
+	religious = yes
+	same_religion_opinion = 5
+	monthly_character_piety = 0.1
+}

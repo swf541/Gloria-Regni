@@ -1,0 +1,23 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# ICONOCLAST
+# Iconoclast trait is shared by many religions
+iconoclast_trait = {
+    potential = {
+        religion = iconoclast
+		religion = lollard
+		religion = paulician
+    }
+
+	same_religion_opinion = 20
+	same_opinion = 20
+	muslim_opinion = 30
+	christian_church_opinion = -20
+	religious = yes
+    customizer = no
+    random = yes
+}

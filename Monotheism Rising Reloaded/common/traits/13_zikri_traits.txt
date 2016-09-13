@@ -1,0 +1,22 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# ZIKRI MAHDI
+
+zikri_mahdi = {
+    potential = {
+        religion = zikri
+    }
+
+	same_religion_opinion = 100
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	religious = yes
+    customizer = no
+    random = no
+	male_insult = INSULT_HERESIARCH
+	male_compliment = COMPL_MAHDI
+}

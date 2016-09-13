@@ -1,0 +1,279 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Lollard   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPiconoclast
+
+
+#Acheiropoieta
+narrative_event = {
+	id = HPiconoclast.6000
+	title = EVTTITLE_HRP_6000
+	desc = EVTDESC_HRP_6000
+	picture = GFX_evt_icon
+
+	trigger = {
+		is_playable = yes
+		religion = iconoclast
+		NOT = { trait = iconoclast_trait }
+		NOT = { has_character_flag = acheiropoieta }
+		any_demesne_province = {
+			religion = orthodox
+		}
+	}
+	mean_time_to_happen = {
+		years = 75
+	}
+	option = { #Destroy
+		name = EVTOPTA_HRP_6000
+		scaled_wealth = 0.5
+		piety = 100
+		add_trait = iconoclast_trait
+		random_demesne_province = {
+			limit = {
+				religion = orthodox 
+			}
+			add_province_modifier = {
+					name = iconoclast_blowback
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_6000
+		piety = -50
+	}
+	option = {
+		name = EVTOPTC_HRP_6000
+		trigger = {
+			OR = {
+				trait = greedy
+				intrigue = 10
+			}
+		}
+		prestige = 20
+		piety = 20
+		set_character_flag = acheiropoieta
+		hidden_tooltip = { character_event = { id = HPiconoclast.6001 days = 3650 } }
+	}
+}
+#Acheiropoieta part dux
+character_event = {
+	id = HPiconoclast.6001
+	desc = EVTDESC_HRP_6001
+	picture = GFX_evt_icon
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_6001
+		add_trait = possessed
+		piety = -200
+		religion = orthodox
+	}
+	option = {
+		name = EVTOPTB_HRP_6001
+		prestige = -300
+		add_trait = lunatic
+	}
+}
+#Constantine's Return
+narrative_event = {
+	id = HPiconoclast.6110
+	title = EVTTITLE_HRP_6110
+	desc = EVTDESC_HRP_6110
+	picture = GFX_evt_icon
+
+	trigger = {
+		has_landed_title = e_byzantium
+		religion = orthodox
+		NOT = { has_global_flag = constatine_return }
+	}
+	is_triggered_only = yes
+	major = yes
+	immediate = {
+		set_global_flag = constatine_return
+	}
+	option = {
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+		name = EVTOPTA_HRP_6110
+		religion = iconoclast
+		add_trait = zealous
+		hidden_tooltip = {
+		any_realm_character = {
+                	limit = {
+                        	religion_group = christian
+                        }
+                        character_event = { id = HPiconoclast.6111 }
+              	}
+		}
+		spawn_unit = {
+                                province = 496
+                                home = 496
+                                owner = ROOT
+                                troops = {
+                                        heavy_infantry = { 1200 1200 }
+                                        light_cavalry = { 300 300 }
+                                        archers = { 300 300 }
+                                }
+                                attrition = 0.0
+                        }
+	}
+	option = {
+		name = EVTOPTB_HRP_6110
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+		piety = -100
+		prestige = -200
+	}
+	option = {
+		name = EVTOPTC_HRP_6110
+		trigger = {
+			NOT = { has_landed_title = e_byzantium }
+		}
+	}
+}
+character_event = {
+        id = HPiconoclast.6111
+        desc = EVTDESC_HRP_17901
+        picture = GFX_evt_stressed_ruler
+        border = GFX_event_normal_frame_religion
+        
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_17901
+                religion = from
+                ai_chance = {
+                        factor = 3
+                        modifier = {
+                                factor = 0.25
+                                NOT = { religion = orthodox }
+                        }
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_17901
+                piety = 20
+                ai_chance = {
+                        factor = 1
+                        modifier = {
+                                factor = 10
+                                trait = zealous
+                        }
+                        modifier = {
+                                factor = 2
+                                any_demesne_province = {
+                                        holding_type = temple
+                                }
+                        }
+                }
+        }
+}
+##Gain trait
+character_event = {
+	id = HPiconoclast.6100
+	desc = EVTDESC_HRP_6100
+	picture = GFX_evt_battle_byzantine
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		is_alive = yes
+		religion = iconoclast
+		NOT = { trait = iconoclast_trait }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_6100
+		add_trait = iconoclast_trait
+	}
+}
+character_event = {
+	id = HPiconoclast.6101
+	desc = EVTDESC_HRP_6101
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	
+	min_age = 6
+	max_age = 16
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = iconoclast_trait }
+		has_guardian = yes
+		religion = iconoclast
+	}
+	option = {
+		name = EVTOPTA_HRP_6101
+		add_trait = iconoclast_trait
+		hidden_tooltip = {
+			guardian = {
+				character_event = {
+					id = HPiconoclast.6102
+					days = 3
+				}
+			}
+		}
+	}
+}
+character_event = {
+	id = HPiconoclast.6102
+	desc = EVTDESC_HRP_6102
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_6102
+	}
+}
+character_event = {
+	id = HPiconoclast.6200
+	desc = EVTDESC_HRP_6200
+	picture = GFX_evt_pope
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_6200
+		ROOT = {
+			create_character = {
+				dynasty = random
+				religion = iconoclast
+				culture = ROOT
+				age = 35
+				health = 7
+				fertility = 0.0
+				trait = quick
+				
+				trait = mastermind_theologian
+				attributes = {
+					learning = 5
+					diplomacy = 5
+					martial = 2
+					stewardship = 5
+					intrigue = 5
+				}
+			}
+			new_character = {
+				add_trait = iconoclast_trait
+				activate_title = { title = d_iconoclast status = yes }
+				d_iconoclast = {
+					grant_title = PREV
+				}
+				b_hagiasophia = {
+					grant_title = PREV 
+				}
+			}
+		}
+	} 
+}
+#Iconoclast Rival

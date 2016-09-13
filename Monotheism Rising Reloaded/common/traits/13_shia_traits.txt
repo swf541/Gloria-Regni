@@ -1,0 +1,54 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# Shia
+
+twelver = {
+   # potential = {
+    #    religion = shitte
+   # }
+	opposites =  {
+		fiver
+		ismali
+	}
+	martial = -1
+	intrigue = 1
+	monthly_character_prestige = -0.2
+	opposite_opinion = -50
+	religious = yes
+    random = no
+	agnatic = yes
+}
+fiver = {
+    #potential = {
+        #religion = shitte
+    #}
+	opposites =  {
+		twelver
+		ismali
+	}
+	stewardship = 1
+	monthly_character_prestige = 0.2
+	opposite_opinion = -50
+	religious = yes
+    random = no
+	agnatic = yes
+}
+ismali = {
+   # potential = {
+        #religion = shitte
+   # }
+	opposites =  {
+		twelver
+		fiver
+	}
+	learning = 2
+	monthly_character_piety = 0.1
+	opposite_opinion = -50
+	religious = yes
+    random = no
+	agnatic = yes
+}

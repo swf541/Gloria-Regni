@@ -1,0 +1,507 @@
+decisions = {
+	observe_bema_feasting = {
+                potential = {
+                        is_ruler = yes
+                        #is_feudal = yes
+                        prisoner = no
+                        religion = manichean
+                        NOT = { trait = incapable }
+                        NOT = {
+                                has_character_modifier = holding_bema_feast
+                        }
+                        NOT = {
+                                has_character_modifier = large_feast_timer
+                        }
+                        NOT = {
+                                has_character_modifier = fabulous_feast
+                        }
+                        NOT = {
+                                liege = {
+                                        has_character_modifier = holding_bema_feast
+                                }
+                        }
+                        num_of_vassals = 1
+                        NOT = { has_character_flag = do_not_disturb }
+                }
+                allow = {
+                        war = no
+                        any_demesne_title = {
+                                is_occupied = no
+                        }
+                        prisoner = no
+                        scaled_wealth = 0.2
+                        month = 1
+						NOT = { month = 3 }
+                        prestige = 100
+                }
+                effect = {
+                        scaled_wealth = -0.2
+                        add_character_modifier = {
+                                name = holding_bema_feast
+                                duration = 365
+                        }
+                        set_character_flag = recent_minor_decision
+                        set_character_flag = do_not_disturb
+                        hidden_tooltip = { character_event = { id = HPmanichean.20000 } }
+                }
+                revoke_allowed = {
+                        always = no
+                }
+                ai_will_do = {
+                        factor = 0.1
+                        modifier = {
+                                factor = 0
+                                NOT = {
+                                        scaled_wealth = 2
+                                }
+                        }
+                        modifier = {
+                                factor = 0.5
+                                trait = shy
+                        }
+                        modifier = {
+                                factor = 0.5
+                                NOT = { diplomacy = 10 }
+                        }       
+                        modifier = {
+                                factor = 0
+                                has_character_flag = recent_minor_decision
+                                NOT = {
+                                        had_character_flag = {
+                                                flag = recent_minor_decision
+                                                days = 730
+                                        }
+                                }
+                        }       
+                        modifier = {
+                                factor = 0
+                                NOT = { age = 30 }
+                        }                       
+                }
+	}
+	choose_manichean_patron_deity = {
+		potential = {
+			has_dlc = "Rajas of India"
+			is_playable = yes
+			age = 16
+			not = { trait = incapable }
+			religion = manichean
+			NOT = {
+				has_character_modifier = patron_reason
+				has_character_modifier = patron_mind
+				has_character_modifier = patron_thought
+				has_character_modifier = patron_intelligence
+				has_character_modifier = patron_mani_understanding
+			}
+		}
+		allow = {
+				prisoner = no
+		}
+		effect = {
+				character_event = { id = HPmanichean.20100 }
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 1
+				modifier = {
+						factor = 5
+						trait = zealous
+				}
+				modifier = {
+						factor = 0.5
+						trait = cynical
+				}
+		}
+	}
+	go_manichean_elect = {
+		potential = {
+			age = 16
+			not = { trait = incapable }
+			religion = manichean
+			NOT = {
+				trait = manichean_elect
+			}
+		}
+		allow = {
+				prisoner = no
+				learning = 10
+		}
+		effect = {
+				add_trait = manichean_elect
+				piety = 10
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 1
+				modifier = {
+						factor = 5
+						trait = zealous
+				}
+				modifier = {
+						factor = 0.25
+						trait = cynical
+				}
+		}
+	}
+	go_manichean_preb = {
+		potential = {
+			age = 30
+			not = { trait = incapable }
+			religion = manichean
+			trait = manichean_elect
+			NOT = {
+				OR = {
+					has_character_modifier = manichean_preb
+					has_character_modifier = manichean_bish
+					has_character_modifier = manichean_apo
+				}
+			}
+			is_title_active = d_manichean
+		}
+		allow = {
+				prisoner = no
+				learning = 13
+				piety = 200
+		}
+		effect = {
+				add_character_modifier = {
+					name = manichean_preb
+					duration = -1
+				}
+				piety = -200
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 0.75
+				modifier = {
+						factor = 5
+						trait = zealous
+				}
+				modifier = {
+						factor = 0
+						trait = cynical
+				}
+		}
+	}
+	go_manichean_bish = {
+		potential = {
+			age = 40
+			not = { trait = incapable }
+			religion = manichean
+			trait = manichean_elect
+			has_character_modifier = manichean_preb
+			NOT = {
+				OR = {
+					has_character_modifier = manichean_bish
+					has_character_modifier = manichean_apo
+				}
+			}
+			is_title_active = d_manichean
+		}
+		allow = {
+				prisoner = no
+				learning = 15
+				piety = 500
+		}
+		effect = {
+			remove_character_modifier = manichean_preb
+			add_character_modifier = {
+					name = manichean_bish
+					duration = -1
+				}
+			piety = -500
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 0.75
+				modifier = {
+						factor = 5
+						trait = zealous
+				}
+				modifier = {
+						factor = 0
+						trait = cynical
+				}
+		}
+	}
+	go_manichean_apo = {
+		potential = {
+			age = 45
+			not = { trait = incapable }
+			religion = manichean
+			trait = manichean_elect
+			has_character_modifier = manichean_bish
+			NOT = {
+				has_character_modifier = manichean_apo
+			}
+			is_title_active = d_manichean
+		}
+		allow = {
+				prisoner = no
+				learning = 20
+				piety = 1000
+		}
+		effect = {
+			remove_character_modifier = manichean_bish
+			add_character_modifier = {
+					name = manichean_apo
+					duration = -1
+				}
+			piety = -1000
+			if = {
+				limit = {
+					has_nickname = no
+				}
+				give_nickname = nick_the_apostle
+			}
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 0.75
+				modifier = {
+						factor = 5
+						trait = zealous
+				}
+				modifier = {
+						factor = 0
+						trait = cynical
+				}
+		}
+	}
+	create_manichean_leader = {
+		is_high_prio = yes
+		potential = {
+			religion = manichean
+			#is_heretic = no
+			NOT = { is_title_active = d_manichean }
+		}
+		allow = {
+			num_of_holy_sites = 3
+			piety = 1000
+			religion_authority = 0.5
+		}
+		effect = {
+			activate_title = { title = d_manichean status = yes }
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = random
+					female = no
+					age = 41
+				}
+				new_character = {
+					d_manichean = {
+						grant_title = PREV
+					}
+					narrative_event = { id = HPmanichean.20512 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	patronize_art = {
+		potential = {
+			religion = manichean
+			OR = {
+				trait = charitable
+				trait = zealous
+			}
+			NOT = { has_character_modifier = mani_art_patron }
+			is_tribal = no
+			is_ruler = yes
+		}
+		allow = {
+			scaled_wealth = 2.0
+		}
+		effect = {
+			scaled_wealth = -2.0
+			add_character_modifier = {
+				name = mani_art_patron
+				duration = -1
+
+			}
+		}
+		ai_will_do = {
+			factor = 0.3
+		}
+	}
+####### MANICHEAN HOLY ORDER
+####### ARMY OF LIGHT!
+	donate_money_to_army_of_light = {
+		potential = {
+			OR = {
+				religion = manichean
+			}
+			
+			is_title_active = d_army_light
+			
+			NOT = { has_character_modifier = expelled_d_army_light }
+			
+			d_army_light = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_army }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_army
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_army_light = {
+					holder_scope = {
+						character_event = {
+							id = HPmanichean.20840
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					AND = {
+						NOT = { controls_religion = manichean }
+					}
+				}
+			}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+	form_army_of_light = {
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion = manichean
+			NOT = { is_title_active = d_army_light }
+			is_heretic = no
+			OR = {
+				has_global_flag = christian_crusades_unlocked #Prevent Army from being created at start.
+				has_global_flag = pagan_ghws_unlocked 
+				has_global_flag = muslim_jihads_unlocked
+				religion_authority = 0.75
+			}
+		}
+		allow = {
+			piety = 1000
+			wealth = 500
+			num_of_holy_sites = 2
+			religion_authority = 0.4
+		}
+		effect = {
+			piety = -1000
+			wealth = -500
+			narrative_event = { id = HPmanichean.20809 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expel_army_of_light = {
+		potential = {
+			ai = no
+			OR = {
+				religion = manichean
+			}
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_army_light
+			NOT = { has_character_modifier = expelled_d_army_light }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_army_light = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_army_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_army_light = {
+					holder_scope = {
+						character_event = {
+							id = HPmanichean.20860
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_army_light
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

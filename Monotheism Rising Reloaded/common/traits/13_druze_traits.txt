@@ -1,0 +1,63 @@
+########################################################################################################
+# Druze Traits, for Heretic Pride
+# By Verin Sedai
+########################################################################################################
+
+druze_uqqal = {
+	potential = {
+		religion = druze
+	}
+	intrigue = 2
+	learning = 2
+	monthly_character_piety = 0.1
+	same_religion_opinion = 10
+	
+	same_opinion = 10
+	religious = yes
+}
+
+druze_ajawid = {
+	potential = {
+		religion = druze
+	}
+	intrigue = 2
+	diplomacy = 2
+	learning = 4
+	monthly_character_piety = 0.3
+	same_religion_opinion = 20
+	#temple_opinion = 20
+	same_opinion = 20
+	religious = yes
+	ai_zeal = 10
+	prevent_decadence = yes
+	
+	male_compliment = COMPL_AJAWID
+	female_compliment = COMPL_AJAWID_F
+	male_insult = INSULT_AJAWID
+	female_insult = INSULT_AJAWID_F
+}
+
+druze_taqiyya = {
+	potential = {
+		religion = druze
+	}
+	monthly_character_piety = -0.2
+	muslim_opinion = 30
+	same_religion_opinion = -30 #Cancel out the general muslim_opinion
+	same_opinion = -30 # Cancel out
+	tolerates_christian = yes
+	#infidel_opinion = 30
+	religious = yes
+	ai_zeal = -40
+}
+on_pilgrimage_druze = {
+	potential = {
+		religion = druze
+	}
+	
+	monthly_character_piety = 0.2
+	same_religion_opinion = 10
+	
+	pilgrimage = yes    # Will need a regent, but can still be guardian to children
+	customizer = no
+}

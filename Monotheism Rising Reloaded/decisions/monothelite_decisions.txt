@@ -1,0 +1,128 @@
+decisions = {
+	mend_chalcedon_schism = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			OR = {
+				tier = EMPEROR
+			}
+			religion = monothelite
+			NOT = { has_global_flag = chalcedon_schism_mended }
+		}
+		allow = {
+			piety = 2000
+			is_heretic = no
+			religion_authority = 0.9
+			completely_controls = c_byzantion
+			b_hagiasophia = {
+				holder_scope = {
+					religion = monothelite
+				}
+			}
+			completely_controls = c_antiocheia
+			b_antiocheia = {
+				holder_scope = {
+					religion = monothelite
+				}
+			}
+			completely_controls = c_jerusalem
+			b_jerusalem = {
+				holder_scope = {
+					religion = monothelite
+				}
+			}
+			completely_controls = c_alexandria
+			b_alexandria = {
+				holder_scope = {
+					religion = monothelite
+				}
+			}
+			OR = {
+				AND = {
+					completely_controls = c_aksum
+					b_aksum = {
+						holder_scope = {
+							religion = monothelite
+						}
+					}
+				}
+				AND = {
+					completely_controls = c_napata
+					b_ghazali = {
+						holder_scope = {
+							religion = monothelite
+						}
+					}
+				}
+				AND = {
+					completely_controls = c_vaspurakan
+				}				
+			}
+		}
+		effect = {
+			narrative_event = { id = HPmonothelite.9010 tooltip = EVTTOOLTIPLoR.210}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	end_heresy_schism = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			tier = EMPEROR
+			religion = monothelite
+			
+			has_global_flag = mono_heretics
+		}
+		allow = {
+			is_heretic = no
+			piety = 1000
+			religion_authority = 0.7
+			any_independent_ruler = {
+				religion = catholic
+				controls_religion = yes
+				reverse_opinion = { who = ROOT value = 75 }
+			}
+		}
+		effect = {
+			narrative_event = { id = HPmonothelite.9005 tooltip = EVTTOOLTIPmonothelite.9005}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vassalize_monothelite_patriarch = {
+		potential = {
+			religion = monothelite
+			tier = EMPEROR
+			any_independent_ruler = {
+				religion = monothelite
+				controls_religion = yes
+			}
+			completely_controls = c_antiocheia
+		}
+		allow = {
+			 piety = 500
+		}
+		effect = {
+			d_monothelite = {
+				holder_scope = {
+					set_defacto_liege = ROOT
+					b_antiocheia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

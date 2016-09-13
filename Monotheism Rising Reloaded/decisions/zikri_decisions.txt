@@ -1,0 +1,87 @@
+decisions = {
+	create_zikri_caliphate = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			independent = yes
+			NOT = { trait = incapable }
+			religion = zikri
+			NOT = { has_global_flag = zikri_caliph }
+			NOT = { has_global_flag = zikri_mahdi }
+		}
+		allow = {
+			OR = {
+				trait = mirza
+				trait = sayyid
+				piety = 1000
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				custom_tooltip = {
+					text = controls_mecca_medina
+					hidden_tooltip = {
+						719 = { # Mecca
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+						718 = { # Medina
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					hidden_tooltip = {
+						774 = { # Jerusalem
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+						728 = { # Damascus
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+						693 = { # Baghdad
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			character_event = { id = HPzikri.2006 }
+			set_global_flag = zikri_caliph
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+
+
+}

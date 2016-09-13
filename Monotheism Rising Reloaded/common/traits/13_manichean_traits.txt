@@ -1,0 +1,43 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# Manichean
+
+manichean_elect = {
+    potential = {
+        religion = manichean
+    }
+	learning = 1
+	health = -1
+	same_religion_opinion = 10
+	monthly_character_piety = 0.05
+	monthly_character_prestige = 0.05
+	religious = yes
+    customizer = no
+    random = no
+	religious = yes
+}
+
+vegetarian= {
+    potential = {
+        OR = {
+		religion = manichean
+		religion = qarmatian
+		religion = cathar
+		religion = jain
+		religion = buddhist
+	}
+	
+    }
+	health = -0.5
+	same_opinion = 20
+	vassal_opinion = -10
+	stewardship = 2
+	monthly_character_piety = 0.02
+	religious = yes
+    customizer = no
+    random = no
+}

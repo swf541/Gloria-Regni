@@ -1,0 +1,144 @@
+################################
+# HERETIC PRIDE -> AMBITIONS
+#
+# VERIN SEDAI
+################################
+
+# YAZIDI : King of Peace
+# Reign at Peace for 20 years
+
+obj_yazidi_peace = {
+        type = character
+
+        creation_effect = {
+                add_character_modifier = {
+                        name = "yazidi_peace_lover"
+                        duration = 7300
+                }
+        }
+
+        allow = {
+                independent = yes
+                is_ruler = yes
+                prisoner = no
+		religion = yazidi
+                NOT = { trait = incapable }
+                NOT = { trait = ambitious }
+                NOT = { has_character_modifier = yazidi_peace_lover }
+                war = no
+                mercenary = no
+        }
+        chance = {
+                factor = 0
+
+        }
+
+        success = {
+                NOT = { has_character_modifier = yazidi_peace_lover }
+        }
+
+        abort = {
+                OR = {
+                        trait = incapable
+                        independent = no
+                        war = yes
+                        prisoner = yes
+                }
+        }
+
+        abort_effect = {
+                remove_character_modifier = yazidi_peace_lover
+        }
+	effect = {
+                change_stewardship = 4
+                piety = 1000
+	        if = {
+                        limit = {
+                                has_nickname = no
+                        }
+                        give_nickname = nick_the_miran
+                }
+                religion_authority = {
+                        modifier = paragon_of_virtue
+                        years = 20
+                }
+        }
+}
+obj_druze_esoteric_learning = {
+        type = character
+
+        creation_effect = {
+                set_character_flag = druze_learning
+        }
+
+        allow = {
+                prisoner = no
+				religion = druze
+                NOT = { trait = incapable }
+                NOT = { trait = druze_uqqal }
+				NOT = { trait = druze_ajawid }
+                NOT = { has_character_flag = druze_learning }
+
+        }
+        chance = {
+                factor = 0
+
+        }
+
+        success = {
+            trait = druze_uqqal
+			
+        }
+
+        abort = {
+            trait = incapable
+        }
+
+        abort_effect = {
+            clr_character_flag = druze_learning
+        }
+	effect = {
+		clr_character_flag = druze_learning
+        change_intrigue = 2
+        piety = 200
+	}
+
+}
+become_fearless = {
+        type = character
+
+        creation_effect = {
+                set_character_flag = paulician_fearless
+        }
+
+        allow = {
+                prisoner = no
+				religion = paulician
+                NOT = { trait = fearless }
+                NOT = { has_character_flag = paulician_fearless }
+
+        }
+        chance = {
+                factor = 0.5
+
+        }
+
+        success = {
+            trait = fearless
+			
+        }
+
+        abort = {
+            trait = incapable
+        }
+
+        abort_effect = {
+            clr_character_flag = paulician_fearless
+        }
+	effect = {
+		clr_character_flag = paulician_fearless
+        change_martial = 2
+        piety = 50
+		prestige = 50
+	}
+}

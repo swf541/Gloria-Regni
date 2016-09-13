@@ -1,0 +1,2095 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Lollard   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPsamaritan
+
+character_event = { 
+	id = HPsamaritan.16001
+	desc = EVTDESC_HRP_16001
+	picture = GFX_evt_samaritan_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		NOT = { 
+			OR = {
+				trait = tribe_of_benjamin
+				trait = tribe_of_levi
+				trait = tribe_of_ephraim
+				trait = tribe_of_manasseh
+			}
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_16001
+		add_trait = tribe_of_benjamin
+		ai_chance = {
+			factor = 2
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_16001
+		add_trait = tribe_of_manasseh
+		ai_chance = {
+			factor = 2
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_16001
+		add_trait = tribe_of_ephraim
+		ai_chance = {
+			factor = 2
+		}
+	}
+	option = {
+		name = EVTOPTD_HRP_16001
+		trigger = {
+			OR = { 
+				is_priest = yes
+				learning = 9
+				any_demesne_province = {
+					holding_type = temple
+				}
+			}		
+		}
+		add_trait = tribe_of_levi
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_priest = yes
+            		}
+			modifier = {
+				factor = 50
+				any_demesne_province = {
+					holding_type = temple
+				}
+            		}
+			modifier = {
+				factor = 500
+				has_landed_title = d_samaritan
+            }
+
+		}
+	}
+}
+#Friend/Rival
+character_event = {
+	id = HPsamaritan.16100
+	picture = GFX_evt_feast
+	desc = EVTDESC_HRP_16100
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		NOT = { num_of_friends = 2 }
+		OR = {
+			AND = {
+				trait = tribe_of_manasseh
+				any_realm_character = {
+					trait = tribe_of_manasseh
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_benjamin
+				any_realm_character = {
+					trait = tribe_of_benjamin
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_levi
+				any_realm_character = {
+					trait = tribe_of_levi
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_benjamin
+				any_realm_character = {
+					trait = tribe_of_benjamin
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_16100
+		if = { 
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			random_realm_character = {
+				limit = {
+					trait = tribe_of_manasseh
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_friend = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16101 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			random_realm_character = {
+				limit = {
+					trait = tribe_of_benjamin
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_friend = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16101 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_levi
+			}
+			random_realm_character = {
+				limit = {
+					trait = tribe_of_levi
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_friend = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16101 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			random_realm_character = {
+				limit = {
+					trait = tribe_of_ephraim
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_friend = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16101 } }
+			}
+		}
+	}
+}
+# Notify new friend
+character_event = {
+	id = HPsamaritan.16101
+	picture = GFX_evt_feast
+	desc = EVTDESC_HRP_16101
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WoL_4120
+		add_friend = FROM
+	}
+}
+character_event = {
+	id = HPsamaritan.16102
+	picture = GFX_evt_feast
+	desc = EVTDESC_HRP_16102
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		NOT = { num_of_rivals = 2 }
+		OR = {
+			AND = {
+				trait = tribe_of_manasseh
+				any_realm_character = {
+					religion = samaritan
+					NOT = { trait = tribe_of_manasseh }
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_benjamin
+				any_realm_character = {
+					religion = samaritan
+					NOT = { trait = tribe_of_benjamin }
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_levi
+				any_realm_character = {
+					religion = samaritan
+					NOT = { trait = tribe_of_levi }
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+			AND = {
+				trait = tribe_of_ephraim
+				any_realm_character = {
+					religion = samaritan
+					NOT = { trait = tribe_of_ephraim }
+					NOT = { is_rival = ROOT }
+					NOT = { is_friend = ROOT }
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_16102
+		if = { 
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			random_realm_character = {
+				limit = {
+					religion = samaritan
+					NOT = { trait = tribe_of_manasseh }
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_rival = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16103 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			random_realm_character = {
+				limit = {
+					religion = samaritan
+					NOT = { trait = tribe_of_benjamin }
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_rival = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16103 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_levi
+			}
+			random_realm_character = {
+				limit = {
+					religion = samaritan
+					NOT = { trait = tribe_of_levi }
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_rival = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16103 } }
+			}
+		}
+		if = { 
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			random_realm_character = {
+				limit = {
+					religion = samaritan
+					NOT = { trait = tribe_of_ephraim }
+					NOT = { is_friend = ROOT }
+					NOT = { is_rival = ROOT }
+				}
+				add_rival = ROOT
+				hidden_tooltip = { character_event = { id = HPsamaritan.16103 } }
+			}
+		}
+	}
+}
+# Notify new friend
+character_event = {
+	id = HPsamaritan.16103
+	picture = GFX_evt_feast
+	desc = EVTDESC_HRP_16103
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_16103
+		add_rival = FROM
+	}
+}
+
+# Third Temple Construction Begun
+character_event = {
+	id = HPsamaritan.16500
+	desc = EVTDESC_HRP_16500
+	picture = GFX_evt_samaritan_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SoA_100
+		set_global_flag = building_samaritan_altar
+		custom_tooltip = { text = third_temple_construction }
+	}
+}
+
+# Third Temple Built
+province_event = {
+	id = HPsamaritan.16501
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { narrative_event = { id = HPsamaritan.16502 } }
+	}
+}
+
+narrative_event = {
+	id = HPsamaritan.16502
+	title = EVTNAME_HRP_16502
+	desc = EVTDESC_HRP_16502
+	picture = GFX_evt_jerusalem_captured_jews
+	border = GFX_event_narrative_frame_religion
+	major = yes
+	
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		set_global_flag = samaritan_altar_built
+		clr_global_flag = building_samaritan_altar
+	}
+	
+	option = {
+		trigger = {
+			religion = samaritan
+		}
+		name = EVTOPTA_HRP_16502
+	}
+	option = {
+		trigger = {
+			NOT = { religion = samaritan }
+		}
+		name = EVTOPTB_HRP_16502
+	}
+}
+
+
+# Non Levi in Temple
+province_event = {
+	id = HPsamaritan.16020
+	trigger = {
+		owner = {
+			religion = samaritan
+		}
+		any_province_holding = {
+			holding_type = temple
+			holder_scope = {
+				religion = samaritan
+				NOT = { trait = tribe_of_levi }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	hide_window = yes
+
+	immediate = {
+		random_province_holding = {
+			limit = {
+				holding_type = temple
+				holder_scope = {
+					religion = samaritan
+					NOT = { trait = tribe_of_levi }
+				}
+			}
+			holder_scope = {
+				character_event = { id = HPsamaritan.16021 }
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16021
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		liege = {
+			character_event = { id = HPsamaritan.16000 }
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16000
+	picture = GFX_evt_feast
+	desc = EVTDESC_HRP_16000
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_16000
+		FROM = {
+			death = {
+                death_reason = death_accident
+            }
+		}	
+	}
+	option = {
+		name = EVTOPTB_HRP_16000
+		piety = -50	
+	}
+	option = {
+		name = EVTOPTC_HRP_16000
+		trigger = {
+			intrigue = 10
+		}
+		piety = -50	
+		treasury = 100
+		reverse_opinion = {
+			modifier = opinion_blackmailed
+			who = FROM
+			months = 60
+		}
+	}
+
+}
+#### TRIBAL MARRIAGE
+## MARRY OUT SIDE OF TRIBE
+character_event = {
+	id = HPsamaritan.16025
+	picture = GFX_evt_marriage
+	desc = EVTDESC_HRP_16025
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { character = ROOT }
+		FROM = { 
+			is_ruler = yes
+			religion = samaritan
+		}
+		OR = {
+			AND = {
+				FROM = { trait = tribe_of_manasseh }
+				spouse = {
+					religion = samaritan
+					NOT = { trait = tribe_of_manasseh }
+				}
+			}
+			AND = {
+				FROM = { trait = tribe_of_benjamin }
+				spouse = {
+					religion = samaritan
+					NOT = { trait = tribe_of_benjamin }
+				}
+			}
+			AND = {
+				FROM = { trait = tribe_of_levi }
+				spouse = {
+					religion = samaritan
+					NOT = { trait = tribe_of_levi }
+				}
+			}
+			AND = {
+				FROM = { trait = tribe_of_ephraim }
+				spouse = {
+					religion = samaritan
+					NOT = { trait = tribe_of_ephraim }
+				}
+			}
+		}
+	}
+	# MANASSEH
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_manasseh }
+			FROM = { spouse = { trait = tribe_of_benjamin } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_manasseh }
+			FROM = { spouse = { trait = tribe_of_levi } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_manasseh }
+			FROM = { spouse = { trait = tribe_of_ephraim } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	#EPHRAIM
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_ephraim }
+			FROM = { spouse = { trait = tribe_of_benjamin } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_ephraim }
+			FROM = { spouse = { trait = tribe_of_levi } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_ephraim }
+			FROM = { spouse = { trait = tribe_of_manasseh } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	# LEVI
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_levi }
+			FROM = { spouse = { trait = tribe_of_benjamin } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_levi }
+			FROM = { spouse = { trait = tribe_of_ephraim } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_levi }
+			FROM = { spouse = { trait = tribe_of_manasseh } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	# Benjamin
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_benjamin }
+			FROM = { spouse = { trait = tribe_of_levi } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_benjamin }
+			FROM = { spouse = { trait = tribe_of_ephraim } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_benjamin }
+			FROM = { spouse = { trait = tribe_of_manasseh } }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+		
+# MARRIAGE IN TRIBE
+character_event = {
+	id = HPsamaritan.16026
+	picture = GFX_evt_marriage
+	desc = EVTDESC_HRP_16026
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { character = ROOT }
+		FROM = { 
+			is_ruler = yes
+			religion = samaritan
+			OR = {
+				AND = {
+					trait = tribe_of_manasseh
+					spouse = {
+						religion = samaritan
+						trait = tribe_of_manasseh
+					}
+				}
+				AND = {
+					trait = tribe_of_benjamin
+					spouse = {
+						religion = samaritan
+						trait = tribe_of_benjamin
+					}
+				}
+				AND = {
+					trait = tribe_of_levi
+					spouse = {
+						religion = samaritan
+						trait = tribe_of_levi
+					}
+				}
+				AND = {
+					trait = tribe_of_ephraim
+					spouse = {
+						religion = samaritan
+						trait = tribe_of_ephraim
+					}
+				}
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_manasseh }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_benjamin }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_levi }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+	option = { 
+		trigger = {
+			FROM = { trait = tribe_of_ephraim }
+		}
+		name = EVTOPTA_HRP_16025
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+##### Focus v/ tribes
+character_event = {
+	id = HPsamaritan.16030
+	desc = EVTDESC_HRP_16030
+	picture = GFX_evt_battle
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		OR = {
+			has_focus = focus_war
+			has_focus = focus_hunting
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16030
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16031
+	desc = EVTDESC_HRP_16031
+	picture = GFX_evt_battle
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		NOT = { trait = tribe_of_manasseh }
+		NOT = { 
+			OR = {
+				has_focus = focus_war
+				has_focus = focus_hunting
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16031
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_manasseh
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16032
+	desc = EVTDESC_HRP_16032
+	picture = GFX_evt_construction_site
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		OR = {
+			has_focus = focus_rulership
+			has_focus = focus_business
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16030
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16033
+	desc = EVTDESC_HRP_16033
+	picture = GFX_evt_construction_site
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		NOT = { trait = tribe_of_ephraim }
+		NOT = { 
+			OR = {
+				has_focus = focus_rulership
+			has_focus = focus_business
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16033
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_ephraim
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16034
+	desc = EVTDESC_HRP_16034
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		OR = {
+			has_focus = focus_scholarship
+			has_focus = focus_theology
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16030
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16035
+	desc = EVTDESC_HRP_16035
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		NOT = { trait = tribe_of_levi }
+		NOT = { 
+			OR = {
+				has_focus = focus_scholarship
+				has_focus = focus_theology
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16035
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_levi
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16036
+	desc = EVTDESC_HRP_16036
+	picture = GFX_evt_family
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		OR = {
+			has_focus = focus_family
+			has_focus = focus_carousing
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16030
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_delighted
+				years = 5
+			}
+		}
+	}
+}
+character_event = {
+	id = HPsamaritan.16037
+	desc = EVTDESC_HRP_16037
+	picture = GFX_evt_family
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = samaritan
+		NOT = { trait = tribe_of_benjamin }
+		NOT = { 
+			OR = {
+				has_focus = focus_family
+				has_focus = focus_carousing
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16037
+		any_realm_character = {
+			limit = {
+				trait = tribe_of_benjamin
+			}
+			opinion = {
+				who = PREV
+				modifier = opinion_angry
+				years = 5
+			}
+		}
+	}
+}
+
+character_event = { # Purify
+	id = HPsamaritan.16503
+	desc = EVTDESC_HRP_16503
+	picture = GFX_evt_samaritan_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_16503
+		piety = 25
+		hidden_tooltip = { character_event = { id = HPsamaritan.16504 } }
+	}
+}
+
+character_event = { # Buy Sacrifice
+	id = HPsamaritan.16504
+	desc = EVTDESC_HRP_16504
+	picture = GFX_evt_samaritan_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_16504
+		piety = 10
+		prestige = -30
+		wealth = -10
+		hidden_tooltip = { character_event = { id = HPsamaritan.16505 } }
+	}
+	option = {
+		name = EVTOPTB_HRP_16504
+		piety = 30
+		wealth = -30
+		hidden_tooltip = { character_event = { id = HPsamaritan.16505 } }
+	}
+	option = {
+		name = EVTOPTC_HRP_16504
+		piety = 50
+		prestige = 30
+		wealth = -50
+		hidden_tooltip = { character_event = { id = HPsamaritan.16505 } }
+	}
+}
+character_event = { # Burn at altar
+	id = HPsamaritan.16505
+	desc = EVTDESC_HRP_16505
+	picture = GFX_evt_samaritan_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_16505
+		random_list = {
+			1 = {
+				add_trait = zealous
+			}
+			1 = {
+				add_trait = humble
+			}
+			1 = {
+				piety = 10
+			}
+			7 = { }
+		}
+	}
+}
+##### HISTORICAL EVENTS 
+character_event = {
+	id = HPsamaritan.16080
+	desc = EVTDESC_HRP_16080
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		has_landed_title = k_jerusalem
+		NOT = { has_global_flag = samaritans_settled }
+		NOT = { has_character_modifier = expelled_jewish }
+		773 = {
+			owner = {
+				OR = {
+					is_liege_or_above = ROOT
+					character = ROOT
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	immediate = {
+		set_global_flag = samaritans_settled
+	}
+	option = {
+		name = EVTOPTA_HRP_16080
+		773 = {
+			religion = samaritan
+			add_province_modifier = {
+				name = sam_settlement
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_16080
+		piety = -50
+	}
+}
+character_event = {
+	id = HPsamaritan.16081
+	desc = EVTDESC_HRP_16081
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		has_landed_title = k_israel
+		NOT = { has_global_flag = samaritans_settled }
+		NOT = { religion = samaritan }
+		773 = {
+			owner = {
+				OR = {
+					is_liege_or_above = ROOT
+					character = ROOT
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	immediate = {
+		set_global_flag = samaritans_settled
+	}
+	option = {
+		name = EVTOPTA_HRP_16080
+		773 = {
+			religion = samaritan
+			add_province_modifier = {
+				name = sam_settlement
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_16080
+		piety = -100
+	}
+}
+character_event = { 
+	id = HPsamaritan.16082
+	desc = EVTDESC_HRP_16082
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		has_landed_title = k_israel
+		religion = samaritan 
+		NOT = { has_global_flag = samaritan_return }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		set_global_flag = samaritan_return
+		name = EVTOPTA_HRP_16082
+		random_realm_province = {
+			limit = {
+				NOT = { religion = samaritan }
+			}
+			religion = samaritan
+		}
+		random_realm_province = {
+			limit = {
+				NOT = { religion = samaritan }
+			}
+			religion = samaritan
+		}
+		random_realm_province = {
+			limit = {
+				NOT = { religion = samaritan }
+			}
+			religion = samaritan
+		}
+	}
+}
+###############
+# THE EXILARCH 16700
+###############
+character_event = { 
+	id = HPsamaritan.16700
+	desc = EVTDESC_HRP_16700
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		has_landed_title = k_papal_state
+		NOT = { has_global_flag = exilarch_lives }
+		NOT = { has_global_flag = exilarch_set }
+		NOT = { year = 1050 }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	hide_window = yes
+	
+	immediate = {
+		set_global_flag = exilarch_lives
+		set_global_flag = exilarch_set
+	}
+}
+
+
+#### Sons of Jeroboam
+#### SPECIAL SAMARITAN ONLY HO
+# The birth of the Sons of Jeroboam
+narrative_event = {
+	id = HPsamaritan.16809
+	title = EVTTITLE_HRP_16809
+	desc = EVTDESC_HRP_16809
+	major = yes
+	
+	picture = GFX_evt_knight_kneeling
+	is_triggered_only = yes
+	#only_playable = yes
+	#hide_from = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		
+		OR = {
+			religion = samaritan
+		}
+		
+		NOT = { is_title_active = d_sons_of_jeroboam }
+		
+	}
+	
+	
+	immediate = {
+		activate_title = { title = d_sons_of_jeroboam status = yes }
+		create_character = {
+			random_traits = no
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 31
+		}
+		new_character = {
+			wealth = 500
+			d_sons_of_jeroboam = {
+				grant_title = PREV
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 16
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 18
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 18
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 20
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 25
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 26
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 28
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = yes
+				age = 16
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = yes
+				age = 17
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_16809
+		trigger = {
+			religion = ROOT
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_16809
+		trigger = {
+			NOT = { religion = ROOT	}
+		}
+	}
+}
+
+# The son of a ruler volunteers to join the Order
+character_event = {
+	id = HPsamaritan.16830
+	desc = EVTDESC_HRP_16830
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	only_men = yes
+	min_age = 16
+	max_age = 45
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		is_ruler = no
+		OR = {
+			
+			religion = samaritan
+		}
+		is_heretic = no
+		
+		martial = 5
+		
+		is_title_active = d_sons_of_jeroboam
+		
+		OR = {
+			father_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+			mother_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		
+		liege = {
+			holy_order = no
+			liege = {
+				holy_order = no
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_sons_of_jeroboam }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_sons_of_jeroboam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.25
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = celibate
+		}
+		modifier = {
+			factor = 0.5
+			trait = homosexual
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 0.75
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			any_heir_title = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_primary_heir = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1030 # Ask to go
+		ai_chance = {
+			factor = 100
+		}
+		liege = {
+			character_event = {
+				id = HPsamaritan.16831
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SOA_1030 # It's a bad idea
+	}
+}
+
+# Son or brother asks to join the Order
+character_event = {
+	id = HPsamaritan.16831
+	desc = EVTDESC_HRP_16831
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1031 # Agree
+		ai_chance = {
+			factor = 100
+		}
+		
+		piety = 100
+		
+		FROM = {
+			character_event = {
+				id = HPsamaritan.16832
+				tooltip = EVTTOOLTIP_HRP_16882
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1031 # Refuse
+		
+		piety = -100
+		
+		FROM = {
+			character_event = {
+				id = HPsamaritan.16833
+				tooltip = EVTTOOLTIP_SOA_1033
+			}
+		}
+	}
+}
+
+# Son or brother joins the Order
+character_event = {
+	id = HPsamaritan.16832
+	desc = EVTDESC_HRP_16832
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		
+		d_sons_of_jeroboam = {
+			holder_scope = {
+				ROOT = {
+					move_character = PREV
+					hidden_tooltip = {
+						clear_wealth = PREV
+					}
+					add_trait = celibate
+					if = {
+						limit = { trait = in_hiding	}
+						remove_trait = in_hiding
+						clr_character_flag = do_not_disturb
+						add_character_modifier = {
+							name = went_out_of_hiding_timer
+							duration = 180
+							hidden = yes
+						}
+						hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+					}
+				}
+			}
+		}
+	}
+}
+
+# Liege refuses request to join the Order
+character_event = {
+	id = HPsamaritan.16833
+	desc = EVTDESC_HRP_16833
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1033
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_refused_request_holy_order
+		}
+	}
+}
+
+# Ping event when donating money to the Order
+character_event = {
+	id = HPsamaritan.16840
+	desc = OK
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 300
+		FROM = {
+			letter_event = {
+				id = HPsamaritan.16841
+			}
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_generous_donation
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when donating money to the Order
+letter_event = {
+	id = HPsamaritan.16841
+	desc = EVTDESC_SOA_1141
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# The Grand Master humbly requests the right to build a castle in your demesne
+character_event = {
+	id = HPsamaritan.16850
+	desc = OK
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		OR = {
+			
+			religion = samaritan
+		}
+		
+		is_heretic = no
+		
+		d_sons_of_jeroboam = {
+			holder_scope = {
+				wealth = 300
+				NOT = {
+					realm_size = 10
+				}
+			}
+		}
+		
+		any_demesne_province = {
+			has_empty_holding = yes
+			empire = {
+				OR = {
+					title = e_persia
+					title = e_arabia
+					title = e_byzantium
+					title = e_rajastan
+				}
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		NOT = { has_character_modifier = expelled_d_sons_of_jeroboam }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_sons_of_jeroboam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			d_sons_of_jeroboam = {
+				holder_scope = {
+					NOT = { demesne_size = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			d_sons_of_jeroboam = {
+				holder_scope = {
+					NOT = { demesne_size = 2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_sons_of_jeroboam = {
+				holder_scope = {
+					num_of_count_titles = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_sons_of_jeroboam = {
+				holder_scope = {
+					realm_size = 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_demesne_province = {
+			limit = {
+				has_empty_holding = yes
+			}
+			province_event = {
+				id = HPsamaritan.16851
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+province_event = {
+	id = HPsamaritan.16851
+	desc = OK
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		d_sons_of_jeroboam = {
+			holder_scope = {
+				character_event = {
+					id = HPsamaritan.16852
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = HPsamaritan.16852
+	desc = OK
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			character_event = {
+				id = HPsamaritan.16853
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = HPsamaritan.16853
+	desc = EVTDESC_SOA_1053
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1023 # Agree
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_character_modifier = expelled_d_sons_of_jeroboam
+			}
+		}
+		
+		hidden_tooltip = {
+			FROMFROM = {
+				province_event = { id = HPsamaritan.16854 }
+			}
+			remove_character_modifier = expelled_d_sons_of_jeroboam
+		}
+		
+		piety = 200
+		wealth = 100
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1153 # Refuse
+		ai_chance = {
+			factor = 20
+		}
+		
+		piety = -100
+	}
+}
+
+# Castle has been erected
+province_event = {
+	id = HPsamaritan.16854
+	desc = EVTDESC_HRP_16854
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			wealth = -300
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1024
+		build_holding = {
+		   type = castle
+		   holder = FROMFROM
+		}
+	}
+}
+
+# Ping event when expelling the Order
+character_event = {
+	id = HPsamaritan.16860
+	desc = OK
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_title_under = {
+			limit = {
+				tier = BARON
+				location = {
+					owner = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+					}
+				}
+			}
+			usurp_title = FROM
+		}
+	
+		FROM = {
+			letter_event = {
+				id = HPsamaritan.16861
+			}
+		}
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_expelled_from_realm
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when expelling the Order
+letter_event = {
+	id = HPsamaritan.16861
+	desc = EVTDESC_HRP_16861
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTB_SOA_1061
+	}
+}

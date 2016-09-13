@@ -1,0 +1,33 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# Messalian
+
+messalian_master = {
+    potential = {
+        religion = messalian
+    }
+	learning = 3
+	same_religion_opinion = 50
+	monthly_character_piety = 0.05
+	monthly_character_prestige = 0.05
+	religious = yes
+    customizer = no
+    random = no
+}
+cult_of_lucifer = {
+    potential = {
+        religion = messalian
+    }
+	learning = 1
+	intrigue = 2
+	same_opinion = 10
+	monthly_character_piety = 0.05
+	monthly_character_prestige = 0.05
+	religious = yes
+    customizer = no
+    random = no
+}

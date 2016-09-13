@@ -1,0 +1,1697 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Hurufi       	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPhurufi
+
+###########################################
+# Diwan Events							  #
+###########################################
+#Write a Grand Poem
+character_event = {
+	id = HPhurufi.3000
+	desc = EVTDESC_HRP_3000
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	
+		trigger = {
+			religion = hurufi
+			is_adult = yes
+			has_focus = focus_scholarship
+			NOT = { has_character_flag = writting_epic_poem_flag }
+			NOT = {
+				OR = {
+					trait = incapable
+					trait = slow
+					trait = imbecile
+					has_character_flag = do_not_disturb
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		years = 4
+		modifier = {
+			factor = 0.75
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.5
+			trait = hurufi_diwan
+		}
+		modifier = {
+			factor = 4.0
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.75
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+		modifier = {
+			factor = 0.75
+			trait = poet
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_3000
+		piety = 25
+		prestige = 50
+		random_list = {
+			20 = {
+				modifier = {
+					trait = hurufi_diwan
+					factor = 0
+				}
+				add_trait = hurufi_diwan
+			}
+			80 = {
+			}
+		}	
+		random_list = {
+			10 = {
+				change_learning = 1
+			}
+			10 = {
+				change_intrigue = 1
+			}
+			10 = {
+				change_diplomacy = 1
+			}
+			70 = {}
+		}
+	}
+}
+
+# EPIC POEM EVENT CHAIN
+#KICKSTART
+character_event = {
+	id = HPhurufi.3001
+	desc = EVTDESC_HRP_3001
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	
+		trigger = {
+			religion = hurufi
+			is_adult = yes
+			trait = hurufi_diwan
+			NOT = { has_character_flag = wrote_epic_poem_flag }
+			NOT = { has_character_flag = writting_epic_poem_flag }
+			has_focus = focus_scholarship
+			NOT = {
+				OR = {
+					trait = incapable
+					trait = slow
+					trait = imbecile
+					has_character_flag = do_not_disturb
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.75
+			trait = diligent
+		}
+		modifier = {
+			factor = 4.0
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.5
+			trait = content
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_3001
+		piety = 100
+		prestige = 100
+		set_character_flag = writting_epic_poem_flag
+		add_character_modifier = {
+                        name = writting_epic_poem
+                        duration = -1
+                }
+		set_variable = { which = "poem_completeness" value = 0 }
+	}
+}
+# Inspiration
+character_event = { 
+	id = HPhurufi.3002
+	desc = EVTDESC_HRP_3002
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { #Women
+		name = EVTOPTA_HRP_3002
+		piety = -50
+		add_trait = lustful
+		random_list = {
+			10 = {
+				add_trait = decadent
+			}
+			90 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+		}
+	}
+	option = { #Wine
+		name = EVTOPTB_HRP_3002
+		piety = -50
+		add_trait = drunkard
+		random_list = {
+			10 = {
+				add_trait = decadent
+			}
+			90 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+		}
+	}
+	option = { #Song
+		name = EVTOPTC_HRP_3002
+		piety = -100
+		prestige = -100
+		random_list = {
+			10 = {
+				add_trait = decadent
+			}
+			90 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+		}
+	}
+	option = { #All at once
+		name = EVTOPTD_HRP_3002
+		piety = -100
+		prestige = 100
+		random_list = {
+			10 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			90 = { 
+				add_trait = decadent
+			}
+		}
+	}
+}
+# Study Topics
+character_event = {
+	id = HPhurufi.3003
+	desc = EVTDESC_HRP_3003
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { #Study Nobility
+		name = EVTOPTA_HRP_3003
+		random_list = {
+			70 = {
+				change_diplomacy = 1
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			30 = {}
+		}
+	}
+	option = { #Study War
+		name = EVTOPTB_HRP_3003
+		random_list = {
+			70 = {
+				change_martial = 1
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			30 = {}
+		}
+	}
+	option = { #Study Library
+		name = EVTOPTC_HRP_3003
+		random_list = {
+			70 = {
+				change_learning = 1
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			30 = {}
+		}
+	}
+}
+# Muse is married
+character_event = {
+	id = HPhurufi.3004
+	desc = EVTDESC_HRP_3004
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		is_ruler = yes
+		trait = hurufi_diwan
+		NOT = { trait = homosexual }
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { #Visit whore house
+		name = EVTOPTA_HRP_3004
+		add_trait = lustful
+		piety = -100
+		random_list = {
+			60 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			40 = {}
+		}
+	}
+	option = { #Unrequited Love
+		name = EVTOPTB_HRP_3004
+		piety = 100
+		random_list = {
+			40 = {
+				add_trait = chaste
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+			60 = {}
+		}
+		
+	}
+}
+# Writers Block
+character_event = {
+	id = HPhurufi.3005
+	desc = EVTDESC_HRP_3005
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { #Enjoy Life
+		name = EVTOPTA_HRP_3005
+		prestige = 100
+		random_list = {
+			20 = {
+				add_trait = lustful
+			}
+			20 = {
+				add_trait = slothful
+			}
+			20 = {
+				add_trait = drunkard
+			}
+			20 = {
+				add_trait = decadent
+			}
+			20 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+		}
+
+	}
+	option = { # Fast and Pray
+		name = EVTOPTB_HRP_3005
+		piety = 100
+		random_list = {
+			20 = {
+				add_trait = temperate
+			}
+			20 = {
+				health = -1
+			}
+			20 = {
+				add_trait = ill
+			}
+			20 = {
+				add_trait = diligent
+			}
+			20 = {
+				change_variable = { which = "poem_completeness" value = 1 }
+			}
+		}
+		
+	}
+}
+# Despair
+character_event = {
+	id = HPhurufi.3006
+	desc = EVTDESC_HRP_3006
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { # Never Finish this 
+		name = EVTOPTA_HRP_3006
+		add_trait = depressed
+		change_variable = { which = "poem_completeness" value = -1 }
+
+	}
+	option = { # Have to concentrate
+		name = EVTOPTB_HRP_3006
+		add_trait = diligent
+		change_variable = { which = "poem_completeness" value = 1 }
+	}
+}
+
+# Procrastination
+character_event = {
+	id = HPhurufi.3007
+	desc = EVTDESC_HRP_3007
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { # I'll get around to it someday 
+		name = EVTOPTA_HRP_3007
+		add_trait = slothful
+		change_variable = { which = "poem_completeness" value = -1 }
+	}
+}
+# Break through
+character_event = {
+	id = HPhurufi.3008
+	desc = EVTDESC_HRP_3008
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { # I'm pretty good at this
+		name = EVTOPTA_HRP_3008
+		prestige = 50
+		change_variable = { which = "poem_completeness" value = 1 }
+	}
+}
+# Completed!
+character_event = {
+	id = HPhurufi.3010
+	desc = EVTDESC_HRP_3010
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+	}
+	option = { # Finally
+		name = EVTOPTA_HRP_3010
+		prestige = 1000
+		piety = 500
+		clr_character_flag = writting_epic_poem_flag
+		set_character_flag = wrote_epic_poem_flag
+		remove_character_modifier = writting_epic_poem
+		add_character_modifier = {
+            name = wrote_epic_poem
+            duration = -1
+        }
+		
+		hidden_tooltip = {
+			character_event = {
+				id = HPhurufi.3011
+				days = 2
+				random = 2
+			}
+		}
+	}
+}
+
+# Recite Poem to court
+character_event = {
+	id = HPhurufi.3011
+	desc = EVTDESC_HRP_3011
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = { # Recite
+		name = EVTOPTA_HRP_3011
+		random_list = {
+			20 = {
+				add_trait = gregarious
+			}
+			80 = {}
+		}
+		random_list = {
+			30 = {
+				character_event = {
+					id = HPhurufi.3012
+					days = 2
+					random = 2
+				}
+			}
+			70 = {
+				character_event = {
+					id = HPhurufi.3013
+					days = 2
+					random = 2
+				}
+			}
+		}
+	}
+}
+# Poem BAD END 
+character_event = {
+	id = HPhurufi.3012
+	desc = EVTDESC_HRP_3012
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3012
+		prestige = -200
+		random_list = {
+			80 = {
+				add_trait = shy
+			}
+			20 = {
+				add_trait = paranoid
+			}
+		}
+	}
+}
+# Poem Good END 
+character_event = {
+	id = HPhurufi.3013
+	desc = EVTDESC_HRP_3013
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3013
+		prestige = 100
+		random_list = {
+			70 = { }
+			30 = {
+				add_trait = genius
+			}
+		}
+	}
+}
+
+# Poem Bouncer 
+character_event = {
+	id = HPhurufi.3015
+	desc = EVTDESC_HRP_3015
+	picture = GFX_evt_diwan_poetry
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = {
+		religion = hurufi
+		is_adult = yes
+		trait = hurufi_diwan
+		has_character_flag = writting_epic_poem_flag
+		has_focus = focus_scholarship
+	}
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				is_variable_equal = { which = "poem_completeness" value = 4 }
+			}
+			character_event = { id = HPhurufi.3010 }
+		}
+		if = {
+			limit = {
+				NOT = { is_variable_equal = { which = "poem_completeness" value = 4 } }
+			}
+			random_list = {
+				10 = { character_event = { id = HPhurufi.3002 } }
+				10 = { character_event = { id = HPhurufi.3003 } }
+				10 = { character_event = { id = HPhurufi.3004 } }
+				10 = { character_event = { id = HPhurufi.3005 } }
+				10 = { character_event = { id = HPhurufi.3006 } }	
+				10 = { character_event = { id = HPhurufi.3007 } }
+				40 = { character_event = { id = HPhurufi.3008 } }
+			}	
+		}
+	}
+}
+
+###########################################
+# Study Events
+# 3050 Go blind -> triggered by age
+# 3051 Gain smarts
+# 3052 Gain weak
+# 3053 Gain Quick
+# 3054 Gain Mystic
+# 3055 Gain depressed
+# 3056 gain chaste
+# 3057 gain intrigue  --> REMOVED!
+# 3058 level up 
+# 3059 gain genius
+# 3060 gain ill
+# 3061  ~omen
+# 3062 good omen
+# 3063 bad omen
+# 3064 bonus pp
+###########################################
+
+#Level 1 Bouncer (not really)
+character_event = {
+	id = HPhurufi.3030
+	desc = EVTDESC_HRP_3030
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		add_character_modifier = { name = hurufi_studying duration = -1 }
+		random_list = {
+			5 = { 
+				modifier = {
+					age = 40
+					factor = 30
+					}
+				character_event = { id = HPhurufi.3050 days = 200 random = 50}
+			}
+			5 = { character_event = { id = HPhurufi.3053 days = 200 random = 50} }
+			5 = { character_event = { id = HPhurufi.3058 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3051 days = 200 random = 50} }
+			15 = { character_event = { id = HPhurufi.3052 days = 200 random = 50} }	
+			10 = { character_event = { id = HPhurufi.3054 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3056 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3060 days = 200 random = 50} }
+			5 = { character_event = { id = HPhurufi.3055 days = 200 random = 50} }
+			30 = { character_event = { id = HPhurufi.3064 days = 200 random = 50} }
+		}
+	}
+}
+#Level 2 Bouncer (not really)
+character_event = {
+	id = HPhurufi.3031
+	desc = EVTDESC_HRP_3031
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		add_character_modifier = { name = hurufi_studying duration = -1 }
+		random_list = {
+			10 = { 
+				modifier = {
+					age = 40
+					factor = 30
+					}
+				character_event = { id = HPhurufi.3050 days = 200 random = 50}
+			}
+			15 = { character_event = { id = HPhurufi.3051 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3052 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3053 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3058 days = 200 random = 50} }
+			5 = { character_event = { id = HPhurufi.3059 days = 200 random = 50} }	
+			10 = { character_event = { id = HPhurufi.3056 days = 200 random = 50} } 
+			10 = { character_event = { id = HPhurufi.3060 days = 200 random = 50} }
+			30 = { character_event = { id = HPhurufi.3064 days = 200 random = 50} }
+		}
+	}
+}
+#Level 3 Bouncer (not really)
+character_event = {
+	id = HPhurufi.3032
+	desc = EVTDESC_HRP_3032
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		add_character_modifier = { name = hurufi_studying duration = -1 }
+		random_list = {
+			10 = { 
+				modifier = {
+					age = 40
+					factor = 30
+					}
+				character_event = { id = HPhurufi.3050 days = 200 random = 50}
+			}
+			10 = { character_event = { id = HPhurufi.3058 days = 200 random = 50} }
+			5 = { character_event = { id = HPhurufi.3052 days = 200 random = 50} }
+			10 = { character_event = { id = HPhurufi.3059 days = 200 random = 50} }
+			5 = { character_event = { id = HPhurufi.3056 days = 200 random = 50} }
+			30 = { character_event = { id = HPhurufi.3064 days = 200 random = 50} }	
+			10 = { character_event = { id = HPhurufi.3060 days = 200 random = 50} }
+			15 = { character_event = { id = HPhurufi.3061 days = 200 random = 50} }
+			30 = { character_event = { id = HPhurufi.3062 days = 200 random = 50} }
+			15 = { character_event = { id = HPhurufi.3063 days = 200 random = 50} }
+		}
+	}
+}
+# Hard to read 
+character_event = {
+	id = HPhurufi.3050
+	desc = EVTDESC_HRP_3050
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3050
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		add_trait = blinded
+	}
+}
+# Gain Smarts
+character_event = {
+	id = HPhurufi.3051
+	desc = EVTDESC_HRP_3051
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3051
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		random_list = {
+			20 = { 
+				change_diplomacy = 1
+			}
+			20 = { 
+				change_martial = 1
+			}
+			20 = { 
+				change_stewardship = 1
+			}
+			20 = { 
+				change_intrigue = 1
+			}
+			20 = { 
+				change_learning = 1
+			}
+		}
+			
+	}
+}
+# Gain weak
+character_event = {
+	id = HPhurufi.3052
+	desc = EVTDESC_HRP_3052
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3052
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = weak
+	}
+}
+# Gain quick
+character_event = {
+	id = HPhurufi.3053
+	desc = EVTDESC_HRP_3053
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3053
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = quick
+	}
+}
+# Gain mystic
+character_event = {
+	id = HPhurufi.3054
+	desc = EVTDESC_HRP_3054
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3054
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = mystic
+	}
+}
+# Gain depressed
+character_event = {
+	id = HPhurufi.3055
+	desc = EVTDESC_HRP_3055
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3055
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = -1
+		add_trait = depressed
+	}
+}
+# Gain chaste
+character_event = {
+	id = HPhurufi.3056
+	desc = EVTDESC_HRP_3056
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3056
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = chaste
+		decadence = -5
+	}
+}
+# level up
+character_event = {
+	id = HPhurufi.3058
+	desc = EVTDESC_HRP_3058
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3058
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		if = {
+			limit = {
+				trait = skilled_tactician
+			}
+			remove_trait = skilled_tactician
+			add_trait = brilliant_strategist
+		}
+		if = {
+			limit = {
+				trait = tough_soldier
+			}
+			remove_trait = tough_soldier
+			add_trait = skilled_tactician
+		}
+		if = {
+			limit = {
+				trait = misguided_warrior
+			}
+			remove_trait = misguided_warrior
+			add_trait = tough_soldier
+		}	
+		if = {
+			limit = {
+				trait = intricate_webweaver
+			}
+			remove_trait = intricate_webweaver
+			add_trait = elusive_shadow
+		}
+		if = {
+			limit = {
+				trait = flamboyant_schemer
+			}
+			remove_trait = flamboyant_schemer
+			add_trait = intricate_webweaver
+		}
+		if = {
+			limit = {
+				trait = amateurish_plotter
+			}
+			remove_trait = amateurish_plotter
+			add_trait = flamboyant_schemer
+		}	
+		if = {
+			limit = {
+				trait = charismatic_negotiator
+			}
+			remove_trait = charismatic_negotiator
+			add_trait = grey_eminence
+		}
+		if = {
+			limit = {
+				trait = underhanded_rogue
+			}
+			remove_trait = underhanded_rogue
+			add_trait = charismatic_negotiator
+		}
+		if = {
+			limit = {
+				trait = naive_appeaser
+			}
+			remove_trait = naive_appeaser
+			add_trait = underhanded_rogue
+		}		
+		if = {
+			limit = {
+				trait = fortune_builder
+			}
+			remove_trait = fortune_builder
+			add_trait = midas_touched
+		}
+		if = {
+			limit = {
+				trait = thrifty_clerk
+			}
+			remove_trait = thrifty_clerk
+			add_trait = fortune_builder
+		}
+		if = {
+			limit = {
+				trait = indulgent_wastrel
+			}
+			remove_trait = indulgent_wastrel
+			add_trait = thrifty_clerk
+		}
+		if = {
+			limit = {
+				trait = scholarly_theologian
+			}
+			remove_trait = scholarly_theologian
+			add_trait = mastermind_theologian
+		}
+		if = {
+			limit = {
+				trait = martial_cleric
+			}
+			remove_trait = martial_cleric
+			add_trait = scholarly_theologian
+		}
+		if = {
+			limit = {
+				trait = detached_priest
+			}
+			remove_trait = detached_priest
+			add_trait = martial_cleric
+		}
+	}
+}
+# Gain genius
+character_event = {
+	id = HPhurufi.3059
+	desc = EVTDESC_HRP_3059
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3059
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = genius
+		decadence = -5
+	}
+}
+# Gain ill
+character_event = {
+	id = HPhurufi.3060
+	desc = EVTDESC_HRP_3060
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3060
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		add_trait = ill
+		decadence = -1
+	}
+}
+# Wrong Omen
+character_event = {
+	id = HPhurufi.3061
+	desc = EVTDESC_HRP_3061
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3061
+		remove_character_modifier = hurufi_studying
+		clr_character_flag = hurufi_studying_flag
+		if = {
+			limit = { 
+				NOT = { has_character_modifier = hurufi_prediction }
+			}
+			add_trait = depressed
+			change_learning = -1
+		}
+		add_character_modifier = {
+                        name = wrong_omen
+                        duration = 365
+                }
+	}
+}
+# Good Omen
+character_event = {
+	id = HPhurufi.3062
+	desc = EVTDESC_HRP_3062
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3062
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		if = {
+			limit = { 
+				NOT = { has_character_modifier = hurufi_prediction }
+			}
+			change_learning = 2
+		}
+		add_character_modifier = {
+                        name = good_omen
+                        duration = 365
+                }
+	}
+}
+# Bad Omen
+character_event = {
+	id = HPhurufi.3063
+	desc = EVTDESC_HRP_3063
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3063
+		remove_character_modifier = hurufi_studying
+		clr_character_flag = hurufi_studying_flag
+		if = {
+			limit = { 
+				NOT = { has_character_modifier = hurufi_prediction }
+			}
+			change_learning = 2
+		}
+		add_character_modifier = {
+                        name = bad_omen
+                        duration = 365
+                }
+	}
+}
+# Bonus piety
+character_event = {
+	id = HPhurufi.3064
+	desc = EVTDESC_HRP_3064
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				learning = 20
+				trait = hurufi_mystic_b
+				NOT = { 
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_b
+			add_trait = hurufi_mystic_c
+		}
+		if = {
+			limit = {
+				learning = 14
+				trait = hurufi_mystic_a
+				NOT = {
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			remove_trait = hurufi_mystic_a
+			add_trait = hurufi_mystic_b
+		}
+		if = {
+			limit = {
+				learning = 8
+				NOT = { 
+					trait = hurufi_mystic_a
+					trait = hurufi_mystic_b
+					trait = hurufi_mystic_c
+				}
+			}
+			add_trait = hurufi_mystic_a
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_3064
+		clr_character_flag = hurufi_studying_flag
+		remove_character_modifier = hurufi_studying
+		change_learning = 2
+		piety = 100
+		decadence = -1
+	}
+}
+
+###########################################
+# Historical Events						  #
+###########################################
+# al-Hurufi
+narrative_event = {
+	id = HPhurufi.3070
+	title = HPHurufi.3070.name
+	desc = EVTDESC_HRP_3070
+	#major = yes
+	
+	picture = GFX_evt_imam
+	border = GFX_event_narrative_frame_religion
+	
+	only_playable = yes
+	
+	trigger = {
+		year = 1394
+		has_landed_title = "d_azerbaijan"
+		NOT = { has_global_flag = alhurufi }
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		set_global_flag = alhurufi
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_3070
+		religion = hurufi
+		668 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		669 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		670 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		671 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		create_character = {
+			random_traits = no
+			dynasty = random
+			name = "Fazlallah Astarabadi"
+			culture = persian
+			religion = hurufi
+			age = 40
+			female = no
+			attributes = {
+				intrigue=15
+				learning=15
+			}
+			health = 6
+			trait = quick
+			trait = mastermind_theologian
+			trait = heresiarch
+			trait = hurufi_mystic_c
+			trait = diligent
+			trait = ambitious
+			trait = gregarious
+			trait = mystic
+		}
+		new_character = {
+			set_defacto_liege = ROOT
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_3070
+		668 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		669 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+		670 = {
+				religion = hurufi
+		}
+		671 = {
+				religion = hurufi
+				remove_province_modifier = heretic_stronghold
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_3070
+		668 = {
+				religion = hurufi
+				add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+                }
+		}
+		669 = {
+				religion = hurufi
+				add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+                }
+		}
+		670 = {
+				religion = hurufi
+				add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+                }
+		}
+		671 = {
+				religion = hurufi
+				add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+                }
+		}
+	}
+}
+
+###########################################
+# Historical Events						  #
+###########################################
+# Imadaddin Nasimi
+### Al-Ghazali ###
+province_event = {
+	id = HPhurufi.3071
+	desc = EVTDESC_HRP_3071
+	picture = GFX_evt_emissary
+
+	trigger = {
+		province_id = 693 #Baghdad
+		NOT = {
+			has_province_modifier = famous_muslim_timer
+		}
+		owner = {
+			religion_group = muslim
+			top_liege = {
+				in_command = no
+				is_adult = yes
+				NOT = {
+					trait = on_hajj
+				}
+				NOT = {
+					any_courtier = {
+						has_character_flag = nesimi_flag
+					}
+				}
+				NOT = {
+					any_vassal = {
+						has_character_flag = nesimi_flag
+					}
+				}
+				religion_group = muslim
+				NOT = {
+					has_character_modifier = muslim_famous_timer
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1000
+	}
+
+	immediate = {
+		hidden_tooltip = {
+			add_province_modifier = {
+				name = famous_muslim_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTA106000"
+		owner = {
+			top_liege = {
+				hidden_tooltip = {
+					add_character_modifier = {
+						name = muslim_famous_timer
+						duration = 1825
+						hidden = yes
+					}
+				}
+				character_event = {
+					id = HPhurufi.3072
+					days = 3
+					random = 4
+					tooltip = "EVTTOOLTIP106001"
+				}
+			}
+		}
+	}
+}
+
+#Liege get new character: Nesimi
+character_event = {
+	id = HPhurufi.3072
+	desc = EVTDESC_HRP_3072
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_3072
+		create_character = {
+			name = "Imadaddin Nesimi"
+			dynasty = random
+			attributes = {
+				learning = 10
+				diplomacy = 10
+				intrigue = 12
+			}
+			religion = hurufi
+			culture = turkish
+			age = 25
+			female = no
+			trait = poet
+			trait = mastermind_theologian
+			trait = hurufi_diwan
+			trait = zealous
+			trait = genius
+			trait = attractive
+			trait = just
+			trait = sayyid
+		}
+		new_character = {
+			set_character_flag = nesimi_flag
+			set_defacto_liege = ROOT
+		}
+		prestige = 100
+	}
+}
+
+# 3061  ~omen
+# 3062 good omen
+# 3063 bad omen
+character_event = {
+	id = HPhurufi.3080
+	desc = EVTDESC_HRP_3080
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		add_character_modifier = { name = hurufi_prediction duration = 730 }
+		random_list = {
+			20 = { character_event = { id = HPhurufi.3061 days = 200 random = 50} }
+			60 = { character_event = { id = HPhurufi.3062 days = 200 random = 50} }
+			20 = { character_event = { id = HPhurufi.3063 days = 200 random = 50} }
+		}
+	}
+}

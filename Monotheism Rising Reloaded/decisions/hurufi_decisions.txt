@@ -1,0 +1,164 @@
+decisions = {	
+# Study 1
+	study_hurufi_one = {
+		potential = {
+			is_playable = yes
+            religion = hurufi
+			is_adult = yes
+			has_focus = focus_theology
+			NOT = { trait = incapable }
+			NOT = { 
+				trait = hurufi_mystic_a
+				trait = hurufi_mystic_b
+				trait = hurufi_mystic_c				
+			}
+			NOT = { 
+				trait = slow
+				trait = imbecile
+				trait = inbred
+				trait = blinded
+			}
+			NOT = { has_character_flag = do_not_disturb }
+			NOT = { has_character_flag = hurufi_studying_flag }
+		}	
+		allow = {
+			piety = 100
+			war = no	
+		}
+		effect = {
+			piety = -100
+			set_character_flag = hurufi_studying_flag
+			hidden_tooltip = { character_event = { id = HPhurufi.3030 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					age = 30
+				}
+			}
+		}
+	}
+	# Study 2
+	study_hurufi_two = {
+		potential = {
+			is_playable = yes
+            religion = hurufi
+			is_adult = yes
+			trait = hurufi_mystic_a
+			NOT = { trait = incapable }
+			NOT = { 
+				trait = hurufi_mystic_b
+				trait = hurufi_mystic_c				
+			}
+			NOT = { 
+				trait = slow
+				trait = imbecile
+				trait = inbred
+				trait = blinded
+			}
+			NOT = { has_character_flag = hurufi_studying_flag }
+			NOT = { has_character_flag = do_not_disturb }
+		}	
+		allow = {
+			piety = 200
+			war = no	
+		}
+		effect = {
+			piety = -200
+			set_character_flag = hurufi_studying_flag
+			hidden_tooltip = { character_event = { id = HPhurufi.3031 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					age = 30
+				}
+			}
+		}
+	}
+# Study 3
+	study_hurufi_three = {
+		potential = {
+			is_playable = yes
+            religion = hurufi
+			is_adult = yes
+			trait = hurufi_mystic_b
+			NOT = { trait = incapable }
+			NOT = { 
+				trait = hurufi_mystic_c				
+			}
+			NOT = { 
+				trait = slow
+				trait = imbecile
+				trait = inbred
+				trait = blinded
+			}
+			NOT = { has_character_flag = do_not_disturb }
+			NOT = { has_character_flag = hurufi_studying_flag }
+		}	
+		allow = {
+			piety = 400
+			war = no	
+		}
+		effect = {
+			piety = -400
+			hidden_tooltip = { character_event = { id = HPhurufi.3032 } }
+			set_character_flag = hurufi_studying_flag
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					age = 30
+				}
+			}
+		}
+	}
+	hurufi_omens = {
+		potential = {
+			is_playable = yes
+            religion = hurufi
+			is_adult = yes
+			trait = hurufi_mystic_c	
+			NOT = { has_character_modifier = hurufi_prediction }
+		}
+		allow = {
+			piety = 50
+			war = no	
+		}
+		effect = {
+			piety = -50
+			hidden_tooltip = { character_event = { id = HPhurufi.3080 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					age = 30
+				}
+			}
+		}
+	}
+}

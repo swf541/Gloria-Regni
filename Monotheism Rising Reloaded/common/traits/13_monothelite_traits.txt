@@ -1,0 +1,25 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# MONOTHELITE
+tolerance = {
+    potential = {
+        religion = monothelite
+    }
+	opposites = {
+		zealous
+	}
+	diplomacy = 2
+	intrigue = -1
+	vassal_opinion = 20
+	tolerates_christian = yes
+	opposite_opinion = -50
+	orthodox_opinion = -30
+	infidel_opinion = 20
+	religious = yes
+    customizer = no
+    random = yes
+}

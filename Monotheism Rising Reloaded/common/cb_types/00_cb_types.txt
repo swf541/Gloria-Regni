@@ -2847,6 +2847,13 @@ crusade = {
 	can_use = {
 		ROOT = {
 			can_call_crusade = yes
+			OR = {
+				NOT = { religion_group = muslim }
+				OR = { 
+					has_law = hp_decadence_0
+					has_law = hp_decadence_1
+				}
+			}
 		}
 		
 		FROM = {
@@ -3289,26 +3296,46 @@ religious = {
 	is_holy_war = yes
 	check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 
-	allowed_to_target_tributaries = no
-	allowed_to_target_suzerains = no
-
-	infamy_modifier = 0.75	
-	
 	can_use = {
 		ROOT = {
-			is_nomadic = no
+			NOT = { religion = kharijite }
 			NOT = { religion_group = pagan_group }
+			NOT = { religion_group = pagan_heretic_group }
 			NOT = { pacifist = yes }
 			NOT = { religion = buddhist }
+			NOT = { religion = yazidi }
+			OR = {
+				NOT = { religion_group = muslim }
+				OR = { 
+					has_law = hp_decadence_0
+					has_law = hp_decadence_1
+					has_law = hp_decadence_2
+				}
+			}
 			OR = {
 				NOT = { religion = hindu }
 				FROM = { NOT = { religion_group = indian_group } }
 			}
 			NOT = { same_realm = FROM }
 			OR = {
+				AND = {
+					religion = monothelite
+					NOT = { religion_group = christian }
+				}
+				AND = {
+					religion = cathar
+					has_global_flag = cathar_war
+					is_heresy_of = FROM
+				}
 				NOT = { religion_group = FROM }
-				is_heresy_of = FROM
-				is_parent_religion = FROM
+				AND = {
+					is_heresy_of = FROM
+					NOT = { religion = monothelite }
+				}
+				AND = { 
+					is_parent_religion = FROM
+					NOT = { religion = monothelite }
+				}
 				AND = {
 					religion_group = muslim
 					NOT = { religion = FROM }
@@ -3317,6 +3344,19 @@ religious = {
 							any_current_enemy = {
 								NOT = {
 									religion_group = muslim
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					religion = paulician
+					NOT = { religion = FROM }
+					FROM = {
+						NOT = { 
+							any_current_enemy = {
+								NOT = {
+									religion_group = christian
 								}
 							}
 						}
@@ -3334,7 +3374,6 @@ religious = {
 					}
 				}
 			}
-			mercenary = no
 		}
 	}
 	
@@ -3363,20 +3402,9 @@ religious = {
 							AND = {
 								is_land = no
 								OR = {
+									year = 1100
 									ROOT = { religion_group = muslim }
 									FROM = { religion_group = muslim }
-									AND = {
-										ROOT = { religion_group = pagan_group }
-										has_global_flag = pagan_ghws_unlocked
-									}
-									AND = {
-										ROOT = { religion_group = christian }
-										has_global_flag = christian_crusades_unlocked
-									}
-									AND = {
-										ROOT = { religion_group = muslim }
-										has_global_flag = muslim_jihads_unlocked
-									}
 								}
 								any_neighbor_province = {
 									OR = {
@@ -3413,6 +3441,7 @@ religious = {
 	is_valid = {
 		ROOT = {
 			NOT = { religion_group = pagan_group }
+			NOT = { religion_group = pagan_heretic_group }
 			NOT = { pacifist = yes }
 			NOT = { religion = buddhist }
 			NOT = { same_realm = FROM }
@@ -3421,7 +3450,10 @@ religious = {
 				is_heresy_of = FROM
 				is_parent_religion = FROM
 				AND = {
-					religion_group = muslim
+					OR = {
+						religion_group = muslim
+						religion = paulician
+					}
 					NOT = { religion = FROM }
 				}
 			}
@@ -3438,7 +3470,7 @@ religious = {
 			participation_scaled_prestige = 50
 			if = {
 				limit = {
-					uses_decadence = yes
+					religion_group = muslim
 				}
 				participation_scaled_decadence = -10
 			}
@@ -3450,7 +3482,7 @@ religious = {
 				participation_scaled_prestige = 50
 				if = {
 					limit = {
-						uses_decadence = yes
+						religion_group = muslim
 					}
 					participation_scaled_decadence = -10
 				}
@@ -3467,7 +3499,13 @@ religious = {
 			religion_authority = {
 				modifier = lost_holy_war
 				years = 20
-			}		
+			}
+			if = {
+				limit = {
+					religion = kharijite
+				}
+				character_event = { id = HPkharijite.5007 }
+			}
 		}
 		FROM = { piety = -100 }
 		FROM = { prestige = -50 }
@@ -3516,9 +3554,15 @@ religious = {
 			participation_scaled_prestige = 100
 			if = {
 				limit = {
-					uses_decadence = yes
+					religion_group = muslim
 				}
 				participation_scaled_decadence = -10
+			}
+			if = {
+				limit = {
+					trait = kharijite_kafir
+				}
+				character_event = { id = HPkharijite.5115 }
 			}
 		}
 		any_defender = {
@@ -3528,7 +3572,7 @@ religious = {
 				participation_scaled_prestige = 100
 				if = {
 					limit = {
-						uses_decadence = yes
+						religion_group = muslim
 					}
 					participation_scaled_decadence = -10
 				}
@@ -3629,7 +3673,6 @@ religious = {
 		}
 	}
 }
-
 excommunicated_ruler = {
 	name = CB_NAME_EXCOMMUNICATED_RULER
 	war_name = WAR_NAME_EXCOMMUNICATED_RULER
@@ -5760,6 +5803,7 @@ muslim_invasion = {
 	can_use = {
 		ROOT = {
 			religion_group = muslim
+			has_law = hp_decadence_0
 			
 			# These use 'tribal_invasion' instead:
 			NOR = {
@@ -5777,7 +5821,12 @@ muslim_invasion = {
 			}
 		}
 		
-		FROM = { NOT = { religion = ROOT } }
+		FROM = { 
+			OR = {
+				NOT = { religion = ROOT } 
+				has_law = hp_decadence_4
+			}
+		}
 		
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
@@ -5822,7 +5871,12 @@ muslim_invasion = {
 		ROOT = {
 			religion_group = muslim
 		}
-		FROM = { NOT = { religion = ROOT } }
+		FROM = { 
+			OR = {
+				NOT = { religion = ROOT } 
+				has_law = hp_decadence_4
+			}
+		}
 	}
 	
 	is_valid_title = {

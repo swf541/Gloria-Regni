@@ -1,0 +1,905 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Lollard   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPwaldensian
+
+
+narrative_event = {
+	id = HPwaldensian.13000
+	title = EVTTITLE_HRP_13000
+	desc = EVTDESC_HRP_13000
+	picture = GFX_evt_heresy_defeated
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = poor_lyons }
+		year = 1100
+		has_landed_title = c_lyon
+		religion = catholic
+		NOT = { religion_authority = 0.60 }
+		
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+	option = {
+		name = EVTOPTA_HRP_13000
+		trigger = {
+			has_landed_title = c_lyon
+		}
+		set_global_flag = poor_lyons
+		piety = -100
+		227 = {
+			religion = waldensian
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_13000
+		trigger = {
+			NOT = { has_landed_title = c_lyon }
+			religion = catholic
+			has_landed_title = d_susa
+		}
+		random_realm_province = {
+			religion = waldensian
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_13000
+		trigger = {
+			religion = catholic
+			NOT = { has_landed_title = c_lyon }
+			NOT = { has_landed_title = d_susa }
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_13000
+		trigger = {
+			NOT = { religion = catholic }
+		}
+	}
+}
+character_event = { 
+	id = HPwaldensian.13001
+	desc = EVTDESC_HRP_13001
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		NOT = { 
+			OR = {
+				trait = sandaliati
+				trait = novellani
+				trait = doctores
+			}
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_13001
+		trigger = {
+			OR = { 
+				is_ruler = yes
+				intrigue = 7
+			}		
+		}
+		add_trait = sandaliati
+	}
+	option = {
+		name = EVTOPTB_HRP_13001
+		trigger = {
+			OR = { 
+				is_priest = yes
+				learning = 9
+			}		
+		}
+		add_trait = doctores
+	}
+	option = {
+		name = EVTOPTC_HRP_13001
+		add_trait = novellani
+	}
+}
+#Lux In Tenebris
+character_event = { 
+	id = HPwaldensian.13002
+	desc = EVTDESC_HRP_13002
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		religion = waldensian
+		tier = KING
+		piety = 200
+		trait = charitable
+	}
+	mean_time_to_happen = {
+		years = 15
+	}
+	option = {
+		name = EVTOPTA_HRP_13002
+		religion_authority = {
+			modifier = wald_king
+			years = 10
+		}
+	}
+}
+#Hospital
+character_event = { 
+	id = HPwaldensian.13020
+	desc = EVTDESC_HRP_13020
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		religion = waldensian
+		tier = KING
+		wealth = 500
+		trait = charitable
+		has_focus = focus_rulership		
+	}
+	mean_time_to_happen = {
+		years = 30
+	}
+	option = {
+		name = EVTOPTA_HRP_13020
+		wealth = -500
+		piety = 100
+		random_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_hospital
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_13020
+		piety = -20
+	}
+}
+#Bible Translate
+character_event = { 
+	id = HPwaldensian.13010
+	desc = EVTDESC_HRP_13010
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		religion = waldensian
+		OR = {
+			tier = KING
+			tier = emperor
+		}
+		piety = 50
+		OR = {
+			has_focus = focus_theology
+			has_focus = focus_scholarship
+			has_focus = focus_rulership
+		}
+		NOT = { has_global_flag = wald_bible }
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = EVTOPTA_HRP_13010
+		hidden_tooltip = {
+			random_list = {
+				30 = {	
+					 character_event = { id = HPwaldensian.13011 days = 900 }
+					 }
+				70 = {
+					character_event = { id = HPwaldensian.13012 days = 720 }
+				}
+			}
+		}	
+	}
+	option = {
+		name = EVTOPTB_HRP_13010
+		scaled_wealth = -5.0
+		hidden_tooltip = {
+			random_list = {
+				70 = {	
+					 character_event = { id = HPwaldensian.13011 days = 900 }
+					 }
+				30 = {
+					character_event = { id = HPwaldensian.13012 days = 720 }
+				}
+			}
+		}	
+	}
+}
+character_event = { 
+	id = HPwaldensian.13011
+	desc = EVTDESC_HRP_13011
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	trigger = {
+		religion = waldensian
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13011
+		piety = 200
+		prestige = 500
+		religion_authority = {
+			modifier = bible_translated
+			years = 20
+		}			
+		set_global_flag = wald_bible
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13013 days = 3 } }
+	}
+}
+character_event = { 
+	id = HPwaldensian.13012
+	desc = EVTDESC_HRP_13012
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	trigger = {
+		religion = waldensian
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13012
+		piety = 200
+		prestige = -200
+		religion_authority = {
+			modifier = bible_translated
+			years = 20
+		}			
+		set_global_flag = wald_bible
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13013 days = 3 } }
+	}
+}
+narrative_event = {
+	id = HPwaldensian.13013
+	title = EVTTITLE_HRP_13013
+	desc = EVTDESC_HRP_13013
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_13013
+		trigger = { religion = waldensian }
+	}
+	option = {
+		name = EVTOPTB_HRP_13013
+		trigger = { 
+			NOT = { religion = waldensian }
+		}
+	}
+}
+
+#Sack events
+character_event = { 
+	id = HPwaldensian.13100
+	desc = EVTDESC_HRP_13100
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			religion = waldensian
+		}
+		FROM = { 
+			holding_type = temple
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = waldensian
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13100
+		piety = 50
+		FROM = {
+			owner = {
+				religion_authority = {
+					modifier = relics_destroyed
+					years = 5
+				}
+				piety = -100
+				random_realm_province = {
+                                	limit = {
+                                 	     	  religion = catholic
+                                	}
+                                	add_province_modifier = {
+                                        	name = religious_tension
+                                      	 	duration = 3650
+                                	}
+				}
+                      	}
+		}
+		random_list = {
+			7 = { add_trait = charitable }
+			3 = { }
+		}
+		random_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_charity
+				duration = 1000
+			}
+		}	
+	}
+}
+#Sack Rome
+character_event = { 
+	id = HPwaldensian.13101
+	desc = EVTDESC_HRP_13101
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		NOT = { has_global_flag = wald_roma }
+		FROM = { 
+			title = b_roma
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = waldensian
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13101
+		piety = 200
+		set_global_flag = wald_roma
+		FROM = {
+			owner = {
+				religion_authority = {
+					modifier = wald_sack
+					years =10
+				}
+				piety = -300
+				any_realm_province = {
+                                	limit = {
+                                 	     	  religion = catholic
+                                	}
+                                	add_province_modifier = {
+                                        	name = religious_tension
+                                      	 	duration = 3650
+                                	}
+				}
+                      	}
+		}
+		add_trait = charitable
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13201 days = 3 } }
+		if = {
+			limit = {
+				has_nickname = no
+			}
+			give_nickname = nick_the_defiler
+		}
+		any_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_charity
+				duration = 1000
+			}
+		}		
+	}
+}
+#Sack Canter
+character_event = { 
+	id = HPwaldensian.13102
+	desc = EVTDESC_HRP_13102
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		NOT = { has_global_flag = wald_cant }
+		FROM = { 
+			title = b_canterbury
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = waldensian
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13102
+		piety = 200
+		set_global_flag = wald_cant
+		FROM = {
+			owner = {
+				religion_authority = {
+					modifier = wald_sack
+					years =10
+				}
+				piety = -300
+				any_realm_province = {
+                                	limit = {
+                                 	     	  religion = catholic
+                                	}
+                                	add_province_modifier = {
+                                        	name = religious_tension
+                                      	 	duration = 3650
+                                	}
+				}
+                      	}
+		}
+		add_trait = charitable
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13202 days = 3 } }
+		if = {
+			limit = {
+				has_nickname = no
+			}
+			give_nickname = nick_the_defiler
+		}
+		any_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_charity
+				duration = 1000
+			}
+		}	
+	}
+}
+#Sack Santiago
+character_event = { 
+	id = HPwaldensian.13103
+	desc = EVTDESC_HRP_13103
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		NOT = { has_global_flag = wald_santiago }
+		FROM = { 
+			title = b_santiago
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = waldensian
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13103
+		piety = 200
+		set_global_flag = wald_santiago
+		FROM = {
+			owner = {
+				religion_authority = {
+					modifier = wald_sack
+					years =10
+				}
+				piety = -300
+				any_realm_province = {
+                                	limit = {
+                                 	     	  religion = catholic
+                                	}
+                                	add_province_modifier = {
+                                        	name = religious_tension
+                                      	 	duration = 3650
+                                	}
+				}
+                      	}
+		}
+		add_trait = charitable
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13203 days = 3 } }
+		if = {
+			limit = {
+				has_nickname = no
+			}
+			give_nickname = nick_the_defiler
+		}
+		any_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_charity
+				duration = 1000
+			}
+		}			
+	}
+}
+#Sack Koln
+character_event = { 
+	id = HPwaldensian.13104
+	desc = EVTDESC_HRP_13104
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		NOT = { has_global_flag = wald_koln }
+		FROM = { 
+			title = b_koln
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = waldensian
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13104
+		piety = 200
+		set_global_flag = wald_koln
+		FROM = {
+			owner = {
+				religion_authority = {
+					modifier = wald_sack
+					years =10
+				}
+				piety = -300
+				any_realm_province = {
+                                	limit = {
+                                 	     	  religion = catholic
+                                	}
+                                	add_province_modifier = {
+                                        	name = religious_tension
+                                      	 	duration = 3650
+                                	}
+				}
+                      	}
+		}
+		add_trait = charitable
+		hidden_tooltip = { narrative_event = { id = HPwaldensian.13204 days = 3 } }
+		if = {
+			limit = {
+				has_nickname = no
+			}
+			give_nickname = nick_the_defiler
+		}
+		any_realm_province = {
+			limit = {
+				religion = waldensian
+			}
+			add_province_modifier = {
+				name = wald_charity
+				duration = 1000
+			}
+		}			
+	}
+}
+
+narrative_event = {
+	id = HPwaldensian.13201
+	title = EVTTITLE_HRP_13201
+	desc = EVTDESC_HRP_13201
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13201
+		trigger = { religion = catholic }
+	}
+	option = {
+		name = EVTOPTB_HRP_13201
+		trigger = { religion = waldensian }
+	}
+	option = {
+		name = EVTOPTC_HRP_13201
+		trigger = { 
+			NOT = { religion = waldensian }
+			NOT = { religion = catholic } 
+		}
+	}
+}
+narrative_event = {
+	id = HPwaldensian.13202
+	title = EVTTITLE_HRP_13202
+	desc = EVTDESC_HRP_13202
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13202
+		trigger = { religion = catholic }
+	}
+	option = {
+		name = EVTOPTB_HRP_13202
+		trigger = { religion = waldensian }
+	}
+	option = {
+		name = EVTOPTC_HRP_13202
+		trigger = { 
+			NOT = { religion = waldensian }
+			NOT = { religion = catholic } 
+		}
+	}
+}
+narrative_event = {
+	id = HPwaldensian.13203
+	title = EVTTITLE_HRP_13203
+	desc = EVTDESC_HRP_13203
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13203
+		trigger = { religion = catholic }
+	}
+	option = {
+		name = EVTOPTB_HRP_13203
+		trigger = { religion = waldensian }
+	}
+	option = {
+		name = EVTOPTC_HRP_13203
+		trigger = { 
+			NOT = { religion = waldensian }
+			NOT = { religion = catholic } 
+		}
+	}
+}
+narrative_event = {
+	id = HPwaldensian.13204
+	title = EVTTITLE_HRP_13204
+	desc = EVTDESC_HRP_13204
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13204
+		trigger = { religion = catholic }
+	}
+	option = {
+		name = EVTOPTB_HRP_13204
+		trigger = { religion = waldensian }
+	}
+	option = {
+		name = EVTOPTC_HRP_13204
+		trigger = { 
+			NOT = { religion = waldensian }
+			NOT = { religion = catholic } 
+		}
+	}
+}
+#Wald yr Bounce Events
+character_event = { 
+	id = HPwaldensian.13300
+	desc = EVTDESC_HRP_13300
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		is_ruler = yes
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13300
+		piety = 50
+		scaled_wealth = -0.4
+		random_list = {
+			7 = {
+				add_trait = charitable
+			}
+			3 = { }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_13300
+		piety = -50
+		random_list = {
+			4 = {
+				add_trait = greedy
+			}
+			6 = { }
+		}
+	}
+}
+character_event = { 
+	id = HPwaldensian.13301
+	desc = EVTDESC_HRP_13301
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		is_ruler = yes
+		trait = greedy
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_13301
+		piety = -50
+		prestige = -50
+		add_character_modifier = {
+			name = the_greedy
+			duration = 730
+		}
+	}
+}
+character_event = { 
+	id = HPwaldensian.13302
+	desc = EVTDESC_HRP_13302
+	picture = GFX_evt_wald_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = waldensian
+		is_ruler = yes
+		NOT = { trait = greedy }
+		OR = {
+			trait = fortune_builder
+			trait = thrifty_clerk
+			trait = indulgent_wastrel
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13302
+		scaled_wealth = -0.5
+		if = {
+			limit = {
+				trait = fortune_builder
+			}
+			remove_trait = fortune_builder
+			add_trait = midas_touched
+		}
+		if = {
+			limit = {
+				trait = thrifty_clerk
+			}
+			remove_trait = thrifty_clerk
+			add_trait = fortune_builder
+		}
+		if = {
+			limit = {
+				trait = indulgent_wastrel
+			}
+			remove_trait = indulgent_wastrel
+			add_trait = thrifty_clerk
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_13302
+		prestige = -10
+	}
+}
+character_event = {
+	id = HPwaldensian.13400
+	desc = EVTDESC_HRP_13400
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	
+	min_age = 6
+	max_age = 16
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = charitable }
+		NOT = { trait = greedy }
+		has_guardian = yes
+		religion = waldensian
+	}
+	option = {
+		name = EVTOPTA_HRP_13302
+		add_trait = charitable
+	}
+}
+# Remove relic modifier if Waldensian
+character_event = {
+	id = HPwaldensian.13405
+	desc = EVTDESC_HRP_13405
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		has_character_modifier = owns_relic
+		religion = waldensian
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13405
+		remove_character_modifier = owns_relic
+		prestige = 30
+		piety = 30
+	}
+	option = {
+		name = EVTOPTB_HRP_13405
+		remove_character_modifier = owns_relic
+		wealth = 30
+		piety = -50
+	}
+}
