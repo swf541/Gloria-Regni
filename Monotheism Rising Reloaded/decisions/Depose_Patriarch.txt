@@ -1,0 +1,167 @@
+targetted_decisions = {
+
+	depose_patriarch_of_rome = {
+		only_playable = yes
+		filter = vassals
+		ai_target_filter = vassals
+	
+		from_potential = {
+			ai = no
+			primary_title = { tier = emperor }	
+		}
+		
+		potential = {
+			has_landed_title = d_rome
+			de_facto_liege = FROM
+		}
+		
+		allow = {
+			piety = 100
+			prestige = 100
+		}
+		
+		effect = {
+			create_random_priest = {
+				random_traits = yes
+				female = no
+			}
+			new_character = {
+				d_rome = {
+					usurp_title_plus_barony_if_unlanded = ROOT
+				}
+			}
+			d_imperial = { change_variable = { which = schism value = 10 } }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+	depose_patriarch_of_constantinople = {
+		only_playable = yes
+		
+		filter = vassals
+		ai_target_filter = vassals
+	
+		from_potential = {
+			ai = no
+			primary_title = { tier = emperor }	
+		}
+		
+		potential = {
+			has_landed_title = d_constantinople
+			de_facto_liege = FROM
+		}
+		
+		allow = {
+			piety = 100
+			prestige = 100
+		}
+		
+		effect = {
+			create_random_priest = {
+				random_traits = yes
+				female = no
+			}
+			new_character = {
+				d_constantinople = {
+					usurp_title_plus_barony_if_unlanded = ROOT
+				}
+			}
+			d_imperial = { change_variable = { which = schism value = 10 } }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+	
+	depose_patriarch_of_constantinople_give_to_relative = {
+		only_playable = yes
+		filter = dynasty
+		ai_target_filter = dynasty
+	
+		from_potential = {
+			d_constantinople = {
+				de_facto_liege = FROM
+			}
+		}
+		
+		potential = {
+			host = FROM
+			is_female = no
+			age = 16
+			is_landed = no
+		}
+		
+		allow = {
+			piety = 100
+			prestige = 100
+		}
+		
+		effect = {
+			ROOT = {
+				d_constantinople = {
+					usurp_title_plus_barony_if_unlanded = ROOT
+				}
+			}
+			d_imperial = { change_variable = { which = schism value = 10 } }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+	depose_patriarch_of_rome_give_to_relative = {
+		only_playable = yes
+		filter = dynasty
+		ai_target_filter = dynasty
+	
+		from_potential = {
+			d_rome = {
+				de_facto_liege = FROM
+			}
+		}
+		
+		potential = {
+			host = FROM
+			is_female = no
+			age = 16
+			is_landed = no
+		}
+		
+		allow = {
+			piety = 100
+			prestige = 100
+		}
+		
+		effect = {
+			ROOT = {
+				d_rome = {
+					usurp_title_plus_barony_if_unlanded = ROOT
+				}
+			}
+			d_imperial = { change_variable = { which = schism value = 10 } }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+}

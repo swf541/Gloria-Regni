@@ -1,0 +1,388 @@
+namespace = indep
+ 
+character_event = {
+        id = indep.1
+        hide_window = yes
+
+        is_triggered_only = yes
+   
+        trigger = {
+                independent = yes
+                is_landed = yes
+        }
+   
+        immediate = {
+        save_event_target_as = ind_ruler
+                set_variable = { which = "capital_count" value = 0 }
+                any_realm_province = {
+                        limit = { OR = { owner = { any_liege = { character = ROOT } } owner = {character = ROOT } } }
+                        remove_province_modifier = contingent_territory
+                        remove_province_modifier = enclaved_territory
+                }
+                any_realm_province = {
+                        limit = { OR = { owner = { any_liege = { character = ROOT } } owner = {character = ROOT } } }
+                        add_province_modifier = { name = enclaved_territory duration = -1 }
+                        change_variable = { which = "ind_counter" value = 1 }
+                        if = {
+                                limit = {
+                                        is_variable_equal = { which = "ind_counter" value = 10 } #YEARS OF CONTINUOUS ENCLAVED TERRITORY
+                                }
+                                province_event = { id = indep.9 }
+                        }
+                }
+                if = {
+                        limit = {
+                                is_merchant_republic = yes
+                        }
+                        character_event = { id = indep.3 }
+                }
+                character_event = { id = indep.2 }
+                clear_event_target = ind_ruler
+        }
+}
+ 
+character_event = {
+        id = indep.2
+        hide_window = yes
+        is_triggered_only = yes
+ 
+        immediate = {
+                capital_scope = {
+                        province_event = { id = indep.8 }
+                }
+        }
+}
+ 
+character_event = {
+        id = indep.3
+        hide_window = yes
+        is_triggered_only = yes
+        immediate = {
+                any_realm_province = {
+                        limit = {
+                                has_trade_post = yes
+                                trade_post_owner = {
+                                        OR = {
+                                                any_liege = { character = ROOT}
+                                                character = ROOT 
+                                        }
+                                }
+                        }
+                        province_event = { id = indep.4 }
+                }
+        }
+}
+ 
+province_event = {
+        id = indep.4
+        hide_window = yes
+        is_triggered_only = yes  
+        immediate = {
+                remove_province_modifier = enclaved_territory
+                add_province_modifier = { name = contingent_territory duration = -1 }
+                set_variable = { which = "ind_counter" value = 0 }
+                event_target:ind_ruler = { character_event = { id = indep.5 } }
+        }
+}
+ 
+character_event = {
+        id = indep.5
+        hide_window = yes
+        is_triggered_only = yes
+        immediate = {
+                any_realm_province = {
+                        limit = {
+                                has_province_modifier = enclaved_territory
+                                any_neighbor_province = {
+                                        has_province_modifier = contingent_territory
+                                        owner = {
+                                                OR = {
+                                                        character = ROOT
+                                                        same_realm = ROOT
+                                                }
+                                        }
+                                }
+                        }
+                        province_event = { id = indep.4 }
+                }
+                any_realm_province = {
+                        limit = {
+                                has_province_modifier = enclaved_territory
+                                port = yes
+                        }
+                        province_event = { id = indep.6 }
+                }
+        }
+}
+ 
+province_event = {
+        id = indep.6
+        hide_window = yes
+        is_triggered_only = yes
+        immediate = {
+                if = {
+                        limit = {
+                                sea_zone = {
+                                        any_neighbor_province = {
+                                                NOT = {
+                                                        province = ROOT
+                                                }
+                                                owner = {
+                                                        OR = {
+                                                                character = FROM
+                                                                same_realm = FROM
+                                                        }
+                                                }
+                                                has_province_modifier = contingent_territory
+                                        }
+                                }
+                        }
+                        province_event = { id = indep.4 }
+                        break = yes
+                }
+                if = {
+                        limit = {
+                                sea_zone = {
+                                        any_neighbor_province = {
+                                                is_land = no
+                                                any_neighbor_province = {
+                                                        NOT = {
+                                                                province = ROOT
+                                                        }
+                                                        owner = {
+                                                                OR = {
+                                                                        character = FROM
+                                                                        same_realm = FROM
+                                                                }
+                                                        }
+                                                        has_province_modifier = contingent_territory
+                                                }
+                                        }
+                                }
+                        }
+                        province_event = { id = indep.4 }
+                        break = yes
+                }
+                if = {
+                        limit = {
+                                sea_zone = {
+                                        any_neighbor_province = {
+                                                is_land = no
+                                                any_neighbor_province = {
+                                                        is_land = no
+                                                        any_neighbor_province = {
+                                                                NOT = {
+                                                                        province = ROOT
+                                                                }
+                                                                owner = {
+                                                                        OR = {
+                                                                                character = FROM
+                                                                                same_realm = FROM
+                                                                        }
+                                                                }
+                                                                has_province_modifier = contingent_territory
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                        province_event = { id = indep.4 }
+                }
+        }
+}
+ 
+character_event = {
+        id = indep.7
+        hide_window = yes
+        is_triggered_only = yes
+        immediate = {
+                ROOT = { character_event = { id = indep.1 days = 3 } }
+                FROM = { character_event = { id = indep.1 days = 3 } }
+        }
+}
+ 
+province_event = {
+        id = indep.8
+        hide_window = yes
+        is_triggered_only = yes  
+   
+        immediate = {
+                if = {
+                        limit = {
+                                FROM = {
+                                        is_variable_equal = { which = "capital_count" value = 0 }
+                                }
+                        }
+                        remove_province_modifier = enclaved_territory
+                        add_province_modifier = { name = contingent_territory duration = -1 }
+                        set_variable = { which = "ind_counter" value = 0 }
+                        FROM = {
+                                change_variable = { which = "capital_count" value = 1 }
+                                character_event = { id = indep.5 }
+                        }
+                }
+        }
+}
+
+province_event = {
+	id = indep.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#IF THE OWNER IS THE INDEPENDENT RULER, A PEASANT REVOLTER WILL TAKE THE COUNTY
+		if = {
+			limit = {
+				ROOT = { 
+					owner = { character = FROM } 
+				}
+			}
+			province_event = { id = indep.10 }
+			break = yes
+		}
+		#IF THE OWNER IS A DIRECT VASSAL OF THE INDEPENDENT RULER, HE'LL BECOME INDEPENDENT
+		if = {
+			limit = {
+				ROOT = {
+					owner = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+			ROOT = {
+				owner = {
+					character_event = { id = indep.12 }
+					break = yes
+				}
+			}
+		}
+		#ELSE, CHECK A LITTLE LATER
+		ROOT = {
+			owner = {
+				character_event = { id = indep.12 days = 7 }
+			}
+		}
+	}
+}
+
+province_event = {
+	id = indep.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		county = {
+			save_event_target_as = ind_county
+			owner = {
+				save_event_target_as = county_owner
+			}
+		}  
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+			attributes = {
+				martial = 5
+			}
+			trait = peasant_leader
+			trait = tough_soldier
+		}
+		new_character = {
+			save_event_target_as = ind_revolter
+		}
+		FROMFROM = { character_event = { id = indep.11 } }
+		clear_event_target = ind_county
+		clear_event_target = ind_revolter
+		clear_event_target = county_owner
+	}
+}
+
+character_event = {
+	id = indep.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#PRESTIGE HIT
+		prestige = -50
+		#THE REVOLTER GAINS THE TITLE #NECESSARY
+		event_target:ind_county = {
+			gain_title = event_target:ind_revolter
+		}
+		#AND BECOMES INDEPENDENT #NECESSARY
+		event_target:ind_revolter = {
+			set_defacto_liege = THIS
+		}
+		#OPINION MODIFIERS
+		event_target:county_owner = {
+			opinion = {
+				who = event_target:ind_revolter
+				years = 100
+				modifier = opinion_hate
+			}
+		}
+		opinion = {
+			who = event_target:ind_revolter
+			years = 100
+			modifier = opinion_hate
+		}
+		reverse_opinion = {
+			who = event_target:ind_revolter
+			years = 100
+			modifier = opinion_hate
+		}
+		#THE ORIGINAL OWNER GETS A PRESSED CLAIM
+		event_target:ind_county = {
+			add_pressed_claim = event_target:county_owner
+		}
+		#REALM CHECK FOR REVOLTER #NECESSARY
+		event_target:ind_revolter = {
+			capital_scope = {
+				set_variable = { which = "ind_counter" value = 0 }
+			}
+			character_event = { id = indep.1 days = 1 }
+		}
+	}
+}
+
+character_event = {
+	id = indep.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		top_liege = {
+			character = event_target:ind_ruler
+		}
+	}
+
+	immediate = {
+		#PRESTIGE HIT FOR LIEGE
+		event_target:ind_ruler = {
+			prestige = -50
+		}
+		#ROOT BECOMES INDEPENDENT #NECESSARY
+		set_defacto_liege = THIS
+		#OPINION MODIFIERS
+		opinion = {
+			who = event_target:ind_ruler
+			years = 100
+			modifier = opinion_hate
+		}
+		reverse_opinion = {
+			who = event_target:ind_ruler
+			years = 100
+			modifier = opinion_hate
+		}
+		#REALM CHECK FOR REVOLTER #NECESSARY
+		any_realm_province = {
+			set_variable = { which = "ind_counter" value = 5 } 
+		}
+		character_event = { id = indep.1 days = 1 }
+		character_event = { id = indep.1 days = 3 }
+	}
+}														

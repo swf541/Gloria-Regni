@@ -8,6 +8,17 @@ character_event = {
 
 	trigger = {
 		religion = imperial
+		NOR = {
+			trait = byzantine_rite
+			trait = roman_rite
+			trait = celtic_rite
+			trait = ambrosian_rite		
+			trait = alexandrian_rite
+			trait = mozarabic_rite
+			trait = antiochene_rite
+			trait = african_rite
+			trait = aquileian_rite			
+		}
 	}     
 
 	immediate = {
@@ -82,6 +93,250 @@ character_event = {
 				}
 			}
 			add_trait = roman_rite
+		}	
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = RITE.2
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = imperial
+	}     
+
+	immediate = {
+		if = {
+			limit = {
+				father = { trait = byzantine_rite }
+			}
+			add_trait = byzantine_rite
+		}
+		if = {
+			limit = {
+				father = { trait = ambrosian_rite }
+			}
+			add_trait = ambrosian_rite
+		}
+		if = {
+			limit = {
+				father = { trait = celtic_rite }
+			}
+			add_trait = celtic_rite
+		}
+		if = {
+			limit = {
+				father = { trait = mozarabic_rite }
+			}
+			add_trait = mozarabic_rite
+		}
+		if = {
+			limit = {
+				father = { trait = african_rite }
+			}
+			add_trait = african_rite
+		}
+		if = {
+			limit = {
+				father = { trait = antiochene_rite }
+			}
+			add_trait = antiochene_rite
+		}
+
+		if = {
+			limit = {
+				father = { trait = aquileian_rite }
+			}
+			add_trait = aquileian_rite
+		}		
+		if = {
+			limit = {
+				father = { trait = roman_rite }
+			}
+			add_trait = roman_rite
+		}	
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = RITE.3
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROMFROM = { religion = imperial }
+	}     
+
+	immediate = {
+		if = {
+			limit = {
+				FROMFROM = { trait = byzantine_rite }
+			}
+			add_trait = byzantine_rite
+			FROM = { add_trait = byzantine_rite }
+		}
+		if = {
+			limit = {
+				FROMFROM = { trait = ambrosian_rite }
+			}
+			add_trait = ambrosian_rite
+			FROM = { add_trait = ambrosian_rite }
+		}
+		if = {
+			limit = {
+				FROMFROM = { trait = celtic_rite }
+			}
+			add_trait = celtic_rite
+			FROM = { add_trait = celtic_rite }
+		}
+		if = {
+			limit = {
+				FROMFROM = { trait = mozarabic_rite }
+			}
+			add_trait = mozarabic_rite
+			FROM = { add_trait = mozarabic_rite }
+		}
+		if = {
+			limit = {
+				FROMFROM = { trait = african_rite }
+			}
+			add_trait = african_rite
+			FROM = { add_trait = african_rite }
+		}
+		if = {
+			limit = {
+				FROMFROM = { trait = antiochene_rite }
+			}
+			add_trait = antiochene_rite
+			FROM = { add_trait = antiochene_rite }
+		}
+
+		if = {
+			limit = {
+				FROMFROM = { trait = aquileian_rite }
+			}
+			add_trait = aquileian_rite
+			FROM = { add_trait = aquileian_rite }
+		}		
+		if = {
+			limit = {
+				FROMFROM = { trait = roman_rite }
+			}
+			add_trait = roman_rite
+			FROM = { add_trait = roman_rite }
+		}	
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = RITE.3
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = imperial 
+		NOR = {
+			trait = byzantine_rite
+			trait = roman_rite
+			trait = celtic_rite
+			trait = ambrosian_rite		
+			trait = alexandrian_rite
+			trait = mozarabic_rite
+			trait = antiochene_rite
+			trait = african_rite
+			trait = aquileian_rite			
+		}
+		top_liege = { 
+			OR = {
+				trait = byzantine_rite
+				trait = roman_rite
+				trait = celtic_rite
+				trait = ambrosian_rite		
+				trait = alexandrian_rite
+				trait = mozarabic_rite
+				trait = antiochene_rite
+				trait = african_rite
+				trait = aquileian_rite			
+			}
+		}
+	}     
+
+	immediate = {
+		if = {
+			limit = {
+				top_liege = { trait = byzantine_rite }
+			}
+			add_trait = byzantine_rite
+			FROM = { add_trait = byzantine_rite }
+		}
+		if = {
+			limit = {
+				top_liege = { trait = ambrosian_rite }
+			}
+			add_trait = ambrosian_rite
+			FROM = { add_trait = ambrosian_rite }
+		}
+		if = {
+			limit = {
+				top_liege = { trait = celtic_rite }
+			}
+			add_trait = celtic_rite
+			FROM = { add_trait = celtic_rite }
+		}
+		if = {
+			limit = {
+				top_liege = { trait = mozarabic_rite }
+			}
+			add_trait = mozarabic_rite
+			FROM = { add_trait = mozarabic_rite }
+		}
+		if = {
+			limit = {
+				top_liege = { trait = african_rite }
+			}
+			add_trait = african_rite
+			FROM = { add_trait = african_rite }
+		}
+		if = {
+			limit = {
+				top_liege = { trait = antiochene_rite }
+			}
+			add_trait = antiochene_rite
+			FROM = { add_trait = antiochene_rite }
+		}
+
+		if = {
+			limit = {
+				top_liege = { trait = aquileian_rite }
+			}
+			add_trait = aquileian_rite
+			FROM = { add_trait = aquileian_rite }
+		}		
+		if = {
+			limit = {
+				top_liege = { trait = roman_rite }
+			}
+			add_trait = roman_rite
+			FROM = { add_trait = roman_rite }
 		}	
 	}
 	
