@@ -1,0 +1,26 @@
+##Crimlings
+1000215012 = {
+	name="Ermaneric"
+	dynasty="1000083001"
+	religion="german_pagan"
+	culture="ostrogothic"
+	590.1.1={
+		birth=yes
+	}
+	645.1.1={
+		death=yes
+	}
+}
+1000215013 = {
+	name="Athanaric"
+	dynasty="1000083001"
+	religion="german_pagan"
+	culture="ostrogothic" #was Norse
+	father = 1000215012
+	615.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}

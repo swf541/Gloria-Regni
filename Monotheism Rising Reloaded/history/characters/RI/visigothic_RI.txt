@@ -1,0 +1,698 @@
+##Visigothic Kings (290-711)
+1000215014 = {
+	name="Amalaric"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215054
+	502.1.1={
+		birth="502.1.1"
+	}
+	531.1.1={
+		death="531.1.1"
+	}
+}
+1000215016 = {
+	name="Theudigisel"
+	dynasty="1000124428"
+	religion="arian"
+	culture="visigothic" #was Norse
+	500.1.1={
+		birth="500.1.1"
+	}
+	549.1.1={
+		death="549.1.1"
+	}
+}
+1000215017 = {
+	name="Agila"
+	dynasty="1000124429"
+	religion="arian"
+	culture="visigothic" #was Norse
+	500.1.1={
+		birth="500.1.1"
+	}
+	554.1.1={
+		death="554.1.1"
+	}
+}
+1000215018 = {
+	name="Athanagild"
+	dynasty="1000124430"
+	religion="arian"
+	culture="visigothic" #was Norse
+	500.1.1={
+		birth="500.1.1"
+	}
+	540.1.1 = {
+		add_spouse = 1000215018
+	}
+	567.1.1={
+		death="567.1.1"
+	}
+}
+1000215019 = {
+	name="Goswintha"
+	female = yes
+	religion="arian"
+	culture="visigothic" #was Norse
+	520.1.1={
+		birth=yes
+	}
+	540.1.1 = {
+		add_spouse = 1000215018
+	}
+	589.1.1={
+		death=yes
+	}
+}
+1000215020 = {
+	name="Galswintha"
+	dynasty="1000124430"
+	female = yes
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215018
+	mother = 1000215019
+	540.1.1={
+		birth=yes
+	}
+	567.1.1={
+		death=yes
+	}
+}
+1000215021 = {
+	name="Brunhild"
+	dynasty="1000124430"
+	female = yes
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215018
+	mother = 1000215019
+	545.1.1={
+		birth=yes
+	}
+	613.1.1={
+		death=yes
+	}
+}
+1000215022 = {
+	name="Ermemberga"
+	female = yes
+	dynasty="1000124431"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215023
+	585.1.1={
+		birth=yes
+	}
+	613.1.1={
+		death=yes
+	}
+}
+1000215023 = {
+	name="Witteric"
+	dynasty="1000124431"
+	religion="arian"
+	culture="visigothic" #was Norse
+	565.1.1={
+		birth="565.1.1"
+	}
+	610.4.1={
+		death="610.4.1"
+	}
+}
+1000215024 = {
+	name="Gundemar"
+	dynasty="1000124432"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	565.1.1={
+		birth="565.1.1"
+	}
+	612.2.15={
+		death="612.2.15"
+	}
+}
+1000215025 = {
+	name="Sisebut"
+	dynasty="1000124433"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	565.1.1={
+		birth="565.1.1"
+	}
+	621.1.1={
+		death="621.1.1"
+	}
+}
+1000215026 = {
+	name="Reccared"
+	dynasty="1000124433"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215025
+	617.1.1={
+		birth="617.1.1"
+	}
+	621.2.1={
+		death="621.2.1"
+	}
+}
+#1000215027 = {
+#	name="Theodefred"
+#	dynasty="1000083006"
+#	religion="catholic"
+#	culture="visigothic" #was Norse
+#	father = 1000215031
+#	650.1.1={
+#		birth=yes
+#	}
+#	702.1.1={
+#		death=yes
+#	}
+#}
+1000215028 = {
+	name="Sisinand"
+	dynasty="1000124434"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	605.1.1={
+		birth="605.1.1"
+	}
+	633.1.1={
+		add_trait="excommunicated"
+	}
+	636.1.1={
+		death="636.1.1"
+	}
+}
+1000215029 = {
+	name="Chintila"
+	dynasty="1000124435"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	605.1.1={
+		birth="605.1.1"
+	}
+	640.1.1={
+		death="640.1.1"
+	}
+}
+1000215030 = {
+	name="Tulga"
+	dynasty="1000124435"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215029
+	625.1.1={
+		birth="625.1.1"
+	}
+	642.1.1={
+		death="642.1.1"
+	}
+}
+1000215031 = {
+	name="Chindaswinth"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	563.1.1={
+		birth="563.1.1"
+		add_trait="strong"
+	}
+	653.1.1={
+		death="653.1.1"
+	}
+}
+1000215032 = {
+	name="Recceswinth"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215031
+	610.1.1={
+		birth="610.1.1"
+	}
+	672.9.1={
+		death="672.9.1"
+	}
+}
+1000215033 = {
+	name="Wamba" #Real First Name Flavius?
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000256709
+	630.1.1={
+		birth="630.1.1"
+	}
+	687.1.1={
+		death="687.1.1"
+	}
+}
+#1000215034 = {
+#	name="Erwig"
+#	#dynasty="1000083004"
+#	religion="catholic"
+#	culture="visigothic" #was Norse
+#	#father = 1000215031
+#	625.1.1={
+#		birth="625.1.1"
+#	}
+#	687.11.14={
+#		death="687.11.14"
+#	}
+#}
+1000215035 = {
+	name="Egica"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000256709
+	640.1.1={
+		birth="640.1.1"
+	}
+	703.1.1={
+		death="703.1.1"
+	}
+}
+1000215036 = {
+	name="Witiza"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215035
+	680.1.1={
+		birth="680.1.1"
+	}
+	711.1.1={
+		death="711.1.1"
+	}
+}
+1000215037 = {
+	name="Achila"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215036
+	700.1.1={
+		birth="680.1.1"
+	}
+	721.1.1={
+		death="721.1.1"
+	}
+}
+1000215045 = {
+	name="Theodefred"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215031
+	640.1.1={
+		birth="640.1.1"
+	}
+	687.1.1 = {
+		add_spouse = 1000256702
+	}
+	712.1.1={
+		death="712.1.1"
+	}
+}
+1000215046 = {
+	name="Roderic"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic" #was Norse
+	father = 1000215045
+	690.1.1={
+		birth="690.1.1"
+	}
+	712.1.1={
+		death="712.1.1"
+	}
+}
+1000215047 = {
+	name="Alaric"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000256701
+	370.1.1={
+		birth="370.1.1"
+	}
+	410.1.1={
+		death="410.1.1"
+	}
+}
+1000215048 = {
+	name="Ataulf"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000256701
+	370.1.1={
+		birth="370.1.1"
+	}
+	415.1.1={
+		death="415.1.1"
+	}
+}
+1000215049 = {
+	name="Wallia"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000256701
+	370.1.1={
+		birth="370.1.1"
+	}
+	419.1.1={
+		death="419.1.1"
+	}
+}
+1000215050 = {
+	name="Theoderic"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215047
+	400.1.1={
+		birth="400.1.1"
+		add_trait="bastard"
+	}
+	451.1.1={
+		death="451.1.1"
+	}
+}
+1000215051 = {
+	name="Thorismund"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215050
+	420.1.1={
+		birth="420.1.1"
+	}
+	451.1.1={
+		death="453.1.1"
+	}
+}
+1000215052 = {
+	name="Theoderic"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215050
+	421.1.1={
+		birth="421.1.1"
+	}
+	466.1.1={
+		death="466.1.1"
+	}
+}
+1000215053 = {
+	name="Euric"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215050
+	440.1.1={
+		birth="440.1.1"
+	}
+	484.12.28={
+		death="484.12.28"
+	}
+}
+1000215054 = {
+	name="Alaric"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215048
+	470.1.1={
+		birth="470.1.1"
+	}
+	507.1.1={
+		death="507.1.1"
+	}
+}
+1000215055 = {
+	name="Athanaric"
+	dynasty="1000124427"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	father = 1000215059
+	325.1.1={
+		birth="320.1.1"
+	}
+	381.1.1={
+		death="381.1.1"
+	}
+}
+1000215057 = {
+	name="Gesalec"
+	dynasty="1000083002"
+	religion="arian"
+	culture="visigothic" #was Norse
+	father = 1000215054
+	490.1.1={
+		birth="490.1.1"
+		add_trait="bastard"
+	}
+	513.1.1={
+		death="513.1.1"
+	}
+}
+1000215058 = {
+	name="Ariaric"
+	dynasty="1000124427"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	270.1.1={
+		birth=yes
+	}
+	335.1.1={
+		death=yes
+	}
+}
+1000215059 = {
+	name="Euric"
+	dynasty="1000124427"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	father = 1000215060
+	306.1.1={
+		birth=yes
+	}
+	364.1.1={
+		death=yes
+	}
+}
+1000215060 = {
+	name="Geberich"
+	dynasty="1000124427"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	father = 1000215058
+	290.1.1={
+		birth="290.1.1"
+	}
+	350.1.1={
+		death="350.1.1"
+	}
+}
+1000215061 = {
+	name="Fritigern"
+	dynasty="1000124427"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	father = 1000215060
+	330.1.1={
+		birth=yes
+	}
+	385.1.1={
+		death=yes
+	}
+}
+1000256700 = {
+	name="Radistis"
+	dynasty="1000083002"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	320.1.1={
+		birth=yes
+	}
+	370.1.1={
+		death=yes
+	}
+}
+1000256701 = {
+	name="Atharid"
+	dynasty="1000083002"
+	religion="german_pagan"
+	culture="visigothic" #was Norse
+	father = 1000256700
+	340.1.1={
+		birth=yes
+	}
+	395.1.1={
+		death=yes
+	}
+}
+1000256702 = {
+	name="Ricilo"
+	religion="catholic"
+	culture="visigothic"
+	female = yes
+	660.1.1={
+		birth=yes
+	}
+	687.1.1 = {
+		add_spouse = 1000215045
+	}
+	715.1.1={
+		death=yes
+	}
+}
+1000256703 = {
+	name="Recesvinto"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic"
+	father = 1000215045
+	mother = 1000256702
+	660.1.1={
+		birth=yes
+	}
+	709.1.1={
+		death=yes
+	}
+}
+1000256704 = {
+	name="Theodefredo"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic"
+	father = 1000256703
+	680.1.1={
+		birth=yes
+	}
+	740.1.1={
+		death=yes
+	}
+}
+1000256705 = {
+	name="Theodeberga"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic"
+	father = 1000215045
+	mother = 1000256702
+	female = yes
+	665.1.1={
+		birth=yes
+	}
+	719.1.1={
+		death=yes
+	}
+}
+1000256706 = {
+	name="Bengo"
+	dynasty="1000083006"
+	religion="catholic"
+	culture="visigothic"
+	mother = 1000256705
+	685.1.1={
+		birth=yes
+	}
+	711.1.1={
+		death=yes
+	}
+}
+1000256707 = {
+	name="Olmundo"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic"
+	father = 1000215036 #Witiza
+	701.1.1={
+		birth=yes
+	}
+	765.1.1={
+		death=yes
+	}
+}
+1000256708 = {
+	name="Ardabasto"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic"
+	father = 1000215036 #Witiza
+	702.1.1={
+		birth=yes
+	}
+	760.1.1={
+		death=yes
+	}
+}
+1000256709 = {
+	name="Radagaisus"
+	dynasty="1000124437"
+	religion="catholic"
+	culture="visigothic"
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}	
+1000256710 = {
+	name="Dogilano"
+	dynasty = 1000124438
+	religion = catholic
+	culture = visigothic
+	600.1.1 = {
+		birth = yes
+	}
+	653.1.1 = {
+		death = yes
+	}
+}
+1000256711 = {
+	name="Richila"
+	dynasty = 1000124439
+	religion = catholic
+	culture = visigothic
+	580.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000256712 = {
+	name="Iudila"
+	dynasty = 1000124443
+	religion = catholic
+	culture = visigothic
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+1000256713 = {
+	name="Fandila"
+	dynasty = 1000124445
+	religion = catholic
+	culture = visigothic
+	590.1.1 = {
+		birth = yes
+	}
+	655.1.1 = {
+		death = yes
+	}
+}

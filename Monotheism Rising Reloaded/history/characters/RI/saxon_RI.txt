@@ -1,0 +1,29 @@
+#Begin mod added characters
+1000255423 = {
+	name = "Æthelberght"
+	dynasty = 1000124563
+	religion = "german_pagan"
+	culture = "saxon"
+	599.1.1 = {
+		birth = "599.1.1"
+	}
+	645.1.1 = {
+		death = "645.1.1"
+	}
+}
+1000255424 = {
+	name = "Æthelwealh"
+	dynasty = 1000124563
+	religion = "german_pagan"
+	culture = "saxon"
+	father = 1000255423
+	625.1.1 = {
+		birth = "625.1.1"
+	}
+	685.1.1 = {
+		death = "685.1.1"
+	}
+	661.1.1 = {
+		religion = "catholic"
+	}
+}

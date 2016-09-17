@@ -1,0 +1,39 @@
+via_regia = {
+	wealth = 100 # Total base wealth of silk route
+
+	modifier = { # How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.15
+		city_tax_modifier = 0.15
+		temple_tax_modifier = 0.15
+		trade_route_value = 1
+	}
+
+	start = { # Start provinces of trade route
+		160 # Lisboa
+		78 	# Brugge
+	}
+	
+	path = {	# Lisboa-Santiago-Burgos-Santilla-Bordeaux-Poitiers-Orléans-Paris-Mainz
+		160 159 158 157 189 190 199 154 153 152 151 150 149 143 141 140 110 138 112 114 930 127 128 124 123
+	}
+	path = {
+		123 254 313 311 312 364 435
+	}
+	path = {
+		78 93 117 91 90 118 123
+	}
+	path = {
+		435 433 526 527 531 534 536 552
+	}
+	path = {
+		435 433 432 528 530 549 535 536
+	}
+	
+	path = { 
+		549 548 424 423 420 934 
+	}
+	
+	path = {
+		934 418 568 569 587
+	}
+}

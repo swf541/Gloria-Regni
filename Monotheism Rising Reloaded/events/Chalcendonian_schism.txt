@@ -1,5 +1,95 @@
 namespace = CHALC
 character_event = {
+	id = CHALC.100
+	picture = GFX_evt_bishop_byzantine
+	desc = EVTDESCCHALC.1
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_bulgaria
+		has_landed_title = e_bulgaria 
+		religion = imperial
+	}     
+	
+	option = {
+		name = EVTOPTACHALC.1
+		
+		
+		add_trait = roman_rite
+		
+		set_global_flag = latin_bulgaria
+		
+		primary_title = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = e_bulgaria_2
+			}
+		}
+
+		k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria_2
+			}
+		}
+		
+		k_bulgaria_2 = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = k_bulgaria	
+			copy_title_laws = k_bulgaria
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		
+		e_bulgaria_2 = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = k_bulgaria	
+			copy_title_laws = k_bulgaria
+		}
+		e_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+		activate_title = { title = e_bulgaria status = no }
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = roman_rite
+			remove_trait = ambrosian_rite
+			remove_trait = byzantine_rite
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}
+		d_imperial = { change_variable = { which = schism value = 20 } }
+	}
+	
+	option = {
+		name = EVTOPTBCHALC.1
+	
+		add_trait = byzantine_rite
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = byzantine_rite
+			remove_trait = ambrosian_rite
+			remove_trait = roman_rite 
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}	
+		
+	}
+}
+character_event = {
 	id = CHALC.1
 	picture = GFX_evt_bishop_byzantine
 	desc = EVTDESCCHALC.1
@@ -8,6 +98,7 @@ character_event = {
 
 	trigger = {
 		has_landed_title = k_bulgaria
+		NOT = { has_landed_title = e_bulgaria }
 		religion = imperial
 	}     
 	

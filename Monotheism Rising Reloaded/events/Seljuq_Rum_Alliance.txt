@@ -11,6 +11,7 @@ narrative_event = {
 	trigger = {
 		has_character_flag = is_kaykhusraw
 		has_landed_title = k_rum
+		year = 1204
 		religion = sunni
 	}
 	
@@ -48,13 +49,7 @@ narrative_event = {
 		k_rum = {
 			narrative_event = { id = SJQ.2003 }
 		}
-		any_child = {
-			limit = {
-				has_character_flag = is_anna_maria
-			}
-			add_betrothal = event_target:kaykhusraw
-			add_alliance = { who = event_target:kaykhusraw years = 20 }
-		}
+		add_alliance = { who = event_target:kaykhusraw years = 20 }
 	}
 
 	option = {

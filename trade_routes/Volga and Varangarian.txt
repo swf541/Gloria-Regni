@@ -1,0 +1,149 @@
+volga = {
+	wealth = 100
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	
+	path = {	
+		290 1005 1006 411 958 409 408 406 586 588 589 611 610
+	}
+	
+	path = {
+		610 609 592 595 619 620 1062 675 674 952 668 1064 666 686 687 693
+	}
+}
+
+varangarian = {
+	wealth = 100
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	
+	path = {
+		290 1005 1004 375 416 419 417 417 418 550 552 547 544 556 557 558 949 560 950 947 496
+	}
+	
+	path = {	
+		290 1005 1006 411 958 409 414 410 417
+	}
+
+}
+
+varangarian_southern = {
+	wealth = 60
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	path = {
+		290 1005 1004 1002 370 427 529 425 549 535 536 546 541 512 949 948 947 496
+	}
+}
+varangarian_central = {
+	wealth = 40
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	path = {	
+		290 1005 1006 411 958 409 414 410 417
+	}
+}
+
+volga = {
+	wealth = 100
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	
+	path = {	
+		290 1005 1006 411 958 409 408 406 586 588 589 611 610 609 592 595 619 620 1062 675 674 952 668 1064 666 686 687 693
+	}
+}
+
+varangarian = {
+	wealth = 100
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		290	# Uppland
+	}
+	path = {	
+		290 1005 1006 411 958 409 414 410 417
+	}	
+	path = {
+		290 1005 1004 375 416 419 417 417 418 550 552 547 544 556 557 558 949 560 949 950 947 496
+	}
+
+}
+
+indian_ocean = {
+	wealth = 100
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		1369	# Socotra
+	}
+	path = {
+		1369 1387 1386 1344 874 858 859 860 861 719 1383 1382 791 796 
+	}
+	path = {
+		1369 1388 1387 1386 858 857 856 855 866 1389 1390 1391 868
+	}
+	path = {
+		868 1392 1393 641 642 1394 643 1395 649
+	}
+	path = {
+		868 1391 1412 1398 1290 1127 1126 1399 1400 1117 1114 1401 1413
+	}
+}

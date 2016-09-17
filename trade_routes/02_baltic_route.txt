@@ -1,0 +1,33 @@
+baltic_trade = {
+	wealth = 5			# Total base wealth of the amber road
+
+	modifier = {			# How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.75
+	}
+	
+	start = {
+		378
+	}
+	
+	path = {	# Kalevan-Uusimaa-Uppland-Gotland-Danzig-Lubeck--Akershus-Hamburg
+		378 1006 381 1005 290 301 1003 368 1002 999 262 266 1001 272 1000 261
+	}
+	path = {	# Hamburg-Brugge
+		1000 973 78
+	}
+	path = {	# Hamburg-Hordaland(Bergenshus)-Vestisland
+		1000 274 986 998 984 982 1
+	}
+	path = {	# Hamburg-Middlesex
+		973 32
+	}
+	path = {	# Waddenzee-Mainz
+		973 80 1043 1044 1045 123
+	}
+	path = {	# Waddenzee-York-Gowrie-Dublin
+		973 996 57 995 43 994 993 992 1019 11
+	}
+}

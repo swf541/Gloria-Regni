@@ -16,8 +16,7 @@ targetted_decisions = {
 		}
 		
 		allow = {
-			piety = 100
-			prestige = 100
+
 		}
 		
 		effect = {
@@ -26,9 +25,8 @@ targetted_decisions = {
 				female = no
 			}
 			new_character = {
-				d_rome = {
-					usurp_title_plus_barony_if_unlanded = ROOT
-				}
+				d_rome = { usurp_title = PREV }
+				b_roma = { usurp_title = PREV }
 			}
 			d_imperial = { change_variable = { which = schism value = 10 } }
 		}
@@ -58,8 +56,7 @@ targetted_decisions = {
 		}
 		
 		allow = {
-			piety = 100
-			prestige = 100
+
 		}
 		
 		effect = {
@@ -68,9 +65,8 @@ targetted_decisions = {
 				female = no
 			}
 			new_character = {
-				d_constantinople = {
-					usurp_title_plus_barony_if_unlanded = ROOT
-				}
+				d_constantinople = { usurp_title = PREV }
+				b_hagiasophia = { usurp_title = PREV }
 			}
 			d_imperial = { change_variable = { which = schism value = 10 } }
 		}
@@ -96,22 +92,18 @@ targetted_decisions = {
 		}
 		
 		potential = {
-			host = FROM
 			is_female = no
 			age = 16
-			is_landed = no
+			is_ruler = no
 		}
 		
 		allow = {
-			piety = 100
-			prestige = 100
 		}
 		
 		effect = {
 			ROOT = {
-				d_constantinople = {
-					usurp_title_plus_barony_if_unlanded = ROOT
-				}
+				d_constantinople = { usurp_title = ROOT }
+				b_hagiasophia = { usurp_title = ROOT }
 			}
 			d_imperial = { change_variable = { which = schism value = 10 } }
 		}
@@ -136,10 +128,9 @@ targetted_decisions = {
 		}
 		
 		potential = {
-			host = FROM
 			is_female = no
 			age = 16
-			is_landed = no
+			is_ruler = no
 		}
 		
 		allow = {
@@ -149,9 +140,8 @@ targetted_decisions = {
 		
 		effect = {
 			ROOT = {
-				d_rome = {
-					usurp_title_plus_barony_if_unlanded = ROOT
-				}
+				d_rome = { usurp_title = ROOT }
+				b_roma = { usurp_title = ROOT }
 			}
 			d_imperial = { change_variable = { which = schism value = 10 } }
 		}

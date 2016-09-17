@@ -27,6 +27,9 @@ feudal_governments = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
 				has_landed_title = e_wre
+				has_landed_title = e_trebizond
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus
 			}
 			#NOT = {	top_liege = { has_landed_title = e_wre } }
 			#NOT = {	top_liege = { has_landed_title = e_roman_empire } }
@@ -121,7 +124,12 @@ feudal_governments = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
 				has_landed_title = e_wre
-				top_liege = { has_landed_title = e_wre }
+				has_landed_title = e_trebizond
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus
+				top_liege = { has_landed_title = k_epirus }
+				top_liege = { has_landed_title = e_nicaea }
+				top_liege = { has_landed_title = e_trebizond }
 				top_liege = { has_landed_title = e_roman_empire }
 				top_liege = { has_landed_title = e_byzantium }
 			}

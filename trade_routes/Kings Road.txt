@@ -1,0 +1,41 @@
+kings_road = {
+	wealth = 10
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+		#monthly_character_piety = 0.50
+		#owner = {
+		#	monthly_character_piety = 0.50
+		#}
+	}
+	
+	start = {
+		796	# Cairo/ Memphis
+	}
+	
+	path = {	
+		796 790 788 785 786 784 722 778 777 723 725 727 728 729 710 709
+	}
+}
+
+via_maris = {
+	wealth = 50
+		
+	modifier = {
+		castle_tax_modifier = 0.02
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.01
+		trade_route_value = 0.5
+	}
+	
+	start = {
+		796	# Cairo/ Memphis
+	}
+	
+	path = {	
+		796 797 789 788 787 781 780 775 772 773 725 727 728  
+	}
+}

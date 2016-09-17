@@ -136,5 +136,87 @@ d_visigoth_nobles = {
 	
 	mercenary_type = varangian_guard_composition
 }
+
+e_trebizond = {
+	color={ 100 151 33 }
+	capital = 678 # Trapezous
+	culture = greek
 	
+	allow = {
+		always = no
+	}
+}
+
+k_epirus = {
+	color={ 134 63 109 }
+	color2={ 255 255 20 }
+			
+	capital = 473 # Arta
+	culture = greek
 	
+	allow = {
+		always = no
+	}
+}
+
+e_thessalonica = {
+	color={ 238 233 233	 }
+	color2={ 255 255 20 }
+			
+	capital = 490 # Thessalonike
+	culture = greek
+	
+	allow = {
+		has_landed_title = k_epirus
+		completely_controls = d_thessalonika
+		completely_controls = d_epirus
+	}
+}
+
+
+e_nicaea = {
+	color={ 202 101 167 }
+	color2={ 255 255 20 }
+			
+	capital = 750 # Nikaea
+	culture = greek
+	
+	allow = {
+		always = no
+	}
+}
+	
+e_bulgaria = {
+	color={ 113 88 101 }
+	color2={ 255 255 255 }
+			
+	culture = bulgarian
+			
+	capital = 499 # Tyrnovo
+		
+	allow = {
+		NOT = { has_global_flag = latin_bulgaria }
+		completely_controls = k_bulgaria
+		completely_controls = k_dacia
+		realm_size = 75
+		not = { has_landed_title = e_byzantium }
+		culture = bulgarian
+	}	
+}
+e_bulgaria_2 = {
+	color={ 113 88 101 }
+	color2={ 255 255 255 }
+			
+	culture = bulgarian
+			
+	capital = 499 # Tyrnovo
+		
+	allow = {
+		completely_controls = k_bulgaria
+		completely_controls = k_dacia
+		realm_size = 75
+		not = { has_landed_title = e_byzantium }
+		culture = bulgarian
+		has_global_flag = latin_bulgaria
+	}	
+}

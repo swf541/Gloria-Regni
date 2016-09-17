@@ -1,0 +1,103 @@
+silk_road = {
+	wealth = 100 # Total base wealth of silk route
+
+	modifier = { # How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.15
+		city_tax_modifier = 0.15
+		temple_tax_modifier = 0.15
+		trade_route_value = 1
+	}
+
+	start = { # Start provinces of trade route
+		1408 # Anxi
+		1177 # Kundina
+	}
+
+	# Northern Silk Route
+	path = {	# Anxi-Dunhuang-Khotan-Kashgar
+		1408 1448 1447 1442 1441 1440 1438 1439
+	}
+	path = {	# Dunhuang-Turpan-Kucha-Kashgar
+		1448 1450 1446 1443 1444 1445 1439
+	}
+	path = {	# Kashgar-Samarkand
+		1439 1423 903
+	}
+	path = {	# Samarkand-Bagdad
+		903 904 1377 905 906 635 636 646 647 657 689 693
+	}
+	path = {	# Samarkand-Turkestan-Itil-Tana
+		903 1181 1186 1431 900 622 621 618 620 605 607 596
+	}
+	path = {	# Bagdad-Antioch
+		693 695 3050 729 710 709 732 733 764
+	}
+	# Additions
+	path = {	# Tana-Cherson-Oleshye-Constantinople
+		596 969 562 560 949 948 496
+	}
+	path = {	# Oleshye-Kiev-Novgorod
+		949 1070 543 1071 1072 547 1076 1077 1078 568 417 1087 1086 414
+	}
+	path = {	# Itil-Bolghar-Novgorod
+		620 1092 1093 1094 1103 1095 1096 610 1097 1098 1099 1100 408 409 414
+	}
+	
+	# Southern Silk Route
+	path = {	# Kundina-Pundravardhana-Candradvipa-Vijayawada(Masulipatam)-Mahoyadapuram(Muziris)-Bharuch-Banbhore
+		 1177 1418 1321 1381 1325 1319 1236 1411 1410 1409 1407 1221 1406 1405 1403 1402 1401 1114 1400 1399 1127 1398 1397 1297
+	}
+	path = {	# Yarkand-Kasmira-Nandana-Indus Valley-Banbhore
+		1438 1161 1341 1340 1338 1337 1339 1138 1303 1297
+	}
+	path = {	# Banbhore-Hormuz-Basra-Bagdad
+		1297 1396 1392 1393 641 1394 1395 649 655 690 693
+	}
+	path = {	# Banbhore-Muscat-Aden-Mecca-Cairo-Alexandria
+		1297 1412 1391 868 1390 1389 1388 1387 858 1386 1385 1384 719 1383 1320 794 791 795 796 797 802
+	}
+		# Additions
+	path = {	# Baghdad-Trebizond-Constantinople
+		695 696 697 685 684 683 701 702 703 704 678 951 950 496
+	}
+	path = {    # Alexandria-Kaneia
+		802 938 937 479
+	}
+	path = {	# Kaneia-Constantinople
+		479 1017 482 942 1111 947 496
+	}
+	path = {	# Kaneia-Venice
+		479 1037 472 1038 468 1109 1110 356
+	}
+	path = {	# Alexandria-Syrakousa-Rome-Genoa-Provence-Barcelona-Mallorca-Tangier
+		1037 1036 343 1032 1031 334 1029 333 1028 233 1027 221 1025 204 1021 827 1020 954 841
+	}
+	path = {	# Malta-Tripolitana-Tunis-Beni Yani-Tangier
+		812 1034 811 1033 817 1023 825 1022 1011 954 841
+	}
+	path = {	# Antioch-Kaneia
+		764 945 757 946 483 936 479
+	}
+	path = {	# Alexandria-Cyrenaica-Malta
+		938 806 1035 812
+	}
+	path = {	# Antioch-Constantinople
+		764 763 735 762 760 753 750 741 496
+	}
+	path = {	# Quena-Jerusalem-Sur-Damascus-Hama
+		791 1382 786 781 780 774 772 771 769 728 731 732
+	}
+	# W-European
+	path = {	# Tangier-Gibraltar-Lisboa-Santiago-Bordeaux-Paris
+		841 166 981 160 980 157 970 1014 974 149 1015 977 31 967 1010 1009 1041 1042 112
+	}
+	path = {	# Baie de la seine-London
+		1009 965 32
+	}
+	path = {	#strait of dover-Brugge
+		965 78
+	}
+	path = {	# Provence-Lyon-Paris
+		221 222 228 227 240 136 132 131 112
+	}
+}
