@@ -1,0 +1,27 @@
+namespace = COPT
+character_event = {
+	id = COPT.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			OR = {
+				has_landed_title = d_patriarch_armenia
+			}
+        }     
+
+        immediate = {
+			set_government_type = theocracy_government
+			any_realm_character = {
+				limit = { government = feudal_government }
+					set_government_type = theocracy_government
+				}
+				
+			}
+	
+	option = {
+		name = ok
+	}
+}

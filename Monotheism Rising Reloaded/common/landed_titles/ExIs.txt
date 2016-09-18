@@ -574,7 +574,6 @@ d_pentarch_alexandria = {
 	pentarchy = priscillianism
 	pentarchy = valentinianism
 	pentarchy = orthodox
-	pentarchy = miaphysite
 	pentarchy = monothelite
 	pentarchy = iconoclast
 	pentarchy = nestorian
@@ -648,6 +647,33 @@ d_pentarch_jerusalem = {
 	pentarchy = orthodox
 	pentarchy = monothelite
 	pentarchy = iconoclast
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_patriarch_armenia = {
+	color={ 142 63 129 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+	
+	# Always exists
+	landless = yes	
+	religion = miaphysite
+		
+	# Cannot be held as a secondary title
+	primary = no
+	pentarchy = miaphysite
+
 	
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 }

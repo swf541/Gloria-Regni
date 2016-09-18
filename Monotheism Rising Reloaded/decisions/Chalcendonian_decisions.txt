@@ -68,22 +68,7 @@ decisions = {
 			clr_global_flag = latin_sicily
 			set_global_flag = greek_sicily
 			
-			k_sicily = {
-				any_direct_de_jure_vassal_title = {
-					de_jure_liege = k_sicily_2
-				}
-			}
-			
-			k_sicily_2 = { 
-				grant_title = ROOT 
-				make_primary_title = yes
-				copy_title_history = k_sicily	
-				copy_title_laws = k_sicily
-			}
-			k_sicily = {
-				destroy_landed_title = THIS
-			}
-			activate_title = { title = k_sicily status = no }
+			set_pentarchy_title = d_constantinople
 			any_realm_character ={
 				limit = { religion = imperial }
 				
@@ -124,22 +109,7 @@ decisions = {
 			
 			set_global_flag = greek_sicily
 			
-			k_sicily_2 = {
-				any_direct_de_jure_vassal_title = {
-					de_jure_liege = k_sicily
-				}
-			}
-			
-			k_sicily = { 
-				grant_title = ROOT 
-				make_primary_title = yes
-				copy_title_history = k_sicily	
-				copy_title_laws = k_sicily_2
-			}
-			k_sicily_2 = {
-				destroy_landed_title = THIS
-			}
-			activate_title = { title = k_sicily_2 status = no }
+			set_pentarchy_title = d_rome
 			any_realm_character ={
 				limit = { religion = imperial }
 				
