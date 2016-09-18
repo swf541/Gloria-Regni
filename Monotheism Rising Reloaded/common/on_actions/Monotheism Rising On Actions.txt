@@ -23,7 +23,16 @@ on_birth = {
 		1 = HPdruze.4500 # Reincarnation?
 	}
 }
-
+on_unlanded = {
+	events = {
+		SHS.17
+		SHS.2
+		SHS.4
+		SHS.8
+		SHS.12
+		SHS.16
+	}
+}
 on_yearly_pulse = {
 	events = {
 		ROMEGOV.1
