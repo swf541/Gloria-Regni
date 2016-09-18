@@ -1,0 +1,588 @@
+#######################################
+#
+# PentarchySchism Events
+#
+# Event ID ID SHS.1 - SHS.99 reserved
+#
+#######################################
+
+# Written by Hansol "LumberKing" Lee
+# Edited for RP Pentarchy by Starwarsfan541
+
+namespace = SHS
+
+## Papacy of Rome
+
+# Rome Re-Established
+character_event = { 
+	id = SHS.1
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = miaphysite
+			religion = monothelite
+			religion = iconoclast
+			religion = nestorian
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_rome }
+		has_landed_title = b_roma
+	}
+
+	option = {
+		name = OK
+		d_rome = {
+			grant_title = ROOT
+		}
+	}
+}
+
+# Rome De-Established
+character_event = {
+	id = SHS.2
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_rome
+		OR = {
+			NOT = { has_landed_title = b_roma }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = miaphysite
+					religion = monothelite
+					religion = iconoclast
+					religion = nestorian
+				}
+			}
+		}
+	}
+
+
+	option = {
+		name = OK
+		d_rome = { destroy_landed_title = THIS }
+	}
+}
+
+
+## Patriarchate of Constantinople
+
+# Constantinople Re-Established
+character_event = { 
+	id = SHS.3
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_constantinople }
+		has_landed_title = b_hagiasophia
+	}
+
+
+	option = {
+		name = OK
+		d_constantinople = {
+			grant_title = ROOT
+		}
+	}
+}
+
+# Constantinople De-Established
+character_event = {
+	id = SHS.4
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_constantinople
+		OR = {
+			NOT = { has_landed_title = b_hagiasophia }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = monothelite
+					religion = iconoclast
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_constantinople = { destroy_landed_title = THIS }
+	}
+}
+
+# Constantinople Reformed (Orthodox)
+character_event = {
+	id = SHS.5
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_orthodox
+		d_constantinople = {
+			holder_scope = {
+				AND = {
+					religion = orthodox
+					NOT = { has_landed_title = k_orthodox }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+		d_constantinople = { grant_title = ROOT }
+		b_hagiasophia = { grant_title = ROOT }
+	}
+}
+
+# Constantinople Reformed (Iconoclast)
+character_event = {
+	id = SHS.6
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_iconoclast
+		d_constantinople = {
+			holder_scope = {
+				AND = {
+					religion = iconoclast
+					NOT = { has_landed_title = d_iconoclast }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_constantinople = { grant_title = ROOT }
+		b_hagiasophia = { grant_title = ROOT }
+	}
+}
+
+## Papacy of Alexandria
+
+# Alexandria Re-Established
+character_event = { 
+	id = SHS.7
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = miaphysite
+			religion = monothelite
+			religion = iconoclast
+			religion = nestorian
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_pentarch_alexandria }
+		has_landed_title = b_alexandria
+	}
+
+
+	option = {
+		name = OK
+		d_pentarch_alexandria = {
+			grant_title = ROOT
+		}
+	}
+}
+
+# Alexandria De-Established
+character_event = {
+	id = SHS.8
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_pentarch_alexandria
+		OR = {
+			NOT = { has_landed_title = b_alexandria }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+				religion = imperial
+				religion = arian
+				religion = donatism
+				religion = adoptionism
+				religion = sabellianism
+				religion = pelagianism
+				religion = macedonianism
+				religion = marcionism
+				religion = priscillianism
+				religion = valentinianism
+				religion = orthodox
+				religion = miaphysite
+				religion = monothelite
+				religion = iconoclast
+				religion = nestorian
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_pentarch_alexandria = { destroy_landed_title = THIS }
+	}
+}
+
+# Alexandria Reformed (Miaphysite)
+character_event = {
+	id = SHS.9
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_miaphysite
+		d_pentarch_alexandria = {
+			holder_scope = {
+				AND = {
+					religion = miaphysite
+					NOT = { has_landed_title = d_miaphysite }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_pentarch_alexandria = { grant_title = ROOT }
+		b_alexandria = { grant_title = ROOT }
+	}
+}
+
+
+## Patriarchate of Antioch
+
+# Antioch Re-Established
+character_event = { 
+	id = SHS.11
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = miaphysite
+			religion = monothelite
+			religion = iconoclast
+			religion = nestorian
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_pentarch_antioch }
+		has_landed_title = b_antiocheia
+	}
+
+	option = {
+		name = OK
+		d_pentarch_antioch = {
+			grant_title = ROOT
+		}
+	}
+}
+
+# Antioch De-Established
+character_event = {
+	id = SHS.12
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_pentarch_antioch
+		OR = {
+			NOT = { has_landed_title = b_antiocheia }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = miaphysite
+					religion = monothelite
+					religion = iconoclast
+					religion = nestorian
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_pentarch_antioch = { destroy_landed_title = THIS }
+	}
+}
+
+# Antioch Reformed (Monothelite)
+character_event = {
+	id = SHS.13
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_monothelite
+		d_pentarch_antioch = {
+			holder_scope = {
+				AND = {
+					religion = monothelite
+					NOT = { has_landed_title = d_monothelite }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_pentarch_antioch = { grant_title = ROOT }
+		b_antiocheia = { grant_title = ROOT }
+	}
+}
+
+
+## Patriarchate of Jerusalem
+
+# Jerusalem Re-Established
+character_event = { 
+	id = SHS.15
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_pentarch_jerusalem }
+		has_landed_title = b_jerusalem
+	}
+
+	option = {
+		name = OK
+		d_pentarch_jerusalem = {
+			grant_title = ROOT
+		}
+	}
+}
+
+# Jerusalem De-Established
+character_event = {
+	id = SHS.16
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_pentarch_jerusalem
+		OR = {
+			NOT = { has_landed_title = b_jerusalem }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = monothelite
+					religion = iconoclast
+				}
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		d_pentarch_jerusalem = { destroy_landed_title = THIS }
+	}
+}
+
+# Establishing Liege for the Pentarchs
+
+character_event = {
+	id = SHS.17
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_landed_title = d_rome
+			has_landed_title = d_constantinople
+			has_landed_title = d_pentarch_alexandria
+			has_landed_title = d_pentarch_antioch
+			has_landed_title = d_pentarch_jerusalem	
+		}
+		independent = yes
+		NOT = {
+			num_of_count_titles = 1
+			num_of_king_titles = 1
+			num_of_emperor_titles = 1
+		}
+	}
+
+	option = {
+		name = OK
+		capital_holding = {
+			dejure_liege_title = {
+				holder_scope = {
+					top_liege = {
+						set_defacto_vassal = ROOT
+					}
+				}
+			}
+		}
+	}
+}

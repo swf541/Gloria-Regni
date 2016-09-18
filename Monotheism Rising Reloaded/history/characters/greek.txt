@@ -4362,6 +4362,25 @@
 	1204.1.2={
 		add_spouse=232509
 	}
+	1204.4.1={
+		effect = {
+            k_georgia = { 
+                holder_scope = {
+                    opinion = {
+                        modifier = in_non_aggression_pact
+                        who = ROOT
+                        years = 30 #Set duration
+                    }
+                    reverse_opinion = {
+                        modifier = in_non_aggression_pact
+                        who = ROOT
+                        years = 30 #Set duration
+                    }
+                    add_alliance = { who = ROOT years = 30 } #Set duration
+                }
+            }
+        }
+	}
 	1222.2.1={
 		death="1222.2.1"
 	}

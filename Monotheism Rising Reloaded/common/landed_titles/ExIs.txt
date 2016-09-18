@@ -376,6 +376,21 @@ d_rome = {
 	
 	# Cannot be held as a secondary title
 	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = miaphysite
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
 	
 	dynasty_title_names = no # Will not be named "Seljuk", etc.
 	
@@ -504,6 +519,19 @@ d_constantinople = {
 	
 	# Cannot be held as a secondary title
 	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
 	
 	dynasty_title_names = no # Will not be named "Seljuk", etc.
 	
@@ -516,4 +544,110 @@ d_constantinople = {
 		Polyeuktos Sergios Sisinnios Stephanos Tarasios Theodoros Theodosios Theodotos Theoleptos
 		Theophanes Theophylaktos Tryphon Zacharias
 	}
+}
+
+d_pentarch_alexandria = {
+	color={ 100 219 134 }
+	color2={ 255 255 255 }
+	
+	capital = 802 # Alexandria
+	
+	title = "POPE"
+	foa = "POPE_FOA"
+	title_prefix = "PAPACY_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = miaphysite
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_pentarch_antioch = {
+	color={ 142 63 129 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = no
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = miaphysite
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_pentarch_jerusalem = {
+	color={ 180 180 180 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = no
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 }
