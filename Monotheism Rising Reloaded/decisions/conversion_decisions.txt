@@ -4761,9 +4761,9 @@ decisions = {
 			activate_title = { title = d_constantinople status = yes }
 			d_iconoclast = {
 				holder_scope = {
-					b_hagiasophia = {
-						grant_title = PREV
-					}
+					#b_hagiasophia = {
+					#	grant_title = PREV
+					#}
 					d_constantinople = {
 						grant_title = PREV
 					}

@@ -37,18 +37,9 @@ character_event = {
 		top_liege = { save_event_target_as = root_liege }
 		if = { 
 			limit = {
-				d_rome = { holder_scope = { has_landed_title = d_imperial } }
+				NOT = { has_global_flag = con_center_authority }
 			}
 			d_imperial = {
-				usurp_title = ROOT
-			}
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = con_center_authority }
-				NOT = { has_landed_title = d_imperial }
-			}
-			d_rome = {
 				usurp_title = ROOT
 			}
 			d_imperial = {
@@ -148,8 +139,18 @@ character_event = {
 
 
 	immediate = {
-		
 		name = OK
+		if = { 
+			limit = {
+				has_global_flag = con_center_authority 
+			}
+			d_imperial = {
+				usurp_title = ROOT
+			}
+			d_imperial = {
+				grant_title = ROOT
+			}
+		}
 		top_liege = { save_event_target_as = root_liege }
 		d_constantinople = {
 			grant_title = ROOT
