@@ -4739,7 +4739,7 @@ decisions = {
 					}
 				}
 			}
-			k_papal_state = {
+			d_rome = {
 				holder_scope = {
 					opinion = {
 						who = ROOT
@@ -4761,6 +4761,9 @@ decisions = {
 			activate_title = { title = d_constantinople status = yes }
 			d_iconoclast = {
 				holder_scope = {
+					b_hagiasophia = {
+						grant_title = PREV
+					}
 					d_constantinople = {
 						grant_title = PREV
 					}

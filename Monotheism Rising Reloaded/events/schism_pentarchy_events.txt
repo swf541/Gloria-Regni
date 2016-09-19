@@ -32,10 +32,37 @@ character_event = {
 		has_landed_title = b_roma
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
+		if = { 
+			limit = {
+				d_rome = { holder_scope = { has_landed_title = d_imperial } }
+			}
+			d_imperial = {
+				usurp_title = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = con_center_authority }
+				NOT = { has_landed_title = d_imperial }
+			}
+			d_rome = {
+				usurp_title = ROOT
+			}
+			d_imperial = {
+				grant_title = ROOT
+			}
+		}
+		d_rome = {
+			usurp_title = ROOT
+		}
 		d_rome = {
 			grant_title = ROOT
+		}
+		d_rome = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -79,9 +106,9 @@ character_event = {
 	}
 
 
-	option = {
+	immediate = {
 		name = OK
-		d_rome = { destroy_landed_title = THIS }
+		d_rome = { unsafe_destroy_landed_title = THIS }
 	}
 }
 
@@ -120,10 +147,15 @@ character_event = {
 	}
 
 
-	option = {
+	immediate = {
+		
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_constantinople = {
 			grant_title = ROOT
+		}
+		d_constantinople = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -164,9 +196,9 @@ character_event = {
 		days = 1
 	}
 
-	option = {
+	immediate = {
 		name = OK
-		d_constantinople = { destroy_landed_title = THIS }
+		d_constantinople = { unsafe_destroy_landed_title = THIS }
 	}
 }
 
@@ -191,7 +223,7 @@ character_event = {
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = OK
 		d_constantinople = { grant_title = ROOT }
 		b_hagiasophia = { grant_title = ROOT }
@@ -220,7 +252,7 @@ character_event = {
 		}
 	}
 
-	option = {
+	immediate = {
 		name = OK
 		d_constantinople = { grant_title = ROOT }
 		b_hagiasophia = { grant_title = ROOT }
@@ -262,10 +294,14 @@ character_event = {
 		has_landed_title = b_alexandria
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_pentarch_alexandria = {
 			grant_title = ROOT
+		}
+		d_pentarch_alexandria = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -308,9 +344,9 @@ character_event = {
 		days = 1
 	}
 
-	option = {
+	immediate = {
 		name = OK
-		d_pentarch_alexandria = { destroy_landed_title = THIS }
+		d_pentarch_alexandria = { unsafe_destroy_landed_title = THIS }
 	}
 }
 
@@ -335,10 +371,14 @@ character_event = {
 		}
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_pentarch_alexandria = { grant_title = ROOT }
 		b_alexandria = { grant_title = ROOT }
+		d_miaphysite = {
+			set_defacto_liege = event_target:root_liege
+		}
 	}
 }
 
@@ -371,16 +411,21 @@ character_event = {
 			religion = monothelite
 			religion = iconoclast
 			religion = nestorian
+		}
 
 		is_theocracy = yes
 		NOT = { has_landed_title = d_pentarch_antioch }
 		has_landed_title = b_antiocheia
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_pentarch_antioch = {
 			grant_title = ROOT
+		}
+		d_pentarch_antioch = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -424,9 +469,9 @@ character_event = {
 		days = 1
 	}
 
-	option = {
+	immediate = {
 		name = OK
-		d_pentarch_antioch = { destroy_landed_title = THIS }
+		d_pentarch_antioch = { unsafe_destroy_landed_title = THIS }
 	}
 }
 
@@ -451,7 +496,7 @@ character_event = {
 		}
 	}
 
-	option = {
+	immediate = {
 		name = OK
 		d_pentarch_antioch = { grant_title = ROOT }
 		b_antiocheia = { grant_title = ROOT }
@@ -492,10 +537,14 @@ character_event = {
 		has_landed_title = b_jerusalem
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_pentarch_jerusalem = {
 			grant_title = ROOT
+		}
+		d_pentarch_jerusalem = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -537,9 +586,9 @@ character_event = {
 		days = 1
 	}
 
-	option = {
+	immediate = {
 		name = OK
-		d_pentarch_jerusalem = { destroy_landed_title = THIS }
+		d_pentarch_jerusalem = { unsafe_destroy_landed_title = THIS }
 	}
 }
 
@@ -569,7 +618,7 @@ character_event = {
 		}
 	}
 
-	option = {
+	immediate = {
 		name = OK
 		capital_holding = {
 			dejure_liege_title = {
@@ -602,10 +651,14 @@ character_event = {
 		has_landed_title = b_roma
 	}
 
-	option = {
+	immediate = {
 		name = OK
+		top_liege = { save_event_target_as = root_liege }
 		d_imperial = {
 			grant_title = ROOT
+		}
+		d_imperial = {
+			set_defacto_liege = event_target:root_liege
 		}
 	}
 }
@@ -626,8 +679,8 @@ character_event = {
 		days = 1
 	}
 
-	option = {
+	immediate = {
 		name = OK
-		d_rome = { destroy_landed_title = THIS }
+		d_imperial = { unsafe_destroy_landed_title = THIS }
 	}
 }
