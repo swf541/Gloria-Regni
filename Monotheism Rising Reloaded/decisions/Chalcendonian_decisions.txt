@@ -49,6 +49,31 @@ decisions = {
 			factor = 0.25
 		}
 	}
+	make_rome_center_of_episcopal_authority = {
+		potential = {
+			has_landed_title = e_byzantium
+			not = { has_global_flag = con_center_authority }
+			completely_controls = d_thrace
+			completely_controls = d_latium
+		}
+		
+		allow = {
+			prestige = 100
+			piety = 100
+		}
+		
+		effect = {
+			clr_global_flag = con_center_authority
+			d_rome = {
+				holder_scope = { save_event_target_as = rome_patriarch }
+			}
+			d_imperial = { usurp_title = event_target:rome_patriarch } 
+			d_imperial = { change_variable = { which = schism value = 40 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
 
 	put_sicily_under_the_byzantine_patriarch = {
 		potential = {
@@ -68,7 +93,9 @@ decisions = {
 			clr_global_flag = latin_sicily
 			set_global_flag = greek_sicily
 			
-			set_pentarchy_title = d_constantinople
+			k_sicily = {
+				set_pentarchy_title = d_constantinople
+			}
 			any_realm_character ={
 				limit = { religion = imperial }
 				
@@ -109,7 +136,9 @@ decisions = {
 			
 			set_global_flag = greek_sicily
 			
-			set_pentarchy_title = d_rome
+			k_sicily = {
+				set_pentarchy_title = d_rome
+			}
 			any_realm_character ={
 				limit = { religion = imperial }
 				
