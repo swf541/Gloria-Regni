@@ -303,6 +303,7 @@ character_event = {
 		d_pentarch_alexandria = {
 			set_defacto_liege = event_target:root_liege
 		}
+		character_event = { id = SCHISM.17 } 
 	}
 }
 
@@ -422,11 +423,15 @@ character_event = {
 		name = OK
 		top_liege = { save_event_target_as = root_liege }
 		d_pentarch_antioch = {
+			usurp_title = ROOT
+		}
+		d_pentarch_antioch = {
 			grant_title = ROOT
 		}
 		d_pentarch_antioch = {
 			set_defacto_liege = event_target:root_liege
 		}
+		character_event = { id = SCHISM.17 } 
 	}
 }
 
@@ -638,14 +643,20 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	
 	is_triggered_only = yes
 
 	trigger = {
 		religion = imperial
-		has_landed_title = d_imperial
-		NOT = { has_global_flag = con_center_authority }
-
+		OR = {
+			AND = {
+				has_landed_title = d_rome
+				NOT = { has_global_flag = con_center_authority }
+			}
+			AND = {
+				has_landed_title = d_constantinople
+				has_global_flag = con_center_authority 
+			}
+		}
 		is_theocracy = yes
 		NOT = { has_landed_title = d_imperial }
 		has_landed_title = b_roma

@@ -27,6 +27,14 @@ targetted_decisions = {
 			new_character = {
 				d_rome = { usurp_title = PREV }
 				b_roma = { usurp_title = PREV }
+				if = { 
+					limit = {
+						NOT = { has_global_flag = con_center_authority }
+					}
+					d_imperial = {
+						usurp_title = PREV
+					}
+				}
 			}
 			character_event = { id = SCHISM.1 } 
 			d_imperial = { change_variable = { which = schism value = 10 } }
