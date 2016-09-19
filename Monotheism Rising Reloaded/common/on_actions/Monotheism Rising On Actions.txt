@@ -24,16 +24,16 @@ on_birth = {
 		1 = HPdruze.4500 # Reincarnation?
 	}
 }
-#on_unlanded = {
-#	events = {
-#		SHS.17
-#		SHS.2
-#		SHS.4
-#		SHS.8
-#		SHS.12
-#		SHS.16
-#	}
-#}
+on_unlanded = {
+	events = {
+		SCHISM.17
+		SCHISM.2
+		SCHISM.4
+		SCHISM.8
+		SCHISM.12
+		SCHISM.16
+	}
+}
 on_yearly_pulse = {
 	events = {
 		ROMEGOV.1
@@ -47,12 +47,12 @@ on_yearly_pulse = {
 		HPdecadence.50002
 		HPdecadence.50003
 		RITE.1
-		SHS.17
-		SHS.2
-		SHS.4
-		SHS.8
-		SHS.12
-		SHS.16
+		SCHISM.17
+		SCHISM.2
+		SCHISM.4
+		SCHISM.8
+		SCHISM.12
+		SCHISM.16
 		COPT.1
 	}
 	random_events = {
@@ -214,15 +214,15 @@ on_yearly_childhood_pulse = {
 on_new_holder = {
 	events = {
 		ROMEGOV.1
-		SHS.1
-		SHS.3
-		SHS.5
-		SHS.6
-		SHS.7
-		SHS.9
-		SHS.11
-		SHS.13
-		SHS.15
+		SCHISM.1
+		SCHISM.3
+		SCHISM.5
+		SCHISM.6
+		SCHISM.7
+		SCHISM.9
+		SCHISM.11
+		SCHISM.13
+		SCHISM.15
 		COPT.1
 	}
 }

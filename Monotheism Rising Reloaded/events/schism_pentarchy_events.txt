@@ -1,21 +1,6 @@
-#######################################
-#
-# PentarchySchism Events
-#
-# Event ID ID SHS.1 - SHS.99 reserved
-#
-#######################################
-
-# Written by Hansol "LumberKing" Lee
-# Edited for RP Pentarchy by Starwarsfan541
-
-namespace = SHS
-
-## Papacy of Rome
-
-# Rome Re-Established
+namespace = SCHISM
 character_event = { 
-	id = SHS.1
+	id = SCHISM.1
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -57,7 +42,7 @@ character_event = {
 
 # Rome De-Established
 character_event = {
-	id = SHS.2
+	id = SCHISM.2
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -103,7 +88,7 @@ character_event = {
 
 # Constantinople Re-Established
 character_event = { 
-	id = SHS.3
+	id = SCHISM.3
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -143,7 +128,7 @@ character_event = {
 
 # Constantinople De-Established
 character_event = {
-	id = SHS.4
+	id = SCHISM.4
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -183,7 +168,7 @@ character_event = {
 
 # Constantinople Reformed (Orthodox)
 character_event = {
-	id = SHS.5
+	id = SCHISM.5
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -211,7 +196,7 @@ character_event = {
 
 # Constantinople Reformed (Iconoclast)
 character_event = {
-	id = SHS.6
+	id = SCHISM.6
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -242,7 +227,7 @@ character_event = {
 
 # Alexandria Re-Established
 character_event = { 
-	id = SHS.7
+	id = SCHISM.7
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -284,7 +269,7 @@ character_event = {
 
 # Alexandria De-Established
 character_event = {
-	id = SHS.8
+	id = SCHISM.8
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -326,7 +311,7 @@ character_event = {
 
 # Alexandria Reformed (Miaphysite)
 character_event = {
-	id = SHS.9
+	id = SCHISM.9
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -357,7 +342,7 @@ character_event = {
 
 # Antioch Re-Established
 character_event = { 
-	id = SHS.11
+	id = SCHISM.11
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -397,7 +382,7 @@ character_event = {
 
 # Antioch De-Established
 character_event = {
-	id = SHS.12
+	id = SCHISM.12
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -439,7 +424,7 @@ character_event = {
 
 # Antioch Reformed (Monothelite)
 character_event = {
-	id = SHS.13
+	id = SCHISM.13
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -470,7 +455,7 @@ character_event = {
 
 # Jerusalem Re-Established
 character_event = { 
-	id = SHS.15
+	id = SCHISM.15
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -509,7 +494,7 @@ character_event = {
 
 # Jerusalem De-Established
 character_event = {
-	id = SHS.16
+	id = SCHISM.16
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
@@ -550,7 +535,7 @@ character_event = {
 # Establishing Liege for the Pentarchs
 
 character_event = {
-	id = SHS.17
+	id = SCHISM.17
 	desc = OK
 	picture = GFX_evt_bishop_byzantine
 
