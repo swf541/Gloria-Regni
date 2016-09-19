@@ -8,7 +8,10 @@ decisions = {
 			prisoner = no
 			NOT = { trait = incapable }
 			NOT = { has_global_flag = wre_restored }
-			culture_group = latin	#Later Change to Post Roman
+			or ={
+				culture_group = postroman
+				culture_group = byzantine
+			}
 		}
 		allow = {
 			prestige = 3000
@@ -53,17 +56,17 @@ decisions = {
 	}
 	
 	re_divide_western_empire = {
-		is_high_prio = yes
+		is_high_prio = no
 		potential = {
 			has_dlc = "Legacy of Rome"
-			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
 			age = 16
 			prisoner = no
-			NOT = { trait = incapable }
+#			NOT = { trait = incapable }
 			NOT = { has_global_flag = wre_restored }
 		}
 		allow = {
-			prestige = 3000
+#			prestige = 3000
 			completely_controls = k_italy
 			completely_controls = k_sicily
 			completely_controls = k_croatia
@@ -78,25 +81,19 @@ decisions = {
 				save_event_target_as = wre_emperor
 			}
 			k_italy = {
-				grant_title = event_target:wre_emperor
-				copy_title_laws = e_byzantium
-				copy_title_history = e_byzantium
+				destroy_landed_title = THIS
 			}
 			k_croatia = {
-				grant_title = event_target:wre_emperor
-				copy_title_laws = e_byzantium
-				copy_title_history = e_byzantium
+				destroy_landed_title = THIS
 			}
 			k_sicily = {
-				grant_title = event_target:wre_emperor
-				copy_title_laws = e_byzantium
-				copy_title_history = e_byzantium
+				destroy_landed_title = THIS
 			}
 			e_wre = {
 				grant_title = event_target:wre_emperor
 				make_primary_title = yes
-				copy_title_laws = e_byzantium
-				copy_title_history = e_byzantium
+				copy_title_laws = e_roman_empire
+				copy_title_history = e_roman_empire
 			}
 			any_direct_de_jure_vassal_title = { 
 				de_jure_liege = e_wre

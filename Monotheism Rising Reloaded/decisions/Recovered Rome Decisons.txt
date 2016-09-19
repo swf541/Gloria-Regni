@@ -7,6 +7,8 @@ decisions = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
+				NOT = { has_global_flag = rome_wall_restored }
+				completely_controls = c_roma
 			}
 			age = 16
 			prisoner = no
@@ -42,6 +44,7 @@ decisions = {
 			NOT = { trait = incapable }
 			has_global_flag = rome_wall_restored
 			NOT = { has_global_flag = rome_city_restored }
+			completely_controls = c_roma
 		}
 		allow = {
 			wealth = 5000
@@ -100,6 +103,7 @@ decisions = {
 			NOT = { trait = incapable }
 			has_global_flag = rome_city_restored
 			NOT = { has_global_flag = rome_great_palace }
+			completely_controls = c_roma
 		}
 		allow = {
 			wealth = 2000

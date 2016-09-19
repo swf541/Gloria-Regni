@@ -8,6 +8,14 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = k_castille
+			completely_controls = k_aragon
+			completely_controls = k_navarra
+			completely_controls = k_asturias
+			completely_controls = k_spanish_galicia
+			completely_controls = k_portugal
+			completely_controls = k_andalusia
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -139,6 +147,9 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = k_england
+			completely_controls = k_wales
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -225,6 +236,12 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_tunis
+			completely_controls = d_tripolitania
+			completely_controls = d_alger
+			completely_controls = d_kabylia
+			completely_controls = d_tlemcen
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -278,6 +295,13 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = k_aquitaine
+			completely_controls = d_berry
+			completely_controls = d_poitou
+			completely_controls = d_provence
+			completely_controls = d_savoie
+			completely_controls = d_dauphine
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -354,6 +378,21 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_brittany
+			completely_controls = d_anjou
+			completely_controls = d_normandy
+			completely_controls = d_orleans
+			completely_controls = d_valois
+			completely_controls = d_champagne
+			completely_controls = d_burgundy
+			completely_controls = d_upper_burgundy
+			completely_controls = d_upper_lorraine
+			completely_controls = d_alsace
+			completely_controls = d_lower_lorraine
+			completely_controls = d_luxembourg
+			completely_controls = d_brabant
+			completely_controls = d_flanders
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -460,6 +499,16 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_ferrara
+			completely_controls = d_modena
+			completely_controls = d_susa
+			completely_controls = d_lombardia
+			completely_controls = d_genoa
+			completely_controls = d_verona
+			completely_controls = d_carinthia
+			completely_controls = d_venice
+			completely_controls = d_tyrol
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -533,6 +582,15 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_bavaria
+			completely_controls = d_osterreich
+			completely_controls = d_esztergom
+			completely_controls = d_pecs
+			completely_controls = d_slavonia
+			completely_controls = d_bosnia
+			completely_controls = d_croatia
+			completely_controls = d_dalmatia
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -608,6 +666,19 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_toscana
+			completely_controls = d_pisa
+			completely_controls = d_ancona
+			completely_controls = d_spoleto
+			completely_controls = d_latium
+			completely_controls = d_sardinia
+			completely_controls = d_benevento
+			completely_controls = d_capua
+			completely_controls = d_apulia
+			completely_controls = d_salerno
+			completely_controls = d_calabria
+			completely_controls = d_sicily
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -696,6 +767,13 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_alexandria
+			completely_controls = d_damietta
+			completely_controls = d_cairo
+			completely_controls = d_aswan
+			completely_controls = d_cyrenaica
+			NOT = { has_global_flag = provnce_aegyptus_restored }
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -749,6 +827,21 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_sinai
+			completely_controls = d_oultrejourdain
+			completely_controls = d_ascalon
+			completely_controls = d_jerusalem
+			completely_controls = d_galilee
+			completely_controls = d_aleppo
+			completely_controls = d_antioch
+			completely_controls = d_tripoli
+			completely_controls = d_damascus
+			completely_controls = d_syria
+			completely_controls = d_jazira
+			completely_controls = d_edessa
+			completely_controls = d_armenia_minor
+			completely_controls = d_cyprus
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -851,6 +944,12 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_anatolia
+			completely_controls = d_thracesia
+			completely_controls = d_cibyrrhaeot
+			completely_controls = d_samos
+			completely_controls = d_aegean_islands
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -900,6 +999,14 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_nikaea
+			completely_controls = d_paphlagonia
+			completely_controls = d_charsianon
+			completely_controls = d_armeniacon
+			completely_controls = d_trebizond
+			completely_controls = d_coloneia
+			completely_controls = d_mesopotamia
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -959,6 +1066,11 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_thrace
+			completely_controls = d_adrianopolis
+			completely_controls = d_turnovo
+			completely_controls = d_karvuna
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -1007,6 +1119,10 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_vidin
+			completely_controls = d_dioclea
+			completely_controls = d_rashka
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
@@ -1050,6 +1166,13 @@ decisions = {
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
 			}
+			completely_controls = d_dyrrachion
+			completely_controls = d_thessalonika
+			completely_controls = d_epirus
+			completely_controls = d_athens
+			completely_controls = d_achaia
+			completely_controls = d_krete
+			
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
