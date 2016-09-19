@@ -24,16 +24,6 @@ on_birth = {
 		1 = HPdruze.4500 # Reincarnation?
 	}
 }
-on_unlanded = {
-	events = {
-		SCHISM.17
-		SCHISM.2
-		SCHISM.4
-		SCHISM.8
-		SCHISM.12
-		SCHISM.16
-	}
-}
 on_yearly_pulse = {
 	events = {
 		ROMEGOV.1
@@ -47,12 +37,13 @@ on_yearly_pulse = {
 		HPdecadence.50002
 		HPdecadence.50003
 		RITE.1
-		SCHISM.17
+		#SCHISM.17
 		SCHISM.2
 		SCHISM.4
 		SCHISM.8
 		SCHISM.12
 		SCHISM.16
+		SCHISM.19
 		COPT.1
 	}
 	random_events = {
@@ -223,7 +214,20 @@ on_new_holder = {
 		SCHISM.11
 		SCHISM.13
 		SCHISM.15
+		SCHISM.18
 		COPT.1
+	}
+}
+
+on_war_ended_defeat = {
+	events = {
+		#SCHISM.17
+		SCHISM.2
+		SCHISM.4
+		SCHISM.8
+		SCHISM.12
+		SCHISM.16
+		SCHISM.19
 	}
 }
 

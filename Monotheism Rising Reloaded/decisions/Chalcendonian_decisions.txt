@@ -29,7 +29,7 @@ decisions = {
 		potential = {
 			has_landed_title = e_byzantium
 			not = { has_global_flag = con_center_authority }
-			completely_controls = c_roma
+			completely_controls = d_latium
 		}
 		
 		allow = {
@@ -43,7 +43,7 @@ decisions = {
 				holder_scope = { save_event_target_as = byz_patriarch }
 			}
 			d_imperial = { usurp_title = event_target:byz_patriarch } 
-			d_imperial = { change_variable = { which = schism value = 40 }
+			d_imperial = { change_variable = { which = schism value = 40 } }
 		}
 		ai_will_do = {
 			factor = 0.25

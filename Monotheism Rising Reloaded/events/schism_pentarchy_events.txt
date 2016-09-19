@@ -47,7 +47,6 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = d_rome
@@ -74,6 +73,9 @@ character_event = {
 				}
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 1
 	}
 
 
@@ -133,7 +135,6 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = d_constantinople
@@ -158,6 +159,9 @@ character_event = {
 				}
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 1
 	}
 
 	option = {
@@ -258,7 +262,6 @@ character_event = {
 		has_landed_title = b_alexandria
 	}
 
-
 	option = {
 		name = OK
 		d_pentarch_alexandria = {
@@ -274,7 +277,6 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = d_pentarch_alexandria
@@ -301,6 +303,9 @@ character_event = {
 				}
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 1
 	}
 
 	option = {
@@ -387,7 +392,6 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = d_pentarch_antioch
@@ -414,6 +418,10 @@ character_event = {
 				}
 			}
 		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
 	}
 
 	option = {
@@ -499,7 +507,6 @@ character_event = {
 	picture = GFX_evt_bishop_byzantine
 
 	hide_window = yes
-	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = d_pentarch_jerusalem
@@ -524,6 +531,10 @@ character_event = {
 				}
 			}
 		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
 	}
 
 	option = {
@@ -569,5 +580,54 @@ character_event = {
 				}
 			}
 		}
+	}
+}
+
+character_event = { 
+	id = SCHISM.18
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		religion = imperial
+		has_landed_title = d_imperial
+		NOT = { has_global_flag = con_center_authority }
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_imperial }
+		has_landed_title = b_roma
+	}
+
+	option = {
+		name = OK
+		d_imperial = {
+			grant_title = ROOT
+		}
+	}
+}
+character_event = {
+	id = SCHISM.19
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+
+	trigger = {
+		has_landed_title = d_imperial
+		NOT = { has_global_flag = con_center_authority }
+		NOT = { has_landed_title = d_rome }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		d_rome = { destroy_landed_title = THIS }
 	}
 }
