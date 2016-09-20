@@ -45,6 +45,19 @@ on_yearly_pulse = {
 		SCHISM.16
 		SCHISM.19
 		COPT.1
+		PA.10009
+		PA.10010
+		PA.10181
+		
+		PA.100280 # CHECK
+		PA.100281 # CHECK
+		
+		PA.100289
+		PA.100291
+		PA.100295
+		PA.100300
+		PA.100301
+		PA.100302
 	}
 	random_events = {
 	
@@ -150,6 +163,14 @@ on_war_ended_victory = {
 	events = {
 		indep.7
 		ROMEGOV.1
+		PA.10037
+		PA.10038
+		PA.10039
+		PA.10071
+		PA.10072
+		PA.10073
+		PA.10074
+		PA.10076
 	}
 }
 # From = Attacker, Root = Defender

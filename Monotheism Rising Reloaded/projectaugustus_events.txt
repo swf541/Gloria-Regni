@@ -1,0 +1,569 @@
+namespace = PA
+# Grain Supply Resumed
+character_event = {
+	id = PA.10009
+	desc = EVTDESCPA.10009
+	picture = GFX_evt_market_byzantine
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+        trigger = {
+		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = grain_supply_resumed }
+		OR = {
+			has_landed_title = e_wre
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+        }
+		completely_controls = d_damietta
+
+	}
+	
+	option = {
+	        name = OPTPA_10009
+                set_global_flag = grain_supply_resumed
+                add_character_modifier = {
+                    name = egyptian_grain
+                    duration = -1
+		    inherit = yes
+					}
+	}
+}
+
+# Grain Supply Interrupted
+character_event = {
+	id = PA.10010
+	desc = EVTDESCPA.10010
+	picture = GFX_evt_market_byzantine
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+		is_triggered_only = yes
+	
+        trigger = {
+		has_dlc = "Legacy of Rome"
+		has_global_flag = grain_supply_resumed
+		OR = {
+			has_landed_title = e_wre
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+                }
+		NOT = { completely_controls = d_damietta }
+
+	}
+	
+	
+	option = {
+	        name = OPTPA_10010
+                clr_global_flag = grain_supply_resumed
+                remove_character_modifier = egyptian_grain
+	}
+}
+
+# Thessalonika Conquered (Latin Empire)
+narrative_event = {
+	id = PA.10037
+	title = EVTNAMEPA.10037
+	desc = EVTDESCPA.10037
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+                  has_landed_title = e_latin_empire
+                  religion_group = christian
+                  completely_controls = c_thessalonike
+		  NOT = { has_global_flag = thessalonika_conquered_latin_empire }
+	}
+	
+
+	option = {
+		name = OPTPA_10037
+                set_global_flag = thessalonika_conquered_latin_empire
+                prestige = 100
+	}		
+}
+
+# Athens Conquered (Latin Empire)
+narrative_event = {
+	id = PA.10038
+	title = EVTNAMEPA.10038
+	desc = EVTDESCPA.10038
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+                  has_landed_title = e_latin_empire
+                  religion_group = christian
+                  completely_controls = c_atheniai
+		  NOT = { has_global_flag = athens_conquered_latin_empire }
+	}
+
+	option = {
+		name = OPTPA_10018
+                set_global_flag = athens_conquered_latin_empire
+                prestige = 100
+	}		
+}
+
+# Byzantium Destroyed (Latin Empire)
+narrative_event = {
+	id = PA.10039
+	title = EVTNAMEPA.10039
+	desc = EVTDESCPA.10039
+	picture = GFX_evt_bloody_man
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+			has_landed_title = e_latin_empire
+			e_nicaea = {
+				has_holder = no
+			}
+		  NOT = { has_global_flag = byzantium_destroyed_latin_empire }
+	}
+	
+
+	option = {
+		name = OPTPA_10039
+                set_global_flag = byzantium_destroyed_latin_empire
+                prestige = 200
+	}		
+}
+
+# Constantinople Conquered (Bulgarian Empire)
+narrative_event = {
+	id = PA.10071
+	title = EVTNAMEPA.10071
+	desc = EVTDESCPA.10071
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+                  has_landed_title = e_bulgaria
+                  completely_controls = c_byzantion
+		  NOT = { has_global_flag = constantinople_conquered_bulgarian_empire }
+	}
+	
+
+	option = {
+		name = OPTPA_10071
+                set_global_flag = constantinople_conquered_bulgarian_empire
+                prestige = 100
+		}		
+}
+
+# Thessalonika Conquered (Trebizond)
+narrative_event = {
+	id = PA.10072
+	title = EVTNAMEPA.10072
+	desc = EVTDESCPA.10072
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+                  has_landed_title = e_trebizond
+                  completely_controls = c_thessalonike
+		  NOT = { has_global_flag = thessalonika_conquered_trebizond }
+	}
+
+	option = {
+		name = OPTPA_10072
+                set_global_flag = thessalonika_conquered_trebizond
+                prestige = 100
+		}		
+}
+
+# Athens Conquered (Greek Empires)
+narrative_event = {
+	id = PA.10073
+	title = EVTNAMEPA.10073
+	desc = EVTDESCPA.10073
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	          OR = {
+			  has_landed_title = e_nicaea
+                        has_landed_title = e_trebizond
+			has_landed_title = e_thessalonica
+		  }
+                  completely_controls = c_atheniai
+		  NOT = { has_global_flag = athens_conquered_greek_empires }
+	}
+
+	option = {
+		name = OPTPA_10073
+                set_global_flag = athens_conquered_greek_empires
+                prestige = 100
+		}		
+}
+
+# Constantinople Conquered (Greek Empires)
+narrative_event = {
+	id = PA.10074
+	title = EVTNAMEPA.10074
+	desc = EVTDESCPA.10074
+	picture = GFX_evt_crusaders
+
+	ai = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	          OR = {
+			  has_landed_title = e_nicaea
+              has_landed_title = e_trebizond
+			has_landed_title = e_thessalonica
+		  }
+                  completely_controls = c_byzantion
+		  NOT = { has_global_flag = constantinople_conquered_greek_empires }
+	}
+
+	option = {
+		name = OPTPA_10074
+                set_global_flag = constantinople_conquered_greek_empires
+                prestige = 100
+		}		
+}
+
+# Byzantium Destroyed (Greek Empires)
+narrative_event = {
+	id = PA.10076
+	title = EVTNAMEPA.10076
+	desc = EVTDESCPA.10076
+	picture = GFX_evt_bloody_man
+
+	ai = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+	          OR = {
+                        has_landed_title = e_trebizond
+			has_landed_title = e_thessalonica
+		  }
+		  e_nicaea = {
+			  has_holder = no
+		  }
+		  NOT = { has_global_flag = byzantium_destroyed_greek_empires }
+	}
+	
+
+	option = {
+		name = OPTPA_10076
+                set_global_flag = byzantium_destroyed_greek_empires
+                prestige = 200
+		}		
+}
+# Fall of Francia
+narrative_event = {
+	id = PA.10181
+	title = EVTNAMEPA.10181
+	desc = EVTDESCPA.10181
+	picture = GFX_evt_seige
+		
+ 	major = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	    NOT = { realm_size = 200 }
+	    has_landed_title = e_france
+
+        }
+		
+	
+	option = {
+		name = OPTPA_100181
+		e_france = {
+			destroy_landed_title = THIS
+		 }
+	}
+}
+
+
+# Gallic province converts to French
+character_event = {
+	id = PA.100278
+	desc = EVTDESCPA.100278
+	picture = GFX_evt_stone_church
+
+        trigger = {
+		NOT = { year = 1000 }
+                any_realm_province = {
+                        culture = gallic
+                }
+                NOT = { has_global_flag = gallia }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = OPTPA_100278
+		random_realm_province = {
+                	limit = {
+				culture = gallic
+			}
+                        culture = frankish
+                }
+	}
+}
+# Frankish Breakup Event (Addition)
+narrative_event = {
+	id = PA.100289
+	title = EVTNAMEPA.100289
+	desc = EVTDESCPA.100289
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	
+        trigger = {
+                year = 867
+		dynasty = 25061
+                has_landed_title = e_france
+		NOT = { has_global_flag = cm_francia }
+		NOT = { has_global_flag = frankish_decline }
+		NOT = { has_global_flag = frankish_breakup }
+		NOT = { has_character_modifier = imperial_decline }
+	}
+	
+	
+	option = {
+	        name = OPTPA_100289
+                set_global_flag = frankish_decline
+                add_character_modifier = {
+                    name = imperial_decline
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+
+# Frankish Breakup Event (Removal)
+narrative_event = {
+	id = PA.100290
+	title = EVTNAMEPA.100290
+	desc = EVTDESCPA.100290
+	picture = GFX_evt_council
+	
+	
+        trigger = {
+		dynasty = 25061
+                has_landed_title = e_france
+		NOT = { has_global_flag = cm_francia }
+		NOT = { has_global_flag = frankish_breakup }
+		has_character_modifier = imperial_decline
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+	}
+	
+	option = {
+	        name = OPTPA_100290
+                remove_character_modifier = imperial_decline
+                prestige = 100
+	}
+}
+
+# Abbasid Breakup Event (Addition)
+narrative_event = {
+	id = PA.100291
+	title = EVTNAMEPA.100291
+	desc = EVTDESCPA.100291
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	
+        trigger = {
+                year = 867
+		dynasty = 101727
+                has_landed_title = d_sunni
+		has_global_flag = abbasid_decline
+                NOT = { has_global_flag = abbasid_anarchy_done }
+		NOT = { has_character_modifier = abbasid_anarchy }
+	}
+
+	
+	option = {
+	        name = OPTPA_100291
+                set_global_flag = abbasid_decline
+                add_character_modifier = {
+                    name = abbasid_anarchy
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+
+# Abbasid Breakup Event (Removal)
+narrative_event = {
+	id = PA.100292
+	title = EVTNAMEPA.100292
+	desc = EVTDESCPA.100292
+	picture = GFX_evt_council
+	
+        trigger = {
+		dynasty = 101727		
+                has_landed_title = d_sunni
+		has_character_modifier = abbasid_anarchy
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+	}
+	
+	option = {
+	        name = OPTPA_100292
+                remove_character_modifier = abbasid_anarchy
+                set_global_flag = abbasid_anarchy_done
+                prestige = 100
+	}
+}
+
+character_event = {
+	id = PA.100295
+	
+        hide_window = yes
+		
+	is_triggered_only = yes		
+	
+	trigger = {
+		has_character_modifier = abbasid_decline
+	}
+	
+	option = {
+	        name = OK
+                remove_character_modifier = abbasid_anarchy
+	}
+}
+
+# Fourth Fitna Event (Addition)
+narrative_event = {
+	id = PA.100300
+	title = EVTNAMEPA.100300
+	desc = EVTDESCPA.100300
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes	
+	
+        trigger = {
+                year = 809
+		dynasty = 101727
+                has_landed_title = d_sunni
+		NOT = { has_global_flag = fourth_fitna }
+		NOT = { has_character_modifier = fourth_fitna }
+		NOT = { has_character_modifier = fourth_fitna_done }
+	}
+	
+	option = {
+	        name = OPTPA_100300
+                set_global_flag = fourth_fitna
+                add_character_modifier = {
+                    name = fourth_fitna
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+
+character_event = {
+	id = PA.100301
+	
+        hide_window = yes
+		
+		is_triggered_only = yes	
+	
+        trigger = {
+        NOT = { has_landed_title = d_sunni }
+		has_character_modifier = fourth_fitna
+
+	}
+	
+	option = {
+	        name = OK
+                remove_character_modifier = fourth_fitna
+	}
+}
+
+character_event = {
+	id = PA.100302
+	
+        hide_window = yes
+		
+		is_triggered_only = yes	
+	
+        trigger = {
+		dynasty = 101727
+                has_landed_title = d_sunni
+		has_global_flag = fourth_fitna
+		NOT = { has_global_flag = fourth_fitna_done }
+		NOT = { has_character_modifier = fourth_fitna }
+
+	}
+	
+	option = {
+	        name = OK
+                add_character_modifier = {
+                    name = fourth_fitna
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+  
+# Fourth Fitna Event (Removal)
+narrative_event = {
+	id = PA.100303
+	title = EVTNAMEPA.100303
+	desc = EVTDESCPA.100303
+	picture = GFX_evt_council
+	
+    trigger = {
+		dynasty = 101727		
+        has_landed_title = d_sunni
+		has_character_modifier = fourth_fitna
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+	}
+	
+	option = {
+	    name = OPTPA_100292
+        set_global_flag = fourth_fitna_done
+        remove_character_modifier = fourth_fitna
+        prestige = 100
+	}
+}
