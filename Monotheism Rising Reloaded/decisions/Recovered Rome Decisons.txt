@@ -7,9 +7,9 @@ decisions = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_wre
 				has_landed_title = e_roman_empire
-				NOT = { has_global_flag = rome_wall_restored }
-				completely_controls = c_roma
 			}
+			NOT = { has_global_flag = rome_wall_restored }
+			completely_controls = c_roma
 			age = 16
 			prisoner = no
 			NOT = { trait = incapable }
