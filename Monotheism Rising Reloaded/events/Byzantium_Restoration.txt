@@ -11,6 +11,7 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPTABYZ.20
+		activate_title = { title = e_byzantium status = yes }
 		e_byzantium = {
 			grant_title = ROOT
 			make_primary_title = yes

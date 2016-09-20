@@ -132,12 +132,12 @@ feudal_governments = {
 				top_liege = { has_landed_title = e_trebizond }
 				top_liege = { has_landed_title = e_roman_empire }
 				top_liege = { has_landed_title = e_byzantium }
-				liege_before_war = e_byzantium
-				liege_before_war = e_roman_empire
-				liege_before_war = e_wre
-				liege_before_war = e_trebizond
-				liege_before_war = e_nicaea
-				liege_before_war = k_epirus
+				liege_before_war = { has_landed_title = e_byzantium }
+				liege_before_war = { has_landed_title = e_roman_empire }
+				liege_before_war = { has_landed_title = e_wre }
+				liege_before_war = { has_landed_title = e_trebizond }
+				liege_before_war = { has_landed_title = e_nicaea }
+				liege_before_war = { has_landed_title = k_epirus }
 			}
 			is_patrician = no
 		}
