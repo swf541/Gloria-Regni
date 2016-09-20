@@ -29,12 +29,12 @@ targetted_decisions = {
 				make_primary_title = yes
 			}
 			FROM = {
-				any_realm_title = {
-					limit = {
-						capital_scope = { location = { region = world_europe_south_italy } }
-					}
-					set_defacto_liege = ROOT
-				}
+				#any_realm_title = {
+				#	limit = {
+				#		capital_scope = { location = { region = world_europe_south_italy } }
+				#	}
+				#	set_defacto_liege = ROOT
+				#}
 				k_italia_suburbicaria = {
 					set_defacto_liege = ROOT
 					destroy_landed_title = THIS
