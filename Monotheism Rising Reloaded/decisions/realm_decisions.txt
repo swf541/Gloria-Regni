@@ -1676,6 +1676,7 @@ decisions = {
 			has_global_flag = charlemagne_hre
 			independent = yes
 			OR = {
+				religion = imperial
 				religion = catholic
 				religion = fraticelli
 			}
@@ -1748,6 +1749,7 @@ decisions = {
 			OR = {
 				religion = catholic
 				religion = fraticelli
+				religion = imperial
 			}
 			NOT = { has_landed_title = e_byzantium }
 		}
