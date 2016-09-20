@@ -284,7 +284,6 @@ character_event = {
 			religion = priscillianism
 			religion = valentinianism
 			religion = orthodox
-			religion = miaphysite
 			religion = monothelite
 			religion = iconoclast
 			religion = nestorian
@@ -351,39 +350,6 @@ character_event = {
 		d_pentarch_alexandria = { unsafe_destroy_landed_title = THIS }
 	}
 }
-
-# Alexandria Reformed (Miaphysite)
-character_event = {
-	id = SCHISM.9
-	desc = OK
-	picture = GFX_evt_bishop_byzantine
-
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_landed_title = d_miaphysite
-		d_pentarch_alexandria = {
-			holder_scope = {
-				AND = {
-					religion = miaphysite
-					NOT = { has_landed_title = d_miaphysite }
-				}
-			}
-		}
-	}
-
-	immediate = {
-		name = OK
-		top_liege = { save_event_target_as = root_liege }
-		d_pentarch_alexandria = { grant_title = ROOT }
-		b_alexandria = { grant_title = ROOT }
-		d_miaphysite = {
-			set_defacto_liege = event_target:root_liege
-		}
-	}
-}
-
 
 ## Patriarchate of Antioch
 
