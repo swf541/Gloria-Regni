@@ -24,7 +24,7 @@ character_event = {
 	immediate = {
 		if = {
 			limit = {
-				culture_group = byzantine_group
+				culture_group = byzantine
 				NOT = { location = { region = world_middle_east } }
 			}
 			add_trait = byzantine_rite
@@ -89,7 +89,7 @@ character_event = {
 					culture = scottish
 					culture = pictish
 					location = { region = custom_ambrosia }
-					culture_group = byzantine_group
+					culture_group = byzantine
 				}
 			}
 			add_trait = roman_rite
