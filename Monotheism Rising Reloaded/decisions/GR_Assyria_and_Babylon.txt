@@ -1,0 +1,37 @@
+decisions ={
+	restore_neoassyria = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = neoassyria_restored }
+			culture = assyrian
+		}
+		allow = {
+			has_landed_title = k_syria
+			has_landed_title = k_mesopotamia
+			prestige = 3000
+			completely_controls = d_aleppo
+			completely_controls = d_antioch
+			completely_controls = d_damascus
+			completely_controls = d_syria
+			completely_controls = d_tripoli
+			completely_controls = d_baghdad
+			completely_controls = d_basra
+			completely_controls = d_jazira
+			completely_controls = d_kermanshah
+			completely_controls = d_mosul
+			completely_controls = d_tigris
+		}
+		effect = {
+			set_global_flag = neoassyria_restored
+			narrative_event = { id = assyria.1 tooltip = EVTTOOLTIPassyria.1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
