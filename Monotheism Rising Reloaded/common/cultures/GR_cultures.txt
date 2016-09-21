@@ -470,6 +470,44 @@ caucasian = {
 
 		modifier = default_culture_modifier
 	}
+
+	aghbanian = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.5 0.2 0.5 }
+
+		male_names = {
+			Abas Abul Abuset Aghbugha Aneroghogis Aratan Arches Armayel Asay Aswagen Atrnerseh_Atrnerseh Awag Bab Baguran Bakur Benjamin Bndoy Dawit_David Eghisha_Elisha Enibay Esuaghen 
+			Gadvshnasp Germanosan Ghazar Grigor_Gregory Grigoris_Gregory Haykaz Ishxananun Javanshir_Javanshir Juankoy Juanshir_Javanshir Kiwrike_Kiurike Mamkan Mankik Marut Matte_Matthew Merhawan Mihr 
+			Mirdazat Mirhavan Mirhorik Movses_Moses Mutsik Nerseh Patrik_Patrick Peroz_Peroz Pillipe_Phillip Rahat Rostom_Rustam Sahak Sanatruk Sargis_Sergius Satoy Shahnshah_Shahanshah 
+			Shama Shat Shergir Sheroy Shuphaghishoy Smbat_Smbat Spandarat Sparakos Stepannos_Stephen Tiran Tirazd Trdat Urnayr Uxtanes Vachagan Vache Vagharshak Vahan Vahram Vanakan 
+			Varaz-Grigor Varaz-Peroz Varaz-Trdat Varazman Varazoy Vard Vardan_Vartan Vaxtank_Vakhtang Viro Viroy Vrtanes Vstam Xochkorik Xosken Xosrov_Khosrow Xurs Yakob_Jacob Yawchagan 
+			Yeremia Yezut-Xosrov Yovhannes_John Yovnatan_Johnathan Yovxan_John Yusik Zakaria
+		}
+		female_names = {
+			Aghavni Alitz_Alice Almasd Anahid Anna_Anna Anoush Aprsamik Arda Arevig Arin Baydzar Berjanoush Berjouhi Dalita Datevig Eliz_Eloise Gadar Gayane Gorandoukht Goriduxt Hasmig 
+			Heghine Houri Hranoush Hripsime Hripsimeh Keghanoush Keran Khorishah Kohar Latavri Leyli Lousin Mara Margarid_Margaret Maria_Maria Mariyam Meghranoush Nane Nazani Ovsanna 
+			Pounig Razmouhi Rita Satenik_Satenik Seta Shoushanig Shushik Siran Sirvart Srpouhi Taguhi_Takouhi Tamar Vardanuhi Vartanoush Vartouhi Vosgi Xnchik Xosrovanush Yeva 
+			Zabel_Elizabeth Zmroukhd
+		}
+		
+		founder_name_dynasties = yes
+		
+		modifier = default_culture_modifier
+	}
+	awaral = { # Awaral or Ma'arulal
+		graphical_cultures = { byzantinegfx }
+		color = { 0.6 0.3 0.8 }
+
+		male_names = {
+			Acsád Adony Ajtony Apor Becse Berény Bese Bod Bogát Bojta Bors Bot Botond Botos Buda Bulcsu Bánk Bátur Béla Bókony Bökény Csaba Csanád Csege Cseka Décse Décso Elmér Elod Ete Ezelek Falicsi Farkas Forkos Gyeicsa Gyejcsa Gyeücsa Gyécso Hetény Hollós Huba Hódos Jutocsa Jutos Kadocsa Kaplony Kartal Karád Katapán Kecsen Keled Kerecse Kerecsen Ketel Keve Kond Kortol Kuppány Kurszán Kál Kölpény Küzsdég Levedi Levente Livünti Lél Makó Mike Mikán Miske Móg Nyárád Obus Ond Pozsony Szabolcs Szecsod Szerénd Szolnok Szoárd Súr Taksony Tarcal Tarkacsu Tas Tasi Teveli Tormacsu Turda Töhötöm Uros Vajk Vata Vál Zolta Zoltán Zombor Zsolt Zsombor Ákus Álmus Árpád Ócsád Öden Örkény Örkönd Özséb
+		}
+		female_names = {
+			Ajnácska Ajándék Arany Arika Barót Bogárd Bolda Buga Bíbur Csente Cseperka Csepke Csikó Csillag Csuda Delin Déva Emese Emoke Enéh Fehéra Gilvád Gyöngy Hajna Havadi Hete Hitvánd Jóleán Karold Kecse Krabocsa Köncse Lelle Lente Mag Manga Mikolt Nyesta Piriska Rázdi Réka Sarolt Somocska Szecsoke Szépa Sáfély Virág Áldáska Örsi Öte
+		}
+		
+		modifier = default_culture_modifier
+		}
 }
 
 
@@ -529,7 +567,7 @@ postbabylonian = {
         modifier = default_culture_modifier
     }
 	aramean = {
-		graphical_culture = muslimgfx
+		graphical_cultures = { byzantinegfx }
 		
 		color = { 0.7 0.15 0.33 }
 		
@@ -545,6 +583,64 @@ postbabylonian = {
 			Tam Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Hanina_Hannah Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tab Tabby_Tabitha 
 			Tabitha Tadea Thomasa Zeta Zeita Talya Taliah Talia Sima Sava Sabah Saba Raz Nura Meiriona Adva Alya Anena Anina Chayuta Duvsha Hayuta_Chayuta Hina 
 			Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna
+		}
+
+		modifier = default_culture_modifier
+	}
+	melkite = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.75 0.25 0.17 }
+		
+		male_names = {
+			Aaron_Aaron Baruch Joshua_Joshua Judah_Judah Solomon_Solomon Elijah_Elijah Levi Obadiah_Obadiah Moses_Moses Maani Mani Abdu Abgar Abraham_Abraham Amru Aram Aryu Bakru Bar-Abbâ_Barabbas Bar-Navâ_Barnabas Bar-Tôlmay_Bartholomew Bar-Yêšû Bar-Šabbâ_Barsabbas Bnê-ra'mâ_Boanerges Daniel_Daniel Ezad Fradhasht 
+			Gabriel Hairân_Herod Izates Ma'nu Maz'ur Monobaz Nasor Odainath_Odaenathus Paqor Sahru Semsoun_Samson Tabyâ Tômâ_Thomas Wahballath_Vallabathus Ya'il Yalur Yochanan_John Yohannon_John Yônâ_Jonah Zakkai
+			Abahu Achan Adlai Avda Azai Caiphas Cephus_Peter Chozai Clopas Diklah_Dikla Foma Ilit Lasizo Lebbaeus Macabee Nahor_Nahir Petrus Raziel_Raphael Saba Sami Shai Shammai Tabai
+			Tadd Taddeus Tadeo Tadeusz Tavi Tavish Thaddeus Thomas Todos Tomas_Thomas Tomasz Toomas Zerika Abba Addai Allah Avahu Avina Bustan Cephas_Peter Chadlai Chuma Hozai Kelaya
+			Lazaros Maadai Maccabee_Macabee Niv Petros Rachim Saad Samal Shafer Shamir Tab Taddeo Tadeu Talmai Tamasine Tavares Tavis Thad Thadeus Tiv Toma Tomasso Toms Yanai
+			Phokas Philippos_Philip Eusebios Alexandros_Alexander Alexios_Alexis Anastasios_Anastasius Adrianos_Adrian Gregoras_Gregory Symeon_Simon Zacharias Zenon Tryphon
+			Hypatios Markos_Marcus Manuel Dionysios_Dionysus Sebastianos_Sebastian Romanos_Roman Ioustinianos_Justinian Theophanes Ioulianos_Julian  Antonios_Antonius Niphon
+			Anicius Constantius_Constantius Gracchus Gratian Herculius_Heracles Jovian Publius Probus Leontius_Leontius Flavianus Felix Belisarius_Belisarius Cassius Valerius_Valerius
+			Valerian Vespasian Petronius Philip_Philip Quintus Nepotian Honorius Constantine_Constantine Valentinian Octavius Julius Gallienus Diocletian Flavianus Arcadius
+		}
+		female_names = {
+			Anina Bat-Zabbai_Zenobia Chanina Tabeitha Diklah_Dikla Hasna Ketina Magdala Mariam Martha Morta Nura Saba Samantha Samiah Samiyah Samya Tabetha
+			Tam Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Hanina_Hannah Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tab Tabby_Tabitha 
+			Tabitha Tadea Thomasa Zeta Zeita Talya Taliah Talia Sima Sava Sabah Saba Raz Nura Meiriona Adva Alya Anena Anina Chayuta Duvsha Hayuta_Chayuta Hina 
+			Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna Miriam_Maria Maria Haritha Layla Nafisa Esther_Esther Aziza
+			Adriane_Adriana Agathe_Agatha Stephania_Stephania Theochariste Theodosia_Theodosia Pavlina_Paulina Helene_Helen Parthena Alexeia Petronia_Petronia
+			Hypatia Markia_Marcia Eirene_Irene Anna_Anna Konstantine_Constantina Barbara Parthena Margarita_Margaret Damiane Pavlina_Paulina Thomais Ioustina_Justina
+			Cornelia Julia_Julia Justa Titiana Valeria_Valeria Silvia Victoria Paula_Paula Flacilla Domnina Justiniana Livia Galeria Hadriana_Adriana Crispina Honoria
+			Sabina Aurelia Serena Marina Lucilla Caecilia Clementia Claudia_Claudia Placidia Faustina Ulpia Pulcheria_Pulcheria Petronia_Petronia Paulina_Paulina
+		}
+
+		modifier = default_culture_modifier
+	}
+	maronite = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.3 0.55 0.78 }
+		
+		male_names = {
+			Aaron_Aaron Baruch Joshua_Joshua Judah_Judah Solomon_Solomon Elijah_Elijah Levi Obadiah_Obadiah Moses_Moses Maani Mani Abdu Abgar Abraham_Abraham Amru Aram Aryu Bakru Bar-Abbâ_Barabbas Bar-Navâ_Barnabas Bar-Tôlmay_Bartholomew Bar-Yêšû Bar-Šabbâ_Barsabbas Bnê-ra'mâ_Boanerges Daniel_Daniel Ezad Fradhasht 
+			Gabriel Hairân_Herod Izates Ma'nu Maz'ur Monobaz Nasor Odainath_Odaenathus Paqor Sahru Semsoun_Samson Tabyâ Tômâ_Thomas Wahballath_Vallabathus Ya'il Yalur Yochanan_John Yohannon_John Yônâ_Jonah Zakkai
+			Abahu Achan Adlai Avda Azai Caiphas Cephus_Peter Chozai Clopas Diklah_Dikla Foma Ilit Lasizo Lebbaeus Macabee Nahor_Nahir Petrus Raziel_Raphael Saba Sami Shai Shammai Tabai
+			Tadd Taddeus Tadeo Tadeusz Tavi Tavish Thaddeus Thomas Todos Tomas_Thomas Tomasz Toomas Zerika Abba Addai Allah Avahu Avina Bustan Cephas_Peter Chadlai Chuma Hozai Kelaya
+			Lazaros Maadai Maccabee_Macabee Niv Petros Rachim Saad Samal Shafer Shamir Tab Taddeo Tadeu Talmai Tamasine Tavares Tavis Thad Thadeus Tiv Toma Tomasso Toms Yanai
+			Phokas Philippos_Philip Eusebios Alexandros_Alexander Alexios_Alexis Anastasios_Anastasius Adrianos_Adrian Gregoras_Gregory Symeon_Simon Zacharias Zenon Tryphon
+			Hypatios Markos_Marcus Manuel Dionysios_Dionysus Sebastianos_Sebastian Romanos_Roman Ioustinianos_Justinian Theophanes Ioulianos_Julian  Antonios_Antonius Niphon
+			Zahir Taimur Sirhan Sharaf Isa Fayiz Bashar Shujah Jibril Sadiq Hasan_Hasan Idris Shaiban Yusuf_Joseph Akin Nizam Hafiz Faruk Abdullah_Abdullah Mukhtar Nasr Hasan_Hasan
+			Sabineh_Sabinus Ruphus_Rufus Sewereh_Severus Abdosir Domineh_Dominus Emil_Aemilius Regineh_Reginus Hamon Serwi_Servius Antonineh_Anthony Diyodoreh_Diodorus Yuli_Julius
+			Yulyaneh_Julianus Mari_Marius Gayi_Caius Luqi_Lucius Phawsteh_Faustus Pheliks_Felix Makrineh_Macrinus Maksineh_Maximus 
+		}
+		female_names = {
+			Anina Bat-Zabbai_Zenobia Chanina Tabeitha Diklah_Dikla Hasna Ketina Magdala Mariam Martha Morta Nura Saba Samantha Samiah Samiyah Samya Tabetha Damiane
+			Tam Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tab Tabby_Tabitha Barbara     
+			Tabitha Tadea Thomasa Zeta Zeita Talya Taliah Talia Sima Sava Sabah Saba Raz Nura Meiriona Adva Alya Anena Anina Chayuta Duvsha Hayuta_Chayuta Hina Konstantine_Constantina
+			Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna Miriam_Maria Maria Haritha Layla Nafisa Esther_Esther Aziza Margarita_Margaret
+			Adriane_Adriana Agathe_Agatha Stephania_Stephania Theodosia_Theodosia Pavlina_Paulina Helene_Helen Alexeia Hypatia Markia_Marcia Eirene_Irene Anna_Anna 
+			Kamala Taliba Zaynab Nafisa Sholah Shararah Rashida Nyawela Maryam Jahaira Faghira Asiya Lala Kinah Huma Hafsa Farida Rajiya Mina Thana Zuhayra Mahdokht
+			Izabel_Elizabeth Lamiya_Lamia Elissa Awgusta_Augusta Hannah Yuhliya_Julia Shiba Domina Astarte Pheliqula_Felicula Antoniya_Antonia Arisha Septy Yasha
 		}
 
 		modifier = default_culture_modifier

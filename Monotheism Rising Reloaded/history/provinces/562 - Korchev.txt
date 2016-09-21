@@ -6,10 +6,10 @@ title = c_korchev
 # Settlements
 max_settlements = 4
 
-b_bosphoros = tribal
+b_bosphoros = castle
 b_cherco = temple
 
-#b_panticapea = city
+b_panticapea = city
 
 
 #b_chystopillia = castle
@@ -19,11 +19,11 @@ b_cherco = temple
 #b_zavitne = castle
 
 # Misc
-culture = greek
+culture = ostrogothic
 religion = imperial
 
 # History
-
+790.1.1 = { culture = greek }
 1054.7.6 = { religion = orthodox }
 
 #1214.1.1 = { culture = greek } 

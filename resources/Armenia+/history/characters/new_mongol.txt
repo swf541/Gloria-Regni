@@ -1,0 +1,55 @@
+2000005000  = { #Fictional
+	name="Munglig"
+	dynasty=2000003003
+	religion="tengri_pagan"
+	culture="mongol"
+	1211.1.1={
+		birth=yes
+	}
+	1276.1.1={
+		death=yes
+	}
+}
+2000005001  = { #Fictional
+	name="Shirgegetu"
+	dynasty=2000003003
+	religion="tengri_pagan"
+	culture="mongol"
+	father=2000005000
+	1254.1.1={
+		birth=yes
+	}
+	1303.1.1={
+		death=yes
+	}
+}
+2000005002  = { #Fictional
+	name="Bugunutei"
+	dynasty=2000003003
+	religion="tengri_pagan"
+	culture="mongol"
+	father=2000005001
+	1289.1.1={
+		birth=yes
+	}
+	1319.1.1={
+		religion="sunni"
+	}
+	1326.1.1={
+		death=yes
+	}
+}
+2000005003  = { #Fictional
+	name="Yokhunan"
+	dynasty=2000003003
+	religion="sunni"
+	culture="mongol"
+	father=2000005002
+	1320.1.1={
+		birth=yes
+	}
+	1374.1.1={
+		death=yes
+	}
+}
+

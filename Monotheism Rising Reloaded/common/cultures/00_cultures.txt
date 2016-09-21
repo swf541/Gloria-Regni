@@ -166,7 +166,126 @@ north_germanic = {
 		seafarer = yes
 	}
 }
+east_germanic = {
+	graphical_cultures = { westerngfx }
+	
+	visigothic = {
+		graphical_cultures = { norsegfx }
+		
+		color = { 0.7 0.7 0.1 }
+		
+		male_names = {
+			Achila Agil Agila Airmanareiks Alhareiks Alaric Alatheus Amal Amala Amalaric Ansila Aoric Ardo Ariaric Athal Athala Athanagild Athanaric
+			Athavulf Audawulfs Augis Beremud Botheric Braulio Bulgar Chindasuinth Chintila Cniva Ediulf Egica Eisarn Ermanaric Ervig Euric
+			Eurich Friderich Frithugairns Fritigern Gainas Gaisumunths Gesimund Gisalic Gundemar Hachiulf Harjareiks Hermangild Hermenegild
+			Hermenigild Hildebad Hilderith Hildireths Himnerith Hisarnis Hunamunths Hunawilja Hunimund Hunuil Ildefonsus Isidore Iudila Julian
+			Leander Leovigild Leuvigild Liuva Nidada Oduulf Ovida Recared Reccared Reccesuinth_Recceswinth Receswinth_Recceswinth Respa Retemer Ricimer Roderic_Roderick Safrac
+			Sarus Segeric Sisbert Sisebut Sisenand Suinthila Suniefred Thaurismunths Theoderic_Theodoric Theodorid Theudisclus_Theudisclus Thiudigisclus_Theudisclus Thiudis
+			Thorismud Thorismund Thuruar Totila Tulga Valaravans Valia Vandalarius Veduc Vinitharius Vultuulf Walahrabns Walja Wamba
+			Wandilaharjis Winithaharjis Witteric Wittiza
+		}
+		female_names = {
+			Amalaberga Adosinda Aeliuba Agnitruedia Ailo Alabera Alatrudia Alduara Aliverta Amalaberga Amalafrida Amalasuentha Andeleova Anilo
+			Ansobrida Ansoi Aragunti Argilo Aruildi Astragundia Astroildi Badosinda Barili Berildi Brunhilda Cenabrida Cenosinda
+			Cenusinda Cixilo Daildi Egilo Eillo Eilo Eldoara Eldontia Elduara Elo Emilo Erelieva Ermenbe Ermenberga_Ermenberga
+			Ermesenda_Ermesinda Ermesinda_Ermesinda Ermosinda_Ermensinda Ermoygia Evermud Fachilo Fakilo Faquilo Florentina Fredenanda Fredesinda Frogildi Froili Froiliuba
+			Froilo Fruilo Galswinth Geloyrae Genusinda Giloira Giluira Gisclauara Gisclaura Gissilauara Gogildi Gogina Goina Goisuintha
+			Gomesinda Goncina Gondilo Gonza Gudigeva Gudoegia Guduigia Guinildi Guinilli Guncina Gunderona Gundigeua Gunthswinth
+			Guntildi Heldoara Hermesendis Hildoara Honosinda Icka Ildoie Illoigia Isilo Ispasanda Leouildi Leovigoto Leudesinda
+			Leuvina Liuilo Mathesuentha Modildi Ninilo Nunilo Nunilu Nunnilo Penetrudia Quinigia Quinilli Ragesenda Ranilo Reccesuinda
+			Recciberga Recesinda Reciberga Recoire Recosinda Regesenda Roilo Senderiga Senetrudia Sesoira Siclauara Sigesgundia Simildi
+			Sindeleoba Sindiuerga Sisegundie Siseguntia Sisiguntis Sisildi Soniefrada Spasanda Subildi Suinthiliuba Sunildi Teodilli
+			Teodogoncia Teodoriga Teodosinda Theudesinda Thiudigoto Thuresmuda Tota Trasildi Trudildi Trudilli Uadauara Ubitilde Uisflauara
+			Uistrilo Vadamerca Vilocia Zenecidarga
+		}
+		
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 80
+		mat_grf_name_chance = 0
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
 
+		modifier = default_culture_modifier
+	}
+	ostrogothic = {
+		graphical_cultures = { norsegfx }
+		
+		color = { 0.6 0.4 0.6 }
+
+		male_names = {
+			Agiulf Aisso Alaric Alatheus Alavivus Aligern Ansemund Areobindus Argebaud Agrimund Ascaric Ataulf
+			Athalric Athaloc Athanaric Ardo Anagastes Arintheus Ansila Ald Alico Aliulf Allobich Andag Andela
+			Apsical Aliulf Albis Arigern Asinar Albilas Andraias_andrew
+			Berig Batwin Beremud Berichus Bigelis Baza Bigelis Barthaulaumaiu_bartholomew
+			Cniva Chintila
+			Dicineus Dumerit Daweidis_david #sunu Daweidis, son of David
+			Eraric Ermenaric Ermenguer Euric Eutharis Erwig Eutharic Ebremud
+			Farnobius Favilac Filimer Fritigern Froya Fridamal Frumarith Filippu_philip
+			Gainas Geberic Gestiblindus Gissur Goddas Gunderic Gesalec Gensemund Gunthigis Gento Gundui Gesila
+			Gudinand Gudisal Gripas Gibal
+			Hermenegild Hildefuns Hildebad Hilderic Hundimund Hunuil Herduic Hunila
+			Isak_isaac Iakob_jacob #Both "Iakob" and "Iakobus" in varying forms are found in Ulfilas' translation
+			Iohannes_john #Matthew 9:14
+			Iosef_joseph #Matthew 27:57
+			Jordanes_jordanes
+			Leovigild Liuva Leodefrid
+			Mausona Mammo Matthaiu_matthew #Ulfilas' bible had both Maþþaiu and  Matþaiu used
+			Nanduin Neudis
+			Odovacer Odotheus Oppas Onegesius Ostrys 
+			Plintha Paitrus_peter
+			Quidila
+			Ratchis Reccared Recceswinth Rothesteus Roderic Recitach
+			Sabbas Sanila Saphrax Segga Sigisbultus Sindered Sisebut Sisenand Scottas Spinas Sisigis Scipuar
+			Seimona_simon
+			Theodehad Theodemir Theodoric_theodoric Theodulf Theudimer Thorismund Totila Tribigild Theudis 
+			Theidigisel Tulga Thuruar Triarius Theodimund Tuluin Tata Tuluin Tzalico Thoman_thomas Thaddaiu_thaddeus
+			Ulfilas Ullibos Ulias Unigis
+			Valamir Vinidarius Vithimiris Veduc Vidimer Vallovic Viliarid
+			Witigas Wereka Wamba Widin Witteric Wallia Winguric Wiligis Wiliarit Wandil Wiliaris Wisibad
+			Zerezino
+		}
+		female_names = { #woefully few feminine Gothic names are attested. "___+berga", "____+frida/freda" and "____+suintha/sinda/swintha" can be used to construct names, but they're not guaranteed to be legit.
+			Adosinda Amalaberga Amalafrida Amalasuintha Amalina Amalwara Adelgund Althilt Aurinia Avagisa Avina
+			Brunhilda Bebelina Bescela
+			Cixilo Chlodosuintha
+			Eberharda Ethelmoda
+			Fredegunda Frothsehilda Frothsegunda
+			Galswintha Gisela Gailavira Gailesvintha Garsendia Geleswintha Gelvira Gosuintha
+			Hervor Herlinda Heva Hilduara
+			Isolde Irmingarda
+			Matasuintha Marja_maria
+			Reccesuintha Reccifrida Rodelinda Ramis Radegunda Riciberga
+			Sigilda
+			Thusnelda Theodagunda Theodesuitha Theodefrida
+			Ulrike
+			Veleda Vadamerca
+		}
+		from_dynasty_prefix = "af "
+
+		male_patronym = "sunu " #previously thought it was "sunus us [name]", but Ulfilas' bible calls Jesus "sunu Daweidis", "Son of David".
+		female_patronym = "dauhtar us " #so if it's not "sunus us [name]" for sons, I'm not sure this is totally right either.
+		prefix = yes
+
+		#Does "Segga sunu Tulga af Sirmium" sound good?
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 30
+		father_name_chance = 10
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 30
+		mother_name_chance = 10
+
+		modifier = default_culture_modifier
+	}
+}
 central_germanic = {
 	graphical_cultures = { germangfx }
 
@@ -845,44 +964,6 @@ latin = {
 		pat_grm_name_chance = 60
 		mat_grm_name_chance = 15
 		mother_name_chance = 15
-	}
-	visigothic = {
-		graphical_cultures = { southerngfx }
-		
-		color = { 0.195 0.55 0.155 }
-
-		male_names = {
-			Adelfonso_Alphonse Agila Airmanagildo Alaricho Aloito Assur Athanagildo Berengario_Berengar Diaco_Diaco Fafila
-			Friedenando_Ferdinand Friednand_Ferdinand Froila_Froila Garçi_Garcia Gonçalo_Gonzalo Gundemar Guttier_Walter Johan_John Liuva Liuvericho
-			Lupo_Lupo Mauregato Monnio_Munio Nunno_Nuno Oliba Ordonno_Ordono Pelagio_Pelagius Petro_Peter Ranimiro_Ramiro Rekkaredo
-			Rodericho_Roderick Sans_Sancho Silo Suneario_Sunyer Suniefredo Theodoricho_Theodoric Veremondo_Vermudo Wifredo_Wilfred Wimarano Witiza
-
-#			Abdela_Abdullah Abdelaçiç Abdelmelic Abdeluahid Abderrabmen Abrafim Ambroz Amet_Ahmad Ayyub Çacharya
-#			Çelim Çulema Hacan Hamdan Harun Içag Mahomat_Muhammad Maruan Muça Omar
-#			Xabrit Yabya Yafar Yuçuf Yunus
-		}
-		female_names = {
-			Adelgundis Adosinda Agnes_Agnes Aragonte Argilo Ava_Eva Brunechildis Egilona Eldonza_Aldonza Elduara_Alduara
-			Elvira_Elvira Ermengardis_Ermengarde Ermenisinda_Ermesinda Flamula Fronilde_Fronilde Gaudiosa Gonterote_Gotruda Iberia Leodegundis Menenda
-			Monnia_Munia Monniadomna Onecca_Oneka Riciberga Sibilia_Sibylla Sisenanda Theodora_Theodora Urraca_Urraca Winidilda_Gunhild
-
-#			Abda Ayab Ayça Çayida Çeida Emira Isra Leyla Melica Nadia
-#			Nadira Neyla Nur Tarifa Yaçmina
-		}
-		from_dynasty_prefix = "de "
-		grammar_transform = french
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 50
-		mat_grf_name_chance = 5
-		father_name_chance = 10
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 10
-		mat_grm_name_chance = 50
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
 	}
 }
 

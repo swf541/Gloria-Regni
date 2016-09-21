@@ -6490,7 +6490,97 @@ e_byzantium = {
 				}
 			}
 		}
-	
+		d_jazira = {
+			color={ 95 180 35 }
+			color2={ 255 255 255 }
+			
+			capital = 700 # Bira
+			
+			c_bira = {
+				color={ 95 186 30 }
+				color2={ 255 255 255 }
+				
+				b_bira = {
+				}
+				b_tella = {
+				}
+				b_resaina = {
+				}
+				b_qalarebete = {
+				}
+				b_derik = {
+				}
+				b_qoser = {
+				}
+				b_samrah = {
+				}
+				b_stewr = {
+				}
+			}
+			c_al_jazira = {
+				color={ 70 160 30 }
+				color2={ 255 255 255 }
+				
+				b_hasakah = {
+				}
+				b_dayrik = {
+				}
+				b_qamishhlo = {
+				}
+				b_darbasiyah = {
+				}
+				b_teltamer = {
+				}
+				b_hamoukar = {
+				}
+				b_amuda = {
+				}
+				b_dakhiliyah = {
+				}
+			}
+			c_amida = {
+				color={ 129 166 48 }
+				color2={ 255 255 255 }
+				
+				b_kiaburc = {
+				}
+				b_amida = {
+				}
+				b_ulucamii = {
+				}
+				b_suraamede = {
+				}
+				b_mayyafarikin = {
+				}
+				b_hazretisuleymancamii = {
+				}
+				b_egil = {
+				}
+				b_idtodyolataloho = {
+				}
+			}
+			c_nisibin = {
+				color={ 133 170 52 }
+				color2={ 255 255 255 }
+				
+				b_nusaybin = {
+				}
+				b_savur = {
+				}
+				b_dairodmorhannanyo = {
+				}
+				b_kerburan = {
+				}
+				b_cizre = {
+				}
+				b_sittiradviyyemadrasa = {
+				}
+				b_dayrodmorgabriel = {
+				}
+				b_yaqobnsibnaya = {
+				}
+			}
+		}	
 		d_armenia = {
 			color={ 154 77 36 }
 			color2={ 255 255 255 }
@@ -8161,108 +8251,6 @@ e_byzantium = {
 				b_gremi = {
 				}
 				b_bodbe = {
-				}
-			}
-		}
-		d_derbent = {
-			color={ 203 76 76 }
-			color2={ 255 255 255 }
-			
-			capital = 674 # Derbent
-
-			armenian = "Aghbania"
-			georgian = "Aghbania"
-			alan = "Aghbania"
-			greek = "Albania"
-			
-			c_albania = {
-				color={ 253 176 176 }
-				color2={ 255 255 255 }
-				
-				armenian = "Aghvank"
-				georgian = "Albaneti"
-
-				b_chukhurkabala = {
-				armenian = "Kabalak"
-				georgian = "Kabala"
-				alan = "Kabala"
-				}
-				b_ganja = {
-				armenian = "Gandzak"
-				georgian = "Gandza"
-				alan = "Gandza"
-				}
-				b_shaki = {
-				armenian = "Shake"
-				georgian = "Shake"
-				alan = "Shake"
-				}
-				b_darussoltan = {
-				armenian = "Kaladasht"
-				georgian = "Kaladasht"
-				alan = "Kaladasht"
-				}
-				b_barda = {
-				armenian = "Partav"
-				georgian = "Bardavi"
-				alan = "Partavi"
-				}
-				b_emli = {
-				armenian = "Surp Yeghishe"
-				georgian = "Gish"
-				alan = "Kish"
-				}
-				b_gelersengorersen = {
-				armenian = "Kalaberd"
-				georgian = "Kalaberd"
-				alan = "Kalaberd"
-				}
-				b_kabala = {
-				armenian = "Vartashen"
-				georgian = "Vardashen"
-				alan = "Vartashen"
-				}
-			}
-			c_derbent = {
-				color={ 253 179 179 }
-				color2={ 255 255 255 }
-				
-				b_narinkala = {
-				}
-				b_derbent = {
-				}
-				b_juma = {
-				}
-				b_chikkulkan = {
-				}
-				b_kuli = {
-				}
-				b_tayus = {
-				}
-				b_humraj = {
-				}
-				b_datuna = {
-				}
-			}
-			c_semender = {
-				color={ 253 182 182 }
-				color2={ 255 255 255 }
-				
-				b_kumukh = {
-				}
-				b_semender = {
-				}
-				b_khattibaku = {
-				}
-				b_khannalkala = {
-				}
-				b_balanjar = {
-				}
-				b_urtseki = {
-				}
-				b_burgaikala = {
-				}
-				b_tarki = {
 				}
 			}
 		}
@@ -17840,7 +17828,247 @@ e_persia = {
 	}
 	
 	short_name = yes
+	
+	k_aghbania = {
+		color={ 111 24 244 }
+		color2={ 255 255 255 }
+		
+		capital = 670 # Azerbaijan
+		
+		culture = aghbanian
+				d_derbent = {
+			color={ 203 76 76 }
+			color2={ 255 255 255 }
+			
+			capital = 674 # Derbent
 
+			armenian = "Aghbania"
+			georgian = "Aghbania"
+			alan = "Aghbania"
+			greek = "Albania"
+			aghbanian = "Albania"
+			
+			c_albania = {
+				color={ 253 176 176 }
+				color2={ 255 255 255 }
+				
+				armenian = "Aghvank"
+				georgian = "Albaneti"
+				aghbanian = "Aghvank"
+
+				b_chukhurkabala = {
+				armenian = "Kabalak"
+				georgian = "Kabala"
+				alan = "Kabala"
+				aghbanian = "Kabalak"
+				}
+				b_ganja = {
+				armenian = "Gandzak"
+				georgian = "Gandza"
+				alan = "Gandza"
+				aghbanian = "Gandzak"
+				}
+				b_shaki = {
+				armenian = "Shake"
+				georgian = "Shake"
+				alan = "Shake"
+				aghbanian = "Shake"
+				}
+				b_darussoltan = {
+				armenian = "Kaladasht"
+				georgian = "Kaladasht"
+				alan = "Kaladasht"
+				aghbanian = "Kaladasht"
+				}
+				b_barda = {
+				armenian = "Partav"
+				georgian = "Bardavi"
+				alan = "Partavi"
+				aghbanian = "Partav"
+				}
+				b_emli = {
+				armenian = "Surp Yeghishe"
+				georgian = "Gish"
+				alan = "Kish"
+				aghbanian = "Surp Yeghishe"
+				}
+				b_gelersengorersen = {
+				armenian = "Kalaberd"
+				georgian = "Kalaberd"
+				alan = "Kalaberd"
+				aghbanian = "Kalaberd"
+				}
+				b_kabala = {
+				armenian = "Vartashen"
+				georgian = "Vardashen"
+				alan = "Vartashen"
+				aghbanian = "Vartashen"
+				}
+			}
+			c_derbent = {
+				color={ 253 179 179 }
+				color2={ 255 255 255 }
+				
+				b_narinkala = {
+				}
+				b_derbent = {
+				}
+				b_juma = {
+				}
+				b_chikkulkan = {
+				}
+				b_kuli = {
+				}
+				b_tayus = {
+				}
+				b_humraj = {
+				}
+				b_datuna = {
+				}
+			}
+			c_semender = {
+				color={ 253 182 182 }
+				color2={ 255 255 255 }
+				
+				b_kumukh = {
+				}
+				b_semender = {
+				}
+				b_khattibaku = {
+				}
+				b_khannalkala = {
+				}
+				b_balanjar = {
+				}
+				b_urtseki = {
+				}
+				b_burgaikala = {
+				}
+				b_tarki = {
+				}
+			}
+		}
+		d_azerbaijan = {
+			color={ 160 232 20 }
+			color2={ 255 255 255 }
+			
+			capital = 670 # Azerbaijan
+			
+			culture = aghbanian
+			
+			c_shirvan = {
+				color={ 162 234 22 }
+				color2={ 255 255 255 }
+				
+				b_baku = {
+				}
+				b_lankaran = {
+				}
+				b_absheron = {
+				}
+				b_shirvan = {
+				}
+				b_shakhriyar = {
+				} 
+				b_salyan = {
+				}
+				b_khizirzinda = {
+				}
+				b_altiagay = {
+				}
+			}
+			c_azerbaijan = {
+				color={ 164 236 24 }
+				color2={ 255 255 255 }
+				
+				b_urmiah = {
+				}
+				b_kapalak = {
+				}
+				b_takhtesuleiman = {
+				}
+				b_bastam = {
+				}
+				b_maku = {
+				} 
+				b_kalaberd = {
+				}
+				b_chaldoran = {
+				}
+				b_deglane = {
+				}
+			}
+			c_suenik = {
+				color={ 166 238 26 }
+				color2={ 255 255 255 }
+				
+				turkish = "Kafan"
+				persian = "Kafan"
+				armenian = "Syunik"
+				aghbanian = "Syunik"
+				
+				b_ghapan = {
+				}
+				b_areni = {
+				}
+				b_noravank = {
+				}
+				b_vorotnavank = {
+				}
+				b_tatev = {
+				}
+				b_prochabert = {
+				}
+				b_gandzassar = {
+				}
+				b_goris = {
+				}
+			}
+			c_shemakha = {
+				color={ 168 240 28 }
+				color2={ 255 255 255 }
+				
+				b_ahemakha = {
+				}
+				b_quba = {
+				}
+				b_shikhlar = {
+				}
+				b_khachmaz = {
+				}
+				b_chiraggala = {
+				}
+				b_anig = {
+				}
+				b_maraza = {
+				}
+				b_khil = {
+				}
+			}
+			c_tabriz = {
+				color={ 106 151 51 }
+				color2={ 255 255 255 }
+				
+				b_babak = {
+				}
+				b_tabriz = {
+				}
+				b_maragheh = {
+				}
+				b_ahar = {
+				}
+				b_zahhak = {
+				}
+				b_sarab = {
+				}
+				b_shabestar = {
+				}
+				b_miyaneh = {
+				}
+			}
+		}
+
+	}
 	k_persia = {
 		color={ 151 224 24 }
 		color2={ 255 255 255 }
@@ -17853,6 +18081,97 @@ e_persia = {
 		zoroastrian_group = 1000 # Crusade target weight
 		zun_pagan_reformed = 500 # Crusade target weight
 		
+		d_kermanshah = { # Luristan
+			color={ 55 144 95 }
+			color2={ 255 255 255 }
+			
+			capital = 657 # Luristan
+			
+			c_kirkuk = {
+				color={ 90 160 105 }
+				color2={ 255 255 255 }
+				
+				b_kirkuk = {
+				}
+				b_daquq = {
+				}
+				b_ranya = {
+				}
+				b_halabja = {
+				}
+				b_makhmur = {
+				}
+				b_dukan = {
+				}
+				b_chuartan = {
+				}
+				b_kifri = {
+				}
+			}			
+			c_qazwin = {
+				color={ 55 144 90 }
+				color2={ 255 255 255 }
+				
+				b_lambsar = {
+				}
+				b_qazwin = {
+				}
+				b_ahmadabad = {
+				}
+				b_avaj = {
+				}
+				b_abeyek = {
+				}
+				b_takestan = {
+				}
+				b_alvand = {
+				}
+				b_buinzahra = {
+				}
+			}
+			c_kermanshah = {
+				color={ 75 114 90 }
+				color2={ 255 255 255 }
+				
+				b_javanroud = {
+				}
+				b_kermanshah = {
+				}
+				b_hulwan = {
+				}
+				b_paveh = {
+				}
+				b_mahalkufa = {
+				}
+				b_kangavar = {
+				}
+				b_kuzaran = {
+				}
+				b_ravansar = {
+				}
+			}
+			c_luristan = {
+				color={ 75 164 110 }
+				color2={ 255 255 255 }
+				
+				b_dezbar = {
+				}
+				b_khorramabad = {
+				}
+				b_borujerd = {
+				}
+				b_dorood = {
+				}
+				b_aligoodarz = {
+				}
+				b_koohdasht = {
+				}
+				b_poledokhtar = {
+				}
+				b_alashtar = {
+				}
+			}
+		}		
 		d_khorasan = {
 			color={ 99 150 9 }
 			color2={ 255 255 255 }
@@ -18016,27 +18335,6 @@ e_persia = {
 				b_garmsar = {
 				}
 				b_varamin = {
-				}
-			}
-			c_dailam = {
-				color={ 72 178 109 }
-				color2={ 255 255 255 }
-				
-				b_dailam = {
-				}
-				b_soltaniyeh = {
-				}
-				b_gheydar = {
-				}
-				b_zanjan = {
-				}
-				b_abhar = {
-				}
-				b_tarom = {
-				}
-				b_mahneshan = {
-				}
-				b_alamut = {
 				}
 			}
 			c_gurgan = {
@@ -18441,6 +18739,27 @@ e_persia = {
 			
 			capital = 666 # Gilan
 			
+			c_dailam = {
+				color={ 72 178 109 }
+				color2={ 255 255 255 }
+				
+				b_dailam = {
+				}
+				b_soltaniyeh = {
+				}
+				b_gheydar = {
+				}
+				b_zanjan = {
+				}
+				b_abhar = {
+				}
+				b_tarom = {
+				}
+				b_mahneshan = {
+				}
+				b_alamut = {
+				}
+			}			
 			c_oromieh = {
 				color={ 86 143 61 }
 				color2={ 255 255 255 }
@@ -18483,124 +18802,6 @@ e_persia = {
 				b_masouleh = {
 				}
 				b_masal = {
-				}
-			}
-			c_tabriz = {
-				color={ 106 151 51 }
-				color2={ 255 255 255 }
-				
-				b_babak = {
-				}
-				b_tabriz = {
-				}
-				b_maragheh = {
-				}
-				b_ahar = {
-				}
-				b_zahhak = {
-				}
-				b_sarab = {
-				}
-				b_shabestar = {
-				}
-				b_miyaneh = {
-				}
-			}
-		}
-		d_azerbaijan = {
-			color={ 160 232 20 }
-			color2={ 255 255 255 }
-			
-			capital = 670 # Azerbaijan
-			
-			culture = persian
-			
-			c_shirvan = {
-				color={ 162 234 22 }
-				color2={ 255 255 255 }
-				
-				b_baku = {
-				}
-				b_lankaran = {
-				}
-				b_absheron = {
-				}
-				b_shirvan = {
-				}
-				b_shakhriyar = {
-				} 
-				b_salyan = {
-				}
-				b_khizirzinda = {
-				}
-				b_altiagay = {
-				}
-			}
-			c_azerbaijan = {
-				color={ 164 236 24 }
-				color2={ 255 255 255 }
-				
-				b_urmiah = {
-				}
-				b_kapalak = {
-				}
-				b_takhtesuleiman = {
-				}
-				b_bastam = {
-				}
-				b_maku = {
-				} 
-				b_kalaberd = {
-				}
-				b_chaldoran = {
-				}
-				b_deglane = {
-				}
-			}
-			c_suenik = {
-				color={ 166 238 26 }
-				color2={ 255 255 255 }
-				
-				turkish = "Kafan"
-				persian = "Kafan"
-				armenian = "Syunik"
-				
-				b_ghapan = {
-				}
-				b_areni = {
-				}
-				b_noravank = {
-				}
-				b_vorotnavank = {
-				}
-				b_tatev = {
-				}
-				b_prochabert = {
-				}
-				b_gandzassar = {
-				}
-				b_goris = {
-				}
-			}
-			c_shemakha = {
-				color={ 168 240 28 }
-				color2={ 255 255 255 }
-				
-				b_ahemakha = {
-				}
-				b_quba = {
-				}
-				b_shikhlar = {
-				}
-				b_khachmaz = {
-				}
-				b_chiraggala = {
-				}
-				b_anig = {
-				}
-				b_maraza = {
-				}
-				b_khil = {
 				}
 			}
 		}
@@ -19338,76 +19539,6 @@ e_persia = {
 		zun_pagan_reformed = 300 # Crusade target weight
 		jewish_group = 500 # Crusade target weight
 		
-		d_kermanshah = { # Luristan
-			color={ 55 144 95 }
-			color2={ 255 255 255 }
-			
-			capital = 657 # Luristan
-			
-			c_qazwin = {
-				color={ 55 144 90 }
-				color2={ 255 255 255 }
-				
-				b_lambsar = {
-				}
-				b_qazwin = {
-				}
-				b_ahmadabad = {
-				}
-				b_avaj = {
-				}
-				b_abeyek = {
-				}
-				b_takestan = {
-				}
-				b_alvand = {
-				}
-				b_buinzahra = {
-				}
-			}
-			c_kermanshah = {
-				color={ 75 114 90 }
-				color2={ 255 255 255 }
-				
-				b_javanroud = {
-				}
-				b_kermanshah = {
-				}
-				b_hulwan = {
-				}
-				b_paveh = {
-				}
-				b_mahalkufa = {
-				}
-				b_kangavar = {
-				}
-				b_kuzaran = {
-				}
-				b_ravansar = {
-				}
-			}
-			c_luristan = {
-				color={ 75 164 110 }
-				color2={ 255 255 255 }
-				
-				b_dezbar = {
-				}
-				b_khorramabad = {
-				}
-				b_borujerd = {
-				}
-				b_dorood = {
-				}
-				b_aligoodarz = {
-				}
-				b_koohdasht = {
-				}
-				b_poledokhtar = {
-				}
-				b_alashtar = {
-				}
-			}
-		}
 		d_tigris = {
 			color={ 113 150 32 }
 			color2={ 255 255 255 }
@@ -19742,27 +19873,6 @@ e_persia = {
 				b_faris = {
 				}
 			}
-			c_kirkuk = {
-				color={ 90 160 105 }
-				color2={ 255 255 255 }
-				
-				b_kirkuk = {
-				}
-				b_daquq = {
-				}
-				b_ranya = {
-				}
-				b_halabja = {
-				}
-				b_makhmur = {
-				}
-				b_dukan = {
-				}
-				b_chuartan = {
-				}
-				b_kifri = {
-				}
-			}
 		}
 		d_mosul = {
 			color={ 11 205 70 }
@@ -19847,97 +19957,6 @@ e_persia = {
 				}
 			}
 			
-		}
-		d_jazira = {
-			color={ 95 180 35 }
-			color2={ 255 255 255 }
-			
-			capital = 700 # Bira
-			
-			c_bira = {
-				color={ 95 186 30 }
-				color2={ 255 255 255 }
-				
-				b_bira = {
-				}
-				b_tella = {
-				}
-				b_resaina = {
-				}
-				b_qalarebete = {
-				}
-				b_derik = {
-				}
-				b_qoser = {
-				}
-				b_samrah = {
-				}
-				b_stewr = {
-				}
-			}
-			c_al_jazira = {
-				color={ 70 160 30 }
-				color2={ 255 255 255 }
-				
-				b_hasakah = {
-				}
-				b_dayrik = {
-				}
-				b_qamishhlo = {
-				}
-				b_darbasiyah = {
-				}
-				b_teltamer = {
-				}
-				b_hamoukar = {
-				}
-				b_amuda = {
-				}
-				b_dakhiliyah = {
-				}
-			}
-			c_amida = {
-				color={ 129 166 48 }
-				color2={ 255 255 255 }
-				
-				b_kiaburc = {
-				}
-				b_amida = {
-				}
-				b_ulucamii = {
-				}
-				b_suraamede = {
-				}
-				b_mayyafarikin = {
-				}
-				b_hazretisuleymancamii = {
-				}
-				b_egil = {
-				}
-				b_idtodyolataloho = {
-				}
-			}
-			c_nisibin = {
-				color={ 133 170 52 }
-				color2={ 255 255 255 }
-				
-				b_nusaybin = {
-				}
-				b_savur = {
-				}
-				b_dairodmorhannanyo = {
-				}
-				b_kerburan = {
-				}
-				b_cizre = {
-				}
-				b_sittiradviyyemadrasa = {
-				}
-				b_dayrodmorgabriel = {
-				}
-				b_yaqobnsibnaya = {
-				}
-			}
 		}
 	}
 } # e_persia

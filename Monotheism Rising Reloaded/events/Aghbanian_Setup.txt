@@ -1,0 +1,30 @@
+namespace = AGH
+character_event = {
+	id = AGH.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			culture = armenian
+			capital_scope = { culture = aghbanian }
+        }     
+
+        immediate = {
+			culture = aghbanian
+			any_realm_character = {
+				limit = { 
+					culture = armenian 
+					location = { culture = aghbanian }
+				}
+				
+					culture = aghbanian
+				}
+		
+			}
+	
+	option = {
+		name = ok
+	}
+}
