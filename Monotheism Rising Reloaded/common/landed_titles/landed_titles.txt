@@ -19329,6 +19329,10 @@ e_persia = {
 		
 		culture = levantine_arabic
 		
+		assyrian = Assyria
+		mandaic = Babylon
+		aramean = Babylon
+		
 		muslim = 400 # Crusade target weight
 		zoroastrian_group = 500 # Crusade target weight
 		zun_pagan_reformed = 300 # Crusade target weight
@@ -19617,6 +19621,10 @@ e_persia = {
 			
 			zun_pagan_reformed = 200 # Crusade target weight
 			
+			assyrian = Babylon
+			mandaic = Babylon
+			aramean = Babylon
+			
 			c_karbala = {
 				color={ 16 110 12 }
 				color2={ 255 255 255 }
@@ -19647,9 +19655,16 @@ e_persia = {
 				holy_site = zun_pagan
 				holy_site = zun_pagan_reformed
 				
+				assyrian = Babylon
+				mandaic = Babylon
+				aramean = Babylon
+				
 				b_baqubah = {
 				}
 				b_bagdad = {
+					assyrian = Babylon
+					mandaic = Babylon
+					aramean = Babylon
 				}
 				b_hillah = {
 				}
@@ -19755,13 +19770,24 @@ e_persia = {
 			
 			capital = 697 # Mosul
 			
+			assyrian = Nineveh
+			mandaic = Nineveh
+			aramean = Nineveh			
+		
 			c_mosul = {
 				color={ 9 236 89 }
 				color2={ 255 255 255 }
 				
 				holy_site = yazidi
 				
+				assyrian = Nineveh
+				mandaic = Nineveh
+				aramean = Nineveh
+				
 				b_mosul = {
+					assyrian = Nineveh
+					mandaic = Nineveh
+					aramean = Nineveh
 				}
 				b_bakhdida = {
 				}

@@ -18,6 +18,13 @@ narrative_event = {
 				}
 			}
 		}
+		k_syria = {
+			de_jure_liege = e_neoassyria
+		}
+		k_mesopotamia = {
+			de_jure_liege = e_neoassyria
+		}
+				
 		e_neoassyria = {
 			grant_title = ROOT
 			make_primary_title = yes
@@ -46,5 +53,60 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPTAassyria.2
+	}
+}
+
+narrative_event = {
+	id = assyria.3
+	title = EVTNAMEassyria.3
+	desc = EVTDESCassyria.3
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAassyria.3
+		hidden_tooltip = {
+			primary_title = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = e_neobabylon
+				}
+			}
+		}
+		k_syria = {
+			de_jure_liege = e_neobabylon
+		}
+		k_mesopotamia = {
+			de_jure_liege = e_neobabylon
+		}
+		e_neobabylon = {
+			grant_title = ROOT
+			make_primary_title = yes
+		}
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = assyria.4 }
+			}
+		}
+		give_nickname = nick_the_glorious
+	}
+}
+
+# Informed about Restoration of Assyria
+narrative_event = {
+	id = assyria.4
+	title = EVTNAMEassyria.4
+	desc = EVTDESCassyria.4
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAassyria.4
 	}
 }

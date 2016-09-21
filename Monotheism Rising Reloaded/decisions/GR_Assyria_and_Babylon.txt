@@ -4,11 +4,12 @@ decisions ={
 		is_high_prio = yes
 		
 		potential = {
+			culture = assyrian		
+			NOT = { religion_group = muslim }
 			is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
 			NOT = { has_global_flag = neoassyria_restored }
-			culture = assyrian
 		}
 		allow = {
 			has_landed_title = k_syria
@@ -29,6 +30,37 @@ decisions ={
 		effect = {
 			set_global_flag = neoassyria_restored
 			narrative_event = { id = assyria.1 tooltip = EVTTOOLTIPassyria.1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	restore_neobabylon = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { 
+				culture = aramean
+				culture = mandaic
+			}		
+			NOT = { religion_group = muslim }
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = neobabylon_restored }
+		}
+		allow = {
+			has_landed_title = k_syria
+			has_landed_title = k_mesopotamia
+			prestige = 3000
+			completely_controls = k_syria
+			completely_controls = k_mesopotamia
+			completely_controls = d_arabia
+		}
+		effect = {
+			set_global_flag = neobabylon_restored
+			narrative_event = { id = assyria.3 tooltip = EVTTOOLTIPassyria.3 }
 		}
 		ai_will_do = {
 			factor = 1
