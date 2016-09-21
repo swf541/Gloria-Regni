@@ -889,6 +889,68 @@ latin = {
 byzantine = {
 	graphical_cultures =  { easterngfx }
 	
+	indo_greek = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.1 0.3 0.8 }
+
+		male_names = {
+			Aegos Agathocles Amyntas Antialcidas Antigonos Antimachus Apollodotus Apollophanes Archebios Ariarathes Artemidoros Strato Akakios Alexandros_Alexander Alexios_Alexis Anthemios Anthimos Antialkidas Antiochos Apollonios Basileios_Basil Demetrios_Demetrius Diodotus Diogenes Diomedes Dionysios_Dionysus Dorotheos Eucratides Eirenaios Epander Eudoxios Eustratios Eugenios Euphemios Eusebios Eustathios_Eustace Euthydemus Hektorios Helias Heliokles Heraklios_Heracles Hermaeus Himerios Hippolytos_Hippolytos Hippostratos Hypatios Kallinikos Kallistos Komitas Kosmas_Cosmas Lysias Maximos Menander Megistos Meletios Neophytos Nicias Niketas Nikodemos_Nicodemus Orestes Pankratios Pantoleon Peukolaos Philippos_Philip Philotheos Plato Polykarpos Polyxenios Philoxenus Porphyrios Pyrros Rajuvula Serapion Telephos Theophilos Thraso Zenobios Zenon Zoilos Perdiccas_Perdiccas Craterus_Craterus Antipater_Antipater Lysimachus_Lysimachus Peucestas_Peucestas Peithon_Peithon Leonnatus_Leonnatus Neoptolemus_Neoptolemus Nikomedes Poly                        perchon_Polyperchon Eumenes_Eumenes Cassander_Cassander Meleager_Meleager Arrhidaeus_Arrhidaeus Laomedon_Laomedon Philotas_Philotas
+		}
+		female_names = {
+			Adriana Agathe_Agatha Agathokleia Agne_Agnes Alexandra Alexeia Anthe Anthousa Antipatra Antonina Apollonia Athanasia Barbara Basileia Basilissa
+			Chrysogone Damiane Demetra Dionysia Dorothea_Dorothy Aigidia Eirene_Irene Elaiodora Eudokia_Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne_Euphrosyne Eupraxia Eusebia Eustathia Evanthia Garyphallia Helene_Helen Hypatia Kale Nikarete Nonna Parthena Philippa_Philippa Phyllis Rhodanthe Sibylla_Sibylla
+			Simonis Sophia_Sophia Thekla Xene Zenobia 
+		}
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}
+	
+	gothic = {
+		graphical_cultures = { norsegfx }
+		
+		color = { 0.4 0.0 0.6 }
+
+		male_names = {
+			Adalfuns Adalrik Alarik Alhreiks Alhwaharyis Alrek Amalareiks Andagis Angantyr Ansila Arareiks Ardarik Ardiarik Aspar Athalagild Athalareiks Athalarik Athalok Athanagild Athanareiks Athanarik Audoaker Auswinthus Avagis 
+			Badwila Beremud Berig Botheric Childefonsus Chindaswintha Dag Ediulf Egika Eirik Elemund Ermanarik Ermingeld Eurik Eutharik Evermud Evorik Fridarik Frideger Frithigern Geberik Giselrik Gizur Gunderik 
+			Haduswinth Hairuwulf Harfidel Hathus Hermanarik Hermanagild Hildefons Hunvil Ildefons Kindaswinth Kunimund Leovigild Liuva Rekimir Rikimar Roderik Sigerik Sigibert Swinthila 
+			Tautila Theodahad Theodemir Theoderik Thiudafred Thiudareiks Thurisind Thurismud Thurismund Thuruar Thurisvinthus Tius Ulfilas Veremund Veterik Ulfila Wingurik
+		}
+		female_names = {
+			Adosinda Amalaberga Amalafrida Amalasuntha Amalasvintha Amalina Amalwara Amelina Avagisa Avina Brenhilda Brunichild Chlodoswintha Egilona Fredegonda Gailavira Garsendis Gaileswintha Goswintha
+			Hermesind Hervor Heva Hilduara Ingund Liuvigoto Mataswintha Radegonda Rikiberga Theodora Theodosia
+		}
+
+		from_dynasty_prefix = "af "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+
+		modifier = default_culture_modifier
+	}
+	
 	romanoarmenian = {
 		graphical_cultures = { byzantinegfx }
 		
@@ -1209,6 +1271,61 @@ celtic = {
 		mother_name_chance = 10
 		
 		tribal_name = "TRIBAL_NAME_PROV_CLAN"
+	}
+	britonic = {
+		graphical_cultures = { celticgfx }
+		
+		color = { 0.1 0.9 0.9 }
+
+		male_names = {
+			Adda Aeddan Alan_Alan Alcun_Alwyn Aliotus Alisander_Alexander Alwyn Amlawdd Anaraut_Anarawd Anarawd Aneirin_Aneurin Aneurin Annun Araut_Arod 
+			Ardun Arod Artgal Arthfael Arthuir_Arthur Arthuis Arthuis_Artorius Arthur_Arthur Arthus_Artorius Arthwr_Arthur Arthws_Artorius Arthwyr_Arthur 
+			Arthwys_Artorius Asa Asaph Awst_Augustus Awstin_Augustine Bangar Bedwyr Beli Bleddyn Branwaladr_Brendan Brochfael_Brogmaglus Brochmael_Brogmaglus 
+			Brut_Brutus Brwt_Brutus Brwyn Brychan Brân Cadell_Catellus Cadeyrn Cadfael Cadfan_Gideon Cadoc_Cadog Cadog Cadraut_Cadrod Cadvael_Cadfael Cadvan_Gideon 
+			Cadwal Cadwaladr Cadwallon_Catualon Cadwgan Cai_Gaius Caid Cain Calchynydd Caradauc_Caradog Caradog Casnar Caswallaun_Catualon Caswallon_Catualon Cawdaf 
+			Cawrdaf_Cawdaf Cedic_Cedig Cedig Cedwyn Ceneu Ceredic_Ceredig Ceredig Cinuit Clinoch Clydno Clydog Coel Coledauc_Coledog Cubricht Cunedda_Kenneth Custeint_Constantius 
+			Custennin_Constantine Cwric_Cyriacus Cynan_Cynan Cynddelw Cynddylan Cyndeyrn_Kentigern Cynfarch Cynfawr Cynfeddw Cynfelyn Cynfyn Cyngar_Cyngar Cyngen Cynwal Cynwallon 
+			Cynwyd Cynyr Dafydd_David Deheuwant Deheweint_Deheuwant Deiniol Deiniol_Daniel Derfyl Dewi Dingat_Duncan Diwg_Dwywg Dogfael Drystan_Tristan Dubric_Dyfrig Dumnagual_Donald 
+			Dunod Dyfnwal Dyfnwal_Donald Dyngad_Duncan Dynod_Donatus Dywel Edern_Eternus Ednowain_Ednywain Ednyfed_Edmund Ednywain Edwyn_Edwin Einion_Enoch Elfin Elidir_Eleutherius Elis 
+			Elisedd Eliudd Elud Elystan Elystan_Aethelstan Elyw_Alexius Emrys_Ambrosius Emyr_Himerius Eochaid Erb_Urban Erbin_Urban Erclwv_Heracles Ernwin Erp_Urban Eudaf_Octavius Eudav_Octavius 
+			Eugein Eugein_Eugene Ewyas Ffilip_Philip Ffrioc_Ffriog Ffriog Ffwdwr Fragan Fychan Fyrsil Gamon Garbon_Germanus Garbonian_Germanianus Geraint_Gerontius Gerallt_Gerald Gereint_Gerontius 
+			Glywis_Claudius Glywys_Claudius Goronwy Goscubrycht Gosmungo Gospatric Greidal Grifiud_Griffith Gronw Gruffydd Gureit Gurgant_Gwrgant Guriat_Gwriad Gurmael_Gwrfael Gwalchafed_Gareth Gwalchafet_Gareth 
+			Gwalchmai_Gawain Gwallauc_Walter Gwallog Gwallog_Walter Gwen Gwenddoleu Gwenwynwyn Gwerstan_Werestan Gwerthefyr_Vortimer Gwertheyrn_Vortigern Gwidir_Victor Gwidyr Gwilym_William Gwrast Gwrast_Gwrast
+			Gwrfael Gwrgant Gwriad Gwrin Gwyar Gwynllyw Hyfaidd_Hubert Hywel Iago_Jacob Iddon_Ethan Idwal Idwallon Iestyn_Justinianus Ieuan_John Ifor_Ivar Ifwr Io Iolo_Edward Iorwerth_Edward Ithel Iudgual_Idwal 
+			Iudguallon_Idwallon Llaennog Lludd Llyr Llywarch Llywelyn Llywernauc_Llywernog Llywernog Macsen_Maximus Madauc_Madog Madog Mael Maelauc_Maelog Maelcwn_Malcolm Maelgwn_Malcolm Maelog March_Marcus Maredudd 
+			Mascwyt Masgwid Math_Matthew Medraut_Mordred Meilir_Meilyr Meilyr Meirchion Meirchion_Marcianus Meirion_Marianus Merchwyn_Marcianus Merfyn Meuric_Maurice Meurig_Maurice Mor_Marius Morcant_Morgan Morfyn Morgan 
+			Neithon Neithon_Nathan Nudd Ohan Oswallt_Oswald Owain Owain_Eugene Oweyn_Eugene Pabo Padarn_Paternus Padern_Paternus Padrig_Patrick Pandoff Pascent_Pasgen Pasgen Patric_Patrick Paul_Paul Pawl_Paul Pedr_Peter 
+			Peredur_Peredyr Peredyr Petr_Peter Pryderi Publig Pwydion Pwyll Pyr Rhainallt_Reginald Rhicert_Richard Rhirid Rhiwallon Rhobert_Robert Rhodri_Roderick Rhudauc_Rhydog Rhudderch_Roderick Rhufon_Roman Rhun 
+			Rhydderch_Roderick Rhydog Rhygyfarch Rhys Ridauc_Rhydog Riderc Riderch_Roderick Rigadaf_Riothamus Rotri Sandde_Sanctus Sandef_Sanctus Sawyl Sawyl_Samuel Seferus Seiriol_Cyril Seisyll_Cecil Selyf_Solomon 
+			Selyfan_Solomon Senllyt Senyllt Sion Siwauna Steffen_Stephen Sulien Sulien_Julian Taliesin Taudar Tegfan Tegid_Tacticus Tegonwy Tegwyd Tegyth_Tacticus Teilo Teudebur Tewdos_Theodosius Tewdric_Theodoric 
+			Tewdrig_Theodoric Tewdwr_Theodore Tomos_Thomas Tothail Trahaearn Tudwal_Theodowalaunus Tudwallon_Theodowalaunus Tutagual Tutgual_Theodowalaunus Tutguallon_Theodowalaunus Tydy Tyfodedd Typipion Tysilio 
+			Urien Uthyr_Victor wMar Ynyr Ynyr_Honorius Ysfael
+		}
+		female_names = {
+			Addiena Aelwyd Aeronwen Aeronwy Afrella Alys Angharad Annes_Anna Annest Annwyl Anowed Arddyn Arianrhod Blodwen Bronwen Catrin_Catherine Ceindrech_Ceindrych Ceindrych Ceridwen Cerie Cerys Cicely Clarisant 
+			Cristin_Christina Danhadlwen Delyth Denis Denyw Dwynwen Dwywai Dyddgu Efa Eferddyl Effros_Euphrasia Eiliwedd Elaine Elen Eleri Elinion Elinor_Eleanor Ellyn Enid Enynny Essyllt_Isolde Eugeina_Eugenia Euronwy 
+			Ffelis Ffion Fflur Ffraid Glynys Gwawl Gwen Gwenasedd Gwenfrewy Gwenhwyfach Gwenhwyfar Gwenllian Gwenwyn Gwerfyl Gwladys Gwladys_Claudia Gwledyr Gwrygan_Gwrygon Gwrygon Haer Hawis Heledd Hellawes Heulwen Hunydd 
+			Hywela Ilud Isabel_Elisabeth Iseult Languoreth Llear_Clara Llecci Lleigy Lleuca Lleuca_Lucia Lleucu_Lucia Lowry Mabyn Maches Madrun Maelrys Mair Mali Mallt Marared Marchell Margred_Margaret Marwyn_Marwenna 
+			Mawd_Matilda Melisant_Melisende Morfydd Morganna Morien Morwyn_Morwenna Myfanwy Mynfrewy Nest_Agnes Nesta_Agnes Nyfain Olwen Owena_Eugenia Oweyna_Eugenia Prawst Ragnell Rhiainfelt_Regina Rhiannon Rhonwen 
+			Riemmelth_Regina Sannant Sara_Sarah Senena Sibyl_Sibylla Sioned_Joan Siwan Siân_Joan Susanna_Susana Tangwystl Thaney Ysbail_Elizabeth Ystradwel
+		}
+
+		from_dynasty_prefix = "de "
+		male_patronym = "ap "
+		female_patronym = "ferch "
+		prefix = yes
+
+		modifier = default_culture_modifier
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 80
+		mat_grf_name_chance = 0
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
 	}
 	welsh = {
 		graphical_cultures = { celticgfx }
@@ -1604,6 +1721,34 @@ altaic = {
 		allow_looting = yes
 
 		modifier = default_culture_modifier
+	}
+	hunnic = { #
+		graphical_cultures = { turkishgfx easterngfx }
+		secondary_event_pictures = bedouin_arabic
+		
+		color = { 0.4 0.4 0.0 }
+		
+		male_names = {
+			Almish Alzek Anzi Apskhih Araslan_Arslan Asparukh Balamber_Balambar Bars Bataul Batbayan Batoya Batulia Bayan Belkermak Bezmer Boyan Bulger Buzan Chepa Chinialush Dengizikh 
+			Dizeng Dometa Dristar Drong Dukum Ellak Elemag Ernakh Eskhakh Goleda Gostun Guar Hudbad Iani Irnek Isbul Islivan Isperikh Ispor Kälaç Kano Karan Karaton
+			Kardam Kharaton Khinialon Khudbard Kordil Kormesiy Kormisosh Kotrag Krovat Krum Kuber Kubrat Kurt Kutrigur Kuvrat Labertam Magotin Malamir Mugel Odolgan Okhsi 
+			Okhsun Okors Omurtag Onegavon Organ Organa Ornag Oshi Ostro Pagan Pakhtiyar_Bakhtiar Paväl Praksa Rassate Rugila Sabin Sandil Sandilkh Sarkhan Sartäç Savin Sevar Shilki 
+			Sondoke Tähtaman Tarasiy Taridin Tatra Telec Telerig Tervel Timër_Timur Timëreç Timërpälat Tingiz Tiradin Tokhtaman Toktu Tsog Tsul Tuk Umor Uturgur Vakrim Venda Vetam Vinekh Yani 
+			Yavantey Yençepi Yerneslu Yeçtirek Zabergan Zenti Tukiy Aydar Irkhan Batir Akhad Alburia Alypbi Askungur Attila Aybat Balamber Belk Bleda Bu-Timer Bu-Urgan Chelbir Dengizich Djilka 
+			Djurash Ellec Ermak Gazan Gostun Hernach Khinialon Kurbat Kutrigur Labertam Octar Rugila Sandlikh Shambat Sinnion Sulabi Tat-Ugek Tat-Utyak Tatra Tingiz Tuldila Uldin Uturgur Vund Zabergan
+		}
+		female_names = {
+			Çeçek_Çiçek Çeçeppi Çeçki Çeçtilet Çilen Çiltanesi Özgul Özlem Akgul Asli Ayasun Ayten Bozçin Dilek Esin Gulçeçek_Gulçiçek Gulay Gunduz Gundes Gunes Ikalay Ilkay Ipek Ipekel Irge 
+			Karacik Kätyarikka Këlnissa Këlyamal Lärkka Lyukha Mala Maturkka Mutlu Naça Patiyer Paykëlti Peksen Puyantay Samur Sarantay Sarä Sarica Sarikel 
+			Sati Savaçka Savkëlti Savtilek Savilay_Sevilay Savintik_Sevindik Shurkka Sibel Sirin Sirma Songul Tähtani Tekçe Tura Umay Usunbike Yasar Yeldem Yildiz Yartilek 
+			Ildico N'Kara Al-Alta Alan Altani Borte Botokhui Bulughan Chabi Chagur Chakha Checheyigen Chotan Doregene Doquz Ebegei Gurbesu Hogelun Holuikhan Ibakha Khadagan Khogaghchin Khojin Khorijin Khugurchin
+			Khulan Mandukhai Mongoljin Nomolun Oghul Orbei Sokhatai Sorkhaghatani Tekine Temulun Töregene Yesugun Yesui Hoelun
+		}
+		allow_looting = yes
+
+		modifier = default_culture_modifier
+
+		founder_named_dynasties = yes
 	}
 	pecheneg = { # Oghuz Turkish
 		graphical_cultures = { turkishgfx }
@@ -2671,6 +2816,49 @@ iranian = {
 		prefix = yes
 
 		modifier = default_culture_modifier
+	}
+	bactrian = { #Bactrians
+		graphical_cultures = { persiangfx }
+
+		color = { 0.05 0.15 0.05 }
+
+		male_names = {
+			Ahuti Amihraman Andez Apama Ardokhsho Artabazu Artana Artasura Artosauka Awishka Bag Bagmareg Barzand Bazeshk Bazodeo Borzomihr Borzomiur Boser Bozan Chinakhratu Daro Dartafarnah Dathshmareg Devraz Etat Eyoman Fanz Freistarab Goboziko Goya Grumbat 
+			Gunavarman Hashtuma Huspasina Huvishka Jouishka Kalan Kama Kanarang Kandik Kanishka Katana Kav Kaw Khalas Khanchil Kharana Khirgoman Khoade Khwasraw Kidara Koshan Kozgashka Kozgashki Kungas Kur Loikhobosar Mareg Mihraman Mithravakhsha Nevak Ninda Nobekht 
+			Nokonzok Nukunzuk Oaksh Oesh Oeshki Ormuzd Oromozd Orshvadata Parka Peroz Piroz Purlang-zin Pusk Ratbel Sang Shabur Shafar Shao Shizogarg Shodila Spitamanah Sukhrak Tarmad Tirikhshara Ukhshebovak Ukhshyabavaka Vakhshufrita Vakhshuvarta Varhran Vitana Vohumanah Wagra Wagwir Warahan Washava Winamarg Yaskul Yezdgird Zhunlad Zmik
+		}
+
+		female_names = {
+			Ab Agalg Alow Alushal Anend Arduksh Begeys Dukhtanosh Farowesp Firg Firyid Fordams Frogerd Harug Khuhz Lahun Lahyid Logda Lrohominan Ma Man Mapresey Muul Nana Nawshal Nestokhot Predyig Purogat Puun Rokhshana Umma Wadobargan Wusugd Zbayana Zhindag
+		}
+
+		from_dynasty_prefix = "auz "
+
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+	}
+	scythian = {
+		graphical_cultures = { persiangfx }
+  
+		color = { 0.7 0.1 0.5 }
+		
+		male_names = {
+			Adraspus_Adraspus Aelis_Aelis Ailios_Ailios Ajuna Akrosander_Akrosander Anacharsis_Anacharsis Arapeithes_Arapeithes Arsakes Aspavarman Atheas_Atheas Azes_Azes Azilises_Azilises Bagamira Bagareva Bagavharna 
+			Bhadayasa Bhimajuna Bhratadarman Bhumaka Charaspes_Charaspes Chastana Damajadasri Damasena Datarvharna Datayola Ghsamotika Hagamasha Hagana Hajatria Hvaramira Idanthyrsus_Idanthyrsus Indravarman Indravasu 
+			Jayadaman Jivadaman Kanites_Kanites Kharahostes_Kharahostes Kharapallana Kozana Koziya Kusulaka Liaka Madyes_Madyes Mamvadi Miratkhma Miravhara Moga_Moga Nahapana Omarg_Omarg Palacus_Palacus Patika 
+			Protothyes_Protothyes Rajuvula Rudradaman Rudrasena Samghadaman Sariakos_Sariakos Sasan Saulius_Saulius Scyles_Scyles Scylurus_Scylurus Simhasena Skunxa_Skunxa Sodasa Spalagadames_Spalagadames 
+			Spalahores_Spalahores Spalirises_Spalirises Vanaspara Vijayamitra Vijayasena Viradaman Vispavarman Visvasena Visvasimha Vonones_Vonones Yasodaman Yolamira Yolatakhma Zeionises_Zeionises
+		}
+		
+		female_names = {
+			Amestris_Amestris Amytis_Amytis Anzaza_Anzaza Artazostre_Artazostre Artystone_Artystone Atossa_Atossa Barsine_Barsine Damaspia_Damaspia Mandane_Mandane Parmys_Parmys Parysatis_Parysatis Phaedymia_Phaedymia 
+			Rinu_Rinu Rukhana Shishirena Stateira_Stateira Uttara Vashti_Vashti Vasumitra
+		}
+		
+		from_dynasty_prefix = "of "
+  
+		modifier = settled_iranian_culture_modifier
 	}
 }
 

@@ -245,3 +245,16 @@ e_neobabylon = {
 		always = no
 	}
 }
+
+e_carthage = {
+	color={ 250 184 31 }
+		
+	capital = 817 # Carthage
+	
+	culture = neo-punic
+		
+	allow = {
+		culture = neo-punic
+	   	completely_controls = k_africa
+	}
+}

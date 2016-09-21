@@ -1,0 +1,27 @@
+decisions = {
+
+	# Reform Carthaginian Empire
+	reform_carthaginian_empire = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+                        culture = neo_punic
+		        NOT = { has_landed_title = e_carthage }
+                 }
+		
+                 allow = {
+		 	completely_controls = k_africa
+                }
+		
+		 effect = {
+                 	hidden_tooltip = {
+				e_carthage = {
+					grant_title = ROOT
+				}
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

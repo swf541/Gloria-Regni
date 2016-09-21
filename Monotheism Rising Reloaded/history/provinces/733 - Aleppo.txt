@@ -16,10 +16,11 @@ b_sarmin = castle
 #b_qusayr = castle
 
 # Misc
-culture = levantine_arabic
+culture = aramean
 religion = miaphysite
 
 # History
+1000.1.1 = { culture = levantine_arabic }
 1000.1.1 = { religion = sunni }
 
 1110.1.1 = { b_lerminet = castle } 

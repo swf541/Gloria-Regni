@@ -482,7 +482,7 @@ postbabylonian = {
 	assyrian = { 
 		graphical_cultures = { muslimgfx } #arabicgfx
 		
-		color = { 0.4 0.3 0.6 }
+		color = { 0.9 0.2 0.15 }
 
 		male_names = {
 			Aba_Abba Abahu_Abahu Abaya_Abaya Abaye_Abaya Abayi_Abaya Abba_Abba Abdima 'Abdisho' Abgar Abimalek Abraham_Abraham Abris Abrisius_Abrisius Acacius Achan Achina Addai_Thaddeus Adlai Aggai Ahai_Ahha Ahadabui Ahha_Ahha "Akha d'abuh'" Akh-es-Samain Aqib-Alaha Asa_Asa Ashur_Asher Avahu Avda_Abahu Avdima_Avdima Avdimi_Avdima Avina Avira Azai
@@ -511,7 +511,7 @@ postbabylonian = {
    mandaic = {
         graphical_cultures = { byzantinegfx }
        
-        color = { 0.4 0.6 0.1 }
+        color = { 0.44 0.63 0.18 }
 
         male_names = {
             Apra Anus_Enos Anusag Anusal Anusta Anusaprit Anusprit Bihram Bhrm Bihran Bhrmduk Br Hiia Haui Hwai Gadana Gdii Hibil Hebil Hurmizdukt Hurmiz Hurmis Iuhana_John Nu_Noah Ramuja Remai Sabur Sitluia Siluia Sitil Sum_Shem Zakia Zakuia Ziua Ziiul
@@ -531,7 +531,7 @@ postbabylonian = {
 	aramean = {
 		graphical_culture = muslimgfx
 		
-		color = { 0.7 0.7 0.3 }
+		color = { 0.7 0.15 0.33 }
 		
 		male_names = {
 			Abdu Abgar Abraham_Abraham Amru Aram Aryu Bakru Bar-Abbâ_Barabbas Bar-Navâ_Barnabas Bar-Tôlmay_Bartholomew Bar-Yêšû Bar-Šabbâ_Barsabbas Bnê-ra'mâ_Boanerges Daniel_Daniel Ezad Fradhasht 
@@ -547,6 +547,33 @@ postbabylonian = {
 			Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna
 		}
 
+		modifier = default_culture_modifier
+	}
+	neo-punic = {
+		graphical_cultures = { andalusiangfx }
+		
+		color = { 0.5 0.4 0.7 }
+
+		male_names = {
+			Abdashmon Abdenna Abdeshmun Abdimilki Abdmilkot Abdmelqart Abdosir Abdshed Abdshesm Abdusmun Abdzaphon Aderbaal Admagon Adonibaal Ahiram Ahimilk Ahotmilk Akbar Alideh_Alidus Amikeh_Amicus Annobaal Anobaal Antonineh_Anthony Aqhat Ashdabor Ashtartyaton Ashtzaph 
+			Awgusteh_Augustus Awrehli_Aurelius Ayliyaneh_Aelianus Azrubaal Baalfadi Baalhanno Baalshillek Baalyaton Baraket Binmilqart Bodashtart Bodeshmun Bodinelqart Bodmelqart Bodtanit Boqqi_Boccius Bostar Danel Diyodoreh_Diodorus 
+			Domineh_Dominus Donateh_Donatus Emil_Aemilius Eshmunamash Eshmunazar Eshmunkhilletz Eshmunshalokh Gayi_Caius Germanikus_Germanicus Germelqart Hamilket Hamon Hannibaal Hanno Haytili_Haetilius Hegrili_Egrilius 
+			Hiram Kanmi Khamelqart Khilletzbaal Khimilkât Kêkili_Caecilius Luqi_Lucius Magon Maharbaal Makrineh_Macrinus Maksineh_Maximus Mari_Marius Marqeh_Mark Marqi_Marcius Marseh_Marsus Melqartpilles Menahilim Merquri_Mercurius 
+			Methaqseh_Metaxus Milkherem Milkpilles Milkyaton Mithonbaal Peregrineh_Peregrinus Phawsteh_Faustus Phlawi_Flavius Pheliks_Felix Philosir Pimyaton Plawteh_Plautus Pompay_Pompeius Primeh_Primus Prophigeh_Profugus Qandideh_Candidus Qommodeh_Commodus 
+			Qwinteh_Quintus Regineh_Reginus Rib-Addi Ruphus_Rufus Sabineh_Sabinus Sakarbaal Serwi_Servius Sewereh_Severus Sexsteh_Sextus Shafat Tabnit Tanubda Tiberi_Tiberius Wespasiyaneh_Vespasian Yaroah Yehawwielon Yuli_Julius Yulyaneh_Julianus Yutpan Zimrida
+		}
+		female_names = {
+			Abdosir Abdtanit Agripina_Agrippina Amatashtart Amatbaal Amma Ammobaal Amotmilqart Antoniya_Antonia Arashtibaal Arisha Arishat Arishot Arshut Ashdanot Ashdonbaal Ashmonrabti Astarte Awgusta_Augusta Azibal Barkitbaal 
+			Batnoam Birkana Birkanda Bisha Bitnima Demna Domina Elissa Emeshmun Hannah Imashmon Imashtart Izabel_Elizabeth Lamiya_Lamia Mitunbaal Muttunbaal Pawly Pheliqula_Felicula Quarta Saphanbaal Septy Shiba Sisa Ummashtart Yasha Yuhliya_Julia Zibqet
+		}
+		
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+
+		male_patronym = "bin "
+		female_patronym = "bitt "
+		prefix = yes
+		
 		modifier = default_culture_modifier
 	}
 }

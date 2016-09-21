@@ -305,7 +305,7 @@ narrative_event = {
 }
 
 
-# Gallic province converts to French
+# Galloroman province converts to French
 character_event = {
 	id = PA.100278
 	desc = EVTDESCPA.100278
@@ -314,7 +314,7 @@ character_event = {
         trigger = {
 		NOT = { year = 1000 }
                 any_realm_province = {
-                        culture = gallic
+                        culture = galloroman
                 }
                 NOT = { has_global_flag = gallia }
 	}
@@ -333,7 +333,7 @@ character_event = {
 		name = OPTPA_100278
 		random_realm_province = {
                 	limit = {
-				culture = gallic
+				culture = galloroman
 			}
                         culture = frankish
                 }
