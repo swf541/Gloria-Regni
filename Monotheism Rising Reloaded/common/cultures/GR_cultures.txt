@@ -508,4 +508,45 @@ postbabylonian = {
 
 		modifier = default_culture_modifier
 	}
+   mandaic = {
+        graphical_cultures = { byzantinegfx }
+       
+        color = { 0.4 0.6 0.1 }
+
+        male_names = {
+            Apra Anus_Enos Anusag Anusal Anusta Anusaprit Anusprit Bihram Bhrm Bihran Bhrmduk Br Hiia Haui Hwai Gadana Gdii Hibil Hebil Hurmizdukt Hurmiz Hurmis Iuhana_John Nu_Noah Ramuja Remai Sabur Sitluia Siluia Sitil Sum_Shem Zakia Zakuia Ziua Ziiul
+        }
+        female_names = {
+            Anat Anut Bibia Bbai Dinarta Dinartia Dukt Dukta Nbh Nuba Anus Azad Anuba Eqaimat Handa Hndu Mahnus Mhanus Mamuia Mamai Mami Miriai_Mary Qiumta Zadia Zad Zaduia
+        }
+
+        from_dynasty_prefix = "of"
+       
+        male_patronym = "Bar "
+        female_patronym = "Barta "
+        prefix = yes
+
+        modifier = default_culture_modifier
+    }
+	aramean = {
+		graphical_culture = muslimgfx
+		
+		color = { 0.7 0.7 0.3 }
+		
+		male_names = {
+			Abdu Abgar Abraham_Abraham Amru Aram Aryu Bakru Bar-Abbâ_Barabbas Bar-Navâ_Barnabas Bar-Tôlmay_Bartholomew Bar-Yêšû Bar-Šabbâ_Barsabbas Bnê-ra'mâ_Boanerges Daniel_Daniel Ezad Fradhasht 
+			Gabriel Hairân_Herod Izates Ma'nu Maz'ur Monobaz Nasor Odainath_Odaenathus Paqor Sahru Semsoun_Samson Tabyâ Tômâ_Thomas Wahballath_Vallabathus Ya'il Yalur Yochanan_John Yohannon_John Yônâ_Jonah Zakkai
+			Abahu Achan Adlai Avda Azai Caiphas Cephus_Peter Chozai Clopas Diklah_Dikla Foma Ilit Lasizo Lebbaeus Macabee Nahor_Nahir Petrus Raziel_Raphael Saba Sami Shai Shammai Tabai
+			Tadd Taddeus Tadeo Tadeusz Tavi Tavish Thaddeus Thomas Todos Tomas_Thomas Tomasz Toomas Zerika Abba Addai Allah Avahu Avina Bustan Cephas_Peter Chadlai Chuma Hozai Kelaya
+			Lazaros Maadai Maccabee_Macabee Niv Petros Rachim Saad Samal Shafer Shamir Tab Taddeo Tadeu Talmai Tamasine Tavares Tavis Thad Thadeus Tiv Toma Tomasso Toms Yanai
+		}
+		female_names = {
+			Anina Bat-Zabbai_Zenobia Chanina Tabeitha Diklah_Dikla Hasna Ketina Magdala Mariam Martha Morta Nura Saba Samantha Samiah Samiyah Samya Tabetha
+			Tam Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Hanina_Hannah Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tab Tabby_Tabitha 
+			Tabitha Tadea Thomasa Zeta Zeita Talya Taliah Talia Sima Sava Sabah Saba Raz Nura Meiriona Adva Alya Anena Anina Chayuta Duvsha Hayuta_Chayuta Hina 
+			Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna
+		}
+
+		modifier = default_culture_modifier
+	}
 }
