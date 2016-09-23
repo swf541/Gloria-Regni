@@ -22,7 +22,7 @@ narrative_event = {
 		NOT = { trait = iconoclast_trait }
 		NOT = { has_character_flag = acheiropoieta }
 		any_demesne_province = {
-			religion = orthodox
+			religion = imperial
 		}
 	}
 	mean_time_to_happen = {
@@ -35,7 +35,7 @@ narrative_event = {
 		add_trait = iconoclast_trait
 		random_demesne_province = {
 			limit = {
-				religion = orthodox 
+				religion = imperial 
 			}
 			add_province_modifier = {
 					name = iconoclast_blowback
@@ -73,7 +73,7 @@ character_event = {
 		name = EVTOPTA_HRP_6001
 		add_trait = possessed
 		piety = -200
-		religion = orthodox
+		religion = imperial
 	}
 	option = {
 		name = EVTOPTB_HRP_6001
@@ -90,7 +90,7 @@ narrative_event = {
 
 	trigger = {
 		has_landed_title = e_byzantium
-		religion = orthodox
+		religion = imperial
 		NOT = { has_global_flag = constatine_return }
 	}
 	is_triggered_only = yes
@@ -155,7 +155,7 @@ character_event = {
                         factor = 3
                         modifier = {
                                 factor = 0.25
-                                NOT = { religion = orthodox }
+                                NOT = { religion = imperial }
                         }
                 }
         }

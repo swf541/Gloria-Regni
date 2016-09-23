@@ -18,6 +18,7 @@ character_event = {
         }     
 
         immediate = {
+			set_government_type = roman_government
 			any_realm_character = {
 				limit = { government = feudal_government }
 					set_government_type = roman_government

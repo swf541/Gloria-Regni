@@ -1,0 +1,35 @@
+# Scripted triggers should have _trigger suffix
+
+
+# The Bureaucratic government type is used for the WRE and ERE
+# trigger has character scope
+roman_government_trigger = {
+	OR = {
+		has_law = imperial_administration 
+		has_law = ze_administration_laws_2 
+		liege = { has_law = imperial_administration }
+		liege = { has_law = ze_administration_laws_2 }
+		top_liege = { has_law = imperial_administration }
+		top_liege = { has_law = ze_administration_laws_2 }
+	}
+	#OR = {
+	#	liege = { has_law = imperial_administration }
+	#	top_liege = { has_law = imperial_administration }
+	#	has_law = imperial_administration
+	#}
+	OR = {
+		top_liege = { holder_scope = { culture_group = byzantine } }
+		top_liege = { holder_scope = { culture_group = postroman } }
+		OR = {
+			AND = {
+				independent = yes
+				culture_group = byzantine
+			}
+			AND = {
+				independent = yes
+				culture_group = postroman
+			}				
+		}
+		
+	}	
+}
