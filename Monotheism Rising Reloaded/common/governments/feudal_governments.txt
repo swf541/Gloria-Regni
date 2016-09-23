@@ -20,22 +20,12 @@ feudal_governments = {
 			NAND = {
 				controls_religion = yes
 				NOT = { religion_group = muslim }
-				NOT = { religion = norse_pagan_reformed }
-				NOT = { religion = hellenic_pagan_reformed }
+				NOT = {	primary_title = { is_landless_type_title = no }	}
 			}
-			NOR = {
-				has_landed_title = e_byzantium
-				has_landed_title = e_roman_empire
-				has_landed_title = e_wre
-				has_landed_title = e_trebizond
-				has_landed_title = e_nicaea
-				has_landed_title = k_epirus
-			}
-			#NOT = {	top_liege = { has_landed_title = e_wre } }
-			#NOT = {	top_liege = { has_landed_title = e_roman_empire } }
-			#NOT = {	top_liege = { has_landed_title = e_byzantium } }
-			#NOT = { liege = { government = roman_government } }
 			NOT = {	religion_group = muslim	}
+			NOT = {
+				roman_government_trigger = yes
+			}
 			is_patrician = no
 		}
 		
@@ -119,27 +109,15 @@ feudal_governments = {
 
 		frame_suffix = "_roman"
 		potential = {
-			is_ruler = yes
-			OR = {
-				has_landed_title = e_byzantium
-				has_landed_title = e_roman_empire
-				has_landed_title = e_wre
-				has_landed_title = e_trebizond
-				has_landed_title = e_nicaea
-				has_landed_title = k_epirus
-				top_liege = { has_landed_title = k_epirus }
-				top_liege = { has_landed_title = e_nicaea }
-				top_liege = { has_landed_title = e_trebizond }
-				top_liege = { has_landed_title = e_roman_empire }
-				top_liege = { has_landed_title = e_byzantium }
-				liege_before_war = { has_landed_title = e_byzantium }
-				liege_before_war = { has_landed_title = e_roman_empire }
-				liege_before_war = { has_landed_title = e_wre }
-				liege_before_war = { has_landed_title = e_trebizond }
-				liege_before_war = { has_landed_title = e_nicaea }
-				liege_before_war = { has_landed_title = k_epirus }
-			}
-			is_patrician = no
+			NAND = {
+				controls_religion = yes
+				NOT = { religion_group = muslim }
+				NOT = {	primary_title = { is_landless_type_title = no }	}
+			}			
+			NOT = { religion_group = muslim }
+			
+			is_theocracy = no
+			roman_government_trigger = yes
 		}
 		
 		color = { 200 0 50 }
