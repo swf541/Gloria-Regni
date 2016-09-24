@@ -6,6 +6,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		culture = hispanic
 		owner = {
 			culture_group = arabic 
@@ -46,6 +47,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		region = custom_catalan
 		culture = hispanic
 		owner = {
@@ -86,6 +88,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		region = custom_portuguese
 		culture = hispanic
 		owner = {
@@ -126,6 +129,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		NOR = {
 			region = custom_portuguese
 			region = custom_catalan
@@ -169,6 +173,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		culture = old_italian
 		owner = {
 			or = {
@@ -207,6 +212,7 @@ province_event = {
 	picture = GFX_evt_stone_church
 
 	trigger = {
+		NOT = { year = 1000 }
 		culture = ostrogothic
 		owner = {
 			culture_group = byzantine

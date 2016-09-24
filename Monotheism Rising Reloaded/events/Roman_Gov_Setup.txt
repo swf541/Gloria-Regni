@@ -194,6 +194,13 @@ character_event = {
 						is_landed = no
 					}
 					inherit = ROOT
+								set_government_type = roman_government
+					any_realm_character = {
+						limit = { 
+							government = feudal_government 
+						}
+						set_government_type = roman_government
+					}
 				}
 			}
 	}
@@ -204,8 +211,6 @@ character_event = {
 		
 	is_triggered_only = yes
 
-	trigger = {
-    } 
 	option = {
 		name = "EVTOPTAROMEGOV.7" # 
 	}
@@ -219,6 +224,11 @@ character_event = {
 			}
 			inherit = FROM
 			set_character_flag = roman_governor
+			set_government_type = roman_government
+			any_realm_character = {
+				limit = { government = feudal_government }
+					set_government_type = roman_government
+				}
 		}
 	}
 }
@@ -239,7 +249,7 @@ character_event = {
 }
 
 character_event = {
-	id = ROMEGOV.8
+	id = ROMEGOV.14
 
         hide_window = yes
 		
@@ -360,6 +370,33 @@ character_event = {
         immediate = {
 			 set_variable = { which = schism value = 1 }
 		}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = ROMEGOV.13
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			government = roman_government
+			FROM = { liege_before_war = { character = ROOT } }
+        }     
+
+        immediate = {
+			FROM = {
+				set_government_type = roman_government
+				any_realm_character = {
+					limit = { government = feudal_government }
+						set_government_type = roman_government
+					}
+				}
+			}
 	
 	option = {
 		name = ok

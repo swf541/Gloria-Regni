@@ -2664,6 +2664,79 @@ magyar = {
 
 iranian = {
 	graphical_cultures = { muslimgfx }
+	
+	choresmian = {
+		graphical_cultures = { persiangfx }
+		color = { 0.2 0.1 0.2  }
+
+		male_names = {
+			Afrig Bagra Sakassak Askajamuk Askajavar Saks Savosh Kamgri Buzkar Artamuk Rostam_Rostam Sabri Shavoshfar Torkasbata Zartusht_Zartosht Mohmud_Muhammad
+			Artivan_Ardavan Aspandhat Astken Aurang_Aurang Avyaman-yan_Avyaman-yan Avyaman_Avyaman Avyamanch_Avyamanch Avyamanvandak Babak_Babak Bahram_Bahram
+			Banda Barak_Barak Bharkhuman_Bharkhuman Bhurz_Bhurz Buddhadasa Chakar_Chakar Chakhapak Chakhren_Chakhren Cher_Cher Chetvandak Dariush_Darius
+			Devadasa Dewashtich_Dewashtich Dhakh Dhruwaspvandak Esfandiar_Esfandiar Eskander_Alexander Ewakhsh Faramarz_Faramarz Farhad_Farhad Farn Farnaghat
+			Farnch Farnkhund Farroukh_Farroukh Farrukhzad_Farrukhzad Farzad_Farzad Fatmiwach Ferdows_Ferdows Fereedun_Feridun Frikhwataw Ghawtus Ghobad_Ghobad
+			Ghoshfarn Ghotamsach Godarz_Godarz Goshtasb_Goshtasb Hazarasp_Hazarasp Hormazd_Hormazd Hormoz_Hormoz Induk Irkin_Irkin Jamshid_Jamshid Jiamut
+			Jimatvande_Jimatvande Kanak_Kanak Kanakk Kartir Karzhtik Kavoos_Kavoos Kaway Kharstrang Khosrow_Khosrow Khun Khurshid_Khurshid Khwadhawanakk
+			Khwarmew Khwasaw Khwasawch Kund Kundakk Kurush_Cyrus Kushan Kushanakanak Makhak_Makhak Marti Marzuban_Marzuban Maymarghch Methakan Mew Miren
+			Muqanna Nanai Nanaidhvar Nanaifarn_Nanaifarn Nanaikhsay Nanaithvar_Nanaydvar Nanaizanch Nanayakk Nanevante_Nanevante Narisaf Narshakhi Nawchirth
+			Nibothak_Nibothak Nipak_Nipak Nithan_Nithan Ot-tegin_Ot-tegin Papakk Parsak Parviz_Parviz Pashang_Pashang Patrodhan Pekako Peroz_Peroz Pesakk
+			Pujman_Pujman Qishiq_Qishiq Ramtish_Ramtish Rashdhes Razmwanwan Resan Rewdhvar Rokhshan_Rokhshan Rostam_Rostam Rutha Sagharak Sas Sasan Satasp
+			Sesh_Sesh Shahbaz_Shahbaz Shahin_Shahin Shahrokh_Sharokh Shans Shapur_Shapur Shaw_Shaw Shennu_Shennu Shirch Sina_Sina Spadh Spadhkharsh Srawakk
+			Stayidh Suryakk Tahmasb_Tahmasb Takhsich Takhsichvandak Takut Tarkhun_Tarkhun Taw Tir Tishtrya_Tishtrya Tishvandak Turghar_Turghar Ukhushukan_Ukhushukan
+			Urak_Urak Vagh Vaghrew Vahhab_Vahhab Varshasb_Varshasb Varzak_Varzak Varzirak Vishtasb_Vishtasb Viyus_Viyus Vuvva Wakhunam Wakhushakk Wakhushu Wanenak
+			Wankaway Wankhanak_Wankhanak Wanrazmak Wanwans Wishaghn Xeykhosrow_Keykhosrow Yín_Yín Zand_Zand Zartosht_Zartosht Zymt_Zymt
+		}
+		female_names = {
+			Aghatzak Anakhit Arghavan_Arghavan Banafsheh_Banafsheh Chat_Chat Chatis Chet Chinanch Darya_Darya Funa_Funa Furuzan_Furuzan Ghamze_Ghamze Ghoncheh_Ghoncheh
+			Golbahar_Golbahar Golshan_Golshan Khansch Makh Mah_Mah Mahtab_Mahtab Miwnay Nana_Nana Nanai_Nanai Nanaidhat Navvaba_Navvaba Nazgol_Nazgol
+			Nazilla_Nazilla Parvaneh_Parvaneh Parvin_Parvin Ranisa Roxana_Roxana Sanakhram Shahrzad_Shahrzad Shahzadeh_Shahzadeh Shayn Shirin_Shirin Touran_Touran
+			Yasaman_Yasaman Yena_Yena
+		}
+
+	    dukes_called_kings = yes
+
+		dynasty_title_names = yes
+		from_dynasty_prefix = "s "
+		male_patronym = "pr"
+		female_patronym = "gd"
+
+		modifier = cultural_default_culture_modifier
+	}
+
+
+    parthian = {
+		graphical_cultures = { persiangfx }
+		secondary_event_pictures = bedouin_arabic
+
+		color = { 0.8 0.5 0.6 }
+
+		male_names = {
+			 Arshak Ardavan_Ardavan Artapana Artavazd Dariahush Godarz Mehrdad Urud Viroy Khusrau_Khosrau Pakur Parthamaspata Frahatak Friapat Santruk Bardan 
+			 Vardan Valgash Vahunam Tirdat Xosrov Varazdowxt Mithridates Aršak Trdat Xosrov Varazdowxt Phraátes Frahat Farnaxw Farnxwandak Farnahvant Varaz 
+			 Artapan Humay Mitraphérnes Wahman Ršama Husravah Vištaspa Atardat Bagdat Bagadata Kophasátes Mihrdat Meiridátes Spandarat Mirabandákes Božan 
+			 Mihrbožan Aryabarzan Ariobarzánes Mithrobouzánes Fradaramn Windafarn Vindafarnah Darayavauš Sasanbaxt Mihr Fravart Fravarti Varhragn Vahagn
+			 Buxtak Mihrak Mihren Karin Aršên Artašir Huwaspin Atar-Mihrak Xosrov Tiridates Tigranes Sanatruk Ashkhadar Axidares Partamasir Parthamasiris 
+			 Vagharsh Vologases Sohaemus Bakur Khorsov Arsaces Varadates Vramshapuh Vologase Phraates Artabanus Sanatruces Bagasis Bacasis Phriapatius
+			 Gotarzes Orodes Pacorus Musa Vorones Cinnamus Osroes Parthamaspates 
+		}
+		female_names = {
+			Ardaxcashca Almasd Anoush Arao Arevalous Ariyamna Arkha Arkina Arshaka Arshama Artaxshasa Artdokht Arxa Arzu Asina Atamaita Athiyabaushna Aturdokht Ava Azadouhi Bahar Banu Bardiya Behzad Berjanoush 
+			Berjouhi Dalita Daria Darya Delara Donatiya Dynamis Dzaghig Dziadzan Erato Esther Firuza Frada Gepaepyris Gulzar Haldita Hamesdouhi Hourig Hratchouhi Hurriya Jaleh Jasmine				
+			Jbdouhi Kaniz Karo Keghezig Keghouhi Kerbanu Kira Kohar Lala Laleh Laodice Lila Mahdokht Mahvash Manishag Martiya Meghranoush Meherafrid Mojgan Morvarid Nabunaita Naheed Nasrin Nazeli
+			Nekdel Nilofer Nouver Omid Pao Parvana Pergrouhi Pigat Pythodoris Roshanak Roxanna Ruhae Sanober Shahnaz Shirdokht Shirin Shoghagat Siran Tanaz Tishtar Toukhdzam Tryphaena Utana Vira
+			Vivana Vosgedzam Yasmin Yerazig Ziba Zuleika
+		}
+
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+
+		male_patronym = "zade"
+		female_patronym = "dokht"
+		prefix = no
+
+		disinherit_from_blinding = yes
+		modifier = default_culture_modifier
+	}
 
 	persian = {
 		graphical_cultures = { persiangfx }
