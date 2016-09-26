@@ -180,7 +180,8 @@ ere_imperial_reconquest_kingdom = {
 				has_landed_title = k_epirus
 				has_landed_title = e_trebizond	
 				has_landed_title = e_thessalonica
-				has_landed_title = e_byzantium				
+				has_landed_title = e_byzantium	'
+				has_landed_title = e_latin_empire
 			}
 			independent = yes
 			NOT = { same_realm = FROM }

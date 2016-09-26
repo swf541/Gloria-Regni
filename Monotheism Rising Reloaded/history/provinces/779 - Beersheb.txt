@@ -16,7 +16,12 @@ b_massada = temple
 #b_ofakim = castle
 
 # Misc
-culture = levantine_arabic
-religion = sunni
+culture = melkite
+religion = imperial
 
 # History
+1054.1.1 = { religion = orthodox }
+1270.1.1 = { 
+	religion = sunni
+	culture = levantine_arabic
+}

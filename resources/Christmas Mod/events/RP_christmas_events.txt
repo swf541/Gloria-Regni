@@ -1,0 +1,6361 @@
+#######################
+#
+#   Christmas Events
+#
+#   - preparations
+#
+#   made by StoneWolf
+#
+#######################
+namespace = RP_christmas
+
+character_event = {    #what food will you have for christmas?
+	id = RP_christmas.1
+	desc = RP_christmas.1.desc
+	picture = GFX_evt_feast
+	
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = RP_christmas_celebrating
+		month = 11
+		NOT = {
+			has_character_flag = RP_christmas_lavish_food
+			has_character_flag = RP_christmas_medium_food
+			has_character_flag = RP_christmas_low_food
+		}
+	}
+	
+	immediate = {
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.2
+				days = 2
+			}
+		}
+	}
+	
+	option = {
+		name = RP_christmas.1.option1  #Spend lavishly on food
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				trait = greedy
+			}
+			modifier = {
+				factor = 2
+				scaled_wealth = 0.15
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { scaled_wealth = 0.15 }
+			}
+			modifier = {
+				factor = 1.1
+				trait = crusader
+			}
+			modifier = {
+				factor = 1.4
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.2
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 0.2
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.2
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.1
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.1
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.3
+				trait = envious
+			}
+			modifier = {
+				factor = 1.2
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = proud
+			}
+			modifier = {
+				factor = 0.5
+				trait = humble
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}
+		set_character_flag = RP_christmas_lavish_food
+		scaled_wealth = -0.15
+	}
+	option = {
+		name = RP_christmas.1.option2
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2
+				NOT = { scaled_wealth = 0.1 }
+			}
+			modifier = {
+				factor = 0
+				trait = greedy
+			}
+		}
+		scaled_wealth = -0.1
+		set_character_flag = RP_christmas_medium_food
+	}
+	option = {
+		name = RP_christmas.1.option3
+		trigger = { NOT = { trait = greedy } }
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					trait = greedy
+					trait = gluttonous
+				}
+			}
+			modifier = {
+				factor = 0.9
+				trait = crusader
+			}
+			modifier = {
+				factor = 0.4
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.2
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.1
+				trait = hunter
+			}
+			modifier = {
+				factor = 0.8
+				trait = lustful
+			}
+			modifier = {
+				factor = 3
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.85
+				trait = charitable
+			}
+			modifier = {
+				factor = 0.75
+				trait = envious
+			}
+			modifier = {
+				factor = 0.85
+				trait = kind
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 3
+				trait = content
+			}
+			modifier = {
+				factor = 0.6
+				trait = zealous
+			}
+		}
+		set_character_flag = RP_christmas_low_food
+		scaled_wealth = -0.05
+	}
+	option = {
+		name = RP_christmas.1.option4
+		trigger = { trait = greedy }
+		ai_chance = { factor = 100 }
+		piety = -30
+		set_character_flag = RP_christmas_low_food
+	}
+}
+
+character_event = {   #Christmas decorations
+	id = RP_christmas.2
+	desc = RP_christmas.2.desc
+	picture = GRX_evt_castle_construction
+	
+	is_triggered_only = yes
+	
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_character_flag = RP_christmas_celebrating
+		NOT = {
+			has_character_flag = RP_christmas_lavish_decorations
+			has_character_flag = RP_christmas_medium_decorations
+			has_character_flag = RP_christmas_no_decorations
+		}
+		war = no
+	}
+	
+	immediate = {
+		character_event = {
+			id = RP_christmas.3
+			days = 7
+		}
+	}
+	
+	option = {
+		name = RP_christmas.2.option1
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					trait = depressed
+					trait = stressed
+					trait = shy
+					trait = cynical
+				}
+			}
+			modifier = {
+				factor = 3
+				scaled_wealth = 0.2
+			}
+			modifier = {
+				factor = 0.4
+				NOT = { scaled_wealth = 0.15 }
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.5
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.85
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.3
+				trait = poet
+			}
+			modifier = {
+				factor = 0.85
+				trait = falconer
+			}
+			modifier = {
+				factor = 0.75
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.3
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.15
+				trait = charitable
+			}
+			modifier = {
+				factor = 0.85
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.1
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = proud
+			}
+			modifier = {
+				factor = 0.4
+				trait = humble
+			}
+			modifier = {
+				factor = 0.75
+				trait = craven
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}
+		set_character_flag = RP_christmas_lavish_decorations
+		scaled_wealth = -0.15
+		prestige = 40
+	}
+	option = {
+		name = RP_christmas.2.option2
+		ai_chance = {
+			factor = 33
+			
+			modifier = {
+				factor = 0.5
+				NOT = { scaled_wealth = 0.1 }
+			}
+		}
+		set_character_flag = RP_christmas_medium_decorations
+		prestige = 10
+		scaled_wealth = -0.1
+	}
+	option = {
+		name = RP_christmas.2.option3
+		ai_chance = {
+			factor = 33
+			
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.6
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.5
+				trait = poet
+			}
+			modifier = {
+				factor = 1.4
+				trait = temperate
+			}
+			modifier = {
+				factor = 1.8
+				trait = greedy
+			}
+			modifier = {
+				factor = 0.6
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.3
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = envious
+			}
+			modifier = {
+				factor = 0.6
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 0.75
+				trait = craven
+			}
+			modifier = {
+				factor = 0.3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = zealous
+			}
+		}
+		set_character_flag = RP_christmas_no_decorations
+		prestige = -20
+	}
+}
+
+character_event = {        #Invitations to vassals
+	id = RP_christmas.3
+	desc = RP_christmas.3.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		war = no
+	}
+	
+	option = {
+		name = RP_christmas.3.option1
+		set_character_flag = RP_christmas_sent_invitations
+		any_vassal = {
+			limit = {
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { has_character_modifier = holding_large_feast }
+				NOT = { has_character_flag = RP_christmas_celebrating }
+				war = no
+				is_adult = yes
+			}
+			hidden_tooltip = {
+				letter_event = {
+					id = RP_christmas.4
+					days = 1
+				}
+			}
+		}
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.6
+				days = 5
+			}
+		}
+	}
+}
+
+letter_event = {
+	id = RP_christmas.4
+	desc = RP_christmas.4.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.4.option1 #Travel to the feast
+		ai_chance = {
+			factor = 1
+			
+			modifier  = {
+				factor = 0.1
+				ai = yes
+				trait = in_hiding
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = from value = -40 }
+			}
+			modifier  = {
+				factor = 2
+				opinion = { who = from value = -20 }
+			}
+			modifier = {
+				factor = 0
+				trait = zealous
+				NOT = {
+					religion_group = christian
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { religion_group = christian }
+			}
+		}
+		set_character_flag = RP_christmas_attending_celebrations
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			clr_character_flag = do_not_disturb
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}                    #fine
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family 
+		}
+	}
+	option = {
+		name = RP_christmas.4.option2 #Refuse
+		ai_chance = {
+			factor = 1
+			modifier  = {
+				factor = 0
+				opinion = { who = from value = 0 }
+				NOT = { trait = in_hiding }
+			}
+			modifier  = {
+				factor = 2
+				NOT = { opinion = { who = from value = -60 } }
+			}
+			modifier  = {
+				factor = 2
+				NOT = { opinion = { who = from value = -80 } }
+			}
+		}
+		if = {
+			limit = {
+				religion_group = christian
+			}
+			piety = -15
+		}
+		FROM = {
+			letter_event = {
+				id = RP_christmas.5
+				days = 1
+				tooltip = EVTTOOLTIP72012  #Fine 
+			}
+		}
+	}
+}
+
+#Vassal refused to attend to christmas celebrations
+letter_event = {
+	id = RP_christmas.5
+	desc = RP_christmas.5.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.5.option1
+		prestige = -10
+		opinion = {
+			modifier = opinion_complain
+			who = FROM
+			years = 10
+		}
+	}
+}
+
+#########################
+#
+#   The actual Feast
+#
+#    - StoneWolf
+#
+#########################
+
+#The guests have arrived
+character_event = {
+	id = RP_christmas.6
+	desc = RP_christmas.6.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	immediate = {
+		hidden_tooltip = {
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_attending_celebrations
+				}
+				character_event = {
+					id = RP_christmas.7
+					tooltip = EVTTOOLTIP72016
+				}
+			}
+			character_event = {
+				id = RP_christmas.16
+				days = 2
+			}
+			character_event = {
+				id = RP_christmas.49
+				days = 1
+			}
+		}
+	}
+	
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_sent_invitations
+		NOT = {
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		any_vassal = {
+			NOT = {
+				has_character_flag = RP_christmas_celebrations_started
+			}
+			had_character_flag = {
+				flag = RP_christmas_attending_celebrations
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = RP_christmas.6.option1
+		set_character_flag = RP_christmas_celebrations_started
+		prestige = 10
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.53
+				days = 21
+			}
+		}
+	}
+}
+
+#Welcome to the feast!
+character_event = {
+	id = RP_christmas.7
+	desc = RP_christmas.7.desc
+	picture = GFX_evt_feast
+
+	is_triggered_only = yes
+
+	option = {
+		name = RP_christmas.7.option1
+		set_character_flag = RP_christmas_guest_started
+		character_event = { id = RP_christmas.8 }
+	}
+}
+
+#Lavish Food
+character_event = {
+	id = RP_christmas.8
+	desc = RP_christmas.8.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_guest_started
+		liege = {
+			NOT = {
+				has_character_modifier = complain_food_timer
+			}
+			NOT = {
+				has_character_modifier = compliment_food_timer
+			}
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_lavish_food
+		}
+	}
+
+	option = {
+		name = RP_christmas.8.option1 #Approve publicly
+		trigger = {
+			NOT = { trait = temperate }
+		}
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 5
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.9
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.9
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.9
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 0.9
+				trait = proud
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_lavish_food
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72023
+				tooltip = RP_christmas_tooltip.2 #Liege is glad you liked it #Change
+			}
+		}
+		random_list = {
+			15 = {
+				add_trait = gluttonous
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.8.option2 #Disapprove
+		trigger = {
+			NOT = {
+				OR = {
+					trait = gluttonous
+					trait = kind
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_lavish_food
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72024
+				tooltip = RP_christmas_tooltip.1 #Liege dislike you complaining about the food
+			}
+		}
+		random_list = {
+			10 = {
+				add_trait = temperate
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.8.option3
+		prestige = -10
+	}
+}
+
+#Medium Food
+character_event = {
+	id = RP_christmas.9
+	desc = RP_christmas.9.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_guest_started
+		liege = {
+			NOT = {
+				had_character_flag = {
+					flag = RP_christmas_celebrations_started
+					days = 2
+				}
+			}
+			NOT = {
+				OR = {
+					has_character_modifier = complain_food_timer
+					has_character_modifier = compliment_food_timer
+				}
+			}
+			has_character_flag = RP_christmas_medium_food
+		}
+	}
+
+	option = {
+		name = RP_christmas.9.option1 #Approve publicly
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.8
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.9
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.9
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = content
+			}
+			modifier = {
+				factor = 1.15
+				trait = content
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_medium_food
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72023
+				tooltip = RP_christmas_tooltip.2 #Liege is glad you liked it
+			}
+		}
+		random_list = {
+			10 = {
+				add_trait = gluttonous
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.9.option2 #Disapprove
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.75
+				trait = zealous
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_medium_food
+			}
+
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72024
+				tooltip = RP_christmas_tooltip.1 #Liege dislike you complaining about the food
+			}
+		}
+		random_list = {
+			5 = {
+				add_trait = temperate
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.9.option3
+		prestige = -10
+	}
+}
+
+#Low Food
+character_event = {
+	id = RP_christmas.10
+	desc = RP_christmas.10.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		war = no
+		has_character_flag = RP_christmas_guest_started
+		liege = {
+			NOT = {
+				had_character_flag = {
+					flag = RP_christmas_celebrations_started
+					days = 2
+				}
+			}
+			NOT = {
+				has_character_modifier = complain_food_timer
+			}
+			NOT = {
+				has_character_modifier = compliment_food_timer
+			}
+			has_character_flag = RP_christmas_celebrating_christmas
+			has_character_flag = RP_christmas_low_food
+		}
+	}
+
+	option = {
+		name = RP_christmas.10.option1 #Approve publicly
+		trigger = {
+			NOT = { trait = gluttonous }
+		}
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.9
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.8
+				trait = hunter
+			}
+			modifier = {
+				factor = 0.8
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.8
+				trait = envious
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.1
+				trait = zealous
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_low_food
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72023
+				tooltip = EVTTOOLTIP72023 #Liege is glad you liked it
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.10.option2 #Disapprove
+		trigger = {
+			NOT = { trait = temperate }
+		}
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.15
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.15
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 1.1
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.15
+				trait = zealous
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_low_food
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_food_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = 72024
+				tooltip = EVTTOOLTIP72024 #Liege dislike you complaining about the food
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.10.option3
+		prestige = -10
+	}
+}
+
+#Lavish decorations
+character_event = {
+	id = RP_christmas.11
+	desc = RP_christmas.11.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_guest_started
+		liege = {
+			NOT = {
+				has_character_modifier = complain_decorations_timer
+			}
+			NOT = {
+				has_character_modifier = compliment_decorations_timer
+			}
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_lavish_decorations
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = RP_christmas.11.option1 #Approve publicly
+		trigger = {
+			NOT = { trait = temperate }
+		}
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 1.1
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.5
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.9
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.8
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.3
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_lavish_decorations
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.12
+				tooltip = RP_christmas_tooltip.2 #Liege is glad you liked it
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.11.option2 #Disapprove
+		trigger = { NOT = { trait = kind } }
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.8
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 1.3
+				trait = ambitious
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_lavish_decorations
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.13
+				tooltip = RP_christmas_tooltip.1 #Liege dislike you complaining about the food
+			}
+		}
+		random_list = {
+			5 = {
+				add_trait = temperate
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.11.option3
+		prestige = -10
+	}
+}
+
+#Liege is glad you liked the decorations at the christmas celebrations
+character_event = {
+	id = RP_christmas.12
+	desc = RP_christmas.12.desc
+	picture = GFX_evt_feast
+
+	is_triggered_only = yes
+
+	option = {
+		name = RP_christmas.12.option1
+		opinion = {
+			modifier = opinion_compliment
+			who = FROM
+			years = 1
+		}
+		reverse_opinion = {	
+			modifier = opinion_compliment
+			who = FROM
+			years = 1
+		}
+	}
+}
+
+#Liege dislikes you complaining about the food at the feast
+character_event = {
+	id = RP_christmas.13
+	desc = RP_christmas.13.desc
+	picture = GFX_evt_feast
+
+	is_triggered_only = yes
+
+	option = {
+		name = RP_christmas.13.option1
+		opinion = {
+			modifier = opinion_complain
+			who = FROM
+			years = 1
+		}
+		reverse_opinion = {
+			modifier = opinion_complain
+			who = FROM
+			years = 1
+		}
+	}
+}
+
+#NO decorations       #Visitors
+character_event = {
+	id = RP_christmas.14
+	desc = RP_christmas.14.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_guest_started
+		liege = {
+			NOT = {
+				had_character_flag = {
+					flag = RP_christmas_celebrations_started
+					days = 3
+				}
+			}
+			NOT = {
+				OR = {
+					has_character_modifier = complain_decorations_timer
+					has_character_modifier = compliment_decorations_timer
+				}
+			}
+			has_character_flag = RP_christmas_no_decorations
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = RP_christmas.14.option1 #Approve publicly
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.9
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.9
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = content
+			}
+			modifier = {
+				factor = 1.15
+				trait = content
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_no_decorations
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.12
+				tooltip = RP_christmas_tooltip.2 #Liege is glad you liked it
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.14.option2 #Disapprove
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.75
+				trait = zealous
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_no_decorations
+			}
+
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.13
+				tooltip = RP_christmas_tooltip.1 #Liege dislike you complaining about the food
+			}
+		}
+		random_list = {
+			5 = {
+				add_trait = temperate
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.14.option3
+		prestige = -10
+	}
+}
+
+#Medium decorations   #Visitors
+character_event = {
+	id = RP_christmas.15
+	desc = RP_christmas.15.desc
+	picture = GFX_evt_feast
+
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		war = no
+		month = 11
+		has_character_flag = RP_christmas_guest_started
+		any_liege = {
+			NOT = {
+				had_character_flag = {
+					flag = RP_christmas_celebrations_started
+					days = 3
+				}
+			}
+			NOT = {
+				OR = {
+					has_character_modifier = complain_decorations_timer
+					has_character_modifier = compliment_decorations_timer
+				}
+			}
+			has_character_flag = RP_christmas_medium_decorations
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = RP_christmas.15.option1 #Approve publicly
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.9
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 0.9
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.9
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 0.8
+				trait = proud
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = content
+			}
+			modifier = {
+				factor = 1.15
+				trait = content
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_medium_decorations
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = compliment_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.12
+				tooltip = RP_christmas_tooltip.2 #Liege is glad you liked it
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.15.option2 #Disapprove
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.3
+				trait = gardener
+			}
+			modifier = {
+				factor = 1.3
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.1
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.4
+				trait = envious
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.6
+				trait = humble
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.75
+				trait = zealous
+			}
+		}
+		any_liege = {
+			limit = {
+				has_character_flag = RP_christmas_celebrating
+				has_character_flag = RP_christmas_medium_decorations
+			}
+
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = complain_decorations_timer
+					duration = 14
+					hidden = yes
+				}
+			}
+			character_event = {
+				id = RP_christmas.13
+				tooltip = RP_christmas_tooltip.1 #Liege dislike you complaining about the food
+			}
+		}
+		random_list = {
+			5 = {
+				add_trait = temperate
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.15.option3
+		prestige = -10
+	}
+}
+
+#Christmas ceremony 24th december
+character_event = {
+	id = RP_christmas.16
+	desc = RP_christmas.16.desc
+	picture = GFX_evt_bishop
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	capable_only = yes
+	
+	trigger = {
+		war = no
+		religion_group = christian
+		has_character_flag = RP_christmas_celebrating
+	}
+	
+	option = {
+		name = RP_christmas.16.option1     #Praise the lord!
+		trigger = { NOT = { trait = cynical } }
+		ai_chance = { factor = 5 }
+		piety = 20
+		random_list = {
+			5 = {
+				add_trait = zealous
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.16.option2      #How can they beleive in this nonsense?
+		trigger = { NOT = { trait = zealous } }
+		ai_chance = { factor = 1 }
+		piety = -20
+		random_list = {
+			10 = {
+				add_trait = cynical
+			}
+		}
+	}
+}
+
+#Seduction on christmas eve...
+character_event = {
+	id = RP_christmas.17
+	desc = RP_christmas.17.desc
+	picture = GFX_evt_lovers
+	
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		war = no
+		has_dlc = "Legacy of Rome"
+		NOT = {
+			has_character_flag = never_lover
+			trait = celibate
+			trait = eunuch
+			trait = infirm
+			trait = incapable
+			trait = pregnant
+			trait = homosexual
+			trait = chaste
+			trait = in_hiding
+			trait = weak
+			trait = craven
+			trait = shy
+			liege = {
+				has_character_modifier = RP_christmas_seduction_timer
+			}
+		}
+		OR = {
+			trait = lustful
+			trait = gamer
+			trait = socializer
+			trait = seductress
+			trait = seducer
+			trait = decadent
+			trait = bad_priest_aztec
+			trait = bad_priest_zoroastrian
+			trait = bad_priest_tengri
+			trait = bad_priest_norse
+			trait = bad_priest_muslim
+			trait = bad_priest_christian
+			trait = drunkard
+			trait = hedonist
+			trait = wroth
+			trait = deceitful
+			trait = brave
+			trait = gregarious
+			trait = cruel
+			trait = hunter
+		}
+		has_character_flag = RP_christmas_guest_started
+		month = 11
+		OR = {
+			ROOT = {
+				is_female = yes
+			}
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					same_liege = ROOT
+					is_female = no
+					NOT = {
+						age = 50
+						trait = blinded
+						trait = eunuch
+						trait = infirm
+						trait = incapable
+						trait = homosexual
+						trait = celibate
+						family = ROOT
+						has_character_flag = never_lover
+					}
+				}
+			}
+			ROOT = {
+				is_female = no
+			}
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					same_liege = ROOT
+					is_female = yes
+					NOT = {
+						opinion = {
+							who = ROOT
+							value = -30
+						}
+						age = 50
+						trait = blinded
+						trait = eunuch
+						trait = infirm
+						trait = pregnant
+						trait = incapable
+						trait = homosexual
+						trait = celibate
+						family = ROOT
+						has_character_flag = never_lover
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 350
+	}
+	
+	option = {
+		name = RP_christmas.17.option1    #Visit targets bed chamber
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 1.1
+				trait = depressed
+			}
+			modifier = {
+				factor = 1.1
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.2
+				trait = possessed
+			}
+			modifier = {
+				factor = 1.2
+				trait = drunkard
+			}
+			modifier = {
+				factor = 1.1
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.05
+				trait = legit_bastard
+			}
+			modifier = {
+				factor = 1.20
+				trait = imbecile
+			}
+			modifier = {
+				factor = 1.1
+				trait = strong
+			}
+			modifier = {
+				factor = 1.2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.5
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.10
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.10
+				trait = envious
+			}
+			modifier = {
+				factor = 1.2
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.2
+				trait = deceitful
+			}
+			modifier = {
+				factor = 1.20
+				trait = brave
+			}
+			modifier = {
+				factor = 1.20
+				trait = gregarious
+			}
+			modifier = {
+				factor = 1.2
+				trait = cruel
+			}
+		}
+		random_list = {
+			10 = { add_trait = lustful }
+			10 = { remove_trait = chaste }
+		}
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.18
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.17.option2
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.1
+				trait = crusader
+			}
+			modifier = {
+				factor = 1.1
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.1
+				trait = patient
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 1.1
+				trait = content
+			}
+		}
+		prestige = -10
+		random_list = {
+			10 = { add_trait = chaste }
+			10 = { remove_trait = lustful }
+		}
+	}
+}
+
+#Answer to ROOT seduction
+character_event = {
+	id = RP_christmas.18
+	desc = RP_christmas.18.desc
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.18.option1
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 0
+				OR = {
+					trait = homosexual
+					trait = craven
+					trait = shy
+				}
+			}
+			modifier = {
+				factor = 1.2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.5
+				trait = chaste
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					trait = strong
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 0.25
+				FROM = {
+					OR = {
+						trait = ugly
+						trait = hunchback
+					}
+				}
+			}
+			modifier = {
+				factor = 0.25
+				opinion = {
+					who = ROOT
+					value = -30
+				}
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = {
+					who = ROOT
+					value = 20
+				}
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+		}
+		add_lover = FROM
+	}
+	option = {
+		name = RP_christmas.18.option2
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.8
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.5
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.5
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					trait = strong
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 4
+				FROM = {
+					OR = {
+						trait = ugly
+						trait = hunchback
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				opinion = {
+					who = ROOT
+					value = -30
+				}
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				opinion = {
+					who = ROOT
+					value = 20
+				}
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+		}
+		FROM = {
+			opinion = {
+				modifier = opinion_denied_love
+				who = ROOT
+				years = 2
+			}
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = RP_christmas.19
+				}
+			}
+		}
+	}
+}
+
+#Seduction at christmas did not work
+character_event = {
+	id = RP_christmas.19
+	desc = RP_christmas.19.desc
+	picture = GFX_evt_bad_news
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	capable_only = yes
+	
+	option = {
+		name = RP_christmas.19.option1      #accept it
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 2
+				OR = {
+					trait = slow
+					trait = imbecile
+					trait = inbred
+				}
+			}
+			modifier = {
+				factor = 1.5
+				trait = scholar
+			}
+			modifier = {
+				factor = 0.75
+				trait = impaler
+			}
+			modifier = {
+				factor = 0.8
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.8
+				trait = envious
+			}
+			modifier = {
+				factor = 0.8
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 0.9
+				trait = cruel
+			}
+		}
+		piety = 20
+		prestige = -50
+		random_list = {
+			20 = { add_trait = depressed  }
+		}
+	}
+	option = {                                 #Do not accept it
+		name = RP_christmas.19.option2
+		trigger = {
+			NOT = {
+				FROM = { trait = strong }
+				trait = weak
+				trait = dwarf
+				trait = kind
+				trait = patient
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.5
+				OR = {
+					trait = slow
+					trait = imbecile
+					trait = inbred
+				}
+			}
+			modifier = {
+				factor = 0.5
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.25
+				trait = impaler
+			}
+			modifier = {
+				factor = 1.2
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.2
+				trait = envious
+			}
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.5
+				trait = just
+			}
+			modifier = {
+				factor = 1.1
+				trait = cruel
+			}
+		}
+		random_list = {
+			5 = { add_trait = lunatic }
+			10 = { add_trait = cruel }
+			15 = { add_trait = wroth }
+		}
+		opinion = {
+			modifier = opinion_raped_by
+			who = FROM
+			years = 100
+		}
+		FROM = {
+			if = {
+				limit = {
+					is_female = yes
+				}
+				random_list = {
+					50 = { impregnate = FROM }
+				}
+			}
+			if = {
+				limit = {
+					is_female = no
+				}
+				random_list = {
+					50 = { impregnate = ROOT }
+				}
+			}
+			character_event = {
+				id = RP_christmas.20
+				tooltip = RP_christmas_tooltip.5
+			}
+		}
+		liege = {
+			hidden_tooltip = {
+				character_event = {
+					id = RP_christmas.23
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+#Answer to RP_christmas.19  #Victim
+character_event = {
+	id = RP_christmas.20
+	desc = RP_christmas.20.desc
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.20.option1
+		add_trait = wounded
+		random_list = {
+			30 = { add_trait = lunatic }
+			50 = { add_trait = paranoid }
+		}
+		if = {
+			limit = {
+				ROOT = { is_female = no }
+			}
+			random_list = {
+				10 = {
+					death = {
+						death_reason = death_murder
+						killer = FROM
+					}
+				}
+				20 = { add_trait = eunuch }
+				20 = { add_trait = maimed }
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { is_female = yes }
+			}
+			random_list = {
+				10 = {
+					death = {
+						death_reason = death_murder
+						killer = FROM
+					}
+				}
+				30 = { add_trait = maimed }
+			}
+		}
+		FROM = {
+			hidden_tooltip =  {
+				character_event = {
+					id = RP_christmas.21
+				}
+			}
+		}
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.22
+			}
+		}
+	}
+}
+
+#Seducer arrested by guards  #Seducers perspective
+character_event = {
+	id = RP_christmas.21
+	desc = RP_christmas.21.desc
+	picture = GFX_evt_drunk
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			any_realm_lord = {
+				limit = {
+					NOT = { character = ROOT }
+				}
+				letter_event = {
+					id = RP_christmas.24
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = RP_christmas.21.option1
+	}
+}
+
+#Seducer arrested by guards #the seduceds perspective
+character_event = {
+	id = RP_christmas.22
+	desc = RP_christmas.22.desc
+	picture = GFX_evt_drunk
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.22.option1
+	}
+}
+
+#Liege finds out about what the seducer has done.
+character_event = {
+	id = RP_christmas.23
+	desc = RP_christmas.23.desc
+	picture = GFX_evt_into_the_dungeon
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			imprison = ROOT
+		}
+	}
+	
+	option = {
+		name = RP_christmas.23.option1   #execution
+		ai_chance = {
+			factor = 5
+			
+			modifier = {
+				factor = 0.01
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 10
+				trait = just
+			}
+			modifier = {
+				factor = 1.2
+				trait = cruel
+			}
+			modifier = {
+				factor = 0
+				opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.5
+				opinion = {
+					who = FROM
+					value = 50
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				opinion = {
+					who = FROM
+					value = 0
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				opinion = {
+					who = FROM
+					value = 0
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -30
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				opinion = {
+					who = FROM
+					value = -70
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -30
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				opinion = {
+					who = FROM
+					value = -100
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -70
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				is_rival = FROM
+			}
+			modifier = {
+				factor = 0.01
+				is_friend = FROM
+			}
+		}
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		any_vassal = {
+			limit = {
+				OR = {
+					is_friend = FROM
+					trait = arbitrary
+					opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			opinion = {
+				modifier = opinion_approves_of_punishment
+				who = ROOT
+				years = 2
+			}
+		}
+		any_vassal = {
+			limit = {
+				OR = {
+					is_rival = FROM
+					trait = just
+					NOT = {
+						is_friend = FROM
+					}
+					NOT = {
+						opinion = {
+							who = FROM
+							value = 50
+						}
+					}
+				}
+			}
+			opinion = {
+				modifier = opinion_dissapproves_of_punishment
+				who = ROOT
+			}
+		}
+		random_list = {
+			20 = { add_trait = just }
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = attending_celebrations
+			}
+			letter_event = {
+				id = RP_christmas.25
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.23.option2       #Let seducer stay imprisoned
+		ai_chance = { factor = 1 }
+		prestige = -50
+		random_list = {
+			10 = { add_trait = arbitrary }
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			letter_event = {
+				id = RP_christmas.26
+			}
+		}
+	}
+	option = {                                 #free seducer
+		name = RP_christmas.23.option3
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.01
+				trait = just
+			}
+			modifier = {
+				factor = 0.8
+				trait = cruel
+			}
+			modifier = {
+				factor = 10
+				opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 5
+				opinion = {
+					who = FROM
+					value = 50
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				opinion = {
+					who = FROM
+					value = 0
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				opinion = {
+					who = FROM
+					value = 0
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.02
+				opinion = {
+					who = FROM
+					value = -100
+				}
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.01
+				is_rival = FROM
+			}
+			modifier = {
+				factor = 10
+				is_friend = FROM
+			}
+		}
+		prestige = -50
+		random_list = {
+			20 = { add_trait = arbitrary }
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = attending_celebrations
+			}
+			letter_event = {
+				id = RP_christmas.27
+			}
+		}
+		any_vassal = {
+			limit = {
+				OR = {
+					is_friend = FROM
+					trait = arbitrary
+					opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			opinion = {
+				modifier = opinion_approves_of_punishment
+				who = ROOT
+			}
+		}
+		any_vassal = {
+			limit = {
+				OR = {
+					is_rival = FROM
+					NOT = {
+						opinion = {
+							who = FROM
+							value = 50
+						}
+					}
+					trait = just
+				}
+			}
+			opinion = {
+				modifier = opinion_dissapproves_of_punishment
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+}
+
+#The other guests finds out what the seducer has done
+letter_event = {
+	id = RP_christmas.24
+	desc = RP_christmas.24.desc
+	picture = GFX_evt_beheading
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.24.option1
+		opinion = {
+			modifier = opinion_raper
+			who = FROM
+			years = 20
+		}
+	}
+}
+
+#The other guests finds out that the seducer will be executed for his crimes
+letter_event = {
+	id = RP_christmas.25
+	desc = RP_christmas.25.desc
+	picture = GFX_evt_begeading
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.25.option1
+		ai_chance = { factor = 3 }
+	}
+	option = {
+		name = RP_christmas.25.option2
+		ai_chance = { factor = 1 }
+	}
+}
+#The other guests finds out that the seducer will be imprisoned
+letter_event = {
+	id = RP_christmas.26
+	desc = RP_christmas.26.desc
+	picture = GFX_evt_begeading
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.26.option1
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = RP_christmas.26.option2
+		ai_chance = { factor = 4 }
+	}
+}
+
+#The other guests finds out that the seducer will be freed
+letter_event = {
+	id = RP_christmas.27
+	desc = RP_christmas.27.desc
+	picture = GFX_evt_begeading
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.27.option1
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = RP_christmas.27.option2
+		ai_chance = { factor = 5 }
+	}
+}
+
+#Poem at christmas eve
+character_event = {
+	id = RP_christmas.49
+	desc = "RP_christmas.49.desc"
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		war = no
+	}
+	
+	option = {
+		name = "RP_christmas.49.option1"  # I will do it!
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				trait = poet
+			}
+			modifier = {
+				factor = 1.2
+				OR = {
+					trait = gregarious
+					trait = socializer
+				}
+			}
+			modifier = {
+				factor = 1.2
+				trait = envious
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					trait = craven
+					trait = shy
+					trait = stutter
+				}
+			}
+		}
+		prestige = 50
+		character_event = {
+			id = RP_christmas.28
+			days = 1
+			tooltip = "RP_christmas_tooltip.9"   #will have to write a poem...
+		}
+	}
+	option = {
+		name = "RP_christmas.49.option2"    #My court chaplain can do it
+		trigger = { NOT = { trait = cynical } }
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				job_spiritual = {
+					opinion = {
+						who = ROOT
+						value = -100
+					}
+					NOT = {
+						opinion = {
+							who = ROOT
+							value = -20
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				job_spiritual = {
+					opinion = {
+						who = ROOT
+						value = 30
+					}
+				}
+			}
+		}
+		job_spiritual = {
+			character_event = {
+				id = RP_christmas.28
+				days = 1
+				tooltip = "RP_christmas_tooltip.8"   #He will have to write a poem...
+			}
+			opinion = {
+				modifier = opinion_chosen_to_write_christmas_poem
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = "RP_christmas.49.option3"    #_______ , cause he/she talks to much anyway!
+		trigger = {
+			NOT = { trait = kind }
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+				religion_group = christian
+				OR = {
+					trait = gregarious
+					trait = socializer
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				trait = cruel
+			}
+			modifier = {
+				factor = 0.8
+				trait = just
+			}
+			modifier = {
+				factor = 1.2
+				trait = arbitrary
+			}
+		}
+		liege = {
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+					religion_group = christian
+					trait = gregarious
+					NOT = {
+						liege = {
+							any_vassal = {
+								has_character_flag = RP_christmas_performs_poem
+							}
+						}
+					}
+				}
+				character_event = {
+					id = RP_christmas.28
+					days = 1
+					tooltip = "RP_christmas_tooltip.9"
+				}
+				opinion = {
+					modifier = opinion_chosen_to_write_christmas_poem
+					who = ROOT
+					years = 2
+				}
+				set_character_flag = RP_christmas_performs_poem
+			}
+		}
+	}
+	option = {
+		name = "RP_christmas.49.option4"    #A migthy lord!
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					NOT = {
+						trait = shy
+						trait = craven
+					}
+					religion_group = christian
+					relative_power_to_liege = 0.25
+				}
+			}
+			modifier = {
+				factor = 3
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					NOT = {
+						trait = shy
+						trait = craven
+					}
+					religion_group = christian
+					relative_power_to_liege = 0.5
+				}
+			}
+			modifier = {
+				factor = 10
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					relative_power_to_liege = 0.75
+					NOT = {
+						trait = shy
+						trait = craven
+					}
+					religion_group = christian
+				}
+			}
+		}
+		random_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+				relative_power_to_liege = 0.15
+				NOT = {
+					trait = shy
+					trait = craven
+				}
+				religion_group = christian
+			}
+			character_event = {
+				id = RP_christmas.28
+				days = 1
+				tooltip = "RP_christmas_tooltip.9"
+			}
+			prestige = 20
+			opinion = {
+				modifier = opinion_chosen_to_write_christmas_poem
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+	option = {
+		name = "RP_christmas.49.option5"    #A real poet!
+		trigger = {
+			NOT = {
+				trait = poet
+				trait = envious
+			}
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+				trait = poet
+				religion_group = christian
+				NOT = {
+					is_rival = ROOT
+					trait = lisp
+					trait = stutter
+					trait = slow
+					trait = imbecile
+					trait = inbred
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.1
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.20
+				OR = {
+					trait = naive_appeaser
+					trait = underhanded_rogue
+					trait = charismatic_negotiator
+					trait = grey_eminence
+				}
+			}
+			modifier = {
+				factor = 1.2
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.2
+				trait = humble
+			}
+		}
+		random_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+				trait = poet
+				religion_group = christian
+				NOT = {
+					is_rival = ROOT
+					trait = lisp
+					trait = stutter
+					trait = slow
+					trait = imbecile
+					trait = inbred
+				}
+			}
+			opinion = {
+				modifier = opinion_chosen_to_write_christmas_poem
+				who = ROOT
+				years = 2
+			}
+			character_event = {
+				id = RP_christmas.28
+				days = 1
+				tooltip = "RP_christmas_tooltip.9"
+			}
+		}
+	}
+}
+
+#Preparation for poem that will be preformed christmas eve
+character_event = {
+	id = RP_christmas.28
+	desc = RP_christmas.28.desc
+	picture = GFX_evt_bad_news
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.28.option1        #Write a poem about charity
+		trigger = { NOT = { trait = greedy } }
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+		}
+		if = {
+			limit = {
+				trait = poet 
+			}
+			character_event = {      #Positive
+				id = RP_christmas.29
+				days = 1
+				tooltip = RP_christmas_tooltip.10
+			}
+			hidden_tooltip = {
+				any_realm_lord = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						same_liege = ROOT
+					}
+					character_event = {
+						id = RP_christmas.31
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = poet }
+			}
+			random_list = {
+				50 = {
+					character_event = {      #Positive
+						id = RP_christmas.29
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.31
+								days = 1
+							}
+						}
+					}
+				}
+				50 = {
+					character_event = {     #Negative
+						id = RP_christmas.30
+						days = 1
+						tooltip = RP_christmas_tooltip.11
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.32
+								days = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.28.option2        #Write a poem about gods greatness
+		trigger = {
+			NOT = {
+				trait = cynical
+			}
+			religion_group = christian
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+			modifier = {
+				factor = 5
+				trait = theologian
+			}
+			modifier = {
+				factor = 5
+				job_spiritual = {
+					character = ROOT
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = poet 
+			}
+			character_event = {      #Positive
+				id = RP_christmas.33
+				days = 1
+			}
+			hidden_tooltip = {
+				any_realm_lord = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						same_liege = ROOT
+					}
+					character_event = {
+						id = RP_christmas.34
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = poet }
+			}
+			random_list = {
+				50 = {
+					character_event = {      #Positive
+						id = RP_christmas.33
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.34
+								days = 1
+							}
+						}
+					}
+				}
+				50 = {
+					character_event = {     #Negative
+						id = RP_christmas.35
+						days = 1
+						tooltip = RP_christmas_tooltip.11
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.36
+								days = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.28.option3        #Write a poem about love
+		trigger = {
+			NOT = {
+				trait = celibate
+				trait = chaste
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = lustful
+			}
+			modifier = {
+				factor = 5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 0.8
+				trait = zealous
+			}
+		}
+		if = {
+			limit = {
+				trait = poet 
+			}
+			character_event = {      #Positive
+				id = RP_christmas.37
+				days = 1
+				tooltip = RP_christmas_tooltip.10
+			}
+			hidden_tooltip = {
+				any_realm_lord = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						same_liege = ROOT
+					}
+					character_event = {
+						id = RP_christmas.38
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = poet }
+			}
+			random_list = {
+				50 = {
+					character_event = {      #Positive
+						id = RP_christmas.37
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.38
+								days = 1
+							}
+						}
+					}
+				}
+			}
+			50 = {
+				ROOT = {
+					character_event = {     #Negative
+						id = RP_christmas.39
+						days = 1
+						tooltip = RP_christmas_tooltip.11
+					}
+					hidden_tooltip = {
+						if = {
+							limit = {
+								liege = {
+									any_vassal = {
+										has_character_flag = RP_christmas_guest_started
+									}
+								}
+							}
+							ROOT = {
+								character_event = {
+									id = RP_christmas.40
+									days = 1
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.28.option4        #Write a poem about honor
+		trigger = {
+			NOT = {
+				trait = deceitful
+				trait = paranoid
+				trait = arbitrary
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.20
+				trait = kind
+			}
+			modifier = {
+				factor = 1.20
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = just
+			}
+		}
+		if = {
+			limit = {
+				trait = poet 
+			}
+			character_event = {      #Positive
+				id = RP_christmas.41
+				days = 1
+				tooltip = RP_christmas_tooltip.10
+			}
+			hidden_tooltip = {
+				any_realm_lord = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						same_liege = ROOT
+					}
+					character_event = {
+						id = RP_christmas.42
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = poet }
+			}
+			random_list = {
+				50 = {
+					character_event = {      #Positive
+						id = RP_christmas.41
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.42
+								days = 1
+							}
+						}
+					}
+				}
+				50 = {
+					character_event = {     #Negative
+						id = RP_christmas.43
+						days = 1
+						tooltip = RP_christmas_tooltip.11
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.44
+								days = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.28.option5        #I will come up with something later
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+			modifier = {
+				factor = 0.8
+				trait = wroth
+			}
+		}
+		if = {
+			limit = {
+				trait = poet 
+			}
+			character_event = {      #Positive
+				id = RP_christmas.45
+				days = 1
+				tooltip = RP_christmas_tooltip.10
+			}
+			hidden_tooltip = {
+				any_realm_lord = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						same_liege = ROOT
+					}
+					character_event = {
+						id = RP_christmas.46
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = poet }
+			}
+			random_list = {
+				10 = {
+					character_event = {      #Positive
+						id = RP_christmas.45
+						days = 1
+						tooltip = RP_christmas_tooltip.10
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.46
+								days = 1
+							}
+						}
+					}
+				}
+				90 = {
+					character_event = {     #Negative
+						id = RP_christmas.47
+						days = 1
+						tooltip = RP_christmas_tooltip.11
+					}
+					hidden_tooltip = {
+						any_realm_lord = {
+							limit = {
+								has_character_flag = RP_christmas_guest_started
+								same_liege = ROOT
+							}
+							character_event = {
+								id = RP_christmas.48
+								days = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Poem performed 24th december was well received /performer /charitable
+character_event = {
+	id = RP_christmas.29
+	desc = RP_christmas.29.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		prestige = 50
+		piety = 25
+		if = {
+			limit = {
+				NOT = { has_dlc = "Way of Life" }
+			}
+			random_list = {
+				10 = { add_trait = poet }
+				5 = { add_trait = charitable }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Way of Life"
+			}
+			random_list = {
+				10 = { add_trait = charitable }
+			}
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_good_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed well on the 24th of december /guests /charitable
+character_event = {
+	id = RP_christmas.30
+	desc = RP_christmas.30.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.30.option1
+	}
+}
+
+#Poem performed badly on the 24th of december /performer /charitable
+character_event = {
+	id = RP_christmas.31
+	desc = RP_christmas.31.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.31.option1
+		prestige = -100
+		piety = -50
+		random_list = {
+			15 = { add_trait = craven }
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_bad_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed badly on the 24th of december /guests /charitable
+character_event = {
+	id = RP_christmas.32
+	desc = RP_christmas.32.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.32.option1
+	}
+}
+
+#Poem performed 24th december was well received /performer /god
+character_event = {
+	id = RP_christmas.33
+	desc = RP_christmas.33.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.33.option1
+		prestige = 50
+		piety = 25
+		if = {
+			limit = {
+				NOT = { has_dlc = "Way of Life" }
+			}
+			random_list = {
+				10 = { add_trait = poet }
+				10 = { add_trait = zealous }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Way of Life"
+			}
+			random_list = {
+				10 = { add_trait = zealous }
+			}
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_good_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed well on the 24th of december /guests /god
+character_event = {
+	id = RP_christmas.34
+	desc = RP_christmas.34.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.34.option1
+	}
+}
+
+#Poem performed badly on the 24th of december /performer /god
+character_event = {
+	id = RP_christmas.35
+	desc = RP_christmas.35.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.35.option1
+		prestige = -100
+		piety = -50
+		random_list = {
+			15 = { add_trait = craven }
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_bad_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed badly on the 24th of december /guests /god
+character_event = {
+	id = RP_christmas.36
+	desc = RP_christmas.36.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.36.option1
+	}
+}
+
+#Poem performed 24th december was well received /performer /love
+character_event = {
+	id = RP_christmas.37
+	desc = RP_christmas.37.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.37.option1
+		prestige = 50
+		piety = 25
+		if = {
+			limit = {
+				NOT = { has_dlc = "Way of Life" }
+			}
+			random_list = {
+				10 = { add_trait = poet }
+				10 = { add_trait = lustful }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Way of Life"
+			}
+			random_list = {
+				10 = { add_trait = lustful }
+			}
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_good_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed well on the 24th of december /guests /love
+character_event = {
+	id = RP_christmas.38
+	desc = RP_christmas.38.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.38.option1
+	}
+}
+
+#Poem performed badly on the 24th of december /performer /love
+character_event = {
+	id = RP_christmas.39
+	desc = RP_christmas.39.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.39.option1
+		prestige = -100
+		piety = -50
+		random_list = {
+			15 = { add_trait = craven }
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_bad_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed badly on the 24th of december /guests /love
+character_event = {
+	id = RP_christmas.40
+	desc = RP_christmas.40.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.40.option1
+	}
+}
+
+#Poem performed 24th december was well received /performer /honor
+character_event = {
+	id = RP_christmas.41
+	desc = RP_christmas.41.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.41.option1
+		prestige = 50
+		piety = 25
+		if = {
+			limit = {
+				NOT = { has_dlc = "Way of Life" }
+			}
+			random_list = {
+				10 = { add_trait = poet }
+				10 = { add_trait = honest }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Way of Life"
+			}
+			random_list = {
+				10 = { add_trait = honest }
+			}
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_good_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed well on the 24th of december /guests /honor
+character_event = {
+	id = RP_christmas.42
+	desc = RP_christmas.42.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.42.option1
+	}
+}
+
+#Poem performed badly on the 24th of december /performer /honor
+character_event = {
+	id = RP_christmas.43
+	desc = RP_christmas.43.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.43.option1
+		prestige = -100
+		piety = -50
+		random_list = {
+			15 = { add_trait = craven }
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_bad_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed badly on the 24th of december /guests /honor
+character_event = {
+	id = RP_christmas.44
+	desc = RP_christmas.44.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.44.option1
+	}
+}
+
+#Poem performed 24th december was well received /performer /slothful
+character_event = {
+	id = RP_christmas.45
+	desc = RP_christmas.45.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.45.option1
+		prestige = 50
+		piety = 25
+		if = {
+			limit = {
+				NOT = { has_dlc = "Way of Life" }
+			}
+			random_list = {
+				10 = { add_trait = poet }
+				5 = { add_trait = slothful }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Way of Life"
+			}
+			random_list = {
+				5 = { add_trait = slothful }
+			}
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_good_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed well on the 24th of december /guests /slothful
+character_event = {
+	id = RP_christmas.46
+	desc = RP_christmas.46.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.46.option1
+	}
+}
+
+#Poem performed badly on the 24th of december /performer /slothful
+character_event = {
+	id = RP_christmas.47
+	desc = RP_christmas.47.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.47.option1
+		prestige = -100
+		piety = -50
+		random_list = {
+			15 = { add_trait = craven }
+		}
+		any_realm_lord = {
+			limit = {
+				same_liege = ROOT
+				OR = {
+					has_character_flag = RP_christmas_guest_started
+					has_character_flag = RP_christmas_celebrating
+				}
+				NOT = {
+					character = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_bad_poetry
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#Poem performed badly on the 24th of december /guests /slothful
+character_event = {
+	id = RP_christmas.48
+	desc = RP_christmas.48.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.48.option1
+	}
+}
+
+#Infidel convinced of god during christmas celebrations
+character_event = {
+	id = RP_christmas.50
+	desc = RP_christmas.50.desc
+	picture = GFX_evt_bishop
+	
+	trigger = {
+		NOT = {
+			trait = zealous
+			religion_group = christian
+		}
+		has_character_flag = RP_christmas_guest_started
+	}
+	
+	mean_time_to_happen = {
+		days = 140
+	}
+	
+	option = {
+		name = RP_christmas.50.option1
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		liege = {
+			reverse_religion = ROOT
+		}
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		remove_trait = cynical
+		hidden_tooltip = {
+			ROOT = {
+				remove_trait = kshatriya
+				remove_trait = vaishya
+				remove_trait = brahmin
+				remove_trait = decadent
+			}
+		}
+	}
+}
+
+#Recruting to faction
+character_event = {
+	id = RP_christmas.51
+	desc = RP_christmas.51.desc
+	picture = GFX_evt_feast
+	
+	trigger = {
+		has_character_flag = RP_christmas_guest_started
+		war = no
+		NOT = {
+			trait = shy
+		}
+		diplomacy = 5
+		OR = {
+			leads_faction = faction_succ_seniority
+			leads_faction = faction_succ_primogeniture
+			leads_faction = faction_succ_feudal_elective
+			leads_faction = faction_succ_gavelkind
+			leads_faction = faction_lower_crown_authority
+			leads_faction = faction_independence
+			leads_faction = faction_claimant
+			leads_faction = faction_antiking
+		}
+		liege = {
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+				in_faction = no
+				NOT = {
+					character = ROOT
+					is_rival = ROOT
+					trait = content
+					opinion = {
+						who = liege
+						value = 50
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 14
+		
+		modifier = {
+			factor = 2
+			trait = socializer
+		}
+		modifier = {
+			factor = 2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 2
+			trait = deceitful
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { diplomacy = 10 }
+		}
+		modifier = {
+			factor = 2
+			diplomacy = 20
+			NOT = { diplomacy = 25 }
+		}
+		modifier = {
+			factor = 5
+			diplomacy = 25
+		}
+	}
+	
+	option = {
+		name = RP_christmas.51.option1
+		liege = {
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+					NOT = { 
+						opinion = {
+							who = liege
+							value = 50
+						}
+						is_rival = ROOT
+						trait = content
+					}
+				}
+				opinion = {
+					modifier = opinion_convinced_to_join_faction
+					who = ROOT
+					years = 4
+				}
+				opinion = {
+					modifier = opinion_convinced_to_join_enemy_faction
+					who = prevprev
+					years = 4
+				}
+				hidden_tooltip = {
+					character_event = {
+						id = RP_christmas.52
+					}
+				}
+			}
+		}
+		prestige = 15
+		random_list = {
+			10 = { add_trait = gregarious }
+		}
+	}
+}
+
+#Leader of faction connvinced you of joining a faction
+character_event = {
+	id = RP_christmas.52
+	desc = RP_christmas.52.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.52.option1
+	}
+}
+
+#Drinking with friend
+#character_event = {
+#	id = RP_christmas.
+#	desc = RP_christmas..desc
+#	picture = GFX_evt_feast
+#	
+#	capable_only = yes
+#	prisoner = no
+#	is_adult = yes
+#	
+#	trigger = {
+#		OR = {
+#			has_character_flag = RP_christmas_guest_started
+#			has_character_flag = RP_christmas_celebrations_started
+#		}
+#		liege = {
+#			any_vassal = {
+#				has_character_flag = RP_christmas_guest_started
+#				NOT = { is_rival = ROOT }
+#			}
+#		}
+#	}
+#	
+#	weigth_multiplier = {
+#		days = 35
+#	}
+#	
+#	option = {
+#		name = RP_christmas..option1
+#		ai_chance = {
+#			factor = 1 
+#			
+#			modifier = {
+#				factor = 0.5
+#				trait = temperate
+#			}
+#			modifier = {
+#				factor = 5
+#				trait = greedy
+#			}
+#			modifier = {
+#				factor = 0.2
+#				trait = shy
+#			}
+#			modifier = {
+#				factor = 1.5
+#				trait = gregarious
+#			}
+#			modifier = {
+#				factor = 1.5
+#				trait = socializer
+#			}
+#		}
+#		random_vassal = {
+#			limit = {
+#				has_character_flag = RP_christmas_guest_started
+#				NOT = { is_rival = ROOT }
+#			}
+#			opinion = {
+#				modifier = opinion_nice_chat
+#				who = ROOT
+#				years = 5
+#			}
+#			reverse_opinion = {
+#				modifier = opinion_nice_chat
+#				who = ROOT
+#				years = 5
+#			}
+#		}
+#		prestige = 10
+#	}
+#	option = {
+#		name = RP_christmas..option1
+#		trigger = { NOT = { trait = drunkard } }
+#		ai_chance = {
+#			factor = 1
+#			
+#			modifier = {
+#				factor = 5
+#				trait = temperate
+#			}
+#			modifier = {
+#				factor = 0.20
+#				trait = greedy
+#			}
+#			modifier = {
+#				factor = 5
+#				trait = shy
+#			}
+#			modifier = {
+#				factor = 0.5
+#				trait = gregarious
+#			}
+#			modifier = {
+#				factor = 0.5
+#				trait = socializer
+#			}
+#		}
+#		random_vassal = {
+#			limit = {
+#				has_character_flag = RP_christmas_guest_started
+#				NOT = { is_rival = ROOT }
+#			}
+#			opinion = {
+#				modifier = opinion_refuse_chat
+#				who = ROOT
+#				years = 2
+#			}
+#		}
+#		prestige = -10
+#		random_list = {
+#			5 = { add_trait = temperate }
+#		}
+#	}
+#}
+
+#End of christmas celebrations (default)
+character_event = {
+	id = RP_christmas.53
+	desc = RP_christmas.53.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.53.option1
+		piety = 50
+		prestige = 15
+		clr_character_flag = RP_christmas_lavish_food
+		clr_character_flag = RP_christmas_medium_food
+		clr_character_flag = RP_christmas_low_food
+		clr_character_flag = RP_christmas_celebrating
+		clr_character_flag = RP_christmas_lavish_decorations
+		clr_character_flag = RP_christmas_medium_decorations
+		clr_character_flag = RP_christmas_no_decorations
+		clr_character_flag = RP_christmas_sent_invitations
+		clr_character_flag = RP_christmas_attending_celebrations
+		clr_character_flag = RP_christmas_guest_started
+		clr_character_flag = RP_christmas_celebrations_started
+		clr_character_flag = RP_christmas_performs_poem
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			opinion = {
+				modifier = opinion_enjoyed_christmas
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+}
+
+#End of christmas_celebrations (forced)
+character_event = {
+	id = RP_christmas.54
+	desc = RP_christmas.54.desc
+	picture = GFX_evt_feast
+	
+	trigger = {
+		war = yes
+		has_character_flag = RP_christmas_celebrating
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = RP_christmas.54.option1
+		clr_character_flag = RP_christmas_lavish_food
+		clr_character_flag = RP_christmas_medium_food
+		clr_character_flag = RP_christmas_low_food
+		clr_character_flag = RP_christmas_celebrating
+		clr_character_flag = RP_christmas_lavish_decorations
+		clr_character_flag = RP_christmas_medium_decorations
+		clr_character_flag = RP_christmas_no_decorations
+		clr_character_flag = RP_christmas_sent_invitations
+		clr_character_flag = RP_christmas_celebrations_started
+		clr_character_flag = RP_christmas_performs_poem
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_attending_celebrations
+			}
+			letter_event = {
+				id = RP_christmas.55
+				tooltip = RP_christmas_tooltip.11
+			}
+			clr_character_flag = RP_christmas_attending_celebrations
+			clr_character_flag = RP_christmas_guest_started
+			clr_character_flag = RP_christmas_performs_poem
+		}
+	}
+}
+
+#Christmas celebrations cancelled (vassals notified)
+letter_event = {
+	id = RP_christmas.55
+	desc = RP_christmas.55.desc
+	picture = GFX__evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.55.option1
+	}
+}
+
+#clears character flags
+character_event = {
+	id = RP_christmas.56
+	
+	hide_window = yes
+	
+	trigger = {
+		had_character_flag = {
+			flag = RP_christmas_celebrating
+			days =  150
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = RP_christmas.56.option1
+		remove_character_modifier = complain_decorations_timer
+		remove_character_modifier = compliment_decorations_timer 
+		remove_character_modifier = RP_christmas_seduction_timer
+		clr_character_flag = RP_christmas_lavish_food
+		clr_character_flag = RP_christmas_medium_food
+		clr_character_flag = RP_christmas_low_food
+		clr_character_flag = RP_christmas_celebrating
+		clr_character_flag = RP_christmas_lavish_decorations
+		clr_character_flag = RP_christmas_medium_decorations
+		clr_character_flag = RP_christmas_no_decorations
+		clr_character_flag = RP_christmas_sent_invitations
+		clr_character_flag = RP_christmas_celebrations_started
+	}
+}
+
+##############################
+#                            #
+#           FLAVOR           #
+#	   						 #
+#         -StoneWolf         #
+#                            #
+##############################
+#young beggar approaching you
+character_event = {
+	id = RP_christmas.57
+	desc = RP_christmas.57.desc
+	picture = GFX_evt_market
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_guest_started
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		NOT = {
+			has_character_modifier = RP_christmas_charitable
+		}
+		wealth = 0
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	option = {
+		name = RP_christmas.57.option1
+		trigger = { NOT = { trait = greedy } }
+		ai_chance = {
+			factor = 2
+			
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+		treasury = -10
+		piety = 15
+		add_character_modifier = {
+			name = RP_christmas_charitable
+			duration = 365
+		}
+		random_list = {
+			20 = { add_trait = charitable }
+			20 = { add_trait = kind }
+		}
+	}
+	option = {
+		name = RP_christmas.57.option2
+		trigger = {
+			NOT = {
+				trait = charitable
+				trait = kind
+			}
+		}
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+		}
+		piety = -10
+		random_list = {
+			15 = { add_trait = greedy }
+			10 = { add_trait = cruel }
+		}
+	}
+}
+
+#Thief stealing from ROOT
+character_event = {
+	id = RP_christmas.58
+	desc = RP_christmas.58.desc
+	picture = GFX_evt_market
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_guest_started
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		NOT = {
+			trait = strong
+		}
+		OR = {
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					is_female = no
+				}
+			}
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+				is_female = no
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = {                          #Help me!
+		name = RP_christmas.58.option1
+		liege = {
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_celebrations_started
+				}
+				character_event = {
+					id = RP_christmas.59
+					tooltip = RP_christmas_tooltip.12
+				}
+			}
+		}
+	}
+}
+
+#Thief stealing from FROM
+character_event = {
+	id = RP_christmas.59
+	desc = RP_christmas.59.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {                  #Run after the thieve
+		name = RP_christmas.59.option1
+		trigger = { NOT = { trait = craven } }
+		ai_chance = {
+			factor = 3
+			
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 5
+				trait = brave
+			}
+			modifier = {
+				factor = 10
+				is_friend = FROM
+			}
+		}
+		random = {
+			chance = 40
+			add_trait = brave
+		}
+		custom_tooltip = { text = RP_christmas_tooltip.13 }
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					character_event = {
+						id = RP_christmas.60
+					}
+				}
+				50 = {
+					character_event = {
+						id = RP_christmas.61
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.59.option2
+		trigger = { NOT = { trait = brave } }
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 50
+			add_trait = craven
+		}
+		prestige = -50
+		FROM = {
+			opinion = {
+				modifier = RP_christmas_did_not_catch_thiefe
+				who = ROOT
+				years = 5
+			}
+		}
+	}
+}
+
+#From was not able to catch thiefe
+character_event = {
+	id = RP_christmas.60
+	desc = RP_christmas.60.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.60.option1
+		random_list = {
+			30 = { add_trait = wounded }
+		}
+		prestige = -50
+		FROM = {
+			character_event = {
+				id = RP_christmas.62
+				tooltip = RP_christmas_tooltip.14
+			}
+		}
+		reverse_opinion = {
+			modifier = RP_christmas_did_not_catch_thiefe
+			who = FROM
+			years = 2
+		}
+	}
+}
+
+#From catched the thiefe
+character_event = {
+	id = RP_christmas.61
+	desc = RP_christmas.61.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.61.option1
+		prestige = 50
+		reverse_opinion = {
+			modifier = RP_christmas_catched_thiefe
+			who = FROM
+			years = 2
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				character_event = {
+					id = RP_christmas.64
+				}
+			}
+		}
+	}
+}
+
+#From did not catch thiefe #ROOT
+character_event = {
+	id = RP_christmas.62
+	desc = RP_christmas.62.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {                #What have you done?!
+		name = RP_christmas.62.option1
+		trigger = { NOT = { is_rival = FROM } }
+		ai_chance = { factor = 3 }
+		wealth = -20
+		custom_tooltip = { text = RP_christmas_tooltip.15 }
+		reverse_opinion = {
+			modifier = opinion_irritated
+			who = FROM
+			years = 1
+		}
+	}
+	option = {             # YOU swearword* little swearword*
+		name = RP_christmas.62.option2
+		trigger = {
+			NOT = {
+				is_friend = FROM
+				num_of_rivals = 2
+				FROM = { num_of_rivals = 2 }
+			}
+		}
+		ai_chance = { factor = 1 }
+		wealth = -20
+		add_rival = FROM
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.63
+			}
+		}
+	}
+}
+
+#From sets ROOT as rival
+character_event = {
+	id = RP_christmas.63
+	desc = RP_christmas.63.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.63.option1
+		custom_tooltip = { text = RP_christmas_tooltip.16 }
+		prestige = -100
+	}
+}
+
+#FROM catches thiefe #ROOT
+character_event = {
+	id = RP_christmas.64
+	desc = RP_christmas.64.desc
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.64.option1
+		trigger = { NOT = { is_rival = FROM } }
+		custom_tooltip = { text = RP_christmas_tooltip.17 }
+		hidden_tooltip = {
+			character_event = {
+				id = RP_christmas.65
+			}
+			FROM = {
+				character_event = {
+					id = RP_christmas.66
+				}
+			}
+		}
+		reverse_opinion = {
+			modifier = opinion_pleased
+			who = FROM
+			years = 2
+		}
+	}
+	option = {
+		name = RP_christmas.64.option2
+		reverse_opinion = {
+			modifier = opinion_pleased
+			who = FROM
+			years = 2
+		}
+	}
+}
+
+#Chat at tavern afterwards  #ROOT
+character_event = {
+	id = RP_christmas.65
+	desc = RP_christmas.65.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.65.option1
+		add_friend = FROMFROM
+	}
+}
+
+#Chat at tavern afterwards  #From
+character_event = {
+	id = RP_christmas.66
+	desc = RP_christmas.66.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.66.option1
+		custom_tooltip = { text = RP_christmas_tooltip.18 }
+	}
+}
+
+#Drinking at christmas celebrations
+character_event = {
+	id = RP_christmas.67
+	desc = RP_christmas.67.desc
+	picture = GFX__evt_feast
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_guest_started
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		NOT = {
+			trait = temperate
+			OR = {
+				liege = {
+					has_character_flag = RP_christmas_low_food
+				}
+				has_character_flag = RP_christmas_low_food
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+		
+		modifier = {
+			factor = 0.2
+			trait = drunkard
+		}
+	}
+	
+	option = {
+		name = RP_christmas.67.option1
+		random = {
+			chance = 50
+			add_trait = drunkard
+		}
+		piety = -20
+		prestige = -20
+	}
+	option = {
+		name = RP_christmas.67.option2
+		random = {
+			chance = 20
+			add_trait = temperate
+		}
+		remove_trait = drunkard
+	}
+}
+
+#Son/daughter sings at christmas mass
+character_event = {
+	id = RP_christmas.68
+	desc = RP_christmas.68.desc
+	picture = GFX_evt_bishop
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_guest_started
+		}
+		num_of_children = 1
+		any_child = {
+			is_adult = no
+			religion_group = christian
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = {
+		name = RP_christmas.68.option1
+		ai_chance = {
+			factor =  5
+			modifier = {
+				factor = 5
+				trait = patient
+			}
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+		}
+		any_child = {
+			limit = {
+				is_adult = no
+				religion_group = christian
+				has_dlc = "Way of Life"
+			}
+			prestige = 100
+			piety = 50
+		}
+		any_child = {
+			limit = {
+				is_adult = no
+				religion_group = christian
+				NOT = { has_dlc = "Way of Life" }
+			}
+			prestige = 100
+			piety = 50
+			opinion = {
+				modifier = opinion_grateful
+				who = ROOT
+				years = 2
+			}
+			random = {
+				chance = 30
+				add_trait = poet
+			}
+		}
+		prestige = 50
+		reverse_opinion = {
+			modifier = opinion_grateful
+			who = ROOT
+			years = 2
+		}
+	}
+	option = {
+		name = RP_christmas.68.option2
+		ai_chance = {
+			factor =  1
+			modifier = {
+				factor = 5
+				trait = envious
+			}
+			modifier = {
+				factor = 5
+				trait = wroth
+			}
+		}
+		any_child = {
+			limit = {
+				is_adult = no
+				religion_group = christian
+			}
+			prestige = 100
+			piety = 50
+			opinion = {
+				modifier = opinion_insulted
+				who = ROOT
+				years = 2
+			}
+		}
+		prestige = 50
+	}
+}
+
+#Buy a present to wife/husband, Yes/No?
+character_event = {
+	id = RP_christmas.69
+	desc = RP_christmas.69.desc
+	picture = GFX_evt_market
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_guest_started
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		is_married = yes
+		wealth = 0
+		religion_group = christian
+	}
+	
+	mean_time_to_happen = {
+		days = 40
+	}
+	
+	option = {
+		name = RP_christmas.69.option1
+		ai_chance = {
+			factor =  3
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 0.25
+				NOT = { wealth = 75 }
+			}
+		}
+		spouse = {
+			opinion = {
+				modifier = opinion_grateful
+				who = ROOT
+				years = 2
+			}
+			prestige = 50
+		}
+		wealth = -75
+		prestige = 25
+	}
+	option = {
+		name = RP_christmas.69.option2
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0.25
+				NOT = { wealth = 25 }
+			}
+		}	
+		spouse = {
+			prestige = 20
+		}
+	}
+	option = {
+		name = RP_christmas.69.option3
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = greedy
+			}
+			modifier = {
+				factor = 10
+				trait = envious
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+		}
+		spouse = {
+			opinion = {
+				modifier = opinion_dislike
+				who = ROOT
+				years = 2
+			}
+			prestige = -20
+			random = {
+				chance = 20
+				add_trait = greedy
+			}
+		}
+	}
+}
+
+#Character eating to much
+character_event = {
+	id = RP_christmas.70
+	desc = RP_christmas.70.desc
+	picture = GFX_evt_feast
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_guest_started
+		}
+		NOT = {
+			trait = temperate
+			OR = {
+				has_character_flag = RP_christmas_low_food
+				liege = {
+					has_character_flag = RP_christmas_low_food
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 75
+	}
+	
+	option = {
+		name = RP_christmas.70.option1
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 5
+				trait = celibate
+			}
+			modifier = {
+				factor = 5
+				trait = patient
+			}
+		}
+		piety = 20
+		random = {
+			chance = 30
+			add_trait = temperate
+		}
+	}
+	option = {
+		name = RP_christmas.70.option2
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+		}
+		piety = -30
+		random = {
+			chance = 30
+			add_trait = gluttonous
+		}
+	}
+}
+
+#Lustful dream...
+character_event = {
+	id = RP_christmas.71
+	desc = RP_christmas.71.desc
+	picture = GFX_evt_brothel
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_guest_started
+		}
+		trait = lustful
+		religion_group = christian
+		NOT = { trait = cynical }
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+		modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+	}
+	
+	option = {
+		name = RP_christmas.68.option1
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 2
+				trait = shy
+			}
+			modifier = {
+				factor = 2
+				trait = craven
+			}
+		}
+		remove_trait = lustful
+		random_list = {
+			30 = { add_trait = chaste }
+			10 = { add_trait = zealous }
+		}
+		piety = 20
+	}
+	option = {
+		name = RP_christmas.71.option2
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 5
+				trait = content
+			}
+			modifier = {
+				factor = 5
+				trait = hedonist
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = cynical
+		}
+		piety = -20
+	}
+}
+
+#Stands in the center of attention
+character_event = {
+	id = RP_christmas.72
+	desc = RP_christmas.72.desc
+	picture = GFX_evt_feast
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_guest_started
+		}
+		NOT = {
+			trait = stutter
+			trait = shy
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+		modifier = {
+			factor = 0.5
+			OR = {
+				trait = gregarious
+				trait = socializer
+			}
+		}
+	}
+	
+	option = {
+		name = RP_christmas.72.option1
+		random_list = {
+			40 = { add_trait = gregarious }
+			10 = { add_trait = proud }
+		}
+		prestige = 50
+		if = {
+			limit = {
+				liege = {
+					has_character_flag = RP_christmas_celebrations_started
+				}
+			}
+			liege = {
+				any_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+					}
+					opinion = {
+						modifier = opinion_nice_chat
+						who = ROOT
+						years = 1
+					}
+				}
+			}
+			liege = {
+				any_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+					}
+					opinion = {
+						modifier = opinion_nice_chat
+						who = ROOT
+						years = 1
+					}
+				}
+			}
+			liege = {
+				any_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+					}
+					opinion = {
+						modifier = opinion_nice_chat
+						who = ROOT
+						years = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = RP_christmas_celebrations_started
+			}
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+				}
+				opinion = {
+					modifier = opinion_nice_chat
+					who = ROOT
+					years = 1
+				}
+			}
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+				}
+				opinion = {
+					modifier = opinion_nice_chat
+					who = ROOT
+					years = 1
+				}
+			}
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+				}
+				opinion = {
+					modifier = opinion_nice_chat
+					who = ROOT
+					years = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = depressed 
+			}
+			remove_trait = depressed
+		}
+	}
+}
+
+#Painting of this years christmas celebrations
+character_event = {
+	id = RP_christmas.73
+	desc = RP_christmas.73.desc
+	picture = GFX_evt_icon
+	
+	trigger = {
+		has_character_flag = RP_christmas_celebrations_started
+		NOT = {
+			trait = cynical
+			has_character_modifier = RP_christmas_painting
+		}
+		wealth = 0
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+		modifier = {
+			factor = 0.75
+			trait = zealous
+		}
+	}
+	
+	option = {
+		name = RP_christmas.73.option1
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = proud
+			}
+			modifier = {
+				factor = 5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 2
+				trait = envious
+			}
+		}
+		prestige = 100
+		piety = 50
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			prestige = 25
+			opinion = {
+				modifier = opinion_was_on_painting
+				who = ROOT
+				years = 2
+			}
+		}
+		add_character_modifier = {
+			name = RP_christmas_painting
+			duration = 200
+		}
+	}
+	option = {
+		name = RP_christmas.73.option2
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = humble
+			}
+			modifier = {
+				factor = 5
+				trait = content
+			}
+			modifier = {
+				factor = 5
+				trait = greedy
+			}
+		}
+		piety = -25
+	}
+}
+
+#Discrimination of heretics/heathens
+character_event = {
+	id = RP_christmas.74
+	desc = RP_christmas.74.desc
+	picture = GFX_evt_heretic
+	
+	trigger = {
+		religion_group = christian
+		OR = {
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					NOT = {
+						religion_group = christian
+						has_character_modifier = RP_christmas_racist_insult_timer
+					}
+				}
+			}
+			has_character_flag = RP_christmas_celebrations_started
+			ROOT = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					NOT = {
+						religion_group = christian
+						has_character_modifier = RP_christmas_racist_insult_timer
+					}
+				}
+			}
+		}
+		NOT = {
+			trait = cynical
+			trait = kind
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	#shout insults at heathen
+	option = {
+		name = RP_christmas.74.option1
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 5
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = RP_christmas_celebrations_started
+			}
+			ROOT = {
+				random_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						NOT = {
+							religion_group = christian
+							has_character_modifier = RP_christmas_racist_insult_timer
+						}
+					}
+					opinion = {
+						modifier = opinion_racialist_insult
+						who = ROOT
+						years = 5
+					}
+					hidden_tooltip = {
+						add_character_modifier = {
+							name = RP_christmas_racist_insult_timer
+							duration = 100
+						}
+						character_event = {
+							id = RP_christmas.76
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						NOT = {
+							religion_group = christian
+							has_character_modifier = RP_christmas_racist_insult_timer
+						}
+					}
+					hidden_tooltip = {
+						add_character_modifier = {
+							name = RP_christmas_racist_insult_timer
+							duration = 100
+						}
+						character_event = {
+							id = RP_christmas.76
+						}
+					}
+					opinion = {
+						modifier = opinion_racialist_insult
+						who = ROOT
+						years = 5
+					}
+				}
+			}
+		}
+		random = {
+			chance = 10
+			add_trait = cruel
+		}
+	} 
+	option = {  #Asks heathen to convert ROOT
+		name = RP_christmas.74.option2
+		trigger = {
+			NOT = {
+				trait = shy
+				trait = zealous
+				has_character_flag = RP_christmas_celebrations_started
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		remove_trait = cynical
+		liege = {
+			random_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+				}
+				opinion = {
+					modifier = opinion_converted_to_another_religion
+					who = ROOT
+					years = 5
+				}
+				reverse_religion = ROOT
+				character_event = {
+					id = RP_christmas.75
+				}
+			}
+		}
+	}
+	
+	option = { #Ignores heathen
+		name = RP_christmas.74.option3
+		ai_chance = {
+			factor = 9
+			modifier = {
+				factor = 2
+				trait = patient
+			}
+			modifier = {
+				factor = 2
+				trait = shy
+			}
+			modifier = {
+				factor = 2
+				trait = cynical
+			}
+		}
+		remove_trait = zealous
+		if = {
+			limit = {
+				NOT = { trait = zealous }
+			}
+			random = {
+				chance = 20
+				add_trait = cynical
+			}
+		}
+	}
+}
+
+#Switches religion solution
+character_event = {
+	id = RP_christmas.75
+	desc = RP_christmas.75.desc
+	picture = GFX_evt_heretic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.75.option1
+		piety = 15
+		random = {
+			chance = 25
+			add_trait = zealous
+		}
+	}
+}
+
+#From shouts racist insult against ROOT
+character_event = {
+	id = RP_christmas.76
+	desc = RP_christmas.76.desc
+	picture = GFX_evt_heretic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.76.option1
+		prestige = -100
+		random = {
+			chance = 20
+			add_trait = zealous
+		}
+	}
+}
+
+#ROOT tries to murder heretic
+character_event = {
+	id = RP_christmas.77
+	desc = RP_christmas.77.desc
+	picture = GFX_evt_lunatic
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_celebrations_started
+			has_character_flag = RP_christmas_guest_started
+		}
+		trait = zealous
+		NOT = { trait = craven trait = kind }
+		OR = {
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+					is_heresy_of = ROOT
+					religion_group = christian
+				}
+			}
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+				is_heresy_of = ROOT
+				religion_group = christian
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 800
+		modifier = {
+			factor = 0.75
+			trait = lunatic
+		}
+	}
+	#Lets murder him/her!
+	option = {
+		name = RP_christmas.77.option1
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			liege = {
+				any_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+						is_heresy_of = ROOT
+						religion_group = christian
+					}
+					save_event_target_as = RP_christmas_anti_heretic_plot_to_kill
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = RP_christmas_celebrations_started
+			}
+			any_vassal = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+					is_heresy_of = ROOT
+					religion_group = christian
+				}
+				save_event_target_as = RP_christmas_anti_heretic_plot_to_kill
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				30 = {
+					modifier = {
+						factor = 1.5
+						intrigue = 5
+						NOT = { event_target:RP_christmas_anti_heretic_plot_to_kill = { intrigue = 5 } }
+					}
+					modifier = {
+						factor = 2
+						intrigue = 10
+						NOT = { event_target:RP_christmas_anti_heretic_plot_to_kill = { intrigue = 10 } }
+					}
+					modifier = {
+						factor = 2
+						intrigue = 15
+						NOT = { event_target:RP_christmas_anti_heretic_plot_to_kill = { intrigue = 15 } }
+					}
+					modifier = {
+						factor = 2
+						intrigue = 20
+						NOT = { event_target:RP_christmas_anti_heretic_plot_to_kill = { intrigue = 20 } }
+					}
+					modifier = {
+						factor = 2
+						intrigue = 25
+						NOT = { event_target:RP_christmas_anti_heretic_plot_to_kill = { intrigue = 25 } }
+					}
+					event_target:RP_christmas_anti_heretic_plot_to_kill = {
+						character_event = {
+							id = RP_christmas.78
+						}
+					}
+				}
+				70 = {
+					event_target:RP_christmas_anti_heretic_plot_to_kill = {
+						character_event = {
+							id = RP_christmas.79
+						}
+					}
+				}
+			}
+		}
+	}  #No that is not necessary...
+	option = {
+		name = RP_christmas.77.option2
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 5
+				trait = just
+			}
+		}
+		random = {
+			chance = 20
+			remove_trait = zealous
+		}
+	}
+}
+
+#From tries to murder the heathen ROOT #Works  #FROM
+character_event = {
+	id = RP_christmas.78
+	desc = RP_christmas.78.desc
+	picture = GFX_evt_castle_construction
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.78.option1
+		ROOT = {
+			death = {
+				death_reason = death_murder_unknown
+				killer = FROM
+			}
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = RP_christmas.80
+				}
+			}
+		}
+	}
+}
+
+#From tries to murder heathen ROOT #Fails  #ROOT
+character_event = {
+	id = RP_christmas.79
+	desc = RP_christmas.79.desc
+	picture = GFX_evt_garden
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.79.option1
+		remove_trait = cruel
+	}
+}
+
+#Chess!!!
+character_event = {
+	id = RP_christmas.80
+	desc = RP_christmas.80.desc
+	picture = GFX_evt_courtiers_talking
+	
+	trigger = {
+		OR = {
+			has_character_flag = RP_christmas_guest_started
+			has_character_flag = RP_christmas_celebrations_started
+		}
+		OR = {
+			liege = {
+				any_vassal = {
+					has_character_flag = RP_christmas_guest_started
+				}
+			}
+			any_vassal = {
+				has_character_flag = RP_christmas_guest_started
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+		modifier = {
+			factor = 0.5
+			trait = gamer
+		}
+	}
+	
+	option = {
+		name = RP_christmas.80.option1
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 10
+				trait = gamer
+			}
+			modifier = {
+				factor = 5
+				trait = strategist
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+		}
+		custom_tooltip = { text = RP_christmas_tooltip.19 }
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_character_flag = RP_christmas_guest_started
+				}
+				liege = {
+					any_vassal = {
+						limit = {
+							has_character_flag = RP_christmas_guest_started
+						}
+					}
+					random_list = {
+						50 = {
+							character_event = {
+								id = RP_christmas.83    #wins
+							}
+							ROOT = {
+								character_event = {
+									id = RP_christmas.82    #loses
+								}
+							}
+						}
+						50 = {
+							character_event = {
+								id = RP_christmas.84    #loses
+							}
+							ROOT = {
+								character_event = {
+									id = RP_christmas.81    #wins
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_character_flag = RP_christmas_celebrations_started
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = RP_christmas_guest_started
+					}
+					random_list = {
+						50 = {
+							character_event = {
+								id = RP_christmas.83    #wins
+							}
+							ROOT = {
+								character_event = {
+									id = RP_christmas.82    #loses
+								}
+							}
+						}
+						50 = {
+							character_event = {
+								id = RP_christmas.84    #loses
+							}
+							ROOT = {
+								character_event = {
+									id = RP_christmas.81    #wins
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.80.option2
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#From challenges ROOT to play a game of chess together   #Root wins
+character_event = {
+	id = RP_christmas.81
+	desc = RP_christmas.81.desc
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.81.option1
+		prestige = 25
+		random = {
+			chance = 20
+			change_learning = 1
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			opinion = {
+				modifier = opinion_played_chess_together
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+}
+
+#From challenges ROOT to play a game of chess together   #ROOT lose
+character_event = {
+	id = RP_christmas.82
+	desc = RP_christmas.82.desc
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.82.option1
+		prestige = 25
+		random = {
+			chance = 20
+			change_learning = 1
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = RP_christmas_guest_started
+			}
+			opinion = {
+				modifier = opinion_played_chess_together
+				who = Root
+				years = 1
+			}
+		}
+	}
+}
+
+#From challenges ROOT to play a game of chess together   #From wins
+character_event = {
+	id = RP_christmas.83
+	desc = RP_christmas.83.desc
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.83.option1
+		prestige = 25
+		random = {
+			chance = 20
+			change_learning = 1
+		}
+		opinion = {
+			modifier = opinion_played_chess_together
+			who = From
+			years = 1
+		}
+	}
+}
+
+#From challenges ROOT to play a game of chess together   #From lose
+character_event = {
+	id = RP_christmas.84
+	desc = RP_christmas.84.desc
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = RP_christmas.84.option1
+		prestige = 25
+		random = {
+			chance = 20
+			change_learning = 1
+		}
+		opinion = {
+			modifier = opinion_played_chess_together
+			who = ROOT
+			years = 1
+		}
+	}
+}
+
+#Root refuses to eat the meat served #Muslim
+character_event = {
+	id = RP_christmas.85
+	desc = RP_christmas.85.desc
+	picture = GFX_evt_feast
+	
+	trigger = {
+		has_character_flag = RP_christmas_guest_started
+		religion_group = muslim
+		NOT = {
+			trait = cynical
+			has_character_modifier = RP_christmas_does_not_eat_meat_timer
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 50
+		modifier = {
+			factor = 0.01
+			trait = zealous
+		}
+	}
+	
+	option = {
+		name = RP_christmas.85.option1
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				trait = theologian
+			}
+			modifier = {
+				factor = 5
+				trait = temperate
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 1000
+				trait = zealous
+			}
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = RP_christmas_does_not_eat_meat_timer
+				duration = 150
+				hidden = yes
+			}
+		}
+		random = {
+			chance = 10
+			add_trait = zealous
+		}
+		piety = 25
+		prestige = 25
+		liege = {
+			opinion = {
+				modifier = opinion_disrespectful
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+	option = {
+		name = RP_christmas.85.option2
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 3
+				trait = gluttonous
+			}
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = RP_christmas_does_not_eat_meat_timer
+				duration = 150
+				hidden = yes
+			}
+		}
+		piety = -75
+		prestige = -50
+		remove_trait = zealous
+		random_list = {
+			40 = { add_trait = cynical }
+			20 = { add_trait = gluttonous }
+		}
+	}
+}

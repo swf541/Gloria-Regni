@@ -1,0 +1,26 @@
+
+namespace = GRL
+
+### Latin Empire Requests Submission to the Emperor
+
+# Invitations Sent (Liege)
+character_event = {
+	id = GRL.700
+	desc = EVTDESC_GRL_700
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_GRL_700
+		ai_chance = { factor = 100 }
+		set_defacto_liege = FROM	
+	}
+	option = {
+		ai_chance = { factor = 0 }
+		name = EVTOPTB_GRL_700
+	}
+}

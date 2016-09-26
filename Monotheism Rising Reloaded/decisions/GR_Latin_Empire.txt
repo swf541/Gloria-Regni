@@ -1,0 +1,119 @@
+decisions = {
+	subjugate_antioch = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = e_latin_empire
+			religion = catholic
+			d_antioch = { holder_scope = { religion = catholic } }
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = antioch_subjugated }
+		}
+		allow = {
+			completely_controls = k_byzantium
+			completely_controls = k_anatolia
+		}
+		effect = {
+			set_global_flag = antioch_subjugated
+			d_antioch = { holder_scope = { character_event = { id = GRL.700 } } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	subjugate_edessa = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = e_latin_empire
+			religion = catholic
+			d_edessa = { holder_scope = { religion = catholic } }
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = edessa_subjugated }
+		}
+		allow = {
+			completely_controls = k_byzantium
+			completely_controls = k_anatolia
+		}
+		effect = {
+			set_global_flag = edessa_subjugated
+			d_edessa = { holder_scope = { character_event = { id = GRL.700 } } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	subjugate_jerusalem = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = e_latin_empire
+			religion = catholic
+			k_jerusalem = { holder_scope = { religion = catholic } }
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = jerusalem_subjugated }
+		}
+		allow = {
+			completely_controls = k_byzantium
+			completely_controls = k_anatolia
+		}
+		effect = {
+			set_global_flag = jerusalem_subjugated
+			k_jerusalem = { holder_scope = { character_event = { id = GRL.700 } } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	organize_the_knights_of_the_holy_wisdom = {
+		is_high_prio = yes
+		potential = {
+			is_female = no
+			prisoner = no
+			age = 16
+			has_landed_title = e_latin_empire
+			NOT = { has_global_flag = holy_wisdom_founded }
+		}
+		allow = {
+			has_landed_title = e_latin_empire
+			piety = 300
+			wealth = 1000
+			realm_size = 50
+		}
+		effect = {
+			set_global_flag = holy_wisdom_founded
+			piety = -300
+			wealth = -1000
+			activate_title = { title = d_knights_holy_wisdom status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = catholic
+					culture = frankish
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_knights_holy_wisdom = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

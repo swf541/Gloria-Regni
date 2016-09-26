@@ -258,3 +258,33 @@ e_carthage = {
 	   	completely_controls = k_africa
 	}
 }
+
+d_knights_holy_wisdom = {
+
+	color={ 230 100 50 }
+	
+	graphical_culture = holygfx
+	
+	capital = 496
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	culture = frankish
+	
+	# Parent Religion 
+	religion = catholic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_calatrava_composition
+}

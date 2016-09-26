@@ -745,7 +745,54 @@ latin = {
 		mat_grm_name_chance = 60
 		mother_name_chance = 10
 	}
-	
+	franj = {
+		graphical_cultures = { frankishgfx }
+
+		color = { 0.8 0.8 0.2 }
+		male_names = {
+			Aimery_Aymeric Amalric_Amalric Anseis Auguste_August Albericus_Aubrey Andronique_Andronicus Adolphe_Adolf Aithon Agapite Alexandre_Alexander Augustin_Augustine Alfonse_Alphonse Antevel 
+			Arnoul_Arnold Andreas_Andrew Adam_Adam Amelin Anfred Aymard Abraham_Abraham Maccabee_Macabee Tadd Taddeus Tadeo Tadeusz Tavi Tavish Thaddeus Thomas Todos Tomas_Thomas Tomasz Toomas Zerika Abba Addai Allah Avahu Avina Bustan 
+			Cephas_Peter Balian Barisan Burchard_Bouchard Bertlin Balduin_Baldwin Boémond Boson_Boson Basile_Basil Bénédict_Benedict Balthazar_Bathasar
+			Carles_Charles Claudius_Claudius Chrestien_Christian Conrad_Konrad Constantin_Constanine Clément_Clement Constant_Constant Daimbert Drogo_Drogo Willelmus_William
+			Eudes_Otto Eufemïen Érard Eustache_Eustace Estienne_Stephen Éracles Eduard_Edward Frotlaic Faramond_Faramond Frédéric_Frederick Folques_Folke Florent_Florentius
+			Guillaume_William Guy_Guy Gefreid_Godfrey Gerin Gerers Giselbert_Gilbert Galbert Gavéras Gabriel_Gabriel Guibert Godefroy_Godfrey Gauthier_Walther Georges_George Gédéon Garnier Gualon
+			Hugbert_Hubert Humfroy Hugues_Hugh Henry_Henry Hercules_Heracles Isaac_Isaac Jehan_John Jaques_Jacob Janus Jocelin Joseph_Joseph Louys_Louis Lazare_Lazarus Lambert_Lambert Luc_Lucas Levon_Leo Léonce_Leontius
+			Michel_Michael Magnus_Magnus Marc_Marcus Maurice_Maurice Marin_Marius Muavias Muamed_Mohammed Milon Manuel_Manuel Raoul_Ralph Richard_Richard Romulald Roger_Roger Renaud_Reinhold Rizzo Rembath Romain_Roman Rostang
+			Nicolas_Nicholas Nicéphore Nersès_Narses NerioOthon_Otto Orderic Oissim Piere_Peter Phoebus Paul_Paul Procope Philarète Philippe_Philip Pagan_Pagan Rollant_Roland Raymond_Raymond Rupin_Reuben Robert_Robert 
+			Sebastien_Sebastian Senibald_Sinibald Serge_Sergius Sclère Thomas_Thomas Tristan_Tristan Tancrède_Tancredi Taphroc Thèorian Ursin_Ursus Vincent_Vincent Vache Valeran Yves
+			Lazaros Maadai Maccabee_Macabee Niv Petros Rachim Saad Samal Shafer Shamir Tab Taddeo Talmai Tamasine Tavares Tavis Thadeus Tiv Toma Tomasso Yanai
+			Gabriel Hairân_Herod Izates Ma'nu Maz'ur Monobaz Nasor Odaenathus Paqor Sahru Samson Tabyâ Tômâ_Thomas Yalur Yochanan_John Yohannon_John Yônâ_Jonah Zakkai
+			Zahir Taimur Sirhan Sharaf Isa Fayiz Bashar Shujah Jibril Sadiq Hasan_Hasan Idris Shaiban Yusuf_Joseph Akin Nizam Hafiz Faruk Abdullah_Abdullah Mukhtar Nasr Hasan_Hasan
+		}
+		female_names = {
+			Arsinde_Arsenda Amelia_Amelia Agnes_Agnes Anne_Anna Antoinette Alix_Alice Agrippine Aurelia Audovère Adélaïde Aliénor_Eleanor Anastasia_Anastasia
+			Constance_Constance Carola Catherine_Catherine Claudia_Claudia Clotilde_Clotilde Clémence_Clementia Dominique Dorothée_Dorothy Danielle
+			Élisabeth_Elisabeth Eloise_Eloise Eudoxia_Eudocia Ermentrude Emma_Emma Eugénie_Eugenia Eschive Ermessinde_Ermesinda Esclarmonde_Esclarmunda 
+			Euphrosine_Euphrosyne Eve_Eva Eulalie Blanche_Blanche Basina Bourguigne Bonne_Bonne Belleassez Bourgogne
+			Faustine Fastrade Godehilde Galla Gerberge_Gerberga Hilarie_Hilaria Hildegarde_Hildegarde Irène_Irene Jehanne_Joan Julia_Julia
+			Leyli Lucie_Lucia Mélissende_Melisende Marie_Maria Mahaut_Mahaut Marguerite_Margaret Marthe_Martha Marcelline Mélusine Mathilde_Matilda
+			Plaisance_Plaisance Perinne Pernette Romana Ritta Rozala Raymonde Sibylle_Sibylla Stéphanie_Stephania Sophie_Sophia Sarrazine Solène
+			Théodora_Theodora Tamar_Tamar Tiburge_Tiburge Vultrade Valerie Valence_Yolanda Xène Ysabeau_Elisabeth Yseult Yolande_Yolanda Zoé Zenobia
+			Anina Chanina Tabeitha Diklah_Dikla Hasna Ketina Magdala Mariam Martha Morta Nura Saba Samantha Samiah Samya Esther_Esther
+			Miriam_Maria Maria Haritha Layla Nafisa Aziza Margaret_Margarita Stephania_Stephania Kamala Taliba Zaynab Sholah Shararah Rashida Nyawela Maryam Jahaira
+			Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Hannah Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tabitha Tadea  
+			Zeta Zeita Talya Taliah Talia Sima Sava Sabah Raz Meiriona Adva Alya Anena Chayuta Duvsha Hayuta_Chayuta Hina Mahalia Bartola Chaseana   
+		}
+		from_dynasty_prefix = "de "
+		grammar_transform = french
+
+		modifier = default_culture_modifier
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 10
+		father_name_chance = 10
+
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 60
+		mother_name_chance = 10
+	}
 	norman = {
 		graphical_cultures = { normangfx }
 
