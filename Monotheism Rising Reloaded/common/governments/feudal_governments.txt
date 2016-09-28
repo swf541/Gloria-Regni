@@ -27,6 +27,14 @@ feudal_governments = {
 				roman_government_trigger = yes
 			}
 			is_patrician = no
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+				has_landed_title = e_trebizond
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus			
+			}
 		}
 		
 		color = { 91 133 207 }

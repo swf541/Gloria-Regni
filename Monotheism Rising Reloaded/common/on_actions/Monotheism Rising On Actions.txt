@@ -175,6 +175,7 @@ on_war_ended_victory = {
 		PA.10073
 		PA.10074
 		PA.10076
+		ROMEGOV.1
 	}
 }
 # From = Attacker, Root = Defender
@@ -268,13 +269,12 @@ on_war_ended_defeat = {
 #}
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
-#on_new_holder_usurpation = {
-#	events = {
-#		ROMEGOV.4
-#		ROMEGOV.2
-#		ROMEGOV.3
-#	}
-#}
+on_new_holder_usurpation = {
+	events = {
+		ROMEGOV.1
+
+	}
+}
 
 on_law_vote_passed = {
 	events = {
