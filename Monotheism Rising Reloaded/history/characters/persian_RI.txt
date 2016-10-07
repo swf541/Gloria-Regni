@@ -1,0 +1,696 @@
+#Begin mod added characters
+1000254518={
+	name="Peroz"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	490.1.1 = {
+		birth = yes
+	}
+	563.1.1 = {
+		death = yes
+	}
+}
+1000254519={
+	name="Bahram"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254518
+	525.1.1 = {
+		birth = yes
+	}
+	580.1.1 = {
+		death = yes
+	}
+}
+1000254520={
+	name="Mardanshina"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254519
+	female = yes
+	541.1.1 = {
+		birth = yes
+	}
+	592.1.1 = {
+		death = yes
+	}
+}
+1000254521={
+	name="Shapur"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254519
+	543.1.1 = {
+		birth = yes
+	}
+	599.1.1 = {
+		death = yes
+	}
+}
+1000254522={
+	name="Ardashir"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254521
+	560.1.1 = {
+		birth = yes
+	}
+	621.1.1 = {
+		death = yes
+	}
+}
+1000254523={
+	name="Shahrbaraz"
+	# Emperor of Persia
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254522
+	579.1.1 = {
+		birth = yes
+	}
+	629.6.17 = {
+		death = yes
+	}
+}
+1000254524={
+	name="Shapur"
+	# Emperor of Persia
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254523
+	600.1.1 = {
+		birth = yes
+	}
+	659.1.1 = {
+		death = yes
+	}
+}
+1000254525={
+	name="Niketas"
+	# Niketas "the Persian", son of Shahrbaraz
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254523
+	602.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = orthodox
+		culture = hellene
+	}
+	636.1.1 = {
+		death = yes
+	}
+}
+1000254526={
+	name="Nike"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254523
+	female = yes
+	603.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = orthodox
+		culture = hellene
+	}
+	662.1.1 = {
+		death = yes
+	}
+}
+1000254527={
+	name="Gorduya"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254519
+	female = yes
+	554.1.1 = {
+		birth = yes
+	}
+	607.1.1 = {
+		death = yes
+	}
+}
+1000254528={
+	name="Gordiya"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254519
+	female = yes
+	557.1.1 = {
+		birth = yes
+	}
+	621.1.1 = {
+		death = yes
+	}
+}
+1000254529={
+	name="Mihran"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 180645
+	576.1.1 = {
+		birth = yes
+	}
+	639.1.1 = {
+		death = yes
+	}
+}
+1000254530={
+	name="Shapur"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 180645
+	578.1.1 = {
+		birth = yes
+	}
+	600.1.1 = {
+		death = yes
+	}
+}
+1000254531 = {
+	name = "Shapur"
+	dynasty = 1000124523
+	culture = old_azeri
+	religion = miaphysite
+	575.1.1 = {
+		birth = yes
+	}
+	630.1.1 = {
+		death = yes
+	}
+}
+
+#Moved these here from armenian.txt
+1000250221 = {
+	name = "Pasagnathes"
+	dynasty = 1000124523
+	culture = old_azeri
+	religion = miaphysite
+	father = 1000254531
+	595.1.1 = {
+		birth = yes
+	}
+	653.1.1 = {
+		death = yes
+	}
+}
+
+1000250222 = {
+	name = "Saborios"
+	dynasty = 1000124523
+	culture = old_azeri
+	religion = miaphysite
+	father = 1000250221
+	625.1.1 = {
+		birth = yes
+	}
+	668.1.1 = {
+		death = yes
+	}
+}
+
+1000254532 = {
+	name="Fayruz"
+	dynasty = 1000124536
+	culture = persian
+	religion = zoroastrian
+	father = 1000254540
+	585.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = sunni
+	}
+	643.1.1 = {
+		death = yes
+	}
+}
+1000254533 = {
+	name="Mihr-Bondad"
+	dynasty = 1000124540
+	culture = persian
+	religion = zoroastrian
+	520.1.1 = {
+		birth = yes
+	}
+	578.1.1 = {
+		death = yes
+	}
+}
+1000254534 = {
+	name="Banegan"
+	dynasty = 1000124540
+	culture = persian
+	religion = zoroastrian
+	father = 1000254533
+	543.1.1 = {
+		birth = yes
+	}
+	610.1.1 = {
+		death = yes
+	}
+}
+1000254535 = {
+	name="Azadbeh"
+	dynasty = 1000124540
+	culture = persian
+	religion = zoroastrian
+	father = 1000254534
+	570.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000254536 = {
+	name="Shapur" #Unnamed son of Azadbeh
+	dynasty = 1000124540
+	culture = persian
+	religion = zoroastrian
+	father = 1000254535
+	591.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+1000254537 = {
+	name="Andarzhagar"
+	dynasty = 1000124541
+	culture = persian
+	religion = zoroastrian
+	595.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+1000254538 = {
+	name="Vahriz"
+	dynasty = 1000124536
+	culture = persian
+	religion = zoroastrian
+	526.1.1 = {
+		birth = yes
+	}
+	582.1.1 = {
+		death = yes
+	}
+}
+1000254539 = {
+	name="Nawzadh"
+	dynasty = 1000124536
+	culture = persian
+	religion = zoroastrian
+	father = 1000254538
+	548.1.1 = {
+		birth = yes
+	}
+	566.1.1 = {
+		death = yes
+	}
+}
+1000254540 = {
+	name="Marzban"
+	dynasty = 1000124536
+	culture = persian
+	religion = zoroastrian
+	father = 1000254538
+	550.1.1 = {
+		birth = yes
+	}
+	613.1.1 = {
+		death = yes
+	}
+}
+1000254541 = {
+	name="Hormozd"
+	dynasty = 1000124542
+	culture = persian
+	religion = zoroastrian
+	573.1.1 = {
+		birth = yes
+	}
+	634.1.1 = {
+		death = yes
+	}
+}
+1000254542 = {
+	name="Bahman"
+	dynasty = 1000124542
+	culture = persian
+	religion = zoroastrian
+	father = 1000254541
+	594.1.1 = {
+		birth = yes
+	}
+	636.1.1 = {
+		death = yes
+	}
+}
+1000254543 = {
+	name="Narseh"
+	# Narses, progenitor of the Dabuyids
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=180625
+	500.1.1={
+		birth=yes
+	}
+	567.1.1={
+		death=yes
+	}
+}
+1000254544 = {
+	name="Firuz"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254543
+	545.1.1={
+		birth=yes
+	}
+	613.1.1={
+		death=yes
+	}
+}
+1000254545 = {
+	name="Gavbara" #Gil Gavbara
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254544
+	601.1.1={
+		birth=yes
+	}
+	660.1.1={
+		death=yes
+	}
+}
+1000254546 = {
+	name="Dabuya"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254545
+	630.1.1={
+		birth=yes
+	}
+	712.1.1={
+		death=yes
+	}
+}
+1000254547 = {
+	name="Farrukhan" #Farrukhan the Great, first attested Dabuyid ruler of Tabaristan
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254546
+	654.1.1={
+		birth=yes
+	}
+	728.1.1={
+		death=yes
+	}
+}
+1000254548 = {
+	name="Saruyih"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254547
+	675.1.1={
+		birth=yes
+	}
+	737.1.1={
+		death=yes
+	}
+}
+1000254549 = {
+	name="Jushnas"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254548
+	694.1.1={
+		birth=yes
+	}
+	761.1.1={
+		death=yes
+	}
+}
+1000254550 = {
+	name="Farrukhan" #Farrukhan the Little
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254547
+	680.1.1={
+		birth=yes
+	}
+	752.1.1={
+		death=yes
+	}
+}
+1000254551 = {
+	name="Dadhburzmihr"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254547
+	681.1.1={
+		birth=yes
+	}
+	741.1.1={
+		death=yes
+	}
+}
+1000254552 = {
+	name="Khurshid"
+	dynasty = 1000124544
+	religion="zoroastrian"
+	culture="persian"
+	father=1000254551
+	734.1.1={
+		birth=yes
+	}
+	761.1.1={
+		death=yes
+	}
+}
+1000254553={
+	name="Siyavakhsh"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254529
+	600.1.1 = {
+		birth = yes
+	}
+	651.1.1 = {
+		death = yes
+	}
+}
+1000254554 = {
+	name="Sawar" 
+	dynasty=7511
+	religion="zoroastrian"
+	culture="persian"
+	father=160301
+	605.1.1={
+		birth=yes
+	}
+	664.1.1={
+		death=yes
+	}
+}
+1000254555 = {
+	name="Burzin" 
+	dynasty=7511
+	religion="zoroastrian"
+	culture="persian"
+	father=160301
+	610.1.1={
+		birth=yes
+	}
+	671.1.1={
+		death=yes
+	}
+}
+1000254556 = {
+	name="Hormuzan"
+	dynasty = 1000124546
+	religion = zoroastrian
+	culture = persian
+	595.1.1 = {
+		birth = yes
+	}
+	641.1.1 = {
+		religion = sunni
+	}
+	644.1.1 = {
+		death = yes
+	}
+}
+1000254557 = {
+	name="Razi"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254518
+	530.1.1 = {
+		birth = yes
+	}
+	587.1.1 = {
+		death = yes
+	}
+}
+1000254558 = {
+	name="Bahram"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254557
+	563.1.1 = {
+		birth = yes
+	}
+	620.1.1 = {
+		death = yes
+	}
+}
+1000254559 = {
+	name="Mihran"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254558
+	590.1.1 = {
+		birth = yes
+	}
+	637.1.1 = {
+		death = yes
+	}
+}
+1000254560 = {
+	name="Mihrbandad"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254557
+	565.1.1 = {
+		birth = yes
+	}
+	627.1.1 = {
+		death = yes
+	}
+}
+1000254561 = {
+	name="Mihran"
+	dynasty=1042070
+	religion=zoroastrian
+	culture = persian
+	father = 1000254560
+	587.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+1000254562 = {
+	name="Piruz Khosrow" #Pirus Khosrow
+	dynasty = 1000124547
+	religion = zoroastrian
+	culture = persian
+	581.1.1 = {
+		birth = yes
+	}
+	642.1.1 = {
+		death = yes
+	}
+}
+1000254563 = {
+	name="Muta"
+	dynasty = 1000124536
+	culture = persian
+	religion = zoroastrian
+	father = 1000254540
+	587.1.1 = {
+		birth = yes
+	}
+	642.1.1 = {
+		death = yes
+	}
+}
+1000254564 = {
+	name="Azad"
+	dynasty = 1000124548
+	culture = persian
+	religion = zoroastrian
+	593.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		religion = sunni
+	}
+	647.1.1 = {
+		death = yes
+	}
+}
+1000254565 = {
+	name="Aspad"
+	dynasty = 1000124549
+	culture = persian
+	religion = zoroastrian
+	590.1.1 = {
+		birth = yes
+	}
+	658.1.1 = {
+		death = yes
+	}
+}
+1000254566 = {
+	name="Shahrbaraz"
+	dynasty = 1000124542
+	culture = persian
+	religion = zoroastrian
+	father = 1000254542
+	610.1.1 = {
+		birth = yes
+	}
+	642.1.1 = {
+		death = yes
+	}
+}
+1000254567 = {
+	name="Fadhusfan"
+	dynasty = 1000124547
+	religion = zoroastrian
+	culture = persian
+	father = 1000254562
+	600.1.1 = {
+		birth = yes
+	}
+	669.1.1 = {
+		death = yes
+	}
+}

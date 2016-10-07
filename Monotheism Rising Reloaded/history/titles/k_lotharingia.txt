@@ -33,8 +33,11 @@
 613.7.1 = {
 	holder=168695 #Clotaire II
 }
-622.10.19 = {
-	holder=168696 #Dagobert Ier
+629.10.19 = {
+	holder = 168696 #Dagobert Ier
+	law = agnatic_succession
+	law = succ_gavelkind
+	liege = e_france
 }
 634.1.1 = {
 	holder=168700 #Sigebert III
@@ -77,6 +80,7 @@
 }
 ##
 768.9.24={
+	liege=0
 	holder = 144999 #Carloman I
 	law = agnatic_succession
 }
