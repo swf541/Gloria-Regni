@@ -3,32 +3,39 @@
 # trigger has character scope
 roman_government_trigger = {
 	OR = {
-		has_law = imperial_administration 
-		has_law = ze_administration_laws_2 
-		liege = { has_law = imperial_administration }
-		liege = { has_law = ze_administration_laws_2 }
-		top_liege = { has_law = imperial_administration }
-		top_liege = { has_law = ze_administration_laws_2 }
-		liege_before_war = { has_law = imperial_administration }
-		liege_before_war = { has_law = ze_administration_laws_2 }
+		#ERE
+		has_landed_title = e_byzantium 
+		liege = { has_landed_title = e_byzantium }
+		top_liege = { has_landed_title = e_byzantium }
+		liege_before_war = { has_landed_title = e_byzantium }
+		
+		#WRE
+		has_landed_title = e_wre 
+		liege = { has_landed_title = e_wre }
+		top_liege = { has_landed_title = e_wre }
+		liege_before_war = { has_landed_title = e_wre }
+		
+		#RE
+		has_landed_title = e_roman_empire
+		liege = { has_landed_title = e_roman_empire }
+		top_liege = { has_landed_title = e_roman_empire }
+		liege_before_war = { has_landed_title = e_roman_empire }
+		
+		#Nicaea
+		has_landed_title = e_nicaea
+		liege = { has_landed_title = e_nicaea }
+		top_liege = { has_landed_title = e_nicaea }
+		liege_before_war = { has_landed_title = e_nicaea }
+		
+		#Trebizond
+		has_landed_title = e_trebizond
+		liege = { has_landed_title = e_trebizond }
+		top_liege = { has_landed_title = e_trebizond }
+		liege_before_war = { has_landed_title = e_trebizond }
+		
+		#Epirus
+		has_landed_title = k_epirus
+		liege = { has_landed_title = k_epirus }
+		top_liege = { has_landed_title = k_epirus }
+		liege_before_war = { has_landed_title = k_epirus }
 	}
-	#OR = {
-	#	liege = { has_law = imperial_administration }
-	#	top_liege = { has_law = imperial_administration }
-	#	has_law = imperial_administration
-	#}
-	OR = {
-		top_liege = { holder_scope = { culture_group = byzantine } }
-		top_liege = { holder_scope = { culture_group = postroman } }
-		OR = {
-			AND = {
-				independent = yes
-				culture_group = byzantine
-			}
-			AND = {
-				independent = yes
-				culture_group = postroman
-			}				
-		}
-	}	
-}
