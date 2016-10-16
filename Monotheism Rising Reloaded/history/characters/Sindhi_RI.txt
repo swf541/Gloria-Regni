@@ -1,6 +1,6 @@
 217870 = {
 	name="Sahasi II"
-	dynasty=1000124521 
+	dynasty=1100124521 
 	religion="hindu"
 	culture="sindhi"
 	trait=kshatriya
@@ -17,7 +17,7 @@
 
 217871 = {
 	name="Suhanadi"
-	dynasty=1000124521 
+	dynasty=1100124521 
 	religion="hindu"
 	culture="sindhi"
 	trait=kshatriya
@@ -31,7 +31,7 @@
 
 217872 = {
 	name="Chach"
-	dynasty=1000124522
+	dynasty=1100124522
 	religion="hindu"
 	culture="sindhi"
 	trait=brahamin
@@ -48,7 +48,7 @@
 
 217873 = {
 	name="Khinkhila"
-	dynasty = 1000124523
+	dynasty = 1100124523
 	religion = vanuhism 
 	culture = bactrian
 	trait = "zealous"
@@ -63,7 +63,7 @@
 
 217874 = {
 	name="Yudhishthira"
-	dynasty = 1000124523
+	dynasty = 1100124523
 	father = 217873
 	religion = vanuhism 
 	culture = bactrian
@@ -79,7 +79,7 @@
 
 217875 = {
 	name="Bulcsu"
-#	dynasty=1000124568 
+	dynasty=1100124526 
 	religion="tengri_pagan"
 	culture="hungarian"
 	600.1.2={
@@ -219,7 +219,7 @@
 
 217886 = {
 	name="Tabat" 
-	dynasty = 1022242
+	dynasty = 1100124524
 	religion = imperial
 	culture = maghreb_arabic
 	600.1.1 = {
@@ -232,7 +232,7 @@
 
 217887 = {
 	name="Dihya" 
-	dynasty = 1022242
+	dynasty = 1100124524
 	religion = imperial
 	culture = maghreb_arabic
 	female=yes
@@ -248,7 +248,7 @@
 
 217888 = {
 	name="Tulemeju_Ptolemaios" 
-	dynasty = 1022243
+	dynasty = 1100124525
 	religion = imperial
 	culture = african_latin
 	600.1.1 = {
@@ -330,7 +330,7 @@
 }
 217894 = {
 	name="Shallagea"
-#	dynasty=1000124574 
+	dynasty=1000124574 
 	religion="egyptian_pagan"
 	culture="beja"
 	610.1.1 = {
@@ -338,5 +338,80 @@
 	}
 	664.1.1 = {
 		death = yes
+	}
+}
+
+217895 = {
+	name="Barkiarok"
+	dynasty=7521
+	religion = tengri_pagan
+	culture = turkish
+	600.1. = {
+		birth = yes
+	}
+	690.1.1 = {
+		death = yes
+	}
+}
+
+217896 = {
+	name="Törtogul" # fictional
+	dynasty=852 # Kimak
+	religion="tengri_pagan"
+	culture="cuman"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217897 = {
+	name="Kegen" # fictional found of Havuksingila clan
+	dynasty=1042052
+	religion="manichean"
+	culture="pecheneg"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217898 = {
+	name="Bönek"	# fictional
+	dynasty=1042185 # Karlukid
+	religion="tengri_pagan"
+	culture="karluk"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217899 = {
+	name="Bayanchur" # or Moyanchur
+	dynasty=1042190 # Uyghurid
+	religion="tengri_pagan"
+	culture="kirghiz" # uyghur
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+
+10257430 = {
+	name="Yi'nan"
+	dynasty=1100124527 
+	religion="tengri_pagan"
+	culture="uyghur"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
 	}
 }
