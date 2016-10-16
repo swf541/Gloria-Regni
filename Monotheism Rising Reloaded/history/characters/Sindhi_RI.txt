@@ -204,3 +204,114 @@
 		death = yes
 	}
 }
+217885 = {
+	name="Phineas II" #Placeholder
+	dynasty = 1022242
+	religion = jewish
+	culture = falashim
+	600.1.1 = {
+		birth = yes
+	}
+	664.1.1 = {
+		death = yes
+	}
+}
+
+217886 = {
+	name="Tabat" 
+	dynasty = 1022242
+	religion = imperial
+	culture = maghreb_arabic
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217887 = {
+	name="Dihya" 
+	dynasty = 1022242
+	religion = imperial
+	culture = maghreb_arabic
+	female=yes
+	father=217886
+	
+	632.1.1 = {
+		birth = yes
+	}
+	700.1.1 = {
+		death = yes
+	}
+}
+
+217888 = {
+	name="Tulemeju_Ptolemaios" 
+	dynasty = 1022243
+	religion = imperial
+	culture = african_latin
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217889 = {
+	name="Justinian"
+	# AKA: Descendant of Ioustinianos 'the Great'
+	dynasty=1022186
+	religion="imperial"
+	culture="greek"
+	609.1.9 = {
+		birth = yes
+		add_claim = e_byzantium
+	}
+	648.1.1 = {
+		death = yes
+	}
+}
+
+217890 = {
+	name="Assefa"
+	dynasty=1042636
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	603.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217891 = {
+	name="Mengesha"
+	dynasty=1042639
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	602.3.4 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217892 = {
+	name="Teferi"
+	dynasty=1042640
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	610.7.9 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
