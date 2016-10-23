@@ -2816,8 +2816,16 @@ crusade = {
 			has_called_crusade = no
 			religion_authority = 0.05
 			OR = {
-				religion_group = zoroastrian_group
-				religion_group = jewish_group
+				religion = temple_judaism
+				religion = grand_sanhedrin
+				AND = {
+						controls_religion = manichean
+						liege = { religion = manichean }
+				}
+				AND = {
+					religion_group = zoroastrian_group
+					NOT = { religion = manichean }
+				}
 				AND = {
 					religion_group = pagan_group
 					custom_tooltip = {
