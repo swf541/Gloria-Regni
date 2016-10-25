@@ -1,0 +1,155 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ # forts do not have any buildings - for modding purposes only
+
+fort = {	
+	ft_level_1 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		gold_cost = 20
+		build_time = 60
+		fort_level = 1
+		light_infantry = 25
+		heavy_infantry = 25
+		archers = 50
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+	
+	ft_level_2 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ft_level_1
+		gold_cost = 40
+		build_time = 60
+		fort_level = 1
+		light_infantry = 50
+		heavy_infantry = 50
+		archers = 100
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+	
+	ft_level_3 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ft_level_2
+		gold_cost = 100
+		build_time = 60
+		fort_level = 1
+		light_infantry = 50
+		heavy_infantry = 50
+		archers = 100
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+	
+	ft_level_4 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ft_level_3
+		gold_cost = 100
+		build_time = 60
+		fort_level = 1
+		light_infantry = 50
+		heavy_infantry = 50
+		archers = 100
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+	
+	ft_level_5 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ft_level_4
+		gold_cost = 100
+		build_time = 60
+		fort_level = 1
+		light_infantry = 50
+		heavy_infantry = 50
+		archers = 100
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+	
+	ft_level_6 = {
+		desc = ft_level_1_desc
+		trigger = {
+			FROM = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ft_level_5
+		gold_cost = 100
+		build_time = 60
+		fort_level = 2
+		light_infantry = 50
+		heavy_infantry = 50
+		archers = 100
+		land_organisation = 0.05
+		siege_defence = 0.1
+		ai_creation_factor = 60
+	}
+}

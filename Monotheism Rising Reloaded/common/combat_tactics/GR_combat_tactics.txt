@@ -1,0 +1,129 @@
+### At the moment we have a pretty basic icon system for combat tactics showing
+### the uniticon which has the biggest bonus value in the tactic.
+### This is the sprite number for each unit:
+### 1=LI 2=HI 3=PIKE 4=LC 5=KNIGHTS 6=ARCHERS 7=HORSE ARCH.
+
+# Must be first in file. This tactic will be set if anything goes wrong
+no_tactic = {
+	days = 1 # tactic lasts one day
+	sprite = 1 # index of icon
+
+	trigger = {
+		always = no # never use unless set explicitly by code
+	}
+}
+
+slavic_skirmish_tactic = {
+	days = 18
+	sprite = 6
+	group = slavic_terrain_skirmish
+
+	trigger = {
+		phase = skirmish  
+		NOT = { archers = 0.3 }
+		light_infantry = 0.10
+		leader = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = west_slavic
+				culture_group = south_slavic
+			}
+		}
+		location = {
+			OR = {
+				terrain = forest
+				terrain = hills
+				terrain = mountain
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.5
+			}
+		}
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.6
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.75
+			}
+		}	
+	}
+
+	light_infantry_defensive = 0.45
+	enemy = {
+		group = harass
+		factor = 1
+	}
+}
+
+
+slavic_terrain_ambush_tactic = {
+	days = 18
+	sprite = 2
+	group = slavic_terrain_melee
+
+	trigger = {
+		phase = melee
+		light_infantry = 0.10
+		leader = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = west_slavic
+				culture_group = south_slavic
+			}
+		}
+		location = {
+			OR = {
+				terrain = forest
+				terrain = hills
+				terrain = mountain
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.5
+			}
+		}
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.6
+			}
+		}	
+		modifier = {
+			factor = 1.5
+			heavy_troops = { 
+				who = light_infantry
+				value = 0.75
+			}
+		}	
+	}
+
+	knights_offensive = -1.5
+	light_infantry_offensive = 3
+	enemy = {
+		group = stand_fast
+		factor = 3
+	}
+}

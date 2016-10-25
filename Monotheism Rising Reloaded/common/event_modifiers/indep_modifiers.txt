@@ -1,10 +1,10 @@
 contingent_territory = {
-	local_revolt_risk = -0.05
-        max_attrition = -0.05		
+	local_revolt_risk = -0.01
+    levy_size = 0.10
 	icon = 13
 }
 enclaved_territory = {		
 	local_revolt_risk = 0.50
-        max_attrition = 0.50
+    levy_size = -0.10
 	icon = 31
 }

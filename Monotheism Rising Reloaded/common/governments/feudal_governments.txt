@@ -90,6 +90,9 @@ feudal_governments = {
 		have_gender_laws = no
 		allows_matrilineal_marriage = no
 		free_retract_vassalage = yes
+		character_modifier = {
+			disease_defence = 0.25
+		}
 
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 
@@ -139,6 +142,7 @@ feudal_governments = {
 			arrest_chance_modifier = 1.2
 			global_tax_modifier = 0.5
 			global_supply_limit = 1
+			disease_defence = 0.25
 		}
 		forced_contract = {
 			roman_government

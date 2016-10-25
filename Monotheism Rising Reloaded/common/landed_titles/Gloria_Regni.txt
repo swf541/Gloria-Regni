@@ -350,3 +350,146 @@ d_knights_holy_wisdom = {
 
 	mercenary_type = knights_calatrava_composition
 }
+
+d_phoideratoi_skythikoi = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = alan
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = skythikoi_composition
+}
+d_phoideratoi_phragkoi = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = old_frankish
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = phragkoi_composition
+}
+d_phoideratoi_aethiopia = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = ethiopian
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = aethiopia_composition
+}
+
+d_schola_protectores_domestici = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Domestikos"  
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = scholae_composition
+}   
+
+d_saqaliba_a = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 728
+	
+	# Parent Religion 
+	religion = sunni
+	
+	culture = volhynian
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = warriors_perun_composition
+}   

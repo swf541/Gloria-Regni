@@ -1,0 +1,52 @@
+##########################################
+###Islamic decisions by starwarsfan541####
+##########################################
+
+decisions = {
+	form_ghilman = {
+		potential = {
+			religion = sunni
+			has_landed_title = e_arabia
+			NOT = { is_title_active = d_ghilman }
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_ghilman status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_ghilman = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

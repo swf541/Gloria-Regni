@@ -35,8 +35,8 @@ laws = {
 			}
 		}
 		
-		levy_size = -0.9
-		retinuesize_perc = 10
+	#levy_size = -0.9
+	#retinuesize_perc = 10
 	}
 	standing_army_roman_1 = {
 		group = standing_army_roman
@@ -51,6 +51,7 @@ laws = {
 			holder_scope = {
 				government = roman_government
 				independent = yes
+				NOT = { completely_controls = k_anatolia }
 			}
 		}
 		revoke_allowed = {
@@ -70,8 +71,8 @@ laws = {
 			hidden_tooltip = {
 				revoke_law = standing_army_roman_0
 			}
-		levy_size = -0.5
-		retinuesize_perc = 7
+	#levy_size = -0.5
+	#retinuesize_perc = 7
 		}
 	}
 }
