@@ -4,12 +4,12 @@
 title = c_socotra
 
 # Settlements
-max_settlements = 3
+max_settlements = 6
 b_qualnsiyah = castle
 b_tamrida = city
 b_qadub = temple
-#b_steroh = castle
-#b_asma = castle
+b_steroh = castle
+b_asma = castle
 #b_siqirah = castle
 #b_qashiu = castle
 
@@ -19,3 +19,89 @@ religion = nestorian
 terrain = hills
 
 # History
+
+600.1.1 = {
+	b_qadub = tp_monastery_1
+	b_qadub = tp_monastery_2
+	b_qadub = tp_barracks_1
+	b_qadub = tp_barracks_2
+	b_qadub = tp_wall_1
+	b_qadub = tp_wall_2
+	b_qadub = tp_town_1
+	b_qadub = tp_town_2
+
+	b_qualnsiyah = ca_town_1
+	b_qualnsiyah = ca_keep_1
+	b_qualnsiyah = ca_keep_2
+	b_qualnsiyah = ca_keep_3
+	b_qualnsiyah = ca_stable_1
+	b_qualnsiyah = ca_stable_2
+	b_qualnsiyah = ca_stable_3
+	b_qualnsiyah = ca_militia_barracks_1
+	b_qualnsiyah = ca_militia_barracks_2
+	b_qualnsiyah = ca_militia_barracks_3
+	b_qualnsiyah = ca_wall_1
+	b_qualnsiyah = ca_wall_2
+	b_qualnsiyah = ca_barracks_1
+	b_qualnsiyah = ca_barracks_2
+	b_qualnsiyah = ca_barracks_3
+	b_qualnsiyah = ca_culture_group_arabic_1
+	b_qualnsiyah = ca_culture_group_arabic_2
+	b_qualnsiyah = ca_culture_group_arabic_3
+	b_qualnsiyah = ca_soc_isle
+
+	b_tamrida = ct_shipyard_1
+	b_tamrida = ct_shipyard_2
+	b_tamrida = ct_training_grounds_1
+	b_tamrida = ct_training_grounds_2
+	b_tamrida = ct_stable_1
+	b_tamrida = ct_barracks_1
+	b_tamrida = ct_barracks_2
+	b_tamrida = ct_militia_barracks_1
+	b_tamrida = ct_militia_barracks_2
+	b_tamrida = ct_wall_1
+	b_tamrida = ct_wall_2
+	b_tamrida = ct_wall_3
+	b_tamrida = ct_wall_4
+	b_tamrida = ct_wall_q_1
+	b_tamrida = ct_wall_q_2
+	b_tamrida = ct_wall_q_3
+	b_tamrida = ct_guard_1
+	b_tamrida = ct_guard_2
+	b_tamrida = ct_guard_3
+	b_tamrida = ct_guard_4
+	b_tamrida = ct_marketplace_1
+	b_tamrida = ct_marketplace_2
+	
+	b_steroh = ca_town_1
+	b_steroh = ca_keep_1
+	b_steroh = ca_keep_2
+	b_steroh = ca_stable_1
+	b_steroh = ca_stable_2
+	b_steroh = ca_militia_barracks_1
+	b_steroh = ca_militia_barracks_2
+	b_steroh = ca_wall_1
+	b_steroh = ca_wall_2
+	b_steroh = ca_barracks_1
+	b_steroh = ca_barracks_2
+	b_steroh = ca_barracks_3
+	b_steroh = ca_culture_group_arabic_1
+	b_steroh = ca_culture_group_arabic_2
+	b_steroh = ca_culture_group_arabic_3
+	
+	b_asma = ca_town_1
+	b_asma = ca_keep_1
+	b_asma = ca_keep_2
+	b_asma = ca_stable_1
+	b_asma = ca_stable_2
+	b_asma = ca_militia_barracks_1
+	b_asma = ca_militia_barracks_2
+	b_asma = ca_wall_1
+	b_asma = ca_wall_2
+	b_asma = ca_barracks_1
+	b_asma = ca_barracks_2
+	b_asma = ca_barracks_3
+	b_asma = ca_culture_group_arabic_1
+	b_asma = ca_culture_group_arabic_2
+	b_asma = ca_culture_group_arabic_3
+}

@@ -436,7 +436,7 @@
 	religion="hindu"
 	culture="tamil"
 	trait=kshatriya
-	trait=shaivist_dravidian 
+	trait=shaivist_hindu 
 	600.1.1={
 		birth="600.1.1"
 	}
@@ -450,7 +450,7 @@
 	religion="hindu"
 	culture="tamil"
 	trait=kshatriya
-	trait=shaivist_dravidian 
+	trait=shaivist_hindu 
 	600.1.1={
 		birth="600.1.1"
 	}
@@ -464,7 +464,7 @@
 	religion="hindu"
 	culture="tamil"
 	trait=kshatriya
-	trait=shaivist_dravidian 
+	trait=shaivist_hindu 
 	father=189048
 	590.1.1={
 		birth="590.1.1"
@@ -480,7 +480,7 @@
 	religion="hindu"
 	culture="kannada"
 	trait=kshatriya
-	trait=shaivist_dravidian
+	trait=shaivist_hindu
 
 	600.1.1={
 		birth=yes
@@ -495,7 +495,7 @@
 	religion="hindu"
 	culture="kannada"
 	trait=kshatriya
-	trait=shaivist_dravidian
+	trait=shaivist_hindu
 	father=74720
 	600.1.1={
 		birth=yes
@@ -510,7 +510,7 @@
 	religion="hindu"
 	culture="kannada"
 	trait=kshatriya
-	trait=shaivist_dravidian
+	trait=shaivist_hindu
 	father=74720
 	602.1.1={
 		birth=yes
@@ -519,3 +519,199 @@
 		death=yes
 	}
 }
+#Empire of Harsha Royal Family and Court
+217908 = {
+	name="Harsha"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	trait=genius
+	trait=scholar
+	trait=brilliant_strategist
+	trait=brave
+	trait=diligent
+	trait=poet
+	father=217912
+	mother=217913
+
+	590.1.1={
+		birth=yes
+	}
+	610.1.1 ={
+		add_spouse = 217909
+	}
+	647.1.1={
+		death=yes
+	}
+}
+217909 = {
+	name="Durgavati"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	female=yes
+
+	590.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+2179010 = {
+	name="Vagyavardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father = 217908
+	mother = 217909
+
+	610.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+217911 = {
+	name="Kalyanvardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father = 217908
+	mother = 217909
+
+	612.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+
+217912 = {
+	name="Prabhakaravardhana"
+	dynasty=100124575
+	religion="hindu"
+	culture="hindustani"
+	trait=kshatriya
+
+	560.1.1={
+		birth=yes
+	}
+	576.1.1 ={
+		add_spouse = 217913
+	}
+	604.1.1={
+		death=yes
+	}
+}
+
+217913 = {
+	name="Mahasenagupta"
+	dynasty=100124576
+	religion="hindu"
+	culture="hindustani"
+	trait=kshatriya
+	female=yes
+
+	562.1.1={
+		birth=yes
+	}
+	604.1.1={
+		death=yes
+	}
+}
+217914 = {
+	name="Rajyavardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father=217912
+	mother=217913
+
+	585.1.1={
+		birth=yes
+	}
+	606.1.1={
+		death=yes
+	}
+}
+217915 = {
+	name="Rajyashri"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father=217912
+	mother=217913
+	female=yes
+
+	591.1.1={
+		birth=yes
+	}
+	650.1.1={
+		death=yes
+	}
+}
+217919 = {
+	name="Arunashwa"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+
+	592.1.1={
+		birth=yes
+	}
+	670.1.1={
+		death=yes
+	}
+}
+#Court Poet
+217916 = {
+	name="Bana"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+
+	590.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+#End of Harsha Empire  Royal Family and Court
+217917 = {	#188999417
+	name="Pulindasena"
+	dynasty=100124577 
+	religion="buddhist"
+	culture="oriya"
+	trait="kshatriya"
+
+	600.1.1={
+		birth=yes
+	}
+	680.1.1={
+		death=yes
+	}
+}
+217918 = {	
+	name="Indradhawala" 
+	dynasty=1043000
+	religion="buddhist"
+	culture="bengali"
+	trait="kshatriya"
+	trait="mahayana_buddhist"
+	602.1.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+

@@ -408,3 +408,25 @@ city = {
 
 }
 
+castle = {
+	ca_soc_isle = { 
+		potential = {
+			FROMFROM = { title = b_qualnsiyah }
+		}
+		desc = ca_ca_soc_isle_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		light_infantry = 1250
+		heavy_infantry = 750
+		archers = 500
+		light_cavalry = 500
+		galleys = 25
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+}
+
