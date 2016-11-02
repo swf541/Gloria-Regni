@@ -16,11 +16,14 @@ b_sidibarrani = temple
 #b_shammas = castle
 
 # Misc
-culture = egyptian_arabic
-religion = sunni
+culture = coptic
+religion = miaphysite
 
 # History
-
+700.1.1 = {
+	religion = sunni
+	culture = egyptian_arabic
+}
 909.1.1 = { religion = shiite } 
 1123.1.1 = { trade_post = b_faliero }
 1171.1.1 = { religion = sunni }

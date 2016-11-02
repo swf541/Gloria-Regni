@@ -16,8 +16,12 @@ b_sela = temple
 #b_idan = castle
 
 # Misc
-culture = levantine_arabic
-religion = sunni
+culture = khalan
+religion = imperial
 
 # History
+700.1.1 = {
+	culture = levantine_arabic
+	religion = sunni
+}
 1187.1.1 = { b_hurmniz = city }

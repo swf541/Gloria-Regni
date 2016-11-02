@@ -543,6 +543,7 @@
 	}
 	630.1.1 = {
 		add_spouse = 1000258131
+		effect = { set_character_flag = is_sajah }
 	}
 	632.6.8 = {
 		religion = nestorian
@@ -627,6 +628,7 @@
 		religion = sunni
 	}
 	630.1.1 = {
+		effect = { set_character_flag = is_musaylimah }
 		add_spouse = 1000258126
 	}
 	631.1.1 = {
@@ -702,6 +704,7 @@
 	}
 	630.1.1 = {
 		religion = sunni
+		effect = { set_character_flag = is_tulayha }
 	}
 	631.1.1 = {
 		religion = pagan

@@ -16,10 +16,13 @@ b_attur = castle
 #b_nabq = castle
 
 # Misc
-culture = levantine_arabic
-religion = sunni
+culture = coptic
+religion = miaphysite
 
 # History
-
+700.1.1 = {
+	religion = sunni
+	culture = levantine_arabic
+}
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni } 

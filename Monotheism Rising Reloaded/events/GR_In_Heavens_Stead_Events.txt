@@ -1,0 +1,612 @@
+# Unification of the Arabs: First External Invasions
+namespace = IHS
+narrative_event = {
+	id = IHS.1
+	title = EVTNAMEIHS.1
+	desc = EVTDESCIHS.1
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAIHS.1
+		war = { target = e_persia casus_belli = muslim_invasion thirdparty_title = k_mesopotamia tier = KING }
+	}
+	option = {
+		name = EVTOPTBIHS.1
+		war = { target = e_byzantium casus_belli = muslim_invasion thirdparty_title = k_syria tier = KING }
+	}
+	option = {
+		name = EVTOPTCIHS.1
+	}
+}
+
+# Fall of Mecca to Tulyaha
+narrative_event = {
+	id = IHS.2
+	title = EVTNAMEIHS.2
+	desc = EVTDESCIHS.2
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_tulayha
+		completely_controls = c_mecca
+		NOT = { has_global_flag = tulayha_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.2
+		set_global_flag = tulayha_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Sajah
+narrative_event = {
+	id = IHS.3
+	title = EVTNAMEIHS.3
+	desc = EVTDESCIHS.3
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_sajah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = sajah_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.3
+		set_global_flag = sajah_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Musaylimah
+narrative_event = {
+	id = IHS.4
+	title = EVTNAMEIHS.4
+	desc = EVTDESCIHS.4
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_musaylimah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = musaylimah_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.4
+		set_global_flag = musaylimah_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Byzantium
+narrative_event = {
+	id = IHS.5
+	title = EVTNAMEIHS.5
+	desc = EVTDESCIHS.5
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_byzantium
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.5
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Persia
+narrative_event = {
+	id = IHS.6
+	title = EVTNAMEIHS.6
+	desc = EVTDESCIHS.6
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_persia
+		has_character_flag = is_musaylimah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.6
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Aksum
+narrative_event = {
+	id = IHS.7
+	title = EVTNAMEIHS.7
+	desc = EVTDESCIHS.7
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_landed_title = e_abyssinia
+			has_landed_title = k_abyssinia
+		}
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.7
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# The Sinicization of Central Asia
+narrative_event = {
+	id = IHS.8
+	title = EVTNAMEIHS.8
+	desc = EVTDESCIHS.8
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		completely_controls = k_khotan
+		culture = han
+		religion = buddhist
+		year = 720
+	}
+	
+	option = {
+		name = EVTOPTAIHS.8
+		set_global_flag = chinese_influence_central_asia
+	}
+}
+
+# Manichaens Breakout Into Steppe
+narrative_event = {
+	id = IHS.9
+	title = EVTNAMEIHS.9
+	desc = EVTDESCIHS.9
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture_group = altaic
+		religion = tengri_pagan
+		year = 720
+		NOT = { has_global_flag = manichaen_steppe }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.9
+		set_global_flag = manichaen_steppe
+		religion = manichean
+		any_realm_character = manichean
+		any_vassal = {
+			clan = yes
+			religion = manichean
+		}
+	}
+}
+
+# Christianization of the Turks
+narrative_event = {
+	id = IHS.10
+	title = EVTNAMEIHS.10
+	desc = EVTDESCIHS.10
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = turkish
+		religion = tengri_pagan
+		year = 720
+		NOT = { has_global_flag = christian_turks }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.10
+		set_global_flag = christian_turks
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+}
+
+# The Sinicization of Central Asia Part 2
+narrative_event = {
+	id = IHS.11
+	title = EVTNAMEIHS.11
+	desc = EVTDESCIHS.11
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		completely_controls = k_khotan
+		or = {
+			culture = mongol
+			culture = uyghur
+		}
+		religion = tengri_pagan
+		year = 720
+	}
+	
+	option = {
+		name = EVTOPTAIHS.11
+		set_global_flag = chinese_influence_central_asia
+		religion = buddhist
+		# Add Event Modifier Here
+	}
+}
+
+# Christianization of the Mongols
+narrative_event = {
+	id = IHS.12
+	title = EVTNAMEIHS.12
+	desc = EVTDESCIHS.12
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = mongol
+		religion = tengri_pagan
+		year = 820
+		NOT = { has_global_flag = christian_mongols }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.12
+		set_global_flag = christian_mongols
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+}
+
+# Khazar Conversion In Heaven Stead Variant 
+narrative_event = {
+	id = IHS.13
+	title = EVTNAMEIHS.13
+	desc = EVTDESCIHS.13
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = khazar
+		religion = tengri_pagan
+		year = 700
+		NOT = { has_global_flag = khazar_decision }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.13
+		set_global_flag = khazar_decision
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+	option = {
+		name = EVTOPTBIHS.13
+		set_global_flag = khazar_decision
+		religion = buddhist
+		any_realm_character = buddhist
+		any_vassal = {
+			clan = yes
+			religion = buddhist
+		}
+	}
+	option = {
+		name = EVTOPTCIHS.13
+		set_global_flag = khazar_decision
+		religion = jewish
+		any_realm_character = jewish
+		any_vassal = {
+			clan = yes
+			religion = jewish
+		}
+	}
+	option = {
+		name = EVTOPTDIHS.13
+		set_global_flag = khazar_decision
+		religion = manichean
+		any_realm_character = manichean
+		any_vassal = {
+			clan = yes
+			religion = manichean
+		}
+	}
+}
+#Erosion of Zoroastrian Nobility in Persia
+narrative_event = {
+	id = IHS.14
+	title = EVTNAMEIHS.14
+	desc = EVTDESCIHS.14
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		trait = sympathy_christendom
+	}
+	
+	option = {
+		name = EVTOPTAIHS.14
+		religion = nestorian
+	}
+	option = {
+		name = EVTOPTBIHS.14
+		piety = 20
+	}
+}
+
+#Nestorian Prince Event Chain
+narrative_event = {
+	id = IHS.15
+	title = EVTNAMEIHS.15
+	desc = EVTDESCIHS.15
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		e_persia = { holder_scope = { is_father_real_father = ROOT } }
+		e_persia = { holder_scope = { religion = zoroastrian } }
+		mother_even_if_dead = { religion = nestorian }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.15
+		add_trait = sympathy_christendom
+		set_character_flag = closet_nestorian
+	}
+}
+
+narrative_event = {
+	id = IHS.16
+	title = EVTNAMEIHS.16
+	desc = EVTDESCIHS.16
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_persia
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		has_character_flag = closet_nestorian
+	}
+	
+	option = {
+		name = EVTOPTAIHS.16
+		religion = nestorian
+		narrative_event = { id = IHS.20 }	# Christianization of Persia
+	}
+	option = {
+		name = EVTOPTBIHS.16
+	}
+}
+
+narrative_event = {
+	id = IHS.17
+	title = EVTNAMEIHS.17
+	desc = EVTDESCIHS.17
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		has_character_flag = closet_nestorian
+		trait = zealous
+	}
+	
+	option = {
+		name = EVTOPTAIHS.17
+		religion = nestorian
+		e_persia = { holder_scope = { narrative_event = { id = IHS.18 } } }
+	}
+	option = {
+		name = EVTOPTBIHS.17
+	}
+}
+
+narrative_event = {
+	id = IHS.18
+	title = EVTNAMEIHS.18
+	desc = EVTDESCIHS.18
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {	#Attempt to Imprison
+		name = EVTOPTAIHS.18
+		random_list = {
+		  50 = {
+			imprison = FROM
+		  }
+		  50 = {
+			FROM = { banish = yes }
+			FROM = { narrative_event = { id = IHS.19 } }
+		  }
+		}
+	}
+	option = {	#Leave them Be
+		name = EVTOPTBIHS.18
+	}
+}
+
+narrative_event = {
+	id = IHS.19
+	title = EVTNAMEIHS.19
+	desc = EVTDESCIHS.19
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.19
+		e_byzantium = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}
+	option = {
+		name = EVTOPTBIHS.19
+		k_khotan = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}
+	option = {
+		name = EVTOPTCCHS.19
+		k_abyssinia = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}	
+}
+
+
+narrative_event = {
+	id = IHS.20
+	title = EVTNAMEIHS.20
+	desc = EVTDESCIHS.20
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.20
+		religion = nestorian
+		any_courtier = nestorian
+		any_vassal = {
+			narrative_event = { id = IHS.21 }
+		}
+	}
+}
+
+narrative_event = {
+	id = IHS.21
+	title = EVTNAMEIHS.21
+	desc = EVTDESCIHS.21
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.21
+		religion = nestorian
+		any_courtier = nestorian
+	}
+	option = {
+		name = EVTOPTBIHS.21
+	}
+}
+narrative_event = {
+	id = IHS.22
+	title = EVTNAMEIHS.22
+	desc = EVTDESCIHS.22
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		num_of_king_titles = 1
+		religion_group = zoroastrian_group
+		culture_group = iranian
+		e_persia = { holder_scope = { culture_group = iranian } }
+		e_persia = { holder_scope = { culture_group = zoroastrian_group } }
+		e_persia = { capital_scope = { controlled_by = ROOT } }
+		any_war = { war_score = 25 }	
+	}
+	
+	option = {
+		name = EVTOPTAIHS.21
+		e_persia = { capital_scope = { usurp_title = ROOT } }
+		e_persia = { usurp_title = { ROOT } }
+	}
+}
