@@ -22,3 +22,12 @@ european_immigrants = {
 recruit_timer = {
 	icon = 1	
 }
+
+war_exhaustion = {
+	levy_size = -0.50
+	local_tax_modifier = -0.50
+	local_revolt_risk = 0.05
+	tradevalue = -0.25
+	levy_reinforce_rate = -0.25
+	icon = 1	
+}

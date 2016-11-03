@@ -6343,6 +6343,19 @@
 	573.1.1={
 		birth="573.1.1"
 	}
+	632.6.8 = {
+		spawn_unit = {
+			province = 719 # Mecca
+			owner = ROOT
+			troops = {
+				light_infantry = { 1125 1125 }
+				archers = { 1125 1125 }
+				light_cavalry = { 2250 2250 }
+				knights = { 500 500 }
+			}
+			attrition = 0.5
+		}
+	}
 	643.8.23={
 		death="643.8.23"
 	}
