@@ -493,3 +493,33 @@ d_saqaliba_a = {
 	
 	mercenary_type = warriors_perun_composition
 }   
+
+d_order_of_saint_lazarus = {
+
+	color={ 230 120 150 }
+	
+	graphical_culture = holygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	culture = frankish
+	
+	# Parent Religion 
+	religion = catholic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_calatrava_composition
+}

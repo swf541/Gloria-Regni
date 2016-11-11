@@ -1,0 +1,42 @@
+# Gloria Regni Ossetian/ Scythian Titles
+title_enarei = {
+	dignity = 0.050
+	grant_limit = 1
+	opinion_effect = 10
+	monthly_salary = 0.02
+	monthly_prestige = 0.75
+
+	revoke_allowed = no
+	
+	allowed_to_hold = {
+		OR = {
+			primary_title = { temporary = no }
+			NOT = {
+				primary_title = {
+					always = yes
+				}
+			}
+		}
+		trait = enarei
+		is_adult = yes
+			}
+		OR = {
+			religion = ossetian_pagan_reformed
+			religion = ossetian_pagan
+		}
+	}
+	
+	allowed_to_grant = { 
+		OR = {
+            religion = ossetian_pagan_reformed
+			religion = ossetian_pagan	
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}

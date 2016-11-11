@@ -1,0 +1,73 @@
+###########################################
+#                                         #
+# Ossetian/ Scythian Enarei Events        #
+#                                         #
+# ID ENA.1-ENA.2                          #
+#                                         #
+###########################################
+
+# Written by swf541
+
+namespace = ENA
+
+###########################################
+# Birth of an Enarei                      #
+###########################################
+
+# Birth of an Enarei  
+character_event = {
+	id = ENA.1
+    hide_window = yes
+
+        is_triggered_only = yes
+	
+	trigger = {
+		father_even_if_dead = { trait = enarei }
+		OR = {
+			religion = ossetian_pagan_reformed
+			religion = ossetian_pagan
+		}
+		is_female = no
+		
+    }     
+
+    immediate = {
+		add_trait = enarei
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+# Surviving Lightning Strike
+character_event = {
+	id = ENA.2
+	desc = EVTDESC_ENA.2
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	ai = no
+	only_capable = yes
+	prisoner = no
+	min_age = 16
+	
+	
+	trigger = {
+		OR = {
+			religion = ossetian_pagan_reformed
+			religion = ossetian_pagan
+		}
+		has_character_modifier = patron_wasilla
+		NOT = { trait = chosen_by_wasilla }
+	}
+	
+	option = {
+		name = EVTOPTA_ENA.2
+		prestige = 50
+		piety = 100
+		add_trait = chosen_by_wasilla
+	}
+}

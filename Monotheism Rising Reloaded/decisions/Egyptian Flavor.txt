@@ -206,6 +206,139 @@ decisions = {
 			}
 		}
 	}
+	celebrate_isia = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			or = {
+				religion = egyptian_pagan
+				religion = egyptian_pagan_reformed
+			}
+			prisoner = no
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_isia_timer
+				liege = { has_character_flag = holding_isia }
+				has_character_flag = holding_isia
+				has_character_flag = planning_isia
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 10
+			not = { month = 12 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_isia
+			custom_tooltip = {
+				text = prepare_isia_feast
+				hidden_tooltip = { 
+					character_event = { id = ISE.700 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	celebrate_sarapia = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			or = {
+				religion = egyptian_pagan
+				religion = egyptian_pagan_reformed
+			}
+			prisoner = no
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 4
+			not = { month = 7 }
+		}
+		effect = {
+			wealth = -50
+			custom_tooltip = {
+				text = prepare_serapia_feast
+				hidden_tooltip = { 
+					character_event = { id = SRP.1 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
 	reform_egyptian_religion = {
 		is_high_prio = yes
 		potential = {

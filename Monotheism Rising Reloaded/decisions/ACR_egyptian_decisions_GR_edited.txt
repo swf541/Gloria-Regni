@@ -1,0 +1,104 @@
+decisions = {
+
+	hold_sed_festival = {
+		only_playable = yes
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			prisoner = no
+			higher_tier_than = duke
+			OR = {
+				religion = egyptian_pagan
+				religion = aten_pagan
+			}
+			ruled_years = 30
+			NOT = {	has_character_flag = holding_sed_festival }
+			NOT = { has_character_modifier = held_sed_festival_timer }
+		}
+		
+		allow = {
+			war = no
+			in_command = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			has_regent = no
+			NOT = { trait = in_hiding }
+		}
+		
+		effect = {
+			hidden_tooltip = {
+				set_character_flag = holding_sed_festival
+				
+				# Can be renewed every 3 years
+				add_character_modifier = {
+					name = held_sed_festival_timer
+					duration = 1080
+					hidden = yes
+				}
+				
+				# Keep counter of number of Sed festivals hold
+				change_variable = { which = nb_sed_festivals value = 1 }
+	
+				character_event = { id = ancrel.4010 days = 15 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Originally copied from CK2+
+
+	restore_luxor = {
+		only_playable = yes
+		is_high_prio = yes
+		potential = {
+			is_playable = yes	
+			independent = yes
+			higher_tier_than = duke
+			religion = egyptian_pagan
+			NOT = { has_global_flag = luxor_restored }
+			NOT = { has_global_flag = luxor_restoring }
+		}	
+		allow = {
+			wealth = 1000
+			795 = {
+				owner = {
+					character = ROOT
+				}
+			}
+			war = no
+			has_regent = no		
+		}
+		effect = {
+			set_global_flag = luxor_restoring
+			wealth = -1000
+			795 = {
+				province_event = { id = ancrel.4000 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 1500
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+}
