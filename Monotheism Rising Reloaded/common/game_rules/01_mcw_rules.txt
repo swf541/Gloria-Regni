@@ -1,0 +1,60 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	option = {										# please note that the first option is always the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		achievements = no							# by default achievements = yes, allows or disallows achievements
+#	}
+# }
+
+mcw_random_shifts = {
+	name = "RULE_RANDOM_SHIFTS"
+	option = {
+		name = on
+		text = "RULE_RANDOM_SHIFTS_ON"
+		desc = "RULE_RANDOM_SHIFTS_ON_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_RANDOM_SHIFTS_OFF"
+		desc = "RULE_RANDOM_SHIFTS_OFF_DESC"
+	}
+	option = {
+		name = fast
+		text = "RULE_RANDOM_SHIFTS_FAST"
+		desc = "RULE_RANDOM_SHIFTS_FAST_DESC"
+	}
+}
+
+mcw_dynamic_ruler_assimilation = {
+	name = "RULE_RULER_ASSIMILATION"
+	option = {
+		name = on
+		text = "RULE_RULER_ASSIMILATION_ON"
+		desc = "RULE_RULER_ASSIMILATION_ON_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_RULER_ASSIMILATION_OFF"
+		desc = "RULE_RULER_ASSIMILATION_OFF_DESC"
+	}
+}
+
+mcw_dynamic_migrations = {
+	name = "RULE_DYNAMIC_MIGRATIONS"
+	option = {
+		name = on
+		text = "RULE_DYNAMIC_MIGRATIONS_ON"
+		desc = "RULE_DYNAMIC_MIGRATIONS_ON_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_DYNAMIC_MIGRATIONS_OFF"
+		desc = "RULE_DYNAMIC_MIGRATIONS_OFF_DESC"
+	}
+}

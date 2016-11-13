@@ -1,0 +1,411 @@
+#############################################
+#			MULTICULTURAL WORLD MOD			#
+#			WRITTEN BY HARJIT SINGH			#
+#############################################
+namespace = MCW
+
+#############################################
+#		DYNAMIC MARITIME CULTURE SPREAD		#
+#	MCW.12 - General maritime spread		#
+#	MCW.13 - Norse seafarers colonise		#
+#											#
+#############################################
+
+# General Maritime culture spread
+# Spreads from the realm capital (not the owner capital)
+# Can affect any wrong-culture province regardless of religion or culture group
+# Can change culture and religion
+province_event = {
+	id = MCW.12
+	desc = EVTDESC_MCW_12
+	picture = GFX_evt_culture_change
+	
+	trigger = {
+		has_game_rule = { # The appropriate game rule must be enabled
+			name = mcw_dynamic_migrations
+			value = on
+		}
+		has_owner = yes
+		port = yes # must be a coastal province
+		owner = { # Viking Norse have a different event
+			OR = {
+				NOT = {
+					has_global_flag = viking_age_started
+				}
+				NOT = {
+					culture = norse
+				}
+				AND = {
+					culture = norse
+					NOT = {
+						religion = norse_pagan
+					}
+				}
+			}
+		}
+		owner = { # the province must be wrong culture
+			NOT = {
+				culture = ROOT
+			}
+		}
+		owner = { # can only colonise when liege has the right culture and religion group
+			top_liege = {
+				religion_group = PREV
+				culture = PREV
+			}
+		}
+		owner = { # Realm capital must have the right culture and a port
+			OR = {
+				AND = {
+					independent = yes
+					capital_scope = {
+						port = yes
+						culture = PREV
+					}
+				}
+				top_liege = {
+					culture = PREV
+					capital_scope = {
+						port = yes
+						culture = PREV
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6000
+		
+		modifier = { # isolated cultures and small islands are very resilient
+			factor = 4
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}
+		modifier = { # merchant republics are better at coastal spread
+			factor = 0.5
+			owner = {
+				is_merchant_republic = yes
+			}
+		}
+		modifier = { # more likely if same religion
+			factor = 0.75
+			owner = {
+				religion = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.75 # more likely if same religious group
+			owner = {
+				religion_group = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.75 # more likely if in the same culture group
+			owner = {
+				culture_group = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.5 # maritime cultures get a boost vs non-maritime cultures
+			NOR = {
+				culture = norse
+				culture = swedish
+				culture = norwegian
+				culture = danish
+				culture = old_saxon
+				culture = frisian
+				culture = dutch
+				culture = italian
+				culture = basque
+				culture = catalan
+				culture = portuguese
+				culture = greek
+				culture = irish
+				culture = breton
+				culture = somali
+				culture = bengali
+				culture = gujurati
+				culture = sinhala
+				culture = tamil
+				culture = telugu
+				culture = kannada
+			}
+			owner = {
+				OR = {
+					culture = norse
+					culture = swedish
+					culture = norwegian
+					culture = danish
+					culture = old_saxon
+					culture = frisian
+					culture = dutch
+					culture = italian
+					culture = basque
+					culture = catalan
+					culture = portuguese
+					culture = greek
+					culture = irish
+					culture = breton
+					culture = somali
+					culture = bengali
+					culture = gujurati
+					culture = sinhala
+					culture = tamil
+					culture = telugu
+					culture = kannada
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.25 # more to change the culture in places that are sparsely-populated
+			OR = {
+				terrain = desert
+				terrain = arctic
+				terrain = steppe
+				terrain = mountain
+			}
+		}
+		modifier = {
+			factor = 1.1 # less likely to change the culture in densely-populated areas
+			OR = {
+				terrain = farmlands
+				terrain = plains
+			}
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.75
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.25
+			has_province_flag = recent_depopulation_3
+		}
+	}
+	option = {
+		name = EVTOPTA_MCW_12
+		owner = {
+			ROOT = {
+				culture = PREV # when this event fires the culture of the province will change to that of the owner
+				if = {
+					limit = {
+						NOT = { religion = PREV }
+					}
+					religion = PREV
+				}
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_MCW_12
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Norse Maritime culture spread
+# Spreads from any owned province
+# Can affect any wrong-culture province regardless of religion or culture group
+# Can change culture and religion
+province_event = {
+	id = MCW.13
+	desc = EVTDESC_MCW_13
+	picture = GFX_evt_culture_change
+	
+	trigger = {
+		has_game_rule = { # The appropriate game rule must be enabled
+			name = mcw_dynamic_migrations
+			value = on
+		}
+		has_global_flag = viking_age_started # The Viking age must have started
+		has_owner = yes
+		OR = { # must be near (but not necessarily adjacent to) water
+			port = yes
+			borders_major_river = yes
+			any_neighbor_province = {
+				has_owner = yes
+				OR = {
+					port = yes
+					borders_major_river = yes
+				}
+			}
+		}
+		owner = { # This even is only for Norse
+			culture = norse
+			religion = norse_pagan
+		}
+		NOT = { # province must not be Norse or Norse-derived
+			culture_group = north_germanic
+		}
+		owner = { # can only colonise when liege has the right culture and religion group
+			top_liege = {
+				religion_group = pagan_group
+				culture = norse
+			}
+		}
+		owner = { # Must own a norse province near (but not necessarily adjacent to) water
+			any_realm_province = {
+				culture = norse
+				OR = {
+					port = yes
+					borders_major_river = yes
+					any_neighbor_province = {
+						has_owner = yes
+						OR = {
+							port = yes
+							borders_major_river = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+		
+		modifier = { # isolated cultures are very resilient
+			factor = 4
+			any_neighbor_province = {
+				is_land = yes
+			}
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}
+		modifier = { # small islands are very vulnerable
+			factor = 0.1
+			NOT = {
+				any_neighbor_province = {
+					is_land = yes
+				}
+			}
+		}
+		modifier = { # merchant republics are better at coastal spread
+			factor = 0.5
+			owner = {
+				is_merchant_republic = yes
+			}
+		}
+		modifier = { # more likely if same religion
+			factor = 0.75
+			owner = {
+				religion = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.75 # more likely if same religious group
+			owner = {
+				religion_group = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.75 # more likely if in the same culture group
+			owner = {
+				culture_group = ROOT
+			}
+		}		
+		modifier = {
+			factor = 0.5 # boost vs non-maritime cultures
+			NOR = {
+				culture = norse
+				culture = swedish
+				culture = norwegian
+				culture = danish
+				culture = old_saxon
+				culture = frisian
+				culture = dutch
+				culture = italian
+				culture = basque
+				culture = catalan
+				culture = portuguese
+				culture = greek
+				culture = irish
+				culture = breton
+				culture = somali
+				culture = bengali
+				culture = gujurati
+				culture = sinhala
+				culture = tamil
+				culture = telugu
+				culture = kannada
+			}
+		}
+		
+		modifier = {
+			factor = 2 # Vikings don't want to move to wastelands
+			OR = {
+				terrain = desert
+				terrain = arctic
+				terrain = steppe
+				terrain = mountain
+			}
+		}
+		modifier = {
+			factor = 0.75 # Vikings like fertile lands to farm
+			OR = {
+				terrain = farmlands
+				terrain = plains
+			}
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.75
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.25
+			has_province_flag = recent_depopulation_3
+		}
+	}
+	option = {
+		name = EVTOPTA_MCW_13
+		owner = {
+			ROOT = {
+				culture = norse # when this event fires the culture of the province will change to norse
+				if = {
+					limit = {
+						NOT = { religion = norse_pagan }
+					}
+					religion = norse_pagan
+				}
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_MCW_13
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
