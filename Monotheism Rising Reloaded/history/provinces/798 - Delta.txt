@@ -4,23 +4,23 @@
 title = c_delta
 
 # Settlements
-max_settlements = 5
+max_settlements = 6
 b_damietta = castle
-b_burlus = city
-b_saramsah = temple
+b_daqahla = city
+b_mansuradelta = temple
 b_burah = castle
 
-#b_baramun = city
-#b_fareskur = castle
+#b_nastarawa = city
 #b_tanis = castle
 #b_shirbin = castle
 
 # Misc
-culture = coptic
-religion = miaphysite
+culture = egyptian_arabic
+religion = sunni
 
 # History
 
+767.1.1 = { religion = miaphysite }
 867.1.1 = { 
 	b_damietta = ca_keep_1
 	b_damietta = ca_training_grounds_1
@@ -30,8 +30,7 @@ religion = miaphysite
 	b_damietta = ca_militia_barracks_1
 }
 
-909.1.1 = { religion = shiite }
-909.1.1 = { culture = egyptian_arabic }
-1171.1.1 = { religion = sunni }
+#909.1.1 = { religion = shiite } #quoted vanilla history - Fatimids did not convert provinces and with shiite Egypt are too strong
+#1171.1.1 = { religion = sunni }
 1187.1.1 = { b_burah = castle }
 1190.1.1 = { trade_post = b_faliero }

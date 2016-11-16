@@ -8,24 +8,23 @@ max_settlements = 7
 
 b_baqubah = castle
 b_iskandariya = castle
-
 b_bagdad = temple # holy_site = sunni, nestorian
 
-b_hillah = city
-b_taji = city
+b_iskaf = city
+b_ukbara = city
 
-#b_latifiya = castle
 #b_madain = castle
-#b_babel = city
+#b_nahrawan = castle
 
 #Misc
-culture = assyrian
-religion = nestorian
+culture = levantine_arabic
+religion = sunni
 
 # History
-700.1.1 = { culture = levantine_arabic }
-700.1.1 = { religion = sunni }
 
+850.1.1 = {
+	b_madain = castle
+}
 867.1.1 = { 
 	b_baqubah = ca_keep_1
 	b_baqubah = ca_training_grounds_1
@@ -36,8 +35,8 @@ religion = nestorian
 	b_baqubah = ca_wall_1
 	b_baqubah = ca_wall_2
 	b_baqubah = ca_wall_3
-	b_hillah = ct_wall_1
-	b_hillah = ct_barracks_1
+	b_iskaf = ct_wall_1
+	b_iskaf = ct_barracks_1
 	b_bagdad = tp_monastery_1
 	b_bagdad = tp_monastery_2
 	b_bagdad = tp_wall_1
@@ -50,10 +49,6 @@ religion = nestorian
 	b_iskandariya = ca_wall_2
 }
 
-1066.1.1 = {
-	b_latifiya = castle
-}
-
-1258.2.20= { remove_settlement = b_taji }
-1258.2.20= { remove_settlement = b_latifiya }
-1278.1.1 = { b_taji = city } 
+1258.2.20= { remove_settlement = b_ukbara }
+1258.2.20= { remove_settlement = b_madain }
+1278.1.1 = { b_ukbara = city } 

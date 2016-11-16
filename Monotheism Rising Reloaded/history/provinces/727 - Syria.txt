@@ -1,30 +1,16 @@
-# 727 - Bostra #Former Syria
+# 727 - AsSukhna #Former Syria
 
 # County Title
 title = c_syria
 
 # Settlements
-max_settlements = 4
+max_settlements = 2
 
-b_amrah = castle
-b_otaybah = city
-b_adra = temple
-
-#b_hayjanah = city
-#b_jarba = castle
-#b_qasmiye = castle
-#b_buraq - castle
-#b_baly = castle
+b_assuhna = tribal
+b_urd = temple
 
 # Misc
-culture = assyrian
-religion = nestorian
+culture = bedouin_arabic
+religion = sunni
 
 # History
-
-900.1.1 = {
-	culture = levantine_arabic
-	religion = sunni
-}
-
-1187.1.1 = { b_buraq = castle }

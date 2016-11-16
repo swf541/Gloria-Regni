@@ -4,8 +4,9 @@
 title = c_negev
 
 # Settlements
-max_settlements = 2
+max_settlements = 3
 b_negev = castle
+b_beersheb = city
 #b_yeruham = city
 #b_dimona = temple
 
@@ -16,11 +17,7 @@ b_negev = castle
 #b_ezuz = castle
 
 # Misc
-culture = melkite
-religion = imperial
+culture = levantine_arabic
+religion = sunni
 
 # History
-1000.1.1 = { 
-	religion = sunni
-	culture = levantine_arabic
-}

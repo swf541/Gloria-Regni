@@ -4,14 +4,14 @@
 title = c_mzab
 
 # Settlements
-max_settlements = 2
+max_settlements = 4
 
-b_mzab = castle
+b_laghouat = castle
+b_ghardaia = city
+b_elatiq = temple
 
-#b_noumerat = city
-#b_sebseb = temple
+#b_tilghemt = castle
 
-#b_elalia = castle
 #b_ouargla = castle
 #b_zelfana = castle
 #b_bermane = castle
@@ -24,6 +24,6 @@ religion = kharijite
 # History
 
 
-1187.1.1 = { b_noumerat = city }
+1187.1.1 = { b_tilghemt = castle }
 
 

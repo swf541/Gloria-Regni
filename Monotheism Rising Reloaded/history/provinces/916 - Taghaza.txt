@@ -4,21 +4,17 @@
 title = c_taghaza
 
 # Settlements
-max_settlements = 1
+max_settlements = 2
 b_taghaza = tribal
 
-#b_kerzaz = city
-#b_metarta = temple
-#b_reggane = castle
-#b_adrar = castle
-#b_aougrout = castle
-#b_charouine = castle
-#b_alouarta = castle #El Ouarta
+#b_taoudeni = city
 
 # Misc
 culture = maghreb_arabic
-religion = west_african_pagan
+#culture = tagelmust
+religion = ibadi
 
 # History
 
-850.1.1 = { religion = sunni }
+#islamization
+933.1.1 = { religion = sunni }

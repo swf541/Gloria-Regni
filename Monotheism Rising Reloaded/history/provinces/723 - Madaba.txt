@@ -1,27 +1,17 @@
-# 723 - Madaba
+# 723 - Madaba/Ta'labiya
 
 # County Title
 title = c_madaba
 
 # Settlements
-max_settlements = 4
-b_madaba = castle
-b_umm_ar-rasas = temple
-b_sahab = city
+max_settlements = 3
+b_talabiya = tribal
+b_zubala = temple
+#b_qabralibadi = city
 
-#b_muwaqqar = castle
-b_qastal = castle
-#b_wadi_al_sir = castle
-#b_bilal = castle
-#b_samhal = city
 
 # Misc
-culture = khalan
-religion = imperial
+culture = bedouin_arabic
+religion = sunni
 
 # History
-700.1.1 = {
-	culture = levantine_arabic
-	religion = sunni
-}
-1192.1.1 = { remove_settlement = b_qastal }

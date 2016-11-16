@@ -18,15 +18,13 @@ b_tobruk = castle
 #b_rukbah = castle
 
 # Misc
-culture = african_latin
-religion = imperial
+culture = maghreb_arabic
+religion = sunni
 
 # History
-700.1.1 = {
-	culture = maghreb_arabic
-	religion = sunni
-}
-909.1.1 = { religion = shiite }
+
+#909.1.1 = { religion = shiite }
+1050.1.1 = { culture = bedouin_arabic }
 1131.1.1 = { trade_post = b_faliero }
 1171.1.1 = { religion = sunni }
 1187.1.1 = { b_bardia = castle }

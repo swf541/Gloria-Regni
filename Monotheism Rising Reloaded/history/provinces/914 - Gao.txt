@@ -4,25 +4,23 @@
 title = c_gao
 
 # Settlements
-max_settlements = 4
+max_settlements = 6
 b_gao = tribal
-#b_sarnah = city 
 b_gaosaney = temple #Gao-Saney
 
+#b_sarnah = city 
 #b_bourem = castle
-#b_ansongo = castle
 #b_menaka = castle #Ménaka
 #b_gabero = castle
-#b_anchawadi = castle
 
 # Misc
-culture = manden
+culture = songhai
 religion = west_african_pagan
 
 # History
 
-900.1.1 = { religion = sunni }
-1300.1.1 = {
+1070.1.1 = {
+	religion = sunni
 	b_gao = castle
 	b_sarnah = city 
 }

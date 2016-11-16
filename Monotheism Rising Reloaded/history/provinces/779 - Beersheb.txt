@@ -5,23 +5,18 @@ title = c_beersheb
 
 # Settlements
 max_settlements = 3
-b_beersheb = castle
-#b_estemon = city
-b_massada = temple
+b_ramleh = castle
+b_lydda = city
+b_latrun = temple
 
-#b_abuzqayqa = castle
 #b_debir = castle
 #b_gilat = castle
 #b_rahat = castle
+#b_abuzqayqa = castle
 #b_ofakim = castle
 
 # Misc
-culture = melkite
-religion = imperial
+culture = levantine_arabic
+religion = sunni
 
 # History
-1054.1.1 = { religion = orthodox }
-1270.1.1 = { 
-	religion = sunni
-	culture = levantine_arabic
-}

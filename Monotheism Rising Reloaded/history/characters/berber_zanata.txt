@@ -1,0 +1,822 @@
+#161103 - 161111
+#free - free
+
+
+161103 = {
+	name="Kassa"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	1050.1.1={
+		birth="1050.1.1"
+	}
+	
+	1110.1.1={
+		death="1110.1.1"
+	}
+}
+
+161104 = {
+	name="Takoi"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161103
+	1080.1.1={
+		birth="1080.1.1"
+	}
+	
+	1140.1.1={
+		death="1140.1.1"
+	}
+}
+
+161105 = {
+	name="Kanafa"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161104
+	1110.1.1={
+		birth="1110.1.1"
+	}
+	
+	1170.1.1={
+		death="1170.1.1"
+	}
+}
+
+161106 = {
+	name="Fatta"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161105
+	1150.1.1={
+		birth="1150.1.1"
+	}
+	
+	1210.1.1={
+		death="1210.1.1"
+	}
+}
+
+161107 = {
+	name="Ouali"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161106
+	1180.1.1={
+		birth="1180.1.1"
+	}
+	
+	1240.1.1={
+		death="1240.1.1"
+	}
+}
+
+161108 = {
+	name="Fädazu"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161107
+	1210.1.1={
+		birth="1210.1.1"
+	}
+	
+	1270.1.1={
+		death="1270.1.1"
+	}
+}
+
+161109 = {
+	name="Kaya"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161108
+	1240.1.1={
+		birth="1240.1.1"
+	}
+	
+	1300.1.1={
+		death="1300.1.1"
+	}
+}
+
+161110 = {
+	name="Lahiltoul"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161109
+	1270.1.1={
+		birth="1270.1.1"
+	}
+	
+	1320.1.1={
+		death="1320.1.1"
+	}
+}
+
+161111 = {
+	name="Akoi"
+	#placeholder
+	dynasty=1030012
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=161110
+	1300.1.1={
+		birth="1300.1.1"
+	}
+	
+	1350.1.1={
+		death="1350.1.1"
+	}
+}
+
+#SWMH characters
+
+1000228220 = {
+	name="Afulay"
+	#placeholder
+	dynasty=1000054009 #Lawata
+	religion="sunni"
+	culture="maghreb_arabic"
+	828.1.1={
+		birth="828.1.1"
+	}
+	
+	869.1.1={
+		death="869.1.1"
+	}
+}
+1000228221 = {
+	name="Awzal"
+	#placeholder
+	dynasty=1000054009
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=1000228220
+	845.1.1={
+		birth="845.1.1"
+	}
+	
+	889.1.1={
+		death="889.1.1"
+	}
+}
+1000228222 = {
+	name="Kahina"
+	#placeholder
+  female = yes
+	dynasty=1000054009
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=1000228220
+	848.1.1={
+		birth="848.1.1"
+	}
+	866.1.1={
+		add_spouse=1000228224
+	}
+	869.1.1={
+		death="869.1.1"
+	}
+}
+1000228223 = {
+	name="Ghanim"
+	#placeholder
+  female = yes
+	dynasty=1000054009
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=1000228220
+	849.1.1={
+		birth="849.1.1"
+	}
+	889.1.1={
+		death="889.1.1"
+	}
+}
+
+#al-Abdún dynasty rulers of Dakhla and al-Wahât in Egypt
+1000228224 = {
+	name="Marwân"  #semi fictional father of Abd al-Malik ibn Marwân who lived in 941
+	dynasty=1000101143
+	religion="sunni"
+	culture="maghreb_arabic"
+	850.1.1={
+		birth="850.1.1"
+	}
+	866.1.1={
+		add_spouse=1000228222
+	}
+	915.1.1={
+		death="915.1.1"
+	}
+}
+1000228225 = {
+	name="Abd al-Malik"  #historical Abd al-Malik ibn Marwân who lived in 941
+	dynasty=1000101143
+	religion="sunni"
+	culture="maghreb_arabic"
+	father=1000228224
+	895.1.1={
+		birth="895.1.1"
+	}
+	
+	955.1.1={
+		death="955.1.1"
+	}
+}
+
+#as-Samh dynasty in eastern Tripolitania
+1000228226 = {
+	name="Khalaf ibn as-Samh"  #historical ibadite revolter against Rustamids from early 9th century
+	dynasty=1000101145
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228842
+	810.1.1={
+		birth="810.1.1"
+	}
+	
+	875.1.1={
+		death="875.1.1"
+	}
+}
+
+#Banú Khattâb in Fezzan
+1000144666 = {
+	name="Kadidu"        #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228851
+	1048.1.1={
+		birth="1048.1.1"
+	}
+	1094.1.1={
+		death="1094.1.1"
+	}
+}
+1000228227 = {
+	name="al-Khattâb"  #semi-historical, possibly had spouse of Hawwara tribe, related to Mazâta tribe 
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	850.1.1={
+		birth = yes
+	}
+	866.1.1={
+		add_spouse=1000228234
+	}
+	866.2.2={
+		add_spouse=1000228231
+	}
+	905.1.1={
+		death = yes
+	}
+}
+1000228228 = {
+	name="AbdAllâh ibn al-Khattâb al-Hawwarî"  #historical founder of the Banu Khattâb tribe/dynasty lived in 918
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228227
+	mother=1000228234
+	880.1.1={
+		birth = yes
+	}
+	940.1.1={
+		death = yes
+	}
+}
+#Mazâta in Waddân and Syrte
+1000228229 = {
+	name="Lant"  #placeholder
+	dynasty=1000054010
+	religion="ibadi"
+	culture="maghreb_arabic"
+	830.1.1={
+		birth="830.1.1"
+	}
+	878.1.1={
+		death="878.1.1"
+	}
+}
+1000228230 = {
+	name="Hiyân"  #placeholder
+	dynasty=1000054010
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228229
+	848.1.1={
+		birth="848.1.1"
+	}
+	900.1.1={
+		death="900.1.1"
+	}
+}
+1000228231 = {
+	name="Kenwa"  #placeholder
+  female=yes
+	dynasty=1000054010
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228229
+	849.1.1={
+		birth="849.1.1"
+	}
+	866.2.2={
+		add_spouse=1000228227
+	}
+	903.1.1={
+		death="903.1.1"
+	}
+}
+#Hawwâra in Tripolitania
+1000228232 = {
+	name="Abd Allâh"  #placeholder
+	dynasty=1000101140
+	religion="ibadi"
+	culture="maghreb_arabic"
+	832.1.1={
+		birth="832.1.1"
+	}
+	866.10.10={
+		death = yes
+	}
+}
+1000228233 = {
+	name="Zalghîn"  #placeholder
+	dynasty=1000101140
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228232
+	849.1.1={
+		birth="849.1.1"
+	}
+	865.1.1={
+		add_spouse=1000228237
+	}
+	900.1.1={
+		death="900.1.1"
+	}
+}
+1000228234 = {
+	name="Kenwa"  #placeholder mother of Abd Allâh ibn al-Khattâb al-Hawwarî
+  female=yes
+	dynasty=1000101140
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228232
+	850.1.1={
+		birth = yes
+	}
+	866.1.1={
+		add_spouse=1000228227
+	}
+	903.1.1={
+		death = yes
+	}
+}
+#Banú Kaldîn in Fezzan
+1000228235 = {
+	name="Kaldîn"  #placeholder
+	dynasty=1000101146
+	religion="ibadi"
+	culture="maghreb_arabic"
+	829.1.1={
+		birth="829.1.1"
+	}
+	868.1.1={
+		death="868.1.1"
+	}
+}
+1000228236 = {
+	name="Ma'âfira"  #placeholder
+	dynasty=1000101146
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228235
+	851.1.1={
+		birth="851.1.1"
+	}
+	908.1.1={
+		death="908.1.1"
+	}
+}
+1000228237 = {
+	name="Silya"  #placeholder
+  female=yes
+	dynasty=1000101146
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228235
+	848.1.1={
+		birth="848.1.1"
+	}
+	865.1.1={
+		add_spouse=1000228233
+	}
+	906.1.1={
+		death="906.1.1"
+	}
+}
+#Rîgha rulers in Wâdî Rîgh (Mzâb)
+1000228238 = {
+	name="Yabîd ibn Zaghlîn"  #historical character in times of Aflah ibn Abd al-Wahhâb Rustamid (823-871)
+	dynasty=1000101149
+	religion="ibadi"
+	culture="maghreb_arabic"
+	823.1.1={
+		birth="823.1.1"
+	}
+	871.1.1={
+		death="871.1.1"
+	}
+}
+1000228239 = {
+	name="Silya"  #placeholder daughter of above
+  female=yes
+	dynasty=1000101149
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228238
+	846.1.1={
+		birth="846.1.1"
+	}
+	902.1.1={
+		death="902.1.1"
+	}
+}
+
+#Mus'ab rulers in (western)Mzâb
+1000228830 = {
+	name="Ash'ath"  #placeholder
+	dynasty=1000101144
+	religion="ibadi"
+	culture="maghreb_arabic"
+	823.1.1={
+		birth="823.1.1"
+	}
+	871.1.1={
+		death="871.1.1"
+	}
+}
+
+#Warjîlânî rulers in Wargla
+1000228831 = {
+	name="Kâsin"  #semi historical father of historical Ismâ'îl ibn Kâsin
+	dynasty=1000101260
+	religion="ibadi"
+	culture="maghreb_arabic"
+	846.1.1={
+		birth="846.1.1"
+	}
+	895.1.1={
+		death="895.1.1"
+	}
+}
+1000228832 = {
+	name="Ismâ'îl ibn Kâsin"  #historical ibâdî ra'îs of Wargla
+	dynasty=1000101260
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228831
+	862.1.1={
+		birth="862.1.1"
+	}
+	920.1.1={
+		death="920.1.1"
+	}
+}
+
+#Tanâta rulers in Ghadâmes
+1000228833 = {
+	name="Masnsen"  #placeholder
+	dynasty=1000101142
+	religion="ibadi"
+	culture="maghreb_arabic"
+	840.1.1={
+		birth="840.1.1"
+	}
+	890.1.1={
+		death="890.1.1"
+	}
+}
+#Banú Midrar rulers in Sijilmasa
+1000228834 = {
+	name="Yasa ibn Midrar"
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	775.1.1={
+		birth="775.1.1"
+	}
+	823.1.1={
+		death="823.1.1"
+	}
+}
+1000228835 = {
+	name="Abu Malik al-Mustansir"
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228834
+	800.1.1={
+		birth="800.1.1"
+	}
+	867.11.11={
+		death="867.11.11"
+	}
+}
+1000228836 = {
+	name="al-Rustamîya"
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228834
+	801.1.1={
+		birth="801.1.1"
+	}
+	860.1.1={
+		death="860.1.1"
+	}
+}
+1000228837 = {
+	name="Thakîya al-Amîr"
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228834
+	805.1.1={
+		birth="805.1.1"
+	}
+	862.1.1={
+		death="862.1.1"
+	}
+}
+1000228838 = {
+	name="Maymún"  #ibn al-Rustamîya
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228836
+	830.1.1={
+		birth="830.1.1"
+	}
+	875.1.1={
+		death="875.1.1"
+	}
+}
+1000228839 = {
+	name="Maymún"  #ibn Thakîya al-Amîr
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228837
+	833.1.1={
+		birth="833.1.1"
+	}
+	877.1.1={
+		death="877.1.1"
+	}
+}
+1000228840 = {
+	name="Muhammad"  #ibn Maymún
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228839
+	853.1.1={
+		birth="853.1.1"
+	}
+	883.1.1={
+		death="883.1.1"
+	}
+}
+1000228841 = {
+	name="Yasa ibn Midrar"
+	dynasty=1000101265
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228835
+	833.1.1={
+		birth="833.1.1"
+	}
+	909.1.1={
+		death="909.1.1"
+	}
+}
+1000228842 = {
+	name="As-Samh"
+	dynasty=1000101145
+	religion="ibadi"
+	culture="maghreb_arabic"
+	790.1.1={
+		birth = yes
+	}
+	830.1.1={
+		death = yes
+	}
+}
+1000228843 = {
+	name="Thakîya"
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	1028.1.1={
+		birth = yes
+	}
+	1090.1.1={
+		death = yes
+	}
+}
+1000228844 = {
+	name="Yasa"
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228843
+	1053.1.1={
+		birth = yes
+	}
+	1110.1.1={
+		death = yes
+	}
+}
+
+
+#rulers of Fezzan
+1000228845 = {
+	name="AbdAllâh"	#ibn Hiyân, historical ruler of Zawila d.762
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228846
+	720.1.1={
+		birth = yes
+	}
+	762.1.1={
+		death = yes
+	}
+}
+1000228846 = {
+	name="Hiyân"
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	700.1.1={
+		birth = yes
+	}
+	750.1.1={
+		death = yes
+	}
+}
+1000228847 = {
+	name= "Hiyân" #ibn AbdAlâh
+	dynasty = 1000101266
+	religion = ibadi
+	culture= maghreb_arabic
+	father = 1000228845
+	745.1.1 = {
+		birth = yes
+	}
+	800.1.1 = {
+		death = yes
+	}
+}
+#Banú Khattâb in Fezzan
+1000228848 = {
+	name="AbdAllâh"  #fictional son of historical founder of the Banu Khattâb tribe/dynasty
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228228
+	910.1.1={
+		birth = yes
+	}
+	970.1.1={
+		death = yes
+	}
+}
+1000228849 = {
+	name="Thakîya" #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228848
+	945.1.1={
+		birth = yes
+	}
+	1005.1.1={
+		death = yes
+	}
+}
+1000228850 = {
+	name="AbdAllâh" #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228849
+	980.1.1={
+		birth = yes
+	}
+	1030.1.1={
+		death = yes
+	}
+}
+1000228851 = {
+	name="Ismâ'îl" #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228850
+	1015.1.1={
+		birth = yes
+	}
+	1064.1.1={
+		death = yes
+	}
+}
+1000228852 = {
+	name="AbdAllâh"        #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000144666
+	1072.1.1={
+		birth = yes
+	}
+	1130.1.1={
+		death = yes
+	}
+}
+1000228853 = {
+	name="Hiyân"        #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228852
+	1100.1.1={
+		birth = yes
+	}
+	1162.1.1={
+		death = yes
+	}
+}
+1000228854 = {
+	name="AbdAllâh"        #placeholder
+	dynasty=1000053594
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father = 1000228853
+	1132.1.1={
+		birth = yes
+	}
+	1190.1.1={
+		death = yes
+	}
+}
+
+#Rulers of Awkar
+1000228855 = {
+	name="Thakîya"
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	1028.1.1={
+		birth = yes
+	}
+	1090.1.1={
+		death = yes
+	}
+}
+1000228856 = {
+	name="Yasa"
+	dynasty=1000101266
+	religion="ibadi"
+	culture="maghreb_arabic"
+	father=1000228843
+	1053.1.1={
+		birth = yes
+	}
+	1110.1.1={
+		death = yes
+	}
+}
+ 
+#no more free characters

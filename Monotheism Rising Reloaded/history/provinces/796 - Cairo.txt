@@ -16,14 +16,11 @@ b_maadi = castle
 #b_merimdabenisalama = castle
 
 # Misc
-culture = coptic
-religion = miaphysite
+culture = egyptian_arabic
+religion = sunni
 
 # History
-700.1.1 = {
-	religion = sunni
-	culture = egyptian_arabic
-}
+
 867.1.1 = { name = "Fustat" }
 909.1.1 = { religion = shiite }
 969.1.1 = { name = "Cairo" b_cairo = castle capital = b_cairo b_fustat = city }

@@ -39,15 +39,13 @@ world_europe_west = {
 world_europe_north = {
 	duchies = {
 		#Sweden
-		d_uppland d_ostergotland d_gotland d_vastergotland d_norrland d_bergslagen d_smaland
+		d_uppland d_ostergotland d_vastergotland d_norrland d_bergslagen d_smaland
 		#Norway
 		d_iceland d_orkney d_vestlandet d_ostlandet d_trondelag d_jamtland
 		#Finland minus Estonia
-		d_karelia d_finland
+		d_kola d_karelia d_finland
 		#Denmark
 		d_skane d_sjaelland d_slesvig d_holstein
-		#Sápmi
-		d_kola d_finnmark d_sapmi
 	}
 }
 world_europe_south_east = { 
@@ -102,9 +100,9 @@ world_middle_east_jerusalem = {
 world_middle_east_arabia = {
 	duchies = {
 		#East Syria
-		d_damascus d_syria
+		d_damascus d_syria d_palmyra
 		#Arabia
-		d_arabia_petrae d_medina d_sanaa d_oman d_nefoud d_amman d_kermanshah d_tigris d_basra d_baghdad d_mosul d_jazira
+		d_arabia_petrae d_medina d_sanaa d_oman d_nefoud d_amman d_kermanshah d_tigris d_basra d_baghdad d_mosul d_jazira d_mudir d_samarra d_hadramut
 		#Sinai
 		d_sinai
 	}
@@ -159,23 +157,32 @@ world_india_rajastan = {
 }
 world_persia = {
 	duchies = {
-		#Persia minus Mesopotamia
-		d_khorasan d_mazandaran d_esfahan d_kerman d_fars d_hamadan d_tabriz d_azerbaijan d_baluchistan d_sistan d_kabul d_zabulistan d_khiva d_samarkand d_merv d_dihistan 
+		#West Persia
+		d_esfahan d_kerman d_fars d_hamadan d_tabriz d_azerbaijan d_mazandaran d_khoar d_ahwaz d_gilan
+		#Khorasan
+		d_khorasan d_merv d_dihistan d_herat d_balkh 
+		#East Persia and Afghanistan
+		d_baluchistan d_sistan d_kabul d_zabulistan 
+		#Transoxiana
+		d_khiva d_samarkand d_ferghana 
 	}
 }
 world_africa_north = {
 	duchies = {
-		d_marrakech d_fes d_tangiers d_tlemcen d_alger d_kabylia d_tunis d_tripolitania d_cyrenaica d_alexandria d_damietta d_cairo d_aswan
+		#Egypt
+		d_alexandria d_damietta d_cairo d_aswan d_alwahat
+		#Maghreb
+		d_marrakech d_fes d_tangiers d_tlemcen d_alger d_kabylia d_tunis d_zab d_tripolitania d_cyrenaica d_jerid d_draa d_fezzan d_sijilmasa
 	}
 }
 world_africa_west = {
 	duchies = {
-		d_songhay d_mali d_ghana d_timbuktu
+		d_songhay d_mali d_ghana d_timbuktu d_kano d_bornu d_kawar d_jeno d_adrar d_wadai
 	}
 }
 world_africa_east = {
 	duchies = {
-		d_nobatia d_nubia d_sennar d_hayya d_axum d_semien d_gondar d_wag d_gojjam d_damot d_shewa d_afar d_harer
+		d_nobatia d_nubia d_sennar d_hayya d_axum d_semien d_wag d_damot d_shewa d_afar d_harer d_kassala d_berbera d_darfur
 	}
 }
 world_africa = {
@@ -266,7 +273,7 @@ custom_portuguese = {
 }
 custom_swedish = {
 	duchies = {
-		d_uppland d_ostergotland d_gotland d_vastergotland d_norrland d_bergslagen d_smaland d_sapmi
+		d_uppland d_ostergotland d_vastergotland d_norrland d_bergslagen d_smaland
 	}
 }
 custom_danish = {
@@ -276,20 +283,12 @@ custom_danish = {
 }
 custom_norwegian = {
 	duchies = {
-		d_iceland d_orkney d_vestlandet d_ostlandet d_trondelag d_jamtland d_finnmark
+		d_iceland d_orkney d_vestlandet d_ostlandet d_trondelag d_jamtland
 	}
 }
 custom_scotland = {
 	duchies = {
 		d_the_isles d_galloway d_western_isles d_lothian d_albany d_moray
-	}
-}
-custom_historical_plague_free_zone = {
-	duchies = {
-		d_lombardia d_lesser_poland d_kuyavia d_mazovia d_lithuanians d_yatviags d_turov d_volhynia d_iceland
-	}
-	counties = {
-		c_valais c_grisons c_alto_aragon c_urgell c_bearn c_faereyar c_lepiel c_orsha c_minsk c_peremyshl c_armagnac c_foix c_chur
 	}
 }
 

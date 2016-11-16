@@ -4,22 +4,15 @@
 title = c_ilam
 
 # Settlements
-max_settlements = 6
-b_dehloran = castle
-b_ilam = city
-b_chahartaghi = temple
-b_mehran = city
-b_abdanan = castle
+max_settlements = 4
+b_sanda = castle
+b_shahrazur = city
+b_tiranshah = temple
 
-#b_hezardar = castle
-#b_ghalehghiran = castle
-#b_towhid = castle
+#b_huftidkan = city
 
 #Misc
 culture = kurdish
-religion = manichean
+religion = sunni
 
 # History
-900.1.1 = {
-	religion = sunni
-}

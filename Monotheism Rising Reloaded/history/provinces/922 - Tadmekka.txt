@@ -4,7 +4,7 @@
 title = c_tadmekka
 
 # Settlements
-max_settlements = 2
+max_settlements = 4
 b_tadmekka = tribal
 
 #b_agades = city
@@ -14,9 +14,12 @@ b_tadmekka = tribal
 #b_kidal = castle
 
 # Misc
-culture = manden
+culture = songhai
 religion = west_african_pagan
 
 # History
 
-900.1.1 = { religion = sunni }
+800.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+	}

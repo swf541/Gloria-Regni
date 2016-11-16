@@ -4,16 +4,22 @@
 title = c_gurma
 
 # Settlements
-max_settlements = 3
+max_settlements = 5
 b_gurma = tribal
-#b_zorgho = city
-#b_hounde = temple
+b_yatenga = temple
+
+#b_wagadougou = city
+#b_risiom = castle
+#b_dagbon = castle
 
 # Misc
-culture = manden
+culture = songhai
 religion = west_african_pagan
 
 # History
-1300.1.1 = {
+1150.1.1 = {
 	b_gurma = castle
+}
+1200.1.1 = {
+	b_wagadougou = city
 }

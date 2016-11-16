@@ -6,17 +6,16 @@ title = c_nisibin
 # Settlements
 max_settlements = 4
 b_nusaybin = castle
-b_savur = city
-b_dairodmorhannanyo = temple
-#b_kerburan  = castle
-#b_cizre = castle
-#b_sittiradviyyemadrasa = temple
-#b_dayrodmorgabriel = temple
-#b_yaqobnsibnaya = temple
+b_jaziratibnumar = city
+b_dunaisir = temple
+b_daranisibis  = castle
+
+#b_hisnkaifa = castle
 
 # Misc
-culture = assyrian
-religion = nestorian
+culture = kurdish
+religion = miaphysite
 
 # History
-
+1255.1.1 = {remove_settlement = b_daranisibis}
+1255.1.1 = {remove_settlement = b_jaziratibnumar}

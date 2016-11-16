@@ -4,20 +4,17 @@
 title = c_sijilmasa
 
 # Settlements
-max_settlements = 1
+max_settlements = 4
 b_sijilmasa = castle
+b_bechar = city
+b_benitajjit = temple
 
-#b_merzouga = city
-#b_tanamouste = temple
-#b_ertoud = castle
-#b_merzane = castle
-#b_hannabou = castle
-#b_tadaout = castle
-#b_tisserdmine = castle
+#b_boudnib = castle
 
 # Misc
 culture = maghreb_arabic
-religion = kharijite
+#culture = zanata
+religion = ibadi
 
 # History
-947.1.1 = { religion = sunni }
+1030.1.1 = { religion = sunni }
