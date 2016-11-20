@@ -1,13 +1,3 @@
-###########################################
-#                                         #
-# Rajas of India feast events             #
-#                                         #
-# ID ENA.3000-ENA.3999                    #
-#                                         #
-###########################################
-
-# Written by Tobias Bodlund
-
 namespace = ENA
 
 ###########################################
@@ -169,7 +159,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3101
 		prestige = -20
 		random = {
 			chance = 10
@@ -177,7 +167,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3101
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -215,7 +205,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3102
 		prestige = -20
 		random = {
 			chance = 10
@@ -223,7 +213,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3102
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -235,7 +225,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTC_ENA_3100
+		name = EVTOPTC_ENA_3102
 		piety = -50
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -292,7 +282,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3103
 		prestige = -20
 		random = {
 			chance = 10
@@ -300,7 +290,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3103
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -337,7 +327,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3104
 		prestige = -20
 		random = {
 			chance = 10
@@ -345,7 +335,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3104
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -383,7 +373,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3105
 		prestige = -20
 		random = {
 			chance = 10
@@ -391,7 +381,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3105
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -429,7 +419,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3106
 		prestige = -20
 		random = {
 			chance = 10
@@ -437,7 +427,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3106
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -475,7 +465,7 @@ character_event = {
 	}
 
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3107
 		prestige = -20
 		random = {
 			chance = 10
@@ -483,7 +473,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3107
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -495,7 +485,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTC_ENA_3100
+		name = EVTOPTC_ENA_3107
 		piety = -50
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -553,7 +543,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3108
 		prestige = -20
 		random = {
 			chance = 10
@@ -561,7 +551,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3108
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -573,7 +563,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTC_ENA_3100
+		name = EVTOPTC_ENA_3108
 		piety = -50
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -633,7 +623,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3109
 		prestige = -20
 		random = {
 			chance = 10
@@ -641,7 +631,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3109
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -680,7 +670,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3110
 		prestige = -20
 		random = {
 			chance = 10
@@ -688,7 +678,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3110
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -727,7 +717,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3111
 		prestige = -20
 		random = {
 			chance = 10
@@ -735,7 +725,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3111
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -773,7 +763,7 @@ character_event = {
 	}
 	
 	option = {
-		name = EVTOPTA_ENA_3100
+		name = EVTOPTA_ENA_3114
 		prestige = -20
 		random = {
 			chance = 10
@@ -781,7 +771,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTB_ENA_3100
+		name = EVTOPTB_ENA_3114
 		piety = -20
 		any_courtier = {
 			limit = { has_minor_title = title_enarei }
@@ -829,7 +819,7 @@ character_event = {
 			}
         }
 	}
-		option = {	#Ask fertility advice
+		option = {	#Ask economic advice
                 name = OPTENAc.10174
                 hidden_tooltip = { 
 				random_list = {
@@ -1018,7 +1008,7 @@ character_event = {		#Bad outcome
 
         is_triggered_only = yes
 
-        option = {	#Ask fertility advice
+        option = {	#Ask economic advice
                 name = OPTENAa.10183
                 hidden_tooltip = { 
 				random_list = {
