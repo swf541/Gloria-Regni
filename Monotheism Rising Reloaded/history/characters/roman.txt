@@ -455,18 +455,25 @@
 }
 
 145237 = {
-	name="Julian"
+	name="Julian" # Hellenic prophet & last pagan ruler of Rome
 	# Caesar Flavius Claudius Iulianus Augustus
 	dynasty=1022195
 	religion="hellenic_pagan"
 	culture="roman"
 	trait="mystic"
 	trait="scholar"
+	trait="diligent"
+	trait="stubborn"
+	trait="charitable"
 	trait="quick"
+	trait="ambitious"
 	trait="skilled_tactician"
 	father=145236
 	332.5.1={
 		birth="332.5.1"
+	}
+	360.3.1={
+		trait="celibate"
 	}
 	363.6.26={
 		death="363.6.26"
@@ -2779,4 +2786,146 @@
 	488.1.1={
 		death=yes
 	}
+}
+200000000 = {
+    name="Petronius"
+    dynasty=200000000
+    religion="imperial"
+    culture="roman"
+    trait="intricate_webweaver"
+    trait="deceitful"
+    396.1.1={
+        birth=yes
+    }
+    455.5.31={
+        death=yes
+    }
+}
+200000001 = {
+    name="Avitus"
+    religion="imperial"
+    culture="gallic"
+    trait="thrift_clerk"
+    trait="scholar"
+    385.1.1={
+        birth=yes
+    }
+    457.1.1={
+        death=yes
+    }
+}
+200000002 = {
+    name="Majorian"
+    religion="imperial"
+    culture="roman"
+    trait="skilled_tactician"
+    trait="ambitious"
+    trait="diligent"
+    trait="patient"
+    trait="brave"
+    420.1.1={
+        birth=yes
+    }
+    461.4.7={
+        death=yes
+    }
+}
+200000003 = {
+    name="Libius"
+    religion="imperial"
+    culture="roman"
+    trait="martial_cleric"
+    trait="charitable"
+    trait="zealous"
+    trait="chaste"
+    420.1.1={
+        birth=yes
+    }
+    465.4.15={
+        death=yes
+    }
+}
+200000004 = {
+    name="Anthemius"
+    dynasty=200000001
+    religion="imperial"
+    culture="roman"
+    trait="skilled_tactician"
+    trait="diligent"
+    trait="patient"
+    420.1.1={
+        birth=yes
+    }
+    472.7.11={
+        death=yes
+    }
+}
+200000005 = {
+    name="Olybrius"
+    dynasty=200000000
+    religion="imperial"
+    culture="roman"
+    430.1.1={
+        birth=yes
+    }
+    472.11.2={
+        death=yes
+    }
+}
+200000006 = {
+    name="Glycerius"
+    religion="imperial"
+    culture="roman"
+    trait="deceitful"
+    425.1.1={
+        birth=yes
+    }
+    481.1.1={
+        death=yes
+    }
+}
+200000007 = {
+    name="Julius"
+    dynasty=200000002
+    religion="imperial"
+    culture="roman"
+    trait="tough_soldier"
+    trait="diligent"
+    trait="content"
+    trait="patient"
+    430.1.1={
+        birth=yes
+    }
+    480.4.25={
+        death=yes
+    }
+}
+200000036 = {
+    name="Orestes"
+    dynasty=200000004
+    religion="imperial"
+    culture="roman"
+    trait="thrift_clerk"
+    trait="greedy"
+    trait="ambitious"
+    trait="deceitful"
+    431.1.1={
+        birth=yes
+    }
+    476.4.28={
+        death=yes
+    }
+}
+200000037 = {
+    name="Romulus"
+    dynasty=200000004
+    religion="imperial"
+    culture="roman"
+	father=200000036
+    461.1.1={
+        birth=yes
+    }
+    485.1.1={
+        death=yes
+    }
 }
