@@ -1173,7 +1173,9 @@ pagan_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 		
-		intermarry = norse_pagan
+		intermarry = norse_pagan_reformed
+		intermarry = germanic_pagan
+		intermarry = germanic_pagan_reformed
 		
 		allow_in_ruler_designer = no
 	}		
@@ -1229,6 +1231,8 @@ pagan_group = {
 		religious_clothing_priest = 3
 		
 		intermarry = norse_pagan_reformed
+		intermarry = germanic_pagan
+		intermarry = germanic_pagan_reformed
 		
 		dislike_tribal_organization = yes
 	}	
@@ -1895,31 +1899,6 @@ pagan_group = {
 		
 		dislike_tribal_organization = yes
 	}
-	
-	zalmoxism = {
-		graphical_culture = westerngfx
-
-		icon = 49
-		heresy_icon = 50
-		
-		color = { 0.1 0.5 0.8 }
-		
-		crusade_name = "CRUSADE"
-		scripture_name = THE_LEGENDS
-		god_names = {
-			GOD_ZALMOXIS
-		}
-		
-		can_grant_divorce = yes
-		can_grant_claim = yes
-		can_call_crusade = no
-		allow_looting = yes
-		#peace_prestige_loss = yes # Lose Prestige while at peace
-		raised_vassal_opinion_loss = no
-		
-		max_consorts = 3
-		
-	}
 
 	zun_pagan_reformed = {
 		graphical_culture = muslimgfx
@@ -2419,7 +2398,8 @@ pagan_group = {
 
 		allow_in_ruler_designer = no
 	}
-		
+
+	
 		basque_pagan_reformed = { # Basque
 		# Use norsegfx rather than celticgfx to have the northern pagan rounded CoA on the map
 		graphical_culture = norsegfx
@@ -2582,7 +2562,7 @@ pagan_group = {
 			GOD_NERTHUS
 		}		
 		evil_god_names = {
-			GOD_LOPTR FENRIR JORMUNGANDR
+			GOD_LOPTR 
 		}
 		
 		investiture = no
@@ -2598,9 +2578,9 @@ pagan_group = {
 		
 		allow_in_ruler_designer = no
 		
-		intermarry = christian
-		intermarry = pagan_group
-		intermarry = zoroastrian_group
+		intermarry = norse_pagan_reformed
+		intermarry = germanic_pagan
+		intermarry = germanic_pagan_reformed
 	}
 	germanic_pagan = { 			# Continental Germanic religion
 		graphical_culture = norsegfx
@@ -2653,9 +2633,9 @@ pagan_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 		
-		intermarry = christian
-		intermarry = pagan_group
-		intermarry = zoroastrian_group
+		intermarry = norse_pagan_reformed
+		intermarry = germanic_pagan
+		intermarry = germanic_pagan_reformed
 	}
 
 	arabic_pagan_reformed = {
@@ -2708,7 +2688,8 @@ pagan_group = {
 		allow_looting = yes
 		max_consorts = 3
 
-
+		allow_in_ruler_designer = no
+		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
@@ -2762,7 +2743,7 @@ pagan_group = {
 		peace_prestige_loss = yes # Lose Prestige while at peace
 		raised_vassal_opinion_loss = no
 		max_consorts = 3
-		reformed = semitic_pagan_reformed
+		reformed = arabic_pagan_reformed
 		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
 		
 		short_reign_opinion_year_mult = 1.5 # The default is 2
@@ -2774,7 +2755,7 @@ pagan_group = {
 	}
 	
 
-		east_african_pagan_reformed = {
+	east_african_pagan_reformed = {
 		graphical_culture = africangfx
 		
 		secondary_event_pictures = west_african_pagan
@@ -2787,7 +2768,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
@@ -2826,13 +2807,15 @@ pagan_group = {
 		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
 		
 		aggression = 0.1 # AI aggression factor
+
+		allow_in_ruler_designer = no
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
 	}
 	
 
-		east_african_pagan = {
+	east_african_pagan = {
 		graphical_culture = africangfx
 
 		secondary_event_pictures = west_african_pagan
@@ -2845,12 +2828,13 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
 		evil_god_names = {
 			THE_DARK_SPIRITS GOD_DHEGDHEER GOD_HABBAD_INA_KAMAS MONSTER_QORI_ISMARIS
+		}
 		
 		unit_modifier = {		
 			garrison_size = 0.4
@@ -2888,7 +2872,7 @@ pagan_group = {
 		religious_clothing_priest = 4
 	}
 	
-		scythian_pagan_reformed = { 	
+	scythian_pagan_reformed = { 	
 		graphical_culture = mongolgfx
 
 		icon = 184
@@ -2928,13 +2912,15 @@ pagan_group = {
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
+
+		allow_in_ruler_designer = no
 		
 		intermarry = christian
 		intermarry = pagan_group
 		intermarry = zoroastrian_group
 	}
 	
-		scythian_pagan = { 	
+	scythian_pagan = { 	
 		graphical_culture = mongolgfx
 
 		icon = 183
@@ -3029,6 +3015,8 @@ pagan_group = {
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
+
+		allow_in_ruler_designer = no
 		
 		intermarry = christian
 		intermarry = pagan_group
