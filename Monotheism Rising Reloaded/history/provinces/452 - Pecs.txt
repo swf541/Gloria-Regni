@@ -16,8 +16,8 @@ b_pecs = tribal
 #b_darda = castle
 
 # Misc
-culture = pannonian
-religion = imperial
+culture = avar
+religion = tengri_pagan
 
 # History
 800.1.1 = {
@@ -25,6 +25,8 @@ religion = imperial
 	b_mohacs = city
 	b_kalocsa = temple
 }
+890.1.1 = { religion = imperial }
 950.1.1 = { culture = hungarian }
-1054.4.19 = { religion = catholic }
+1054.7.6 = { religion = catholic }
+
 1187.1.1 = { b_pecsvarad = castle } 

@@ -4,24 +4,18 @@
 title = c_suwaida
 
 # Settlements
-max_settlements = 4
-b_suwaida = castle
-b_raha = city
-b_qummoualad = temple
+max_settlements = 5
+b_latakiah = castle
+b_sahyun = city
+b_dair-alfarus = temple
 
-#b_taraba = castle
-#b_nimreh = castle
-#b_salah = castle
-#b_tlilin = castle
-#b_busan = city
+#b_gabula = castle
+#b_fiha = castle
 
 # Misc
-culture = assyrian
+culture = levantine_arabic
 religion = nestorian
 
 # History
 
-1016.1.1 = { religion = sunni }
-1016.1.1 = { culture = levantine_arabic }
-
-1187.1.1 = { b_taraba = castle }
+1187.1.1 = { b_gabula = castle }

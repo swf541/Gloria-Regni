@@ -17,19 +17,15 @@ b_selanger = tribal
 #b_sundsvall
 
 # Misc
-culture = lappish
-religion = finnish_pagan
+culture = norse
+religion = norse_pagan
 terrain = forest
 
 # History
 800.1.1 = {
 	b_selanger = tb_shipyard_1
 }
-
-1047.10.25 = { culture = swedish 
-	religion = norse_pagan
-}
-
+1066.1.1 = { culture = swedish }
 1090.1.1 = { religion = catholic }
 1300.1.1 = {
 	b_selanger = castle

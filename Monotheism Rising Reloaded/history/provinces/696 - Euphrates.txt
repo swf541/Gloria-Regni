@@ -6,22 +6,17 @@ title = c_euphrates
 # Settlements
 max_settlements = 6
 b_samarra = castle
-b_bayji = city
-b_tagrit = temple
+b_uhnuniya = city
+b_daskara = temple
 b_balad = castle
-b_amirli = castle
+b_almashuq = castle
 
-#b_dujail = city
-#b_ishaqi = castle
-#b_faris = castle
+#b_addur = city
 
 #Misc
-culture = assyrian
+culture = levantine_arabic
 religion = nestorian
 
 # History
-
-1016.1.1 = { religion = sunni }
-1016.1.1 = { culture = levantine_arabic }
-
-1255.1.1 = { remove_settlement = b_tagrit }
+1055.1.1 = { remove_settlement = b_almashuq }
+1255.1.1 = { remove_settlement = b_balad }

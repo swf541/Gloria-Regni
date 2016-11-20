@@ -1173,9 +1173,7 @@ pagan_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 		
-		intermarry = norse_pagan_reformed
-		intermarry = germanic_pagan
-		intermarry = germanic_pagan_reformed
+		intermarry = norse_pagan
 		
 		allow_in_ruler_designer = no
 	}		
@@ -1231,8 +1229,6 @@ pagan_group = {
 		religious_clothing_priest = 3
 		
 		intermarry = norse_pagan_reformed
-		intermarry = germanic_pagan
-		intermarry = germanic_pagan_reformed
 		
 		dislike_tribal_organization = yes
 	}	
@@ -1899,6 +1895,31 @@ pagan_group = {
 		
 		dislike_tribal_organization = yes
 	}
+	
+	zalmoxism = {
+		graphical_culture = westerngfx
+
+		icon = 49
+		heresy_icon = 50
+		
+		color = { 0.1 0.5 0.8 }
+		
+		crusade_name = "CRUSADE"
+		scripture_name = THE_LEGENDS
+		god_names = {
+			GOD_ZALMOXIS
+		}
+		
+		can_grant_divorce = yes
+		can_grant_claim = yes
+		can_call_crusade = no
+		allow_looting = yes
+		#peace_prestige_loss = yes # Lose Prestige while at peace
+		raised_vassal_opinion_loss = no
+		
+		max_consorts = 3
+		
+	}
 
 	zun_pagan_reformed = {
 		graphical_culture = muslimgfx
@@ -1999,15 +2020,15 @@ pagan_group = {
 		
 		ai_convert_other_group = 2 # always try to convert
 		
-		color = { 0.48 0.37 0.58 }
+		color = { 0.6 0.1 0.1 }
 		high_god_name = { 
 			GOD_JUPITER
 		}
 		god_names = {
-			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS
+			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_JUPITER GOD_NEPTUNE GOD_VULCAN GOD_APOLLO
 		}
 		evil_god_names = {
-			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
+			GOD_PLUTO
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2038,15 +2059,15 @@ pagan_group = {
 		
 		ai_convert_other_group = 2 # always try to convert
 		
-		color = { 0.68 0.57 0.78 }
+		color = { 0.6 0.1 0.1 }
 		high_god_name = { 
-			GOD_HELIOS_MITHRAS
+			GOD_HELIOS GOD_JUPITER
 		}
 		god_names = {
-			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS GOD_THE_SUN THE_LIGHT GOD_HELIOS
+			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_VULCAN GOD_APOLLO GOD_MITHRAS
 		}
 		evil_god_names = {
-			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
+			GOD_PLUTO
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2080,15 +2101,11 @@ pagan_group = {
 		ai_convert_other_group = 2 # always try to convert
 		
 		color = { 0.1 0.2 0.4 }
-		high_god_name = { 
-			GOD_SOL
-		}		
-		
 		god_names = {
-			GOD_MITHRAS GOD_SOL GOD_LUNA GOD_THE_SUN THE_LIGHT
+			GOD_MITHRAS GOD_SOL
 		}
 		evil_god_names = {
-			THE_DARKNESS THE_DARK_SPIRITS
+			GOD_TYPHON
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2113,20 +2130,25 @@ pagan_group = {
 	egyptian_pagan = { # Kemetic
 		graphical_culture = africangfx
 		
+		pre_reformed = yes
+		
 		icon = 106
 		heresy_icon = 107
+
+		ai_convert_other_group = 2 # always try to convert
+		ai_convert_same_group = 2 # always try to convert
 
 		color = { 0.5 0.4 0 }
 		
 		scripture_name = BOOK_OF_THE_DEAD
 		crusade_name = GREAT_HOLY_WAR
-		high_god_name = GOD_ISIS
+		high_god_name = GOD_AMON
 
 		god_names = {
-			GOD_ARENSNUPHIS GOD_MANDULIS GOD_AMON GOD_RA GOD_ISIS GOD_OSIRIS GOD_ANUBIS GOD_APEDEMAK GOD_BES GOD_SERAPIS GOD_SET 
+			GOD_AMAUNET GOD_AMON GOD_HAUHET GOD_HEH GOD_KAUKET GOD_KEK GOD_NAUNET GOD_NUN GOD_RA GOD_ISIS GOD_OSIRIS GOD_ANUBIS
 		}
 		evil_god_names = {
-			GOD_APEP THE_DARK_SPIRITS THE_DARKNESS 
+			GOD_SET GOD_APEP
 		}
 		
 		allow_rivermovement = yes
@@ -2136,14 +2158,14 @@ pagan_group = {
 		divine_blood = yes
 		pc_marriage = yes
 		bs_marriage = yes
-		can_call_crusade = no
+		can_call_crusade = yes
 		
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
 		
 	}
 	
-	egyptian_pagan_reformed = { # Kemetic Reformed
+	egyptian_pagan_reformed = { # Kemetic
 		graphical_culture = africangfx
 		
 		pre_reformed = yes
@@ -2161,10 +2183,10 @@ pagan_group = {
 		high_god_name = GOD_AMON
 
 		god_names = {
-			GOD_ARENSNUPHIS GOD_MANDULIS GOD_AMON GOD_RA GOD_ISIS GOD_OSIRIS GOD_ANUBIS GOD_APEDEMAK GOD_BES GOD_SERAPIS GOD_SET 
+			GOD_AMAUNET GOD_AMON GOD_HAUHET GOD_HEH GOD_KAUKET GOD_KEK GOD_NAUNET GOD_NUN GOD_RA GOD_ISIS GOD_OSIRIS GOD_ANUBIS
 		}
 		evil_god_names = {
-			GOD_APEP THE_DARK_SPIRITS THE_DARKNESS 
+			GOD_SET GOD_APEP
 		}
 		
 		allow_rivermovement = yes
@@ -2182,223 +2204,6 @@ pagan_group = {
 
 		allow_in_ruler_designer = no		
 	}
-
-	grecoegyptian_pagan = { # Greco-Kemetic
-		graphical_culture = africangfx
-		
-		pre_reformed = yes
-		
-		icon = 182
-		heresy_icon = 107
-
-		ai_convert_other_group = 2 # always try to convert
-		ai_convert_same_group = 2 # always try to convert
-
-		color = { 0.5 0.4 0.78 }
-		
-		scripture_name = BOOK_OF_THE_DEAD
-		crusade_name = GREAT_HOLY_WAR
-		high_god_name = GOD_SERAPIS
-
-		god_names = {
-			GOD_SERAPIS GOD_ZEUS_AMMON GOD_ISIS GOD_HERMANUBIS GOD_HARPOCRATES GOD_SOBEK GOD_DIONYSUS
-		}
-		evil_god_names = {
-			GOD_SET_TYPHON THE_DARK_SPIRITS THE_DARKNESS 
-		}
-		
-		can_call_crusade = yes
-		priest_title = AUGUR
-		allow_rivermovement = yes
-		priests_can_marry = yes
-		female_temple_holders = yes
-		max_wives = 4
-		divine_blood = yes
-		pc_marriage = yes
-		bs_marriage = yes
-		can_call_crusade = yes
-		
-		religious_clothing_head = 5
-		religious_clothing_priest = 5
-
-
-		allow_in_ruler_designer = no		
-	}	
-	
-	celtic_pagan_reformed = { # Druidic
-		# Use norsegfx rather than celticgfx to have the northern pagan rounded CoA on the map
-		graphical_culture = norsegfx
-		
-		icon = 86
-		heresy_icon = 87
-		
-		ai_convert_other_group = 2 # always try to convert
-		ai_convert_same_group = 2 # always try to convert
-		
-		color = { 0.2 0.6 0.03 }
-		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_STONES
-		priest_title = DRUID
-		can_call_crusade = yes
-
-		high_god_name = GOD_LUGH
-
-		god_names = {
-			GOD_ANGUS GOD_MANANNAN GOD_DAGHDA GOD_LUGH GOD_MACHA GOD_DANA GOD_NUADA GOD_HORNED_ONE GOD_CERNNUNOS
-		}
-		evil_god_names = {
-			THE_FOMORIANS EVIL_BALOR EVIL_BRES GOD_CAILLEACH
-		}
-		
-		unit_modifier = {	
-			levy_size = 0.15
-			
-			retinuesize_perc = 0.3
-			garrison_size = 0.2
-			
-			key = "HERO_RELIGION"
-		}
-		
-		unit_home_modifier = {
-			land_morale = 0.4
-			light_infantry_defensive = 0.4
-			heavy_infantry_defensive = 0.4
-			pikemen_defensive = 0.4
-			light_cavalry_defensive = 0.4
-			knights_defensive = 0.4
-			archers_defensive = 0.4
-			horse_archers_defensive = 0.4
-			camel_cavalry_defensive = 0.4
-			war_elephants_defensive = 0.4
-			
-			garrison_size = 0.2
-			
-			key = "HERO_RELIGION_HOME_TERRITORY"
-		}
-		
-		intermarry = celtic_pagan
-		priests_can_marry = yes
-		female_temple_holders = yes
-		feminist = yes
-		max_consorts = 3
-		allow_looting = yes
-
-		aggression = 1.5 # AI aggression factor
-		
-		short_reign_opinion_year_mult = 1.5 # The default is 2
-		
-		religious_clothing_head = 3
-		religious_clothing_priest = 3
-
-		allow_in_ruler_designer = no
-	}
-	
-	celtic_pagan = {
-		# Use norsegfx rather than celticgfx to have the northern pagan rounded CoA on the map
-		graphical_culture = norsegfx
-		
-		icon = 85
-		heresy_icon = 87
-		
-		color = { 0.14 0.36 0.16 }
-		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_BALLADS
-		priest_title = DRUID
-
-		high_god_name = GOD_LUGH
-
-		god_names = {
-			GOD_ANGUS GOD_MANANNAN GOD_DAGHDA GOD_LUGH GOD_MACHA GOD_DANA GOD_NUADA GOD_HORNED_ONE GOD_CERNNUNOS
-		}
-		evil_god_names = {
-			THE_FOMORIANS EVIL_BALOR EVIL_BRES GOD_CAILLEACH
-		}
-		
-		unit_modifier = {	
-			levy_size = 0.15
-			
-			retinuesize_perc = 0.3	
-			garrison_size = 0.2
-			
-			key = "HERO_RELIGION"
-		}
-		unit_home_modifier = {
-			land_morale = 0.6
-			light_infantry_defensive = 0.6
-			heavy_infantry_defensive = 0.6
-			pikemen_defensive = 0.6
-			light_cavalry_defensive = 0.6
-			knights_defensive = 0.6
-			archers_defensive = 0.6
-			horse_archers_defensive = 0.6
-			camel_cavalry_defensive = 0.6
-			war_elephants_defensive = 0.6
-			
-			garrison_size = 0.2
-			
-			key = "HERO_RELIGION_HOME_TERRITORY"
-		}
-
-		intermarry = celtic_pagan_reformed
-		priests_can_marry = yes
-		female_temple_holders = yes
-		feminist = yes
-		defensive_attrition = yes
-		max_consorts = 3
-		peace_prestige_loss = yes # Lose Prestige while at peace
-		raised_vassal_opinion_loss = no
-		allow_looting = yes
-		reformed = celtic_pagan_reformed
-		aggression = 1.5 # AI aggression factor
-		
-		dislike_tribal_organization = yes
-
-		short_reign_opinion_year_mult = 2
-		
-		religious_clothing_head = 3
-		religious_clothing_priest = 3
-	}
-
-	aten_pagan = { # Atenism
-		graphical_culture = africangfx
-		
-		pre_reformed = yes
-
-		icon = 108
-		heresy_icon = 109
-		
-		ai_convert_other_group = 2 # always try to convert
-		ai_convert_same_group = 2 # always try to convert
-
-		color = {0.9 0.8 0}
-		
-		scripture_name = AMARNA_SCROLLS
-		crusade_name = GREAT_HOLY_WAR
-
-		high_god_name = GOD_ATEN
-		god_names = {
-			GOD_ATEN GOD_THE_SUN THE_LIGHT
-		}
-		evil_god_names = {
-			GOD_SET THE_DARKNESS THE_FALSE_GODS
-		}
-		
-		uses_decadence = yes
-
-		allow_rivermovement = yes
-		priests_can_marry = yes
-		female_temple_holders = yes
-		max_wives = 4
-		divine_blood = yes
-		pc_marriage = yes
-		bs_marriage = yes
-		can_call_crusade = yes
-		religious_clothing_head = 5
-		religious_clothing_priest = 5
-
-		allow_in_ruler_designer = no
-	}
-
 	
 		basque_pagan_reformed = { # Basque
 		# Use norsegfx rather than celticgfx to have the northern pagan rounded CoA on the map
@@ -2578,11 +2383,11 @@ pagan_group = {
 		
 		allow_in_ruler_designer = no
 		
-		intermarry = norse_pagan_reformed
-		intermarry = germanic_pagan
-		intermarry = germanic_pagan_reformed
+		intermarry = christian
+		intermarry = pagan_group
+		intermarry = zoroastrian_group
 	}
-	germanic_pagan = { 			# Continental Germanic religion
+	germanic_pagan = { 			# West-Germanic religion
 		graphical_culture = norsegfx
 
 		icon = 97
@@ -2617,7 +2422,7 @@ pagan_group = {
 			GOD_NERTHUS
 		}		
 		evil_god_names = {
-			GOD_LOPTR FENRIR JORMUNGANDR
+			GOD_LOPTR 
 		}
 		
 		investiture = no
@@ -2633,12 +2438,12 @@ pagan_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 		
-		intermarry = norse_pagan_reformed
-		intermarry = germanic_pagan
-		intermarry = germanic_pagan_reformed
+		intermarry = christian
+		intermarry = pagan_group
+		intermarry = zoroastrian_group
 	}
 
-	arabic_pagan_reformed = {
+	semitic_pagan_reformed = {
 		graphical_culture = muslimgfx
 
 		icon = 71
@@ -2688,14 +2493,13 @@ pagan_group = {
 		allow_looting = yes
 		max_consorts = 3
 
-		allow_in_ruler_designer = no
-		
+
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
 	
 
-	arabic_pagan = { 
+	semitic_pagan = { 
 		graphical_culture = muslimgfx
 
 		icon = 69
@@ -2743,7 +2547,7 @@ pagan_group = {
 		peace_prestige_loss = yes # Lose Prestige while at peace
 		raised_vassal_opinion_loss = no
 		max_consorts = 3
-		reformed = arabic_pagan_reformed
+		reformed = semitic_pagan_reformed
 		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
 		
 		short_reign_opinion_year_mult = 1.5 # The default is 2
@@ -2755,7 +2559,7 @@ pagan_group = {
 	}
 	
 
-	east_african_pagan_reformed = {
+		east_african_pagan_reformed = {
 		graphical_culture = africangfx
 		
 		secondary_event_pictures = west_african_pagan
@@ -2768,7 +2572,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_WAAQ
+		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
@@ -2807,15 +2611,13 @@ pagan_group = {
 		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
 		
 		aggression = 0.1 # AI aggression factor
-
-		allow_in_ruler_designer = no
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
 	}
 	
 
-	east_african_pagan = {
+		east_african_pagan = {
 		graphical_culture = africangfx
 
 		secondary_event_pictures = west_african_pagan
@@ -2828,13 +2630,12 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_WAAQ
+		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
 		evil_god_names = {
 			THE_DARK_SPIRITS GOD_DHEGDHEER GOD_HABBAD_INA_KAMAS MONSTER_QORI_ISMARIS
-		}
 		
 		unit_modifier = {		
 			garrison_size = 0.4
@@ -2872,7 +2673,7 @@ pagan_group = {
 		religious_clothing_priest = 4
 	}
 	
-	scythian_pagan_reformed = { 	
+		scythian_pagan_reformed = { 	
 		graphical_culture = mongolgfx
 
 		icon = 184
@@ -2912,15 +2713,13 @@ pagan_group = {
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
-
-		allow_in_ruler_designer = no
 		
 		intermarry = christian
 		intermarry = pagan_group
 		intermarry = zoroastrian_group
 	}
 	
-	scythian_pagan = { 	
+		scythian_pagan = { 	
 		graphical_culture = mongolgfx
 
 		icon = 183
@@ -3015,8 +2814,6 @@ pagan_group = {
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
-
-		allow_in_ruler_designer = no
 		
 		intermarry = christian
 		intermarry = pagan_group
@@ -3175,20 +2972,14 @@ zoroastrian_group = {
 		icon = 58
 		heresy_icon = 59
 		
-		color = { 0.7 0.7 0.4 }
-
+		color = { 0.3 0.3 0.7 }
 		crusade_name = GREAT_HOLY_WAR
-        scripture_name = THE_GOSPELS
 		
 		high_god_name = GOD_ZURVAN
 		
 		god_names = {
-			GOD_ZURVAN GOD_OHRMAZD PROPHET_MANI GOD_MIHRYAZD
+			PROPHET_MANI 
 		}
-
-                evil_god_names = {
-                        JEHOVAH AHIRMAN SATAN LUCIFER
-                }
 		
 		can_grant_divorce = yes
 		can_call_crusade = yes

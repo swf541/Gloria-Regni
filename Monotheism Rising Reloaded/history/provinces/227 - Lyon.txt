@@ -16,13 +16,19 @@ b_brindas = castle
 #b_irigny = castle
 
 # Misc
-culture = gallic
+culture = galloroman
 religion = imperial
-terrain=forest
 
 # History
 790.1.1 = { culture = frankish }
-1054.4.19 = { religion = catholic }
+1054.7.6 = { religion = catholic }
+
 1202.11.28 = {
 	capital = b_stjeanbaptiste
 }
+
+
+
+1999.1.1 = { # Intentional empty entry
+}
+
