@@ -78,20 +78,6 @@ character_event = {		#Masked Processions
 	}
 }
 
-character_event = {		#Conclusion of Sarapia
-	id = SRP.6
-	title = "EVTNAMESRP.6"
-	desc = "EVTDESCSRP.6"
-	picture = "GFX_evt_roman_great_temple"
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = "EVTOPTASRP.6" # 
-		piety = 10
-	}
-}
-
 
 ### Egyptian sarapia Festival and Feast
 
