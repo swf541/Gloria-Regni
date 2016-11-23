@@ -19,11 +19,15 @@ b_essaouira = tribal
 
 # Misc
 culture = maghreb_arabic
-religion = shiite
+religion = imperial
 
 # History
 
-767.1.1 = { religion = ibadi }
+871.1.1 = { 
+	religion = ibadi 
+	culture = maghreb_arabic
+}
+
 947.1.1 = { religion = sunni }
 1062.1.1 = {
 	b_essaouira = castle

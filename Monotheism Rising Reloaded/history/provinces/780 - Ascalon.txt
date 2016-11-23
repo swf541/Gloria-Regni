@@ -16,9 +16,11 @@ b_galatia = temple
 #b_semsem = castle
 
 # Misc
-culture = levantine_arabic
-religion = orthodox
+culture = melkite
+religion = imperial
 
 # History
-867.1.1 = { religion = sunni }
+1054.1.1 = { religion = orthodox }
+1200.1.1 = { religion = sunni }
+1200.1.1 = { culture = levantine_arabic }
 1246.1.1 = { trade_post = b_dandolo }

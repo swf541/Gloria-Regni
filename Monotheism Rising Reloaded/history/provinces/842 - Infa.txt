@@ -19,10 +19,9 @@ b_infa = tribal
 
 # Misc
 culture = maghreb_arabic
-religion = shiite
+religion = imperial
 
 # History
-767.1.1 = { religion = ibadi }
 867.1.1 = {
 	b_infa = castle
 	b_rabat = city
@@ -38,6 +37,9 @@ religion = shiite
 	b_infa = ca_wall_1
 	b_infa = ca_wall_2
 }
-
+871.1.1 = { 
+	religion = ibadi 
+	culture = maghreb_arabic
+}
 974.1.1 = { religion = sunni }
 1132.1.1 = { trade_post = b_doria }

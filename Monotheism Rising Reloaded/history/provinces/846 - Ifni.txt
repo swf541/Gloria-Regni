@@ -19,10 +19,14 @@ b_ifni = tribal
 
 # Misc
 culture = maghreb_arabic
-religion = shiite
+religion = imperial
 
 # History
 
+871.1.1 = { 
+	religion = shiite 
+	culture = maghreb_arabic
+}
 947.1.1 = { religion = sunni }
 1062.1.1 = {
 	b_ifni = castle
