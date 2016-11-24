@@ -1,0 +1,22 @@
+# 696 - Samarra #Former Euphrates
+
+# County Title
+title = c_euphrates
+
+# Settlements
+max_settlements = 6
+b_samarra = castle
+b_uhnuniya = city
+b_daskara = temple
+b_balad = castle
+b_almashuq = castle
+
+#b_addur = city
+
+#Misc
+culture = levantine_arabic
+religion = nestorian
+
+# History
+1055.1.1 = { remove_settlement = b_almashuq }
+1255.1.1 = { remove_settlement = b_balad }

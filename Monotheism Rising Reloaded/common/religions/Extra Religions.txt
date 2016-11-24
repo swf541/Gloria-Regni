@@ -1,16 +1,4 @@
 zoroastrian_group = {
-	has_coa_on_barony_only = yes
-	graphical_culture = muslimgfx
-	playable = yes
-	
-	ai_convert_same_group = 2 # always try to convert
-	ai_convert_other_group = 2	# always try to convert
-	
-	# Names given only to Zoroastrian characters (base names)
-	male_names = {
-		Hormazd Maziar Shapur Vandad Zartosht
-	}
-
        zurvanite = {        
                 graphical_culture = persiangfx
                 
@@ -85,18 +73,6 @@ zoroastrian_group = {
 }
 
 jewish_group = {
-        graphical_culture = jewishgfx
-        crusade_cb = crusade
-        playable = yes
-        ai_peaceful = yes # Will make Hordes lose their super aggressiveness
-        
-        ai_convert_same_group = 2 # always try to convert
-        ai_convert_other_group = 2        # always try to convert
-        
-        # Names given only to Jewish characters (base names)
-        male_names = {
-                Belet Ezra Hanukkah Hezekiah Isaac Levi Manasseh Nisi Simeon Yavdi Zebulun
-        }
 		
 			grand_sanhedrin = {
                 graphical_culture = jewishgfx
