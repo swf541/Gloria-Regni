@@ -1775,9 +1775,11 @@ character_event = {	#chaharshanbe_suri
 			10 = { change_stewardship = 1 }
 		}
 		if = {
-			or = {
-				trait = wounded
-				trait = ill
+			limit = {
+				or = {
+					trait = wounded
+					trait = ill
+				}
 			}
 			character_event = { id = BAS.507 tooltip = EVTTOOLTIP_BAS.507 }
 		}

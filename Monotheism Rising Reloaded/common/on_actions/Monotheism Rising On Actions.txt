@@ -14,8 +14,8 @@ on_startup = {
 }
 on_birth = {
 	events = {
-		ROMEGOV.5
-		#ROMEGOV.7
+		#ROMEGOV.5
+		##ROMEGOV.7
 		ROMEGOV.8
 		ExIs.6001
 		RITE.2
@@ -293,20 +293,20 @@ on_law_vote_passed = {
 
 on_battle_won = {
 	events = {
-		ROMEGOV.5
+		#ROMEGOV.5
 	}
 }
 
 # any leader in battle on winning side is ROOT - opponent army leader is FROM
 on_major_battle_won = {
 	events = {
-		ROMEGOV.5
+		#ROMEGOV.5
 	}
 }
 
 on_death = {
 	events = {
-		ROMEGOV.6
+		#ROMEGOV.6
 		######HERETIC PRIDE
 		HPdruze.4402 #Mad caliph dies, druze is scattered
 		HPdecadence.50900
