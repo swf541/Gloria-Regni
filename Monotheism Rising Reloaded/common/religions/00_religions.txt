@@ -2037,12 +2037,14 @@ pagan_group = {
 		ai_convert_other_group = 2 # always try to convert
 		
 		color = { 0.6 0.1 0.1 }
-		high_god_name = GOD_JUPITER
+		high_god_name = { 
+			GOD_JUPITER
+		}
 		god_names = {
-			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_JUPITER GOD_NEPTUNE GOD_VULCAN GOD_APOLLO
+			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS
 		}
 		evil_god_names = {
-			GOD_PLUTO
+			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2074,12 +2076,14 @@ pagan_group = {
 		ai_convert_other_group = 2 # always try to convert
 		
 		color = { 0.6 0.1 0.1 }
-		high_god_name = GOD_HELIOS 
+		high_god_name = { 
+			GOD_HELIOS_MITHRAS
+		}
 		god_names = {
-			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_VULCAN GOD_APOLLO GOD_MITHRAS
+			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS GOD_THE_SUN THE_LIGHT GOD_HELIOS
 		}
 		evil_god_names = {
-			
+			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
 		}
 		unit_modifier = {
 			levy_size = 0.3
