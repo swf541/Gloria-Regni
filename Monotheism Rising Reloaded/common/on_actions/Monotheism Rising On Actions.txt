@@ -25,7 +25,7 @@ on_birth = {
 	random_events = {
 		1 = MET.10000 # Reincarnation?
 		1 = HPyazidi.1500 # Reincarnation?
-		1 = HPdruze.4500 # Reincarnation?
+		#1 = HPdruze.4500 # Reincarnation?
 	}
 }
 on_yearly_pulse = {
@@ -148,8 +148,8 @@ on_yearly_pulse = {
 		1000 = HPyazidi.1520
 		1000 = HPyazidi.1521
 		1000 = HPyazidi.1522
-		1000 = HPdruze.1520
-		1000 = HPdruze.1521
+		#1000 = HPdruze.1520
+		#1000 = HPdruze.1521
 		1000 = HPdrzue.1522
 		1000 = RoI.10020
 		1000 = RoI.10021
@@ -228,7 +228,7 @@ on_yearly_childhood_pulse = {
 		
 		### HERETIC PRIDE
 		5000 = HPyazidi.1510 # Acknowledged reincarnated child acquires trait from previous personality
-		5000 = HPdruze.1510 # Acknowledged reincarnated child acquires trait from previous personality
+		#5000 = HPdruze.1510 # Acknowledged reincarnated child acquires trait from previous personality
 		100 = HPwaldensian.13400 #Wald Charity
 		1000 = HPcathar.12100 # Cathar Chaste
 		100 = HPcathar.12101
@@ -308,7 +308,7 @@ on_death = {
 	events = {
 		#ROMEGOV.6
 		######HERETIC PRIDE
-		HPdruze.4402 #Mad caliph dies, druze is scattered
+		#HPdruze.4402 #Mad caliph dies, druze is scattered
 		HPdecadence.50900
 		HPdecadence.50901
 	}

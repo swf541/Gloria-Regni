@@ -2037,9 +2037,7 @@ pagan_group = {
 		ai_convert_other_group = 2 # always try to convert
 		
 		color = { 0.6 0.1 0.1 }
-		high_god_name = { 
-			GOD_JUPITER
-		}
+		high_god_name = GOD_JUPITER
 		god_names = {
 			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_JUPITER GOD_NEPTUNE GOD_VULCAN GOD_APOLLO
 		}
@@ -2076,14 +2074,12 @@ pagan_group = {
 		ai_convert_other_group = 2 # always try to convert
 		
 		color = { 0.6 0.1 0.1 }
-		high_god_name = { 
-			GOD_HELIOS GOD_JUPITER
-		}
+		high_god_name = GOD_HELIOS 
 		god_names = {
 			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_VULCAN GOD_APOLLO GOD_MITHRAS
 		}
 		evil_god_names = {
-			GOD_PLUTO
+			
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2588,7 +2584,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
@@ -2646,7 +2642,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
