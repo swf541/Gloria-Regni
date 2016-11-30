@@ -601,7 +601,7 @@
 121 = {
    title=c_nassau
    max_settlements=5
-   terrain=hills
+   terrain=forest
 }
 122 = {
    title=c_leiningen
@@ -611,7 +611,7 @@
 123 = {
    title=c_mainz
    max_settlements=5
-   terrain=plains
+   terrain=forest
 }
 124 = {
    title=c_pfalz
@@ -621,12 +621,12 @@
 125 = {
    title=c_baden
    max_settlements=5
-   terrain=plains
+   terrain=forest
 }
 126 = {
    title=c_nordgau
    max_settlements=4
-   terrain=forest
+   terrain=plains
 }
 127 = {
    title=c_lorraine
@@ -1246,12 +1246,12 @@
 250 = {
    title=c_breisgau
    max_settlements=4
-   terrain=forest
+   terrain=plains
 }
 251 = {
    title=c_furstenberg
    max_settlements=4
-   terrain=hills
+   terrain=forest
 }
 252 = {
    title=c_ulm
@@ -1261,12 +1261,12 @@
 253 = {
    title=c_wurttemberg
    max_settlements=5
-   terrain=plains
+   terrain=forest
 }
 254 = {
    title=c_wurzburg
    max_settlements=5
-   terrain=forest
+   terrain=plains
 }
 255 = {
    title=c_thuringen
@@ -1276,7 +1276,7 @@
 256 = {
    title=c_weimar
    max_settlements=4
-   terrain=hills
+   terrain=farmlands
 }
 257 = {
    title=c_braunschweig
@@ -1291,7 +1291,7 @@
 259 = {
    title=c_celle
    max_settlements=4
-   terrain=plains
+   terrain=hills
 }
 260 = {
    title=c_mecklemburg
@@ -1301,7 +1301,7 @@
 261 = {
    title=c_hamburg
    max_settlements=6
-   terrain=plains
+   terrain=hills
 }
 262 = {
    title=c_lubeck
@@ -1546,17 +1546,17 @@
 310 = {
    title=c_anhalt
    max_settlements=5
-   terrain=forest
+   terrain=plains
 }
 311 = {
    title=c_plauen
    max_settlements=5
-   terrain=farmlands
+   terrain=hills
 }
 312 = {
    title=c_meissen
    max_settlements=5
-   terrain=forest
+   terrain=hills
 }
 313 = {
    title=c_bamberg
@@ -1786,7 +1786,7 @@
 358 = {
    title=c_aquileia
    max_settlements=5
-   terrain=mountain
+   terrain=hills
 }
 359 = {
    title=c_innsbruck
@@ -1796,17 +1796,17 @@
 360 = {
    title=c_oberbayern
    max_settlements=5
-   terrain=hills
+   terrain=forest
 }
 361 = {
    title=c_niederbayern
    max_settlements=4
-   terrain=hills
+   terrain=plains
 }
 362 = {
    title=c_domazlice
    max_settlements=5
-   terrain=plains
+   terrain=hills
 }
 363 = {
    title=c_litomerice
@@ -1975,11 +1975,6 @@
 }
 396 = {
    title=c_bjarmia
-   max_settlements=2
-   terrain=arctic
-}
-397 = {
-   title=c_samoyeds
    max_settlements=2
    terrain=arctic
 }
@@ -2161,7 +2156,7 @@
 433 = {
    title=c_opole
    max_settlements=5
-   terrain=plains
+   terrain=forest
 }
 434 = {
    title=c_lower_silesia
@@ -2176,7 +2171,7 @@
 436 = {
    title=c_boleslav
    max_settlements=4
-   terrain=plains
+   terrain=hills
 }
 437 = {
    title=c_praha
@@ -2186,12 +2181,12 @@
 438 = {
    title=c_hradec
    max_settlements=5
-   terrain=hills
+   terrain=plains
 }
 439 = {
    title=c_plzen
    max_settlements=4
-   terrain=plains
+   terrain=forest
 }
 440 = {
    title=c_olomouc
@@ -2201,12 +2196,12 @@
 441 = {
    title=c_brno
    max_settlements=4
-   terrain=plains
+   terrain=forest
 }
 442 = {
    title=c_trencin
    max_settlements=4
-   terrain=hills
+   terrain=mountain
 }
 443 = {
    title=c_nitra
@@ -2231,12 +2226,12 @@
 447 = {
    title=c_passau
    max_settlements=4
-   terrain=hills
+   terrain=plains
 }
 448 = {
    title=c_salzburg
    max_settlements=5
-   terrain=forest
+   terrain=mountain
 }
 449 = {
    title=c_osterreich
@@ -2271,12 +2266,12 @@
 455 = {
    title=c_steiermark
    max_settlements=4
-   terrain=hills
+   terrain=mountain
 }
 456 = {
    title=c_karnten
    max_settlements=5
-   terrain=hills
+   terrain=mountain
 }
 457 = {
    title=c_krain
@@ -2571,7 +2566,7 @@
 515 = {
    title=c_tirgoviste
    max_settlements=3
-   terrain=plains
+   terrain=hills
 }
 516 = {
    title=c_severin
@@ -2581,7 +2576,7 @@
 517 = {
    title=c_temes
    max_settlements=3
-   terrain=forest
+   terrain=plains
 }
 518 = {
    title=c_bacs
@@ -2591,12 +2586,12 @@
 519 = {
    title=c_feher
    max_settlements=4
-   terrain=hills
+   terrain=mountain
 }
 520 = {
    title=c_bihar
    max_settlements=4
-   terrain=hills
+   terrain=mountain
 }
 521 = {
    title=c_csanad
@@ -2681,7 +2676,7 @@
 537 = {
    title=c_bereg
    max_settlements=3
-   terrain=mountain
+   terrain=plains
 }
 538 = {
    title=c_abauj
@@ -2696,7 +2691,7 @@
 540 = {
    title=c_szekelyfold
    max_settlements=3
-   terrain=hills
+   terrain=mountain
 }
 541 = {
    title=c_peresechen
@@ -2721,7 +2716,7 @@
 545 = {
    title=c_torki
    max_settlements=4
-   terrain=plains
+   terrain=mountain
 }
 546 = {
    title=c_terebovl
@@ -3141,12 +3136,12 @@
 629 = {
    title=c_konjikala #Farava
    max_settlements=4
-   terrain=desert
+   terrain=mountain
 }
 630 = {
    title=c_merv
    max_settlements=5
-   terrain=plains
+   terrain=desert
 }
 631 = {
    title=c_dihistan
@@ -3171,17 +3166,17 @@
 635 = {
    title=c_qohistan
    max_settlements=4
-   terrain=desert
+   terrain=mountain
 }
 636 = {
    title=c_lut #Mafaza
    max_settlements=4
-   terrain=desert
+   terrain=mountain
 }
 637 = {
    title=c_sistan
    max_settlements=6
-   terrain=mountain
+   terrain=desert
 }
 638 = {
    title=c_yazd
@@ -3191,7 +3186,7 @@
 639 = {
    title=c_kerman
    max_settlements=4
-   terrain=mountain
+   terrain=desert
 }
 640 = {
    title=c_sirjan
@@ -3206,7 +3201,7 @@
 642 = {
    title=c_ladistan #Mandestan
    max_settlements=5
-   terrain=hills
+   terrain=desert
 }
 643 = {
    title=c_fars
@@ -3231,7 +3226,7 @@
 647 = {
    title=c_avhaz
    max_settlements=5
-   terrain=mountain
+   terrain=desert
 }
 648 = {
    title=c_khozistan
@@ -3241,7 +3236,7 @@
 649 = {
    title=c_basra
    max_settlements=6
-   terrain=desert
+   terrain=plains
 }
 650 = {
    title=c_kuwait
@@ -3256,7 +3251,7 @@
 652 = {
    title=c_al_hasa
    max_settlements=5
-   terrain=desert
+   terrain=plains
 }
 653 = {
    title=c_bahrein
@@ -3271,7 +3266,7 @@
 655 = {
    title=c_kufa
    max_settlements=5
-   terrain=plains
+   terrain=desert
 }
 656 = {
    title=c_tigris
@@ -3560,7 +3555,7 @@
 }
 713 = {
    title=c_druz
-   max_settlements=4
+   max_settlements=5
    terrain=desert
 }
 714 = {
@@ -5754,7 +5749,7 @@
 }
 1188 = {
    title=c_chaghaniyan
-   max_settlements=3
+   max_settlements=4
    terrain=mountain
 }
 1189 = {
@@ -7193,4 +7188,9 @@
    title=c_tokharestan
    max_settlements=4
    terrain=mountain
+}
+397 = {
+   title=c_samoyeds
+   max_settlements=2
+   terrain=arctic
 }
