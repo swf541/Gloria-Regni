@@ -1,0 +1,30 @@
+# 824 - Arigh
+
+# County Title
+title = c_arigh
+
+# Settlements
+max_settlements = 3
+
+b_arigh = castle
+b_tuggurt = city
+
+#b_taghyart = temple
+
+# Misc
+culture = maghreb_arabic
+religion = ibadi
+
+# History
+
+930.1.1 = { religion = shiite }
+1056.1.1 = {
+	remove_settlement = b_tuggurt
+	religion = sunni
+	b_arigh = tribal
+}
+1070.1.1 = { 
+religion = sunni
+culture = maghreb_arabic
+}
+

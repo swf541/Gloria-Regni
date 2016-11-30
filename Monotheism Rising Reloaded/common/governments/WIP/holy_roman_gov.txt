@@ -1,0 +1,60 @@
+feudal_governments = {
+	holy_roman = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE 
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			muslim_government
+		}
+		vassal_call_to_arms = {
+			feudal_government
+			holy_roman
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			muslim_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		potential = {
+			NAND = {
+				controls_religion = yes
+				NOT = { religion_group = muslim }
+				NOT = {	primary_title = { is_landless_type_title = no }	}
+			}
+			NOT = {	religion_group = muslim	}
+			holy_roman_empire_trigger = yes
+			NOT = {
+				roman_government_trigger = yes
+			}
+			is_patrician = no
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+				has_landed_title = e_trebizond
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus			
+			}
+		}
+		
+		color = { 91 133 207 }
+		
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+	}
+}

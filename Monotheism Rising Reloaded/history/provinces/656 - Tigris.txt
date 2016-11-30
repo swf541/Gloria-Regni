@@ -11,10 +11,12 @@ b_jamida = temple
 b_nuffar = castle
 
 #Misc
-culture = levantine_arabic
-religion = sunni
+culture = assyrian
+religion = mesopotamian_paganism
 
 # History
+710.1.1 = { culture = levantine_arabic }
+710.1.1 = { religion = sunni }
 1055.1.1 = { remove_settlement = b_nuffar }
 1085.1.1 = { b_nuffar = castle }
 1258.1.1 = { remove_settlement = b_nuffar }

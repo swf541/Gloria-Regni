@@ -1125,6 +1125,22 @@ pagan_group = {
 		dislike_tribal_organization = yes
 	}
 	
+	mesopotamian_paganism = { # Mesopotamian
+		graphical_culture = persiangfx
+		icon = 71
+		color = { 0.3 0.5 1.0 }
+		crusade_name = "CRUSADE"
+		scripture_name = PLACEHOLDER
+		god_names = {
+			GOD_MARDUK GOD_NABU GOD_ASHUR GOD_MULLISSU GOD_NINURTA GOD_ZABABA
+		}
+		can_grant_divorce = yes
+		can_call_crusade = no
+		priests_can_marry = no
+		female_temple_holders = yes
+		max_consorts = 3
+	}
+	
 	norse_pagan_reformed = {
 		graphical_culture = norsegfx
 		secondary_event_pictures = norse_pagan
@@ -2025,10 +2041,10 @@ pagan_group = {
 			GOD_JUPITER
 		}
 		god_names = {
-			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_JUPITER GOD_NEPTUNE GOD_VULCAN GOD_APOLLO
+			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS
 		}
 		evil_god_names = {
-			GOD_PLUTO
+			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2061,13 +2077,13 @@ pagan_group = {
 		
 		color = { 0.6 0.1 0.1 }
 		high_god_name = { 
-			GOD_HELIOS GOD_JUPITER
+			GOD_HELIOS_MITHRAS
 		}
 		god_names = {
-			GOD_JUNO GOD_VESTA GOD_MINERVA GOD_CERES GOD_DIANA GOD_VENUS GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_VULCAN GOD_APOLLO GOD_MITHRAS
+			GOD_JUPITER GOD_THE_THUNDERER GOD_JUNO GOD_MINERVA GOD_MARS GOD_MERCURY GOD_NEPTUNE GOD_APOLLO GOD_MITHRAS GOD_SERAPIS GOD_THE_SUN THE_LIGHT GOD_HELIOS
 		}
 		evil_god_names = {
-			GOD_PLUTO
+			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
 		}
 		unit_modifier = {
 			levy_size = 0.3
@@ -2572,7 +2588,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
@@ -2630,7 +2646,7 @@ pagan_group = {
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
 		
-		high_god_name = GOD_THE_SPIRITS GOD_WAAQ
+		high_god_name = GOD_WAAQ
 		god_names = {
 			GOD_THE_AYAANLE GOD_THE_ANCESTORS GOD_WAAQ GOD_HUUR GOD_NIDAR GOD_BIRIIR_INA_BARQO
 		}
