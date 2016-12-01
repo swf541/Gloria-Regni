@@ -1,0 +1,249 @@
+decisions = {
+
+	celebrate_donibane = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = basque_pagan
+				religion = basque_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_donibane_feast_timer
+				liege = { has_character_flag = holding_donibane_feast }
+				has_character_flag = holding_donibane_feast
+				has_character_flag = planning_donibane_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 10 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_donibane_feast
+			custom_tooltip = {
+				text = prepare_donibane_feast
+				hidden_tooltip = { 
+					character_event = { id = BAS.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 3 }
+				month = 6
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}		
+	
+	celebrate_urgoiena = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = basque_pagan
+				religion = basque_pagan_reformed
+			}
+			month = 6
+			not = { month = 9 }
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_urgoiena_feast_timer
+				liege = { has_character_flag = holding_urgoiena_feast }
+				has_character_flag = holding_urgoiena_feast
+				has_character_flag = planning_urgoiena_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_urgoiena_feast
+			custom_tooltip = {
+				text = prepare_urgoiena_feast
+				hidden_tooltip = { 
+					character_event = { id = URO.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 3 }
+				month = 6
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	basque_priesthood = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			religion = basque_pagan_reformed
+			NOT = { has_global_flag = basque_priesthood_founded }
+		}
+		allow = {
+			has_landed_title = k_navarra
+			piety = 300
+		}
+		effect = {
+			set_global_flag = basque_priesthood_founded
+			piety = -300
+			activate_title = { title = d_basque status = yes }
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = basque_pagan_reformed
+					culture = basque
+					dynasty = random
+					female = yes
+					age = 30
+				}
+				new_character = {
+					d_basque = {
+						grant_title = PREV
+					}
+				}
+			}
+			d_basque = {
+				holder_scope = {
+					ROOT = {
+						holder_scope = {
+							set_defacto_vassal = PREVPREV
+						}
+					}
+				}
+				add_law = enatic_succession
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	form_defenders_of_mari = {
+		potential = {
+			religion = basque_pagan_reformed
+			has_landed_title = k_navarra
+			NOT = { is_title_active = d_defenders_of_mari }
+			has_global_flag = basque_priesthood_founded
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_defenders_of_mari status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = yes
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_defenders_of_mari = {
+						grant_title = PREV
+						add_law = enatic_succession
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_ortizi_warriors = {
+		potential = {
+			religion = basque_pagan_reformed
+			has_landed_title = k_navarra
+			NOT = { is_title_active = d_ortizi_warriors }
+			has_global_flag = basque_priesthood_founded
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_ortizi_warriors status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = yes
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_ortizi_warriors = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

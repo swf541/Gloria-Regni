@@ -3,25 +3,25 @@
 # Several titles can refer to the same type as well now.
 
 knights_templar_composition = {
-	levy_size = 4
+	levy_size = 6
 	heavy_infantry = 600
 	knights = 300
 	archers = 200
 }
 
 teutonic_order_composition = {
-	levy_size = 4
+	levy_size = 6
 	heavy_infantry = 750
 	knights = 100
 	archers = 250
 }
 
 knights_hospitaler_composition = {
-	levy_size = 4
+	levy_size = 6
 	heavy_infantry = 450
 	knights = 225
 	archers = 150
-	galleys = 50
+	galleys = 10
 }
 
 hashshashin_composition = {
@@ -68,7 +68,22 @@ holy_sepulchre_composition = {
 	archers = 200
 }
 
+saint_peter_composition = {
+	levy_size = 6
+	heavy_infantry = 600
+	knights = 300
+	archers = 200
+}
+
 saint_anthony_composition = {
+	levy_size = 6
+	heavy_infantry = 500
+	light_cavalry = 200
+	knights = 100
+	archers = 300
+}
+
+saint_blaise_composition = {
 	levy_size = 6
 	heavy_infantry = 500
 	light_cavalry = 200
@@ -84,14 +99,14 @@ saint_addai_composition = {
 	archers = 300
 }
 
-sky_lords_composition = {
+darkhan_knights_composition = {
 	levy_size = 6
-	knights = 100
+	knights = 150
 	horse_archers = 450
-	light_cavalry = 150
+	light_cavalry = 100
 }
 
-spirit_guardians_composition = {
+guardians_nyame_composition = {
 	levy_size = 6
 	light_infantry = 500
 	archers = 600
@@ -127,14 +142,14 @@ huitzilopochtli_composition = {
 }
 
 knights_santiago_composition = {
-	levy_size = 2
+	levy_size = 3
 	heavy_infantry = 400
 	knights = 100
 	light_cavalry = 200
 }
 
 knights_calatrava_composition = {
-	levy_size = 2
+	levy_size = 3
 	heavy_infantry = 200
 	light_cavalry = 300
 	knights = 100
@@ -201,7 +216,7 @@ victual_brothers_composition = {
 	heavy_infantry = 210
 	light_infantry = 225
 	knights = 15
-	galleys = 40
+	galleys = 6
 }
 
 white_company_composition = {
@@ -321,29 +336,155 @@ saxon_band_composition = {
 	heavy_infantry = 375
 }
 
+imperial_order_composition = {
+	knights = 3200
+        light_cavalry = 800
+}
+
+tagmata_composition = {
+	knights = 3200
+        light_cavalry = 800
+}
+
+tagmata2_composition = {
+	knights = 6400
+        light_cavalry = 1600
+}
+
+scholae_composition = {
+	knights = 6400
+        light_cavalry = 1600
+}
+
+archon_composition = {
+	knights = 1600
+        horse_archers = 400
+}
+
+archon2_composition = {
+	knights = 3200
+        horse_archers = 800
+}
+
+nobiles_composition = {
+	knights = 3200
+        horse_archers = 800
+}
+
+sacred_band_composition = {
+	knights = 400
+	pikemen = 4600
+	archers = 1000
+}
+
 varangian_guard_composition = {
-	levy_size = 6
-	knights = 50
-	heavy_infantry = 350
-	archers = 50
+	knights = 400
+	heavy_infantry = 4600
+	archers = 1000
+}
+
+foederati_composition = {
+	knights = 800
+	heavy_infantry = 4000
+	archers = 1200
+}
+
+heroes_composition = {
+	knights = 800
+	heavy_infantry = 4000
+	archers = 1200
+}
+
+nokkor_composition = {
+	horse_archers = 8000
+        light_cavalry = 2000
+}
+
+
+golden_band_composition = {
+	knights = 400
+	heavy_infantry = 4600
+	archers = 1000
+}
+
+legionary_composition = {
+	knights = 400
+	heavy_infantry = 4600
+	archers = 1000
+	pikemen = 2000
+}
+
+chosen_composition = {
+	knights = 2000
+        light_cavalry = 1200
+	heavy_infantry = 3000
+	archers = 1200
+        pikemen = 600
+}
+
+arsiyah_composition = {
+	knights = 400
+	heavy_infantry = 2400
+	archers = 1200
+}
+
+kheshig_composition = {
+	horse_archers = 8000
+        light_cavalry = 2000
+}
+
+companions_composition = {
+        light_cavalry = 1000
+	knights = 3000
+}
+
+imperial_fleet_composition = {
+	galleys = 100
+}
+
+syrian_fleet_composition = {
+	galleys = 100
+}
+
+alexandrian_fleet_composition = {
+	galleys = 100
+}
+
+paladins_composition = {
+	knights = 500
+	heavy_infantry = 3600
+	archers = 900
+}
+
+pushtigban_composition = {
+	horse_archers = 1000
+	light_cavalry = 2000
+	knights = 4000
 }
 
 mamluks_composition = {
-	levy_size = 6
-	horse_archers = 225
-	light_cavalry = 300
-	archers = 150
-	heavy_infantry = 150
-	knights = 75
+	horse_archers = 2000
+	light_cavalry = 4000
+	archers = 1500
+	heavy_infantry = 1500
+	knights = 1000
 }
 
 ghilman_composition = {
-	levy_size = 6
-	horse_archers = 225
-	light_cavalry = 350
-	archers = 150
-	heavy_infantry = 150
-	knights = 25
+	archers = 1500
+	horse_archers = 1000
+	light_cavalry = 1500
+	heavy_infantry = 3000
+        knights = 1000
+}
+
+janissaries_composition = {
+	horse_archers = 500
+	light_cavalry = 1000
+	archers = 1000
+	light_infantry = 1000
+	heavy_infantry = 3000
+	knights = 500
 }
 
 cuman_company_composition = {
@@ -553,6 +694,93 @@ rajput_band_composition = {
 	war_elephants = 10
 }
 
+Somali_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100
+}
+
+Afar_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Beja_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Tigray_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Makuria_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Darfur_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Wolof_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Fula_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Gao_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Tuareg_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
+
+Gurma_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100	
+}
 mercenary_princess_composition = {
 	levy_size = 5
 	archers = 450
@@ -589,3 +817,11 @@ alan_culture_band_composition = {
 	horse_archers = 30
 }
 
+foederati_composition_western = {
+	levy_size = 1
+	archers = 4000
+	light_infantry = 4000
+	light_cavalry = 4000
+	heavy_infantry = 6000
+	knights = 2000
+}

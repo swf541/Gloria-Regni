@@ -523,3 +523,169 @@ d_order_of_saint_lazarus = {
 
 	mercenary_type = knights_calatrava_composition
 }
+
+d_defenders_of_mari = {
+
+	color={ 170 50 60 }
+
+	graphical_culture = holygfx
+
+	capital = 152
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = basque_pagan_reformed
+
+	culture = basque
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+d_ortizi_warriors = {
+
+	color={ 70 50 60 }
+
+	graphical_culture = holygfx
+
+	capital = 152
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = basque_pagan_reformed
+
+	culture = basque
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+d_basque = {
+	color = { 0 80 255 }
+	
+	capital = 152 #	Tiberias
+	
+	title = "HEAD_PRIESTESS"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = basque_pagan_reformed
+	dignity = 80 # Counted as having this many more counties than it does
+	religion = basque_pagan_reformed
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_ossetian = {
+	color = { 10 180 25 }
+	
+	capital = 603 #	Tiberias
+	
+	title = "HEAD_ENAREI"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = ossetian_pagan_reformed
+	dignity = 80 # Counted as having this many more counties than it does
+	religion = ossetian_pagan_reformed
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_xucau_warriors = {
+
+	color={ 70 20 80 }
+
+	graphical_culture = holygfx
+
+	capital = 603
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = ossetian_pagan_reformed
+
+	culture = alan
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+
+d_wasilla_guardians = {
+
+	color={ 170 120 180 }
+
+	graphical_culture = holygfx
+
+	capital = 603
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = ossetian_pagan_reformed
+
+	culture = alan
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}

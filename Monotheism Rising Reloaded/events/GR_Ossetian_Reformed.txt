@@ -1,0 +1,64 @@
+###########################################
+#                                         #
+# Ossetian/ Scythian Reformation          #
+#                                         #
+# ID ENA.1-ENA.2                          #
+#                                         #
+###########################################
+
+# Written by swf541
+
+namespace = ENA
+
+###########################################
+# Birth of an Enarei                      #
+###########################################
+
+# Ossetian Reformation  
+character_event = {
+	id = ENA.1000
+    hide_window = yes
+
+        is_triggered_only = yes
+	
+	trigger = {
+		father_even_if_dead = { trait = enarei }
+		religion = ossetian_pagan_reformed
+    }     
+
+    immediate = {
+					activate_title = { title = d_ossetian status = yes }
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = ossetian_pagan_reformed
+					culture = alan
+					dynasty = random
+					female = no
+					age = 30
+					trait = enarei
+				}
+				new_character = {
+					d_ossetian = {
+						grant_title = PREV
+					}
+				}
+			}
+			d_ossetian = {
+				holder_scope = {
+					ROOT = {
+						holder_scope = {
+							set_defacto_vassal = ROOT
+						}
+					}
+				}
+				add_law = cognatic_succession
+				add_law = succ_primogeniture
+			}
+	}
+	
+	option = {
+		name = ok
+	}
+}
+

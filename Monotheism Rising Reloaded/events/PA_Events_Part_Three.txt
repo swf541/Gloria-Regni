@@ -1,0 +1,73 @@
+namespace = PA
+
+character_event = {
+	id = PA.100293
+
+        hide_window = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia2 status = yes }
+		k_serbia2 = {
+			grant_title = ROOT
+			copy_title_laws = k_serbia
+			copy_title_history = k_serbia
+		}
+                k_serbia = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia2
+			}
+		}
+		k_serbia = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia status = no }
+        }
+}
+
+character_event = {
+	id = PA.100294
+	
+        hide_window = yes
+	
+        trigger = {
+                NOT = { has_landed_title = e_france }
+                NOT = { has_landed_title = e_byzantium }
+		has_character_modifier = imperial_decline
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+                remove_character_modifier = imperial_decline
+	}
+}
+
+character_event = {
+	id = PA.100295
+	
+        hide_window = yes
+	
+        trigger = {
+                NOT = { has_landed_title = e_sunni }
+		has_character_modifier = abbasid_anarchy
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+            remove_character_modifier = abbasid_anarchy
+	}
+}
+
+

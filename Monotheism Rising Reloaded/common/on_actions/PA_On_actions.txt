@@ -1,0 +1,62 @@
+#character
+on_startup = { 
+	events = {
+		PA.10385
+		PA.10386
+		PA.10387
+		PA.10388
+		PA.10389
+		PA.10390
+		PA.10391
+		PA.10392
+		PA.10393
+		PA.10394
+        PA.10431
+        PA.10434
+        
+	}
+}
+
+# Winning army leader is ROOT - opponent army leader is FROM
+on_major_battle_won_leader = {
+	events = {
+		MG.1
+	}
+}
+
+on_death = {
+	events = {
+		appointment.1
+		inherit.1
+	}
+}
+
+# ROOT is the creating character, FROM is the title
+on_create_title = {
+	events = {
+		inherit.6
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		inherit.7
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_inheritance = {
+	events = {
+		inherit.7
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		inherit.7
+	}
+}
+
+

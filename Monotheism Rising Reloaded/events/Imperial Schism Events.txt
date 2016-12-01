@@ -143,7 +143,10 @@ character_event = {
         is_triggered_only = yes
 	
 	trigger = {
+			OR = {
                 has_global_flag = great_schism
+				year = 1054
+			}
         }     
 	
 

@@ -101,4 +101,75 @@ decisions = {
 			}
 		}
 	}
+	form_xucau_warriors = {
+		potential = {
+			religion = ossetian_pagan_reformed			
+			NOT = { is_title_active = d_xucau_warriors }
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_xucau_warriors status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_xucau_warriors = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_wasilla_guardians = {
+		potential = {
+			religion = ossetian_pagan_reformed			
+			NOT = { is_title_active = d_wasilla_guardians }
+			religion_authority = 0.50
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_wasilla_guardians status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_wasilla_guardians = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

@@ -1,0 +1,16 @@
+namespace = PA
+narrative_event = {
+        id = PA.10434
+        title = EVTNAMEPA.10434
+	desc = EVTDESCPA.10434
+
+        is_triggered_only = yes
+
+        weight_multiplier = {
+                days = 1
+        }
+
+        option = {
+                name = OPTPA_10434
+        }
+}

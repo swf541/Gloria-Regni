@@ -1,0 +1,3325 @@
+namespace = PA
+narrative_event = {
+	id = PA.10305
+        title = EVTNAMPA.10305
+        desc = EVTDESCPA.10305
+        picture = GFX_evt_seige
+
+        trigger = {
+		NOT = { realm_size = 60 }
+		has_landed_title = k_kievan_rus
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+        option = {
+		name = OPTPA_100307
+		k_kievan_rus = {
+			destroy_landed_title = THIS
+		}
+	}
+}
+
+character_event = {
+	id = PA.10306
+
+        hide_window = yes
+
+	trigger = {
+                tier = king
+	        independent = yes
+                has_landed_title = k_bulgaria
+                has_global_flag = bulgarian_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria2 status = yes }
+		k_bulgaria2 = {
+			grant_title = ROOT
+			copy_title_laws = k_bulgaria
+			copy_title_history = k_bulgaria
+		}
+                k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria2
+			}
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+        }
+}
+
+character_event = {
+	id = PA.10307
+
+        hide_window = yes
+
+	trigger = {
+                tier = king
+	        independent = yes
+                has_landed_title = k_serbia
+                has_global_flag = serbian_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia2 status = yes }
+		k_serbia2 = {
+			grant_title = ROOT
+			copy_title_laws = k_serbia
+			copy_title_history = k_serbia
+		}
+                k_serbia = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia2
+			}
+		}
+		k_serbia = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia status = no }
+        }
+}
+
+character_event = {
+	id = PA.10308
+
+        hide_window = yes
+
+	trigger = {
+		k_bulgaria2 = {
+			has_holder = no
+                }
+                is_title_active = k_bulgaria2
+                has_global_flag = bulgarian_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria status = yes }
+		k_bulgaria = {
+			copy_title_history = k_bulgaria2
+		}
+                k_bulgaria2 = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria
+			}
+		}
+		k_bulgaria2 = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria2 status = no }
+        }
+}
+
+character_event = {
+	id = PA.10309
+
+        hide_window = yes
+
+	trigger = {
+		k_serbia2 = {
+			has_holder = no
+                }
+                is_title_active = k_serbia2
+                has_global_flag = serbia_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia status = yes }
+		k_serbia = {
+			copy_title_history = k_serbia2
+		}
+                k_serbia2 = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia
+			}
+		}
+		k_serbia2 = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia2 status = no }
+        }
+}
+
+character_event = {
+	id = PA.10310
+
+        hide_window = yes
+
+	trigger = {
+                NOT = { has_global_flag = hre_formed }
+                k_germany = {
+			de_jure_liege = e_hre
+                }                    
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+                e_hre = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = 0
+			}
+		}
+        }
+}
+
+character_event = {
+	id = PA.10311
+
+        hide_window = yes
+
+	trigger = {
+                tier = emperor
+	        independent = yes
+                has_landed_title = k_bulgaria
+                has_global_flag = bulgarian_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria2 status = yes }
+		k_bulgaria2 = {
+                        grant_title = ROOT
+			copy_title_history = k_bulgaria
+		}
+                k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria2
+			}
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+        }
+}
+
+character_event = {
+	id = PA.10312
+
+        hide_window = yes
+
+	trigger = {
+                tier = emperor
+	        independent = yes
+                has_landed_title = k_serbia
+                has_global_flag = serbian_patriarchate
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia2 status = yes }
+		k_serbia2 = {
+                        grant_title = ROOT
+			copy_title_history = k_serbia
+		}
+                k_serbia = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia2
+			}
+		}
+		k_serbia = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia status = no }
+        }
+}
+
+# Qaisar Trait Gained
+character_event = {
+	id = PA.10313
+	desc = EVTDESCPA.10313
+	picture = GFX_evt_hagia_sophia_muslim
+	
+	trigger = {
+                is_female = no
+		NOT = { trait = qaisar }
+		has_landed_title = e_rum
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10
+		add_trait = qaisar
+	}
+}
+
+# Qaisar Trait Lost
+character_event = {
+	id = PA.10314
+	desc = EVTDESCPA.10314
+	picture = GFX_evt_hagia_sophia_muslim
+	
+	trigger = {
+		trait = qaisar
+		is_alive = yes
+		NOT = { has_landed_title = e_rum }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_101
+		remove_trait = qaisar
+	}
+}
+
+
+# Qaisara Trait Gained
+character_event = {
+	id = PA.10315
+	desc = EVTDESCPA.10315
+	picture = GFX_evt_hagia_sophia_muslim
+	
+	trigger = {
+                is_female = yes
+		NOT = { trait = qaisara }
+		has_landed_title = e_rum
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10
+		add_trait = qaisara
+	}
+}
+
+# Qaisara Trait Lost
+character_event = {
+	id = PA.10316
+	desc = EVTDESCPA.10316
+	picture = GFX_evt_hagia_sophia_muslim
+	
+	trigger = {
+		trait = qaisara
+		is_alive = yes
+		NOT = { has_landed_title = e_rum }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_101
+		remove_trait = qaisara
+	}
+}
+
+# Imperator Trait Gained
+character_event = {
+	id = PA.10317
+	desc = EVTDESCPA.10317
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+        is_female = no
+		NOT = { trait = imperator }
+		has_landed_title = e_western
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10
+		add_trait = imperator
+	}
+}
+
+# Imperator Trait Lost
+character_event = {
+	id = PA.10318
+	desc = EVTDESCPA.10318
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		trait = imperator
+		is_alive = yes
+		NOT = { has_landed_title = e_western }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_101
+		remove_trait = imperator
+	}
+}
+
+# Imperatrix Trait Gained
+character_event = {
+	id = PA.10319
+	desc = EVTDESCPA.10319
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+                is_female = yes
+		NOT = { trait = imperatrix }
+		has_landed_title = e_western
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10
+		add_trait = imperatrix
+	}
+}
+
+# Imperatrix Trait Lost
+character_event = {
+	id = PA.10320
+	desc = EVTDESCPA.10320
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		trait = imperatrix
+		is_alive = yes
+		NOT = { has_landed_title = e_western }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_101
+		remove_trait = imperatrix
+	}
+}
+
+character_event = {
+	id = PA.10321
+
+        hide_window = yes
+
+        trigger = {
+                tier = emperor
+                is_feudal = yes
+                independent = yes
+                has_law = imperial_administration
+                any_vassal = {
+                        tier = KING
+                        primary_title = { is_vice_royalty = yes }
+                }
+        }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+        option = {
+		       name = OK
+               any_vassal = {
+                       limit = {
+                              tier = KING
+                              primary_title = { is_vice_royalty = yes }
+                       }
+                       primary_title = { add_claim = ROOT }
+               }
+        }
+}
+
+character_event = {
+	id = PA.10323
+	
+        hide_window = yes
+	
+        trigger = {
+                has_law = vassal_wars_2
+		NOT = { has_law = crown_authority_2 }
+		NOT = { has_law = crown_authority_3 }
+		NOT = { has_law = crown_authority_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+                primary_title = { add_law = vassal_wars_1 }
+	}
+}
+
+character_event = {
+	id = PA.10324
+	
+        hide_window = yes
+	
+        trigger = {
+                has_law = vassal_wars_1
+		NOT = { has_law = crown_authority_2 }
+		NOT = { has_law = crown_authority_3 }
+		NOT = { has_law = crown_authority_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+                primary_title = { add_law = vassal_wars_0 }
+	}
+}
+
+character_event = {
+	id = PA.10325
+	
+        hide_window = yes
+	
+        trigger = {
+                has_law = vice_royalty_2
+		NOT = { has_law = crown_authority_2 }
+		NOT = { has_law = crown_authority_3 }
+		NOT = { has_law = crown_authority_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+                primary_title = { add_law = vice_royalty_1 }
+	}
+}
+
+character_event = {
+	id = PA.19325
+	
+        hide_window = yes
+	
+        trigger = {
+                has_law = vice_royalty_1
+		NOT = { has_law = crown_authority_2 }
+		NOT = { has_law = crown_authority_3 }
+		NOT = { has_law = crown_authority_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OK
+                primary_title = { add_law = vice_royalty_0 }
+	}
+}
+
+character_event = {
+	id = PA.10326
+
+        hide_window = yes
+
+	trigger = {
+                has_landed_title = e_byzantium
+                has_landed_title = k_bulgaria2
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria status = yes }
+		k_bulgaria = {
+			copy_title_history = k_bulgaria2
+		}
+                k_bulgaria2 = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria
+			}
+		}
+		k_bulgaria2 = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria2 status = no }
+        }
+}
+
+character_event = {
+	id = PA.10327
+
+        hide_window = yes
+
+	trigger = {
+                has_landed_title = e_byzantium
+                has_landed_title = k_serbia2
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia status = yes }
+		k_serbia = {
+			copy_title_history = k_serbia2
+		}
+                k_serbia2 = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia
+			}
+		}
+		k_serbia2 = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia2 status = no }
+        }
+}
+
+narrative_event = {
+	id = PA.10328
+        title = EVTNAMPA.10328
+        desc = EVTDESCPA.10328
+        picture = GFX_evt_seige
+
+        trigger = {
+		has_landed_title = e_trebizond
+		NOT = { has_landed_title = c_trapezous }
+		NOT ={ any_vassal = {
+			has_landed_title = c_trapezous
+                        }
+		}
+        }
+
+        mean_time_to_happen = {
+		days = 1
+        }
+
+        option = {
+		name = OPTPA_10328
+		e_trebizond = {
+			destroy_landed_title = THIS
+		}
+	}
+}
+
+# Italo-Roman province converts to Italian
+province_event = {
+	id = PA.10330
+	desc = EVTDESCPA.10330
+	picture = GFX_evt_stone_church
+
+	trigger = {
+                year = 867
+		culture = old_italian
+                NOT = { year = 1000 }
+		OR = { 
+			county = { kingdom = { title = k_lombardy } }
+			county = { kingdom = { title = k_sicily } }
+                }
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_CM_2
+		culture = italian
+	}
+}
+
+# Italo-Roman province converts to Roman
+character_event = {
+	id = PA.10331
+	desc = EVTDESCPA.10331
+	picture = GFX_evt_stone_church
+
+        trigger = {
+                culture = roman
+                any_realm_province = {
+                        culture = old_italian
+                }
+                has_global_flag = revived_roman_culture
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_10331
+		random_realm_province = {
+			limit = {
+				culture_group = old_italian
+			}
+			culture = roman
+		}
+	}
+}
+
+# Lombard province converts to Italian
+province_event = {
+	id = PA.10332
+	desc = EVTDESCPA.10332
+	picture = GFX_evt_stone_church
+
+	trigger = {
+                year = 867
+		culture = lombard
+                NOT = { year = 1000 }
+		OR = { 
+			county = { kingdom = { title = k_lombardy } }
+			county = { kingdom = { title = k_sicily } }
+                }
+                NOT = { county = { title = c_grisons } }
+                NOT = { county = { title = c_lombardia } }
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_CM_2
+		culture = italian
+	}
+}
+
+# Sacred Band Initiation Ceremony
+province_event = {
+	id = PA.10333
+
+        hide_window = yes
+
+	trigger = {
+        NOT = { trait = homosexual }
+        has_landed_title = d_sacred_band
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = Ok
+		add_trait = homosexual
+	}
+}
+
+# Re-establish Nokkor
+narrative_event = {
+	id = PA.100334
+
+        hide_window = yes
+	
+	trigger = {
+        has_landed_title = e_hunnicia
+        has_global_flag = formed_imperial_nokkor
+		  any_vassal = {
+			NOT = { has_landed_title = d_nokkor }
+		  }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		activate_title = { title = d_nokkor status = yes }
+		create_random_soldier = {
+			dynasty = none
+			random_traits = yes
+			religion = ROOT
+		}
+		new_character = {
+			d_nokkor = {
+				grant_title = PREV
+			}
+			set_defacto_liege = ROOT
+		}
+		
+	}
+	
+	option = {
+		name = OK
+	}
+		
+}
+
+# Destroy Nokkor
+narrative_event = {
+	id = PA.100335
+
+        hide_window = yes
+	
+	trigger = {
+		  e_hunnicia = {
+			  has_holder = no
+		  }
+		  d_nokkor = {
+			  has_holder = yes
+		  }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		destroy_landed_title = d_nokkor
+		activate_title = { title = d_nokkor status = no }
+		
+	}
+	
+	option = {
+		name = OK
+        }	
+}
+
+########################################
+# Imperial Order
+########################################
+
+# The son of a ruler volunteers to join the Order
+character_event = {
+	id = PA.10336
+	desc = EVTDESCPA.10336
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	only_men = yes
+	min_age = 16
+	max_age = 45
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		is_ruler = no
+		religion = imperial
+		is_heretic = no
+		
+		martial = 5
+		
+		is_title_active = d_imperial_order
+		
+		OR = {
+			father_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+			mother_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		
+		liege = {
+			holy_order = no
+			liege = {
+				holy_order = no
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_imperial_order }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_imperial_order
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.25
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = celibate
+		}
+		modifier = {
+			factor = 0.5
+			trait = homosexual
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 0.75
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			any_heir_title = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_primary_heir = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1030 # Ask to go
+		ai_chance = {
+			factor = 100
+		}
+		liege = {
+			character_event = {
+				id = PA.10357
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SOA_1030 # It's a bad idea
+	}
+}
+
+# Son or brother asks to join the Order
+character_event = {
+	id = PA.10337
+	desc = EVTDESCPA.10337
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1031 # Agree
+		ai_chance = {
+			factor = 100
+		}
+		
+		piety = 100
+		
+		FROM = {
+			character_event = {
+				id = PA.10338
+				tooltip = EVTTOOLTIPPA_10339
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1031 # Refuse
+		
+		piety = -100
+		
+		FROM = {
+			character_event = {
+				id = PA.10339
+				tooltip = EVTTOOLTIP_SOA_1033
+			}
+		}
+	}
+}
+
+# Son or brother joins the Order
+character_event = {
+	id = PA.10338
+	desc = EVTDESCPA.10338
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		
+		d_imperial_order = {
+			holder_scope = {
+				ROOT = {
+					move_character = PREV
+					hidden_tooltip = {
+						clear_wealth = PREV
+					}
+					add_trait = celibate
+				}
+			}
+		}
+	}
+}
+
+# Liege refuses request to join the Order
+character_event = {
+	id = PA.10339
+	desc = EVTDESCPA.10339
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1033
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_refused_request_holy_order
+		}
+	}
+}
+
+# Ping event when donating money to the Order
+character_event = {
+	id = PA.10340
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 300
+		FROM = {
+			letter_event = {
+				id = PA.10341
+			}
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_generous_donation
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when donating money to the Order
+letter_event = {
+	id = PA.10341
+	desc = EVTDESC_SOA_1141
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# The Grand Master humbly requests the right to build a castle in your demesne
+character_event = {
+	id = PA.10342
+	
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		religion = imperial
+		is_heretic = no
+		
+		d_imperial_order = {
+			holder_scope = {
+				wealth = 300
+				NOT = {
+					realm_size = 10
+				}
+			}
+		}
+		
+		any_demesne_province = {
+			has_empty_holding = yes
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_imperial_order }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_imperial_order
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			d_imperial_order = {
+				holder_scope = {
+					NOT = { demesne_size = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			d_imperial_order = {
+				holder_scope = {
+					NOT = { demesne_size = 2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_imperial_order = {
+				holder_scope = {
+					num_of_count_titles = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_imperial_order = {
+				holder_scope = {
+					realm_size = 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_demesne_province = {
+			limit = {
+				has_empty_holding = yes
+			}
+			province_event = {
+				id = PA.10343
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+province_event = {
+	id = PA.10343
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		d_imperial_order = {
+			holder_scope = {
+				character_event = {
+					id = PA.10344
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = PA.10344
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			character_event = {
+				id = PA.10345
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = PA.10345
+	desc = EVTDESCPA.10345
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1023 # Agree
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_character_modifier = expelled_d_imperial_order
+			}
+		}
+		
+		hidden_tooltip = {
+			FROMFROM = {
+				province_event = { id = PA.10346 }
+			}
+			remove_character_modifier = expelled_d_imperial_order
+		}
+		
+		piety = 200
+		wealth = 100
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1153 # Refuse
+		ai_chance = {
+			factor = 20
+		}
+		
+		piety = -100
+	}
+}
+
+# Castle has been erected
+province_event = {
+	id = PA.10346
+	desc = EVTDESCPA.10346
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			wealth = -300
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1024
+		build_holding = {
+			type = castle
+		        holder = FROMFROM
+		}
+	}
+}
+
+# Ping event when expelling the Order
+character_event = {
+	id = PA.10347
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_title_under = {
+			limit = {
+				tier = BARON
+				location = {
+					owner = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+					}
+				}
+			}
+			usurp_title = FROM
+		}
+	
+		FROM = {
+			letter_event = {
+				id = PA.10348
+			}
+		}
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_expelled_from_realm
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when expelling the Order
+letter_event = {
+	id = PA.10348
+	desc = EVTDESCPA.10348
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTB_SOA_1061
+	}
+}
+
+########################################
+# Sacred Band
+########################################
+
+# The son of a ruler volunteers to join the Order
+character_event = {
+	id = PA.10349
+	desc = EVTDESCPA.10349
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	only_men = yes
+	min_age = 16
+	max_age = 45
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		is_ruler = no
+		religion = hellenic_pagan
+		is_heretic = no
+		
+		martial = 5
+		
+		is_title_active = d_sacred_band
+		
+		OR = {
+			father_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+			mother_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		
+		liege = {
+			holy_order = no
+			liege = {
+				holy_order = no
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_sacred_band }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_sacred_band
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.25
+			trait = zealous
+		}
+		modifier = {
+			factor = 0
+			trait = celibate
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 0
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			trait = homosexual
+		}
+		modifier = {
+			factor = 2.0
+			any_heir_title = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_primary_heir = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1030 # Ask to go
+		ai_chance = {
+			factor = 100
+		}
+		liege = {
+			character_event = {
+				id = PA.10350
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SOA_1030 # It's a bad idea
+	}
+}
+
+# Son or brother asks to join the Order
+character_event = {
+	id = PA.10350
+	desc = EVTDESCPA.10350
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1031 # Agree
+		ai_chance = {
+			factor = 100
+		}
+		
+		piety = 100
+		
+		FROM = {
+			character_event = {
+				id = PA.10351
+				tooltip = EVTTOOLTIPPA_10351
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1031 # Refuse
+		
+		piety = -100
+		
+		FROM = {
+			character_event = {
+				id = PA.10352
+				tooltip = EVTTOOLTIP_SOA_1033
+			}
+		}
+	}
+}
+
+# Son or brother joins the Order
+character_event = {
+	id = PA.10353
+	desc = EVTDESCPA.10353
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		
+		d_sacred_band = {
+			holder_scope = {
+				ROOT = {
+					move_character = PREV
+					hidden_tooltip = {
+						clear_wealth = PREV
+					}
+					add_trait = homosexual
+				}
+			}
+		}
+	}
+}
+
+# Liege refuses request to join the Order
+character_event = {
+	id = PA.10354
+	desc = EVTDESCPA.10354
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1033
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_refused_request_holy_order
+		}
+	}
+}
+
+# Ping event when donating money to the Order
+character_event = {
+	id = PA.10355
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 300
+		FROM = {
+			letter_event = {
+				id = PA.10356
+			}
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_generous_donation
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when donating money to the Order
+letter_event = {
+	id = PA.10356
+	desc = EVTDESC_SOA_1141
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# The Grand Master humbly requests the right to build a castle in your demesne
+character_event = {
+	id = PA.10357
+	
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		religion = hellenic_pagan
+		is_heretic = no
+		
+		d_sacred_band = {
+			holder_scope = {
+				wealth = 300
+				NOT = {
+					realm_size = 10
+				}
+			}
+		}
+		
+		any_demesne_province = {
+			has_empty_holding = yes
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_sacred_band }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_sacred_band
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			d_sacred_band = {
+				holder_scope = {
+					NOT = { demesne_size = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			d_sacred_band = {
+				holder_scope = {
+					NOT = { demesne_size = 2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_sacred_band = {
+				holder_scope = {
+					num_of_count_titles = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_sacred_band = {
+				holder_scope = {
+					realm_size = 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_demesne_province = {
+			limit = {
+				has_empty_holding = yes
+			}
+			province_event = {
+				id = PA.10358
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+province_event = {
+	id = PA.10358
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		d_sacred_band = {
+			holder_scope = {
+				character_event = {
+					id = PA.10359
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+character_event = {
+	id = PA.10359
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			character_event = {
+				id = PA.10360
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = PA.10360
+	desc = EVTDESCPA.10360
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1023 # Agree
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_character_modifier = expelled_d_sacred_band
+			}
+		}
+		
+		hidden_tooltip = {
+			FROMFROM = {
+				province_event = { id = PA.10361 }
+			}
+			remove_character_modifier = expelled_d_sacred_band
+		}
+		
+		piety = 200
+		wealth = 100
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1153 # Refuse
+		ai_chance = {
+			factor = 20
+		}
+		
+		piety = -100
+	}
+}
+
+# Castle has been erected
+province_event = {
+	id = PA.10361
+	desc = EVTDESCPA.10361
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			wealth = -300
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1024
+		build_holding = {
+			type = castle
+		        holder = FROMFROM
+		}
+	}
+}
+
+# Ping event when expelling the Order
+character_event = {
+	id = PA.10362
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_title_under = {
+			limit = {
+				tier = BARON
+				location = {
+					owner = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+					}
+				}
+			}
+			usurp_title = FROM
+		}
+	
+		FROM = {
+			letter_event = {
+				id = PA.100363
+			}
+		}
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_expelled_from_realm
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when expelling the Order
+letter_event = {
+	id = PA.100363
+	desc = EVTDESCPA.100363
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTB_SOA_1061
+	}
+}
+
+# Bolghar province converts to Bulgarian
+province_event = {
+	id = PA.10363
+	desc = EVTDESCPA.10363
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		culture = bolghar
+        NOT = { year = 1000 }
+		county = { kingdom = { title = k_bulgaria } }
+		owner = {
+			NOT = {	culture = bulgarian }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	option = {
+		name = EVTOPTA_CM_2
+		culture = bulgarian
+	}
+}
+
+# Deification Event (Father)
+character_event = {
+	id = PA.10188	
+	desc = EVTDESCPA.10188
+	picture = GFX_evt_religious_exultation
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+        	OR={
+                	tier = king
+                        tier = emperor
+                }
+                is_ruler = yes
+                is_feudal = yes
+                religion_group = pagan_group
+                NOT = { has_character_modifier = divine_father }
+		father = {
+                        religion_group = pagan_group
+			OR = {
+                        	piety = 1000
+                        	diplomacy = 20
+                                stewardship = 20
+                                martial = 20
+                                intrigue = 20
+                                learning = 20
+			}
+			is_alive = no
+		}
+	}
+
+	option = {
+		name = OPTAPA_100188
+		add_character_modifier = {
+                	name = divine_father
+                        duration = -1
+                        inherit = no
+                }
+                piety = 100
+                father_even_if_dead = {
+                	give_nickname = nick_the_divine
+                }
+	        ai_chance = {
+	        	factor = 1
+	        }
+        }
+
+	option = {
+		name = OPTBPA_100188
+		piety = -100
+
+	        ai_chance = {
+	        	factor = 0
+	        }
+        }
+}
+# Deification Event (Mother)
+character_event = {
+	id = PA.10189	
+	desc = EVTDESCPA.10189
+	picture = GFX_evt_religious_exultation
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+                OR={
+                       tier = king
+                       tier = emperor
+                }
+                is_ruler = yes
+                is_feudal = yes
+                religion_group = pagan_group
+                NOT = { has_character_modifier = divine_mother }
+		mother = {
+                        religion_group = pagan_group
+			OR = {
+                              piety = 1000
+                              diplomacy = 20
+                              stewardship = 20
+                              martial = 20
+                              intrigue = 20
+                              learning = 20
+			}
+			is_alive = no
+		}
+	}
+
+	option = {
+		name = OPTAPA_100189
+		add_character_modifier = {
+                        name = divine_mother
+                        duration = -1
+                        inherit = no
+                }
+                piety = 100
+                mother_even_if_dead = {
+                         give_nickname = nick_the_divine
+                }
+
+	        ai_chance = {
+	        	factor = 1
+	        }
+        }
+
+	option = {
+		name = OPTBPA_100189
+		piety = -100
+
+	        ai_chance = {
+	        	factor = 0
+	        }
+        }
+}
+
+# Canonisation Event (Father)
+character_event = {
+	id = PA.10364	
+	desc = EVTDESCPA.10364
+	picture = GFX_evt_religious_exultation
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+                OR={
+                       tier = king
+                       tier = emperor
+                }
+                is_ruler = yes
+                is_feudal = yes
+                religion_group = christian
+                NOT = { has_character_modifier = canonised_father }
+		father = {
+                        religion_group = christian
+                        NOT = { trait = cruel }
+                        NOT = { trait = proud }
+                        NOT = { trait = greedy }
+                        NOT = { trait = cynical }
+                        NOT = { trait = lustful }
+                        NOT = { trait = lunatic }
+                        NOT = { trait = drunkard }
+                        NOT = { trait = impaler  }
+                        NOT = { trait = kinslayer }
+                        NOT = { trait = possessed }
+                        NOT = { trait = homosexual }
+                        NOT = { trait = excommunicated }
+			OR = {
+                                piety = 2000
+                                learning = 20
+			}
+			is_alive = no
+		}
+	}
+
+	option = {
+		name = OPTAPA_100188
+		add_character_modifier = {
+                        name = canonised_father
+                        duration = -1
+                        inherit = no
+                }
+                piety = 100
+                father_even_if_dead = {
+                         give_nickname = nick_the_saint
+                }
+
+	        ai_chance = {
+	        	factor = 1
+	        }
+        }
+
+	option = {
+		name = OPTBPA_100188
+		piety = -100
+
+	        ai_chance = {
+	        	factor = 0
+	        }
+        }
+}
+
+# Canonisation Event (Mother)
+character_event = {
+	id = PA.10365	
+	desc = EVTDESCPA.10365
+	picture = GFX_evt_religious_exultation
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+                OR={
+                       tier = king
+                       tier = emperor
+                }
+                is_ruler = yes
+                is_feudal = yes
+                religion_group = christian
+                NOT = { has_character_modifier = canonised_mother }
+		mother = {
+                        religion_group = christian
+                        NOT = { trait = cruel }
+                        NOT = { trait = proud }
+                        NOT = { trait = greedy }
+                        NOT = { trait = cynical }
+                        NOT = { trait = lustful }
+                        NOT = { trait = lunatic }
+                        NOT = { trait = drunkard }
+                        NOT = { trait = impaler }
+                        NOT = { trait = kinslayer }
+                        NOT = { trait = possessed }
+                        NOT = { trait = homosexual }
+                        NOT = { trait = excommunicated }
+			OR = {
+                                piety = 2000
+                                learning = 20
+			}
+			is_alive = no
+		}
+	}
+
+	option = {
+		name = OPTAPA_100189
+		add_character_modifier = {
+                        name = canonised_mother
+                        duration = -1
+                        inherit = no
+                }
+                piety = 100
+                mother_even_if_dead = {
+                         give_nickname = nick_the_saint
+                }
+
+
+	        ai_chance = {
+	        	factor = 1
+	        }
+        }
+
+	option = {
+		name = OPTBPA_100189
+		piety = -100
+
+
+	        ai_chance = {
+	        	factor = 0
+	        }
+        }
+}
+
+# Magyar Horde Event (Generation)
+character_event = {
+	id = PA.10368
+
+        hide_window = yes	
+
+        trigger = {
+                year = 845
+                NOT = { year = 867 }
+                controls_religion = yes
+                NOT = { has_global_flag = magyars }
+                NOT = { has_global_flag = magyar_migration }
+        }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+                name = OK
+                set_global_flag = magyars
+                create_random_soldier = {
+			random_traits = no
+	                dynasty=708
+			name = "Álmos"
+			culture = hungarian
+			religion = tengri_pagan
+			age = 35
+			attributes = {
+	                        martial = 8
+	                        diplomacy = 7
+			}
+			trait=ambitious
+			trait=gregarious
+			trait=just
+			trait=patient
+			trait=brilliant_strategist
+			trait=inspiring_leader
+		}
+		new_character = {
+			k_magyar = {
+				grant_title = PREV
+			}
+			set_defacto_liege = THIS
+                }
+        }
+}
+# Magyar Horde Event (Invasion)
+narrative_event = {
+	id = PA.10369	
+        title = EVTNAMPA.10369
+        desc = EVTDESCPA.10369
+        picture = GFX_evt_seige
+
+        trigger = {
+                year = 845
+                NOT = { year = 867 }
+                has_landed_title = k_magyar
+                NOT = { has_global_flag = magyar_migration }
+        }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+                name = OK
+
+                wealth = 200
+                prestige = 750
+
+		set_global_flag = magyar_migration
+                522 = { # Pest
+			kingdom = {
+				ROOT = {
+					war = {
+						casus_belli = tribal_invasion
+                                                target = PREVPREV # The top liege of the owner
+                                                thirdparty_title = PREV # The de jure kingdom
+                                        }
+                                }
+                        }
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 23
+			attributes = {
+				martial = 6
+			}
+			trait = tough_soldier
+		}
+		new_character = {
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = PREV
+				troops = {
+                                archers = { 1000 1000 }
+                                pikemen = { 800 800 }
+			        light_cavalry = { 1200 1200 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 2400 2400 }
+				knights = { 800 800 }
+                                }
+                                earmark = hungarian_conquest
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+			attributes = {
+				martial = 6
+			}
+			trait = tough_soldier
+		}
+		new_character = {
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = PREV
+				troops = {
+                                archers = { 1000 1000 }
+                                pikemen = { 800 800 }
+				light_cavalry = { 1200 1200 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 2400 2400 }
+				knights = { 800 800 }
+                                }
+                                earmark = hungarian_conquest
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 27
+			attributes = {
+				martial = 6
+			}
+			trait = tough_soldier
+		}
+		new_character = {
+			spawn_unit = {
+				province = 544 # Korsun
+				owner = PREV
+			        troops = {
+                                archers = { 1000 1000 }
+                                pikemen = { 800 800 }
+				light_cavalry = { 1200 1200 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 2400 2400 }
+				knights = { 800 800 }
+                                }
+                                earmark = hungarian_conquest
+			}
+		}
+	}
+}
+
+# Re-establish Golden Band
+narrative_event = {
+	id = PA.10370
+
+        hide_window = yes
+	
+	trigger = {
+                  has_landed_title = e_carthage
+                  has_global_flag = formed_golden_band
+		  any_vassal = {
+			NOT = { has_landed_title = d_golden_band }
+		  }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		activate_title = { title = d_golden_band status = yes }
+		create_random_soldier = {
+			dynasty = none
+			random_traits = yes
+			religion = ROOT
+		}
+		new_character = {
+			d_golden_band = {
+				grant_title = PREV
+			}
+			set_defacto_liege = ROOT
+		}
+		
+	}
+	
+	option = {
+		name = OK
+	}		
+}
+
+# Destroy Golden Band
+narrative_event = {
+	id = PA.10371
+
+        hide_window = yes
+	
+	trigger = {
+		  e_carthage = {
+			  has_holder = no
+		  }
+		  d_golden_band = {
+			  has_holder = yes
+		  }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		destroy_landed_title = d_golden_band
+		activate_title = { title = d_golden_band status = no }
+		
+	}
+	
+	option = {
+		name = OK
+        }	
+}
+
+########################################
+# Saint Maron
+########################################
+
+# The son of a ruler volunteers to join the Order
+character_event = {
+	id = PA.10372
+	desc = EVTDESCPA.10372
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	only_men = yes
+	min_age = 16
+	max_age = 45
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		is_ruler = no
+		religion = catholic
+		is_heretic = no
+		
+		martial = 5
+		
+		is_title_active = d_saint_maron
+		
+		OR = {
+			father_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+			mother_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		
+		liege = {
+			holy_order = no
+			liege = {
+				holy_order = no
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_saint_maron }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_saint_maron
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.25
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = celibate
+		}
+		modifier = {
+			factor = 0.5
+			trait = homosexual
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 0.75
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			any_heir_title = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_primary_heir = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1030 # Ask to go
+		ai_chance = {
+			factor = 100
+		}
+		liege = {
+			character_event = {
+				id = PA.10373
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SOA_1030 # It's a bad idea
+	}
+}
+
+# Son or brother asks to join the Order
+character_event = {
+	id = PA.10373
+	desc = EVTDESCPA.10373
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1031 # Agree
+		ai_chance = {
+			factor = 100
+		}
+		
+		piety = 100
+		
+		FROM = {
+			character_event = {
+				id = PA.10374
+				tooltip = EVTTOOLTIPPA_10374
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1031 # Refuse
+		
+		piety = -100
+		
+		FROM = {
+			character_event = {
+				id = PA.10375
+				tooltip = EVTTOOLTIP_SOA_1033
+			}
+		}
+	}
+}
+
+# Son or brother joins the Order
+character_event = {
+	id = PA.10374
+	desc = EVTDESCPA.10374
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		
+		d_saint_maron = {
+			holder_scope = {
+				ROOT = {
+					move_character = PREV
+					hidden_tooltip = {
+						clear_wealth = PREV
+					}
+					add_trait = celibate
+				}
+			}
+		}
+	}
+}
+
+# Liege refuses request to join the Order
+character_event = {
+	id = PA.10375
+	desc = EVTDESCPA.10375
+	picture = GFX_evt_western_knights_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1033
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_refused_request_holy_order
+		}
+	}
+}
+
+# Ping event when donating money to the Order
+character_event = {
+	id = PA.10376
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 300
+		FROM = {
+			letter_event = {
+				id = PA.10377
+			}
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_generous_donation
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when donating money to the Order
+letter_event = {
+	id = PA.10377
+	desc = EVTDESC_SOA_1141
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# The Grand Master humbly requests the right to build a castle in your demesne
+character_event = {
+	id = PA.10378
+	
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		religion = catholic
+		is_heretic = no
+		
+		d_saint_maron = {
+			holder_scope = {
+				wealth = 300
+				NOT = {
+					realm_size = 10
+				}
+			}
+		}
+		
+		any_demesne_province = {
+			has_empty_holding = yes
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_saint_maron }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_saint_maron
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			d_saint_maron = {
+				holder_scope = {
+					NOT = { demesne_size = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			d_saint_maron = {
+				holder_scope = {
+					NOT = { demesne_size = 2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_saint_maron = {
+				holder_scope = {
+					num_of_count_titles = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_saint_maron = {
+				holder_scope = {
+					realm_size = 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_demesne_province = {
+			limit = {
+				has_empty_holding = yes
+			}
+			province_event = {
+				id = PA.10379
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+province_event = {
+	id = PA.10379
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		d_saint_maron = {
+			holder_scope = {
+				character_event = {
+					id = PA.10380
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = PA.10380
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			character_event = {
+				id = PA.10381
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = PA.10381
+	desc = EVTDESCPA.10381
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1023 # Agree
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_character_modifier = expelled_d_saint_maron
+			}
+		}
+		
+		hidden_tooltip = {
+			FROMFROM = {
+				province_event = { id = PA.10382 }
+			}
+			remove_character_modifier = expelled_d_saint_maron
+		}
+		
+		piety = 200
+		wealth = 100
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1153 # Refuse
+		ai_chance = {
+			factor = 20
+		}
+		
+		piety = -100
+	}
+}
+
+# Castle has been erected
+province_event = {
+	id = PA.10382
+	desc = EVTDESCPA.10382
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			wealth = -300
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1024
+		build_holding = {
+			type = castle
+		        holder = FROMFROM
+		}
+	}
+}
+
+# Ping event when expelling the Order
+character_event = {
+	id = PA.10383
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_title_under = {
+			limit = {
+				tier = BARON
+				location = {
+					owner = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+					}
+				}
+			}
+			usurp_title = FROM
+		}
+	
+		FROM = {
+			letter_event = {
+				id = PA.10384
+			}
+		}
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_expelled_from_realm
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when expelling the Order
+letter_event = {
+	id = PA.10384
+	desc = EVTDESCPA.10384
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTB_SOA_1061
+	}
+}
+
+character_event = {
+	id = PA.10385
+
+        hide_window = yes
+
+	trigger = {
+		is_patrician = no
+                independent = yes
+		is_merchant_republic = no
+                NOT = { has_law = legislature_1 }
+		has_law = imperial_administration
+                NOT = { government = imperial_government }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                set_government_type = imperial_government
+	}
+}
+
+character_event = {
+	id = PA.10386
+
+        hide_window = yes
+
+	trigger = {		                
+	        is_patrician = no
+                independent = yes
+                has_law = legislature_1 
+		is_merchant_republic = no
+		has_law = imperial_administration
+		NOT = { government = constitutional_government }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                set_government_type = constitutional_government
+	}
+}
+
+
+character_event = {
+	id = PA.10387
+
+        hide_window = yes
+
+	trigger = {
+	        is_patrician = no
+                independent = yes
+                has_law = legislature_0
+		is_merchant_republic = no
+	        has_law = imperial_administration
+                government = consitutional_government
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                set_government_type = imperial_government
+	}
+}
+
+character_event = {
+	id = PA.10388
+
+        hide_window = yes
+
+	trigger = {
+                independent = yes
+                NOT = { religion_group = muslim }
+		NOT = { has_law = imperial_administration }
+                government = imperial_government
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                set_government_type = feudal_government
+	}
+}
+
+character_event = {
+	id = PA.10389
+
+        hide_window = yes
+
+	trigger = {
+		is_patrician = no	
+                independent = yes
+                religion_group = muslim
+		is_merchant_republic = no
+		NOT = { has_law = imperial_administration }
+                government = imperial_government
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                set_government_type = muslim_government
+	}
+}
+
+character_event = {
+	id = PA.10390
+
+        hide_window = yes
+
+	trigger = {
+		has_law = crown_authority_0
+		NOT = { has_law = crown_levy_0 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                add_law = crown_levy_0
+	}
+}
+
+character_event = {
+	id = PA.10391
+
+        hide_window = yes
+
+	trigger = {
+		has_law = crown_authority_1
+		NOT = { has_law = crown_levy_1 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                add_law = crown_levy_1
+	}
+}
+
+character_event = {
+	id = PA.10392
+
+        hide_window = yes
+
+	trigger = {
+		has_law = crown_authority_2
+		NOT = { has_law = crown_levy_2 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                add_law = crown_levy_2
+	}
+}
+
+character_event = {
+	id = PA.10393
+
+        hide_window = yes
+
+	trigger = {
+		has_law = crown_authority_3
+		NOT = { has_law = crown_levy_3 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                add_law = crown_levy_3
+	}
+}
+
+character_event = {
+	id = PA.10394
+
+        hide_window = yes
+
+	trigger = {
+		has_law = crown_authority_4
+		NOT = { has_law = crown_levy_4 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+                add_law = crown_levy_4
+	}
+}
+
+character_event = {
+	id = PA.10409
+        hide_window = yes	
+	trigger = {
+		NOT = { religion_group = pagan_group }
+		has_character_modifier = divine_father
+	}
+	mean_time_to_happen = {
+		days = 1
+	}	
+	option = {
+		name = OK
+			remove_character_modifier = divine_father 
+	}
+}
+
+character_event = {
+	id = PA.10410
+        hide_window = yes	
+	trigger = {
+		NOT = { religion_group = pagan_group }
+		has_character_modifier = divine_mother
+	}
+	mean_time_to_happen = {
+		days = 1
+	}	
+	option = {
+	        name = OK
+		remove_character_modifier = divine_mother 
+	}
+}
+
+character_event = {
+	id = PA.10411
+        hide_window = yes	
+	trigger = {
+		NOT = { religion_group = christian }
+	        has_character_modifier = canonised_father
+	}
+	mean_time_to_happen = {
+		days = 1
+	}	
+	option = {
+	        name = OK
+		remove_character_modifier = canonised_father 
+	}
+}
+
+character_event = {
+	id = PA.10412
+        hide_window = yes	
+	trigger = {
+	        NOT = { religion_group = christian }
+	        has_character_modifier = canonised_mother
+	}
+	mean_time_to_happen = {
+		days = 1
+	}	
+	option = {
+	        name = OK
+		remove_character_modifier = canonised_mother
+	}
+}
+
+# Thracian province converts to Romanian
+character_event = {
+	id = PA.10413
+	desc = EVTDESCPA.10413
+	picture = GFX_evt_stone_church
+
+       trigger = {
+		year = 850
+                NOT = { year = 1000 }
+                any_realm_province = {
+        		culture = thracian
+        	}
+        	NOT = { has_global_flag = thracia }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_10413
+		random_realm_province = {
+			limit = {
+				culture_group = thracian
+			}
+			culture = romanian
+		}
+	}
+}
+
+# Dacian province converts to Romanian
+character_event = {
+	id = PA.10414
+	desc = EVTDESCPA.10414
+	picture = GFX_evt_stone_church
+
+        trigger = {
+		year = 850
+                NOT = { year = 1000 }
+                any_realm_province = {
+                	culture = dacian
+                }
+                NOT = { has_global_flag = dacia }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_10414
+		random_realm_province = {
+			limit = {
+				culture_group = dacian
+			}
+			culture = romanian
+		}
+	}
+}
+
+# Rhaetian province converts to Romansh
+character_event = {
+	id = PA.10415
+	desc = EVTDESCPA.10415
+	picture = GFX_evt_stone_church
+
+    trigger = {
+		year = 850
+                NOT = { year = 1000 }
+                any_realm_province = {
+                	culture = rhaetian
+        	}
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_10415
+		random_realm_province = {
+			limit = {
+				culture_group = rhaetian
+			}
+			culture = romansh
+		}
+	}
+}
+
+# Illyrian province converts to Albanian
+character_event = {
+	id = PA.10416
+	desc = EVTDESCPA.10416
+	picture = GFX_evt_stone_church
+
+        trigger = {
+		year = 850
+            	NOT = { year = 1000 }
+                any_realm_province = {
+                	culture = illyrian
+            	}
+                NOT = { has_global_flag = illyria }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_10416
+		random_realm_province = {
+			limit = {
+				culture_group = illyrian
+			}
+			culture = albanian
+		}
+	}
+}
+
+narrative_event = {
+	id = PA.10417
+	title = EVTNAMEPA.10417
+	desc = EVTDESCPA.10417
+	picture = GFX_evt_rome_restored_byzantine
+
+        trigger = {
+		has_landed_title = e_western
+		has_global_flag = fall_of_wre
+        	NOT = { has_global_flag = wre_revived }
+        }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OPTPA_10417
+		set_global_flag = wre_revived
+		prestige = 500
+	}
+}
+
+narrative_event = {
+	id = PA.10418
+	title = EVTNAMEPA.10418
+	desc = EVTDESCPA.10418
+	picture = GFX_evt_religious_exultation
+
+        trigger = {
+		has_landed_title = e_carthage
+                NOT = { has_global_flag = carthage_revived }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OPTPA_10418
+		set_global_flag = carthage_revived
+		prestige = 500
+	}
+}
+
+narrative_event = {
+	id = PA.10419
+	title = EVTNAMEPA.10419
+	desc = EVTDESCPA.10419
+	picture = GFX_evt_religious_exultation
+
+        trigger = {
+		has_landed_title = e_macedonia
+                NOT = { has_global_flag = macedonia_revived }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OPTPA_10419
+		set_global_flag = macedonia_revived
+		prestige = 500
+	}
+}
+
+narrative_event = {
+	id = PA.10420
+	title = EVTNAMEPA.10420
+	desc = EVTDESCPA.10420
+	picture = GFX_evt_mongols_pillage_oldgods
+
+        trigger = {
+		has_landed_title = e_hunnicia
+		has_global_flag = fall_of_hunnicia
+                NOT = { has_global_flag = hunnicia_revived }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OPTPA_10419
+		set_global_flag = hunnicia_revived
+		prestige = 500
+	}
+}

@@ -1,7 +1,7 @@
 on_startup = {
 	events = {
 		indep.1
-		PA.1043512	#Heresy Setup in Post 1054
+		PA.10432	#Heresy Setup in Post 1054
 		SEN.1
 		ROMEGOV.1
 		ROMEGOV.2
@@ -49,19 +49,7 @@ on_yearly_pulse = {
 		SCHISM.16
 		SCHISM.19
 		COPT.1
-		PA.10009
-		PA.10010
-		PA.10181
-		
-		PA.100280 # CHECK
-		PA.100281 # CHECK
-		
-		PA.100289
-		PA.100291
-		PA.100295
-		PA.100300
-		PA.100301
-		PA.100302
+	
 	}
 	random_events = {
 	
@@ -150,7 +138,7 @@ on_yearly_pulse = {
 		1000 = HPyazidi.1522
 		#1000 = HPdruze.1520
 		#1000 = HPdruze.1521
-		1000 = HPdrzue.1522
+		#1000 = HPdrzue.1522
 		1000 = RoI.10020
 		1000 = RoI.10021
 		1000 = RoI.10022
@@ -169,14 +157,6 @@ on_war_ended_victory = {
 	events = {
 		indep.7
 		ROMEGOV.1
-		PA.10037
-		PA.10038
-		PA.10039
-		PA.10071
-		PA.10072
-		PA.10073
-		PA.10074
-		PA.10076
 		ROMEGOV.1
 		#IHS.2
 		#IHS.3
@@ -414,5 +394,6 @@ on_character_convert_religion = {
 on_reform_religion = {
 	events = {
 		39680
+		ENA.1000
 	}
 }

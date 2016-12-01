@@ -1,0 +1,50 @@
+namespace = ABDICATE
+
+character_event = {
+	id = ABDICATE.001
+	desc = "ABD.001.DESC"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "ABD.001.A"
+		
+		ai_chance = {
+			factor = 1
+		}
+
+		FROM = { character_event = { id = ABDICATE.002 } }
+	}
+}
+
+character_event = {
+	id = ABDICATE.002
+	desc = "ABD.002.DESC"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "ABD.002.A"
+		
+		ai_chance = {
+			factor = 1
+		}
+		
+		FROM = {
+			clr_character_flag = abdicate
+		}
+		
+		clr_character_flag = wants_to_abdicate
+		set_character_flag = has_abdicated_throne
+		
+		abdicate_to = FROM
+                FROM = {
+                 wealth = ROOT
+                }
+                clear_wealth = yes
+		
+		any_claim = {
+			remove_claim = ROOT
+		}
+	}
+}

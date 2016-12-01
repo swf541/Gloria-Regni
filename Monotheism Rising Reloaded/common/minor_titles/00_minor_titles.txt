@@ -648,6 +648,42 @@ title_paramount_knight = {
 	message = yes
 }
 
+title_imperial_eunuch2 = {
+	dignity = 0.050
+	grant_limit = 1
+	opinion_effect = 60
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.1
+	
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+		trait = eunuch
+    	}
+
+	allowed_to_grant = {
+		is_feudal = yes
+        	culture = roman
+	   	OR = {
+            		has_landed_title = e_western
+		    	has_landed_title = e_byzantium
+            		has_landed_title = e_roman_empire
+        	}
+		OR = {
+			religion_group = christian
+			religion_group = pagan_group
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
 # Byzantine Titles
 title_despot = {
 	dignity = 0.25
@@ -2970,6 +3006,149 @@ title_court_physician = {
 	lose_effect = {
 	}
 	retire_effect = {
+	}
+
+	message = yes
+}
+
+# Macedonian Titles
+title_hegemon = {
+	dignity = 0.5
+	grant_limit = 1
+	opinion_effect = 20
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.1
+
+	is_unique = yes
+	
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+    	}
+
+	allowed_to_grant = {
+		is_feudal = yes
+		OR = {
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+		OR = {
+			religion_group = christian
+			religion_group = pagan_group
+		}
+		NOT = { has_minor_title = title_symbasileus }
+		NOT = { has_minor_title = title_peliganes }
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_peliganes = {
+	dignity = 0.4
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.1
+
+	is_unique = yes
+	
+	allowed_to_hold = {
+        	is_adult = yes
+		is_female = no
+    	}
+
+	allowed_to_grant = {
+		is_feudal = yes
+		OR = {
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+		OR = {
+			religion_group = christian
+			religion_group = pagan_group
+		}
+		NOT = { has_minor_title = title_symbasileus }
+		NOT = { has_minor_title = title_autarch }
+		NOT = { has_minor_title = title_polemarch }
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+
+title_polemarch = {
+	dignity = 0.02
+	grant_limit = 2
+	opinion_effect = 15
+	
+	monthly_salary = 0.075
+	monthly_prestige = 0.75
+	
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+    	}
+
+	allowed_to_grant = {
+		is_feudal = yes
+		OR = {
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+		OR = {
+			religion_group = christian
+			religion_group = pagan_group
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_satrap = {
+	dignity = 0.01
+	grant_limit = 4
+	opinion_effect = 10
+	
+	monthly_salary = 0.005
+	monthly_prestige = 0.5
+	
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+    	}
+ 
+    	allowed_to_grant = {
+		is_feudal = yes
+		OR = {
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+		OR = {
+			religion_group = christian
+			religion_group = pagan_group
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
 	}
 
 	message = yes

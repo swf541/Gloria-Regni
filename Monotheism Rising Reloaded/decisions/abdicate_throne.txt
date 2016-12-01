@@ -1,0 +1,121 @@
+decisions = {
+
+	abdicate_throne = {
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			is_feudal = yes
+		}
+        potential = { 
+			# Flags that will not allow the abidcate button to display and prevents spamming of the button between 2 characters in the realm
+			NOT = { 
+				has_character_flag = wants_to_abdicate 
+				has_character_flag = has_abdicated_throne 
+				}
+			# condtions for the heir (must 16 and has not abdicated a throne before) if condtions are not met button will not display (might wanna to remove the is_adult condition)
+			current_heir = { 
+			is_adult = yes 
+			dynasty = ROOT
+			NOT = { has_character_flag = has_abdicated_throne }
+			}
+
+			# No gavelkind succession
+			OR = {
+				AND = {
+					primary_title = { tier = KING }
+					NOT = {
+						any_demesne_title = {
+							kingdom = { has_law = succ_gavelkind }
+						}
+					}
+				}
+				AND = {
+					primary_title = { tier = EMPEROR }
+					NOT = {
+						any_demesne_title = {
+							empire = { has_law = succ_gavelkind }
+						}
+					}
+				}
+				AND = {
+					NOT = { primary_title = { higher_tier_than = DUKE } }
+					NOT = {
+						primary_title = {
+							has_law = succ_gavelkind
+						}
+					}
+				}
+			}
+			# Traits checks
+			NOT = { trait = lunatic }
+			NOT = { trait = possessed }
+			NOT = { trait = imbecile }
+			NOT = { trait = cruel }
+			NOT = { trait = paranoid }
+			NOT = {
+				AND = {
+					trait = envious
+					trait = greedy
+				}
+			}			
+        } 		
+		allow = {
+			war = no
+			prisoner = no			
+			
+			# Age checks
+			OR = {
+				AND = {
+					age = 60
+					NOT = { trait = envious }
+					NOT = { trait = greedy }
+				}
+				AND = {
+					age = 50
+					NOT = { trait = envious }
+					NOT = { trait = greedy }
+				}
+				AND = {
+					OR = {
+						trait = depressed
+						trait = stressed
+					}
+					NOT = { trait = envious }
+					NOT = { trait = greedy }
+					age = 40
+				}
+				AND = {
+					OR = {
+						trait = content
+						trait = humble
+					}
+					OR = {
+						trait = shy
+						trait = craven
+					}
+					NOT = { trait = envious }
+					NOT = { trait = greedy }
+					age = 30
+				}
+                AND = {
+                    current_heir = { age = 16 }
+                }
+			}
+			
+			# Costs
+			prestige = 750
+		}
+		effect = {
+			prestige = -750
+			piety = 100
+			add_trait = content
+			set_character_flag = wants_to_abdicate
+			current_heir = {
+				character_event = { id = ABDICATE.001 days = 3 random = 3 tooltip = "abd_ask" }
+			}
+		}
+		ai_will_do = {
+			factor = 0 # Prevent AI from doing (can cause major crashes)
+		}		
+	}
+}
