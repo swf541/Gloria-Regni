@@ -1092,24 +1092,6 @@ e_palmyra = {
 	short_name = yes
 }
 
-k_gallia = {
-	color = { 94 194 85 }
-	capital = 95 # Amiens
-	culture = galloroman
-
-	arian = 5000 # Crusade target weight
-	imperial = 5000 # Crusade target weight
-	catholic = 5000 # Crusade target weight
-	fraticelli = 5000 # Crusade target weight
-	norse_pagan_reformed = 100 # Crusade target weight
-
-	galloroman = "Soissons"
-	
-	allow = {
-		always = no
-	}
-}
-
 # Rome
 
 b_pierleoni = {
