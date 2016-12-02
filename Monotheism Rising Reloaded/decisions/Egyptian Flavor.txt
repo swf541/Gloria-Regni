@@ -348,12 +348,11 @@ decisions = {
 			
 		allow = {
 			religion_authority = 0.5
-		    tier = emperor
 			is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }	
-			has_law = religous_organization_5
-			has_landed_title = k_egypt
+			has_law = egyptian_temple_funding_4
+			completely_controls = k_egypt
 
 			not = { trait = cynical }
 	    }			 
@@ -418,11 +417,85 @@ decisions = {
 			completely_controls = d_cyprus
 			completely_controls = k_nubia
 			completely_controls = d_medina
-			completely_controls = d_arabia_petrae
+			#completely_controls = d_arabia_petrae
 		}
 		effect = {
 			set_global_flag = egypt_restored
 			narrative_event = { id = LoE.20 tooltip = EVTTOOLTIPLoR.20 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_light_of_amun = {
+		potential = {
+			religion = egyptian_pagan_reformed
+			has_landed_title = d_pharoah
+			NOT = { is_title_active = d_light_of_amun }
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_light_of_amun status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_light_of_amun = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_defenders_of_the_nile = {
+		potential = {
+			religion = egyptian_pagan_reformed
+			has_landed_title = d_pharoah
+			completely_controls = k_nubia
+			completely_controls = k_egypt
+			NOT = { is_title_active = d_defenders_of_the_nile }
+		}
+		allow = {
+			war = no
+			wealth = 500
+		}
+
+		effect = {
+			wealth = -500
+			activate_title = { title = d_defenders_of_the_nile status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_defenders_of_the_nile = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1

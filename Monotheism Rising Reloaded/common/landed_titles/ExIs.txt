@@ -304,9 +304,71 @@ d_sacred_band = {
 	mercenary_type = sacred_band_composition
 }
 
+d_light_of_amun = {
+
+	color={ 153 20 16 }
+	capital = 796 
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 796 # Atheniai
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = egyptian_pagan_reformed
+	
+	culture = coptic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = sacred_band_composition
+}
+
+d_defenders_of_the_nile = {
+
+	color={ 153 20 160 }
+	capital = 796 
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 796 # Atheniai
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = egyptian_pagan_reformed
+	
+	culture = coptic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = heroes_composition
+}
+
 d_pharoah = {
 	color={ 153 2 6 }
-	
+	capital = 796 
 	title = "Pharoah"
 	title_female = "Pharoahess"
 	foa = "HEAD_PRIEST_FOA"
@@ -334,6 +396,7 @@ d_pharoah = {
 
 e_egypt = {
 	color = { 255 215 0 }
+	capital = 796 
 	title = "Pharoah"
 	title_female = "Pharoahess"
 	foa = "HEAD_PRIEST_FOA"
