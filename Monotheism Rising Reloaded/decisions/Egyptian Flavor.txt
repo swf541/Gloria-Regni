@@ -304,6 +304,7 @@ decisions = {
 				text = prepare_serapia_feast
 				hidden_tooltip = { 
 					character_event = { id = SRP.1 } 
+					character_event = { id = SRP.700 } 
 				}
 			}
 		}
@@ -417,7 +418,7 @@ decisions = {
 			completely_controls = d_cyprus
 			completely_controls = k_nubia
 			completely_controls = d_medina
-			#completely_controls = d_arabia_petrae
+			completely_controls = d_arabia_petrae
 		}
 		effect = {
 			set_global_flag = egypt_restored

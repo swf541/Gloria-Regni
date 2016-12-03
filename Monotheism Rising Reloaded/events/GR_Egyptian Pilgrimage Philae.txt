@@ -106,7 +106,7 @@ character_event = {
                 add_trait = pilgrim
                 piety = 100
 				hidden_tooltip = { 
-                        character_event = { id = PHI.10174 } 
+                        character_event = { id = PHI.10173 } 
                 }
 		clr_character_flag = egyptian_pilgrimage
         }
@@ -127,7 +127,7 @@ character_event = {
                 add_trait = pilgrim
                 piety = -100
 				hidden_tooltip = { 
-                        character_event = { id = PHI.10174 } 
+                        character_event = { id = PHI.10173 } 
                 }
 		clr_character_flag = egyptian_pilgrimage
         }
@@ -294,7 +294,7 @@ character_event = {
                 name = OPTAPHI.100173
                 set_character_flag = pilgrimage
                 custom_tooltip = {
-                       name = pilgrimag
+                       name = pilgrimage
                 }	
 	}
 }  

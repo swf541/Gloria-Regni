@@ -21,11 +21,11 @@ decisions = {
 			OR = {
 				AND = {
 					spouse = { any_dynasty_member = { has_landed_title = e_byzantium } }
-					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 50 } } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 25 } } }
 				}
 				AND = {
 					current_heir = { spouse = { any_dynasty_member = { has_landed_title = e_byzantium } } }
-					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 50 } } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 25 } } }
 				}
 			}
 		}

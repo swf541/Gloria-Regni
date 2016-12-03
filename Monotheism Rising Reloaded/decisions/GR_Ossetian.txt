@@ -1,38 +1,20 @@
 decisions = {
 	patrons_ose = {
-		is_high_prio = yes
 		potential = {
-			is_playable = yes
-			is_landed = yes
-			age = 16
-			NOT = { 
-				trait = incapable
-				trait = infirm
+            is_playable = yes
+            age = 16
+            not = { trait = incapable }
+			OR = {
+				religion = ossetian_pagan_reformed
+				religion = ossetian_pagan
 			}
-			NOT = {
-				has_character_modifier = patron_wastyrdzhi
-				has_character_modifier = patron_xucau
-				has_character_modifier = patron_wasilla
-				has_character_modifier = patron_safa
-				has_character_modifier = patron_faelvaera
-				has_character_modifier = patron_donbettyr
-				has_character_modifier = patron_tutyr
-				has_character_modifier = patron_kurdalaegon
-				has_character_modifier = patron_aefsati
-				has_character_modifier = patron_satana
-				has_character_modifier = patron_argimpasa
-				has_character_modifier = patron_huyaendon_aeldar
-				has_character_modifier = patron_barastyr
-				has_character_modifier = patron_aminon
-				has_character_modifier = patron_alardy
-			}
-            religion = ossetian_pagan_reformed
-			religion = ossetian_pagan
+			NOT = { has_character_flag = ossetian_patron_selected }
 		}
 		allow = {
 			prisoner = no
 		}
 		effect = {
+			set_character_flag = ossetian_patron_selected
 			character_event = { id = PATRONS_OSE.1 }
 		}
 		revoke_allowed = {
@@ -170,6 +152,67 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	celebrate_djiorgwyba = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = ossetian_pagan
+				religion = ossetian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_djiorgwyba_feast_timer
+				liege = { has_character_flag = holding_djiorgwyba_feast }
+				has_character_flag = holding_djiorgwyba_feast
+				has_character_flag = planning_djiorgwyba_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 10 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_djiorgwyba_feast
+			custom_tooltip = {
+				text = prepare_djiorgwyba_feast
+				hidden_tooltip = { 
+					character_event = { id = DJI.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 3 }
+				month = 6
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
 		}
 	}
 }
