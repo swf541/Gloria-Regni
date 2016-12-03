@@ -1,0 +1,211 @@
+# DEMES
+
+blue_deme = {
+	opposites = {
+		green_deme
+	}
+	same_opinion = 10
+	opposite_opinion = -10
+	
+	customizer = no
+	random = no
+}
+green_deme = {
+	opposites = {
+		blue_deme
+	}
+
+	same_opinion = 10
+	opposite_opinion = -10
+	
+	customizer = no
+	random = no
+}
+
+# RITES
+
+roman_rite = {
+	opposites = {
+		byzantine_rite
+		celtic_rite
+		ambrosian_rite
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+byzantine_rite = {
+	opposites = {
+		roman_rite
+		celtic_rite
+		ambrosian_rite		
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+celtic_rite = {
+	opposites = {
+		byzantine_rite
+		roman_rite
+		ambrosian_rite		
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+ambrosian_rite = {
+	opposites = {
+		celtic_rite
+		byzantine_rite
+		roman_rite	
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+antiochene_rite = {
+	opposites = {
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		alexandrian_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+alexandrian_rite = {
+	opposites = {
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+mozarabic_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		antiochene_rite
+		african_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+african_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		aquileian_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+aquileian_rite = {
+	opposites = {
+		alexandrian_rite
+		ambrosian_rite
+		celtic_rite
+		byzantine_rite
+		roman_rite
+		mozarabic_rite
+		antiochene_rite
+		african_rite
+	}
+
+	same_opinion = 5
+	opposite_opinion = -5
+	
+	customizer = no
+	random = no
+}
+
+enarei = {
+	piety = 0.10
+	learning = 1
+	stewardship = 1
+	fertility = 0.1
+	ossetian_pagan_reformed_opinion = 50
+	ossetian_pagan_opinion = 50
+
+	customizer = no
+	random = no
+}
+
+chosen_by_wasilla = {
+	piety = 0.25
+	combat_rating = 1
+	ossetian_pagan_reformed_opinion = 50
+	ossetian_pagan_opinion = 50
+
+	customizer = no
+	random = no
+}

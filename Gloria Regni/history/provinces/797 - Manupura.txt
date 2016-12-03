@@ -1,0 +1,36 @@
+# 797 - Manupura / Giza
+
+# County Title
+title = c_giza
+
+# Settlements
+max_settlements = 5
+b_gizeh = castle
+b_ausim = castle
+b_algazira = city
+b_abughalib = temple
+#b_manf = castle
+
+
+# Misc
+culture = coptic
+religion = miaphysite
+
+# History
+
+867.1.1 = { 
+	b_gizeh = ca_keep_1
+	b_gizeh = ca_training_grounds_1
+	b_gizeh = ca_stable_1
+	b_gizeh = ca_wall_1
+	b_gizeh = ca_wall_2
+	b_gizeh = ca_militia_barracks_1
+	b_ausim = ca_keep_1
+	b_ausim = ca_training_grounds_1
+	b_ausim = ca_stable_1
+	b_ausim = ca_wall_1
+	b_ausim = ca_wall_2
+	b_ausim = ca_militia_barracks_1
+}
+
+# 1171.1.1 = { religion = sunni }

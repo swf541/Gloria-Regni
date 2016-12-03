@@ -1,0 +1,691 @@
+k_visigoth = {
+	color={ 233 200 20 }
+	color2={ 255 255 255 }
+	
+	capital = 197 # Toledo
+	
+	allow = {
+		always = no
+	}
+}
+k_nabatea = {
+	color={ 210 220 200 }
+	color2={ 255 255 255 }
+	
+	capital = 652 
+	
+	allow = {
+		always = no
+	}
+}
+k_hirah = {
+	color={ 10 120 100 }
+	color2={ 255 255 255 }
+	
+	capital = 649 
+	
+	allow = {
+		always = no
+	}
+}
+k_bahrain = {
+	color={ 110 220 100 }
+	color2={ 255 255 255 }
+	
+	capital = 649 
+	
+	allow = {
+		always = no
+	}
+}
+e_avar = {
+	color={ 210 120 200 }
+	color2={ 255 255 255 }
+	
+	capital = 522 # Pest
+	
+	allow = {
+		always = no
+	}
+}
+
+k_wend = {
+	color={ 10 220 20 }
+	color2={ 255 255 255 }
+	
+	capital = 441
+	
+	allow = {
+		always = no
+	}
+}
+	
+e_wre = {
+	color={ 200 0 50 }
+	color2={ 255 255 20 }
+	
+	capital = 333 
+	
+	short_name = yes
+	
+	culture = italo_roman
+	religion = imperial
+	dynasty_title_names = no
+	has_top_de_jure_capital = yes
+	
+	purple_born_heirs = yes
+	
+	allow = {
+		completely_controls = k_italy
+		completely_controls = k_sicily
+		completely_controls = k_croatia
+		has_global_flag = wre_restored
+	}
+	
+	dignity = 100 # Counted as having this many more counties than it does
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+
+
+	k_hispania = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		allow = {
+			has_global_flag = provnce_hispania_restored
+		}
+		culture = roman
+	}
+	
+	k_britannia = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 112
+		
+		allow = {
+			has_global_flag = provnce_britannia_restored
+		}
+				
+		culture = roman
+	}
+	
+	k_viennensis = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+				
+		capital = 228 
+		
+		allow = {
+			has_global_flag = provnce_viennensis_restored
+		}
+		
+		culture = roman
+	}
+	
+	k_gallia = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 112
+		
+		allow = {
+			has_global_flag = provnce_gallia_restored
+		}
+		
+		culture = roman
+	}
+	
+	k_italia_annonaria = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+	
+		allow = {
+			has_global_flag = provnce_italia_annonaria_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_illyricum = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		allow = {
+			has_global_flag = provnce_illyricum_restored
+		}	
+		
+		culture = roman
+	}
+	
+	k_italia_suburbicaria = {
+		color={ 200 0 50 }
+		color2={ 255 255 20 }
+		
+		capital = 333 # Rome
+		
+		allow = {
+			has_global_flag = provnce_italia_suburbicaria_restored
+		}	
+		
+		culture = roman
+	}
+}
+
+d_visigoth_nobles = {
+	color={ 80 188 230 }
+	color2={ 255 255 255 }
+
+	capital = 155 
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = visigothic
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = varangian_guard_composition
+}
+
+e_trebizond = {
+	color={ 100 151 33 }
+	capital = 678 # Trapezous
+	culture = greek
+	
+	allow = {
+		always = no
+	}
+}
+
+k_epirus = {
+	color={ 134 63 109 }
+	color2={ 255 255 20 }
+			
+	capital = 473 # Arta
+	culture = greek
+	
+	allow = {
+		always = no
+	}
+}
+
+e_thessalonica = {
+	color={ 238 233 233	 }
+	color2={ 255 255 20 }
+			
+	capital = 490 # Thessalonike
+	culture = greek
+	
+	allow = {
+		has_landed_title = k_epirus
+		completely_controls = d_thessalonika
+		completely_controls = d_epirus
+	}
+}
+
+
+e_nicaea = {
+	color={ 202 101 167 }
+	color2={ 255 255 20 }
+			
+	capital = 750 # Nikaea
+	culture = greek
+	
+	allow = {
+		always = no
+	}
+}
+	
+e_bulgaria = {
+	color={ 113 88 101 }
+	color2={ 255 255 255 }
+			
+	culture = bulgarian
+			
+	capital = 499 # Tyrnovo
+		
+	allow = {
+		NOT = { has_global_flag = latin_bulgaria }
+		completely_controls = k_bulgaria
+		completely_controls = k_dacia
+		realm_size = 75
+		not = { has_landed_title = e_byzantium }
+		culture = bulgarian
+	}	
+}
+e_bulgaria_2 = {
+	color={ 113 88 101 }
+	color2={ 255 255 255 }
+			
+	culture = bulgarian
+			
+	capital = 499 # Tyrnovo
+		
+	allow = {
+		completely_controls = k_bulgaria
+		completely_controls = k_dacia
+		realm_size = 75
+		not = { has_landed_title = e_byzantium }
+		culture = bulgarian
+		has_global_flag = latin_bulgaria
+	}	
+}
+e_neoassyria = {
+	color = { 102 51 0 }
+	color2 = { 255 255 255 }
+	
+	culture = assyrian
+	
+	capital = 697 # Nineveh
+	
+	allow = {
+		always = no
+	}
+}
+
+e_neobabylon = {
+	color = { 61 154 0 }
+	color2 = { 255 255 255 }
+	
+	culture = aramean
+	
+	capital = 693 # Babylon
+	
+	allow = {
+		always = no
+	}
+}
+
+e_carthage = {
+	color={ 250 184 31 }
+		
+	capital = 817 # Carthage
+	
+	culture = neo-punic
+		
+	allow = {
+		culture = neo-punic
+	   	completely_controls = k_africa
+	}
+}
+
+d_knights_holy_wisdom = {
+
+	color={ 230 100 50 }
+	
+	graphical_culture = holygfx
+	
+	capital = 496
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	culture = frankish
+	
+	# Parent Religion 
+	religion = catholic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_calatrava_composition
+}
+
+d_phoideratoi_skythikoi = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = alan
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = skythikoi_composition
+}
+d_phoideratoi_phragkoi = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = old_frankish
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = phragkoi_composition
+}
+d_phoideratoi_aethiopia = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = ethiopian
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = aethiopia_composition
+}
+
+d_schola_protectores_domestici = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
+
+	capital = 496 # Uppland
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Domestikos"  
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = scholae_composition
+}   
+
+d_saqaliba_a = {
+	color={ 245 180 180 } 
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 728
+	
+	# Parent Religion 
+	religion = sunni
+	
+	culture = volhynian
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = warriors_perun_composition
+}   
+
+d_order_of_saint_lazarus = {
+
+	color={ 230 120 150 }
+	
+	graphical_culture = holygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	culture = frankish
+	
+	# Parent Religion 
+	religion = catholic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_calatrava_composition
+}
+
+d_defenders_of_mari = {
+
+	color={ 170 50 60 }
+
+	graphical_culture = holygfx
+
+	capital = 152
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = basque_pagan_reformed
+
+	culture = basque
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+d_ortizi_warriors = {
+
+	color={ 70 50 60 }
+
+	graphical_culture = holygfx
+
+	capital = 152
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = basque_pagan_reformed
+
+	culture = basque
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+d_basque = {
+	color = { 0 80 255 }
+	
+	capital = 152 #	Tiberias
+	
+	title = "HEAD_PRIESTESS"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = basque_pagan_reformed
+	dignity = 80 # Counted as having this many more counties than it does
+	religion = basque_pagan_reformed
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_ossetian = {
+	color = { 10 180 25 }
+	
+	capital = 603 #	Tiberias
+	
+	title = "HEAD_ENAREI"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = ossetian_pagan_reformed
+	dignity = 80 # Counted as having this many more counties than it does
+	religion = ossetian_pagan_reformed
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_xucau_warriors = {
+
+	color={ 70 20 80 }
+
+	graphical_culture = holygfx
+
+	capital = 603
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = ossetian_pagan_reformed
+
+	culture = alan
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}
+
+d_wasilla_guardians = {
+
+	color={ 170 120 180 }
+
+	graphical_culture = holygfx
+
+	capital = 603
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	#mercenary_type = zheyden_band_composition
+	mercenary_type = knights_templar_composition
+
+	religion = ossetian_pagan_reformed
+
+	culture = alan
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 10
+
+}

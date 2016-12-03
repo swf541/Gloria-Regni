@@ -1,0 +1,742 @@
+d_temple_judaism = {
+	color = { 0 80 255 }
+	
+	capital = 774 #	Jerusalem
+	
+	title = "HEAD_KOHEN_GADOL"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = temple_judaism
+	
+	religion = temple_judaism
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_grand_sanhedrin = {
+	color = { 0 80 255 }
+	
+	capital = 774 #	Jerusalem
+	
+	title = "HEAD_CHIEF_RABBI"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = grand_sanhedrin
+	
+	religion = grand_sanhedrin
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+#Holy Orders
+d_maccabean_guard = {
+
+	color={ 128 0 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = no
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = maccabean_guard_composition
+}
+
+d_knights_khazaria = {
+
+	color={ 128 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = zealots_composition
+}
+
+d_lions_solomon = {
+
+	color={ 0 128 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = lions_solomon_composition
+}
+
+d_knights_goshen = {
+
+	color={ 220 20 60 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_goshen_composition
+}
+
+d_siqariqim = {
+
+	color={ 0 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = siqariqim_composition
+}
+
+d_mishkan_guardians= {
+
+	color={ 65 105 225 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = mishkan_guardians_composition
+}
+
+k_archereus = {
+	color={ 153 2 6 }
+	
+	title = "Pontifex Maximus"
+	title_female = "Pontifex Maximus"
+	foa = "HEAD_PRIEST_FOA"
+	
+	short_name = yes
+
+	location_ruler_title = yes
+	
+	# Controls a religion
+	controls_religion = hellenic_pagan_reformed
+	
+	religion = hellenic_pagan_reformed
+	
+	allow = {
+		religion = hellenic_pagan_reformed
+		num_of_holy_sites = 3
+        piety = 1000
+	}
+	
+	dignity = 100 # Counted as having this many more counties than it does
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+c_oracle_delphi = {
+	color = { 10 80 25 }
+	
+	capital = 475
+	
+	short_name = yes
+
+	title = "Pythia"
+	
+	# Always exists
+	landless = yes	
+	
+	
+	religion = hellenic_pagan
+	
+	# Cannot be held as a secondary title
+	primary = no
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_heroes = {
+
+	color={ 245 20 98 }
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 490 # Thessalonike
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = hellenic_pagan_reformed
+	
+	culture = greek
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = heroes_composition
+}
+
+d_sacred_band = {
+
+	color={ 225 174 233 }
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 482 # Atheniai
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = hellenic_pagan_reformed
+	
+	culture = greek
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = sacred_band_composition
+}
+
+d_light_of_amun = {
+
+	color={ 153 20 16 }
+	capital = 796 
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 796 # Atheniai
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = egyptian_pagan_reformed
+	
+	culture = coptic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = sacred_band_composition
+}
+
+d_defenders_of_the_nile = {
+
+	color={ 153 20 160 }
+	capital = 796 
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 796 # Atheniai
+
+	title = "Strategos"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = egyptian_pagan_reformed
+	
+	culture = coptic
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = heroes_composition
+}
+
+d_pharoah = {
+	color={ 153 2 6 }
+	capital = 796 
+	title = "Pharoah"
+	title_female = "Pharoahess"
+	foa = "HEAD_PRIEST_FOA"
+	
+	short_name = yes
+
+	location_ruler_title = yes
+	
+	# Controls a religion
+	controls_religion = egyptian_pagan_reformed
+	
+	religion = egyptian_pagan_reformed
+	
+	allow = {
+		religion = egyptian_pagan_reformed
+		has_landed_title = k_egypt
+		num_of_holy_sites = 3
+        piety = 1000
+	}
+	
+	dignity = 100 # Counted as having this many more counties than it does
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+
+e_egypt = {
+	color = { 255 215 0 }
+	capital = 796 
+	title = "Pharoah"
+	title_female = "Pharoahess"
+	foa = "HEAD_PRIEST_FOA"
+	
+	short_name = yes
+
+	location_ruler_title = yes
+	
+	# Controls a religion
+	
+	religion = egyptian_pagan_reformed
+	
+	allow = {
+		completely_controls = k_egypt
+		completely_controls = k_jerusalem
+		completely_controls = k_syria
+		has_landed_title = d_pharoah
+	}
+	
+	dignity = 100 # Counted as having this many more counties than it does
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+
+d_rome = {
+	color={ 240 248 255 }
+	
+	capital = 333 # Rome
+	
+	title = "Patriarch"
+	title_prefix = "Patriarchate of"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	
+	# Always exists
+	landless = yes
+	dignity = 100
+	
+	religion = imperial
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = miaphysite
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	
+	# Regnal names
+	male_names = {
+		Constantine Aurelius Maximus Marcus Lucius Romanus Alexander Valentinus Anastasius 
+		Celestius Aquilius Cassius Corenelius Decimus Felix Flavius Florianus Horatius Julius
+		Laurentius Marius Maxentius Paulus Urbanus Publius Quintillus Regulus Rufus Vinicius
+		Secundus Septimus Severius Sergius Sextus Silvanus Valentinus Valerius Vibianus Valerius
+		Simplicius Pelagius Hilarius Mauritius Vergilus Ovidius Naevius Gordanius Gallus Fabricius
+	}
+}
+
+d_imperial = {
+	color={ 240 248 255 }
+	
+	capital = 333 # Rome
+	
+	title = "Patriarch"
+	title_prefix = "Patriarchate of"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	
+	# Always exists
+	landless = yes
+	dignity = 1000
+	
+	# Controls a religion
+	controls_religion = imperial
+	
+	religion = imperial
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	
+	# Regnal names
+	male_names = {
+		Constantine Aurelius Maximus Marcus Lucius Romanus Alexander Valentinus Anastasius 
+		Celestius Aquilius Cassius Corenelius Decimus Felix Flavius Florianus Horatius Julius
+		Laurentius Marius Maxentius Paulus Urbanus Publius Quintillus Regulus Rufus Vinicius
+		Secundus Septimus Severius Sergius Sextus Silvanus Valentinus Valerius Vibianus Valerius
+		Simplicius Pelagius Hilarius Mauritius Vergilus Ovidius Naevius Gordanius Gallus Fabricius
+	}
+}
+
+k_arian = {
+	color={ 211 220 178 }
+	
+	capital = 333 # Rome
+	
+	title = "POPE"
+	foa = "POPE_FOA"
+	short_name = yes
+	location_ruler_title = yes
+	
+	# Always exists
+	landless = yes
+	
+	# Controls a religion
+	controls_religion = arian
+	
+	religion = arian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	
+	# Regnal names
+	male_names = {
+		Constantine Aurelius Maximus Marcus Lucius Romanus Alexander Valentinus Anastasius 
+		Celestius Aquilius Cassius Corenelius Decimus Felix Flavius Florianus Horatius Julius
+		Laurentius Marius Maxentius Paulus Urbanus Publius Quintillus Regulus Rufus Vinicius
+		Secundus Septimus Severius Sergius Sextus Silvanus Valentinus Valerius Vibianus Valerius
+		Simplicius Pelagius Hilarius Mauritius Vergilus Ovidius Naevius Gordanius Gallus Fabricius
+	}
+}
+
+k_eutychian = {
+	color={ 228 128 156 }
+	
+	capital = 693 # Baghdad
+	
+	title = "Patriarch"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	location_ruler_title = yes
+	
+	short_name = yes
+
+	# Always exists
+	landless = yes
+	
+	# Controls a religion
+	controls_religion = eutychian
+
+	culture = assyrian
+	
+	religion = eutychian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	
+	# Regnal names
+	male_names = {
+		Aba Abraham Eliya Denha Emmanuel Giwargis Hnanisho Ishoyahb Makkikha 
+		Maremmeh Pethion Sabrisho Shemon Sargis Surin Theodosios Timotheos Yahballaha Yohannan
+	}
+}
+
+d_constantinople = {
+	color={ 150 90 30 }
+	color2={ 220 220 0 }
+	
+	capital = 496 # Constantinople
+	
+	title = "Patriarch"
+	title_prefix = "Patriarchate of"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+
+	# Always exists
+	landless = yes
+	
+	religion = imperial
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	
+	# Regnal names
+	male_names = {
+		Alexios Anastasios Arsenios Athanasios Antonios	Basileios Dositheos Eustathios Eustratios
+		Euthymios Georgios Gerasimos Germanos Gregorios Ignatios Ioannes Ioseph Isaias Isidoros
+		Kallistos Konstantinos Kosmas Leon Loukas Makarios Manuel Matthaios Maximos Methodios
+		Metrophanes Michael Neophytos Nephon Nikolaos Nikephoros Nilos Pavlos Philotheos Photios
+		Polyeuktos Sergios Sisinnios Stephanos Tarasios Theodoros Theodosios Theodotos Theoleptos
+		Theophanes Theophylaktos Tryphon Zacharias
+	}
+}
+
+d_pentarch_alexandria = {
+	color={ 100 219 134 }
+	color2={ 255 255 255 }
+	
+	capital = 802 # Alexandria
+	
+	title = "POPE"
+	foa = "POPE_FOA"
+	title_prefix = "PAPACY_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_pentarch_antioch = {
+	color={ 142 63 129 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = miaphysite
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	pentarchy = nestorian
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_pentarch_jerusalem = {
+	color={ 180 180 180 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+		
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = imperial
+	pentarchy = arian
+	pentarchy = donatism
+	pentarchy = adoptionism
+	pentarchy = sabellianism
+	pentarchy = pelagianism
+	pentarchy = macedonianism
+	pentarchy = marcionism
+	pentarchy = priscillianism
+	pentarchy = valentinianism
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_patriarch_armenia = {
+	color={ 142 63 129 }
+	color2={ 255 255 255 }
+	
+	capital = 774 # Jerusalem
+	
+	title = "PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+	title_prefix = "PATRIARCHATE_OF"
+	location_ruler_title = yes
+
+	allow = {
+		always = no
+	}
+	
+	# Always exists
+	landless = yes	
+	religion = miaphysite
+		
+	# Cannot be held as a secondary title
+	primary = yes
+	pentarchy = miaphysite
+
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}

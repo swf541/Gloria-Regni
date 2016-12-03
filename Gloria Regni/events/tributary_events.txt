@@ -1,0 +1,104 @@
+namespace = inherit
+
+character_event = {
+	id = inherit.1
+	hide_window = yes
+	
+	desc = ok
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			any_independent_ruler = { #check if ROOT has any tributaries
+				pays_tribute_to = ROOT
+			}
+			is_tributary = yes #checks if tributary
+		}
+	}
+	option = {
+		name = "ok"
+		if = { #Make suzerain's heir the new suzerain
+			limit = {
+				any_independent_ruler = {
+					suzerain = { character = ROOT }
+				}
+			}
+			any_independent_ruler = {
+				limit = {
+					pays_tribute_to = ROOT
+				}
+				ROOT = {
+					current_heir = {
+						make_tributary = { who = PREVPREV percentage = 0.1 }
+						character_event = { id = inherit.5 }
+					}
+				}
+			}
+		}
+		if = { #make tributary's heir a new tributary
+			limit = {
+				is_tributary = yes
+			}
+			suzerain = {
+				save_event_target_as = target_suzerain
+			}
+			current_heir = {
+				character_event = { id = inherit.5 days = 1 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = inherit.5
+	hide_window = yes
+	
+	desc = "EVTDESCinherit.3"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTinherit.3"
+		event_target:target_suzerain = {
+			make_tributary = { who = ROOT percentage = 0.1 }
+		}
+	}
+}
+
+character_event = { # creating title
+	id = inherit.6
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		is_tributary = yes
+	}
+	
+	option = {
+		suzerain = {
+			save_event_target_as = target_suzerain
+		}
+		character_event = { id = inherit.5 days = 1 }
+	}
+}
+character_event = { #on new holder
+	id = inherit.7
+	is_triggered_only = yes
+	hide_window = yes
+	
+	option = {
+		if = {
+			limit = {
+				FROMFROM = {
+					is_tributary = yes
+				}
+			}
+			FROMFROM = {
+				suzerain = {
+					save_event_target_as = target_suzerain
+				}
+			}
+			character_event = { id = inherit.5 days = 1 }
+		}
+	}
+}

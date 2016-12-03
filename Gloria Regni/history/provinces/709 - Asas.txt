@@ -1,0 +1,23 @@
+# 709 - Asas / Hunasira
+
+# County Title
+title = c_asas
+
+# Settlements
+max_settlements = 4
+
+b_hunasira = castle
+b_siffin = city
+b_balis = temple
+
+#b_qasirin = castle
+
+# Misc
+culture = aramean
+religion = miaphysite
+810.1.1 = {
+culture = levantine_arabic
+religion = sunni
+}
+
+1187.1.1 = { b_qasirin = castle } 

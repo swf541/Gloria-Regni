@@ -1,0 +1,21 @@
+# 684 - Nisibin
+
+# County Title
+title = c_nisibin
+
+# Settlements
+max_settlements = 5
+b_nusaybin = castle
+b_jaziratibnumar = city
+b_dunaisir = temple
+b_daranisibis  = castle
+
+#b_hisnkaifa = castle
+
+# Misc
+culture = kurdish
+religion = miaphysite
+
+# History
+1255.1.1 = {remove_settlement = b_daranisibis}
+1255.1.1 = {remove_settlement = b_jaziratibnumar}

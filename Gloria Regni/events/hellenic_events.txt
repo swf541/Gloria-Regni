@@ -1,0 +1,1247 @@
+namespace = PA
+
+# First Conversion
+narrative_event = {
+	id = PA.10103
+	title = EVTNAMEPA.10103
+	desc = EVTDESCPA.10103
+        picture = GFX_evt_throne_room_byzantine
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+                OR = {
+                        has_landed_title = e_western
+                	has_landed_title = e_roman_empire
+                }
+                culture = roman
+                religion_group = christian
+		capital_scope = { province_id = 333 }
+                NOT = { has_global_flag = first_conversion }
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = OPTAPA_10103
+		ROOT = { religion = hellenic_pagan }
+		333 =  { religion = hellenic_pagan }
+		any_courtier = {
+			limit = { 
+				is_close_relative = ROOT
+			}
+			religion = hellenic_pagan
+		}
+                set_global_flag = first_conversion
+                add_character_modifier = {
+                        name = religious_upheaval
+                        duration = 3650
+                        inherit = yes
+		}
+		ai_chance = {
+		factor = 1
+               	}
+	}
+	option = {
+		name = OPTAPA_10103
+                piety = 100
+                set_global_flag = first_conversion
+		ai_chance = {
+		       factor = 0
+		}
+        }
+        option = {
+		name = OPTBPA_10103
+                piety = 200
+                set_global_flag = first_conversion
+		ai_chance = {
+		       factor = 1
+	        }
+        }
+}
+
+# Second Conversion
+narrative_event = {
+	id = PA.10104
+	title = EVTNAMEPA.10104
+	desc = EVTDESCPA.10104
+        picture = GFX_evt_throne_room_byzantine
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+                has_landed_title = e_byzantium
+		capital_scope = { province_id = 496 }
+                OR = {
+                        culture = greek
+                        culture = hellene
+                } 
+                religion_group = christian
+                NOT = { realm_size = 30 }
+                NOT = { has_global_flag = second_conversion }
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = OPTAPA_10104
+		ROOT = { religion = hellenic_pagan }
+		496 =  { religion = hellenic_pagan }
+		any_courtier = {
+			limit = { 
+				is_close_relative = ROOT
+			}
+			religion = hellenic_pagan
+		}
+                set_global_flag = second_conversion
+                add_character_modifier = {
+                        name = religious_upheaval
+                        duration = 3650
+                        inherit = yes
+		}
+		ai_chance = {
+		        factor = 0
+               	}
+	}
+	option = {
+		name = OPTBPA_10104
+                piety = 100
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = no
+			age = 56
+			religion = hellenic_pagan
+			culture = ROOT
+                        trait = mastermind_theologian
+			trait = mystic
+                        trait = scholar
+                        trait = zealous
+		}
+		new_character = {
+			prisoner = yes
+		}
+                set_global_flag = second_conversion
+		ai_chance = {
+			factor = 1
+	        }
+        }
+}
+
+# Heroes of Olympus
+narrative_event = {
+	id = PA.10180
+	title = EVTNAMEPA.10180
+	desc = EVTDESCPA.10180
+	picture = GFX_evt_crusaders
+
+ 	major = yes
+	only_playable = yes
+	only_men = yes
+	
+	trigger = {
+                tier = emperor
+                religion = hellenic_pagan 
+		d_hellenic_pagan = {
+			  has_holder = yes
+		}
+		d_heroes = {
+			  has_holder = no
+		}
+        }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		activate_title = { title = d_heroes status = yes }
+		create_random_soldier = {
+			dynasty = none
+			random_traits = yes
+			religion = hellenic_pagan
+		}
+		new_character = {
+			d_heroes = {
+				grant_title = PREV
+			}
+			set_defacto_liege = THIS
+			wealth = 500
+		}
+		
+		religion_authority = {
+			modifier = religious_order_formed
+			years = 10
+		}
+	}
+	
+	option = {
+		name = OPTAPA_10180
+		trigger = {
+			religion = hellenic_pagan
+		}
+		
+	}
+	option = {
+		name = OPTBPA_10180
+		   trigger = {
+                         NOT = { religion = hellenic_pagan }
+                }
+	}
+}
+
+# Third Conversion
+narrative_event = {
+	id = PA.10187
+	title = EVTNAMEPA.10187
+	desc = EVTDESCPA.10187
+        picture = GFX_evt_library
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+                has_landed_title = e_macedonia
+		capital_scope = { province_id = 490 }
+                OR = {
+                        culture = greek
+                        culture = hellene
+                }
+                religion_group = christian
+                NOT = { has_global_flag = third_conversion }
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = OPTAPA_10187
+		ROOT = { religion = hellenic_pagan }
+		490 =  { religion = hellenic_pagan }
+		any_courtier = {
+			limit = { 
+				is_close_relative = ROOT
+			}
+			religion = hellenic_pagan
+		}
+                set_global_flag = third_conversion
+                add_character_modifier = {
+                        name = religious_upheaval
+                        duration = 3650
+                        inherit = yes
+		}
+		ai_chance = {
+			factor = 0
+                }
+	}
+	option = {
+		name = OPTBPA_10187
+                piety = 100
+                set_global_flag = third_conversion
+		ai_chance = {
+			factor = 1
+		}
+        }
+}
+
+########################################
+# Heroes of Olympus
+########################################
+
+# The son of a ruler volunteers to join the Heroes
+character_event = {
+	id = PA.10190
+	desc = EVTDESCPA.10190
+	picture = GFX_evt_rider_adventure
+	border = GFX_event_normal_frame_religion
+	
+	only_men = yes
+	min_age = 16
+	max_age = 45
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		is_ruler = no
+		OR = {
+			religion = hellenic_pagan
+		}
+		is_heretic = no
+		
+		martial = 5
+		
+		is_title_active = d_heroes
+		
+		OR = {
+			father_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+			mother_even_if_dead = {
+				primary_title = { higher_tier_than = BARON }
+			}
+		}
+		
+		liege = {
+			holy_order = no
+			liege = {
+				holy_order = no
+			}
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_heroes }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_heroes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.25
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = celibate
+		}
+		modifier = {
+			factor = 0.5
+			trait = homosexual
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 0.75
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			any_heir_title = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_primary_heir = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1030 # Ask to go
+		ai_chance = {
+			factor = 100
+		}
+		liege = {
+			character_event = {
+				id = PA.10191
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SOA_1030 # It's a bad idea
+	}
+}
+
+# Son or brother asks to join the Heroes
+character_event = {
+	id = PA.10191
+	desc = EVTDESCPA.10191
+	picture = GFX_evt_rider_adventure
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1031 # Agree
+		ai_chance = {
+			factor = 100
+		}
+		
+		piety = 100
+		
+		FROM = {
+			character_event = {
+				id = PA.10192
+				tooltip = EVTTOOLTIPPA_100192
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1031 # Refuse
+		
+		piety = -100
+		
+		FROM = {
+			character_event = {
+				id = PA.10193
+				tooltip = EVTTOOLTIP_SOA_1033
+			}
+		}
+	}
+}
+
+# Son or brother joins the Heroes
+character_event = {
+	id = PA.10192
+	desc = EVTDESCPA.10192
+	picture = GFX_evt_rider_adventure
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		
+		d_heroes = {
+			holder_scope = {
+				ROOT = {
+					move_character = PREV
+					hidden_tooltip = {
+						clear_wealth = PREV
+					}
+					add_trait = celibate
+				}
+			}
+		}
+	}
+}
+
+# Liege refuses request to join the Heroes
+character_event = {
+	id = PA.10193
+	desc = EVTDESCPA.10193
+	picture = GFX_evt_rider_adventure
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1033
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_refused_request_holy_order
+		}
+	}
+}
+
+# Ping event when donating money to the Heroes
+character_event = {
+	id = PA.10194
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 300
+		FROM = {
+			letter_event = {
+				id = PA.10195
+			}
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_generous_donation
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when donating money to the Heroes
+letter_event = {
+	id = PA.10195
+	desc = EVTDESCPA.10195
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# The Strategos humbly requests the right to build a castle in your demesne
+character_event = {
+	id = PA.10196
+	
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		OR = {
+			religion = hellenic_pagan
+		}
+		is_heretic = no
+		
+		d_heroes = {
+			holder_scope = {
+				wealth = 300
+				NOT = {
+					realm_size = 10
+				}
+			}
+		}
+		
+		any_demesne_province = {
+			has_empty_holding = yes
+		}
+		
+		has_dlc = "Sons of Abraham"
+		
+		NOT = { has_character_modifier = expelled_d_heroes }
+		NOT = {
+			any_liege = {
+				has_character_modifier = expelled_d_heroes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			d_heroes = {
+				holder_scope = {
+					NOT = { demesne_size = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			d_heroes = {
+				holder_scope = {
+					NOT = { demesne_size = 2 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_heroes = {
+				holder_scope = {
+					num_of_count_titles = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			d_heroes = {
+				holder_scope = {
+					realm_size = 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_demesne_province = {
+			limit = {
+				has_empty_holding = yes
+			}
+			province_event = {
+				id = PA.10197
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+province_event = {
+	id = PA.10197
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		d_heroes = {
+			holder_scope = {
+				character_event = {
+					id = PA.10198
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = PA.10198
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			character_event = {
+				id = PA.10199
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = PA.10199
+	desc = EVTDESCPA.10199
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_SOA_1023 # Agree
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				has_character_modifier = expelled_d_heroes
+			}
+		}
+		
+		hidden_tooltip = {
+			FROMFROM = {
+				province_event = { id = PA.10200 }
+			}
+			remove_character_modifier = expelled_d_heroes
+		}
+		
+		piety = 200
+		wealth = 100
+	}
+	
+	option = {
+		name = EVTOPTB_SOA_1153 # Refuse
+		ai_chance = {
+			factor = 20
+		}
+		
+		piety = -100
+	}
+}
+
+# Castle has been erected
+province_event = {
+	id = PA.10200
+	desc = EVTDESCPA.10200
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = {
+			wealth = -300
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SOA_1024
+		build_holding = {
+		   type = castle
+		   holder = FROMFROM
+		}
+	}
+}
+
+# Ping event when expelling the Order
+character_event = {
+	id = PA.10201
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_title_under = {
+			limit = {
+				tier = BARON
+				location = {
+					owner = {
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+					}
+				}
+			}
+			usurp_title = FROM
+		}
+	
+		FROM = {
+			letter_event = {
+				id = PA.10202
+			}
+		}
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_expelled_from_realm
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Notification event when expelling the Heroes
+letter_event = {
+	id = PA.10202
+	desc = EVTDESCPA.10202
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTB_SOA_1061
+	}
+}
+
+# Who should get the Hellenic Church?
+character_event = {
+	id = PA.10205
+	desc = EVTDESCPA.10205
+	picture = GFX_evt_ritual_scroll
+	
+	is_triggered_only = yes
+
+        option = {
+        	name = OPTAPA_10205
+	        activate_title = { title = d_hellenic_pagan status = yes }
+			d_hellenic_pagan = {
+				grant_title = ROOT
+	         }
+        }
+        option = {
+        	name = OPTBPA_10205
+	        activate_title = { title = d_hellenic_pagan status = yes }
+	        hidden_tooltip = {
+			create_character = {
+				random_traits = yes
+				religion = hellenic_pagan
+				culture = ROOT
+				dynasty = NONE
+				female = no
+				age = 54
+				trait = scholarly_theologian
+			}
+			new_character = {
+				d_hellenic_pagan = {
+					grant_title = PREV
+				}
+				set_defacto_liege = ROOT
+			}
+		}
+        }
+}
+
+# Local Temple Event
+character_event = {
+	id = PA.10206
+	desc = EVTDESCPA.10206
+	picture = GFX_evt_emissary
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_ruler = yes
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+        }
+
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = OPTAPA_10206
+                wealth = -50
+                piety = 50
+	}
+	option = {
+	        name = OPTBPA_10206
+		piety = -50
+	}
+}
+
+# The Odyssey Event
+character_event = {
+	id = PA.10207
+	desc = EVTDESCPA.10207
+	picture = GFX_evt_emissary
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_ruler = yes
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+        }
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = OPTAPA_10207
+                wealth = -50
+                prestige = 50
+	}
+	option = {
+	        name = OPTBPA_10207
+		prestige = -50
+	}
+}
+
+# The Iliad Event
+character_event = {
+	id = PA.10208
+	desc = EVTDESCPA.10208
+	picture = GFX_evt_emissary
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_ruler = yes
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+        }
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = OPTAPA_10208
+                wealth = -50
+                prestige = 50
+	}
+	option = {
+	        name = OPTBPA_10208
+		prestige = -50
+	}
+}
+
+# Augur Gives Good Luck
+character_event = {
+	id = PA.10209
+	desc = EVTDESCPA.10209
+	picture = GFX_evt_religious_exultation
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_ruler = yes
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { has_character_modifier = good_augury }
+                NOT = { has_character_modifier = terrible_augury }
+        }
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = OPTPA_100209
+                add_character_modifier = {
+                    name = good_augury
+                    duration = 365
+
+		}
+	}
+}
+
+# Augur Gives Bad Luck
+character_event = {
+	id = PA.10210
+	desc = EVTDESCPA.10210
+	picture = GFX_evt_ritual_scroll
+
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_ruler = yes
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { has_character_modifier = good_augury }
+                NOT = { has_character_modifier = terrible_augury }
+        }
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = OPTPA_100210
+                add_character_modifier = {
+                    name = terrible_augury
+                    duration = 365
+
+		}
+	}
+}
+
+# Cult of Antinous
+character_event = {
+	id = PA.10211
+	desc = EVTDESCPA.10211
+	picture = GFX_evt_ritual_scroll
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_female = no
+                OR = {
+                   trait = fair
+                   trait = homosexual
+                }
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { trait = cultist }
+                NOT = { has_character_flag = no_cults }
+        }
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10211
+                add_trait = cultist
+	}
+
+        option = {
+		name = OPTBPA_10211
+	}
+
+        option = {
+		name = OPTCPA_10211
+                custom_tooltip = {
+			 text = disable_cult_events
+	        }
+                set_character_flag = no_cults
+	}
+}
+
+# Cult of Sappho
+character_event = {
+	id = PA.10212
+	desc = EVTDESCPA.10212
+	picture = GFX_evt_ritual_scroll
+
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_female = yes
+                OR = {
+                   trait = poet
+                   trait = homosexual
+                }
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { trait = cultist }
+                NOT = { has_character_flag = no_cults }
+        }
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10212
+                add_trait = cultist
+	}
+
+        option = {
+		name = OPTBPA_10212
+	}
+
+        option = {
+		name = OPTCPA_10212
+                custom_tooltip = {
+			 text = disable_cult_events
+	        }
+                set_character_flag = no_cults
+	}
+}
+
+# Cult of Mithras
+character_event = {
+	id = PA.10213
+	desc = EVTDESCPA.10213
+	picture = GFX_evt_ritual_scroll
+
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                is_female = no
+                OR = {
+                   trait = strong
+                   trait = hunter
+                   trait = falconer
+                }
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { trait = cultist }
+                NOT = { has_character_flag = no_cults }
+        }
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10213
+                add_trait = cultist
+	}
+
+        option = {
+		name = OPTBPA_10213
+	}
+
+        option = {
+		name = OPTCPA_10214
+                custom_tooltip = {
+			 text = disable_cult_events
+	        }
+                set_character_flag = no_cults
+	}
+}
+
+# Cult of Bacchus
+character_event = {
+	id = PA.10214
+	desc = EVTDESCPA.10214
+	picture = GFX_evt_ritual_scroll
+
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                OR = {
+                   trait = lustful
+                   trait = drunkard
+                   trait = gluttonous
+                }
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { trait = cultist }
+                NOT = { has_character_flag = no_cults }
+        }
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10214
+                add_trait = cultist
+	}
+
+        option = {
+		name = OPTBPA_10214
+	}
+
+        option = {
+		name = OPTCPA_10214
+                custom_tooltip = {
+			 text = disable_cult_events
+	        }
+                set_character_flag = no_cults
+	}
+}
+
+# Cult of Sol Invictus
+character_event = {
+	id = PA.10215
+	desc = EVTDESCPA.10215
+	picture = GFX_evt_ritual_scroll
+
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+                OR = {
+                   trait = just
+                   trait = strong
+                   trait = ambitious
+                }
+		has_dlc = "The Old Gods"
+                religion = hellenic_pagan
+                NOT = { trait = cultist }
+                NOT = { has_character_flag = no_cults }
+        }
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10215
+                add_trait = cultist
+	}
+
+        option = {
+		name = OPTBPA_10215
+	}
+
+        option = {
+		name = OPTCPA_10215
+                custom_tooltip = {
+			 text = disable_cult_events
+	        }
+                set_character_flag = no_cults
+	}
+}
+
+# Sacrifice Event
+character_event = {
+	id = PA.10216
+	desc = EVTDESCPA.10216
+	picture = GFX_evt_ritual_scroll
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTAPA_10216
+                wealth = -100
+                hidden_tooltip = {
+                	character_event = { id = PA.10217 }
+                }                  
+	}
+	option = {
+		name = OPTBPA_10216
+                wealth = -50
+                hidden_tooltip = {
+                        character_event = { id = PA.10218 }
+                } 
+	}
+	option = {
+		name = OPTCPA_10216
+                hidden_tooltip = {
+                        character_event = { id = PA.10219 }
+                } 
+	}
+}
+
+# Sacrifice Event
+character_event = {
+	id = PA.10217
+	desc = EVTDESCPA.10217
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_100217
+                piety = 100
+                add_character_modifier = {
+                	name = hellenic_sacrifice_bull
+                        duration = 365
+
+		}
+	}
+}
+
+# Sacrifice Event
+character_event = {
+	id = PA.10218
+	desc = EVTDESCPA.10218
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_100218
+                piety = 50
+                add_character_modifier = {
+                	name = hellenic_sacrifice_lamb
+                        duration = 365
+
+		}
+	}
+}
+
+# Sacrifice Event
+character_event = {
+	id = PA.10219
+	desc = EVTDESCPA.10219
+	picture = GFX_evt_peasants
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_100219
+                piety = -100
+                add_character_modifier = {
+                	name = hellenic_sacrifice_nothing
+                        duration = 365
+
+		}
+	}
+}

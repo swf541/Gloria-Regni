@@ -1,0 +1,3067 @@
+decisions = {	
+
+	reform_syrian_fleet = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 300
+                        OR = { 
+                                has_landed_title = e_shia
+                        	has_landed_title = e_sunni
+                        }
+                        completely_controls = k_syria
+		        NOT = { is_title_active = d_syrian_fleet }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = syrian_fleet
+			activate_title = { title = d_syrian_fleet status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_syrian_fleet = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	reform_alexandrian_fleet = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 300
+                        OR = { 
+                                has_landed_title = e_shia
+                        	has_landed_title = e_sunni
+                        }
+                        completely_controls = k_egypt
+		        NOT = { is_title_active = d_alexandrian_fleet }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = alexandrian_fleet
+			activate_title = { title = d_alexandrian_fleet status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_alexandrian_fleet = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	form_imperial_paladins = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 400
+                        has_landed_title = e_france
+		        NOT = { is_title_active = d_paladins }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = paladins
+			activate_title = { title = d_paladins status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_paladins = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	form_savaran = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_persia
+                        completely_controls = k_khiva
+                        completely_controls = k_persia
+                        completely_controls = k_mesopotamia
+                        completely_controls = k_baluchistan
+                        completely_controls = k_afghanistan
+		        NOT = { is_title_active = d_savaran }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = savaran
+			activate_title = { title = d_savaran status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_savaran = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	form_janissaries = {
+		is_high_prio = yes
+		potential = {
+                        OR = {
+                        	has_landed_title = k_ottoman
+                        	has_landed_title = e_ottoman
+                        }
+                        completely_controls = k_anatolia
+		        NOT = { is_title_active = d_janissaries }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = janissaries
+			activate_title = { title = d_janissaries status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_janissaries = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Form Ottoman Empire
+	form_ottoman_empire = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+                        has_landed_title = k_ottoman
+                        NOT = { has_landed_title = e_ottoman }
+                }
+                allow = {
+			completely_controls = k_greece
+			completely_controls = k_bulgaria
+			completely_controls = k_anatolia
+                }
+		effect = {
+                         prestige = 300
+		         e_ottoman = {
+			              grant_title = ROOT
+			              copy_title_laws = k_ottoman
+		                      }
+		         k_ottoman = {
+			              destroy_landed_title = THIS
+		                      }
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Form Francian Empire
+	form_francian_empire = {
+		is_high_prio = yes
+		potential = {
+	                tier = king
+                        independent = yes
+                        character = 6392
+			OR = {
+                        	has_landed_title = k_neustria
+                        	has_landed_title = k_austrasia
+                        }
+		}
+                allow = {
+		        completely_controls = k_france
+	                completely_controls = k_aquitaine
+	                completely_controls = k_lotharingia
+	                completely_controls = k_burgundy
+                }
+		effect = {
+                         prestige = 500
+		         e_france = {
+			               grant_title = ROOT
+		         }
+                         hidden_tooltip = {
+                                      narrative_event = { id = CM.1500 }
+                         }
+                }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        make_julich_capital = {
+		is_high_prio = yes
+		potential = {
+		    character = 6392
+			has_landed_title = e_france
+			capital_scope = {
+				NOT = { province_id = 90 }
+			}
+			any_realm_lord = { 
+				AND = {
+					ai = yes
+					has_landed_title = c_julich
+				}
+			}
+			any_realm_lord = { 
+				AND = {
+					ai = yes
+					has_landed_title = b_julich
+				}
+			}
+		}
+		allow = {
+			has_landed_title = e_france
+			any_realm_lord = { has_landed_title = c_julich }
+		}
+		effect = {
+			custom_tooltip = {
+				text = julich_capital
+				hidden_tooltip = {
+					ROOT = {
+						b_julich = {
+							usurp_title = PREV
+						}
+					}
+					b_julich = { 
+						ROOT = { capital = PREV }
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        make_damascus_capital = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_landed_title = e_sunni
+			capital_scope = {
+				NOT = { province_id = 728 }
+			}
+			any_realm_lord = { 
+				AND = {
+					ai = yes
+					has_landed_title = c_damascus
+				}
+			}
+			any_realm_lord = { 
+				AND = {
+					ai = yes
+					has_landed_title = b_qsarbardawil
+				}
+			}
+		}
+		allow = {
+			has_landed_title = e_sunni
+			any_realm_lord = { has_landed_title = c_damascus }
+		}
+		effect = {
+			custom_tooltip = {
+				text = damascus_capital
+				hidden_tooltip = {
+					ROOT = {
+						b_qsarbardawil = {
+							usurp_title = PREV
+						}
+					}
+					b_qsarbardawil = { 
+						ROOT = { capital = PREV }
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        form_mamluks = {
+		is_high_prio = yes
+		potential = {
+                        year = 850
+                        independent = yes
+                        OR = {
+				AND = {
+				has_landed_title = e_arabia
+				has_landed_title = d_sunni
+				}
+								AND = {
+				has_landed_title = e_arabia
+				has_landed_title = d_shia
+				}
+				has_landed_title = k_egypt
+                        }
+		        NOT = { is_title_active = d_mamluks }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = mamluks
+			activate_title = { title = d_mamluks status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_mamluks = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        form_scholae = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = d_scholae }
+                        has_global_flag = revived_roman_culture
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_scholae status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_scholae = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        reform_scholae = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_byzantium
+		        NOT = { is_title_active = d_scholae }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_scholae status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_scholae = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        reform_scholae2 = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = d_scholae }
+                        has_global_flag = revived_roman_culture
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_scholae status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_scholae = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        form_archon = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_byzantium
+		        NOT = { is_title_active = d_archon }
+                        NOT = { has_global_flag = formed_archon }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = formed_archon
+			activate_title = { title = d_archon status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_archon = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        form_nobiles = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = d_nobiles }
+                        has_global_flag = revived_roman_culture
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_nobiles status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_nobiles = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        reform_nobiles = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = d_nobiles }
+                        has_global_flag = revived_roman_culture
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_nobiles status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_nobiles = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Reform Ravenna Exarchate
+	reform_ravenna_exarchate = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = k_ravenna }
+                        NOT = { has_global_flag = revived_roman_culture }
+                }
+                allow = {
+			completely_controls = k_italy
+                }
+		effect = {
+                        hidden_tooltip = {
+				k_ravenna = {
+					grant_title = ROOT
+				}
+                                k_italy = {
+			                any_direct_de_jure_vassal_title = {
+				                de_jure_liege = k_ravenna
+			                }
+		                }
+		                k_italy = {
+			                destroy_landed_title = THIS
+		                }
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Reform Carthage Exarchate
+	reform_carthage_exarchate = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = k_carthage }
+                        NOT = { has_global_flag = revived_roman_culture }
+                }
+                allow = {
+			completely_controls = k_africa
+                }
+		effect = {
+                        hidden_tooltip = {
+				k_carthage = {
+					grant_title = ROOT
+				}
+                                k_africa = {
+			                any_direct_de_jure_vassal_title = {
+				                de_jure_liege = k_carthage
+			                }
+		                }
+		                k_africa = {
+			                destroy_landed_title = THIS
+		                }
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Form Cordoba Exarchate
+	form_cordoba_exarchate = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_roman_empire
+		        NOT = { is_title_active = k_cordoba }
+                        NOT = { has_global_flag = revived_roman_culture }
+                }
+                allow = {
+			completely_controls = k_andalusia
+                }
+		effect = {
+                        hidden_tooltip = {
+				k_cordoba = {
+					grant_title = ROOT
+				}
+                                k_andalusia = {
+			                any_direct_de_jure_vassal_title = {
+				                de_jure_liege = k_cordoba
+			                }
+		                }
+		                k_andalusia = {
+			                destroy_landed_title = THIS
+		                }
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        enlarge_archon = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+		        is_title_active = d_archon
+                        has_landed_title = e_byzantium
+		        NOT = { is_title_active = d_archon2 }
+                        has_global_flag = formed_archon
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = enlarged_archon
+			activate_title = { title = d_archon status = no }
+			activate_title = { title = d_archon2 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_archon2 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        reform_archon = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_byzantium
+                        has_global_flag = formed_archon
+		        NOT = { is_title_active = d_archon }
+                        NOT = { has_global_flag = enlarged_archon }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_archon status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_archon = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        reform_archon2 = {
+		is_high_prio = yes
+		potential = {
+                        realm_size = 150
+                        has_landed_title = e_byzantium
+		        NOT = { is_title_active = d_archon2 }
+                        has_global_flag = enlarged_archon
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_archon2 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_archon2 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Establish Bulgarian Patriarchate
+	establish_bulgarian_patriarchate = {
+		is_high_prio = yes
+		potential = {
+                        trait = zealous
+			OR = {
+                        	 religion = orthodox
+                        	 religion = iconoclast
+                        	 religion = paulician
+                        	 religion = monothelite
+			}
+                        completely_controls = k_bulgaria
+                        OR = {
+                        	 has_landed_title = e_byzantium
+                        	 has_landed_title = e_roman_empire
+                        }
+                        NOT = { has_global_flag = bulgarian_patriarchate }
+                }
+
+		effect = {
+                         prestige = 100
+                	 character_event = { ID = PA.10286 days = 1 }
+                         set_global_flag = bulgarian_patriarchate
+                }
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Establish Serbian Patriarchate
+	establish_serbian_patriarchate = {
+		is_high_prio = yes
+		potential = {
+                        trait = zealous
+			OR = {
+                        	 religion = orthodox
+                        	 religion = iconoclast
+                        	 religion = paulician
+                        	 religion = monothelite
+			}
+                        completely_controls = k_serbia
+                        OR = {
+                        	 has_landed_title = e_byzantium
+                        	 has_landed_title = e_roman_empire
+                        }
+                        NOT = { has_global_flag = serbian_patriarchate }
+                }
+
+		effect = {
+                         prestige = 100
+                	 character_event = { ID = PA.10293 days = 1 }
+                         set_global_flag = serbian_patriarchate
+                }
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Request Bulgarian Patriarchate
+	request_bulgarian_patriarchate = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+                                 religion = imperial
+                        	 religion = orthodox
+                        	 religion = iconoclast
+                        	 religion = paulician
+                        	 religion = monothelite
+			}
+                        OR = {
+                        	 has_landed_title = k_bulgaria
+                        	 has_landed_title = e_bulgaria
+			}
+                        NOT = { has_global_flag = bulgarian_patriarchate }   
+                }
+
+                allow = {
+                        OR = {
+                                d_constantinople = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_orthodox = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_iconoclast = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_paulician = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_monothelite = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                        }
+                }
+
+		effect = {
+                         prestige = 100
+                	 character_event = { ID = PA.10284 days = 1 }
+                         set_global_flag = bulgarian_patriarchate
+                }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Request Serbian Patriarchate
+	request_serbian_patriarchate = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+                       	         religion = imperial
+                        	 religion = orthodox
+                        	 religion = iconoclast
+                        	 religion = paulician
+                        	 religion = monothelite
+			}
+                        OR = {
+                        	 has_landed_title = k_serbia
+                        	 has_landed_title = e_serbia
+                        }
+                        NOT = { has_global_flag = serbian_patriarchate }
+                }
+
+                allow = {
+                        OR = {
+                                d_constantinople = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_orthodox = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_iconoclast = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_paulician = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                                k_monothelite = {
+                                        opinion = {
+                                                who = ROOT
+                                                value = 100
+                                        }
+                                }
+                        }
+                }
+
+		effect = {
+                         prestige = 100
+                	 character_event = { ID = PA.10285 days = 1 }
+                         set_global_flag = serbian_patriarchate
+                }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Visigothic Arian Conversion
+	visigothic_arian_conversion = {
+		is_high_prio = yes
+		potential = {
+                        is_feudal = yes
+                        independent = yes
+                        culture = visigothic
+                        religion = imperial
+                        ROOT = {
+                                NOT = { religion_authority = 0.4 }
+                        }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        ROOT = { religion = arian }
+		        any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					religion = arian
+				}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Ostrogothic Arian Conversion
+	ostrogothic_arian_conversion = {
+		is_high_prio = yes
+		potential = {
+                        is_feudal = yes
+                        independent = yes
+                        culture = ostrogothic
+                        religion = imperial
+                        ROOT = {
+                                NOT = { religion_authority = 0.4 }
+                        }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        ROOT = { religion = arian }
+		        any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					religion = arian
+				}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Revive Ostrogothic Culture
+	revive_ostrogothic_culture = {
+		is_high_prio = yes
+		potential = {
+                        culture = gothic
+			NOT = { culture = ostrogothic }
+			has_landed_title = k_taurica
+			NOT = { has_global_flag = revived_ostrogothic_culture }
+			capital_scope = { province_id = 559 }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        custom_tooltip = {
+				text = ostrogothic_culture
+			}
+		        hidden_tooltip = {
+				ROOT = { culture = ostrogothic }
+				559 =  { culture = ostrogothic }
+				any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					culture = ostrogothic
+				}
+                        }
+			set_global_flag = revived_ostrogothic_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Revive Visigothic Culture
+	revive_visigothic_culture = {
+		is_high_prio = yes
+		potential = {
+                        culture = hispanic
+			NOT = { culture = visigothic }
+			has_landed_title = k_visigothia
+			NOT = { has_global_flag = revived_visigothic_culture }
+			capital_scope = { province_ID = 197 }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        custom_tooltip = {
+				text = visigothic_culture
+			}
+		        hidden_tooltip = {
+				ROOT = { culture = visigothic }
+				197 =  { culture = visigothic }
+				any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					culture = visigothic
+				}
+                        }
+			set_global_flag = revived_visigothic_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+        # Restore Gallia
+	restore_gallia = {
+		is_high_prio = yes
+		potential = {
+                        culture = galloroman
+			has_landed_title = k_france
+		        OR = {
+                                religion = hellenic_pagan
+			        religion_group = christian
+		        }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = k_france
+	                completely_controls = k_lotharingia
+	                completely_controls = k_aquitaine
+	                completely_controls = k_burgundy
+	                completely_controls = k_brittany
+                }
+		effect = {
+                         prestige = 300
+                         k_gallia = {
+                                  grant_title = ROOT
+			          copy_title_laws = k_france
+                         }
+		         k_france = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_gallia
+			         }
+		         }
+		         k_lotharingia = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_gallia
+			         }
+		         }
+		         k_aquitaine = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_gallia
+			         }
+		         }
+		         k_burgundy = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_gallia
+			         }
+		         }
+		         k_brittany = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_gallia
+			         }
+		         }
+                         set_global_flag = gallia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Restore galloroman Empire
+	restore_galloroman_empire = {
+		is_high_prio = yes
+		potential = {
+                        culture = galloroman
+			has_landed_title = k_gallia
+		        OR = {
+                                religion = hellenic_pagan
+								religion = hellenic_pagan_reformed
+			        religion_group = christian
+		        }
+                }
+                allow = {
+                        independent = yes
+                        completely_controls = k_gallia
+                }
+		effect = {
+                         prestige = 300
+                         e_gallia = {
+                                    grant_title = ROOT
+			            copy_title_laws = k_gallia
+                         }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Restore Palmyrene Empire
+	restore_palmyrene_empire = {
+		is_high_prio = yes
+		potential = {
+                        culture = aramean
+			has_landed_title = k_syria
+		        OR = {
+                                religion = hellenic_pagan
+								religion = hellenic_pagan_reformed
+			        religion_group = christian
+		        }
+                }
+                allow = {
+                        independent = yes
+                        completely_controls = k_syria
+                        completely_controls = k_jerusalem
+                }
+		effect = {
+                         prestige = 300
+                         e_palmyra = {
+                                    grant_title = ROOT
+			            copy_title_laws = k_syria
+                         }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Ostrogothic Germanic Conversion
+	ostrogothic_germanic_conversion = {
+		is_high_prio = yes
+		potential = {
+                        is_feudal = yes
+                        independent = yes
+                        culture = ostrogothic
+                        religion = imperial 
+                        ROOT = {
+                                NOT = { religion_authority = 0.2 }
+                        }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        ROOT = { religion = germanic_pagan }
+		        any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					religion = germanic_pagan
+				}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Visigothic Germanic Conversion
+	visigothic_arian_conversion = {
+		is_high_prio = yes
+		potential = {
+                        is_feudal = yes
+                        independent = yes
+                        culture = visigothic
+                        OR = {
+                                religion = imperial
+                                religion = catholic
+                        }
+                        ROOT = {
+                                NOT = { religion_authority = 0.2 }
+                        }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        ROOT = { religion = germanic_pagan }
+		        any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					religion = germanic_pagan
+				}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Form Rum Empire
+	form_rum_empire = {
+		is_high_prio = yes
+		potential = {
+                        culture = turkish
+                        religion_group = muslim
+			has_landed_title = k_rum
+                }
+                allow = {
+                        independent = yes
+                        completely_controls = k_cyprus
+                        completely_controls = k_thrace
+                        completely_controls = k_macedon
+                        completely_controls = k_anatolia
+                        completely_controls = k_bulgaria
+                        NOT = { has_landed_title = k_ottomans }
+                        NOT = { has_landed_title = e_ottomans }
+                }
+		effect = {
+                         prestige = 300
+                         e_rum = {
+                                    grant_title = ROOT
+			            copy_title_laws = k_rum
+                         }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Restore Ostrogothia
+	restore_ostrogothia = {
+		is_high_prio = yes
+		potential = {
+                        culture = ostrogothic
+			has_landed_title = k_taurica
+		        OR = {
+			        religion = imperial
+			        is_heresy_of = imperial
+			        religion = orthodox
+			        is_heresy_of = orthodox
+                                religion = germanic_pagan
+                                is_heresy_of = germanic_pagan
+		        }
+                        NOT = { has_global_flag = ostrogothia }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = k_taurica
+                }
+		effect = {
+                         prestige = 300
+                         k_ostrogoth = {
+                                 grant_title = ROOT
+			         copy_title_laws = k_taurica
+                         }
+		         k_taurica = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				          de_jure_liege = k_ostrogoth
+			         }
+		         }
+                         set_global_flag = ostrogothia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Migrate to Italy 
+	migrate_to_italy = {
+		is_high_prio = yes
+		potential = {
+                        culture = ostrogothic
+			has_landed_title = k_taurica
+		        OR = {
+			        religion = imperial
+			        is_heresy_of = imperial
+			        religion = orthodox
+			        is_heresy_of = orthodox
+                                religion = germanic_pagan
+                                is_heresy_of = germanic_pagan
+		        }
+                        NOT = { has_global_flag = ostrogothic_migration }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = k_taurica
+                }
+		effect = {
+		        set_global_flag = ostrogothic_migration
+		        351 = { # Ravenna
+			        kingdom = {
+				        ROOT = {
+					        war = {
+						        casus_belli = tribal_invasion
+						        target = PREVPREV # The top liege of the owner
+						        thirdparty_title = PREV # The de jure kingdom
+					        }
+				        }
+			        }
+		        }
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 23
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 560 # Theodoro
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                                        earmark = ostrogothic_conquest
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 30
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 560 # Theodoro
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                                        earmark = ostrogothic_conquest
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 27
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 560 # Theodoro
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                                        earmark = ostrogothic_conquest
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}    
+
+        # Restore Ostrogothia2
+	restore_ostrogothia2 = {
+		is_high_prio = yes
+		potential = {
+                        culture = ostrogothic
+			has_landed_title = k_taurica
+		        OR = {
+			        religion = imperial
+			        is_heresy_of = imperial
+			        religion = orthodox
+			        is_heresy_of = orthodox
+                                religion = germanic_pagan
+                                is_heresy_of = germanic_pagan
+		        }
+                        NOT = { has_global_flag = ostrogothia }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = k_italy
+                }
+		effect = {
+                         prestige = 300
+                         k_ostrogoth = {
+                                 grant_title = ROOT
+			         copy_title_laws = k_taurica
+                         }
+                         k_taurica = {
+			         destroy_landed_title = THIS
+                         }
+		         k_italy = {
+			         destroy_landed_title = THIS
+			         any_direct_de_jure_vassal_title = {
+				         de_jure_liege = k_ostrogoth
+			         }
+		         }
+                         set_global_flag = ostrogothia
+                         disband_event_forces = ostrogothic_conquest
+		         # The Ostrogothic culture in Ukraine is lost
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+		         }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+		         }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+			 }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+			 }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+			 }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+			 }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+			 }
+			 random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		         }
+		         random_realm_province = {
+			 	limit = {
+					culture = ostrogothic
+				        	kingdom = {
+					        	OR = {
+						        	title = k_taurica
+						                title = k_kiev
+						                title = k_cuman
+						                title = k_alania
+						                title = k_dacia
+                        				}
+						}
+				any_neighbor_province = {
+					NOT = { culture = ostrogothic }
+				}
+		        }
+		        random_neighbor_province = {
+				limit = {
+					NOT = { culture = ostrogothic }
+				}
+				reverse_culture = PREV
+				reverse_religion = PREV
+			        }
+		        }
+		
+		        # Lose control of the Ukraininan lands
+	                any_realm_province = {
+				limit = {
+					OR = {
+						kingdom = {
+							OR = {
+								title = k_taurica
+								title = k_kiev
+								title = k_cuman
+								title = k_alania
+								title = k_dacia
+							}
+						}
+					}
+					owner = {
+						# Human vassals get to keep their stuff
+						OR = {
+							ai = yes
+							character = ROOT
+						}
+					}
+				}
+				county = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = PREV
+						culture = PREV
+						female = no
+						age = 25
+						trait = peasant_leader
+					}
+					new_character = {
+						usurp_title_plus_barony_if_unlanded = PREV
+						set_defacto_liege = THIS
+				        }
+			        }
+		        }
+                }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Incorporate Sicily
+	incorporate_sicily = {
+		is_high_prio = yes
+		potential = {
+                        culture = ostrogothic
+			has_landed_title = k_ostrogoth
+                        NOT = { has_global_flag = ostrogothic_sicily }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = k_sicily
+                }
+		effect = {
+                         prestige = 200
+		         k_sicily = {
+			           destroy_landed_title = THIS
+			           any_direct_de_jure_vassal_title = {
+				            de_jure_liege = k_ostrogoth
+			           }
+		         }
+                         set_global_flag = ostrogothic_sicily
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Form the Golden Horde
+	form_golden_horde = {
+		is_high_prio = yes
+		potential = {
+                        culture = mongol
+			has_landed_title = e_mongol_empire
+                        NOT = { has_landed_title = k_golden_horde }
+                        NOT = { any_vassal = {
+                                has_landed_title = k_golden_horde
+                                }
+                        }        
+                }
+                allow = {
+                        completely_controls = k_kimak
+                        completely_controls = k_cuman
+                        completely_controls = k_volga_bulgaria
+                }
+		effect = {
+                         activate_title = { title = k_golden_horde status = yes }
+                         k_golden_horde = {
+                                 grant_title = ROOT
+			         copy_title_laws = e_mongol_empire
+                         }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+        # Form the Ilkhanate
+	form_ilkhanate = {
+		is_high_prio = yes
+		potential = {
+                        culture = mongol
+			has_landed_title = e_mongol_empire
+                        NOT = { has_landed_title = k_il-khanate }
+                        NOT = { any_vassal = {
+                                has_landed_title = k_il-khanate
+                                }
+                        }        
+                }
+                allow = {
+                        completely_controls = k_persia
+                        completely_controls = k_baluchistan
+                        completely_controls = k_afghanistan
+                }
+		effect = {
+                         activate_title = { title = k_il-khanate status = yes }
+                         k_il-khanate = {
+                                 grant_title = ROOT
+			         copy_title_laws = e_mongol_empire
+                         }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Declare Independence
+	form_golden_horde2 = {
+		is_high_prio = yes
+		potential = {
+                        tier = king
+                        culture = mongol
+                        independent = yes
+			has_landed_title = k_golden_horde
+                        NOT = { has_landed_title = e_golden_horde }
+                }
+                allow = {
+                        completely_controls = k_kimak
+                        completely_controls = k_cuman
+                        completely_controls = k_volga_bulgaria
+                }
+		effect = {
+                         prestige = 500
+                         activate_title = { title = e_golden_horde status = yes }
+                         e_golden_horde = {
+                                 grant_title = ROOT
+			         copy_title_laws = k_golden_horde
+                         }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Declare Independence
+	form_ilkhanate2 = {
+		is_high_prio = yes
+		potential = {
+                        tier = king
+                        culture = mongol
+                        independent = yes
+			has_landed_title = k_il-khanate
+                        NOT = { has_landed_title = e_il-khanate }
+                }
+                allow = {
+                        completely_controls = k_persia
+                        completely_controls = k_baluchistan
+                        completely_controls = k_afghanistan
+                }
+		effect = {
+                         prestige = 500
+                         activate_title = { title = e_il-khanate status = yes }
+                         e_il-khanate = {
+                                 grant_title = ROOT
+			         copy_title_laws = k_il-khanate
+                         }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Revive Hunnic Culture
+	revive_hunnic_culture = {
+		is_high_prio = yes
+		potential = {
+                        culture_group = altaic
+			NOT = { culture = hunnic }
+			has_landed_title = e_hunnicia
+			NOT = { has_global_flag = revived_hunnic_culture }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+		        custom_tooltip = {
+				text = hunnic_culture
+		        }
+		        hidden_tooltip = {
+				ROOT = { culture = hunnic }
+				any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					culture = hunnic
+				}
+                        }
+			set_global_flag = revived_hunnic_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	reform_imperial_nokkor = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_hunnicia
+		        NOT = { has_global_flag = reformed_imperial_nokkor }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = reformed_imperial_nokkor
+			activate_title = { title = d_nokkor status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_nokkor = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	reform_sacred_band = {
+		is_high_prio = yes
+		potential = {
+                        tier = emperor
+                        religion = hellenic_pagan
+                        OR = { 
+                        	has_landed_title = d_hellenic_pagan
+                                any_vassal = {
+                                	has_landed_title = d_hellenic_pagan
+                                }
+                        }
+		        NOT = { has_global_flag = reformed_sacred_band }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = reformed_sacred_band
+			activate_title = { title = d_sacred_band status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+                                        trait = homosexual
+				}
+				new_character = {
+					d_sacred_band = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_imperial_order = {
+		is_high_prio = yes
+		potential = {
+                        religion = imperial
+                        any_vassal = {
+                                has_landed_title = k_imperial
+                        }
+				has_landed_title = e_wre
+		        NOT = { has_global_flag = formed_imperial_order }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = formed_imperial_order
+			activate_title = { title = d_imperial_order status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_imperial_order = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        expel_imperial_order = {
+		potential = {
+			ai = no
+                        religion = imperial
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_imperial_order
+			NOT = { has_character_modifier = expelled_d_imperial_order }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_imperial_order = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_imperial_order = {
+					holder_scope = {
+						character_event = {
+							id = PA.10347
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_imperial_order
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_imperial_order = {
+		potential = {
+                        has_dlc = "Sons of Abraham"
+			religion = imperial
+			is_heretic = no
+			is_title_active = d_imperial_order
+			
+			NOT = { has_character_modifier = expelled_d_imperial_order }
+			
+			d_imperial_order = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_imperial_order = {
+					holder_scope = {
+						character_event = {
+							id = PA.10340
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = imperial }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+        expel_sacred_band = {
+		potential = {
+			ai = no
+                        religion = hellenic_pagan_reformed
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_sacred_band
+			NOT = { has_character_modifier = expelled_d_sacred_band }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_sacred_band = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_sacred_band = {
+					holder_scope = {
+						character_event = {
+							id = PA.10362
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_sacred_band
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_sacred_band = {
+		potential = {
+                        has_dlc = "Sons of Abraham"
+			religion = hellenic_pagan
+			is_heretic = no
+			is_title_active = d_sacred_band
+			
+			NOT = { has_character_modifier = expelled_d_sacred_band }
+			
+			d_sacred_band = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_sacred_band = {
+					holder_scope = {
+						character_event = {
+							id = PA.10355
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = hellenic_pagan }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+        expel_darkhan_knights = {
+		potential = {
+			ai = no
+                        religion = tengri_pagan_reformed
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_darkhan_knights
+			NOT = { has_character_modifier = expelled_d_darkhan_knights }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_darkhan_knights = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_darkhan_knights = {
+					holder_scope = {
+						character_event = {
+							id = SoA.2060
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_darkhan_knights
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_darkhan_knights = {
+		potential = {
+                        has_dlc = "Sons of Abraham"
+			religion = tengri_pagan_reformed
+			is_heretic = no
+			is_title_active = d_darkhan_knights
+			
+			NOT = { has_character_modifier = expelled_d_darkhan_knights }
+			
+			d_darkhan_knights = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_darkhan_knights = {
+					holder_scope = {
+						character_event = {
+							id = SoA.2040
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = tengri_pagan_reformed }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+        expel_guardians_nyame = {
+		potential = {
+			ai = no
+                        religion = west_african_pagan_reformed
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_guardians_nyame
+			NOT = { has_character_modifier = expelled_d_guardians_nyame }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_guardians_nyame = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_guardians_nyame = {
+					holder_scope = { character_event = { id = SoA.2160 } }
+				}
+				add_character_modifier = {
+					name = expelled_d_guardians_nyame
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_guardians_nyame = {
+		potential = {
+                        has_dlc = "Sons of Abraham"
+			religion = west_african_pagan_reformed
+			is_heretic = no
+			is_title_active = d_guardians_nyame
+			
+			NOT = { has_character_modifier = expelled_d_guardians_nyame }
+			
+			d_guardians_nyame = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_guardians_nyame = {
+					holder_scope = {
+						character_event = {
+							id = SoA.2140
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = west_african_pagan_reformed }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+        # Unite Magyars
+	unite_magyars = {
+		is_high_prio = yes
+		potential = {
+                        culture = hungarian
+                        NOT = { has_global_flag = magyars }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = c_korsun
+	                completely_controls = c_oleshye
+	                completely_controls = c_chortitza
+	                completely_controls = c_pereyaslavl
+	                completely_controls = c_sharukan
+	                completely_controls = c_sugrov
+	                completely_controls = c_peresechen
+	                completely_controls = c_torki
+	                completely_controls = c_belgorod
+	                completely_controls = c_olvia
+
+                }
+		effect = {
+                         prestige = 300
+                         k_magyar = {
+                                 grant_title = ROOT
+                         }
+                         set_global_flag = magyars
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        # Migrate to Carpathia
+	migrate_to_carpathia = {
+		is_high_prio = yes
+		potential = {
+                        culture = hungarian
+			has_landed_title = k_magyar
+                        NOT = { has_global_flag = magyar_migration }
+                }
+                allow = {
+                        independent = yes
+	                completely_controls = c_korsun
+	                completely_controls = c_oleshye
+	                completely_controls = c_chortitza
+	                completely_controls = c_pereyaslavl
+	                completely_controls = c_sharukan
+	                completely_controls = c_sugrov
+	                completely_controls = c_peresechen
+	                completely_controls = c_torki
+	                completely_controls = c_belgorod
+	                completely_controls = c_olvia
+                }
+		effect = {
+		        set_global_flag = magyar_migration
+                        522 = { # Pest
+                                kingdom = {
+                                        ROOT = {
+                                                war = {
+                                                        casus_belli = tribal_invasion
+                                                        target = PREVPREV # The top liege of the owner
+                                                        thirdparty_title = PREV # The de jure kingdom
+                                                }
+                                        }
+                                }
+                        }
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 23
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 544 # Korsun
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                    earmark = hungarian_conquest
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 30
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 544 # Korsun
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                    earmark = hungarian_conquest
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 27
+				attributes = {
+					martial = 6
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 544 # Korsun
+					owner = PREV
+				        troops = {
+                                        archers = { 1000 1000 }
+                                        pikemen = { 800 800 }
+					light_cavalry = { 1200 1200 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 2400 2400 }
+					knights = { 800 800 }
+                                        }
+                    earmark = hungarian_conquest
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_golden_band = {
+		is_high_prio = yes
+		potential = {
+                        has_landed_title = e_carthage
+		        NOT = { has_global_flag = formed_golden_band }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+                        set_global_flag = formed_golden_band
+			activate_title = { title = d_golden_band status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_golden_band = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+        expel_saint_maron = {
+		potential = {
+			ai = no
+                        religion = catholic
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_saint_maron
+			NOT = { has_character_modifier = expelled_d_saint_maron }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_saint_maron = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_saint_maron = {
+					holder_scope = {
+						character_event = { id = SoA.2160 }
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_saint_maron
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_saint_maron = {
+		potential = {
+                        has_dlc = "Sons of Abraham"
+			religion = catholic
+			is_heretic = no
+			is_title_active = d_saint_maron
+			
+			NOT = { has_character_modifier = expelled_d_saint_maron }
+			
+			d_saint_maron = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_saint_maron = {
+					holder_scope = {
+						character_event = {
+							id = SoA.2140
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = catholic }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+	prisoner_release_all = {
+		potential = {
+			ai = no
+			any_courtier = {
+				not = { has_character_modifier = house_arrest }
+				prisoner = yes
+			}
+		}
+		effect = {
+			any_courtier = {
+				limit = {
+					prisoner = yes
+				}
+				hidden_tooltip = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_merciful
+						months = 60
+					}
+					if = {
+						limit = {
+							liege = { character = ROOT }
+							is_landed = yes
+						}
+						ROOT = {
+							any_vassal = {
+								limit = {
+									not = {
+										has_opinion_modifier = { who = ROOT modifier = opinion_released_prisoner }
+									}
+								}
+								opinion = {
+									modifier = opinion_released_prisoner
+									who = ROOT
+									months = 30
+								}
+							}
+						}
+					}
+				}
+				imprison = no
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	# Form Chagatai Khanate
+	form_chagatai = {
+		is_high_prio = yes
+		potential = {
+                        culture = mongol
+			has_landed_title = e_mongol_empire
+                        NOT = { has_landed_title = k_chagatai }
+                        NOT = { any_vassal = { has_landed_title = k_chagatai } }        
+                 }
+                 allow = {
+                        completely_controls = k_khiva
+                 }
+		effect = {
+                        activate_title = { title = k_chagatai status = yes }
+                        k_chagatai = {
+                        	grant_title = ROOT
+		           	copy_title_laws = e_mongol_empire
+                        }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+        # Declare Independence
+	form_chagatai2 = {
+		is_high_prio = yes
+		potential = {
+                        tier = king
+                        culture = mongol
+                        independent = yes
+			has_landed_title = k_chagatai
+                        NOT = { has_landed_title = e_chagatai }
+                }
+                allow = {
+            		completely_controls = k_khiva
+                }
+		effect = {
+            		 prestige = 500
+                         activate_title = { title = e_chagatai status = yes }
+                         e_chagatai = {
+                	 	grant_title = ROOT
+			        copy_title_laws = k_chagatai
+                         }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

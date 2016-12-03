@@ -1,0 +1,22 @@
+# 713 - Druz
+
+# County Title
+title = c_druz
+
+# Settlements
+max_settlements = 5
+b_wasit = castle
+b_kaskar = city
+b_badinwasit = temple
+
+#b_famassilh = temple
+#b_almubarak = castle
+#b_zubaidiya = castle
+
+# Misc
+culture = mandaic
+religion = mandean
+
+# History
+861.1.1 = { b_almubarak = castle }
+1258.1.1 = { remove_settlement = b_almubarak }

@@ -1,0 +1,618 @@
+namespace = MG
+
+##############################
+#####CODER: MILOILGUFO########
+##############################
+
+#TRIGGERED BY ON_MAJOR_BATTLE_WON_LEADER
+#RARELY GIVES SUCCESSFUL_GENERAL MODIFER
+character_event = {
+	id = MG.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_alive = yes
+		liege = {
+			any_demesne_title = {
+				has_law = imperial_administration
+			}
+		}
+		NOT = { trait = succ_commander }
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2
+					trait = misguided_warrior
+				}
+				modifier = {
+					factor = 3
+					trait = tough_soldier
+				}
+				modifier = {
+					factor = 4
+					trait = skilled_tactician
+				}
+				modifier = {
+					factor = 5
+					trait = brilliant_strategist
+				}
+				modifier = {
+					factor = 1.2
+					trait = possessed
+				}
+				modifier = {
+					factor = 1.1
+					trait = scarred
+				}
+				modifier = {
+					factor = 2
+					trait = genius
+				}
+				modifier = {
+					factor = 1.5
+					trait = quick
+				}
+				modifier = {
+					factor = 1.5
+					trait = strong
+				}
+				modifier = {
+					factor = 0.5
+					trait = weak
+				}
+				modifier = {
+					factor = 0.5
+					trait = slow
+				}
+				modifier = {
+					factor = 0.5
+					trait = humble
+				}
+				modifier = {
+					factor = 0.1
+					trait = content
+				}
+				modifier = {
+					factor = 0.5
+					trait = craven
+				}
+				modifier = {
+					factor = 0.4
+					trait = imbecile
+				}
+				modifier = {
+					factor = 0.3
+					trait = inbred
+				}
+				modifier = {
+					factor = 1.2
+					trait = duelist
+				}
+				modifier = {
+					factor = 1.2
+					trait = strategist
+				}
+				modifier = {
+					factor = 1.2
+					has_focus = focus_war
+				}
+				modifier = {
+					factor = 1.2
+					trait = brave
+				}
+				modifier = {
+					factor = 1.1
+					trait = proud
+				}
+				modifier = {
+					factor = 2
+					trait = ambitious
+				}
+				add_trait = succ_commander
+				character_event = { id = MG.2 }
+				character_event = { id = MG.10 }
+			}
+			1000 = {
+				
+			}
+		}
+	}
+}
+
+#GENERAL NOTIFIED OF TRAIT
+character_event = {
+	id = MG.2
+	desc = EVTDESC_MG_2
+	picture = GFX_evt_battle_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_2 #OH YEAH
+		tooltip = {
+			add_trait = succ_commander
+		}
+	}
+}
+
+#COSTANTLY REPEATS ITSELF UNTIL THE WAR IS OVER
+#THEN THE COMMANDER RECEIVES THE EVENT TO REQUEST THE HONOR
+character_event = {
+	id = MG.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				liege = {
+					war = yes
+				}
+			}
+			repeat_event = { id = MG.10 days = 7 }
+			break = yes
+		}
+		character_event = { id = MG.20 }
+	}
+}
+
+#COMMANDER DECIDES, ASK A TRIUMPH?
+character_event = {
+	id = MG.20
+	desc = EVTDESC_MG_20
+	picture = GFX_evt_melee
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_20 #I'LL ASK
+		hidden_tooltip = {
+			liege = {
+				character_event = { id = MG.30 days = 5 }
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 5
+				trait = proud
+			}
+		}
+	}
+	option  = {
+		name = EVTOPTB_MG_20 #NO WAY
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = content
+			}
+			modifier = {
+				factor = 5
+				trait = humble
+			}
+		}
+	}
+}
+
+#LIEGE DECIDES ABOUT TRIUMPH
+character_event = {
+	id = MG.30
+	desc = EVTDESC_MG_30
+	picture = GFX_evt_throne_room_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_30 #SURE
+		treasury = -200
+		FROM = {
+			prestige = 200
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = MG.101 days = 3 }
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				trait = content
+			}
+			modifier = {
+				factor = 3
+				trait = charitable
+			}
+			modifier = {
+				factor = 3
+				opinion = { who = FROM value = 50 }
+			}
+		}
+	}
+	option  = {
+		name = EVTOPTB_MG_30 #NO WAY
+		primary_title = {
+			add_claim = FROM
+		}
+		hidden_tooltip = {
+			FROM = { 
+				character_event = { id = MG.100 days = 3 } 
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 3
+				trait = greedy
+			}
+			modifier = {
+				factor = 3
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+		}
+	}
+}
+
+#GENERAL NOTIFIED OF NO TRIUMPH
+character_event = {
+	id = MG.100
+	desc = EVTDESC_MG_100
+	picture = GFX_evt_riots_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_100 #LIEGE BE DAMNED
+		hidden_tooltip = {
+			liege = {
+				any_realm_character = {
+					character_event = { id = MG.110 }
+				}
+			}
+		}
+	}
+}
+
+#GENERAL NOTIFIED OF TRIUMPH
+character_event = {
+	id = MG.101
+	desc = EVTDESC_MG_101
+	picture = GFX_evt_victory_arch_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_101 #YEAH
+		liege = {
+			any_realm_character = {
+				limit = {
+					NOT = { character = ROOT }
+				}
+				opinion = {
+					who = ROOT
+					years = 100
+					modifier = opinion_impressed
+				}
+			}
+		}
+	}
+}
+
+#REALM CHARACTER HAS A CHANCE TO LIKE THE COMMANDER MORE
+character_event = {
+	id = MG.110
+	desc = EVTDESC_MG_110
+	picture = GFX_evt_riots_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_110 #HE SHOULD BE REWARDED
+		opinion = {
+			who = FROM
+			years = 10
+			modifier = opinion_supporter
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_MG_110 #I DONT CARE
+	}
+	
+}
+
+#PALACE COUPS
+#THE PLOTTERS SEARCH FOR BACKERS
+character_event = {
+	id = MG.200
+	desc = EVTDESC_MG_200 #I HAVE TO FIND BACKERS OR MY COUP WILL FAIL!
+	picture = GFX_evt_riots_byzantine
+   
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+   
+	trigger = {
+		has_plot = plot_byzantine_coup
+			liege = {
+            			any_vassal = {
+                			age = 16
+                			prisoner = no
+               				higher_tier_than = BARON
+                			NOT = {
+                    				character = ROOT
+                    				trait = incapable
+                    				opinion = { who = PREV value = 0 }
+                    				any_backed_character = {
+                        				has_plot = plot_byzantine_coup
+ 					}
+				}
+			}
+		}
+	}
+   
+	mean_time_to_happen = {
+        	months = 1
+	}
+   
+	option = {
+		name = EVTOPTA_MG_200 #I'LL ASK AROUND, BUT THE LIEGE MAY FIND IT OUT
+			liege = {
+            			random_vassal = {
+                			limit = {
+                    			age = 16
+                    			prisoner = no
+                    			higher_tier_than = BARON
+                    			NOT = {
+                        			character = ROOT
+                        			trait = incapable
+                        			opinion = { who = LIEGE value = 0 }
+                        			any_backed_character = {
+                            				has_plot = plot_byzantine_coup
+                        		        }
+                    		        }
+                	        }
+                        letter_event = { id = MG.210 days = 3 }
+            	        }
+                }
+	}
+}
+	
+# COUP ULTIMATUM
+letter_event = {
+	id = MG.300
+	desc = EVTDESC_MG_300
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_300
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				FROM = { NOT = { plot_power = 1.0 } }
+			}				
+			modifier = {
+				factor = 1.25
+				trait = weak
+			}
+			modifier = {
+				factor = 1.25
+				trait = craven
+			}
+			modifier = {
+				factor = 1.25
+				trait = humble
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 1.25
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = content
+			}		
+		}
+		hidden_tooltip = {
+			FROM = {
+				letter_event = { id = MG.310 }
+				any_plot_backer = {
+					letter_event = { id = MG.320 }
+				}
+			}
+		}
+		FROM = {
+			plot_target_title = {
+				usurp_title_plus_barony_if_unlanded = PREV
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_MG_300
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 1.25
+				trait = strong
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				trait = proud
+			}
+			modifier = {
+				factor = 1.25
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.75
+				FROM = { plot_power = 1.5 }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { plot_power = 2.0 }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { plot_power = 3.0 }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { plot_power = 4.0 }
+			}			
+		}
+		FROM = {
+			letter_event = { id = MG.350 days = 3 tooltip = "EVTTOOLTIP8100" }
+			tooltip = {
+				any_plot_backer = {
+				}
+			}
+		}
+	}
+}
+
+# Demand accepted - COUP SUCCEDED
+letter_event = {
+	id = MG.310
+	desc = EVTDESC_MG_310
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_310
+	}	
+}
+
+# Inform backers - COUP SUCCEDED
+letter_event = {
+	id = MG.320
+	desc = EVTDESC_MG_320
+	
+	show_from_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_320
+	}
+}
+
+# Demand rejected - COUP 
+letter_event = {
+	id = MG.350
+	desc = EVTDESC_MG_350
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_MG_350
+		ai_chance = { factor = 100 }
+		hidden_tooltip = { reveal_plot = yes }
+		liege = {
+			primary_title = {
+				add_claim = ROOT
+				holder_scope = {
+					reverse_war = {
+						target = ROOT
+						casus_belli = claim_on_liege
+						thirdparty_title = PREV
+						plot_backers = yes
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_MG_350
+		ai_chance = { factor = 0 }
+		prestige = -100
+		any_plot_backer = {
+			opinion = {
+				modifier = opinion_coward
+				who = ROOT
+				years = 5
+			}
+			hidden_tooltip = {
+				letter_event = { id = 8120 }
+			}
+		}
+		cancel_plot = plot_byzantine_coup
+	}
+}
+
+#TEST EVENTS
+
+character_event = {
+	id = MG.9990
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			random_vassal = {
+				limit = {
+					prisoner = no
+					NOT = { trait = incapable }
+					primary_title = {
+						higher_tier_than = BARON
+					}
+					NOT = { character = ROOT }
+				}
+				back_plot = ROOT
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MG.9999
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = succ_commander
+		character_event = { id = MG.10 }
+	}
+}

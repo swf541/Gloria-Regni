@@ -1,0 +1,1130 @@
+d_saint_blaise = {
+
+	color={ 145 105 65 }
+	
+	graphical_culture = holygfx
+	
+	capital = 672 # Dwin
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = miaphysite
+	
+	culture = armenian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = saint_blaise_composition
+}
+
+d_saint_peter = {
+
+	color={ 241 64 76 }
+	
+	graphical_culture = orthodoxholygfx
+	
+	capital = 333 # Rome
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = roman
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = saint_peter_composition
+}
+
+d_imperial_order = {
+
+	color={ 242 75 63 }
+	
+	graphical_culture = byzantinegfx
+	
+	capital = 333 # Rome
+
+	title = "Grand Master"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = imperial
+	
+	culture = roman
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = sacred_band_composition
+}
+
+d_foederati = {
+	color={ 150 10 100 }
+	color2={ 255 255 20 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 333 # Rome
+	
+	culture = roman
+	
+	mercenary = yes
+
+	title = "Domesticus"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = foederati_composition
+}
+
+d_archon = {
+	color={ 167 165 242 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 496 # Byzantion
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Domestikos"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = archon_composition
+}
+
+d_archon2 = {
+	color={ 167 165 242 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 496 # Byzantion
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Domestikos"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = archon2_composition
+}
+
+d_scholae = {
+	color={ 240 242 165 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 496 # Byzantion
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Domestikos"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = scholae_composition
+}
+
+d_scholae2 = {
+	color={ 240 242 165 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 333 # Rome
+	
+	culture = roman
+	
+	mercenary = yes
+
+	title = "Domesticus"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = scholae_composition
+}
+
+d_nobiles = {
+	color={ 167 165 242 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 333 # Rome
+	
+	culture = roman
+	
+	mercenary = yes
+
+	title = "Domesticus"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = nobiles_composition
+}
+
+d_nokkor = {
+	color={ 246 189 161 }
+
+	capital = 444 # Esztergom
+	
+	culture = hunnic
+	
+	mercenary = yes
+
+	title = "Tarkhan"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = nokkor_composition
+}
+
+d_golden_band = {
+	color={ 233 214 107 }
+	
+	graphical_culture = andalusiangfx
+
+	capital = 817 # Tunis
+	
+	culture = neo-punic
+	
+	mercenary = yes
+
+	title = "Captain"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = golden_band_composition
+}
+
+d_chosen = {
+	color = { 100 50 30 }
+
+	capital = 499 # Tyrnovo
+	
+	religion = ROOT
+	
+	culture = bulgarian
+	
+	mercenary = yes
+
+	title = "Chargobilya"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = chosen_composition
+}
+
+d_arsiyah = {
+	color = { 245 219 20 }
+
+	capital = 620 #	Itil
+	
+	culture = khazar
+	
+	mercenary = yes
+
+	title = "Tarkhan"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = arsiyah_composition
+}
+
+d_kheshig = {
+	color = { 247 228 79 }
+
+	capital = 1457 # Kara-khorum
+	
+	culture = mongol
+	
+	mercenary = yes
+
+	title = "Cherbi"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = kheshig_composition
+}
+
+d_companions = {
+	color = { 175 212 131 }
+
+	capital = 490 # Thessalonike
+	
+	culture = greek
+
+	short_name = yes
+	
+	mercenary = yes
+
+	title = "Strategos"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = companions_composition
+}
+
+d_imperial_fleet = {
+	color={ 211 172 185 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 496 # Byzantion
+	
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Droungarios"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = imperial_fleet_composition
+}
+
+d_imperial_fleet2 = {
+	color={ 211 172 185 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 496 # Byzantion
+
+	culture = greek
+	
+	mercenary = yes
+
+	title = "Droungarios"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = imperial_fleet_composition
+}
+
+d_imperial_fleet3 = {
+	color={ 211 172 185 }
+	
+	graphical_culture = byzantinegfx
+
+	capital = 333 # Rome
+	
+	culture = roman
+	
+	mercenary = yes
+
+	title = "Drungarius"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = imperial_fleet_composition
+}
+
+d_syrian_fleet = {
+	color={ 156 219 88 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 767 # Tripoli
+	
+	culture = levantine_arabic
+
+	religion = sunni
+	
+	mercenary = yes
+
+	title = "Amiralay"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = syrian_fleet_composition
+}
+
+d_alexandrian_fleet = {
+	color={ 181 219 140 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 802 # Alexandria
+	
+	culture = egyptian
+
+	religion = sunni
+	
+	mercenary = yes
+
+	title = "Amiralay"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = alexandrian_fleet_composition
+}
+
+d_paladins = {
+	color={ 102 137 254 }
+	
+	graphical_culture = germangfx
+
+	capital = 90 # Julich
+	
+	culture = levantine
+	
+	mercenary = yes
+
+	title = CAPTAIN
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = paladins_composition
+}
+
+d_savaran = {
+	color={ 177 235 106 }
+	
+	graphical_culture = persiangfx
+
+	capital = 693 # Baghdad
+	
+	culture = persian
+	   
+	religion = zoroastrian
+	
+	mercenary = yes
+
+	title = "Savaran Sardar"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = pushtigban_composition
+}
+
+d_janissaries = {
+	color={ 200 235 106 }
+	
+	graphical_culture = turkishgfx
+
+	capital = 693 # Baghdad
+	
+	culture = turkish
+	   
+	religion = sunni
+	
+	mercenary = yes
+
+	title = "Agha"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary_type = janissaries_composition
+}
+
+e_ottoman = {
+	color = { 126 203 120 }
+
+	short_name = yes
+
+	culture = turkish
+}
+
+e_khazaria = {
+	color={ 250 184 31 }
+	color2={ 255 255 255 }
+		
+	capital = 620 #	Itil
+		
+	culture = khazar
+		
+	allow = {
+		culture = khazar
+		independent = yes
+		has_landed_title = d_itil
+		completely_controls = d_itil
+	}
+}
+
+e_hunnicia = {
+	color={ 238 113 67 }
+		
+	capital = 444 # Esztergom
+		
+	culture = hunnic
+		
+	allow = {
+		dynasty = 591
+		independent = yes
+		culture_group = altaic
+		completely_controls = k_taurica
+		completely_controls = k_bulgaria
+		completely_controls = k_dacia
+	}
+}
+
+
+e_serbia = {
+	color={ 166 72 57 }
+	capital = 502 # Rashka
+	culture = serbian
+	
+	allow = {
+		tier = king
+		culture = serbian
+		independent = yes
+		OR ={
+			has_landed_title = k_serbia
+			has_landed_title = k_serbia2
+		}
+		OR ={
+			completely_controls = k_serbia
+			completely_controls = k_serbia2
+		}
+		completely_controls = d_dyrrachion
+	}
+}
+
+k_neustria = {
+	color={ 15 27 187 }
+		
+		color2={ 255 255 20 }
+	capital = 113 # Vermandois
+	culture = old_frankish
+	
+	allow = {
+		always = no
+	}
+
+	dignity = 100 # Counted as having this many more counties than it does
+}
+
+k_austrasia = {
+	color={ 110 110 160 }
+		
+		color2={ 220 220 20 }
+	capital = 128 # Metz
+	culture = old_frankish
+	
+	allow = {
+		always = no
+	}
+
+	dignity = 100 # Counted as having this many more counties than it does
+}
+
+k_khamag_mongol = {
+	color = { 108 153 65 }
+	capital = 903 # Samarkand
+	culture = mongol
+	
+	# Always exists
+	landless = yes
+	
+	allow = {
+		always = no
+	}
+	
+	culture = mongol
+}
+
+k_golden_horde = {
+	color = { 243 180 17 }
+	capital = 619 # Saray
+	culture = mongol
+
+	short_name = yes
+	
+	allow = {
+		culture = mongol
+		completely_controls = k_kimak
+		completely_controls = k_cuman
+		completely_controls = k_volga_bulgaria
+	   	has_landed_title = e_mongol_empire
+	}
+	
+	culture = mongol
+}
+
+k_il-khanate = {
+	color = { 140 180 20 }
+	capital = 646 # Esfahan
+	culture = mongol
+
+	short_name = yes
+	
+	allow = {
+		culture = mongol
+		completely_controls = k_persia
+		completely_controls = k_baluchistan
+		completely_controls = k_afghanistan
+	   	has_landed_title = e_mongol_empire
+	}
+	
+	culture = mongol
+}
+
+k_chagatai = {
+	color = { 200 200 200 }
+	color2 = { 0 250 250 }
+	
+	capital = 903 # Samarkand
+	
+	allow = {
+		culture = mongol
+		completely_controls = k_khiva
+	   	has_landed_title = e_mongol_empire
+	}
+	
+	culture = mongol
+	religion = tengri_pagan
+}
+
+k_kimak = {	
+	color = { 231 201 115 }	
+	color2={ 255 255 255 }	
+
+	culture = cuman
+
+	capital = 1435 # Kimak	
+		
+	tengri_pagan_reformed = 600
+}
+
+k_ravenna = {
+	color={ 228 131 128 }
+	capital = 351 # Ravenna
+	culture = roman
+
+	title = "Exarch"
+	title_female = "Exarchessa"
+	title_prefix = "Exarchate of"
+	
+	allow = {
+		always = no
+	}
+}
+
+k_carthage = {
+	color={ 215 141 187 }
+	capital = 817 # Tunis
+	culture = roman
+
+	title = "Exarch"
+	title_female = "Exarchessa"
+	title_prefix = "Exarchate of"
+	
+	allow = {
+		always = no
+	}
+}
+
+k_cordoba = {
+	color={ 222 166 134 }
+	capital = 181 # Cordoba
+	culture = roman
+
+	title = "Exarch"
+	title_female = "Exarchessa"
+	title_prefix = "Exarchate of"
+	
+	allow = {
+		always = no
+	}
+}
+
+k_tangiers = {
+	color={ 243 218 164 }
+	capital = 841 # Tangiers
+	culture = roman
+
+	title = "Exarch"
+	title_female = "Exarchessa"
+	title_prefix = "Exarchate of"
+	
+	allow = {
+		always = no
+	}
+}
+
+k_croatia2 = {	
+	color={ 122 46 58 }	
+	color2={ 200 0 0 }
+			
+	culture = croatian
+			
+	capital = 465 # Zadar	
+		
+	arian = 1000 # Crusade target weight
+	orthodox = 300 # Crusade target weight	
+	catholic = 1000 # Crusade target weight	
+	fraticelli = 1000 # Crusade target weight	  
+	imperial = 1000 # Crusade target weight
+
+			   
+	roman = "Illyria"	  
+	greek = "Dalmatia"
+
+	allow = {
+		completely_controls = k_croatia2
+		NOT = { is_title_active = k_croatia }
+	}
+
+}
+
+k_sicily2 = {
+		
+	color = { 180 160 80 }	
+	color2={ 255 255 255 }	
+	capital = 334 #	Napoli
+			
+	culture = italian
+	
+	arian = 500 # Crusade target weight	
+	imperial = 500 # Crusade target weight	
+	catholic = 500 # Crusade target weight	
+	fraticelli = 500 # Crusade target weight	
+	orthodox = 50	
+	muslim = 10	 
+	hellenic_pagan = 4000 # Crusade target weight
+
+	roman = "Sicilia"
+
+	allow = {
+		completely_controls = k_sicily2
+		NOT = { is_title_active = k_sicily }
+	}
+}
+
+k_serbia2 = {	
+	color={ 198 54 60 }	
+	color2={ 255 255 255 }
+			
+	culture = serbian
+			
+	capital = 502 # Rashka
+	
+		
+	arian = 100 # Crusade target weight	
+	orthodox = 300 # Crusade target weight	
+	catholic = 100 # Crusade target weight	
+	fraticelli = 100 # Crusade target weight   
+	imperial = 300 # Crusade target weight	
+	hellenic_pagan = 25 # Crusade target weight
+
+	roman = "Dardania"   
+	greek = "Dardania"
+
+	allow = {
+		completely_controls = k_serbia2
+		NOT = { is_title_active = k_serbia }
+	}
+}
+
+k_bulgaria2 = {	
+	color={ 113 88 101 }	
+	color2={ 255 255 255 }
+	capital = 499 # Tyrnovo
+		
+	culture = bulgarian
+		
+	arian = 100 # Crusade target weight	
+	orthodox = 300 # Crusade target weight	
+	catholic = 100 # Crusade target weight	
+	fraticelli = 100 # Crusade target weight	   
+	imperial = 300 # Crusade target weight	
+	hellenic_pagan = 3000 # Crusade target weight	
+	slavic_pagan_reformed = 50 # Crusade target weight	
+	tengri_pagan_reformed = 50
+
+	roman = "Moesia"
+	bolghar = "Bulgars"
+
+	allow = {
+		completely_controls = k_bulgaria2
+		NOT = { has_landed_title = k_bulgaria }
+	}
+}
+
+k_kievan_rus = {
+	color={ 242 162 166 }
+
+	capital = 547 # Kiev
+	culture = russian
+	
+	allow = {
+		tier = duke
+		culture = russian
+		has_landed_title = d_kiev
+		completely_controls = d_kiev
+	}
+}
+
+k_cilicia = {
+	color={ 247 210 109 }
+
+	capital = 762 # Adana
+	culture = armenian
+
+	arian = 65 # Crusade target weight
+	orthodox = 250 # Crusade target weight
+	catholic = 65 # Crusade target weight
+	fraticelli = 65 # Crusade target weight
+	imperial = 250 # Crusade target weight
+	muslim = 110 # Crusade target weight
+	hellenic_pagan = 65 # Crusade target weight
+	zoroastrian_group = 120 # Crusade target weight
+}
+
+k_ostrogoth = {
+	color = { 185 101 207 }
+	capital = 351 # Ravenna
+	culture = ostrogothic
+	
+	allow = {
+		always = no
+	}
+}
+e_rum = {
+	color = { 144 182 161 }
+	culture = turkish
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+
+	title = "Qaisar"
+	title_female = "Qaisara"
+
+	allow = {
+		tier = king
+		independent = yes
+		culture = turkish
+		has_landed_title = k_rum
+		completely_controls = k_cyprus
+		completely_controls = k_thrace
+		completely_controls = k_macedon
+		completely_controls = k_cilicia
+		completely_controls = k_anatolia
+		completely_controls = k_bulgaria
+		NOT = { has_landed_title = k_ottomans }
+		NOT = { has_landed_title = e_ottomans }
+	}
+}
+
+k_austria = {
+	color={ 220 220 220 }
+	capital = 449 # Österreich
+	culture = german
+
+	title = "Archduke"
+	title_female = "Archducess"
+	title_prefix = "Archduchy of"
+	
+	allow = {
+		culture = german
+                independent = yes
+		has_landed_title = d_osterreich
+                completely_controls = d_osterreich
+		completely_controls = d_bavaria
+		completely_controls = d_tyrol
+	}
+}
+
+k_morea = {
+	color={ 168 121 129 }
+	capital = 481 # Korintos
+	culture = greek
+
+	has_top_de_jure_capital = yes
+
+	purple_born_heirs = yes
+	
+	allow = {
+		tier = duke
+		independent = yes
+                OR = {
+                        culture = greek
+                        culture = roman
+                } 
+		has_landed_title = d_achaia
+		completely_controls = d_achaia
+	}
+}
+
+d_commune = {
+	color = { 236 52 52 }
+	capital = 333 # Rome
+	culture = italian
+
+	title = "Patrician"
+	title_female = "Patricia"
+		
+	dignity = 200 # Never want the Roman Commune to change primary title
+ 
+	short_name = yes
+		
+	allow = {
+		tier = count
+		is_republic = yes
+		independent = yes
+		has_landed_title = c_roma
+	}
+}
+
+
+
+d_saint_maron = {
+	color={ 180 165 70 }
+	
+	graphical_culture = holygfx
+	
+	capital = 767 # Boutron
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = monothelite
+	
+	culture = aramean
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 1 # (Must be an integer between 1 and 512)
+
+	mercenary_type = holy_sepulchre_composition
+}
+
+k_christ = {
+	color={ 44 195 212 }
+	
+	title = "Lord"
+	title_female = "Lady"
+	foa = "MESSIAH_FOA"
+	
+	short_name = yes
+
+        culture = aramean
+	
+	religion = imperial
+
+	# Always exists
+	landless = yes	
+	
+	allow = {
+		always = no
+	}
+
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dignity = 100 # Counted as having this many more counties than it does
+	
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+
+	# Regnal names
+	male_names = {
+		Yeshua
+	}
+}
+
+e_gallia = {
+	color={ 128 196 71 }
+
+	capital = 118 # Trier
+	culture = galloroman
+
+	has_top_de_jure_capital = yes
+	
+	allow = {
+		always = no
+	}
+
+	short_name = yes
+}
+
+e_palmyra = {
+	color={ 253 230 154 }
+
+	capital = 730 # Palmyra
+	culture = aramean
+
+	has_top_de_jure_capital = yes
+	
+	allow = {
+		always = no
+	}
+
+	short_name = yes
+}
+
+# Rome
+
+b_pierleoni = {
+	culture = italian
+	religion = catholic
+}
+
+b_da_brescia = {
+	culture = italian
+	religion = catholic
+}
+
+b_romano = {
+	culture = italian
+	religion = catholic
+}
+
+b_frangipani = {
+	culture = italian
+	religion = catholic
+}
+
+b_cresenti = {
+	culture = italian
+	religion = catholic
+}
+
+b_normanni = {
+	culture = italian
+	religion = catholic
+}
+
+b_savelli = {
+	culture = italian
+	religion = catholic
+}

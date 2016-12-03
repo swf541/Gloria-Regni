@@ -1,0 +1,789 @@
+hunnic;Hunnic;;;;;;;;;x 
+old_italian;Italo-Roman;;;;;;;;;x 
+baron_old_italian;Nobilus;;;;;;;;;x 
+baron_female_old_italian;Nobilia;;;;;;;;;x 
+barony_of_old_italian;Castra of;;;;;;;;;x 
+city_baron_old_italian;Curator;;;;;;;;;x 
+count_old_italian;Comes;;;;;;;;;x 
+count_female_old_italian;Comitissa;;;;;;;;;x 
+county_of_old_italian;Comitatus of;;;;;;;;;x 
+city_count_old_italian;Prefect;;;;;;;;;x 
+duke_old_italian;Dux;;;;;;;;;x 
+duke_female_old_italian;Ducissa;;;;;;;;;x 
+duchy_of_old_italian;Ducate of;;;;;;;;;x 
+city_duke_of_old_italian;Doge;;;;;;;;;x 
+city_duchy_of_old_italian;Republic of;;;;;;;;;x 
+king_old_italian;Rex;;;;;;;;;x 
+king_female_old_italian;Regina;;;;;;;;;x 
+city_king_old_italian;Serene Doge;;;;;;;;;x 
+city_kingdom_of_old_italian;Serene Republic of;;;;;;;;;x 
+emperor_old_italian;Imperator;;;;;;;;;x 
+emperor_female_old_italian;Imperatrix;;;;;;;;;x 
+city_emperor_old_italian;Princeps;;;;;;;;;x 
+city_empire_of_old_italian;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_old_italian;Rector;;;;;;;;;x 
+vice_royalty_count_female_old_italian;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_old_italian;Coventus of;;;;;;;;;x 
+vice_royalty_duke_old_italian;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_old_italian;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_old_italian;Province of;;;;;;;;;x 
+vice_royalty_king_old_italian;Exarch;;;;;;;;;x 
+vice_royalty_king_female_old_italian;Exarchessa;;;;;;;;;x 
+vice_royalty_kingdom_of_old_italian;Exarchate of;;;;;;;;;x 
+title_prince_old_italian;Princeps;;;;;;;;;x 
+title_prince_female_old_italian;Principissa;;;;;;;;;x 
+temple_baron_yazidi;Kochek;;;;;;;;;x 
+temple_count_yazidi;Qewel;;;;;;;;;x 
+temple_county_of_yazidi;Theocracy of;;;;;;;;;x 
+temple_duke_yazidi;Faqir;;;;;;;;;x 
+temple_duchy_of_yazidi;Theocracy of;;;;;;;;;x 
+temple_king_yazidi;Shiek;;;;;;;;;x 
+temple_kingdom_of_yazidi;Theocracy of;;;;;;;;;x 
+temple_emperor_yazidi;Mir;;;;;;;;;x 
+temple_empire_of_yazidi;Theocracy of;;;;;;;;;x 
+sunni_DESC;Sunni Islam is by far the most widespread form of the religion. It is the more orthodox of the two main branches of Islam but the origin of the Sunni-Shia schism was largely political in nature. The Sunnis accepted the first Caliph, Abu Bakr, whereas the Shiites rejected him in favor of Ali. Sunni Muslims hold strictly to the Sunnah - the sayings and actions of Muhammad - as collected in the Hadiths, which form the basis for Sunni jurisprudence. The formal head of Sunni Islam is the (Sunni) Caliph.;;;;;;;;;x 
+shiite_DESC;Shi'a is the short form of Shi'atul Ali, or the Party of Ali, which rejected the first Caliph Abu Bakr in favor of Ali, the grandson of Muhammad. Shi'a Islam is the less orthodox of the two main branches of Islam and accepts the idea of intercession by dead Imams on behalf of the living. The formal head of Shi'a Islam is the (Shiite) Caliph.:;;;;;;;;;x 
+ibadi_DESC;Ibadism is a moderate form of Islam that was founded twenty years after the death of Muhammad. Ibadis believe that race and tribe do not matter when selecting leaders. Ibadis also reject the notion that Muslims will get to see Allah on the Day of Judgment. In-game, Ibadi is considered a Sunni heresy.;;;;;;;;;x 
+kharijite_DESC;The Kharijites are a branch of Islam that was marginalized and repressed early in the 7th century. They believe that any unrepentant sinner is a Kafir, also rejecting the notion of infallibility of the Caliphs. In-game, Kharijite is considered a Shia heresy.;;;;;;;;;x 
+raise_tribal_units2;Raise Tribal Levies;;;;;;;;;x 
+raise_tribal_units2_desc;Raise levies from among the Bolghar tribes.;;;;;;;;;x 
+raised_tribal_units;Raised Tribal Levies;;;;;;;;;x 
+EVTDESCPA.CM.2;Far from their ancestral Northern lands, the Lombards have over the centuries slowly but steadily adopted more and more Latin and Roman traditions. In the province of [Root.GetName], the people have now gone so far as to start considering themselves properly Italo-Roman.;;;;;;;;;x 
+EVTDESCPA.10330;The Italo-Romans in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Italian in culture.;;;;;;;;;x 
+EVTDESCPA.10331;The revival of the Roman culture has led to a decline in the number of Vulgar Latin speakers. This is highly noticeable in the province of [Root.GetName], which is now Roman in culture.;;;;;;;;;x 
+EVTDESCPA.10332;Far from their ancestral Northern lands, the Lombards have over the centuries slowly but steadily adopted more and more Latin and Roman traditions. In the province of [Root.GetName], the people have now gone so far as to start considering themselves properly Italians.;;;;;;;;;x 
+raise_guerilla_units;Raise Guerilla Levies;;;;;;;;;x 
+raise_guerilla_units_desc;Raise levies from among the guerillas camped at the borders.;;;;;;;;;x 
+raised_guerilla_units;Raised Guerilla Levies;;;;;;;;;x 
+nick_attila;the Scourge of God;;;;;;;;;x 
+e_hunnicia;Hunnicia;;;;;;;;;x 
+e_hunnicia_adj;Hunnic;;;;;;;;;x 
+revive_hunnic_culture;Revive Hunnic Culture;;;;;;;;;x 
+revive_hunnic_culture_desc;The Hunnic Empire has been restored to its former glory, but its once rich language and culture is dead. You could attempt to revive it if you wish.;;;;;;;;;x 
+hunnic_culture;[From.GetTitledName] becomes Hunnicr.;;;;;;;;;x 
+pagan_subjugation_desc;Lower-tier pagans (Duke and below) are allowed to subjugate other pagan rulers once in their lifetime (With the 'Become $KING$' ambition, there is no such time limit against targets within the kingdom). Pagan kings and emperors are automatically exempt from the usual usage limits (Free men are always willing to follow the mightiest ruler).;;;;;;;;;x 
+d_nokkor;Imperial Nokkor;;;;;;;;;x 
+d_nokkor_adj;Nokkor;;;;;;;;;x 
+reform_imperial_nokkor;Reform the Nokkor;;;;;;;;;x 
+reform_imperial_nokkor_desc;The Nokkor were the imperial guards of Attila. Mainly horse archers, they were fearsome in combat.;;;;;;;;;x 
+d_sacred_band;Sacred Band;;;;;;;;;x 
+d_sacred_band_adj;Sacred Band;;;;;;;;;x 
+reform_sacred_band;Reform the Sacred Band;;;;;;;;;x 
+reform_sacred_band_desc;Reform the Sacred Band of Thebes, a famous ancient Greek military unit made up entirely of homosexual couples.;;;;;;;;;x 
+d_imperial_order;Imperial Order;;;;;;;;;x 
+d_imperial_order_adj;Imperial Order;;;;;;;;;x 
+form_imperial_order;Form the Imperial Order;;;;;;;;;x 
+form_imperial_order_desc;The Knights of Saint Peter are a powerful shock force, but a unit of holy warriors loyal only to the empire could be useful.;;;;;;;;;x 
+EVTDESCPA.10338;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Imperial Order in their struggle against the infidel, even though this will forever disinherit him.;;;;;;;;;x 
+EVTTOOLTIPPA_10339;[This.GetTitledFirstName] becomes a member of the Imperial Order.;;;;;;;;;x 
+EVTDESCPA.10341;Your Highness, this extremely generous donation will not be forgotten. You have my friendship, as well as that of the Church. Rest assured that you will be rewarded in the afterlife, if not on Earth!\nPax Christi,\n\nGrand Master [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10342;Most righteous [Root.GetTitledFirstName], the Imperial Order needs more castles in order to defend the Imperial faith against the Infidel. It has come to my attention that there is a suitable location in your demesne - in [FromFrom.GetName] to be specific. I am willing to pay you 100 gold in exchange for the right to construct a fortress there.\nPax Christi,\n\nGrand Master [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10346;The Imperial Order has constructed a castle in [Root.GetName]!;;;;;;;;;x 
+EVTDESCPA.10348;Your majesty, this antagonism is completely unwarranted! The Imperial Order serves Christ, but, one has to wonder, do you?\n\With anger and sadness,\n\Grand Master [From.GetFirstName];;;;;;;;;x 
+expel_imperial_order;Expel the Imperial Order;;;;;;;;;x 
+expel_imperial_order_desc;I can drive the Imperial Order from my realm and seize their castles. However, it is a very impious thing to do...;;;;;;;;;x 
+donate_money_to_imperial_order;Donate money to the Imperial Order;;;;;;;;;x 
+donate_money_to_imperial_order_desc;I can donate money to the Imperial Order in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
+EVTDESCPA.10350;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Sacred Band in their struggle against the infidel, even though this will forever disinherit him.;;;;;;;;;x 
+EVTTOOLTIPPA_10351;[This.GetTitledFirstName] becomes a member of the Sacred Band.;;;;;;;;;x 
+EVTDESCPA.10356;Your Highness, this extremely generous donation will not be forgotten. You have my friendship, as well as that of the Church. Rest assured that you will be rewarded in the afterlife, if not on Earth!\nPax Deorum,\n\nStrategos [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10357;Most righteous [Root.GetTitledFirstName], the Sacred Band need more castles in order to defend Hellenism against the Infidel. It has come to my attention that there is a suitable location in your demesne - in [FromFrom.GetName] to be specific. I am willing to pay you 100 gold in exchange for the right to construct a fortress there.\nPax Deorum,\n\nStrategos [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10361;The Sacred Band has constructed a castle in [Root.GetName]!;;;;;;;;;x 
+EVTDESCPA.10362;Your majesty, this antagonism is completely unwarranted! The Sacred Band serves the Gods, but, one has to wonder, do you?\n\With anger and sadness,\n\Strategos [From.GetFirstName];;;;;;;;;x 
+expel_sacred_band;Expel the Sacred Band;;;;;;;;;x 
+expel_sacred_band_desc;I can drive the Sacred Band from my realm and seize their castles. However, it is a very impious thing to do...;;;;;;;;;x 
+donate_money_to_sacred_band;Donate money to the Sacred Band;;;;;;;;;x 
+donate_money_to_sacred_band_desc;I can donate money to the Sacred Band in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
+expelled_d_imperial_order;Expelled the Imperial Order;;;;;;;;;x 
+expelled_d_sacred_band;Expelled the Sacred Band;;;;;;;;;x 
+expelled_d_darkhan_knights;Expelled the Darkhan Knights;;;;;;;;;x 
+expelled_d_guardians_nyame;Expelled the Guardians of Nyame;;;;;;;;;x 
+EVTTITLE_SOA_2009;The Darkhan Knights;;;;;;;;;x 
+EVTDESC_SOA_2009;The mighty Sky-Father of the Tengri faith is all-seeing, but still has need of human instruments on the ground. The Darkhan Knights, a new holy order that has been founded in the wake of the Tengri Reformation, ride to do battle against infidels and to spread the will of the Sky-Father to all corners of the world. The deafening sound of these knights approaching on their mounts is like thunder in the sky, and the noise alone is rumored to have made some convert to the Tengri religion on the spot.;;;;;;;;;x 
+EVTDESC_SOA_2031;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Darkhan Knights in their tireless pursuit of heathenry, even though this will forever disinherit him.;;;;;;;;;x 
+EVTDESC_SOA_2041;Great [Root.PrimaryTitle.GetRulerTitle], your extremely generous donation will aid us greatly as we ride into battle against the enemies of the Sky-Father! Upon my honor, I shall name one of my finest steeds after you!\n\nFor the Sky-Father!\nWarchief [From.GetFirstName];;;;;;;;;x 
+EVTTOOLTIP_SOA_2032;[This.GetTitledFirstName] becomes a Darkhan Knight.;;;;;;;;;x 
+EVTDESC_SOA_2053;Most righteous [Root.GetTitledFirstName], the Darkhan Knights are in need of more castles in order to train troops and generate a supporting income. There is a suitable location in your demesne - in [FromFrom.GetName] to be specific. I am willing to pay you 100 gold in exchange for the right to construct a fortress there.\n\nFor the Sky-Father!\nWarchief [From.GetFirstName];;;;;;;;;x 
+EVTDESC_SOA_2054;The Darkhan Knights have constructed a castle in [Root.GetName]!;;;;;;;;;x 
+EVTDESC_SOA_2061;Your majesty, this antagonism is completely unwarranted! The Darkhan Knights seek only to ride into battle against the enemies of the Sky-Father. Can you make that same claim?\n\nWith anger and sadness,\n\nWarchief [From.GetFirstName];;;;;;;;;x 
+EVTTITLE_SOA_2109;The Guardians of Nyame;;;;;;;;;x 
+EVTDESC_SOA_2109;With the reformation of the many West African pagan belief systems into a single coherent whole, several tribes have agreed to pool together their best warriors into a single holy order. They claim to be the Guardians of Nyame, the Creator, and they have vowed to defend the spirits and those who believe in them from all who would do them harm.;;;;;;;;;x 
+EVTDESC_SOA_2131;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Guardians of Nyame in their brave defense of our faith, even though this will forever disinherit him.;;;;;;;;;x 
+EVTDESC_SOA_2141;Great [Root.PrimaryTitle.GetRulerTitle], your extremely generous donation shall aid us greatly in our unceasing efforts to defend the Spirits and their faithful believers! You have my friendship, as well as that of the priesthood.\n\nMay the Spirits walk with you,\nWarchief [From.GetFirstName];;;;;;;;;x 
+EVTTOOLTIP_SOA_2132;[This.GetTitledFirstName] becomes a Guardian of Nyame.;;;;;;;;;x 
+EVTDESC_SOA_2153;Most righteous [Root.GetTitledFirstName], the Guardians of Nyame are in need of more castles in order to train troops and generate a supporting income. There is a suitable location in your demesne - in [FromFrom.GetName] to be specific. I am willing to pay you 100 gold in exchange for the right to construct a fortress there.\n\nMay the Spirits walk with you,\nWarchief [From.GetFirstName];;;;;;;;;x 
+EVTDESC_SOA_2154;The Guardians of Nyame have constructed a castle in [Root.GetName]!;;;;;;;;;x 
+EVTDESC_SOA_2161;Your majesty, this antagonism is completely unwarranted! The Guardians of Nyame walk with the Spirits, but, one has to wonder, do you?\n\nWith anger and sadness,\n\nWarchief [From.GetFirstName];;;;;;;;;x 
+expel_sacred_band;Expel the Sacred Band;;;;;;;;;x 
+expel_sacred_band_desc;I can drive the Sacred Band from my realm and seize their castles. However, it is a very impious thing to do...;;;;;;;;;x 
+donate_money_to_darkhan_knights;Donate money to the Darkhan knights;;;;;;;;;x 
+donate_money_to_darkhan_knights_desc;I can donate money to the Darkhan Knights in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
+donate_money_to_guardians_nyame;Donate money to the Guardians of Nyame;;;;;;;;;x 
+donate_money_to_guardians_nyame_desc;I can donate money to the Guardians of Nyame in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
+emperor_hunnic;Khagan;;;;;;;;;x 
+emperor_female_hunnic;Khatun;;;;;;;;;x 
+empire_of_hunnic;Khaganate of;;;;;;;;;x 
+king_hunnic;Khan;;;;;;;;;x 
+king_female_hunnic;Khanum;;;;;;;;;x 
+kingdom_of_hunnic;Khanate of;;;;;;;;;x 
+duke_hunnic;High Chief;;;;;;;;;x 
+duke_female_hunnic;High Chieftess;;;;;;;;;x 
+duchy_of_hunnic;High Chiefdom of;;;;;;;;;x 
+count_hunnic;Chief;;;;;;;;;x 
+count_female_hunnic;Chieftess;;;;;;;;;x 
+baron_hunnic;Hetman;;;;;;;;;x 
+EVTDESCPA.10363;The Bolghars in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Bulgarian in culture.;;;;;;;;;x 
+nick_the_divine;the Divine;;;;;;;;;x 
+canonised_father;Saintly Father;;;;;;;;;x 
+canonised_mother;Saintly Mother;;;;;;;;;x 
+EVTDESCPA.10364;Your father was an exceptional man, a true Christian by all accounts. Perhaps you should consider asking the church to canonise him? Doing so would certainly help legitimise your rule, as well improve your piety.;;;;;;;;;x 
+EVTDESCPA.10365;Your mother was an exceptional woman, a true Christian by all accounts. Perhaps you should consider asking the church to canonise her? Doing so would certainly help legitimise your rule, as well improve your piety.;;;;;;;;;x 
+unite_magyars;Unite the Magyars;;;;;;;;;x 
+unite_magyars_desc;Unite the Magyar tribes into a single kingdom.;;;;;;;;;x 
+migrate_to_carpathia;Migrate to Carpathia;;;;;;;;;x 
+migrate_to_carpathia_desc;The Carpathian mountains would provide a good barrier to our enemies on the steppes. Victory is not guaranteed, but the tribes will follow you regardless.;;;;;;;;;x 
+CB_NAME_TRIBAL_CONQUEST;Conquest of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_TRIBAL_CONQUEST;$ORDER$$FIRST_ADJ$ Conquest of $OTHER_TITLE$;;;;;;;;;x 
+tribal_county_conquest_desc;Tribals can conquer single border counties without specific reasons.;;;;;;;;;x 
+title_senator2;Senator;;;;;;;;;x 
+title_senator2_desc;This title allows a vassal to sit in the Byzantine Senate. This title gives its holder a substantial boost to their prestige due to its importance in the government of the state.;;;;;;;;;x 
+faction_loyalists_title;Loyalist Faction;;;;;;;;;x 
+faction_loyalists_desc;The Loyalist Faction is made up of the most trusted and loyal supporters of §Y[From.Liege.GetBestName]§!. Members cannot plot to lower crown authority, change the succession, or declare independence while they apart of the Loyalist Faction. If the faction grows powerful, the leader may send §Y[From.Liege.GetBestName]§! gifts as a token of their approval.;;;;;;;;;x 
+legislature;Legislature;;;;;;;;;x 
+legislature_desc;The Legislature law controls what type of government you have. A realm with no legislature functions normally under the game's feudal system, gaining no bonuses or penalties, while a realm with strong legislature gains legitimacy bonuses, but at the cost of power and influence (And the risk of a coup).;;;;;;;;;x 
+legislature_0;Weak Legislature;;;;;;;;;x 
+legislature_1;Strong Legislature;;;;;;;;;x 
+legislature_0_desc;Power in the realm is centralised under the high nobility.;;;;;;;;;x 
+legislature_1_desc;A strong legislature exists in the realm, giving administrative bonuses.;;;;;;;;;x 
+EVTNAMEPA.10369;The Magyar Conquest;;;;;;;;;x 
+EVTDESCPA.10369;After decades of fighting against the Slavs, the Khazars, the Bolghars and the Pechenegs, the Magyar tribes have decided it is time to search for a new homeland. Led by Grand Prince Álmos, a supposed descendant of Attila the Hun, the Magyars have begun to move towards the Pannonian basin, the heartland of the Avar people.;;;;;;;;;x 
+canaanite;Canaanite;;;;;;;;;x 
+neo_punic;Neo-Punic;;;;;;;;;x 
+RETTYPE_CUL_CANAAN;Canaanite Heavy Infantry;;;;;;;;;x 
+ca_culture_canaanite_1;Canaanite Infantry Barracks;;;;;;;;;x 
+ca_culture_canaanite_2;Canaanite Infantry Barracks;;;;;;;;;x 
+ca_culture_canaanite_3;Canaanite Infantry Barracks;;;;;;;;;x 
+ca_culture_canaanite_4;Canaanite Infantry Barracks;;;;;;;;;x 
+ca_culture_canaanite_1_desc;The heavy infantry of the Canaanites are hardy warriors that can cut through enemy formations with ease. Equipped with chainmail, a shortsword, and a wooden shield, they are more than a match for their enemies.;;;;;;;;;x 
+k_matmada;Matmada;;;;;;;;;x 
+k_matmada_adj;Matmadan;;;;;;;;;x 
+k_tripolitania;Tripolitania;;;;;;;;;x 
+k_tripolitania_adj;Tripolitanian;;;;;;;;;x 
+make_julich_capital;Make Jülich Capital;;;;;;;;;x 
+make_julich_capital_desc;Move the imperial capital to Jülich.;;;;;;;;;x 
+julich_capital;Jülich becomes the new imperial capital.;;;;;;;;;x 
+e_carthage;Carthage;;;;;;;;;x 
+e_carthage_adj;Carthaginian;;;;;;;;;x 
+d_golden_band;Golden Band;;;;;;;;;x 
+d_golden_band_adj;Golden Band;;;;;;;;;x 
+form_golden_band;Form the Golden Band;;;;;;;;;x 
+form_golden_band_desc;Form a new guard unit to protect Carthage.;;;;;;;;;x 
+k_pannonia;Pannonia;;;;;;;;;x 
+k_pannonia_adj;Pannonian;;;;;;;;;x 
+k_slovakia;Slovakia;;;;;;;;;x 
+k_slovakia_adj;Slovak;;;;;;;;;x 
+d_pressburg;Pressburg;;;;;;;;;x 
+d_pressburg_adj;Pressburger;;;;;;;;;x 
+expel_saint_maron;Expel the Order of Saint Maron;;;;;;;;;x 
+expel_saint_maron_desc;I can drive the Order fo Saint Maron from my realm and seize their castles. However, it is a very impious thing to do...;;;;;;;;;x 
+donate_money_to_saint_maron;Donate money to the Order of Saint Maron;;;;;;;;;x 
+donate_money_to_saint_maron_desc;I can donate money to the Order of Saint Maron in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
+EVTDESCPA.10373;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Order of Saint Maron in their struggle against the infidel, even though this will forever disinherit him.;;;;;;;;;x 
+EVTTOOLTIPPA_10373;[This.GetTitledFirstName] becomes a member of the Order of Saint Maron.;;;;;;;;;x 
+EVTDESCPA.10377;Your Highness, this extremely generous donation will not be forgotten. You have my friendship, as well as that of the Church. Rest assured that you will be rewarded in the afterlife, if not on Earth!\nPax Christi,\n\nGrand Master [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10378;Most righteous [Root.GetTitledFirstName], the Order of Saint Maron needs more castles in order to defend the Catholic faith against the Infidel. It has come to my attention that there is a suitable location in your demesne - in [FromFrom.GetName] to be specific. I am willing to pay you 100 gold in exchange for the right to construct a fortress there.\nPax Christi,\n\nGrand Master [From.GetFirstName];;;;;;;;;x 
+EVTDESCPA.10381;The Order of Saint Maron has constructed a castle in [Root.GetName]!;;;;;;;;;x 
+EVTDESCPA.10384;Your majesty, this antagonism is completely unwarranted! The Order of Saint Maron serves Christ, but, one has to wonder, do you?\n\With anger and sadness,\n\Grand Master [From.GetFirstName];;;;;;;;;x 
+expelled_d_saint_maron;Expelled the Order of Saint Maron;;;;;;;;;x 
+RETTYPE_CUL_PUNIC;North African Elephants;;;;;;;;;x 
+CB_NAME_IMPERIAL6;Imperial Reconquest of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_IMPERIAL6;$ORDER$$FIRST_ADJ$ Imperial Reconquest of $OTHER_TITLE$;;;;;;;;;x 
+imperial_reconquest6_desc;The lost territory of the Carthaginian Empire must be reclaimed! §Y$CLAIMANT$§! can use this Casus Belli to seize all titles held by §Y$TARGET$§! within the de jure §Y$TITLE$§!;;;;;;;;;x 
+title_nokhor;Nokhor;;;;;;;;;x 
+title_nokhor_desc;A Nokhor (Companion) was the Mongol version of a blood-brother. They often acted as representatives and bodyguards for their patrons, who they usually served for life.;;;;;;;;;x 
+d_belgrade;Belgrade;;;;;;;;;x 
+d_belgrade_adj;Belgrader;;;;;;;;;x 
+k_chagatai;Chagatai;;;;;;;;;x 
+k_chagatai_adj;Chagatayid;;;;;;;;;x 
+form_mongol_empire;Form the Mongol Empire;;;;;;;;;x 
+form_mongol_empire_desc;United the Mongol hordes into a grand new empire.;;;;;;;;;x 
+e_yuan;Yuan Empire;;;;;;;;;x 
+e_yuan_adj;Yuan;;;;;;;;;x 
+k_assyria;Assyria;;;;;;;;;x 
+k_assyria_adj;Assyrian;;;;;;;;;x 
+k_hispania;Hispania;;;;;;;;;x 
+k_hispania_adj;Spanish;;;;;;;;;x 
+form_chagatai;Form the Chagatai Khanate;;;;;;;;;x 
+form_chagatai_desc;Form the Chagatai Khanate.;;;;;;;;;x 
+form_chagatai2;Declare Independence;;;;;;;;;x 
+form_chagatai2_desc;Formally break off form the Mongol Empire and assume your imperial throne.;;;;;;;;;x 
+karaite_DESC;Karaite Judaism is a Jewish movement characterized by the recognition of the Tanakh alone as its supreme legal authority in Jewish religious law and theology. In this it is distinct from mainstream Rabbinic Judaism. Karaites maintain that all of the divine commandments handed down to Moses by God were recorded in the written Torah, without additional Oral Law or explanation. In-game, Karaite Judaism is a heresy of mainstream Judaism.;;;;;;;;;x 
+samaritan_DESC;Samaritanism is an Abrahamic religion closely related to Judaism. Samaritans assert their worship is the true religion of the ancient Israelites prior to the Babylonian Exile, preserved by those who remained in the Land of Israel, as opposed to Judaism, which they assert is a related but altered and amended religion. In-game, Samaritanism is treated as a heresy of mainstream Judaism.;;;;;;;;;x 
+monothelite_DESC;Monothelitism is a Christological doctrine that was declared heretical in 681. Monothelites attempted to develop the Miaphysite and Monophysite stance on the single nature of Christ by saying he had both a human and a divine nature but only a single will. The nominal head of the Monothelite Church is the Monothelite Patriarch of Constantinople.;;;;;;;;;x 
+imperial_government;Imperial;;;;;;;;;x 
+imperial_government_desc;An Imperial government follows a centralised, bureaucratic structure that hands absolute power to the monarch. This government type does not affect succession laws or your vassal limit, but it does allow you greater control over your vassals.;;;;;;;;;x 
+REVOKE_TITLE_INTERACTION_2G;Our Imperial administration allows us to revoke titles without objections from the aristocracy.;;;;;;;;;x 
+settlement_destroy;Destroy Settlement;;;;;;;;;x 
+vice_royalty_count_persian;Istandar;;;;;;;;;x 
+vice_royalty_county_of_persian;Istan of;;;;;;;;;x 
+vice_royalty_duke_persian;Shahrab;;;;;;;;;x 
+vice_royalty_duchy_of_persian;Province of;;;;;;;;;x 
+vice_royalty_king_persian;Padhuspan;;;;;;;;;x 
+vice_royalty_kingdom_of_persian;Prefecture of;;;;;;;;;x 
+constitutional_government;Constitutional;;;;;;;;;x 
+constitutional_government_desc;A Constitutional government is centralised and bureaucratic. Although the monarch may hold substantial powers, a legislature exists to mediate their rule. This government type does not affect succession laws but does give bonuses towards your vassal limit.;;;;;;;;;x 
+prisoner_release_all;Release all Prisoners;;;;;;;;;x 
+prisoner_release_all_desc;I can order my guards to release all prisoners who aren't under house arrest.;;;;;;;;;x 
+title_speaker;Speaker;;;;;;;;;x 
+title_speaker_desc;The Speaker is the leader of the House of Peers. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_lord_peer;Lord Peer;;;;;;;;;x 
+title_lord_peer_desc;This title allows a vassal to sit in the House of Peers. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_speaker2;Speaker;;;;;;;;;x 
+title_speaker2_desc;The Speaker is the leader of the Consultative Assembly. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_councillor;Councillor;;;;;;;;;x 
+title_councillor_desc;This title allows a vassal to sit in the Consultative Assembly. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_nasi;Nasi;;;;;;;;;x 
+title_nasi_desc;The Nasi is the leader of the Great State Sanhedrin. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_mufla;Mufla;;;;;;;;;x 
+title_mufla_desc;This title allows a vassal to sit in the Great State Sanhedrin. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_speaker3;Speaker;;;;;;;;;x 
+title_speaker3_desc;The Speaker is the leader of the Council of State. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_councillor2;Councillor;;;;;;;;;x 
+title_councillor2_desc;This title allows a vassal to sit in the Council of State. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_speaker4;Speaker;;;;;;;;;x 
+title_speaker4_desc;The Speaker is the leader of the Council of Elders. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_high_elder;High Elder;;;;;;;;;x 
+title_high_elder_desc;This title allows a vassal to sit in the Council of Elders. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_speaker5;Speaker;;;;;;;;;x 
+title_speaker5_desc;The Speaker is the leader of the Great State Council. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+title_councillor3;Councillor;;;;;;;;;x 
+title_councillor3_desc;This title allows a vassal to sit on the Great State Council. This title gives its holder a substantial boost to their prestige due to its importance in the government of the realm.;;;;;;;;;x 
+HORDE_RETTYPE_CAM1;Desert Nomads;;;;;;;;;x 
+HORDE_RETTYPE_CAM2;Desert Raiders;;;;;;;;;x 
+HORDE_RETTYPE_CAM3;Desert Pillagers;;;;;;;;;x 
+HORDE_RETTYPE_CAM4;Desert Knights;;;;;;;;;x 
+title_dominus;Dominus;;;;;;;;;x 
+title_dominus_desc;Originally one of the titles of the Roman Emperor (Diocletian in particular), Dominus (Lord) can now be given to anybody.;;;;;;;;;x 
+title_prefect;Urban Prefect;;;;;;;;;x 
+title_prefect_desc;The Urban Prefect is the leader of the Roman Senate. This title gives its holder a substantial boost to their prestige due to its importance in the government of the state.;;;;;;;;;x 
+title_eparch;Urban Prefect;;;;;;;;;x 
+title_eparch_desc;The Urban Prefect is the leader of the Byzantine Senate. This title gives its holder a substantial boost to their prestige due to its importance in the government of the state.;;;;;;;;;x 
+k_cyrenaica;Cyrenaica;;;;;;;;;x 
+k_cyrenaica_adj;Cyrenaican;;;;;;;;;x 
+b_nea_moni;Nea Moni;;;;;;;;;x 
+indo_greek;Indo-Greek;;;;;;;;;x 
+thracian;Thraco-Roman;;;;;;;;;x 
+illyrian;Illyro-Roman;;;;;;;;;x 
+rhaetian;Rhaeto-Roman;;;;;;;;;x 
+british;Britto-Roman;;;;;;;;;x 
+pannonian;Pannonian;;;;;;;;;x 
+old_arabic;Gharab;;;;;;;;;x 
+bactrian;Bactrian;;;;;;;;;x 
+scythian;Scythian;;;;;;;;;x 
+dacian;Daco-Roman;;;;;;;;;x 
+albanian;Albanian;;;;;;;;;x 
+galatian;Galatian;;;;;;;;;x 
+isaurian;Isaurian;;;;;;;;;x 
+romansh;Romansh;;;;;;;;;x 
+hellene;Hellene;;;;;;;;;x 
+mandaic;Mandaic;;;;;;;;;x 
+skirian;Skirian;;;;;;;;;x 
+balkan;Balkan;;;;;;;;;x 
+suevic;Suevic;;;;;;;;;x 
+vandal;Vandal;;;;;;;;;x 
+heruli;Heruli;;;;;;;;;x 
+gepid;Gepid;;;;;;;;;x 
+griko;Griko;;;;;;;;;x 
+reform_western_empire;Reform the Western Roman Empire;;;;;;;;;x 
+reform_western_empire_desc;Restore the Roman Empire in the West.;;;;;;;;;x 
+reform_hunnic_empire;Reform the Hunnic Empire;;;;;;;;;x 
+reform_hunnic_empire_desc;Reform the empire of the great Attila.;;;;;;;;;x 
+EVTDESCPA.10413;Through foreign trade and Latin influence, new traditions are evolving among the Thraco-Romans. This is highly noticeable in the province of [Root.GetName], which is now Vlach in culture.;;;;;;;;;x 
+EVTDESCPA.10414;Through foreign trade and Latin influence, new traditions are evolving among the Daco-Romans. This is highly noticeable in the province of [Root.GetName], which is now Vlach in culture.;;;;;;;;;x 
+EVTDESCPA.10415;Through foreign trade and Latin influence, new traditions are evolving among the Rhaetians. This is highly noticeable in the province of [Root.GetName], which is now Romansh in culture.;;;;;;;;;x 
+EVTDESCPA.10416;Through foreign trade and Latin influence, new traditions are evolving among the Illyro-Romans. This is highly noticeable in the province of [Root.GetName], which is now Albanian in culture.;;;;;;;;;x 
+emperor_scythian;Khagan;;;;;;;;;x 
+emperor_female_scythian;Khatun;;;;;;;;;x 
+empire_of_scythian;Khaganate of;;;;;;;;;x 
+king_scythian;Khan;;;;;;;;;x 
+king_female_scythian;Khanum;;;;;;;;;x 
+kingdom_of_scythian;Khanate of;;;;;;;;;x 
+duke_scythian;High Chief;;;;;;;;;x 
+duke_female_scythian;High Chieftess;;;;;;;;;x 
+duchy_of_scythian;High Chiefdom of;;;;;;;;;x 
+count_scythian;Chief;;;;;;;;;x 
+count_female_scythian;Chieftess;;;;;;;;;x 
+baron_scythian;Hetman;;;;;;;;;x 
+baron_thracian;Nobilus;;;;;;;;;x 
+baron_female_thracian;Nobilia;;;;;;;;;x 
+barony_of_thracian;Castra of;;;;;;;;;x 
+city_baron_thracian;Curator;;;;;;;;;x 
+count_thracian;Comes;;;;;;;;;x 
+count_female_thracian;Comitissa;;;;;;;;;x 
+county_of_thracian;Comitatus of;;;;;;;;;x 
+city_count_thracian;Prefect;;;;;;;;;x 
+duke_thracian;Dux;;;;;;;;;x 
+duke_female_thracian;Ducissa;;;;;;;;;x 
+duchy_of_thracian;Ducate of;;;;;;;;;x 
+city_duke_of_thracian;Doge;;;;;;;;;x 
+city_duchy_of_thracian;Republic of;;;;;;;;;x 
+king_thracian;Rex;;;;;;;;;x 
+king_female_thracian;Regina;;;;;;;;;x 
+city_king_thracian;Seren Doge;;;;;;;;;x 
+city_kingdom_of_thracian;Seren Republic of;;;;;;;;;x 
+emperor_thracian;Imperator;;;;;;;;;x 
+emperor_female_thracian;Imperatrix;;;;;;;;;x 
+city_emperor_thracian;Princeps;;;;;;;;;x 
+city_empire_of_thracian;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_thracian;Rector;;;;;;;;;x 
+vice_royalty_count_female_thracian;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_thracian;Coventus of;;;;;;;;;x 
+vice_royalty_duke_thracian;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_thracian;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_thracian;Province of;;;;;;;;;x 
+vice_royalty_king_thracian;Exarch;;;;;;;;;x 
+vice_royalty_king_female_thracian;Exarchessa;;;;;;;;;x 
+baron_dacian;Nobilus;;;;;;;;;x 
+baron_female_dacian;Nobilia;;;;;;;;;x 
+barony_of_dacian;Castra of;;;;;;;;;x 
+city_baron_dacian;Curator;;;;;;;;;x 
+count_dacian;Comes;;;;;;;;;x 
+count_female_dacian;Comitissa;;;;;;;;;x 
+county_of_dacian;Comitatus of;;;;;;;;;x 
+city_count_dacian;Prefect;;;;;;;;;x 
+duke_dacian;Dux;;;;;;;;;x 
+duke_female_dacian;Ducissa;;;;;;;;;x 
+duchy_of_dacian;Ducate of;;;;;;;;;x 
+city_duke_of_dacian;Doge;;;;;;;;;x 
+city_duchy_of_dacian;Republic of;;;;;;;;;x 
+king_dacian;Rex;;;;;;;;;x 
+king_female_dacian;Regina;;;;;;;;;x 
+city_king_dacian;Seren Doge;;;;;;;;;x 
+city_kingdom_of_dacian;Seren Republic of;;;;;;;;;x 
+emperor_dacian;Imperator;;;;;;;;;x 
+emperor_female_dacian;Imperatrix;;;;;;;;;x 
+city_emperor_dacian;Princeps;;;;;;;;;x 
+city_empire_of_dacian;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_dacian;Rector;;;;;;;;;x 
+vice_royalty_count_female_dacian;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_dacian;Coventus of;;;;;;;;;x 
+vice_royalty_duke_dacian;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_dacian;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_dacian;Province of;;;;;;;;;x 
+vice_royalty_king_dacian;Exarch;;;;;;;;;x 
+baron_rhaetian;Nobilus;;;;;;;;;x 
+baron_female_rhaetian;Nobilia;;;;;;;;;x 
+barony_of_rhaetian;Castra of;;;;;;;;;x 
+city_baron_rhaetian;Curator;;;;;;;;;x 
+count_rhaetian;Comes;;;;;;;;;x 
+count_female_rhaetian;Comitissa;;;;;;;;;x 
+county_of_rhaetian;Comitatus of;;;;;;;;;x 
+city_count_rhaetian;Prefect;;;;;;;;;x 
+duke_rhaetian;Dux;;;;;;;;;x 
+duke_female_rhaetian;Ducissa;;;;;;;;;x 
+duchy_of_rhaetian;Ducate of;;;;;;;;;x 
+city_duke_of_rhaetian;Doge;;;;;;;;;x 
+city_duchy_of_rhaetian;Republic of;;;;;;;;;x 
+king_rhaetian;Rex;;;;;;;;;x 
+king_female_rhaetian;Regina;;;;;;;;;x 
+city_king_rhaetian;Seren Doge;;;;;;;;;x 
+city_kingdom_of_rhaetian;Seren Republic of;;;;;;;;;x 
+emperor_rhaetian;Imperator;;;;;;;;;x 
+emperor_female_rhaetian;Imperatrix;;;;;;;;;x 
+city_emperor_rhaetian;Princeps;;;;;;;;;x 
+city_empire_of_rhaetian;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_rhaetian;Rector;;;;;;;;;x 
+vice_royalty_count_female_rhaetian;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_rhaetian;Coventus of;;;;;;;;;x 
+vice_royalty_duke_rhaetian;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_rhaetian;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_rhaetian;Province of;;;;;;;;;x 
+vice_royalty_king_rhaetian;Exarch;;;;;;;;;x 
+vice_royalty_king_female_rhaetian;Exarchessa;;;;;;;;;x 
+vice_royalty_kingdom_of_rhaetian;Exarchate of;;;;;;;;;x 
+title_prince_rhaetian;Princeps;;;;;;;;;x 
+title_prince_female_rhaetian;Principissa;;;;;;;;;x 
+baron_pannonian;Nobilus;;;;;;;;;x 
+baron_female_pannonian;Nobilia;;;;;;;;;x 
+barony_of_pannonian;Castra of;;;;;;;;;x 
+city_baron_pannonian;Curator;;;;;;;;;x 
+count_pannonian;Comes;;;;;;;;;x 
+count_female_pannonian;Comitissa;;;;;;;;;x 
+county_of_pannonian;Comitatus of;;;;;;;;;x 
+city_count_pannonian;Prefect;;;;;;;;;x 
+duke_pannonian;Dux;;;;;;;;;x 
+duke_female_pannonian;Ducissa;;;;;;;;;x 
+duchy_of_pannonian;Ducate of;;;;;;;;;x 
+city_duke_of_pannonian;Doge;;;;;;;;;x 
+city_duchy_of_pannonian;Republic of;;;;;;;;;x 
+king_pannonian;Rex;;;;;;;;;x 
+king_female_pannonian;Regina;;;;;;;;;x 
+city_king_pannonian;Seren Doge;;;;;;;;;x 
+city_kingdom_of_pannonian;Seren Republic of;;;;;;;;;x 
+emperor_pannonian;Imperator;;;;;;;;;x 
+emperor_female_pannonian;Imperatrix;;;;;;;;;x 
+city_emperor_pannonian;Princeps;;;;;;;;;x 
+city_empire_of_pannonian;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_pannonian;Rector;;;;;;;;;x 
+vice_royalty_count_female_pannonian;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_pannonian;Coventus of;;;;;;;;;x 
+vice_royalty_duke_pannonian;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_pannonian;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_pannonian;Province of;;;;;;;;;x 
+vice_royalty_king_pannonian;Exarch;;;;;;;;;x 
+vice_royalty_king_female_pannonian;Exarchessa;;;;;;;;;x 
+vice_royalty_kingdom_of_pannonian;Exarchate of;;;;;;;;;x 
+title_prince_pannonian;Princeps;;;;;;;;;x 
+title_prince_female_pannonian;Principissa;;;;;;;;;x 
+baron_british;Nobilus;;;;;;;;;x 
+baron_female_british;Nobilia;;;;;;;;;x 
+barony_of_british;Castra of;;;;;;;;;x 
+city_baron_british;Curator;;;;;;;;;x 
+count_british;Comes;;;;;;;;;x 
+count_female_british;Comitissa;;;;;;;;;x 
+county_of_british;Comitatus of;;;;;;;;;x 
+city_count_british;Prefect;;;;;;;;;x 
+duke_british;Dux;;;;;;;;;x 
+duke_female_british;Ducissa;;;;;;;;;x 
+duchy_of_british;Ducate of;;;;;;;;;x 
+city_duke_of_british;Doge;;;;;;;;;x 
+city_duchy_of_british;Republic of;;;;;;;;;x 
+king_british;Rex;;;;;;;;;x 
+king_female_british;Regina;;;;;;;;;x 
+city_king_british;Seren Doge;;;;;;;;;x 
+city_kingdom_of_british;Seren Republic of;;;;;;;;;x 
+emperor_british;Imperator;;;;;;;;;x 
+emperor_female_british;Imperatrix;;;;;;;;;x 
+city_emperor_british;Princeps;;;;;;;;;x 
+city_empire_of_british;Grand Republic of;;;;;;;;;x 
+vice_royalty_count_british;Rector;;;;;;;;;x 
+vice_royalty_count_female_british;Rectrix;;;;;;;;;x 
+vice_royalty_county_of_british;Coventus of;;;;;;;;;x 
+vice_royalty_duke_british;Vicarius;;;;;;;;;x 
+vice_royalty_duke_female_british;Vicaria;;;;;;;;;x 
+vice_royalty_duchy_of_british;Province of;;;;;;;;;x 
+vice_royalty_king_british;Exarch;;;;;;;;;x 
+vice_royalty_king_female_british;Exarchessa;;;;;;;;;x 
+vice_royalty_kingdom_of_british;Exarchate of;;;;;;;;;x 
+title_prince_british;Princeps;;;;;;;;;x 
+title_prince_female_british;Principissa;;;;;;;;;x 
+EVTNAMEPA.10417;The Western Roman Empire;;;;;;;;;x 
+EVTDESCPA.10417;Risen from the ashes like a phoenix, the Western Roman Empire has been reborn! Ever since Odacer's betrayal and the death of Julius Nepos, the last de jure Western Emperor, Roman rulers (And the odd Frank) have dreamed of re-establishing Roman control in Western Europe and North Africa. It will be a difficult task re-establishing Rome's true borders, and it is unknown how Constantinople and her successors will react to this news, but as history now shows, anything is possible.;;;;;;;;;x 
+EVTNAMEPA.10418;The Carthaginian Empire;;;;;;;;;x 
+EVTDESCPA.10418;Risen from the ashes like a phoenix, the Carthaginian Empire has been reborn! Ever since the destruction of Carthage in the Third Punic War, the Carthaginian people have been little more than slaves of Rome and her successors. It is unknown how the remnants of Rome and her successors will react, but with a grand new empire and a veteran army composed of Eritrean elephants, the Carthaginians are well on their way towards re-establishing their dominance in the Mediterranean.;;;;;;;;;x 
+EVTNAMEPA.10419;The Macedonian Empire;;;;;;;;;x 
+EVTDESCPA.10419;Risen from the ashes like a phoenix, the Macedonian Empire has been reborn! Ever since Cassander's betrayal and the death of Alexander IV, the last de jure ruler of Imperial Macedonian, Greek rulers have dreamed of re-establishing Alexander's empire. It will be a difficult task re-conquering Persia, Egypt, and the Middle East, and it is unknown how the people of those regions will react to Macedonian control over their homelands, but as history now shows, anything is possible.;;;;;;;;;x 
+EVTNAMEPA.10420;The Carthaginian Empire;;;;;;;;;x 
+EVTDESCPA.10420;Risen from the ashes like a phoenix, the Hunnic Empire has been reborn! Ever since the the death of the great Attila, the Huns have been without a true leader. The sons of Attila, though proud warriors and strong leaders, were unable to keep his vast empire together, leading to a period of civil war. The Bulgars, the Avars, and all those who exploited the Huns during their time of weakness, will now have to content with a revived Hunnic state, ruled by the descendants of Attila.;;;;;;;;;x 
+city_baron_griko;Kritai;;;;;;;;;x 
+city_count_griko;Kephale;;;;;;;;;x 
+city_duke_griko;Anthypatos;;;;;;;;;x 
+city_king_griko;Hypatos;;;;;;;;;x 
+city_emperor_griko;Prinkeps;;;;;;;;;x 
+baron_griko;Komes;;;;;;;;;x 
+baron_female_griko;Komessa;;;;;;;;;x 
+barony_of_griko;Bandon of;;;;;;;;;x 
+count_griko;Archon;;;;;;;;;x 
+count_female_griko;Archontissa;;;;;;;;;x 
+county_of_griko;Archonate of;;;;;;;;;x 
+duke_griko;Doux;;;;;;;;;x 
+duke_female_griko;Douxissa;;;;;;;;;x 
+duchy_of_griko;Ducate of;;;;;;;;;x 
+king_griko;Despot;;;;;;;;;x 
+king_female_griko;Despoina;;;;;;;;;x 
+kingdom_of_griko;Despotate of;;;;;;;;;x 
+emperor_griko;Basileus;;;;;;;;;x 
+emperor_female_griko;Basilissa;;;;;;;;;x 
+vice_royalty_count_griko;Tourmarches;;;;;;;;;x 
+vice_royalty_count_female_griko;Tourmarchissa;;;;;;;;;x 
+vice_royalty_county_of_griko;Tourma of;;;;;;;;;x 
+vice_royalty_duke_griko;Strategos;;;;;;;;;x 
+vice_royalty_duke_female_griko;Strategissa;;;;;;;;;x 
+vice_royalty_duchy_of_griko;Theme of;;;;;;;;;x 
+vice_royalty_king_griko;Katepan;;;;;;;;;x 
+vice_royalty_king_female_griko;Katepana;;;;;;;;;x 
+vice_royalty_kingdom_of_griko;Katepanate of;;;;;;;;;x 
+city_baron_hellene;Kritai;;;;;;;;;x 
+city_count_hellene;Kephale;;;;;;;;;x 
+city_duke_hellene;Anthypatos;;;;;;;;;x 
+city_king_hellene;Hypatos;;;;;;;;;x 
+city_emperor_hellene;Prinkeps;;;;;;;;;x 
+baron_hellene;Komes;;;;;;;;;x 
+baron_female_hellene;Komessa;;;;;;;;;x 
+barony_of_hellene;Bandon of;;;;;;;;;x 
+count_hellene;Archon;;;;;;;;;x 
+count_female_hellene;Archontissa;;;;;;;;;x 
+county_of_hellene;Archonate of;;;;;;;;;x 
+duke_hellene;Doux;;;;;;;;;x 
+duke_female_hellene;Douxissa;;;;;;;;;x 
+duchy_of_hellene;Ducate of;;;;;;;;;x 
+king_hellene;Despot;;;;;;;;;x 
+king_female_hellene;Despoina;;;;;;;;;x 
+kingdom_of_hellene;Despotate of;;;;;;;;;x 
+emperor_hellene;Basileus;;;;;;;;;x 
+emperor_female_hellene;Basilissa;;;;;;;;;x 
+vice_royalty_count_hellene;Tourmarches;;;;;;;;;x 
+vice_royalty_count_female_hellene;Tourmarchissa;;;;;;;;;x 
+vice_royalty_county_of_hellene;Tourma of;;;;;;;;;x 
+vice_royalty_duke_hellene;Strategos;;;;;;;;;x 
+vice_royalty_duke_female_hellene;Strategissa;;;;;;;;;x 
+vice_royalty_duchy_of_hellene;Theme of;;;;;;;;;x 
+vice_royalty_king_hellene;Katepan;;;;;;;;;x 
+vice_royalty_king_female_hellene;Katepana;;;;;;;;;x 
+vice_royalty_kingdom_of_hellene;Katepanate of;;;;;;;;;x 
+city_baron_indo_greek;Kritai;;;;;;;;;x 
+city_count_indo_greek;Kephale;;;;;;;;;x 
+city_duke_indo_greek;Anthypatos;;;;;;;;;x 
+city_king_indo_greek;Hypatos;;;;;;;;;x 
+city_emperor_indo_greek;Prinkeps;;;;;;;;;x 
+baron_indo_greek;Komes;;;;;;;;;x 
+baron_female_indo_greek;Komessa;;;;;;;;;x 
+barony_of_indo_greek;Bandon of;;;;;;;;;x 
+count_indo_greek;Archon;;;;;;;;;x 
+count_female_indo_greek;Archontissa;;;;;;;;;x 
+county_of_indo_greek;Archonate of;;;;;;;;;x 
+duke_indo_greek;Doux;;;;;;;;;x 
+duke_female_indo_greek;Douxissa;;;;;;;;;x 
+duchy_of_indo_greek;Ducate of;;;;;;;;;x 
+king_indo_greek;Despot;;;;;;;;;x 
+king_female_indo_greek;Despoina;;;;;;;;;x 
+kingdom_of_indo_greek;Despotate of;;;;;;;;;x 
+emperor_indo_greek;Basileus;;;;;;;;;x 
+emperor_female_indo_greek;Basilissa;;;;;;;;;x 
+vice_royalty_count_indo_greek;Tourmarches;;;;;;;;;x 
+vice_royalty_count_female_indo_greek;Tourmarchissa;;;;;;;;;x 
+vice_royalty_county_of_indo_greek;Tourma of;;;;;;;;;x 
+vice_royalty_duke_indo_greek;Strategos;;;;;;;;;x 
+vice_royalty_duke_female_indo_greek;Strategissa;;;;;;;;;x 
+vice_royalty_duchy_of_indo_greek;Theme of;;;;;;;;;x 
+vice_royalty_king_indo_greek;Katepan;;;;;;;;;x 
+vice_royalty_king_female_indo_greek;Katepana;;;;;;;;;x 
+vice_royalty_kingdom_of_indo_greek;Katepanate of;;;;;;;;;x 
+reform_macedonian_empire;Reform the Macedonian Empire;;;;;;;;;x 
+reform_macedonian_empire_desc;Restore the empire of the great Alexander.;;;;;;;;;x 
+reform_carthaginian_empire;Reform the Carthaginian Empire;;;;;;;;;x 
+reform_carthaginian_empire_desc;Reform the ancient Carthaginian Empire.;;;;;;;;;x 
+CB_NAME_ANNEXTION;Imperial Annexation of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_ANNEXATION;$ORDER$$FIRST_ADJ$ Imperial Annexation of $OTHER_TITLE$;;;;;;;;;x 
+imperial_annexation_desc;The lost territory of the Roman Empire must be reclaimed! §Y$CLAIMANT$§! can use this Casus Belli to seize the Eastern Roman Empire from §Y$TARGET$§!.;;;;;;;;;x 
+CB_NAME_ANNEXTION2;Imperial Annexation of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_ANNEXATION2;$ORDER$$FIRST_ADJ$ Imperial Annexation of $OTHER_TITLE$;;;;;;;;;x 
+imperial_annexation2_desc;The lost territory of the Roman Empire must be reclaimed! §Y$CLAIMANT$§! can use this Casus Belli to seize the Western Roman Empire from §Y$TARGET$§!.;;;;;;;;;x 
+CB_NAME_SUGJUGATION5;Imperial Subjugation of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_SUBJUGATION5;$ORDER$$FIRST_ADJ$ Imperial Subjugation of $OTHER_TITLE$;;;;;;;;;x 
+imperial_subjugation5_desc;The Pope must bow to the Roman Empire! §Y$CLAIMANT$§! can use this Casus Belli to vassal §Y$TARGET$§!.;;;;;;;;;x 
+CB_NAME_SUGJUGATION6;Imperial Subjugation of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_SUBJUGATION6;$ORDER$$FIRST_ADJ$ Imperial Subjugation of $OTHER_TITLE$;;;;;;;;;x 
+imperial_subjugation6_desc;The Pope must bow to the Roman Empire! §Y$CLAIMANT$§! can use this Casus Belli to vassal §Y$TARGET$§!.;;;;;;;;;x 
+CB_NAME_SUGJUGATION7;Imperial Subjugation of [Title.GetBaseName];;;;;;;;;x 
+WAR_NAME_SUBJUGATION7;$ORDER$$FIRST_ADJ$ Imperial Subjugation of $OTHER_TITLE$;;;;;;;;;x 
+imperial_subjugation7_desc;The Pope must bow to the Roman Empire! §Y$CLAIMANT$§! can use this Casus Belli to vassal §Y$TARGET$§!.;;;;;;;;;x 
+settlement_destroy_desc;Destroy this settlement, creating an empty holding in its place.;;;;;;;;;x 
+burgundian;Burgundian;;;;;;;;;x 
+k_christ;Heavenly Kingdom;;;;;;;;;x 
+d_constantinople;Constantinople;;;;;;;;;x 
+d_constantinople_adj;Constantinopolitan;;;;;;;;;x 
+MESSIAH_FOA;My Lord and Saviour;;;;;;;;;x 
+EVTTITLEPA.10424;The Great Schism;;;;;;;;;x 
+EVTDESCPA.10424;The relationship between the Eastern and Western branches of the Imperial Roman Church has worsened to the point of schism. The Pope has excommunicated the Ecumenical Patriarch of Constantinople, who has in turn excommunicated the Pope, destroying the unity of the Mother Church. Tensions between the churches have increased slowly over the years due to various disagreements, such as iconoclasm and the Popes claim of leadership over the Mother Church. Both sides have re-organised themselves and their faithful into two new churches, the Western Roman Catholic Church, led by the Pope, and the Eastern Orthodox Catholic Church, led by the Ecumenical Patriarch. In time, the church may be re-united, but for now, Christendom is divided, a fact its enemies will surely take note of.;;;;;;;;;x 
+EVTDESCPA.10425;The coronation of Charlemagne by the Pope has significantly worsened the relations between the Eastern and Western branches of the Imperial Church. Should another event of this magnitude occur, the unity of the Mother Church may be broken.;;;;;;;;;x 
+EVTDESCPA.10428;The conversion of the Byzantine Empire to Iconoclasm has significantly worsened the relations between the Eastern and Western branches of the Imperial Church. Although this schism may yet be healed, the unity of the Mother Church has been seriously damaged.;;;;;;;;;x 
+EVTDESCPA.10430;The relationship between the Pope and the Ecumenical Patriarch of Constantinople has worsened to the point were both have excommunicated each other. This act has irreparably worsened the relations between the Eastern and Western branches of the Imperial Church.;;;;;;;;;x 
+donatism;Donatist;;;;;;;;;x 
+donatism_DESC;Donatism was a Christian sect within the Roman province of Africa that flourished in the fourth and fifth centuries among Berber Christians. Donatism had its roots in the social pressures among the long-established Christian community of Roman North Africa (present-day Berber countries Algeria and Tunisia), during the persecutions of Christians under Diocletian. The Donatists (Named for the Berber Christian bishop Donatus Magnus) were members of a schismatic church not in communion with the churches of the rest of Early Christianity in Late Antiquity.;;;;;;;;;x 
+pelagianism;Pelagian;;;;;;;;;x 
+pelagianism_DESC;Pelagianism is the belief that original sin did not taint human nature and that mortal will is still capable of choosing good or evil without special divine aid. This theological theory is named after the British monk Pelagius (354–420, possibly 440), although he denied, at least at some point in his life, many of the doctrines associated with his name. Pelagius taught that the human will, as created with its abilities by God, was sufficient to live a sinless life. Pelagianism was popular among smallfolk people and faced crackdown by the Roman Church. It was eventually declared a heresy at the Council of Ephesus in 361, and subsequently suppressed.;;;;;;;;;x 
+adoptionism;Adoptionist;;;;;;;;;x 
+adoptionism_DESC;Adoptionism is a nontrinitarian theological teaching that Jesus was adopted as God's Son at either his baptism, his resurrection, or his ascension. According to Epiphanius's account of the Ebionites, the group believed that Jesus was chosen because of his sinless devotion to the will of God. Adoptionism was declared a heresy at the end of the 2nd century and was rejected by the Synods of Antioch and the First Council of Nicaea, which defined the orthodox doctrine of the Trinity and identified the man Jesus with the eternally begotten Son or Word of God.;;;;;;;;;x 
+sabellianism;Sabellian;;;;;;;;;x 
+sabellianism_DESC;In Christianity, Sabellianism (Also known as modalism, modalistic monarchianism, or modal monarchism) is the nontrinitarian belief that the Heavenly Father, Resurrected Son, and Holy Spirit are three different modes or aspects of one monadic God, as perceived by the believer, rather than three distinct persons within the Godhead—that there are no real or substantial differences among the three, such that there is no substantial identity for the Spirit or the Son. The term Sabellianism comes from Sabellius, who was a theologian and priest from the 3rd century.;;;;;;;;;x 
+macedonianism;Macedonian;;;;;;;;;x 
+macedonianism_DESC;The Macedonians (Named after Macedonius I, the third archbishop of Constantinople) Pneumatomachi, or Semi-Arians as they were known in Constantinople, were an anti-Nicene Creed sect which flourished in the countries adjacent to the Hellespont during the latter half of the fourth, and the beginning of the fifth century. They denied the Godhead of the Holy Ghost, hence the Greek name Pneumatomachi (Combators against the Spirit). The Pneumatomachi were denounced in 374 by Pope Damasus I, and eventually suppressed during the reign of Emperor Theodosius I (369 - 395).;;;;;;;;;x 
+valentinianism;Valentinian;;;;;;;;;x 
+valentinianism_DESC:Valentinianism is a Gnostic Christian movement that was founded by Valentinus in the second century AD. Valentinianism was one of the major Gnostic movements, and its influence was extremely widespread, not just within Rome, but also in Egypt, Asia Minor, Syria in the east, and Northwest Africa. Later in the movement’s history, it broke into two schools, an Eastern school and a Western school. Disciples of Valentinus continued to be active into the 4th century AD, after the Roman Empire was declared to be Christian, but was eventually suppressed by Imperial authorities.;;;;;;;;;;x 
+GOSPEL_OF_PHILIP;Gospel of Philip;;;;;;;;;x 
+THE_AEONS;the Aeons;;;;;;;;;x 
+OGDOAD;Ogdoad;;;;;;;;;x 
+SOPHIA;Sophia;;;;;;;;;x 
+LOGOS;Logos;;;;;;;;;x 
+c_sper;Sper;;;;;;;;;x 
+b_sper;Sper;;;;;;;;;x 
+k_moldau;Moldova;;;;;;;;;x 
+k_moldau_adj;Moldovian;;;;;;;;;x 
+k_galatia;Galatia;;;;;;;;;x 
+k_galatia_adj;Galatian;;;;;;;;;x 
+EVTNAMEPA.10434;The Territory System;;;;;;;;;x 
+EVTDESCPA.10434;Some of you may have noticed the "enclaved territory" and "contingent territory" modifiers but not understood what exactly they do in-game, so this event added to make sure you understand what's going on. The territory system decides what provinces in your realm can be reasonably controlled. If a province is not connected to your realm by another friendly province or three sea zones that are next to a friendly province, it will gain the "enclaved territory" modifier. If you do not reconnect the province to your realm within ten years, it will automatically go independent via a hidden event, either under a local noble or a generated ruler. Merchant republics are subject to these rules too, with the exception that they can control any province that has a friendly trade post present.;;;;;;;;;x 
+marcionism;Marcionist;;;;;;;;;x 
+marcionism_DESC;Marcionism was an Early Christian dualist belief system that originated in the teachings of Marcion of Sinope at Rome around the year 144. Marcion believed Jesus was the savior sent by God, and Paul the Apostle was his chief apostle, but he rejected the Hebrew Bible and the God of Israel. Marcionists believed that the wrathful Hebrew God was a separate and lower entity than the all-forgiving God of the New Testament.;;;;;;;;;x 
+priscillianism;Priscillianist;;;;;;;;;x 
+priscillianism_DESC;Priscillianism is a Christian belief system developed in the Iberian Peninsula (the Roman Hispania) in the 4th century by Priscillian, derived from the Gnostic-Manichaean doctrines taught by Marcus, an Egyptian from Memphis, and later considered a heresy by the Roman Imperial Church.;;;;;;;;;x 
+syriac;Antiochene;;;;;;;;;x 
+syriac_DESC;The Syriac Orthodox Church of Antioch is an autocephalous Oriental Orthodox church based in the Eastern Mediterranean. It employs the oldest surviving liturgy in Christianity, the Liturgy of Saint James the Apostle, and uses Syriac as its official and liturgical language. The church is led by the Syriac Orthodox Patriarch of Antioch. The Syrian Orthodox Church traces its history to one of the first Christian communities in Antioch, established by Saint Peter in AD 37.;;;;;;;;;x 
+ebionite;Ebionite;;;;;;;;;x 
+ebionite_DESC;The Ebionites were Jewish Christian movement that existed during the early centuries of the Christian Era. They regarded Jesus of Nazareth as the Messiah while rejecting his divinity and insisted on the necessity of following Jewish law and rites. The Ebionites used only one of the Jewish Gospels, revered James the Just, and rejected Paul the Apostle as an apostate from the Law.;;;;;;;;;x 
+tondrakian;Tondrakian;;;;;;;;;x 
+tondrakian_DESC;The Tondrakians were members of an anti-feudal, heretical Christian sect that flourished in medieval Armenia between the early 9th century and 11th century and centered on the city of Tondrak, north of Lake Van in Western Armenia.;;;;;;;;;x 
+THE_NEW_TESTAMENT;the New Testament;;;;;;;;;x 
+GOD_THE_STRANGER;the Stranger;;;;;;;;;x 
+GOD_MONAD;Monad;;;;;;;;;x 
+PROPHET_PAUL;Paul;;;;;;;;;x 
+GOD_YALTABAOTH;Yaltabaoth;;;;;;;;;x 
+convert_to_spouse_quran;Convert to Quranism;;;;;;;;;x 
+convert_to_spouse_quran_desc;The pillow talk of a spouse or concubine can be very persuasive. Can this Allah beat the Old Gods though?;;;;;;;;;x 
+convert_to_spouse_donatism;Convert to Donatism;;;;;;;;;x 
+convert_to_spouse_donatism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_adoptionism;Convert to Adoptionism;;;;;;;;;x 
+convert_to_spouse_adoptionism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_sabellianism;Convert to Sabellianism;;;;;;;;;x 
+convert_to_spouse_sabellianism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_pelagianism;Convert to Pelagianism;;;;;;;;;x 
+convert_to_spouse_pelagianism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_macedonianism;Convert to Macedonianism;;;;;;;;;x 
+convert_to_spouse_macedonianism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_marcionism;Convert to Marcionism;;;;;;;;;x 
+convert_to_spouse_marcionism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_priscillianism;Convert to Priscillianism;;;;;;;;;x 
+convert_to_spouse_priscillianism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_valentinianism;Convert to Valentinianism;;;;;;;;;x 
+convert_to_spouse_Valentinianism_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_tondrakian;Convert to Tondrakian;;;;;;;;;x 
+convert_to_spouse_tondrakian_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_ebonite;Convert to Ebonite;;;;;;;;;x 
+convert_to_spouse_ebonite_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_syriac;Convert to Antiochene;;;;;;;;;x 
+convert_to_spouse_syriac_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
+convert_to_spouse_yazidi;Convert to Yazidi;;;;;;;;;x 
+convert_to_spouse_yazidi_desc;The pillow talk of a spouse or concubine can be very persuasive. Sheikh Adi was undoubtedly a wise priest - perhaps life really is a struggle between good and evil?;;;;;;;;;x 
+convert_to_spouse_zurvanite;Convert to Zurvanite;;;;;;;;;x 
+convert_to_spouse_zurvanite_desc;The pillow talk of a spouse or concubine can be very persuasive. Zoroaster was undoubtedly a wise prophet - perhaps life really is a struggle between good and evil?;;;;;;;;;x 
+convert_to_spouse_mandean;Convert to Mandean;;;;;;;;;x 
+convert_to_spouse_mandean_desc;The pillow talk of a spouse or concubine can be very persuasive. John the Baptist was undoubtedly a wise leader - perhaps life really is a struggle between good and evil?;;;;;;;;;x 
+RETTYPE_CUL_ALB;Stratioti;;;;;;;;;x 
+RETTYPE_CUL_CELTIC;Hobelar;;;;;;;;;x 
+RETTYPE_CUL_ROMANCE;Spathari;;;;;;;;;x 
+RETTYPE_CUL_ROMANCE2;Cabalari;;;;;;;;;x 
+RETTYPE_CUL_GERMANIC;Gadrauht;;;;;;;;;x 
+RETTYPE_CUL_SAHARA;Sahara Camels;;;;;;;;;x 
+ca_culture_albanian_1;Stratioti Cavalry Stables;;;;;;;;;x 
+ca_culture_albanian_2;Stratioti Cavalry Stables;;;;;;;;;x 
+ca_culture_albanian_3;Stratioti Cavalry Stables;;;;;;;;;x 
+ca_culture_albanian_4;Stratioti Cavalry Stables;;;;;;;;;x 
+ca_culture_albanian_1_desc;Stratioti are light cavalry, inspired by the cavalry used by the Byzantine Empire during its battles against the Bulgars and the Slavs.;;;;;;;;;x 
+ca_culture_romance_1;Spathari Training Ground;;;;;;;;;x 
+ca_culture_romance_2;Spathari Training Ground;;;;;;;;;x 
+ca_culture_romance_3;Spathari Training Ground;;;;;;;;;x 
+ca_culture_romance_4;Spathari Training Ground;;;;;;;;;x 
+ca_culture_romance_1_desc;Patterned after the infantry of the Late Roman Army, Spathari are heavy infantry equipped with chain mail, javelins, and the spatha longsword.;;;;;;;;;x 
+ca_culture_germanic_1;Gadrauht Training Ground;;;;;;;;;x 
+ca_culture_germanic_2;Gadrauht Training Ground;;;;;;;;;x 
+ca_culture_germanic_3;Gadrauht Training Ground;;;;;;;;;x 
+ca_culture_germanic_4;Gadrauht Training Ground;;;;;;;;;x 
+ca_culture_germanic_1_desc;The heavy infantry of the Germanic tribes is patterned after the infantry of the Late Roman Army. Gadrauhts are equipped with longswords and chain mail.;;;;;;;;;x 
+gov_monarchy;Monarchical State;;;;;;;;;x
+gov_republic;Republican State;;;;;;;;;x
+gov_patrician;Patrician House;;;;;;;;x
+gov_theocracy;Theocratic State;;;;;;;;;x
+gov_tribal;Tribal State;;;;;;;;;x
+gov_nomad;Nomadic State;;;;;;;;;x
+job_chancellor_greek;Chancellor;;;;;;;;;x
+job_spymaster_greek;Spymaster;;;;;;;;;x
+job_treasurer_greek;Treasurer;;;;;;;;;x
+job_marshal_greek;Marshal;;;;;;;;;x
+city_job_chancellor_greek;Chancellor;;;;;;;;;x
+city_job_spymaster_greek;Spymaster;;;;;;;;;x
+city_job_treasurer_greek;Treasurer;;;;;;;;;x
+city_job_marshal_greek;Marshal;;;;;;;;;x
+crown_levy;Crown Levy;;;;;;;;;x 
+crown_levy_desc;The Crown Levy Laws control the proportion of levies that vassal lords have to provide their liege.;;;;;;;;;x 
+crown_levy_0;Minimal Crown Levies;;;;;;;;;x 
+crown_levy_0_option;Min;;;;;;;;;x 
+crown_levy_0_desc;Vassal lords must only provide their liege with a majority of their levies.;;;;;;;;;x 
+crown_levy_1;Small Crown Levies;;;;;;;;;x 
+crown_levy_1_option;Small;;;;;;;;;x 
+crown_levy_1_desc;Vassal lords may retain a significant portion of their levies for themselves.;;;;;;;;;x 
+crown_levy_2;Medium Crown Levies;;;;;;;;;x 
+crown_levy_2_option;Medium;;;;;;;;;x 
+crown_levy_2_desc;Vassal lords retain small mobile retinues in addition to their garrisons.;;;;;;;;;x 
+crown_levy_3;Large Crown Levies;;;;;;;;;x 
+crown_levy_3_option;Large;;;;;;;;;x 
+crown_levy_3_desc;Vassal lords are obliged to provide almost their entire levy.;;;;;;;;;x 
+crown_levy_4;Maximum Crown Levies;;;;;;;;;x 
+crown_levy_4_option;Max;;;;;;;;;x 
+crown_levy_4_desc;Vassal lords are obliged to provide their entire levy.;;;;;;;;;x 
+d_aten_pagan;The Cult of Aten;;;;;;;;;x
+d_celtic_pagan;The Cult of Lug;;;;;;;;;x
+d_egyptian_pagan;The Cult of Horus;;;;;;;;;x
+zurvanite;Zurvanite;;;;;;;;;x 
+zurvanite_DESC;Zurvanism is a branch of Zoroastrianism that believes in the existence of Zurvan, a genderless god for whom there is no distinction between good and evil. Zurvan is the parent of the two opposites representing the good god Ahura Mazda and the evil god Angra Mainyu, unlike in normal Zoroastrianism where Ahura Mazda is the Supreme Being. \n§Y*§! Rulers can marry close kin to improve vassal opinions\n§Y*§! Can have a religious head (the Moabadan-Moabad) if the Persian Empire is retaken;;;;;;;;;x
+egyptian_pagan;Kemetic;;;;;;;;;x
+egyptian_pagan_DESC;The Kemetic religion is polytheistic, with a large selection of gods and cults. It originated in ancient Egypt and with the conquests of the Egyptian empire, it would go on to become the dominant religion in the middle east until the rise of the Roman empire.;;;;;;;;;x
+BOOK_OF_THE_DEAD;Book of the Dead;;;;;;;;;x
+GOD_AMAUNET;Amaunet;;;;;;;;;x
+GOD_AMON;Amon;;;;;;;;;x
+GOD_KAUKET;Kaukett;;;;;;;;;x
+GOD_KEK;Kek;;;;;;;;;x
+GOD_HAUHET;Hauhet;;;;;;;;;x
+GOD_HEH;Heh;;;;;;;;;x
+GOD_NAUNET;Naunet;;;;;;;;;x
+GOD_NUN;Nun;;;;;;;;;x
+GOD_SET;Set;;;;;;;;;x
+GOD_ATEN;Aten;;;;;;;;;x
+GOD_RA;Ra;;;;;;;;;x
+GOD_ISIS;Isis;;;;;;;;;x
+GOD_OSIRIS;Osiris;;;;;;;;;x
+GOD_ANUBIS;Anubis;;;;;;;;;x
+GOD_APEP;Apep;;;;;;;;;x
+HERO_RELIGION;Heroic Religion;;;;;;;;;;;;;x
+HERO_RELIGION_HOME_TERRITORY;Heroic Religion in Home Territory;;;;;;;;;;;;;x
+GOD_CERNNUNOS;Cernunnos;;;;;;;;;x
+GOD_HORNED_ONE;The Horned One;;;;;;;;;;;;;x
+GOD_ANGUS;Angus mac Og;;;;;;;;;;;;;x
+GOD_DAGHDA;The Daghda;;;;;;;;;;;;;x
+GOD_MANANNAN;Manannan mac Lir;;;;;;;;;;;;;x
+GOD_LUGH;Lugh;;;;;;;;;;;;;x
+GOD_MACHA;Macha;;;;;;;;;;;;;x
+GOD_DANA;Dannu;;;;;;;;;;;;;x
+GOD_NUADA;Nuada;;;;;;;;;;;;;x
+THE_STONES;Stones;;;;;;;;;x
+celtic_pagan;Celtic;;;;;;;;;;;;;x
+celtic_pagan_reformed;Druidic;;;;;;;;;;;;;x
+celtic_pagan_DESC;Celtic paganism is one of the last surviving branch of the ancient druidic belief systems. Through a pantheon of gods and a world full of spirits, the children of Dannu rule the Skies, the Earth and the Otherworld. The main gods are Cernunnos, the Horned One, Dannu and Nuada, Angus, the god of Youth, Macha, the horse goddess, the great Daghda, Manannan mac Lir, the Sea God and Lugh of the Long Spear.;;;;;;;;;;;;;x
+celtic_pagan_reformed_DESC;The reformed Celtic faith has a standardized liturgy written in the Ogham script, telling the story of the Tuatha De Danann. It is led by the Circle of the Druids with the Arch-Druid as the religious leader of the faithful.;;;;;;;;;;;;;x
+celtic_pagan_reformed_FEATURES;§Y*§! The Arch Druid is elected by, and from, the members of the Circle;;;;;;;;;;;;;x
+THE_STONES;The Sacred Stones;;;;;;;;;;;;;x
+THE_BALLADS;The Ballads;;;;;;;;;;;;;x
+DRUID;Druid;;;;;;;;;;;;;x
+THE_FOMORIANS;The Fomorians;;;;;;;;;;;;;x
+EVIL_BALOR;Balor;;;;;;;;;;;;;x
+EVIL_BRES;Bres;;;;;;;;;;;;;x
+GOD_CAILLEACH;Cailleach;;;;;;;;;;;;;x
+d_arabic_pagan;The Cult of Hubal;;;;;;;;;x
+arabic_pagan_reformed;Watani;;;;;;;;;x
+arabic_pagan_reformed;The reformed Arabic faith has a standardized liturgy written in the Arabic script, telling the story of the creation of the world. It is led by the High Priest of Hubal, who traditionally sits in Mecca.;;;;;;;;;x
+arabic_pagan;Arabic;;;;;;;;;x
+GOD_HUBAL;Hubal;;;;;;;;;x
+GODESS_MANAT;Manat;;;;;;;;;x
+GODESS_UZZA;Uzza;;;;;;;;;x
+GOD_AMM ;Amm;;;;;;;;;x
+GODESS_LAT;Lat;;;;;;;;;x
+GOD_WADD;Wadd;;;;;;;;;x
+GOD_DUSHARA;Dushara;;;;;;;;;x
+IFRITS;Ifritis;;;;;;;;;x
+THE_LEGENDS;Legends;;;;;;;;;x
+c_anbar;Anbar;;;;;;;;;x
+d_jawf;Jawf;;;;;;;;;x
+c_mark;Mark;;;;;;;;;x
+c_ostmark;Ostmark;;;;;;;;;x
+c_freistadt;Freistadt;;;;;;;;;x
+d_znojmo;Znojmo;;;;;;;;;x
+k_znojmo;Znojmo;;;;;;;;;x
+b_hamm;Hamm;;;;;;;;;x
+b_altena;Altena;;;;;;;;;x
+b_lippe;Lippe;;;;;;;;;x
+b_ostmark;Ostmark;;;;;;;;;x
+b_hollabrun;Hollabrun;;;;;;;;x
+b_mistelbach;Mistelbach;;;;;;;;;x
+b_freistadt;Freistadt;;;;;;;;;x
+b_seigberg;Seigberg;;;;;;;;;x
+d_nordgau;Nordgau;;;;;;;;;x

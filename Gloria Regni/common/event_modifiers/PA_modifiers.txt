@@ -1,0 +1,260 @@
+
+egyptian_grain = {
+	city_vassal_tax_modifier = 0.2
+	castle_vassal_tax_modifier = 0.2
+	temple_vassal_tax_modifier = 0.2
+	global_revolt_risk = -0.02
+	icon = 4
+}
+religious_upheaval = {
+        global_revolt_risk = 0.20
+	icon = 35
+}
+sword_of_caesar = {
+        martial = 2
+	icon = 1
+}
+peacocks_feather = {
+	health = 1
+	diplomacy = 2
+        learning = 4
+        fertility = 0.20
+        church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.5
+	icon = 17
+}
+desert_heat = {
+	health = -1
+	icon = 36
+}
+fresh_water = {
+	health = 1
+	icon = 18
+}
+divine_father = {
+	diplomacy = 1
+        learning = 2
+        church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}
+divine_mother = {
+	diplomacy = 1
+        learning = 2
+        church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}
+good_augury = {
+	health = 0.5
+        fertility = 0.10
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}
+terrible_augury = {
+	health = -0.5
+        fertility = -0.10
+	monthly_character_piety = -0.2
+	global_revolt_risk = 0.01
+	icon = 35
+}
+hellenic_sacrifice_bull = {
+	monthly_character_piety = 0.4
+	global_revolt_risk = -0.02
+	icon = 17
+}
+hellenic_sacrifice_lamb = {
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}
+hellenic_sacrifice_nothing = {
+	monthly_character_piety = -0.4
+	global_revolt_risk = 0.02
+	icon = 35
+}
+hellenic_sacrifice_decision = {
+	icon = 17
+}
+imperial_taxes = {
+	city_vassal_tax_modifier = 0.25
+	castle_vassal_tax_modifier = 0.25
+	temple_vassal_tax_modifier = 0.25
+	icon = 4
+}
+imperial_rule = {		
+	retinuesize = 5000
+	icon = 11
+}
+imperial_rule2 = {		
+	retinuesize = 10000
+	icon = 11
+}
+imperial_rule3 = {		
+	retinuesize = 15000
+	icon = 11
+}
+imperial_rule4 = {		
+	retinuesize = 20000
+	icon = 11
+}
+imperial_rule5 = {		
+	retinuesize = 25000
+	icon = 11
+}
+imperial_rule6 = {		
+	retinuesize = 30000
+	icon = 11
+}
+imperial_rule7 = {		
+	retinuesize = 35000
+	icon = 11
+}
+imperial_rule8 = {		
+	retinuesize = 40000
+	icon = 11
+}
+imperial_rule9 = {		
+	retinuesize = 45000
+	icon = 11
+}
+imperial_rule10 = {		
+	retinuesize = 50000
+	icon = 11
+}
+imperial_rule11 = {		
+	retinuesize = 55000
+	icon = 11
+}
+imperial_rule12 = {		
+	retinuesize = 60000
+	icon = 11
+}
+imperial_rule13 = {		
+	retinuesize = 65000
+	icon = 11
+}
+imperial_rule14 = {		
+	retinuesize = 70000
+	icon = 11
+}
+imperial_rule15 = {		
+	retinuesize = 75000
+	icon = 11
+}
+imperial_rule16 = {		
+	retinuesize = 80000
+	icon = 11
+}
+imperial_rule17 = {		
+	retinuesize = 85000
+	icon = 11
+}
+imperial_rule18 = {		
+	retinuesize = 90000
+	icon = 11
+}
+imperial_rule19 = {		
+	retinuesize = 95000
+	icon = 11
+}
+imperial_rule20 = {		
+	retinuesize = 100000
+	icon = 11
+}
+weak_ruler = {
+        general_opinion = -10
+	icon = 34
+}
+inactive_themes = {		
+	levy_size = -0.75
+	icon = 29
+}
+active_themes = {		
+	levy_size = 0.25
+	icon = 11
+}
+imperial_decline = {
+	vassal_opinion = -50
+	icon = 21
+}
+abbasid_anarchy= {
+	vassal_opinion = -50
+	icon = 21
+}
+fourth_fitna = {
+	vassal_opinion = -50
+	icon = 21
+}
+standing_army = {		
+	levy_size = -0.1
+	icon = 29
+}
+standing_army2 = {		
+	levy_size = -0.2
+	icon = 29
+}
+standing_army3 = {		
+	levy_size = -0.3
+	icon = 29
+}
+standing_army4 = {		
+	levy_size = -0.4
+	icon = 29
+}
+standing_army5 = {		
+	levy_size = -0.5
+	icon = 29
+}
+expelled_d_guardians_nyame = {
+	icon = 35
+}
+expelled_d_darkhan_knights = {
+	icon = 35
+}
+expelled_d_warriors_nyame = {
+	icon = 35
+}
+expelled_d_saint_blaise = {
+	icon = 35
+}
+expelled_d_saint_peter = {
+	icon = 35
+}
+expelled_d_heroes = {
+	icon = 35
+}
+expelled_d_imperial_order = {
+	icon = 35
+}
+expelled_d_sacred_band = {
+	icon = 35
+}
+expelled_d_saint_maron = {
+	icon = 35
+}
+
+canonised_father = {
+	diplomacy = 1
+        learning = 2
+        church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}
+canonised_mother = {
+	diplomacy = 1
+        learning = 2
+        church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.01
+	icon = 17
+}

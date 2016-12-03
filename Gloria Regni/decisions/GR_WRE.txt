@@ -1,0 +1,115 @@
+decisions = {
+	restore_wre = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			has_landed_title = k_italy
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = wre_restored }
+			or = {
+				culture_group = postroman
+				culture_group = byzantine
+			}
+		}
+		allow = {
+			prestige = 3000
+			completely_controls = k_italy
+			completely_controls = k_sicily
+			completely_controls = k_croatia
+			OR = {
+				AND = {
+					spouse = { any_dynasty_member = { has_landed_title = e_byzantium } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 25 } } }
+				}
+				AND = {
+					current_heir = { spouse = { any_dynasty_member = { has_landed_title = e_byzantium } } }
+					e_byzantium = { holder_scope = { reverse_opinion = { who = ROOT value = 25 } } }
+				}
+			}
+		}
+		effect = {
+			set_global_flag = wre_restored
+			e_wre = {
+				grant_title = ROOT
+				make_primary_title = yes
+				copy_title_laws = k_italy
+				copy_title_history = k_italy
+			}
+			any_direct_de_jure_vassal_title = { 
+				de_jure_liege = e_wre
+			}
+			k_italy = {
+				de_jure_liege = e_wre
+			}
+			k_croatia = {
+				de_jure_liege = e_wre
+			}
+			k_sicily = {
+				de_jure_liege = e_wre
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	re_divide_western_empire = {
+		is_high_prio = no
+		potential = {
+			has_dlc = "Legacy of Rome"
+			has_landed_title = e_roman_empire
+			age = 16
+			prisoner = no
+#			NOT = { trait = incapable }
+			NOT = { has_global_flag = wre_restored }
+		}
+		allow = {
+#			prestige = 3000
+			completely_controls = k_italy
+			completely_controls = k_sicily
+			completely_controls = k_croatia
+			num_of_children = 2
+		}
+		effect = {
+			set_global_flag = wre_restored
+			random_child = {
+				limit = {
+					is_heir = no
+				}
+				save_event_target_as = wre_emperor
+			}
+			k_italy = {
+				destroy_landed_title = THIS
+			}
+			k_croatia = {
+				destroy_landed_title = THIS
+			}
+			k_sicily = {
+				destroy_landed_title = THIS
+			}
+			e_wre = {
+				grant_title = event_target:wre_emperor
+				make_primary_title = yes
+				copy_title_laws = e_roman_empire
+				copy_title_history = e_roman_empire
+			}
+			any_direct_de_jure_vassal_title = { 
+				de_jure_liege = e_wre
+			}
+			k_italy = {
+				de_jure_liege = e_wre
+			}
+			k_croatia = {
+				de_jure_liege = e_wre
+			}
+			k_sicily = {
+				de_jure_liege = e_wre
+			}
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}	
+}

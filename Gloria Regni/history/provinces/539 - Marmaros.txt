@@ -1,0 +1,34 @@
+# 539 - Marmaros
+
+# County Title
+title = c_marmaros
+
+# Settlements
+max_settlements = 4
+b_maramarossziget = tribal
+
+#b_nagybanya = temple
+#b_huszt = castle
+#b_aknasugatag = castle
+#b_tecso = castle
+#b_raho = castle
+#b_felsoviso = castle
+
+# Misc
+culture = gepid
+religion = arian
+700.1.1 = {
+culture = volhynian
+religion = slavic_pagan
+}
+
+# History
+800.1.1 = {
+	b_maramarossziget = castle
+	b_nagykaroly = city
+	b_nagybanya = temple
+}
+900.1.1 = { religion = imperial }
+950.1.1 = { culture = hungarian }
+
+1054.7.6 = { religion = catholic }

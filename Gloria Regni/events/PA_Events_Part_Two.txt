@@ -1,0 +1,283 @@
+namespace = PA
+
+character_event = {
+	id = PA.100283
+
+        hide_window = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		activate_title = { title = k_sicily2 status = yes }
+		k_sicily2 = {
+			grant_title = ROOT
+			copy_title_laws = k_sicily
+			copy_title_history = k_sicily
+		}
+                k_sicily = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_sicily2
+			}
+		}
+		k_sicily = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_sicily status = no }
+        }
+}
+
+character_event = {
+	id = PA.100284
+
+        hide_window = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria2 status = yes }
+		k_bulgaria2 = {
+			grant_title = ROOT
+			copy_title_laws = k_bulgaria
+			copy_title_history = k_bulgaria
+		}
+                k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria2
+			}
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+        }
+}
+
+character_event = {
+	id = PA.100285
+
+        hide_window = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		activate_title = { title = k_serbia2 status = yes }
+		k_serbia2 = {
+			grant_title = ROOT
+			copy_title_laws = k_serbia
+			copy_title_history = k_serbia
+		}
+                k_serbia = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_serbia2
+			}
+		}
+		k_serbia = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_serbia status = no }
+        }
+}
+
+character_event = {
+	id = PA.100286
+
+        hide_window = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		activate_title = { title = k_bulgaria2 status = yes }
+		k_bulgaria2 = {
+			grant_title = ROOT
+			copy_title_laws = k_bulgaria
+			copy_title_history = k_bulgaria
+		}
+                k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria2
+			}
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+                }
+		activate_title = { title = k_bulgaria status = no }
+        }
+}
+
+character_event = {
+	id = PA.100287
+	desc = EVTDESCPA.100287
+	picture = GFX_evt_stone_church
+
+        trigger = {
+                year = 800
+                culture = khazar
+		NOT = { year = 1000 }
+                any_realm_province = {
+                        culture = ostrogothic
+                }
+	}
+
+	mean_time_to_happen = {
+		months = 3600
+	}
+
+	option = {
+		name = OPTPA_100287
+		random_realm_province = {
+                                limit = {
+					culture = ostrogothic
+				}
+                                culture = khazar
+                        }
+		}
+	}
+
+#Special event for Middle Francia to be renamed to Luxembourg
+narrative_event = {
+	id = PA.100288
+	title = EVTNAMEPA.100288
+	desc = EVTDESCPA.100288
+	
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_diplomacy
+	
+	only_playable = yes
+	
+	trigger = {
+		has_landed_title = k_lotharingia
+		NOT = { dynasty = 25061 } # Karling dynasty
+		NOT = { has_global_flag = lotharingia_renamed }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_100288
+		set_global_flag = lotharingia_renamed
+		k_lotharingia = {
+			set_name="Luxembourg"
+			adjective="Luxembourger"
+		}
+	}
+}
+
+# Frankish Breakup Event (Addition)
+narrative_event = {
+	id = PA.100289
+	title = EVTNAMEPA.100289
+	desc = EVTDESCPA.100289
+	picture = GFX_evt_council
+	
+        trigger = {
+                year = 867
+		dynasty = 25061
+                has_landed_title = e_france
+		NOT = { has_global_flag = cm_francia }
+		NOT = { has_global_flag = frankish_decline }
+		NOT = { has_global_flag = frankish_breakup }
+		NOT = { has_character_modifier = imperial_decline }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OPTPA_100289
+                set_global_flag = frankish_decline
+                add_character_modifier = {
+                    name = imperial_decline
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+
+# Frankish Breakup Event (Removal)
+narrative_event = {
+	id = PA.100290
+	title = EVTNAMEPA.100290
+	desc = EVTDESCPA.100290
+	picture = GFX_evt_council
+	
+        trigger = {
+		dynasty = 25061
+                has_landed_title = e_france
+		NOT = { has_global_flag = cm_francia }
+		NOT = { has_global_flag = frankish_breakup }
+		has_character_modifier = imperial_decline
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+	}
+	
+	option = {
+	        name = OPTPA_100290
+                remove_character_modifier = imperial_decline
+                prestige = 100
+	}
+}
+
+# Abbasid Breakup Event (Addition)
+narrative_event = {
+	id = PA.100291
+	title = EVTNAMEPA.100291
+	desc = EVTDESCPA.100291
+	picture = GFX_evt_council
+	
+        trigger = {
+                year = 867
+		dynasty = 101727
+                has_landed_title = e_arabia
+		has_global_flag = abbasid_decline
+                NOT = { has_global_flag = abbasid_anarchy_done }
+		NOT = { has_character_modifier = abbasid_anarchy }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OPTPA_100291
+                set_global_flag = abbasid_decline
+                add_character_modifier = {
+                    name = abbasid_anarchy
+                    duration = -1
+		    inherit = yes
+		}
+	}
+}
+
+# Abbasid Breakup Event (Removal)
+narrative_event = {
+	id = PA.100292
+	title = EVTNAMEPA.100292
+	desc = EVTDESCPA.100292
+	picture = GFX_evt_council
+	
+        trigger = {
+		dynasty = 101727		
+                has_landed_title = e_arabia
+		has_character_modifier = abbasid_anarchy
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+	}
+	
+	option = {
+	        name = OPTPA_100292
+                remove_character_modifier = abbasid_anarchy
+                set_global_flag = abbasid_anarchy_done
+                prestige = 100
+	}
+}

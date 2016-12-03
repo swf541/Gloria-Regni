@@ -1,0 +1,203 @@
+law_groups = {
+	 interpretatio_romana = {
+		law_type = realm
+	}
+	egyptian_temple_funding = {
+		law_type = realm
+	}
+}
+
+laws = {
+	interpretatio_romana_0 = {
+		group = interpretatio_romana
+		allow = {
+			has_law = interpretatio_romana_1
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = hellenic_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+			
+		}
+		effect = {			
+			hidden_tooltip = {
+				revoke_law = interpretatio_romana_1
+			}
+		}
+		slavic_pagan_opinion = 10
+	}
+	interpretatio_romana_1 = {
+		group = interpretatio_romana
+		allow = {
+			OR = {
+				has_law = interpretatio_romana_1
+				has_law = interpretatio_romana_0
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = hellenic_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = interpretatio_romana_0
+			}
+		}
+	}
+	egyptian_temple_funding_1 = {
+		group = egyptian_temple_funding
+		temple_opinion = 0
+		default = yes
+		allow = {
+			has_law = egyptian_temple_funding_romana_1
+		}
+		potential = {
+			holder_scope = { religion = egyptian_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+			
+		}
+		effect = {			
+			hidden_tooltip = {
+				revoke_law = egyptian_temple_funding_4
+				revoke_law = egyptian_temple_funding_3
+				revoke_law = egyptian_temple_funding_2
+			}
+		}
+		temple_vassal_tax_modifier = 0.0
+	}
+	egyptian_temple_funding_2 = {
+		group = egyptian_temple_funding
+		temple_opinion = 5
+		allow = {
+			OR = {
+				has_law = egyptian_temple_funding_1
+				has_law = egyptian_temple_funding_3
+			}
+		}
+		potential = {
+			holder_scope = { religion = egyptian_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = egyptian_temple_funding_4
+				revoke_law = egyptian_temple_funding_3
+				revoke_law = egyptian_temple_funding_1
+			}
+		}
+		temple_vassal_tax_modifier = -0.1
+		global_tax_modifier = -0.025
+	}
+	egyptian_temple_funding_3 = {
+		group = egyptian_temple_funding
+		temple_opinion = 10
+		allow = {
+			OR = {
+				has_law = egyptian_temple_funding_2
+				has_law = egyptian_temple_funding_4
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = egyptian_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = egyptian_temple_funding_4
+				revoke_law = egyptian_temple_funding_2
+				revoke_law = egyptian_temple_funding_1
+			}
+		}
+		temple_vassal_tax_modifier = -0.25
+		global_tax_modifier = -0.05
+	}
+	egyptian_temple_funding_4 = {
+		group = egyptian_temple_funding
+		temple_opinion = 20
+		allow = {
+			OR = {
+				has_law = egyptian_temple_funding_3
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { religion = egyptian_pagan }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = egyptian_temple_funding_3
+				revoke_law = egyptian_temple_funding_2
+				revoke_law = egyptian_temple_funding_1
+			}
+		}
+		temple_vassal_tax_modifier = -0.50
+		global_tax_modifier = -0.10
+	}
+}

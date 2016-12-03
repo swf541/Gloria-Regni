@@ -1,0 +1,190 @@
+# Death of a Duke
+namespace = appointment
+
+character_event = {
+	id = appointment.1
+	desc = EVTDESCappointment.1
+	picture = GFX_evt_death
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	    is_feudal = yes
+		mercenary = no
+        independent = yes
+        NOT = { has_dlc = "Charlemagne" }
+	    liege = {
+		    is_feudal = yes
+			OR = {
+                has_landed_title = k_morea
+                has_landed_title = k_epirus
+                has_landed_title = k_thrace
+                has_landed_title = k_macedon
+                has_landed_title = k_bulgaria
+                has_landed_title = k_bulgaria2
+                has_landed_title = k_trebizond
+                has_landed_title = k_byzantium
+                has_landed_title = e_bulgaria
+			    has_landed_title = e_western
+				has_landed_title = e_trebizond
+				has_landed_title = e_byzantium
+				has_landed_title = e_thessalonika
+				has_landed_title = e_roman_empire
+			}
+			crownlaw_title = {
+				AND = {
+					OR = {
+						has_law = crown_authority_2
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		tier = duke
+	}
+	
+	immediate = {
+		# Fire the character event for the Emperor first
+		liege = {
+			character_event = { id = appointment.2 }
+		}
+		# Revert all duchies to the Emperor (this frees counties to be inherited normally)
+		any_demesne_title = {
+			if = {
+				limit = {
+					tier = duke
+					# Additional exclusion for Varangian Guard (should be dealt with by mercenary = no though)
+					NOT = {
+						AND = {
+							is_landless_type_title = yes
+							is_tribal_type_title = no
+						}
+					}
+				}
+				ROOT = {
+					liege = {
+						gain_title = PREVPREV
+					}
+					# Give the children claims to the Duchy, for extra fun
+					any_child = {
+						limit = { 
+							dynasty = ROOT 
+							is_alive = yes
+							is_female = no
+						}
+						add_pressed_claim = PREVPREV
+					}
+					any_child = {
+						limit = { 
+							dynasty = ROOT 
+							is_alive = yes
+							is_female = yes
+						}
+						add_weak_pressed_claim = PREVPREV
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OTPAPP_1
+	}
+}
+
+# Emperor event: How to deal with the children of the dead Doux
+character_event = {
+	id = appointment.2
+	desc = EVTDESCappointment.2
+	picture = GFX_evt_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OTPAAPP_2
+		ai_chance = { factor = 20 }
+		FROM = {
+			any_child = {
+				limit = {
+					# Those who didn't inherit anything are not involved here
+					is_landed = yes
+					# If one of them is already a Doux, that is good enough
+					primary_title = {
+						OR = {
+							tier = count
+							tier = baron
+						}
+					}
+					NOT = {
+						any_sibling = {
+							is_alive = yes
+							is_landed = yes
+							primary_title = {
+								OR = {
+									tier = count
+									tier = baron
+								}
+							}
+							is_older_than = PREV
+						}
+					}
+				}
+				ROOT = {
+					any_demesne_title = {
+						if = {
+							limit = {
+								tier = duke
+								#holder_scope = {
+								#	character = FROM
+								#}
+								any_previous_holder = {
+									character = FROM
+								}
+							}
+							gain_title = PREVPREV
+							PREVPREV = {
+								remove_opinion = { who = ROOT modifier = opinion_granted_duchy }
+								opinion = { modifier = opinion_duchy_appointment who = ROOT years = 5 }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OTPBAPP_2
+		ai_chance = { factor = 40 }
+		FROM = {
+			any_child = {
+				limit = {
+					# Those who didn't inherit anything are not involved here
+					is_landed = yes
+					# If one of them is already a Doux, that is good enough
+					primary_title = {
+						OR = {
+							tier = count
+							tier = baron
+						}
+					}
+				}
+				ROOT = {
+					transfer_scaled_wealth = { to = PREV value = 0.15 } 
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OTPCAPP_2
+		ai_chance = { factor = 40 }
+		FROM = {
+			any_child = {
+				opinion = { modifier = opinion_heirs_not_paid_off who = ROOT years = 30 } 
+			}
+		}
+	}
+}
