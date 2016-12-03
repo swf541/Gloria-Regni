@@ -1,0 +1,245 @@
+namespace = DEMES
+
+# Wroth Character Attacks You
+character_event = {
+	id = DEMES.821
+	desc = EVTDESC_DEMES_651
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	
+	option = {	# Brawl Starts
+		name = EVTOPTC_TOG_651
+		FROM = { character_event = { id = DEMES.670 } }
+		top_liege = { character_event = { id = DEMES.201 } }
+	}
+}
+
+character_event = {
+	id = DEMES.920
+	desc = EVTDESC_DEMES.920
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	option = {	# Vandalism
+		name = EVTOPTA_DEMES.920
+		random_list = {
+				25 = {
+					character_event = { id = DEMES.990 }
+					top_liege = { character_event = { id = DEMES.202 } }
+				}
+				75 = {
+					top_liege = { character_event = { id = DEMES.202 } }
+				}
+			}
+	}
+	option = {	# Start a Duel with an Opposing Deme
+		name = EVTOPTB_DEMES.920
+			if = {
+				limit = { trait = blue_deme }
+				random_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						trait = green_deme
+						age = 16
+						NOT = { character = ROOT }
+					}
+					character_event = { id = DEMES.670 }
+					top_liege = { character_event = { id = DEMES.201 } }
+				}
+			}
+			if = {
+				limit = { trait = green_deme }
+				random_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						trait = blue_deme
+						age = 16
+						NOT = { character = ROOT }
+					}
+					character_event = { id = DEMES.670 }
+					top_liege = { character_event = { id = DEMES.201 } }
+				}
+			}
+			random_list = {
+				25 = {
+					character_event = { id = DEMES.990 }
+					top_liege = { character_event = { id = DEMES.201 } }
+				}
+				75 = {
+					top_liege = { character_event = { id = DEMES.201 } }
+				}
+			}
+		}
+}
+character_event = {
+	id = DEMES.960
+	desc = EVTDESC37011
+	picture = GFX_evt_large_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA37011 # Interesting
+		
+		hidden_tooltip = {
+			top_liege = { character_event = { id = DEMES.961 } } # Notify the old liege
+		}
+	}
+}
+
+# The old liege is notified
+character_event = {
+	id = DEMES.961
+	desc = EVTDESC37012
+	picture = GFX_evt_large_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA37012 # Kill em all
+		
+		opinion = {
+			who = FROM
+			modifier = opinion_traitor
+		}
+		
+		random_list = {
+		75 = {
+			event_target:riot_king = { death = { death_reason = death_execution killer = ROOT } }
+			any_realm_character = {
+				limit = {
+					has_character_flag = attempting_rebellion
+				}
+				death = { death_reason = death_execution killer = ROOT }
+			}
+		}
+		25 = {
+			event_target:riot_king = { character_event = { id = 37015 } } # The event that actually fires the revolt
+			}
+		}
+	}
+}
+character_event = {
+	id = DEMES.960
+	desc = EVTDESC37011
+	picture = GFX_evt_large_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA37011 # Interesting
+		
+		hidden_tooltip = {
+			top_liege = { character_event = { id = DEMES.961 } } # Notify the old liege
+		}
+	}
+}
+
+character_event = {
+	id = DEMES.202
+	desc = EVTDESCDEMES.202
+	picture = GFX_evt_large_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTADEMES.202 # Interesting
+	}
+}
+
+# Brawling Reported
+character_event = {
+	id = DEMES.201
+	desc = EVTDESCDEMES.201
+	picture = GFX_evt_large_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTADEMES.201 # Interesting
+	}
+}
+
+
+# The pretender launches the attack
+character_event = {
+	id = DEMES.970
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = no
+		is_ruler = no
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+	
+	immediate = {
+		event_target:senator_rebel = {
+			capital_scope = {
+				ROOT = {
+					set_defacto_liege = ROOT
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = ROOT
+						name = "CLAIMANT_ADVENTURE"
+						holder = ROOT
+					}
+				}
+			}
+		}
+					event_target:riot_king = {
+						set_character_flag = claimant_adventurer
+							496 = {
+								spawn_unit = {
+									province = 496
+									home = 496
+									owner = THIS
+									leader = THIS
+									match_character = THIS
+									match_mult = 0.125
+									match_min = 300
+									match_max = 5000
+									attrition = 0.25
+									earmark = claimant_adventure
+									disband_on_peace = yes
+								}
+								spawn_unit = {
+									province = 496
+									home = 496
+									owner = THIS
+									match_character = THIS
+									match_mult = 0.125
+									match_min = 300
+									match_max = 5000
+									attrition = 0.25
+									earmark = claimant_adventure
+									disband_on_peace = yes
+								}
+								spawn_unit = {
+									province = 496
+									home = 496
+									owner = THIS
+									match_character = THIS
+									match_mult = 0.125
+									match_min = 300
+									match_max = 5000
+									attrition = 0.25
+									earmark = claimant_adventure
+									disband_on_peace = yes
+								}
+						}
+					
+				
+			}
+		}
+	}
+
