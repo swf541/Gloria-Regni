@@ -4779,9 +4779,7 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0.1 # slow it down
-			}
+
 			modifier = {
 				factor = 3
 				trait = cynical

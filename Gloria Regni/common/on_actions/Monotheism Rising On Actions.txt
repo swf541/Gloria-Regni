@@ -10,6 +10,95 @@ on_startup = {
 		COPT.1
 		AGH.1
 		BUL.1
+		VFS.1
+	}
+}
+# When the religion changes in a county
+on_county_religion_change = {
+	events = {
+		VFS.2
+		VFS.3
+		VFS.4
+		VFS.5
+		VFS.6
+		VFS.7
+		VFS.8
+		VFS.9
+		VFS.10
+		VFS.11
+		VFS.12
+		VFS.13
+		VFS.14
+		VFS.15
+		VFS.16
+		VFS.17
+		VFS.18
+		VFS.19
+		VFS.20
+		VFS.21
+		VFS.22
+		VFS.23
+		VFS.24
+		VFS.25
+		VFS.26
+		VFS.27
+		VFS.28
+		VFS.29
+		VFS.30
+		VFS.31
+		VFS.32
+		VFS.33
+		VFS.34
+		VFS.35
+		VFS.36
+		VFS.37
+		VFS.38
+		VFS.39
+		VFS.40
+		VFS.41
+		VFS.42
+		VFS.43
+		VFS.44
+		VFS.45
+		VFS.46
+		VFS.47
+		VFS.48
+		VFS.49
+		VFS.50
+		VFS.51
+		VFS.52
+		VFS.53
+		VFS.54
+		VFS.55
+		VFS.56
+		VFS.57
+		VFS.58
+		VFS.59
+		VFS.60
+		VFS.61
+		VFS.62
+		VFS.63
+		VFS.64
+		VFS.65
+		VFS.66
+		VFS.67
+		VFS.68
+		VFS.69
+		VFS.70
+		VFS.71
+		VFS.72
+		VFS.73
+		VFS.74
+		VFS.75
+		VFS.76
+		VFS.77
+		VFS.78
+		VFS.79
+		VFS.80
+		VFS.81
+		VFS.82
+		VFS.83
+		VFS.84
 	}
 }
 on_birth = {

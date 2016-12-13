@@ -3991,6 +3991,7 @@ narrative_event = {
  	major = yes
 	
 	trigger = {
+		year = 800
 	    NOT = { realm_size = 200 }
 	    has_landed_title = e_france
 

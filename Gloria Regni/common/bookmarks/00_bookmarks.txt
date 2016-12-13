@@ -1,9 +1,16 @@
-#bm_ridda_wars = {
-#	name = "bm_ridda_wars"
-#	desc = "BM_CHARLEMAGNE_ERA_INFO"
-#	date = 632.6.8
-#	
-#}
+bm_constantine = {
+	name = "bm_ridda_wars"
+	desc = "BM_CHARLEMAGNE_ERA_INFO"
+	date = 321.1.1
+	
+}
+
+bm_ridda_wars = {
+	name = "bm_ridda_wars"
+	desc = "BM_CHARLEMAGNE_ERA_INFO"
+	date = 632.6.8
+	
+}
 bm_charlemagne = {
 	name = "BM_CHARLEMAGNE_ERA"
 	desc = "BM_CHARLEMAGNE_ERA_INFO"
@@ -412,7 +419,15 @@ bm_komnenos_dynasty = {
 		id = 3046 # Suleyman I of Rum
 	}
 }
+bm_commune_rome = {
+	name = "BM_COMMUNE_ROME"
+	desc = "BM_COMMUNE_ROME_DESC"
+	date = 1143.10.23
 
+	selectable_character = {
+		id = 213016 
+	}	
+}
 bm_third_crusade = {
 	name = "BM_THIRD_CRUSADE"
 	desc = "BM_THIRD_CRUSADE_DESC"

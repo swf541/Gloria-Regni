@@ -31,19 +31,8 @@ feudal_governments = {
 				NOT = {	primary_title = { is_landless_type_title = no }	}
 			}
 			NOT = {	religion_group = muslim	}
-			holy_roman_empire_trigger = yes
-			NOT = {
-				roman_government_trigger = yes
-			}
+			has_landed_title = e_hre
 			is_patrician = no
-			NOR = {
-				has_landed_title = e_byzantium
-				has_landed_title = e_roman_empire
-				has_landed_title = e_wre
-				has_landed_title = e_trebizond
-				has_landed_title = e_nicaea
-				has_landed_title = k_epirus			
-			}
 		}
 		
 		color = { 91 133 207 }

@@ -23,6 +23,14 @@ character_event = {
 				limit = { government = feudal_government }
 					set_government_type = roman_government
 				}
+			any_realm_character = {
+				limit = {
+						NOT = { government = feudal_government }
+						NOT = { government = merchant_republic_government }
+						NOT = { government = republic_government }
+					}
+					set_government_type = roman_government
+				}
 				b_constantinople = { add_building = ct_con_wall_6 }
 				b_constantinople = { add_building = ct_great_palace_byz }
 				b_constantinople = { add_building = ct_boukoleon }

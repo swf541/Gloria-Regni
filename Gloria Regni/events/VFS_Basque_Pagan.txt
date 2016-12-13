@@ -1,0 +1,7233 @@
+province_event = {	#basque_pagan Population Grows in Province
+	id = VFS.64
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		religion = basque_pagan
+	} 
+	
+	immediate = {
+		if = {
+			limit = {
+				has_province_flag = jewish_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = jewish
+		}
+		if = {
+			limit = {
+				has_province_flag = jewish_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = jewish
+		}
+		if = {
+			limit = {
+				has_province_flag = jewish_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = jewish
+		}
+		if = {
+			limit = {
+				has_province_flag = jewish_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_jewish_community_1
+				add_building = ct_jewish_community_2
+				add_building = ct_jewish_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = jewish_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = imperial_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = imperial
+		}
+		if = {
+			limit = {
+				has_province_flag = imperial_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = imperial
+		}
+		if = {
+			limit = {
+				has_province_flag = imperial_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = imperial
+		}
+		if = {
+			limit = {
+				has_province_flag = imperial_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_imperial_community_1
+				add_building = ct_imperial_community_2
+				add_building = ct_imperial_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = imperial_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = arian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = arian
+		}
+		if = {
+			limit = {
+				has_province_flag = arian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = arian
+		}
+		if = {
+			limit = {
+				has_province_flag = arian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = arian
+		}
+		if = {
+			limit = {
+				has_province_flag = arian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_arian_community_1
+				add_building = ct_arian_community_2
+				add_building = ct_arian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = arian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = donatism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = donatism
+		}
+		if = {
+			limit = {
+				has_province_flag = donatism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = donatism
+		}
+		if = {
+			limit = {
+				has_province_flag = donatism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = donatism
+		}
+		if = {
+			limit = {
+				has_province_flag = donatism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_donatism_community_1
+				add_building = ct_donatism_community_2
+				add_building = ct_donatism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = donatism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = adoptionism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = adoptionism
+		}
+		if = {
+			limit = {
+				has_province_flag = adoptionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = adoptionism
+		}
+		if = {
+			limit = {
+				has_province_flag = adoptionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = adoptionism
+		}
+		if = {
+			limit = {
+				has_province_flag = adoptionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_adoptionism_community_1
+				add_building = ct_adoptionism_community_2
+				add_building = ct_adoptionism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = adoptionism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = sabellianism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = sabellianism
+		}
+		if = {
+			limit = {
+				has_province_flag = sabellianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = sabellianism
+		}
+		if = {
+			limit = {
+				has_province_flag = sabellianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = sabellianism
+		}
+		if = {
+			limit = {
+				has_province_flag = sabellianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_sabellianism_community_1
+				add_building = ct_sabellianism_community_2				
+				add_building = ct_sabellianism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = sabellianism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = pelagianism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = pelagianism
+		}
+		if = {
+			limit = {
+				has_province_flag = pelagianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = pelagianism
+		}
+		if = {
+			limit = {
+				has_province_flag = pelagianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = pelagianism
+		}
+		if = {
+			limit = {
+				has_province_flag = pelagianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_pelagianism_community_1
+				add_building = ct_pelagianism_community_2
+				add_building = ct_pelagianism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = pelagianism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = macedonianism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = macedonianism
+		}
+		if = {
+			limit = {
+				has_province_flag = macedonianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = macedonianism
+		}
+		if = {
+			limit = {
+				has_province_flag = macedonianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = macedonianism
+		}
+		if = {
+			limit = {
+				has_province_flag = macedonianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_macedonianism_community_1
+				add_building = ct_macedonianism_community_2	
+				add_building = ct_macedonianism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = macedonianism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = marcionism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = marcionism
+		}
+		if = {
+			limit = {
+				has_province_flag = marcionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = marcionism
+		}
+		if = {
+			limit = {
+				has_province_flag = marcionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = marcionism
+		}
+		if = {
+			limit = {
+				has_province_flag = marcionism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_marcionism_community_1
+				add_building = ct_marcionism_community_2
+				add_building = ct_marcionism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = marcionism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = priscillianism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = priscillianism
+		}
+		if = {
+			limit = {
+				has_province_flag = priscillianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = priscillianism
+		}
+		if = {
+			limit = {
+				has_province_flag = priscillianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = priscillianism
+		}
+		if = {
+			limit = {
+				has_province_flag = priscillianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_priscillianism_community_1
+				add_building = ct_priscillianism_community_2
+				add_building = ct_priscillianism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = priscillianism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = valentinianism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = valentinianism
+		}
+		if = {
+			limit = {
+				has_province_flag = valentinianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = valentinianism
+		}
+		if = {
+			limit = {
+				has_province_flag = valentinianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = valentinianism
+		}
+		if = {
+			limit = {
+				has_province_flag = valentinianism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_valentinianism_community_1
+				add_building = ct_valentinianism_community_2
+				add_building = ct_valentinianism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = valentinianism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = catholic_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = catholic
+		}
+		if = {
+			limit = {
+				has_province_flag = catholic_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = catholic
+		}
+		if = {
+			limit = {
+				has_province_flag = catholic_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = catholic
+		}
+		if = {
+			limit = {
+				has_province_flag = catholic_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_catholic_community_1
+				add_building = ct_catholic_community_2
+				add_building = ct_catholic_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = catholic_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = cathar_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = cathar
+		}
+		if = {
+			limit = {
+				has_province_flag = cathar_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = cathar
+		}
+		if = {
+			limit = {
+				has_province_flag = cathar_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = cathar
+		}
+		if = {
+			limit = {
+				has_province_flag = cathar_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_cathar_community_1
+				add_building = ct_cathar_community_2
+				add_building = ct_cathar_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = cathar_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = fraticelli_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = fraticelli
+		}
+		if = {
+			limit = {
+				has_province_flag = fraticelli_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = fraticelli
+		}
+		if = {
+			limit = {
+				has_province_flag = fraticelli_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = fraticelli
+		}
+		if = {
+			limit = {
+				has_province_flag = fraticelli_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_fraticelli_community_1
+				add_building = ct_fraticelli_community_2
+				add_building = ct_fraticelli_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = fraticelli_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = waldensian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = waldensian
+		}
+		if = {
+			limit = {
+				has_province_flag = waldensian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = waldensian
+		}
+		if = {
+			limit = {
+				has_province_flag = waldensian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = waldensian
+		}
+		if = {
+			limit = {
+				has_province_flag = waldensian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_waldensian_community_1
+				add_building = ct_waldensian_community_2
+				add_building = ct_waldensian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = waldensian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = lollard_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = lollard
+		}
+		if = {
+			limit = {
+				has_province_flag = lollard_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = lollard
+		}
+		if = {
+			limit = {
+				has_province_flag = lollard_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = lollard
+		}
+		if = {
+			limit = {
+				has_province_flag = lollard_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_lollard_community_1
+				add_building = ct_lollard_community_2
+				add_building = ct_lollard_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = lollard_majority
+			set_province_flag = basque_pagan_majority
+		}
+				if = {
+			limit = {
+				has_province_flag = orthodox_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = orthodox
+		}
+		if = {
+			limit = {
+				has_province_flag = orthodox_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = orthodox
+		}
+		if = {
+			limit = {
+				has_province_flag = orthodox_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = orthodox
+		}
+		if = {
+			limit = {
+				has_province_flag = orthodox_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_orthodox_community_1
+				add_building = ct_orthodox_community_2
+				add_building = ct_orthodox_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = orthodox_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = miaphysite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = miaphysite
+		}
+		if = {
+			limit = {
+				has_province_flag = miaphysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = miaphysite
+		}
+		if = {
+			limit = {
+				has_province_flag = miaphysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = miaphysite
+		}
+		if = {
+			limit = {
+				has_province_flag = miaphysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_miaphysite_community_1
+				add_building = ct_miaphysite_community_2
+				add_building = ct_miaphysite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = miaphysite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = paulician_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = paulician
+		}
+		if = {
+			limit = {
+				has_province_flag = paulician_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = paulician
+		}
+		if = {
+			limit = {
+				has_province_flag = paulician_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = paulician
+		}
+		if = {
+			limit = {
+				has_province_flag = paulician_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_paulician_community_1
+				add_building = ct_paulician_community_2
+				add_building = ct_paulician_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			set_province_flag = basque_pagan_majority
+			clr_province_flag = paulician_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = tondrakian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = tondrakian
+		}
+		if = {
+			limit = {
+				has_province_flag = tondrakian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = tondrakian
+		}
+		if = {
+			limit = {
+				has_province_flag = tondrakian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = tondrakian
+		}
+		if = {
+			limit = {
+				has_province_flag = tondrakian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_tondrakian_community_1
+				add_building = ct_tondrakian_community_2
+				add_building = ct_tondrakian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = tondrakian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = monophysite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = monophysite
+		}
+		if = {
+			limit = {
+				has_province_flag = monophysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = monophysite
+		}
+		if = {
+			limit = {
+				has_province_flag = monophysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = monophysite
+		}
+		if = {
+			limit = {
+				has_province_flag = monophysite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_monophysite_community_1
+				add_building = ct_monophysite_community_2
+				add_building = ct_monophysite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = monophysite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = bogomilist_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = bogomilist
+		}
+		if = {
+			limit = {
+				has_province_flag = bogomilist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = bogomilist
+		}
+		if = {
+			limit = {
+				has_province_flag = bogomilist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = bogomilist
+		}
+		if = {
+			limit = {
+				has_province_flag = bogomilist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_bogomilist_community_1
+				add_building = ct_bogomilist_community_2
+				add_building = ct_bogomilist_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = bogomilist_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = monothelite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = monothelite
+		}
+		if = {
+			limit = {
+				has_province_flag = monothelite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = monothelite
+		}
+		if = {
+			limit = {
+				has_province_flag = monothelite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = monothelite
+		}
+		if = {
+			limit = {
+				has_province_flag = monothelite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_monothelite_community_1
+				add_building = ct_monothelite_community_2
+				add_building = ct_monothelite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = monothelite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = iconoclast_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = iconoclast
+		}
+		if = {
+			limit = {
+				has_province_flag = iconoclast_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = iconoclast
+		}
+		if = {
+			limit = {
+				has_province_flag = iconoclast_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = iconoclast
+		}
+		if = {
+			limit = {
+				has_province_flag = iconoclast_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_iconoclast_community_1
+				add_building = ct_iconoclast_community_2
+				add_building = ct_iconoclast_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = iconoclast_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = nestorian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = nestorian
+		}
+		if = {
+			limit = {
+				has_province_flag = nestorian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = nestorian
+		}
+		if = {
+			limit = {
+				has_province_flag = nestorian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = nestorian
+		}
+		if = {
+			limit = {
+				has_province_flag = nestorian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_nestorian_community_1
+				add_building = ct_nestorian_community_2
+				add_building = ct_nestorian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = nestorian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = eutychian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = eutychian
+		}
+		if = {
+			limit = {
+				has_province_flag = eutychian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = eutychian
+		}
+		if = {
+			limit = {
+				has_province_flag = eutychian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = eutychian
+		}
+		if = {
+			limit = {
+				has_province_flag = eutychian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_eutychian_community_1
+				add_building = ct_eutychian_community_2
+				add_building = ct_eutychian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = eutychian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = messalian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = messalian
+		}
+		if = {
+			limit = {
+				has_province_flag = messalian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = messalian
+		}
+		if = {
+			limit = {
+				has_province_flag = messalian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = messalian
+		}
+		if = {
+			limit = {
+				has_province_flag = messalian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_messalian_community_1
+				add_building = ct_messalian_community_2
+				add_building = ct_messalian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = messalian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = sunni_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = sunni
+		}
+		if = {
+			limit = {
+				has_province_flag = sunni_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = sunni
+		}
+		if = {
+			limit = {
+				has_province_flag = sunni_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = sunni
+		}
+		if = {
+			limit = {
+				has_province_flag = sunni_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_sunni_community_1
+				add_building = ct_sunni_community_2				
+				add_building = ct_sunni_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = sunni_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zikri_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zikri
+		}
+		if = {
+			limit = {
+				has_province_flag = zikri_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zikri
+		}
+		if = {
+			limit = {
+				has_province_flag = zikri_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zikri
+		}
+		if = {
+			limit = {
+				has_province_flag = zikri_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zikri_community_1
+				add_building = ct_zikri_community_2
+				add_building = ct_zikri_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zikri_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = yazidi_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = yazidi
+		}
+		if = {
+			limit = {
+				has_province_flag = yazidi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = yazidi
+		}
+		if = {
+			limit = {
+				has_province_flag = yazidi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = yazidi
+		}
+		if = {
+			limit = {
+				has_province_flag = yazidi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_yazidi_community_1
+				add_building = ct_yazidi_community_2
+				add_building = ct_yazidi_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = yazidi_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = ibadi_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = ibadi
+		}
+		if = {
+			limit = {
+				has_province_flag = ibadi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = ibadi
+		}
+		if = {
+			limit = {
+				has_province_flag = ibadi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = ibadi
+		}
+		if = {
+			limit = {
+				has_province_flag = ibadi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_ibadi_community_1
+				add_building = ct_ibadi_community_2
+				add_building = ct_ibadi_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = ibadi_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = kharijite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = kharijite
+		}
+		if = {
+			limit = {
+				has_province_flag = kharijite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = kharijite
+		}
+		if = {
+			limit = {
+				has_province_flag = kharijite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = kharijite
+		}
+		if = {
+			limit = {
+				has_province_flag = kharijite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_kharijite_community_1
+				add_building = ct_kharijite_community_2
+				add_building = ct_kharijite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = kharijite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = shiite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = shiite
+		}
+		if = {
+			limit = {
+				has_province_flag = shiite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = shiite
+		}
+		if = {
+			limit = {
+				has_province_flag = shiite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = shiite
+		}
+		if = {
+			limit = {
+				has_province_flag = shiite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_shiite_community_1
+				add_building = ct_shiite_community_2				
+				add_building = ct_shiite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = shiite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = druze_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = druze
+		}
+		if = {
+			limit = {
+				has_province_flag = druze_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = druze
+		}
+		if = {
+			limit = {
+				has_province_flag = druze_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = druze
+		}
+		if = {
+			limit = {
+				has_province_flag = druze_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_druze_community_1
+				add_building = ct_druze_community_2
+				add_building = ct_druze_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = druze_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = qarmatian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = qarmatian
+		}
+		if = {
+			limit = {
+				has_province_flag = qarmatian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = qarmatian
+		}
+		if = {
+			limit = {
+				has_province_flag = qarmatian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = qarmatian
+		}
+		if = {
+			limit = {
+				has_province_flag = qarmatian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_qarmatian_community_1
+				add_building = ct_qarmatian_community_2
+				add_building = ct_qarmatian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = qarmatian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = hurufi_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = hurufi
+		}
+		if = {
+			limit = {
+				has_province_flag = hurufi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = hurufi
+		}
+		if = {
+			limit = {
+				has_province_flag = hurufi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = hurufi
+		}
+		if = {
+			limit = {
+				has_province_flag = hurufi_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hurufi_community_1
+				add_building = ct_hurufi_community_2
+				add_building = ct_hurufi_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = hurufi_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_pagan_community_1
+				add_building = ct_pagan_community_2				
+				add_building = ct_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = mesopotamian_paganism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = mesopotamian_paganism
+		}
+		if = {
+			limit = {
+				has_province_flag = mesopotamian_paganism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = mesopotamian_paganism
+		}
+		if = {
+			limit = {
+				has_province_flag = mesopotamian_paganism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = mesopotamian_paganism
+		}
+		if = {
+			limit = {
+				has_province_flag = mesopotamian_paganism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_mesopotamian_paganism_community_1
+				add_building = ct_mesopotamian_paganism_community_2
+				add_building = ct_mesopotamian_paganism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = mesopotamian_paganism_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = norse_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = norse_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = norse_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_norse_pagan_reformed_community_1
+				add_building = ct_norse_pagan_reformed_community_2
+				add_building = ct_norse_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = norse_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = norse_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_norse_pagan_community_1
+				add_building = ct_norse_pagan_community_2
+				add_building = ct_norse_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = norse_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = tengri_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = tengri_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = tengri_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_tengri_pagan_reformed_community_1
+				add_building = ct_tengri_pagan_reformed_community_2
+				add_building = ct_tengri_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = tengri_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = tengri_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = tengri_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = tengri_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = tengri_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_tengri_pagan_community_1
+				add_building = ct_tengri_pagan_community_2
+				add_building = ct_tengri_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = tengri_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = baltic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = baltic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = baltic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_baltic_pagan_reformed_community_1
+				add_building = ct_baltic_pagan_reformed_community_2
+				add_building = ct_baltic_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = baltic_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = baltic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_baltic_pagan_community_1
+				add_building = ct_baltic_pagan_community_2
+				add_building = ct_baltic_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = baltic_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = finnish_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = finnish_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = finnish_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_finnish_pagan_reformed_community_1
+				add_building = ct_finnish_pagan_reformed_community_2				
+				add_building = ct_finnish_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = finnish_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = finnish_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_finnish_pagan_community_1
+				add_building = ct_finnish_pagan_community_2
+				add_building = ct_finnish_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = finnish_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_aztec_reformed_community_1
+				add_building = ct_aztec_reformed_community_2
+				add_building = ct_aztec_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = aztec_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = aztec_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_aztec_reformed_community_1
+				add_building = ct_aztec_reformed_community_2
+				add_building = ct_aztec_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = aztec_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = aztec
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = aztec
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = aztec
+		}
+		if = {
+			limit = {
+				has_province_flag = aztec_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_aztec_community_1
+				add_building = ct_aztec_community_2				
+				add_building = ct_aztec_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = aztec_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = slavic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = slavic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = slavic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_slavic_pagan_reformed_community_1
+				add_building = ct_slavic_pagan_reformed_community_2
+				add_building = ct_slavic_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = slavic_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = slavic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_slavic_pagan_community_1
+				add_building = ct_slavic_pagan_community_2
+				add_building = ct_slavic_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = slavic_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_west_african_pagan_reformed_community_1
+				add_building = ct_west_african_pagan_reformed_community_2
+				add_building = ct_west_african_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = west_african_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = west_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = west_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_west_african_pagan_reformed_community_1
+				add_building = ct_west_african_pagan_reformed_community_2
+				add_building = ct_west_african_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = west_african_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zalmoxism_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zalmoxism_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zalmoxism_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zalmoxism_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zalmoxism_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zalmoxism_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zalmoxism_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zalmoxism_reformed_community_1
+				add_building = ct_zalmoxism_reformed_community_2
+				add_building = ct_zalmoxism_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zalmoxism_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zun_pagan_reformed_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zun_pagan_reformed_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zun_pagan_reformed_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zun_pagan_reformed_reformed_community_1
+				add_building = ct_zun_pagan_reformed_reformed_community_2
+				add_building = ct_zun_pagan_reformed_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zun_pagan_reformed_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zun_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zun_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zun_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = zun_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zun_pagan_reformed_community_1
+				add_building = ct_zun_pagan_reformed_community_2
+				add_building = ct_zun_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zun_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = hellenic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = hellenic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = hellenic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hellenic_pagan_community_1
+				add_building = ct_hellenic_pagan_community_2
+				add_building = ct_hellenic_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = hellenic_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = hellenic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = hellenic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = hellenic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = hellenic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hellenic_pagan_reformed_community_1
+				add_building = ct_hellenic_pagan_reformed_community_2
+				add_building = ct_hellenic_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = hellenic_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = sol_invictus_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = sol_invictus
+		}
+		if = {
+			limit = {
+				has_province_flag = sol_invictus_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = sol_invictus
+		}
+		if = {
+			limit = {
+				has_province_flag = sol_invictus_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = sol_invictus
+		}
+		if = {
+			limit = {
+				has_province_flag = sol_invictus_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_sol_invictus_community_1
+				add_building = ct_sol_invictus_community_2
+				add_building = ct_sol_invictus_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = sol_invictus_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = egyptian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = egyptian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = egyptian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_egyptian_pagan_community_1
+				add_building = ct_egyptian_pagan_community_2
+				add_building = ct_egyptian_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = egyptian_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = egyptian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = egyptian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = egyptian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = egyptian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_egyptian_pagan_reformed_community_1
+				add_building = ct_egyptian_pagan_reformed_community_2
+				add_building = ct_egyptian_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = egyptian_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = basque_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = basque_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = basque_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_basque_pagan_reformed_community_1
+				add_building = ct_basque_pagan_reformed_community_2				
+				add_building = ct_basque_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = basque_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = basque_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = basque_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = basque_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = basque_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+				add_building = ct_basque_pagan_community_2
+				add_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = basque_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = germanic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = germanic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = germanic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_germanic_pagan_reformed_community_1
+				add_building = ct_germanic_pagan_reformed_community_2
+				add_building = ct_germanic_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = germanic_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = germanic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = germanic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = germanic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = germanic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_germanic_pagan_community_1
+				add_building = ct_germanic_pagan_community_2				
+				add_building = ct_germanic_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = germanic_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = semitic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = semitic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = semitic_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_semitic_pagan_reformed_community_1
+				add_building = ct_semitic_pagan_reformed_community_2
+				add_building = ct_semitic_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = semitic_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = semitic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = semitic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = semitic_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = semitic_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_semitic_pagan_community_1
+				add_building = ct_semitic_pagan_community_2
+				add_building = ct_semitic_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = semitic_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = east_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = east_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = east_african_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_east_african_pagan_reformed_community_1
+				add_building = ct_east_african_pagan_reformed_community_2
+				add_building = ct_east_african_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = east_african_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = east_african_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = east_african_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = east_african_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = east_african_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_east_african_pagan_community_1
+				add_building = ct_east_african_pagan_community_2
+				add_building = ct_east_african_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = east_african_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_reformed_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = ossetian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = ossetian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = ossetian_pagan_reformed
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_reformed_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_ossetian_pagan_reformed_community_1
+				add_building = ct_ossetian_pagan_reformed_community_2
+				add_building = ct_ossetian_pagan_reformed_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = ossetian_pagan_reformed_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = ossetian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = ossetian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = ossetian_pagan
+		}
+		if = {
+			limit = {
+				has_province_flag = ossetian_pagan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_ossetian_pagan_community_1
+				add_building = ct_ossetian_pagan_community_2
+				add_building = ct_ossetian_pagan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = ossetian_pagan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zoroastrian_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zoroastrian
+		}
+		if = {
+			limit = {
+				has_province_flag = zoroastrian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zoroastrian
+		}
+		if = {
+			limit = {
+				has_province_flag = zoroastrian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zoroastrian
+		}
+		if = {
+			limit = {
+				has_province_flag = zoroastrian_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zoroastrian_community_1
+				add_building = ct_zoroastrian_community_2
+				add_building = ct_zoroastrian_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zoroastrian_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = mazdaki_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = mazdaki
+		}
+		if = {
+			limit = {
+				has_province_flag = mazdaki_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = mazdaki
+		}
+		if = {
+			limit = {
+				has_province_flag = mazdaki_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = mazdaki
+		}
+		if = {
+			limit = {
+				has_province_flag = mazdaki_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_mazdaki_community_1
+				add_building = ct_mazdaki_community_2
+				add_building = ct_mazdaki_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = mazdaki_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = manichean_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = manichean
+		}
+		if = {
+			limit = {
+				has_province_flag = manichean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = manichean
+		}
+		if = {
+			limit = {
+				has_province_flag = manichean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = manichean
+		}
+		if = {
+			limit = {
+				has_province_flag = manichean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_manichean_community_1
+				add_building = ct_manichean_community_2				
+				add_building = ct_manichean_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = manichean_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = samaritan_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = samaritan
+		}
+		if = {
+			limit = {
+				has_province_flag = samaritan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = samaritan
+		}
+		if = {
+			limit = {
+				has_province_flag = samaritan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = samaritan
+		}
+		if = {
+			limit = {
+				has_province_flag = samaritan_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_samaritan_community_1
+				add_building = ct_samaritan_community_2
+				add_building = ct_samaritan_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = samaritan_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = karaite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = karaite
+		}
+		if = {
+			limit = {
+				has_province_flag = karaite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = karaite
+		}
+		if = {
+			limit = {
+				has_province_flag = karaite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = karaite
+		}
+		if = {
+			limit = {
+				has_province_flag = karaite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_karaite_community_1
+				add_building = ct_karaite_community_2
+				add_building = ct_karaite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = karaite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = hindu_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = hindu
+		}
+		if = {
+			limit = {
+				has_province_flag = hindu_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = hindu
+		}
+		if = {
+			limit = {
+				has_province_flag = hindu_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = hindu
+		}
+		if = {
+			limit = {
+				has_province_flag = hindu_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hindu_community_1
+				add_building = ct_hindu_community_2
+				add_building = ct_hindu_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = hindu_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = jain_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = jain
+		}
+		if = {
+			limit = {
+				has_province_flag = jain_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = jain
+		}
+		if = {
+			limit = {
+				has_province_flag = jain_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = jain
+		}
+		if = {
+			limit = {
+				has_province_flag = jain_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_jain_community_1
+				add_building = ct_jain_community_2
+				add_building = ct_jain_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = jain_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = buddhist_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = buddhist
+		}
+		if = {
+			limit = {
+				has_province_flag = buddhist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = buddhist
+		}
+		if = {
+			limit = {
+				has_province_flag = buddhist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = buddhist
+		}
+		if = {
+			limit = {
+				has_province_flag = buddhist_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_buddhist_community_1
+				add_building = ct_buddhist_community_2
+				add_building = ct_buddhist_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = buddhist_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = zurvanite_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = zurvanite
+		}
+		if = {
+			limit = {
+				has_province_flag = zurvanite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = zurvanite
+		}
+		if = {
+			limit = {
+				has_province_flag = zurvanite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = zurvanite
+		}
+		if = {
+			limit = {
+				has_province_flag = zurvanite_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_zurvanite_community_1
+				add_building = ct_zurvanite_community_2				
+				add_building = ct_zurvanite_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = zurvanite_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = mandean_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = mandean
+		}
+		if = {
+			limit = {
+				has_province_flag = mandean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = mandean
+		}
+		if = {
+			limit = {
+				has_province_flag = mandean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = mandean
+		}
+		if = {
+			limit = {
+				has_province_flag = mandean_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_mandean_community_1
+				add_building = ct_mandean_community_2
+				add_building = ct_mandean_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = mandean_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = grand_sanhedrin_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = grand_sanhedrin
+		}
+		if = {
+			limit = {
+				has_province_flag = grand_sanhedrin_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = grand_sanhedrin
+		}
+		if = {
+			limit = {
+				has_province_flag = grand_sanhedrin_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = grand_sanhedrin
+		}
+		if = {
+			limit = {
+				has_province_flag = grand_sanhedrin_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_grand_sanhedrin_community_1
+				add_building = ct_grand_sanhedrin_community_2				
+				add_building = ct_grand_sanhedrin_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = grand_sanhedrin_majority
+			set_province_flag = basque_pagan_majority
+		}
+		if = {
+			limit = {
+				has_province_flag = temple_judaism_majority
+				religion = basque_pagan 
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_1
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+			}
+			religion = temple_judaism
+		}
+		if = {
+			limit = {
+				has_province_flag = temple_judaism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_basque_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_2
+			}
+			religion = temple_judaism
+		}
+		if = {
+			limit = {
+				has_province_flag = temple_judaism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_basque_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_3
+			}
+			religion = temple_judaism
+		}
+		if = {
+			limit = {
+				has_province_flag = temple_judaism_majority
+				religion = basque_pagan 
+				any_province_holding = {
+					has_building = ct_basque_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city }
+				add_building = ct_temple_judaism_community_1
+				add_building = ct_temple_judaism_community_2
+				add_building = ct_temple_judaism_community_3
+				remove_building = ct_basque_pagan_community_3
+				remove_building = ct_basque_pagan_community_2
+				remove_building = ct_basque_pagan_community_1
+			}
+			clr_province_flag = temple_judaism_majority
+			set_province_flag = basque_pagan_majority
+		}
+	}
+}
