@@ -23,8 +23,31 @@ religion = nestorian
 # History
 710.1.1 = { culture = levantine_arabic }
 710.1.1 = { religion = sunni }
+710.1.1 = {
+	b_iskaf = ct_nestorian_community_1
+	b_iskaf = ct_nestorian_community_2
+	b_iskaf = ct_nestorian_community_3
+	b_iskaf = ct_manichean_community_1
+	b_iskaf = ct_manichean_community_2
+	b_iskaf = ct_karaite_community_1
+	b_iskaf = ct_karaite_community_2
+	b_iskaf = ct_jewish_community_1
+	b_iskaf = ct_jewish_community_2
+	b_iskaf = ct_zoroastrian_community_1
+	
+	b_ukbara = ct_nestorian_community_1
+	b_ukbara = ct_nestorian_community_2
+	b_ukbara = ct_nestorian_community_3
+	b_ukbara = ct_manichean_community_1
+	b_ukbara = ct_manichean_community_2
+	b_ukbara = ct_karaite_community_1
+	b_ukbara = ct_karaite_community_2
+	b_ukbara = ct_jewish_community_1
+	b_ukbara = ct_jewish_community_2
+	b_ukbara = ct_zoroastrian_community_1
+}
 850.1.1 = {
-	b_madain = castle
+	b_madain = castle 
 }
 867.1.1 = { 
 	b_baqubah = ca_keep_1
