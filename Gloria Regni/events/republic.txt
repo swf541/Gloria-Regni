@@ -1,0 +1,347 @@
+namespace = commune
+
+narrative_event = {
+	id = commune.1
+	title = "EVTNAMEcommune.1"
+	desc = "EVTDESCcommune.1"
+	picture = GFX_evt_roman_emperor_salute
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAcommune.1"
+
+	    liege = {
+	 	k_roman_republic = {
+			grant_title = ROOT
+			copy_title_laws = d_commune_of_rome
+		}
+		set_defacto_vassal = ROOT
+	    }
+
+	    d_commune_of_rome = {
+		destroy_landed_title = THIS
+	    }
+	    give_nickname = nick_the_glorious
+	    hidden_tooltip = {
+		activate_title = { title = d_commune_of_rome status = no }
+	    }
+
+	    any_playable_ruler = {
+		limit = {
+		    OR = {
+			has_landed_title = e_hre
+			has_landed_title = e_byzantium
+			ai = no
+		    }
+		}
+		    narrative_event = { id =  commune.99 }
+	    }
+	}
+}
+
+narrative_event = {
+	id = commune.99
+	title = "EVTNAMEcommune.99"
+	desc = "EVTDESCcommune.99"
+	picture = GFX_evt_roman_emperor_salute
+	
+	is_triggered_only = yes
+
+	# Generic event for not AI characters
+	option = {
+	    name = "EVTOPTAcommune.99"
+	    trigger = {
+		NOT = {
+		    has_landed_title = e_hre
+		    has_landed_title = e_byzantium
+		}
+	    }
+	}
+
+	# Event for the Holy Roman Emperor
+	option = {
+	    name = "EVTOPTBcommune.99"
+	    trigger = {
+		has_landed_title = e_hre
+	    }
+	}
+
+	# Event for the Byzantine Emperor
+	option = {
+	    name = "EVTOPTCcommune.99"
+	    trigger = {
+		has_landed_title = e_byzantium
+	     }
+	     # Byzantium loses prestige because the pretender in the West
+	     # is reforming "The Roman Republic"
+	     prestige = -100
+	}
+}
+
+character_event = {
+	id = commune.2
+	desc = "EVTDESCcommune.2"
+	picture = GFX_evt_roman_aquila_pillar
+	
+	trigger = {
+		has_landed_title = k_roman_republic
+		NOT = {
+			has_landed_title = k_italy
+			has_global_flag = goodbye_italy
+		}
+		completely_controls = d_ancona
+		completely_controls = d_spoleto
+		has_landed_title = c_roma
+		completely_controls = c_orvieto
+		completely_controls = c_orbetello
+		completely_controls = d_toscana
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2
+			trait = content
+		}
+		modifier = {
+			factor = 0.7
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.4
+			intrigue = 13
+		}
+		modifier = {
+			factor = 0.9
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 1.5
+			learning = 13
+		}
+		modifier = {
+			factor = 0.7
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.6
+			prestige = 750
+		}
+		modifier = {
+			factor = 0.5
+			prestige = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAcommune.2"
+		prestige = 250
+		if = {
+			limit = {
+				trait = content
+			}
+			remove_trait = content
+		}
+		set_global_flag = goodbye_italy
+		hidden_tooltip = {
+			activate_title = { title = d_commune_of_rome status = no }
+			k_italy = {
+				destroy_landed_title = THIS
+			}
+		}
+		k_italy = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_roman_republic
+			}
+		}
+	}
+}
+
+character_event = {
+	id = commune.3
+	title = "EVTNAMEcommune.3"
+	desc = "EVTDESCcommune.3"
+	picture = GFX_evt_Council_Around_Table
+	
+	trigger = {
+		war = no
+		independent = yes
+		has_landed_title = e_hre
+		NOT = { has_global_flag = asked_for_submission }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.4
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.3
+			trait = honest
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+			
+	}
+	
+	option = {
+		name = "EVTOPTAcommune.3"
+		prestige = -500
+	}
+	
+	option = {
+		name = "EVTOPTBcommune.3"
+		# Set flag in calling event, since it gets set no matter which option is chosen, and avoids
+                # the delay programmed into the call.
+		set_global_flag = asked_for_submission
+		prestige = 250
+		hidden_tooltip = { 
+			d_commune_of_rome = { holder_scope = { character_event = { id = commune.4 days = 10 } } }
+		}
+	}
+}
+
+character_event = {
+	id = commune.4
+	title = "EVTNAMEcommune.4"
+	desc = "EVTDESCcommune.4"
+	picture = GFX_evt_senate
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = d_commune_of_rome
+		independent = yes
+	}
+
+	option = {
+		name = "EVTOPTAcommune.4"
+		FROM = {
+			add_claim = c_roma
+			opinion = {
+				modifier = opinion_refused_alleigance
+				years = 10
+				who = ROOT
+			}
+		}
+		prestige = 250
+	}
+	
+	option = {
+		name = "EVTOPTBcommune.4"
+		# Not needed to research who is the character he is already in scope...
+		set_defacto_liege = FROM
+		prestige = -500
+		set_global_flag = rome_is_vassal_of_hre
+	}
+}
+
+narrative_event = {
+	id = commune.5
+	title = "EVTNAMEcommune.5"
+	desc = "EVTDESCcommune.5"
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	has_landed_title = d_commune_of_rome
+	#	independent = yes
+	#}
+	
+	option = {
+		name = "EVTOPTAcommune.5"
+		e_wre = {
+			grant_title = ROOT
+			copy_title_laws = k_roman_republic
+		}
+
+		# Now we make S.P.Q.R. and Sicily as its de jure vassals
+		k_roman_republic = {
+			de_jure_liege = e_wre
+		}
+		k_sicily = {
+			de_jure_liege = e_wre
+		}
+		hidden_tooltip = {
+			e_byzantium = {
+				holder_scope = {
+					add_claim = k_sicily
+				}
+			}
+		}
+
+		any_playable_ruler = {
+			limit = {
+				#NOT = { has_landed_title = e_byzantium }
+				ai = no
+			}
+			narrative_event = { id =  commune.6 }
+		}
+                # Now the Lateran Pact decision should be enabled
+		# after this, start of timed event for "HRE event chain"
+	}
+}
+
+narrative_event = {
+	id = commune.6
+	title = "EVTNAMEcommune.6"
+	desc = "EVTDESCcommune.6"
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	#trigger = {
+	#	has_landed_title = d_commune_of_rome
+	#	independent = yes
+	#}
+	
+	option = {
+		name = "EVTOPTAcommune.6"
+		trigger = {
+			NOT = {
+				has_landed_title = e_hre
+				has_landed_title = e_byzantium
+			}
+		}
+	}
+
+	# Sorry HRE Emperor but you are an anacronism now...
+	# (It is implicit that because the Pope has accepted vassalazition
+        #  he is recognizing now the Roman Republic as the real successor of
+        #  Rome)
+	option = {
+        	name = "EVTOPTBcommune.6"
+		trigger = {
+			has_landed_title = e_hre
+		}
+		prestige = -500
+	}
+
+	option = {
+        name = "EVTOPTCcommune.6"
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+		# More penalty for Byzantium that should had have been the
+		# "real" thing
+		e_byzantium = { set_name = "Eastern Roman Empire" }
+		prestige = -1000
+	}
+}

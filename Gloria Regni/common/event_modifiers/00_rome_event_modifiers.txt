@@ -1,0 +1,29 @@
+# Later Treaty Cooldown.
+# Inherited and pinned on the liege.
+
+lateran_treaty_cooldown = {
+	icon = 11
+}
+
+gladiator_mercenaries = {
+	general_opinion = -15
+	icon = 5
+}
+
+naval_colosseum = {
+	galleys = 20
+	town_opinion = 10
+	icon = 24
+}
+
+huge_colosseum = {
+	local_revolt_risk = -0.1
+	levy_reinforce_rate = 0.35
+	icon = 12
+}
+
+sabotaged_colosseum = {
+	local_build_cost_modifier = 0.5
+	local_build_time_modifier = 0.5
+	icon = 12
+}

@@ -1,0 +1,267 @@
+city = {
+	ct_amphitheatre_0 = {
+		desc = ct_amphitheatre_0_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		build_cost = 200
+		build_time = 300
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+		}
+		garrison_size = 0.05
+		levy_reinforce_rate = 0.05
+		light_infantry_morale = 0.05
+		local_revolt_risk = -0.03
+		ai_creation_factor = 93
+		
+		extra_tech_building_start = 0.5
+	}
+	ct_amphitheatre_1 = {
+		desc = ct_amphitheatre_1_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_amphitheatre_0
+		build_cost = 250
+		build_time = 350
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		garrison_size = 0.05
+		levy_reinforce_rate = 0.05
+		light_infantry_morale = 0.04
+		local_revolt_risk = -0.03
+		ai_creation_factor = 88
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_amphitheatre_2 = {
+		desc = ct_amphitheatre_2_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_amphitheatre_1
+		build_cost = 300
+		build_time = 500
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		garrison_size = 0.05
+		levy_reinforce_rate = 0.03
+		light_infantry_morale = 0.03
+		local_revolt_risk = -0.03
+		ai_creation_factor = 80
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_amphitheatre_3 = {
+		desc = ct_amphitheatre_3_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_amphitheatre_2
+		build_cost = 350
+		build_time = 700
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		garrison_size = 0.05
+		levy_reinforce_rate = 0.04
+		local_revolt_risk = -0.03
+		light_infantry_morale = 0.02
+		ai_creation_factor = 75
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_bath_house_0 = {
+		desc = ct_bath_house_0_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		build_cost = 200
+		build_time = 300
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+		}
+		monthly_character_prestige = 0.5
+		knights_morale = 0.05
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.6
+	}
+	ct_bath_house_1 = {
+		desc = ct_bath_house_1_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_bath_house_0
+		build_cost = 300
+		build_time = 350
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		monthly_character_prestige = 0.5
+		knights_morale = 0.05
+		ai_creation_factor = 100
+		knights = 10
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_bath_house_2 = {
+		desc = ct_bath_house_2_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_bath_house_1
+		build_cost = 375
+		build_time = 475
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+				monthly_character_prestige = 0.5
+		knights_morale = 0.05
+		ai_creation_factor = 100
+		knights = 15
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_bath_house_3 = {
+		desc = ct_bath_house_3_desc
+		upgrades_from = ct_bath_house_2
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		build_cost = 425
+		build_time = 525
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		monthly_character_prestige = 0.5
+		knights_morale = 0.05
+		ai_creation_factor = 100
+		knights = 20
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_forum_0 = {
+		desc = ct_forum_0_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		build_cost = 150
+		build_time = 250
+		trigger = {
+			TECH_POPULAR_CUSTOMS = 1
+		}
+		town_opinion = 2
+		light_infantry_morale = 0.05
+		local_revolt_risk = -0.05
+		light_infantry_defensive = 0.1
+		
+		extra_tech_building_start = 0.7
+	}
+	ct_forum_1 = {
+		desc = ct_forum_1_desc
+		upgrades_from = ct_forum_0
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		build_cost = 150
+		build_time = 250
+		trigger = {
+			TECH_POPULAR_CUSTOMS = 2
+		}
+		town_opinion = 3
+		light_infantry_morale = 0.05
+		local_revolt_risk = -0.05
+		light_infantry_defensive = 0.1
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_forum_2 = {
+		desc = ct_forum_2_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_forum_1
+		build_cost = 200
+		build_time = 300
+		trigger = {
+			TECH_POPULAR_CUSTOMS = 2
+			TECH_CITY_CONSTRUCTION = 1
+		}
+		town_opinion = 4
+		light_infantry_morale = 0.05
+		local_revolt_risk = -0.05
+		light_infantry_defensive = 0.1
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_forum_3 = {
+		desc = ct_forum_2_desc
+		potential = {
+			FROM = { 
+				culture = roman
+			}
+		}
+		upgrades_from = ct_forum_1
+		build_cost = 275
+		build_time = 500
+		trigger = {
+			TECH_POPULAR_CUSTOMS = 2
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		town_opinion = 6
+		light_infantry_morale = 0.05
+		local_revolt_risk = -0.05
+		light_infantry_defensive = 0.1
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_colosseum = {
+		desc = ct_colosseum_desc
+		potential = {
+			FROMFROM = { title = b_viterbo }
+			FROM = {
+				culture = roman
+			}
+		}
+		trigger = {
+			always = no
+		}
+		vassal_opinion = 10
+		global_revolt_risk = -0.05
+		light_infantry_offensive = 0.1
+		archers_offensive = 0.1
+		light_cavalry_offensive = 0.1
+		pikemen_offensive = 0.1
+		heavy_infantry_offensive = 0.1
+		
+		extra_tech_building_start = 0.1
+	}
+}
+
+		
