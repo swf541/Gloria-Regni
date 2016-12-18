@@ -275,8 +275,8 @@ narrative_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		has_global_flag = chinese_influence_central_asia
 		government = nomadic_government	
-		completely_controls = k_khotan
 		or = {
 			culture = mongol
 			culture = uyghur
@@ -287,7 +287,6 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPTAIHS.11
-		set_global_flag = chinese_influence_central_asia
 		religion = buddhist
 		# Add Event Modifier Here
 	}
