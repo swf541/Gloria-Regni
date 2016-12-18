@@ -4,7 +4,7 @@ western_roman_empire = {
 	is_high_prio = yes	
 	potential = {
 		has_landed_title = k_roman_republic
-		culture = italian
+		culture = roman
 		NOT = {
 			has_global_flag = western_roman_empire
 		}
@@ -39,7 +39,7 @@ republic_of_rome = {
 	is_high_prio = yes
 	potential = {
 		has_landed_title = d_commune_of_rome
-		culture = italian
+		culture = roman
 		NOT = {
 			has_global_flag = republic_of_rome
 		}
@@ -112,7 +112,7 @@ gladiators = {
 			create_character = {
 				random_traits = yes
 				religion = ROOT
-				culture = italian
+				culture = roman
 				dynasty = NONE
 				female = no
 				age = 34
@@ -188,7 +188,7 @@ become_a_gladiator = {
 		is_landed = no
 		is_ruler = no
 		liege = {
-			culture = italian
+			culture = roman
 		}
 	}
 	effect = {
@@ -233,7 +233,7 @@ form_the_praetorians = {
 			has_landed_title = k_roman_republic
 			has_landed_title = e_wre
 		}
-		culture = italian
+		culture = roman
 		NOT = {
 			has_global_flag = praetorians
 		}
