@@ -1098,17 +1098,9 @@ b_pierleoni = {
 	culture = italian
 	religion = catholic
 }
-b_orsini = {
-	culture = roman
-	religion = catholic
-}
 
 b_da_brescia = {
 	culture = italian
-	religion = catholic
-}
-b_colonna = {
-	culture = roman
 	religion = catholic
 }
 
@@ -1119,10 +1111,6 @@ b_romano = {
 
 b_frangipani = {
 	culture = italian
-	religion = catholic
-}
-b_annibaldi =  {
-	culture = roman
 	religion = catholic
 }
 
@@ -1139,131 +1127,4 @@ b_normanni = {
 b_savelli = {
 	culture = italian
 	religion = catholic
-}
-
-k_roman_republic = {
-	color={ 255 0 0 }
-	color2= { 255 255 0}
-	
-	capital = 333 # Rome
-	culture = roman
-
-	short_name = yes
-
-	dignity = 200
-
-	title = "CONSUL"
-
-	allow = { 
-		has_landed_title = d_commune_of_rome
-		is_republic = yes
-	}
-}
-
-e_dal_eriu = {
-	color={ 34 139 34 }
-	color2={ 0 128 0 }
-	
-	capital = 11
-	
-	allow = {
-		always = no
-	}
-}
-
-e_wre = {
-	color={ 255 0 0 }
-	color2= { 255 255 0 }
-	
-	capital = 333 # Rome
-	culture = roman
-
-	short_name = yes
-
-	duchy_revokation=yes
-
-	dignity = 200
-	
-	allow = { 
-		has_landed_title = k_roman_republic
-		is_republic = yes
-	}
-}
-
-d_gladiators = {
-	color={ 204 188 127 }
-	color2={ 255 255 255 }
-	
-	capital = 333 # Rome
-	
-	religion = catholic
-	
-	culture = roman
-	
-	mercenary = yes
-	
-	title = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-	
-	landless = yes
-	
-	primary = yes
-	
-	strength_growth_per_century = 0.50
-	
-	mercenary_type = gladiators_composition
-}
-
-d_legio_i_italia = {
-	color={ 255 0 0 }
-	color2={ 255 255 0 }
-
-	capital = 333 # Roma
-	
-	# Parent Religion 
-	religion = catholic
-	
-	culture = roman
-	
-	mercenary = yes
-
-	title = "LEGATUS"
-	foa = "LEGATUS_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	strength_growth_per_century = 0.80
-	
-	mercenary_type = legio_italia_composition
-}
-
-d_praetorians = {
-	color={ 255 0 0 }
-	color2={ 255 255 0 }
-
-	capital = 333 # Roma
-	
-	# Parent Religion 
-	religion = catholic
-	
-	culture = roman
-	
-	mercenary = yes
-
-	title = "PRAETORIAN_PREFECT"
-	foa = "PRAETORIAN_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	strength_growth_per_century = 0.80
-	
-	mercenary_type = praetorian_composition
 }
