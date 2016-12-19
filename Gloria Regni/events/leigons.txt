@@ -1,0 +1,660 @@
+namespace = legion
+
+narrative_event = {
+	id = legion.1
+	title = "EVTNAMElegion.1"
+	desc = "EVTDESClegion.1"
+	picture = GFX_evt_roman_soldiers_training
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAlegion.1"
+		activate_title = { title = d_legio_i_italia status = yes }
+		hidden_tooltip = {
+			create_character = {
+				random_traits = yes
+				religion = ROOT
+				culture = roman
+				dynasty = NONE
+				female = no
+				age = 34
+				trait = skilled_tactician
+			}
+			new_character = {
+				d_legio_i_italia = {
+					grant_title = PREV
+				}
+				set_defacto_liege = ROOT
+			}
+		}
+	}
+}
+
+# Son has served a few years
+character_event = {
+	id = legion.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = wants_italia
+	}
+	
+	immediate = {
+		set_character_flag = serving_italia
+		clr_character_flag = wants_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son wants to join the Varangians (Son)
+character_event = {
+	id = legion.3
+	hide_window = yes
+	
+	ai = yes
+	min_age = 16
+	max_age = 40
+	only_men = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_landed = no
+		in_command = no
+		has_global_flag = legio_italia
+		culture = roman
+		NOT = { 
+			has_character_flag = wants_italia
+			has_character_flag = denied_italia
+		}
+		father = {
+			is_alive = yes
+			culture = roman
+			is_ruler = yes
+			is_liege_of = ROOT
+			prisoner = no
+			NOT = { trait = incapable }
+			ROOT = { host = { character = PREVPREV } }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.75
+			trait = proud
+		}
+		modifier = {
+			factor = 0.75
+			trait = impaler
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+		modifier = {
+			factor = 1.5
+			is_primary_heir = yes
+		}
+		modifier = {
+			factor = 2.0
+			trait = craven
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.4 } }
+		set_character_flag = wants_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son wants to join the Varangians (Father)
+character_event = {
+	id = legion.4
+	desc = EVTDESClegion.4
+	picture = GFX_evt_roman_soldiers_training
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { # Deny
+		name = EVTOPTA_legion.4
+		FROM = {
+			opinion = {
+				modifier = opinion_very_disappointed
+				years = 1
+				who = ROOT
+			}
+			clr_character_flag = wants_italia
+			set_character_flag = denied_italia
+		}
+		prestige = -100
+	}
+	option = { # Allow
+		name = EVTOPTB_legion.4
+		d_legio_i_italia = {
+			holder_scope = {
+				FROM = {
+					move_character = PREV
+				}
+			}
+		}
+		hidden_tooltip = {
+			FROM = { 
+				character_event = { id = legion.2 days = 1460 }
+			}
+		}
+		prestige = 100
+	}
+}
+
+# Son returns scarred but seasoned (Son)
+character_event = {
+	id = legion.5
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+		NOT = { trait = scarred }
+	}
+	
+	mean_time_to_happen = {
+		months = 160
+		
+		modifier = {
+			factor = 0.75
+			trait = brave
+		}
+		modifier = {
+			factor = 1.25
+			trait = craven
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.6 } }
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son returns scarred but seasoned
+character_event = {
+	id = legion.6
+	desc = EVTDESClegion.6
+	picture = GFX_evt_roman_legionary_dark
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAlegion.6		
+		FROM = {
+			move_character = ROOT
+			add_trait = scarred
+			change_martial = 4
+		}
+	}
+}
+
+# Son returns as excellent strategist (Son)
+character_event = {
+	id = legion.7
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+		NOT = { trait = brilliant_strategist }
+		OR = {
+			trait = misguided_warrior
+			trait = tough_soldier
+			trait = skilled_tactician
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 160
+		
+		modifier = {
+			factor = 0.5
+			trait = genius
+		}
+		modifier = {
+			factor = 0.75
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.75
+			trait = quick
+		}
+		modifier = {
+			factor = 1.5
+			trait = slow
+		}
+		modifier = {
+			factor = 1.5
+			trait = imbecile
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.8 } }
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son returns as excellent strategist
+character_event = {
+	id = legion.8
+	desc = EVTDESClegion.8
+	picture = GFX_evt_roman_army_aquila
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAlegion.8"
+		if = {
+			limit = {
+				FROM = {
+					trait = skilled_tactician
+				}
+			}
+			FROM = {
+				hidden_tooltip = { remove_trait = skilled_tactician }
+				add_trait = brilliant_strategist
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						trait = misguided_warrior
+						trait = tough_soldier
+					}	
+				}
+			}
+			FROM = {
+				hidden_tooltip = { 
+					remove_trait = misguided_warrior
+					remove_trait = tough_soldier
+				}
+				add_trait = skilled_tactician
+			}
+		}
+		FROM = {
+			change_martial = 2
+			move_character = ROOT
+		}
+	}
+}
+
+# Son returns with PTSD (Son)
+character_event = {
+	id = legion.9
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+		NOT = { trait = depressed }
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		
+		modifier = {
+			factor = 0.75
+			trait = kind
+		}
+		modifier = {
+			factor = 0.75
+			trait = poet
+		}
+		modifier = {
+			factor = 0.75
+			trait = just
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.10 } }
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son returns with PTSD
+character_event = {
+	id = legion.10
+	desc = EVTDESClegion.10
+	picture = GFX_evt_roman_legionary_dark
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAlegion.10
+		FROM = {
+			move_character = ROOT
+			add_trait = stressed
+			add_trait = depressed
+		}
+	}
+}
+
+# Son returns home as a seasoned warrior (Son)
+character_event = {
+	id = legion.11
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		
+		modifier = {
+			factor = 0.75
+			trait = brave
+		}
+		modifier = {
+			factor = 0.75
+			trait = strong
+		}
+		modifier = {
+			factor = 0.75
+			trait = quick
+		}
+		modifier = {
+			factor = 0.75
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.5
+			trait = slow
+		}
+		modifier = {
+			factor = 1.5
+			trait = imbecile
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.12 } }
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son returns home as a seasoned warrior
+character_event = {
+	id = legion.12
+	desc = EVTDESClegion.12
+	picture = GFX_evt_roman_legionary_dark
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAlegion.12
+		FROM = {
+			move_character = ROOT
+			add_trait = brave
+			change_martial = 2
+		}
+	}
+}
+
+# Son dies in battle (Son)
+character_event = {
+	id = legion.13
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		
+		modifier = {
+			factor = 0.75
+			trait = brave
+		}
+		modifier = {
+			factor = 0.75
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.75
+			trait = berserker
+		}
+		modifier = {
+			factor = 1.25
+			trait = craven
+		}
+		modifier = {
+			factor = 0.75
+			trait = drunkard
+		}
+		modifier = {
+			factor = 0.75
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 0.75
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 0.75
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.75
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 0.75
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 0.75
+			trait = has_small_pox
+		}
+		modifier = {
+			factor = 0.75
+			trait = wounded
+		}
+		modifier = {
+			factor = 0.5
+			trait = infirm
+		}
+		modifier = {
+			factor = 0.5
+			trait = incapable
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.14 } }
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son dies in battle
+character_event = {
+	id = legion.14
+	desc = EVTDESClegion.14
+	picture = GFX_evt_roman_legionary_dark
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAlegion.14
+		FROM = { death = { death_reason = death_battle } }
+	}
+}
+
+# Son returns with loot (Son)
+character_event = {
+	id = legion.15
+	hide_window = yes
+	
+	trigger = {
+		has_character_flag = serving_italia
+	}
+	
+	mean_time_to_happen = {
+		months = 160
+		
+		modifier = {
+			factor = 0.75
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.75
+			stewardship = 10
+		}
+	}
+	
+	immediate = {
+		father = { character_event = { id = legion.16 } }
+		clr_character_flag = serving_varangian
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Son returns with loot
+character_event = {
+	id = legion.16
+	desc = EVTDESClegion.16
+	picture = GFX_evt_roman_great_temple
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAlegion.16
+		FROM = {
+			move_character = ROOT
+		}
+		wealth = 300
+	}
+}
+
+# Father dies, Player Son is heir
+character_event = {
+	id = legion.17
+	desc = EVTDESClegion.17
+	picture = GFX_evt_roman_rider
+	border = GFX_event_normal_frame_war
+	
+	ai = no
+	
+	trigger = {
+		OR = {
+			has_character_flag = wants_italia
+			has_character_flag = serving_italia
+		}
+		father = { is_alive = no }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = wants_italia
+		clr_character_flag = serving_italia
+	}
+	
+	option = {
+		name = EVTOPTAlegion.17
+		prestige = 200
+		wealth = 200
+	}
+}
+
+#Praetorian Guard 
+narrative_event = {
+	id = legion.18
+	title = "EVTNAMElegion.18"
+	desc = "EVTDESClegion.18"
+	picture = GFX_evt_roman_soldiers_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = praetorian_guard
+		activate_title = { title = d_praetorians status = yes }
+			create_character = {
+				random_traits = yes
+				religion = ROOT
+				culture = roman
+				dynasty = NONE
+				female = no
+				age = 34
+				trait = brilliant_strategist
+			}
+			new_character = {
+				d_praetorians = {
+					grant_title = PREV
+				}
+				set_defacto_liege = ROOT
+		}
+	}
+
+	option = {
+		name = "EVTOPTAlegion.18"
+		prestige = 500
+	}
+}
