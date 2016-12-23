@@ -1,0 +1,30 @@
+spriteTypes = {
+        spriteType = {
+               name = "GFX_evt_library_of_Athens"
+	       texturefile = "gfx/event_pictures/library_of_Athens.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+               effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_roman_city"
+	       texturefile = "gfx/event_pictures/roman_city.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_room_with_scrolls"
+	       texturefile = "gfx/event_pictures/room_with_scrolls.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+        spriteType = {
+	       name = "GFX_evt_roman_senate"
+	       texturefile = "gfx/event_pictures/roman_senate.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+}
