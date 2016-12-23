@@ -1,0 +1,106 @@
+namespace = RKR
+character_event = {                        #Arrival at the Library of Alexandria
+	id = RKR.1
+        title = "EVTNAMERKR.1"
+	desc = "EVTDESCRKR.1"
+	picture = "GFX_evt_library_of_alexandria"
+
+        is_triggered_only = yes
+                        
+	option = {
+		name = "EVTOPTARKR.1" #
+                add_trait = cynical 
+                Prestige = 100
+                character_event = { id = RKR.2 }
+}
+	option = {
+		name = "EVTOPTBRKR.1" #
+                add_trait = zealous 
+                piety = 100 
+                remove_trait = on_pilgrimage
+         }
+}
+character_event = {                        #Arrival at the room with scrolls 
+        id = RKR.2
+        title = "EVTNAMERKR.2"
+        desc = "EVTDESCRKR.2"
+        picture = "GFX_evt_room_with_scrolls"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARKR.2" # 
+		Prestige = 100	
+                add_trait = sympathy_pagans
+                character_event = { id = RKR.3 }
+	}
+}
+character_event = {                        #On the way back home
+        id = RKR.3
+        title = "EVTNAMERKR.3"
+        desc = "EVTDESCRKR.3"
+        picture = "GFX_evt_city_of_alexandria"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARKR.3" # 
+		Prestige = 100	
+		character_event = { id = RKR.4 }
+	}
+}
+
+character_event = {                        #Back at the palace
+        id = RKR.4
+        title = "EVTNAMERKR.4"
+        desc = "EVTDESCRKR.4"
+        picture = "GFX_evt_roman_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARKR.4" # 
+		Prestige = 100
+                character_event = { id = RKR.5 }	
+}              
+        option = {
+                name = "EVTOPTBRKR.4" # 
+                add_trait = zealous
+                piety = 150 
+                
+        }
+  }
+character_event = {                        #In the senate for putting trough the new laws 
+        id = RKR.5
+        title = "EVTNAMERKR.5"
+        desc = "EVTDESCRKR.5"
+        picture = "GFX_evt_pharaoh"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARKR.5" # 
+		piety = 100	
+                religion = egyptian_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous 
+                prestige = 50
+}
+        option = { 
+                name = "EVTOPTBRKR.5" # 
+		piety = 100	
+                religion = Kemetic_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous
+                add_trait = cruel
+                Prestige = 10
+}
+        option = { 
+                name = "EVTOPTCRKR.5" # 
+		piety = 100	
+                religion = egyptian_pagan
+                remove_trait = on_pilgrimage	
+}
+
+
+
