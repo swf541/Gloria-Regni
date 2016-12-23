@@ -1,0 +1,2128 @@
+#TOS Education Events
+namespace = TOS
+character_event = {
+	id = TOS.1
+	title = TOS.1
+	desc = TOS.1_desc
+	picture = 
+	
+	trigger = {
+		any_child = {
+			age = 5
+			is_landed = no
+		}
+	}
+	
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.1 #Child is sent to the militia barracks
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_militia_barracks_1
+					has_building = ca_militia_barracks_2
+					has_building = ca_militia_barracks_3
+					has_building = ca_militia_barracks_4
+					has_building = tb_training_grounds_1
+					has_building = tb_training_grounds_2
+					has_building = tb_training_grounds_3
+					has_building = tb_training_grounds_4
+					has_building = fp_barracks_1
+					has_building = fp_barracks_2
+					has_building = fp_barracks_3
+				}
+			}
+		}
+		set_character_flag = militia_barracks
+		d_militia_barracks = {
+			move_character = ROOT
+			set_de_facto_liege = d_militia_barracks
+		}
+		hidden_tooltip = { character_event = { id = TOS.5 } }
+	}
+	
+	option = {
+		name = TOSOPTB.1 #Child is sent to the general's retinue
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_generals_retinue_1
+					has_building = ca_generals_retinue_2
+					has_building = ca_generals_retinue_3
+					has_building = ca_generals_retinue_4
+					has_building = tb_war_camp_1
+					has_building = tb_war_camp_2
+					has_building = tb_war_camp_3
+					has_building = tb_war_camp_4
+					has_building = tb_steppe_barracks_1
+					has_building = tb_steppe_barracks_2
+					has_building = tb_steppe_barracks_3
+					has_building = tb_steppe_barracks_4
+					has_building = fp_warehouse_1
+					has_building = fp_warehouse_2
+					has_building = fp_warehouse_3
+				}
+			}
+		}
+		set_character_flag = generals_retinue
+		d_generals_retinue = {
+			move_character = ROOT
+			set_de_facto_liege = d_generals_retinue
+		}
+		hidden_tooltip = { character_event = { id = TOS.6 } }
+	}
+	
+	option = {
+		name = TOSOPTC.1 #Child is sent to the emissaries
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_emissary_1
+					has_building = ca_emissary_2
+					has_building = ca_emissary_3
+					has_building = ca_emissary_4
+					has_building = fp_mansion_1
+					has_building = fp_mansion_2
+					has_building = fp_mansion_3
+					has_building = fp_mansion_4
+					has_building = tb_hillfort_1
+					has_building = tb_hillfort_2
+					has_building = tb_hillfort_3
+					has_building = tb_hillfort_4
+				}
+			}
+		}
+		set_character_flag = emissaries
+		d_emissarries = {
+			move_character = ROOT
+			set_de_facto_liege = d_emissarries
+		}
+		hidden_tooltip = { character_event = { id = TOS.7 } }
+	}
+	
+	option = { 
+		name = TOSOPTD.1 #Next set of three education options
+		hidden_tooltip = { character_event = TOS.2 }
+	}
+}
+		
+character_event = {
+	id = TOS.2
+	title = TOS.2
+	desc = TOS.2_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+		
+	option = {
+		name = TOSOPTA.2 #Child is sent to the emissariate
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_emissariate_1
+					has_building = ca_emissariate_2
+					has_building = ca_emissariate_3
+					has_building = ca_emissariate_4
+					has_building = fp_mansion_1
+					has_building = fp_mansion_2
+					has_building = fp_mansion_3
+					has_building = fp_mansion_4
+					has_building = tb_hillfort_1
+					has_building = tb_hillfort_2
+					has_building = tb_hillfort_3
+					has_building = tb_hillfort_4
+				}
+			}
+		}
+		set_character_flag = emissariate
+		d_emissariate = {
+			move_character = ROOT
+			set_de_facto_liege = d_emissariate
+		}
+		hidden_tooltip = { character_event = { id = TOS.8 } }
+	}
+		
+	option = {
+		name = TOSOPTB.2 #Child is sent to the spy network
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_spy_network_1
+					has_building = ca_spy_network_2
+					has_building = ca_spy_network_3
+					has_building = ca_spy_network_4
+					has_building = fp_cellar_1
+					has_building = fp_cellar_2
+					has_building = fp_cellar_3
+					has_building = tb_market_town_1
+					has_building = tb_market_town_2
+					has_building = tb_market_town_3
+					has_building = tb_market_town_4
+				}
+			}
+		}
+		set_character_flag = spy_network
+		d_spy_network = {
+			move_character = ROOT
+			set_de_facto_liege = d_spy_network
+		}
+		hidden_tooltip = { character_event = { id = TOS.9 } }
+	}
+	
+	option = {
+		name = TOSOPTC.2 #Child is sent to the criminal underground
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_criminal_underground_1
+					has_building = ct_criminal_underground_2
+					has_building = ct_criminal_underground_3
+					has_building = ct_criminal_underground_4
+					has_building = fp_cellar_1
+					has_building = fp_cellar_2
+					has_building = fp_cellar_3
+					has_building = tb_market_town_1
+					has_building = tb_market_town_2
+					has_building = tb_market_town_3
+					has_building = tb_market_town_4
+				}
+			}
+		}
+		set_character_flag = criminal_underground
+		d_criminal_underground = {
+			move_character = ROOT
+			set_de_facto_liege = d_criminal_underground
+		}
+		hidden_tooltip = { character_event = { id = TOS.10 } }
+	}
+	
+	option = {
+		name = TOSOPTD.2 #Next set of three education options
+		hidden_tooltip = { character_event = { id = TOS.3 } }
+	}
+}
+	
+character_event = {
+	id = TOS.3
+	title = TOS.3
+	desc = TOS.3_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.3 #Child is sent to the city university
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_university_1
+					has_building = ct_university_2
+					has_building = ct_university_3
+					has_building = ct_university_4
+					has_building = fp_warehouse_1
+					has_building = fp_warehouse_2
+					has_building = fp_warehouse_3
+				}
+			}
+		}
+		set_character_flag = city_university
+		d_city_university = {
+			move_character = ROOT
+			set_de_facto_liege = d_city_university
+		}
+		hidden_tooltip = { character_event = { id = TOS.11 } }
+	}
+	
+	option = {
+		name = TOSOPTB.3 #Child is sent to the city herdsman
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_herdsman_1
+					has_building = ct_herdsman_2
+					has_building = ct_herdsman_3
+					has_building = ct_herdsman_4
+					has_building = fp_stable_1
+					has_building = fp_stable_2
+					has_building = fp_stable_3
+					has_building = tb_steppe_stable_1
+					has_building = tb_steppe_stable_2
+					has_building = tb_steppe_stable_3
+					has_building = tb_steppe_stable_4
+				}
+			}
+		}
+		set_character_flag = city_herdsman
+		d_city_herdsman = {
+			move_character = ROOT
+			d_city_herdsman
+		}
+		hidden_tooltip = { character_event = { id = TOS.14 } }
+	}
+	
+	option = {
+		name = TOSOPTC.3 #Child is sent to the temple school
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = tp_school_1
+					has_building = tp_school_2
+					has_building = tp_school_3
+					has_building = tp_school_4
+					has_building = fp_shrine_1
+					has_building = fp_shrine_2
+					has_building = fp_shrine_3
+					has_building = tb_hillfort_1
+					has_building = tb_hillfort_2
+					has_building = tb_hillfort_3
+					has_building = tb_hillfort_4
+				}
+			}
+		}
+		set_character_flag = temple_school
+		d_temple_school = {
+			move_character = ROOT
+			set_de_facto_liege = d_temple_school
+		}
+		hidden_tooltip = { character_event = { id = TOS.15 } }
+	}
+	
+	option = {
+		name = TOSOPTD.3 #Final education option
+		hidden_tooltip = { character_event = { id = TOS.4 } }
+	}
+}
+	
+character_event = {
+	id = TOS.4
+	title = TOS.4
+	desc = TOS.4_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.4 #Child taught by parent
+		potential = {
+			OR = {
+				trait = teaching_I
+				trait = teaching_II
+				trait = teaching_III
+				trait = teaching_IV
+			}
+		set_character_flag = taught_by_parent
+	}
+	hidden_tooltip = { character_event = { id = TOS.16 } }
+}
+
+#Militia Barraks Training	
+character_event = {
+	id = TOS.5
+	title = TOS.5
+	desc = TOS.5_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.5
+		desc = TOSOPTA.5_desc 
+		add_trait = athletic_I
+		set_character_flag = athletic_I
+	}
+	
+	option = {
+		name = TOSOPTB.5 
+		desc = TOSOPTB.5_desc 
+		add_trait = weapon_arts_I
+		set_character_flag = weapon_arts_I
+	}
+}
+
+#Generals Retinue Training
+character_event = {
+	id = TOS.6
+	title = TOS.6
+	desc = TOS.6_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = TOSOPTA.6 
+		desc = TOSOPTA.6_desc 
+		add_trait = military_I
+		set_character_flag = military_I
+	}
+}
+
+#Emissary Training
+character_event = {
+	id = TOS.7
+	title = TOS.7
+	desc = TOS.7_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.7 
+		desc = TOSOPTA.7_desc 
+		add_trait = business_diplomacy_I
+		set_character_flag = business_diplomacy_I
+	}
+}
+	
+#Emissariate Training
+character_event = {
+	id = TOS.8
+	title = TOS.6
+	desc = TOS.8_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.8 
+		desc = TOSOPTA.8_desc
+		add_trait = scholarly_diplomacy_I
+		set_character_flag = scholarly_diplomacy_I
+	}
+}
+	
+#Spy Network Training
+character_event = {
+	id = TOS.9
+	title = TOS.9
+	desc = TOS.9_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.9 
+		desc = TOSOPTA.9_desc
+		add_trait = spycraft_I
+		set_character_flag = spycraft_I
+	}
+}
+
+#Criminal Underground Training	
+character_event = {
+	id = TOS.10
+	title = TOS.10
+	desc = TOS.10_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.10 
+		desc = TOSOPTA.10_desc
+		add_trait = criminal_I
+		set_character_flag = criminal_I
+	}
+}
+
+#City University Training	
+character_event = {
+	id = TOS.11
+	title = TOS.11
+	desc = TOS.11_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.11
+		desc = TOSOPTA.11_desc
+		add_trait = business_stewardship_I
+		set_character_flag = business_stewardship_I
+	}
+	
+	option = {
+		name = TOSOPTB.11
+		desc = TOSOPTB.11_desc
+		add_trait = knowledge_I #Stewardship
+		set_character_flag = knowledge_I
+	}
+	
+	option = {
+		name = TOSOPTC.11
+		desc = TOSOPTC.11_desc
+		add_trait = arts_I #Learning
+		set_character_flag = arts_I
+	}
+	
+	option = {
+		name = TOSOPTD.11 #Next set of disciplines
+	}
+	hidden_tooltip = { character_event = { id = TOS.12 } }	
+}
+
+#City University Training	Continued
+character_event = {
+	id = TOS.12
+	title = TOS.12
+	desc = TOS.12_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.12
+		desc = TOSOPTA.12_desc
+		add_trait = weapon_design_I #Learning
+		set_character_flag = weapon_design_I
+	}
+	
+	option = {
+		name = TOSOPTB.12
+		desc = TOSOPTB.12_desc
+		add_trait = design_I #Learning
+		set_character_flag = design_I
+	}
+	
+	option = {
+		name = TOSOPTC.12
+		desc = TOSOPTC.12_desc
+		add_trait = medicine_I #Learning
+		set_character_flag = medicine_I
+	}
+	
+	option = {
+		name = TOSOPTD.12 #Next set of disciplines
+		}
+	hidden_tooltip = { character_event = { id = TOS.13 } }
+}
+
+#City University Training	Continued
+character_event = {
+	id = TOS.13
+	title = TOS.13
+	desc = TOS.13_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.13
+		desc = TOSOPTA.13_desc
+		add_trait = sciences_I
+		set_character_flag = sciences_I
+	}
+	
+	option = {
+		name = TOSOPTB.13
+		desc = TOSOPTB.13_desc
+		add_trait = learning_scholarly_I
+		set_character_flag = learning_scholarly_I
+	}
+}
+
+#Animal Herdsman Training
+character_event = {
+	id = TOS.14
+	title = TOS.14
+	desc = TOS.14_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.14
+		desc = TOSOPTA.14_desc
+		add_trait = animal_handling_I
+		set_character_flag = animal_handling_I
+	}
+}
+
+#Temple School Training
+character_event = {
+	id = TOS.15
+	title = TOS.15
+	desc = TOS.15_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.15
+		desc = TOSOPTA.15_desc
+		add_trait = theology_I
+		set_character_flag = theology_I
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.16
+	title = TOS.16
+	desc = TOS.16_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #Militia Training
+			OR = {
+				trait = athletic_I
+				trait = athletic_II
+				trait = athletic_III
+				trait = athletic_IV
+			}
+		}
+		name = TOSOPTA.16
+		desc = TOSOPTA.16_desc
+		
+		add_trait = athletic_I
+		set_character_flag = athletic_I
+	}
+	
+	option = {
+		potential = { #Militia Training
+			OR = {
+				trait = weapon_arts_I
+				trait = weapon_arts_II
+				trait = weapon_arts_III
+				trait = weapon_arts_IV
+			}
+		}
+		name = TOSOPTB.16
+		desc = TOSOPTB.16_desc
+		
+		add_trait = weapon_arts_I
+		set_character_flag = weapon_arts_I
+	}
+	
+	option = {
+		potential = { #Generals Retinue
+			OR = {
+				trait = military_I
+				trait = military_II
+				trait = military_III
+				trait = military_IV
+			}
+		}
+		name = TOSOPTC.16
+		desc = TOSOPTC.16_desc
+		
+		add_trait = military_I
+		set_character_flag = military_I
+	}
+	
+	option = {
+		name = TOSOPTD.16
+		desc = TOSOPTD.16_desc
+		hidden_tooltip = { character_event = { id = TOS.17 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.17
+	title = TOS.17
+	desc = TOS.17_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #Emissary Training
+			OR = {
+				trait = business_diplomacy_I
+				trait = business_diplomacy_II
+				trait = business_diplomacy_III
+				trait = business_diplomacy_IV
+			}
+		}
+		name = TOSOPTA.17
+		desc = TOSOPTA.17_desc
+		
+		add_trait = business_diplomacy_I
+		set_character_flag = business_diplomacy_I
+	}
+	
+	option = {
+		potential = { #Emissariate Training
+			OR = {
+				trait = scholarly_diplomacy_I
+				trait = scholarly_diplomacy_II
+				trait = scholarly_diplomacy_III
+				trait = scholarly_diplomacy_IV
+			}
+		}
+		name = TOSOPTB.17
+		desc = TOSOPTB.17_desc
+		
+		add_trait = scholarly_diplomacy_I
+		set_character_flag = scholarly_diplomacy_I
+	}
+	
+	option = {
+		potential = {#Stewardship 
+			OR = {
+				trait = business_stewardship_I
+				trait = business_stewardship_II
+				trait = business_stewardship_III
+				trait = business_stewardship_IV
+			}
+		}
+		name = TOSOPTC.17
+		desc = TOSOPTC.17_desc
+		
+		add_trait = business_stewardship_I
+		set_character_flag = business_stewardship_I
+	}
+	
+	option = {
+		
+		name = TOSOPTD.17
+		desc = TOSOPTD.17_desc
+		hidden_tooltip = { character_event = { id = TOS.18 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.18
+	title = TOS.18
+	desc = TOS.18_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {#Criminal Underground
+			OR = {
+				trait = criminal_I
+				trait = criminal_II 
+				trait = criminal_III
+				trait = criminal_IV 
+			}
+		}
+		name = TOSOPTA.18
+		desc = TOSOPTA.18_desc
+		
+		add_trait = criminal_I
+		set_character_flag = criminal_I
+	}
+	
+	option = {
+		potential = { #Spy Network
+			OR = {
+				trait = spycraft_I
+				trait = spycraft_II 
+				trait = spycraft_III
+				trait = spycraft_IV 
+			}
+		}
+		name = TOSOPTB.18
+		desc = TOSOPTB.18_desc
+		
+		add_trait = spycraft_I
+		set_character_flag = spycraft_I
+	}
+	
+	option = {
+		potential = { #Herdsman Training
+			OR = {
+				trait = animal_handling_I
+				trait = animal_handling_II
+				trait = animal_handling_III
+				trait = animal_handling_IV 
+			}
+		}
+		name = TOSOPTC.18
+		desc = TOSOPTC.18_desc
+		
+		add_trait = animal_handling_I
+		set_character_flag = animal_handling_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.18
+		desc = TOSOPTD.18_desc
+		hidden_tooltip = { character_event = { id = TOS.19 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.19
+	title = TOS.19
+	desc = TOS.19_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = arts_I
+				trait = arts_II 
+				trait = arts_III
+				trait = arts_IV 
+			}
+		}
+		name = TOSOPTA.19
+		desc = TOSOPTA.19_desc
+		
+		add_trait = arts_I
+		set_character_flag = arts_I
+	}
+	
+	option = { 
+		potential = {#University Disciplines
+			OR = {
+				trait = weapon_design_I
+				trait = weapon_design_II 
+				trait = weapon_design_III
+				trait = weapon_design_IV 
+			}
+		}
+		name = TOSOPTB.19
+		desc = TOSOPTB.19_desc
+		
+		add_trait = weapon_design_I
+		set_character_flag = weapon_design_I
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = design_I
+				trait = design_II 
+				trait = design_III
+				trait = design_IV 
+			}
+		}
+		name = TOSOPTC.19
+		desc = TOSOPTC.19_desc
+		
+		add_trait = design_I
+		set_character_flag = design_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.19
+		desc = TOSOPTD.19_desc
+		hidden_tooltip = { character_event = { id = TOS.20 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.20
+	title = TOS.20
+	desc = TOS.20_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = medicine_I
+				trait = medicine_II 
+				trait = medicine_III
+				trait = medicine_IV 
+			}
+		}
+		name = TOSOPTA.20
+		desc = TOSOPTA.20_desc
+		
+		add_trait = medicine_I
+		set_character_flag = medicine_I
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = sciences_I
+				trait = sciences_II 
+				trait = sciences_III
+				trait = sciences_IV 
+			}
+		}
+		name =TOSOPTB.20 
+		desc = TOSOPTB.20_desc
+		
+		add_trait = sciences_I
+		set_character_flag = sciences_I
+	}
+	
+	option = {
+		potential = {
+			OR = {
+				trait = learning_scholarly_I
+				trait = learning_scholarly_II 
+				trait = learning_scholarly_III
+				trait = learning_scholarly_IV 
+			}
+		}
+		name = TOSOPTC.20
+		desc = TOSOPTC.20_desc
+		
+		add_trait = learning_scholarly_I
+		set_character_flag = learning_scholarly_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.20
+		desc = TOSOPTD.20_desc
+		hidden_tooltip = { character_event = { id = TOS.21 } }
+	}
+}
+	
+#Parental Training
+character_event = {
+	id = TOS.21
+	title = TOS.21
+	desc = TOS.21_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			OR {
+				trait = theology_I
+				trait = theology_II 
+				trait = theology_III
+				trait = theology_IV 
+			}
+		}
+		name = TOSOPTA.21
+		desc = TOSOPTA.21_desc
+		
+		add_trait = theology_I
+		set_character_flag = theology_I
+	}
+}
+
+#Age 10 Education Events
+character_event = {
+	id = TOS.22
+	title = TOS.22
+	desc = TOS.22_desc
+	picture = 
+	
+	trigger = {
+		any_child = {
+			age = 10
+			is_landed = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.22 #Child is sent to the militia barracks
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_militia_barracks_1
+					has_building = ca_militia_barracks_2
+					has_building = ca_militia_barracks_3
+					has_building = ca_militia_barracks_4
+				}
+				NOT = {
+					has_character_flag = athletic_I
+					has_character_flag = weapon_arts_I
+				}
+			}
+		}
+		set_character_flag = militia_barracks
+		d_militia_barracks = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.26 } }
+	}
+	
+	option = {
+		name = TOSOPTB.22 #Child is sent to the general's retinue
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_generals_retinue_1
+					has_building = ca_generals_retinue_2
+					has_building = ca_generals_retinue_3
+					has_building = ca_generals_retinue_4
+				}
+				NOT = { 
+					has_character_flag = military_I
+				}
+			}
+		}
+		set_character_flag = generals_retinue
+		d_generals_retinue = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.27 } }
+	}
+	
+	option = {
+		name = TOSOPTC.22 #Child is sent to the emissaries
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_emissary_1
+					has_building = ca_emissary_2
+					has_building = ca_emissary_3
+					has_building = ca_emissary_4
+				}
+				NOT = {
+					has_character_flag = business_diplomacy_I
+				}
+			}
+		}
+		set_character_flag = emissaries
+		d_emissarries = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.28 } }
+	}
+	
+	option = { 
+		name = TOSOPTD.22 #Next set of three education options
+		hidden_tooltip = { character_event = TOS.23 }
+	}
+}
+		
+character_event = {
+	id = TOS.23
+	title = TOS.23
+	desc = TOS.23_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+		
+	option = {
+		name = TOSOPTA.23 #Child is sent to the emissariate
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_emissariate_1
+					has_building = ca_emissariate_2
+					has_building = ca_emissariate_3
+					has_building = ca_emissariate_4
+				}
+				NOT = {
+					scholarly_diplomacy_I
+				}
+			}
+		}
+		set_character_flag = emissariate
+		d_emissariate = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.29 } }
+	}
+		
+	option = {
+		name = TOSOPTB.23 #Child is sent to the spy network
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ca_spy_network_1
+					has_building = ca_spy_network_2
+					has_building = ca_spy_network_3
+					has_building = ca_spy_network_4
+				}
+				NOT = {
+					has_character_flag = spycraft_I
+				}
+			}
+		}
+		set_character_flag = spy_network
+		d_spy_network = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.30 } }
+	}
+	
+	option = {
+		name = TOSOPTC.23 #Child is sent to the criminal underground
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_criminal_underground_1
+					has_building = ct_criminal_underground_2
+					has_building = ct_criminal_underground_3
+					has_building = ct_criminal_underground_4
+				}
+				NOT = {
+					has_character_flag = criminal_I
+				}
+			}
+		}
+		set_character_flag = criminal_underground
+		d_criminal_underground = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.31 } }
+	}
+	
+	option = {
+		name = TOSOPTD.2 #Next set of three education options
+		hidden_tooltip = { character_event = { id = TOS.24 } }
+	}
+}
+	
+character_event = {
+	id = TOS.24
+	title = TOS.24
+	desc = TOS.24_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.24 #Child is sent to the city university
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_university_1
+					has_building = ct_university_2
+					has_building = ct_university_3
+					has_building = ct_university_4
+				}
+			}
+		}
+		set_character_flag = city_university
+		d_city_university = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.32 } }
+	}
+	
+	option = {
+		name = TOSOPTB.24 #Child is sent to the city herdsman
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = ct_herdsman_1
+					has_building = ct_herdsman_2
+					has_building = ct_herdsman_3
+					has_building = ct_herdsman_4
+				}
+				NOT = {
+					has_character_flag = animal_handling_I
+				}
+			}
+		}
+		set_character_flag = city_herdsman
+		d_city_herdsman = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.35 } }
+	}
+	
+	option = {
+		name = TOSOPTC.24 #Child is sent to the temple school
+		any_realm_title = {
+			potential = {
+				OR = {
+					has_building = tp_school_1
+					has_building = tp_school_2
+					has_building = tp_school_3
+					has_building = tp_school_4
+				}
+				NOT = {
+					has_character_flag = sciences_I
+				}
+			}
+		}
+		set_character_flag = temple_school
+		d_temple_school = {
+			move_character = ROOT
+			
+		}
+		hidden_tooltip = { character_event = { id = TOS.36 } }
+	}
+	
+	option = {
+		name = TOSOPTD.3 #Final education option
+		hidden_tooltip = { character_event = { id = TOS.25 } }
+	}
+}
+	
+character_event = {
+	id = TOS.25
+	title = TOS.25
+	desc = TOS.25_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.25 #Child taught by parent
+		potential = {
+			OR = {
+				trait = teaching_I
+				trait = teaching_II
+				trait = teaching_III
+				trait = teaching_IV
+			}
+		set_character_flag = taught_by_parent
+	}
+	hidden_tooltip = { character_event = { id = TOS.37 } }
+}
+
+#Militia Barraks Training	
+character_event = {
+	id = TOS.26
+	title = TOS.26
+	desc = TOS.26_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = athletic_I
+			}
+		}
+		name = TOSOPTA.26
+		desc = TOSOPTA.26_desc 
+		add_trait = athletic_I
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = weapon_arts_I
+			}
+		}
+		name = TOSOPTB.5 
+		desc = TOSOPTB.5_desc 
+		add_trait = weapon_arts_I
+	}
+}
+
+#Generals Retinue Training
+character_event = {
+	id = TOS.27
+	title = TOS.27
+	desc = TOS.27_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = TOSOPTA.27 
+		desc = TOSOPTA.27_desc 
+		add_trait = military_I
+	}
+}
+
+#Emissary Training
+character_event = {
+	id = TOS.28
+	title = TOS.28
+	desc = TOS.28_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.28 
+		desc = TOSOPTA.28_desc 
+		add_trait = business_diplomacy_I
+	}
+}
+	
+#Emissariate Training
+character_event = {
+	id = TOS.29
+	title = TOS.29
+	desc = TOS.29_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.29 
+		desc = TOSOPTA.29_desc
+		add_trait = scholarly_diplomacy_I
+	}
+}
+	
+#Spy Network Training
+character_event = {
+	id = TOS.30
+	title = TOS.30
+	desc = TOS.30_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.30
+		desc = TOSOPTA.30_desc
+		add_trait = spycraft_I
+	}
+}
+
+#Criminal Underground Training	
+character_event = {
+	id = TOS.31
+	title = TOS.31
+	desc = TOS.31_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.31 
+		desc = TOSOPTA.31_desc
+		add_trait = criminal_I
+	}
+}
+
+#City University Training	
+character_event = {
+	id = TOS.32
+	title = TOS.32
+	desc = TOS.32_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = business_stewardship_I
+			}
+		}
+		name = TOSOPTA.32
+		desc = TOSOPTA.32_desc
+		add_trait = business_stewardship_I
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = knowledge_I
+			}
+		}
+		name = TOSOPTB.32
+		desc = TOSOPTB.32_desc
+		add_trait = knowledge_I #Stewardship
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = arts_I
+			}
+		}
+		name = TOSOPTC.32
+		desc = TOSOPTC.32_desc
+		add_trait = arts_I #Learning
+	}
+	
+	option = {
+		name = TOSOPTD.32 #Next set of disciplines
+	}
+	hidden_tooltip = { character_event = { id = TOS.33 } }	
+}
+
+#City University Training	Continued
+character_event = {
+	id = TOS.33
+	title = TOS.33
+	desc = TOS.33_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = weapon_design_I
+			}
+		}
+		name = TOSOPTA.33
+		desc = TOSOPTA.33_desc
+		add_trait = weapon_design_I #Learning
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = design_I
+			}
+		}
+		name = TOSOPTB.33
+		desc = TOSOPTB.33_desc
+		add_trait = design_I #Learning
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = medicine_I
+			}
+		}
+		name = TOSOPTC.33
+		desc = TOSOPTC.33_desc
+		add_trait = medicine_I #Learning
+	}
+	
+	option = {
+		name = TOSOPTD.33 #Next set of disciplines
+		}
+	hidden_tooltip = { character_event = { id = TOS.34 } }
+}
+
+#City University Training	Continued
+character_event = {
+	id = TOS.34
+	title = TOS.34
+	desc = TOS.34_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = natural_sciences_I
+			}
+		}
+		name = TOSOPTA.34
+		desc = TOSOPTA.34_desc
+		add_trait = sciences_I
+	}
+	
+	option = {
+		potential = {
+			NOT = {
+				has_character_flag = learning_scholarly_I
+			}
+		}
+		name = TOSOPTB.34
+		desc = TOSOPTB.34_desc
+		add_trait = learning_scholarly_I
+	}
+}
+
+#Animal Herdsman Training
+character_event = {
+	id = TOS.35
+	title = TOS.35
+	desc = TOS.35_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.35
+		desc = TOSOPTA.35_desc
+		add_trait = animal_handling_I
+	}
+}
+
+#Temple School Training
+character_event = {
+	id = TOS.36
+	title = TOS.36
+	desc = TOS.36_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = TOSOPTA.36
+		desc = TOSOPTA.36_desc
+		add_trait = theology_I
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.37
+	title = TOS.37
+	desc = TOS.37_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #Militia Training
+			OR = {
+				trait = athletic_I
+				trait = athletic_II
+				trait = athletic_III
+				trait = athletic_IV
+			}
+			NOT = {
+				has_character_flag = athletic_I
+			}
+		}
+		name = TOSOPTA.37
+		desc = TOSOPTA.37_desc
+		
+		add_trait = athletic_I
+	}
+	
+	option = {
+		potential = { #Militia Training
+			OR = {
+				trait = weapon_arts_I
+				trait = weapon_arts_II
+				trait = weapon_arts_III
+				trait = weapon_arts_IV
+			}
+			NOT = {
+				has_character_flag = weapon_arts_I
+			}
+		}
+		name = TOSOPTB.37
+		desc = TOSOPTB.37_desc
+		
+		add_trait = weapon_arts_I
+	}
+	
+	option = {
+		potential = { #Generals Retinue
+			OR = {
+				trait = military_I
+				trait = military_II
+				trait = military_III
+				trait = military_IV
+			}
+			NOT = {
+				has_character_flag = military_I
+			}
+		}
+		name = TOSOPTC.37
+		desc = TOSOPTC.37_desc
+		
+		add_trait = military_I
+	}
+	
+	option = {
+		name = TOSOPTD.37
+		desc = TOSOPTD.37_desc
+		hidden_tooltip = { character_event = { id = TOS.38 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.38
+	title = TOS.38
+	desc = TOS.38_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #Emissary Training
+			OR = {
+				trait = business_diplomacy_I
+				trait = business_diplomacy_II
+				trait = business_diplomacy_III
+				trait = business_diplomacy_IV
+			}
+			NOT = {
+				has_character_flag = business_diplomacy_I
+			}
+		}
+		name = TOSOPTA.38
+		desc = TOSOPTA.38_desc
+		
+		add_trait = business_diplomacy_I
+	}
+	
+	option = {
+		potential = { #Emissariate Training
+			OR = {
+				trait = scholarly_diplomacy_I
+				trait = scholarly_diplomacy_II
+				trait = scholarly_diplomacy_III
+				trait = scholarly_diplomacy_IV
+			}
+			NOT = {
+				has_character_flag = scholarly_diplomacy_I
+			}
+		}
+		name = TOSOPTB.38
+		desc = TOSOPTB.38_desc
+		
+		add_trait = scholarly_diplomacy_I
+	}
+	
+	option = {
+		potential = {#Stewardship 
+			OR = {
+				trait = business_stewardship_I
+				trait = business_stewardship_II
+				trait = business_stewardship_III
+				trait = business_stewardship_IV
+			}
+			NOT = {
+				has_character_flag = business_stewardship_I
+			}
+		}
+		name = TOSOPTC.38
+		desc = TOSOPTC.38_desc
+		
+		add_trait = business_stewardship_I
+	}
+	
+	option = {
+		
+		name = TOSOPTD.38
+		desc = TOSOPTD.38_desc
+		hidden_tooltip = { character_event = { id = TOS.39 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.39
+	title = TOS.39
+	desc = TOS.39_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {#Criminal Underground
+			OR = {
+				trait = criminal_I
+				trait = criminal_II 
+				trait = criminal_III
+				trait = criminal_IV 
+			}
+			NOT = {
+				has_character_flag = criminal_I
+			}
+		}
+		name = TOSOPTA.39
+		desc = TOSOPTA.39_desc
+		
+		add_trait = criminal_I
+	}
+	
+	option = {
+		potential = { #Spy Network
+			OR = {
+				trait = spycraft_I
+				trait = spycraft_II 
+				trait = spycraft_III
+				trait = spycraft_IV 
+			}
+			NOT = {
+				has_character_flag = spycraft_I
+			}
+		}
+		name = TOSOPTB.39
+		desc = TOSOPTB.39_desc
+		
+		add_trait = spycraft_I
+	}
+	
+	option = {
+		potential = { #Herdsman Training
+			OR = {
+				trait = animal_handling_I
+				trait = animal_handling_II
+				trait = animal_handling_III
+				trait = animal_handling_IV 
+			}
+			NOT = {
+				has_character_flag = animal_handling_I
+			}
+		}
+		name = TOSOPTC.39
+		desc = TOSOPTC.39_desc
+		
+		add_trait = animal_handling_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.39
+		desc = TOSOPTD.39_desc
+		hidden_tooltip = { character_event = { id = TOS.40 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.40
+	title = TOS.40
+	desc = TOS.40_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = arts_I
+				trait = arts_II 
+				trait = arts_III
+				trait = arts_IV 
+			}
+			NOT = {
+				has_character_flag = arts_I
+			}
+		}
+		name = TOSOPTA.10
+		desc = TOSOPTA.40_desc
+		
+		add_trait = arts_I
+	}
+	
+	option = { 
+		potential = {#University Disciplines
+			OR = {
+				trait = weapon_design_I
+				trait = weapon_design_II 
+				trait = weapon_design_III
+				trait = weapon_design_IV 
+			}
+			NOT = {
+				has_character_flag = weapon_design_I
+			}
+		}
+		name = TOSOPTB.40
+		desc = TOSOPTB.40_desc
+		
+		add_trait = weapon_design_I
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = design_I
+				trait = design_II 
+				trait = design_III
+				trait = design_IV 
+			}
+			NOT = {
+				has_character_flag = design_I
+			}
+		}
+		name = TOSOPTC.40
+		desc = TOSOPTC.40_desc
+		
+		add_trait = design_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.40
+		desc = TOSOPTD.40_desc
+		hidden_tooltip = { character_event = { id = TOS.41 } }
+	}
+}
+
+#Parental Training
+character_event = {
+	id = TOS.41
+	title = TOS.41
+	desc = TOS.41_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = medicine_I
+				trait = medicine_II 
+				trait = medicine_III
+				trait = medicine_IV 
+			}
+			NOT = {
+				has_character_flag = medicine_I
+			}
+		}
+		name = TOSOPTA.41
+		desc = TOSOPTA.41_desc
+		
+		add_trait = medicine_I
+	}
+	
+	option = {
+		potential = { #University Disciplines
+			OR = {
+				trait = sciences_I
+				trait = sciences_II 
+				trait = sciences_III
+				trait = sciences_IV 
+			}
+			NOT = {
+				has_character_flag = sciences_I
+			}
+		}
+		name =TOSOPTB.41 
+		desc = TOSOPTB.41_desc
+		
+		add_trait = sciences_I
+	}
+	
+	option = {
+		potential = {
+			OR = {
+				trait = learning_scholarly_I
+				trait = learning_scholarly_II 
+				trait = learning_scholarly_III
+				trait = learning_scholarly_IV 
+			}
+			NOT = {
+				has_character_flag = learning_scholarly_I
+			}
+		}
+		name = TOSOPTC.41
+		desc = TOSOPTC.41_desc
+		
+		add_trait = learning_scholarly_I
+	}
+	
+	option = { #Continued
+		name = TOSOPTD.41
+		desc = TOSOPTD.41_desc
+		hidden_tooltip = { character_event = { id = TOS.42 } }
+	}
+}
+	
+#Parental Training
+character_event = {
+	id = TOS.42
+	title = TOS.42
+	desc = TOS.42_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		potential = {
+			OR {
+				trait = theology_I
+				trait = theology_II 
+				trait = theology_III
+				trait = theology_IV 
+			}
+			NOT = {
+				has_character_flag = theology_I
+			}
+		}
+		name = TOSOPTA.42
+		desc = TOSOPTA.42_desc
+		
+		add_trait = theology_I
+	}
+}
+
+character_event = {
+	id = TOS.43
+	title = TOS.43
+	desc = TOS.43_desc
+	picture = 
+	
+	trigger = {
+		any_child = {
+			age = 16
+			is_landed = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = { #Child comes home
+		name = TOSOPTA.43
+		desc = TOSOPTA.43_desc
+		move_character = ROOT
+	}
+}
+
+#combat_reflexes Child
+character_event = {
+	id = TOS.44
+	desc = "TOS.44_desc"
+	picture = "GFX_evt_child_play"
+	
+	min_age = 6
+	max_age = 16
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = craven }
+		NOT = { trait = combat_reflexes }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			trait = clubfooted
+			factor = 0.8
+		}
+		modifier = {
+			trait = harelip
+			factor = 0.9
+		}
+		modifier = {
+			trait = hunchback
+			factor = 0.7
+		}
+		modifier = {
+			trait = lisp
+			factor = 0.95
+		}
+		modifier = {
+			trait = stutter
+			factor = 0.95
+		}
+		modifier = {
+			trait = fair
+			factor = 0.8
+		}
+		modifier = {
+			trait = ugly
+			factor = 1.25
+		}
+		modifier = {
+			trait = dwarf
+			factor = 0.9
+		}		
+		modifier = {
+			trait = genius
+			factor = 1.05
+		}
+		modifier = {
+			trait = quick
+			factor = 1.05
+		}	
+		modifier = {
+			trait = slow
+			factor = 0.95
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 0.5
+		}
+		modifier = {
+			trait = inbred
+			factor = 0.05
+		}
+		modifier = {
+			trait = strong
+			factor = 5.0
+		}
+		modifier = {
+			trait = weak
+			factor = 0.05
+		}
+	}
+	
+	option = {
+		name = "TOSOPTA.44"
+		add_trait = combat_reflexes
+		hidden_tooltip = {
+			de_facto_liege = {
+				character_event = {
+					id = TOS.45
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+# Discouraged
+character_event = {
+	id = TOS.45
+	desc = "TOS.45_desc"
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			add_trait = combat_reflexes
+		}
+	}
+	
+	option = {
+		name = "TOSOPTA.45"
+		remove_trait = combat_reflexes
+	}
+}

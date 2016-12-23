@@ -1,0 +1,1217 @@
+#Localisation of all events, buildings, equipment, and traits
+#by Preacher
+
+#TOS Age 5 Trait Events
+TOS.1;Your Child's Education;;;;;;;;;;;;;x
+TOS.1_desc;You have watched your child grow up from a little infant to the time you must select a tutor for them. You carefully review your choices and decide to send them to...;;;;;;;;;;;;;x
+TOSOPTA.1;[From.GetHimHer] will benefit from an education in the militia.;;;;;;;;;;;;;x
+TOSOPTB.1[From.GetHimHer] will benefit from an education on how to be a leader.;;;;;;;;;;;;;x
+TOSOPTC.1;[From.GetHimHer] will benefit from an education on how to be a diplomat.;;;;;;;;;;;;;x
+TOSOPTD.1;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.2;Your Child's Education Continued;;;;;;;;;;;;;x
+TOS.2_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.2;[From.GetHimHer] will benefit from an education on how to be a diplomat.;;;;;;;;;;;;;x
+TOSOPTB.2;[From.GetHimHer] will benefit from an education on how to be a spy.;;;;;;;;;;;;;x
+TOSOPTC.2;[From.GetHimHer] will benefit from an education on how to be a criminal.;;;;;;;;;;;;;x
+TOSOPTD.2;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.3;Your Child's Education;;;;;;;;;;;;;x
+TOS.3_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.3;[From.GetHimHer] will benefit from an education at the university.;;;;;;;;;;;;;x
+TOSOPTB.3;[From.GetHimHer] will benefit from an education from the local herdsman.;;;;;;;;;;;;;x
+TOSOPTC.3;[From.GetHimHer] will benefit from an education at the temple school.;;;;;;;;;;;;;x
+TOSOPTD.3;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.4;Your Child's Education;;;;;;;;;;;;;x
+TOS.4_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.4;You have decided to home school your child.;;;;;;;;;;;;;x
+TOS.5;Militia Training;;;;;;;;;;;;;x
+TOS.5_desc;You child arrives at the militia barracks for training.;;;;;;;;;;;;;x
+TOSOPTA.5;They shall study athletics.;;;;;;;;;;;;;x
+TOSOPTB.5;They shall study weapon arts.;;;;;;;;;;;;;x
+TOS.6;General's Retinue;;;;;;;;;;;;;x
+TOS.6_desc;Your child reports to your lead general for training.;;;;;;;;;;;;;x
+TOSOPTA.6;They shall study the military arts of a leader.;;;;;;;;;;;;;x
+TOS.7;Emissaries;;;;;;;;;;;;;x
+TOS.7_desc;Your child reports to your head diplomat for training.;;;;;;;;;;;;;x
+TOSOPTA.7;They will study business diplomacy.;;;;;;;;;;;;;x
+TOS.8;Emissariate;;;;;;;;;;;;;x
+TOS.8_desc;Your child child reports to the emissariate.;;;;;;;;;;;;;x
+TOSOPTA.8;They will study scholarly diplomacy.;;;;;;;;;;;;;x
+TOS.9;Spy Network;;;;;;;;;;;;;x
+TOS.9_desc;Your child reports the local spy network.;;;;;;;;;;;;;x
+TOSOPTA.9;They shall study to be a spy.;;;;;;;;;;;;;x
+TOS.10;Criminal Underworld;;;;;;;;;;;;;x
+TOS.10_desc;Your child reports to the local crime boss.;;;;;;;;;;;;;x
+TOSOPTA.10;They will study how to be a criminal.;;;;;;;;;;;;;x
+TOS.11;University;;;;;;;;;;;;;x
+TOS.11_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.11;Study business stewardship.;;;;;;;;;;;;;x
+TOSOPTB.11;Study knowledge.;;;;;;;;;;;;;x
+TOSOPTC.11;Study the arts.;;;;;;;;;;;;;x
+TOSOPTD.11;Continue to next choices.;;;;;;;;;;;;;x
+TOS.12;University;;;;;;;;;;;;;x
+TOS.12_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.12;Study weapon design.;;;;;;;;;;;;;x
+TOSOPTB.12;Study building design.;;;;;;;;;;;;;x
+TOSOPTC.12;Study medicine.;;;;;;;;;;;;;x
+TOSOPTD.12;Continue to next choices.;;;;;;;;;;;;;x
+TOS.13;University;;;;;;;;;;;;;x
+TOS.13_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.13;They will study natural sciences.;;;;;;;;;;;;;x
+TOSOPTB.13;They will study scholarly learning.;;;;;;;;;;;;;x
+TOS.14;Herdsman;;;;;;;;;;;;;x
+TOS.14_desc;They will learn from the local herdsman.;;;;;;;;;;;;;x
+TOSOPTA.14;They will study on how to handle animals.;;;;;;;;;;;;;x
+TOS.15;Temple School;;;;;;;;;;;;;x
+TOS.15_desc;Your child reports to the head priest of the temple school.;;;;;;;;;;;;;x
+TOSOPTA.15;They will study social sciences.;;;;;;;;;;;;;x
+TOS.16;Teach at home.;;;;;;;;;;;;;x
+TOS.16_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.16;[From.GetHimHer] will learn athletics.;;;;;;;;;;;;;x
+TOSOPTB.16;[From.GetHimHer] will learn weapon arts.;;;;;;;;;;;;;x
+TOSOPTC.16;[From.GetHimHer] will learn military training.;;;;;;;;;;;;;x
+TOSOPTD.16;Continue to next choices.;;;;;;;;;;;;;x
+TOS.17;Teach at home.;;;;;;;;;;;;;x
+TOS.17_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.17;[From.GetHimHer] will learn business diplomacy.;;;;;;;;;;;;;x
+TOSOPTB.17;[From.GetHimHer] will learn scholarly diplomacy.;;;;;;;;;;;;;x
+TOSOPTC.17;[From.GetHimHer] will learn business stewardship.;;;;;;;;;;;;;x
+TOSOPTD.17;Continue to next choices.;;;;;;;;;;;;;x
+TOS.18;Teach at home.;;;;;;;;;;;;;x
+TOS.18_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.18;[From.GetHimHer] will learn criminal activities.;;;;;;;;;;;;;x
+TOSOPTB.18;[From.GetHimHer] will learn spy techniques.;;;;;;;;;;;;;x
+TOSOPTC.18;[From.GetHimHer] will learn animal handling.;;;;;;;;;;;;;x
+TOSOPTD.18;Continue to next choices.;;;;;;;;;;;;;x
+TOS.19;Teach at home.;;;;;;;;;;;;;x
+TOS.19_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.19;[From.GetHimHer] will learn the arts.;;;;;;;;;;;;;x
+TOSOPTB.19;[From.GetHimHer] will learn weapon design.;;;;;;;;;;;;;x
+TOSOPTC.19;[From.GetHimHer] will learn building design.;;;;;;;;;;;;;x
+TOSOPTD.19;Continue to next choices.;;;;;;;;;;;;;x
+TOS.20;Teach at home.;;;;;;;;;;;;;x
+TOS.20_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.20;[From.GetHimHer] will learn medicine.;;;;;;;;;;;;;x
+TOSOPTB.20;[From.GetHimHer] will learn natural sciences.;;;;;;;;;;;;;x
+TOSOPTC.20;[From.GetHimHer] will learn scholarly learning.;;;;;;;;;;;;;x
+TOSOPTD.20;Continue to next choices.;;;;;;;;;;;;;x
+TOS.21;;Teach at home.;;;;;;;;;;;;;x
+TOS.21_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.21;[From.GetHimHer] will learn social sciences.;;;;;;;;;;;;;x
+
+#TOS Age 10 Trait Events
+TOS.22;Your Child's Education;;;;;;;;;;;;;x
+TOS.22_desc;After a short break from your child's studies, you must decide where to send them to school at again.;;;;;;;;;;;;;x
+TOSOPTA.22;[From.GetHimHer] will benefit from an education in the militia.;;;;;;;;;;;;;x
+TOSOPTB.22[From.GetHimHer] will benefit from an education on how to be a leader.;;;;;;;;;;;;;x
+TOSOPTC.22;[From.GetHimHer] will benefit from an education on how to be a diplomat.;;;;;;;;;;;;;x
+TOSOPTD.22;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.23;Your Child's Education Continued;;;;;;;;;;;;;x
+TOS.23_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.23;[From.GetHimHer] will benefit from an education on how to be a diplomat.;;;;;;;;;;;;;x
+TOSOPTB.23;[From.GetHimHer] will benefit from an education on how to be a spy.;;;;;;;;;;;;;x
+TOSOPTC.23;[From.GetHimHer] will benefit from an education on how to be a criminal.;;;;;;;;;;;;;x
+TOSOPTD.23;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.24;Your Child's Education;;;;;;;;;;;;;x
+TOS.24_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.24;[From.GetHimHer] will benefit from an education at the university.;;;;;;;;;;;;;x
+TOSOPTB.24;[From.GetHimHer] will benefit from an education from the local herdsman.;;;;;;;;;;;;;x
+TOSOPTC.24;[From.GetHimHer] will benefit from an education at the temple school.;;;;;;;;;;;;;x
+TOSOPTD.24;Continue to the next choices.;;;;;;;;;;;;;x
+TOS.25;Your Child's Education;;;;;;;;;;;;;x
+TOS.25_desc;It has come time to decide upon your child's education. You review the options available and select the best one...;;;;;;;;;;;;;x
+TOSOPTA.25;You have decided to home school your child.;;;;;;;;;;;;;x
+TOS.26;Militia Training;;;;;;;;;;;;;x
+TOS.26_desc;You child arrives at the militia barracks for training.;;;;;;;;;;;;;x
+TOSOPTA.26;They shall study athletics.;;;;;;;;;;;;;x
+TOSOPTB.26;They shall study weapon arts.;;;;;;;;;;;;;x
+TOS.27;General's Retinue;;;;;;;;;;;;;x
+TOS.27_desc;Your child reports to your lead general for training.;;;;;;;;;;;;;x
+TOSOPTA.27;They shall study the military arts of a leader.;;;;;;;;;;;;;x
+TOS.28;Emissaries;;;;;;;;;;;;;x
+TOS.28_desc;Your child reports to your head diplomat for training.;;;;;;;;;;;;;x
+TOSOPTA.28;They will study business diplomacy.;;;;;;;;;;;;;x
+TOS.29;Emissariate;;;;;;;;;;;;;x
+TOS.29_desc;Your child child reports to the emissariate.;;;;;;;;;;;;;x
+TOSOPTA.29;They will study scholarly diplomacy.;;;;;;;;;;;;;x
+TOS.30;Spy Network;;;;;;;;;;;;;x
+TOS.30_desc;Your child reports the local spy network.;;;;;;;;;;;;;x
+TOSOPTA.30;They shall study to be a spy.;;;;;;;;;;;;;x
+TOS.31;Criminal Underworld;;;;;;;;;;;;;x
+TOS.31_desc;Your child reports to the local crime boss.;;;;;;;;;;;;;x
+TOSOPTA.31;They will study how to be a criminal.;;;;;;;;;;;;;x
+TOS.32;University;;;;;;;;;;;;;x
+TOS.32_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.32;Study business stewardship.;;;;;;;;;;;;;x
+TOSOPTB.32;Study knowledge.;;;;;;;;;;;;;x
+TOSOPTC.32;Study the arts.;;;;;;;;;;;;;x
+TOSOPTD.32;Continue to next choices.;;;;;;;;;;;;;x
+TOS.33;University;;;;;;;;;;;;;x
+TOS.33_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.33;Study weapon design.;;;;;;;;;;;;;x
+TOSOPTB.33;Study building design.;;;;;;;;;;;;;x
+TOSOPTC.33;Study medicine.;;;;;;;;;;;;;x
+TOSOPTD.33;Continue to next choices.;;;;;;;;;;;;;x
+TOS.34;University;;;;;;;;;;;;;x
+TOS.34_desc;They will study at the university.;;;;;;;;;;;;;x
+TOSOPTA.34;They will study natural sciences.;;;;;;;;;;;;;x
+TOSOPTB.34;They will study scholarly learning.;;;;;;;;;;;;;x
+TOS.35;Herdsman;;;;;;;;;;;;;x
+TOS.35_desc;They will learn from the local herdsman.;;;;;;;;;;;;;x
+TOSOPTA.35;They will study on how to handle animals.;;;;;;;;;;;;;x
+TOS.36;Temple School;;;;;;;;;;;;;x
+TOS.36_desc;Your child reports to the head priest of the temple school.;;;;;;;;;;;;;x
+TOSOPTA.36;They will study social sciences.;;;;;;;;;;;;;x
+TOS.37;Teach at home.;;;;;;;;;;;;;x
+TOS.37_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.37;[From.GetHimHer] will learn athletics.;;;;;;;;;;;;;x
+TOSOPTB.37;[From.GetHimHer] will learn weapon arts.;;;;;;;;;;;;;x
+TOSOPTC.37;[From.GetHimHer] will learn military training.;;;;;;;;;;;;;x
+TOSOPTD.37;Continue to next choices.;;;;;;;;;;;;;x
+TOS.38;Teach at home.;;;;;;;;;;;;;x
+TOS.38_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.38;[From.GetHimHer] will learn business diplomacy.;;;;;;;;;;;;;x
+TOSOPTB.38;[From.GetHimHer] will learn scholarly diplomacy.;;;;;;;;;;;;;x
+TOSOPTC.38;[From.GetHimHer] will learn business stewardship.;;;;;;;;;;;;;x
+TOSOPTD.38;Continue to next choices.;;;;;;;;;;;;;x
+TOS.39;Teach at home.;;;;;;;;;;;;;x
+TOS.39_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.39;[From.GetHimHer] will learn criminal activities.;;;;;;;;;;;;;x
+TOSOPTB.39;[From.GetHimHer] will learn spy techniques.;;;;;;;;;;;;;x
+TOSOPTC.39;[From.GetHimHer] will learn animal handling.;;;;;;;;;;;;;x
+TOSOPTD.39;Continue to next choices.;;;;;;;;;;;;;x
+TOS.40;Teach at home.;;;;;;;;;;;;;x
+TOS.40_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.40;[From.GetHimHer] will learn the arts.;;;;;;;;;;;;;x
+TOSOPTB.40;[From.GetHimHer] will learn weapon design.;;;;;;;;;;;;;x
+TOSOPTC.40;[From.GetHimHer] will learn building design.;;;;;;;;;;;;;x
+TOSOPTD.40;Continue to next choices.;;;;;;;;;;;;;x
+TOS.41;Teach at home.;;;;;;;;;;;;;x
+TOS.41_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.41;[From.GetHimHer] will learn medicine.;;;;;;;;;;;;;x
+TOSOPTB.41;[From.GetHimHer] will learn natural sciences.;;;;;;;;;;;;;x
+TOSOPTC.41;[From.GetHimHer] will learn scholarly learning.;;;;;;;;;;;;;x
+TOSOPTD.41;Continue to next choices.;;;;;;;;;;;;;x
+TOS.42;Teach at home.;;;;;;;;;;;;;x
+TOS.42_desc;You decide to teach your child at home.;;;;;;;;;;;;;x
+TOSOPTA.42;[From.GetHimHer] will learn social sciences.;;;;;;;;;;;;;x
+TOS.43;Child's Homecoming;;;;;;;;;;;;;x
+TOS.43_desc;Your child has returned home from their studies.;;;;;;;;;;;;;x
+TOSOPTA.43;It's so good to see them.;;;;;;;;;;;;;x
+#Childhood Personality Event 
+TOS.44;Combat Reflexes;;;;;;;;;;;;;x
+TOS.44_desc;You were skipping along the edge of one of the towers and was precariously balanced upon the stones. Your heart skipped a beat when you were certain that you were going to fall, instead you learned Combat Reflexes.;;;;;;;;;;;;;x
+TOSOPTA.44;I hope my guardian is pleased.;;;;;;;;;;;;;x
+TOS.45;Ward Learns Combat Reflexes;;;;;;;;;;;;;x
+TOS.45_desc;Your ward was skipping along the edge of one of the towers and was precariously balanced upon the stones. Your heart skipped a beat when you were certain that they were going to fall, instead they learned Combat Reflexes.;;;;;;;;;;;;;x
+TOSOPTA.45;It's too dangerous for them.;;;;;;;;;;;;;x
+#TOS Decision Events
+TOSDE.1;Discipline Purchased;;;;;;;;;;;;;x
+TOSDE.1_desc;You have purchased a new discipline!;;;;;;;;;;;;;x
+TOSDEOPTA.1;One never stops learning.;;;;;;;;;;;;;x
+TOSDE.2;Discipline Upgraded;;;;;;;;;;;;;x
+TOSDE.2_desc;You have upgraded one of your disciplines.;;;;;;;;;;;;;x
+TOSDEOPTA.2;One never stops learning.;;;;;;;;;;;;;x
+TOSDE.3;Skill Trait Purchased;;;;;;;;;;;;;x
+TOSDE.3_desc;You have purchased a new skill trait.;;;;;;;;;;;;;x
+TOSDEOPTA.3;Here's to knowledge!;;;;;;;;;;;;;x
+TOSDE.4;Skill Trait Upgraded;;;;;;;;;;;;;x
+TOSDE.4_desc;You have upgraded one of your skill traits.;;;;;;;;;;;;;x
+TOSDEOPTA.4;I'm getting more powerful!;;;;;;;;;;;;;x
+TOSDE.5;Ye Olde Super Store!;;;;;;;;;;;;;x
+TOSDE.5_desc;You walk into the local medieval super center with a pocket full of gold. You are intending to spend every single last gold piece on new equipment, so you are properly outfitted for the battlefield. They have the latest in style and innovation for such a savey shopper as yourself.;;;;;;;;;;;;;x
+TOSDEOPTA.5;To the melee weapons!;;;;;;;;;;;;;x
+TOSDEOPTB.5;To the ranged weapons!;;;;;;;;;;;;;x
+TOSDEOPTC.5;Shields is what I need!;;;;;;;;;;;;;x
+TOSDEOPTD.5;Armour is where its at!;;;;;;;;;;;;;x
+TOSDE.6;Melee Weapon Counter;;;;;;;;;;;;;x
+TOSDE.6_desc;You walk through Ye Olde Super Store to the melee weapons counter. The area is filled with training dummies, so you're able to practice with any weapon of your choice. You're in the mood to buy something that can really kill someone. Standing behind the counter is a young man lacking any muscles and wearing nothing but a loin cloth.;;;;;;;;;;;;;x
+TOSDEOPTA.6;I prefer an axe.;;;;;;;;;;;;;x
+TOSDEOPTB.6;Maces are a good choice.;;;;;;;;;;;;;x
+TOSDEOPTC.6;An arming sword is what I need.;;;;;;;;;;;;;x
+TOSDEOPTD.6;I don't like these!;;;;;;;;;;;;;x
+TOSDE.7;Melee Weapon Counter;;;;;;;;;;;;;x
+TOSDE.7_desc;The nice clerk behind the counter lays out three more weapons for you to look at..;;;;;;;;;;;;;x
+TOSDEOPTA.7;Daggers are nice.;;;;;;;;;;;;;x
+TOSDEOPTB.7;I hear lances are good!;;;;;;;;;;;;;x
+TOSDEOPTC.7;I can reach out and touch someone with a polearm.;;;;;;;;;;;;;x
+TOSDEOPTD.7;I don't like these!;;;;;;;;;;;;;x
+TOSDE.8;Melee Weapon Counter;;;;;;;;;;;;;x
+TOSDE.8_desc;The nice clerk behind the counter lays out three more weapons for you to look at..;;;;;;;;;;;;;x
+TOSDEOPTA.8;Erol Flynn used a rapier and main-gauche!;;;;;;;;;;;;;x
+TOSDEOPTB.8;A saber makes a superb cut!;;;;;;;;;;;;;x
+TOSDEOPTC.8;Just because it says short means it's not dangerous.;;;;;;;;;;;;;x
+TOSDEOPTD.8;I still don't like these!;;;;;;;;;;;;;x
+TOSDE.9;Melee Weapon Counter;;;;;;;;;;;;;x
+TOSDE.9_desc;The nice clerk behind the counter lays out three more weapons for you to look at..;;;;;;;;;;;;;x
+TOSDEOPTA.9;Maybe I should get a spear?;;;;;;;;;;;;;x
+TOSDEOPTB.9;A staff made out of 100% Oak.;;;;;;;;;;;;;x
+TOSDEOPTC.9;I like the heft of a battleaxe!;;;;;;;;;;;;;x
+TOSDEOPTD.9;I don't like these!;;;;;;;;;;;;;x
+TOSDE.10;Melee Weapon Counter;;;;;;;;;;;;;x
+TOSDE.10_desc;The nice clerk behind the counter lays out three more weapons for you to look at..;;;;;;;;;;;;;x
+TOSDEOPTA.10;I know a two handed mace!;;;;;;;;;;;;;x
+TOSDEOPTB.10;A longsword is sharp!;;;;;;;;;;;;;x
+TOSDEOPTC.10;Head to the front of the store.;;;;;;;;;;;;;x
+TOSDE.11;Ranged Weapon Counter
+TOSDE.11_desc;You make up your mind and head to the ranged weapon counter. Standing behind the counter is a short man with glasses that is surrounded by glass cases under lock and key. The department has several targets set up in order to let you try out the bows.;;;;;;;;;;;;;x
+TOSDEOPTA.11;I prefer a horse bow.;;;;;;;;;;;;;x
+TOSDEOPTB.11;The English in me wants a long bow.;;;;;;;;;;;;;x
+TOSDEOPTC.11;I don't need no special bow!;;;;;;;;;;;;;x
+TOSDEOPTD.11;Clerk I want more choices!;;;;;;;;;;;;;x
+TOSDE.12;Ranged Weapon Counter;;;;;;;;;;;;;x
+TOSDE.12_desc;The short man with glasses presents you with his final selection.;;;;;;;;;;;;;x
+TOSDEOPTA.12;A crossbow is what I need.;;;;;;;;;;;;;x
+TOSDEOPTB.12;Head to the front of the store.;;;;;;;;;;;;;x
+TOSDE.13;Shield Department;;;;;;;;;;;;;x
+TOSDE.13_desc;You decide that a shield is what you need to protect yourself from all the dangers on the field of battle. You walk into the department surrounded by shields of all shapes and sizes. A petite young woman, wearing a chain mail bikini, stands there looking at you apprehensively.;;;;;;;;;;;;;x
+TOSDEOPTA.13;I am a true Knight! A knight's shield is what I need.;;;;;;;;;;;;;x
+TOSDEOPTB.13;I like round shields.;;;;;;;;;;;;;x
+TOSDEOPTC.13;I need a buckler.;;;;;;;;;;;;;x
+TOSDEOPTD.13;Show me more of your wares wench!;;;;;;;;;;;;;x
+TOSDE.14;Shield Department;;;;;;;;;;;;;x
+TOSDE.14_desc;The woman walks you around to the other shields they sell.;;;;;;;;;;;;;x
+TOSDEOPTA.14;A targe is just what this Scotsman needs!;;;;;;;;;;;;;x
+TOSDEOPTB.14;A scutum my lady if you don't mind.;;;;;;;;;;;;;x
+TOSDEOPTC.14;This aspis just speaks to me!;;;;;;;;;;;;;x
+TOSDEOPTD.14;Head to the front of the store.;;;;;;;;;;;;;x
+TOSDE.15;Armour Department;;;;;;;;;;;;;x
+TOSDE.15_desc;You walk to the armour department and see a strong, muscle bound man keeping watch over the area. Armour stands line the area to showcase all of the armour they have in stock. You casually look through their selection.;;;;;;;;;;;;;x
+TOSDEOPTA.15;Cloth Armour is not only defensive but stylish!;;;;;;;;;;;;;x
+TOSDEOPTB.15;Who can resist leather?;;;;;;;;;;;;;x
+TOSDEOPTC.15;I need mail!;;;;;;;;;;;;;x
+TOSDEOPTD.15;Could you show me more wares?
+TOSDE.16;Armour Department;;;;;;;;;;;;;x
+TOSDE.16_desc;You continue to browse the armour selection.;;;;;;;;;;;;;x
+TOSDEOPTA.16;Halfplate would make a good investment!;;;;;;;;;;;;;x
+TOSDEOPTB.16;I am invulnerable in fullplate!;;;;;;;;;;;;;x
+TOSDEOPTC.16;Head to the front of the store.;;;;;;;;;;;;;x
+#TOS Experience Events
+
+#TOS Random Character Generation
+
+#TOS Disciplines and Traits
+#Discipline
+athletic_I;Athletic Level 1;;;;;;;;;;;;;x
+athletic_I_desc;Athletic's level 1 covers only the basics of physical fitness.;;;;;;;;;;;;;x
+athletic_II;Athletic Level 2;;;;;;;;;;;;;x
+athletic_II_desc;You have become average in athletics.;;;;;;;;;;;;;x
+athletic_III;Athletic Level 3;;;;;;;;;;;;;x
+athletic_III_desc;You are superb in athletics.;;;;;;;;;;;;;x
+athletic_IV;Athletic Level 4;;;;;;;;;;;;;x
+athletic_IV_desc;You have mastered athletics.;;;;;;;;;;;;;x
+#Traits
+manouvering_I;Manouvering Level 1;;;;;;;;;;;;;x
+manouvering_I_desc;Manouvering level 1 covers the basics of moving around the battlefield.;;;;;;;;;;;;;x
+manouvering_II;Manouvering Level 2;;;;;;;;;;;;;x
+manouvering_II_desc;You have become average in manouvering.;;;;;;;;;;;;;x
+manouvering_III;Manouvering Level 3;;;;;;;;;;;;;x
+manouvering_III_desc;You have become superb at manouvering.;;;;;;;;;;;;;x
+manouvering_IV;Manouvering Level 4;;;;;;;;;;;;;x
+manouvering_IV_desc:You have mastered manouvering.;;;;;;;;;;;;;x
+combat_arts_I;Combat Arts Level 1;;;;;;;;;;;;;x
+combat_arts_I_desc;You have learned the basics of hand to hand combat.;;;;;;;;;;;;;x
+combat_arts_II;Combat Arts Level 2;;;;;;;;;;;;;x
+combat_arts_II_desc;You have become average in hand to hand combat.;;;;;;;;;;;;;x
+combat_arts_III;Combat Arts Level 3;;;;;;;;;;;;;x
+combat_arts_III_desc;You have become superb at hand to hand combat.;;;;;;;;;;;;;x
+combat_arts_IV;Combat Arts Level 4;;;;;;;;;;;;;x
+combat_arts_IV_desc;You have mastered hand to hand combat.;;;;;;;;;;;;;x
+#Discipline
+weapon_arts_I;Weapon Arts Level 1;;;;;;;;;;;;;x
+weapon_arts_I_desc;You have learned the basics of weapon combat.;;;;;;;;;;;;;x
+weapon_arts_II;Weapon Arts Level 2;;;;;;;;;;;;;x
+weapon_arts_II_desc;You have become average in weapon combat.;;;;;;;;;;;;;x
+weapon_arts_III;Weapon Arts Level 3;;;;;;;;;;;;;x
+weapon_arts_III_desc;You have become superb at weapon combat.;;;;;;;;;;;;;x
+weapon_arts_IV;Weapon Arts Level 4;;;;;;;;;;;;;x
+weapon_arts_IV_desc;You have mastered weapon combat.;;;;;;;;;;;;;x
+#Traits
+#Melee Weapons
+axe_I;Axe Level 1;;;;;;;;;;;;;x
+axe_I_desc;You have learned the basics of using an axe.;;;;;;;;;;;;;x
+axe_II;Axe Level 2;;;;;;;;;;;;;x
+axe_II_desc;You have become average with the axe.;;;;;;;;;;;;;x
+axe_III;Axe Level 3;;;;;;;;;;;;;x
+axe_III_desc;You have become superb with an axe.;;;;;;;;;;;;;x
+axe_IV;Axe Level 4;;;;;;;;;;;;;x
+axe_IV_desc;You have mastered the axe.;;;;;;;;;;;;;x
+mace_I;Mace Level 1;;;;;;;;;;;;;x
+mace_I_desc;You have learned the basics of using a mace.;;;;;;;;;;;;;x
+mace_II;Mace Level 2;;;;;;;;;;;;;x
+mace_II_desc;You have become average with the mace.;;;;;;;;;;;;;x
+mace_III;Mace Level 3;;;;;;;;;;;;;x
+mace_III_desc;You have become superb with a mace.;;;;;;;;;;;;;x
+mace_IV;Mace Level 4;;;;;;;;;;;;;x
+mace_IV_desc;You have mastered the mace.;;;;;;;;;;;;;x
+arming_sword_I;Arming Sword Level 1;;;;;;;;;;;;;x
+arming_sword_I_desc;You have learned the basics of using an arming sword.;;;;;;;;;;;;;x
+arming_sword_II;Arming Sword Level 2;;;;;;;;;;;;;x
+arming_sword_II_desc;You have become average with the arming sword.;;;;;;;;;;;;;x
+arming_sword_III;Arming Sword Level 3;;;;;;;;;;;;;x
+arming_sword_III_desc;You have become superb with an arming sword.;;;;;;;;;;;;;x
+arming_sword_IV;Arming Sword Level 4;;;;;;;;;;;;;x
+arming_sword_IV_desc;You have mastered the arming sword.;;;;;;;;;;;;;x
+dagger_I;Dagger Level 1;;;;;;;;;;;;;x
+dagger_I_desc;You have learned the basics of using a dagger.;;;;;;;;;;;;;x
+dagger_II;Dagger Level 2;;;;;;;;;;;;;x
+dagger_II_desc;You have become average with the dagger.;;;;;;;;;;;;;x
+dagger_III;Dagger Level 3;;;;;;;;;;;;;x
+dagger_III_desc;You have become superb with a dagger.;;;;;;;;;;;;;x
+dagger_IV;Dagger Level 4;;;;;;;;;;;;;x
+dagger_IV_desc;You have mastered the dagger.;;;;;;;;;;;;;x
+lance_I;Lance Level 1;;;;;;;;;;;;;x
+lance_I_desc;You have learned the basics of using a lance.;;;;;;;;;;;;;x
+lance_II;Lance Level 2;;;;;;;;;;;;;x
+lance_II_desc;You have become average with the lance.;;;;;;;;;;;;;x
+lance_III;Lance Level 3;;;;;;;;;;;;;x
+lance_III_desc;You have become superb with a lance.;;;;;;;;;;;;;x
+lance_IV;Lance Level 4;;;;;;;;;;;;;x
+lance_IV_desc;You have mastered the lance.;;;;;;;;;;;;;x
+polearm_I;Polearm Level 1;;;;;;;;;;;;;x
+polearm_I_desc;You have learned the basics of using a polearm.;;;;;;;;;;;;;x
+polearm_II;Polearm Level 2;;;;;;;;;;;;;x
+polearm_II_desc;You have become average with the polearm.;;;;;;;;;;;;;x
+polearm_III;Polearm Level 3;;;;;;;;;;;;;x
+polearm_III_desc;You have become superb with a polearm.;;;;;;;;;;;;;x
+polearm_IV;Polearm Level 4;;;;;;;;;;;;;x
+polearm_IV_desc;You have mastered the polearm.;;;;;;;;;;;;;x
+rapier_main_gauche_I;Rapier and Main-Gauche Level 1;;;;;;;;;;;;;x
+rapier_main_gauche_I_desc;You have learned the basics of using a rapier and main-gauche.;;;;;;;;;;;;;x
+rapier_main_gauche_II;Rapier and Main-Gauche Level 2;;;;;;;;;;;;;x
+rapier_main_gauche_II_desc;You have become average with the rapier and main-gauche.;;;;;;;;;;;;;x
+rapier_main_gauche_III;Rapier and Main-Gauche Level 3;;;;;;;;;;;;;x
+rapier_main_gauche_III_desc;You have become superb with a rapier and main-gauche.;;;;;;;;;;;;;x
+rapier_main_gauche_IV;Rapier and Main-Gauche Level 4;;;;;;;;;;;;;x
+rapier_main_gauche_IV_desc;You have mastered the rapier and main-gauche.;;;;;;;;;;;;;x
+saber_I;Saber Level 1;;;;;;;;;;;;;x
+saber_I_desc;You have learned the basics of using a saber.;;;;;;;;;;;;;x
+saber_II;Saber Level 2;;;;;;;;;;;;;x
+saber_II_desc;You have become average with the saber.;;;;;;;;;;;;;x
+saber_III;Saber Level 3;;;;;;;;;;;;;x
+saber_III_desc;You have become superb with a saber.;;;;;;;;;;;;;x
+saber_IV;Saber Level 4;;;;;;;;;;;;;x
+saber_IV_desc;You have mastered the saber.;;;;;;;;;;;;;x
+short_sword_I;Short Sword Level 1;;;;;;;;;;;;;x
+short_sword_I_desc;You have learned the basics of using a short sword.;;;;;;;;;;;;;x
+short_sword_II;Short Sword Level 2;;;;;;;;;;;;;x
+short_sword_II_desc;You have become average with the short sword.;;;;;;;;;;;;;x
+short_sword_III;Short Sword Level 3;;;;;;;;;;;;;x
+short_sword_III_desc;You have become superb with a short sword.;;;;;;;;;;;;;x
+short_sword_IV;Short Sword Level 4;;;;;;;;;;;;;x
+short_sword_IV_desc;You have mastered the short sword.;;;;;;;;;;;;;x
+spear_I;Spear Level 1;;;;;;;;;;;;;x
+spear_I_desc;You have learned the basics of using a spear.;;;;;;;;;;;;;x
+spear_II;Spear Level 2;;;;;;;;;;;;;x
+spear_II_desc;You have become average with the spear.;;;;;;;;;;;;;x
+spear_III;Spear Level 3;;;;;;;;;;;;;x
+spear_III_desc;You have become superb with a spear.;;;;;;;;;;;;;x
+spear_IV;Spear Level 4;;;;;;;;;;;;;x
+spear_IV_desc;You have mastered the spear.;;;;;;;;;;;;;x
+staff_I;Staff Level 1;;;;;;;;;;;;;x
+staff_I_desc;You have learned the basics of using a staff.;;;;;;;;;;;;;x
+staff_II;Staff Level 2;;;;;;;;;;;;;x
+staff_II_desc;You have become average with the staff.;;;;;;;;;;;;;x
+staff_III;Staff Level 3;;;;;;;;;;;;;x
+staff_III_desc;You have become superb with a staff.;;;;;;;;;;;;;x
+staff_IV;Staff Level 4;;;;;;;;;;;;;x
+staff_IV_desc;You have mastered the staff.;;;;;;;;;;;;;x
+battleaxe_I;Battleaxe Level 1;;;;;;;;;;;;;x
+battleaxe_I_desc;You have learned the basics of using a battleaxe.;;;;;;;;;;;;;x
+battleaxe_II;Battleaxe Level 2;;;;;;;;;;;;;x
+battleaxe_II_desc;You have become average with the battleaxe.;;;;;;;;;;;;;x
+battleaxe_III;Battleaxe Level 3;;;;;;;;;;;;;x
+battleaxe_III_desc;You have become superb with a battleaxe.;;;;;;;;;;;;;x
+battleaxe_IV;Battleaxe Level 4;;;;;;;;;;;;;x
+battleaxe_IV_desc;You have mastered the battleaxe.;;;;;;;;;;;;;x
+2h_mace_I;Two Handed Mace Level 1;;;;;;;;;;;;;x
+2h_mace_I_desc;You have learned the basics of using a two handed mace.;;;;;;;;;;;;;x
+2h_mace_II;Two Handed Mace Level 2;;;;;;;;;;;;;x
+2h_mace_II_desc;You have become average with the two handed mace.;;;;;;;;;;;;;x
+2h_mace_III;Two Handed Mace Level 3;;;;;;;;;;;;;x
+2h_mace_III_desc;You have become superb with a two handed mace.;;;;;;;;;;;;;x
+2h_mace_IV;Two Handed Mace Level 4;;;;;;;;;;;;;x
+2h_mace_IV_desc;You have mastered the two handed mace.;;;;;;;;;;;;;x
+longsword_I;Longsword Level 1;;;;;;;;;;;;;x
+longsword_I_desc;You have learned the basics of using a longsword.;;;;;;;;;;;;;x
+longsword_II;Longsword Level 2;;;;;;;;;;;;;x
+longsword_II_desc;You have become average with the longsword.;;;;;;;;;;;;;x
+longsword_III;Longsword Level 3;;;;;;;;;;;;;x
+longsword_III_desc;You have become superb with a longsword.;;;;;;;;;;;;;x
+longsword_IV;Longsword Level 4;;;;;;;;;;;;;x
+longsword_IV_desc;You have mastered the longsword.;;;;;;;;;;;;;x
+#Ranged Weapons
+horse_bow_I;Horse Bow Level 1;;;;;;;;;;;;;x
+horse_bow_I_desc;You have learned the basics of using a horse bow.;;;;;;;;;;;;;x
+horse_bow_II;Horse Bow Level 2;;;;;;;;;;;;;x
+horse_bow_II_desc;You have become average with the horse bow.;;;;;;;;;;;;;x
+horse_bow_III;Horse Bow Level 3;;;;;;;;;;;;;x
+horse_bow_III_desc;You have become superb with a horse bow.;;;;;;;;;;;;;x
+horse_bow_IV;Horse Bow Level 4;;;;;;;;;;;;;x
+horse_bow_IV_desc;You have mastered the horse bow.;;;;;;;;;;;;;x
+long_bow_I;Long Bow Level 1;;;;;;;;;;;;;x
+long_bow_I_desc;You have learned the basics of using a long bow.;;;;;;;;;;;;;x
+long_bow_II;Long Bow Level 2;;;;;;;;;;;;;x
+long_bow_II_desc;You have become average with the long bow.;;;;;;;;;;;;;x
+long_bow_III;Long Bow Level 3;;;;;;;;;;;;;x
+long_bow_III_desc;You have become superb with a long bow.;;;;;;;;;;;;;x
+long_bow_IV;Long Bow Level 4;;;;;;;;;;;;;x
+long_bow_IV_desc;You have mastered the long bow.;;;;;;;;;;;;;x
+bow_I;Bow Level 1;;;;;;;;;;;;;x
+bow_I_desc;You have learned the basics of using a bow.;;;;;;;;;;;;;x
+bow_II;Bow Level 2;;;;;;;;;;;;;x
+bow_II_desc;You have become average with the bow.;;;;;;;;;;;;;x
+bow_III;Bow Level 3;;;;;;;;;;;;;x
+bow_III_desc;You have become superb with a bow.;;;;;;;;;;;;;x
+bow_IV;Bow Level 4;;;;;;;;;;;;;x
+bow_IV_desc;You have mastered the bow.;;;;;;;;;;;;;x
+crossbow_I;Crossbow Level 1;;;;;;;;;;;;;x
+crossbow_I_desc;You have learned the basics of using a crossbow.;;;;;;;;;;;;;x
+crossbow_II;Crossbow Level 2;;;;;;;;;;;;;x
+crossbow_II_desc;You have become average with the crossbow.;;;;;;;;;;;;;x
+crossbow_III;Crossbow Level 3;;;;;;;;;;;;;x
+crossbow_III_desc;You have become superb with a crossbow.;;;;;;;;;;;;;x
+crossbow_IV;Crossbow Level 4;;;;;;;;;;;;;x
+crossbow_IV_desc;You have mastered the crossbow.;;;;;;;;;;;;;x
+#Shields
+knights_shield_I;Knight's Shield Level 1;;;;;;;;;;;;;x
+knights_shield_I_desc;You have learned the basics of using a knight's shield.;;;;;;;;;;;;;x
+knights_shield_II;Knight's Shield Level 2;;;;;;;;;;;;;x
+knights_shield_II_desc;You have become average with the knight's shield.;;;;;;;;;;;;;x
+knights_shield_III;Knight's Shield Level 3;;;;;;;;;;;;;x
+knights_shield_III_desc;You have become superb with a knight's shield.;;;;;;;;;;;;;x
+knights_shield_IV;Knight's Shield Level 4;;;;;;;;;;;;;x
+knights_shield_IV_desc;You have mastered the knight's shield.;;;;;;;;;;;;;x
+round_shield_I;Round Shield Level 1;;;;;;;;;;;;;x
+round_shield_I_desc;You have learned the basics of using a round shield.;;;;;;;;;;;;;x
+round_shield_II;Round Shield Level 2;;;;;;;;;;;;;x
+round_shield_II_desc;You have become average with the round shield.;;;;;;;;;;;;;x
+round_shield_III;Round Shield Level 3;;;;;;;;;;;;;x
+round_shield_III_desc;You have become superb with a round shield.;;;;;;;;;;;;;x
+round_shield_IV;Round Shield Level 4;;;;;;;;;;;;;x
+round_shield_IV_desc;You have mastered the round shield.;;;;;;;;;;;;;x
+buckler_I;Buckler Level 1;;;;;;;;;;;;;x
+buckler_I_desc;You have learned the basics of using a buckler.;;;;;;;;;;;;;x
+buckler_II;Buckler Level 2;;;;;;;;;;;;;x
+buckler_II_desc;You have become average with the buckler.;;;;;;;;;;;;;x
+buckler_III;Buckler Level 3;;;;;;;;;;;;;x
+buckler_III_desc;You have become superb with a buckler.;;;;;;;;;;;;;x
+buckler_IV;Buckler Level 4;;;;;;;;;;;;;x
+buckler_IV_desc;You have mastered the buckler.;;;;;;;;;;;;;x
+targe_I;Targe Level 1;;;;;;;;;;;;;x
+targe_I_desc;You have learned the basics of using a targe.;;;;;;;;;;;;;x
+targe_II;Targe Level 2;;;;;;;;;;;;;x
+targe_II_desc;You have become average with the targe.;;;;;;;;;;;;;x
+targe_III;Targe Level 3;;;;;;;;;;;;;x
+targe_III_desc;You have become superb with a targe.;;;;;;;;;;;;;x
+targe_IV;Targe Level 4;;;;;;;;;;;;;x
+targe_IV_desc;You have mastered the targe.;;;;;;;;;;;;;x
+scutum_I;Scutum Level 1;;;;;;;;;;;;;x
+scutum_I_desc;You have learned the basics of using a scutum.;;;;;;;;;;;;;x
+scutum_II;Scutum Level 2;;;;;;;;;;;;;x
+scutum_II_desc;You have become average with the scutum.;;;;;;;;;;;;;x
+scutum_III;Scutum Level 3;;;;;;;;;;;;;x
+scutum_III_desc;You have become superb with a scutum.;;;;;;;;;;;;;x
+scutum_IV;Scutum Level 4;;;;;;;;;;;;;x
+scutum_IV_desc;You have mastered the scutum.;;;;;;;;;;;;;x
+aspis_I;Aspis Level 1;;;;;;;;;;;;;x
+aspis_I_desc;You have learned the basics of using a aspis.;;;;;;;;;;;;;x
+aspis_II;Aspis Level 2;;;;;;;;;;;;;x
+aspis_II_desc;You have become average with the aspis.;;;;;;;;;;;;;x
+aspis_III;Aspis Level 3;;;;;;;;;;;;;x
+aspis_III_desc;You have become superb with a aspis.;;;;;;;;;;;;;x
+aspis_IV;Aspis Level 4;;;;;;;;;;;;;x
+aspis_IV_desc;You have mastered the aspis.;;;;;;;;;;;;;x
+#Armour
+cloth_armour_I;Cloth Armour Level 1;;;;;;;;;;;;;x
+cloth_armour_I_desc;You have learned the basics of using cloth armour.;;;;;;;;;;;;;x
+cloth_armour_II;Cloth Armour Level 2;;;;;;;;;;;;;x
+cloth_armour_II_desc;You have become average with the cloth armour.;;;;;;;;;;;;;x
+cloth_armour_III;Cloth Armour Level 3;;;;;;;;;;;;;x
+cloth_armour_III_desc;You have become superb with cloth armour.;;;;;;;;;;;;;x
+cloth_armour_IV;Cloth Armour Level 4;;;;;;;;;;;;;x
+cloth_armour_IV_desc;You have mastered cloth armour.;;;;;;;;;;;;;x
+leather_armour_I;Leather Armour Level 1;;;;;;;;;;;;;x
+leather_armour_I_desc;You have learned the basics of using leather armour.;;;;;;;;;;;;;x
+leather_armour_II;Leather Armour Level 2;;;;;;;;;;;;;x
+leather_armour_II_desc;You have become average with the leather armour.;;;;;;;;;;;;;x
+leather_armour_III;Leather Armour Level 3;;;;;;;;;;;;;x
+leather_armour_III_desc;You have become superb with leather armour.;;;;;;;;;;;;;x
+leather_armour_IV;Leather Armour Level 4;;;;;;;;;;;;;x
+leather_armour_IV_desc;You have mastered leather armour.;;;;;;;;;;;;;x
+mail_armour_I;Mail Armour Level 1;;;;;;;;;;;;;x
+mail_armour_I_desc;You have learned the basics of using mail armour.;;;;;;;;;;;;;x
+mail_armour_II;Mail Armour Level 2;;;;;;;;;;;;;x
+mail_armour_II_desc;You have become average with the mail armour.;;;;;;;;;;;;;x
+mail_armour_III;Mail Armour Level 3;;;;;;;;;;;;;x
+mail_armour_III_desc;You have become superb with mail armour.;;;;;;;;;;;;;x
+mail_armour_IV;Mail Armour Level 4;;;;;;;;;;;;;x
+mail_armour_IV_desc;You have mastered mail armour.;;;;;;;;;;;;;x
+halfplate_I;Halfplate Level 1;;;;;;;;;;;;;x
+halfplate_I_desc;You have learned the basics of using halfplate.;;;;;;;;;;;;;x
+halfplate_II;Halfplate Level 2;;;;;;;;;;;;;x
+halfplate_II_desc;You have become average with halfplate.;;;;;;;;;;;;;x
+halfplate_III;Halfplate Level 3;;;;;;;;;;;;;x
+halfplate_III_desc;You have become superb with halfplate.;;;;;;;;;;;;;x
+halfplate_IV;Halfplate Level 4;;;;;;;;;;;;;x
+halfplate_IV_desc;You have mastered halfplate.;;;;;;;;;;;;;x
+fullplate_I;Fullplate Level 1;;;;;;;;;;;;;x
+fullplate_I_desc;You have learned the basics of using fullplate.;;;;;;;;;;;;;x
+fullplate_II;Fullplate Level 2;;;;;;;;;;;;;x
+fullplate_II_desc;You have become average with fullplate.;;;;;;;;;;;;;x
+fullplate_III;Fullplate Level 3;;;;;;;;;;;;;x
+fullplate_III_desc;You have become superb with fullplate.;;;;;;;;;;;;;x
+fullplate_IV;Fullplate Level 4;;;;;;;;;;;;;x
+fullplate_IV_desc;You have mastered fullplate.;;;;;;;;;;;;;x
+fast_draw_I;Fast Draw Level 1;;;;;;;;;;;;;x
+fast_draw_I_desc;You have learned the basics of using fast draw.;;;;;;;;;;;;;x
+fast_draw_II;Fast Draw Level 2;;;;;;;;;;;;;x
+fast_draw_II_desc;You have become average with fast draw.;;;;;;;;;;;;;x
+fast_draw_III;Fast Draw Level 3;;;;;;;;;;;;;x
+fast_draw_III_desc;You have become superb with fast draw.;;;;;;;;;;;;;x
+fast_draw_IV;Fast Draw Level 4;;;;;;;;;;;;;x
+fast_draw_IV_desc;You have mastered fast draw.;;;;;;;;;;;;;x
+#Military Discipline
+military_I;Military Level 1;;;;;;;;;;;;;x
+military_I_desc;You have learned the basics of using military.;;;;;;;;;;;;;x
+military_II;Military Level 2;;;;;;;;;;;;;x
+military_II_desc;You have become average with military.;;;;;;;;;;;;;x
+military_III;Military Level 3;;;;;;;;;;;;;x
+military_III_desc;You have become superb with military.;;;;;;;;;;;;;x
+military_IV;Military Level 4;;;;;;;;;;;;;x
+military_IV_desc;You have mastered military.;;;;;;;;;;;;;x
+#Traits
+armoury_I;Armoury Level 1;;;;;;;;;;;;;x
+armoury_I_desc;You have learned the basics of using armoury.;;;;;;;;;;;;;x
+armoury_II;Armoury Level 2;;;;;;;;;;;;;x
+armoury_II_desc;You have become average with armoury.;;;;;;;;;;;;;x
+armoury_III;Armoury Level 3;;;;;;;;;;;;;x
+armoury_III_desc;You have become superb with armoury.;;;;;;;;;;;;;x
+armoury_IV;Armoury Level 4;;;;;;;;;;;;;x
+armoury_IV_desc;You have mastered armoury.;;;;;;;;;;;;;x
+Military Tactics_tactics_I;Military Tactics Level 1;;;;;;;;;;;;;x
+Military Tactics_tactics_I_desc;You have learned the basics of using military tactics.;;;;;;;;;;;;;x
+Military Tactics_tactics_II;Military Tactics Level 2;;;;;;;;;;;;;x
+Military Tactics_tactics_II_desc;You have become average with military tactics.;;;;;;;;;;;;;x
+Military Tactics_tactics_III;Military Tactics Level 3;;;;;;;;;;;;;x
+Military Tactics_tactics_III_desc;You have become superb with military tactics.;;;;;;;;;;;;;x
+Military Tactics_tactics_IV;Military Tactics Level 4;;;;;;;;;;;;;x
+Military Tactics_tactics_IV_desc;You have mastered military tactics.;;;;;;;;;;;;;x
+leadership_I;Leadership Level 1;;;;;;;;;;;;;x
+leadership_I_desc;You have learned the basics of using leadership.;;;;;;;;;;;;;x
+leadership_II;Leadership Level 2;;;;;;;;;;;;;x
+leadership_II_desc;You have become average with leadership.;;;;;;;;;;;;;x
+leadership_III;Leadership Level 3;;;;;;;;;;;;;x
+leadership_III_desc;You have become superb with leadership.;;;;;;;;;;;;;x
+leadership_IV;Leadership Level 4;;;;;;;;;;;;;x
+leadership_IV_desc;You have mastered leadership.;;;;;;;;;;;;;x
+siege_engines_I;Siege Engines Level 1;;;;;;;;;;;;;x
+siege_engines_I_desc;You have learned the basics of using siege engines.;;;;;;;;;;;;;x
+siege_engines_II;Siege Engines Level 2;;;;;;;;;;;;;x
+siege_engines_II_desc;You have become average with siege engines.;;;;;;;;;;;;;x
+siege_engines_III;Siege Engines Level 3;;;;;;;;;;;;;x
+siege_engines_III_desc;You have become superb with siege engines.;;;;;;;;;;;;;x
+siege_engines_IV;Siege Engines Level 4;;;;;;;;;;;;;x
+siege_engines_IV_desc;You have mastered siege engines.;;;;;;;;;;;;;x
+#Business Discipline
+business_diplomacy_I;Business Diplomacy Level 1;;;;;;;;;;;;;x
+business_diplomacy_I_desc;You have learned the basics of using business diplomacy.;;;;;;;;;;;;;x
+business_diplomacy_II;Business Diplomacy Level 2;;;;;;;;;;;;;x
+business_diplomacy_II_desc;You have become average with business diplomacy.;;;;;;;;;;;;;x
+business_diplomacy_III;Business Diplomacy Level 3;;;;;;;;;;;;;x
+business_diplomacy_III_desc;You have become superb with business diplomacy.;;;;;;;;;;;;;x
+business_diplomacy_IV;Business Diplomacy Level 4;;;;;;;;;;;;;x
+business_diplomacy_IV_desc;You have mastered business diplomacy.;;;;;;;;;;;;;x
+#Traits
+diplomacy_I;Diplomacy Level 1;;;;;;;;;;;;;x
+diplomacy_I_desc;You have learned the basics of using diplomacy.;;;;;;;;;;;;;x
+diplomacy_II;Diplomacy Level 2;;;;;;;;;;;;;x
+diplomacy_II_desc;You have become average with diplomacy.;;;;;;;;;;;;;x
+diplomacy_III;Diplomacy Level 3;;;;;;;;;;;;;x
+diplomacy_III_desc;You have become superb with diplomacy.;;;;;;;;;;;;;x
+diplomacy_IV;Diplomacy Level 4;;;;;;;;;;;;;x
+diplomacy_IV_desc;You have mastered diplomacy.;;;;;;;;;;;;;x
+law_I;Law Level 1;;;;;;;;;;;;;x
+law_I_desc;You have learned the basics of using law.;;;;;;;;;;;;;x
+law_II;Law Level 2;;;;;;;;;;;;;x
+law_II_desc;You have become average with law.;;;;;;;;;;;;;x
+law_III;Law Level 3;;;;;;;;;;;;;x
+law_III_desc;You have become superb with law.;;;;;;;;;;;;;x
+law_IV;Law Level 4;;;;;;;;;;;;;x
+law_IV_desc;You have mastered law.;;;;;;;;;;;;;x
+politics_I;Politics Level 1;;;;;;;;;;;;;x
+politics_I_desc;You have learned the basics of using politics.;;;;;;;;;;;;;x
+politics_II;Politics Level 2;;;;;;;;;;;;;x
+politics_II_desc;You have become average with politics.;;;;;;;;;;;;;x
+politics_III;Politics Level 3;;;;;;;;;;;;;x
+politics_III_desc;You have become superb with politics.;;;;;;;;;;;;;x
+politics_IV;Politics Level 4;;;;;;;;;;;;;x
+politics_IV_desc;You have mastered politics.;;;;;;;;;;;;;x
+propaganda_I;Propaganda Level 1;;;;;;;;;;;;;x
+propaganda_I_desc;You have learned the basics of using propaganda.;;;;;;;;;;;;;x
+propaganda_II;Propaganda Level 2;;;;;;;;;;;;;x
+propaganda_II_desc;You have become average with propaganda.;;;;;;;;;;;;;x
+propaganda_III;Propaganda Level 3;;;;;;;;;;;;;x
+propaganda_III_desc;You have become superb with propaganda.;;;;;;;;;;;;;x
+propaganda_IV;Propaganda Level 4;;;;;;;;;;;;;x
+propaganda_IV_desc;You have mastered propaganda.;;;;;;;;;;;;;x
+#Scholarly Diplomacy Discipline
+scholarly_diplomacy_I;Scholarly Diplomacy Level 1;;;;;;;;;;;;;x
+scholarly_diplomacy_I_desc;You have learned the basics of using scholarly diplomacy.;;;;;;;;;;;;;x
+scholarly_diplomacy_II;Scholarly Diplomacy Level 2;;;;;;;;;;;;;x
+scholarly_diplomacy_II_desc;You have become average with scholarly diplomacy.;;;;;;;;;;;;;x
+scholarly_diplomacy_III;Scholarly Diplomacy Level 3;;;;;;;;;;;;;x
+scholarly_diplomacy_III_desc;You have become superb with scholarly diplomacy.;;;;;;;;;;;;;x
+scholarly_diplomacy_IV;Scholarly Diplomacy Level 4;;;;;;;;;;;;;x
+scholarly_diplomacy_IV_desc;You have mastered scholarly diplomacy.;;;;;;;;;;;;;x
+#Traits
+public_speaking_I;Public Speaking Level 1;;;;;;;;;;;;;x
+public_speaking_I_desc;You have learned the basics of using public speaking.;;;;;;;;;;;;;x
+public_speaking_II;Public Speaking Level 2;;;;;;;;;;;;;x
+public_speaking_II_desc;You have become average with public speaking.;;;;;;;;;;;;;x
+public_speaking_III;Public Speaking Level 3;;;;;;;;;;;;;x
+public_speaking_III_desc;You have become superb with public speaking.;;;;;;;;;;;;;x
+public_speaking_IV;Public Speaking Level 4;;;;;;;;;;;;;x
+public_speaking_IV_desc;You have mastered public speaking.;;;;;;;;;;;;;x
+#Business Stewardship Discipline
+business_stewardship_I;Business Stewardship Level 1;;;;;;;;;;;;;x
+business_stewardship_I_desc;You have learned the basics of using business stewardship.;;;;;;;;;;;;;x
+business_stewardship_II;Business Stewardship Level 2;;;;;;;;;;;;;x
+business_stewardship_II_desc;You have become average with business stewardship.;;;;;;;;;;;;;x
+business_stewardship_III;Business Stewardship Level 3;;;;;;;;;;;;;x
+business_stewardship_III_desc;You have become superb with business stewardship.;;;;;;;;;;;;;x
+business_stewardship_IV;Business Stewardship Level 4;;;;;;;;;;;;;x
+business_stewardship_IV_desc;You have mastered business stewardship.;;;;;;;;;;;;;x
+#Traits
+accounting_I;Accounting Level 1;;;;;;;;;;;;;x
+accounting_I_desc;You have learned the basics of using accounting.;;;;;;;;;;;;;x
+accounting_II;Accounting Level 2;;;;;;;;;;;;;x
+accounting_II_desc;You have become average with accounting.;;;;;;;;;;;;;x
+accounting_III;Accounting Level 3;;;;;;;;;;;;;x
+accounting_III_desc;You have become superb with accounting.;;;;;;;;;;;;;x
+accounting_IV;Accounting Level 4;;;;;;;;;;;;;x
+accounting_IV_desc;You have mastered accounting.;;;;;;;;;;;;;x
+administration_I;Administration Level 1;;;;;;;;;;;;;x
+administration_I_desc;You have learned the basics of using administration.;;;;;;;;;;;;;x
+administration_II;Administration Level 2;;;;;;;;;;;;;x
+administration_II_desc;You have become average with administration.;;;;;;;;;;;;;x
+administration_III;Administration Level 3;;;;;;;;;;;;;x
+administration_III_desc;You have become superb with administration.;;;;;;;;;;;;;x
+administration_IV;Administration Level 4;;;;;;;;;;;;;x
+administration_IV_desc;You have mastered administration.;;;;;;;;;;;;;x
+economics_I;Economics Level 1;;;;;;;;;;;;;x
+economics_I_desc;You have learned the basics of using economics.;;;;;;;;;;;;;x
+economics_II;Economics Level 2;;;;;;;;;;;;;x
+economics_II_desc;You have become average with economics.;;;;;;;;;;;;;x
+economics_III;Economics Level 3;;;;;;;;;;;;;x
+economics_III_desc;You have become superb with economics.;;;;;;;;;;;;;x
+economics_IV;Economics Level 4;;;;;;;;;;;;;x
+economics_IV_desc;You have mastered economics.;;;;;;;;;;;;;x
+finance_I;Finance Level 1;;;;;;;;;;;;;x
+finance_I_desc;You have learned the basics of using finance.;;;;;;;;;;;;;x
+finance_II;Finance Level 2;;;;;;;;;;;;;x
+finance_II_desc;You have become average with finance.;;;;;;;;;;;;;x
+finance_III;Finance Level 3;;;;;;;;;;;;;x
+finance_III_desc;You have become superb with finance.;;;;;;;;;;;;;x
+finance_IV;Finance Level 4;;;;;;;;;;;;;x
+finance_IV_desc;You have mastered finance.;;;;;;;;;;;;;x
+#Stewardship Knowledge Discipline
+knowledge_I;Knowledge Level 1;;;;;;;;;;;;;x
+knowledge_I_desc;You have learned the basics of using knowledge.;;;;;;;;;;;;;x
+knowledge_II;Knowledge Level 2;;;;;;;;;;;;;x
+knowledge_II_desc;You have become average with knowledge.;;;;;;;;;;;;;x
+knowledge_III;Knowledge Level 3;;;;;;;;;;;;;x
+knowledge_III_desc;You have become superb with knowledge.;;;;;;;;;;;;;x
+knowledge_IV;Knowledge Level 4;;;;;;;;;;;;;x
+knowledge_IV_desc;You have mastered knowledge.;;;;;;;;;;;;;x
+#Traits
+artist_I;Artist Level 1;;;;;;;;;;;;;x
+artist_I_desc;You have learned the basics of using artist.;;;;;;;;;;;;;x
+artist_II;Artist Level 2;;;;;;;;;;;;;x
+artist_II_desc;You have become average with artist.;;;;;;;;;;;;;x
+artist_III;Artist Level 3;;;;;;;;;;;;;x
+artist_III_desc;You have become superb with artist.;;;;;;;;;;;;;x
+artist_IV;Artist Level 4;;;;;;;;;;;;;x
+artist_IV_desc;You have mastered artist.;;;;;;;;;;;;;x
+connoisseur_I;Connoisseur Level 1;;;;;;;;;;;;;x
+connoisseur_I_desc;You have learned the basics of using connoisseur.;;;;;;;;;;;;;x
+connoisseur_II;Connoisseur Level 2;;;;;;;;;;;;;x
+connoisseur_II_desc;You have become average with connoisseur.;;;;;;;;;;;;;x
+connoisseur_III;Connoisseur Level 3;;;;;;;;;;;;;x
+connoisseur_III_desc;You have become superb with connoisseur.;;;;;;;;;;;;;x
+connoisseur_IV;Connoisseur Level 4;;;;;;;;;;;;;x
+connoisseur_IV_desc;You have mastered connoisseur.;;;;;;;;;;;;;x
+dancing_I;Dancing Level 1;;;;;;;;;;;;;x
+dancing_I_desc;You have learned the basics of using dancing.;;;;;;;;;;;;;x
+dancing_II;Dancing Level 2;;;;;;;;;;;;;x
+dancing_II_desc;You have become average with dancing.;;;;;;;;;;;;;x
+dancing_III;Dancing Level 3;;;;;;;;;;;;;x
+dancing_III_desc;You have become superb with dancing.;;;;;;;;;;;;;x
+dancing_IV;Dancing Level 4;;;;;;;;;;;;;x
+dancing_IV_desc;You have mastered dancing.;;;;;;;;;;;;;x
+fire_eating_I;Fire Eating Level 1;;;;;;;;;;;;;x
+fire_eating_I_desc;You have learned the basics of using fire eating.;;;;;;;;;;;;;x
+fire_eating_II;Fire Eating Level 2;;;;;;;;;;;;;x
+fire_eating_II_desc;You have become average with fire eating.;;;;;;;;;;;;;x
+fire_eating_III;Fire Eating Level 3;;;;;;;;;;;;;x
+fire_eating_III_desc;You have become superb with fire eating.;;;;;;;;;;;;;x
+fire_eating_IV;Fire Eating Level 4;;;;;;;;;;;;;x
+fire_eating_IV_desc;You have mastered fire eating.;;;;;;;;;;;;;x
+musician_I;Musician Level 1;;;;;;;;;;;;;x
+musician_I_desc;You have learned the basics of using musician.;;;;;;;;;;;;;x
+musician_II;Musician Level 2;;;;;;;;;;;;;x
+musician_II_desc;You have become average with musician.;;;;;;;;;;;;;x
+musician_III;Musician Level 3;;;;;;;;;;;;;x
+musician_III_desc;You have become superb with musician.;;;;;;;;;;;;;x
+musician_IV;Musician Level 4;;;;;;;;;;;;;x
+musician_IV_desc;You have mastered musician.;;;;;;;;;;;;;x
+poet_I;Poet Level 1;;;;;;;;;;;;;x
+poet_I_desc;You have learned the basics of using poet.;;;;;;;;;;;;;x
+poet_II;Poet Level 2;;;;;;;;;;;;;x
+poet_II_desc;You have become average with poet.;;;;;;;;;;;;;x
+poet_III;Poet Level 3;;;;;;;;;;;;;x
+poet_III_desc;You have become superb with poet.;;;;;;;;;;;;;x
+poet_IV;Poet Level 4;;;;;;;;;;;;;x
+poet_IV_desc;You have mastered poet.;;;;;;;;;;;;;x
+savoir_faire_I;Savoir Faire Level 1;;;;;;;;;;;;;x
+savoir_faire_I_desc;You have learned the basics of using savoir faire.;;;;;;;;;;;;;x
+savoir_faire_II;Savoir Faire Level 2;;;;;;;;;;;;;x
+savoir_faire_II_desc;You have become average with savoir faire.;;;;;;;;;;;;;x
+savoir_faire_III;Savoir Faire Level 3;;;;;;;;;;;;;x
+savoir_faire_III_desc;You have become superb with savoir faire.;;;;;;;;;;;;;x
+savoir_faire_IV;Savoir Faire Level 4;;;;;;;;;;;;;x
+savoir_faire_IV_desc;You have mastered savoir faire.;;;;;;;;;;;;;x
+singer_I;Singer Level 1;;;;;;;;;;;;;x
+singer_I_desc;You have learned the basics of using singer.;;;;;;;;;;;;;x
+singer_II;Singer Level 2;;;;;;;;;;;;;x
+singer_II_desc;You have become average with singer.;;;;;;;;;;;;;x
+singer_III;Singer Level 3;;;;;;;;;;;;;x
+singer_III_desc;You have become superb with singer.;;;;;;;;;;;;;x
+singer_IV;Singer Level 4;;;;;;;;;;;;;x
+singer_IV_desc;You have mastered singer.;;;;;;;;;;;;;x
+#Criminal Discipline
+criminal_I;Criminal Level 1;;;;;;;;;;;;;x
+criminal_I_desc;You have learned the basics of using criminal.;;;;;;;;;;;;;x
+criminal_II;Criminal Level 2;;;;;;;;;;;;;x
+criminal_II_desc;You have become average with criminal.;;;;;;;;;;;;;x
+criminal_III;Criminal Level 3;;;;;;;;;;;;;x
+criminal_III_desc;You have become superb with criminal.;;;;;;;;;;;;;x
+criminal_IV;Criminal Level 4;;;;;;;;;;;;;x
+criminal_IV_desc;You have mastered criminal.;;;;;;;;;;;;;x
+#Traits
+disguise_I;Disguise Level 1;;;;;;;;;;;;;x
+disguise_I_desc;You have learned the basics of using disguise.;;;;;;;;;;;;;x
+disguise_II;Disguise Level 2;;;;;;;;;;;;;x
+disguise_II_desc;You have become average with disguise.;;;;;;;;;;;;;x
+disguise_III;Disguise Level 3;;;;;;;;;;;;;x
+disguise_III_desc;You have become superb with disguise.;;;;;;;;;;;;;x
+disguise_IV;Disguise Level 4;;;;;;;;;;;;;x
+disguise_IV_desc;You have mastered disguise.;;;;;;;;;;;;;x
+fast_talk_I;Fast Talk Level 1;;;;;;;;;;;;;x
+fast_talk_I_desc;You have learned the basics of using fast talk.;;;;;;;;;;;;;x
+fast_talk_II;Fast Talk Level 2;;;;;;;;;;;;;x
+fast_talk_II_desc;You have become average with fast talk.;;;;;;;;;;;;;x
+fast_talk_III;Fast Talk Level 3;;;;;;;;;;;;;x
+fast_talk_III_desc;You have become superb with fast talk.;;;;;;;;;;;;;x
+fast_talk_IV;Fast Talk Level 4;;;;;;;;;;;;;x
+fast_talk_IV_desc;You have mastered fast talk.;;;;;;;;;;;;;x
+forced_entry_I;Forced Entry Level 1;;;;;;;;;;;;;x
+forced_entry_I_desc;You have learned the basics of using forced entry.;;;;;;;;;;;;;x
+forced_entry_II;Forced Entry Level 2;;;;;;;;;;;;;x
+forced_entry_II_desc;You have become average with forced entry.;;;;;;;;;;;;;x
+forced_entry_III;Forced Entry Level 3;;;;;;;;;;;;;x
+forced_entry_III_desc;You have become superb with forced entry.;;;;;;;;;;;;;x
+forced_entry_IV;Forced Entry Level 4;;;;;;;;;;;;;x
+forced_entry_IV_desc;You have mastered forced entry.;;;;;;;;;;;;;x
+observation_I;Observation Level 1;;;;;;;;;;;;;x
+observation_I_desc;You have learned the basics of using observation.;;;;;;;;;;;;;x
+observation_II;Observation Level 2;;;;;;;;;;;;;x
+observation_II_desc;You have become average with observation.;;;;;;;;;;;;;x
+observation_III;Observation Level 3;;;;;;;;;;;;;x
+observation_III_desc;You have become superb with observation.;;;;;;;;;;;;;x
+observation_IV;Observation Level 4;;;;;;;;;;;;;x
+observation_IV_desc;You have mastered observation.;;;;;;;;;;;;;x
+smuggling_I;Smuggling Level 1;;;;;;;;;;;;;x
+smuggling_I_desc;You have learned the basics of using smuggling.;;;;;;;;;;;;;x
+smuggling_II;Smuggling Level 2;;;;;;;;;;;;;x
+smuggling_II_desc;You have become average with smuggling.;;;;;;;;;;;;;x
+smuggling_III;Smuggling Level 3;;;;;;;;;;;;;x
+smuggling_III_desc;You have become superb with smuggling.;;;;;;;;;;;;;x
+smuggling_IV;Smuggling Level 4;;;;;;;;;;;;;x
+smuggling_IV_descYou have mastered smuggling.;;;;;;;;;;;;;x
+streetwise_I;Streetwise Level 1;;;;;;;;;;;;;x
+streetwise_I_desc;You have learned the basics of using streetwise.;;;;;;;;;;;;;x
+streetwise_II;Streetwise Level 2;;;;;;;;;;;;;x
+streetwise_II_desc;You have become average with streetwise.;;;;;;;;;;;;;x
+streetwise_III;Streetwise Level 3;;;;;;;;;;;;;x
+streetwise_III_desc;You have become superb with streetwise.;;;;;;;;;;;;;x
+streetwise_IV;Streetwise Level 4;;;;;;;;;;;;;x
+streetwise_IV_desc;You have mastered streetwise.;;;;;;;;;;;;;x
+#Spycraft Discipline
+spycraft_I;Spycraft Level 1;;;;;;;;;;;;;x
+spycraft_I_desc;You have learned the basics of using spycraft.;;;;;;;;;;;;;x
+spycraft_II;Spycraft Level 2;;;;;;;;;;;;;x
+spycraft_II_desc;You have become average with spycraft.;;;;;;;;;;;;;x
+spycraft_III;Spycraft Level 3;;;;;;;;;;;;;x
+spycraft_III_desc;You have become superb with spycraft.;;;;;;;;;;;;;x
+spycraft_IV;Spycraft Level 4;;;;;;;;;;;;;x
+spycraft_IV_desc;You have mastered spycraft.;;;;;;;;;;;;;x
+#Traits
+assassination_I;Assassination Level 1;;;;;;;;;;;;;x
+assassination_I_desc;You have learned the basics of using assassination.;;;;;;;;;;;;;x
+assassination_II;Assassination Level 2;;;;;;;;;;;;;x
+assassination_II_desc;You have become average with assassination.;;;;;;;;;;;;;x
+assassination_III;Assassination Level 3;;;;;;;;;;;;;x
+assassination_III_desc;You have become superb with assassination.;;;;;;;;;;;;;x
+assassination_IV;Assassination Level 4;;;;;;;;;;;;;x
+assassination_IV_desc;You have mastered assassination.;;;;;;;;;;;;;x
+counterfeiting_I;Counterfeiting Level 1;;;;;;;;;;;;;x
+counterfeiting_I_desc;You have learned the basics of using counterfeiting.;;;;;;;;;;;;;x
+counterfeiting_II;Counterfeiting Level 2;;;;;;;;;;;;;x
+counterfeiting_II_desc;You have become average with counterfeiting.;;;;;;;;;;;;;x
+counterfeiting_III;Counterfeiting Level 3;;;;;;;;;;;;;x
+counterfeiting_III_desc;You have become superb with counterfeiting.;;;;;;;;;;;;;x
+counterfeiting_IV;Counterfeiting Level 4;;;;;;;;;;;;;x
+counterfeiting_IV_desc;You have mastered counterfeiting.;;;;;;;;;;;;;x
+forgery_I;Forgery Level 1;;;;;;;;;;;;;x
+forgery_I_desc;You have learned the basics of using forgery.;;;;;;;;;;;;;x
+forgery_II;Forgery Level 2;;;;;;;;;;;;;x
+forgery_II_desc;You have become average with forgery.;;;;;;;;;;;;;x
+forgery_III;Forgery Level 3;;;;;;;;;;;;;x
+forgery_III_desc;You have become superb with forgery.;;;;;;;;;;;;;x
+forgery_IV;Forgery Level 4;;;;;;;;;;;;;x
+forgery_IV_desc;You have mastered forgery.;;;;;;;;;;;;;x
+poisons_I;Poisons Level 1;;;;;;;;;;;;;x
+poisons_I_desc;You have learned the basics of using poisons.;;;;;;;;;;;;;x
+poisons_II;Poisons Level 2;;;;;;;;;;;;;x
+poisons_II_desc;You have become average with poisons.;;;;;;;;;;;;;x
+poisons_III;Poisons Level 3;;;;;;;;;;;;;x
+poisons_III_desc;You have become superb with poisons.;;;;;;;;;;;;;x
+poisons_IV;Poisons Level 4;;;;;;;;;;;;;x
+poisons_IV_desc;You have mastered poisons.;;;;;;;;;;;;;x
+stealth_I;Stealth Level 1;;;;;;;;;;;;;x
+stealth_I_desc;You have learned the basics of using stealth.;;;;;;;;;;;;;x
+stealth_II;Stealth Level 2;;;;;;;;;;;;;x
+stealth_II_desc;You have become average with stealth.;;;;;;;;;;;;;x
+stealth_III;Stealth Level 3;;;;;;;;;;;;;x
+stealth_III_desc;You have become superb with stealth.;;;;;;;;;;;;;x
+stealth_IV;Stealth Level 4;;;;;;;;;;;;;x
+stealth_IV_desc;You have mastered stealth.;;;;;;;;;;;;;x
+throwing_I;Throwing Level 1;;;;;;;;;;;;;x
+throwing_I_desc;You have learned the basics of using throwing.;;;;;;;;;;;;;x
+throwing_II;Throwing Level 2;;;;;;;;;;;;;x
+throwing_II_desc;You have become average with throwing.;;;;;;;;;;;;;x
+throwing_III;Throwing Level 3;;;;;;;;;;;;;x
+throwing_III_desc;You have become superb with throwing.;;;;;;;;;;;;;x
+throwing_IV;Throwing Level 4;;;;;;;;;;;;;x
+throwing_IV_desc;You have mastered throwing.;;;;;;;;;;;;;x
+#Animal Handling Discipline
+animal_handling_I;Animal Handling Level 1;;;;;;;;;;;;;x
+animal_handling_I_desc;You have learned the basics of using animal handling.;;;;;;;;;;;;;x
+animal_handling_II;Animal Handling Level 2;;;;;;;;;;;;;x
+animal_handling_II_desc;You have become average with animal handling.;;;;;;;;;;;;;x
+animal_handling_III;Animal Handling Level 3;;;;;;;;;;;;;x
+animal_handling_III_desc;You have become superb with animal handling.;;;;;;;;;;;;;x
+animal_handling_IV;Animal Handling Level 4;;;;;;;;;;;;;x
+animal_handling_IV_desc;You have mastered animal handling.;;;;;;;;;;;;;x
+#Traits
+falconer_I;Falconer Level 1;;;;;;;;;;;;;x
+falconer_I_desc;You have learned the basics of using falconer.;;;;;;;;;;;;;x
+falconer_II;Falconer Level 2;;;;;;;;;;;;;x
+falconer_II_desc;You have become average with falconer.;;;;;;;;;;;;;x
+falconer_III;Falconer Level 3;;;;;;;;;;;;;x
+falconer_III_desc;You have become superb with falconer.;;;;;;;;;;;;;x
+falconer_IV;Falconer Level 4;;;;;;;;;;;;;x
+falconer_IV_desc;You have mastered falconer.;;;;;;;;;;;;;x
+warhorse_I;Warhorse Level 1;;;;;;;;;;;;;x
+warhorse_I_desc;You have learned the basics of using warhorse.;;;;;;;;;;;;;x
+warhorse_II;Warhorse Level 2;;;;;;;;;;;;;x
+warhorse_II_desc;You have become average with warhorse.;;;;;;;;;;;;;x
+warhorse_III;Warhorse Level 3;;;;;;;;;;;;;x
+warhorse_III_desc;You have become superb with warhorse.;;;;;;;;;;;;;x
+warhorse_IV;Warhorse Level 4;;;;;;;;;;;;;x
+warhorse_IV_desc;You have mastered warhorse.;;;;;;;;;;;;;x
+#Arts Discipline
+arts_I;Arts Level 1;;;;;;;;;;;;;x
+arts_I_desc;You have learned the basics of using arts.;;;;;;;;;;;;;x
+arts_II;Arts Level 2;;;;;;;;;;;;;x
+arts_II_desc;You have become average with arts.;;;;;;;;;;;;;x
+arts_III;Arts Level 3;;;;;;;;;;;;;x
+arts_III_desc;You have become superb with arts.;;;;;;;;;;;;;x
+arts_IV;Arts Level 4;;;;;;;;;;;;;x
+arts_IV_desc;You have mastered arts.;;;;;;;;;;;;;x
+#Traits
+writer_I;Writer Level 1;;;;;;;;;;;;;x
+writer_I_desc;You have learned the basics of using writer.;;;;;;;;;;;;;x
+writer_II;Writer Level 2;;;;;;;;;;;;;x
+writer_II_desc;You have become average with writer.;;;;;;;;;;;;;x
+writer_III;Writer Level 3;;;;;;;;;;;;;x
+writer_III_desc;You have become superb with writer.;;;;;;;;;;;;;x
+writer_IV;Writer Level 4;;;;;;;;;;;;;x
+writer_IV_desc;You have mastered writer.;;;;;;;;;;;;;x
+#Weapon Design Discipline
+weapon_design_I;Weapon Design Level 1;;;;;;;;;;;;;x
+weapon_design_I_desc;You have learned the basics of using weapon design.;;;;;;;;;;;;;x
+weapon_design_II;Weapon Design Level 2;;;;;;;;;;;;;x
+weapon_design_II_desc;You have become average with weapon design.;;;;;;;;;;;;;x
+weapon_design_III;Weapon Design Level 3;;;;;;;;;;;;;x
+weapon_design_III_desc;You have become superb with weapon design.;;;;;;;;;;;;;x
+weapon_design_IV;Weapon Design Level 4;;;;;;;;;;;;;x
+weapon_design_IV_desc;You have mastered weapon design.;;;;;;;;;;;;;x
+#Traits
+metallurgy_I;Metallurgy Level 1;;;;;;;;;;;;;x
+metallurgy_I_desc;You have learned the basics of using metallurgy.;;;;;;;;;;;;;x
+metallurgy_II;Metallurgy Level 2;;;;;;;;;;;;;x
+metallurgy_II_desc;You have become average with metallurgy.;;;;;;;;;;;;;x
+metallurgy_III;Metallurgy Level 3;;;;;;;;;;;;;x
+metallurgy_III_desc;You have become superb with metallurgy.;;;;;;;;;;;;;x
+metallurgy_IV;Metallurgy Level 4;;;;;;;;;;;;;x
+metallurgy_IV_desc;You have mastered metallurgy.;;;;;;;;;;;;;x
+siege_engineering_I;Siege Engineering Level 1;;;;;;;;;;;;;x
+siege_engineering_I_desc;You have learned the basics of using siege engineering.;;;;;;;;;;;;;x
+siege_engineering_II;Siege Engineering Level 2;;;;;;;;;;;;;x
+siege_engineering_II_desc;You have become average with siege engineering.;;;;;;;;;;;;;x
+siege_engineering_III;Siege Engineering Level 3;;;;;;;;;;;;;x
+siege_engineering_III_desc;You have become superb with siege engineering.;;;;;;;;;;;;;x
+siege_engineering_IV;Siege Engineering Level 4;;;;;;;;;;;;;x
+siege_engineering_IV_desc;You have mastered siege engineering.;;;;;;;;;;;;;x
+#Design Discipline
+design_I;Design Level 1;;;;;;;;;;;;;x
+design_I_desc;You have learned the basics of using design.;;;;;;;;;;;;;x
+design_II;Design Level 2;;;;;;;;;;;;;x
+design_II_desc;You have become average with design.;;;;;;;;;;;;;x
+design_III;Design Level 3;;;;;;;;;;;;;x
+design_III_desc;You have become superb with design.;;;;;;;;;;;;;x
+design_IV;Design Level 4;;;;;;;;;;;;;x
+design_IV_desc;You have mastered design.;;;;;;;;;;;;;x
+#Traits
+architecture_I;Architecture Level 1;;;;;;;;;;;;;x
+architecture_I_desc;You have learned the basics of using architecture.;;;;;;;;;;;;;x
+architecture_II;Architecture Level 2;;;;;;;;;;;;;x
+architecture_II_desc;You have become average with architecture.;;;;;;;;;;;;;x
+architecture_III;Architecture Level 3;;;;;;;;;;;;;x
+architecture_III_desc;You have become superb with architecture.;;;;;;;;;;;;;x
+architecture_IV;Architecture Level 4;;;;;;;;;;;;;x
+architecture_IV_desc;You have mastered architecture.;;;;;;;;;;;;;x
+engineering_I;Engineering Level 1;;;;;;;;;;;;;x
+engineering_I_desc;You have learned the basics of using engineering.;;;;;;;;;;;;;x
+engineering_II;Engineering Level 2;;;;;;;;;;;;;x
+engineering_II_desc;You have become average with engineering.;;;;;;;;;;;;;x
+engineering_III;Engineering Level 3;;;;;;;;;;;;;x
+engineering_III_desc;You have become superb with engineering.;;;;;;;;;;;;;x
+engineering_IV;Engineering Level 4;;;;;;;;;;;;;x
+engineering_IV_desc;You have mastered engineering.;;;;;;;;;;;;;x
+#medicine Discipline
+medicine_I;Medicine Level 1;;;;;;;;;;;;;x
+medicine_I_desc;You have learned the basics of using medicine.;;;;;;;;;;;;;x
+medicine_II;Medicine Level 2;;;;;;;;;;;;;x
+medicine_II_desc;You have become average with medicine.;;;;;;;;;;;;;x
+medicine_III;Medicine Level 3;;;;;;;;;;;;;x
+medicine_III_desc;You have become superb with medicine.;;;;;;;;;;;;;x
+medicine_IV;Medicine Level 4;;;;;;;;;;;;;x
+medicine_IV_desc;You have mastered medicine.;;;;;;;;;;;;;x
+#Traits
+herbalism_I;Herbalism Level 1;;;;;;;;;;;;;x
+herbalism_I_desc;You have learned the basics of using herbalism.;;;;;;;;;;;;;x
+herbalism_II;Herbalism Level 2;;;;;;;;;;;;;x
+herbalism_II_desc;You have become average with herbalism.;;;;;;;;;;;;;x
+herbalism_III;Herbalism Level 3;;;;;;;;;;;;;x
+herbalism_III_desc;You have become superb with herbalism.;;;;;;;;;;;;;x
+herbalism_IV;Herbalism Level 4;;;;;;;;;;;;;x
+herbalism_IV_desc;You have mastered herbalism.;;;;;;;;;;;;;x
+physician_I;Physician Level 1;;;;;;;;;;;;;x
+physician_I_desc;You have learned the basics of using physician.;;;;;;;;;;;;;x
+physician_II;Physician Level 2;;;;;;;;;;;;;x
+physician_II_desc;You have become average with physician.;;;;;;;;;;;;;x
+physician_III;Physician Level 3;;;;;;;;;;;;;x
+physician_III_desc;You have become superb with physician.;;;;;;;;;;;;;x
+physician_IV;Physician Level 4;;;;;;;;;;;;;x
+physician_IV_desc;You have mastered physician.;;;;;;;;;;;;;x
+#Sciences Discipline
+sciences_I;Sciences Level 1;;;;;;;;;;;;;x
+sciences_I_desc;You have learned the basics of using sciences.;;;;;;;;;;;;;x
+sciences_II;Sciences Level 2;;;;;;;;;;;;;x
+sciences_II_desc;You have become average with sciences.;;;;;;;;;;;;;x
+sciences_III;Sciences Level 3;;;;;;;;;;;;;x
+sciences_III_desc;You have become superb with sciences.;;;;;;;;;;;;;x
+sciences_IV;Sciences Level 4;;;;;;;;;;;;;x
+sciences_IV_desc;You have mastered sciences.;;;;;;;;;;;;;x
+#Traits
+protective_alchemy_I;Protective Alchemy Level 1;;;;;;;;;;;;;x
+protective_alchemy_I_desc;You have learned the basics of using protective alchemy.;;;;;;;;;;;;;x
+protective_alchemy_II;Protective Alchemy Level 2;;;;;;;;;;;;;x
+protective_alchemy_II_desc;You have become average with protective alchemy.;;;;;;;;;;;;;x
+protective_alchemy_III;Protective Alchemy Level 3;;;;;;;;;;;;;x
+protective_alchemy_III_desc;You have become superb with protective alchemy.;;;;;;;;;;;;;x
+protective_alchemy_IV;Protective Alchemy Level 4;;;;;;;;;;;;;x
+protective_alchemy_IV_desc;You have mastered protective alchemy.;;;;;;;;;;;;;x
+poisonous_alchemy_I;Poisonous Alchemy Level 1;;;;;;;;;;;;;x
+poisonous_alchemy_I_desc;You have learned the basics of using poisonous alchemy.;;;;;;;;;;;;;x
+poisonous_alchemy_II;Poisonous Alchemy Level 2;;;;;;;;;;;;;x
+poisonous_alchemy_II_desc;You have become average with poisonous alchemy.;;;;;;;;;;;;;x
+poisonous_alchemy_III;Poisonous Alchemy Level 3;;;;;;;;;;;;;x
+poisonous_alchemy_III_desc;You have become superb with poisonous alchemy.;;;;;;;;;;;;;x
+poisonous_alchemy_IV;Poisonous Alchemy Level 4;;;;;;;;;;;;;x
+poisonous_alchemy_IV_desc;You have mastered poisonous alchemy.;;;;;;;;;;;;;x
+anthropology_I;Anthropology Level 1;;;;;;;;;;;;;x
+anthropology_I_desc;You have learned the basics of using anthropology.;;;;;;;;;;;;;x
+anthropology_II;Anthropology Level 2;;;;;;;;;;;;;x
+anthropology_II_desc;You have become average with anthropology.;;;;;;;;;;;;;x
+anthropology_III;Anthropology Level 3;;;;;;;;;;;;;x
+anthropology_III_desc;You have become superb with anthropology.;;;;;;;;;;;;;x
+anthropology_IV;Anthropology Level 4;;;;;;;;;;;;;x
+anthropology_IV_desc;You have mastered anthropology.;;;;;;;;;;;;;x
+archaelogy_I;Archaelogy Level 1;;;;;;;;;;;;;x
+archaelogy_I_desc;You have learned the basics of using archaelogy.;;;;;;;;;;;;;x
+archaelogy_II;Archaelogy Level 2;;;;;;;;;;;;;x
+archaelogy_II_desc;You have become average with archaelogy.;;;;;;;;;;;;;x
+archaelogy_III;Archaelogy Level 3;;;;;;;;;;;;;x
+archaelogy_III_desc;You have become superb with archaelogy.;;;;;;;;;;;;;x
+archaelogy_IV;Archaelogy Level 4;;;;;;;;;;;;;x
+archaelogy_IV_desc;You have mastered archaelogy.;;;;;;;;;;;;;x
+astronomy_I;Astronomy Level 1;;;;;;;;;;;;;x
+astronomy_I_desc;You have learned the basics of using astronomy.;;;;;;;;;;;;;x
+astronomy_II;Astronomy Level 2;;;;;;;;;;;;;x
+astronomy_II_desc;You have become average with astronomy.;;;;;;;;;;;;;x
+astronomy_III;Astronomy Level 3;;;;;;;;;;;;;x
+astronomy_III_desc;You have become superb with astronomy.;;;;;;;;;;;;;x
+astronomy_IV;Astronomy Level 4;;;;;;;;;;;;;x
+astronomy_IV_desc;You have mastered astronomy.;;;;;;;;;;;;;x
+geology_I;Geology Level 1;;;;;;;;;;;;;x
+geology_I_desc;You have learned the basics of using geology.;;;;;;;;;;;;;x
+geology_II;Geology Level 2;;;;;;;;;;;;;x
+geology_II_desc;You have become average with geology.;;;;;;;;;;;;;x
+geology_III;Geology Level 3;;;;;;;;;;;;;x
+geology_III_desc;You have become superb with geology.;;;;;;;;;;;;;x
+geology_IV;Geology Level 4;;;;;;;;;;;;;x
+geology_IV_desc;You have mastered geology.;;;;;;;;;;;;;x
+geography_I;Geography Level 1;;;;;;;;;;;;;x
+geography_I_desc;You have learned the basics of using geography.;;;;;;;;;;;;;x
+geography_II;Geography Level 2;;;;;;;;;;;;;x
+geography_II_desc;You have become average with geography.;;;;;;;;;;;;;x
+geography_III;Geography Level 3;;;;;;;;;;;;;x
+geography_III_desc;You have become superb with geography.;;;;;;;;;;;;;x
+geography_IV;Geography Level 4;;;;;;;;;;;;;x
+geography_IV_desc;You have mastered geography.;;;;;;;;;;;;;x
+mathematics_I;Mathematics Level 1;;;;;;;;;;;;;x
+mathematics_I_desc;You have learned the basics of using mathematics.;;;;;;;;;;;;;x
+mathematics_II;Mathematics Level 2;;;;;;;;;;;;;x
+mathematics_II_desc;You have become average with mathematics.;;;;;;;;;;;;;x
+mathematics_III;Mathematics Level 3;;;;;;;;;;;;;x
+mathematics_III_desc;You have become superb with mathematics.;;;;;;;;;;;;;x
+mathematics_IV;Mathematics Level 4;;;;;;;;;;;;;x
+mathematics_IV_desc;You have mastered mathematics.;;;;;;;;;;;;;x
+physics_I;Physics Level 1;;;;;;;;;;;;;x
+physics_I_desc;You have learned the basics of using physics.;;;;;;;;;;;;;x
+physics_II;Physics Level 2;;;;;;;;;;;;;x
+physics_II_desc;You have become average with physics.;;;;;;;;;;;;;x
+physics_III;Physics Level 3;;;;;;;;;;;;;x
+physics_III_desc;You have become superb with physics.;;;;;;;;;;;;;x
+physics_IV;Physics Level 4;;;;;;;;;;;;;x
+physics_IV_desc;You have mastered physics.;;;;;;;;;;;;;x
+#Scholarly Learning Discipline
+learning_scholarly_I;Learning Scholarly Level 1;;;;;;;;;;;;;x
+learning_scholarly_I_desc;You have learned the basics of using learning scholarly.;;;;;;;;;;;;;x
+learning_scholarly_II;Learning Scholarly Level 2;;;;;;;;;;;;;x
+learning_scholarly_II_desc;You have become average with learning scholarly.;;;;;;;;;;;;;x
+learning_scholarly_III;Learning Scholarly Level 3;;;;;;;;;;;;;x
+learning_scholarly_III_desc;You have become superb with learning scholarly.;;;;;;;;;;;;;x
+learning_scholarly_IV;Learning Scholarly Level 4;;;;;;;;;;;;;x
+learning_scholarly_IV_desc;You have mastered learning scholarly.;;;;;;;;;;;;;x
+#Traits
+literature_I;Literature Level 1;;;;;;;;;;;;;x
+literature_I_desc;You have learned the basics of using literature.;;;;;;;;;;;;;x
+literature_II;Literature Level 2;;;;;;;;;;;;;x
+literature_II_desc;You have become average with literature.;;;;;;;;;;;;;x
+literature_III;Literature Level 3;;;;;;;;;;;;;x
+literature_III_desc;You have become superb with literature.;;;;;;;;;;;;;x
+literature_IV;Literature Level 4;;;;;;;;;;;;;x
+literature_IV_desc;You have mastered literature.;;;;;;;;;;;;;x
+teaching_I;Teaching Level 1;;;;;;;;;;;;;x
+teaching_I_desc;You have learned the basics of using teaching.;;;;;;;;;;;;;x
+teaching_II;Teaching Level 2;;;;;;;;;;;;;x
+teaching_II_desc;You have become average with teaching.;;;;;;;;;;;;;x
+teaching_III;Teaching Level 3;;;;;;;;;;;;;x
+teaching_III_desc;You have become superb with teaching.;;;;;;;;;;;;;x
+teaching_IV;Teaching Level 4;;;;;;;;;;;;;x
+teaching_IV_desc;You have mastered teaching.;;;;;;;;;;;;;x
+#Theology Discipline
+theology_I;Theology Level 1;;;;;;;;;;;;;x
+theology_I_desc;You have learned the basics of using theology.;;;;;;;;;;;;;x
+theology_II;Theology Level 2;;;;;;;;;;;;;x
+theology_II_desc;You have become average with theology.;;;;;;;;;;;;;x
+theology_III;Theology Level 3;;;;;;;;;;;;;x
+theology_III_desc;You have become superb with theology.;;;;;;;;;;;;;x
+theology_IV;Theology Level 4;;;;;;;;;;;;;x
+theology_IV_desc;You have mastered theology.;;;;;;;;;;;;;x
+#Traits
+philosophy_I;Philosophy Level 1;;;;;;;;;;;;;x
+philosophy_I_desc;You have learned the basics of using philosophy.;;;;;;;;;;;;;x
+philosophy_II;Philosophy Level 2;;;;;;;;;;;;;x
+philosophy_II_desc;You have become average with philosophy.;;;;;;;;;;;;;x
+philosophy_III;Philosophy Level 3;;;;;;;;;;;;;x
+philosophy_III_desc;You have become superb with philosophy.;;;;;;;;;;;;;x
+philosophy_IV;Philosophy Level 4;;;;;;;;;;;;;x
+philosophy_IV_desc;You have mastered philosophy.;;;;;;;;;;;;;x
+#Equipment
+#Melee Weapons
+axe;Axe;;;;;;;;;;;;;x
+axe_desc;A standard axe that is one handed and comes in a variety shapes.;;;;;;;;;;;;;x
+mace;Mace;;;;;;;;;;;;;x
+mace_desc;Maces comprise anything from balls to morningstars.;;;;;;;;;;;;;x
+arming_sword;Arming Sword;;;;;;;;;;;;;x
+arming_sword_desc;An arming sword has a broad blade that is useable one handed.;;;;;;;;;;;;;x
+dagger;Dagger;;;;;;;;;;;;;x
+dagger_desc;Daggers come in a variety of shapes and sizes.;;;;;;;;;;;;;x
+lance;Lance;;;;;;;;;;;;;x
+lance_desc;A standard lance for jousting and to attack the enemy with from horseback.;;;;;;;;;;;;;x
+polearm;Polearm;;;;;;;;;;;;;x
+polearm_desc;Polearms come in a variety of shapes and sizes.;;;;;;;;;;;;;x
+rapier_main_gauche;Rapier and Main-Gauche;;;;;;;;;;;;;x
+rapier_main_gauche_desc;The rapier and main-gauche became common as fencing took off.;;;;;;;;;;;;;x
+saber;Saber;;;;;;;;;;;;;x
+saber_desc;a Saber's curved blade provides for better cutting ability at the loss of stabbing power.;;;;;;;;;;;;;x
+short_sword;Short Sword;;;;;;;;;;;;;x
+short_sword_desc;A short sword is the standard sword for many armies and militias.;;;;;;;;;;;;;x
+spear;Spear;;;;;;;;;;;;;x
+spear_desc;A spear comes in two flavors; a long spear or a short spear.;;;;;;;;;;;;;x
+staff;Staff;;;;;;;;;;;;;x
+staff_desc;A typical staff is made from a hardwood like oak.;;;;;;;;;;;;;x
+battleaxe;Battleaxe;;;;;;;;;;;;;x
+battleaxe_desc;A battleaxe is the larger brother to the axe. It also comes in a variety of shapes and sizes.;;;;;;;;;;;;;x
+2h_mace;Two Handed Mace;;;;;;;;;;;;;x
+2h_mace_desc;The two handed mace is the larger brother to the mace and comes in a variety of shapes and sizes.;;;;;;;;;;;;;x
+longsword;Longsword;;;;;;;;;;;;;x
+longsword_desc;A longsword is a two handed sword that is capable of both slashing and thrusting into foes.;;;;;;;;;;;;;x
+#Ranged Weapons
+horse_bow;Horse Bow;;;;;;;;;;;;;x
+horse_bow_desc;The horse bow is a staple of the Mongol and Turkish militaries.;;;;;;;;;;;;;x
+long_bow;Long Bow;;;;;;;;;;;;;x
+long_bow_desc;The long bow provides better range and penetration over the standard bow.;;;;;;;;;;;;;x
+bow;Bow;;;;;;;;;;;;;x
+bow_desc;The bow is the staple of many armies for their archers.;;;;;;;;;;;;;x
+crossbow;Crossbow;;;;;;;;;;;;;x
+crossbow_desc;A crossbow takes less time to train troops to use, but the trade off is a longer reload time.;;;;;;;;;;;;;x
+#Shields
+knights_shield;Knight's Shield;;;;;;;;;;;;;x
+knights_shield_desc;A knight's shield is a typical shield that utilizes two straps to hold it into place.;;;;;;;;;;;;;x
+round_shield;Round Shield;;;;;;;;;;;;;x
+round_shield_desc;The round shield usually has a single strap and can be used offensively.;;;;;;;;;;;;;x
+buckler;Buckler;;;;;;;;;;;;;x
+buckler_desc;A buckler is the smallest shield available, but does allow the use of a dagger, combined with the shield, when fighting.;;;;;;;;;;;;;x
+targe;Targe;;;;;;;;;;;;;x
+targe_desc;The targe is a shield found exclusively amongst the Scottish and other nearby cultures.;;;;;;;;;;;;;x
+scutum;Scutum;;;;;;;;;;;;;x
+scutum_desc;The scutum was the standard shield of the Roman Army.;;;;;;;;;;;;;x
+aspis;Aspis;;;;;;;;;;;;;x
+aspis_desc;The aspis was the standard shield of the Greek Armies.;;;;;;;;;;;;;x
+#Armour
+cloth_armour;Cloth Armour;;;;;;;;;;;;;x
+cloth_armour_desc;Cloth Armour is the lightest of the armours due to being comprised of several dense layers of cloth.;;;;;;;;;;;;;x
+leather_armour;Leather Armour;;;;;;;;;;;;;x
+leather_armour_desc;Leather armour offers a substantial improvement over the cloth armours using hardened hide as a base material.;;;;;;;;;;;;;x
+mail_armour;Mail Armour;;;;;;;;;;;;;x
+mail_armour_desc;Mail armour supplanted leather as metal smiths were able to manufacture the armour using a variety of techniques.;;;;;;;;;;;;;x
+halfplate;Halfplate;;;;;;;;;;;;;x
+halfplate_desc;Halfplate combines mail with armoured plates that cover the vital areas.;;;;;;;;;;;;;x
+fullplate;Fullplate;;;;;;;;;;;;;x
+fullplate_desc;Fullplate uses little of the mail armour allowing the wearer to have maximum protection by using metal plates.;;;;;;;;;;;;;x

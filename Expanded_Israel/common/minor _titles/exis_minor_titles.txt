@@ -1,0 +1,215 @@
+############################################################
+#  Minor Titles for Jewish Characters in Expanded Israel   #
+#                                                          #
+#   Created by ThePatriot1776                              #
+############################################################
+
+title_alluph
+dignity = 0.05
+        realm_in_name = yes
+        grant_limit = 4
+        opinion_effect = 10
+        
+        monthly_salary = 0.02
+        monthly_prestige = 0.004
+        
+        is_unique = yes
+        
+        allow = {
+			    is_adult = yes
+                is_female = no
+                FROM = {
+                        OR = {
+                                is_feudal = yes
+                                is_tribal = yes
+                        }
+                        NOT = { has_landed_title = e_byzantium }
+                        NOT = { has_landed_title = e_roman_empire }
+                        NOT = { religion_group = christian
+                                religion_group = muslim
+                                religion_group = pagan
+                                religion_group = indan_group
+                                religion_group = zoroastrian_group
+                            }
+                        OR = {religion_group = jewish_group                                
+                        }
+                }
+                NOT = { has_character_flag = guru }
+        }
+        
+        gain_effect = {
+        }
+        lose_effect = {
+        }
+
+
+        message = yes
+}
+title_navi
+dignity = 0.03
+        realm_in_name = yes
+        grant_limit = 1
+        opinion_effect = 10
+        
+        monthly_salary = 0.02
+        monthly_prestige = 0.004
+        
+        is_unique = yes
+        
+        allow = {
+				is_adult = yes
+                FROM = {
+                        OR = {
+                                is_feudal = yes
+                                is_tribal = yes
+                        }
+                        NOT = { has_landed_title = e_byzantium }
+                        NOT = { has_landed_title = e_roman_empire }
+                        NOT = { religion_group = christian
+                                religion_group = muslim
+                                religion_group = pagan
+                                religion_group = indan_group
+                                religion_group = zoroastrian_group
+                            }
+                       OR = {religion_group = jewish_group                                
+                        }
+                }
+        }
+        
+        gain_effect = {
+        }
+        lose_effect = {
+        }
+
+
+        message = yes
+}
+title_shofet
+dignity = 0.15
+        realm_in_name = yes
+        grant_limit = 1
+        opinion_effect = 15
+        
+        monthly_salary = 0.05
+        monthly_prestige = 0.006
+        
+        is_unique = yes
+        
+        allow = {
+				is_adult = yes
+                is_female = no
+                FROM = {
+                        OR = {
+                                is_feudal = yes
+                                is_tribal = yes
+                        }
+                        primary_title = {
+                                OR = {
+                                        tier = king
+                                        tier = emperor
+                                }
+                        }
+                        NOT = { has_landed_title = e_byzantium }
+                        NOT = { has_landed_title = e_roman_empire }
+                        NOT = { religion_group = christian
+                                religion_group = muslim
+                                religion_group = pagan
+                                religion_group = indan_group
+                                religion_group = zoroastrian_group
+                            }
+                       OR = {religion_group = jewish_group                                
+                        }
+                }
+                NOT = { has_character_flag = guru }
+        }
+        
+        gain_effect = {
+        }
+        lose_effect = {
+        }
+
+
+        message = yes
+}
+title_tehillim
+dignity = 0.1
+        realm_in_name = yes
+        grant_limit = 1
+        opinion_effect = 15
+        
+        monthly_salary = 0.05
+        monthly_prestige = 0.006
+        
+        is_unique = yes
+        
+        allow = {
+				is_adult = yes
+                is_female = no
+                FROM = {
+                        OR = {
+                                is_feudal = yes
+                                is_tribal = yes
+                        }
+                        NOT = { has_landed_title = e_byzantium }
+                        NOT = { has_landed_title = e_roman_empire }
+                        NOT = { religion_group = christian
+                                religion_group = muslim
+                                religion_group = pagan
+                                religion_group = indan_group
+                                religion_group = zoroastrian_group
+                            }
+                        OR = {religion_group = jewish_group                                
+                        }    
+                }
+                NOT = { has_character_flag = guru }
+        }
+        
+        gain_effect = {
+        }
+        lose_effect = {
+        }
+
+
+        message = yes
+}
+title_adrichal
+dignity = 0.1
+        realm_in_name = yes
+        grant_limit = 1
+        opinion_effect = 15
+        
+        monthly_salary = 0.05
+        monthly_prestige = 0.006
+        
+        is_unique = yes
+        
+        allow = {
+				is_adult = yes
+                is_female = no
+                FROM = {
+                        OR = {
+                                is_feudal = yes
+                                is_tribal = yes
+                        }
+                        NOT = { has_landed_title = e_byzantium }
+                        NOT = { has_landed_title = e_roman_empire }
+                        NOT = { religion_group = christian
+                                religion_group = muslim
+                                religion_group = pagan
+                                religion_group = indan_group
+                                religion_group = zoroastrian_group
+                            }
+                        OR = {religion_group = jewish_group                                
+                        }   
+                }
+                NOT = { has_character_flag = guru }
+        }
+        
+        gain_effect = {
+        }
+        lose_effect = {
+        }
+
+
+        message = yes
+}

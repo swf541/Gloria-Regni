@@ -1,0 +1,414 @@
+###############################################################
+#  Minor Decisions for Jewish Characters in Monotheism Rising #
+#															  #
+#   Created by ThePatriot1776						 		  #
+###############################################################
+decisions = {
+
+celebrate_purim = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_purim_timer }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 4 }
+				month = 2
+			}
+			wealth = 25
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -25
+			prestige = 50
+			piety = 50
+			set_character_modifier = held_purim_timer
+			custom_tooltip = {
+				text = purim_celebrations
+				hidden_tooltip = { 
+					character_event = { id = ExIs.112 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+
+celebrate_rosh_hashanah = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_rosh_hashanah_timer }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 10 }
+				month = 9
+			}
+			wealth = 25
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -25
+			prestige = 50
+			piety = 50
+			set_character_modifier = held_rosh_hashanah_timer
+			custom_tooltip = {
+				text = rosh_hashanah_celebrations
+				hidden_tooltip = { 
+					character_event = { id = ExIs.113 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+
+celebrate_yom_kippur = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_yom_kippur_timer }
+			
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 12 }
+				month = 10
+			}
+			wealth = 150
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -150
+			prestige = 300
+			piety = 300
+			set_character_modifier = held_yom_kippur_timer
+			custom_tooltip = {
+				text = yom_kippur_celebrations
+				hidden_tooltip = { 
+					narrative_event = { id = ExIs.114 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+celebrate_sukkot = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_sukkot_timer }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 12 }
+				month = 9
+			}
+			wealth = 25
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -25
+			prestige = 50
+			piety = 50
+			set_character_modifier = held_sukkot_timer
+			custom_tooltip = {
+				text = sukkot_celebrations
+				hidden_tooltip = { 
+					character_event = { id = ExIs.1103 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+
+celebrate_shavuot  = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_shavuot_timer }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 7 }
+				month = 5
+			}
+			wealth = 25
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -25
+			prestige = 50
+			piety = 50
+			set_character_modifier = held_shavuot_timer
+			custom_tooltip = {
+				text = shavuot_celebrations
+				hidden_tooltip = { 
+					character_event = { id = ExIs.1104 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+celebrate_hanukkah = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			religion_group = jewish_group
+			NOT = { has_character_modifier = held_hanukkah_timer }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 1 }
+				month = 11
+			}
+			wealth = 25
+			prisoner = no
+			NOT = { trait = in_hiding }
+		}
+		effect = {
+			wealth = -25
+			prestige = 50
+			piety = 50
+			set_character_modifier = held_hanukkah_timer
+			custom_tooltip = {
+				text = hanukkah_celebrations
+				hidden_tooltip = { 
+					character_event = { id = ExIs.1105 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 365
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,587 @@
+narrative_event = {
+	id = CHA.1
+	title = EVTNAMELoR.210
+	desc =EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+	
+	trigger = {
+		not = { year = 1054 }
+		NOT = { has_global_flag = "setup" }
+		OR = {
+			religion = catholic
+			religion = orthodox 
+		}
+	}
+	
+
+	mean_time_to_happen = {
+		days = 1
+				
+	}
+	
+		
+	option = { # Yes
+		name = EVTOPTALoR.211
+		religion = chalcendonian 
+		any_realm_character= {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+		any_realm_character= {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		set_global_flag = "setup" 
+		774 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		97 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		101 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		103= {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		112 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		119 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		124 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		126 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		128 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		130 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		138 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		141 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		149 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		158 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		169 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		170 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		180 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		181 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		182 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		190 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		197 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		198 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		199 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		204 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		212 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		214 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		220 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		221 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		222 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		227 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		234 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		235 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		245 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		252 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		310 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		315 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		317 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		320 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		328 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		332 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		333 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		334 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		338 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		339 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		340 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		345 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		346 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		350 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		353 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		355 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		356 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		360 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		361 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		474 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		482 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		483 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		489 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		490 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		494 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		496 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+#http://www.animeflavor.com/node/10031
+		499 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		641 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		643 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		646 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		649 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		667 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		687 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		692 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		693 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		694 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		695 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		691 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		697 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		709 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		718 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		719 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		722 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		728 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		730 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		733 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		746 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		750 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+
+		770 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		772 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		775 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		780 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		781 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		789 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		796  = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		817 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		841 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		858 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		859 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		860 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		861 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		868 = {
+			add_province_modifier = { name = "rabbinic_minority" duration = -1 }
+		}
+
+		1124 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		1125 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+
+		1331 = {
+			add_province_modifier = { name = "karaite_minority" duration = -1 }
+		}
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					religion = catholic
+					controls_religion = no
+				}
+				narrative_event = { id = CHA.2 }
+			}
+		}
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					religion = orthodox
+					controls_religion = no
+				}
+				narrative_event = { id = CHA.2 }
+			}
+		}
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					not = {  or = { religion = orthodox religion = catholic } }
+					controls_religion = no
+				}
+				narrative_event = { id = CHA.3 }
+			}
+		}
+		
+	}
+
+}
+
+
+
+
+
+narrative_event = {
+	id = CHA.2
+	title = EVTNAMELoR.210
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+		
+	option = { # Yes
+		name = EVTOPTALoR.211
+		religion = chalcendonian 
+		any_realm_character= {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		any_realm_character= {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+	}
+
+}
+
+narrative_event = {
+	id = CHA.3
+	title = EVTNAMELoR.210
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+		
+	option = { # Yes
+		name = EVTOPTALoR.211
+		any_realm_character= {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = orthodox
+			}
+			religion = chalcendonian 
+		}
+		any_realm_character= {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+		any_realm_province = {
+			limit = {
+				religion = catholic
+			}
+			religion = chalcendonian 
+		}
+	}
+
+}
+
+narrative_event = {
+	id = CHA.4
+	title = EVTNAMELoR.210
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+		
+	option = { # Yes
+		name = EVTOPTALoR.211
+		any_realm_character= {
+			limit = {
+				dynasty = 7331 
+			}
+			dyasnty = 1029100
+		}
+	}
+
+}
+
+

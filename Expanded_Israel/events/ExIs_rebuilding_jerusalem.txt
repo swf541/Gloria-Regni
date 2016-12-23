@@ -1,0 +1,104 @@
+####Rebuilding Jerusalem####
+province_event = {
+	id = ExIs.121
+	title = "EVTNAME_ExIs_121"
+	desc = "EVTDESC_ExIs_121"
+	picture = "GFX_persepolis_ruin"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_ExIs_121" # Rebuild just the royal palace.
+		wealth = -1000
+		774 = {
+			AND = {
+				add_province_modifier = { name = "rebuilding_jerusalem_local" duration = 730 }
+				add_province_modifier = { local_revolt_risk = -0.5 duration = -1 }
+			}
+			character_event = { id = ExIs.122 days = 730}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB_ExIs_121" # Rebuild the entire city.
+		wealth = -3000
+		774 = {
+			AND = {
+				add_province_modifier = { name = "rebuilding_jerusalem_local" duration = 1460 }
+				add_province_modifier = { tax_income = 0.25 duration = -1 }
+			}
+		}
+		character_event = { id = ExIs.122 days = 1460}
+	}
+
+	option = {
+		name = "EVTOPTC_ExIs_121" # Make it the greatest city there ever was!
+		wealth = -5000
+		immediate = {
+			if = {
+				limit = { has_building = ca_town_6 }
+				add_building = { ca_town_7 }
+			}
+		}
+		774 = {
+			AND = {
+				add_province_modifier = { name = "rebuilding_jerusalem_local" duration = 2920 }
+				add_province_modifier = { tax_income = 0.75 duration = -1 }
+				add_province_modifier = { local_revolt_risk = -0.5 duration = -1 }
+			}
+		}
+		character_event = { id = ExIs.122 days = 2920}
+	}
+}
+
+####Rebuild Jerusalem 2
+character_event = {
+	id = ExIs.122
+	title = "EVTNAME_ExIs_122"
+	desc = "EVTDESC_ExIs_122"
+	picture = "GFX_persepolis_built"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_ExIs_122" #Upper City
+		prestige = 500
+		wealth = -3000
+		set_global_flag = jerusalem_rebuilt
+		b_mirabel = { set_name = Ayar David }
+		774 = {
+			AND = {
+				add_province_modifier = { name = "jerusalem_upper_city" duration = -1 }
+				add_province_modifier = { monthly_character_prestige = 0.5 duration = -1 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB_ExIs_122" #Lower City
+		prestige = 500
+		wealth = -1000
+		set_global_flag = jerusalem_rebuilt
+		b_mirabel= { set_name = Ayar David }
+		774 = {
+			AND = {
+				add_province_modifier = { name = "jerusalem_lower_city" duration = -1 }
+				add_province_modifier = { monthly_character_prestige = 0.25 duration = -1 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC_ExIs_122" #Gates of Jerusalem
+		prestige = 500
+		wealth = -4000
+		set_global_flag = jerusalem_rebuilt
+		b_mirabel = { set_name = Ayar David }
+		774 = {
+			AND = {
+				add_province_modifier = { name = "jerusalem_gates" duration = -1 }
+				add_province_modifier = { monthly_character_prestige = 0.75 duration = -1 }
+			}
+		}
+	}
+}

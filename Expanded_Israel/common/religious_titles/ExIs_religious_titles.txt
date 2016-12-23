@@ -1,0 +1,296 @@
+##Expanded Israel
+#Religions
+
+d_rabbinic_judaism_exilarch = {
+	color = { 0 80 255 }
+	
+	capital = 774 #	Jerusalem
+	
+	name_tier = king
+	
+	allow = {
+		NOT = {
+			religion = temple_judaism
+			religion = karaite
+			religion = samaritan
+			religion = haymanot_judaism
+			religion = grand_sanhedrin
+			has_landed_title = d_karaite_judaism_exilarch
+			has_landed_title = k_israel
+		}
+	}
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes
+	
+	# Controls a religion
+	controls_religion = rabbinic_judaism
+	
+	religion = rabbinic_judaism
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+
+
+d_karaite_exilarch = {
+	color = { 0 80 255 }
+	
+	capital = 646 # Esfahan
+	
+	name_tier = king
+	
+	allow = {
+		NOT = {
+			religion = temple_judaism
+			religion = rabbinic_judaism
+			religion = samaritan
+			religion = haymanot_judaism
+			religion = grand_sanhedrin
+			has_landed_title = d_rabbinic_judaism_exilarch
+			has_landed_title = k_israel
+		}
+	}
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes
+	
+	
+	religion = karaite
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_temple_judaism = {
+	color = { 0 80 255 }
+	
+	capital = 774 #	Jerusalem
+	
+	name_tier = king
+	
+	allow = {
+		NOT = {
+			religion = rabbinic_judaism
+			religion = samaritan
+			religion = haymanot_judaism
+			religion = grand_sanhedrin
+			
+		}
+	}
+	
+	title = "HEAD_KOHEN_GADOL"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = temple_judaism
+	
+	religion = temple_judaism
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+}
+
+d_grand_sanhedrin = {
+	color = { 0 80 255 }
+	
+	capital = 774 #	Jerusalem
+	
+	name_tier = king
+	
+	allow = {
+		NOT = {
+			religion = temple_judaism
+			religion = karaite
+			religion = samaritan
+			religion = haymanot_judaism
+			
+		}
+	}
+	
+	title = "HEAD_CHIEF_RABBI"
+	foa = "POPE_FOA"
+	
+	short_name = yes
+	
+	# Always exists
+	landless = yes	
+	
+	# Controls a religion
+	controls_religion = grand_sanhedrin
+	
+	religion = grand_sanhedrin
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+
+}
+
+#Holy Orders
+b_maccabean_guard = {
+
+	color={ 128 0 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = no
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = maccabean_guard_composition
+}
+
+d_knights_khazaria = {
+
+	color={ 128 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = zealots_composition
+}
+
+d_lions_solomon = {
+
+	color={ 0 128 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = lions_solomon_composition
+}
+
+d_knights_goshen = {
+
+	color={ 220 20 60 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_goshen_composition
+}
+
+d_siqariqim = {
+
+	color={ 0 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = siqariqim_composition
+}
+
+d_mishkan_guardians= {
+
+	color={ 65 105 225 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = mishkan_guardians_composition
+}

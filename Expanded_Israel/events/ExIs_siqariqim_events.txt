@@ -1,0 +1,35 @@
+#Siqariqim Destroyed
+narrative_event = {
+	id = ExIs.123
+	title = EVTNAME_ExIs_123
+	desc = EVTDESC_ExIs_123
+	picture = GFX_evt_shadow
+	border = GFX_event_narrative_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_123 #Siqariqim Destroyed
+		prestige = -100
+		piety = -100
+		wealth = -500
+	}
+}
+
+#Siqariqim Rebuilt
+narrative_event = {
+	id = ExIs.124
+	title = EVTNAME_ExIs_124
+	desc = EVTDESC_ExIs_124
+	picture = GFX_evt_shadow
+	border = GFX_event_narrative_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_124 #Siqariqim Rebuilt
+		prestige = 100
+		piety = 100
+		wealth = -750
+	}
+}

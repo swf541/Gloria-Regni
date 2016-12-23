@@ -1,0 +1,4303 @@
+#Trait Overhaul System Experience Events by Preacher
+
+namespace = TOSEE
+
+#Experience Pool set up event
+character_event = {
+	id = TOSEE.1
+	
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+		
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	immediate = {
+		set_variable = { which = experience_pool value = 1}
+	}
+	
+	option = {
+		name = Okay
+	}
+}
+
+#Traits and variables
+character_event = {
+	id = TOSEE.2
+	
+	
+	hide_window = yes 
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+#Militia Barracks	
+	if = {
+		limit = {
+			trait = athletic_I
+		}	
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = athletic_I
+	}
+	
+	if = {
+		limit = {
+			trait = athletic_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = athletic_II
+	}
+	
+	if = {
+		limit = {
+			trait = athletic_III
+		}
+		set_global_flag = athletic_III
+		set_variable = { which = experience_cost value = 40 }
+	}
+		
+	if = { 
+		limit = {
+			trait = athletic_IV 
+		}
+		set_global_flag = athletic_IV
+		set_variable = { which = experience_cost value = 60 }
+	}
+	
+	if = {
+		limit = {
+			trait = manouvering_I 
+		}
+		
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = duel_move value = 1 }
+	}
+	
+	if = {
+		limit = { 
+			trait = manouvering_II 
+		}
+		
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = duel_move value = 1 }
+	}
+		
+	if = {
+		
+		limit = {
+			trait = manouvering_III 
+		}
+		
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = duel_move value = 2 }
+	}
+		
+	if = {
+		
+		limit = {
+			trait = manouvering_IV 
+		}
+		
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = duel_move value = 2 }
+	}
+		
+	if = {
+		limit = { 
+			trait = combat_arts_I 
+		}
+		
+		set_variable = { which = experience_cost value = 5 }
+	}	
+	
+	if = {
+		
+		limit = {
+			trait = combat_arts_II 
+		}
+	
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = combat_arts_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	
+	}
+	
+	if = {
+		
+		limit = {
+			trait = combat_arts_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		limit = {
+			trait = weapon_arts_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_global_flag = weapon_arts_I
+	}
+	
+	if = {
+		limit = {
+			trait = weapon_arts_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = weapon_arts_II
+	}
+	
+	if = {
+		limit = {
+			trait = weapon_arts_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = weapon_arts_III
+	}
+	
+	if = {
+		limit = {
+			trait = weapon_arts_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_global_flag = weapon_arts_IV
+	}
+#Melee Weapons	
+	if = {
+		
+		limit = {
+			trait = axe_I 
+		}
+		set_global_flag = axe
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = required_hands value = 1 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 2 }
+		set_variable = { which = utility value = 3 }
+		set_variable = { which = gold_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = axe_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+		set_variable = { which = utility value = 3.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = axe_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = utility value = 4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = axe_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 3.5 }
+		set_variable = { which = utility value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mace_I 
+		}
+		set_global_flag = mace
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = wp_bonus_damage_halfplate value = 3 }
+		set_variable = { which = wp_bonus_damage_fullplate value = 3 }
+		set_variable = { which = gold_cost value = 8 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mace_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 3.5 }
+		set_variable = { which = wp_bonus_damage_halfplate value = 3 }
+		set_variable = { which = wp_bonus_damage_fullplate value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait mace_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = wp_bonus_damage_halfplate value = 3 }
+		set_variable = { which = wp_bonus_damage_fullplate value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mace_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+		set_variable = { which = wp_bonus_damage_halfplate value = 3 }
+		set_variable = { which = wp_bonus_damage_fullplate value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arming_sword_I 
+		}
+		set_global_flag = arming_sword
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arming_sword_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arming_sword_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arming_sword_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dagger_I 
+		}
+		set_global_flag = dagger
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 1 }
+		set_variable = { which = utility value = 3 }
+		set_variable = { which = gold_cost value = 1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dagger_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 1.5 }
+		set_variable = { which = utility value = 3.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dagger_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 5 }
+		set_variable = { which = weapon_power value = 2 }
+		set_variable = { which = utility value = 4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dagger_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 5.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+		set_variable = { which = utility value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = lance_I 
+		}
+		set_global_flag = lance
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 0 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = lance_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 0.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = lance_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 1 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = lance_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 1.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = polearm_I 
+		}
+		set_global_flag = polearm
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 6 }
+		set_variable = { which = utility value = 1 }
+		set_variable = { which = gold_cost value = 15 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = polearm_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 6.5 }
+		set_variable = { which = utility value = 1.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = polearm_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 7 }
+		set_variable = { which = utility value = 2 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = polearm_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 7 }
+		set_variable = { which = utility value = 2 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = rapier_main_gauche_I
+		}
+		set_global_flag = rapier_main_gauche
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 2 }
+		set_variable = { which = gold_cost value = 20 }
+	}
+	
+	if = { 
+		
+		limit = {
+			trait = rapier_main_gauche_II 
+		}
+		
+		set_variable = { which = experience_cost value = 10 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = rapier_main_gauche_III
+		}
+		
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = rapier_main_gauche_IV 
+		}
+		
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = saber_I 
+		}
+		
+		set_variable = { which = experience_cost value = 5 }
+		set_global_flag = saber
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = saber_II 
+		}
+		
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 3.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = saber_III 
+		}
+		
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = saber_IV 
+		}
+		
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = short_sword_I
+		}
+		set_global_flag = short_sword
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 1 }
+		set_variable = { which = gold_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = short_sword_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 1.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = short_sword_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 5 }
+		set_variable = { which = weapon_power value = 2 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = short_sword_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 5.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spear_I 
+		}
+		set_global_flag = spear
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = utility value = 1 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		limit = {
+			trait = spear_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = utility value = 1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spear_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = utility value = 2 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spear_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+		set_variable = { which = utility value = 2.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = staff_I 
+		}
+		set_global_flag = staff
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 1 }
+		set_variable = { which = gold_cost value = 1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = staff_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 1.5 }
+	}
+	
+	if = { 
+		
+		limit = {
+			trait = staff_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 2 }
+	}
+	
+	if = {
+		limit = {
+			trait = staff_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+	}
+	
+	if = {
+		limit = {
+			trait = battleaxe_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 15 }
+		set_global_flag = battleaxe
+	}
+	
+	if = {
+		potential = {
+			
+		limit = {
+			trait battleaxe_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = battleaxe_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = battleaxe_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = 2h_mace_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 1 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 25 }
+		set_global_flag = 2h_mace
+	}
+	
+	if = {
+		
+		limit = {
+			trait = 2h_mace_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 1.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = 2h_mace_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = 2h_mace_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = longsword_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_global_flag = longsword
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 25 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait longsword_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = longsword_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = longsword_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+#Ranged Weapons
+	if = {
+		
+		limit = {
+			trait = horse_bow_I 
+		}
+		set_global_flag = horse_bow
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = horse_bow_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 3.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = horse_bow_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = speed value = 5 }
+		set_variable = { which = weapon_power value = 4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = horse_bow_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = speed value = 5.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		limit = {
+			trait = long_bow_I
+		}
+		set_global_flag = long_bow
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 5 }
+		set_variable = { which = gold_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = long_bow_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = long_bow_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 6 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = long_bow_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 6.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = bow_I 
+		}
+		set_global_flag = bow 
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 2 }
+		set_variable = { which = gold_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = bow_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 2.5 }
+	}
+	
+	if = { 
+		
+		limit = {
+			trait = bow_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = speed value = 4 }
+		set_variable = { which = weapon_power value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = bow_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = speed value = 4.5 }
+		set_variable = { which = weapon_power value = 3.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = crossbow_I
+		}
+		set_global_flag = crossbow
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = speed value = 2 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = gold_cost value = 15 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = crossbow_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = speed value = 2.5 }
+		set_variable = { which = weapon_power value = 4.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = crossbow_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = speed value = 3 }
+		set_variable = { which = weapon_power value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = crossbow_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = speed value = 3.5 }
+		set_variable = { which = weapon_power value = 5.5 }
+	}
+#Shields
+	if = {
+		
+		limit = {
+			trait = knights_shield_I
+		}
+		set_global_flag = knights_shield
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knights_shield_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knights_shield_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knights_shield_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = round_shield_I
+		}
+		set_global_flag = round_shield
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = weapon_power value = 3 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 12 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = round_shield_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = weapon_power value = 3.5 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = round_shield_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = weapon_power value = 4 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = round_shield_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = weapon_power value = 4.5 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = buckler_I 
+		}
+		set_global_flag = buckler
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 1 }
+		set_variable = { which = weapon_power value = 1 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 5 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = buckler_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 1 }
+		set_variable = { which = weapon_power value = 1.5 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = buckler_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 1 }
+		set_variable = { which = weapon_power value = 2 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = buckler_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 1 }
+		set_variable = { which = weapon_power value = 2.5 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = targe_I
+		}
+		set_global_flag = targe
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 8 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = targe_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = targe_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = targe_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = scutum_I 
+		}
+		set_global_flag = scutum
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 15 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = scutum_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = scutum_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = scutum_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = aspis_I 
+		}
+		set_global_flag = aspis
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.25 }
+		set_variable = { which = gold_cost = value = 12 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = aspis_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = aspis_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.35 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = aspis_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+#Armour	
+	if = {
+		
+		limit = {
+			trait = cloth_armour_I 
+		}
+		
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.3 }
+		set_variable = { which = gold_cost = value = 25 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = cloth_armour_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = cloth_armour_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = cloth_armour_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 2 }
+		set_variable = { which = block_chance value = 0.6 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leather_armour_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.3 }
+		set_variable = { which = gold_cost = value = 50 }
+	}
+	
+	if ={
+		
+		limit = {
+			trait = leather_armour_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leather_armour_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leather_armour_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 3 }
+		set_variable = { which = block_chance value = 0.6 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mail_armour_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.3 }
+		set_variable = { which = gold_cost = value = 100 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mail_armour_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mail_armour_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mail_armour_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 4 }
+		set_variable = { which = block_chance value = 0.6 }
+	}
+	
+	if ={
+		
+		limit = {
+			trait = halfplate_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.3 }
+		set_variable = { which = gold_cost = value = 200 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = halfplate_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = halfplate_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = halfplate_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 5 }
+		set_variable = { which = block_chance value = 0.6 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fullplate_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = defence value = 6 }
+		set_variable = { which = block_chance value = 0.3 }
+		set_variable = { which = gold_cost = value = 1000 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fullplate_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = defence value = 6 }
+		set_variable = { which = block_chance value = 0.4 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fullplate_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = defence value = 6 }
+		set_variable = { which = block_chance value = 0.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fullplate_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = defence value = 6 }
+		set_variable = { which = block_chance value = 0.6 }
+	}
+	
+#Skill Traits
+
+	if = { 
+		
+		limit = {
+			trait = fast_draw_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable { which = speed value = 1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fast_draw_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable { which = speed value = 2 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fast_draw_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable { which = speed value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fast_draw_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable { which = speed value = 4 }
+	}
+#Generals Retinue
+	if = {
+		limit = {
+			trait = military_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = military_I
+	}
+
+	if = {
+		
+		limit = {
+			trait = military_II
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = military_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = military_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = military_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = military_IV
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = military_IV
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = armoury_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = armoury_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = armoury_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = armoury_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = ambush_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = ambush_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = ambush_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = ambush_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		}
+		limit = {
+			trait = military_tactics_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = military_tactics_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = military_tactics_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = military_tactics_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leadership_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leadership_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leadership_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = leadership_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engines_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engines_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engines_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engines_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = misguided_warrior
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = tough_soldier
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = skilled_tactician
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = brilliant_strategist
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Emissaries Training
+	if = {
+		limit = {
+			trait = business_diplomacy_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = business_diplomacy_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_diplomacy_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = business_diplomacy_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_diplomacy_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = business_diplomacy_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_diplomacy_IV
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = business_diplomacy_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = diplomacy_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = diplomacy_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = diplomacy_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = diplomacy_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = law_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = law_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = law_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = law_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = politics_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = politics_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = politics_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = politics_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = propaganda_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		}
+		
+	if = {
+		
+		limit = {
+			trait = propaganda_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = propaganda_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = propaganda_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = naive_appeaser
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = underhanded_rogue
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = grey_eminence
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Emissariate Training
+
+	if = {
+		limit = {
+			trait = scholarly_diplomacy_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = scholarly_diplomacy_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = scholarly_diplomacy_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = scholarly_diplomacy_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = scholarly_diplomacy_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = scholarly_diplomacy_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = scholarly_diplomacy_IV
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = scholarly_diplomacy_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = public_speaking_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = public_speaking_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = public_speaking_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = public_speaking_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Stewardship Training
+
+	if = {
+		limit = {
+			trait = business_stewardship_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = business_stewardship_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_stewardship_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = business_stewardship_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_stewardship_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = business_stewardship_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = business_stewardship_IV
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = business_stewardship_IV
+	}
+	
+	if = {
+	
+		limit = {
+			trait = accounting_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+
+		limit = {
+			trait = accounting_II
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = accounting_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = accounting_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = administration_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = administration_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = administration_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = administration_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = economics_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = economics_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = economics_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = economics_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = finance_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = finance_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = finance_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = finance_IV
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = indulgent_wastrel
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = thrifty_clerk
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fortune_builder
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = midas_touched
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+#Learning Knowledge Discipline	
+	if = {
+		limit = {
+			trait = knowledge_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = knowledge_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knowledge_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = knowledge_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knowledge_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = knowledge_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = knowledge_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = knowledge_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = connoisseur_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = connoisseur_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = connoisseur_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = connoisseur_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = savoir_faire_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = savoir_faire_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = savoir_faire_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = savoir_faire_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = artist_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = artist_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = artist_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = artist_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = dancer_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dancer_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dancer_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = dancer_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fire_eating_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fire_eating_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fire_eating_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = { 
+		limit = {
+			trait = fire_eating_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = musician_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = musician_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = musician_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = musician_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poet_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poet_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poet_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poet_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = singer_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = singer_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit ={
+			trait = singer_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = singer_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	
+#Criminal Training
+
+	if = {
+		limit = {
+			trait = criminal_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = criminal_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = criminal_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = criminal_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = criminal_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = criminal_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = criminal_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = criminal_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = disguise_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = disguise_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = disguise_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = disguise_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		}
+		limit = {
+			trait = fast_talk_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fast_talk_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+	
+		limit = {
+			trait = fast_talk_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = fast_talk_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forced_entry_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forced_entry_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forced_entry_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forced_entry_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = observation_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = observation_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = observation_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = observation_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = smuggling_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = smuggling_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = smuggling_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = smuggling_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = streetwise_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = streetwise_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = streetwise_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = streetwise_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Spy Training
+
+	if = {
+		limit = {
+			trait = spycraft_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = spycraft_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spycraft_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = spycraft_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spycraft_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = spycraft_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = spycraft_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = spycraft_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = assassination_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = assassination_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit ={
+			assassination_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = assassination_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = counterfeiting_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = counterfeiting_I value = -0.025 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = counterfeiting_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = counterfeiting_II value = -0.05 }
+	}
+	
+	if = {
+		
+		limit = {
+			counterfeiting_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = counterfeiting_III value = -0.075 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = counterfeiting_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = counterfeiting_IV value = -0.1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forgery_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = forgery_I_time value = -0.025 }
+		set_variable = { which = forgery_I_success value = 0.025 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forgery_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = forgery_II_time value = -0.05 }
+		set_variable = { which = forgery_II_success value = 0.05 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forgery_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = forgery_III_time value = -0.075 }
+		set_variable = { which = forgery_III_success value = 0.075 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = forgery_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = forgery_IV_time value = -0.1 }
+		set_variable = { which = forgery_IV_success value = 0.1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poison_I 
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poison_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = { 
+		
+		limit = {
+			trait = poison_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poison_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = stealth_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = stealth_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = stealth_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = stealth_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = throwing_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = utility value = .5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = throwing_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = utility value = 1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = throwing_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = utility value = 1.5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = throwing_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = utility value = 2 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = amateurish_plotter
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = flamboyant_schemer
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = { 
+			trait = intricate_webweaver
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = elusive_shadow
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Herdsman Training
+
+	if = {
+		limit = {
+			trait = animal_handling_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = animal_handling_I
+	}
+	
+	if = { 
+		
+		limit = {
+			trait = animal_handling_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = animal_handling_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = animal_handling_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = animal_handling_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = animal_handling_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = animal_handling_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = falconer_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	if = {
+		
+		limit = {
+			trait = falconer_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = falconer_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = falconer_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = warhorse_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = {	which = duel_move value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = warhorse_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = {	which = duel_move value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = warhorse_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = {	which = duel_move value = 3 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = warhorse_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = {	which = duel_move value = 3 }
+	}
+	
+#Arts Training
+
+	if = {
+		limit = {
+			trait = arts_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = arts_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arts_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = arts_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arts_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = arts_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = arts_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = arts_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = writer_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = writer_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = writer_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = writer_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		limit = {
+			trait = weapon_design_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = weapon_design_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = weapon_design_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = weapon_design_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = weapon_design_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = weapon_design_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = weapon_design_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = weapon_design_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = metallurgy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+		set_variable = { which = weapon_power value = 0.025 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = metallurgy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_variable = { which = weapon_power value = 0.05 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = metallurgy_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_variable = { which = weapon_power value = 0.075 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = metallurgy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+		set_variable = { which = weapon_power value = 0.1 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engineering_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engineering_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engineering_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = siege_engineering_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		limit = {
+			trait = design_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = design_I
+		
+	}
+	
+	if = {
+		
+		limit = {
+			trait = design_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = design_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = design_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = design_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = design_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = design_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = architecture_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = architecture_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = architecture_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = architecture_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = engineering_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = engineering_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = engineering_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = engineering_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		limit = {
+			trait = medicine_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = medicine_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = medicine_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = medicine_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = medicine_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = medicine_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = medicine_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = medicine_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = herbalism_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = herbalism_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = herbalism_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = herbalism_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physician_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physician_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physician_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physician_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+#Sciences
+	if = {
+		limit = {
+			trait = sciences_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = sciences_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = sciences_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = sciences_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = sciences_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = sciences_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = sciences_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = sciences_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = protective_alchemy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = protective_alchemy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = protective_alchemy_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = protective_alchemy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poisonous_alchemy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poisonous_alchemy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poisonous_alchemy_III
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = poisonous_alchemy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = anthropology_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = anthropology_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = anthropology_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = anthropology_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = archaelogy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = archaelogy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = archaelogy_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = archaelogy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+		
+	if = {
+		
+		limit = {
+			trait = astronomy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = astronomy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = astronomy_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = astronomy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geology_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geology_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geology_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geology_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait	= geography_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geography_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geography_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = geography_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mathematics_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mathematics_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mathematics_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mathematics_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physics_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physics_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physics_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = physics_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Learning Scholarly
+
+	if = {
+		limit = {
+			trait = learning_scholarly_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = learning_scholarly_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = learning_scholarly_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = learning_scholarly_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = learning_scholarly_III
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = learning_scholarly_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = learning_scholarly_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = learning_scholarly_IV
+	}
+	
+	if = {
+		
+		limit = {
+			trait = literature_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = literature_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = literature_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = literature_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = teaching_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = teaching_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = teaching_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = teaching_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+#Theology Training
+
+	if = {
+		
+		limit = {
+			trait = theology_I
+		}
+		set_variable = { which = experience_cost value = 10 }
+		set_global_flag = theology_I
+	}
+	
+	if = {
+		
+		limit = {
+			trait = theology_II 
+		}
+		set_variable = { which = experience_cost value = 20 }
+		set_global_flag = theology_II
+	}
+	
+	if = {
+		
+		limit = {
+			trait = theology_III 
+		}
+		set_variable = { which = experience_cost value = 40 }
+		set_global_flag = theology_III
+	}
+	
+	if = {
+		
+		limit = {
+			trait = theology_IV 
+		}
+		set_variable = { which = experience_cost value = 60 }
+		set_global_flag = theology_IV
+	}
+		
+	if = {
+		
+		limit = {
+			trait = philosophy_I
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = philosophy_II 
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = philosophy_III 
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = philosophy_IV 
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = detached_priest
+		}
+		set_variable = { which = experience_cost value = 5 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = martial_cleric
+		}
+		set_variable = { which = experience_cost value = 10 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = scholarly_theologian
+		}
+		set_variable = { which = experience_cost value = 20 }
+	}
+	
+	if = {
+		
+		limit = {
+			trait = mastermind_theologian
+		}
+		set_variable = { which = experience_cost value = 30 }
+	}
+	
+	option = {
+		name = Okay
+	}
+	
+#Yearly Experience Event 	
+character_event = {
+	id = TOSEE.3
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { add_variable = { which = experience_pool value = 5 } } 
+	
+	option = {
+		name = Okay
+	}
+}
+
+#Combat Pulse Event
+character_event = {
+	id = TOSEE.4
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}
+	
+character_event = {
+	id = TOSEE.5
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}
+	
+character_event = {
+	id = TOSEE.6
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}
+	
+character_event = {
+	id = TOSEE.7
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}
+	
+character_event = {
+	id = TOSEE.8
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}
+			 
+character_event = {
+	id = TOSEE.9
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}
+}	
+			
+character_event = {
+	id = TOSEE.10 
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Assassination
+
+character_event = {
+	id = TOSEE.11 
+	
+	hide_window = yes	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Marriage
+
+character_event = {
+	id = TOSEE.12 
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Law changes
+
+character_event = {
+	id = TOSEE.13 
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.14 
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Crusade
+
+character_event = {
+	id = TOSEE.15
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Religious Events
+
+character_event = {
+	id = TOSEE.16
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.17
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.18
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Looting Events
+character_event = {
+	id = TOSEE.19
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.20
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+#Character Conversion Events
+
+character_event = {
+	id = TOSEE.21
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.22
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+
+character_event = {
+	id = TOSEE.23
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Okay
+		add_variable = {	which = experience_pool value = 1 }
+	}			
+			
+}
+

@@ -1,0 +1,62 @@
+#Purim Celebration
+character_event = {
+	id = ExIs.1103
+	title = EVTNAME_ExIs_1103
+	desc = EVTDESC_ExIs_1103
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+		
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+			name = EVTOPTA_ExIs_1103
+			add_character_modifier = {
+			name = held_sukkot_timer
+			duration = 1825
+			hidden = yes
+		}
+	}
+}	
+character_event = {
+	id = ExIs.1104
+	title = EVTNAME_ExIs_1104
+	desc = EVTDESC_ExIs_1104
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+		
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+			name = EVTOPTA_ExIs_1104
+			add_character_modifier = {
+			name = held_shavuot_timer
+			duration = 1825
+			hidden = yes
+		}
+	}
+}
+
+character_event = {
+	id = ExIs.1105
+	title = EVTNAME_ExIs_1105
+	desc = EVTDESC_ExIs_1105
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+		
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+			name = EVTOPTA_ExIs_1105
+			add_character_modifier = {
+			name = held_hanukkah_timer
+			duration = 1825
+			hidden = yes
+		}
+	}
+}

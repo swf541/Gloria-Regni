@@ -1,0 +1,2011 @@
+##Trait System Overhaul by Preacher
+#Martial
+#Children sent here are trained by the militia barracks
+#Discipline
+athletic_I = {
+	education = yes
+	martial = 1
+	combat_rating = 1
+
+	ruler_designer_cost = 2
+}
+athletic_II = {
+	education = yes
+	martial = 2
+	combat_rating = 2
+	
+	ruler_designer_cost = 4
+}
+
+athletic_III = {
+	education = yes
+	martial = 3
+	combat_rating = 3
+	
+	ruler_designer_cost = 8
+}
+
+athletic_IV = {
+	education = yes
+	martial = 4
+	combat_rating = 4
+	
+	ruler_designer_cost = 12
+}
+#Traits
+manouvering_I = {
+	martial = 1
+	
+}
+manouvering_II = {
+	martial = 1
+	
+}
+manouvering_III = {
+	martial = 2
+	
+}
+manouvering_IV = {
+	martial = 2
+	
+}
+combat_arts_I = {
+	combat_rating = 1
+}
+combat_arts_II = {
+	combat_rating = 2
+}
+combat_arts_III = {
+	combat_rating = 3
+}
+combat_arts_IV = {
+	combat_rating = 4
+}
+#Discipline
+weapon_arts_I = {
+	education = yes
+	combat_rating = 1
+
+	ruler_designer_cost = 2
+}
+weapon_arts_II = {
+	education = yes
+	combat_rating = 2
+
+	ruler_designer_cost = 4
+}
+weapon_arts_III = {
+	education = yes
+	combat_rating = 3
+
+	ruler_designer_cost = 8
+}
+weapon_arts_IV = {
+	education = yes
+	combat_rating = 4
+
+	ruler_designer_cost = 12
+}
+#Traits
+#Duel elements are speed, weapon power, manouvering/utility, and defense
+#Weapon
+axe_I = {
+	
+}
+axe_II = {
+	
+}
+axe_III = {
+	
+}
+axe_IV = {
+	
+}
+mace_I = {
+	
+}
+mace_II = {
+	
+}
+mace_III = {
+	
+}
+mace_IV = {
+	
+}
+arming_sword_I = {
+	
+}
+arming_sword_II = {
+	
+}
+arming_sword_III = {
+	
+}
+arming_sword_IV = {
+	
+}
+dagger_I = {
+	
+}
+dagger_II = {
+	
+}
+dagger_III = {
+	
+}
+dagger_IV = {
+	
+}
+lance_I = {
+	
+}
+lance_II = {
+	
+}
+lance_III = {
+	
+}
+lance_IV = {
+	
+}
+polearm_I = {
+	
+}
+polearm_II = {
+	
+}
+polearm_III = {
+	
+}
+polearm_IV = {
+	
+}
+rapier_main_gauche_I = {
+	
+}
+rapier_main_gauche_II = {
+	
+}
+rapier_main_gauche_III = {
+	
+	
+}
+rapier_main_gauche_IV = {
+	
+}
+saber_I = {
+	
+}
+saber_II = {
+	
+
+}
+saber_III = {
+	
+}
+saber_IV = {
+	
+}
+short_sword_I = {
+	
+}
+short_sword_II = {
+
+}
+short_sword_III = {
+
+}
+short_sword_IV = {
+
+}
+spear_I = {
+	
+}
+spear_II = {
+	
+}
+spear_III = {
+
+}
+spear_IV = {
+
+}
+staff_I = {
+	
+}
+staff_II = {
+	
+}
+staff_III = {
+	
+}
+staff_IV = {
+	
+}
+battleaxe_I = {
+	
+}
+battleaxe_II = {
+	
+}
+battleaxe_III = {
+	
+}
+battleaxe_IV = {
+	
+}
+2h_mace_I = {
+	
+}
+2h_mace_II = {
+	
+}
+2h_mace_III = {
+	
+}
+2h_mace_IV = {
+	
+}
+longsword_I = {
+	
+}
+longsword_II = {
+	
+}
+longsword_III = {
+	
+}
+longsword_IV = {
+	
+}
+
+#Ranged Weapons
+horse_bow_I = {
+	
+	
+}
+horse_bow_II = {
+}
+horse_bow_III = {
+}
+horse_bow_IV = {
+}	
+long_bow_I = {
+	
+	
+}
+long_bow_II = {
+		
+}
+long_bow_III = {
+		
+}
+long_bow_IV = {
+		
+}
+bow_I = {
+	
+}
+bow_II = {
+	
+}
+bow_III = {
+	
+}
+bow_IV = {
+
+}
+crossbow_I = {
+	
+}
+crossbow_II = {
+	
+}
+crossbow_III = {
+	
+}
+crossbow_IV = {
+	
+}
+#Shields
+knights_shield_I = {
+	
+}
+knights_shield_II = {
+	
+}
+knights_shield_III = {
+	
+
+}
+knights_shield_IV = {
+	
+}
+round_shield_I = {
+	
+}
+round_shield_II = {
+	
+}
+round_shield_III = {
+	
+}
+round_shield_IV = {
+	
+}
+buckler_I = {
+	
+}
+buckler_II = {
+	
+}
+buckler_III = {
+
+}
+buckler_IV = {
+	
+}
+targe_I = {
+	
+}
+targe_II = {
+
+}
+targe_III = {
+
+}
+targe_IV = {
+	
+}
+scutum_I = {
+	
+	prestige = 10
+	vassal_opinion = 10
+	
+}
+scutum_II = {
+	
+	prestige = 10
+	vassal_opinion = 10
+	
+}
+scutum_III = {
+		
+	prestige = 10
+	vassal_opinion = 10
+	
+}
+scutum_IV = {
+	
+	prestige = 10
+	vassal_opinion = 10
+
+}
+aspis_I = {
+	
+	prestige = 10
+	vassal_opinion = 10
+	
+}
+aspis_II = {
+	
+	prestige = 10
+	vassal_opinion = 10
+
+}
+aspis_III = {
+	
+	prestige = 10
+	vassal_opinion = 10
+	
+}
+aspis_IV = {
+	
+	prestige = 10
+	vassal_opinion = 10
+
+}
+#Armour
+cloth_armour_I = {
+	
+}
+cloth_armour_II = {
+	
+}
+cloth_armour_III = {
+	
+}
+cloth_armour_IV = {
+	
+}
+leather_armour_I = {
+	
+}
+leather_armour_II = {
+	
+}
+leather_armour_III = {
+	
+}
+leather_armour_IV = {
+
+}
+mail_armour_I = {
+	
+}
+mail_armour_II = {
+	
+}
+mail_armour_III = {
+	
+}
+mail_armour_IV = {
+	
+}
+halfplate_I = {
+	
+	
+}
+halfplate_II = {
+	
+}
+halfplate_III = {
+	
+}
+halfplate_IV = {
+	
+}
+fullplate_I = {
+	
+}
+fullplate_II = {
+	
+	
+}
+fullplate_III = {
+	
+	
+}
+fullplate_IV = {
+	
+	
+}
+#Weapon Arts Skill
+fast_draw_I = {
+	
+}
+fast_draw_II = {
+	
+}
+fast_draw_III = {
+	
+}
+fast_draw_IV = {
+	
+}
+#Child is trained by general's retinue
+#Discipline
+military_I = {
+	education = yes
+	monthly_character_prestige = 1
+	leadership_traits = 1
+	ruler_designer_cost = 2
+}		
+military_II = {
+	education = yes
+	monthly_character_prestige = 2
+	leadership_traits = 1
+	ruler_designer_cost = 4
+}
+military_III = {
+	education = yes
+	monthly_character_prestige = 3
+	leadership_traits = 2
+	ruler_designer_cost = 8
+}
+military_IV = {
+	education = yes
+	monthly_character_prestige = 4
+	leadership_traits = 3
+	ruler_designer_cost = 12
+}
+#Traits
+armoury_I = {
+	command_modifer = {
+		defence = 0.05
+	}
+	
+}
+armoury_II = {
+	command_modifer = {
+		defence = 0.1
+	}
+	
+}
+armoury_III = {
+	command_modifer = {
+		defence = 0.15
+	}
+	
+}
+armoury_IV = {
+	command_modifer = {
+		defence = 0.2
+	}
+	
+}
+ambush_I = {
+	flank = 0.05
+	
+}
+ambush_II = {
+	flank = 0.1
+	
+}
+ambush_III = {
+	flank = 0.15
+	
+}
+ambush_IV = {
+	flank = 0.2
+	
+}
+military_tactics_I = {
+	center = 0.05
+	
+}
+military_tactics_II = {
+	center = 0.1
+	
+}
+military_tactics_III = {
+	center = 0.15
+	
+}
+military_tactics_IV = {
+	center = 0.2
+	
+}
+leadership_I = {
+	levy_size = 0.05
+	
+}
+leadership_II = {
+	levy_size = 0.1
+	
+}
+leadership_III = {
+	levy_size = 0.15
+	
+}
+leadership_IV = {
+	levy_size = 0.2
+	
+}
+siege_engines_I = {
+	siege_speed = 0.05
+	
+}
+siege_engines_II = {
+	siege_speed = 0.1
+	
+}
+siege_engines_III = {
+	siege_speed = 0.15
+	
+}
+siege_engines_IV = {
+	siege_speed = 0.2
+
+}
+misguided_warrior = {
+	
+	martial = 1
+	learning = -1
+	
+	combat_rating = 1
+	
+	health = 0.5
+	
+	
+}
+tough_soldier = {
+	
+	martial = 3
+	learning = -1
+	
+	combat_rating = 1
+	
+	health = 0.5
+	
+	
+}
+skilled_tactician = {
+	
+	martial = 6
+	intrigue = 1
+	stewardship = 1
+	learning = -1
+	
+	combat_rating = 1
+	
+	health = 0.5
+	
+	
+}
+brilliant_strategist = {
+	
+	martial = 9
+	intrigue = 2
+	stewardship = 2
+	learning = -1
+	
+	combat_rating = 1
+	
+	health = 0.5
+
+	leadership_traits = 1
+	
+}
+#Child is trained by emissaries
+#Diplomacy
+#Discipline
+business_diplomacy_I = {
+	education = yes
+	local_tax_modifer = 0.025
+	
+	ruler_designer_cost = 2
+}
+business_diplomacy_II = {
+	education = yes
+	local_tax_modifier = 0.05
+	
+	ruler_designer_cost = 4
+}
+business_diplomacy_III = {
+	education = yes
+	local_tax_modifier = 0.075
+	
+	ruler_designer_cost = 8
+}
+business_diplomacy_IV = {
+	education = yes
+	local_tax_modifier = 0.1
+	
+	ruler_designer_cost = 12
+}
+#Traits
+diplomacy_I = {
+	diplomacy = 1
+	
+}
+diplomacy_II = {
+	diplomacy = 2
+	
+}
+diplomacy_III = {
+	diplomacy = 3
+	
+}
+diplomacy_IV = {
+	diplomacy = 4
+
+}
+law_I = {
+	stewardship = 1
+	
+}
+law_II = {
+	stewardship = 2
+	
+}
+law_III = {
+	stewardship = 3
+	
+}
+law_IV = {
+	stewardship = 4
+	
+}
+politics_I = {
+	diplomacy = 2
+	
+}
+politics_II = {
+	diplomacy = 4
+	
+}
+politics_III = {
+	diplomacy = 6
+	
+}
+politics_IV = {
+	diplomacy = 8
+	
+}
+propaganda_I = {
+	levy_size = 0.025
+	
+}
+propaganda_II = {
+	levy_size = 0.05
+	
+}
+propaganda_III = {
+	levy_size = 0.075
+	
+}
+propaganda_IV = {
+	levy_size = 0.1
+	
+}
+naive_appeaser = {
+	
+	diplomacy = 1
+	martial = -1
+	
+	
+}
+underhanded_rogue = {
+		
+	diplomacy = 3
+	martial = -1
+	fertility = 0.05
+	
+	
+}
+charismatic_negotiator = {
+		
+	diplomacy = 6
+	intrigue = 1
+	learning = 1
+	martial = -1
+	fertility = 0.05
+
+	
+}
+grey_eminence = {
+		
+	diplomacy = 9
+	intrigue = 2
+	learning = 2
+	martial = -1
+	fertility = 0.1
+	
+	
+}
+#Child is trained by emissariate
+#Discipline
+scholarly_diplomacy_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+scholarly_diplomacy_II ={
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+scholarly_diplomacy_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+scholarly_diplomacy_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+public_speaking_I = {
+	demense_size = 1
+	
+}
+public_speaking_II = {
+	demense_size = 2
+	
+}
+public_speaking_III = {
+	demense_size = 3
+	
+}
+public_speaking_IV = {
+	demense_size = 4
+	
+}
+#Child is trained by local city university
+#Stewardship
+#Discipline
+business_stewardship_I = {
+	education = yes
+	local_tax_modifer = 0.025
+	
+	ruler_designer_cost = 2
+}
+business_stewardship_II = {
+	education = yes
+	local_tax_modifier = 0.05
+	
+	ruler_designer_cost = 4
+}
+business_stewardship_III = {
+	education = yes
+	local_tax_modifier = 0.075
+	
+	ruler_designer_cost = 8
+}
+business_stewardship_IV = {
+	education = yes
+	local_tax_modifier = 0.1
+	
+	ruler_designer_cost = 12
+}
+#Traits		
+accounting_I = {
+	local_tax_modifer = 0.025
+	
+}
+accounting_II = {
+	local_tax_modifier = 0.05
+	
+}
+accounting_III = {
+	local_tax_modifier = 0.075
+	
+}
+accounting_IV = {
+	local_tax_modifier = 0.1
+	
+}
+administration_I = {
+	local_tax_modifer = 0.025
+	levy_size = 0.025
+	
+}
+administration_II = {
+	local_tax_modifer = 0.05
+	levy_size = 0.05
+	
+}
+administration_III = {
+	local_tax_modifer = 0.075
+	levy_size = 0.075
+	
+}
+administration_IV = {
+	local_tax_modifer = 0.1
+	levy_size = 0.1
+	
+}
+economics_I = {
+	local_tax_modifer = 0.025
+	
+}
+economics_II = {
+	local_tax_modifier = 0.05
+	
+}
+economics_III = {
+	local_tax_modifier = 0.075
+	
+}
+economics_IV = {
+	local_tax_modifier = 0.1
+	
+}
+finance_I = {
+	stewardship = 1
+	
+}
+finance_II = {
+	stewardship = 2
+	
+}
+finance_III = {
+	stewardship = 3
+	
+}
+finance_IV = {
+	stewardship = 4
+	
+}
+indulgent_wastrel = {
+		
+	stewardship = 1
+	diplomacy = -1
+
+}
+thrifty_clerk = {
+		
+	stewardship = 3
+	diplomacy = -1
+	fertility = 0.05
+	
+}
+fortune_builder = {	
+		
+	stewardship = 6
+	martial = 1
+	learning = 1
+	diplomacy = -1
+	fertility = 0.1
+	
+}
+midas_touched = {
+		
+	stewardship = 9
+	martial = 2
+	learning = 2
+	diplomacy = -1
+	fertility = 0.15
+	
+}
+#Child is trained by local city university
+#Discipline
+knowledge_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+knowledge_II = {
+	education = yes
+	learning = 4
+
+	ruler_designer_cost = 4
+}
+knowledge_III = {
+	education = yes
+	learning = 6
+
+	ruler_designer_cost = 8
+}
+knowledge_IV = {
+	education = yes
+	learning = 8
+
+	ruler_designer_cost = 12
+}
+#Traits
+artist_I = {
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+artist_II = {
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+}
+artist_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+}
+artist_IV = {
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+}
+connoisseur_I = {
+	learning = 1
+
+}
+connoisseur_II = {
+	learning = 2
+
+}
+connoisseur_III = {
+	learning = 3
+
+}
+connoisseur_IV = {
+	learning = 4
+
+}
+dancing_I = {
+	
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+dancing_II = {
+	
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+	
+}
+dancing_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+	
+}
+dancing_IV = {
+	
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+	
+}
+fire_eating_I = {
+	
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+fire_eating_II = {
+	
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+	
+}
+fire_eating_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+	
+}
+fire_eating_IV = {
+	
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+	
+}
+musician_I = {
+	
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+musician_II = {
+	
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+	
+}
+musician_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+	
+}
+musician_IV = {
+	
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+	
+}
+poet_I = {
+	
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+poet_II = {
+	
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+	
+}
+poet_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+	
+}
+poet_IV = {
+	
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+	
+}
+savoir_faire_I = {
+	learning = 1
+	short_reign_length = -1
+}
+savoir_faire_II = {
+	learning = 2
+	short_reign_length = -2
+}
+savoir_faire_III = {
+	learning = 3
+	short_reign_length = -3
+}
+savoir_faire_IV = {
+	learning = 4
+	short_reign_length = -4
+}
+singer_I = {
+	
+	culture_flex = -0.025
+	global_revolt_risk = -0.025
+}
+singer_II = {
+	
+	culture_flex = -0.05
+	global_revolt_risk = -0.05
+	
+}
+singer_III = {
+	
+	culture_flex = -0.075
+	global_revolt_risk = -0.075
+	
+}
+singer_IV = {
+	
+	culture_flex = -0.1
+	global_revolt_risk = -0.1
+	
+}
+#Child is trained by local city criminal network
+#Intrigue
+#Discipline
+criminal_I = {
+	education = yes
+
+	ruler_designer_cost = 2
+}
+criminal_II = {
+	education = yes
+
+	ruler_designer_cost = 4
+}
+criminal_III = {
+	education = yes
+
+	ruler_designer_cost = 8
+}
+criminal_IV = {
+	education = yes
+
+	ruler_designer_cost = 12
+}
+#Traits
+disguise_I = {
+	intrigue = 1
+}
+disguise_II = {
+	intrigue = 2 
+}
+disguise_III = {
+	intrigue = 3
+}
+disguise_IV = {
+	intrigue = 4
+}
+fast_talk_I = {
+	diplomacy = 1
+}
+fast_talk_II = {
+	diplomacy = 2
+}
+fast_talk_III = {
+	diplomacy = 3
+}
+fast_talk_IV = {
+	diplomacy = 4
+}
+forced_entry_I = {
+	intrigue = 1
+}
+forced_entry_II = {
+	intrigue = 2
+}
+forced_entry_III = {
+	intrigue = 3
+}
+forced_entry_IV = {
+	intrigue = 4
+}
+observation_I = {
+	intrigue = 1
+}
+observation_II = {
+	intrigue = 2
+}
+observation_III = { 
+	intrigue = 3
+}
+observation_IV = {
+	intrigue = 4
+}
+smuggling_I = {
+	siege_defence = 0.05
+
+}
+smuggling_II = {
+	siege_defence = 0.1
+
+}
+smuggling_III = {
+	siege_defence = 0.15
+
+}
+smuggling_IV = {
+	siege_defence = 0.2
+
+}
+streetwise_I = {
+	intrigue = 1
+}
+streetwise_II = {
+	intrigue = 2
+}
+streetwise_III = {
+	intrigue = 3
+}
+streetwise_IV = {
+	intrigue = 4
+}
+#Child is trained by local castle spy network
+#Discipline
+spycraft_I = {
+	education = yes
+	intrigue = 2
+
+	ruler_designer_cost = 2
+}
+spycraft_II = {
+	education = yes
+	intrigue = 4
+
+	ruler_designer_cost = 4
+}
+spycraft_III = {
+	education = yes
+	intrigue = 6
+	
+	ruler_designer_cost = 8
+}
+spycraft_IV = {
+	education = yes
+	intrigue = 8
+
+	ruler_designer_cost = 12
+}
+#Traits
+assassination_I = {
+	assassinate_chance_modifier = 0.025
+	
+}
+assassination_II = {
+	assassinate_chance_modifier = 0.05
+
+}
+assassination_III = {
+	assassinate_chance_modifier = 0.075
+	
+}
+assassination_IV = {
+	assassinate_chance_modifier = 0.1
+	
+}
+counterfeiting_I = {
+	
+	
+}
+counterfeiting_II = {
+	
+}
+counterfeiting_III = {
+	
+}
+counterfeiting_IV = {
+	
+}
+forgery_I = {
+	
+	
+}
+forgery_II = {
+	
+	
+}
+forgery_III = {
+	
+}
+forgery_IV = {
+	
+}
+poison_I = {
+	assassinate_chance_modifier = 0.5
+}
+poison_II = {
+	assassinate_chance_modifier = 0.1
+}
+poison_III = {
+	assassinate_chance_modifier = 0.15
+}
+poison_IV = {
+	assassinate_chance_modifier = 0.2
+}
+stealth_I = {
+	intrigue = 1
+}
+stealth_II = {
+	intrigue = 2
+}
+stealth_III = {
+	intrigue = 3
+}
+stealth_IV = {
+	intrigue = 4
+}
+throwing_I = {
+	
+	
+}
+throwing_II = {
+	
+	
+}
+throwing_III = {
+	
+	
+}
+throwing_IV = {
+	
+	
+}
+amateurish_plotter = {
+	
+	intrigue = 1
+	stewardship = -1
+	
+}
+flamboyant_schemer = {
+	
+	intrigue = 3
+	stewardship = -1
+	
+}
+intricate_webweaver = {
+
+	intrigue = 6
+	martial = 1
+	diplomacy = 1
+	stewardship = -1
+	
+}
+elusive_shadow = {
+	
+	intrigue = 9
+	martial = 2
+	diplomacy = 2
+	stewardship = -1
+	
+}
+#Child is trained by local city herdsmen
+#Learning
+#Discipline
+animal_handling_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+animal_handling_II = {
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+animal_handling_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+animal_handling_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+falconer_I = {
+	
+	potential = {
+		NOT = { religion = jain }
+	}
+
+	diplomacy = 2
+	same_opinion = 20
+	
+}
+falconer_II = {
+	
+	potential = {
+		NOT = { religion = jain }
+	}
+
+	diplomacy = 4
+	same_opinion = 20
+	
+}
+falconer_III = {
+	
+	potential = {
+		NOT = { religion = jain }
+	}
+
+	diplomacy = 6
+	same_opinion = 20
+	
+}
+falconer_IV = {
+	
+	potential = {
+		NOT = { religion = jain }
+	}
+
+	diplomacy = 8
+	same_opinion = 20
+	
+}
+warhorse_I = {
+	martial = 1
+	health = 0.5
+	
+}
+warhorse_II = {
+	martial = 2
+	health = 1
+	
+}
+warhorse_III = {
+	martial = 3
+	health = 1.5
+	
+}
+warhorse_IV = {
+	martial = 4
+	health = 2
+	
+}
+#Child is trained by local city university
+#Discipline
+arts_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+arts_II = {
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+arts_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+arts_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+writer_I = {
+	learning = 1
+	
+}
+writer_II = {
+	learning = 2
+	
+}
+writer_III = {
+	learning = 3
+	
+}
+writer_IV = {
+	learning = 4
+	
+}
+#Child is trained by local city university
+#Discipline
+weapon_design_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+weapon_design_II = {
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+weapon_design_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+weapon_design_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+siege_engineering_I = {
+	siege_speed = 0.025
+	
+}
+siege_engineering_II = {
+	siege_speed = 0.05
+	
+}
+siege_engineering_III = {
+	siege_speed = 0.075
+	
+}
+siege_engineering_IV = {
+	siege_speed = 0.1
+	
+}
+metallurgy_I = {
+	
+}
+metallurgy_II = {
+
+}
+metallurgy_III = {
+	
+}
+metallurgy_IV = {
+	
+}
+#Child is trained by local city university
+#Discipline
+design_I = {
+	education = yes
+	build_time_modifier = -0.025
+	
+	ruler_designer_cost = 2
+}
+design_II = {
+	education = yes
+	build_time_modifier = -0.05
+	
+	ruler_designer_cost = 4
+}
+design_III = {
+	education = yes
+	build_time_modifier = -0.075
+	
+	ruler_designer_cost = 8
+}
+design_IV = {
+	education = yes
+	build_time_modifier = -0.1
+	
+	ruler_designer_cost = 12
+}
+#Traits
+architecture_I = {
+	build_cost_modifier = -0.025
+	
+}
+architecture_II = {
+	build_cost_modifier = -0.05
+	
+}
+architecture_III = {
+	build_cost_modifier = -0.075
+	
+}
+architecture_IV = {
+	build_cost_modifier = -0.1
+	
+}
+engineering_I = {
+	build_time_modifier = -0.025
+	
+}
+engineering_II = {
+	build_time_modifier = -0.05
+	
+}
+engineering_III = {
+	build_time_modifier = -0.075
+	
+}
+engineering_IV = {
+	build_time_modifier = -0.1
+	
+}
+#Child is trained by local city university
+#Discipline
+medicine_I = {
+	education = yes
+	assassinate_chance_modifier = -0.025
+	
+	ruler_designer_cost = 2
+}
+medicine_II = {
+	education = yes
+	assassinate_chance_modifier = -0.05
+	
+	ruler_designer_cost = 4
+}
+medicine_III = {
+	education = yes
+	assassinate_chance_modifier = -0.075
+
+	ruler_designer_cost = 8
+}
+medicine_IV = {
+	education = yes
+	assassinate_chance_modifier = -0.1
+	
+	ruler_designer_cost = 12
+}
+#Traits
+herbalism_I = {
+	assassinate_chance_modifier = -0.025
+	
+}
+herbalism_II = {
+	assassinate_chance_modifier = -0.05
+	
+}
+herbalism_III = {
+	assassinate_chance_modifier = -0.075
+	
+}
+herbalism_IV = {
+	assassinate_chance_modifier = -0.1
+	
+}
+physician_I = {
+	health = 0.5
+	cure_illness = yes
+	
+}
+physician_II = {
+	health = 1
+	cure_illness = yes
+	
+}
+physician_III = {
+	health = 1.5
+	cure_illness = yes
+	
+}
+physician_IV = {
+	health = 2
+	cure_illness = yes
+	
+}
+#Child is trained by  local city university
+#Discipline
+sciences_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+sciences_II = {
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+sciences_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+sciences_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+protective_alchemy_I = {
+	assassinate_chance_modifier = -0.025
+	
+}
+protective_alchemy_II = {
+	assassinate_chance_modifier = -0.05
+	
+}
+protective_alchemy_III = {
+	assassinate_chance_modifier = -0.075
+	
+}
+protective_alchemy_IV = {
+	assassinate_chance_modifier = -0.1
+	
+}
+poisonous_alchemy_I = {
+	assassinate_chance_modifier = 0.025
+	
+}
+poisonous_alchemy_II = {
+	assassinate_chance_modifier = 0.05
+	
+}
+poisonous_alchemy_III = {
+	assassinate_chance_modifier = 0.075
+	
+}
+poisonous_alchemy_IV = {
+	assassinate_chance_modifier = -0.1
+	
+}
+anthropology_I = {
+	learning = 1
+	
+}
+anthropology_II = {
+	learning = 2
+	
+}
+anthropology_III = {
+	learning = 3
+	
+}
+anthropology_IV = {
+	learning = 4
+	
+}
+archaelogy_I = {
+	learning = 1
+	
+}
+archaelogy_II = {
+	learning = 2
+	
+}
+archaelogy_III = {
+	learning = 3
+	
+}
+archaelogy_IV = {
+	learning = 4
+	
+}
+astronomy_I = {
+	learning = 1
+	
+}
+astronomy_II = {
+	learning = 2
+	
+}
+astronomy_III = {
+	learning = 3
+	
+}
+astronomy_IV = {
+	learning = 4
+	
+}
+geology_I = {
+	learning = 1
+	
+}
+geology_II = {
+	learning = 2
+	
+}
+geology_III = {
+	learning = 3
+	
+}
+geology_IV = {
+	learning = 4
+	
+}
+geography_I = {
+	culture_flex = -0.025
+	
+}
+geography_II = {
+	culture_flex = -0.05
+	
+}
+geography_III = {
+	culture_flex = -0.075
+	
+}
+geography_IV = {
+	culture_flex = -0.1
+	
+}
+mathematics_I = {
+	learning = 2
+	
+}
+mathematics_II = {
+	learning = 4
+	
+}
+mathematics_III = {
+	learning = 6
+	
+}
+mathematics_IV = {
+	learning = 8
+	
+}
+
+physics_I = {
+	siege_speed = 0.025
+	
+}
+physics_II = {
+	siege_speed = 0.05
+	
+}
+physics_III = {
+	siege_speed = 0.075
+	
+}
+physics_IV = {
+	siege_speed = 0.1
+	
+}
+#Child is trained by local city university
+#Discipline
+learning_scholarly_I = {
+	education = yes
+	learning = 2
+	
+	ruler_designer_cost = 2
+}
+learning_scholarly_II = {
+	education = yes
+	learning = 4
+	
+	ruler_designer_cost = 4
+}
+learning_scholarly_III = {
+	education = yes
+	learning = 6
+	
+	ruler_designer_cost = 8
+}
+learning_scholarly_IV = {
+	education = yes
+	learning = 8
+	
+	ruler_designer_cost = 12
+}
+#Traits
+literature_I = {
+	learning = 1
+	
+}
+literature_II = {
+	learning = 2
+	
+}
+literature_III = {
+	learning = 3
+	
+}
+literature_IV = {
+	learning = 4
+	
+}
+teaching_I = {
+	learning = 1 
+	
+}
+teaching_II = {
+	learning = 2
+	
+}
+teaching_III = {
+	learning = 3
+	
+}
+teaching_IV = {
+	learning = 4
+	
+}
+#Child is trained by local temple school
+#Discipline
+theology_I = {
+	education = yes
+	religion_flex = -0.025
+	learning = 2
+	ruler_designer_cost = 2
+}
+theology_II = {
+	education = yes
+	religion_flex = -0.05
+	learning = 4
+	ruler_designer_cost = 4
+}
+theology_III = {
+	education = yes
+	religion_flex = -0.075
+	learning = 6
+	ruler_designer_cost = 8
+}
+theology_IV = {
+	education = yes
+	religion_flex = -0.1 
+	learning = 8
+	ruler_designer_cost = 12
+}
+#Traits
+philosophy_I = {
+	culture_flex = -0.025
+	religion_flex = -0.025
+}
+philosophy_II = {
+	culture_flex = -0.05
+	religion_flex = -0.05
+}
+philosophy_III = {
+	culture_flex = -0.075
+	religion_flex = -0.075
+}
+philosophy_IV = {
+	culture_flex = -0.1
+	religion_flex = -0.1
+}
+
+detached_priest = {
+	priest = yes
+		
+	learning = 1
+	intrigue = -1
+	
+}
+martial_cleric = {
+	priest = yes
+		
+	learning = 3
+	intrigue = -1
+	
+	ai_zeal = 10
+	
+}
+scholarly_theologian = {
+	priest = yes
+		
+	learning = 6
+	diplomacy = 1
+	stewardship = 1
+	intrigue = -1
+	
+	fertility = -0.05
+	
+	ai_zeal = 20
+	
+}
+mastermind_theologian = {
+	priest = yes
+		
+	learning = 9
+	diplomacy = 2
+	stewardship = 2
+	intrigue = -1
+	
+	fertility = -0.05
+	
+	ai_zeal = 30
+	
+}
+#Personality Event Traits
+combat_reflexes = {
+	
+	combat_rating = 2
+	ruler_designer_cost = 4
+}
+#Immortal trait for title holders
+immortality = {
+	immortal = yes
+}

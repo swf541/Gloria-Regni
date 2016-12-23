@@ -1,0 +1,21 @@
+#Rosh Hashanah Celebration
+character_event = {
+	id = ExIs.113
+	title = EVTNAME_ExIs_113
+	desc = EVTDESC_ExIs_113
+	picture = GFX_evt_synagogue
+	border = GFX_event_normal_frame_religion
+		
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+			name = EVTOPTA_ExIs_113
+			add_character_modifier = {
+			name = held_rosh_hashanah_timer
+			duration = 1825
+			hidden = yes
+		}
+	}
+}

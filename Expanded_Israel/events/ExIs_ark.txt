@@ -1,0 +1,483 @@
+#### Ark of the Covenant
+namespace = JR
+narrative_event = {
+	id =JR.2001
+	title =EVTNAME_JR_2001
+	desc =EVTDESC_JR_2001
+	major =no
+	
+	picture = "GFX_evt_emissary_kneeling_before_throne"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		NOT = { has_global_flag = "search_covenant" }
+	}
+	
+	mean_time_to_happen = {
+		months = 960
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2001"
+		set_global_flag = "search_covenant"
+	}
+
+	option = {
+		name = "EVTOPTB_JR_2001"
+	}
+}
+
+narrative_event = {
+	id =JR.2002
+	title =EVTNAME_JR_2002
+	desc =EVTDESC_JR_2002
+	major =no
+	
+	picture = "GFX_evt_whispering_in_ear"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "search_covenant" 
+		NOT = { has_global_flag = "prayer_covenant_1" }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2002"
+		set_global_flag = "prayer_covenant_1"
+		hidden_tooltip = { narrative_event = { id = JR.2003 days = 1 } }
+	}
+}
+
+narrative_event = {
+	id =JR.2003
+	title =EVTNAME_JR_2003
+	desc =EVTDESC_JR_2003
+	major =no
+	
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2003"
+		set_global_flag = "vision_covenant_1"
+	}
+}
+
+narrative_event = {
+	id =JR.2004
+	title =EVTNAME_JR_2004
+	desc =EVTDESC_JR_2004
+	major =no
+	
+	picture = "GFX_evt_busy_trading_port_dock_republic"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "vision_covenant_1"
+		NOT = { has_global_flag = "vision_covenant_2" }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2004"
+		set_global_flag = "vision_covenant_2" 
+	}
+}
+
+
+narrative_event = {
+	id =JR.2005
+	title =EVTNAME_JR_2005
+	desc =EVTDESC_JR_2005
+	major =no
+	
+	picture = "GFX_evt_byzatine_through_arch_victory"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "vision_covenant_2"
+		NOT = { has_global_flag = "expedition_ark" }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2005"
+		set_global_flag = "expedition_ark" 
+	}
+}
+
+narrative_event = {
+	id =JR.2006
+	title =EVTNAME_JR_2006
+	desc =EVTDESC_JR_2006
+	major =no
+	
+	picture = "GFX_evt_battle_scene"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "expedition_ark" 
+		NOT = { has_global_flag = "bandits_ark_1" }
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2006"
+		set_global_flag = "bandits_ark_1" 
+		random = { chance = 10 add_trait = wounded }
+	}
+}
+
+narrative_event = {
+	id =JR.2007
+	title =EVTNAME_JR_2007
+	desc =EVTDESC_JR_2007
+	major =no
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "bandits_ark_1" 
+		NOT = { has_global_flag = "sandstorm" }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2007"
+		set_global_flag = "sandstorm" 
+		random = { chance = 50 add_trait = wounded }
+		random = { chance = 5 add_trait = maimed }
+	}
+}
+
+narrative_event = {
+	id =JR.2008
+	title =EVTNAME_JR_2008
+	desc =EVTDESC_JR_2008
+	major =no
+	
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "sandstorm" 
+		NOT = { has_global_flag = "arrival_ark" }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2008"
+		set_global_flag = "arrival_ark" 
+
+	}
+}
+
+narrative_event = {
+	id =JR.2009
+	title =EVTNAME_JR_2009
+	desc =EVTDESC_JR_2009
+	major =no
+	
+	picture = "GFX_evt_whispering_in_ear"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "arrival_ark" 
+		NOT = { has_global_flag = "vision_covenant_3" }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2009"
+		set_global_flag = "vision_covenant_3"
+	}
+}
+
+
+narrative_event = {
+	id =JR.2010
+	title =EVTNAME_JR_2010
+	desc =EVTDESC_JR_2010
+	major =no
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "vision_covenant_3" 
+		NOT = { has_global_flag = "impure_workers" }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2010"
+		set_global_flag = "impure_workers"
+
+	}
+}
+
+narrative_event = {
+	id =JR.2011
+	title =EVTNAME_JR_2011
+	desc =EVTDESC_JR_2011
+	major =no
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "impure_workers" 
+		NOT = { has_global_flag = "pure_workers" }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2011"
+		set_global_flag = "pure_workers"
+
+	}
+}
+
+narrative_event = {
+	id =JR.2012
+	title =EVTNAME_JR_2012
+	desc =EVTDESC_JR_2012
+	major =no
+	
+	picture = "GFX_evt_banquet_hall_feast"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "pure_workers" 
+		NOT = { has_global_flag = "pure_workers_arrive" }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2012"
+		set_global_flag = "pure_workers_arrive"
+
+	}
+}
+
+narrative_event = {
+	id =JR.2013
+	title =EVTNAME_JR_2013
+	desc =EVTDESC_JR_2013
+	major =no
+	
+	picture = "GFX_evt_comet"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "pure_workers_arrive" 
+		NOT = { has_global_flag = "ark_recovered" }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2013"
+		set_global_flag = "ark_recovered" 
+
+	}
+}
+
+narrative_event = {
+	id =JR.2014
+	title =EVTNAME_JR_2014
+	desc =EVTDESC_JR_2014
+	major =no
+	
+	picture = "GFX_evt_battle_scene"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "ark_recovered" 
+		NOT = { has_global_flag = "ark_muslim_raiders" }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2014"
+		set_global_flag = "ark_muslim_raiders" 
+		hidden_tooltip = { narrative_event = { id = JR.2015 days = 1 } }
+	}
+}
+
+narrative_event = {
+	id =JR.2015
+	title =EVTNAME_JR_2015
+	desc =EVTDESC_JR_2015
+	major =no
+	
+	picture = "GFX_evt_battle_scene"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "EVTOPTA_JR_2015"
+	}
+}
+
+narrative_event = {
+	id =JR.2016
+	title =EVTNAME_JR_2016
+	desc =EVTDESC_JR_2016
+	major =no
+	
+	picture = "GFX_evt_byzatine_through_arch_victory"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "ark_muslim_raiders" 
+		NOT = { has_global_flag = "ark_arrival" }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "EVTOPTA_JR_2016"
+		set_global_flag = "ark_arrival" 
+	}
+}
+
+narrative_event = {
+	id =JR.2017
+	title =EVTNAME_JR_2017
+	desc =EVTDESC_JR_2017
+	major =no
+	
+	picture = "GFX_evt_jerusalem_captured_jews_soa"
+	border = "GFX_event_narrative_frame_war"
+	
+	trigger = {
+		has_landed_title = k_israel
+		has_global_flag = third_temple_built
+		has_global_flag = jewish_priesthood_founded
+		religion_group = jewish_group
+		has_global_flag = "ark_arrival" 
+		NOT = { has_global_flag = "ark_installed_holy_holies" }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA_JR.2017"
+		set_global_flag = "ark_installed_holy_holies" 
+		774 = {
+			add_province_modifier = {
+				modifier = ark_of_the_covenant_province
+				duration = -1
+			}
+		}
+	}
+}

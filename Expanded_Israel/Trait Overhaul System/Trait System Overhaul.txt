@@ -1,0 +1,313 @@
+The trait heading will be referred to as the discipline and every trait under it will be learned. Some discipline traits do not have bonuses. For stats and foci that have multiple disciplines, characters can learn up to two disciplines under that stat or can learn two different disciplines under two different stats. Each of the traits is upgradeable to level 4 with the bonus stacking for each level and the minimum stat requirement is met. Tutors will be able to teach up to one level lower or level 1. A child will be able to learn the tutor's non-teaching discipline that takes 6.5 years before they have to find another tutor to learn their second discipline. 
+
+The experience system will be based upon 5 experience gained per year in their entire trait discipline. For second level it will take 10 experience, level 3 would be 20 experience, and level 4 would be 30 experience. These experience points are earned for the entire discipline and their traits.
+
+Experience Table
+Level 1: 5 experience
+Level 2: 10 experience
+Level 3: 20 experience
+Level 4: 30 Experience
+
+Each discipline or trait level higher than 1 adds a bonus that is equal to the level 1 bonus for levels 2, 3, and 4. 
+
+The weapons listed are for a duel engine and will provide bonuses once it has been thought out or modified.
+
+Basic Stats
+
+Provides 50% benefit of the Focus Trait
+
+Stat
+	Discipline
+		Traits
+
+Martial			
+	Athletic: +1 Martial
+		Manouvering: +1 Martial and +1 Duel Move
+		Combat Arts: +1 Martial
+			
+#Duel elements are speed, weapon power, manouvering/utility, and defense
+	Weapon
+		Axe: SPD = 3, WP = 2, M/U = 3, Gold: 5
+		Mace: SPD = 2, WP = 3, +3 to plate armours. Gold: 8
+		Arming Sword: SPD = 3, WP = 4, Gold = 10
+		Fast-Draw: +1 Speed to melee weapons
+		Dagger: SPD = 4, WP = 1, M/U = 3, Gold = 1
+		Lance: SPD = 0, WP = 4, M/U = 0, Gold = 10
+		Polearm: SPD = 2, WP = 6, M/U = 1, Gold = 15
+		Rapier + Main-Gauche *Locked till 14th century*: SPD = 3, WP = 2, Gold = 20
+		Saber *Locked to Middle East, Steppes, and Russia*: SPD = 2, WP = 3, Gold = 10
+		Short Sword: SPD = 4, WP = 1, Gold = 5
+		Spear: SPD = 2, WP = 3, M/U = 1, Gold = 10
+		Staff: SPD = 2, WP = 1, Gold = 1
+		Battleaxe: SPD = 2, WP = 4, Gold = 15
+		2H Mace: SPD = 1, WP = 4, Gold = 25
+		Longsword: SPD = 3, WP = 4, Gold = 25
+	Shields
+		Knight's Shield: DEF = 4, WP = 2, Gold = 20
+		Round Shield: DEF = 3, WP = 3, Gold = 12
+		Buckler: DEF = 1, WP = 1 + 1 with dagger, Gold = 5
+		Targe *Locked to Scots, Franks, and Norse*: DEF = 2, Gold = 8
+		Scutum *Locked to WRE and ERE*: DEF = 5, +10 Approval/Prestige to Roman Cultured Vassals., Gold = 15
+		Aspis *Locked to Greek and Spear*: DEF = 3, +10 Approval/Prestige to Hellenic religion vassals/Greek Culture vassals, Gold = 12
+	Armour
+		Cloth Armour: DEF = 2, Gold: 25
+		Leather Armour: DEF = 3, Gold: 50
+		Mail Armour: DEF = 4, Gold: 100
+		Halfplate *Locked to 1200*: DEF = 5, Gold: 200
+		Fullplate *Locked to 1350*: DEF = 6, Gold: 1000
+		
+	Ranged Weapons
+		Horse Bow *Locked to Turks and Mongols*: SPD = 4, WP = 3, Gold = 10
+		Long Bow *Locked to Welsh and English*: SPD = 2, WP = 5, Gold = 10
+		Bow: SPD = 3, WP = 2, Gold = 5
+		Crossbow: SPD = 2, WP = 4, Gold = 15
+		Fast Draw: + 1 Speed to Bows/Crossbows
+	
+	Military
+		Armoury: +5% Defense
+		Ambush: +5% Damage from Flanks
+		Military Tactics: +5% Damage from Flanks and Center Attacks
+		Leadership: +5% Maximum Troop Level
+		Siege Engines: +5% Seige Speed
+		Misguided Warrior>Tough Soldier>Skilled Tactician>Brilliant Strategist
+	
+
+Diplomacy
+	Business: 2.5% tax bonus
+		Diplomacy: 1 Diplomacy and +5% cultural shift (+15% for Persian/Chinese) if a tutor also
+		Law: +1 Stewardship
+		Politics: +2 Diplomacy
+		Propaganda: 2.5% levy size
+		Naive Appeaser>Underhanded Rogue>Charismatic Negotiator>Grey Eminence
+		
+	Scholarly
+		Public Speaking: +1 Demense
+
+Stewardship
+	
+	Business: 2.5% tax bonus
+		Accounting:	2.5% tax bonus
+		Administration: 2.5% tax bonus and 2.5% levy size
+		Economics: 2.5% tax bonus
+		Finance: +1 Stewardship
+		Indulgent Wastrel>Thrifty Clerk>Fortune Builder>Midas Touched
+	
+	Knowledge: 2.5% Tech Spread
+		Connoisseur: 2.5% Tech Points
+		Savoir-Faire: 2.5% tech points and tech spread
+
+Intrigue
+	Criminal/Street: -2.5% to other's taxes
+		Disguise: Event Specific bonus
+		Fast Talk: Event Specific bonus
+		Forced Entry: Event Specific bonus
+		Observation: Event Specific bonus
+		Smuggling: -5% siege speed and Event Specific bonus
+		Streetwise: Event Specific bonus
+		
+	Spycraft
+		Assassinations: Increases success rate by +2.5%
+		Counterfeiting: -2.5% to other's taxes
+		Forgery: Time decrease and success rate increase to forging claims by +2.5%
+		Poisons: Decreases target's health by .5
+		Stealth: Event Specific bonus
+		Throwing: Event Specific bonus
+		Amateurish Plotter>Flamboyant Schemer>Intricate Webweaver>Elusive Shadow
+		
+Learning
+	Animal Traits
+		Falconry (use vanilla)
+		Warhorse: +1 Martial
+		
+	Arts: 2.5% tech spread
+		Artist: 2.5% cultural tech points
+		Dancing: 2.5% cultural tech points
+		Fire Eating: 2.5% cultural tech points
+		Musician: 2.5% cultural tech points
+		Poetry: 2.5% cultural tech points
+		Singing: 2.5% cultural tech points
+		Writing: 2.5% cultural tech points
+	
+	
+	Weapons
+		Siege Engineering (Provides half benefit without the War version) 2.5%/5% siege speed
+	
+	Design: 2.5% time decrease on building
+		Architecture: 2.5% cost reduction on building
+		Engineering: 2.5% time decrease on building
+	
+	Medical: 2.5% decrease to Assassination success rate
+		Herbalism: 2.5% decrease to Assassination success rate
+		Physician: +.5 Health and Cures Diseases
+	
+	Natural Sciences
+		Alchemy: 2.5% increase or decrease to Assassination success rate
+		Astronomy: 2.5% tech spread
+		Geology: 2.5% technology tech points
+		Mathematics: 2.5% technology tech points
+		Metallurgy: 2.5% weapon damage
+		Physics: 2.5% siege damage
+	
+	Scholarly
+		Literature: 2.5% tech spread
+		Teaching: Enables tutoring of children
+	
+	Social Sciences
+		Anthropology: Event specific bonus
+		Archaeology: Event specific bonus
+		Geography: 2.5% military tech spread
+		Philosophy: 2.5% cultural tech points
+		Theology: 2.5% county conversion chance
+		Detached Priest>Dutiful Cleric>Scholarly Theologian>Mastermind Theologian
+	
+
+Foci
+
+Provides full benefit
+
+Focus
+	Discipline
+		Traits
+
+Rulership
+	
+	Business: 5% tax bonus
+		Accounting:	5% tax bonus
+		Administration: 5% tax bonus and 5% levy size
+		Economics: 5% tax bonus
+		Finance: +2 Stewardship
+		Law: +2 Stewardship
+		Politics: +5 Diplomacy
+		Propaganda: 5% levy size
+	
+	Knowledge: 5% Tech Spread
+		Connoisseur: 5% Tech Points
+		Savoir-Faire: 5% tech points and tech spread
+		Naive Appeaser>Underhanded Rogue>Charismatic Negotiator>Grey Eminence
+		
+	Scholarly
+		Public Speaking: +1 Demense
+	
+
+Business
+	Business: 5% tax bonus
+		Accounting:	5% tax bonus
+		Administration: 5% tax bonus and 5% levy size
+		Economics: 5% tax bonus
+		Finance: +2 Stewardship
+		Indulgent Wastrel>Thrifty Clerk>Fortune Builder>Midas Touched
+		
+Hunting
+	Animal Traits
+		Animal Handling *random animal chance as pet* +1 Health
+		Falconry +2 Diplomacy
+		Warhorse: +2 Martial
+
+War
+	Athletic: +2 Martial
+		Manouvering: +2 Martial and +2 Duel Move
+		Combat Arts: +4 Martial
+				
+	Weapon
+		Axe
+		Mace
+		Arming Sword
+		Fast-Draw
+		Dagger
+		Lance
+		Polearm
+		Rapier + Main-Gauche *Locked till 14th century*
+		Saber *Locked to Middle East, Steppes, and Russia*
+		Shield
+		Short Sword
+		Spear
+		Staff
+		Battleaxe
+		2H Mace
+		Longsword
+	
+		Siege Engines: +10% Seige Speed
+		Horse Bow *Locked to Turks and Mongels*
+		Long Bow *Locked to Welsh and English*
+		Bow
+		Crossbow
+		Fast Draw
+	
+	Military
+		Armoury: +10% Defense
+		Ambush: +10% Damage from Flanks
+		Military Tactics: +10% Damage from Flanks and Center Attacks
+		Leadership: +10% Maximum Troop Level
+		Misguided Warrior>Tough Soldier>Skilled Tactician>Brilliant Strategist
+
+Family
+
+Carousing
+
+Seduction
+
+Intrigue
+	Criminal/Street: -5% to other's taxes
+		Disguise: Event Specific bonus
+		Fast Talk: Event Specific bonus
+		Forced Entry: Event Specific bonus
+		Observation: Event Specific bonus
+		Smuggling: -10% siege speed and Event Specific bonus
+		Streetwise: Event Specific bonus
+		
+	Spycraft
+		Assassinations: Increases success rate by +5%
+		Counterfeiting: -5% to other's taxes
+		Forgery: Time decrease and success rate increase to forging claims by +5%
+		Poisons: Decreases target's health by 1
+		Stealth: Event Specific bonus
+		Throwing: Event Specific bonus
+
+Scholarship
+
+	Arts: 5% tech spread
+		Artist: 5% cultural tech points
+		Dancing: 5% cultural tech points
+		Fire Eating: 5% cultural tech points
+		Musician: 5% cultural tech points
+		Poetry: 5% cultural tech points
+		Singing: 5% cultural tech points
+		Writing: 5% cultural tech points
+	
+	Weapons
+		Siege Engineering (Provides half benefit without the War version) 5%/10% siege speed
+	
+	Design: 5% time decrease on building
+		Architecture: 5% cost reduction on building
+		Engineering: 5% time decrease on building
+	
+	Medical: 5% decrease to Assassination success rate
+		Herbalism: 5% decrease to Assassination success rate
+		Physician: +1 Health and Cures Disease
+	
+	Natural Sciences
+		Alchemy: 5% increase or decrease to Assassination success rate
+		Astronomy: 5% technology tech points
+		Geology: 5%  technology tech points
+		Mathematics: 5% technology tech points
+		Metallurgy: 5% weapon damage
+		Physics: 5% siege damage
+	
+	Scholarly
+		Literature: 5% tech spread
+		Teaching: Enables tutoring of children, level bases earning of the character, and +5% cultural shift (+10% for Persian/Chinese)
+	
+	Social Sciences
+		Anthropology: Event specific bonus
+		Archaeology: Event specific bonus
+		Geography: 5% tech spread
+		Philosophy: 5% cultural tech points
+		
+
+Theology
+	Occult
+		Exorcism: Removes possession
+		Herb Lore: 5% to Poisons or 5% to Herbalism
+		Theology: 5% county conversion chance
+		Detached Priest>Dutiful Cleric>Scholarly Theologian>Mastermind Theologian
+		

@@ -1,0 +1,288 @@
+jewish_group = {
+        graphical_culture = jewishgfx
+        crusade_cb = crusade
+        playable = yes
+        ai_peaceful = yes # Will make Hordes lose their super aggressiveness
+        hostile_within_group = yes
+        
+        ai_convert_same_group = 2 # always try to convert
+        ai_convert_other_group = 1 # try to convert if ai_zeal is high
+        
+        # Names given only to Jewish characters (base names)
+       male_names = {
+			Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi Baruch
+			Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel
+			Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel 
+			Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam 
+			Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi 
+			Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi 
+			Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yehudah 
+			Yisrael Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
+		}
+		female_names = {
+			Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
+			Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil
+		}
+
+	grand_sanhedrin = {
+                graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.1 0.5 0.9 }
+                
+                crusade_name = GREAT_HOLY_WAR
+				scripture_name = THE_TORAH
+                priest_title = RABBI
+
+                can_grant_divorce = yes
+                can_call_crusade = yes
+                can_grant_invasion_cb = invasion
+				can_retire_to_monastery = yes
+				
+				autocephaly = no
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				
+				allow_rivermovement = yes
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+                
+                expel_modifier = expelled_jewish
+                
+				unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+
+			}
+
+		rabbinic_judaism = { #rabbinic_judaism 
+                graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.1 0.7 1.0 }
+                crusade_name = GREAT_HOLY_WAR
+                scripture_name = THE_TORAH
+                priest_title = RABBI
+                
+                high_god_name = GOD_GOD
+                
+                god_names = {
+                        GOD_GOD GOD_THE_LORD ADONAI
+                }
+                evil_god_names = {
+                        SATAN
+                }
+                
+                can_grant_divorce = yes
+				can_retire_to_monastery = yes
+               
+                autocephaly = no
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				
+				reformed = grand_sanhedrin
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+
+               expel_modifier = expelled_jewish
+                
+                
+                unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+        }
+
+		temple_judaism = {
+                graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.1 0.5 0.9 }
+                
+                crusade_name = GREAT_HOLY_WAR
+				scripture_name = THE_TORAH
+                priest_title = KOHEN
+
+               autocephaly = no
+			   can_retire_to_monastery = yes
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				allow_rivermovement = yes
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+				
+				max_wives = 2
+				expel_modifier = expelled_jewish
+                
+				unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+        }
+		
+        karaite = {
+                graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.1 0.5 0.9 }
+                
+                crusade_name = GREAT_HOLY_WAR
+				scripture_name = THE_TORAH
+                priest_title = KOHEN
+
+                can_grant_divorce = yes
+				can_retire_to_monastery = yes
+                                
+				autocephaly = no
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				allow_rivermovement = yes
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+				
+				reformed = temple_judaism
+				
+				max_wives = 2
+
+				expel_modifier = expelled_jewish
+                
+				unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+        }
+		
+		haymanot_judaism = {
+                graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.1 0.7 1.0 }
+                crusade_name = GREAT_HOLY_WAR
+                scripture_name = Mashafa_Kedus
+                priest_title = Kes
+                
+                high_god_name = GOD_GOD
+                
+                god_names = {
+                        GOD_GOD GOD_THE_LORD ADONAI
+                }
+                evil_god_names = {
+                        SATAN
+                }
+                
+                can_grant_divorce = yes
+                can_call_crusade = yes
+                can_grant_invasion_cb = invasion
+				can_retire_to_monastery = yes
+                
+               autocephaly = no
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				allow_rivermovement = yes				
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+                
+                unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+
+			}
+
+		samaritan = {
+				graphical_culture = jewishgfx
+                
+                icon = 38
+                heresy_icon = 39
+                
+                color = { 0.3 0.5 1.0 }
+                crusade_name = GREAT_HOLY_WAR
+                scripture_name = THE_TORAH
+                priest_title = RABBI
+                
+                high_god_name = GOD_GOD
+                
+                god_names = {
+                        GOD_GOD GOD_THE_LORD ADONAI
+                }
+                evil_god_names = {
+                        SATAN
+                }
+                
+                can_grant_divorce = yes
+				can_retire_to_monastery = yes
+               
+               autocephaly = no
+		
+				feminist = yes
+                
+                priests_can_marry = yes
+                priests_can_inherit = yes
+				piety_name = CHASID
+				allow_rivermovement = yes
+                
+                religious_clothing_head = 7
+                religious_clothing_priest = 7
+
+               expel_modifier = expelled_jewish
+                
+                unit_modifier = {
+                	heavy_infantry_offensive = 0.8
+                	heavy_infantry_defensive = 0.8
+                	light_cavalry_offensive = 0.8
+                	light_cavalry_defensive = 0.8
+                }
+                modifier = israelite_culture_modifier
+        }
+}

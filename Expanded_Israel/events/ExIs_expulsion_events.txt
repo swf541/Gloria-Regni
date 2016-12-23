@@ -1,0 +1,164 @@
+#Expulsion and Welcome Back Events
+#Needs Pagans and Zoarastrians added
+
+# Muslims Expelled
+narrative_event = {
+	id = ExIs.103
+	title = EVTNAME_ExIs_103
+	desc = EVTDESC_ExIs_103
+	picture = GFX_evt_jewish_market
+	border = GFX_event_narrative_frame_religion
+	major = no
+		
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_103
+		wealth = 200
+		prestige = -100
+		banish_religion = muslim
+		hidden_tooltip = {
+			any_realm_lord = {
+				character_event = { id = ExIs.105 }
+			}
+		}
+	}
+}
+
+# Muslims Welcomed Back
+narrative_event = {
+	id = ExIs.104
+	title = EVTNAME_ExIs_104
+	desc = EVTDESC_ExIs_104
+	picture = GFX_evt_jewish_market
+	border = GFX_event_narrative_frame_religion
+	major = no
+		
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_104
+		prestige = 50
+		hidden_tooltip = {
+			any_realm_lord = {
+				limit = { ai = no }
+				character_event = { id = ExIs.106 }
+			}
+		}
+	}
+}
+
+# Muslims Expelled (Notifier for Vassals)
+character_event = {
+	id = ExIs_105
+	title = EVTNAME_ExIs_105
+	desc = EVTDESC_ExIs_105
+	picture = GFX_evt_jewish_market
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExI_105
+	}
+}
+
+# Muslims Welcomed Back (Notifier for Vassals)
+character_event = {
+	id = ExIs.106
+	title = EVTNAME_ExIs_106
+	desc = EVTDESC_ExIs_106
+	picture = GFX_evt_jewish_market
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_106
+	}
+}
+
+# Christians Expelled
+narrative_event = {
+	id = ExIs.107
+	title = EVTNAME_ExIs_107
+	desc = EVTDESC_ExIs_107
+	picture = GFX_evt_jewish_market
+	border = GFX_event_narrative_frame_religion
+	major = no
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_107
+		wealth = 200
+		prestige = -100
+		banish_religion = christian
+		hidden_tooltip = {
+			any_realm_lord = {
+				character_event = { id = ExIs.109 }
+			}
+		}
+	}
+}
+
+# Christians Welcomed Back
+narrative_event = {
+	id = ExIs.108
+	title = EVTNAME_ExIs_108
+	desc = EVTDESC_ExIs_108
+	picture = GFX_evt_jewish_market
+	border = GFX_event_narrative_frame_religion
+	major = no
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_108
+		prestige = 50
+		hidden_tooltip = {
+			any_realm_lord = {
+				limit = { ai = no }
+				character_event = { id = ExIs.110 }
+			}
+		}
+	}
+}
+
+# Christians Expelled (Notifier for Vassals)
+character_event = {
+	id = ExIs.109
+	title = EVTNAME_ExIs_109
+	desc = EVTDESC_ExIs_109
+	picture = GFX_evt_jewish_market
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExI_109
+	}
+}
+
+# Christians Welcomed Back (Notifier for Vassals)
+character_event = {
+	id = ExIs.110
+	title = EVTNAME_ExIs_110
+	desc = EVTDESC_ExIs_110
+	picture = GFX_evt_jewish_market
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_110
+	}
+}

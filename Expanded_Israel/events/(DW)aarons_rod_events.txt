@@ -1,0 +1,158 @@
+### AARON'S ROD EVENTS
+
+# All written by DingoWalley
+
+# A Lone Tabernacle
+character_event = {
+	id = 250
+	desc = EVTDESC250
+	picture = (3 Men riding to a Tabernacle in the middle of a Desert)
+
+	min_age = 16
+	prisoner = no
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		religion_group = jewish_group
+		has_landed_title = {
+			OR = {
+				kingdom = { title = k_jerusalem }
+				kingdom = { title = k_israel }
+			}
+		}
+		NOT = { has_global_flag = found_aarons_rod }
+	}
+
+	mean_time_to_happen = {
+		months = 9600
+		modifier = {
+			factor = 2.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 2.0
+			trait = theologian
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_christianity
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_islam
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_zoroastrian
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_indian
+		}
+		modifier = {
+			factor = 0.25
+			trait = sympathy_pagan
+		}
+		modifier = {
+			factor = 0.1
+			trait = cynical
+		}
+	}
+	
+	option = {
+		name = EVTOPTA250
+		custom_tooltip = {
+			text = go_to_it
+			hidden_tooltip = {
+				random_list = {
+					25 = { character_event = { id = 251 days = 1 } }
+					25 = { character_event = { id = 252 days = 1 } }
+					50 = { character_event = { id = 253 days = 1 } }
+				}
+			}
+		}
+	}
+}
+
+# Aaron's Rod!
+character_event = {
+	id = 251
+	desc = EVTDESC251
+	picture = (King holding a glowing rod)
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			set_global_flag = found_aarons_rod
+		}
+	}
+	
+	option = {
+		name = EVTOPTA251
+		prestige = 10000
+		piety = 2000
+		martial = 5
+		diplomacy = 5
+		learning = 2
+	}
+
+	option = {
+		name = EVTOPTB251
+		prestige = 5000
+		piety = 8000
+		learning = 5
+		add_trait = zealous
+	}
+}
+
+# Moses's Rod!
+character_event = {
+	id = 252
+	desc = EVTDESC252
+	picture = (King holding a regular rod)
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			set_global_flag = found_aarons_rod
+		}
+	}
+	
+	option = {
+		name = EVTOPTA252
+		prestige = 5000
+		piety = 2000
+		martial = 5
+		diplomacy = 5
+		learning = 2
+		add_trait = mystic
+	}
+}
+
+# Empty Tabernacle
+character_event = {
+	id = 253
+	desc = EVTDESC253
+	picture = (Men entering an abadoned tabernacle)
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA253
+		hidden_tooltip = {
+			random_list = {
+				25 = { gold = 100 }
+				25 = { gold = 25 }
+				25 = { gold = 50 }
+				25 = { gold = 0 }
+			}
+		}
+	}
+}

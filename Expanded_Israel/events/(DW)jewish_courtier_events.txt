@@ -1,0 +1,2603 @@
+# Rabbinic Jewish Diplomat Appears at Court (Ashkenazi)
+character_event = {
+	id = 900
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 950
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Administrator Appears at Court (Ashkenazi)
+character_event = {
+	id = 901
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 950
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }	
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Ashkenazi)
+character_event = {
+	id = 902
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 950
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Diplomat Appears at Court (Sephardi)
+character_event = {
+	id = 903
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 1100
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Administrator Appears at Court (Sephardi)
+character_event = {
+	id = 904
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 1100
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Sephardi)
+character_event = {
+	id = 905
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		year = 1100
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Diplomat Appears at Court (Mizrahi)
+character_event = {
+	id = 906
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Administrator Appears at Court (Mizrahi)
+character_event = {
+	id = 907
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Mizrahi)
+character_event = {
+	id = 908
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Diplomat Appears at Court (Itali)
+character_event = {
+	id = 909
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Administrator Appears at Court (Itali)
+character_event = {
+	id = 910
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }	
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Itali)
+character_event = {
+	id = 911
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Diplomat Appears at Court (Iberiani)
+character_event = {
+	id = 912
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Administrator Appears at Court (Iberiani)
+character_event = {
+	id = 913
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Iberiani)
+character_event = {
+	id = 914
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = rabbinic_jewish
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Diplomat Appears at Court (Ashkenazi)
+character_event = {
+	id = 940
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Administrator Appears at Court (Ashkenazi)
+character_event = {
+	id = 941
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }	
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Spy Appears at Court (Ashkenazi)
+character_event = {
+	id = 942
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = ashkenazi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Diplomat Appears at Court (Sephardi)
+character_event = {
+	id = 943
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Administrator Appears at Court (Sephardi)
+character_event = {
+	id = 944
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Spy Appears at Court (Sephardi)
+character_event = {
+	id = 945
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+			AND = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				NOT = { year = 900 }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = sephardi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Diplomat Appears at Court (Mizrahi)
+character_event = {
+	id = 946
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Administrator Appears at Court (Mizrahi)
+character_event = {
+	id = 947
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Spy Appears at Court (Mizrahi)
+character_event = {
+	id = 948
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_byzantium }
+			}
+			capital_scope = {
+				empire = { title = e_latin_empire }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_persia }
+			}
+			capital_scope = {
+				empire = { title = e_tartaria }
+			}
+			capital_scope = {
+				empire = { title = e_abyssinia }
+			}
+			capital_scope = {
+				empire = { title = e_mongol_horde }
+			}
+			capital_scope = {
+				empire = { title = e_golden_horde }
+			}
+			capital_scope = {
+				empire = { title = e_il-khanate }
+			}
+			capital_scope = {
+				empire = { title = e_timurids }
+			}
+			capital_scope = {
+				empire = { title = e_india }
+			}
+			capital_scope = {
+				empire = { title = e_rajastan }
+			}
+			capital_scope = {
+				empire = { title = e_bengal }
+			}
+			capital_scope = {
+				empire = { title = e_deccan }
+			}
+		}
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = mizrahi
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Diplomat Appears at Court (Itali)
+character_event = {
+	id = 915
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Administrator Appears at Court (Itali)
+character_event = {
+	id = 916
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }	
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Spy Appears at Court (Itali)
+character_event = {
+	id = 917
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		NOT = { year = 950 }
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		NOT = { 
+			OR = {
+				capital_scope = {
+					empire = { title = e_spain }
+				}
+				capital_scope = {
+					empire = { title = e_mexikha }
+				}
+				capital_scope = {
+					empire = { title = e_byzantium }
+				}
+				capital_scope = {
+					empire = { title = e_latin_empire }
+				}
+				capital_scope = {
+					empire = { title = e_arabia }
+				}
+				capital_scope = {
+					empire = { title = e_tartaria }
+				}
+				capital_scope = {
+					empire = { title = e_persia }
+				}
+				capital_scope = {
+					empire = { title = e_abbysinia }
+				}
+				capital_scope = {
+					empire = { title = e_mali }
+				}
+				capital_scope = {
+					empire = { title = e_india }
+				}
+				capital_scope = {
+					empire = { title = e_rajastan }
+				}
+				capital_scope = {
+					empire = { title = e_bengal }
+				}
+				capital_scope = {
+					empire = { title = e_deccan }
+				}
+				capital_scope = {
+					empire = { title = e_mongol_empire }
+				}
+				capital_scope = {
+					empire = { title = e_golden_horde }
+				}
+				capital_scope = {
+					empire = { title = e_il-khanate }
+				}
+				capital_scope = {
+					empire = { title = e_timurids }
+				}
+			}
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1100
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = itali
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Diplomat Appears at Court (Iberiani)
+character_event = {
+	id = 918
+	desc = EVTDESC_900
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = charismatic_negotiator
+			attributes = {
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Karaite Jewish Administrator Appears at Court (Iberiani)
+character_event = {
+	id = 919
+	desc = EVTDESC_901
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ts_1 }
+		NOT = { tm_ts_2 }
+		NOT = { tm_ts_3 }
+		NOT = { tm_ts_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = fortune_builder
+			attributes = {
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}
+
+# Rabbinic Jewish Spy Appears at Court (Iberiani)
+character_event = {
+	id = 920
+	desc = EVTDESC_902
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		independent = yes
+		AND = {
+			year = 900
+			NOT = { year = 1100 }
+		}
+		NOT = { tm_ks_1 }
+		NOT = { tm_ks_2 }
+		NOT = { tm_ks_3 }
+		NOT = { tm_ks_4 }
+		OR = {
+			capital_scope = {
+				empire = { title = e_spain }
+			}
+			capital_scope = {
+				empire = { title = e_roman_empire }
+			}
+			capital_scope = {
+				empire = { title = e_arabia }
+			}
+			capital_scope = {
+				empire = { title = e_mexikha }
+			}
+			capital_scope = {
+				empire = { title = e_mali }
+			}
+		}	
+		NOT = { 
+			has_character_modifier = expelled_jewish
+			trait = incapable
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	option = {
+		name = EVTOPTA_900
+		create_character = {
+			random_traits = yes
+			culture = iberiani
+			dynasty = culture
+			religion = karaite
+			female = no
+			age = 30
+			trait = intricate_webweaver
+			attributes = {
+				intrigue = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+	}
+}

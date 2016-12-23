@@ -1,0 +1,289 @@
+### NEHASHTUN EVENTS
+
+# All written by DingoWalley
+
+#A Dream: Moses and the Fiery Serpants
+narrative_event = {
+	id = 300
+	desc = EVTDESC300
+	picture = (Moses with the Nehashtun, healing the Sick)
+
+	min_age = 16
+	prisoner = no
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		religion_group = jewish_group
+		has_landed_title = {
+			OR = {
+				kingdom = { title = k_jerusalem }
+				kingdom = { title = k_israel }
+			}
+		}
+		NOT = { has_global_flag = found_nehushtan }
+	}
+
+	mean_time_to_happen = {
+		months = 9600
+		modifier = {
+			factor = 2.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 2.0
+			trait = theologian
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_christianity
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_islam
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_zoroastrian
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_indian
+		}
+		modifier = {
+			factor = 0.25
+			trait = sympathy_pagan
+		}
+		modifier = {
+			factor = 0.1
+			trait = cynical
+		}
+	}
+	
+	option = {
+		name = EVTOPTA300
+		trigger = {
+			NOT = { trait = cynical }
+		}
+		custom_tooltip = {
+			text = bronze_snake_dream
+			hidden_tooltip = {
+				character_event = { id = 301 months = 60 }
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB300
+		trigger = {
+			trait = cynical
+		}
+		custom_tooltip = {
+			text = just_dream
+			hidden_tooltip = {
+				character_event = { id = 301 months = 60 }
+			}
+		}
+	}
+}
+
+#Shine in the Sand
+character_event = {
+	id = 301
+	desc = EVTDESC301
+	picture = (Men on Horseback, one looking at something shining on the Ground)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA301
+		custom_tooltip = {
+			text = must_investigate
+			hidden_tooltip = {
+				random_list = {
+					20 = { character_event = { id_302 } }
+					40 = { character_event = { id_303 } }
+					40 = { character_event = { id_304 } }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB301
+	}
+}
+
+#It's a Rock...
+character_event = {
+	id = 302
+	desc = EVTDESC302
+	picture = (Man holding rock, Others laughing)
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA302
+		trigger = {
+			NOT = { trait = slow }
+			NOT = { trait = inbred }
+		}
+		prestige = -500
+	}
+
+	option = {
+		name = EVTOPTB302
+		trigger = {
+			OR = {
+				trait = slow
+				trait = inbred
+			}
+		}
+		prestige = -1000
+	}
+}
+
+#Diamond In the Rough
+character_event = {
+	id = 303
+	desc = EVTDESC303
+	picture = (Man looking at Diamond peeking through sand)
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA303
+		prestige = 250
+		gold = 1500
+	}
+}
+
+#The Bronze Serpant's Head
+character_event = {
+	id = 304
+	desc = EVTDESC304
+	picture = (Man looking at a Bronze Serpant peeking from the sand)
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			set_global_flag = found_nehushtan
+		}
+	}
+	
+	option = {
+		name = EVTOPTA304
+		trigger = {
+			NOT = { trait = cynical }
+		}
+		custom_tooltip = {
+			text = can_it_be
+			hidden_tooltip = {
+				narrative_event = { id = 305 days = 3 }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB304
+		trigger = {
+			trait = cynical
+		}
+		custom_tooltip = {
+			text = this_is_impossible
+			hidden_tooltip = {
+				narrative_event = { id = 305 days = 3 }
+			}
+		}
+	}
+}
+
+#The Nehushtan Rediscovered
+narrative_event = {
+	id = 305
+	desc = EVTDESC305
+	picture = (Man holding Nehushtan head, two others looking at it with amazement)
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA305
+		if = {
+			trait = cynical
+			remove_trait = cynical
+		}
+		custom_tooltip = {
+			text = rebuild_it
+			hidden_tooltip = {
+				if = {
+					OR = {
+						religion = rabbinic_judaism
+						religion = temple_judaism
+						religion = grand_sanhendrin
+					}
+					character_event = { id = 306 months = 10 }
+				}
+			}
+			hidden_tooltip = {
+				if = {
+					NOT = {
+						religion = rabbinic_judaism
+						religion = temple_judaism
+						religion = grand_sanhendrin
+					}
+					narrative_event = { id = 308 months = 24 }
+				}
+			}
+		}
+		prestige = 5000
+		piety = 2500
+	}
+	
+	option = {
+		name = EVTOPTB305
+		if = {
+			trait = cynical
+			remove_trait = cynical
+		}
+		custom_tooltip = {
+			text = hide_this_artifact
+		}
+		prestige = 2500
+		piety = 5000
+	}
+}
+
+#Kohen Gadol is Displeased with attempts to rebuild the Nehusthan
+
+#Message from the Kohen Gadol
+
+#The Nehushtan is Rebuilt!
+narrative_event = {
+	id = 308
+	desc = EVTDESC308
+	picture = (Dark Figure holding a bright bronze serpant with red eyes on a mountain's edge, lighting in background)
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA308
+		custom_tooltip = {
+			text = awesome
+		}
+		prestige = 5000
+		piety = 5000
+		health = 5
+		if = {
+			is_theocracy = yes
+			opinion = -25
+		}
+		if = {
+			is_theocracy = no
+			opinion = 50
+		}
+	}
+}

@@ -1,0 +1,140 @@
+###On Actions
+on_startup = {
+	events = {
+		TOSDTG.1
+		TOSDTG.151
+		TOSEE.1
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		TOSEE.3
+	}
+}
+
+on_yearly_childhood_pulse = {
+	events = {
+		TOSEE.3
+	}
+}
+
+on_battle_won = {
+	events = {
+		TOSEE.4 
+	}
+}
+
+on_major_battle_won = {
+	events = {
+		TOSEE.5 
+	}
+}
+
+on_battle_won_leader = {
+	events = {
+		TOSEE.6 
+	}
+}
+
+on_major_battle_won_leader = {
+	events = {
+		TOSEE.7 
+	}
+}
+
+on_siege_won_leader = {
+	events = {
+		TOSEE.8 
+	}
+}
+
+on_war_ended_victory = {
+	events = {
+		TOSEE.9 
+	}
+}
+
+on_war_ended_whitepeace = {
+	events = {
+		TOSEE.10
+	}
+}
+on_assassination = {
+	events = {
+		TOSEE.11
+	}
+}
+
+on_marriage = {
+	events = {
+		TOSEE.12
+	}
+}
+
+on_approve_law = {
+	events = {
+		TOSEE.13
+	}
+}
+
+on_approve_de_jure_law = {
+	events = {
+		TOSEE.14
+	}
+}
+
+on_crusade_success = {
+	events = {
+		TOSEE.15
+	}
+}
+
+on_county_religion_change = {
+	events = {
+		TOSEE.16
+	}
+}
+
+on_vassal_accepts_religious_conversion = {
+	events = {
+		TOSEE.17
+	}
+}
+
+on_reform_religion = {
+	events = {
+		TOSEE.18
+	}
+}
+
+on_settlement_looted = {
+	events = {
+		TOSEE.19
+	}
+}
+
+on_navy_returns_with_loot = {
+	events = {
+		TOSEE.20
+	}
+}
+
+on_character_convert_religion = {
+	events = {
+		TOSEE.21
+	}
+}
+
+on_character_convert_culture = {
+	events = {
+		TOSEE.22
+	}
+}
+
+on_acquire_nickname = {
+	events = {
+		TOSEE.23
+	}
+}
+

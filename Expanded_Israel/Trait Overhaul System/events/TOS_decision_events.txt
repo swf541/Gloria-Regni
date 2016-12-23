@@ -1,0 +1,887 @@
+#TOS Decision Events by Preacher
+namespace = TOSDE
+
+#Disciplines Events
+character_event = {
+	id = TOSDE.1 
+	name = TOSDE.1 
+	desc = TOSDE.1_desc 
+	picture = 
+	
+	is_triggered_only = yes 
+	
+	
+	option = {
+		name = TOSDEOPTA.1
+	}
+}
+
+character_event = {
+	id = TOSDE.2 
+	name = TOSDE.2
+	desc = TOSDE.2_desc 
+	picture = 
+	
+	is_triggered_only = yes 
+	
+	
+	option = {
+		name = TOSDEOPTA.2
+	}
+}
+
+#Trait Events
+character_event = {
+	id = TOSDE.3 
+	name = TOSDE.3
+	desc = TOSDE.3_desc 
+	picture = 
+	
+	is_triggered_only = yes 
+	
+	
+	option = {
+		name = TOSDEOPTA.3
+	}
+}
+
+character_event = {
+	id = TOSDE.4
+	name = TOSDE.4
+	desc = TOSDE.4_desc 
+	picture = 
+	
+	is_triggered_only = yes 
+	
+	
+	option = {
+		name = TOSDEOPTA.4
+	}
+}
+#Ye Olde Box Store
+character_event = {
+	id = TOSDE.5 
+	name = TOSDE.5
+	desc = TOSDE.5_desc 
+	picture = 
+	
+	is_triggered_only = yes 
+
+	option = #Melee Weapons
+		name = TOSDEOPTA.5 
+		desc = TOSDEOPTA.5_desc
+		hidden_tooltip = { character_event = { id = TOSDE.6 } }
+		
+	
+	option = #Ranged Weapons
+		name = TOSDEOPTB.5 
+		desc = TOSDEOPTB.5_desc
+		 hidden_tooltip = { character_event = { id = TOSDE.11 } }
+	
+	option = #Shields
+		name = TOSDEOPTC.5 
+		desc = TOSDEOPTC.5_desc
+		hidden_tooltip = { character_event = { id = TOSDE.13 } }
+	
+	option = {#Armour
+		name = TOSDEOPTD.5 
+		desc = TOSDEOPTD.5_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.15 } }
+	}
+}
+
+character_event = {
+	id = TOSDE.6 
+	desc = TOSDE.6_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Axe
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTA.6 
+		desc = TOSDEOPTA.6_desc
+		treasury = -5
+		add_character_modifer = axe
+	}
+	
+	option = { #Mace
+		
+		potential = {
+			NOT = {
+				has_global_flag = axe
+				has_global_flag = arming_sword
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTB.6 
+		desc = TOSDEOPTB.6_desc
+		treasury = -8
+		add_character_modifer = mace
+	}
+	
+	option = {#Arming Sword
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = axe
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTC.6 
+		desc = TOSDEOPTC.6_desc 
+		treasury = -10
+		add_character_modifer = arming_sword
+	}
+	
+	option = {#Melee Weapons Continued
+		name = TOSDEOPTD.6 
+		desc = TOSDEOPTD.6_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.7 } }
+	}
+}
+	
+character_event = {
+	id = TOSDE.7 
+	desc = TOSDE.7_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Dagger
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = axe
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTA.7 
+		desc = TOSDEOPTA.7_desc
+		treasury = -1
+		add_character_modifer = dagger
+	}
+	
+	option = { #Lance
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = axe
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+			OR = {
+				trait = warhorse_I
+				trait = warhorse_II
+				trait = warhorse_III
+				trait = warhorse_IV
+			}
+		}
+		name = TOSDEOPTB.7 
+		desc = TOSDEOPTB.7_desc
+		treasury = -10
+		add_character_modifer = lance
+	}
+	
+	option = {#Polearm
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = axe
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTC.7 
+		desc = TOSDEOPTC.7_desc 
+		treasury = -15
+		add_character_modifer = polearm
+	}
+	
+	option = {#Melee Weapons Continued
+		name = TOSDEOPTD.7 
+		desc = TOSDEOPTD.7_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.8 } }
+	}
+}
+	
+character_event = {
+	id = TOSDE.8 
+	desc = TOSDE.8_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Rapier and Main Gauche
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = axe
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTA.8 
+		desc = TOSDEOPTA.8_desc
+		treasury = -20
+		add_character_modifer = rapier_main_gauche
+	}
+	
+	option = { #Saber
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = axe
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTB.8 
+		desc = TOSDEOPTB.8_desc
+		treasury = -10
+		add_character_modifer = saber
+	}
+	
+	option = {#Short Sword
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = axe
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTC.8 
+		desc = TOSDEOPTC.8_desc 
+		treasury = -5
+		add_character_modifer = short_sword
+	}
+	
+	option = {#Melee Weapons Continued
+		name = TOSDEOPTD.8 
+		desc = TOSDEOPTD.8_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.9 } }
+	}
+}
+	
+character_event = {
+	id = TOSDE.9 
+	desc = TOSDE.9_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Spear
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = axe
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTA.9 
+		desc = TOSDEOPTA.9_desc
+		treasury = -10
+		add_character_modifer = spear
+	}
+	
+	option = { #Staff
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = axe
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTB.9 
+		desc = TOSDEOPTB.9_desc
+		treasury = -1
+		add_character_modifer = staff
+	}
+}
+	
+	option = {#Battleaxe
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = axe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTC.9 
+		desc = TOSDEOPTC.9_desc 
+		treasury = -15
+		add_character_modifer = battleaxe
+	}
+	
+	option = {#Melee Weapons Continued
+		name = TOSDEOPTD.9 
+		desc = TOSDEOPTD.9_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.9 } }
+	}
+}
+	
+character_event = {
+	id = TOSDE.10 
+	desc = TOSDE.10_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Two Handed Mace
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = axe
+				has_global_flag = longsword
+			}
+		}
+		name = TOSDEOPTA.10 
+		desc = TOSDEOPTA.10_desc
+		treasury = -25
+		add_character_modifer = 2h_mace
+	}
+}
+	
+	option = { #Longsword
+		
+		potential = {
+			NOT = {
+				has_global_flag = mace
+				has_global_flag = arming_sword
+				has_global_flag = dagger
+				has_global_flag = lance
+				has_global_flag = polearm
+				has_global_flag = rapier_main_gauche
+				has_global_flag = saber
+				has_global_flag = short_sword
+				has_global_flag = spear
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = axe
+			}
+		}
+		name = TOSDEOPTB.10 
+		desc = TOSDEOPTB.10_desc
+		treasury = -25
+		add_character_modifer = longsword
+	}
+	
+	option = {#Return to Main Menu
+		name = TOSDEOPTC.10 
+		desc = TOSDEOPTC.10_desc 
+		hidden_tooltip = { character_event = { id = TOSDE.5 } }
+	}
+}
+	
+character_event = {
+	id = TOSDE.11
+	name = TOSDE.11
+	desc = TOSDE.11_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Horse Bow
+		
+		potential = {
+			NOT = {
+				has_global_flag = long_bow 
+				has_global_flag = bow 
+				has_global_flag = crossbow
+			}
+			OR = {
+				trait = warhorse_I
+				trait = warhorse_II
+				trait = warhorse_III
+				trait = warhorse_IV
+			}
+		}
+		name = TOSDEOPTA.11
+		desc = TOSDE.11_desc
+		treasury = 10
+		add_character_modifer = horse_bow
+	}
+	
+	option = {#Long Bow 
+		
+		potential = {
+			NOT = {
+				has_global_flag = horse_bow 
+				has_global_flag = bow 
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTB.11
+		desc = TOSDEOPTB.11_desc
+		treasury = -10
+		add_character_modifer = long_bow
+	}
+	
+	option = {#Bow
+		
+		potential = {
+			NOT = {
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTC.11
+		desc = TOSDEOPTC.11_desc
+		treasury = -5
+		add_character_modifer = bow
+	}
+	
+	option = {#Ranged Weapons Continued
+		name = TOSDEOPTC.11 
+		hidden_tooltip = { character_event = { id = TOSDE.12 } }
+	}
+}
+
+character_event = {
+	id = TOSDE.12
+	name = TOSDE.12
+	desc = TOSDE.12_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Crossbow
+		potential = {
+			NOT = {
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+			}
+		}
+		name = TOSDEOPTA.12
+		desc = TOSDEOPTA.12_desc
+		treasury = -15
+		add_character_modifer = crossbow
+	}
+	
+	option = {#Return to Main Menu
+		name = TOSDEOPTB.12 
+		hidden_tooltip = { character_event = { id = TOSDE.5 } }
+	}
+	
+character_event = {
+	id = TOSDE.13
+	name = TOSDE.13 
+	desc = TOSDE.13_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Knight's Shield 
+		potential = {
+			NOT = {
+				has_global_flag = round_shield
+				has_global_flag = buckler 
+				has_global_flag = targe 
+				has_global_flag = scutum 
+				has_global_flag = aspis
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTA.13
+		desc = TOSDEOPTA.13_desc
+		treasury = -20
+		add_character_modifer = knights_shield
+	}
+	
+	option = {#Round Shield
+		potential = {
+			NOT = {
+				has_global_flag = knights_shield
+				has_global_flag = buckler 
+				has_global_flag = targe 
+				has_global_flag = scutum 
+				has_global_flag = aspis
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTB.13
+		desc = TOSDEOPTB.13_desc
+		treasury = -12
+		add_character_modifer = round_shield
+	}
+	
+	option = {#Buckler
+		potential = {
+			NOT = {
+				has_global_flag = knights_shield
+				has_global_flag = round_shield 
+				has_global_flag = targe 
+				has_global_flag = scutum 
+				has_global_flag = aspis
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTC.13
+		desc = TOSDEOPTC.13_desc
+		treasury = -5
+		add_character_modifer = buckler
+	}
+	
+	option = {#Shields Continued
+		name = TOSDEOPTD.13 
+		hidden_tooltip = { character_event = { id = TOSDE.14 } }
+	}
+}
+
+character_event = {
+	id = TOSDE.14
+	name = TOSDE.14
+	desc = TOSDE.14_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Targe
+		potential = {
+			NOT = {
+				has_global_flag = knights_shield
+				has_global_flag = round_shield 
+				has_global_flag = buckler 
+				has_global_flag = scutum 
+				has_global_flag = aspis
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTA.14
+		desc = TOSDEOPTA.14_desc
+		treasury = -8
+		add_character_modifer = targe
+	}
+	
+	option = {#Scutum
+		potential = {
+			NOT = {
+				has_global_flag = knights_shield
+				has_global_flag = round_shield 
+				has_global_flag = buckler 
+				has_global_flag = targe 
+				has_global_flag = aspis
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTB.14
+		desc = TOSDEOPTB.14_desc
+		treasury = -15
+		add_character_modifer = scutum
+	}
+	
+	option = {
+		potential = {#Aspis
+			NOT = {
+				has_global_flag = knights_shield
+				has_global_flag = round_shield 
+				has_global_flag = buckler 
+				has_global_flag = targe 
+				has_global_flag = scutum
+				has_global_flag = staff
+				has_global_flag = battleaxe
+				has_global_flag = 2h_mace
+				has_global_flag = longsword
+				has_global_flag = rapier_main_gauche
+				has_global_flag = lance
+				has_global_flag = horse_bow
+				has_global_flag = long_bow
+				has_global_flag = bow
+				has_global_flag = crossbow
+			}
+		}
+		name = TOSDEOPTC.14
+		desc = TOSDEOPTC.14_desc
+		treasury = -12
+		add_character_modifer = aspis
+	}
+	
+	option = {#Return to Main Menu
+		name = TOSDEOPTD.14
+		hidden_tooltip = { character_event = { id = TOSDE.5 } }
+	}
+}
+
+character_event = {
+	id = TOSDE.15
+	name = TOSDE.15
+	desc = TOSDE.15_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Cloth Armour
+		name = TOSDEOPTA.15
+		desc = TOSDEOPTA.15_desc
+		treasury = -25
+		add_character_modifer = cloth_armour
+		OR = {
+			clr_global_flag = leather_armour
+			clr_global_flag = mail_armour
+			clr_global_flag = halfplate
+			clr_global_flag = fullplate 
+		}
+		set_global_flag = cloth_armour
+	}
+	
+	option = {#Leather Armour
+		name = TOSDEOPTB.15
+		desc = TOSDEOPTB.15_desc
+		treasury = -50
+		add_character_modifer = leather_armour
+		OR = {
+			clr_global_flag = cloth_armour
+			clr_global_flag = mail_armour
+			clr_global_flag = halfplate
+			clr_global_flag = fullplate 
+		}
+		set_global_flag = leather_armour
+	}
+	
+	option = {#Mail Armour
+		name = TOSDEOPTC.15 
+		desc = TOSDEOPTC.15_desc
+		treasury = -100
+		add_character_modifer = mail_armour
+		OR = {
+			clr_global_flag = cloth_armour
+			clr_global_flag = leather_armour
+			clr_global_flag = halfplate
+			clr_global_flag = fullplate 
+		}
+		set_global_flag = mail_armour
+	}
+	
+	option = {#Armour Continued
+		name = TOSDEOPTD.15
+		hidden_tooltip = { character_event = { id = TOSDE.16 } }
+	}
+}
+
+character_event = {
+	id = TOSDE.16
+	name = TOSDE.16
+	desc = TOSDE.16_desc
+	picture = 
+	
+	is_triggered_only = yes
+	
+	option = {#Halfplate
+		name = TOSDEOPTA.16
+		desc = TOSDEOPTA.16_desc
+		treasury = -200
+		add_character_modifer = halfplate
+		OR = {
+			clr_global_flag = cloth_armour
+			clr_global_flag = leather_armour
+			clr_global_flag = mail_armour
+			clr_global_flag = fullplate 
+		}
+		set_global_flag = halfplate
+	}
+	
+	option = {#Fullplate
+		name = TOSDEOPTB.16
+		desc = TOSDEOPTB.16_desc
+		treasury = -1000
+		add_character_modifer = fullplate
+		OR = {
+			clr_global_flag = cloth_armour
+			clr_global_flag = leather_armour
+			clr_global_flag = mail_armour
+			clr_global_flag = halfplate 
+		}
+		set_global_flag = fullplate
+	}
+	
+	option = {#Return to Main Menu
+		name = TOSDEOPTC.16
+		hidden_tooltip = { character_event = { id = TOSDE.5 } }
+}

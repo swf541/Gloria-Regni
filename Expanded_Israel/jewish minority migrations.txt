@@ -1,0 +1,139 @@
+narrative_event = {
+	id = JMI.1
+	title = "Jewish Settlements In England"
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+
+	trigger = {
+		has_law = full_rights
+	}
+
+
+	mean_time_to_happen = {
+		months = 240
+				
+	}
+
+	option = { # Yes
+	name = EVTOPTALoR.211
+
+	any_realm_province = {
+		limit = {
+			has_province_modifier = rabbinic_minority
+		}
+
+		random_neighbor_province = {
+			limit = {
+				not = { has_province_modifier = rabbinic_minority }
+			}
+			add_province_modifier = rabbinic_minority
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = JMI.2
+	title = "Jewish Settlements In England"
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+
+	trigger = {
+		has_law = full_rights
+	}
+
+
+	mean_time_to_happen = {
+		months = 240
+				
+	}
+
+	option = { # Yes
+	name = EVTOPTALoR.211
+
+	any_realm_province = {
+		limit = {
+			has_province_modifier = karaite_minority
+		}
+
+		random_neighbor_province = {
+			limit = {
+				not = { has_province_modifier = karaite_minority }
+			}
+			add_province_modifier = karaite_minority
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = JMI.3
+	title = "Jewish Refugees Ask to Settle In Our Realm"
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+
+	is_triggered_only = yes
+
+	option = { # Yes
+	name = EVTOPTALoR.211
+
+	random_realm_province = {
+		limit = {
+			not = { has_province_modifier = rabbinic_minority }
+		}
+		add_province_modifier = rabbinic_minority
+			
+		}
+	}
+
+	option = {	#no
+	name = EVTOPTALoR.211
+	random_playable_ruler = {
+		capital_scope = {
+		distance = {
+			where = PREVPREVPREV
+			value = 400# Not too far away
+			}
+		}
+		narrative_event = JMI.3
+		}
+	}
+}
+
+narrative_event = {
+	id = JMI.4
+	title = "Jewish Refugees Ask to Settle In Our Realm"
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+
+	is_triggered_only = yes
+
+	option = { # Yes
+	name = EVTOPTALoR.211
+
+	random_realm_province = {
+		limit = {
+			not = { has_province_modifier = karaite_minority }
+		}
+		add_province_modifier = karaite_minority
+			
+		}
+	}
+
+	option = {	#no
+	name = EVTOPTALoR.211
+	random_playable_ruler = {
+		capital_scope = {
+		distance = {
+			where = PREVPREVPREV
+			value = 600# Not too far away
+			}
+		}
+		narrative_event = JMI.3
+		}
+	}
+}	

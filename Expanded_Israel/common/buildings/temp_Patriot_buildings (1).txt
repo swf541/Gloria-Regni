@@ -1,0 +1,1647 @@
+##################Jewish Buildings by ThePatriot1776
+#Castle Jewish Quarter
+castle = {
+	ca_jq_1 = {
+		desc = ca_jq_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			OR = {
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+			}
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 730 #2 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	ca_jq_2 = {
+		desc = ca_jq_2_desc
+			potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = ca_jq_1
+		build_cost = 120
+		build_time = 1095 #3 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	ca_jq_3 = {
+		desc = ca_jq_3_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = ca_jq_2
+		build_cost = 80
+		build_time = 1460 #4 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	ca_jq_4 = {
+		desc = ca_jq_4_desc
+			potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = ca_jq_3
+		build_cost = 120
+		build_time = 1825 #5 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+	
+#Castle Jewish Merchants
+	ca_jm_1 = {
+		desc = ca_jm_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ca_jq_1
+			OR = {
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+			}
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 730 #2 years
+		tax_income = 1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	ca_jm_2 = {
+		desc = ca_jm_2_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ca_jq_2
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = ca_jm_1
+		build_cost = 80
+		build_time = 1460 #4 years
+		tax_income = 2
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	ca_jm_3 = {
+		desc = ca_jm_3_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ca_jq_3
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = ca_jm_2
+		build_cost = 80
+		build_time = 1825 #5 years
+		tax_income = 3
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	ca_jm_4 = {
+		desc = ca_jm_4_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				ca_jq_4
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = ca_jm_3
+		build_cost = 120
+		build_time = 2190 #6 years
+		tax_income = 5
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+}
+
+#City Jewish Quarter
+city = {
+	ci_jq_1 = {
+		desc = ci_jq_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			OR = {
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+			}
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 730 #2 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	ci_jq_2 = {
+		desc = ci_jq_2_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = ci_jq_1
+		build_cost = 120
+		build_time = 1095 #3 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	ci_jq_3 = {
+		desc = ci_jq_3_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = ci_jq_2
+		build_cost = 80
+		build_time = 1460 #4 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	ci_jq_4 = {
+		desc = ci_jq_4_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = ci_jq_3
+		build_cost = 120
+		build_time = 1825 #5 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+
+#City Jewish Merchants
+	ci_jm_1 = {
+		desc = ci_jm_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ci_jq_1
+			OR = {
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+			}
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 730 #2 years
+		tax_income = 1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	ci_jm_2 = {
+		desc = ci_jm_2_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ci_jq_2
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = ci_jm_1
+		build_cost = 80
+		build_time = 1460 #4 years
+		tax_income = 2
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	ci_jm_3 = {
+		desc = ci_jm_3_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			ci_jq_3
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = ci_jm_2
+		build_cost = 80
+		build_time = 1825 #5 years
+		tax_income = 3
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	ci_jm_4 = {
+		desc = ci_jm_4_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				ci_jq_4
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = ci_jm_3
+		build_cost = 120
+		build_time = 2190 #6 years
+		tax_income = 5
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+}
+
+#Temple Jewish Quarter
+temple = {
+	tm_jq_1 = {
+		desc = tm_jq_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			OR = {
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+			}
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 730 #2 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	tm_jq_2 = {
+		desc = tm_jq_2_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tm_jq_1
+		build_cost = 120
+		build_time = 1095 #3 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	tm_jq_3 ={
+		desc = tm_jq_3_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tm_jq_2
+		build_cost = 80
+		build_time = 1460 #4 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	tm_jq_4 = {
+		desc = tm_jq_4_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tm_jq_3
+		build_cost = 120
+		build_time = 1825 #5 years
+		levy_size = 0.1
+		garrison_size = 0.1
+		ai_creation_factor = 85
+		extra_tech_building_start = 0.2
+		
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+
+#Temple Talmudic School
+	tm_ts_1 = {
+		desc = tm_ts_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			tm_jq_1
+			FROMFROM = { has_province_modifier = "rabbinic_minority" }
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		not_if_x_exists = { tm_ks_1 tm_ks_2 tm_ks_3 tm_ks_4}
+		build_cost = 80
+		build_time = 730 #2 years
+		tech_growth_modifier = 0.1
+		monthly_character_piety = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+	
+	tm_ts_2 = {
+		desc = tm_ts_2_desc
+			potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				tm_jq_2
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tm_ts_1
+		not_if_x_exists = { tm_ks_1 tm_ks_2 tm_ks_3 tm_ks_4}
+		build_cost = 120
+		build_time = 1095 #3 years
+		tech_growth_modifier = 0.1
+		monthly_character_piety = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	tm_ts_3 = {
+		desc = tm_ts_3_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				tm_jq_3
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tm_ts_2
+		not_if_x_exists = { tm_ks_1 tm_ks_2 tm_ks_3 tm_ks_4}
+		build_cost = 120
+		build_time = 1460 #4 years
+		tech_growth_modifier = 0.1
+		monthly_character_piety = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	tm_ts_4 = {
+		desc = tm_ts_4_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			tm_jq_3
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tm_ts_3
+		not_if_x_exists = { tm_ks_1 tm_ks_2 tm_ks_3 tm_ks_4}
+		build_cost = 120
+		build_time = 1825 #5 years
+		tech_growth_modifier = 0.1
+		monthly_character_piety = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}		
+
+#Temple Karaite Synagogue
+	tm_ks_1 = {
+		desc = tm_ks_1_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			tm_jq_1
+			FROMFROM = { has_province_modifier = "karaite_minority" }
+			
+		}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		not_if_x_exists = { tm_ts_1 tm_ts_2 tm_ts_3 tm_ts_4}
+		build_cost = 80
+		build_time = 730 #2 years
+		culture_techpoints = 0.1
+		monthly_character_prestige = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 769
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 900
+				}
+			}
+		}
+	}
+		
+	
+	tm_ks_2 = {
+		desc = tm_ks_2_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				tm_jq_2
+			}
+		
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tm_ks_1
+		not_if_x_exists = { tm_ts_1 tm_ts_2 tm_ts_3 tm_ts_4}
+		build_cost = 120
+		build_time = 1095 #3 years
+		culture_techpoints = 0.1
+		monthly_character_prestige = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 867
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 950
+				}
+			}
+		}
+	}
+	
+	tm_ks_3 = {
+		desc = tm_ks_3_desc
+		potential = {
+				religion_group = pagan
+				religion_group = christian
+				religion_group = muslim
+				has_building  = tm_jq_3
+			}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tm_ks_2
+		not_if_x_exists = { tm_ts_1 tm_ts_2 tm_ts_3 tm_ts_4}
+		build_cost = 120
+		build_time = 1460 #4 years
+		culture_techpoints = 0.1
+		monthly_character_prestige = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 900
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1000
+				}
+			}
+		}
+	}
+	
+	tm_ks_4 = {
+		desc = tm_ks_4_desc
+		potential = {
+			religion_group = pagan
+			religion_group = christian
+			religion_group = muslim
+			has_building = tm_jq_3
+		}
+		
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tm_ks_3
+		not_if_x_exists = { tm_ts_1 tm_ts_2 tm_ts_3 tm_ts_4}
+		build_cost = 120
+		build_time = 1825 #5 years
+		culture_techpoints = 0.1
+		monthly_character_prestige = 0.1
+		ai_creation_factor = 85
+				
+		start = {
+			OR = {
+				AND = {
+					FROM = { religion_group = muslim }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = christian }
+					year = 1000
+				}
+				AND = {
+					FROM = { religion_group = pagan }
+					year = 1050
+				}
+			}
+		}
+	}
+}
+
+#Thid Temple Upgrades
+
+#Temple Gates and Walls
+temple = {
+	tt_tg_1 = {
+		desc = tt_tg_1_desc
+		potential = {
+			religion_group = jewish
+			has_global_flag = third_temple_built
+			has_global_flag = formed_temple_judaism
+			title = b_jerusalem
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		monthly_character_prestige = 0.1
+	
+	tt_tg_2 = {
+		desc = tt_tg_2_desc
+		potential = {
+			religion_group = jewish
+			has_global_flag = third_temple_built
+			title = b_jerusalem
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_tg_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		monthly_character_prestige = 0.1
+	
+	tt_tg_3 = {
+		desc = tt_tg_3_desc
+		potential = {
+			religion_group = jewish
+			has_global_flag = third_temple_built
+			title = b_jerusalem
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_tg_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		monthly_character_prestige = 0.1
+	
+	tt_tg_4 = {
+		desc = tt_tg_4_desc
+		potential = {
+			religion_group = jewish
+			has_global_flag = third_temple_built
+			title = b_jerusalem
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_tg_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		monthly_character_prestige = 0.1
+
+#Court of the Gentiles
+
+	tt_cg_1 = {
+		desc = tt_cg_1_desc
+		potential = {
+			religion_group = jewish
+			tt_tg_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		tax_income = 1
+	
+	tt_cg_2 = {
+		desc = tt_cg_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tg_2
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_cg_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		tax_income = 1
+	
+	tt_cg_3 = {
+		desc = tt_cg_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tg_3
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_cg_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		tax_income = 1
+	
+	tt_cg_4 = {
+		desc = tt_cg_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tg_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_cg_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		tax_income = 1
+
+#Temple Mikveh
+
+	tt_tm_1 = {
+		desc = tt_tm_1_desc
+		potential = {
+			religion_group = jewish
+			tt_cg_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		monthly_character_piety = 0.1
+	
+	tt_tm_2 = {
+		desc = tt_tm_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_2
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_tm_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		monthly_character_piety = 0.1
+	
+	tt_tm_3 = {
+		desc = tt_tm_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_3
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_tm_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		monthly_character_piety = 0.1
+	
+	tt_tm_4 = {
+		desc = tt_tm_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_tm_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		monthly_character_piety = 0.1
+	
+
+#Temple Synagogue
+	tt_ts_1 = {
+		desc = tt_ts_1_desc
+		potential = {
+			religion_group = jewish
+			tt_cg_1
+			tt_tm_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		jewish_opinion = 5
+	
+	tt_ts_2 = {
+		desc = tt_ts_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_2
+			tt_tm_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_ts_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		jewish_opinion = 5
+	
+	tt_ts_3 = {
+		desc = tt_ts_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_3
+			tt_tm_3
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_ts_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		jewish_opinion = 5
+	
+	tt_ts_4 = {
+		desc = tt_ts_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cg_4
+			tt_tm_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_ts_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		jewish_opinion = 5
+	
+#Court of the Women
+
+	tt_cw_1 = {
+		desc = tt_cw_1_desc
+		potential = {
+			religion_group = jewish
+			tt_ts_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		fertility = 0.1
+	
+	tt_cw_2 = {
+		desc = tt_cw_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ts_2
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_cw_2
+		build_cost = 120
+		build_time = 2190 #6 years
+		fertility = 0.1
+	
+	tt_cw_3 = {
+		desc = tt_cw_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ts_3
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_cw_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		fertility = 0.1
+	
+	tt_cw_4 = {
+		desc = tt_cw_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ts_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_cw_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		fertility = 0.1
+
+#Court of the Israelites
+
+	tt_ci_1 = {
+		desc = tt_ci_1_desc
+		potential = {
+			religion_group = jewish
+			tt_cw_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		vassal_opinion = 5
+	
+	tt_ci_2 = {
+		desc = tt_ci_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cw_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_ci_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		vassal_opinion = 5
+	
+	tt_ci_3 = {
+		desc = tt_ci_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cw_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_ci_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		vassal_opinion = 5
+	
+	tt_ci_4 = {
+		desc = tt_ci_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_cw_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_ci_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		vassal_opinion = 5
+	
+#Temple Alter
+
+	tt_ta_1 = {
+		desc = tt_ta_1_desc
+		potential = {
+			religion_group = jewish
+			tt_ci_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		monthly_character_piety = 0.2
+	
+	tt_ta_2 = {
+		desc = tt_ta_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ci_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_ta_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		monthly_character_piety = 0.2
+	
+	tt_ta_3 = {
+		desc = tt_ta_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ci_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_ta_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		monthly_character_piety = 0.2
+	
+	tt_ta_4 = {
+		desc = tt_ta_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ci_4
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_ta_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		monthly_character_piety = 0.2
+	
+#Temple Inner Court
+
+	tt_ic_1 = {
+		desc = tt_ic_1_desc
+		potential = {
+			religion_group = jewish
+			tt_ta_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		religion_flex = 10
+	
+	tt_ic_2 = {
+		desc = tt_ic_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ta_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_ic_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		religion_flex = 10
+	
+	tt_ic_3 = {
+		desc = tt_ic_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ta_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_ic_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		religion_flex = 10
+	
+	tt_ic_4 = {
+		desc = tt_ic_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ta_4
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_ic_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		religion_flex = 10
+	
+#Temple Furnishings of the Inner Court
+
+	tt_tf_1 = {
+		desc = tt_tf_1_desc
+		potential = {
+			religion_group = jewish
+			tt_ic_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		culture_flex = 10
+	
+	tt_tf_2 = {
+		desc = tt_tf_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ic_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_tf_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		culture_flex = 10
+	
+	tt_tf_3 = {
+		desc = tt_tf_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ic_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_tf_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		culture_flex = 10
+	
+	tt_tf_4 = {
+		desc = tt_tf_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_ic_4
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_tf_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		culture_flex = 10
+	
+#Temple Inner Sanctuary
+
+	tt_is_1 = {
+		desc = tt_is_1_desc
+		potential = {
+			religion_group = jewish
+			tt_tf_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		church_opinion = 10
+	
+	tt_is_2 = {
+		desc = tt_is_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tf_2
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_is_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		church_opinion = 10
+	
+	tt_is_3 = {
+		desc = tt_is_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tf_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_is_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		church_opinion = 10
+	}
+	
+	tt_is_4 = {
+		desc = tt_is_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_tf_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_is_3
+			build_cost = 180
+		build_time = 3650 #10 years
+		church_opinion = 10
+	}
+	
+#Temple Holy of Holies
+
+	tt_hh_1 = {
+		desc = tt_hh_1_desc
+		potential = {
+			religion_group = jewish
+			tt_is_1
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		build_cost = 80
+		build_time = 1460 #4 years
+		learning = 1
+	}
+	
+	tt_hh_2 = {
+		desc = tt_hh_2_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_is_2
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		upgrades_from = tt_hh_1
+		build_cost = 120
+		build_time = 2190 #6 years
+		learning = 2
+	}
+	
+	tt_hh_3 = {
+		desc = tt_hh_3_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_is_3
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		upgrades_from = tt_hh_2
+		build_cost = 150
+		build_time = 2920 #8 years
+		learning = 3
+	}
+		
+	tt_hh_4 = {
+		desc = tt_hh_4_desc
+		potential = {
+			religion_group = jewish
+			title = b_jerusalem
+			has_global_flag = formed_temple_judaism
+			tt_is_4
+		}
+		trigger = {	TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+		upgrades_from = tt_hh_3
+		build_cost = 180
+		build_time = 3650 #10 years
+		learning = 4
+	}
+}

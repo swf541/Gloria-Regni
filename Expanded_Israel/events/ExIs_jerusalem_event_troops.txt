@@ -1,0 +1,28 @@
+#Jerusalem Event Troops
+character_event = {
+	id = ExIs.125
+	title = EVTNAME_ExIs_125
+	desc = EVTDESC_ExIs_125
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = EVTOPTA_ExIs_125
+			set_global_flag = war_troops
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				troops = {
+					archers = { 2500 2500 }
+					light_infantry = { 2500 2500 }
+					heavy_infantry = { 2500 2500 }
+					light_cavalry = { 2500 2500 }
+				}
+				attrition = 0.50
+				maintenance_multiplier = 0.01
+			}
+		}
+}

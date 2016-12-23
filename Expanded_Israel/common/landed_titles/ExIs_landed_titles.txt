@@ -1,0 +1,913 @@
+##Expanded Israel
+	k_jerusalem = {
+		color={ 180 180 180 }
+		color2={ 255 255 255 }
+		
+		capital = 774 # Jerusalem
+		
+		assimilate = no # Duchies cannot de jure drift OUT of this title
+		
+		culture = levantine_arabic
+		
+		# Creation/Usurp Trigger
+		allow = {
+			religion_group = christian
+		}
+		
+		# Creation Effect
+		gain_effect = {
+			if = {
+				limit = { NOT = { has_global_flag = created_jerusalem } }
+				prestige = 5000
+				piety = 2000 
+				set_global_flag = created_jerusalem
+			}
+		}
+		
+                arian = 500 # Crusade target weight
+                catholic = 500 # Crusade target weight
+                fraticelli = 500 # Crusade target weight
+                imperial = 500 # Crusade target weight
+				muslim = 250 # Crusade target weight
+                hellenic_pagan = 2000 # Crusade target weight
+				zoroastrian_group = 200 # Crusade target weight
+
+                roman = "Judea"
+		
+		d_gilead = {
+			color={ 190 190 180 }
+			color2={ 255 255 255 }
+			
+			capital = 723 # Madaba
+		
+			c_monreal = {
+				color={ 190 170 155 }
+				color2={ 255 255 255 }
+				
+				bedouin_arabic = "Wadi Musa"
+				maghreb_arabic = "Wadi Musa"
+				levantine_arabic = "Wadi Musa"
+				egyptian_arabic = "Wadi Musa"
+				andalusian_arabic = "Wadi Musa"
+			
+				b_monreal = {
+					bedouin_arabic = "Wadi Musa"
+					maghreb_arabic = "Wadi Musa"
+					levantine_arabic = "Wadi Musa"
+					egyptian_arabic = "Wadi Musa"
+					andalusian_arabic = "Wadi Musa"
+				}
+				b_hurmniz = {
+				}
+				b_sela = {
+				}
+				b_wadimusah = {
+				}
+				b_tafila = {
+				}
+				b_bildad = {
+				}
+				b_paran = {
+				}
+				b_idan = {
+				}
+			}
+			c_kerak = {
+				color={ 150 150 170 }
+				color2={ 255 255 255 }
+				
+				bedouin_arabic = "Al-Karak"
+				maghreb_arabic = "Al-Karak"
+				levantine_arabic = "Al-Karak"
+				egyptian_arabic = "Al-Karak"
+				andalusian_arabic = "Al-Karak"
+			
+				b_kirhaseset = {
+				}
+				b_kerak = {
+					bedouin_arabic = "Al-Karak"
+					maghreb_arabic = "Al-Karak"
+					levantine_arabic = "Al-Karak"
+					egyptian_arabic = "Al-Karak"
+					andalusian_arabic = "Al-Karak"
+				}
+				b_tamar = {
+				}
+				b_zoar = {
+				}
+				b_zaimona = {
+				}
+				b_bozra = {
+				}
+				b_punon = {
+				}
+				b_krakdemoab = {
+				}
+			}
+			c_madaba = {
+				color={ 150 140 160 }
+				color2={ 255 255 255 }
+				
+				b_madaba = {
+				}
+				b_muwaqqar = {
+				}
+				b_qastal = {
+				}
+				b_bilal = {
+				}
+				b_umm_ar-rasas = {
+				}
+				b_sahab = {
+				}
+				b_wadi_al_sir = {
+				}
+				b_samhal = {
+				}
+			}
+		}
+		d_yehuda = {
+			color={ 160 160 200 }
+			color2={ 255 255 255 }
+			
+			capital = 776 #Hebron
+			
+			christian = 250 # Crusade target weight
+			muslim = 250 # Crusade target weight
+			
+			c_hebron = {
+				color={ 200 210 160 }
+				color2={ 255 255 255 }
+		
+				b_hebron = {
+				}
+				b_bethlehem = {
+					holy_site = rabbinic_judaism
+					holy_site = grand_sanhedrin
+					holy_site = karaite
+					holy_site = temple_judaism
+					holy_site = haymanot_judaism
+				}
+				b_deimachar = {
+				}
+				b_syrbelmont = {
+				}
+				b_alsamoa = {
+				}
+				b_saintcharlton = {
+				}
+				b_latrun = {
+				}
+				b_bethgibelin = {
+				}
+			}
+			c_jerusalem = {
+				color={ 250 250 230 }
+				color2={ 255 255 255 }
+				
+				christian = 250 # Crusade target weight
+				muslim = 250 # Crusade target weight
+		
+				b_mirabel = {
+				}
+				b_jerusalem = {
+					holy_site = imperial
+					holy_site = catholic
+					holy_site = orthodox
+					holy_site = sunni
+					holy_site = shiite
+					holy_site = apostolic
+					holy_site = miaphysite
+					holy_site = monophysite
+					holy_site = nestorian
+					holy_site = pagan
+					holy_site = haymanot_judaism 
+					holy_site = yazidi
+					holy_site = rabbinic_judaism
+					holy_site = grand_sanhedrin
+					holy_site = karaite
+					holy_site = temple_judaism
+					holy_site = ibadi
+					holy_site = chalcendonian
+				}
+				b_nablus = {
+				}
+				b_rammala = {
+				}
+				b_beitnuba = {
+				}
+				b_montgisard = {
+				} 
+				b_jericho = {
+				}
+				b_saintsamuel = {
+				}
+			}
+			c_negev = {
+				color={ 190 180 165 }
+				color2={ 255 255 255 }
+			
+				b_negev = {
+				}
+				b_yeruham = {
+				}
+				b_dimona = {
+				}
+				b_avdat = {
+				}
+				b_albaqar = {
+				}
+				b_kmehin = {
+				}
+				b_ezuz = {
+				}
+				b_haluza = {
+				}
+			}
+			c_darum = {
+				color={ 167 165 190 }
+				color2={ 255 255 255 }
+			
+				b_darum = {
+				}
+				b_gaza = {
+				}
+				b_rafah = {
+				}
+				b_radwan = {
+				}
+				b_salqah = {
+				}
+				b_gerar = {
+				}
+				b_jarara = {
+				}
+				b_abasan = {
+				}
+			}
+			c_ascalon = {
+				color={ 176 190 140 }
+				color2={ 255 255 255 }
+				
+				bedouin_arabic = "Asqalan"
+				maghreb_arabic = "Asqalan"
+				levantine_arabic = "Asqalan"
+				egyptian_arabic = "Asqalan"
+				andalusian_arabic = "Asqalan"
+			
+				b_ascalon = {
+					bedouin_arabic = "Asqalan"
+					maghreb_arabic = "Asqalan"
+					levantine_arabic = "Asqalan"
+					egyptian_arabic = "Asqalan"
+					andalusian_arabic = "Asqalan"
+				}
+				b_harbijah = {
+				}
+				b_agelen = {
+				}
+				b_laforbie = {
+				}
+				b_blanchegarde = {
+				}
+				b_bothme = {
+				}
+				b_huidre = {
+				}
+				b_semsem = {
+				}
+			}
+			c_beersheb = {
+				color={ 139 170 160 }
+				color2={ 255 255 255 }
+			
+				b_beersheb = {
+				}
+				b_estemon = {
+				}
+				b_massada = {
+				}
+				b_debir = {
+				}
+				b_gilat = {
+				}
+				b_rahat = {
+				}
+				b_ofakim = {
+				}
+				b_abuzqayqa = {
+				}
+			}
+		}			
+		d_samaria = {
+			color={ 225 200 160 }
+			color2={ 255 255 255 }
+			
+			capital = 772 #Acre
+			
+			c_tiberias = {
+				color={ 225 220 160 }
+				color2={ 255 255 255 }
+			
+				b_tiberias = {
+				}
+				b_nazareth = {
+				}
+				b_mnttabor = {
+				} 
+				b_bethsan = {
+				}
+				b_caymont = {
+				}
+				b_hattin = {
+				}
+				b_ashtera = {
+				}
+				b_lafeve = {
+				}
+			}			
+			c_acre = {
+				color={ 230 190 154 }
+				color2={ 255 255 255 }
+		
+				b_acre = {
+				}
+				b_haifa = {
+				}
+				b_syrcaesarea = {
+				}
+				b_merle = {
+				}
+				b_adelon = {
+				}
+				b_manawat = {
+				}
+				b_recordana = {
+				}
+				b_athlith = {
+				}
+			}
+			c_jaffa = {
+				color={ 167 190 150 }
+				color2={ 255 255 255 }
+				
+				bedouin_arabic = "Arsuf"
+				maghreb_arabic = "Arsuf"
+				levantine_arabic = "Arsuf"
+				egyptian_arabic = "Arsuf"
+				andalusian_arabic = "Arsuf"
+			
+				b_jaffa = {
+					bedouin_arabic = "Arsuf"
+					maghreb_arabic = "Arsuf"
+					levantine_arabic = "Arsuf"
+					egyptian_arabic = "Arsuf"
+					andalusian_arabic = "Arsuf"
+				}
+				b_arsuf = {
+				}
+				b_lydda = {
+				}
+				b_ibelin = {
+				}
+				b_ramleh = {
+				}
+				b_yazur = {
+				}
+				b_qula = {
+				}
+				b_beitdejan = {
+				}
+			}	
+		d_galilee = {
+			color={ 225 200 160 }
+			color2={ 255 255 255 }
+			
+			capital = 771 # Tyrus
+		
+			c_tyrus = {
+				color={ 245 245 200 }
+				color2={ 255 255 255 }
+				
+				bedouin_arabic = "Sur"
+				maghreb_arabic = "Sur"
+				levantine_arabic = "Sur"
+				egyptian_arabic = "Sur"
+				andalusian_arabic = "Sur"
+			
+				b_tyrus = {
+					bedouin_arabic = "Sur"
+					maghreb_arabic = "Sur"
+					levantine_arabic = "Sur"
+					egyptian_arabic = "Sur"
+					andalusian_arabic = "Sur"
+				}
+				b_sarafand = {
+				}
+				b_scandalon = {
+				}
+				b_megedel = {
+				}
+				b_syrmontfort = {
+				}
+				b_casalimbert = {
+				}
+				b_hunin = {
+				}
+				b_syrbelfort = {
+				}
+			}
+			
+			c_irbid = {
+				color={ 128 255 9 }
+				color2={ 255 255 255 }
+			
+				b_aljun = {
+				}
+				b_irbid = {
+				}
+				b_pella = {
+				}
+				b_yarmouk = {
+				}
+				b_habisjaldak = {
+				}
+				b_aydoun = {
+				}
+				b_ummqais = {
+				}
+				b_gadera = {
+				}
+			}
+		}
+	}
+#Holy Orders
+b_maccabean_guard = {
+
+	color={ 128 0 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = no
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	mercenary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = maccabean_guard_composition
+}
+
+d_knights_khazaria = {
+
+	color={ 128 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = zealots_composition
+}
+
+d_lions_solomon = {
+
+	color={ 0 128 128 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = lions_solomon_composition
+}
+
+d_knights_goshen = {
+
+	color={ 220 20 60 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = knights_goshen_composition
+}
+
+d_siqariqim = {
+
+	color={ 0 0 0 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = siqariqim_composition
+}
+
+d_mishkan_guardians= {
+
+	color={ 65 105 225 }
+	
+	graphical_culture = jewishholygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = mishkan_guardians_composition
+}
+
+#Merchant Republics
+
+#Barcelona Merchant Republic
+
+d_barcelon_tp = {
+		color = { 166 100 72 }
+		color2={ 255 255 255 }
+	
+	capital = 204 # Barcelona
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_ach'av = {
+		culture = itali
+		religion = rabbinic_judaism
+	}
+
+	b_bet_aharon = {
+		culture = itali
+		religion = rabbinic_judaism
+	}
+
+	b_bet_benayahu = {
+		culture = itali
+		religion = rabbinic_judaism
+	}
+
+	b_bet_mikha'el = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_shaprut = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+
+
+
+#Tunis Merchant Republic
+
+d_tunis_tp = {
+	color={ 20 232 95 }
+	color2={ 255 255 255 }
+			
+	capital = 817 # Tunis
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+		
+	b_bet_aviram = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_labrat = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_neriah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_hiram = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_ofrah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+#Yudah Merchant Republic (Ascalon)
+
+d_yudah_tp
+	color={ 160 160 200 }
+	color2={ 255 255 255 }
+			
+	capital = 780 # Ascalon
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_daniyyel	= {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_saruk = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_penuel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_adinah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_terach = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	
+#Hormuz Merchant Republic
+d_hormuz_tp = {
+	color={ 106 126 71 }
+	color2={ 255 255 255 }
+	
+	capital = 641 #Hormuz
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_gedalyahu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mal'akhi = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_gershom = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_gid'on = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_golyat = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+
+	
+#Thana Merchant Republic
+
+d_thana_tp = {
+	color={ 100 20 40 }
+	color2={ 255 255 255 }
+	
+	capital = 1125 # Thana
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_meshullam = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_daryawesh = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mikhah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_machlah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nogah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+#Sonda Merchant Republic
+
+d_sonda_tp = {
+	color={ 230 115 20 }
+	color2={ 255 255 255 }
+	
+	capital = 1331 #Sonda
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_natan = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_elisha = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mattan = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mattanyahu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_menashsheh = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+#Honnore Merchant Republic
+
+d_honnore_tp = {
+	color={ 115 20 60 }
+	color2={ 255 255 255 }
+	
+	capital = 1124 #Honnore
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_nethanel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mikhayhu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_rafa'el = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_moshe = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nachum = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+#Melgueil Merchant Republic
+
+d_melgueil_tp = {
+	color={ 10 16 243 }
+	color2={ 255 255 255 }
+	
+	capital = 220 #Montpellier
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_oved = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_hevel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_adoniyah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_noach = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nadav = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	

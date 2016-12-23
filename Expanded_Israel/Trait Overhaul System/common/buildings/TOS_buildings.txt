@@ -1,0 +1,234 @@
+#Militia Barracks
+ca_militia_barracks_1 = {
+		desc = ca_militia_barracks_1_desc
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 1
+		build_time = 1
+		light_infantry = 80
+		archers = 10
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+#General's Retinue
+ca_generals_retinue_1 = {
+	desc = ca_generals_retinue_1_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ca_generals_retinue_2 = {
+	desc = ca_generals_retinue_2_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+	prerequisites = { ca_generals_retinue_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ca_generals_retinue_3 = {
+	desc = ca_generals_retinue_3_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+	prerequisites = { ca_generals_retinue_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ca_generals_retinue_4 = {
+	desc = ca_generals_retinue_4_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+	prerequisites = { ca_generals_retinue_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#Emissaries
+ca_emissary_1 = {
+	desc = ca_emissary_1_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ca_emissary_2 = {
+	desc = ca_emissary_2_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+	prerequisites = { ca_emissary_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ca_emissary_3 = {
+	desc = ca_emissary_3_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+	prerequisites = { ca_emissary_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ca_emissary_4 = {
+	desc = ca_emissary_4_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+	prerequisites = { ca_emissary_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#Emissariate
+ca_emissariate_1 = {
+	desc = ca_emissariate_1_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ca_emissariate_2 = {
+	desc = ca_emissariate_2_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+	prerequisites = { ca_emissariate_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ca_emissariate_3 = {
+	desc = ca_emissariate_3_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+	prerequisites = { ca_emissariate_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ca_emissariate_4 = {
+	desc = ca_emissariate_4_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+	prerequisites = { ca_emissariate_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#Spy Network
+ca_spy_network_1 = {
+	desc = ca_spy_network_1_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ca_spy_network_2 = {
+	desc = ca_spy_network_2_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+	prerequisites = { ca_spy_network_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ca_spy_network_3 = {
+	desc = ca_spy_network_3_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+	prerequisites = { ca_emissariate_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ca_spy_network_4 = {
+	desc = ca_spy_network_4_desc
+	trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+	prerequisites = { ca_emissariate_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#City University
+ct_university_1 = {
+	desc = ct_university_1_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+		
+	tech_growth_modifier = 0.3
+	economy_techpoints = 0.05
+		
+	ai_creation_factor = 90
+
+	extra_tech_building_start = 0.2
+	}
+#Criminal Underground
+ct_criminal_underground_1 = {
+	desc = ct_criminal_underground_1_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ct_criminal_underground_2 = {
+	desc = ct_criminal_underground_2_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 2 }
+	prerequisites = { ct_criminal_underground_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ct_criminal_underground_3 = {
+	desc = ct_criminal_underground_3_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 4 }
+	prerequisites = { ct_criminal_underground_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ct_criminal_underground_4 = {
+	desc = ct_criminal_underground_4_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 6 }
+	prerequisites = { ct_criminal_underground_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#Herdsman
+ct_herdsman_1 = {
+	desc = ct_herdsman_1_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 0 }
+	gold_cost = 1
+	build_time = 1
+	ai_creation_factor = 100
+}
+ct_herdsman_2 = {
+	desc = ct_herdsman_2_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 2 }
+	prerequisites = { ct_herdsman_1 }
+	gold_cost = 120
+	build_time = 365
+	ai_creation_factor = 90
+}
+ct_herdsman_3 = {
+	desc = ct_herdsman_3_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 4 }
+	prerequisites = { ct_herdsman_2 }
+	gold_cost = 240
+	build_time = 730
+	ai_creation_factor = 89
+}
+ct_herdsman_4 = {
+	desc = ct_herdsman_4_desc
+	trigger = { TECH_CITY_CONSTRUCTION = 6 }
+	prerequisites = { ct_herdsman_3 }
+	gold_cost = 360
+	build_time = 1095
+	ai_creation_factor = 85
+}
+#Temple School
+tp_school_1 = {
+		desc = tp_school_1_desc
+		trigger = { TECH_TEMPLE_CONSTRUCTION = 0 }
+		gold_cost = 1
+		build_time = 1
+		
+		tech_growth_modifier = 0.1
+		culture_techpoints = 0.04
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+		liege_piety = 0.05
+
+		extra_tech_building_start = 0.2
+	}

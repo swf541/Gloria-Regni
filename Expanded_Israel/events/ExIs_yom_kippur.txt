@@ -1,0 +1,21 @@
+#Observance of Yom Kippur
+narrative_event = {
+	id = ExIs.114
+	title = EVTNAME_ExIs_114
+	desc = EVTDESC_ExIs_114
+	picture = GFX_evt_synagogue
+	border = GFX_event_narrative_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ExIs_114
+		add_character_modifier = {
+			name = held_yom_kippur_timer
+			duration = 1825
+			hidden = yes
+		}
+	}
+}

@@ -1,0 +1,358 @@
+#########################################################
+#  Decisions for Jewish Characters in Monotheism Rising #
+#														#
+#   Created by ThePatriot1776						 	#
+#########################################################
+decisions = {		
+	expel_muslims = {
+	
+		potential = {
+			is_ruler = yes
+			age = 16
+			any_realm_character = {
+				religion_group = muslim
+			}
+		}
+			
+		allow = {
+			religion_group = jewish_group
+			primary_title = { higher_tier_than = DUKE }
+					
+			NOT = {
+				trait = incapable
+			}	
+			independent = yes
+			age = 16
+			prisoner = no
+		}							
+		effect = {
+			add_character_modifier = {
+				name = expelled_muslims
+				duration = -1
+				inherit = yes
+			}
+		
+			custom_tooltip = { text = muslims_are_expelled }
+			hidden_tooltip = { narrative_event = { id = ExIs.103 } }
+			add_character_modifier = {
+				name = expelled_muslims_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+				
+			modifier = {
+				factor = 0
+				any_realm_character = {
+					religion_group = muslim
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion_group = muslim
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				any_child = {
+					religion_group = muslim
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+					
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+					
+			modifier = {
+				factor = 1.2
+				has_character_modifier = borrowed_from_jews
+				trait = greedy
+			}
+		}
+	}
+		
+
+	
+	welcome_muslims = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			has_character_modifier = expelled_muslims
+		}
+			
+		allow = { 
+			religion_group = jewish_group
+			primary_title = { higher_tier_than = DUKE }
+						
+			NOT = {
+				has_character_modifier = expelled_muslims_timer
+				trait = incapable
+			}
+		}	 
+			 effect = {
+				remove_character_modifier = expelled_muslims
+				custom_tooltip = { text = muslims_are_welcome }
+				hidden_tooltip = { narrative_event = { id = ExIs.104 } }
+			}			
+		
+		ai_will_do = {
+			factor = 1
+		
+			modifier = {
+				factor = 0.1 #Less likely to do it
+			}
+					
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+		}
+	}
+	
+	expel_christians = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = jewish_group
+			any_realm_character = {
+				religion_group = christian
+			}
+		}
+	
+		allow = {
+			primary_title = { higher_tier_than = DUKE }
+											
+			NOT = {
+				trait = incapable
+			}	
+			independent = yes
+			age = 16
+			prisoner = no
+		}							
+		effect = { 
+			add_character_modifier = {
+				name = expelled_christians
+				duration = -1
+				inherit = yes
+			}
+		
+			custom_tooltip = { text = christians_are_expelled }
+			hidden_tooltip = { narrative_event = { id = ExIs.107 } }
+			add_character_modifier = {
+				name = expelled_christians_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+				
+			modifier = {
+				factor = 0
+				any_realm_character = {
+					religion_group = christian
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion_group = christian
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				any_child = {
+					religion_group = christian
+				}
+			}
+					
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+					
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+					
+			modifier = {
+				factor = 1.2
+				has_character_modifier = borrowed_from_jews
+				trait = greedy
+			}
+		}
+	}
+		
+
+	
+	welcome_christians = {
+	
+		potential = {
+			is_ruler = yes
+			age = 16
+			has_character_modifier = expelled_christians
+		}
+		
+		allow = { 
+			religion_group = jewish_group
+			primary_title = { higher_tier_than = DUKE }
+			
+				
+			NOT = {
+				has_character_modifier = expelled_christians_timer
+				trait = incapable
+			}
+		}	 
+			 effect = {
+				remove_character_modifier = expelled_christians
+				custom_tooltip = { text = christians_are_welcome }
+				hidden_tooltip = { narrative_event = { id = ExIs.108 } }
+			}			
+		
+		ai_will_do = {
+			factor = 1
+		
+			modifier = {
+				factor = 0.1 #Less likely to do it
+			}
+					
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+		}
+	}
+	
+#####Rebuild Jerusalem
+	rebuild_jerusalem = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = jewish_group
+			NOT = { has_global_flag = jerusalem_rebuilt }
+			NOT = { has_global_flag = rebuilding_jerusalem }
+		}
+		allow = {
+			wealth = 9000
+			has_landed_title = b_mirabel
+			OR = {
+				has_landed_title = k_israel
+				has_landed_title = e_israel
+			}
+			
+			b_mirabel = {
+				AND = {
+					has_building = ca_wall_5
+					has_building = ca_keep_6
+					has_building = ca_militia_barracks_4
+					has_building = ca_training_grounds_3
+					has_building = ca_barracks_6
+					has_building = ca_stable_6
+					has_building = ca_town_6
+					has_building = ca_culture_jewish_4
+				}
+			}
+			war = no
+			prisoner = no		
+		}
+		effect = {
+			province_event = { id = ExIs.121 }
+			set_global_flag = rebuilding_jerusalem
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+	
+	destroy_siqariqim = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_reformed_religion = yes
+			is_title_active = d_siqariqim
+		}
+		
+		allow = {
+			wealth = 500
+			realm_intrigue = 30
+			has_landed_title = k_israel
+		}
+		
+		effect = {
+			narrative_event = { id = ExIs.123 }
+			set_character_flag = destroyed_siqariqim
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_siqariqim = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			is_reformed_religion = yes
+			NOT = { has_character_flag = "destroyed_siqariqim" }
+			NOT = { has_character_flag = "rebuilt_siqariqim" }
+		}
+		
+		allow = {
+			wealth = 750
+			realm_intrigue = 30
+			trait = zealous
+			has_landed_title = k_israel
+		}
+		
+		effect = {
+			narrative_event = { id = ExIs_HO.120 }
+			set_character_flag = "rebuilt_siqariqim"
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
