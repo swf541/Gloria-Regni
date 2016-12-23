@@ -6,6 +6,7 @@ province_event = {	#baltic_pagan Population Grows in Province
 	trigger = {
 		religion = baltic_pagan
 	} 
+	immediate = {
 		if = {
 			limit = {
 				has_province_flag = jewish_majority
@@ -93,7 +94,6 @@ province_event = {	#baltic_pagan Population Grows in Province
 			clr_province_flag = jewish_majority
 			set_province_flag = baltic_pagan_majority
 		}	
-	immediate = {
 		if = {
 			limit = {
 				has_province_flag = imperial_majority

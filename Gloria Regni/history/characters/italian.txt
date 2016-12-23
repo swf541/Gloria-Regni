@@ -1541,14 +1541,42 @@
 	religion="catholic"
 	culture="italian"
 	father=73404
+	martial=13
+	diplomacy=6
+	intrigue=10
+	stewardship=8
+	trait="just"
+	trait="cynical"
+	trait="brave"
+	trait="gregarious"
+	trait="elusive_shadow"
 	1088.1.1 = {
 		birth="1088.1.1"
+	}
+	1143.1.5 = {
+		wealth = 200
+		raise_levies = {
+			location=333 # Rome
+			force_mult=1.0
+		}
 	}
 	1150.1.1 = {
 		death="1150.1.1"
 	}
 }
-
+11284001 = { #Fictional Son
+	name="Abelardo"
+	dynasty=8723
+	religion="catholic"
+	culture="italian"
+	father=213016 
+	1142.1.1 = {
+		birth="1142.1.1"
+	}
+	1154.1.1 = {
+		death="1154.1.1"
+	}
+}
 213017 = {
 	name="Martino"
 	religion="catholic"
