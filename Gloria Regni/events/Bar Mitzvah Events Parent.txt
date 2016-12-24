@@ -1,0 +1,32 @@
+namespace = ExIs
+character_event = {
+	id = ExIs.116
+	title = EVTNAME_ExIs_116
+	desc = EVTDESC_ExIs_116
+	picture = GFX_evt_son_asking_father
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+		
+
+	option = {
+			name = EVTOPTA_ExIs_116
+			prestige = 100
+		}
+	}
+#Bat Mitzvah (Notifier for Parent)
+character_event = {
+	id = ExIs.118
+	title = EVTNAME_ExIs_118
+	desc = EVTDESC_ExIs_118
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+			name = EVTOPTA_ExIs_118
+			prestige = 100
+		}
+	}

@@ -5,16 +5,6 @@ province_event = {	#germanic_pagan_reformed Population Grows in Province
 
 	trigger = {
 		religion = germanic_pagan_reformed
-		any_province_holding = {
-			holding_type = city
-		}
-		holder_scope = {
-			OR = {
-				is_feudal = yes
-				is_theocracy = yes
-				is_republic = yes
-			}
-		}
 	} 
 	
 	immediate = {

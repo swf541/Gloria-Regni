@@ -5,16 +5,6 @@ province_event = {	#basque_pagan_reformed Population Grows in Province
 
 	trigger = {
 		religion = basque_pagan_reformed
-		holder_scope = {
-			OR = {
-				is_feudal = yes
-				is_theocracy = yes
-				is_republic = yes
-			}
-		}
-		any_province_holding = {
-			holding_type = city
-		}
 	} 
 	
 	immediate = {

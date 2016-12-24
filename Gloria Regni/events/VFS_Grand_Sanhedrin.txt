@@ -5,16 +5,6 @@ province_event = {	#grand_sanhedrin Population Grows in Province
 
 	trigger = {
 		religion = grand_sanhedrin
-		any_province_holding = {
-			holding_type = city
-		}
-		holder_scope = {
-			OR = {
-				is_feudal = yes
-				is_theocracy = yes
-				is_republic = yes
-			}
-		}
 	} 
 	
 	immediate = {
