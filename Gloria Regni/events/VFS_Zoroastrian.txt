@@ -5,6 +5,16 @@ province_event = {	#zoroastrian Population Grows in Province
 
 	trigger = {
 		religion = zoroastrian
+		any_province_holding = {
+			holding_type = city
+		}
+		holder_scope = {
+			OR = {
+				is_feudal = yes
+				is_theocracy = yes
+				is_republic = yes
+			}
+		}
 	} 
 	
 	immediate = {

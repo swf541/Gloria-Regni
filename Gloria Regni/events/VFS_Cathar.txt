@@ -6,6 +6,16 @@ province_event = {	#cathar Population Grows in Province
 
 	trigger = {
 		religion = cathar
+		any_province_holding = {
+			holding_type = city
+		}
+		holder_scope = {
+			OR = {
+				is_feudal = yes
+				is_theocracy = yes
+				is_republic = yes
+			}
+		}
 	} 
 	
 	immediate = {
