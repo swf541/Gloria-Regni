@@ -1,6 +1,116 @@
-postroman = {
-	graphical_cultures = { westerngfx }
+byzantine = {
+	graphical_cultures =  { easterngfx }
 	
+	indo_greek = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.1 0.3 0.8 }
+
+		male_names = {
+			Aegos Agathocles Amyntas Antialcidas Antigonos Antimachus Apollodotus Apollophanes Archebios Ariarathes Artemidoros Strato Akakios Alexandros_Alexander Alexios_Alexis Anthemios Anthimos Antialkidas Antiochos Apollonios Basileios_Basil Demetrios_Demetrius Diodotus Diogenes Diomedes Dionysios_Dionysus Dorotheos Eucratides Eirenaios Epander Eudoxios Eustratios Eugenios Euphemios Eusebios Eustathios_Eustace Euthydemus Hektorios Helias Heliokles Heraklios_Heracles Hermaeus Himerios Hippolytos_Hippolytos Hippostratos Hypatios Kallinikos Kallistos Komitas Kosmas_Cosmas Lysias Maximos Menander Megistos Meletios Neophytos Nicias Niketas Nikodemos_Nicodemus Orestes Pankratios Pantoleon Peukolaos Philippos_Philip Philotheos Plato Polykarpos Polyxenios Philoxenus Porphyrios Pyrros Rajuvula Serapion Telephos Theophilos Thraso Zenobios Zenon Zoilos Perdiccas_Perdiccas Craterus_Craterus Antipater_Antipater Lysimachus_Lysimachus Peucestas_Peucestas Peithon_Peithon Leonnatus_Leonnatus Neoptolemus_Neoptolemus Nikomedes Poly                        perchon_Polyperchon Eumenes_Eumenes Cassander_Cassander Meleager_Meleager Arrhidaeus_Arrhidaeus Laomedon_Laomedon Philotas_Philotas
+		}
+		female_names = {
+			Adriana Agathe_Agatha Agathokleia Agne_Agnes Alexandra Alexeia Anthe Anthousa Antipatra Antonina Apollonia Athanasia Barbara Basileia Basilissa
+			Chrysogone Damiane Demetra Dionysia Dorothea_Dorothy Aigidia Eirene_Irene Elaiodora Eudokia_Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne_Euphrosyne Eupraxia Eusebia Eustathia Evanthia Garyphallia Helene_Helen Hypatia Kale Nikarete Nonna Parthena Philippa_Philippa Phyllis Rhodanthe Sibylla_Sibylla
+			Simonis Sophia_Sophia Thekla Xene Zenobia 
+		}
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}
+	
+	gothic = {
+		graphical_cultures = { norsegfx }
+		
+		color = { 0.4 0.0 0.6 }
+
+		male_names = {
+			Adalfuns Adalrik Alarik Alhreiks Alhwaharyis Alrek Amalareiks Andagis Angantyr Ansila Arareiks Ardarik Ardiarik Aspar Athalagild Athalareiks Athalarik Athalok Athanagild Athanareiks Athanarik Audoaker Auswinthus Avagis 
+			Badwila Beremud Berig Botheric Childefonsus Chindaswintha Dag Ediulf Egika Eirik Elemund Ermanarik Ermingeld Eurik Eutharik Evermud Evorik Fridarik Frideger Frithigern Geberik Giselrik Gizur Gunderik 
+			Haduswinth Hairuwulf Harfidel Hathus Hermanarik Hermanagild Hildefons Hunvil Ildefons Kindaswinth Kunimund Leovigild Liuva Rekimir Rikimar Roderik Sigerik Sigibert Swinthila 
+			Tautila Theodahad Theodemir Theoderik Thiudafred Thiudareiks Thurisind Thurismud Thurismund Thuruar Thurisvinthus Tius Ulfilas Veremund Veterik Ulfila Wingurik
+		}
+		female_names = {
+			Adosinda Amalaberga Amalafrida Amalasuntha Amalasvintha Amalina Amalwara Amelina Avagisa Avina Brenhilda Brunichild Chlodoswintha Egilona Fredegonda Gailavira Garsendis Gaileswintha Goswintha
+			Hermesind Hervor Heva Hilduara Ingund Liuvigoto Mataswintha Radegonda Rikiberga Theodora Theodosia
+		}
+
+		from_dynasty_prefix = "af "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+
+		modifier = default_culture_modifier
+	}
+	
+	romanoarmenian = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.5 0.2 0.5 }
+
+		male_names = {
+			Abas Abirad Aboughamr Aboulgharib Aleksandr_Alexander Artashes Artashir_Ardeshir Artavazd Arsen Arshak Ashot_Ashot Athom Atrnerseh_Atrnerseh Avag Avedis Bagour_Bagour Bagrat Bedros_Peter Boghos_Paul Davit_David Eshkhan Gagik_Gagik Gevorg_George
+			Gosdantin_Constantine Grigor_Gregory Gurgen_Lupo Hagop Hamazasp Hethum Hovhannes_John Hovsep_Joseph Ishkhan_Ishkhan Ivane Kapriel_Gabriel Khachik Khosrov_Khosrau Levon_Leo Malkhas_Malkhas Mamigon Manuel_Manuel Margos_Marcus Melek Mihrdat_Mithridates Mikayel_Michael Mleh Mushegh Mushel Mzhezh
+			Nerseh_Narses Oshin Roupen_Reuben Sahag_Isaac Sarkis_Sergius Sevag Shahanshah_Shahanshah Smbat_Smbat Stepanos_Stephen Tachat Taniel_Daniel Tatoul Tigran Tornik_Tornik Tovmas_Thomas Thoros_Theodore Trdat Vache Vachagan Vagharshak Vahag Vahan Vahram Vakhtank Varazdat Vartan Vassak Vesd Vrtanes Zakare Zarmihr
+		}
+		female_names = {
+			Aghavni Alitz_Alice Almasd Anahid Anna_Anna Anoush Arda Arevig Arin Baydzar Berjanoush Berjouhi Datevig Dalita Eliz_Eloise Gadar Gorandoukht_Gorandukht Hasmig Houri Hranoush
+			Hripsimeh Keghanoush Keran Khorishah Kohar Latavri Leyli Lousin Mara Margarid_Margaret Maria_Maria Mariyam_Mariam Meghranoush Nane Nazani Ovsanna Pounig Razmouhi Rita Satenik_Satinik Seta Siran Sirvart
+			Srpouhi Shoushanig Takouhi Tamar_Tamar Vartanoush Vartouhi Vosgi Yeva Zabel_Elizabeth Zmroukhd
+		}
+		
+		from_dynasty_prefix = "ve "
+		
+		disinherit_from_blinding = yes
+		
+		modifier = default_culture_modifier
+	}
+	romanogeorgian = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.6 0.3 0.8 }
+
+		male_names = {
+			Adarnase_Atrnerseh Aghsartan Aleksandre_Alexander Andronik_Andronicus Anzori Archili Ashot_Ashot Bagrat Bakur_Bagour Davit_David Demetre_Demetrius Demna Djavakhi Erekle_Heracles Gabrieli_Gabriel Gagiki_Gagik Giorgi_George Grigoli_Gregory Guaram_Guaram Gubaz
+			Gurgen_Lupo Iese Ioane_John Ishkhanik_Ishkhan Iveri Jarji Kaikhosro_Keykhosrau Kakhi Koba Konstantine_Constantine Kvarkvare Kvirike Levan_Leo Luarsab Malkhazi_Malkhas Mamia Merab Mikheil_Michael Mukhran Nerse_Narses Nikoloz_Nicholas Okhropir Orbeli
+			Padla Samoeli_Samuel Shanshe_Shahanshah Shota Simon_Simon Stepanoz_Stephen Sumbat_Smbat Teimuraz_Teimuraz Tornike_Tornik Ushisha Vache Vakhtang_Vakhtank Zurab Zviad
+		}
+		female_names = {
+			Ana_Anna Baia Bedisa Borena Chiora Chito Dali Dedika Duda Dzabuli Elene_Helen Eliso Endzela Gogutsa Gulchara Guliko Gulisa Gulvardi Guranduht_Gorandukht Gvantsa Ia Judjuna
+			Kekela Ketevan_Catherine Lamara Lamzira Lela Mariami_Mariam Mathiko Mthvarisa Mzekhar Natia Nino Rusudan Sanatha Shorena Shukhia Suliko
+			Tamari_Tamar Taplo Tinatini Tsiala Vardo
+		}
+		
+		from_dynasty_prefix = "ve "
+		
+		male_patronym = "s dze"
+		female_patronym = "shvili"
+		prefix = no
+		
+		disinherit_from_blinding = yes
+
+		modifier = default_culture_modifier
+	}
 	roman = {
 		graphical_cultures = { byzantinegfx }
 		
@@ -43,7 +153,155 @@ postroman = {
 		modifier = default_culture_modifier
 	}
 	
-		hispanic = {
+	albanian = {
+		graphical_cultures = { westernslavicgfx }
+		
+		color = { 0.6 0.1 0.1 }
+
+		male_names = {
+			Adnan Afrim Agim Agon Alban Alek Aleksander Andrea Ardian Ardit Arianit Armend Bajram Bashkim Behar Besian Besnik Blerim Bua Burim Dardan Depa 
+			Dhimitër Dimitri Dritan Dëfrim Edon Endrit Engjëll Fatmir Fisnik Flamur Gjergj Gjin Gjon Gojko Grigor Gulam Jakub Jetmir Jeton Koja Kostandin Kreshnik 
+			Kushtrim Leka Lekë Leotrim Leutrim Liridon Lulëzim Moisi Muriq Muzaka Pal Perparim Pjetër Progon Pëllumb Skender Tanush Teodor Valon Veli Visar Vladan Ylli Zameer Zamyr
+		}
+		female_names = {
+			Afërdita Arjeta Blerina Blerta Blerte Bolja Bora Bosa Boxia Boša Boža Dardana Diellza Edona Era Fatmire Flutura Jehona Lindita Liridona Lule Luljeta Mirjeta Pranvera Shpresa 
+			Shqipe Teuta Tirana Vera Yllka
+		}		
+		
+		from_dynasty_prefix = "e "
+		
+		modifier = default_culture_modifier
+	}
+
+	greek = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.8 0.3 0.8 }
+
+		male_names = {
+			Adrianos_Adrian Akakios Alexandros_Alexander Alexios_Alexis Anastasios_Anastasius Anatolios Andreas_Andrew Andronikos_Andronicus Anthemios Anthimos Antiochos Antonios_Antonius Apollonios Arsenios Artemios Athanasios_Athanasius Bardas
+			Bartholomaios_Bartolomeus Basileios_Basil Belisarios_Belisarius Boethios Bosporios Christophoros_Christopher Chrysanthos Chrysogonos Damianos Daniel_Daniel David_David Demetrios_Demetrius Diogenes Dionysios_Dionysus Dorotheos Eirenaios Eudoxios Eustratios
+			Eugenios Euphemios Eusebios Eustathios_Eustace Evangelos Gabriel_Gabriel Gennadios Georgios_George Gerasimos Germanos_Germanus Gregoras_Gregory Gregorios_Gregory Hektorios Helias Herakleios_Heracles Hierotheos Himerios
+			Hippolytos Hypatios Iakobos_Jacob Ignatios_Ignatius Innokentios Ioannes_John Ioannikios Iordanes Ioseph_Joseph Isaakios Isaias Isidoros Ioulianos_Julian Ioustinianos_Justinian Ioustinos_Justin Kaisarios_Caesar
+			Kallinikos Kallistos Komitas Konstantinos_Constantine Konstantios_Constantius Konstas_Constans Kosmas_Cosmas Kyriakos Kyrillos_Cyril Kyros Laurentios_Laurence Lazaros Leon_Leo Leontios_Leontius Loukas Makarios Manuel Markos_Marcus
+			Matthaios_Matthew Maurikios Maximos_Maximus Megistos_Magnus Meletios Methodios Michael_Michael Narses Neophytos Nikephoros Niketas Nikodemos Nikolaos_Nicholas Niphon Orestes Pamphilios Pankratios Pantoleon Paschalis
+			Pavlos_Paul Pelagios_Pelagius Petros_Peter Philaretos Philippos_Philip Philotheos Phokas Photios Polykarpos Porphyrios Prokopios_Procopius Pyrros Raphail Romanos_Roman Sabas Samuel_Samuel Serapion Sebastianos_Sebastian Sergios_Sergius Stephanos_Stephen
+			Staurakios Symeon_Simon Symmachos_Symmachus Theocharistos Theodoros_Theodore Theodosios_Theodosios Theodotos_Theodat Theodoulos Theoktistos Theophanes Theophilos Theophylaktos Thomas_Thomas Tiberios_Tiberius Traianos_Trajan
+			Timotheos Tryphon Valerios_Valerius Zacharias Zenobios Zenon
+		}
+		female_names = {
+			Adriane_Adriana Agathe_Agatha Agne_Agnes Aikaterine Alexandra Alexeia Anastasia_Anastasia Anna_Anna Anthe Anthousa Antipatra Antonia_Antonia Apollonia Athanasia Barbara Basillike
+			Chrysogone Damiane Demetra Dionysia Dorothea_Dorothy Aigidia Eirene_Irene Elaiodora Epiphania Eudokia_Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne_Euphrosyne
+			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene_Helen Hypatia Ioanna_Joan Ioulia_Julia Iouliana_Juliana Ioustina_Justina Kale Konstantia_Constantia Konstantine_Constantina Kyra Kyriake
+			Leontia Margarita_Margaret Maria_Maria Markia_Marcia Martha_Martha Melissa_Melisende Nikarete Nikoletta Nonna Parthena Pavlina_Paulina Pelagia Petronia_Petronia Philippa_Philippa Phyllis Pulcheria_Pulcheria Rhodanthe Romane Romylia Sergia_Sergia Sibylla_Sibylla
+			Simonis Sophia_Sophia Stephania_Stephania Thekla Theochariste Theodora_Theodora Theodosia_Theodosia Theognosia Theoktiste Theophano Thomais Valeria_Valeria Viviana_Viviana Xene Zenobia Zoe
+		}
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+
+		modifier = default_culture_modifier
+	}
+	coptic = {
+		graphical_cultures = { muslimgfx }
+		
+		color = { 0.8 0.4 0.4 }
+
+		male_names = {
+			Ahmod Aiai Aha Akhom Amon Amakhte An Apanoub Apahour Apamon Aretee Apas Beet Bertouet Ennikeran Erhu Gerges Hanouf Jinti Jori Keloj Shenouti Shosi Sok Mareten Mei Mina Nakat Nahdi Nishde Nai
+			Naui Nishti Nofr Noub Ounouf Ourot Ouini Ounisht Panous Pakhom Papnouti Pishoui Pisha-eneh Pimen Pimoue Pimoui Psote Rashad Rashi Rami Ruweis Payom Pishai Pikhit Pijimi Pijoul Pasnadi 
+			Pajro Pakat Patape Pashnona Taio	
+		}
+		female_names = {
+			Afaf Amunet Asmin Eratee Ese Fana Hana Heit Hoeite Khnau Khreere Lelou Pernoufe Raune Ro-oune Taloushem Tanouti Takla Ta-ou Tawaret Nefret Sai-ou Stoi Sawsan Shouree Shoushou Uradaa
+		}
+		from_dynasty_prefix = " "
+
+		modifier = default_culture_modifier
+	}	
+	
+	dacian = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.7 0.4 0.3 } 
+
+		male_names = {
+			Bastiza Bikilis Brasus Burebista Comosicus Cotiso Dablosa Daizus 
+			Damanais Dapyg Dardanos Decaeneus Decebalus Dicomes Diegis Diurpaneus 
+			Driglisa Dromichaetes Komakiza Komozoi Mucapor Mucatra Natoporus Oroles 
+			Petoporus Pieporus Rescuturme Rigozus Scorylo Tarbus Thiamarkos Tiati 
+			Tsinna Tsiru Vezina Zyraxes		
+		}
+		female_names = {
+			Brasia Comosia Cotisa Daiza Damanaia Dardana Diegia Diurpanea 
+			Komozia Natopora Orola Petopora Piepora Scoryla Tarba Vezineia 
+			Zia Zyraxa		
+		}
+  
+		from_dynasty_prefix = "of "
+	
+		modifier = default_culture_modifier
+	}
+	
+	thracian = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.8 0.2 0.2 }
+		
+		male_names = {
+			"Agis" "Ariston" "Audoleon" "Bastareus" "Didas" "Dokidan" "Dokim" "Dropion" "Dyplaios" "Euergetes" "Langarus" "Leon" "Lycceius" "Main" "Mantyes" "Nicharchos" "Patraeus" "Patraus" "Pigres" "Symnon" "Teutamado" "Teutaos"
+		}
+		female_names = {
+			"Agis" "Ariston" "Audoleon" "Bastareus" "Didas" "Dokidan" "Dokim" "Dropion" "Dyplaios" "Euergetes" "Langarus" "Leon" "Lycceius" "Main" "Mantyes" "Nicharchos" "Patraeus" "Patraus" "Pigres" "Symnon" "Teutamado" "Teutaos"
+		}
+		from_dynasty_prefix = "of "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+
+	illyrian = {
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0.8 0.5 0.1 } 
+
+		male_names = {
+			Agron Artas Ballaios Bardhyll Bato Caeria Cleitus Demetrius 
+			Epulon Galaurus Gentius Glaucias Grabos Ionios Longarus Monunius 
+			Mytilus Opis Pinnes Pleuratus Pleurias Scerdilaidas Sirras Testimos 
+			Teuta Verzi		
+		}
+		female_names = {
+			Brasia Comosia Cotisa Daiza Damanaia Dardana Diegia Diurpanea Pythodoris_Pythodoris Sura_Sura Tryphaena_Tryphaena Tarba Vezineia 
+			Zia Zyraxa			
+		}
+  
+		from_dynasty_prefix = "of "
+	
+		modifier = default_culture_modifier
+		dynasty_title_names = yes
+	}
+
+	hispanic = {
 		graphical_cultures = { southerngfx }
 		
 		color = { 0.55 0.55 0.15 }
