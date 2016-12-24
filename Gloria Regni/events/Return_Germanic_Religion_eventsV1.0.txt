@@ -1,0 +1,105 @@
+namespace = RGR
+character_event = {                        #travaling to Osnabruck
+	id = RGR.1
+        title = "EVTNAMERGR.1"
+	desc = "EVTDESCRGR.1"
+	picture = "GFX_evt_Osnabruck"
+
+        is_triggered_only = yes
+                        
+	option = {
+		name = "EVTOPTARGR.1" #
+                add_trait = cynical 
+                Prestige = 100
+                character_event = { id = RGR.2 }
+}
+	option = {
+		name = "EVTOPTBRGR.1" #
+                add_trait = zealous 
+                piety = 100 
+                remove_trait = on_pilgrimage
+         }
+}
+character_event = {                        #Arrival at Osnabruck 
+        id = RGR.2
+        title = "EVTNAMERGR.2"
+        desc = "EVTDESCRGR.2"
+        picture = "GFX_evt_Osnabruck"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARGR.2" # 
+		Prestige = 100	
+                add_trait = sympathy_pagans
+                character_event = { id = RGR.3 }
+	}
+}
+character_event = {                        #at the place of the old irminsul
+        id = RGR.3
+        title = "EVTNAMERGR.3"
+        desc = "EVTDESCRGR.3"
+        picture = "GFX_evt_irminsul"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARGR.3" # 
+		Prestige = 100	
+		character_event = { id = RGR.4 }
+	}
+}
+
+character_event = {                        #at the place of the old irminsul
+        id = RGR.4
+        title = "EVTNAMERGR.4"
+        desc = "EVTDESCRGR.4"
+        picture = "GFX_evt_irminsul"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARGR.4" # 
+		Prestige = 100
+                character_event = { id = RGR.5 }	
+}              
+        option = {
+                name = "EVTOPTBRGR.4" # 
+                add_trait = zealous
+                piety = 150 
+                
+        }
+  }
+character_event = {                        #first ceremony at the new irminsul 
+        id = RGR.5
+        title = "EVTNAMERGR.5"
+        desc = "EVTDESCRGR.5"
+        picture = "GFX_evt_ceremony_at_the_irminsul"
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARGR.5" # 
+		piety = 100	
+                religion = german_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous 
+                prestige = 50
+}
+        option = { 
+                name = "EVTOPTBRGR.5" # 
+		piety = 100	
+                religion = german_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous
+                add_trait = cruel
+                Prestige = 10
+}
+        option = { 
+                name = "EVTOPTCRGR.5" # 
+		piety = 100	
+                religion = german_pagan
+                remove_trait = on_pilgrimage	
+}
+
+
+
