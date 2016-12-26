@@ -11,13 +11,10 @@ narrative_event = {
 	option = {
 		name = "EVTOPTAcommune.1"
 
-	    liege = {
 	 	k_roman_republic = {
 			grant_title = ROOT
 			copy_title_laws = d_commune_of_rome
 		}
-		set_defacto_vassal = ROOT
-	    }
 
 	    d_commune_of_rome = {
 		destroy_landed_title = THIS
