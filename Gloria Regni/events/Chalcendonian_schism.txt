@@ -338,6 +338,8 @@ character_event = {
 	
 	
 	immediate = {
+		set_global_flag = great_schism_in_effect
+		set_global_flag = great_schism_happened
 		d_imperial = {
 			unsafe_destroy_landed_title = THIS
 		}

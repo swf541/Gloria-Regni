@@ -1,0 +1,174 @@
+### NEHASHTUN EVENTS
+namespace = JR
+# All written by DingoWalley
+# Being Edited and Finished for GR by starwarsfan541
+
+#Shine in the Sand
+character_event = {
+	id = JR.301
+	desc = EVTDESCJR.301
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAJR.301
+		random_list = {
+			20 = { character_event = { id = JR.302 } }
+			40 = { character_event = { id = JR.303 } }
+			40 = { character_event = { id = JR.304 } }
+		}	
+		
+	}
+	
+	option = {
+		name = EVTOPTBJR.301
+	}
+}
+
+#It's a Rock...
+character_event = {
+	id = JR.302
+	desc = EVTDESCJR.302
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAJR.302
+		trigger = {
+			NOT = { trait = slow }
+			NOT = { trait = inbred }
+		}
+		prestige = -500
+	}
+
+	option = {
+		name = EVTOPTBJR.302
+		trigger = {
+			OR = {
+				trait = slow
+				trait = inbred
+			}
+		}
+		prestige = -1000
+	}
+}
+
+#Diamond In the Rough
+character_event = {
+	id = JR.303
+	desc = EVTDESCJR.303
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAJR.303
+		prestige = 250
+		wealth = 1500
+	}
+}
+
+#The Bronze Serpant's Head
+character_event = {
+	id = JR.304
+	desc = EVTDESCJR.304
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			set_global_flag = found_nehushtan
+		}
+	}
+	
+	option = {
+		name = EVTOPTAJR.304
+		trigger = {
+			NOT = { trait = cynical }
+		}
+		narrative_event = { id = JR.305 days = 3 }
+	}
+	option = {
+		name = EVTOPTBJR.304
+		trigger = {
+			trait = cynical
+		}
+		narrative_event = { id = JR.305 days = 3 }
+	}
+}
+
+#The Nehushtan Rediscovered
+narrative_event = {
+	id = JR.305
+	desc = EVTDESCJR.305
+	
+	picture = "GFX_evt_desert"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAJR.305
+		if = {
+			limit = {
+				trait = cynical
+			}
+			remove_trait = cynical
+		}
+		character_event = { id = JR.306 months = 10 }
+		prestige = 5000
+		piety = 2500
+	}
+	
+	option = {
+		name = EVTOPTBJR.305
+		if = {
+			limit = {
+				trait = cynical
+			}
+			remove_trait = cynical
+		}
+		prestige = 2500
+		piety = 5000
+	}
+}
+
+#Kohen Gadol is Displeased with attempts to rebuild the Nehusthan
+
+#Message from the Kohen Gadol
+
+#The Nehushtan is Rebuilt!
+narrative_event = {
+	id = JR.308
+	desc = EVTDESCJR.308
+	picture = "GFX_event_Bishop_preaching_from_pulpit_muslim"
+	border = "GFX_event_narrative_frame_war"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAJR.308
+		prestige = 5000
+		piety = 5000
+		health = 5
+		any_realm_character = {
+			limit = { 
+				is_priest = yes
+			}
+			opinion = { modifier = priestly_reaction_nehushtan who = ROOT years = 100 }	
+		}
+		any_realm_character = {
+			limit = { 
+				is_priest = no
+			}
+			opinion = { modifier = opinion_reaction_nehushtan  who = ROOT years = 100 }	
+		}
+	}
+}

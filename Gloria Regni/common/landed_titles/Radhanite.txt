@@ -1,0 +1,435 @@
+	k_radhanite = {
+		color={ 202 26 26 }
+		color2={ 255 255 255 }
+		capital = 1491 # Middlesex
+		
+		
+
+		
+		d_radhanite = {
+			color={ 255 0 0 }
+			color2={ 255 255 255 }
+			
+			capital = 1491 # Northumberland
+
+			c_radhanite_1 = {
+				color={ 30 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_1 = {
+				}
+				b_radhanite_2 = {
+				}
+				b_radhanite_3 = {
+				}
+				b_radhanite_4 = {
+				}
+			}
+			c_radhanite_2 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_5 = {
+				}
+				b_radhanite_6 = {
+				}
+				b_radhanite_7 = {
+				}
+				b_radhanite_8 = {
+				}
+			}
+			c_radhanite_3 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_9 = {
+				}
+				b_radhanite_10 = {
+				}
+				b_radhanite_11 = {
+				}
+				b_radhanite_12 = {
+				}
+			}
+			c_radhanite_4 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_13 = {
+				}
+				b_radhanite_14 = {
+				}
+				b_radhanite_15 = {
+				}
+				b_radhanite_16 = {
+				}
+			}
+			c_radhanite_5 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_17 = {
+				}
+				b_radhanite_18 = {
+				}
+				b_radhanite_19 = {
+				}
+				b_radhanite_20 = {
+				}
+			}
+			c_radhanite_6 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_21 = {
+				}
+				b_radhanite_22 = {
+				}
+				b_radhanite_23 = {
+				}
+				b_radhanite_24 = {
+				}
+			}
+			c_radhanite_7 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_25 = {
+				}
+				b_radhanite_26 = {
+				}
+				b_radhanite_27 = {
+				}
+				b_radhanite_28 = {
+				}
+			}
+			c_radhanite_8 = {
+				color={ 130 185 243 }
+				color2={ 255 255 255 }
+	
+				b_radhanite_29 = {
+				}
+				b_radhanite_30 = {
+				}
+				b_radhanite_31 = {
+				}
+				b_radhanite_32 = {
+				}
+			}
+		}
+	}
+#Merchant Republics
+
+#Barcelona Merchant Republic
+
+d_barcelon_tp = {
+		color = { 166 100 72 }
+		color2={ 255 255 255 }
+	
+	capital = 204 # Barcelona
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_ach'av = {
+		culture = itali
+		religion = rabbinic_judaism
+	}
+
+#	b_bet_aharon = {
+#		culture = itali
+#		religion = rabbinic_judaism
+#	}
+
+	b_bet_benayahu = {
+		culture = itali
+		religion = rabbinic_judaism
+	}
+
+#	b_bet_mikha'el = {
+#		culture = mizrahi
+#		religion = rabbinic_judaism
+#	}
+
+	b_bet_shaprut = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+
+
+
+#Tunis Merchant Republic
+
+d_tunis_tp = {
+	color={ 20 232 95 }
+	color2={ 255 255 255 }
+			
+	capital = 817 # Tunis
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+		
+	b_bet_aviram = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_labrat = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_neriah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_hiram = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	b_bet_ofrah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+#Yudah Merchant Republic (Ascalon)
+
+d_yudah_tp = {
+	color={ 160 160 200 }
+	color2={ 255 255 255 }
+			
+	capital = 780 # Ascalon
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+	b_bet_daniyyel	= {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_saruk = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_penuel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_adinah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_terach = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	
+#Hormuz Merchant Republic
+d_hormuz_tp = {
+	color={ 106 126 71 }
+	color2={ 255 255 255 }
+	
+	capital = 641 #Hormuz
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+	b_bet_gedalyahu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mal'akhi = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_gershom = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_gid'on = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_golyat = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+
+	
+#Thana Merchant Republic
+
+d_thana_tp = {
+	color={ 100 20 40 }
+	color2={ 255 255 255 }
+	
+	capital = 1125 # Thana
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+	b_bet_meshullam = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_daryawesh = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mikhah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_machlah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nogah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+	
+#Sonda Merchant Republic
+
+d_sonda_tp = {
+	color={ 230 115 20 }
+	color2={ 255 255 255 }
+	
+	capital = 1331 #Sonda
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+	b_bet_natan = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_elisha = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mattan = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mattanyahu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_menashsheh = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+#Honnore Merchant Republic
+
+d_honnore_tp = {
+	color={ 115 20 60 }
+	color2={ 255 255 255 }
+	
+	capital = 1124 #Honnore
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+	b_bet_nethanel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_mikhayhu = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_rafa'el = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_moshe = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nachum = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
+#Melgueil Merchant Republic
+
+d_melgueil_tp = {
+	color={ 10 16 243 }
+	color2={ 255 255 255 }
+	
+	capital = 220 #Montpellier
+	
+	allow = {
+			always = no
+			is_republic = yes
+		}
+}
+
+	b_bet_oved = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_hevel = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_adoniyah = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_noach = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+	
+	b_bet_nadav = {
+		culture = mizrahi
+		religion = rabbinic_judaism
+	}
+
