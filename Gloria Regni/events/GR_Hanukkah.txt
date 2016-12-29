@@ -1,0 +1,1861 @@
+
+namespace = HNK
+
+### Hanukkah
+
+# Invitations Sent (Liege)
+character_event = {
+	id = HNK.700
+	desc = EVTDESC_HNK_700
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_HNK_700
+		any_vassal = {
+			limit = {
+				age = 16
+				prisoner = no
+				war = no
+				NOT = { trait = incapable }
+			}
+			character_event = { id = HNK.701 tooltip = EVTTOOLTIP_HNK_701 }
+		}
+		hidden_tooltip = { character_event = { id = HNK.703 days = 10 } }
+	}
+}
+
+# Invitations Received (Vassals)
+character_event = {
+	id = HNK.701
+	desc = EVTDESC_HNK_701
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HNK_701
+		trigger = {
+			religion_group = jewish_group
+		}
+		set_character_flag = attending_hanukkah
+		set_character_flag = do_not_disturb
+		hidden_tooltip = { character_event = { id = HNK.899 days = 100 } } # Safety catch flag clearing
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+		}
+	}
+	option = {
+		name = EVTOPTB_HNK_701
+		trigger = {
+			NOT = { religion_group = jewish_group }
+		}
+		FROM = {
+			character_event = { id = HNK.702 days = 5 tooltip = DIPLOWINDOW_REJECT }
+			opinion = {
+				modifier = opinion_refused_hanukkah
+				who = ROOT
+			}
+		}
+	}
+}
+
+# Invitation Refused (Liege)
+character_event = {
+	id = HNK.702
+	desc = EVTDESC_HNK_702
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HNK_702
+		tooltip = {
+			opinion = {
+				modifier = opinion_refused_hanukkah
+				who = FROM
+			}
+		}
+	}
+}
+
+# Celebration Begins (Liege)
+character_event = {
+	id = HNK.703
+	desc = EVTDESC_HNK_703
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_HNK_703
+		custom_tooltip = {
+			text = hanukkah_begins
+			hidden_tooltip = {
+				any_vassal = {
+					limit = { has_character_flag = attending_hanukkah }
+					character_event = { id = HNK.704 }
+					character_event = { id = HNK.1 }
+				}
+				character_event = { id = HNK.1 }
+				character_event = { id = HNK.705 days = 10 }
+			}
+		}
+	}
+}
+
+character_event = {		#Day 1
+	id = HNK.1
+	title = "EVTNHNKHNK.1"
+	desc = "EVTDESCHNK.1"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.1" # 
+		piety = 10
+		character_event = { id = HNK.2 days = 1 }
+	}
+}
+
+character_event = {		#Day 2
+	id = HNK.2
+	title = "EVTNHNKHNK.2"
+	desc = "EVTDESCHNK.2"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.2" # 
+		piety = 10
+		character_event = { id = HNK.3 days = 1 }
+	}
+}
+
+character_event = {		#Day 3
+	id = HNK.3
+	title = "EVTNHNKHNK.3"
+	desc = "EVTDESCHNK.3"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.3" # 
+		piety = 10
+		character_event = { id = HNK.4 days = 1 }
+	}
+}
+character_event = {		#Day 4
+	id = HNK.4
+	title = "EVTNHNKHNK.4"
+	desc = "EVTDESCHNK.4"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.4" # 
+		piety = 10
+		character_event = { id = HNK.5 days = 1 }
+	}
+}
+character_event = {		#Day 5
+	id = HNK.5
+	title = "EVTNHNKHNK.5"
+	desc = "EVTDESCHNK.5"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.5" # 
+		piety = 10
+		character_event = { id = HNK.6 days = 1 }
+	}
+}
+character_event = {		#Day 6
+	id = HNK.6
+	title = "EVTNHNKHNK.6"
+	desc = "EVTDESCHNK.6"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.6" # 
+		piety = 10
+		character_event = { id = HNK.7 days = 1 }
+	}
+}
+character_event = {		#Day 7
+	id = HNK.7
+	title = "EVTNHNKHNK.6"
+	desc = "EVTDESCHNK.6"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.7" # 
+		piety = 10
+		character_event = { id = HNK.8 days = 1 }
+	}
+}
+character_event = {		#Day 8
+	id = HNK.8
+	title = "EVTNHNKHNK.8"
+	desc = "EVTDESCHNK.8"
+	picture = "GFX_evt_roi_throneroom"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAHNK.8" # 
+		piety = 10
+	}
+}
+
+# Celebration Begins (Vassals)
+character_event = {
+	id = HNK.704
+	desc = EVTDESC_HNK_704
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HNK_703
+		custom_tooltip = { text = hanukkah_begins }
+	}
+}
+
+# Feast Begins (Liege)
+character_event = {
+	id = HNK.705
+	desc = EVTDESC_HNK_705
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_HNK_705
+		
+		custom_tooltip = {
+			text = feast_begins
+			hidden_tooltip = {
+				any_vassal = {
+					limit = { has_character_flag = attending_hanukkah }
+					character_event = { id = HNK.706 }
+				}
+				character_event = { id = HNK.707 days = 25 }
+				random_list = {
+					10 = { character_event = { id = HNK.741 days = 3 } } 
+					10 = { character_event = { id = HNK.742 days = 3 } }
+					10 = { character_event = { id = HNK.743 days = 3 } }
+					10 = { character_event = { id = HNK.744 days = 3 } }
+					10 = { character_event = { id = HNK.745 days = 3 } }
+					10 = { character_event = { id = HNK.746 days = 3 } }
+					10 = { character_event = { id = HNK.747 days = 3 } }
+				}
+				random_list = {
+					10 = { character_event = { id = HNK.741 days = 8 } }
+					10 = { character_event = { id = HNK.742 days = 8 } }
+					10 = { character_event = { id = HNK.743 days = 8 } }
+					10 = { character_event = { id = HNK.744 days = 8 } }
+					10 = { character_event = { id = HNK.745 days = 8 } }
+					10 = { character_event = { id = HNK.746 days = 8 } }
+					10 = { character_event = { id = HNK.747 days = 8 } }
+				}
+				random_list = {
+					10 = { character_event = { id = HNK.741 days = 13 } }
+					10 = { character_event = { id = HNK.742 days = 13 } }
+					10 = { character_event = { id = HNK.743 days = 13 } }
+					10 = { character_event = { id = HNK.744 days = 13 } }
+					10 = { character_event = { id = HNK.745 days = 13 } }
+					10 = { character_event = { id = HNK.746 days = 13 } }
+					10 = { character_event = { id = HNK.747 days = 13 } }
+				}
+				random_list = {
+					10 = { character_event = { id = HNK.741 days = 18 } }
+					10 = { character_event = { id = HNK.742 days = 18 } }
+					10 = { character_event = { id = HNK.743 days = 18 } }
+					10 = { character_event = { id = HNK.744 days = 18 } }
+					10 = { character_event = { id = HNK.745 days = 18 } }
+					10 = { character_event = { id = HNK.746 days = 18 } }
+					10 = { character_event = { id = HNK.747 days = 18 } }
+				}
+			}
+		}
+	}
+}
+
+# Feast Begins (Vassals)
+character_event = {
+	id = HNK.706
+	desc = EVTDESC_HNK_706
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HNK_705
+		set_character_flag = hanukkah_feast_vassal
+		custom_tooltip = { text = feast_begins }
+	}
+}
+
+# Feast Ends (Liege)
+character_event = {
+	id = HNK.707
+	desc = EVTDESC_HNK_707
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_HNK_707
+		any_vassal = {
+			limit = { has_character_flag = attending_hanukkah }
+			opinion = {
+				modifier = opinion_hanukkah
+				who = ROOT
+			}
+		}
+		hidden_tooltip = {
+			any_vassal = {
+				limit = { has_character_flag = attending_hanukkah }
+				character_event = { id = HNK.708 }
+			}
+		}
+		add_character_modifier = {
+			name = held_hanukkah_timer
+			duration = 1825
+			hidden = yes
+		}
+		prestige = 100
+		piety = 100
+		clr_character_flag = holding_hanukkah
+		clr_character_flag = feast_drunkard
+		clr_character_flag = feast_gluttonous
+		clr_character_flag = feast_lunatic
+		clr_character_flag = feast_lustful
+		clr_character_flag = feast_homosexual
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Feast Ends (Vassals)
+character_event = {
+	id = HNK.708
+	desc = EVTDESC_HNK_708
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HNK_707
+		clr_character_flag = attending_hanukkah
+		clr_character_flag = hanukkah_feast_vassal
+		clr_character_flag = feast_drunkard
+		clr_character_flag = feast_gluttonous
+		clr_character_flag = feast_lunatic
+		clr_character_flag = feast_lustful
+		clr_character_flag = feast_friendship
+		clr_character_flag = feast_homosexual
+		clr_character_flag = do_not_disturb
+	}
+}
+
+## Ukon juhla Feast Events
+
+# Drunkard (Guest)
+character_event = {
+	id = HNK.720
+	desc = EVTDESC_TOG_650
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_drunkard }
+		liege = { 
+			has_character_flag = holding_hanukkah
+			NOT = { has_character_flag = feast_drunkard }
+		}
+		trait = drunkard
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_650
+		tooltip_info = drunkard
+		set_character_flag = feast_drunkard
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_drunkard
+				character_event = { id = HNK.721 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = HNK.721 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = drunkard } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = drunkard }
+					opinion = {
+						modifier = opinion_drinking_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = drunkard }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						trait = drunkard
+					}
+					opinion = {
+						modifier = opinion_drinking_buddy
+						who = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+# Drunkard (Host and Other Guests)
+character_event = {
+	id = HNK.721
+	desc = EVTDESC_TOG_651
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_651
+		trigger = { 
+			NOT = { trait = drunkard } 
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_651
+		tooltip_info = drunkard
+		trigger = { 
+			trait = drunkard
+		}
+		opinion = {
+			modifier = opinion_drinking_buddy
+			who = FROM
+		}
+	}
+}
+
+# Gluttonous (Victim Hidden)
+character_event = {
+	id = HNK.722
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		liege = {
+			has_character_flag = holding_hanukkah
+			NOT = { has_character_flag = feast_gluttonous }
+			any_vassal = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_gluttonous }
+				trait = gluttonous
+				NOT = { character = ROOT }
+			}
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		liege = {
+			set_character_flag = feast_gluttonous
+			random_vassal = {
+				limit = {
+					has_character_flag = hanukkah_feast_vassal
+					trait = gluttonous
+					NOT = { character = ROOT }
+				}
+				character_event = { id = HNK.723 }
+				set_character_flag = feast_gluttonous
+			}
+		}
+	}
+}
+
+# Gluttonous (Guest)
+character_event = {
+	id = HNK.723
+	desc = EVTDESC_TOG_653
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_653
+		tooltip_info = gluttonous
+		FROM = {
+			character_event = { id = HNK.724 tooltip = EVTTOOLTIP_HNK_654 }
+		}	
+		hidden_tooltip = {
+			liege = {
+				character_event = { id = HNK.725 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { 
+							character = ROOT 
+							character = FROM
+						}
+					}
+					character_event = { id = HNK.725 }
+				}
+			}
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_vomit
+					who = ROOT
+				}
+			}
+			liege = {
+				opinion = {
+					modifier = opinion_feast_scandal
+					who = ROOT
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { 
+							character = ROOT 
+							character = FROM
+						}
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+# Gluttonous (Victim)
+character_event = {
+	id = HNK.724
+	desc = EVTDESC_TOG_654
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_654
+		opinion = {
+			modifier = opinion_vomit
+			who = FROM
+		}
+	}
+}
+
+# Gluttonous (Host and Other Guests)
+character_event = {
+	id = HNK.725
+	desc = EVTDESC_TOG_655
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_655
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+}
+
+# Lunatic (Guest)
+character_event = {
+	id = HNK.726
+	desc = EVTDESC_TOG_656
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_lunatic }
+		liege = { 
+			has_character_flag = holding_hanukkah 
+			NOT = { has_character_flag = feast_lunatic }
+		}
+		trait = lunatic
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_656
+		tooltip_info = lunatic
+		set_character_flag = feast_lunatic
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lunatic
+				character_event = { id = HNK.727 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = HNK.727 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lunatic } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lunatic }
+					opinion = {
+						modifier = opinion_feast_friend
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lunatic }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						trait = lunatic
+					}
+					opinion = {
+						modifier = opinion_feast_friend
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+}
+
+# Lunatic (Host and Other Guests)
+character_event = {
+	id = HNK.727
+	desc = EVTDESC_TOG_657
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_657
+		trigger = {
+			NOT = { trait = lunatic }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = ROOT
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_657
+		tooltip_info = lunatic
+		trigger = {
+			trait = lunatic
+		}
+		opinion = {
+			modifier = opinion_feast_friend
+			who = ROOT
+		}
+	}
+}
+
+# Lustful (Guest)
+character_event = {
+	id = HNK.728
+	desc = EVTDESC_TOG_658
+	picture = GFX_evt_brothel
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	hide_from = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_lustful }
+		liege = { 
+			has_character_flag = holding_hanukkah 
+			NOT = { has_character_flag = feast_lustful }
+		}
+		trait = lustful
+		is_female = no
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_658
+		tooltip_info = lustful
+		set_character_flag = feast_lustful
+		trigger = {
+			is_married = no
+		}
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lustful
+				character_event = { id = HNK.729 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = HNK.729 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lustful } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lustful }
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lustful }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						trait = lustful
+					}
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+	option = {
+		name = EVTOPTB_TOG_658
+		tooltip_info = lustful
+		set_character_flag = feast_lustful
+		trigger = {
+			is_married = yes
+		}
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lustful
+				character_event = { id = HNK.729 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = HNK.729 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lustful } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lustful }
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lustful }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						trait = lustful
+					}
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+			}
+			any_spouse = {
+				opinion = {
+					modifier = opinion_mad_as_hell
+					who = ROOT
+					years = 1
+				}
+			}
+		}	
+	}
+}
+
+# Lustful (Host and Other Guests)
+character_event = {
+	id = HNK.729
+	desc = EVTDESC_TOG_659
+	picture = GFX_evt_brothel
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_659
+		trigger = {
+			NOT = { trait = lustful }
+			NOT = { any_spouse = { character = FROM } }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_659
+		tooltip_info = lustful
+		trigger = {
+			trait = lustful
+			NOT = { any_spouse = { character = FROM } }
+		}
+		opinion = {
+			modifier = opinion_lustful_buddy
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTC_HNK_659
+		trigger = {
+			any_spouse = { character = FROM }
+		}
+		opinion = {
+			modifier = opinion_mad_as_hell
+			who = FROM
+			years = 1
+		}
+	}
+}
+
+# Friendship Formed (Guest 1 Hidden)
+character_event = {
+	id = HNK.730
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_friendship }
+		liege = { 
+			has_character_flag = holding_hanukkah
+			any_vassal = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_friendship }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  20 }
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_friendship
+		liege = { 
+			random_vassal = {
+				limit = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  20 }
+				}
+				character_event = { id = HNK.731 }
+				set_character_flag = feast_friendship
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+				reverse_opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}		
+		}
+	}
+}
+
+# Friendship Formed (Guest 2)
+character_event = {
+	id = HNK.731
+	desc = EVTDESC_TOG_661
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_661
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = HNK.732 }
+			}
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_feast_friend
+				who = FROM
+			}
+		}
+	}
+}
+
+# Friendship Formed (Guest 1)
+character_event = {
+	id = HNK.732
+	desc = EVTDESC_TOG_661
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_661
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_feast_friend
+				who = FROM
+			}
+		}
+	}
+}
+
+# Homosexual Male (Guest 1 Hidden)
+character_event = {
+	id = HNK.733
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_homosexual }
+		trait = homosexual
+		is_female = no
+		has_lover = no
+		liege = { 
+			has_character_flag = holding_hanukkah
+			NOT = { has_character_flag = feast_homosexual }
+			any_vassal = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  0 }
+				trait = homosexual
+				is_female = no
+				has_lover = no
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 40
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_homosexual
+		liege = { 
+			set_character_flag = feast_homosexual
+			random_vassal = {
+				limit = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  0 }
+					trait = homosexual
+					is_female = no
+				}
+				character_event = { id = HNK.734 }
+				add_lover = ROOT
+				set_character_flag = feast_homosexual
+			}		
+		}
+	}
+}
+
+# Homosexual Male (Guest 2)
+character_event = {
+	id = HNK.734
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = HNK.735 }
+			}
+			liege = {
+				character_event = { id = HNK.740 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = {
+							character = ROOT
+							character = FROM
+						}
+					}
+					character_event = { id = HNK.740 }
+				}
+			}
+		}
+		tooltip = {
+			random = {
+				chance = 50
+				character_event = { id = HNK.739 tooltip = EVTTOOLTIP_HNK_669 }
+			}
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Male (Guest 1)
+character_event = {
+	id = HNK.735
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		random = {
+			chance = 50
+			character_event = { id = HNK.739 tooltip = EVTTOOLTIP_HNK_669 }
+			hidden_tooltip = {
+				FROM = {
+					character_event = { id = HNK.739 }
+				}
+			}
+		}
+		tooltip = {
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Female (Guest 1 Hidden)
+character_event = {
+	id = HNK.736
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = hanukkah_feast_vassal
+		NOT = { has_character_flag = feast_homosexual }
+		trait = homosexual
+		is_female = yes
+		has_lover = no
+		liege = { 
+			has_character_flag = holding_hanukkah
+			NOT = { has_character_flag = feast_homosexual }
+			any_vassal = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  0 }
+				trait = homosexual
+				is_female = yes
+				has_lover = no
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 40
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_homosexual
+		liege = { 
+			set_character_flag = feast_homosexual
+			random_vassal = {
+				limit = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  0 }
+					trait = homosexual
+					is_female = yes
+				}
+				character_event = { id = HNK.737 }
+				set_character_flag = feast_homosexual
+				add_lover = ROOT
+			}		
+		}
+	}
+}
+
+# Homosexual Female (Guest 2)
+character_event = {
+	id = HNK.737
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = HNK.738 }
+			}
+			liege = {
+				character_event = { id = HNK.740 }
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = {
+							character = ROOT
+							character = FROM
+						}
+					}
+					character_event = { id = HNK.740 }
+				}
+			}			
+		}
+		tooltip = {
+			random = {
+				chance = 50
+				character_event = { id = HNK.739 tooltip = EVTTOOLTIP_HNK_669 }
+			}
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Female (Guest 1)
+character_event = {
+	id = HNK.738
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		random = {
+			chance = 50
+			character_event = { id = HNK.739 tooltip = EVTTOOLTIP_HNK_669 }
+			hidden_tooltip = {
+				FROM = {
+					character_event = { id = HNK.739 }
+				}
+			}
+		}
+		tooltip = {
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Caught
+character_event = {
+	id = HNK.739
+	desc = EVTDESC_TOG_669
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_669
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = homosexual } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = homosexual }
+					opinion = {
+						modifier = opinion_homosexual_sympathy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = homosexual }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { character = ROOT }
+						trait = homosexual
+					}
+					opinion = {
+						modifier = opinion_homosexual_sympathy
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+}
+
+# Homosexual Caught (Host and Other Guests)
+character_event = {
+	id = HNK.740
+	desc = EVTDESC_TOG_670
+	picture = GFX_evt_roi_throneroom
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_670
+		trigger = {
+			NOT = { trait = homosexual }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_670
+		tooltip_info = homosexual
+		trigger = {
+			trait = homosexual
+		}
+		opinion = {
+			modifier = opinion_homosexual_sympathy
+			who = FROM
+		}
+	}
+}
+
+### Feast event bounces
+character_event = { #feast_drunkard
+	id = HNK.741
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_hanukkah
+		NOT = { has_character_flag = feast_drunkard }
+		any_vassal = {
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_drunkard }
+			trait = drunkard
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_drunkard }
+				trait = drunkard
+			}
+			character_event = { id = HNK.720 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.742 #feast_gluttonous
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_hanukkah
+		NOT = { has_character_flag = feast_gluttonous }
+		any_vassal = {
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_gluttonous }
+			trait = gluttonous
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_gluttonous }
+				trait = gluttonous
+			}
+			character_event = { id = HNK.722 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.743 #feast_lunatic
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_hanukkah
+		NOT = { has_character_flag = feast_lunatic }
+		any_vassal = {
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_lunatic }
+			trait = lunatic
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_lunatic }
+				trait = lunatic
+			}
+			character_event = { id = HNK.726 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.744 #feast_lustful
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_hanukkah
+		NOT = { has_character_flag = feast_lustful }
+		any_vassal = { 
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_lustful }
+			trait = lustful
+			is_female = no
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_lustful }
+				trait = lustful
+				is_female = no
+			}
+			character_event = { id = HNK.728 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.745 #feast_friendship
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_hanukkah
+		NOT = { has_character_flag = feast_friendship }
+		has_character_flag = hanukkah_feast_vassal
+		any_vassal = {
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_friendship }
+			liege = { 
+				any_vassal = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { has_character_flag = feast_friendship }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  20 }
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_friendship }
+				liege = { 
+					any_vassal = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { has_character_flag = feast_friendship }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  20 }
+					}		
+				}
+			}
+			character_event = { id = HNK.730 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.746 #male_homosexual
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		NOT = { has_character_flag = feast_homosexual }
+		has_character_flag = holding_hanukkah
+		any_vassal = { 
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_homosexual }
+			trait = homosexual
+			is_female = no
+			has_lover = no
+			liege = { 
+				any_vassal = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  0 }
+					trait = homosexual
+					is_female = no
+					has_lover = no
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				trait = homosexual
+				is_female = no
+				has_lover = no
+				liege = { 
+					any_vassal = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { has_character_flag = feast_homosexual }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  0 }
+						trait = homosexual
+						is_female = no
+						has_lover = no
+					}		
+				}
+			}
+			character_event = { id = HNK.733 }
+		}
+	}
+}
+
+character_event = {
+	id = HNK.747 #female_homosexual
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		NOT = { has_character_flag = feast_homosexual }
+		has_character_flag = holding_hanukkah
+		any_vassal = { 
+			has_character_flag = hanukkah_feast_vassal
+			NOT = { has_character_flag = feast_homosexual }
+			trait = homosexual
+			is_female = yes
+			has_lover = no
+			liege = { 
+				any_vassal = {
+					has_character_flag = hanukkah_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  0 }
+					trait = homosexual
+					is_female = yes
+					has_lover = no
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = hanukkah_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				trait = homosexual
+				is_female = yes
+				has_lover = no
+				liege = { 
+					any_vassal = {
+						has_character_flag = hanukkah_feast_vassal
+						NOT = { has_character_flag = feast_homosexual }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  0 }
+						trait = homosexual
+						is_female = yes
+						has_lover = no
+					}		
+				}
+			}
+			character_event = { id = HNK.736 }
+		}
+	}
+}
