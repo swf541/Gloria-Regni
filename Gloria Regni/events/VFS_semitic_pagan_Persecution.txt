@@ -1,0 +1,162 @@
+namespace = VFS
+province_event = {	#semitic_pagan Expulsion
+	id = VFS.165
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_semitic_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_semitic_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_1
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_semitic_pagan_community_2
+						}
+						any_province_holding = {
+							has_building = ct_semitic_pagan_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_1
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+			religion = FROM
+		}
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_semitic_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_2
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_semitic_pagan_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_2
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+			religion = FROM
+		}
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_3
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_semitic_pagan_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_semitic_pagan_community_3
+				333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			}
+			religion = FROM
+		}
+		if = {
+			limit = {
+				religion = semitic_pagan
+				has_province_flag = semitic_pagan_majority
+				NOT = { # Not if there is already an ongoing revolt
+					owner = {
+						top_liege = {
+							war = yes
+							any_war = {
+								defender = { character = PREV }
+								AND = {
+									using_cb = religious_revolt
+									attacker = { religion = ROOT }
+								}
+							}
+						}
+					}
+				}
+			}
+			333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			province_event = { id = TOG.1060 }
+			religion = FROM 
+		}
+		if = {
+			limit = {
+				religion = semitic_pagan
+				has_province_flag = semitic_pagan_majority
+				owner = {
+					top_liege = {
+						war = yes
+						any_war = {
+							defender = { character = PREV }
+							using_cb = religious_revolt
+							attacker = { religion = ROOT }
+						}
+					}
+				}
+			}
+			333 = { change_variable = { which = "semitic_pagan_refugees" value = 1 } }
+			province_event = { id = TOG.1070 }
+			religion = FROM 
+		}
+	}
+}
