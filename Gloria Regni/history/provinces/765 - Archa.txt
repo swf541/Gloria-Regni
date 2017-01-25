@@ -16,13 +16,10 @@ b_famia = temple
 #b_krakdeschevaliers = castle
 
 # Misc
-culture = aramean
-religion = imperial
+culture = levantine_arabic
+religion = orthodox
 
 # History
-
-1054.7.6 = { religion = orthodox }
-
 #Assassins establish themselves in Masyaf
 1100.1.1 = { b_masyaf = castle }
 
@@ -33,4 +30,3 @@ religion = imperial
 1271.1.1 = { remove_settlement = b_krakdeschevaliers } 
 1271.1.1 = { b_kafroun = castle }
 1271.1.1 = { religion = sunni }
-1271.1.1 = { culture = levantine_arabic }

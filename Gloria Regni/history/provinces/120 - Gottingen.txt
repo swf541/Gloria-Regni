@@ -7,7 +7,6 @@ title = c_gottingen
 max_settlements = 5
 b_gottingen = tribal
 
-#b_goslar = castle
 #b_corvey = temple
 #b_lippe = city
 #b_kassel = city
@@ -17,18 +16,15 @@ b_gottingen = tribal
 
 # Misc
 culture = old_saxon
-religion = germanic_pagan
+religion = norse_pagan
 
 # History
 790.1.1 = {
 	culture = german
-	religion = imperial
+	religion = catholic
 	
 	b_gottingen = castle
 	b_corvey = temple
 	b_goslar = castle	## silver mines of Goslar
 }
-
-1054.7.6 = { religion = catholic }
-
 1337.1.1 = { b_lippe = city }

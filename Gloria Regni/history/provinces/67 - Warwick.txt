@@ -7,20 +7,22 @@ title = c_warwick
 max_settlements = 4
 b_tamworth = castle
 b_warwick = castle
-b_coventry = temple
-
-#b_lichfield = castle
+b_lichfield = temple
 b_stafford = city
-#b_kenilworth = castle
+
 #b_tutbury = castle
+#b_coventry = temple
+#b_kenilworth = castle
 #b_dudley = castle
 
 # Misc
 culture = saxon
-religion = imperial
+religion = catholic
 
 # History
-900.1.1 = { remove_settlement = b_tamworth }
-1054.7.6 = { religion = catholic }
-
+874.1.1 = { remove_settlement = b_tamworth  } # Danish sacking
+1075.8.28={ # Council of London moves bishopric from Lichfield
+	remove_settlement = b_lichfield
+	b_coventry = temple
+}
 1100.11.11 = { culture = english }

@@ -4,7 +4,7 @@
 title = c_kairwan
 
 # Settlements
-max_settlements = 6
+max_settlements = 4
 
 b_kairouan = castle
 b_gafsa = city
@@ -18,12 +18,6 @@ b_sidibouzid = city
 
 # Misc
 culture = maghreb_arabic
-religion = donatism
+religion = sunni
 
 # History
-700.1.1 = { religion = imperial }
-
-1200.1.1 = { 
-	religion = sunni 
-	culture = maghreb_arabic
-}

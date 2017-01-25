@@ -18,7 +18,7 @@ b_iona = temple
 
 # Misc
 culture = irish
-religion = imperial #celtic_pagan
+religion = catholic
 terrain = hills
 
 # History
@@ -31,7 +31,7 @@ terrain = hills
 	b_iona = tp_shipyard_1
 }
 1000.1.1 = {
-	religion = imperial
+	religion = catholic
 	b_finlaggan = castle
 	b_stornoway = city
 
@@ -41,8 +41,5 @@ terrain = hills
 	b_finlaggan = ca_shipyard_1
 	b_stornoway = ct_port_1
 } 
-
-1054.7.6 = { religion = catholic }
-
 1066.1.1 = { culture = norwegian } 
 1266.1.1 = { culture = scottish }

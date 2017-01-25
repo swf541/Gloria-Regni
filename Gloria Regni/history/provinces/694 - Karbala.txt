@@ -4,20 +4,21 @@
 title = c_karbala
 
 # Settlements
-max_settlements = 5
-b_hillah = castle
-b_farasha = city
+max_settlements = 4
+b_ainaltamur = castle
+b_hindiya = city
 b_karbala = temple
 
-#b_sura = castle
-#b_ainattamr = castle
+#b_ofak = castle
+#b_hamzah = castle
+#b_shamiyah = castle
+#b_qisair = castle
+#b_ukhaidir = castle
 
 #Misc
-culture = assyrian
-religion = mesopotamian_paganism
+culture = levantine_arabic
+religion = sunni
 
 # History
-710.1.1 = { culture = levantine_arabic }
-710.1.1 = { religion = sunni }
 1086.1.1 = { remove_settlement = b_karbala }
 

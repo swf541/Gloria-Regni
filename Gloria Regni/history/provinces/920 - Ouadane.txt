@@ -4,31 +4,17 @@
 title = c_ouadane
 
 # Settlements
-max_settlements = 5
-b_ouadane = castle
-b_azuggi = city
-b_chinguitti = temple
+max_settlements = 1
+b_ouadane = tribal
 
-#b_binklabin = city
-#b_tingi = castle
-
+#b_wadan = city 
+#b_azuggi = castle
 #b_ksaralkiali = castle #Ksar-al-Kiali
 
 # Misc
-culture = soninke
+culture = maghreb_arabic
 religion = west_african_pagan
 
 # History
 
-#berber colonization
-950.1.1 = { culture = maghreb_arabic }
-#950.1.1 = { culture = tagelmust }
-
-#islamization
-950.1.1 = { religion = sunni }
-
-#nomadization
-1060.1.1 = { remove_settlement = b_chinguitti }
-1060.1.1 = { remove_settlement = b_azuggi }
-1060.1.1 = { b_ouadane = tribal }
-1060.1.1 = { capital = b_ouadane }
+900.1.1 = { religion = sunni }

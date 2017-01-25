@@ -5,10 +5,10 @@ title = c_crimea
 
 # Settlements
 max_settlements = 5
-b_bakhchisaray = castle
+b_bakhchisaray = tribal
 b_aqmescit = temple
 
-b_dzhankoy = city
+#b_dzhankoy = city
 
 #b_saq = castle
 #b_perekop = castle
@@ -17,13 +17,11 @@ b_dzhankoy = city
 #b_qurman = castle
 
 # Misc
-culture = ostrogothic
-religion = imperial
+culture = khazar
+religion = tengri_pagan
 
 # History
-790.1.1 = { culture = khazar }
 
-790.1.1 = { religion = tengri_pagan }
 930.1.1 = { culture = cuman } 
 1152.1.1 = { trade_post = b_grimaldi }
 

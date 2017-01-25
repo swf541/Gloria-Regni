@@ -6,23 +6,20 @@ title = c_cairo
 # Settlements
 max_settlements = 7
 b_fustat = castle
+b_helwan = castle
 b_heliopolis = temple
 b_memphis = temple
-b_helwan = castle
-b_maadi = castle
+b_maadi = city
 
 #b_cairo = castle
 #b_tekkekyahudiyya = castle
 #b_merimdabenisalama = castle
 
 # Misc
-culture = coptic
-religion = miaphysite
+culture = egyptian_arabic
+religion = sunni
 
 # History
-710.1.1 = { religion = sunni }
-710.1.1 = { culture = egyptian_arabic }
-
 
 867.1.1 = { name = "Fustat" }
 909.1.1 = { religion = shiite }

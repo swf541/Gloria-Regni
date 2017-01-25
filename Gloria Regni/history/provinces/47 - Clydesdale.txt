@@ -17,8 +17,8 @@ b_st_kentigern = temple
 #b_renfrew = castle
 
 # Misc
-culture = britonic
-religion = imperial
+culture = welsh
+religion = catholic
 
 1000.1.1 = {
 	b_dumbarton = castle
@@ -32,4 +32,3 @@ religion = imperial
 	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
 	remove_settlement = b_dumbarton 
 }
-1054.7.6 = { religion = catholic }

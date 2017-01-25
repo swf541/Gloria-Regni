@@ -16,21 +16,15 @@ b_southampton = city
 #b_andover = castle
 
 # Misc
-culture = british
-religion = imperial
+culture = saxon
+religion = catholic
 
 # History
-800.1.1 = {
-	culture = saxon
-}
-
 867.1.1 = {
 	b_winchester = ca_keep_1
 	b_winchester = ca_militia_barracks_1
 	b_winchester = ca_wall_1
 }
-
-1054.7.6 = { religion = catholic }
 
 1070.1.1 = { capital = b_st_swithun }
 1100.11.11 = { culture = english } 

@@ -4,16 +4,24 @@
 title = c_bambuk
 
 # Settlements
-max_settlements = 4
+max_settlements = 3
 b_bambuk = tribal
-b_yaresna = city
+#b_kiffa = city
+#b_kankossa = temple
 
-#b_fegui = temple
-#b_alahina = castle
+#b_boumdeid = castle
+#b_guerou = castle
+#b_aftout = castle
 
 # Misc
 culture = manden
 religion = west_african_pagan
 
 # History
-1060.1.1 = { b_bambuk = castle }
+
+1050.1.1 = { religion = sunni }
+1300.1.1 = {
+	b_bambuk = castle
+	b_kiffa = city
+	b_kankossa = temple
+}
