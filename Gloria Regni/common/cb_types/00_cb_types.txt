@@ -2929,9 +2929,6 @@ crusade = {
 
 	on_success_title = {
 		log = "[Root.GetBestName] succeeded with their crusade for the [This.GetFullName] against [From.GetBestName]"
-		#change imperial decadence
-		ROOT = { imperial_decadence_minus_2_effect = yes }
-		FROM = { imperial_decadence_plus_2_effect = yes }
 		
 		hidden_tooltip = {
 			any_attacker = {
