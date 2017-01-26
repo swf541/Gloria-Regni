@@ -16,9 +16,14 @@ b_grosseto = city
 #b_rusellae = castle
 
 # Misc
-culture = italian
-religion = catholic
+culture = old_italian
+religion = imperial
 
 # History
+
+867.1.1 = { culture = italian }
+
+1054.7.6 = { religion = catholic }
+
 1096.1.1 = { trade_post = b_della_gherardesca }
 1285.1.1 = { trade_post = b_doria }

@@ -16,10 +16,14 @@ b_cesena = city
 #b_gatteo = castle
 
 # Misc
-culture = italian
-religion = catholic
+culture = old_italian
+religion = imperial
 
 # History
+867.1.1 = { culture = italian }
+
+1054.7.6 = { religion = catholic }
+
 1066.1.1 = { capital = b_ravenna }
 1130.1.1 = { trade_post = b_contarini }
 1218.1.1 = { capital = b_cervia }

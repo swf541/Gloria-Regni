@@ -15,7 +15,7 @@ b_scarborough = city
 
 # Misc
 culture = saxon
-religion = catholic
+religion = imperial
 
 # History
 866.1.1 = {
@@ -27,8 +27,10 @@ religion = catholic
 }
 954.1.1 = {
 	culture = saxon 
-	religion = catholic
+	religion = imperial
 }
+1054.7.6 = { religion = catholic }
+
 1100.11.11 = { culture = english }
 1187.1.1 = { b_pontefract = castle } 
 1330.1.1 = { remove_settlement = b_pontefract } 

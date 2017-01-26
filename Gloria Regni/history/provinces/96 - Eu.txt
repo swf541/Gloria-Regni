@@ -16,8 +16,8 @@ b_forges = city
 #b_neufchatel-en-bray = castle
 
 # Misc
-culture = old_frankish
-religion = catholic
+culture = galloroman
+religion = imperial
 
 # History
 790.1.1 = { culture = frankish }
@@ -36,6 +36,8 @@ religion = catholic
 960.1.1 = {
 	culture = norman
 }
+
+1054.7.6 = { religion = catholic }
 
 1066.1.1 = {
 	b_forges = ct_port_2

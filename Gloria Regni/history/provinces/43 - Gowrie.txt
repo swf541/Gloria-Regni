@@ -17,7 +17,7 @@ b_dunkeld = temple
 
 # Misc
 culture = pictish
-religion = catholic
+religion = imperial
 terrain = hills
 
 # History
@@ -25,6 +25,8 @@ terrain = hills
 848.1.1={
 	culture = scottish
 }
+
+1054.7.6 = { religion = catholic }
 
 1066.1.1 = { 
 	b_scone = castle

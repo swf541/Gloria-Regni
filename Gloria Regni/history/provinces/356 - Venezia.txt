@@ -16,8 +16,8 @@ b_lido = city
 #b_fusina = city
 
 # Misc
-culture = italian
-religion = catholic
+culture = old_italian
+religion = imperial
 
 # History
 
@@ -45,7 +45,10 @@ religion = catholic
 	b_rialto = tp_shipyard_1
 	b_jesolo = ct_shipyard_1
 	b_lido = ct_shipyard_1
+	culture = italian
 }
+
+1054.7.6 = { religion = catholic }
 
 1066.1.1 = { 
 	b_venezia = ct_port_3

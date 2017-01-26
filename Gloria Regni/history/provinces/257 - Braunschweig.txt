@@ -16,14 +16,16 @@ b_paderborn = temple # Norse Pagan Holy Site (representing the Irminsul at Oberm
 
 # Misc
 culture = old_saxon
-religion = norse_pagan
+religion = germanic_pagan
 
 # History
 790.1.1 = {
 	culture = german
-	religion = catholic
-
+	religion = imperial
 	b_braunschweig = castle
 	b_bielefeld = city
 }
+
+1054.7.6 = { religion = catholic }
+
 1127.1.1 = { b_waldeck = castle }

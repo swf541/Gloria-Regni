@@ -17,10 +17,13 @@ b_clonmacnoise = temple
 
 # Misc
 culture = irish
-religion = catholic
+religion = imperial
 
 # History
 1000.1.1 = {
 	b_gowran = castle
 	b_kilkenny = city
 }
+
+
+1054.7.6 = { religion = catholic }

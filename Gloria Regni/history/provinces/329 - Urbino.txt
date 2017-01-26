@@ -15,11 +15,16 @@ b_sanseverino = temple
 #b_fossombrone = castle
 
 # Misc
-culture = italian
-religion = catholic
+culture = old_italian
+religion = imperial
 
 # History
+867.1.1 = { culture = italian }
+
 1000.1.1 = { capital = b_sanmarino }
+
+1054.7.6 = { religion = catholic }
+
 1216.2.12 = { capital = b_urbino }
 1289.1.1 = { capital = b_sanseverino }
 1292.1.1 = { capital = b_urbino }

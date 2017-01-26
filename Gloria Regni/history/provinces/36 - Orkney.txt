@@ -17,7 +17,7 @@ b_kirkwall = temple
 
 # Misc
 culture = pictish
-religion = catholic
+religion = imperial
 terrain = hills
 
 # History
@@ -30,6 +30,8 @@ terrain = hills
 	b_birsay = ca_shipyard_1
 	b_kirkwall = tp_town_1
 	b_kirkwall = tp_shipyard_1
-	religion = catholic
+	religion = imperial
 } 
+1054.7.6 = { religion = catholic }
+
 1066.1.1 = { culture = norwegian }

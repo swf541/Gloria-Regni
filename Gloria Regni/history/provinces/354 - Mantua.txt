@@ -15,9 +15,13 @@ b_serravalle = temple
 #b_bagnolosanvito = castle
 
 # Misc
-culture = italian
-religion = catholic
+culture = old_italian
+religion = imperial
 
 # History
+867.1.1 = { culture = italian }
+
+1054.7.6 = { religion = catholic }
+
 1115.7.24 = { capital = b_castellucchio }
 1220.1.1 = { capital = b_mantua }

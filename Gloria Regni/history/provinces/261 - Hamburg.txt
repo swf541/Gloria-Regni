@@ -17,7 +17,7 @@ b_hamburg = temple
 
 # Misc
 culture = old_saxon
-religion = norse_pagan
+religion = germanic_pagan
 
 # History
 790.1.1 = {
@@ -25,9 +25,12 @@ religion = norse_pagan
 	b_dithmarschen = castle
 	capital = b_hamburg
 	culture = german
-	religion = catholic
+	religion = imperial
 }
-1224.1.1 = { b_hamburg = city }
+
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = { b_hamburg = city }
 1224.1.1 = { capital = b_dithmarschen }
 1224.1.1 = { b_buxtehude = castle } 
 1224.1.1 = { remove_settlement = b_altona } 

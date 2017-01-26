@@ -19,7 +19,7 @@ b_rushen = tribal
 # Misc
 terrain = hills
 culture = welsh
-religion = catholic
+religion = imperial
 
 # History
 836.1.1 = {
@@ -27,7 +27,7 @@ religion = catholic
 	religion = norse_pagan
 }
 1000.1.1 = {
-	religion = catholic
+	religion = imperial
 	
 	b_rushen = castle
 	b_peel = temple
@@ -38,5 +38,7 @@ religion = catholic
 	b_peel = tp_shipyard_1
 	b_douglas = ct_port_1
 } 
+1054.7.6 = { religion = catholic }
+
 1066.1.1 = { culture = norwegian } 
 1130.1.1 = { culture = scottish }

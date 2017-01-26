@@ -18,7 +18,7 @@ b_ravello=temple
 
 # Misc
 culture = greek
-religion = orthodox
+religion = imperial
 
 # History
 867.1.1 = { 
@@ -38,8 +38,10 @@ religion = orthodox
 
 898.1.1 = {
 	culture=lombard
-	religion=catholic
+	religion=imperial
 }
+
+1054.7.6 = { religion = catholic }
 
 1076.12.13={
 	remove_settlement=b_amalfi

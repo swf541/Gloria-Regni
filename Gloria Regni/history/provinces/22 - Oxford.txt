@@ -16,8 +16,14 @@ b_abingdon = temple
 #b_wallingford = castle
 
 # Misc
-culture = saxon
-religion = catholic
+culture = british
+religion = imperial
 
 # History
+800.1.1 = {
+	culture = saxon
+}
+
+1054.7.6 = { religion = catholic }
+
 1100.11.11 = { culture = english } 

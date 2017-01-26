@@ -17,14 +17,16 @@ b_abercorn = temple
 #b_torphichen = castle
 
 # Misc
-culture = welsh
-religion = catholic
+culture = britonic
+religion = imperial
 
 # History
 867.1.1 = {
 	culture = saxon
 	b_stirling = castle
 }
+1054.7.6 = { religion = catholic }
+
 1100.11.11 = { culture = english }
 1235.9.25 = { culture = scottish }
 
