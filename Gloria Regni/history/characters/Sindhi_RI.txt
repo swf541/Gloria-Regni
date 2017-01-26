@@ -21,6 +21,7 @@
 	religion="hindu"
 	culture="sindhi"
 	trait=kshatriya
+	female=yes
 	602.5.3={
 		birth=yes
 	}
@@ -49,7 +50,7 @@
 217873 = {
 	name="Khinkhila"
 	dynasty = 1100124523
-	religion = vanuhism 
+	religion = zoroastrian 
 	culture = bactrian
 	trait = "zealous"
 	trait = "brave"
@@ -65,7 +66,7 @@
 	name="Yudhishthira"
 	dynasty = 1100124523
 	father = 217873
-	religion = vanuhism 
+	religion = zoroastrian 
 	culture = bactrian
 	trait = "zealous"
 	trait = "brave"
@@ -465,7 +466,6 @@
 	culture="tamil"
 	trait=kshatriya
 	trait=shaivist_hindu 
-	father=189048
 	590.1.1={
 		birth="590.1.1"
 	}
@@ -658,7 +658,7 @@
 		death=yes
 	}
 }
-217919 = {
+2117919 = {
 	name="Arunashwa"
 	religion="buddhist"
 	culture="hindustani"
