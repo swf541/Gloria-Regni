@@ -3092,6 +3092,8 @@ e_germany = {
 
 				holy_site = norse_pagan
 				holy_site = norse_pagan_reformed
+				holy_site = germanic_pagan
+				holy_site = germanic_pagan_reformed
 				
 				b_middelburg = {
 				}
@@ -4057,7 +4059,8 @@ e_germany = {
 
 				holy_site = norse_pagan
 				holy_site = norse_pagan_reformed
-				
+				holy_site = germanic_pagan
+				holy_site = germanic_pagan_reformed				
 				b_braunschweig = {
 				}
 				b_bielefeld = {
@@ -4970,6 +4973,7 @@ e_byzantium = {
 				turkish = "Balakhisar"
 
 				holy_site = hellenic_pagan
+				holy_site = hellenic_pagan_reformed
 				
 				b_abydos = {
 					turkish = "Balakhisar"
@@ -5115,6 +5119,19 @@ e_byzantium = {
 				
 				top_de_jure_capital = yes
 
+				holy_site = iconoclast
+				holy_site = iconoclast
+				holy_site = monothelite
+				holy_site = valentinianism
+				holy_site = priscillianism
+				holy_site = marcionism
+				holy_site = macedonianism
+				holy_site = pelagianism
+				holy_site = sabellianism
+				holy_site = adoptionism
+				holy_site = donatism
+				holy_site = arian
+				holy_site = chalcedonian
 				holy_site = orthodox
 				
 				turkish = "Kostantiniyye"
@@ -5257,6 +5274,8 @@ e_byzantium = {
 				turkish = "Salonika"
 
 				holy_site = hellenic_pagan
+				holy_site = hellenic_pagan_reformed
+				holy_site = sol_invictus
 				
 				b_thessaloniki = {
 					turkish = "Salonika"
@@ -5513,7 +5532,6 @@ e_byzantium = {
 				color={ 215 75 167 }
 				color2={ 255 255 20 }
 
-				holy_site = hellenic_pagan
 				
 				b_athens = {
 				}
@@ -8988,10 +9006,25 @@ e_italy = {
 				
 				christian = 5000 # Crusade target weight
 
+				holy_site = iconoclast
+				holy_site = iconoclast
+				holy_site = monothelite
+				holy_site = valentinianism
+				holy_site = priscillianism
+				holy_site = marcionism
+				holy_site = macedonianism
+				holy_site = pelagianism
+				holy_site = sabellianism
+				holy_site = adoptionism
+				holy_site = donatism
+				holy_site = arian
+				holy_site = chalcedonian
 				holy_site = catholic
 				holy_site = aztec
 				holy_site = aztec_reformed
 				holy_site = hellenic_pagan
+				holy_site = hellenic_pagan_reformed
+				holy_site = sol_invictus
 				holy_site = pagan
 				
 				italian = Roma
@@ -9260,7 +9293,8 @@ e_scandinavia = {
 
 				holy_site = norse_pagan
 				holy_site = norse_pagan_reformed
-				
+				holy_site = germanic_pagan
+				holy_site = germanic_pagan_reformed				
 				b_sigtuna = {
 				}
 				b_uppsala = {
@@ -10023,7 +10057,8 @@ e_scandinavia = {
 
 				holy_site = norse_pagan
 				holy_site = norse_pagan_reformed
-				
+				holy_site = germanic_pagan
+				holy_site = germanic_pagan_reformed				
 				b_kobenhavn = {
 					swedish = Köpenhamn
 					norse = Hafn
@@ -10841,7 +10876,7 @@ e_scandinavia = {
 
 				holy_site = norse_pagan
 				holy_site = norse_pagan_reformed
-				
+			
 				b_tinghaugen = {
 				}
 				b_lade = {
@@ -19720,6 +19755,8 @@ e_persia = {
 				holy_site = nestorian
 				holy_site = zun_pagan
 				holy_site = zun_pagan_reformed
+				holy_site = semitic_pagan
+				holy_site = semitic_pagan_reformed
 				
 				b_baqubah = {
 				}
@@ -24763,7 +24800,9 @@ e_arabia = {
 				holy_site = sunni
 				holy_site = shiite
 				holy_site = ibadi
-				
+				holy_site = semitic_pagan
+				holy_site = semitic_pagan_reformed
+
 				b_medina = {
 				}
 				b_khaybar = {
@@ -24792,6 +24831,8 @@ e_arabia = {
 				holy_site = pagan
 				holy_site = yazidi
 				holy_site = ibadi
+				holy_site = semitic_pagan
+				holy_site = semitic_pagan_reformed
 				
 				b_mecca = {
 				}
@@ -25291,9 +25332,24 @@ e_arabia = {
 				color={ 102 221 136 }
 				color2={ 255 255 255 }
 
+				holy_site = iconoclast
+				holy_site = iconoclast
+				holy_site = monothelite
+				holy_site = valentinianism
+				holy_site = priscillianism
+				holy_site = marcionism
+				holy_site = macedonianism
+				holy_site = pelagianism
+				holy_site = sabellianism
+				holy_site = adoptionism
+				holy_site = donatism
+				holy_site = arian
+				holy_site = chalcedonian
 				holy_site = miaphysite
 				holy_site = monophysite
 				holy_site = hellenic_pagan
+				holy_site = hellenic_pagan_reformed
+				holy_site = sol_invictus
 				holy_site = nestorian
 				
 				b_alexandria = {
@@ -25984,6 +26040,19 @@ e_arabia = {
 				christian = 250 # Crusade target weight
 				muslim = 250 # Crusade target weight
 
+				holy_site = iconoclast
+				holy_site = iconoclast
+				holy_site = monothelite
+				holy_site = valentinianism
+				holy_site = priscillianism
+				holy_site = marcionism
+				holy_site = macedonianism
+				holy_site = pelagianism
+				holy_site = sabellianism
+				holy_site = adoptionism
+				holy_site = donatism
+				holy_site = arian
+				holy_site = chalcedonian
 				holy_site = catholic
 				holy_site = orthodox
 				holy_site = sunni
@@ -25997,7 +26066,9 @@ e_arabia = {
 				holy_site = samaritan
 				holy_site = karaite
 				holy_site = ibadi
-				
+				holy_site = semitic_pagan
+				holy_site = semitic_pagan_reformed
+
 				b_mirabel = {
 				}
 				b_jerusalem = {
@@ -26248,6 +26319,8 @@ e_arabia = {
 				color={ 93 240 28 }
 				color2={ 255 255 255 }
 			
+				holy_site = sol_invictus
+
 				b_homs = {
 				}
 				b_zweitina = {
@@ -26297,6 +26370,19 @@ e_arabia = {
 				color={ 152 69 135 }
 				color2={ 255 255 255 }
 
+				holy_site = iconoclast
+				holy_site = iconoclast
+				holy_site = monothelite
+				holy_site = valentinianism
+				holy_site = priscillianism
+				holy_site = marcionism
+				holy_site = macedonianism
+				holy_site = pelagianism
+				holy_site = sabellianism
+				holy_site = adoptionism
+				holy_site = donatism
+				holy_site = arian
+				holy_site = chalcedonian
 				holy_site = orthodox
 				holy_site = miaphysite
 				holy_site = monophysite
@@ -27233,7 +27319,11 @@ e_arabia = {
 			c_tunis = {
 				color={ 23 235 98 }
 				color2={ 255 255 255 }
-			
+
+				holy_site = hellenic_pagan			
+				holy_site = hellenic_pagan_reformed
+				holy_site = sol_invictus
+
 				b_tunis = {
 				}
 				b_ariana = {
@@ -27754,6 +27844,8 @@ e_abyssinia = {
 
 				holy_site = miaphysite
 				holy_site = monophysite
+				holy_site = semitic_pagan
+				holy_site = semitic_pagan_reformed
 				
 				b_adwa = {
 				}
@@ -28919,6 +29011,8 @@ e_britannia = {
 			
 				holy_site = aztec
 				holy_site = aztec_reformed
+				holy_site = germanic_pagan
+				holy_site = germanic_pagan_reformed
 
 				b_westminster = {
 					used_for_dynasty_names = no
