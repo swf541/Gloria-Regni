@@ -60,8 +60,6 @@ title_caesar;Caesar;;;;;;;;;x
 title_caesar_desc;Caesar is the one of the highest titles in the Roman Empire, second only to the Emperor. It can only be granted to close relatives of the Emperor, and is used to designate the heir to the Imperial throne.;;;;;;;;;x 
 title_magister;Magister;;;;;;;;;x 
 title_magister_desc;A Magister (Master) was a type of officer who held imperium (Power) in the Roman Republic. It became a proper title in the late Roman Empire and was given to important ministers, bureaucrats and generals.;;;;;;;;;x 
-title_senator;Senator;;;;;;;;;x 
-title_senator_desc;This title allows a vassal to sit in the Roman Senate. This title gives its holder a substantial boost to their prestige due to its importance in the government of the state.;;;;;;;;;x 
 title_nobilissimus;Nobilissimus;;;;;;;;;x 
 title_nobilissimus_desc;Nobilissimus is Latin for 'most noble.' It was introduced as an honorary title during Constantine's reign and affords its holders great prestige.;;;;;;;;;x 
 title_patrician;Patrician;;;;;;;;;x 
@@ -521,8 +519,6 @@ d_heroes;Heroes of Olympus;;;;;;;;;x
 d_hellenic_pagan;The Hellenic Church;;;;;;;;;x 
 d_hellenic_Pagan_adj;Hellenic;;;;;;;;;x 
 empress_iranian;Shahbanu;;;;;;;;;x 
-title_patrikos;Patrikos;;;;;;;;;x 
-title_patrikos_desc;Although no longer as prestigious as it was during the times of Justinian, the title of Patrikos still ranks high in Byzantine society.;;;;;;;;;x 
 tp_thirdtemple;Third Temple;;;;;;;;;x 
 tp_thirdtemple_desc;The temple was rebuilt after the re-creation of Israel. It is the heart of the Jewish faith and the holiest site in the Jewish religion.;;;;;;;;;x 
 tp_irminsul;Irminsul;;;;;;;;;x 
@@ -865,13 +861,11 @@ EVTDESC_CM_6;Through foreign trade and Latin influence new traditions are evolvi
 EVTDESC_CM_7;The Hispano-Romans in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Castilian in culture.;;;;;;;;;x 
 EVTDESC_CM_8;The Hispano-Romans in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Catalan in culture.;;;;;;;;;x 
 EVTDESC_CM_9;Through foreign trade and Latin influence, new traditions are evolving among the Hispano-Romans. This is highly noticeable in the province of [Root.GetName], which is now Portuguese in culture.;;;;;;;;;x 
-hispanic;Hispano-Roman;;;;;;;;;x 
 vasconic;Vasconic;;;;;;;;;x 
 k_neustria;Neustria;;;;;;;;;x 
 k_neustria_adj;Neustrian;;;;;;;;;x 
 k_austrasia;Austrasia;;;;;;;;;x 
 k_austrasia_adj;Austrasian;;;;;;;;;x 
-dalmatian;Dalmatian;;;;;;;;;x 
 create_fraticelli_papacy;Create the Fraticelli Papacy;;;;;;;;;x 
 create_fraticelli_papacy_desc;If I am pious enough and control Rome, I can appoint a Fraticelli Pope to serve as the head of the faith in opposition to the vile Catholic Pope.;;;;;;;;;x 
 create_iconoclast_patriarchate;Create the Iconoclast Patriarchate;;;;;;;;;x 
@@ -1021,7 +1015,7 @@ visigothic_germanic_conversion_desc;With the Catholic Church in disarray, you co
 e_gallia;Gallic Empire;;;;;;;;;x 
 e_gallia_adj;Gallic;;;;;;;;;x 
 e_palmyra;Palmyrene Empire;;;;;;;;;x 
-e_palmyra;Palmyrene;;;;;;;;;x 
+e_palmyra_adj;Palmyrene;;;;;;;;;x 
 restore_gallic_empire;Restore the Gallic Empire..;;;;;;;;;x 
 restore_gallia_empire_desc;Restore the Gallic Empire.;;;;;;;;;x 
 restore_palmyrene_empire;Restore the Palmyrene Empire..;;;;;;;;;x 
@@ -1239,7 +1233,6 @@ b_lamounia;Lamounia;;;;;;;;;x
 b_doris;Doris;;;;;;;;;x 
 b_geyve;Geyve;;;;;;;;;x 
 b_tarsia;Tarsia;;;;;;;;;x 
-britonic;Britonic;;;;;;;;;x 
 AUGUR;Augur;;;;;;;;;x 
 EVTNAMEPA.10328;Fall of Trebizond;;;;;;;;;x 
 EVTDESCPA.10328;The great Empire of Trebizond has fallen. With the loss of Trebizond itself to foreign powers, the Empire has completely collapsed. The unity of the Pontic Greeks has been shattered for now, but the future may see it return.;;;;;;;;;x 
