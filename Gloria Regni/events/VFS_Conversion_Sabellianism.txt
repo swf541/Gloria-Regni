@@ -1,12 +1,12 @@
 namespace = VFS
-character_event = {	#adoptionism Expulsion
-	id = VFS.305
+character_event = {	#sabellianism Expulsion
+	id = VFS.306
 	hide_window = yes
 	is_triggered_only = yes
 	
 	trigger = {
 		has_job_action = action_inquisition
-		NOT = { religion = adoptionism }
+		NOT = { religion = sabellianism }
 		location = { religion = ROOT } 
 		location = {
 			owner = { same_realm = ROOT }
@@ -14,13 +14,13 @@ character_event = {	#adoptionism Expulsion
 		location = {
 			OR = {
 				any_province_holding = {
-					has_building = ct_adoptionism_community_1
+					has_building = ct_sabellianism_community_1
 				}
 				any_province_holding = {
-					has_building = ct_adoptionism_community_2
+					has_building = ct_sabellianism_community_2
 				}
 				any_province_holding = {
-					has_building = ct_adoptionism_community_3
+					has_building = ct_sabellianism_community_3
 				}
 			}
 		}
@@ -31,19 +31,19 @@ character_event = {	#adoptionism Expulsion
 			limit = {
 				location = {
 					any_province_holding = {
-						has_building = ct_adoptionism_community_1
+						has_building = ct_sabellianism_community_1
 					}
 				}
 				NOT = {
 					OR = {
 						location = {
 							any_province_holding = {
-								has_building = ct_adoptionism_community_2
+								has_building = ct_sabellianism_community_2
 							}
 						}
 						location = {
 							any_province_holding = {
-								has_building = ct_adoptionism_community_3
+								has_building = ct_sabellianism_community_3
 							}
 						}
 					}
@@ -52,7 +52,7 @@ character_event = {	#adoptionism Expulsion
 			location = {
 				any_province_holding = {
 					limit = { holding_type = city } 
-					remove_building = ct_adoptionism_community_1
+					remove_building = ct_sabellianism_community_1
 				}
 			}
 		}
@@ -60,13 +60,13 @@ character_event = {	#adoptionism Expulsion
 			limit = {
 				location = {
 					any_province_holding = {
-						has_building = ct_adoptionism_community_2
+						has_building = ct_sabellianism_community_2
 					}
 				}
 				location = {
 					NOT = {
 						any_province_holding = {
-							has_building = ct_adoptionism_community_3
+							has_building = ct_sabellianism_community_3
 						}
 					}
 				}
@@ -74,7 +74,7 @@ character_event = {	#adoptionism Expulsion
 			location = {
 				any_province_holding = {
 					limit = { holding_type = city } 
-					remove_building = ct_adoptionism_community_2
+					remove_building = ct_sabellianism_community_2
 				}
 			}
 		}
@@ -82,14 +82,14 @@ character_event = {	#adoptionism Expulsion
 			limit = {
 				location = {
 					any_province_holding = {
-						has_building = ct_adoptionism_community_3
+						has_building = ct_sabellianism_community_3
 					}
 				}
 			}
 			location = {
 				any_province_holding = {
 					limit = { holding_type = city } 
-					remove_building = ct_adoptionism_community_3
+					remove_building = ct_sabellianism_community_3
 				}
 			}
 		}
