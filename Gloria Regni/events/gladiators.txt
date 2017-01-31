@@ -112,9 +112,7 @@ character_event = { #Second Chance at Disbandment
 		prestige = 300
 		wealth = 75
 		clr_character_flag = unjust_mercs
-		remove_character_modifier = {
-			name = gladiator_mercenaries
-		}
+		remove_character_modifier = gladiator_mercenaries
 	}
 	
 	option = {
@@ -247,11 +245,9 @@ letter_event = { #Liege gets gladiators money
 				piety = 100
 				prestige = -100
 			}
-		hidden_tooltip = {
-			FROM = {
-				character_event = { id = gladiators.6 }
-				}
-			}
+		}
+		FROM = {
+			character_event = { id = gladiators.6 }
 		}
 	}
 }
@@ -334,6 +330,7 @@ character_event = { #Delayed Construction
 		modifier = {
 			factor = 0.2
 			stewardship = 6
+		}
 		modifier = {
 			factor = 0.4
 			stewardship = 8
@@ -430,18 +427,14 @@ character_event = { #Insufficient Tech
 					}
 			}
 			25 = {
-				learning = 2
+				change_learning = 2
 			}
 			25 = {
 				economy_techpoints = 100
 			}
 			25 = {
-				custom_tooltip = {
-					text = no_research
-				}
 			}
 		}
-	}
 	
 	option = { #Who Cares
 		name = "EVTOPTBgladiators.9"

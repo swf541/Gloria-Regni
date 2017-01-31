@@ -174,9 +174,6 @@ good_omen_desc;Fantastic events have been predicted;;;;;;;;;;;;;x
 bad_omen;Bad Omen;;;;;;;;;;;;;x
 bad_omen_desc;Horrible events have been predicted;;;;;;;;;;;;;x
 EVTDESC_HP_B1000;Even after the Tsar converted to Christianity, many of the common people remained pagan, the problem exasperated by the priests the Greek Emperor sent to convert the populace. Few enjoyed sermons they did not understand preached in a language they did not speak. To better bring the Light of Christ, a Bulgarian born monk began preaching the Gospel in the native tongue, his sermons touching on the communion of property, clerical poverity, and an end to feudal servitude, all dangerous and considered heretical. His form of Christianity has spread like wildfire throughout the Kingdom of Bulgaria.;;;;;;;;;;;;;x
-EVTOPTA_HP_B1000;Invite the man to court;;;;;;;;;;;;;x
-EVTOPTB_HP_B1000;Ignore the madman;;;;;;;;;;;;;x
-EVTOPTC_HP_B1000;Have him 'silenced';;;;;;;;;;;;;x
 EVTDESC_HP_B1001;While some of the ideas of this Bogomil are quite... unorthodox, he does present an interesting opportunity. By converting to his brand of Christianity, you could establish your own state church with him as your Patriarch, with no reliance on the Greeks in Constantinople. Of course, this would invite reprisals ;;;;;;;;;;;;;x
 EVTOPTA_HP_B1000;Make Bogomil the Patriarch of a new Church;;;;;;;;;;;;;x
 EVTOPTB_HP_B1000;I can not afford a conflict with the Greeks right now;;;;;;;;;;;;;x
@@ -402,8 +399,6 @@ on_pilgrimage_yazidi;On Pilgrimage;;;;;;;;;;;;;x
 on_pilgrimage_yazidi_desc;This man is on pilgrimage to Lalish;;;;;;;;;;;;;x
 yazidi_pilgrim;Yazidi Pilgrim;;;;;;;;;;;;;x
 yazidi_pilgrim_desc;This man attended the Feast of Assembly at Lalish;;;;;;;;;;;;;x
-yazidi_pilgrimage;Yazidi Pilgrimage;;;;;;;;;;;;;x
-yazidi_pilgrimage_desc;Go on pilgrimage to the Tomb of Sheikh Adi, and attend the Feast of Assembly;;;;;;;;;;;;;x
 EVTNAME_HRP_1620;Lalish;;;;;;;;;;;;;x
 EVTDESC_HRP_1620;You have finally arrived at Lalish! It is a small mountain valley village, north of Mosul.  The conical roofs you see in the distance mark the tomb of the holy Sheikh Adi, and as well as many other Yazidi saints;;;;;;;;;;;;;x
 EVTOPTA_HRP_1620;A wondrous sight!;;;;;;;;;;;;;x
@@ -738,7 +733,6 @@ EVTTITLE_HRP_12000;Council of Saint-Félix;;;;;;;;;;;;;x
 EVTDESC_HRP_12000;In [GetDateText], the Cathar bishops met under the Bogomilist Bishop Niketas, at Saint-Félix. Amongst heated debate, there they codified many important laws of the religion, and divided their territories into bishoprics, marking a turning point in the religion's history.  Their new theology is gaining many converts, and spreading like wildfire across southern France.;;;;;;;;;;;;;x
 EVTOPTA_HRP_12000;Heresy, heresy everywhere!;;;;;;;;;;;;;x
 EVTOPTB_HRP_12000;A crusade sounds in order...;;;;;;;;;;;;;x
-EVTDESC_HRP_12000;Let the fools fight each other;;;;;;;;;;;;;x
 EVTTITLE_HRP_12001;The Albigensian Crusade;;;;;;;;;;;;;x
 EVTDESC_HRP_12001;The Cathar faithful desire nothing more than peace, but the men of this evil world will not let that be. And so, a change in philosophy is in order. The Cathar are permitted, no required, to make holy war to drive off the unbelievers and bring about the salvation of mankind;;;;;;;;;;;;;x
 EVTOPTA_HRP_12001;God wills it!;;;;;;;;;;;;;x
@@ -796,18 +790,10 @@ EVTDESC_HRP_8104;With little regard for his safety, [Root.GetTitledFirstName] fe
 EVTOPTA_HRP_8104;Excellent;;;;;;;;;;;;;x
 EVTDESC_HRP_8100;Showing little regard for his personal safety in this corrupt world, [Root.GetTitledFirstName] has become known as fearless;;;;;;;;;;;;;x
 EVTOPTA_HRP_8110;Death comes for us all;;;;;;;;;;;;;x
-paulician_DESC;Paulicianism is Christian Gnostic heresy influenced by Manichaeism, originating in Armenia, known for its militarist attitude and emphasis on only accepting the New Testament as legitimate. New Heretic Pride features:\n§Y*§! Paulicians can raid and Holy War other Christians\n§Y*§! Paulicians can gain the Fearless and Iconoclast traits\n§Y*§! Historical Spread Events and new Holy Sites\n§Y*§! A Martial bonus and Learning malus\n Vanilla features:\n§Y*§! There is always a Paulician Patriarch, even if Constantinople falls\n§Y*§! Multiple Patriarchs - the five Pentarchs and Autocephalous Patriarchs under Kings\n§Y*§! Patriarchs can grant divorces\n§Y*§! The Patriarch can grant the Invasion Casus Belli\n§Y*§! Patriarchs can Excommunicate Paulician characters;;;;;;;;;;;;;x
 EVTDESC_HRP_8111;This world is corrupt and filled with evil. There is no purpose in trying to remain in it any longer than necessary;;;;;;;;;;;;;x
 EVTOPTA_HRP_8111;Life is a dream, who fears to wake?;;;;;;;;;;;;;x
 EVTDESC_HRP_8112;Your ward, [From.GetFirstName] has become a good Paulician, and has no fear of death in his heart;;;;;;;;;;;;;x
 EVTOPTA_HRP_8112;Life is a dream, who fears to wake?;;;;;;;;;;;;;x
-monothelite_DESC;Monothelitism is a Christological doctrine that was declared heretical in 681. Monothelites attempted to develop the Miaphysite and Monophysite stance on the single nature of Christ by saying he had both a human and a divine nature but only a single will. The nominal head of the Monothelite Church is the Monothelite Patriarch of Antioch. New Heretic Pride features:\n§Y*§! A Monothelite Emperor can mend the Chalcedon Schism\n§Y*§! Monothelites can gain the Tolerance trait\n§Y*§! Monothelites must lift the stain of Heresy from their sect\n§Y*§! Monothelites can not declare Holy War on Christians\n§Y*§! Monothelites get a defensive bonus in home territory, but a Martial malus \n Vanilla features:\n§Y*§! There is always a Monothelite Patriarch, even if he has no land\n§Y*§! Multiple Patriarchs - the five Pentarchs and Autocephalous Patriarchs under Kings\n§Y*§! Patriarchs can grant divorces\n§Y*§! The Monothelite Patriarch can grant the Invasion Casus Belli\n§Y*§! Patriarchs can Excommunicate Monothelite characters;;;;;;;;;;;;;x
-waldensian_DESC;Originally a reform movement within the Catholic church, Waldensian heretics are anti-clerical and advocate a return to vows of poverty. They are opposed to capital punishment and believe that laymen can also administer the sacraments, and have no religious head. New Heretic Pride features:\n§Y*§! A Stewardship and garrison bonus \n§Y*§! New Demense Laws \n§Y*§! Historical Spread Events and new Holy Sites \n§Y*§! New traits and flavor events \n§Y*§! Waldensians refuse to go on pilgrimage, and can sack Catholic Pilgrimage sites;;;;;;;;;;;;;x
-lollard_DESC;Lollard heretics are opposed to perceived corruption within the Catholic Church. Like many Catholic heresies, they loathe the wealth and ostentation of the clergy and advocate a return to a more original form of Christianity. This heresy has no formal head. New Heretic Pride features:\n§Y*§! Priests can marry and inherit \n§Y*§! Historical Spread Events and new Holy Sites \n§Y*§! Lollards can gain the Iconoclast trait;;;;;;;;;;;;;x
-fraticelli_DESC;The Fraticelli, or 'Little Brethren', is a Catholic heresy that originated in the Fransiscan Order of monks. It is devoted to poverty and asceticism - especially for men of the cloth. Fraticelli heretics are violently opposed to Church wealth and displays of opulence. New Heretic Pride features:\n§Y*§! Historical Spread Events \n§Y*§! A Learning bonus but a Stewardship malus \n§Y*§! New Demense Laws \n Vanilla features:\n§Y*§! Can create the Fraticelli Papacy, if Rome is conquered\n§Y*§! The Pope can grant divorces\n§Y*§! The Pope can grant the Invasion Casus Belli\n§Y*§! The Pope can Excommunicate Fraticelli characters§Y*§! Fraticelli Bishops may pay tax to the Pope rather than their secular liege;;;;;;;;;;;;;x
-cathar_DESC;The Cathar, or Albigensian, heresy rejects confession and the holiness of the clergy and of the Pope. They only have a single sacrament - the Consolation - to remove sin and turn the believer into a Cathar 'Perfect'. New Heretic Pride features:\n§Y*§! Historical Spread Events and new Holy Sites\n§Y*§! The Perfecti trait \n§Y*§! Lowered fertility and Cathars can not choose the Family or Seduction Focus \n§Y*§! Cathars can adopt children \n§Y*§! Cathars can not declare Holy War on Catholics unless they are attacked first \n§Y*§! Cathars can create a Papacy \n§Y*§! Cathars have lowered garrison and levy sizes, but higher morale\n Vanilla features:\n§Y*§! There is no religious head\n§Y*§! Cathars may install women as priests;;;;;;;;;;;;;x
-messalian_DESC;"The Messalians, or Euchites (""Those who Pray""), are a heretical Christian sect that originated in Mesopotamia, influenced by dualistic faiths like Zoroastrianism. Messalians believe that God can be perceived by the carnal senses, and that this perception is necessary to reach perfection. Each person is born with an inner demon, and only intense prayer can drive it out. They also believe that Lucifer is the elder son of God and a force for good, and that incest is sacred since it was practised by the children of Adam and Eve. They have no formal rites and no strict church hierarchy. New Heretic Pride features:\n§Y*§! New Religious Traits\n§Y*§! Messalians must pray to expel their personal demons\n§Y*§! Messalians can create their own Holy Order \n§Y*§! Messalian Character have an Intrigue bonus but a Diplomacy Malus\n§Y*§!\n Vanilla features:\n§Y*§! There is no religious head\n§Y*§! Messalians may install women as priests\n§Y*§! Rulers can marry close kin to improve vassal opinions";;;;;;;;;;;;;x
-iconoclast_DESC;The Iconoclast heresy plagued the Byzantine Empire in multiple waves. Iconoclasts believe that religious images - icons and depictions of holy figures in particular - are a form of idolatry and must not be allowed. In their heyday, iconoclasts destroyed innumerable such decorations and icons, sometimes even urged on by Iconoclast Emperors. New Heretic Pride features:\n§Y*§! Iconoclasts can gain the Iconoclast trait and have special events \n§Y*§! Can create the Iconoclast Patriarch if Constantinople is controlled \n Vanilla features:\n§Y*§! Multiple Patriarchs - the five Pentarchs and Autocephalous Patriarchs under Kings\n§Y*§! Patriarchs can grant divorces\n§Y*§! The Iconoclast Patriarch can grant the Invasion Casus Belli\n§Y*§! Patriarchs can Excommunicate Orthodox characters;;;;;;;;;;;;;x
 iconoclast_blowback;Iconoclast Blowback;;;;;;;;;;;;;x
 iconoclast_blowback_desc;The peasants are upset about the destruction of their icons;;;;;;;;;;;;;x
 EVTTITLE_HRP_6000;Acheiropoieta;;;;;;;;;;;;;x
@@ -841,13 +827,6 @@ cathar_fallen_perfecti;Fallen Perfecti;;;;;;;;;;;;;x
 cathar_fallen_perfecti_desc;This character has fallen to sin after becoming a Perfecti;;;;;;;;;;;;;x
 EVTDESC_HRP_12999;You have fallen from the elightened highest of Prefection by wallowing in sin. There can be no salvation for you in this incarnation;;;;;;;;;;;;;x
 EVTOPTA_HRP_12999;Maybe in my next life...;;;;;;;;;;;;;x
-yazidi_DESC;The Yazidi religion is properly a distinct religion but is treated as a Sunni heresy in the game. Yazidis believe that God created the world and left seven angels in charge, the chief of whom is the Peacock Angel, Malek Taus or Shaytan, a being usually identified by Christians and Muslims as Satan.New Heretic Pride features:\n§Y*§! Yazidi have their own pilgrimage and feast \n§Y*§! Yazidi can be reincarnations and incarnations of the Seven Archangels\n§Y*§! Yazidi have a defensive home bonus \n§Y*§! Yazidi characters have a diplomacy malus but a stewardship bonus \n Vanilla features:\n§Y*§! The Yazidi Sheikhdom is held by a secular ruler, and can cease to exist.\n§Y*§! The Yazidi Sheikh can subjugate other Yazidi rulers freely\n§Y*§! The Yazidi Sheikh can declare great Jihads\n§Y*§! Yazidi rulers can - and are expected to have - multiple wives\n§Y*§! Temple Holdings can be held by anyone without penalty\n§Y*§! Yazidi dynasties grow decadent unless the men have enough land and win wars;;;;;;;;;;;;;x
-hurufi_DESC;The Hurufi faith is a mystical, kabbalistic, Sufi sect within Islam, regarded as a heresy. New Heretic Pride features:\n§Y*§! Hurufi characters can become poets or mystics \n§Y*§! New Historical characters and spread events\n§Y*§! Hurufi characters have a learning malus but a stewardship malus\n Vanilla features:\n§Y*§! The Hurufi Sheikhdom is held by a secular ruler, and can cease to exist.\n§Y*§! The Hurufi Sheikh can subjugate other Hurufi rulers freely\n§Y*§! The Hurufi Sheikh can declare great Jihads\n§Y*§! Hurufi rulers can - and are expected to have - multiple wives\n§Y*§! Mosque Holdings can be held by anyone without penalty\n§Y*§! Hurufi dynasties grow decadent unless the men have enough land and win wars;;;;;;;;;;;;;x
-karaite_DESC;Karaite Judaism is a Jewish movement characterized by the recognition of the Tanakh alone as its supreme legal authority in Jewish religious law and theology. In this it is distinct from mainstream Rabbinic Judaism. Karaites maintain that all of the divine commandments handed down to Moses by God were recorded in the written Torah, without additional Oral Law or explanation. In-game, Karaite Judaism is a heresy of mainstream Judaism. New Heretic Pride features:\n§Y*§! The Karaite High Priesthood can be created \n§Y*§! Karaites can debate theology\n§Y*§! The Jewish Councillor events now can give Karaites;;;;;;;;;;;;;x
-samaritan_DESC;Samaritanism is an Abrahamic religion closely related to Judaism. Samaritans assert their worship is the true religion of the ancient Israelites prior to the Babylonian Exile, preserved by those who remained in the Land of Israel, as opposed to Judaism, which they assert is a related but altered and amended religion. New Heretic Pride features:\n§Y*§! The Samaritian High Priesthood Always Exists \n§Y*§! Defensive military bonuses\n§Y*§! Samaritans are divided into tribes \n§Y*§! Samaritans can restore the Kingdom of Samaria and rebuild the Altar on Mount Gerizim\n§Y*§! New Holy Sites and Spread Events;;;;;;;;;;;;;x
-kharijite_DESC;The Kharijites are a branch of Islam that was marginalized and repressed early in the 7th century. They believe that any unrepentant sinner is a Kafir, also rejecting the notion of infallibility of the Caliphs. New Heretic Pride features:\n§Y*§! Kharijites can holy war other Kharijites \n§Y*§! Sinful Kharijites can be declared Kafir\n§Y*§! Kharijite characters have a marital malus but a diplomacy malus\n§Y*§! Kharijites can raise armies of zealots, and have a light infantry bonus \n§Y*§! Kharijites can execute prisoners for fun and profit\n Vanilla features:\n§Y*§! The Kharijite Caliphate is held by a secular ruler, and can cease to exist.\n§Y*§! The Kharijite Caliph can subjugate other Hurufi rulers freely\n§Y*§! The Kharijite Caliph  can declare great Jihads\n§Y*§! Kharijite rulers can - and are expected to have - multiple wives\n§Y*§! Mosque Holdings can be held by anyone without penalty\n§Y*§! Kharijite dynasties grow decadent unless the men have enough land and win wars;;;;;;;;;;;;;x
-druze_DESC;The Druze religion originated in the Ismaili sect of Shi'a Islam, but has many features of gnosticism, neoplatonism in addition to the Abrahamic religions. New Heretic Pride features:\n§Y*§! Druze have an intrigue bonus, and other Muslims like them better \n§Y*§! Druze may only have one wife, and women can hold titles\n§Y*§! Druze characters can be reincarnations\n§Y*§! Druze can study their religion and go on retreats\n Vanilla features:\n§Y*§! There is no religious head\n§Y*§! Temple Holdings can be held by anyone without penalty\n§Y*§! Druze dynasties grow decadent unless the men have enough land and win wars;;;;;;;;;;;;;x
-zikri_DESC;Zikri Islam is a Sunni heresy in-game. The Zikri faith is treated as a millennialist sect in-game, that believes in the prophesized return of the Mahdi. New Heretic Pride features:\n§Y*§! The Zikri Caliphate can be created by the Mahdi \n§Y*§! Special events during Ramadan\n Vanilla features: \n§Y*§! Muslim rulers can - and are expected to have - multiple wives \n§Y*§! Mosque Holdings can be held by anyone without penalty \n§Y*§! Muslim dynasties grow decadent unless the men have enough land and win wars;;;;;;;;;;;;;x
 EVTDESC_HRP_16001;All Samaritans divide themselves into one of the four remaining tribes of Israel. The tribes are decided by birth, but since you have been adopted into the religion, you may pick a tribe to join. Any sons born with automatically be part of the tribe as well.;;;;;;;;;;;;;x
 EVTOPTA_HRP_16001;Tribe of Benjamin;;;;;;;;;;;;;x
 EVTOPTB_HRP_16001;Tribe of Manasseh;;;;;;;;;;;;;x
@@ -863,8 +842,6 @@ tribe_of_manasseh_desc;This character belongs to the Tribe of Manasseh;;;;;;;;;;
 tribe_of_benjamin_desc;This character belongs to the Tribe of Benjamin;;;;;;;;;;;;;x
 tribe_of_levi_desc;This character belongs to the Tribe of Levi;;;;;;;;;;;;;x
 tribe_of_ephraim_desc;This character belongs to the Tribe of Ephraim;;;;;;;;;;;;;x
-d_samaritan;Samaria High Priesthood;;;;;;;;;;;;;x
-d_samaritan_adj;Samaritan;;;;;;;;;;;;;x
 EVTDESC_HRP_16100;Although all Samaritans are equal under [Root.Religion.GetRandomGodName], you know that only the members of your own tribe can be trusted. In fact, you've made fast friends with a fellow tribe member;;;;;;;;;;;;;x
 EVTOPTA_HRP_16100;My Friend and Brother;;;;;;;;;;;;;x
 EVTDESC_HRP_16101;You've made good friends with a fellow member of your tribe;;;;;;;;;;;;;x
@@ -1001,8 +978,6 @@ EVTOPTA_HRP_17911;We welcome our new brothers in faith;;;;;;;;;;;;;x
 EVTOPTB_HRP_17911;May all those heathens all perish in pointless wars;;;;;;;;;;;;;x
 create_karaite_high_priesthood;Restore the High Priesthood;;;;;;;;;;;;;x
 create_karaite_high_priesthood_desc;The office of the Kohen Gadol - the High Priest of Judaism - has been vacant since the destruction of the Second Temple at the hands of the Romans. Now that the Third Temple has been built, perhaps a new High Priest should be appointed.;;;;;;;;;;;;;x
-d_karaite;The Karaite High Priesthood;;;;;;;;;;;;;x
-d karaite_adj;Jewish;;;;;;;;;;;;;x
 EVTDESC_HRP_17120;In 760, Anan ben David, the brother of the Jewish Exilarch, founded the Karaite sect and attempted to wrest control of the Exilarchiship from his brother. The attempt failed, and since then the his descendants have traveled from community to community, finally turning up at yours.;;;;;;;;;;;;;x
 EVTOPTA_HRP_17120;Invite him to stay as long as he wants;;;;;;;;;;;;;x
 EVTOPTB_HRP_17120;Turn him away;;;;;;;;;;;;;x
@@ -1238,7 +1213,6 @@ EVTDESC_HRP_19002;The Abbasids would never have seized the Caliphate without the
 EVTTITLE_HRP_19002;Babak and Banu;;;;;;;;;;;;;x
 EVTOPTA_HRP_19002;The Fires of Zoroastrianism are not extinguished ;;;;;;;;;;;;;x
 EVTOPTB_HRP_19002;We need a general to counter this revolt!;;;;;;;;;;;;;x
-d_mazdaki;Mazdaki Church;;;;;;;;;;;;;x
 anarchy_at_samarra_trait_death;murdered by his own bodyguard;;;;;;;;;;;;;x
 EVTDESC_HRP_19005;To counter the threat of Babak, a Persian general loyal to us has volunteered to lead the armies of the Faithful. He is a noble princeling from Oshrusana, and a recent convert to Islam, so there is some question of his loyalty, but he is a skilled general;;;;;;;;;;;;;x
 EVTOPTA_HRP_19005;Give him command;;;;;;;;;;;;;x
@@ -1395,8 +1369,6 @@ EVTOPTB_HRP_5236;It is true... [From.GetSheHe] is kin.;;;;;;;;;;;;;x
 EVTDESC_HRP_5237;Your spouse, [From.GetTitledFirstName], is dragged to the square, where a great bonfire is roaring. In a last desperate effort to save  [From.GetHerselfHimself], [From.GetFirstName] calls out to you for mercy. I have always loved you, [Root.GetFirstName]... and I always will.;;;;;;;;;;;;;x
 EVTOPTA_HRP_5237;Forgive me then, my love, but this is how it must be.;;;;;;;;;;;;;x
 EVTOPTB_HRP_5237;No, this is too much... I can't permit it.;;;;;;;;;;;;;x
-mazdaki_DESC;Mazdak was a Zoroastrian priest who claimed to be a prophet of Ahura Mazda. He attempted to reform the religion with Gnostic elements, and advocated communal possessions and welfare programs. His teachings fell out of favor with the Shahanshah Kavadh I in 524, but pockets of there heresy survived in remote areas. New Heretic Pride features:\n§Y*§! Historical Rebellion Events\n§Y*§! Mazdakis are expected to share the wealth of the state with the people\n§Y*§! Madzakis can create a High Priest \n§Y*§! Mazdaki realms have a defensive bonus, and characters get a Martial bonus\n§Y*§! Mazdaki realms can have priestesses, and females can inheirt;;;;;;;;;;;;;x
-manichean_DESC;Manichaeism is a Gnostic religion founded by the alleged prophet Mani who was put to death by the Sassanid Shahanshah Bahram I in 277. His 'Religion of Light' incorporated elements of Christianity, Zoroastrianism, Buddhism and Gnosticism. In the game, Manichaeism is regarded as a Zoroastrian heresy. New Heretic Pride features:\n§Y*§! The Manichean Leader exists at game start\n§Y*§! Mainchean have their own Feast, the Bema\n§Y*§! Manicheans can not do any of the special Zoroastrian decisions\n§Y*§! Manichean realms have a defensive bonus\n§Y*§! Mancheans have their own religious hierarchy that they can ascend through;;;;;;;;;;;;;x
 patron_nestor;St. Nestorius;;;;;;;;;;;;;x
 patron_addai;St. Addai;;;;;;;;;;;;;x
 patron_lucifer;Lucifer;;;;;;;;;;;;;x
@@ -1788,7 +1760,6 @@ church_st_bogomil_desc;The grandest cathedral of all Bogomilism;;;;;;;;;;;;;x
 create_bogomilist_patriarch;Create Bogomilist Patriarch;;;;;;;;;;;;;x
 create_bogomilist_patriarch_desc;Create a Head of Religion to run the Church;;;;;;;;;;;;;x
 PATRIARCH;Patriarch;;;;;;;;;;;;;x
-MATRIARCH;Matriarch;;;;;;;;;;;;;x
 GOD_ADITYA;Aditya;;;;;;;;;;;;;x
 adityan;Adityan;;;;;;;;;;;;;x
 adityan_DESC;Aditya, or Surya, is the chief solar deity in Hinduism. As the Zun faith reformed, the more Indic worshipers split off from the main body of faith and synchronized the worship of Aditya with that of Zun. New Heretic Pride features:\n§Y*§! No Religious Head\n§Y*§! Seven Patrons from the Seven colors of the rainbow\n§Y*§! Can raid other religions;;;;;;;;;;;;;x
@@ -1992,10 +1963,6 @@ EVTOPTA_HRP_34132;It's alright, I guess;;;;;;;;;;;;;x
 EVTDESC_HRP_34133;The horse [From.GetTitledName] is a spavined old beast, closer to a donkey that a stallion.;;;;;;;;;;;;;x
 EVTOPTA_HRP_34133;Really? That's the best he could do?;;;;;;;;;;;;;x
 EVTDESC_HRP_34143;After the sacrifice, [From.GetTitledName]'s highest shamans gather round to determine what the future will bring. After mush discussion they announce that the future is promising, with a early springs and many strong new foals birthed;;;;;;;;;;;;;x
-EVTOPTA_HRP_34143;Good to know!;;;;;;;;;;;;;x
-EVTDESC_HRP_34144;After the sacrifice, [From.GetTitledName]'s highest shamans gather round to determine what the future will bring. After mush discussion they announce the next year is dark, with a long winter and many stillborn foals;;;;;;;;;;;;;x
-EVTOPTA_HRP_34144;Perhaps a more pious ruler would get better omens;;;;;;;;;;;;;x
-EVTDESC_HRP_34145;After the sacrifice, [From.GetTitledName]'s highest shamans gather round to determine what the future will bring. After mush discussion, they announce the next year is uncertain, and fate will bring many high low and those low will become high;;;;;;;;;;;;;x
 EVTOPTA_HRP_34145;Maybe I shall be the one that ascends;;;;;;;;;;;;;x
 observe_horse_sacrifice;Hold a Horse Sacrifice;;;;;;;;;;;;;x
 observe_horse_sacrifice_desc;Sacrifice a horse to honor Bey Ülgen;;;;;;;;;;;;;x
@@ -2315,12 +2282,10 @@ good_sermon_familiy_desc;Delivered a Good Sermon;;;;;;;;;;;;;x
 good_sermon_war_desc;Delivered a Good Sermon;;;;;;;;;;;;;x
 good_sermon_tax_desc;Delivered a Good Sermon;;;;;;;;;;;;;x
 good_sermon_faith_desc;Delivered a Good Sermon;;;;;;;;;;;;;x
-EVTDESC_HRP_34143;As a Saltigue, [From.GetTitledName] has the responsibility to determine what the future will bring. After consulting the omens, he announces that the future is promising, with a early spring and a good harvest;;;;;;;;;;;;;x
 EVTOPTA_HRP_34143;Good to know!;;;;;;;;;;;;;x
 EVTDESC_HRP_34144;As a Saltigue, [From.GetTitledName] has the responsibility to determine what the future will bring. After consulting the omens, he announces the next year is dark, with a long winter and a poor harvest;;;;;;;;;;;;;x
 EVTOPTA_HRP_34144;Perhaps a more pious ruler would get better omens;;;;;;;;;;;;;x
 EVTDESC_HRP_34145;As a Saltigue, [From.GetTitledName] has the responsibility to determine what the future will bring. After consulting the omens, he announces the next year is uncertain, and fate will bring many high low and those low will become high;;;;;;;;;;;;;x
-EVTOPTA_HRP_34145;Maybe I shall be the one that ascends;;;;;;;;;;;;;x
 k_bahrein_qarm;Qarmatian Republic;;;;;;;;;;;;;x
 k_bahrein_qarm_adj;Qarmatian;;;;;;;;;;;;;x
 d_qarmatian;Qarmatian Caliphate;;;;;;;;;;;;;x
@@ -2374,8 +2339,6 @@ vegetarian_desc;This person insists on eating only plants for religious reasons;
 EVTDESC_HRP_29051;As part of your religious training, you have decided to abstain from all meats and eat only food from plants.;;;;;;;;;;;;;x
 EVTOPTA_HRP_29051;It's healthier this way;;;;;;;;;;;;;x
 vegetarian_elect_death;of malnourishment;;;;;;;;;;;;;x
-EVTDESC_HRP_29051;Despite your vegetarian ways, how still crave meat. One day your break down and gorge yourself on the finest of roast slices;;;;;;;;;;;;;x
-EVTOPTA_HRP_29051;Aw, screw vegetarianism!;;;;;;;;;;;;;x
 EVTOPTD_HRP_29011;You murdered me, you bastard!;;;;;;;;;;;;;x
 qarmatian_republic ;Qarmatian Republic;;;;;;;;;;;;;x
 qarmatian_republic_desc;Create the Qarmatian Republic;;;;;;;;;;;;;x

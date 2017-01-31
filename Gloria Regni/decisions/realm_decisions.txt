@@ -436,6 +436,7 @@ decisions = {
 		effect = {
 			narrative_event = { id = LoR.210 tooltip = EVTTOOLTIPLoR.210}
 			set_global_flag = schism_mended
+			clr_global_flag = great_schism_in_effect
 		}
 		ai_will_do = {
 			factor = 1

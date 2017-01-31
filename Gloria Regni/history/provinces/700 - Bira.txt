@@ -5,18 +5,22 @@ title = c_bira
 
 # Settlements
 max_settlements = 4
-b_mayyafarikin = castle
-b_arzan = city
-b_nasriye = temple
+b_bira = castle
+b_resaina = city
+b_tella = temple
 
-#b_saird = castle
+#b_qalarebete = castle
+#b_derik = castle
+#b_qoser = city
+#b_samrah = castle
+#b_stewr = castle
 
 #Misc
-culture = aramean
-religion = imperial
+culture = levantine_arabic
+religion = orthodox
 
 # History
-1054.1.1 = { religion = orthodox }
+
 1164.1.1 = { 
 	culture = kurdish 
 	religion = sunni

@@ -4,17 +4,19 @@
 title = c_petra
 
 # Settlements
-max_settlements = 3
-b_qurayyat = tribal
-#b_tubarjal = city
-b_fajr = temple
+max_settlements = 4
+b_tophel = castle
+b_wadi_musa = city
+b_petra = temple
+
+#b_bozrah = temple
+#b_shoubak = castle
+#b_abdelliya = castle
+#b_hamza = castle
+#b_husseiniya = castle
 
 # Misc
-culture = khalan
-religion = monophysite
+culture = levantine_arabic
+religion = sunni
 
 # History
-700.1.1 = {
-culture = bedouin_arabic
-religion = sunni
-}

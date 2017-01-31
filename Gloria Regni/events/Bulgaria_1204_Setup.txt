@@ -20,7 +20,10 @@ character_event = {
 				}		
 			any_realm_province = {
 				limit = { religion = orthodox }
-					religion = catholic
+				clr_province_flag = orthodox_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
 				}					
 			}
 	

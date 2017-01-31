@@ -16,21 +16,16 @@ b_sopron = tribal
 #b_nagymarton = castle
 
 # Misc
-culture = pannonian
-religion = imperial
-
-700.1.1 = {
 culture = croatian
 religion = slavic_pagan
-}
+
+# History
 
 797.1.1 = {
-	religion = imperial
+	religion = catholic
 	
 	b_sopron = castle
 	b_csorna = city
 	b_gyor = temple
 }
 950.1.1 = { culture = hungarian }
-
-1054.7.6 = { religion = catholic }

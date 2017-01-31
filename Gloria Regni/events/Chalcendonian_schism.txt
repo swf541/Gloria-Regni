@@ -238,7 +238,10 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
-			religion = catholic
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
 		}
 	}
 }
@@ -270,6 +273,9 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
 			religion = orthodox
 		}
 	}
@@ -286,6 +292,9 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = catholic
 			}
 			any_courtier = {
@@ -310,6 +319,9 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = orthodox
 			}
 			any_courtier = {
@@ -338,6 +350,8 @@ character_event = {
 	
 	
 	immediate = {
+		set_global_flag = great_schism_in_effect
+		set_global_flag = great_schism_happened
 		d_imperial = {
 			unsafe_destroy_landed_title = THIS
 		}
@@ -360,6 +374,9 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = catholic
 			}
 		}
@@ -378,7 +395,10 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
-				religion = orthodox
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
+			religion = orthodox
 			}
 		}
 		any_playable_ruler = {
@@ -396,6 +416,9 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = orthodox
 			}
 		}
@@ -414,6 +437,9 @@ character_event = {
 				limit = {
 					religion = imperial
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = orthodox
 			}
 		}
@@ -421,7 +447,18 @@ character_event = {
 			limit = {
 				NOT = { religion = imperial }
 				any_demesne_province = {
-					religion = imperial
+					OR = {
+						religion = imperial
+						any_province_holding = {
+							has_building = ct_imperial_community_1
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}						
+					}				
 					OR = {
 						region = world_europe_south_italy
 						region = world_europe_north
@@ -438,6 +475,67 @@ character_event = {
 			}
 			any_demesne_province = {
 				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_1
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+			}
+			any_demesne_province = {
+				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_2
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+				add_building = ct_catholic_community_2
+			}
+			any_demesne_province = {
+				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_3					
+					}
+				}
+				remove_building = ct_imperial_community_3
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+				add_building = ct_catholic_community_2
+				add_building = ct_catholic_community_3
+			}
+			any_demesne_province = {
+				limit = {
 					religion = imperial
 					OR = {
 						region = world_europe_south_italy
@@ -446,6 +544,9 @@ character_event = {
 						region = custom_world_africa_north
 					}
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = catholic
 			}
 		}
@@ -453,7 +554,18 @@ character_event = {
 			limit = {
 				NOT = { religion = imperial }
 				any_demesne_province = {
-					religion = imperial
+					OR = {
+						religion = imperial
+						any_province_holding = {
+							has_building = ct_imperial_community_1
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}						
+					}	
 					NOR = {
 						region = world_europe_south_italy
 						region = world_europe_north
@@ -462,7 +574,67 @@ character_event = {
 					}
 				}
 			}
-			religion = orthodox
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_1
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+			}
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_2
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+				add_building = ct_orthodox_community_2
+			}
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}	
+					any_province_holding = {
+						has_building = ct_imperial_community_3					
+					}
+				}
+				remove_building = ct_imperial_community_3
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+				add_building = ct_orthodox_community_2
+				add_building = ct_orthodox_community_3
+			}
 			any_courtier = {
 				limit = { religion = imperial }
 				religion = orthodox
@@ -478,6 +650,9 @@ character_event = {
 						region = custom_world_africa_north
 					}
 				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
 				religion = orthodox
 			}
 		}
@@ -560,7 +735,10 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
-			religion = catholic
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
 		}
 	}
 	
@@ -618,6 +796,9 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
 			religion = orthodox
 		}
 	}
@@ -659,7 +840,10 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
-			religion = catholic
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
 		}
 	}
 	
@@ -698,7 +882,10 @@ character_event = {
 			limit = {
 				religion = imperial
 			}
-			religion = orthodox
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
 		}
 	}
 	option = {

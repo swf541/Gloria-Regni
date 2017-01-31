@@ -1,0 +1,108 @@
+namespace = VFS
+
+character_event = {
+	id = VFS.290
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		independent = yes
+		year = 700
+		NOT = { year = 800 }
+	} 
+	immediate = {
+		any_realm_province = {
+			limit = { 
+				culture = persian
+				NOT = { religion = zoroastrian }
+				location = { region = world_persia }
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zoroastrian_community_1
+				add_building = ct_zoroastrian_community_2
+				add_building = ct_zoroastrian_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = nestorian }
+				location = { region = world_persia }
+				NOT = { location = { region = world_sogdia } }
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_nestorian_community_1
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = nestorian }
+				location = { region = world_sogdia } 
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_nestorian_community_1
+				add_building = ct_nestorian_community_2
+				add_building = ct_nestorian_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = manichean }
+				location = { region = world_sogdia } 
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_manichean_community_1
+				add_building = ct_manichean_community_2
+				add_building = ct_manichean_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = buddhist }
+				location = { region = world_sogdia } 
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_buddhist_community_1
+				add_building = ct_buddhist_community_2
+				add_building = ct_buddhist_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = zoroastrian }
+				location = { region = world_sogdia } 
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_zoroastrian_community_1
+				add_building = ct_zoroastrian_community_2
+				add_building = ct_zoroastrian_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = hindu }
+				location = { region = world_sogdia } 
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hindu_community_1
+				add_building = ct_hindu_community_2
+			}
+		}
+		903	= { add_building = ct_mesopotamian_paganism_community_1 }
+	}
+}

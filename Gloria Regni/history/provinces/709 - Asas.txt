@@ -1,4 +1,4 @@
-# 709 - Asas / Hunasira
+# 709 - Asas
 
 # County Title
 title = c_asas
@@ -6,18 +6,22 @@ title = c_asas
 # Settlements
 max_settlements = 4
 
-b_hunasira = castle
-b_siffin = city
-b_balis = temple
+b_asas = castle
+b_rakka = city
+b_kallinikos = temple
 
-#b_qasirin = castle
+#b_talabyad = castle
+#b_tabqa = castle
+#b_souriya = city
+#b_resafa = castle
+#b_zaazouaa = castle
 
 # Misc
-culture = aramean
-religion = miaphysite
-810.1.1 = {
 culture = levantine_arabic
-religion = sunni
-}
+religion = orthodox
 
-1187.1.1 = { b_qasirin = castle } 
+# History
+
+1187.1.1 = { b_talabyad = castle } 
+
+1270.1.1 = { religion = sunni }

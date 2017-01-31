@@ -76,10 +76,18 @@ e_wre = {
 	purple_born_heirs = yes
 	
 	allow = {
-		completely_controls = k_italy
-		completely_controls = k_sicily
-		completely_controls = k_croatia
-		has_global_flag = wre_restored
+		OR = {
+			AND = {
+				completely_controls = k_italy
+				completely_controls = k_sicily
+				completely_controls = k_croatia
+				has_global_flag = wre_restored
+			}
+			AND = {
+				has_landed_title = k_roman_republic
+				is_republic = yes
+			}
+		}
 	}
 	
 	dignity = 100 # Counted as having this many more counties than it does

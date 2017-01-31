@@ -134,7 +134,6 @@
 	}
 	629.1.1 = {
 		death = yes
-		nickname = nick_the_saint
 	}
 }
 1000153011 = {
@@ -158,9 +157,6 @@
 	father = 1000153009
 	590.1.1 = {
 		birth = yes
-	}
-	630.1.1 = {
-		nickname = nick_the_saint
 	}
 	668.1.1 = {
 		death = yes
@@ -236,9 +232,10 @@
 }
 1000153018 = {
 	name="Leutsinde"
-	famale = yes
+	female = yes
 	religion = catholic
 	culture = old_frankish
+	female = yes
 	615.1.1 = {
 		birth = yes
 	}
@@ -352,6 +349,7 @@
 	culture = old_frankish
 	father = 1000153022
 	mother = 1000153024
+	female = yes
 	645.1.1 = {
 		birth = yes
 	}

@@ -1,23 +1,25 @@
-# 830 - Lemdiyya / Masila
+# 830 - Lemdiyya
 
 # County Title
 title = c_lemdiyya
 
 # Settlements
-max_settlements = 4
+max_settlements = 3
 
-b_qalatbhammad = castle
-b_masila = city
-b_bousaada = temple
+b_medea = castle
+b_relizane = city
+b_aindefla = temple
 
-#b_tarmount = castle
-#b_matarfa = castle
+#b_elrhenb = castle
+#b_aintorki = castle
+#b_blida = castle
+#b_sidimohammed = castle
+#b_elhachem = castle
 
 # Misc
 culture = maghreb_arabic
-religion = imperial
+religion = ibadi
 
 # History
-700.1.1 = { religion = ibadi }
 
 909.1.1 = { religion = sunni }

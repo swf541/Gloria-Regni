@@ -1,0 +1,136 @@
+namespace = VFS
+province_event = {	#adoptionism Expulsion
+	id = VFS.305
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_job_action = action_inquisition
+		NOT = { religion = adoptionism }
+		location = { religion = ROOT } 
+		location = {
+			owner = { same_realm = ROOT }
+		}
+		location = {
+			OR = {
+				any_province_holding = {
+					has_building = ct_adoptionism_community_1
+				}
+				any_province_holding = {
+					has_building = ct_adoptionism_community_2
+				}
+				any_province_holding = {
+					has_building = ct_adoptionism_community_3
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_adoptionism_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_adoptionism_community_2
+						}
+						any_province_holding = {
+							has_building = ct_adoptionism_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_adoptionism_community_1
+				}
+				NOT = {
+					OR = {
+						any_province_holding = {
+							has_building = ct_adoptionism_community_2
+						}
+						any_province_holding = {
+							has_building = ct_adoptionism_community_3
+						}
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_1
+			}
+			religion = FROM
+		}
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_adoptionism_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_adoptionism_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_2
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_adoptionism_community_2
+				}
+				NOT = {
+					any_province_holding = {
+						has_building = ct_adoptionism_community_3
+					}
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_2
+			}
+			religion = FROM
+		}
+		if = {
+			limit = {
+				religion = FROM
+				any_province_holding = {
+					has_building = ct_adoptionism_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_3
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = FROM }
+				any_province_holding = {
+					has_building = ct_adoptionism_community_3
+				}
+			}
+			any_province_holding = {
+				limit = { holding_type = city } 
+				remove_building = ct_adoptionism_community_3
+			}
+			religion = FROM
+		}
+	}
+}

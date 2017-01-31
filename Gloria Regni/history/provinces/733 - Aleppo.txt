@@ -7,26 +7,24 @@ title = c_aleppo
 max_settlements = 6
 b_aleppo = castle
 b_azaz = city
-b_buzaa = temple 
-b_artah = castle
+b_mashala = temple 
 
-#b_albab = castle
+#b_lerminet = castle
+b_sarmin = castle
 #b_harim = castle
-#b_alatarib = castle
+#b_maaratannuman = castle
+#b_qusayr = castle
 
 # Misc
-culture = aramean
-religion = miaphysite
-810.1.1 = {
 culture = levantine_arabic
 religion = sunni
-}
+
 # History
 
-1110.1.1 = { b_albab = castle } 
+1110.1.1 = { b_lerminet = castle } 
 
-1272.1.1 = { remove_settlement = b_albab }
+1272.1.1 = { remove_settlement = b_lerminet }
 
-1272.1.1 = { b_artah = castle } 
+1272.1.1 = { b_sarmin = castle } 
 
 

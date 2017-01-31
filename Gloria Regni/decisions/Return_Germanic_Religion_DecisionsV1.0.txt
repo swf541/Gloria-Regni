@@ -9,11 +9,10 @@ decisions = {
 				NOT = {religion = germanic_pagan_reformed}
                                 NOT = { trait = zealous } 
                                 OR = {
-                                      culture = north_germanic
-				      culture = west_germanic
-                                      culture = east_germanic
-                                      culture = central_germanic
-                                      cultuer = saxon
+                                      culture_group = north_germanic
+				      culture_group = west_germanic
+                                      culture_group = east_germanic
+                                      culture_group = central_germanic
                                 }
                 }
                 allow = {
@@ -26,16 +25,23 @@ decisions = {
                         character_event = { id = RGR.1 }
            }
                 ai_will_do = {
-                        factor = 1
+                        factor =  0.0000001
                         modifier = {
-                                factor = 0
+                                factor = 10
                                 ai = yes
                                 OR = {
                                         NOT = { religion = germanic_pagan }
-                                        NOT = { religion = germanic_pagan_reformed}
-                                        piety = 0
+                                        NOT = { religion = germanic_pagan_reformed }
                                 }
-                        }
+                                piety = 0
+                                        religion_authority = 0
+
+                                OR = {
+                                   culture_group = central_germanic
+                                   culture_group = west_germanic
+                                 }     
+                            }    
+                      }
                 }
         }
 }

@@ -17,15 +17,13 @@ b_szombathely = tribal
 #b_nemetujvar = castle
 
 # Misc
-culture = pannonian
-religion = imperial
-
-700.1.1 = {
 culture = croatian
 religion = slavic_pagan
-}
+
+# History
+
 797.1.1 = {
-	religion = imperial
+	religion = catholic
 	
 	b_szombathely = castle
 	b_vasvar = city
@@ -33,5 +31,3 @@ religion = slavic_pagan
 }
 
 950.1.1 = { culture = hungarian }
-
-1054.7.6 = { religion = catholic }

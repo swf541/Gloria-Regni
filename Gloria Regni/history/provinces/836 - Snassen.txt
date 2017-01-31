@@ -6,22 +6,21 @@ title = c_snassen
 # Settlements
 max_settlements = 5
 
-b_medea = castle
-b_tahart = city
-b_qalatbhuwara = castle
-b_abida = temple
-b_achir = city
+b_oujda = castle
+b_jerada = city
+b_saldia = temple
 
-#b_jerada = castle
-#b_saldia = castle
+#b_ainbenimathar = castle
+#b_debdou = castle
+#b_tendrara = castle
+#b_berkane = castle
+#b_ahfir = castle
 
 # Misc
 culture = maghreb_arabic
-religion = imperial
+religion = catholic
 
 # History
 
-809.1.1 = { b_achir = city }
 909.1.1 = { religion = sunni }
-930.1.1 = { remove_settlement = b_achir }
 1130.1.1 = { trade_post = b_embriaco }

@@ -18,15 +18,11 @@ b_bujima = castle
 
 # Misc
 culture = maghreb_arabic
-religion = imperial
+religion = catholic
 
-700.1.1 = {
-religion = kharijite
-}
-1200.1.1 = { 
-	religion = sunni 
-	culture = maghreb_arabic
-}
+# History
+
+909.1.1 = { religion = sunni }
 1083.1.1 = { trade_post = b_embriaco }
 
 #1187.1.1 = { b_bujima = castle }

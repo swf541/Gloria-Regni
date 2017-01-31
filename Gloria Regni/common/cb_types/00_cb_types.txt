@@ -2929,9 +2929,6 @@ crusade = {
 
 	on_success_title = {
 		log = "[Root.GetBestName] succeeded with their crusade for the [This.GetFullName] against [From.GetBestName]"
-		#change imperial decadence
-		ROOT = { imperial_decadence_minus_2_effect = yes }
-		FROM = { imperial_decadence_plus_2_effect = yes }
 		
 		hidden_tooltip = {
 			any_attacker = {
@@ -3135,9 +3132,6 @@ crusade = {
 					participation_scaled_decadence = -100
 				}
 			}
-			#faction mood boost
-			pf_tradition_plus4_effect = yes
-			pf_glory_plus2_effect = yes
 		}
 		any_attacker = {
 			limit = { NOT = { character = ROOT } }
@@ -3150,8 +3144,6 @@ crusade = {
 						participation_scaled_decadence = -100
 					}
 				}
-				pf_tradition_plus4_effect = yes
-				pf_glory_plus2_effect = yes
 			}
 		}
 		any_attacker = {
@@ -3164,8 +3156,6 @@ crusade = {
 
 		FROM = {
 			prestige = -500
-			pf_glory_minus2_effect = yes
-			pf_tradition_minus4_effect = yes
 		}
 		hidden_tooltip = {
 			any_defender = {

@@ -8,47 +8,22 @@ max_settlements = 7
 
 b_baqubah = castle
 b_iskandariya = castle
+
 b_bagdad = temple # holy_site = sunni, nestorian
 
-b_iskaf = city
-b_ukbara = city
+b_hillah = city
+b_taji = city
 
+#b_latifiya = castle
 #b_madain = castle
-#b_nahrawan = castle
+#b_babel = city
 
 #Misc
-culture = assyrian
-religion = nestorian
+culture = levantine_arabic
+religion = sunni
 
 # History
-710.1.1 = { culture = levantine_arabic }
-710.1.1 = { religion = sunni }
-710.1.1 = {
-	b_iskaf = ct_nestorian_community_1
-	b_iskaf = ct_nestorian_community_2
-	b_iskaf = ct_nestorian_community_3
-	b_iskaf = ct_manichean_community_1
-	b_iskaf = ct_manichean_community_2
-	b_iskaf = ct_karaite_community_1
-	b_iskaf = ct_karaite_community_2
-	b_iskaf = ct_jewish_community_1
-	b_iskaf = ct_jewish_community_2
-	b_iskaf = ct_zoroastrian_community_1
-	
-	b_ukbara = ct_nestorian_community_1
-	b_ukbara = ct_nestorian_community_2
-	b_ukbara = ct_nestorian_community_3
-	b_ukbara = ct_manichean_community_1
-	b_ukbara = ct_manichean_community_2
-	b_ukbara = ct_karaite_community_1
-	b_ukbara = ct_karaite_community_2
-	b_ukbara = ct_jewish_community_1
-	b_ukbara = ct_jewish_community_2
-	b_ukbara = ct_zoroastrian_community_1
-}
-850.1.1 = {
-	b_madain = castle 
-}
+
 867.1.1 = { 
 	b_baqubah = ca_keep_1
 	b_baqubah = ca_training_grounds_1
@@ -59,8 +34,8 @@ religion = nestorian
 	b_baqubah = ca_wall_1
 	b_baqubah = ca_wall_2
 	b_baqubah = ca_wall_3
-	b_iskaf = ct_wall_1
-	b_iskaf = ct_barracks_1
+	b_hillah = ct_wall_1
+	b_hillah = ct_barracks_1
 	b_bagdad = tp_monastery_1
 	b_bagdad = tp_monastery_2
 	b_bagdad = tp_wall_1
@@ -73,6 +48,10 @@ religion = nestorian
 	b_iskandariya = ca_wall_2
 }
 
-1258.2.20= { remove_settlement = b_ukbara }
-1258.2.20= { remove_settlement = b_madain }
-1278.1.1 = { b_ukbara = city } 
+1066.1.1 = {
+	b_latifiya = castle
+}
+
+1258.2.20= { remove_settlement = b_taji }
+1258.2.20= { remove_settlement = b_latifiya }
+1278.1.1 = { b_taji = city } 

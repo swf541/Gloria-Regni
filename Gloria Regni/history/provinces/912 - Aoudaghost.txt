@@ -4,7 +4,7 @@
 title = c_aoudaghost
 
 # Settlements
-max_settlements = 4
+max_settlements = 3
 b_aoudaghost = tribal
 
 #b_tichitt = city
@@ -12,12 +12,9 @@ b_aoudaghost = tribal
 #b_ksarelbarka = castle #Ksar-el-Barka
 
 # Misc
-culture = soninke
+culture = manden
 religion = west_african_pagan
 
 # History
 
-1055.1.1 = { 
-	religion = sunni
-	b_tichitt = city
-	}
+1000.1.1 = { religion = sunni }

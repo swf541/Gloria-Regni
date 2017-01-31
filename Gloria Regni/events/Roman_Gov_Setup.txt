@@ -47,6 +47,9 @@ character_event = {
 				add_law = ze_administration_laws_2
 				add_law = vice_royalty_2
 				add_law = revoke_title_law_1
+				any_realm_character = {
+					remove_opinion = { who = ROOT modifier = succ_law_change }
+				}
 			}
 	
 	option = {

@@ -4,19 +4,21 @@
 title = c_druz
 
 # Settlements
-max_settlements = 5
-b_wasit = castle
-b_kaskar = city
-b_badinwasit = temple
+max_settlements = 4
+b_salkhard = castle
+b_dibin = city
+b_awas = temple
 
-#b_famassilh = temple
-#b_almubarak = castle
-#b_zubaidiya = castle
+#b_shannireh = temple
+#b_ghariyah = castle
+#b_thoula = castle
+#b_busra = castle
+#b_samj = castle
 
 # Misc
-culture = mandaic
-religion = mandean
+culture = levantine_arabic
+religion = sunni
 
 # History
-861.1.1 = { b_almubarak = castle }
-1258.1.1 = { remove_settlement = b_almubarak }
+
+1016.1.1 = { religion = druze }

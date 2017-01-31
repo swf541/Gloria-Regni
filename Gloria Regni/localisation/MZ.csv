@@ -110,7 +110,7 @@ persepolis_library;Library of Persepolis.;;;;;;;;;;;;;x, construct buildings in 
 persepolis_irrigation;Extensive irrigation system.;;;;;;;;;;;;;x
 persepolis_gate;Gate of all nations.;;;;;;;;;;;;;x
 vassal_blinding_decision_persian;Blind [Root.GetTitledFirstName];;;;;;;;;;;;;x
-vassal_blinding_decision_persian;As [Root.GetSheHe] is your prisoner
+vassal_blinding_decision_persian_desc;As [Root.GetSheHe] is your prisoner you can choose to blind them;;;;;;x
 nick_with_immortal_soul;of Immortal Soul;;;;;;;;;;;;;x, you may give the order to permanently blind [Root.GetTitledFirstName] and then setting [Root.GetHerHim] free. This is a common Persian way of dealing with political rivals without outright killing them, as a blind [Root.GetManWoman] is of little threat to the throne;;;;;;;;;;;;;x,,
 nick_the_mazdayasnian;the Mazdayasnian;;;;;;;;;;;;;x
 EVTNAME_ZOR_500;Nowruz Invitations Sent;;;;;;;;;;;;;x
@@ -130,9 +130,6 @@ EVTNAME_ZOR_504;Nowruz Celebration Ends;;;;;;;;;;;;;x
 EVTDESC_ZOR_504;The celebration is over now that the New Year has came and past.;;;;;;;;;;;;;;;;;;;;x
 EVTOPTA_ZOR_504;Til next year.;;;;;;;;;;;;;x
 EVTNAME_ZOR_505;Nowruz Celebration Ends;;;;;;;;;;;;;x
-EVTDESC_ZOR_505;The celebration is over now that the New Year has came and past.;;;;;;;;;;;;;;;;;;;;x
-EVTOPTA_ZOR_505;Til next year.;;;;;;;;;;;;;x
-EVTNAME_ZOR_505;Chaharshanbe Suri;;;;;;;;;;;;;x
 EVTDESC_ZOR_505;To celebrate the New Year, the practice of Chaharshanbe Suri reenacts the process of the changing alignment of the planetsm through jumping through hoops of fire.;;;;;;;;;;;;;;;;;;;;x
 EVTOPTA_ZOR_505;Through the fire I go;;;;;;;;;;;;;x
 EVTOPTB_ZOR_505;Isn't this dangerous?;;;;;;;;;;;;;x
@@ -153,8 +150,6 @@ restore_archegos;Restore the Archegos;;;;;;;;;;;;;X
 form_guardians_of_light;Form Guardians of Light;;;;;;;;;;;;;;;;;;X
 self_castration;Self Castration;;;;;;;;;;;;;;;X
 become_a_vegetarian;Become a Vegetarian;;;;;;;;;;;;;;;X
-vegetarian;Vegetarian;;;;;;;;;;;;;;;;;;;X
-vegetarian_desc;This character has forgone consuming meat;;;;;;;;;;;X
 elect;Elect;;;;;;;;;;;;;;;;;;;;X
 elect_desc;This character is a member of the Manichean elect, making them paragons of virtue;;;;;;;;;;;;;;;;;;;;X
 extreme_devotion;Extreme Devotion;;;;;;;;;;;;X
@@ -175,7 +170,6 @@ fund_shahnameh_desc;Fund Shanameh, the epic poem of the old Zoroastrian Dynastie
 celebrate_nowruz_desc;It is nearly time for Nowruz, or the Persian New Year, we should start preparing in advance and send invitations to the subjects;;;;;;;;;;;;;;;;;;;;;x
 rebuild_ctesiphon_desc;Now that we hold all of the Persian Empire, we can now rebuild the grand capital of the Sassanid Empire;;;;;;;;;;;;;;;;;;;;;X
 fund_shahnameh_addition_desc;Fund an addition to the Shahnameh to record the tales of your predescesor;;;;;;;;;;;;;;;;;;x, held by people mainly ethnic Kurds,living in Zagros mountains. These religions are syncretic and include elements from old Mesopotamian religions,, Zoroastrianism, Christianity and so on Main aspects,are belief on single God and/or seven angels/benevolent beings such as Melek Taus (Peacock Angel),, who protect mankind from malign forces, While these religions are distinct and unique,, in game-terms Yazdanism is considered a Zoroastrian heresy.;;;;;;;;;;;;;;;;;;;;;;X
-yazidi_DESC;Yazdanism covers large number of religious beliefs,However what binds them into the same classification,is their connection to the Kurdish culture,Due to many connections to other faiths and it predating Islam,It is a Zoroastrian heresy in game with the potential to become a full religion under specific circumstances;;;;;;;;;;;x
 rebuild_ctesiphon_library_desc;Rebuild the Ctesiphon Library which was destroyed by the Arabs;;;;;;;;;x
 title_metropolitan;Metropolitan;;;;;;;;;;;;;x
 celebrate_jashan_e_sadah;Celebrate Jashan-e Sadah;;;;;;x
@@ -232,7 +226,6 @@ EVTTITLE_ZOR_506;Chaharshanbe Suri;;;;;;;;;x
 EVTDESC_ZOR_506;The Chaharshanbe Suri is a purification rite prior to the New Year beginning. The bonfires are lit and it is expected for you to jump over the fire.;;;;;;;;x
 EVTOPTA_ZOR_506;My yellow is yours, your red is mine, the traditional poetic verse sung as one jumps over the fire);;;;;;;;x
 EVTOPTB_ZOR_506;This does not seem safe.....;;;;;;;;x
-celebrate_nowruz_desc;Celebrate Nowruz, the Zoroastrian New Year;;;;;;;;;;;x
 d_mithra_grivpanvar;Grivpanvar of Mithra;;;;;;;x
 d_anahita_zhayedan;Zhayedan of Anahita;;;;;;;;;x
 d_zurvan_zhayedan;Zhayedan of Zurvan;;;;;;;;x
@@ -304,7 +297,8 @@ EVTNAMEZOR.21;Subjugation of Turkestan;;;;;;;;;;;;x
 EVTDESC_ZOR.21;Since time immemorial the Turkish tribes ,to our north have been a constant threat to the Persia and civilization as a whole,the time has finally come and the Turkish tribes have been forced to submit to the Persian Empire,Perhaps this is the perfect time to begin settling these areas to,permanently ending the Turkish tribes threats to our great civilizations;;;;;;;;x
 EVTOPTAZOR.21;Glorious News;;;;;;;;;;;;;;;;;x
 EVTNAMEZOR.22;The Conquest of Syria;;;;;;;;x
-EVTOPTAZOR.21;Glorious News;;;;;;;;;;;;;;;;;x,we further erode the power of the Greeks and Arabs ,as well as taking major cultural and commerce centers such as ,Damascus and Palmyra, as well as providing ports and naval bases on the Mediterreanen Sea,Syria has not been occupied by a Persian Army since the Roman-Sassanid Wars prior to the Islamic invasion;;;;;;;;;;x
+EVTDESCZOR.22;We further erode the power of the Greeks and Arabs ,as well as taking major cultural and commerce centers such as ,Damascus and Palmyra, as well as providing ports and naval bases on the Mediterreanen Sea,Syria has not been occupied by a Persian Army since the Roman-Sassanid Wars prior to the Islamic invasion;;;;;;;;;;x
+EVTOPTAZOR.21;Glorious News;;;;;;;;;;;;;;;;;x
 EVTOPTAZOR.22;Glorious News;;;;;;;;;;;;;;;;;x
 EVTNAMEZOR.23;Conquest of Alania;;;;;;;;;;;x
 EVTDESC_ZOR.23;While the Turks are a constant threat from our northeastern border,Our northwestern provinces are at great risk from the unstable Caucaus tribes and the nomadic tribes in Alania,Similar to the Turkestan region, we should aim to urbanize the region,to make it easier to defend against nomadic invaders,The Alans have long been an ally of the Byzantines and with their homeland falling, we can cut off another ally of our mortal enemies;;;;;;;;;;x
@@ -332,14 +326,6 @@ form_hellenic_church;Reform the Greco-Roman faith;;;;;;;;;x
 hellenic_charity;Give Charity to the Poor;;;;;x
 interpretatio_romana_1;Ban Further Syncretic Practices;;;;;;;;;x
 interpretatio_romana_0;Interpretatio Romana;;;;;;;;;;x
-d_heroes;Heroes of Olympus;;;;;;;;;x 
-d_heroes;Heroes;;;;;;;;;x 
-d_sacred_band;Sacred Band;;;;;;;;;x 
-d_sacred_band_adj;Sacred Band;;;;;;;;;x 
-reform_sacred_band;Reform the Sacred Band;;;;;;;;;x 
-reform_sacred_band_desc;Reform the Sacred Band of Thebes, a famous ancient Greek military unit made up entirely of homosexual couples.;;;;;;;;;x 
-EVTNAMEPA.10180;Heroes of Olympus;;;;;;;;;x 
-EVTDESCPA.10180;Although Hellenism has managed to regain enough of its power to become a true religion once more, its position is still precarious. To protect the faithful and keep the infidels at bay, the Hellenic clergy have sanctioned the creation of a holy order, the Heroes of Olympus. Having sworn an oath to defend Hellenism and the holy mountain, the Heroes are ready to fight for those who need them. A new era of pagan expansion has begun, with the Heroes at the forefront.;;;;;;;;;x 
 make_sacrifice_mars;Make a Sacrifice to Mars, God of War;;;;;;;;x
 make_sacrifice_jupiter;Make a Sacrifice to Jupiter, King of the Gods;;;;;;;;x
 make_sacrifice_juno;Make a Sacrifice to Juno, Queen of the Gods;;;;;;;x
@@ -479,7 +465,6 @@ imperial_reconquest_kingdom_macedon;Imperial Reconquest;;;;x
 attempt_to_join_the_samo_thracian_mysteries;Attempt To Join the Samo-Thracian Mysteries;;;;;;x
 restore_delphi_oracle;Restore The Delphi Oracle;;;;;;;x
 reform_sol_invictus;Reform Sol Invictus;;;;;x
-k_macedon;Kingdom of Macedonia;;;;;;x
 e_macedon;Greek Empire;;;;;;x
 interpretatio_romana;Interpretatio Romana;;;;;;x
 SAC_HEL.1.desc;You have decided to make a sacrifice to one of the major Greco-Roman Deities, whom shall you select?;;;;;;;;;x
