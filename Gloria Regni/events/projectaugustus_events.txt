@@ -1,5 +1,55 @@
 namespace = PA
 
+# Augusta Trait Gained
+character_event = {
+	id = PA.10000
+	desc = EVTDESCPA.10000
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+                is_female = yes
+		NOT = { trait = augusta }
+                has_global_flag = revived_roman_culture
+		has_landed_title = e_roman_empire
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10000
+		add_trait = augusta
+	}
+}
+
+# Augusta Trait Lost
+character_event = {
+	id = PA.10001
+	desc = EVTDESCPA.10001
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		trait = augusta
+		is_alive = yes
+                OR = {
+                        NOT = { has_global_flag = revived_roman_culture }
+		        NOT = { has_landed_title = e_roman_empire }
+                }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10001
+		remove_trait = augusta
+	}
+}
+
 # A child is Born in the Purple (Empires)
 character_event = {
 	id = PA.10002
@@ -227,6 +277,196 @@ character_event = {
 		new_character = {
 			prisoner = yes
 		}
+	}
+}
+
+### The autokrator/Autokrateira Traits
+
+# autokrator Trait Gained
+character_event = {
+	id = PA.10012
+	desc = EVTDESCPA.10012
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+                is_female = no
+		NOT = { trait = autokrator }
+		has_landed_title = e_byzantium
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10012
+		add_trait = autokrator
+	}
+}
+
+# autokrator Trait Lost
+character_event = {
+	id = PA.10013
+	desc = EVTDESCPA.10013
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrator
+		is_alive = yes
+		NOT = { has_landed_title = e_byzantium }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10013
+		remove_trait = autokrator
+	}
+}
+
+# autokrateira Trait Gained
+character_event = {
+	id = PA.10014
+	desc = EVTDESCPA.10014
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+                is_female = yes
+		NOT = { trait = autokrateira }
+		has_landed_title = e_byzantium
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10014
+		add_trait = autokrateira
+	}
+}
+
+# autokrateira Trait Lost
+character_event = {
+	id = PA.10015
+	desc = EVTDESCPA.10015
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrateira
+		is_alive = yes
+		NOT = { has_landed_title = e_byzantium }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10015
+		remove_trait = autokrateira
+	}
+}
+
+# autokrator2 Trait Gained
+character_event = {
+	id = PA.10016
+	desc = EVTDESCPA.10016
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+                is_female = no
+		NOT = { trait = autokrator2 }
+                NOT = { has_global_flag = revived_roman_culture }
+		has_landed_title = e_roman_empire
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10016
+		add_trait = autokrator2
+	}
+}
+
+# autokrator2 Trait Lost
+character_event = {
+	id = PA.10017
+	desc = EVTDESCPA.10017
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrator2
+		is_alive = yes
+                OR = {
+                        has_global_flag = revived_roman_culture
+		        NOT = { has_landed_title = e_roman_empire }
+                }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10017
+		remove_trait = autokrator2
+	}
+}
+
+# autokrateira2 Trait Gained
+character_event = {
+	id = PA.10018
+	desc = EVTDESCPA.10018
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+                is_female = yes
+		NOT = { trait = autokrateira2 }
+                NOT = { has_global_flag = revived_roman_culture }
+		has_landed_title = e_roman_empire
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10018
+		add_trait = autokrateira2
+	}
+}
+
+# autokrateira2 Trait Lost
+character_event = {
+	id = PA.10019
+	desc = EVTDESCPA.10019
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrateira2
+		is_alive = yes
+                OR = {
+                        has_global_flag = revived_roman_culture
+		        NOT = { has_landed_title = e_roman_empire }
+                }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10019
+		remove_trait = autokrateira2
 	}
 }
 

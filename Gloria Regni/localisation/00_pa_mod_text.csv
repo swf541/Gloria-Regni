@@ -5,6 +5,12 @@ EVTDESCPA.10003;A child has been born in the purple room of the Imperial Palace,
 EVTDESCPA.10004;One of the eunuchs at the Imperial Court has distinguished himself and caught the attention of your advisors. Though they are usually of the jealous kind and loathe to admit redeeming qualities in others, even they cannot deny the promise of this young man.;;;;;;;;;x 
 EVTOPTAPA_10004;Very well. Bring this man before me.;;;;;;;;;x 
 EVTOPTBPA_10004;He should be cleaning floors and watching over women.;;;;;;;;;x 
+born_in_the_purple2;Born in the Purple;;;;;;;;;x 
+born_in_the_purple2_desc;This character was "born in the purple" - a high honour in the realm. It is a special trait bestowed only to children born of a ruling monarch in the purple chamber of the palace.;;;;;;;;;x 
+augustus;Augustus;;;;;;;;;x 
+augustus_desc;This character is the current ruler of the restored Roman Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
+augusta;Augusta;;;;;;;;;x 
+augusta_desc;This character is the current ruler of the restored Roman Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
 baron_roman;Nobilus;;;;;;;;;x 
 baron_female_roman;Nobilia;;;;;;;;;x 
 barony_of_roman;Castra of;;;;;;;;;x 
@@ -32,11 +38,6 @@ roman_culture;[From.GetTitledName] becomes Roman.;;;;;;;;;x
 build_imperial_walls;Build Imperial Walls;;;;;;;;;x 
 build_imperial_walls_desc;The Aurelian Walls are no longer strong enough to protect Rome. The city needs a new set of fortifications worthy of its status as an Imperial capital.;;;;;;;;;x 
 RETTYPE_CUL_ROMAN;Legionary;;;;;;;;;x 
-ca_culture_roman_1;Legionary Training Ground;;;;;;;;;x 
-ca_culture_roman_2;Legionary Training Ground;;;;;;;;;x 
-ca_culture_roman_3;Legionary Training Ground;;;;;;;;;x 
-ca_culture_roman_4;Legionary Training Ground;;;;;;;;;x 
-ca_culture_roman_1_desc;Legionary units include heavy infantry and pikemen. They are well equipped shock troops which can deal heavy damage.;;;;;;;;;x 
 RETTYPE_CUL_ROMAN2;Clibanarii;;;;;;;;;x 
 tp_rom_wall_6;Aurelian Walls;;;;;;;;;x 
 tp_rom_wall_6_desc;The Aurelian Walls were built in the 3rd century to protect Rome. They encompass all of the cities seven hills, protecting them from siege.;;;;;;;;;x 
@@ -54,8 +55,6 @@ title_caesar;Caesar;;;;;;;;;x
 title_caesar_desc;Caesar is the one of the highest titles in the Roman Empire, second only to the Emperor. It can only be granted to close relatives of the Emperor, and is used to designate the heir to the Imperial throne.;;;;;;;;;x 
 title_magister;Magister;;;;;;;;;x 
 title_magister_desc;A Magister (Master) was a type of officer who held imperium (Power) in the Roman Republic. It became a proper title in the late Roman Empire and was given to important ministers, bureaucrats and generals.;;;;;;;;;x 
-title_senator;Senator;;;;;;;;;x 
-title_senator_desc;This title allows a vassal to sit in the Roman Senate. This title gives its holder a substantial boost to their prestige due to its importance in the government of the state.;;;;;;;;;x 
 title_nobilissimus;Nobilissimus;;;;;;;;;x 
 title_nobilissimus_desc;Nobilissimus is Latin for 'most noble.' It was introduced as an honorary title during Constantine's reign and affords its holders great prestige.;;;;;;;;;x 
 title_patrician;Patrician;;;;;;;;;x 
@@ -68,11 +67,16 @@ EVTNAMEPA.10006;More Auxillaries;;;;;;;;;x
 EVTDESCPA.10006;Another group of men has shown up at your borders, requesting service in the Roman army. The stories of the auxillaries have apparently spread far and wide, and they wish to join them in serving the Empire. The people did not take well to the arrival of the previous group, believing them to be spies sent by Rome's enemies. The memory of the barbarian Odacer's betrayal is still fresh in the mind of Rome's citizens. What shall you do?;;;;;;;;;x 
 EVTNAMEPA.10007;Riots in Rome;;;;;;;;;x 
 EVTDESCPA.10007;A riot has broken out in the Imperial Forum between the citizens of Rome and a group of auxillaries. Several groups of people have taken to the streets, convinced the "barbarian" auxillaries are planning the downfall of Rome. They are demanding you expel the Foederati from the Empire at once, or they will march on the Imperial Palace. The palace is well defended, and your guards are ready to fight, but the battle could be close.;;;;;;;;;x 
-egyptian_grain;Egyptian Grain;;;;;;;;;x 
-EVTDESCPA.10009;With the reconquest of the Nile delta, the grain supply to the Empire's cities has resumed.;;;;;;;;;x 
-EVTDESCPA.10010;With the loss of the Nile delta, the grain supply to the Empire's cities has again ceased.;;;;;;;;;x 
 EVTDESCPA.10011;A clumsy servant fell while pouring you a glass of wine and spilled it over you by accident, ruining your expensive purple cloak.;;;;;;;;;x 
 forgive_servant;The servant is pardoned.;;;;;;;;;x 
+autokrator;Autokrator;;;;;;;;;x 
+autokrator_desc;This character is the current ruler of the Byzantine (Eastern Roman) Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
+autokrateira;Autokrateira;;;;;;;;;x 
+autokrateira_desc;This character is the current ruler of the Byzantine (Eastern Roman) Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
+autokrator2;Autokrator;;;;;;;;;x 
+autokrator2_desc;This character is the current ruler of the Roman Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
+autokrateira2;Autokrateira;;;;;;;;;x 
+autokrateira2_desc;This character is the current ruler of the Roman Empire and commands the respect an office of such magnitude is due.;;;;;;;;;x 
 EVTDESCPA.10012;You are the current ruler of the glorious Byzantine Empire. May your reign be a prosperous one!;;;;;;;;;x 
 EVTDESCPA.10013;You are no longer the ruler of the Byzantine Empire. It will surely crumble without your guiding hand to lead it.;;;;;;;;;x 
 EVTDESCPA.10014;You are the current ruler of the glorious Byzantine Empire. May your reign be a prosperous one!;;;;;;;;;x 
@@ -89,12 +93,8 @@ united_churches;The Churches are united.;;;;;;;;;x
 EVTDESCPA.10022;The promised troops have finally arrived from the west. They have set up in the capital and are awaiting your orders.;;;;;;;;;x 
 form_latin_empire;Form the Latin Empire;;;;;;;;;x 
 form_latin_empire_desc;Form the Latin Empire.;;;;;;;;;x 
-e_trebizond;Trebizond;;;;;;;;;x 
-e_trebizond_adj;Trebizondian;;;;;;;;;x 
 form_trebizond_empire;Form the Empire of Trebizond;;;;;;;;;x 
 form_trebizond_empire_desc;Form the Empire of Trebizond.;;;;;;;;;x 
-k_epirus;Epirus;;;;;;;;;x 
-k_epirus_adj;Epirote;;;;;;;;;x 
 form_epirus_despotate;Form the Despotate of Epirus;;;;;;;;;x 
 form_epirus_despotate_desc;Form the Despotate of Epirus.;;;;;;;;;x 
 tp_stpeters;St. Peter's Basilica;;;;;;;;;x 
@@ -127,8 +127,6 @@ EVTNAMEPA.10025;Rome Destroyed;;;;;;;;;x
 EVTDESCPA.10025;You leave your palace along with your guards as the city burns. The city watch is unable to contain the blaze, which eventually burns much of Rome to the ground, killing thousands of people.;;;;;;;;;x 
 opinion_saved_rome;Saved Rome;;;;;;;;;x 
 opinion_destroyed_rome;Destroyed Rome;;;;;;;;;x 
-e_bulgaria;Bulgaria;;;;;;;;;x 
-e_bulgaria_adj;Bulgarian;;;;;;;;;x 
 e_serbia;Serbia;;;;;;;;;x 
 e_serbia_adj;Serbian;;;;;;;;;x 
 form_bulgarian_empire;Form the Bulgarian Empire;;;;;;;;;x 
@@ -218,7 +216,6 @@ convert_to_spouse_apostolic_desc;The pillow talk of a spouse or concubine can be
 convert_to_spouse_imperial;Convert to Imperial;;;;;;;;;x 
 convert_to_spouse_imperial_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
 d_saint_blaise;Order of Saint Blaise;;;;;;;;;x 
-d_saint_peter;Order of Saint Peter;;;;;;;;;x 
 d_saint_blaise_adj;St Blaise's Knights;;;;;;;;;x 
 expelled_d_saint_blaise;Expelled St Blaise's Knights;;;;;;;;;x 
 expelled_d_saint_peter;Expelled St Peter's Knights;;;;;;;;;x 
@@ -243,12 +240,6 @@ WAR_NAME_SUBJUGATION;$ORDER$$FIRST_ADJ$ Imperial Subjugation of $OTHER_TITLE$;;;
 imperial_subjugation_desc;We are the true heirs of Rome, and our empire should reflect this! $CLAIMANT$§! can use this Casus Belli to seize all titles held by §Y$TARGET$§! within the de jure §Y$TITLE$§!;;;;;;;;;x 
 EVTDESCPA.10035;The treasury is empty and the Empire is deep in debt. You could make quite a bit of money if you were to sell the Crown of Thorns to a Western monarch, but it won't do wonders for your prestige.;;;;;;;;;x 
 EVTDESCPA.10036;The treasury is empty and the Empire is once again in debt. You could make some money if you were to sell the lead tiles on the roof of the Great Palace, but it won't do wonders for your prestige.;;;;;;;;;x 
-EVTNAMEPA.10037;Fall of Thessalonika;;;;;;;;;x 
-EVTDESCPA.10037;The city of Thessalonika has finally fallen to our forces and accepted [Root.GetTitledFirstName]'s rule. Named after Thessalonike, the wife of the diadochi Cassander, the city of Thessalonika flourished under Roman rule. It was one of the few cities in Greece which was able to resist the Slavic incursions in the 8th century, owing to it's strong defences. The second largest city in Greece after Constantinople, Thessalonika will make a fine addition to the Empire.;;;;;;;;;x 
-EVTNAMEPA.10038;Fall of Athens;;;;;;;;;x 
-EVTDESCPA.10038;The city of Athens has fallen to our forces and accepted [Root.GetTitledFirstName] as it's sovereign. One of the greatest cities of the ancient Greek world, Athens became a part of the Roman Republic in 146 BC and flourished under Imperial rule. The city remained under Roman control even after the losses to the Arabs, who failed to take Constantinople and invade Greece. While Athens may not be as large as it once was, it will still make a fine addition to the Empire.;;;;;;;;;x 
-EVTNAMEPA.10039;Fall of Byzantium;;;;;;;;;x 
-EVTDESCPA.10039;The Byzantine Empire has fallen, leaving ourselves as the true heirs of Rome in the east. The Holy Roman Empire may have the support of the Pope, but we control Constantinople, the New Rome and city of the world's desire. The German pretenders can continue to play emperor, so long as they leave the East to it's true rulers. There are much more dangerous enemies close to home we need to deal with, such as the Muslim infidels who still control the Levant, Egypt and Africa.;;;;;;;;;x 
 release_prisoner;Release [Root.GetTitledFirstName];;;;;;;;;x 
 release_prisoner_desc;I can order my guards to release [Root.GetTitledFirstName] from prison if I wish.;;;;;;;;;x 
 d_commune;Roman Commune;;;;;;;;;x 
@@ -271,22 +262,12 @@ EVTDESCPA.10066;The Order of Saint Blaise has constructed a castle in [Root.GetN
 EVTDESCPA.10068;Your majesty, this antagonism is completely unwarranted! The Order serves Christ, but, one has to wonder, do you?\n\nWith anger and sadness,\n\nGrand Master [From.GetFirstName];;;;;;;;;x 
 d_chosen;Chosen Warriors;;;;;;;;;x 
 d_chosen_adj;Chosen Warriors;;;;;;;;;x 
-EVTNAMEPA.10071;Fall of Constantinople;;;;;;;;;x 
-EVTDESCPA.10071;The city of Constantinople has finally fallen to our forces. Our ancestors have been fighting the Byzantines for centuries, but now the conflict is finally over. It was hard work breaching the Theodosian Walls, but the countless treasures which lay behind them more than make up for our losses. Control over the Sea of Marmara will greatly enrich our people and allow us to expand further. A golden age has begun for us, all thanks to [Root.GetTitledFirstName]'s leadership.;;;;;;;;;x 
 tp_etchmiadzin;Etchmiadzin Cathedral;;;;;;;;;x 
 tp_etchmiadzin_desc;Originally constructed in the early 4th century by Saint Gregory the Illuminator, Etchmiadzin Cathedral is the base of the Catholicos of All Armenia and one of the Apostolic faith's most important holy sites.;;;;;;;;;x 
 tp_grandmosque;Grand Mosque;;;;;;;;;x 
 tp_grandmosque_desc;The largest and most sacred mosque in the world, the Grand Mosque contains the Kabba, the most important holy site in all of Islam. All Muslims are required to undertake a pilgrimage to the Kabba once in their lifetime.;;;;;;;;;x 
 tp_prophetsmosque;Prophet's Mosque;;;;;;;;;x 
 tp_prophetsmosque_desc;The second most important holy place in Islam, the Prophet's Mosque is said to have been constructed by Muhammad himself. It is one of the largest mosques in the world, rivalled only by the Grand Mosque in Mecca.;;;;;;;;;x 
-EVTNAMEPA.10072;Fall of Thessalonika;;;;;;;;;x 
-EVTDESCPA.10072;The city of Thessalonika has finally fallen to our forces and accepted [Root.GetTitledFirstName]'s rule. Named after Thessalonike, the wife of the diadochi Cassander, the city of Thessalonika flourished under Roman rule. It was one of the few cities in Greece which was able to resist the Slavic incursions in the 8th century, owing to it's strong defences. The second largest city in Greece after Constantinople, Thessalonika will make a fine addition to the kingdom.;;;;;;;;;x 
-EVTNAMEPA.10073;Fall of Athens;;;;;;;;;x 
-EVTDESCPA.10073;The city of Athens has fallen to our forces and accepted [Root.GetTitledFirstName] as it's sovereign. One of the greatest cities of the ancient Greek world, Athens became a part of the Roman Republic in 146 BC and flourished under Imperial rule. The city remained under Roman control even after the losses to the Arabs, who failed to take Constantinople and invade Greece. While Athens may not be as large as it once was, it will still make a fine addition to the kingdom.;;;;;;;;;x 
-EVTNAMEPA.10074;Fall of Constantinople;;;;;;;;;x 
-EVTDESCPA.10074;The city of Constantinople has finally fallen to our forces. The Byzantine Empire has questioned the legitimacy of our state since it's very foundation, but now we can lay claim to the title of protector of all Greeks. The trade which flows through the Sea of Marmara will greatly enrich our people, and Constantinople's strong defences will form a bulwark against eastern threats. The future of the realm is secured, all thanks to [Root.GetTitledFirstName]'s leadership.;;;;;;;;;x 
-EVTNAMEPA.10076;Fall of Byzantium;;;;;;;;;x 
-EVTDESCPA.10076;The Byzantine Empire has fallen, leaving ourselves as the true heirs of Rome and Greece. The Byzantine people claimed to be Romans, but they abandoned the Latin language under Emperor Heraclius, and Rome itself passed outside of Imperial control in the 7th century. We are the true fore-bearers of Hellenistic culture, a fact none can deny any longer. A new golden age of Greek culture will begin under our protection, all thanks to [Root.GetTitledFirstName]'s leadership.;;;;;;;;;x 
 EVTNAMEPA.10077;Fall of Thessalonika;;;;;;;;;x 
 EVTDESCPA.10077;The city of Thessalonika has finally fallen to our forces and accepted [Root.GetTitledFirstName]'s rule. Named after Thessalonike, the wife of the diadochi Cassander, the city of Thessalonika flourished under Roman rule. It was one of the few cities in Greece which was able to resist the Slavic incursions in the 8th century, owing to it's strong defences. The second largest city in Greece after Constantinople, Thessalonika will make a fine addition to the Empire.;;;;;;;;;x 
 EVTNAMEPA.10078;Fall of Athens;;;;;;;;;x 
@@ -327,7 +308,6 @@ CALIPHA;Calipha;;;;;;;;;x
 CALIPH_FOA;My Caliph;;;;;;;;;x 
 EVTNAMEPA.10092;The Varangian Guard;;;;;;;;;x 
 EVTDESCPA.10092;Impressed by the stories of the Varangians prowess in battle, [Root.GetTitledFirstName] has decided to reform the fabled mercenary unit. The Varangian Guard was one of the best military units in the world during Byzantine times, and [Root.GetTitledFirstName] hopes to restore it's honour and reputation. The Byzantine Empire may be gone, but its legacy lives on through its successors.;;;;;;;;;x 
-gothic;Gothic;;;;;;;;;x 
 religious_upheaval;Religious Upheaval;;;;;;;;;x 
 sword_of_caesar;Caesar's Sword;;;;;;;;;x 
 EVTNAMEPA.10091;Caesar's Sword;;;;;;;;;x 
@@ -420,46 +400,7 @@ d_imperial_fleet3;Imperial Fleet;;;;;;;;;x
 convert_to_spouse_hellenic;Convert to Hellenic;;;;;;;;;x 
 convert_to_spouse_hellenic_desc;The pillow talk of a spouse or concubine can be very persuasive. These Hellenic gods don't sound very nice though...;;;;;;;;;x 
 job_spiritual_pagan_group;Diviner;;;;;;;;;x 
-count_norse_pagan;Chief;;;;;;;;;x 
-count_norse_pagan_reformed;Chief;;;;;;;;;x 
-count_tengri_pagan;Chief;;;;;;;;;x 
-count_tengri_pagan_reformed;Chief;;;;;;;;;x 
-count_baltic_pagan;Chief;;;;;;;;;x 
-count_baltic_pagan_reformed;Chief;;;;;;;;;x 
-count_finnish_pagan;Chief;;;;;;;;;x 
-count_finnish_pagan_reformed;Chief;;;;;;;;;x 
-count_slavic_pagan;Chief;;;;;;;;;x 
-count_slavic_pagan_reformed;Chief;;;;;;;;;x 
-count_west_african_pagan;Chief;;;;;;;;;x 
-count_west_african_pagan_reformed;Chief;;;;;;;;;x 
-count_female_norse_pagan;Chieftess;;;;;;;;;x 
-count_female_norse_pagan_reformed;Chieftess;;;;;;;;;x 
-count_female_tengri_pagan;Chieftess;;;;;;;;;x 
-count_female_tengri_pagan_reformed;Chieftess;;;;;;;;;x 
-count_female_baltic_pagan;Chieftess;;;;;;;;;x 
-count_female_baltic_pagan_reformed;Chieftess;;;;;;;;;x 
-count_female_finnish_pagan;Chieftess;;;;;;;;;x 
-count_female_finnish_pagan_reformed;Chieftess;;;;;;;;;x 
-count_female_slavic_pagan;Chieftess;;;;;;;;;x 
-count_female_slavic_pagan_reformed;Chieftess;;;;;;;;;x 
-count_female_west_african_pagan;Chieftess;;;;;;;;;x 
-count_female_west_african_pagan_reformed;Chieftess;;;;;;;;;x 
-temple_baron_norse_pagan;Godi;;;;;;;;;x 
-temple_baron_norse_pagan_reformed;Godi;;;;;;;;;x 
-temple_baron_tengri_pagan;Shaman;;;;;;;;;x 
-temple_baron_tengri_pagan_reformed;Shaman;;;;;;;;;x 
-temple_baron_baltic_pagan;Shaman;;;;;;;;;x 
-temple_baron_baltic_pagan_reformed;Shaman;;;;;;;;;x 
-temple_baron_finnish_pagan;Shaman;;;;;;;;;x 
-temple_baron_finnish_pagan_reformed;Shaman;;;;;;;;;x 
-temple_baron_aztec;Shaman;;;;;;;;;x 
-temple_baron_aztec_reformed;Shaman;;;;;;;;;x 
-temple_baron_slavic_pagan;Shaman;;;;;;;;;x 
-temple_baron_slavic_pagan_reformed;Shaman;;;;;;;;;x 
-temple_baron_west_african_pagan;Shaman;;;;;;;;;x 
-temple_baron_west_african_pagan_reformed;Shaman;;;;;;;;;x 
-job_spiritual_west_african_pagan;Diviner;;;;;;;;;x 
-job_spiritual_west_african_pagan_reformed;Diviner;;;;;;;;;x 
+
 baron_norse_pagan;Hetman;;;;;;;;;x 
 baron_norse_pagan_reformed;Hetman;;;;;;;;;x 
 baron_tengri_pagan;Hetman;;;;;;;;;x 
@@ -507,12 +448,9 @@ d_arsiyah_adj;Arsiyah;;;;;;;;;x
 d_kheshig;Imperial Kheshig;;;;;;;;;x 
 d_kheshig_adj;Kheshig;;;;;;;;;x 
 d_heroes;Heroes of Olympus;;;;;;;;;x 
-d_heroes;Heroes;;;;;;;;;x 
 d_hellenic_pagan;The Hellenic Church;;;;;;;;;x 
 d_hellenic_Pagan_adj;Hellenic;;;;;;;;;x 
 empress_iranian;Shahbanu;;;;;;;;;x 
-title_patrikos;Patrikos;;;;;;;;;x 
-title_patrikos_desc;Although no longer as prestigious as it was during the times of Justinian, the title of Patrikos still ranks high in Byzantine society.;;;;;;;;;x 
 tp_thirdtemple;Third Temple;;;;;;;;;x 
 tp_thirdtemple_desc;The temple was rebuilt after the re-creation of Israel. It is the heart of the Jewish faith and the holiest site in the Jewish religion.;;;;;;;;;x 
 tp_irminsul;Irminsul;;;;;;;;;x 
@@ -584,8 +522,11 @@ EVTNAMEPA.10179;The Magyar Conquest;;;;;;;;;x
 EVTDESCPA.10179;Historically, the Magyars did not migrate to the Carpathian basin until 895, but with Bulgaria busy with the Byzantine Empire and Avar power weakening, it might be a good idea to invade Carpathia. The Bulgarians won't be busy forever, and the Christian powers, especially the Franks, will turn their attention to the Pannonian lands eventually, so why waste a good opportunity? Your army is strong and well prepared, but will only fight if you command it.;;;;;;;;;x 
 EVTNAMEPA.10180;Heroes of Olympus;;;;;;;;;x 
 EVTDESCPA.10180;Although Hellenism has managed to regain enough of its power to become a true religion once more, its position is still precarious. To protect the faithful and keep the infidels at bay, the Hellenic clergy have sanctioned the creation of a holy order, the Heroes of Olympus. Having sworn an oath to defend Hellenism and the holy mountain, the Heroes are ready to fight for those who need them. A new era of pagan expansion has begun, with the Heroes at the forefront.;;;;;;;;;x 
-EVTNAMEPA.10181;Fall of Francia;;;;;;;;;x 
-EVTDESCPA.10181;The empire of Charlemagne has fallen. With the loss of so much territory to revolts, independence-minded nobles and foreign powers, it was only a matter of time before Francia toppled and fell. The Pope will need to look for a new protector, as the remnants of the empire fight among themselves for the right to claim the vacant throne. Although Francia may be gone, Charlemagne's memory still lives on, as does his dream of reforging the Roman Empire. Western Europe may see another emperor before too long, Francian or Roman.;;;;;;;;;x 
+COMPL_AUGUSTA;Augusta;;;;;;;;;x 
+COMPL_AUTOKRATOR;Autokrator;;;;;;;;;x 
+COMPL_AUTOKRATEIRA;Autokrateira;;;;;;;;;x 
+COMPL_AUTOKRATOR2;Autokrator;;;;;;;;;x 
+COMPL_AUTOKRATEIRA2;Autokrateira;;;;;;;;;x 
 title_prince_greek;Despot;;;;;;;;;x 
 title_prince_female_greek;Despoina;;;;;;;;;x 
 title_prince_roman;Princeps;;;;;;;;;x 
@@ -606,8 +547,6 @@ tp_house_of_wisdom;House of Wisdom;;;;;;;;;x
 tp_house_of_wisdom_desc;The House of Wisdom is a vast library which was constructed following the foundation of Baghdad as the capital of the Abbasid Caliphate in 762. The archives house one of the largest collections of classical knowledge outside of Constantinople, Alexandria or Rome.;;;;;;;;;x 
 tp_house_of_wisdom2;House of Wisdom;;;;;;;;;x 
 tp_house_of_wisdom2_desc;The House of Wisdom was eventually rebuilt following the sack of Baghdad by the Mongols. Though much knowledge was lost after the Mongol invasion, the archives house one of the largest collections of classical knowledge outside of Constantinople, Alexandria or Rome.;;;;;;;;;x 
-k_macedonia;Macedonia;;;;;;;;;x 
-k_macedonia_adj;Macedonian;;;;;;;;;x 
 e_macedonia;Hellene Empire;;;;;;;;;x 
 e_macedonia_adj;Greek;;;;;;;;;x 
 d_companions;Companions;;;;;;;;;x 
@@ -653,8 +592,6 @@ donate_money_to_heroes;Donate money to the Heroes;;;;;;;;;x
 donate_money_to_heroes_desc;I can donate money to the Heroes in exchange for Piety and lifelong respect from the [Root.Religion.GetName] Church.;;;;;;;;;x 
 EVTDESCPA.10203;I have been Born in the Purple!;;;;;;;;;x 
 EVTDESCPA.10204;A child has been born in the purple room of the Royal Palace, strengthening their claim to the throne.;;;;;;;;;x 
-form_hellenic_church;Appoint a Religious Head;;;;;;;;;x 
-form_hellenic_church_desc;Appoint a high priest to oversee the administration of the Hellenic Church.;;;;;;;;;x 
 EVTDESCPA.10205;You have chosen to centralise the Hellenic Church and appoint a religious head to oversee it, but who should that be? You could keep the title for yourself if you wish, or give it to a vassal priest.;;;;;;;;;x 
 EVTDESCPA.10206;A priest has come to you asking for funds to help build a temple in a nearby village. The foundations of the temple are finished, but the construction costs have run several coins over budget. Will you help him?;;;;;;;;;x 
 EVTDESCPA.10207;A group of actors from a nearby village is looking to host a production of Homer's Odyssey, but they are sorely lacking in funds. The leader of the group has come to you to ask for a small loan. Will you help him?;;;;;;;;;x 
@@ -850,14 +787,12 @@ EVTDESC_CM_6;Through foreign trade and Latin influence new traditions are evolvi
 EVTDESC_CM_7;The Hispano-Romans in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Castilian in culture.;;;;;;;;;x 
 EVTDESC_CM_8;The Hispano-Romans in various regions are slowly developing unique local identities with distinctive speech and customs. The latest news is that the province of [Root.GetName] has become Catalan in culture.;;;;;;;;;x 
 EVTDESC_CM_9;Through foreign trade and Latin influence, new traditions are evolving among the Hispano-Romans. This is highly noticeable in the province of [Root.GetName], which is now Portuguese in culture.;;;;;;;;;x 
-hispanic;Hispano-Roman;;;;;;;;;x 
 vasconic;Vasconic;;;;;;;;;x 
 k_neustria;Neustria;;;;;;;;;x 
 k_neustria_adj;Neustrian;;;;;;;;;x 
 k_austrasia;Austrasia;;;;;;;;;x 
 k_austrasia_adj;Austrasian;;;;;;;;;x 
-dalmatian;Dalmatian;;;;;;;;;x 
-create_fraticelli_papacy_desc;Create the Fraticelli Papacy;;;;;;;;;x 
+create_fraticelli_papacy;Create the Fraticelli Papacy;;;;;;;;;x 
 create_fraticelli_papacy_desc;If I am pious enough and control Rome, I can appoint a Fraticelli Pope to serve as the head of the faith in opposition to the vile Catholic Pope.;;;;;;;;;x 
 create_iconoclast_patriarchate;Create the Iconoclast Patriarchate;;;;;;;;;x 
 create_iconoclast_patriarchate_desc;If I am pious enough and control Constantinople, I can appoint an Iconoclast Ecumenical Patriarch to serve as the head of the faith in opposition to the vile Orthodox Patriarch.;;;;;;;;;x 
@@ -875,10 +810,6 @@ ca_culture_group_byzantine_2;Skoutatoi Training Ground;;;;;;;;;x
 ca_culture_group_byzantine_3;Skoutatoi Training Ground;;;;;;;;;x 
 ca_culture_group_byzantine_4;Skoutatoi Training Ground;;;;;;;;;x 
 ca_culture_group_byzantine_1_desc;Skoutatoi units include heavy infantry and pikemen. They are well equipped shock troops which can deal heavy damage.;;;;;;;;;x 
-ca_culture_italian_1;Militia Training Ground;;;;;;;;;x 
-ca_culture_italian_2;Militia Training Ground;;;;;;;;;x 
-ca_culture_italian_3;Militia Training Ground;;;;;;;;;x 
-ca_culture_italian_4;Militia Training Ground;;;;;;;;;x 
 ca_culture_italian_1_desc;These grounds are used to train militia pikemen. Focused mainly on the defence, pikemen are excellent against all types of cavalry.;;;;;;;;;x 
 k_bulgaria2;Bulgaria;;;;;;;;;x 
 k_bulgaria2_adj;Bulgarian;;;;;;;;;x 
@@ -904,15 +835,6 @@ vassal_wars_2;Disallowed Wars;;;;;;;;;x
 vassal_wars_0_desc;Vassals can declare war if they have a valid casus belli.;;;;;;;;;x 
 vassal_wars_1_desc;Vassals can only declare wars on external targets.;;;;;;;;;x 
 vassal_wars_2_desc;Vassals are forbidden from declaring war.;;;;;;;;;x 
-lollard_DESC;Lollard heretics are opposed to perceived corruption within the Catholic Church. Like many Catholic heresies, they loathe the wealth and ostentation of the clergy and advocate a return to a more original form of Christianity.;;;;;;;;;x 
-cathar_DESC;The Cathar, or Albigensian, heresy rejects confession and the holiness of the clergy and of the Pope. They only have a single sacrament - the Consolation - to remove sin and turn the believer into a Cathar Perfect.;;;;;;;;;x 
-waldensian_DESC;Originally a reform movement within the Catholic church, Waldensian heretics are anti-clerical and advocate a return to vows of poverty. They are opposed to capital punishment and believe that laymen can also administer the sacraments.;;;;;;;;;x 
-bogomilist_DESC;Bogomilism is an originally Orthodox Christian heresy with Gnostic elements that completely rejects the ecclesiastical hierarchy and advocates a return to early Christianity. Bogomilists believe that the world was created by an evil demiurge - the Devil.;;;;;;;;;x 
-jewish_DESC;Judaism is the oldest of the Abrahamic religions and its origins can be traced back all the way to the Bronze Age. The holiest city of this monotheistic faith is Jerusalem, which served as the capital of the ancient Kingdom of Israel before the Assyrian invasion.;;;;;;;;;x 
-manichean_DESC;Manichaeism is a Gnostic religion founded by the prophet Mani who was put to death by the Sassanid Shahanshah Bahram I in 277. His 'Religion of Light' incorporated elements of Christianity, Zoroastrianism and Gnosticism. The traditional leader of the Manichean church was the Megas Archegos of Baghdad. In-game, Manichaeism is regarded as a Zoroastrian heresy.;;;;;;;;;x 
-mazdaki_DESC;Mazdak was a Zoroastrian priest who claimed to be a prophet of Ahura Mazda. He attempted to reform the religion with Gnostic elements, and advocated communal possessions and welfare programs. His teachings fell out of favor with the Shahanshah Kavadh I in 524, but pockets of the heresy survived for a time in the Persian mountains.;;;;;;;;;x 
-karaite_DESC;Karaite Judaism is a Jewish movement characterized by the recognition of the Tanakh alone as its supreme legal authority in Jewish religious law and theology. In this it is distinct from mainstream Rabbinic Judaism. Karaites maintain that all of the divine commandments handed down to Moses by God were recorded in the written Torah, without additional Oral Law or explanation.;;;;;;;;;x 
-samaritan_DESC;Samaritanism is an Abrahamic religion closely related to Judaism. Samaritans assert their worship is the true religion of the ancient Israelites prior to the Babylonian Exile, preserved by those who remained in the Land of Israel, as opposed to Judaism, which they assert is a related but altered and amended religion. In-game, Samaritanism is treated as a heresy of mainstream Judaism.;;;;;;;;;x 
 d_mazdaki;The Mazdaki Church;;;;;;;;;x 
 d_mazdaki_adj;Mazdaki;;;;;;;;;x 
 d_zurvanite;The Zurvanite Church;;;;;;;;;x 
@@ -934,9 +856,6 @@ eutychian;Eutychian;;;;;;;;;x
 eutychian_DESC;The Eutychian faith, named after the monk eutychian of Constantinople, is a non-Chalcedonian faith which taught that the human nature of Christ was overcome by the divine, or that Christ had a human nature but it was unlike the rest of humanity. One formulation is that Eutychianism stressed the unity of Christ's nature to such an extent that Christ's divinity consumed his humanity as the ocean consumes a drop of vinegar. In-game, Eutychianism is considered a Nestorian heresy.;;;;;;;;;x 
 convert_to_spouse_eutychian;Convert to Eutychian;;;;;;;;;x 
 convert_to_spouse_eutychian_desc;The pillow talk of a spouse or concubine can be very persuasive. This White Christ does not sound very warlike though...;;;;;;;;;x 
-east_germanic;East Germanic;;;;;;;;;x 
-ostrogothic;Ostrogothic;;;;;;;;;x 
-visigothic;Visigothic;;;;;;;;;x 
 e_avaria;Avars;;;;;;;;;x 
 e_avaria_adj;Avar;;;;;;;;;x 
 EVTDESCPA.10279;Through foreign trade and Greek influence, new traditions are evolving among the Ostrogoths. This is highly noticeable in the province of [Root.GetName], which is now Gothic in culture.;;;;;;;;;x 
@@ -995,8 +914,6 @@ EVTNAMEPA.10300;The Fourth Fitna;;;;;;;;;x
 EVTDESCPA.10300;As the Abbasid caliphate grew, infighting began among the members of the ruling dynasty, which only continued to grow larger. If the caliph is not careful, he may soon see his realm ripped apart by civil strife.;;;;;;;;;x 
 EVTNAMEPA.10303;The Fourth Fitna;;;;;;;;;x 
 EVTDESCPA.10303;The Abbasid caliphate has remained strong in the face of civil war and independence-minded nobles. With the caliphate united once more, Muhammad's dream of a united Islamic world may finally come to pass.;;;;;;;;;x 
-k_gallia;Gallia;;;;;;;;;x 
-k_gallia_adj;Gallic;;;;;;;;;x 
 restore_gallia;Form the Kingdom of Gallia.;;;;;;;;;x 
 restore_gallia_desc;Form the Kingdom of Gallia.;;;;;;;;;x 
 ostrogothic_germanic_conversion;Covert to Germanic;;;;;;;;;x 
@@ -1006,7 +923,7 @@ visigothic_germanic_conversion_desc;With the Catholic Church in disarray, you co
 e_gallia;Gallic Empire;;;;;;;;;x 
 e_gallia_adj;Gallic;;;;;;;;;x 
 e_palmyra;Palmyrene Empire;;;;;;;;;x 
-e_palmyra;Palmyrene;;;;;;;;;x 
+e_palmyra_adj;Palmyrene;;;;;;;;;x 
 restore_gallic_empire;Restore the Gallic Empire..;;;;;;;;;x 
 restore_gallia_empire_desc;Restore the Gallic Empire.;;;;;;;;;x 
 restore_palmyrene_empire;Restore the Palmyrene Empire..;;;;;;;;;x 
@@ -1035,9 +952,6 @@ EVTNAMEPA.10309;Rise of Rum;;;;;;;;;x
 EVTDESCPA.10309;The Byzantine Empire has been defeated in Anatolia by the Seljuk Turks, who now call themselves Rum (Rome). Lead by distant relation of the Seljuk sultan, they are eager to continue their invasion of the Byzantine Empire.;;;;;;;;;x 
 k_socotra;Socotra;;;;;;;;;x 
 k_socotra_adj;Socotran;;;;;;;;;x 
-assyrian;Assyrian;;;;;;;;;x 
-aramean;Aramean;;;;;;;;;x 
-coptic;Coptic;;;;;;;;;x 
 k_kimak;Kimak;;;;;;;;;x 
 d_sahara;Sahara;;;;;;;;;x 
 Canaanite;Canaanite;;;;;;;;;x 
@@ -1054,12 +968,6 @@ langobard_arian_conversion;Covert to Arian;;;;;;;;;x
 langobard_arian_conversion_desc;With the Catholic Church in disarray, you could convert to Arianism.;;;;;;;;;x 
 langobard_germanic_conversion;Covert to Arian;;;;;;;;;x 
 langobard_germanic_conversion_desc;With the Catholic Church in disarray, you could convert to paganism.;;;;;;;;;x 
-restore_ostrogothia;Restore the Visigothic Kingdom;;;;;;;;;x 
-restore_ostrogothia_desc;Restore the Visigothic kingdom.;;;;;;;;;x 
-migrate_to_italy;Migrate to Italy;;;;;;;;;x 
-migrate_to_italy_desc;Migrate to Italy.;;;;;;;;;x 
-restore_ostrogothia2;Restore the Visigothic Kingdom;;;;;;;;;x 
-restore_ostrogothia2_desc;Restore the Visigothic kingdom.;;;;;;;;;x 
 RETTYPE_CUL_MAC;Hoplite;;;;;;;;;x 
 RETTYPE_CUL_MAC2;Companion;;;;;;;;;x 
 ca_national_retinue_macedonia_1;Hoplite Training Ground;;;;;;;;;x 
@@ -1071,7 +979,6 @@ RETTYPE_CUL_GOTH;Gothic Heavy Infantry;;;;;;;;;x
 ca_culture_germanic_1_desc;The heavy infantry formations of the Franks, the Lombards and the Goths are heavily influenced by the Roman army's organization and tactics. Here is where these elite warriors are trained and drilled to be ready for battle in the service of their liege.;;;;;;;;;x 
 RETTYPE_CUL_ARF;Moorish Infantry;;;;;;;;;x 
 RETTYPE_CUL_BERBER;Moorish Cavalry;;;;;;;;;x 
-mizrahi;Mizrahi;;;;;;;;;x 
 baron_gallic;Nobilus;;;;;;;;;x 
 baron_female_gallic;Nobilia;;;;;;;;;x 
 barony_of_gallic;Castra of;;;;;;;;;x 
@@ -1187,7 +1094,7 @@ imperator_desc;This character is the ruler of the restored Western Roman Empire,
 imperatrix;Imperatrix;;;;;;;;;x 
 imperatrix_desc;This character is the ruler of the restored Western Roman Empire, and commands the respect an office of such magnitude is due.;;;;;;;;;x 
 RETTYPE_NAT_MAC;Hoplite;;;;;;;;;x 
-RETTYPE_NAT_MAC;Companion;;;;;;;;;x 
+RETTYPE_NAT_MAC_2;Companion;;;;;;;;;x 
 RETTYPE_CUL_IRAN;Paighan;;;;;;;;;x 
 RETTYPE_GEN_RAID;Raiders;;;;;;;;;x 
 EVTDESCPA.10313;You are the current ruler of Imperial Rum. May your reign be a prosperous one!;;;;;;;;;x 
@@ -1230,7 +1137,6 @@ b_lamounia;Lamounia;;;;;;;;;x
 b_doris;Doris;;;;;;;;;x 
 b_geyve;Geyve;;;;;;;;;x 
 b_tarsia;Tarsia;;;;;;;;;x 
-britonic;Britonic;;;;;;;;;x 
 AUGUR;Augur;;;;;;;;;x 
 EVTNAMEPA.10328;Fall of Trebizond;;;;;;;;;x 
 EVTDESCPA.10328;The great Empire of Trebizond has fallen. With the loss of Trebizond itself to foreign powers, the Empire has completely collapsed. The unity of the Pontic Greeks has been shattered for now, but the future may see it return.;;;;;;;;;x 
@@ -1279,4 +1185,3 @@ d_zhayedan_2;Zhayedan;;;;;;;x
 k_governate_persia;Governate of Persia;;;;;;;x
 PROV792;Nubian Desert;;;;;;x
 EVTDESCPA.100289;Decline of the Frankish Empire, after many years, the empire has begun to slowly but surely enter a period of decline putting the future hegemony of the empire at risk;;;;;;x
-EVTDESCPA.100290;After a turbluent number of years, the worst has passed and our period of decline has halted;;;;;;;x
