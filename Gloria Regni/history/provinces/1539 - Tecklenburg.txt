@@ -1,0 +1,28 @@
+# 87 - Osnabrück
+
+# County Title
+title = c_tecklenburg
+
+# Settlements
+max_settlements = 4
+b_tecklenburg1 = tribal
+
+# Misc
+culture = old_saxon
+religion = germanic_pagan
+
+# History
+790.1.1 = {
+	culture = german
+	religion = imperial
+	
+	b_tecklenburg1 = castle
+	b_tecklenburg2 = city
+	b_tecklenburg3 = temple
+}
+
+
+1054.7.6 = { religion = catholic }
+
+}
+1205.1.1 = { b_bentheim = castle } 

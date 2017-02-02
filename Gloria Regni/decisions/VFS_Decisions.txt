@@ -91,20 +91,20 @@ decisions = {
 			}
 			any_realm_province = { 
 				OR = {
-					religion = catholic
+					religion = jewish
 					any_province_holding = {
-						has_building = ct_catholic_community_1
+						has_building = ct_jewish_community_1
 					}	
 					any_province_holding = {
-						has_building = ct_catholic_community_2
+						has_building = ct_jewish_community_2
 					}
 					any_province_holding = {
-						has_building = ct_catholic_community_3
+						has_building = ct_jewish_community_3
 					}
 					
 				}
 			}
-            NOT = { religion = catholic }
+            NOT = { religion = jewish }
 		}
 		allow = {
 			prisoner = no
@@ -113,15 +113,15 @@ decisions = {
 			any_realm_province = { 
 				limit = {
 					OR = {
-						religion = catholic
+						religion = jewish
 						any_province_holding = {
-							has_building = ct_catholic_community_1
+							has_building = ct_jewish_community_1
 						}	
 						any_province_holding = {
-							has_building = ct_catholic_community_2
+							has_building = ct_jewish_community_2
 						}
 						any_province_holding = {
-							has_building = ct_catholic_community_3
+							has_building = ct_jewish_community_3
 						}
 						
 					}

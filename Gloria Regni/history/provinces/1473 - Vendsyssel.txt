@@ -1,0 +1,28 @@
+# 267 - Jylland
+
+# County Title
+title = c_vendsyssel
+
+# Settlements
+max_settlements = 5
+b_vendsyssel1 = tribal
+
+# Misc
+culture = norse
+religion = norse_pagan
+
+# History
+867.1.1 = {
+	b_vendsyssel1 = tb_shipyard_1
+}
+1000.1.1 = {
+	b_vendsyssel1 = castle
+	b_vendsyssel2 = temple
+	b_vendsyssel3 = city
+}
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = {
+	culture = danish
+	religion = catholic
+}

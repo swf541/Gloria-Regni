@@ -1,0 +1,25 @@
+# 264 - Slesvig
+
+# County Title
+title = c_uthlande
+
+# Settlements
+max_settlements = 5
+b_uthlande1 = tribal
+
+# Misc
+culture = norse
+religion = norse_pagan
+
+# History
+800.1.1 = {
+	b_uthlande1 = tb_shipyard_1
+}
+1000.1.1 = {
+	b_uthlande1 = castle
+	b_uthlande2 = castle
+	b_uthlande3 = city
+}
+1054.7.6 = { religion = catholic }
+
+

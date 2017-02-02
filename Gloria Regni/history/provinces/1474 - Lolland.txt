@@ -1,0 +1,29 @@
+# 266 - Sjaelland
+
+# County Title
+title = c_lolland
+
+# Settlements
+max_settlements = 6
+b_lolland1 = tribal
+
+# Misc
+culture = norse
+religion = norse_pagan
+terrain = farmlands
+
+# History
+800.1.1 = {
+	b_lolland1 = tp_shipyard_1
+}
+1000.1.1 = {
+	b_lolland1 = castle
+	b_lolland2 = temple
+	b_lolland3 = city
+}
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = {
+	culture = danish
+	religion = catholic
+}

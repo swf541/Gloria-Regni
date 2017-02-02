@@ -1,0 +1,22 @@
+# 364 - Lausitz
+
+# County Title
+title = c_oberlausitz
+
+# Settlements
+max_settlements = 4
+b_oberlausitz1 = tribal
+
+
+# Misc
+culture = pommeranian
+religion = slavic_pagan
+
+# History
+800.1.1 = {
+	b_oberlausitz1 = castle
+	b_oberlausitz2 = city 
+	b_oberlausitz3 = temple
+}
+1200.1.1 = { culture = german } 
+1200.1.1 = { religion = catholic } 
