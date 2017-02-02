@@ -1,0 +1,30 @@
+# 759 - Ikonion
+
+# County Title
+title = c_laranda
+
+# Settlements
+max_settlements = 5
+
+b_laranda1 = castle
+b_laranda2 = city
+b_laranda3 = temple
+
+#b_isauria = castle
+#b_laranda = castle
+#b_terpe = castle
+#b_amblada = castle
+#b_sauatra = castle
+
+# Misc
+culture = greek
+religion = imperial
+
+# History
+720.1.1 = { religion = iconoclast }
+1054.1.1 = { religion = orthodox }
+
+1091.8.26 = { culture = turkish }
+1091.8.26 = { religion = sunni }
+
+1091.8.26 = { b_terpe = castle }

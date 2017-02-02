@@ -1,0 +1,24 @@
+# 753 - Ankyra
+
+# County Title
+title = c_sakarya
+
+# Settlements
+max_settlements = 4
+b_sakarya1 = castle
+b_sakarya2 = city
+b_sakarya3 = temple
+
+
+# Misc
+culture = greek
+religion = imperial
+
+# History
+720.1.1 = { religion = imperial } # iconoclast
+1054.1.1 = { religion = orthodox }
+
+# The Seljuks take over Anatolia
+
+1097.8.26 = { culture = turkish }
+1097.8.26 = { religion = sunni }
