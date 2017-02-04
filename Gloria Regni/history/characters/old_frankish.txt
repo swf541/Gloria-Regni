@@ -2428,111 +2428,7 @@
 		death="825.1.1"
 	}
 }
-168670 = {
-	name="Clodion"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	390.1.1 = {
-		birth=yes
-	}
-	
-	450.1.1 = {
-		death=yes
-	}
-}
 
-168671 = {
-	name="Mérovech"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	father=168670
-	410.1.1 = {
-		birth=yes
-	}
-	
-	457.1.1 = {
-		death=yes
-	}
-}
-
-168672 = {
-	name="Childéric"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	father=168671
-	430.1.1 = {
-		birth=yes
-	}
-	
-	481.1.1 = {
-		death=yes
-	}
-}
-
-168673 = {
-	name="Clovis"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	add_trait="brave"
-	add_trait="zealous"
-	add_trait="deceitful"
-	add_trait="greedy"
-	add_trait="proud"
-	add_trait="brilliant_strategist"
-	father=168672
-	466.1.1 = {
-		birth=yes
-	}
-	494.1.1 = {
-		add_spouse=168749
-	}
-	499.1.1 = {
-		religion="imperial"
-	}
-	511.11.27 = {
-		death=yes
-	}
-}
-
-168674 = {
-	name="Théoderic"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	father=168673
-	485.1.1 = {
-		birth=yes
-	}
-	499.1.1 = {
-		religion="imperial"
-	}
-	516.1.1 = {
-		add_spouse=168754
-	}
-	534.1.1 = {
-		death=yes
-	}
-}
-
-168675 = {
-	name="Théodebert"
-	dynasty=542
-	religion="imperial"
-	culture="old_frankish"
-	father=168674
-	mother=168754
-	517.1.1 = {
-		birth=yes
-	}
-	
-	548.1.1 = {
-		death=yes
-	}
-}
 
 168676 = {
 	name="Théodebald"
@@ -2581,45 +2477,6 @@
 	}
 }
 
-168679 = {
-	name="Clodomir"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	father=168673
-	mother=168749
-	495.1.1 = {
-		birth=yes
-	}
-	499.1.1 = {
-		religion="imperial"
-	}
-	514.1.1 = {
-		add_spouse=168752
-	}
-	524.6.25 = {
-		death=yes
-	}
-}
-
-168680 = {
-	name="Childébert"
-	dynasty=542
-	religion="germanic_pagan"
-	culture="old_frankish"
-	father=168673
-	mother=168749
-	497.1.1 = {
-		birth=yes
-	}
-	499.1.1 = {
-		religion="imperial"
-	}
-	558.12.23 = {
-		death=yes
-	}
-}
-
 168681 = {
 	name="Clotaire"
 	dynasty=542
@@ -2654,21 +2511,6 @@
 	}
 	
 	531.1.1 = {
-		death=yes
-	}
-}
-
-168683 = {
-	name="Chlodoald"
-	dynasty=542
-	religion="imperial"
-	culture="old_frankish"
-	father=168679
-	522.1.1 = {
-		birth=yes
-	}
-	
-	560.1.1 = {
 		death=yes
 	}
 }
@@ -2794,10 +2636,6 @@
 	}
 }
 
-
-
-
-
 168692 = {
 	name="Théodebert"
 	dynasty=542
@@ -2812,10 +2650,6 @@
 		death=yes
 	}
 }
-
-
-
-
 
 168693 = {
 	name="Théoderic"
