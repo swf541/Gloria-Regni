@@ -1,0 +1,23 @@
+# 83 - Gelre
+
+# County Title
+title = c_zutphen
+
+# Settlements
+max_settlements = 5
+
+b_zutphen1 = castle
+b_zutphen2 = temple
+b_zutphen3 = city
+
+# Misc
+culture = frisian
+religion = germanic_pagan
+
+# History
+790.1.1 = {
+	culture = dutch
+	religion = imperial
+}
+
+1054.7.6 = { religion = catholic }
