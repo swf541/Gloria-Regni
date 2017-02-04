@@ -1,0 +1,22 @@
+# 325 - Arborea
+
+# County Title
+title = c_gallura
+
+# Settlements
+max_settlements = 3
+b_gallura1 = castle
+b_gallura2 = city
+b_gallura3 = temple
+
+# Misc
+culture = old_italian
+religion = imperial
+terrain = mountain
+
+# History
+
+867.1.1 = { culture = italian }
+1054.7.6 = { religion = catholic }
+1066.1.1 = { trade_post = b_visconti }
+1285.1.1 = { trade_post = b_grimaldi }

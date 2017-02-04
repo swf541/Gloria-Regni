@@ -3595,19 +3595,6 @@ e_germany = {
 			color2={ 255 255 255 }
 			
 			capital = 134 #Sundgau
-			
-			c_strasburg = {
-				color = { 186 45 203 }
-				color2 = { 255 255 255 }
-				
-				b_strasburg1 = { }
-				b_strasburg2 = { }
-				b_strasburg3 = { }
-				b_strasburg4 = { }
-				b_strasburg5 = { }
-				b_strasburg6 = { }
-				b_strasburg7 = { }
-			}
 		
 			c_nordgau = {
 				color={ 160 160 210 }
@@ -3650,6 +3637,18 @@ e_germany = {
 				}
 				b_ferette = {
 				}
+			}
+			c_strasburg = {
+				color = { 122 44 199 }
+				color2 = { 255 255 255 }
+				
+				b_strasburg1 = { }
+				b_strasburg2 = { }
+				b_strasburg3 = { }
+				b_strasburg4 = { }
+				b_strasburg5 = { }
+				b_strasburg6 = { }
+				b_strasburg7 = { }
 			}
 		}
 	}
@@ -8824,6 +8823,45 @@ e_italy = {
 			
 			capital = 319 # Verona
 			
+			c_belluno = {
+				color = { 158 99 45 }
+				color2 = { 255 255 255 }
+				
+				b_belluno1 = { }
+				b_belluno2 = { }
+				b_belluno3 = { }
+				b_belluno4 = { }
+				b_belluno5 = { }
+				b_belluno6 = { }
+				b_belluno7 = { }
+			}
+
+			c_friuli = {
+				color = { 88 92 105 }
+				color2 = { 255 255 255 }
+				
+				b_friuli1 = { }
+				b_friuli2 = { }
+				b_friuli3 = { }
+				b_friuli4 = { }
+				b_friuli5 = { }
+				b_friuli6 = { }
+				b_friuli7 = { }
+			}
+
+			c_vicensa = {
+				color = { 98 150 62 }
+				color2 = { 255 255 255 }
+				
+				b_vicensa1 = { }
+				b_vicensa2 = { }
+				b_vicensa3 = { }
+				b_vicensa4 = { }
+				b_vicensa5 = { }
+				b_vicensa6 = { }
+				b_vicensa7 = { }
+			}
+			
 			c_treviso = {
 				color={ 251 226 226 }
 				color2={ 255 255 255 }
@@ -9103,6 +9141,19 @@ e_italy = {
 			capital = 233 # Genoa
 			
 			dignity = 10
+			
+			c_savona = {
+				color = { 33 133 177 }
+				color2 = { 255 255 255 }
+				
+				b_savona1 = { }
+				b_savona2 = { }
+				b_savona3 = { }
+				b_savona4 = { }
+				b_savona5 = { }
+				b_savona6 = { }
+				b_savona7 = { }
+			}
 			
 			c_genoa = {
 				color={ 253 247 228 }
@@ -9639,6 +9690,19 @@ e_italy = {
 			
 			capital = 326 # Cagliari
 			
+			c_cap_corse = {
+				color = { 111 123 15 }
+				color2 = { 255 255 255 }
+				
+				b_cap_corse1 = { }
+				b_cap_corse2 = { }
+				b_cap_corse3 = { }
+				b_cap_corse4 = { }
+				b_cap_corse5 = { }
+				b_cap_corse6 = { }
+				b_cap_corse7 = { }
+			}
+			
 			c_corsica = {
 				color={ 226 248 251 }
 				color2={ 255 255 255 }
@@ -9659,6 +9723,31 @@ e_italy = {
 				}
 				b_aleria = {
 				}
+			}
+			c_gallura = {
+				color = { 124 111 170 }
+				color2 = { 255 255 255 }
+				
+				b_gallura1 = { }
+				b_gallura2 = { }
+				b_gallura3 = { }
+				b_gallura4 = { }
+				b_gallura5 = { }
+				b_gallura6 = { }
+				b_gallura7 = { }
+			}
+
+			c_logudoro = {
+				color = { 150 160 160  }
+				color2 = { 255 255 255 }
+				
+				b_logudoro1 = { }
+				b_logudoro2 = { }
+				b_logudoro3 = { }
+				b_logudoro4 = { }
+				b_logudoro5 = { }
+				b_logudoro6 = { }
+				b_logudoro7 = { }
 			}
 			c_arborea = {
 				color={ 170 182 225 }
@@ -14169,7 +14258,44 @@ e_wendish_empire = {
             color2={ 255 255 255 }
             
             capital = 437 # Praha
-            
+			
+			c_beroun = {
+				color = { 87 89 120 }
+				color2 = { 255 255 255 }
+				
+				b_beroun1 = { }
+				b_beroun2 = { }
+				b_beroun3 = { }
+				b_beroun4 = { }
+				b_beroun5 = { }
+				b_beroun6 = { }
+				b_beroun7 = { }
+			}
+			c_trebon = {
+				color = { 77 190 202 }
+				color2 = { 255 255 255 }
+				
+				b_trebon1 = { }
+				b_trebon2 = { }
+				b_trebon3 = { }
+				b_trebon4 = { }
+				b_trebon5 = { }
+				b_trebon6 = { }
+				b_trebon7 = { }
+			}
+
+			c_prachatice = {
+				color = { 104 28 55 }
+				color2 = { 255 255 255 }
+				
+				b_prachatice1 = { }
+				b_prachatice2 = { }
+				b_prachatice3 = { }
+				b_prachatice4 = { }
+				b_prachatice5 = { }
+				b_prachatice6 = { }
+				b_prachatice7 = { }
+			}
             c_domazlice = {
                 color={ 197 112 13 }
                 color2={ 255 255 255 }
@@ -14274,6 +14400,18 @@ e_wendish_empire = {
                 b_turnov = {
                 }
             }
+			c_podborany = {
+				color = { 108 83 92 }
+				color2 = { 255 255 255 }
+				
+				b_podborany1 = { }
+				b_podborany2 = { }
+				b_podborany3 = { }
+				b_podborany4 = { }
+				b_podborany5 = { }
+				b_podborany6 = { }
+				b_podborany7 = { }
+			}
             c_litomerice = {
               color={ 203 118 19 }
               color2={ 255 255 255 }
@@ -23417,6 +23555,18 @@ e_france = {
 			
 			capital = 227 # Lyon
 			
+			c_valentinois = {
+				color = { 112 12 212 }
+				color2 = { 255 255 255 }
+				
+				b_valentinois1 = { }
+				b_valentinois2 = { }
+				b_valentinois3 = { }
+				b_valentinois4 = { }
+				b_valentinois5 = { }
+				b_valentinois6 = { }
+				b_valentinois7 = { }
+			}
 			c_dauphine_viennois = {
 				color={ 119 30 54 }
 				color2={ 255 255 255 }
@@ -23437,6 +23587,18 @@ e_france = {
 				}
 				b_valreas = {
 				}
+			}
+			c_grenoble = {
+				color = { 79 15 210 }
+				color2 = { 255 255 255 }
+				
+				b_grenoble1 = { }
+				b_grenoble2 = { }
+				b_grenoble3 = { }
+				b_grenoble4 = { }
+				b_grenoble5 = { }
+				b_grenoble6 = { }
+				b_grenoble7 = { }
 			}
 			c_lyon = {
 				color={ 123 34 58 }

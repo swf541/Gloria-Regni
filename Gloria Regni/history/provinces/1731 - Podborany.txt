@@ -1,0 +1,21 @@
+# 363 - Litomerice
+
+# County Title
+title = c_podborany
+
+# Settlements
+max_settlements = 4
+b_podborany1 = tribal
+
+# Misc
+culture = bohemian
+religion = slavic_pagan
+
+# History
+800.1.1 = {
+	b_podborany1 = castle
+	b_podborany2 = city
+	b_podborany3 = temple
+}
+883.1.1 = { religion = imperial }
+1054.1.1 = { religion = catholic }
