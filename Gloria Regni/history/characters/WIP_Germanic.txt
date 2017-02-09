@@ -1,0 +1,2590 @@
+
+
+168673 = {			# King Clovis I of the Franks								# KING
+
+	name="Hlódowíg"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	dna="aejfi0iecc0"
+
+  	properties="cd0dbnbebb"
+
+	martial=14
+
+	diplomacy=15
+
+	intrigue=13
+
+	stewardship=14
+
+	learning=11
+
+	culture="old_frankish"
+
+	add_trait="brave"
+	add_trait="brilliant_strategist"
+	add_trait="hunter"
+	
+	add_trait="cruel"
+	add_trait="ambitious"
+	add_trait="gregarious"
+	add_trait="proud"
+	add_trait = quick # Add by Clay
+
+	father=168672	# Childeric
+
+	465.5.16={
+
+		birth="465.5.16"
+
+		prestige=2200
+
+		wealth=150
+
+	}
+
+	478.6.21={
+
+		add_spouse=168749	# Clotilde
+
+	}
+	
+	482.1.1 = {
+		
+		add_consort = 110013	# Evochildis
+		
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+	
+	509.3.1 = {
+	
+		add_trait="kinslayer"
+		
+	}
+
+	511.11.27={
+
+		death=yes
+
+	}
+
+}
+
+
+
+168672 = {			# Childeric, father of Clovis I
+
+	name="Hildarík"
+
+	dynasty=542
+
+	dna="dlcdh0ieba0"
+
+	properties="kc0kekbebb"
+
+	religion= germanic_pagan
+
+	martial=12
+
+	diplomacy=15
+
+	intrigue=12
+
+	stewardship=12
+
+	learning=12
+
+	culture="old_frankish"
+	
+	health = 3.5
+
+	
+
+	add_trait="brave"
+	add_trait="skilled_tactician"
+	add_trait="temperate"
+	add_trait="content"
+	add_trait="proud"
+	add_trait = "lustful"
+
+	father=168671	# Merovech
+
+	#mother=
+
+	439.1.10={
+
+		birth="439.1.10"
+
+		prestige=975
+
+	}
+	
+	479.12.3={
+	
+		add_trait="maimed"
+		
+		
+	}
+		
+	482.1.1={
+
+		death="482.1.1"
+
+	}
+
+}
+
+
+
+168671 = {			# Merovech
+
+	name="Mérawíg"
+
+	dynasty=542
+
+	dna="dlcdi0ijfa0"
+
+	properties="kj0kekbabb"
+
+	religion= germanic_pagan
+	martial=16
+	diplomacy=13
+	intrigue=11
+	stewardship=12
+	learning=12
+
+	culture="old_frankish"
+	add_trait="skilled_tactician"
+	add_trait="just"
+	add_trait="ambitious"
+	add_trait="proud"
+
+	father=168670
+
+	#mother=
+
+	411.12.10={
+
+		birth="411.12.10"
+
+		prestige=1625
+
+	}
+
+	457.3.20={
+
+		death="457.3.20"
+
+	}
+
+}
+
+
+
+168674 = {			# Theuderic, King of Austrasia
+
+	name="Þéodarík"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	martial=13
+
+	diplomacy=11
+
+	intrigue=11
+
+	stewardship=10
+
+	learning=10
+
+	culture="old_frankish"
+
+	add_trait="quick"
+	
+	add_trait="skilled_tactician"
+
+	father=168673
+
+	mother=110013
+
+	485.11.14={
+
+		birth=yes
+
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+	
+
+	534.1.1={
+
+		death=yes
+
+	}
+
+}
+
+
+
+110006 = {			# Audofleda of the Franks
+
+	name="Audaféoda"
+
+	female=yes
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	martial=4
+
+	diplomacy=10
+
+	intrigue=7
+
+	stewardship=10
+
+	learning=10
+
+	culture="old_frankish"
+
+	add_trait="mystic"
+
+	add_trait="intricate_webweaver"
+
+	add_trait="deceitful"
+
+	add_trait="ambitious"
+
+	add_trait="proud"
+
+	
+
+	father=168672	# Childeric
+
+	459.3.12={
+
+		birth=yes
+
+	}
+	
+	493.1.1 = {
+	
+		add_spouse = 5210011		# King Theodoric the Great of Ostrogoths
+		
+		religion = arian
+		
+	}
+
+	512.10.21={
+
+		death=yes
+
+	}
+
+}
+
+
+
+110007 = {			# Landhilde of the Franks
+
+	name="Landahilda"
+
+	female=yes
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	martial=4
+
+	diplomacy=12
+
+	intrigue=10
+
+	stewardship=12
+
+	learning=12
+
+	culture="old_frankish"
+
+	add_trait="gardener"
+
+	add_trait="thrifty_clerk"
+
+	add_trait="kind"
+
+	add_trait="trusting"
+
+	
+
+	father=168672	# Childeric
+
+	461.9.24={
+
+		birth="461.9.24"
+
+	}
+
+	512.12.25={
+
+		death="512.12.25"
+
+	}
+
+}
+
+
+
+110008 = {			# Aboflede of the Franks
+
+	name="Arboféoda"
+
+	female=yes
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	martial=5
+
+	diplomacy=11
+
+	intrigue=9
+
+	stewardship=11
+
+	learning=9
+
+	culture="old_frankish"
+
+	
+
+	add_trait="gregarious"
+
+	add_trait="quick"
+
+	father=168672	# Childeric
+
+	464.3.14={
+
+		birth="464.3.14"
+
+	}
+
+	516.5.15={
+
+		death="516.5.15"
+
+	}
+
+}
+
+
+
+110009 = {			# Theodemer, King of the Salian Franks
+
+	name="Þéodamér"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	martial=14
+
+	diplomacy=10
+
+	intrigue=9
+
+	stewardship=11
+
+	learning=10
+
+	culture="old_frankish"
+
+	add_trait="brave"
+
+	add_trait="skilled_tactician"
+	
+
+	add_trait="proud"
+
+	father=2313
+
+	374.7.18={
+
+		birth=yes
+
+		prestige=600
+
+	}
+
+	414.8.15={
+
+		death=yes
+
+	}
+
+}
+
+168679 = {			# Chlodomer, Prince of the Franks
+
+	name="Hlódomér"
+
+	dynasty=542
+
+	religion=germanic_pagan
+
+	martial=9
+
+	diplomacy=7
+
+	intrigue=13
+
+	stewardship=9
+
+	learning=6
+
+	culture="old_frankish"
+
+	
+
+	add_trait = quick
+
+	father=168673
+
+	mother=168749
+
+	495.1.1={
+
+		birth=yes
+
+	}
+	512.1.1 = {
+	
+		add_spouse = 110016	# King Chlodomer of Orleans
+		
+	}	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+	
+
+	524.3.24={
+
+		death=yes
+
+	}
+
+}
+
+110011 = {			# Childebert, Prince of the Franks
+
+	name="Hildaberht"
+
+	dynasty=542
+
+	religion=germanic_pagan
+
+	martial=7
+
+	diplomacy=10
+
+	intrigue=4
+
+	stewardship=15
+
+	learning=12
+
+	culture="old_frankish"
+
+	
+	
+	add_trait = zealous
+
+	
+	
+	add_trait="skilled_tactician"
+
+	father=168673
+
+	mother=168749
+
+	496.1.1={
+
+		birth=yes
+
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+
+	558.12.12={
+
+		death=yes
+
+	}
+
+}
+
+168680 = {			# Chlothar, Prince of the Franks
+
+	name="Hlódohari"
+
+	dynasty=542
+
+	religion=imperial
+
+	martial=7
+
+	diplomacy=10
+
+	intrigue=4
+
+	stewardship=15
+
+	learning=12
+
+	culture="old_frankish"
+
+	
+	
+	add_trait="skilled_tactician"
+	
+	add_trait = quick
+	
+	add_trait = ambitious
+	
+	add_trait = cruel
+	
+	add_trait = patient
+
+	father=168673
+
+	mother=168749
+
+	497.1.1={
+
+		birth=yes
+
+	}
+
+	
+	524.4.1 = {
+	
+		add_trait = kinslayer
+		
+	}
+
+	561.11.29={
+
+		death=yes
+
+	}
+
+}
+
+
+110013 = {			# Evochildis, mother of Theuderic of Austrasia
+
+	name="Eburhilda"
+
+	dynasty=542
+
+	religion=germanic_pagan
+
+	culture="old_frankish"
+	
+	female = yes
+	
+	father=110057
+
+	#mother=
+
+	468.1.1={
+
+		birth=yes
+
+	}
+
+	536.1.1={
+
+		death=yes
+
+	}
+
+}
+
+168675 = {			# Theudebert, King of Austrasia
+
+	name="Þéodaberht"
+
+	dynasty=542
+
+	religion= imperial
+
+	culture="old_frankish"
+	
+	martial = 12
+
+	
+	
+	add_trait="zealous"
+	
+	add_trait="proud"
+	
+	add_trait="ambitious"
+	
+	add_trait="brilliant_strategist"
+
+	add_trait = quick
+
+
+	father=168674
+
+	500.1.1={
+
+		birth=yes
+
+	}
+
+	548.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110015 = {			# Theodechild, Princess of Austrasia
+
+	name="Þéodahilda"
+
+	dynasty=542
+
+	religion= imperial
+
+	culture="old_frankish"
+
+	
+	
+	female = yes
+
+	father=168674
+
+	526.1.1={
+
+		birth=yes
+
+	}
+
+	575.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110017 = {			# Prince Gunthar of Orleans
+
+	name="Gúþohari"
+	
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+
+	father=168679
+
+	517.1.1={
+
+		birth=yes
+
+	}
+
+	524.4.1 = {
+
+		death = {
+		
+			death_reason = death_murder 
+			
+			killer = 168680		# King Chlothar of Soissons
+			
+		}
+
+	}
+
+}
+
+110018 = {			# Prince Theudebald of Orleans
+
+	name="Þéodabald"
+	
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+
+	father=168679
+
+
+	514.1.1={
+
+		birth=yes
+
+	}
+
+	524.4.1 = {
+
+		death = {
+		
+			death_reason = death_murder 
+			
+			killer = 168680		# King Chlothar of Soissons
+			
+		}
+
+	}
+
+}
+
+110038 = {			# Princess Clotilde of Franks, wife of Amalaric
+
+	name="Hlódohilda"
+
+	dynasty=542
+
+	religion="imperial"
+
+	culture="old_frankish"
+	
+	female = yes
+	
+	trait = zealous
+
+	father=168673
+
+	mother=168749
+
+	500.11.15={
+
+		birth=yes
+
+	}
+
+	531.12.18={
+
+		death=yes
+
+	}
+
+}
+
+
+168683 = {			# Prince Clodoald of Orleans
+
+	name="Hlódowald"
+	
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+
+	father=168679
+
+
+	522.1.1={
+
+		birth=yes
+
+	}
+	
+	524.4.1 = {
+	
+		add_trait = monk
+		
+		add_trait = celibate
+		
+	}
+
+	560.6.1 = {
+
+		death = yes
+
+	}
+
+}
+
+
+110043 = {			# Chrodoberge, Princess of Neustria
+
+	name="Hróþiberga"
+
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+	
+	female = yes
+
+	father=110011
+
+	519.1.1={
+
+		birth=yes
+
+	}
+
+	579.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110044 = {			# Chrodesinde, Princess of Neustria
+
+	name="Hróþisíþa"
+
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+	
+	female = yes
+
+	father=110011
+
+	522.1.1={
+
+		birth=yes
+
+	}
+
+	582.1.1={
+
+		death=yes
+
+	}
+
+}
+
+
+110052 = {			# Prince Gunthar of Soissons
+
+	name="Gúþohari"
+
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+
+	father=168680
+
+	515.1.1={
+
+		birth=yes
+
+	}
+
+	552.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110053 = {			# King Charibert of Neustria
+
+	name="Hariberht"
+
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+
+	father=168680
+
+	517.1.1={
+
+		birth=yes
+
+	}
+
+	567.12.1={
+
+		death=yes
+
+	}
+
+}
+
+110054 = {			# Princess Chlothsind of Soissons
+
+	name="Hlódosíþa"
+
+	dynasty=542
+
+	religion=imperial
+
+	culture="old_frankish"
+
+	
+	
+	female = yes
+
+	father=168680
+
+	530.1.1={
+
+		birth=yes
+
+	}
+
+	567.1.1={
+
+		death=yes
+
+	}
+
+}
+
+168670 = {			# King Chlodio the Long-Haired of Salian Franks
+
+	name="Hlódo"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+
+	father=110009
+
+	395.1.1={
+
+		birth=yes
+
+	}
+
+
+	448.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110056 = {			# King Childebert of Cologne	Ripuarian King (Majorian Bookmark Trier to Antwerpen or Roermond
+	name="Hildaberht"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+
+	father=168670
+
+	#mother=
+
+	425.1.1={
+
+		birth=yes
+
+	}
+
+	478.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110057 = {			# King Sigebert "the Lame" of Cologne
+
+	name="Sigiberht"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+
+	father=110056
+
+	#mother=
+
+	452.1.1={
+
+		birth=yes
+
+	}
+	
+	478.1.1 = {
+	
+		give_nickname = nick_the_lame
+		
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+
+	509.5.1={
+
+		death=yes
+	}
+
+}
+
+110058 = {			# King Cloderic "the Parracide" of Cologne
+
+	name="Hlódorík"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+	
+	add_trait="trusting"
+	
+	add_trait="greedy"
+	
+	add_trait="cruel"
+
+	father=110057
+
+	#mother=
+
+	473.1.1={
+
+		birth=yes
+
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+	
+	509.5.1 = {
+		
+		add_trait = kinslayer
+		
+	}
+
+	509.5.5={
+
+		death={
+		
+			death_reason = death_murder
+			
+			killer = 168673		# King Clovis of the Salian Franks
+
+		}
+
+	}
+
+}
+
+110059 = {			# Prince Munderic of Cologne
+
+	name="Mundarík"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+
+	father=110058
+
+	#mother=
+
+	495.1.1={
+
+		birth=yes
+
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+	
+	511.4.21 = {
+		
+		wealth = 320
+		
+	}
+
+	532.1.1={
+
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168674		# King Theuderic of Austrasia
+
+		}
+
+	}
+
+}
+
+110060 = {			# King Chararic of Tongres
+
+	name="Hararík"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+	
+	add_trait="proud"
+
+	father=110056
+
+	#mother=
+
+	460.1.1={
+
+		birth=yes
+
+	}
+	
+
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+
+	509.7.1={
+		
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168673		# King Clovis of the Salian Franks
+
+		}
+
+	}
+
+}
+
+110061 = {			# Prince Arnulf of Tongres
+
+	name="Arowulf"
+
+	dynasty=542
+
+	religion= germanic_pagan
+	
+	culture="old_frankish"
+	
+	add_trait="wroth"
+
+	father=110060
+
+	#mother=
+
+	485.1.1={
+
+		birth=yes
+
+	}
+	
+	496.12.25={
+		
+		religion=imperial
+		
+	}
+
+	509.7.1={
+
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168673		# King Clovis of the Salian Franks
+
+		}
+
+	}
+
+}
+
+110062 = {			# King Genniod of Cambrai
+
+	name="Gúþobald"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	culture="old_frankish"
+
+	
+
+	father=168671	# Merovech
+
+	#mother=
+
+	443.1.1={
+
+		birth=yes
+		
+	}
+	
+
+	483.1.1={
+
+
+		death=yes
+
+	}
+
+}
+
+110063 = {			# King Ragnachar of Cambrai
+
+	name="Raginhari"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	culture="old_frankish"
+	
+	add_trait="cruel"
+	
+	add_trait="greedy"
+	
+	add_trait="zealous"
+
+	father=110062	# Genniod
+
+	#mother=
+
+	465.1.1={
+
+		birth=yes
+
+	}
+	
+
+	509.3.1={
+	
+
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168673		# Clovis
+			
+		}
+
+	}
+
+}
+
+110064 = {			# King Rignomer of Le Mans
+
+	name="Raginmér"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	culture="old_frankish"
+
+	
+
+	father=110062	# Genniod
+
+	#mother=
+
+	463.1.1={
+
+		birth=yes
+
+	}
+
+	509.4.1={
+
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168673		# Clovis
+			
+		}
+
+	}
+
+}
+
+110065 = {			# Prince Ricchar of Cambrai
+
+	name="Ríkahari"
+
+	dynasty=542
+
+	religion= germanic_pagan
+
+	culture="old_frankish"
+
+	
+
+	father=110062	# Genniod
+
+	#mother=
+
+	470.1.1={
+
+		birth=yes
+
+	}
+
+	509.3.1={
+
+		death={
+		
+			death_reason = death_execution
+			
+			killer = 168673		# Clovis
+			
+		}
+
+	}
+
+}
+
+
+15860 = {			# Lord Degeberht of Frysland
+
+	name="Degeberht"
+
+	dynasty=1000124299
+
+	martial=8
+
+	diplomacy=8
+
+	intrigue=8
+
+	stewardship=10
+
+	learning=7
+
+	culture="frisian"
+
+	religion=germanic_pagan
+
+	add_trait="fortune_builder"
+
+
+	add_trait="diligent"
+
+	add_trait="cynical"
+
+	add_trait="greedy"
+
+	father=15007
+
+	#mother=
+
+	445.1.23={
+
+		birth="445.1.23"
+
+		wealth=160
+
+		prestige=275
+
+	}
+
+	487.10.4={
+
+		death="487.10.4"
+
+	}
+
+}
+
+15861 = {			# King Eadgils of Frysland
+
+	name="Eadgils"
+
+	dynasty=1000124299
+
+	culture="frisian"
+
+	religion=germanic_pagan
+
+	father=15860
+
+	#mother=
+
+	466.1.1={
+
+		birth=yes
+
+	}
+	
+	507.1.1={
+	
+		add_trait="kinslayer"
+	
+	}
+
+	513.1.1={
+
+		death=yes
+
+	}
+
+}
+
+15862 = {			# King Eadwulf of Frysland
+
+	name="Eadwulf"
+
+	dynasty=1000124299
+
+	culture="frisian"
+
+	religion=germanic_pagan
+
+	father=15861
+
+	#mother=
+
+	483.1.1={
+
+		birth=yes
+
+	}
+	
+	520.1.1 = {
+		culture = frisian
+	}
+
+	542.1.1={
+
+		death=yes
+
+	}
+
+}
+
+15870 = {			# Lord Eþelhere of Hugas
+
+	name="Eþelhere"
+
+	dynasty=1000124299
+
+	martial=8
+
+	diplomacy=8
+
+	intrigue=9
+
+	stewardship=10
+
+	learning=8
+
+	culture="frisian"
+
+	religion=germanic_pagan
+
+	add_trait="tolerant"
+
+	add_trait="diligent"
+
+	add_trait="skilled_tactician"
+
+	add_trait="veteran"
+
+	add_trait="proud"
+
+	add_trait="ambitious"
+
+	father=15006
+
+	#mother=
+
+	441.11.2={
+
+		birth="441.11.2"
+
+		wealth=125
+
+		prestige=330
+
+	}
+
+	487.10.18={
+
+		add_trait="wounded"
+
+		death = { death_reason = death_trait }
+
+	}
+
+}
+
+15871 = {			# Lord Finn of East Frisia
+
+	name="Finn"
+
+	dynasty=1000124299
+
+	culture="frisian"
+
+	religion=germanic_pagan
+
+	father=15870
+
+	#mother=
+
+	470.1.1={
+
+		birth=yes
+
+	}
+	
+	507.1.1={
+
+		death = {
+
+    		death_reason = death_battle
+
+    		killer = 15861
+
+    	}
+
+	}
+}
+
+15000 = {			# King Folcwald of Frisia
+
+	name="Folcwald"
+	
+	dynasty=1000124299
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	#father=
+	
+	383.1.1={
+		birth=yes
+	}
+	430.1.1={
+		death=yes
+	}
+}
+
+15001 = {			# King Finn Folcwalding of Frisia
+
+	name="Finn"
+	
+	dynasty=1000124299
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	father=15000
+	
+	409.1.1={
+		birth=yes
+	}
+	448.1.1={
+		death=yes
+	}
+}
+
+15006 = {			# Prince Friouwulf Folcwalding of Frisia
+
+	name="Friouwulf"
+	
+	dynasty=1000124299
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	father=15001
+	
+	426.1.1={
+		birth=yes
+	}
+	448.1.1={
+		death=yes
+	}
+}
+
+15007 = {			# Prince Frealaf Folcwalding of Frisia
+
+	name="Frealaf"
+	
+	dynasty=1000124299
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	father=15001
+	
+	429.1.1={
+	
+		birth=yes
+		
+	}
+	471.1.24={
+	
+		death=yes
+		
+	}
+	
+}
+
+15865 = {			# Lord Goderic of Cynnham
+
+	name="Goderic"
+
+	dynasty=1000124300
+
+	martial=7
+
+	diplomacy=10
+
+	intrigue=8
+
+	stewardship=10
+
+	learning=7
+
+	culture=frisian
+
+	religion=germanic_pagan
+
+	add_trait="quick"
+
+	add_trait="tough_soldier"
+
+	add_trait="temperate"
+
+	add_trait="ambitious"
+
+	father=150005
+
+	#mother=
+
+	447.4.12={
+
+		birth=yes
+
+	}
+
+	514.1.1={
+
+		death=yes
+
+	}
+
+}
+
+15866 = {			# Lord Owon of Cynnham
+
+	name="Owon"
+
+	dynasty=1000124300
+
+	culture=frisian
+
+	religion=germanic_pagan
+	
+	add_trait="greedy"
+
+	add_trait="proud"
+	
+	add_trait="content"
+	
+	father=15865
+
+	#mother=
+
+	478.1.1={
+
+		birth=yes
+
+	}
+	
+	520.1.1 = {
+		culture = oldfrisian
+	}
+
+	532.1.1={
+
+		death=yes
+
+	}
+
+}
+150005 = {			# Chief Osberht of Cynnham
+
+	name="Osberht"
+	
+	dynasty=1000124300
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	#father=
+	
+	396.1.1={
+		birth=yes
+	}
+	470.1.1={
+		death=yes
+	}
+}
+
+#Holland Rulers
+150002 = {			# Chief Wulfram of Holland
+
+	name="Wulfram"
+	
+	dynasty=1000124301
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	father=150003
+	
+	454.1.1={
+		birth=yes
+	}
+	499.1.1={
+		death=yes
+	}
+}
+
+150003 = {			# Chief Goderic of Holland
+
+	name="Goderic"
+	
+	dynasty=1000124301
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	father=150004
+	
+	427.1.1={
+		birth=yes
+	}
+	476.9.21={
+		death=yes
+	}
+}
+
+150004 = {			# Chief Guobodo of Holland
+
+	name="Guobodo"
+	
+	dynasty=1000124301
+	
+	religion="germanic_pagan"
+	
+	culture="frisian"
+	
+	#father=
+	
+	387.1.1={
+		birth=yes
+	}
+	443.1.1={
+		death=yes
+	}
+}
+
+521009 = {
+	name="Rodulf"
+	dynasty=6000083
+	martial=8
+	diplomacy=6
+	intrigue=7
+	stewardship=5
+	religion="germanic_pagan"
+	culture="german"	#Heruli
+	trait="ambitious"
+	trait="patient"
+	trait="cruel"
+	trait="brilliant_strategist"
+	441.6.12 = {
+		birth="460.1.2"
+	}
+	487.1.1 = {
+		death="487.1.1"
+	}
+}
+
+280110 = {
+	name="Achiulf" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	270.1.1={
+		birth=yes
+	}
+	340.1.1={
+		death=yes
+	}
+}
+280111 = {
+	name="Hermanaric" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280110
+	310.1.1={
+		birth=yes
+	}
+	376.1.1={
+		death=yes
+	}
+}
+280112 = {
+	name="Hunimund" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280111
+	326.1.1={
+		birth=yes
+	}
+	405.1.1={
+		death=yes
+	}
+}
+280113 = {
+	name="Thorismund" 
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280112
+	338.1.1={
+		birth=yes
+	}
+	411.1.1={
+		death=yes
+	}
+}
+280115 = {
+	name="Berimund" 
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280113
+	350.1.1={
+		birth=yes
+	}
+	450.1.1={
+		death=yes
+	}
+}
+280122 = {
+	name="Wideric" 
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280115
+	460.1.1={
+		birth=yes
+	}
+	517.1.1={
+		death=yes
+	}
+}
+280123 = {
+	name="Vultwulf" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280110
+	300.1.1={
+		birth=yes
+	}
+	378.1.1={
+		death=yes
+	}
+}
+280124 = {
+	name="Valarvans" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280123
+	320.1.1={
+		birth=yes
+	}
+	409.1.1={
+		death=yes
+	}
+}
+280125 = {
+	name="Vinitharius" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280124
+	340.1.1={
+		birth=yes
+	}
+	400.1.1={
+		death=yes
+	}
+}
+280126 = {
+	name="Vandalarius" 
+	dynasty=101424537
+	religion="germanic_pagan"
+	culture="ostrogothic"
+	father=280125
+	364.1.1={
+		birth=yes
+	}
+	459.1.1={
+		death=yes
+	}
+}
+280200 = {
+	name="Eutharic Cilliga"
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280122
+	480.1.1={
+		birth=yes
+	}
+	515.1.1={
+		add_spouse = 280201
+	}
+	522.1.1={
+		death=yes
+	}
+}
+280201 = {
+	name="Amalasuntha" 
+	female=yes
+	dynasty=101424537
+	religion="imperial"
+	culture="ostrogothic"
+	father=5210011
+	mother=41
+	495.1.1={
+		birth=yes
+	}
+	515.1.1={
+		add_spouse = 280200
+	}
+	535.1.1={
+		death=yes
+	}
+}
+280202 = {
+	name="Matasuntha" 
+	female=yes
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280200
+	mother=280201 
+	517.1.1={
+		birth=yes
+	}
+	540.1.1={
+		employer=70513
+	}
+	550.1.1={
+		add_spouse=1004006
+	}
+	584.1.1={
+		death=yes
+	}
+}
+280203 = {
+	name="Athalaric" 
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280200
+	mother=280201 
+	516.1.1={
+		birth=yes
+	}
+	534.1.1={
+		death=yes
+	}
+}
+280204 = {
+	name="Theodemir" 
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280126
+	420.1.1={
+		birth=yes
+	}
+	440.1.1={
+		add_spouse = 280205
+	}
+	475.1.1={
+		death=yes
+	}
+}
+280205 = {
+	name="Eusabic"
+	female=yes
+	dynasty=0
+	religion="imperial"
+	culture="ostrogothic"
+	420.1.1={
+		birth=yes
+	}
+	475.1.1={
+		death=yes
+	}
+}
+280206 = {
+	name="Amalafrida"
+	female=yes
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280204
+	mother=280205
+	add_trait="brave"
+	add_trait="underhanded_rogue"
+	add_trait="temperate"
+	460.1.1={
+		birth=yes
+	}
+	500.1.1={
+		add_spouse=280070
+	}
+	525.1.1={
+		death=yes
+	}
+}
+88536 = {
+	name="Amalaberga"
+	female=yes
+	dynasty=101424537
+	religion="imperial"
+	culture="ostrogothic"
+	father=280070
+	mother=280206
+	480.1.1={
+		birth=yes
+	}
+	585.1.1={
+		death=yes
+	}
+}
+
+280219 = {
+	name="Witiges" 
+	dynasty=1042329
+	religion="arian"
+	culture="ostrogothic"
+	510.1.1={
+		birth=yes
+	}
+	536.1.1={
+		add_spouse = 280202
+	}
+	540.1.1={
+		death=yes
+	}
+}
+280220 = {
+	name="Theodegotho" 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	440.1.1={
+		birth=yes
+	}	
+	490.1.1={
+		death=yes
+	}
+}
+280221 = {
+	name="Theuder" 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	father=280220
+	470.1.1={
+		birth=yes
+	}
+	471.1.1={
+		employer=5210011
+	}
+	554.1.1={
+		death=yes
+	}
+}
+280222 = {
+	name="Ildibad" 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	father=280221
+	490.1.1={
+		birth=yes
+	}
+	491.1.1={
+		employer=5210011
+	}
+	540.1.1={
+		death=yes
+	}
+}
+
+280117 = {
+	name="Veruk" 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	father=280221
+	486.1.1={
+		birth=yes
+	}
+	520.1.1={
+		death=yes
+	}
+}
+280118 = {
+	name="Totila" # Ostrogothic King 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	father=280117
+	trait="brilliant_strategist"
+	trait="holy_warrior"
+	trait="strong"
+	trait="gregarious"
+	
+	500.1.1={
+		birth=yes
+	}
+	552.1.1={
+		death=yes
+	}
+}
+155147 = {
+	name="Thila" # Ostrogothic King 
+	dynasty=1042390
+	religion="arian"
+	culture="ostrogothic"
+	father=280118
+	530.1.1={
+		birth=yes
+	}
+	553.1.1={
+		death=yes
+	}
+}
+
+5210010 = {
+	name="Theodemir"
+	dynasty=101424537
+	religion="arian"
+	culture="ostrogothic"
+	father=280126
+	418.1.1={
+		birth=yes
+	}
+	465.1.1={
+		death=yes
+	}
+}
+
+5210011 = {
+	name="Theodoric"
+	dynasty=101424537
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="arian"
+	culture="ostrogothic"
+	trait="patient"
+	trait="scholar"
+	trait="ambitious"
+	trait="gregarious"
+	trait="genius"
+	trait="strong"
+	trait="brilliant_strategist"
+	trait="diligent"
+	father=280204
+	mother=280205
+	454.1.2 = {
+		birth = yes
+	}
+	493.1.1 = {
+	
+		add_spouse = 110006		# King Theodoric the Great of Ostrogoths
+	}
+	526.3.8 = {
+		death = yes
+	}
+}
+5210012 = {
+	name="Balamber"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"	
+	trait="brilliant_strategist"
+	320.1.2 = {
+		birth=yes
+	}
+	378.1.1 = {
+		death=yes
+	}
+}
+5210013 = {
+	name="Baltazár"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"	
+	trait="brilliant_strategist"
+	father = 5210012
+	320.1.2 = {
+		birth=yes
+	}
+	390.1.1 = {
+		death=yes
+	}
+}
+5210014 = {
+	name="Uldin"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"
+	trait="gregarious"
+	trait="cruel"
+	trait="impaler"
+	trait="brilliant_strategist"
+	father = 5210013
+	330.1.2 = {
+		birth=yes
+	}
+	410.1.1 = {
+		death=yes
+	}
+}
+5210015 = {
+	name="Charaton"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="greedy"
+	trait="shy"
+	trait="cruel"
+	trait="impaler"
+	trait="brilliant_strategist"
+	father = 5210014
+	342.5.8 = {
+		birth=yes
+	}
+	420.1.1 = {
+		death=yes
+	}
+}
+5210016 = {
+	name="Octar"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="greedy"
+	trait="gluttonous"
+	trait="envious"
+	trait="brilliant_strategist"
+	father = 5210015
+	350.1.2 = {
+		birth=yes
+	}
+	434.1.1 = {
+		death=yes
+	}
+}
+5210017 = {
+	name="Rugila"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"
+	trait="hunter"
+	trait="ambitious"
+	trait="gregarious"
+	trait="scarred"
+	trait="brilliant_strategist"
+	father = 5210015
+	360.1.2 = {
+		birth=yes
+	}
+	434.1.1 = {
+		death=yes
+	}
+}
+5210018 = {
+	name="Bleda"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"
+	trait="hunter"
+	trait="gregarious"
+	trait="scarred"
+	trait="brilliant_strategist"
+	father = 5210017
+	390.1.2 = {
+		birth=yes
+	}
+	445.1.1 = {
+		death=yes
+	}
+}
+5210019 = {
+	name = "Attila"
+	dynasty=2000269
+	martial = 15
+	diplomacy = 10
+	stewardship = 8
+	intrigue = 4
+	learning = 2
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait = "brilliant_strategist"
+	trait = "quick"
+	trait = "humble"
+	trait = "gluttonous"
+	trait = "cavalry_leader"
+	trait = "flat_terrain_leader"
+	trait="strong"
+	trait="genius"
+	trait="ambitious"
+	trait="wroth"
+	trait="greedy"
+	trait="scarred"
+	father = 5210017
+	413.1.1 = {
+		birth = yes
+	}
+	453.1.1 = {
+		death = yes
+	}
+}
+5210020 = {
+	name="Almish"
+	dynasty=6000106
+	religion="tengri_pagan"
+	culture="hunnic"
+	438.4.2 = {
+		birth=yes
+	}
+	487.1.1 = {
+		death=yes
+	}
+}
+5210023 = {
+	name="Omurtag"
+	dynasty=6000107
+	religion="tengri_pagan"
+	culture="hunnic"
+	439.9.12 = {
+		birth=yes
+	}
+	487.1.1 = {
+		death=yes
+	}
+}
+5210024 = {
+	name="Djurash"
+	dynasty=6000108
+	religion="tengri_pagan"
+	culture="hunnic"
+	435.7.20 = {
+		birth=yes
+	}
+	487.1.1 = {
+		death=yes
+	}
+}
+
+5210021 = {
+	name="Ellac"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="wroth"
+	trait="maimed"
+	trait="scarred"
+	trait="brilliant_strategist"
+	father = 5210019
+	420.1.2 = {
+		birth=yes
+	}
+	454.1.1 = {
+		death=yes
+	}
+}
+5210022 = {
+	name="Dengizich"
+	dynasty=2000269
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="strong"
+	trait="gregarious"
+	trait="kind"
+	trait="scarred"
+	trait="grey_eminence"
+	father = 5210019
+	420.1.2 = {
+		birth=yes
+	}
+	469.1.1 = {
+		death=yes
+	}
+}
+
+
+5210025 = {
+	name="Flavius Julius" 
+	dynasty=6000109
+	religion="imperial"
+	trait="strong"
+	trait="brilliant_strategist"
+	trait="quick"
+	culture="roman"
+	421.1.1={
+		birth=yes
+	}
+	461.8.2={
+		death=yes
+	}
+}
+

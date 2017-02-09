@@ -2,9 +2,17 @@
 1000250700 = {
 	name = Ernakh
 	dynasty = 591
-	religion = tengri_pagan
-	culture = bolghar #hunnic
-#	father = #ID OF ATTILA THE HUN
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="tengri_pagan"
+	culture="hunnic"
+	trait="content"
+	trait="wroth"
+	trait="greedy"
+	trait="tough_soldier"
+	father=5210019
 	434.1.1 = {
 		birth = yes
 	}
