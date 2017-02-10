@@ -1,0 +1,24 @@
+# 343 - Siracusa
+
+# County Title
+title = c_modica
+
+# Settlements
+max_settlements = 5
+b_modica1 = castle
+b_modica2 = city
+b_modica3 = temple
+
+
+# Misc
+culture = greek
+religion = imperial
+terrain = hills
+
+# History
+904.1.1={ culture = maghreb_arabic religion = sunni }
+
+
+1116.1.1={ culture = italian religion = catholic }
+
+1232.1.1 = { b_enna4 = city }

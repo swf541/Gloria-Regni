@@ -2587,4 +2587,313 @@
 		death=yes
 	}
 }
+5210026 = {
+	name="Benga" 
+	dynasty=6000110
+	religion="ossetian_pagan"
+	culture="alan"
+	425.5.4={
+		birth=yes
+	}
+	478.8.2={
+		death=yes
+	}
+}
+5210027 = {
+	name="Odoacer"
+	dynasty=1042160
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="arian"
+	culture="german"	#skirian
+	trait="patient"
+	trait="cruel"
+	trait="ambitious"
+	trait="gregarious"
+	trait="hunter"
+	trait="brilliant_strategist"
+	trait="diligent"
+	father=5210028
+	435.1.2 = {
+		birth = yes
+	}
+	#450.1.1 = {
+	#	add_spouse = 36642 # Evochilde of the Visigoths
+	#}
+	493.1.1 = {
+		death = yes
+	}
+}
+5210028 = {
+	name="Edeko"
+	dynasty=1042160
+	martial=7
+	diplomacy=5
+	intrigue=6
+	stewardship=5
+	religion="arian"
+	culture="german"	#skirian
+	trait="content"
+	trait="gregarious"
+	trait="poet"
+	trait="grey_eminence"
+	406.1.1 = {
+		birth = yes
+	}
+	465.1.1 = {
+		death = yes
+	}
+}
+5210029 = {
+	name="Onoulphus" 
+	# Onoulphus
+	dynasty=1042160 
+	religion="arian"
+	culture="german"	#skirian
+	trait="brilliant_strategist"
+	trait="brave"	
+	trait="honest"
+	father=5210028 
+	430.1.1={
+		birth = yes
+	}
+	493.1.1={
+		death = yes
+	}
+}
 
+5210030 = {
+	name="Armatus"
+	religion=imperial
+	culture=german	#skirian
+	father=5210028
+	dynasty=1042160
+	add_trait="strong"
+	add_trait="proud"
+	add_trait="tough_soldier"
+	add_trait="greedy"
+	428.1.1={
+		birth = yes
+	}
+	477.6.1={
+		death = yes
+	}
+}
+5210031 = {
+	name="Flaviolus" 
+	religion="imperial"
+	culture="roman"
+	401.2.10={
+		birth=yes
+	}
+	465.1.1={
+		death=yes
+	}
+}
+
+5210032 = {
+	name="Probus"
+	religion=nicene
+	culture=roman
+	dynasty=6000111 
+	#father=74401
+	#mother=1008291
+	435.1.1={
+		birth = yes
+	}
+	455.5.31={
+		add_claim=e_wre
+	}
+	#460.1.1={
+	#	add_spouse = 1008288
+	#}
+	480.1.1={
+		death = yes
+	}
+}
+
+5210033 = {
+	name="Promotus" 
+	religion="imperial"
+	culture="roman"
+	418.7.15={
+		birth=yes
+	}
+	465.1.1={
+		death=yes
+	}
+}
+5210034 = {
+	name="Julius Agrius Tarrutenius" 
+	dynasty = 101424142
+	religion="imperial"
+	culture="roman"
+	422.4.4={
+		birth=yes
+	}
+	490.1.1={
+		death=yes
+	}
+}
+5210035 = {			#Alatey, Leader of the Alans of Orleans
+	name = "Alatey"
+	dynasty=6000112
+	religion="imperial"	
+	culture="alan"
+	trait = brilliant_strategist
+	
+	444.1.1={
+	
+		birth=yes
+		
+	}
+	
+	505.1.1 = {
+	
+		death = yes
+		
+	}
+}
+
+5210036 = {			#King Beorgor of the Alans
+	name = "Beorgor"
+	dynasty=6000112
+	religion="ossetian_pagan"	
+	culture="alan"
+	
+	442.1.1={
+	
+		birth=yes
+		
+	}
+	
+	464.1.1 = {
+	
+		death = yes
+		
+	}
+}
+5210037 = {			# Syagrius of Soissons										# KING
+
+	name="Syagrius"
+
+	dynasty=6000113
+
+	religion="imperial"
+
+	dna="ddmhb0gmaa0"
+
+  	properties="bh0ihkbebb"
+
+	martial=6
+
+	diplomacy=12
+
+	intrigue=9
+
+	stewardship=10
+
+	learning=9
+
+	culture="galloroman"
+
+	add_trait="skilled_tactician"
+
+	add_trait="hunter"
+
+	add_trait="just"
+	
+	add_trait="diligent"
+	
+	add_trait="humble"
+
+	father=5210038	# Aegidius 
+
+	#mother=
+
+	430.1.26={
+
+		birth="430.1.26"
+
+		prestige=650
+
+		wealth=215
+
+	}
+
+	469.12.22={
+
+		add_spouse=1092
+	
+	}
+	486.3.21={
+
+		death="486.3.21"
+
+	}
+
+}
+
+
+
+5210038 = {			# Aegidius of Soissons
+
+	name="Aegidius"
+
+	dynasty=6000113
+
+	religion="imperial"
+
+	dna="bkagc0jmaa0"
+
+  	properties="bc0dhkbebb"
+
+	martial=11
+
+	diplomacy=15
+
+	intrigue=10
+
+	stewardship=15
+
+	learning=13
+
+	culture="galloroman"
+
+	add_trait="brave"
+
+	add_trait="brilliant_strategist"
+
+	add_trait="ambitious"
+
+	add_trait="strong"
+
+	add_trait="just"
+
+	410.10.12={
+
+		birth="410.10.12"
+
+		prestige=1650
+
+	}
+
+	468.9.26={
+
+		death="468.9.26"
+
+	}
+}
+5210039 = {
+	name="Burco" 
+	religion="imperial"
+	culture="roman"
+	421.3.22={
+		birth=yes
+	}
+	465.1.1={
+		death=yes
+	}
+}

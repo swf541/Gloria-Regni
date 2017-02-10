@@ -1,44 +1,71 @@
-#county of Orl�ans
-450.1.1 = {
-	holder = 5210035
-	liege = e_wre
+﻿#county of Paris
+#county of Paris
+#Meroving
+481.1.1 = {
+	holder = 168673 #Clovis Ier
 }
-470.1.1 = {
-	holder-0
-	liege=0
+511.11.27 = {
+	holder = 168681 #Clotaire Ier
 }
-630.1.1 = {
-	holder = 1000153017
-	liege = d_orleans
+561.11.29 = {
+	holder = 168689 #Chilpéric Ier
 }
-658.1.1 = {
-	holder = 1000153019
+584.11.1 = {
+	holder = 168695 #Clotaire II
 }
-676.1.1 = {
-	holder = 0
+629.10.19 = {
+	holder = 168696 #Dagobert Ier
 }
-750.1.1={
-	liege="k_lotharingia"
-	holder = 91483 #GALIMANUS, historical count as placeholder
+639.1.19 = {
+	holder = 168699 #Clovis II, le Fainéant
 }
-815.1.1={
+657.10.31 = {
+	holder = 168701 #Clotaire III
+}
+673.5.9 = {
+	holder = 168703 #Thierry III
+}
+673.12.1 = {
+	holder = 168702 #Childéric II
+}
+675.1.1 = {
+	holder = 168703 #Thierry III
+}
+#Karling
+687.1.1={
+	holder = 131720
+}
+714.1.17={
+	holder = 131721
+}
+741.1.23={
+	holder = 144989
+}
+751.11.1 = {
 	liege="k_france"
-	holder = 163092
 }
-840.6.20={
-	holder = 90104 #Charles II le Chauve
+#Chantenois
+752.1.1={
+	holder = 31700
 }
-877.10.6={
-	holder = 90123 #Louis II le B�gue
+769.1.1 = {
+	liege = k_lotharingia
 }
-879.4.10={
-	holder = 90154 #Louis III
+779.1.2={
+	holder = 31701
+}
+
+#Elder house of Welf
+859.1.1={
+	holder = 7988
+}
+862.1.1={
+	holder = 90104
+	liege = k_france
 }
 #Robertian (=Capetians)
 882.1.1={
 	holder = 6448 #Eudes I
-	law=succ_primogeniture
-	law=cognatic_succession
 }
 888.1.1={
 	holder = 6442 #Robert I
