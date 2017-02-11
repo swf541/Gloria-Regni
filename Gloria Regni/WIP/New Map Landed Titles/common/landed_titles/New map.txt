@@ -568,6 +568,29 @@ c_grenoble = {
 	b_grenoble7 = { }
 }
 
+c_valentinois = {
+	color = { 112 12 212 }
+	color2 = { 255 255 255 }
+	
+	b_valentinois1 = { }
+	b_valentinois2 = { }
+	b_valentinois3 = { }
+	b_valentinois4 = { }
+	b_valentinois5 = { }
+	b_valentinois6 = { }
+	b_valentinois7 = { }
+}
+
+
+
+
+
+
+
+
+
+
+
 c_alnwick = {
 	color = { 128 115 12 }
 	color2 = { 255 255 255 }
@@ -1573,18 +1596,7 @@ c_aulon = {
 	b_aulon7 = { }
 }
 
-c_arezzo = {
-	color = { 77 188 90 }
-	color2 = { 255 255 255 }
-	
-	b_arezzo1 = { }
-	b_arezzo2 = { }
-	b_arezzo3 = { }
-	b_arezzo4 = { }
-	b_arezzo5 = { }
-	b_arezzo6 = { }
-	b_arezzo7 = { }
-}
+
 
 c_abbruzze = {
 	color = { 177 54 95 }
@@ -1610,6 +1622,19 @@ c_perugia = {
 	b_perugia5 = { }
 	b_perugia6 = { }
 	b_perugia7 = { }
+}
+
+c_savona = {
+	color = { 33 133 177 }
+	color2 = { 255 255 255 }
+	
+	b_savona1 = { }
+	b_savona2 = { }
+	b_savona3 = { }
+	b_savona4 = { }
+	b_savona5 = { }
+	b_savona6 = { }
+	b_savona7 = { }
 }
 
 c_enna = {
@@ -1638,109 +1663,10 @@ c_modica = {
 	b_modica7 = { }
 }
 
-c_novara = {
-	color = { 177 142 145 }
-	color2 = { 255 255 255 }
-	
-	b_novara1 = { }
-	b_novara2 = { }
-	b_novara3 = { }
-	b_novara4 = { }
-	b_novara5 = { }
-	b_novara6 = { }
-	b_novara7 = { }
-}
 
-c_castelseprio = {
-	color = { 148 77 199 }
-	color2 = { 255 255 255 }
-	
-	b_castelseprio1 = { }
-	b_castelseprio2 = { }
-	b_castelseprio3 = { }
-	b_castelseprio4 = { }
-	b_castelseprio5 = { }
-	b_castelseprio6 = { }
-	b_castelseprio7 = { }
-}
 
-c_ticino = {
-	color = { 95 98 42 }
-	color2 = { 255 255 255 }
-	
-	b_ticino1 = { }
-	b_ticino2 = { }
-	b_ticino3 = { }
-	b_ticino4 = { }
-	b_ticino5 = { }
-	b_ticino6 = { }
-	b_ticino7 = { }
-}
 
-c_bergano = {
-	color = { 142 55 158 }
-	color2 = { 255 255 255 }
-	
-	b_bergano1 = { }
-	b_bergano2 = { }
-	b_bergano3 = { }
-	b_bergano4 = { }
-	b_bergano5 = { }
-	b_bergano6 = { }
-	b_bergano7 = { }
-}
 
-c_belluno = {
-	color = { 158 99 45 }
-	color2 = { 255 255 255 }
-	
-	b_belluno1 = { }
-	b_belluno2 = { }
-	b_belluno3 = { }
-	b_belluno4 = { }
-	b_belluno5 = { }
-	b_belluno6 = { }
-	b_belluno7 = { }
-}
-
-c_friuli = {
-	color = { 88 92 105 }
-	color2 = { 255 255 255 }
-	
-	b_friuli1 = { }
-	b_friuli2 = { }
-	b_friuli3 = { }
-	b_friuli4 = { }
-	b_friuli5 = { }
-	b_friuli6 = { }
-	b_friuli7 = { }
-}
-
-c_vicensa = {
-	color = { 98 150 62 }
-	color2 = { 255 255 255 }
-	
-	b_vicensa1 = { }
-	b_vicensa2 = { }
-	b_vicensa3 = { }
-	b_vicensa4 = { }
-	b_vicensa5 = { }
-	b_vicensa6 = { }
-	b_vicensa7 = { }
-}
-
-c_asti = {
-	color = { 180 90 120 }
-	color2 = { 255 255 255 }
-	
-	b_asti1 = { }
-	b_asti2 = { }
-	b_asti3 = { }
-	b_asti4 = { }
-	b_asti5 = { }
-	b_asti6 = { }
-	b_asti7 = { }
-}
 
 c_frosinone = {
 	color = { 140 77 99 }
@@ -2346,11 +2272,57 @@ c_trancoso = {
 
 
 
+c_podborany = {
+	color = { 108 83 92 }
+	color2 = { 255 255 255 }
+	
+	b_podborany1 = { }
+	b_podborany2 = { }
+	b_podborany3 = { }
+	b_podborany4 = { }
+	b_podborany5 = { }
+	b_podborany6 = { }
+	b_podborany7 = { }
+}
 
+c_beroun = {
+	color = { 87 89 120 }
+	color2 = { 255 255 255 }
+	
+	b_beroun1 = { }
+	b_beroun2 = { }
+	b_beroun3 = { }
+	b_beroun4 = { }
+	b_beroun5 = { }
+	b_beroun6 = { }
+	b_beroun7 = { }
+}
 
+c_trebon = {
+	color = { 77 190 202 }
+	color2 = { 255 255 255 }
+	
+	b_trebon1 = { }
+	b_trebon2 = { }
+	b_trebon3 = { }
+	b_trebon4 = { }
+	b_trebon5 = { }
+	b_trebon6 = { }
+	b_trebon7 = { }
+}
 
-
-
+c_prachatice = {
+	color = { 104 28 55 }
+	color2 = { 255 255 255 }
+	
+	b_prachatice1 = { }
+	b_prachatice2 = { }
+	b_prachatice3 = { }
+	b_prachatice4 = { }
+	b_prachatice5 = { }
+	b_prachatice6 = { }
+	b_prachatice7 = { }
+}
 
 c_kromeriz = {
 	color = { 20 56 102 }
