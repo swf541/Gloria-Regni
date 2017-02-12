@@ -1,0 +1,26 @@
+# 348 - Foggia
+
+# County Title
+title = c_foggia
+
+# Settlements
+max_settlements = 4
+b_foggia1 = castle
+b_foggia2 = city
+b_foggia3 = temple
+
+
+# Misc
+culture = lombard
+religion = imperial
+
+# History
+915.1.1 = { culture = greek
+	    religion = imperial }
+
+
+1054.7.6 = { religion = orthodox }
+
+
+1068.1.1 = { culture = italian
+	     religion = catholic }
