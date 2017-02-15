@@ -52,6 +52,14 @@ decisions = {
 				}	
 				province_event = { id = VFS.100 }
 			}
+			any_realm_character = {
+				limit = { is_ruler = true }
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				NOT = { limit = { is_ruler = true } }
+				character_event = { id = VFS.801 }
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -128,6 +136,14 @@ decisions = {
 				}	
 				province_event = { id = VFS.101 }
 			}
+			any_realm_character = {
+				limit = { is_ruler = true }
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				NOT = { limit = { is_ruler = true } }
+				character_event = { id = VFS.801 }
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -156,13 +172,3 @@ decisions = {
 		}
 	}
 }
-	
-
-
-
-
-
-
-
-
-
