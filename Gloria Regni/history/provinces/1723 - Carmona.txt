@@ -1,0 +1,24 @@
+# 182 - Sevilla
+
+# County Title
+title = c_carmona
+
+# Settlements
+max_settlements = 5
+b_carmona1 = castle
+b_carmona2 = temple
+b_carmona3 = city
+
+culture = hispanic
+religion = imperial
+
+# History
+710.1.1 = { religion = sunni }
+929.1.1 = {
+	culture = andalusian_arabic
+}
+
+1263.1.1 = {
+	culture = castillan
+	religion = catholic
+}

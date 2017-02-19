@@ -1,0 +1,25 @@
+# 181 - Cordoba
+
+# County Title
+title = c_jaen
+
+# Settlements
+max_settlements = 5
+b_jaen1 = castle
+b_jaen2 = temple
+b_jaen3 = city
+b_jaen4 = temple
+
+culture = hispanic
+religion = imperial
+
+# History
+710.1.1 = { religion = sunni }
+929.1.1 = {
+	culture = andalusian_arabic
+}
+
+1251.1.1 = {
+	culture = castillan
+	religion = catholic
+}

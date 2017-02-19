@@ -1,0 +1,24 @@
+# 163 - Faro
+
+# County Title
+title = c_mertcia
+
+# Settlements
+max_settlements = 4
+b_mertcia1 = castle
+b_mertcia2 = city
+b_mertcia3 = temple
+
+culture = hispanic
+religion = imperial
+
+# History
+710.1.1 = { religion = sunni }
+939.1.1 = {
+	culture = andalusian_arabic
+}
+
+1264.1.1 = {
+	culture = portuguese 
+	religion = catholic
+}

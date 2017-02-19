@@ -1,0 +1,125 @@
+##############################################
+###Religous Minority System Coded by swf541###
+##############################################
+
+decisions = {
+	persecute_sabellianism = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			is_landed = yes
+			age = 16
+			NOT = { religion = sabellianism }
+			NOT = { 
+				trait = incapable
+				trait = infirm
+			}
+			any_realm_province = { 
+				OR = {
+					religion = sabellianism
+					any_province_holding = {
+						has_building = ct_sabellianism_community_1
+					}	
+					any_province_holding = {
+						has_building = ct_sabellianism_community_2
+					}
+					any_province_holding = {
+						has_building = ct_sabellianism_community_3
+					}
+					
+				}
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			any_realm_province = { 
+				limit = {
+					OR = {
+						religion = sabellianism
+						any_province_holding = {
+							has_building = ct_sabellianism_community_1
+						}	
+						any_province_holding = {
+							has_building = ct_sabellianism_community_2
+						}
+						any_province_holding = {
+							has_building = ct_sabellianism_community_3
+						}
+						
+					}
+				}	
+				province_event = { id = VFS.106 }
+			}
+			any_realm_character = {
+				limit = { 
+					is_ruler = true 
+					religion = sabellianism
+				}
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				limit = { 
+					NOT = {  is_ruler = true } 
+					religion = sabellianism
+				}
+				character_event = { id = VFS.801 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001 # Less likely to do it
+			}
+			modifier = {
+				factor = 0
+				any_courtier = {
+					religion = sabellianism
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+			modifier = {
+				factor = 0
+				any_friend = {
+					religion = sabellianism
+				}
+			}
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion = sabellianism
+				}
+			}
+			modifier = {
+				factor = 0
+				any_child = {
+					religion = sabellianism
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

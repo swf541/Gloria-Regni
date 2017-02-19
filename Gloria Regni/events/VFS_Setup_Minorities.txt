@@ -17,7 +17,7 @@ character_event = {
 			limit = { 
 				culture = persian
 				NOT = { religion = zoroastrian }
-				location = { region = world_persia }
+				region = world_persia
 			}
 			
 			any_province_holding = {
@@ -30,8 +30,8 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = nestorian }
-				location = { region = world_persia }
-				NOT = { location = { region = world_sogdia } }
+				region = world_persia 
+				NOT = { region = world_sogdia } 
 			}
 			
 			any_province_holding = {
@@ -42,7 +42,7 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = nestorian }
-				location = { region = world_sogdia } 
+				region = world_sogdia 
 			}
 			
 			any_province_holding = {
@@ -55,7 +55,7 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = manichean }
-				location = { region = world_sogdia } 
+				region = world_sogdia 
 			}
 			
 			any_province_holding = {
@@ -68,7 +68,7 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = buddhist }
-				location = { region = world_sogdia } 
+				region = world_sogdia
 			}
 			
 			any_province_holding = {
@@ -81,7 +81,7 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = zoroastrian }
-				location = { region = world_sogdia } 
+				region = world_sogdia
 			}
 			
 			any_province_holding = {
@@ -94,7 +94,7 @@ character_event = {
 		any_realm_province = {
 			limit = { 
 				NOT = { religion = hindu }
-				location = { region = world_sogdia } 
+				region = world_sogdia
 			}
 			
 			any_province_holding = {
@@ -103,6 +103,85 @@ character_event = {
 				add_building = ct_hindu_community_2
 			}
 		}
-		903	= { add_building = ct_mesopotamian_paganism_community_1 }
+		903	= {
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_mesopotamian_paganism_community_1 
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = hellenic_pagan }
+				region = custom_vfs_thrace
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_hellenic_pagan_community_1
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = basque_pagan }
+				culture = basque
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_basque_pagan_community_1
+				add_building = ct_basque_pagan_community_2
+				add_building = ct_basque_pagan_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				religion = basque_pagan
+				culture = basque
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_imperial_community_1
+				add_building = ct_imperial_community_2
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				NOT = { religion = germanic_pagan }
+				culture = frisian
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_germanic_pagan_community_1
+				add_building = ct_germanic_pagan_community_2
+				add_building = ct_germanic_pagan_community_3
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				religion = germanic_pagan 
+				culture = frisian
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_imperial_community_1
+				add_building = ct_imperial_community_2
+			}
+		}
+		any_realm_province = {
+			limit = { 
+				religion = sunni 
+				culture = hispanic
+			}
+			
+			any_province_holding = {
+				limit = { holding_type = city } 
+				add_building = ct_imperial_community_1
+				add_building = ct_imperial_community_2
+				add_building = ct_imperial_community_3
+			}
+		}			
 	}
 }

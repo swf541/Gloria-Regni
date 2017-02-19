@@ -1,0 +1,125 @@
+##############################################
+###Religous Minority System Coded by swf541###
+##############################################
+
+decisions = {
+	persecute_mazdaki = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			is_landed = yes
+			age = 16
+			NOT = { religion = mazdaki }
+			NOT = { 
+				trait = incapable
+				trait = infirm
+			}
+			any_realm_province = { 
+				OR = {
+					religion = mazdaki
+					any_province_holding = {
+						has_building = ct_mazdaki_community_1
+					}	
+					any_province_holding = {
+						has_building = ct_mazdaki_community_2
+					}
+					any_province_holding = {
+						has_building = ct_mazdaki_community_3
+					}
+					
+				}
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			any_realm_province = { 
+				limit = {
+					OR = {
+						religion = mazdaki
+						any_province_holding = {
+							has_building = ct_mazdaki_community_1
+						}	
+						any_province_holding = {
+							has_building = ct_mazdaki_community_2
+						}
+						any_province_holding = {
+							has_building = ct_mazdaki_community_3
+						}
+						
+					}
+				}	
+				province_event = { id = VFS.171 }
+			}
+			any_realm_character = {
+				limit = { 
+					is_ruler = true 
+					religion = mazdaki
+				}
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				limit = { 
+					NOT = {  is_ruler = true } 
+					religion = mazdaki
+				}
+				character_event = { id = VFS.801 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001 # Less likely to do it
+			}
+			modifier = {
+				factor = 0
+				any_courtier = {
+					religion = mazdaki
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+			modifier = {
+				factor = 0
+				any_friend = {
+					religion = mazdaki
+				}
+			}
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion = mazdaki
+				}
+			}
+			modifier = {
+				factor = 0
+				any_child = {
+					religion = mazdaki
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

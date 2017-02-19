@@ -1,0 +1,27 @@
+# 827 - Mallorca
+
+# County Title
+title = c_ibiza
+
+# Settlements
+max_settlements = 4
+b_ibiza1 = castle
+b_ibiza2 = temple
+b_ibiza3 = city
+
+
+# Misc
+culture = hispanic
+religion = imperial
+terrain = mountain
+
+# History
+
+928.1.1 = { religion = sunni }
+
+954.1.1 = { culture = andalusian_arabic }
+
+1245.1.1 = {
+	culture = catalan
+	religion = catholic
+}

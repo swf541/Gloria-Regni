@@ -1,0 +1,125 @@
+##############################################
+###Religous Minority System Coded by swf541###
+##############################################
+
+decisions = {
+	persecute_zun_pagan_reformed = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			is_landed = yes
+			age = 16
+			NOT = { religion = zun_pagan_reformed }
+			NOT = { 
+				trait = incapable
+				trait = infirm
+			}
+			any_realm_province = { 
+				OR = {
+					religion = zun_pagan_reformed
+					any_province_holding = {
+						has_building = ct_zun_pagan_reformed_community_1
+					}	
+					any_province_holding = {
+						has_building = ct_zun_pagan_reformed_community_2
+					}
+					any_province_holding = {
+						has_building = ct_zun_pagan_reformed_community_3
+					}
+					
+				}
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			any_realm_province = { 
+				limit = {
+					OR = {
+						religion = zun_pagan_reformed
+						any_province_holding = {
+							has_building = ct_zun_pagan_reformed_community_1
+						}	
+						any_province_holding = {
+							has_building = ct_zun_pagan_reformed_community_2
+						}
+						any_province_holding = {
+							has_building = ct_zun_pagan_reformed_community_3
+						}
+						
+					}
+				}	
+				province_event = { id = VFS.153 }
+			}
+			any_realm_character = {
+				limit = { 
+					is_ruler = true 
+					religion = zun_pagan_reformed
+				}
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				limit = { 
+					NOT = {  is_ruler = true } 
+					religion = zun_pagan_reformed
+				}
+				character_event = { id = VFS.801 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001 # Less likely to do it
+			}
+			modifier = {
+				factor = 0
+				any_courtier = {
+					religion = zun_pagan_reformed
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+			modifier = {
+				factor = 0
+				any_friend = {
+					religion = zun_pagan_reformed
+				}
+			}
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion = zun_pagan_reformed
+				}
+			}
+			modifier = {
+				factor = 0
+				any_child = {
+					religion = zun_pagan_reformed
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

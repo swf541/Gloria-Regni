@@ -53,11 +53,17 @@ decisions = {
 				province_event = { id = VFS.105 }
 			}
 			any_realm_character = {
-				limit = { is_ruler = true }
+				limit = { 
+					is_ruler = true 
+					religion = adoptionism
+				}
 				character_event = { id = VFS.800 }
 			}
 			any_realm_character = {
-				NOT = { limit = { is_ruler = true } }
+				limit = { 
+					NOT = {  is_ruler = true } 
+					religion = adoptionism
+				}
 				character_event = { id = VFS.801 }
 			}
 		}
