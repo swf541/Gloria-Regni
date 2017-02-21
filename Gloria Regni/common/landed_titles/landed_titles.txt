@@ -20601,6 +20601,18 @@ e_persia = {
 				b_jaarah = {
 				}
 			}
+			c_shuyukh = {
+				color = { 50 160 20 }
+				color2 = { 255 255 255 }
+				
+				b_shuyukh1 = { }
+				b_shuyukh2 = { }
+				b_shuyukh3 = { }
+				b_shuyukh4 = { }
+				b_shuyukh5 = { }
+				b_shuyukh6 = { }
+				b_shuyukh7 = { }
+			}
 			c_ilam = {
 				color={ 105 150 52 }
 				color2={ 255 255 255 }
@@ -20643,6 +20655,18 @@ e_persia = {
 				b_tellelhiba = {
 				}
 			}
+			c_bayan = {
+				color = { 192 145 90 }
+				color2 = { 255 255 255 }
+				
+				b_bayan1 = { }
+				b_bayan2 = { }
+				b_bayan3 = { }
+				b_bayan4 = { }
+				b_bayan5 = { }
+				b_bayan6 = { }
+				b_bayan7 = { }
+			}
 			c_al_amarah = {
 				color={ 92 144 82 }
 				color2={ 255 255 255 }
@@ -20664,6 +20688,31 @@ e_persia = {
 				b_zurbatiyah = {
 				}
 			}
+			c_wasit = {
+				color = { 155 166 190 }
+				color2 = { 255 255 255 }
+				
+				b_wasit1 = { }
+				b_wasit2 = { }
+				b_wasit3 = { }
+				b_wasit4 = { }
+				b_wasit5 = { }
+				b_wasit6 = { }
+				b_wasit7 = { }
+			}
+			c_kut = {
+				color = { 177 16 190 }
+				color2 = { 255 255 255 }
+				
+				b_kut1 = { }
+				b_kut2 = { }
+				b_kut3 = { }
+				b_kut4 = { }
+				b_kut5 = { }
+				b_kut6 = { }
+				b_kut7 = { }
+			}
+
 			c_al_nasiryah = {
 				color={ 42 144 82 }
 				color2={ 255 255 255 }
@@ -20685,13 +20734,60 @@ e_persia = {
 				b_shatra = {
 				}
 			}
+			c_kashkar = {
+				color={ 142 144 82 }
+				color2={ 255 255 255 }
+				
+				b_kashkar1 = { }
+				b_kashkar2 = { }
+				b_kashkar3 = { }
+				b_kashkar4 = { }
+				b_kashkar5 = { }
+				b_kashkar6 = { }
+				b_kashkar7 = { }
+			}
+			c_samawaha = {
+				color={ 42 144 182 }
+				color2={ 255 255 255 }
+				
+				b_samawaha1 = { }
+				b_samawaha2 = { }
+				b_samawaha3 = { }
+				b_samawaha4 = { }
+				b_samawaha5 = { }
+				b_samawaha6 = { }
+				b_samawaha7 = { }
+			}
+			c_qurnah = {
+				color={ 142 177 82 }
+				color2={ 255 255 255 }
+				
+				b_qurnah1 = { }
+				b_qurnah2 = { }
+				b_qurnah3 = { }
+				b_qurnah4 = { }
+				b_qurnah5 = { }
+				b_qurnah6 = { }
+				b_qurnah7 = { }
+			}
 		}
 		d_basra = {
 			color={ 6 150 2 }
 			color2={ 255 255 255 }
 			
 			capital = 649 # Basra
-			
+			c_diwaniyah = {
+				color = { 54 58 154 }
+				color2 = { 255 255 255 }
+				
+				b_diwaniyah1 = { }
+				b_diwaniyah2 = { }
+				b_diwaniyah3 = { }
+				b_diwaniyah4 = { }
+				b_diwaniyah5 = { }
+				b_diwaniyah6 = { }
+				b_diwaniyah7 = { }
+			}			
 			c_kufa = {
 				color={ 46 150 2 }
 				color2={ 255 255 255 }
@@ -20805,6 +20901,18 @@ e_persia = {
 				}
 				b_ukhaidir = {
 				}
+			}
+			c_hillah = {
+				color = { 177 16 190 }
+				color2 = { 255 255 255 }
+
+				b_hillah1 = { }
+				b_hillah2 = { }
+				b_hillah3 = { }
+				b_hillah4 = { }
+				b_hillah5 = { }
+				b_hillah6 = { }
+				b_hillah7 = { }
 			}
 			c_baghdad = {
 				color={ 16 135 12 }
@@ -20982,6 +21090,32 @@ e_persia = {
 			
 			capital = 697 # Mosul
 			
+			c_baqofah = {
+				color={ 19 236 189 }
+				color2={ 255 255 255 }	
+
+				b_baqofah1 = { }
+				b_baqofah2 = { }
+				b_baqofah3 = { }
+				b_baqofah4 = { }
+				b_baqofah5 = { }
+				b_baqofah6 = { }
+				b_baqofah7 = { }
+			}
+			
+			c_bakhdida = {
+				color={ 49 136 289 }
+				color2={ 255 255 255 }	
+
+				b_bakhdida1 = { }
+				b_bakhdida2 = { }
+				b_bakhdida3 = { }
+				b_bakhdida4 = { }
+				b_bakhdida5 = { }
+				b_bakhdida6 = { }
+				b_bakhdida7 = { }
+			}
+			
 			c_mosul = {
 				color={ 9 236 89 }
 				color2={ 255 255 255 }
@@ -21046,6 +21180,30 @@ e_persia = {
 				}
 				b_nabiyunus = {
 				}
+			}
+			c_rawa = {
+				color={ 61 160 170 }
+				color2={ 255 255 255 }
+				
+				b_rawa1 = { }
+				b_rawa2 = { }
+				b_rawa3 = { }
+				b_rawa4 = { }
+				b_rawa5 = { }
+				b_rawa6 = { }
+				b_rawa7 = { }				
+			}
+			c_hatra = {
+				color={ 161 160 70 }
+				color2={ 255 255 255 }	
+
+				b_hatra1 = { }
+				b_hatra2 = { }
+				b_hatra3 = { }
+				b_hatra4 = { }
+				b_hatra5 = { }
+				b_hatra6 = { }
+				b_hatra7 = { }				
 			}
 			
 		}
