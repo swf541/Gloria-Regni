@@ -1,0 +1,26 @@
+# County Title
+title = c_holderness
+
+# Settlements
+max_settlements = 5
+b_holderness1 = castle
+b_holderness2 = temple
+b_holderness3 = castle
+b_holderness4 = city
+
+# Misc
+culture = saxon
+religion = imperial
+
+# History
+866.1.1 = {
+	culture = norse 
+	religion = norse_pagan
+}
+954.1.1 = {
+	culture = saxon 
+	religion = imperial
+}
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english }

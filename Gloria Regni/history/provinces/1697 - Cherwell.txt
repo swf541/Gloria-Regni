@@ -1,0 +1,24 @@
+# 22 - Oxford
+
+# County Title
+title = c_cherwell
+
+# Settlements
+max_settlements = 4
+b_cherwell1  = castle
+b_cherwell2 = castle
+b_cherwell3 = city
+b_cherwell4 = temple
+
+# Misc
+culture = british
+religion = imperial
+
+# History
+800.1.1 = {
+	culture = saxon
+}
+
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english } 

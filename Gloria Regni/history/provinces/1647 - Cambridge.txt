@@ -1,0 +1,23 @@
+# 68 - Northampton
+
+# County Title
+title = c_cambridge
+
+# Settlements
+max_settlements = 4
+b_cambridge1 = castle
+b_cambridge2 = city
+b_cambridge3 = temple
+
+# Misc
+culture = british
+religion = imperial
+
+# History
+800.1.1 = {
+	culture = saxon
+}
+
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english }

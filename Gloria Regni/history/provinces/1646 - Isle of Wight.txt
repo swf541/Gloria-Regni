@@ -1,0 +1,24 @@
+# 26 - Winchester
+
+# County Title
+title = c_wight
+
+# Settlements
+max_settlements = 3
+b_wight1 = castle
+b_wight2 = temple
+b_wight3 = city
+
+
+# Misc
+culture = british
+religion = imperial
+
+# History
+800.1.1 = {
+	culture = saxon
+}
+
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english } 

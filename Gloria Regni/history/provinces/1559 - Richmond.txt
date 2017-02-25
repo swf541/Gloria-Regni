@@ -1,0 +1,26 @@
+# County Title
+title = c_richmond
+
+# Settlements
+max_settlements = 5
+b_richmond1 = castle
+b_richmond2 = temple
+b_richmond3 = castle
+b_richmond4 = city
+
+# Misc
+culture = saxon
+religion = imperial
+
+# History
+866.1.1 = {
+	culture = norse 
+	religion = norse_pagan
+}
+954.1.1 = {
+	culture = saxon 
+	religion = imperial
+}
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english }
