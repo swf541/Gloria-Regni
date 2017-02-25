@@ -16,7 +16,10 @@ decisions = {
 			}
 			any_realm_province = { 
 				OR = {
-					religion = sol_invictus
+						AND = {
+							religion = sol_invictus
+							any_province_holding = { holding_type = city }
+						}
 					any_province_holding = {
 						has_building = ct_sol_invictus_community_1
 					}	
@@ -37,7 +40,10 @@ decisions = {
 			any_realm_province = { 
 				limit = {
 					OR = {
-						religion = sol_invictus
+						AND = {
+							religion = sol_invictus
+							any_province_holding = { holding_type = city }
+						}
 						any_province_holding = {
 							has_building = ct_sol_invictus_community_1
 						}	

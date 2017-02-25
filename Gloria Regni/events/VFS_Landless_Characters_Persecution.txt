@@ -34,6 +34,6 @@ character_event = {
 			}
 		}
 		name = "EVTOPTA_VFS_801"
-		FROM = { banish = ROOT }
+		ROOT = { banish = FROM }
 	}
 }

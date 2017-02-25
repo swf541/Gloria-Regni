@@ -16,7 +16,10 @@ decisions = {
 			}
 			any_realm_province = { 
 				OR = {
-					religion = grand_sanhedrin
+					AND = {
+						religion = grand_sanhedrin
+						any_province_holding = { holding_type = city }
+					}
 					any_province_holding = {
 						has_building = ct_grand_sanhedrin_community_1
 					}	
@@ -37,7 +40,10 @@ decisions = {
 			any_realm_province = { 
 				limit = {
 					OR = {
-						religion = grand_sanhedrin
+						AND = {
+							religion = grand_sanhedrin
+							any_province_holding = { holding_type = city }
+						}
 						any_province_holding = {
 							has_building = ct_grand_sanhedrin_community_1
 						}	

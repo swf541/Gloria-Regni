@@ -16,7 +16,10 @@ decisions = {
 			}
 			any_realm_province = { 
 				OR = {
-					religion = yazidi
+						AND = {
+							religion = yazidi
+							any_province_holding = { holding_type = city }
+						}
 					any_province_holding = {
 						has_building = ct_yazidi_community_1
 					}	
@@ -37,7 +40,10 @@ decisions = {
 			any_realm_province = { 
 				limit = {
 					OR = {
-						religion = yazidi
+						AND = {
+							religion = yazidi
+							any_province_holding = { holding_type = city }
+						}
 						any_province_holding = {
 							has_building = ct_yazidi_community_1
 						}	

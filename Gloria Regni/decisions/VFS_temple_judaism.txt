@@ -16,7 +16,10 @@ decisions = {
 			}
 			any_realm_province = { 
 				OR = {
-					religion = temple_judaism
+					AND = {
+						religion = temple_judaism
+						any_province_holding = { holding_type = city }
+					}
 					any_province_holding = {
 						has_building = ct_temple_judaism_community_1
 					}	
@@ -37,7 +40,10 @@ decisions = {
 			any_realm_province = { 
 				limit = {
 					OR = {
-						religion = temple_judaism
+						AND = {
+							religion = temple_judaism
+							any_province_holding = { holding_type = city }
+						}
 						any_province_holding = {
 							has_building = ct_temple_judaism_community_1
 						}	
