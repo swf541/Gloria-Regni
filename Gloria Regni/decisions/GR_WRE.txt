@@ -8,10 +8,7 @@ decisions = {
 			prisoner = no
 			NOT = { trait = incapable }
 			NOT = { has_global_flag = wre_restored }
-			or = {
-				culture_group = postroman
-				culture_group = byzantine
-			}
+			culture_group = byzantine
 		}
 		allow = {
 			prestige = 3000
