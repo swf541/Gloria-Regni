@@ -1,0 +1,30 @@
+# 35 - Innse Gall
+
+# County Title
+title = c_skye
+
+# Settlements
+max_settlements = 3
+b_skye1 = tribal
+b_skye2 = temple
+
+# Misc
+culture = irish
+religion = imperial #celtic_pagan
+terrain = hills
+
+# History
+855.1.1={
+	culture = norse
+	religion = norse_pagan
+}
+1000.1.1 = {
+	religion = imperial
+	b_skye1 = castle
+	b_skye3 = city
+} 
+
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = { culture = norwegian } 
+1266.1.1 = { culture = scottish }

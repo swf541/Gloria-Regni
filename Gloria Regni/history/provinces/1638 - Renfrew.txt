@@ -1,0 +1,24 @@
+# 49 - Carrick
+
+# County Title
+title = c_renfrew
+
+# Settlements
+max_settlements = 3
+b_renfrew1 = tribal
+b_renfrew2 = temple
+
+# Misc
+culture = britonic
+religion = imperial
+terrain = hills
+
+# History
+1000.1.1 = {
+	b_renfrew1 = castle
+}
+1054.1.1 = {
+	culture = scottish
+}
+
+1054.7.6 = { religion = catholic }
