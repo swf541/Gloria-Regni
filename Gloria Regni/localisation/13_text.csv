@@ -611,7 +611,6 @@ EVTDESC_HRP_13001;The founding of the Waldensian Church was mostly underground, 
 EVTOPTA_HRP_13001;I will be a Sandaliati;;;;;;;;;;;;;x
 EVTOPTB_HRP_13001;I will be a Doctores;;;;;;;;;;;;;x
 EVTOPTC_HRP_13001;I will be a Novellani;;;;;;;;;;;;;x
-wald_king;Pious King;;;;;;;;;;;;;x
 wald_sack;Waldensians Destroy Relics;;;;;;;;;;;;;x
 EVTDESC_HRP_13002;Your pious behavior has brought your religion renown amongst the people, and improved your moral authority;;;;;;;;;;;;;x
 EVTOPTA_HRP_13002;Lux Lucit in Tenebris!;;;;;;;;;;;;;x
@@ -1759,11 +1758,9 @@ church_st_bogomil;Church of St. Bogomil the Martyr;;;;;;;;;;;;;x
 church_st_bogomil_desc;The grandest cathedral of all Bogomilism;;;;;;;;;;;;;x
 create_bogomilist_patriarch;Create Bogomilist Patriarch;;;;;;;;;;;;;x
 create_bogomilist_patriarch_desc;Create a Head of Religion to run the Church;;;;;;;;;;;;;x
-PATRIARCH;Patriarch;;;;;;;;;;;;;x
-GOD_ADITYA;Aditya;;;;;;;;;;;;;x
+
 adityan;Adityan;;;;;;;;;;;;;x
 adityan_DESC;Aditya, or Surya, is the chief solar deity in Hinduism. As the Zun faith reformed, the more Indic worshipers split off from the main body of faith and synchronized the worship of Aditya with that of Zun. New Heretic Pride features:\n§Y*§! No Religious Head\n§Y*§! Seven Patrons from the Seven colors of the rainbow\n§Y*§! Can raid other religions;;;;;;;;;;;;;x
-GOD_SURYA;Surya;;;;;;;;;;;;;x
 EVTDESC_HRP_36000;The more you think about it, the more you think you must be right. The Zun faith is incomplete, and the Church of Zun has strayed from the true path. Zun is merely an aspect of the one True God Aditya, and only he is worthy of worship;;;;;;;;;;;;;x
 EVTOPTA_HRP_36000;I will proclaim the True Faith of Aditya!;;;;;;;;;;;;;x
 EVTOPTB_HRP_36000;This... this can't be right...;;;;;;;;;;;;;x
@@ -1798,9 +1795,6 @@ patron_aditya_yellow_desc;Yellow, for all matters of growth;;;;;;;;;;;;;x
 patron_aditya_orange_desc;Orange, for romance and reproduction;;;;;;;;;;;;;x
 patron_aditya_red_desc;Red, for strength and security;;;;;;;;;;;;;x
 pagan_heretic_group;Heretic Pride!;;;;;;;;;;;;;x
-THE_VEDAS;The Vedas;;;;;;;;;;;;;x
-GOD_YNGVI;Yngvi;;;;;;;;;;;;;x
-GOD_ROD;Rod;;;;;;;;;;;;;x
 ynglism;Ynglism;;;;;;;;;;;;;x
 pagan_heresy_founded;Pagan Heresy Founded;;;;;;;;;;;;;x
 EVTDESC_HRP_33000;The more you think about it, the more you think you must be right. The Slavic faith is incomplete, and the Slavic Church has strayed from the true path. Ynglv-Freyr was the Father of All and the founder of the Russian peoples, and only he is worthy of worship;;;;;;;;;;;;;x
@@ -1917,7 +1911,6 @@ opinion_noble_sacrifice;Noble Sacrifice;;;;;;;;;;;;;x
 opinion_okay_sacrifice;Okay Sacrifice;;;;;;;;;;;;;x
 opinion_weak_sacrifice;Weak Sacrifice;;;;;;;;;;;;;x
 opinion_bad_omens;Bad Omens;;;;;;;;;;;;;x
-GOD_BEY_ULGEN;Bey Ülgen;;;;;;;;;;;;;x
 ulgenist;Ulgenist;;;;;;;;;;;;;x
 EVTDESC_HRP_34000;This new 'Reformed' faith of Tengri is a terrible mistake. It turns our back on our traditions and on our other gods. Why the god Bey Ülgen is more power than Tengri, and gives us greater strength for our shamanic rituals, someone should reform a religion about him...;;;;;;;;;;;;;x
 EVTOPTA_HRP_34000;That gives me an idea;;;;;;;;;;;;;x
@@ -1979,25 +1972,6 @@ white_shaman;White Shaman;;;;;;;;;;;;;x
 white_shaman_desc;Calls upon the spirits of the noble dead;;;;;;;;;;;;;x
 yellow_shaman;Yellow Shaman;;;;;;;;;;;;;x
 yellow_shaman_desc;Calls upon the great Buddhas of the southlands;;;;;;;;;;;;;x
-job_spiritual_ulgenist;High Shaman;;;;;;;;;;;;;x
-temple_king_ulgenist;Archshaman;;;;;;;;;;;;;x
-temple_duke_ulgenist;High Shaman;;;;;;;;;;;;;x
-temple_count_ulgenist;Shaman;;;;;;;;;;;;;x
-temple_baron_ulgenist;Shaman;;;;;;;;;;;;;x
-temple_baron_female_ulgenist;Shamanic Princess;;;;;;;;;;;;;x
-temple_count_female_ulgenist;Shamanic Princess;;;;;;;;;;;;;x
-temple_duke_female_ulgenist;High Shamaness;;;;;;;;;;;;;x
-temple_king_female_ulgenist;Archshamaness;;;;;;;;;;;;;x
-temple_emperor_female_ulgenist;Khanum;;;;;;;;;;;;;x
-count_ulgenist;Chieftain;;;;;;;;;;;;;x
-count_female_ulgenist;Chieftess;;;;;;;;;;;;;x
-duke_ulgenist;High Chieftain;;;;;;;;;;;;;x
-duke_female_ulgenist;High Chieftess;;;;;;;;;;;;;x
-king_ulgenist;Khan;;;;;;;;;;;;;x
-king_female_ulgenist;Khanum;;;;;;;;;;;;;x
-emperor_ulgenist;Great Khan;;;;;;;;;;;;;x
-emperor_female_ulgenist;Khanum;;;;;;;;;;;;;x
-tribal_kingdom_ulgenist;Khanate of;;;;;;;;;;;;;x
 EVTDESC_HRP_34320;Bey Ülgan has seven sons, called the Akoglanlar. A Ülgenist can pick one of these seven sons of to venerate;;;;;;;;;;;;;x
 choose_ulgenist_patron_deity;Choose Ülgenist Patron Deity;;;;;;;;;;;;;x
 choose_ulgenist_patron_deity_desc;A Ülgenist can pick one of the seven sons of Bey Ülgen to venerate;;;;;;;;;;;;;x
@@ -2009,28 +1983,6 @@ EVTOPTA_HRP_34321;Yasil Kan, the god of nature.;;;;;;;;;;;;;x
 EVTOPTB_HRP_34321;Karakus, the god of birds.;;;;;;;;;;;;;x
 EVTOPTA_HRP_34322;Er Kanim, the god of confidence.;;;;;;;;;;;;;x
 EVTOPTB_HRP_34322;Bakti Kan, the god of blessing.;;;;;;;;;;;;;x
-patron_ulgenist_karsit;Karsit;;;;;;;;;;;;;x
-patron_ulgenist_bura;Bura;;;;;;;;;;;;;x
-patron_ulgenist_burcakan;Burça Kan;;;;;;;;;;;;;x
-patron_ulgenist_yasilkan;Yasil Kan;;;;;;;;;;;;;x
-patron_ulgenist_karakus;Karaku?;;;;;;;;;;;;;x
-patron_ulgenist_erkanim;Er Kanim;;;;;;;;;;;;;x
-patron_ulgenist_baktikan;Bakti Kan;;;;;;;;;;;;;x
-patron_ulgenist_karsit_desc;Karsit, the god of purity.;;;;;;;;;;;;;x
-patron_ulgenist_bura_desc;Bura, the god of horses.;;;;;;;;;;;;;x
-patron_ulgenist_burcakan_desc;Burça Kan, the god of prosperity.;;;;;;;;;;;;;x
-patron_ulgenist_yasilkan_desc;Yasil Kan, the god of nature.;;;;;;;;;;;;;x
-patron_ulgenist_karakus_desc;Karakus, the god of birds.;;;;;;;;;;;;;x
-patron_ulgenist_erkanim_desc;Er Kanim, the god of confidence.;;;;;;;;;;;;;x
-patron_ulgenist_baktikan_desc;Bakti Kan, the god of blessing.;;;;;;;;;;;;;x
-temple_baron_ynglism;Priest;;;;;;;;;;;;;x
-temple_baron_female_ynglism;Priestess;;;;;;;;;;;;;x
-job_spiritual_ynglism;Head Priest;;;;;;;;;;;;;x
-temple_barony_of_ynglism;Sacred Grove;;;;;;;;;;;;;x
-temple_baron_adityan;Sun Guardian;;;;;;;;;;;;;x
-temple_baron_female_adityan;Sun Guardian;;;;;;;;;;;;;x
-job_spiritual_adityan;Court Sun Guardian;;;;;;;;;;;;;x
-temple_barony_of_adityan;Sun Temple of;;;;;;;;;;;;;x
 EVTDESC_HRP_50910;The decadent rule of [Root.Liege.GetTitledName] is more than you can take. You have decided to ignore all further commands from the capital, less his sinful ways destroy us all;;;;;;;;;;;;;x
 EVTOPTA_HRP_50910;I know when to leave a sinking ship;;;;;;;;;;;;;x
 EVTDESC_HRP_50911;My liege, given the current state of decadence in your realm, I have decided it would sinful to continue to submit to you. My Allah judge you mercifully, although I expect he will not.;;;;;;;;;;;;;x
@@ -2045,7 +1997,6 @@ reduce_decadence_levels_emperor_desc;After this decision, Muslim rulers can lowe
 reduce_decadence_levels_king_desc;After this decision, Muslim rulers can lower the Decadence Demesne Law;;;;;;;;;;;;;x
 reduce_decadence_levels_duke_desc;After this decision, Muslim rulers can lower the Decadence Demesne Law;;;;;;;;;;;;;x
 reduce_decadence_levels_count_desc;After this decision, Muslim rulers can lower the Decadence Demesne Law;;;;;;;;;;;;;x
-GOD_MARA;Mara;;;;;;;;;;;;;x
 dievturi_schism;Dievturi Schism;;;;;;;;;;;;;x
 dievturi_schism_desc;Start a schism within the Reformed Romuvan Church;;;;;;;;;;;;;x
 remembrance_of_dead;Remembrance of the Dead;;;;;;;;;;;;;x
@@ -2084,20 +2035,10 @@ EVTDESC_HRP_32002;After the schism, a new high priesthood has arose, to organize
 EVTOPTA_HRP_32002;Okay;;;;;;;;;;;;;x
 choose_dievturi_patron_deity;Dievturi Patron;;;;;;;;;;;;;x
 choose_dievturi_patron_deity_desc;Dievturi can select an aspect of Dievs to venerate;;;;;;;;;;;;;x
-temple_baron_dievturi;Priest;;;;;;;;;;;;;x
-temple_baron_female_dievturi;Priestess;;;;;;;;;;;;;x
-job_spiritual_dievturi;Court Priest;;;;;;;;;;;;;x
-temple_barony_of_dievturi;Temple;;;;;;;;;;;;;x
 taara_schism;Taaraism Schism;;;;;;;;;;;;;x
 taara_schism_desc;Start a schism within the Reformed Suomenusko Church;;;;;;;;;;;;;x
-d_taaraism;Taaraist Chief Hiislar;;;;;;;;;;;;;x
-d_taaraism_adj;Taaraian;;;;;;;;;;;;;x
 taaraism;Taaraism;;;;;;;;;;;;;x
 taaraism_DESC;Taaraism is a schismatic form of Reformed Suomenusko based of off cultural differences between the Estonian tribes and the rest of the Finno-Ugric peoples. Taaraists hold a monistic or monotheistic worldview in which all the gods are aspects of one only pantheistic reality, which they identify with the god Taara.  Their ethics emphasize a harmonious life and balance in all things. New Heretic Pride features:\n§Y*§! New Religious Head\n§Y*§! Jaanipaev Festivals \n§Y*§! New Traits and Holy Sites;;;;;;;;;;;;;x
-temple_baron_taaraism;Hiislar;;;;;;;;;;;;;x
-temple_baron_female_taaraism;Hiislar;;;;;;;;;;;;;x
-job_spiritual_taaraism;Court Hiislar;;;;;;;;;;;;;x
-temple_barony_of_taaraism;Hiis;;;;;;;;;;;;;x
 EVTTITLE_HRP_31001;The Taaraist Schism;;;;;;;;;;;;;x
 EVTDESC_HRP_31001;The differences in faith between the Estonian Church and the rest of the Reformed Suomenusko tribes were at first minor, but as the reformed faith spread, these differences grew into sharp contrast. Eventually this could not hold. The Suomenusko Church demanded orthodoxy, and the Estonians refused, causing a schism in the pagan religion and the birth of the Taaraist faith.;;;;;;;;;;;;;x
 EVTOPTA_HRP_31001;Taara is with us!;;;;;;;;;;;;;x
@@ -2164,10 +2105,6 @@ d_serer;Serer High Priesthood;;;;;;;;;;;;;x
 d_serer_adj;Sererian;;;;;;;;;;;;;x
 serer;Serer;;;;;;;;;;;;;x
 serer_DESC;The Serer people originally populated the Gambian region of West Africa. They believe in a supreme deity called Roog, and have developed a complex theology and church hierarchy. When Mandé missionaries arrived in their lands, they adapted their new system of a written holy book and liturgy to create a new reformed pagan religion. In game it is treated as Mandé heresy. New Heretic Pride features:\n§Y*§! New Religious Head\n§Y*§! Reincarnation Events\n§Y*§! Can become a 'Saltigue', Spiritual Elder\n§Y*§! Characters can have a Xoy festival and Ndut initiation rites \n§Y*§! Can venerate ancestors and mummify them when they die;;;;;;;;;;;;;x
-temple_baron_serer;Priest;;;;;;;;;;;;;x
-temple_baron_female_serer;Priestess;;;;;;;;;;;;;x
-job_spiritual_serer;Spiritual Elder;;;;;;;;;;;;;x
-temple_barony_of_serer;Temple;;;;;;;;;;;;;x
 EVTDESC_HRP_35000;There are many places throughout Africa that still worship traditional pagan gods. Several zealous Mandé missionaries are seeking funds to travel to west coast, spreading the true faith to the heathens;;;;;;;;;;;;;x
 EVTOPTA_HRP_35000;Gods know I support the Church;;;;;;;;;;;;;x
 EVTOPTB_HRP_35000;I can't afford to waste money on that;;;;;;;;;;;;;x
@@ -2176,9 +2113,6 @@ EVTDESC_HRP_35001;After the Mandé Reformation, several missionaries traveled to 
 EVTOPTA_HRP_35001;This Roog sounds interesting;;;;;;;;;;;;;x
 EVTOPTB_HRP_35001;This heresy must be eliminated!;;;;;;;;;;;;;x
 EVTOPTC_HRP_35001;What do I care about barbarians beyond the sea?;;;;;;;;;;;;;x
-GOD_TAKHAR;Takhar;;;;;;;;;;;;;x
-GOD_ROOG;Roog;;;;;;;;;;;;;x
-GOD_TIURAKH;Tiurakh;;;;;;;;;;;;;x
 go_saltigue;Become a Saltigue;;;;;;;;;;;;;x
 go_saltigue_desc;Be initiated into the secret Serer rites;;;;;;;;;;;;;x
 saltigue;Saltigue;;;;;;;;;;;;;x
@@ -2228,7 +2162,6 @@ EVTOPTE_HRP_35122;Venerate him as a wise and knowledgeable sage;;;;;;;;;;;;;x
 EVTOPTF_HRP_35122;Venerate him as a great and powerful spirit;;;;;;;;;;;;;x
 fangool;Venerated Father as Fangool;;;;;;;;;;;;;x
 fangool_desc;Venerated Father as Fangool;;;;;;;;;;;;;x
-GOD_THE_PANGOOL;the Pangool;;;;;;;;;;;;;x
 EVTDESC_HRP_35400;You have begun preparations for a grand Xoy festival in [Root.Capital.GetName]. You send out messengers with invitations to your vassals, expecting all to come and honor [Root.Religion.GetRandomGodName].;;;;;;;;;;;;;x
 EVTOPTA_HRP_35400;Come all to celebrate His strength!;;;;;;;;;;;;;x
 EVTDESC_HRP_35401;Dear vassal,\nI hereby invite you to attend the Xoy festival at [From.Capital.GetName].\n\nYour Liege,\n[From.GetTitledName];;;;;;;;;;;;;x
@@ -2321,7 +2254,6 @@ loss_of_black_stone;Loss of the Black Stone;;;;;;;;;;;;;x
 return_of_black_stone;Return of the Black Stone;;;;;;;;;;;;;x
 the_black_stone;The Black Stone;;;;;;;;;;;;;x
 the_black_stone_desc;The Black Stone is being held here;;;;;;;;;;;;;x
-city_king_qarmatian;High Malik;;;;;;;;;;;;;x
 the_magian_appeared;The Final Age is near!\n;;;;;;;;;;;;;x
 EVTDESC_HRP_29020;The Qarmatians believe the final age of the world is nigh, and now they believe they have found their Mahdi, who will usher in the final true religion, and reveal the secrets of all religions that proceeded him. This 'Mahdi' is a young man is a Persian from Isfahan, who claims descent from the Persian kings of old.;;;;;;;;;;;;;x
 EVTTITLE_HRP_29020;The Isfahani;;;;;;;;;;;;;x
