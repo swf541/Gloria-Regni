@@ -1,0 +1,22 @@
+# 915 - Jenne
+
+# County Title
+title = c_jenne
+
+# Settlements
+max_settlements = 5
+b_jenne = tribal
+b_kaniana = temple
+
+
+# Misc
+culture = manden
+religion = west_african_pagan
+
+# History
+
+1050.1.1 = { religion = sunni }
+1300.1.1 = {
+	b_jenne = castle
+	b_hambarketalo = city
+}

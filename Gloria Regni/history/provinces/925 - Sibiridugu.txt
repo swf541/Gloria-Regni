@@ -1,0 +1,21 @@
+# 925 - Sibiridugu
+
+# County Title
+title = c_sibiridugu
+
+# Settlements
+max_settlements = 4
+b_bamako = tribal
+b_soussa = temple
+
+
+# Misc
+culture = manden
+religion = west_african_pagan
+
+# History
+1050.1.1 = { religion = sunni }
+1250.1.1 = {
+	b_bamako = castle
+	b_dialakoro = city
+}
