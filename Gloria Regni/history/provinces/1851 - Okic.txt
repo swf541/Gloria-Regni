@@ -1,0 +1,24 @@
+# 463 - Usora
+
+# County Title
+title = c_okic
+
+# Settlements
+max_settlements = 4
+b_okic1 = castle
+b_okic2 = city
+b_okic3 = temple
+
+# Misc
+culture = croatian
+religion = slavic_pagan
+
+
+# History
+800.1.1 = {
+	religion = imperial
+}
+1054.1.1 = { 
+	religion = catholic 
+}
+1200.1.1= { religion = bogomilist } 
