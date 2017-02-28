@@ -1,0 +1,32 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+#------------------------------------------------------------------------------#
+# 캐릭터 혜택에 의한 우호도 보정                                               #
+#------------------------------------------------------------------------------#
+
+opinion_mod_set_character_adventage = {
+	opinion = 85
+	months = 1200
+}
+
+#------------------------------------------------------------------------------#
+# Event: 이벤트에서 공통으로 사용할 각종 오피니언 모디파이어                   #
+#------------------------------------------------------------------------------#
+
+opinion_mod_char_faithful_advice = {
+	opinion = 15
+	months = 12
+}
+
+opinion_mod_char_reason_imprisoning = {
+	prison_reason = yes
+	opinion = 0
+	months = 60
+}
+
+opinion_mod_char_reason_revoking_imprisoning = {
+	revoke_reason = yes
+	prison_reason = yes
+	opinion = 0
+	months = 60
+}

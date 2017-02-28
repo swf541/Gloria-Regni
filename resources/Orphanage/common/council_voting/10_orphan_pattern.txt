@@ -1,0 +1,3459 @@
+orphan_pattern_for = {
+	icon = 3
+	pattern_type = for
+
+	declare_war_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	law_voting_power_0 =  { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	law_voting_power_1 =  { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	banish_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	banish_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	execution_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	execution_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	revoke_title_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	revoke_title_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	grant_title_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	grant_title_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	imprison_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	imprison_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	war_voting_power_0 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	war_voting_power_1 = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	# ROOT - Voter, FROM - Actor, FROMFROM - Recipient, FROMFROMFROM - Revoked title.
+	revoke_title_interaction = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	imprison_character_interaction = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	grant_landed_title_interaction = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	exile_imprisoned_interaction = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	execute_imprisoned_interaction = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	centralization_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	centralization_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	centralization_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	centralization_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	centralization_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	vice_royalty_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	vice_royalty_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	vice_royalty_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	feudal_administration = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	imperial_administration = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	out_of_realm_inheritance_law_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	out_of_realm_inheritance_law_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	tax_levy_law_feudal_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	tribal_organization_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tribal_organization_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tribal_organization_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tribal_organization_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	tribal_organization_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	status_of_women_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	status_of_women_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	status_of_women_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	status_of_women_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	status_of_women_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	revoke_title_law_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	revoke_title_law_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	revoke_title_law_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	ze_administration_laws_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	ze_administration_laws_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	ze_administration_laws_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	succession_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	succession_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+	
+	enforce_peace = { 
+		custom_tooltip = {
+			text = pattern_from_orphanage_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					ai = no
+					character = FROM
+				}
+			}
+		}
+	}
+}
+
+
+orphan_pattern_against = {
+	icon = 3
+	pattern_type = against
+	
+	declare_war_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	law_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	law_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	banish_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	banish_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	execution_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	execution_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	revoke_title_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	revoke_title_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	grant_title_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	grant_title_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	imprison_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	imprison_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	war_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	war_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	# ROOT - Voter, FROM - Actor, FROMFROM - Recipient, FROMFROMFROM - Revoked title.
+	revoke_title_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	imprison_character_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	grant_landed_title_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	exile_imprisoned_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	execute_imprisoned_interaction = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	out_of_realm_inheritance_law_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	out_of_realm_inheritance_law_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	
+	tax_levy_law_feudal_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_feudal_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_iqta_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_republic_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_theocracy_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_5 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_6 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_7 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tax_levy_law_tribal_8 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	tribal_organization_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tribal_organization_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tribal_organization_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tribal_organization_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	tribal_organization_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	status_of_women_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	status_of_women_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	status_of_women_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	status_of_women_3 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	status_of_women_4 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	revoke_title_law_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	revoke_title_law_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	revoke_title_law_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	ze_administration_laws_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	ze_administration_laws_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	ze_administration_laws_2 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+	
+	succession_voting_power_0 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+    succession_voting_power_1 = {
+		custom_tooltip = {
+			text = pattern_from_orphanage_against_vote_as_liege_custom_tooltip
+			hidden_tooltip = {
+				ROOT = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+						trait = adopted_orphan
+					}
+				}
+				liege = {
+					OR = {
+						ai = yes
+						NOT = { character = FROM }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,4765 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 2100~2199
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-04-17
+
+namespace = OPG
+
+#==============================================================================#
+# 고아원 이벤트                                                                #
+# 고아원 보모, 기타 고아원 내에서 이루어지는 기본기능의 구현                   #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 고아원 방문 (2101~) / Decision -> 2101                                       #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2101
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		character_event = {
+			id = OPG.2102
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2102
+	desc = EVTDESC_OPG_2102
+	picture = GFX_evt_nemo_default_orphanage
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2102
+
+		#----------------------------------------------------------------------#
+		# A. 고아원 보모를 만난다.                                             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			#------------------------------------------------------------------#
+			# 고아원 보모가 존재해야 함 + 현재 수도에 있어야 함                #
+			#------------------------------------------------------------------#
+
+			is_orphanage_nurse_in_capital_trigger = yes
+		}
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2105
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2102
+
+		#----------------------------------------------------------------------#
+		# B. 고아들의 생활공간으로 간다.                                       #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 2 이상이 필요                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 고아원에 고아가 최소 1명 이상 있어야 함                          #
+			#------------------------------------------------------------------#
+
+			any_courtier = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				is_adult = no
+				is_common_npc_trigger = yes
+				is_orphan_in_orphanage_trigger = yes
+			}
+		}
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2103
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2102
+
+		#----------------------------------------------------------------------#
+		# C. 다락방으로 올라간다.                                              #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 1 이상이 필요                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_1_trigger = yes
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+		}
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2141
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2102
+		
+		#----------------------------------------------------------------------#
+		# D. 성으로 돌아간다.                                                  #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아들의 생활공간 (2103~2104)                                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2103
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		character_event = {
+			id = OPG.2104
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2104
+	desc = EVTDESC_OPG_2104
+	picture = GFX_evt_nemo_default_orphanage
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2104
+
+		#----------------------------------------------------------------------#
+		# A. 이 곳의 고아들과 시간을 보낸다.                                   #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 2 이상이 필요                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 고아들의 생활공간 커맨드의 공통 쿨 타임이 설정되지 않았어야 함   #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_talk_to_orphans }
+		}
+
+		ROOT = {
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_PLAY_WITH_ORPHANS
+				hidden_tooltip = {
+					character_event = {
+						id = OPG.2135
+					}			
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2104
+
+		#----------------------------------------------------------------------#
+		# B. 한 명의 고아와 긴 시간을 보낸다                                   #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 3 이상이 필요                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 고아들의 생활공간 커맨드의 공통 쿨 타임이 설정되지 않았어야 함   #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_talk_to_orphans }
+		}
+
+		ROOT = {
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_TEACH_ORPHANS
+				hidden_tooltip = {
+					set_character_flag = mod_event_pending_flag_meet_and_teach_orphan
+					character_event = {
+						id = OPG.2137
+					}			
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2104
+		
+		#----------------------------------------------------------------------#
+		# D. 밖으로 나간다.                                                    #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2101
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아원 보모 방문 (2105~)                                                     #
+#------------------------------------------------------------------------------#
+
+
+character_event = {
+
+	id = OPG.2105
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+			}
+			character_event = {
+				id = OPG.2106
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2106
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 보모와 관련된 이벤트가 걸린 경우 (이벤트 메뉴 OPG.2108 로 분기)      #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						#------------------------------------------------------#
+						# 해외입양 관련 이벤트들                               #
+						#------------------------------------------------------#
+
+						has_character_flag = mod_event_temporary_flag_letter_from_chancellor
+						has_character_flag = mod_event_temporary_flag_2nd_letter_from_chancellor
+
+						# 소녀 정원사 관련 이벤트
+
+						has_character_flag = mod_event_temporary_flag_want_a_gardener_girl
+
+						# 특별한 부탁 관련 이벤트
+
+						has_character_flag = mod_event_temporary_flag_special_guardianship_1
+					}
+				}
+			}
+			FROM = {
+				character_event = {
+					id = OPG.2108
+				}
+				break = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 단순히 보모를 만나러 오는 경우 (이벤트 메뉴 OPG.2107 으로 분기)      #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			character_event = {
+				id = OPG.2107
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2107
+	desc = EVTDESC_OPG_2107
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+
+		name = EVTOPTA_OPG_2107
+
+		#----------------------------------------------------------------------#
+		# A. 고아를 입양한다 (플레이어의 가문) : Lv4 이상                      #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 플레이어가 성인인 경우에만 입양이 가능하다.                      #
+			#------------------------------------------------------------------#
+
+			is_common_adult_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 4 이상이 건설되어 있어야 한다.                       #
+			# 가문 입양이 해금된 상태여야 한다.                                #
+			#------------------------------------------------------------------#
+
+			has_orphanage_level_4_trigger = yes
+			has_global_flag = MOD_NEMO_OPG_ADOPT_ORPHAN_ACTIVATED
+
+			#------------------------------------------------------------------#
+			# 가문으로 입양 가능한 고아가 있어야만 한다.                       #
+			#------------------------------------------------------------------#
+
+			any_courtier = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				is_adult = no
+
+				is_common_npc_trigger = yes
+				is_orphan_in_orphanage_trigger = yes
+
+				is_orphan_pending_special_event_trigger = no
+				has_npc_is_pending_certain_event_flag_trigger = no
+
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_mod_made_a_good_relation
+				}
+
+				NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty }
+			}
+
+			#------------------------------------------------------------------#
+			# 한 명을 입양한 후에는 쿨 타임이 지난 상태여야 한다.              #
+			#------------------------------------------------------------------#
+			
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_adopt_orphans }
+		}
+		ROOT = {
+			hidden_tooltip = {
+				set_character_flag = mod_event_pending_flag_player_adopt_orphan
+
+				character_event = {
+					id = OPG.2131
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2107
+
+		#----------------------------------------------------------------------#
+		# B. 고아를 다른 영주에게 보낸다 : Lv3 이상                            #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 3 이상이 건설되어 있어야 한다.                       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 다른 군주에게 고아를 보내는 기능이 활성화되어 있고,              #
+			# 쿨 타임이 지난 상태여야 한다.                                    #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_ORPHAN_ABROAD_ACTIVATED
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_adopt_orphan_abroad }
+		}
+
+		#----------------------------------------------------------------------#
+		# 실제로 고아를 받을 수 있는 군주가 존재하는지에 따라서 적당한 페이지  #
+		# 로 이동한다. (일부 모드와 얽히면 없을 수도 있다.)                    #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			if = {
+				limit = {
+					is_ruler_exist_want_to_adopt_orphan_trigger = yes
+				}
+				set_character_flag = mod_event_pending_flag_player_adopt_orphan_abroad
+				character_event = {
+					id = OPG.3051
+				}
+				break = yes
+			}
+
+			if = {
+				limit = {
+					is_ruler_exist_want_to_adopt_orphan_trigger = no
+				}
+				character_event = {
+					id = OPG.3051
+				}
+				break = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2107		
+
+		#----------------------------------------------------------------------#
+		# C. 고아원의 운영 방침을 정한다.                                      #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 1 이상이 건설되어 있어야 한다.                       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_1_trigger = yes
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+		}
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2111
+				}
+			}
+		}
+	}
+
+	option = {
+		## D. 성으로 돌아간다. #################################################
+
+		name = EVTOPTD_OPG_2107
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2101
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2108
+	desc = EVTDESC_OPG_2108
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		## Aa. 자문관의 편지에 대해 고아원 보모와 대화한다. ####################
+
+		name = EVTOPTAa_OPG_2108
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 3 이상이 건설되어 있어야 한다.                       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 현재 이 이벤트가 실행되어야 하는 상태일 것                       #
+			#------------------------------------------------------------------#
+
+			has_character_flag = mod_event_temporary_flag_letter_from_chancellor
+
+			NOT = { has_character_flag = mod_event_temporary_flag_talk_to_nurse_about_letter }
+			NOT = { has_character_flag = mod_event_temporary_flag_2nd_letter_from_chancellor }
+			NOT = { has_character_flag = mod_event_temporary_flag_agree_to_adopt_orphan_abroad }
+			NOT = { has_global_flag = MOD_NEMO_OPG_ORPHAN_ABROAD_ACTIVATED }
+		}
+
+		#----------------------------------------------------------------------#
+		# OPG.3011 로 이동                                                     #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.3011
+				}
+			}
+		}
+	}
+
+	option = {
+		## Ab. 자문관의 편지에 대해 고아원 보모와 대화한다. ####################
+
+		name = EVTOPTAb_OPG_2108
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 3 이상이 건설되어 있어야 한다.                       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 현재 이 이벤트가 실행되어야 하는 상태일 것                       #
+			#------------------------------------------------------------------#
+
+			has_character_flag = mod_event_temporary_flag_2nd_letter_from_chancellor
+			NOT = { has_character_flag = mod_event_temporary_flag_agree_to_adopt_orphan_abroad }
+			NOT = { has_global_flag = MOD_NEMO_OPG_ORPHAN_ABROAD_ACTIVATED }
+		}
+
+		#----------------------------------------------------------------------#
+		# OPG.3031 로 이동                                                     #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.3031
+				}
+			}
+		}
+	}
+
+	#	option = {
+	#		## B. 정원사로 쓸 여자아이를 찾는다 (MNR 로 이동) ######################
+	#
+	#		name = EVTOPTB_OPG_2108
+	#		trigger = {
+	#			capital_holding = {
+	#				OR = {
+	#					has_building = ca_manor_2
+	#					has_building = ca_manor_3
+	#					has_building = ca_manor_4
+	#				}
+	#			}
+	#
+	#			#------------------------------------------------------------------#
+	#			# 고아원 레벨 3 이상이 건설되어 있어야 한다.                       #
+	#			#------------------------------------------------------------------#
+	#
+	#			OR = {
+	#				has_orphanage_level_2_trigger = yes
+	#				has_orphanage_level_3_trigger = yes
+	#				has_orphanage_level_4_trigger = yes
+	#			}
+	#
+	#			has_character_flag = mod_event_temporary_flag_want_a_gardener_girl
+	#			NOT = { has_global_flag = MOD_NEMO_MNR_GARDENER_GIRL_EVENT }
+	#		}
+	#		ROOT = {
+	#			hidden_tooltip = {
+	#				character_event = {
+	#					id = MNR.3501
+	#				}
+	#			}
+	#		}
+	#	}
+	#
+	#	option = {
+	#		## C. 특별한 고아들의 육성에 대해 고아원 보모와 대화한다. ####################
+	#
+	#		name = EVTOPTC_OPG_2108
+	#		trigger = {
+	#
+	#			#------------------------------------------------------------------#
+	#			# 고아원 레벨 4 이상이 건설되어 있어야 한다.                       #
+	#			#------------------------------------------------------------------#
+	#
+	#			has_orphanage_level_4_trigger = yes
+	#
+	#
+	#
+	#			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+	#			has_character_flag = mod_event_temporary_flag_special_guardianship_1
+	#			NOT = { has_global_flag = MOD_NEMO_OPG_SPECIAL_GUARDIANSHIP_ACTIVATED }
+	#		}
+	#		FROM = {
+	#			hidden_tooltip = {
+	#				character_event = {
+	#					id = OPG.6205
+	#				}
+	#			}
+	#		}
+	#	}
+	
+
+	option = {
+		## D. 성으로 돌아간다. ######################################
+
+		name = EVTOPTD_OPG_2108
+		ROOT = {
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아원의 운영 방침을 정한다 (2111~2118)                                      #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2111
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2112
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2112
+	desc = EVTDESC_OPG_2112
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 설정 기본값이 설정되지 않은 상태인 경우 기본값을 설정한다.           #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_0 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_1 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_2 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_3 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_4 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_5 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_6 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_7 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_8 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_9 }
+				NOT = { has_global_flag = mod_orphanage_policy_patrol_level_10 }
+			}
+			set_global_flag = mod_orphanage_policy_patrol_level_0
+		}
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = mod_orphanage_policy_location_outer }
+				NOT = { has_global_flag = mod_orphanage_policy_location_neutral }
+				NOT = { has_global_flag = mod_orphanage_policy_location_inner }
+			}
+			set_global_flag = mod_orphanage_policy_location_neutral
+		}
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = mod_orphanage_policy_manage_level_high }
+				NOT = { has_global_flag = mod_orphanage_policy_manage_level_low }
+			}
+			set_global_flag = mod_orphanage_policy_manage_level_high
+		}
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = mod_orphanage_policy_always_set_heritage }
+				NOT = { has_global_flag = mod_orphanage_policy_allow_set_heritage }
+				NOT = { has_global_flag = mod_orphanage_policy_disallow_set_heritage }
+			}
+			set_global_flag = mod_orphanage_policy_allow_set_heritage
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_2112
+		
+		#----------------------------------------------------------------------#
+		# A. 순찰의 빈도를 조정한다.                                           #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 2 이상에서 설정할 수 있다.                           #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+		}
+
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2113
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2112
+		
+		#----------------------------------------------------------------------#
+		# B. 순찰 지역을 조정한다.                                             #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 고아원 레벨 2 이상에서 설정할 수 있다.                           #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+		}
+
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2115
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTCa_OPG_2112
+		trigger = {
+			NOT = { has_dlc = "Zeus" }
+		}
+		
+		#----------------------------------------------------------------------#
+		# C. 고아들의 관리 수준을 조정한다.                                    #
+		#----------------------------------------------------------------------#
+		
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2117
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTCb_OPG_2112
+		trigger = {
+			has_dlc = "Zeus"
+			OR = {
+				has_global_flag = MOD_NEMO_OPG_EVENT_04
+				has_global_flag = MOD_NEMO_OPG_EVENT_05
+				has_global_flag = MOD_NEMO_OPG_EVENT_06
+				has_global_flag = MOD_NEMO_OPG_EVENT_07
+				has_global_flag = MOD_NEMO_OPG_EVENT_08
+				has_global_flag = MOD_NEMO_OPG_EVENT_09
+			}
+		}
+		
+		#----------------------------------------------------------------------#
+		# C. 고아원 고아들의 관리 수준을 정한다.                               #
+		#----------------------------------------------------------------------#
+		
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2119
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2112
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2105
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2113
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2114
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2114
+	desc = {
+		text = EVTDESC_OPG_2114_0
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_0
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_1
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_1
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_2
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_3
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_3
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_4
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_4
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_5
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_5
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_6
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_6
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_7
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_7
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_8
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_8
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_9
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_9
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2114_10
+		trigger = {
+			has_global_flag = mod_orphanage_policy_patrol_level_10
+		}
+	}
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2114
+		
+		#----------------------------------------------------------------------#
+		# A. 순찰의 빈도수를 늘린다                                            #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_patrol_level_10 }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_INCREASE_PATROL_COUNT
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 설정값을 새 설정값으로 교체하고, 기존 모디파이어를 삭제      #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_9
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_10
+					clr_global_flag = mod_orphanage_policy_patrol_level_9
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_9
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_8
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_9
+					clr_global_flag = mod_orphanage_policy_patrol_level_8
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_8
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_7
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_8
+					clr_global_flag = mod_orphanage_policy_patrol_level_7
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_7
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_6
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_7
+					clr_global_flag = mod_orphanage_policy_patrol_level_6
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_6
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_5
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_6
+					clr_global_flag = mod_orphanage_policy_patrol_level_5
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_5
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_4
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_5
+					clr_global_flag = mod_orphanage_policy_patrol_level_4
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_4
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_3
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_4
+					clr_global_flag = mod_orphanage_policy_patrol_level_3
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_3
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_2
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_3
+					clr_global_flag = mod_orphanage_policy_patrol_level_2
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_2
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_1
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_2
+					clr_global_flag = mod_orphanage_policy_patrol_level_1
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_1
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_0
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_1
+					clr_global_flag = mod_orphanage_policy_patrol_level_0
+				}
+
+				#--------------------------------------------------------------#
+				# 월간 예산이 지출되는 캐릭터 모디파이어                       #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_10
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_10
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_9
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_9
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_8
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_8
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_7
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_7
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_6
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_6
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_5
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_5
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_4
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_4
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_3
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_3
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_2
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_2
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_1
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_1
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2113
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2114
+		
+		#----------------------------------------------------------------------#
+		# B. 순찰의 빈도수를 줄인다                                            #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_patrol_level_0 }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_DECREASE_PATROL_COUNT
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 설정값을 새 설정값으로 교체하고, 기존 모디파이어를 삭제      #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_1
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_0
+					clr_global_flag = mod_orphanage_policy_patrol_level_1
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_1
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_2
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_1
+					clr_global_flag = mod_orphanage_policy_patrol_level_2
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_2
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_3
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_2
+					clr_global_flag = mod_orphanage_policy_patrol_level_3
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_3
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_4
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_3
+					clr_global_flag = mod_orphanage_policy_patrol_level_4
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_4
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_5
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_4
+					clr_global_flag = mod_orphanage_policy_patrol_level_5
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_5
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_6
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_5
+					clr_global_flag = mod_orphanage_policy_patrol_level_6
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_6
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_7
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_6
+					clr_global_flag = mod_orphanage_policy_patrol_level_7
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_7
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_8
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_7
+					clr_global_flag = mod_orphanage_policy_patrol_level_8
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_8
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_9
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_8
+					clr_global_flag = mod_orphanage_policy_patrol_level_9
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_9
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_10
+					}
+					set_global_flag = mod_orphanage_policy_patrol_level_9
+					clr_global_flag = mod_orphanage_policy_patrol_level_10
+					remove_character_modifier = mod_event_orphanage_policy_patrol_level_10
+				}
+
+				#--------------------------------------------------------------#
+				# 월간 예산 지출용 새 캐릭터 모디파이어 설정                   #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_10
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_10
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_9
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_9
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_8
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_8
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_7
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_7
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_6
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_6
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_5
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_5
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_4
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_4
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_3
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_3
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_2
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_2
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+
+				if = {
+					limit = {
+						has_global_flag = mod_orphanage_policy_patrol_level_1
+					}
+					add_character_modifier = {
+						name = mod_event_orphanage_policy_patrol_level_1
+						duration = -1
+						hidden = yes
+						inherit = yes
+					}
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2113
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2114
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2111
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2115
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2116
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2116
+	desc = {
+		text = EVTDESC_OPG_2116_A
+		trigger = {
+			has_global_flag = mod_orphanage_policy_location_inner
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2116_B
+		trigger = {
+			has_global_flag = mod_orphanage_policy_location_neutral
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2116_C
+		trigger = {
+			has_global_flag = mod_orphanage_policy_location_outer
+		}
+	}
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2116
+		
+		#----------------------------------------------------------------------#
+		# A. 내부 순찰을 강화한다.                                             #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_location_inner }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_LOCATION_INNER
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_location_inner
+				clr_global_flag = mod_orphanage_policy_location_outer
+				clr_global_flag = mod_orphanage_policy_location_neutral
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2115
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2116
+		
+		#----------------------------------------------------------------------#
+		# B. 평균적으로 고루 순찰한다.                                         #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_location_neutral }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_LOCATION_NEUTRAL
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_location_neutral
+				clr_global_flag = mod_orphanage_policy_location_inner
+				clr_global_flag = mod_orphanage_policy_location_outer
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2115
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2116
+		
+		#----------------------------------------------------------------------#
+		# C. 외부 순찰을 강화한다.                                             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_location_outer }
+		}
+		
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_LOCATION_OUTER
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_location_outer
+				clr_global_flag = mod_orphanage_policy_location_inner
+				clr_global_flag = mod_orphanage_policy_location_neutral
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2115
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2116
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2111
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2117
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2118
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2118
+	desc = {
+		text = EVTDESC_OPG_2118_A
+		trigger = {
+			has_global_flag = mod_orphanage_policy_manage_level_high
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2118_B
+		trigger = {
+			has_global_flag = mod_orphanage_policy_manage_level_low
+		}
+	}
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2118
+		
+		#----------------------------------------------------------------------#
+		# A. 관리 수준을 높음으로 설정한다.                                    #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_manage_level_high }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_MANAGE_LEVEL_HIGH
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_manage_level_high
+				clr_global_flag = mod_orphanage_policy_manage_level_low
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2117
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2118
+		
+		#----------------------------------------------------------------------#
+		# B. 관리 수준을 낮음으로 설정한다.                                    #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_manage_level_low }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_MANAGE_LEVEL_LOW
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_manage_level_low
+				clr_global_flag = mod_orphanage_policy_manage_level_high
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2117
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2118
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2111
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2119
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2120
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2120
+	desc = EVTDESC_OPG_2120
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2120
+		
+		#----------------------------------------------------------------------#
+		# A. Heritage 관심사의 설정 여부                                       #
+		#----------------------------------------------------------------------#
+		
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2121
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2120
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2111
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2121
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2122
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2122
+	desc = {
+		text = EVTDESC_OPG_2122_A
+		trigger = {
+			has_global_flag = mod_orphanage_policy_allow_set_heritage
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2122_B
+		trigger = {
+			has_global_flag = mod_orphanage_policy_disallow_set_heritage
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2122_C
+		trigger = {
+			has_global_flag = mod_orphanage_policy_always_set_heritage
+		}
+	}
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2122
+		
+		#----------------------------------------------------------------------#
+		# A. 보모의 재량으로 Heritage 관심사의 설정을 허용합니다.              #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_allow_set_heritage }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_ALLOW_SET_HERITAGE
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_allow_set_heritage
+				clr_global_flag = mod_orphanage_policy_disallow_set_heritage
+				clr_global_flag = mod_orphanage_policy_always_set_heritage
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2121
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2122
+		
+		#----------------------------------------------------------------------#
+		# B. Heritage 관심사의 설정을 허용하지 않습니다.                       #
+		#----------------------------------------------------------------------#
+		
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_disallow_set_heritage }
+		}
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_DISALLOW_SET_HERITAGE
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_disallow_set_heritage
+				clr_global_flag = mod_orphanage_policy_allow_set_heritage
+				clr_global_flag = mod_orphanage_policy_always_set_heritage
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2121
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2122
+		
+		#----------------------------------------------------------------------#
+		# C. 문화/종교가 다르면 언제나 Heritage 를 설정합니다                  #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = { has_global_flag = mod_orphanage_policy_always_set_heritage }
+		}
+		
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_SET_ORPHANAGE_POLICY_ALWAYS_SET_HERITAGE
+			hidden_tooltip = {
+				set_global_flag = mod_orphanage_policy_always_set_heritage
+				clr_global_flag = mod_orphanage_policy_disallow_set_heritage
+				clr_global_flag = mod_orphanage_policy_allow_set_heritage
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2121
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2122
+		
+		#----------------------------------------------------------------------#
+		# D. 설정을 마치고 돌아간다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2119
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 특정한 고아를 가문으로 입양한다 (2131)                                       #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.2131
+	desc = EVTDESC_OPG_2131
+	picture = GFX_evt_nemo_common_discuss
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTD_OPG_2131
+		ROOT = {
+			hidden_tooltip = {
+
+				clr_character_flag = mod_event_pending_flag_player_adopt_orphan
+
+				if = {
+					limit = {
+						has_character_flag = mod_event_pending_flag_player_adopt_orphan_selected
+					}
+					clr_character_flag = mod_event_pending_flag_player_adopt_orphan_selected
+				}
+
+				recalc_succession = yes
+
+				character_event = {
+					id = OPG.2105
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.2133
+	desc = EVTDESC_OPG_2133
+	picture = GFX_evt_nemo_adopt_orphan
+
+	# ROOT : Player, FROM : Adopted Orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2133
+		FROM = {
+
+			#------------------------------------------------------------------#
+			# 고아와 관련한 모든 표지를 제거한다.                              #
+			#------------------------------------------------------------------#
+
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_trait_effect = yes
+
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+			
+			#------------------------------------------------------------------#
+			# 가문으로 받아들인다.                                             #
+			#------------------------------------------------------------------#
+
+			add_trait = adopted_orphan
+
+			if = {
+				limit = {
+					ROOT = {
+						is_female = yes
+					}
+				}
+				set_mother = ROOT
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						is_female = no
+					}
+				}
+				set_father = ROOT
+			}
+
+			dynasty = ROOT
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adopted_orphan
+			}
+		}
+
+		ROOT = {
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = mod_event_interval_notification_flag_modifier_adopt_orphans
+					duration = 365
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2133
+		ROOT = {
+			clr_character_flag = mod_event_pending_flag_player_adopt_orphan_selected
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아들과 시간을 보낸다 (2135)                                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2135
+	picture = GFX_evt_nemo_play_with_orphan
+
+	desc = {
+		text = EVTDESC_OPG_2135_1
+		trigger = {
+			ROOT = {
+				is_adult = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2135_2
+		trigger = {
+			ROOT = {
+				is_adult = no
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2135
+
+		#----------------------------------------------------------------------#
+		# A. 성년 플레이어의 경우                                              #
+		#    나이에 따라서 확률에 따라 일정한 스탯의 상승이 있을 수 있다. 약간 #
+		#    의 우호도 상승도 이루어진다.                                      #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				is_adult = yes
+			}
+		}
+		any_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				age = 6
+				is_adult = no
+			}
+
+			if = {
+				limit = {
+					age = 6
+					NOT = { age = 8 }
+				}
+				random = {
+					chance = 50
+					change_learning = 1
+				}
+			}
+			if = {
+				limit = {
+					age = 8
+					NOT = { age = 10 }
+				}
+				random = {
+					chance = 50
+					change_martial = 1
+				}
+			}
+			if = {
+				limit = {
+					age = 10
+					NOT = { age = 12 }
+				}
+				random = {
+					chance = 50
+					change_diplomacy = 1
+				}
+			}
+			if = {
+				limit = {
+					age = 12
+					NOT = { age = 14 }
+				}
+				random = {
+					chance = 50
+					change_intrigue = 1
+				}
+			}
+			if = {
+				limit = {
+					age = 14
+					NOT = { age = 16 }
+				}
+				random = {
+					chance = 50
+					change_stewardship = 1
+				}
+			}
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_play_with_orphans
+			}
+		}
+		ROOT = {
+			prestige = 1
+			piety = 1
+
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+					duration = 365
+				}
+
+				character_event = {
+					id = OPG.2103
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2135
+
+		#----------------------------------------------------------------------#
+		# B. 미성년 플레이어의 경우                                            #
+		#    미성년 플레이어는 함께 놀면서 고아들의 스탯을 올리지는 못하지만,  #
+		#    우호도 향상은 똑같이 가능하다. (플레이어와 2살 이내 차이나는 고아 #
+		#    들에 대해서 우호도 향상이 있다.)                                  #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				is_adult = no
+			}
+		}
+		any_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				NOT = {
+					age_diff = {
+						who = ROOT
+						years = 2
+					}
+				}
+				is_adult = no
+			}
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_play_with_orphans
+			}
+		}
+		ROOT = {
+			prestige = 1
+			piety = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 실행했으므로 쿨 타임 모디파이어를 붙인다.                    #
+				#--------------------------------------------------------------#
+
+				add_character_modifier = {
+					name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+					duration = 365
+				}
+
+				#--------------------------------------------------------------#
+				# 고아들의 공간 메인으로 돌아간다.                             #
+				#--------------------------------------------------------------#
+
+				character_event = {
+					id = OPG.2103
+				}
+			}
+		}
+	}
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+# 특정한 고아와 시간을 보낸다 (2137~)                                          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2137
+	desc = {
+		text = EVTDESC_OPG_2137_1
+		trigger = {
+			ROOT = {
+				is_adult = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2137_2
+		trigger = {
+			ROOT = {
+				is_adult = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_play_with_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTD_OPG_2137
+
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 고아 선택할 수 있음 플래그를 해제한다.                       #
+				#--------------------------------------------------------------#
+
+				clr_character_flag = mod_event_pending_flag_meet_and_teach_orphan
+
+				#--------------------------------------------------------------#
+				# 고아를 무한정 선택할 수 있는 상황을 막기 위해 고아 선택됨 플 #
+				# 래그를 여기서 해제한다.                                      #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_character_flag = mod_event_pending_flag_meet_and_teach_orphan_selected
+					}
+					clr_character_flag = mod_event_pending_flag_meet_and_teach_orphan_selected
+				}
+
+				#--------------------------------------------------------------#
+				# 고아들의 공간 메인으로 돌아간다.                             #
+				#--------------------------------------------------------------#
+
+				character_event = {
+					id = OPG.2103
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2139
+	desc = {
+		text = EVTDESC_OPG_2139_1
+		trigger = {
+			ROOT = {
+				is_adult = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2139_2
+		trigger = {
+			ROOT = {
+				is_adult = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_play_with_orphan
+
+	# ROOT : Player, FROM : Selected Orphan
+
+	only_rulers = yes
+	capable_only = yes
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2139
+
+		#----------------------------------------------------------------------#
+		# 일정 확률로, 플레이어가 가지고 있는 트레잇 중 하나가 옮겨진다.       #
+		#----------------------------------------------------------------------#
+
+		random = {
+			chance = 75
+			FROM = {
+				copy_random_personality_trait = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 성년 플레이어인 경우 : 플레이어의 스탯이 10 이상인 경우에 한해, 일정 #
+		# 확률로 고아의 스탯이 1씩 올라간다.                                   #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = yes
+					diplomacy = 10
+				}
+			}
+			random = {
+				chance = 65
+				FROM = {
+					change_diplomacy = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = yes
+					martial = 10
+				}
+			}
+			random = {
+				chance = 65
+				FROM = {
+					change_martial = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = yes
+					stewardship = 10
+				}
+			}
+			random = {
+				chance = 65
+				FROM = {
+					change_stewardship = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = yes
+					intrigue = 10
+				}
+			}
+			random = {
+				chance = 65
+				FROM = {
+					change_intrigue = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = yes
+					learning = 10
+				}
+			}
+			random = {
+				chance = 65
+				FROM = {
+					change_learning = 1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년의 경우, 새로 이야기한 고아와 친구가 될 수 있다.               #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					is_adult = no
+					NOT = { is_friend = FROM }
+				}
+			}
+			ROOT = {
+				add_friend = FROM
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 약간의 우호도 보너스를 얻는다. 이것은 상호간 연결이며, 11년간 유효하 #
+		# 다. 이 연결이 유효한 동안 몇 가지의 추가 이벤트를 실행 가능하다.     #
+		# (단, 다른 조건을 만족한 경우에 한하여..)                             #
+		#----------------------------------------------------------------------#
+
+		opinion = {
+			who = FROM
+			modifier = opinion_mod_made_a_good_relation
+		}
+		reverse_opinion = {
+			who = FROM
+			modifier = opinion_mod_made_a_good_relation
+		}
+	
+		#----------------------------------------------------------------------#
+		# 실행했으므로 쿨 타임 모디파이어를 붙인다.                            #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+				duration = 365
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 캐릭터에게 이벤트 실행중 플래그를 제거한다.                       #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이건 별도의 실행 창이므로 어디로 가지 않고 그냥 끄면 된다.           #
+		#----------------------------------------------------------------------#
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2139
+		trigger = {
+			ROOT = {
+				#OR = {
+					NOT = { religion = FROM }
+				#	NOT = { culture = FROM }				
+				#}
+			}
+		}
+
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = OPG.2161
+				}
+			}
+		}
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 고아원의 다락방  (2141)                                                      #
+#------------------------------------------------------------------------------#
+
+## 다락층의 복도
+
+character_event = {
+
+	id = OPG.2141
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			character_event = {
+				id = OPG.2142
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2142
+	desc = EVTDESC_OPG_2142
+	picture = GFX_evt_nemo_default_orphanage_attic_floor
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# A. 휘핑 보이의 방으로 간다.                                          #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_exist_heirs_whipping_boy_trigger = yes
+		}
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 후계자의 휘핑 보이의 방                                      #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						is_adult = yes
+					}
+
+					random_realm_character = {
+						limit = {
+							OR = {
+								trait = rescued_orphan_by_player
+								trait = rescued_orphan_by_ai
+							}
+							is_adult = no
+							is_alive = yes
+							is_female = no
+							NOT = { trait = incapable }
+							has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+							ROOT = {
+								current_heir = {
+									ai = yes
+									is_female = no
+									is_adult = no
+									dynasty = PREV
+
+									has_opinion_modifier = {
+										 who = PREVPREV
+										 modifier = opinion_mod_char_heirs_whipping_boy
+									}
+								}
+							}
+						}
+						character_event = {
+							id = OPG.2145
+						}
+					}
+
+					break = yes
+				}
+
+				#--------------------------------------------------------------#
+				# 자신의 휘핑 보이의 방                                        #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						is_adult = no
+					}
+
+					random_courtier = {
+						limit = {
+							OR = {
+								trait = rescued_orphan_by_player
+								trait = rescued_orphan_by_ai
+							}
+							is_adult = no
+							is_alive = yes
+							is_female = no
+							NOT = { trait = incapable }
+							has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+							has_opinion_modifier = {
+								 who = PREV
+								 modifier = opinion_mod_char_heirs_whipping_boy
+							}
+						}
+						character_event = {
+							id = OPG.2145
+						}
+					}
+
+					break = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTAa_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# Aa. 빈 방으로 간다 - 휘핑 보이가 없는 경우                            #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_exist_heirs_whipping_boy_trigger = no
+		}
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2143
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# B. 고아 비밀 요원의 방으로 간다.                                     #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_in_orphanage_orphan_secret_agent_trigger = yes
+		}
+		ROOT = {
+			hidden_tooltip = {
+				random_courtier = {
+					limit = {
+						trait = rescued_orphan_by_player
+						is_adult = no
+						is_alive = yes
+						
+						has_opinion_modifier = {
+							 who = PREV
+							 modifier = opinion_mod_orphans_boss_of_intrigue
+						}
+
+						is_orphan_in_orphanage_trigger = yes
+					}
+					character_event = {
+						id = OPG.7101
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTBa_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# B. 빈 방으로 간다                                                    #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_in_orphanage_orphan_secret_agent_trigger = no
+		}
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2143
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# C. 특별한 친구의 방으로 간다.                                        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_exist_friend_of_opposite_sex_trigger = yes
+		}
+		ROOT = {
+			hidden_tooltip = {
+				random_courtier = {
+					limit = {
+						has_any_opinion_modifier = opinion_mod_char_friend_of_opposite_sex
+						OR = {
+							trait = rescued_orphan_by_player
+							trait = rescued_orphan_by_ai
+						}
+						is_adult = no
+						is_alive = yes
+						NOT = { trait = incapable }
+						has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+
+						has_opinion_modifier = {
+							 who = PREV
+							 modifier = opinion_mod_char_friend_of_opposite_sex
+						}
+					}
+					character_event = {
+						id = OPG.2147
+					}
+				}
+
+				break = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTCa_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# C. 빈 방으로 간다                                                    #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			is_exist_friend_of_opposite_sex_trigger = no
+		}
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2143
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2142
+
+		#----------------------------------------------------------------------#
+		# D. 1층으로 내려간다.                                                 #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2101
+				}
+			}
+		}
+	}
+}
+
+## 다락층의 빈 방 (2143~2144) ##
+
+character_event = {
+
+	id = OPG.2143
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2144
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2144
+	desc = EVTDESC_OPG_2144
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		## D. 밖으로 나가기 #################################################
+
+		name = EVTOPTD_OPG_2144
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2141
+				}
+			}
+		}
+	}
+}
+
+## 휘핑 보이의 방 (2145~2146) ##
+
+character_event = {
+
+	id = OPG.2145
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2146
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2146
+	desc = {
+		text = EVTDESC_OPG_2146_1
+		trigger = {
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2146_2
+		trigger = {
+			is_adult = no
+		}
+	}
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+
+	is_triggered_only = yes
+
+	option = {
+		## D. 밖으로 나가기 #################################################
+
+		name = EVTOPTD_OPG_2146
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2141
+				}
+			}
+		}
+	}
+}
+
+## 특별한 친구의 방 (2147~2152) ##
+
+character_event = {
+
+	id = OPG.2147
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2148
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2148
+
+	#--------------------------------------------------------------------------#
+	# 못 만난다 : 10세 이후 아직 "두 사람의 거리" 이벤트가 발생하지 않은 경우  #
+	#             또는 현재 친구 캐릭터가 다른 이벤트를 진행중인 경우          #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2148_1
+		trigger = {
+			is_adult = yes
+			OR = {
+				AND = {
+					NOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+					event_target:mod_event_target_orphan = { age = 10 }
+				}
+				has_npc_is_pending_certain_event_flag_trigger = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2148_2
+		trigger = {
+			is_adult = no
+			OR = {
+				AND = {
+					NOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+					event_target:mod_event_target_orphan = { age = 10 }
+				}
+				has_npc_is_pending_certain_event_flag_trigger = yes
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 만난다 (10세 이전)                                                       #
+	# 10세 이전인 경우 플레이어는 최대 12~13세이므로, 미성년 대화만 들어간다.   #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2148_4
+		trigger = {
+			#is_adult = no
+			event_target:mod_event_target_orphan = {
+				NOT = { age = 10 }
+				has_npc_is_pending_certain_event_flag_trigger = no
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 만난다 ("두 사람의 거리" 이벤트 이후, 약혼하지 않는 선택)                #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2148_5
+		trigger = {
+			is_adult = yes
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2148_6
+		trigger = {
+			is_adult = no
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = no
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 만난다 ("두 사람의 거리" 이벤트 이후, 약혼했다.)                         #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2148_7
+		trigger = {
+			is_adult = yes
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2148_8
+		trigger = {
+			is_adult = no
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = yes
+			}
+		}
+	}
+
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+
+	is_triggered_only = yes
+
+	option = {
+		## A. 함께 시간을 보낸다 ###############################################
+
+		name = EVTOPTA_OPG_2148
+		trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						NOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+						event_target:mod_event_target_orphan = { age = 10 }
+					}
+					has_npc_is_pending_certain_event_flag_trigger = yes
+				}
+			}
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_meet_friend_of_opposite_sex }
+		}
+
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_meet_friend_of_opposite_sex
+				duration = 7
+				hidden = no
+			}		
+		}
+
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2149
+				}
+			}
+		}
+	}
+
+	option = {
+		## D. 밖으로 나가기 ####################################################
+
+		name = EVTOPTD_OPG_2148
+		hidden_tooltip = {
+
+			if = {
+				limit = {
+					event_target:mod_event_target_orphan = {
+						has_character_flag = mod_event_check_flag_meet_directly
+					}
+				}
+
+				event_target:mod_event_target_orphan = {
+					clr_character_flag = mod_event_check_flag_meet_directly
+				}
+
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_player
+
+				ROOT = {
+					clr_main_decision_event_flag_effect = yes
+				}
+
+				break = yes
+			}
+
+			if = {
+				limit = {
+					event_target:mod_event_target_orphan = {
+						NOT = { has_character_flag = mod_event_check_flag_meet_directly }
+					}
+				}
+
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_player
+
+				ROOT = {
+					character_event = {
+						id = OPG.2141
+					}
+				}
+
+				break = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2149
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 약혼 이벤트가 발생한 이후에는 특수 커뮤니케이션으로 넘어갈 수 있다.  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+					is_betrothed = yes
+				}
+				ROOT = {
+					has_npc_is_pending_certain_event_flag_trigger = no
+					is_betrothed = yes
+				}
+			}
+
+			#--------------------------------------------------------------#
+			# 특수 커뮤니케이션                                            #
+			#--------------------------------------------------------------#
+
+			random_list = {
+				15 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { trait = fair }
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { religion_group = muslim }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { 
+							OR = {
+								trait = chaste
+								trait = lustful
+							}
+						}
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				15 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { 
+							NOT = { trait = haughty }
+							NOT = { has_character_flag = was_haughty }
+						}
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				15 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { 
+							NOT = { trait = rowdy }
+							NOT = { has_character_flag = was_rowdy }
+						}
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				15 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { 
+							OR = {
+								trait = affectionate
+								has_character_flag = was_affectionate
+							}
+						}
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				15 = {
+					modifier = {
+						factor = 0
+						ROOT = { is_female = no }
+					}
+					modifier = {
+						factor = 0
+						ROOT = { 
+							OR = {
+								trait = conscientious
+								has_character_flag = was_conscientious
+							}
+						}
+					}
+
+					set_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.2151
+						}
+					}
+
+					break = yes
+				}
+				95 = {
+					# 발생하지 않는다.
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기까지 왔다면 일반 커뮤니케이션                                    #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2150
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2150
+
+	#--------------------------------------------------------------------------#
+	# 10세 이전인 경우 플레이어는 최대 12~13세이므로, 미성년 대화만 들어간다.  #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2150_4
+		trigger = {
+			#is_adult = no
+			event_target:mod_event_target_orphan = {
+				NOT = { age = 10 }
+				has_npc_is_pending_certain_event_flag_trigger = no
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	#"두 사람의 거리" 이벤트 이후, 약혼하지 않는 선택                          #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2150_5
+		trigger = {
+			is_adult = yes
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2150_6
+		trigger = {
+			is_adult = no
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = no
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# "두 사람의 거리" 이벤트 이후, 약혼했다.                                  #
+	#--------------------------------------------------------------------------#
+
+	desc = {
+		text = EVTDESC_OPG_2150_7
+		trigger = {
+			is_adult = yes
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2150_8
+		trigger = {
+			is_adult = no
+			has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+			event_target:mod_event_target_orphan = {
+				age = 10
+				has_npc_is_pending_certain_event_flag_trigger = no
+				is_betrothed = yes
+			}
+		}
+	}
+
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+
+	is_triggered_only = yes
+
+	option = {
+		## D. 대화를 마친다 ####################################################
+
+		name = EVTOPTD_OPG_2150
+		event_target:mod_event_target_orphan = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_meet_friend_of_opposite_sex
+			}
+
+			if = {
+				limit = {
+					age = 10
+				}
+
+				random_list = {
+					50 = {
+						
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							diplomacy = 20
+						}
+						change_diplomacy = 1
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							martial = 20
+						}
+						change_martial = 1
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							stewardship = 20
+						}
+						change_stewardship = 1
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							intrigue = 20
+						}
+						change_intrigue = 1
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							learning = 20
+						}
+						change_learning = 1
+					}
+				} 
+			}
+
+			hidden_tooltip = {
+
+				if = {
+					limit = {
+						ROOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+						is_betrothed = yes
+						NOT = { fertility = 1.01 }
+					}
+					fertility = 0.02
+				}
+
+				if = {
+					limit = {
+						ROOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+						is_betrothed = yes
+						NOT = { health = 6.1 }
+					}
+					health = 0.05
+				}
+
+				character_event = {
+					id = OPG.2152
+				}
+			}
+		}
+		ROOT = {
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+						is_betrothed = yes
+						NOT = { fertility = 1.01 }
+					}
+					fertility = 0.02
+				}
+
+				if = {
+					limit = {
+						has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+						is_betrothed = yes
+						NOT = { health = 6.1 }
+					}
+					health = 0.05
+				}
+			}
+
+			opinion = {
+				who = event_target:mod_event_target_orphan
+				modifier = opinion_mod_char_meet_friend_of_opposite_sex
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2151
+
+	desc = {
+		text = EVTDESC_OPG_2151_1
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_OPG_2151_2
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_OPG_2151_3
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_OPG_2151_4
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_OPG_2151_5
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_OPG_2151_6
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+			}
+		}
+	}
+
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# Communication 1. Fair                                                    #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTAa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+			}
+		}
+		
+		event_target:mod_event_target_orphan = {
+			random = {
+				chance = 55
+				if = {
+					limit = {
+						trait = ugly
+					}
+					remove_trait = ugly
+				}
+				add_trait = fair
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTAb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			prestige = 5
+			
+			if = {
+				limit = {
+					NOT = { diplomacy = 20 }
+				}
+				change_diplomacy = 1
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_1
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+
+	#--------------------------------------------------------------------------#
+	# Communication 2. Lustful/Chaste                                          #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTBa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			if = {
+				limit = {
+					trait = lustful
+				}
+				remove_trait = lustful
+			}
+			add_trait = chaste
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTBb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			if = {
+				limit = {
+					trait = chaste
+				}
+				remove_trait = chaste
+			}
+			add_trait = lustful
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_2
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+
+	#--------------------------------------------------------------------------#
+	# Communication 3. Haughty                                                 #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTCa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			if = {
+				limit = {
+					trait = haughty
+				}
+				remove_trait = haughty
+			}
+
+			if = {
+				limit = {
+					has_character_flag = was_haughty
+				}
+				clr_character_flag = was_haughty
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTCb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			prestige = 5
+			
+			if = {
+				limit = {
+					NOT = { martial = 20 }
+				}
+				change_martial = 1
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_3
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# Communication 4. Rowdy                                                   #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTDa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			if = {
+				limit = {
+					trait = rowdy
+				}
+				remove_trait = rowdy
+			}
+
+			if = {
+				limit = {
+					has_character_flag = was_rowdy
+				}
+				clr_character_flag = was_rowdy
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTDb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			prestige = 5
+			
+			if = {
+				limit = {
+					NOT = { martial = 20 }
+				}
+				change_martial = 1
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_4
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# Communication 5. Not Affectionate                                        #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTEa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			add_trait = affectionate
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTEb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			prestige = 5
+			
+			if = {
+				limit = {
+					NOT = { intrigue = 20 }
+				}
+				change_intrigue = 1
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_5
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# Communication 6. Not Conscientious                                       #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTFa_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			add_trait = conscientious
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTFb_OPG_2151
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+
+			prestige = 5
+			
+			if = {
+				limit = {
+					NOT = { diplomacy = 20 }
+				}
+				change_diplomacy = 1
+			}
+
+			hidden_tooltip = {
+				clr_character_flag = mod_event_check_flag_friend_of_opposite_sex_special_communication_6
+				character_event = {
+					id = OPG.2152
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2152
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2148
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2153
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2147
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아와 대화 중 : 문화나 종교가 플레이어와 다른 경우 (2161~)                  #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2161
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2162
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2162
+	desc = EVTDESC_OPG_2162
+	picture = GFX_evt_nemo_play_with_orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2162
+
+		#----------------------------------------------------------------------#
+		# 30% 확률로 고아가 개종. 70%의 확률로 우호도 하락.                    #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			30 = {
+				FROM = {
+					religion = ROOT
+				}
+			}
+
+			## opinion_mad_at_guardian : 원본을 재사용
+
+			70 = {
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mad_at_guardian
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 실행했으므로 쿨 타임 모디파이어를 붙인다.                            #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+				duration = 365
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 캐릭터에게 이벤트 실행중 플래그를 제거한다.                       #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이건 별도의 실행 창이므로 어디로 가지 않고 그냥 끄면 된다.           #
+		#----------------------------------------------------------------------#
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2162
+
+		#----------------------------------------------------------------------#
+		# 실행했으므로 쿨 타임 모디파이어를 붙인다.                            #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+				duration = 365
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 캐릭터에게 이벤트 실행중 플래그를 제거한다.                       #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이건 별도의 실행 창이므로 어디로 가지 않고 그냥 끄면 된다.           #
+		#----------------------------------------------------------------------#
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2162
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 개종한다.                                                 #
+		#----------------------------------------------------------------------#
+
+		religion = FROM
+
+		#----------------------------------------------------------------------#
+		# 플레이어는 이 종교로 개종할 것을 모두에게 권유한다.                  #
+		#----------------------------------------------------------------------#
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_PLAYER_PERSUADE_ALL_TO_CONVERT_NEW_RELIGION
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2163
+					days = 1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 실행했으므로 쿨 타임 모디파이어를 붙인다.                            #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_talk_to_orphans
+				duration = 365
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 캐릭터에게 이벤트 실행중 플래그를 제거한다.                       #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이건 별도의 실행 창이므로 어디로 가지 않고 그냥 끄면 된다.           #
+		#----------------------------------------------------------------------#
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2163
+	desc = EVTDESC_OPG_2163
+	picture = GFX_evt_nemo_common_letter
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2163
+
+		#----------------------------------------------------------------------#
+		# 가신들에게 편지를 보냄 (백합 기사단장이 있는 경우 그녀에게는 X)      #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			limit = {
+				NOT = { religion = ROOT }
+				primary_title = {
+					NOT = { title = d_female_knights_band }
+				}
+			}
+			character_event = {
+				id = OPG.2164
+				days = 1
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 봉신들에게 편지를 보냄 (백합 기사단장이 있는 경우 그녀에게는 X)      #
+		#----------------------------------------------------------------------#
+
+		any_vassal = {
+			limit = {
+				NOT = { religion = ROOT }
+				primary_title = {
+					NOT = { title = d_female_knights_band }
+				}
+				host = {
+					NOT = { character = ROOT }
+				}
+			}
+			character_event = {
+				id = OPG.2164
+				days = 2
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2164
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# ROOT : Courtier / Vassal, FROM : Player
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				trait = content
+			}
+			modifier = {
+				factor = 1.3
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.1
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.2
+				opinion = { who = FROM value = 25 }
+			}
+			modifier = {
+				factor = 2.5
+				is_consort = FROM
+			}
+			modifier = {
+				factor = 2.0
+				spouse = {
+					character = FROM
+				}
+			}
+			modifier = {
+				factor = 2.5
+				is_adult = no
+				guardian = {
+					religion = FROM
+				}
+			}
+			modifier = {
+				factor = 2.5
+				FROM = {
+					current_heir = {
+						character = ROOT
+					}
+				}
+			}
+		}
+		ROOT = {
+			religion = FROM
+		}
+		FROM = {
+			hidden_tooltip = {
+				letter_event = {
+					id = OPG.2165
+					days = 5
+					random = 8
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.3
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.1
+				trait = proud
+			}
+			modifier = {
+				factor = 1.3
+				trait = theologian
+			}
+			modifier = {
+				factor = 1.3
+				is_landed = yes
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = -50 }
+			}
+			modifier = {
+				factor = 1.2
+				opinion = { who = FROM value = -25 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { trait = zealous }
+				is_orphan_character_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_dlc = "Zeus" }
+				is_adult = no
+				guardian = {
+					character = FROM
+				}
+			}
+			modifier = {
+				factor = 0
+				has_dlc = "Zeus"
+				is_adult = no
+				educator = {
+					character = FROM
+				}
+			}
+		}
+		FROM = {
+			hidden_tooltip = {
+				letter_event = {
+					id = OPG.2166
+					days = 5
+					random = 8
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2165
+	desc = EVTDESC_OPG_2165
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_OPG_2165
+		ROOT = {
+			piety = 5
+			prestige = 5
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2166
+	desc = EVTDESC_OPG_2166
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_OPG_2166
+		ROOT = {
+			piety = -5
+			prestige = -5
+		}
+		FROM = {
+			opinion = {
+				modifier = opinion_mod_char_reject_to_convert_religion
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 인근 프로빈스의 전쟁 : 보모의 종군 구출 이벤트 (2201~2205) / 트리거 이벤트   #
+#------------------------------------------------------------------------------#
+
+## 2201~2203 : 보모가 전쟁터로 떠날 것을 청원
+
+character_event = {
+
+	id = OPG.2201
+	hide_window = yes
+
+	ai = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		ai = no
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 전쟁중이 아닐 것, 종군중도 아닐 것                                   #
+		#----------------------------------------------------------------------#
+
+		in_command = no
+		war = no
+
+		#----------------------------------------------------------------------#
+		# 지출할 반년치 수입에 상당하는 금액이 있을 것                         #
+		#----------------------------------------------------------------------#
+
+		scaled_wealth = 0.5
+
+		#----------------------------------------------------------------------#
+		# 보모가 있을 것 + Kind, Brave 트레잇, 현재 종군중이 아니며 지난 종군  #
+		# 후에 5년이 지났을 것                                                 #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphanage_nurse_trigger = yes
+			OR = {
+				trait = kind
+				trait = charitable
+			}
+			trait = brave
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_mission_to_battlefield }
+			NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+			has_npc_is_pending_certain_event_flag_trigger = no
+		}
+
+		#----------------------------------------------------------------------#
+		# 프로빈스 조건 : 1) 이웃 프로빈스가 전쟁 중이거나,                    #
+		# 2) 나의 수도와 400 거리 이내에 수도가 있는 군주가 전쟁 중인 경우     #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			any_realm_province = {
+				any_neighbor_province = {
+					holder_scope = {
+						war = yes
+						#in_command = yes
+					}
+				}
+			}
+			any_playable_ruler = {
+				NOT = { character = ROOT }
+				capital_scope = {
+					ROOT = {
+						capital_scope = {
+							NOT = {
+								distance = {
+									where = PREVPREV
+									value = 400
+								}
+							}
+						}
+					}
+				}
+				war = yes
+				#in_command = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+				OR = {
+					trait = kind
+					trait = charitable
+				}
+				trait = brave
+				NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_mission_to_battlefield }
+				NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+			}
+			character_event = {
+				id = OPG.2202
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2202
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = OPG.2203
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2203
+	desc = EVTDESC_OPG_2203
+	picture = GFX_evt_nemo_orphanage_nurse_in_battlefield
+
+	## Root : Player, From : Orphanage Manager #############################
+
+	is_triggered_only = yes
+
+	option = {
+
+		## A. Project is applied. ######################################
+
+		name = EVTOPTA_OPG_2203
+		ROOT = {
+			scaled_wealth = -0.5
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_APPLY_MISSION_TO_BATTLEFIELD_ORPHAN
+			}
+		}
+		FROM = {
+			set_character_flag = mod_character_event_flag_mission_to_battlefield
+			
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.2204
+					days = 180
+				}
+			}
+		}
+	}
+
+	option = {
+
+		## B. Project is rejected. #####################################
+
+		name = EVTOPTB_OPG_2203
+		FROM = {
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = mod_event_interval_notification_flag_modifier_mission_to_battlefield
+					duration = 1825
+				}
+			}
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_REJECT_MISSION_TO_BATTLEFIELD_ORPHAN
+			}
+		}
+	}
+}
+
+
+## 2204~2205 : 보모가 궁정으로 돌아옴
+
+character_event = {
+
+	id = OPG.2204
+	hide_window = yes
+
+	## Root : Orphanage Manager (Triggered from 2203), From : Player #######
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		ROOT = {
+			#------------------------------------------------------------------#
+			# 종군중을 나타내는 캐릭터 플래그를 제거                           #
+			#------------------------------------------------------------------#
+
+			clr_character_flag = mod_character_event_flag_mission_to_battlefield
+
+			#------------------------------------------------------------------#
+			# 5년의 쿨 타임을 위한 캐릭터 모디파이어 추가                      #
+			#------------------------------------------------------------------#
+
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_mission_to_battlefield
+				duration = 1825
+			}
+		}
+		FROM = {
+			character_event = {
+				id = OPG.2205
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2205
+	desc = EVTDESC_OPG_2205
+	picture = GFX_evt_throne_room	# Original
+
+	## Root : Player, From : Orphanage Manager #############################
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2205
+		ROOT = {
+			piety = 610
+			prestige = 500
+
+			#------------------------------------------------------------------#
+			# 위협 수치 하락 모디파이어에 -25 가 추가됨                        #
+			# (이 부분의 코드는 좀 더 연구가 필요. localisaton 이 안 먹음)     #
+			#------------------------------------------------------------------#
+
+			change_infamy = {
+				value = -25.0
+				localisation = CUSTOM_TOOLTIP_SURVIVOR_OF_ORPHAN
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 3년간 모든 독립군주에게 우호도 버프를 받음                           #
+		#----------------------------------------------------------------------#
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_ALL_INDEPENDENT_RULER_PRAISE_YOU
+			hidden_tooltip = {
+				any_independent_ruler = {
+					opinion = {
+						modifier = opinion_mod_char_rescuer_on_battlefield
+						who = ROOT
+						years = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+## 2207~2208 : 보모가 전쟁터에서 사망함
+
+character_event = {
+
+	id = OPG.2207
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		random_list = {
+			2 = {
+				modifier = {
+					factor = 1.5
+					age = 30
+				}
+				modifier = {
+					factor = 1.5
+					age = 40
+				}
+				modifier = {
+					factor = 1.8
+					age = 50
+				}
+				modifier = {
+					factor = 2.0
+					age = 60
+				}
+				modifier = {
+					factor = 2.0
+					age = 70
+				}
+				character_event = {
+					id = OPG.2208
+				}
+			}
+			98 = {
+
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.2208
+	desc = EVTDESC_OPG_2208
+	picture = GFX_evt_nemo_dead
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2208
+
+		#----------------------------------------------------------------------#
+		# 해당 가신/봉신이 자살한다.                                           #
+		#----------------------------------------------------------------------#
+
+		FROMFROM = {
+			death = {
+				death_reason = death_murder
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 입양 해금 (2211) / 트리거 이벤트                                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2211
+	desc = EVTDESC_OPG_2211
+	picture = GFX_evt_nemo_play_with_orphan
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 성인 플레이어 확인                                       #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 4 필요                                                   #
+		#----------------------------------------------------------------------#
+
+		has_orphanage_level_4_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 수도에 있어야 함                                       #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 플레이어와 개인적으로 대화한 고아가 존재해야 함                      #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = opinion_mod_made_a_good_relation
+			}
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 가문 입양 해금이 안 된 상태여야 함                                   #     
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_global_flag = MOD_NEMO_OPG_EVENT_02
+			has_global_flag = MOD_NEMO_OPG_EVENT_03
+			has_global_flag = MOD_NEMO_OPG_EVENT_04
+			has_global_flag = MOD_NEMO_OPG_EVENT_05
+			has_global_flag = MOD_NEMO_OPG_EVENT_06
+			has_global_flag = MOD_NEMO_OPG_EVENT_07
+			has_global_flag = MOD_NEMO_OPG_EVENT_08
+			has_global_flag = MOD_NEMO_OPG_EVENT_09
+		}
+		NOT = { has_global_flag = MOD_NEMO_OPG_ADOPT_ORPHAN_ACTIVATED }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = EVTOPTA_OPG_2211
+		ROOT = {
+			hidden_tooltip = {
+				set_global_flag = MOD_NEMO_OPG_ADOPT_ORPHAN_ACTIVATED
+			}
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_ADOPT_ORPHAN_IS_ACTIVATED
+			}
+		}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,4976 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 1000~1099
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-04-15
+
+namespace = OPG
+
+#==============================================================================#
+# 고아 발견 이벤트                                                             #
+# 각종 고아 발견 관련 이벤트들은 이 곳에서 처리한다.                           #
+#==============================================================================#
+
+
+#------------------------------------------------------------------------------#
+# 첫 고아 발견 이벤트의 발생 (OPG.1001~1004) / 트리거 이벤트                   #
+# 첫 고아 이벤트가 발생해야 고아가 궁정에 들어오고, 고아원 해금이 가능하다.    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1001
+	hide_window = yes
+
+	ai = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 모드 활성화 이후 최소 365일이 지났을 것                              #
+		#----------------------------------------------------------------------#
+
+		had_global_flag = { flag = MOD_NEMO_OPG_SETUP_OK days = 365 }
+
+		#----------------------------------------------------------------------#
+		# 유목정에서 강제 활성화한 경우에 고아가 나타나지 않도록 한다.         #
+		#----------------------------------------------------------------------#
+		
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+			is_republic = yes
+		}
+		
+		#----------------------------------------------------------------------#
+		# 1) 아직 첫 고아 발생 이벤트가 발생하지 않았거나,                     #
+		# 2) 발생했지만 고아가 한 명도 궁정 가신으로 존재하지 않는 경우        #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			AND = {
+				has_character_flag = mod_event_chain_flag_rescue_first_orphan
+				NOT = {
+					any_courtier = {
+						is_adult = no
+						trait = rescued_orphan_by_ai
+					}
+				}
+			}
+			NOT = { has_character_flag = mod_event_chain_flag_rescue_first_orphan }
+		}
+
+		#----------------------------------------------------------------------#
+		# 과거 첫 고아 이벤트가 발생했을 때 고아를 구출하지 않았다면, 그로부터 #
+		# 10년 동안은 다시 이 이벤트가 발생하지 않는다.                        #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_modifier = mod_event_chain_flag_not_rescue_first_orphan }
+
+		#----------------------------------------------------------------------#
+		# 이미 고아원이 해금된 경우에는 이 이벤트는 발생할 일이 없다.          #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_EVENT_01
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+
+		modifier = {
+			factor = 4
+			trait = impaler
+		}
+		modifier = {
+			factor = 4
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.5
+			trait = kind
+		}
+		modifier = {
+			factor = 0.5
+			trait = charitable
+		}
+	}
+
+	immediate = {
+		character_event = {
+			id = OPG.1002
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1002
+	hide_window = yes
+
+	ai = no
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 첫 고아 캐릭터가 생성된다 : 성별은 남녀 반반 확률                    #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			50 = {
+				ROOT = {
+					create_character = {
+						random_traits = yes
+						dynasty = NONE
+						female = no
+						age = 0
+						trait = rescued_orphan_by_ai
+						attributes = {
+							learning = 1
+							martial = 1
+							diplomacy = 1
+							intrigue = 1
+							stewardship = 1
+						}
+					}
+					new_character = {
+						character_event = {
+							id = OPG.1003
+						}
+					}
+				}
+			}
+			50 = {
+				ROOT = {
+					create_character = {
+						random_traits = yes
+						dynasty = NONE
+						female = yes
+						age = 0
+						trait = rescued_orphan_by_ai
+						attributes = {
+							learning = 1
+							martial = 1
+							diplomacy = 1
+							intrigue = 1
+							stewardship = 1
+						}
+					}
+					new_character = {
+						character_event = {
+							id = OPG.1003
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1003
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 생성된 고아 캐릭터 (ROOT)                                                #
+	# 플레이어 (FROM)                                                          #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 이벤트 스코프를 생성한 후 다시 플레이어에게 이벤트를 실행시킨다.     #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.1004
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1004
+	desc = EVTDESC_OPG_1004
+	picture = GFX_evt_nemo_rescued_orphan
+
+	#--------------------------------------------------------------------------#
+	# 플레이어 : mod_event_target_player (ROOT)                                #
+	# 고아     : mod_event_target_orphan                                       #
+	#                                                                          #
+	# 플레이어가 (생성된) 고아를 발견 : 고아를 구출할지 말지를 선택한다.       #
+	#--------------------------------------------------------------------------#
+
+	is_triggered_only = yes
+
+	## A. 고아를 구출할 것을 선택 ##############################################
+
+	option = {
+		name = EVTOPTA_OPG_1004
+
+		trigger = {
+			
+			#------------------------------------------------------------------#
+			# 조건 : 최소한 금화 1 은 있어야 한다.                             #
+			#------------------------------------------------------------------#
+
+			wealth = 1
+		}
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 고아를 구출했음을 확인하는 캐릭터 플래그를 박는다.               #
+			# (이 캐릭터 플래그는 고아원이 해금되면 해제된다.)                 #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_chain_flag_rescue_first_orphan
+				}
+				clr_character_flag = mod_event_chain_flag_rescue_first_orphan
+			}
+
+			set_character_flag = mod_event_chain_flag_rescue_first_orphan
+
+			piety = 5
+			prestige = 5
+			wealth = -1
+
+			#------------------------------------------------------------------#
+			# 80% 확률로 Kind 트레잇을 얻는다. (Cruel, Envious 가 있다면 상실) #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					NOT = { trait = kind }
+				}
+				random = {
+					chance = 80
+					if = {
+						limit = {
+							trait = cruel
+						}
+						remove_trait = cruel
+					}
+					if = {
+						limit = {
+							trait = envious
+						}
+						remove_trait = envious
+					}
+					add_trait = kind
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아에게 트레잇 (고아 트레잇은 캐릭터 생성시 이미 붙어 있다) 이외의  #
+		# 각종 설정들을 붙인다.                                                #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+
+				set_orphan_character_relative_opinion_modifier_effect = yes
+
+				#--------------------------------------------------------------#
+				# 첫 고아는 Piety 5, Health +0.5 의 어드밴티지를 받는다.       #
+				#--------------------------------------------------------------#
+
+				piety = 5
+				health = 0.5
+			}		
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료 : 이벤트 스코프 삭제                                     #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	## B. 고아를 구출하지 않을 것을 선택 #######################################
+
+	option = {
+		name = EVTOPTB_OPG_1004
+
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 고아를 구출하지 않았음을 확인하는 캐릭터 플래그를 박는다.        #
+			# (캐릭터 플래그 대신 캐릭터 모디파이어의 형태로 박는다. 10년의 유 #
+			# 효 기간을 두기 위해서)                                           #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = mod_event_chain_flag_not_rescue_first_orphan
+					duration = 3650
+					hidden = yes
+				}			
+			}
+
+			piety = -5
+			prestige = -5
+
+			#------------------------------------------------------------------#
+			# 80% 확률로 Cruel 트레잇을 얻는다. (Kind 가 있다면 상실)          #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					NOT = { trait = cruel }
+				}
+				random = {
+					chance = 80
+					if = {
+						limit = {
+							trait = kind
+						}
+						remove_trait = kind
+					}
+					add_trait = cruel
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 구해지지 않은 고아는 병약으로 사망                                   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			health = -8
+			add_trait = infirm
+			death = {
+				death_reason = death_trait
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료 : 이벤트 스코프 삭제                                     #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# AI 가 고아를 발견하여 고아원에 데려오다 (1011~1014) / 트리거 이벤트          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1011
+	hide_window = yes
+	
+	ai = no
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 정책 : 고아가 발견되지 않도록 설정되어 있지 않을 것                  #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_global_flag = mod_orphanage_policy_patrol_level_0 }
+
+		#----------------------------------------------------------------------#
+		# 숫자 : 고아원 내 최대 고아 숫자를 넘기지 않도록 할 것                #
+		#----------------------------------------------------------------------#
+
+		is_max_orphan_in_orphanage = no
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 한 명 이상의 가신이 궁정에 있을 것                                   #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_common_adult_npc_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 730
+
+		modifier = {
+			factor = 0
+			has_global_flag = mod_orphanage_policy_patrol_level_0
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = mod_orphanage_policy_patrol_level_1
+		}
+		modifier = {
+			factor = 6
+			has_global_flag = mod_orphanage_policy_patrol_level_2
+		}
+		modifier = {
+			factor = 4
+			has_global_flag = mod_orphanage_policy_patrol_level_3
+		}
+		modifier = {
+			factor = 2
+			has_global_flag = mod_orphanage_policy_patrol_level_4
+		}
+		#modifier = {
+		#	factor = 1
+		#	has_global_flag = mod_orphanage_policy_patrol_level_5
+		#}
+		modifier = {
+			factor = 0.8
+			has_global_flag = mod_orphanage_policy_patrol_level_6
+		}
+		modifier = {
+			factor = 0.6
+			has_global_flag = mod_orphanage_policy_patrol_level_7
+		}
+		modifier = {
+			factor = 0.4
+			has_global_flag = mod_orphanage_policy_patrol_level_8
+		}
+		modifier = {
+			factor = 0.2
+			has_global_flag = mod_orphanage_policy_patrol_level_9
+		}
+		modifier = {
+			factor = 0.1
+			has_global_flag = mod_orphanage_policy_patrol_level_10
+		}
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_common_adult_npc_trigger = yes
+			}
+			character_event = {
+				id = OPG.1012
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1012
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 성별 결정 (A,B): 범위 보통(neutral) 선택 시 1:1 확률.                    #
+	#                  범위 외부(outer) 선택 시 3:1 비율로 남자가 많음.        #
+	#                  범위 내부(inner) 선택 시 3:1 비율로 여자가 많음.        #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_global_flag = mod_orphanage_policy_location_outer
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = mod_orphanage_policy_location_inner
+			}
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		capital_scope = {
+			FROM = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 0
+					trait = rescued_orphan_by_ai
+					race = THIS
+					culture = THIS
+					religion = THIS
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+				new_character = {
+					character_event = {
+						id = OPG.1013
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_global_flag = mod_orphanage_policy_location_inner
+			}
+			modifier = {
+				factor = 0.5
+				has_global_flag = mod_orphanage_policy_location_outer
+			}
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		capital_scope = {
+			FROM = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 0
+					trait = rescued_orphan_by_ai
+					race = THIS
+					culture = THIS
+					religion = THIS
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+				new_character = {
+					character_event = {
+						id = OPG.1013
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1013
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = mod_event_target_orphan
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1014
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1014
+	desc = EVTDESC_OPG_1014
+	picture = GFX_evt_nemo_rescued_orphan
+
+	# 플레이어 : mod_event_target_player (ROOT)
+	# 고아     : mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1014
+		ROOT = {
+			piety = 1
+			prestige = 1
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_orphan_character_relative_opinion_modifier_effect = yes
+				piety = 2
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 플레이어가 산책 중 고아를 발견하다 (1021~1025) / 연결 이벤트                 #
+# * WLK 모듈 연동                                                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1021
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 만약 아직 고아원이 없는 상태에서 여기로 왔다면 WLK.1203 로 되돌린다. #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = MOD_NEMO_OPG_EVENT_01
+					has_global_flag = MOD_NEMO_OPG_EVENT_02
+					has_building_orphanage_trigger = no
+				}
+			}
+			character_event = {
+				id = WLK.1203
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 산책 중 고아를 발견하는 것은 숫자의 제한을 받지 않는다.   #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.1022
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.1022
+	desc = EVTDESC_OPG_1022
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	## A. 남자 아이를 구출했다.
+
+	option = {
+		name = EVTOPTA_OPG_1022
+		trigger = {
+			ROOT = {
+				scaled_wealth = 0.08
+				has_building_orphanage_trigger = yes
+			}
+		}
+		
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = no
+			religion = ROOT
+			culture = ROOT
+			age = 0
+			trait = rescued_orphan_by_player
+			attributes = {
+				learning = 3
+				martial = 3
+				diplomacy = 3
+				intrigue = 3
+				stewardship = 3
+			}
+		}
+		new_character = {
+			character_event = {
+				id = OPG.1023
+			}
+		}
+	}
+
+	## B. 여자 아이를 구출했다.
+
+	option = {
+		name = EVTOPTB_OPG_1022
+		trigger = {
+			ROOT = {
+				scaled_wealth = 0.08
+				has_building_orphanage_trigger = yes
+			}
+		}
+		
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = yes
+			age = 0
+			religion = ROOT
+			culture = ROOT
+			trait = rescued_orphan_by_player
+			attributes = {
+				learning = 3
+				martial = 3
+				diplomacy = 3
+				intrigue = 3
+				stewardship = 3
+			}
+		}
+		new_character = {
+			character_event = {
+				id = OPG.1023
+			}
+		}
+	}
+
+	## C. 사람이 아니다.
+
+	option = {
+		name = EVTOPTC_OPG_1022
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.1025
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1023
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	is_triggered_only = yes
+
+	# ROOT : Rescued Orphan, FROM : Player
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.1024
+			}
+		}
+	}
+}
+
+## 구출한 경우
+
+character_event = {
+
+	id = OPG.1024
+	desc = EVTDESC_OPG_1024
+	picture = GFX_evt_nemo_rescued_orphan
+
+	# 플레이어 : mod_event_target_player (ROOT)
+	# 고아     : mod_event_target_orphan
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 고아 발견시 쿨 타임은 180일이다.                          #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+				duration = 180
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1024
+
+		#----------------------------------------------------------------------#
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_orphan_character_relative_opinion_modifier_effect = yes
+				piety = 3
+			}
+
+			scaled_wealth = -0.08
+			piety = 1
+
+			#------------------------------------------------------------------#
+			# 이벤트 체인 종료 (산책 이벤트 중이므로 그쪽으로 이동해야 한다.   #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_player
+
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+## 새끼 고양이 (구출하지 않은 경우)
+
+character_event = {
+
+	id = OPG.1025
+	desc = EVTDESC_OPG_1025
+	picture = GFX_evt_nemo_kitten_in_the_bushes
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	# ROOT, FROM : Player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 일반 산책 이벤트의 쿨 타임은 3일이다.                                #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1025
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 이벤트 체인 종료 (산책 이벤트 중이므로 그쪽으로 이동해야 한다.   #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아원 보모가 전쟁터에서 고아를 구출하다 (1031~1035) / 트리거 이벤트         #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1031
+	hide_window = yes
+
+	ai = no
+
+	trigger = {
+		
+		#----------------------------------------------------------------------#
+		# 현재 고아원 보모가 종군 중인 경우                                    #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphanage_nurse_trigger = yes
+			has_character_flag = mod_character_event_flag_mission_to_battlefield
+		}
+
+		#----------------------------------------------------------------------#
+		# 숫자 : 고아원 내 최대 고아 숫자를 넘기지 않도록 할 것                #
+		#----------------------------------------------------------------------#
+
+		is_max_orphan_in_orphanage = no
+	}
+
+	mean_time_to_happen = {
+
+		#----------------------------------------------------------------------#
+		# 주. MTTH 가 7일로 되어 있지만, EVENT_PROCESS_OFFSET = 20 이 기본값이 #
+		#     므로 실제로는 20일에 한 번씩 실행된다.                           #
+		#----------------------------------------------------------------------#
+
+		days = 7
+	}
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+				has_character_flag = mod_character_event_flag_mission_to_battlefield
+			}
+			character_event = {
+				id = OPG.1032
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1032
+	hide_window = yes
+
+	# ROOT : Orphanage Nurse, FROM: Player
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생 시 고아를 구출할 확률은 75%                              #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			75 = {
+				save_event_target_as = mod_event_target_orphanage_nurse
+
+				character_event = {
+					id = OPG.1033
+				}
+			}
+			25 = {
+				clear_event_target = mod_event_target_player
+
+				FROM = {
+					piety = 1
+
+					#----------------------------------------------------------#
+					# 구출에 실패하는 경우 일정 확률에 따라서 보모가 사망할 수 #
+					# 있다.                                                    #
+					#----------------------------------------------------------#
+
+					character_event = {
+						id = OPG.2207
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1033
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# 플레이어    : mod_event_target_player 
+	# 고아원 보모 : mod_event_target_orphanage_nurse (ROOT)
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.6
+				has_global_flag = mod_orphanage_policy_location_outer
+			}
+		}
+
+		random_list = {
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 0
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 1
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 2
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 3
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 4
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 5
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 6
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 7
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 8
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 9
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 3
+						martial = 3
+						diplomacy = 3
+						intrigue = 3
+						stewardship = 3
+					}
+				}
+			}
+		}
+
+		new_character = {
+			character_event = {
+				id = OPG.1034
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.6
+				has_global_flag = mod_orphanage_policy_location_inner
+			}
+		}
+
+		random_list = {
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 0
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 1
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 2
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 0
+						martial = 0
+						diplomacy = 0
+						intrigue = 0
+						stewardship = 0
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 3
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 4
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 5
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 1
+						martial = 1
+						diplomacy = 1
+						intrigue = 1
+						stewardship = 1
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 6
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 7
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 8
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 2
+						martial = 2
+						diplomacy = 2
+						intrigue = 2
+						stewardship = 2
+					}
+				}
+			}
+			10 = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					age = 9
+					trait = rescued_orphan_by_ai
+					culture = random
+					attributes = {
+						learning = 3
+						martial = 3
+						diplomacy = 3
+						intrigue = 3
+						stewardship = 3
+					}
+				}
+			}
+		}
+
+		new_character = {
+			character_event = {
+				id = OPG.1034
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1034
+	hide_window = yes
+
+	# 플레이어    : mod_event_target_player 
+	# 고아        : mod_event_target_orphan (ROOT)
+	# 고아원 보모 : mod_event_target_orphanage_nurse
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+
+		#----------------------------------------------------------------------#
+		# 전쟁 고아는 별도로 표시를 해 둔다.                                   #
+		#----------------------------------------------------------------------#
+
+		set_character_flag = mod_event_character_flag_war_orphan
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1035
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1035
+	desc = EVTDESC_OPG_1035
+	picture = GFX_evt_nemo_orphan_rescued_on_battlefield
+
+	# 플레이어    : mod_event_target_player (ROOT)
+	# 고아        : mod_event_target_orphan (FROM)
+	# 고아원 보모 : mod_event_target_orphanage_nurse
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1035
+		event_target:mod_event_target_player = {
+			piety = 2
+			prestige = 2
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_orphan_character_relative_opinion_modifier_effect = yes
+				piety = 3
+			}
+		}
+
+		hidden_tooltip = {
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_nurse
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 가문의 Bastard 를 고아원에 맡기다 (1041~1045) / On-Actions 이벤트            #
+# * on_birth 에서 오므로, ROOT 는 태아이다.                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1041
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 건물 : 부의 주군이 플레이어이고, 고아원 건물이 존재할 것             #
+		#        (모계에서는 Bastard 가 나올 수가 없지)                        #
+		#----------------------------------------------------------------------#
+
+		father = {
+			is_ruler = yes
+			OR = {
+				AND = {
+	
+					#----------------------------------------------------------#
+					# 아버지가 플레이어이거나                                  #
+					#----------------------------------------------------------#
+
+					ai = no
+					OR = {
+						has_orphanage_level_1_trigger = yes
+						has_orphanage_level_2_trigger = yes
+						has_orphanage_level_3_trigger = yes
+						has_orphanage_level_4_trigger = yes
+					}
+				}
+				liege = {
+
+					#----------------------------------------------------------#
+					# 아버지의 주군이 플레이어이거나                           #
+					#----------------------------------------------------------#
+
+					ai = no
+					OR = {
+						has_orphanage_level_1_trigger = yes
+						has_orphanage_level_2_trigger = yes
+						has_orphanage_level_3_trigger = yes
+						has_orphanage_level_4_trigger = yes
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아가 Bastard 로 판정되었을 것                                      #
+		#----------------------------------------------------------------------#
+
+		was_conceived_a_bastard = yes
+		NOT = { real_father = { always = yes } } # There is no 'real_father' set, i.e. this is not a hidden, cuckoo bastard
+
+		#----------------------------------------------------------------------#
+		# 고아 자신의 주군이 플레이어일 것. (아니라면 모계의 보호를 받으니)    #
+		#----------------------------------------------------------------------#
+
+		liege = {
+			ai = no
+		}
+
+		#----------------------------------------------------------------------#
+		# Bastard 를 고아원에 맡기는 것은 숫자의 제한을 받지 않는다.           #
+		#----------------------------------------------------------------------#
+
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# Father 의 Bastard 결정이 days = 1 에 있으므로, 그것을 기다리기 위해  #
+		# day = 3 까지 결정을 미뤄둔다.                                        #
+		# (아버지가 인정하는 경우에는 고아원에 맡겨질 리가 없다.)              #
+		#----------------------------------------------------------------------#
+
+		father = {
+			character_event = {
+				id = OPG.1042
+				days = 3
+			}
+
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1042
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# ROOT : 태어난 아기의 아버지, FROM : 태어난 아기                          #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 여전히 트레잇이 Bastard 로 남아있는 경우 다음 이벤트를 실행한다.     #
+		# (즉, 적법한 서자로 인정받지 못한 경우에 다음의 선택가능성이 생긴다.  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					is_alive = yes
+					trait = bastard
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 체인에서 사용하기 위한 이벤트 타겟을 정의                        #
+			#------------------------------------------------------------------#
+
+			ROOT = {
+				save_event_target_as = mod_event_target_father
+			}
+			FROM = {
+				save_event_target_as = mod_event_target_bastard_baby
+			}
+
+			if = {
+				limit = {
+					ROOT = { ai = no }
+				}
+				ROOT = {
+
+					#----------------------------------------------------------#
+					# 이 경우는 Father = Player...                             #
+					#----------------------------------------------------------#
+
+					save_event_target_as = mod_event_target_player
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						liege = {
+							ai = no
+						}
+					}
+				}
+				ROOT = {
+					liege = {
+
+						#------------------------------------------------------#
+						# 이 경우는 Father / Player...                         #
+						#------------------------------------------------------#
+
+						save_event_target_as = mod_event_target_player
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 아버지가 선택할 수 있도록 이벤트를 실행한다.                     #
+			#------------------------------------------------------------------#
+
+			event_target:mod_event_target_father = {
+				character_event = {
+					id = OPG.1043
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 만약 아버지가 적법한 서자로 인정했다면, 위의 코드가 실행되지 않으므  #
+		# 로, 여기서 코드의 실행이 중단된다.                                   #
+		#----------------------------------------------------------------------#
+	}
+}
+
+character_event = {
+	id = OPG.1043
+	desc = {
+		text = EVTDESC_OPG_1043_1
+		trigger = {
+			## 아버지가 플레이어가 아님 ##
+			event_target:mod_event_target_player = {
+				NOT = { character = ROOT }
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1043_2
+		trigger = {
+			## 아버지가 플레이어 ##
+			event_target:mod_event_target_player = {
+				character = ROOT
+			}
+		}
+	}
+	picture = GFX_evt_birth
+	border = GFX_event_normal_frame_intrigue
+
+	# mod_event_target_player
+	# mod_event_target_bastard_baby
+	# mod_event_target_father (ROOT)
+	
+	is_triggered_only = yes
+	show_from_from = yes
+	
+	option = {
+		name = EVTOPTA_OPG_1043
+
+		#----------------------------------------------------------------------#
+		# A. 아기를 고아원에 맡기고 입단속을 시킨다.                           #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+		}
+
+		event_target:mod_event_target_bastard_baby = {
+			character_event = {
+				id = OPG.1044
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1043
+
+		#----------------------------------------------------------------------#
+		# B. 그래도 고아원에 맡긴다는 것은 있을 수 없다.                       #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+		}
+
+		piety = 5
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_bastard_baby
+		clear_event_target = mod_event_target_father
+	}
+}
+
+character_event = {
+
+	id = OPG.1044
+	hide_window = yes
+
+	# mod_event_target_player
+	# mod_event_target_bastard_baby (ROOT)
+	# mod_event_target_father
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 아버지가 플레이어가 아닌 경우                                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					event_target:mod_event_target_father = {
+						NOT = { character = PREV }
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# Bastard 트레잇을 지우고 고아 트레잇을 얻음                       #
+			#------------------------------------------------------------------#
+
+			remove_trait = bastard
+			add_trait = rescued_orphan_by_ai
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이후 이벤트의 가능성을 열어두기 위해서, 진짜 부모와의 연결을 #
+				# 만들어 둔다.                                                 #
+				#--------------------------------------------------------------#
+
+				father = {
+					ROOT = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_hidden_real_parent
+						}
+					}
+				}
+				mother = {
+					ROOT = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_hidden_real_parent
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 부모의 정보를 삭제                                           #
+				#--------------------------------------------------------------#
+
+				set_mother = 0
+				set_father = 0
+
+				#--------------------------------------------------------------#
+				# 이 고아들은 입양될 수 없음                                   #
+				#--------------------------------------------------------------#
+
+				set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+				set_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty
+
+				save_event_target_as = mod_event_target_orphan
+				clear_event_target = mod_event_target_bastard_baby
+			}
+			
+			#------------------------------------------------------------------#
+			# 가신/봉신의 경우 여기로부터 추가 이벤트가 이어진다.              #
+			#------------------------------------------------------------------#
+
+			random_list = {
+
+				#--------------------------------------------------------------#
+				# 고아원 앞에 버려진 아기가 누구의 아기인지 알 수 없다!        #
+				#--------------------------------------------------------------#
+
+				60 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.1046
+							days = 14
+							random = 10
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 고아원 앞에 버려진 아기가 누구의 아기인지 알아냈다!          #
+				#--------------------------------------------------------------#
+
+				40 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.1045
+							days = 14
+							random = 10
+						}
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 아버지가 플레이어인 경우                                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					event_target:mod_event_target_father = {
+						character = PREV
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# Bastard 트레잇을 지우고 고아 트레잇을 얻음                       #
+			#------------------------------------------------------------------#
+
+			remove_trait = bastard
+			add_trait = rescued_orphan_by_player
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이후 이벤트의 가능성을 열어두기 위해서, 진짜 부모와의 연결을 #
+				# 만들어 둔다.                                                 #
+				#--------------------------------------------------------------#
+
+				father = {
+					ROOT = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_hidden_real_parent
+						}
+					}
+				}
+				mother = {
+					ROOT = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_hidden_real_parent
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 부모의 정보를 삭제                                           #
+				#--------------------------------------------------------------#
+
+				set_mother = 0
+				set_father = 0
+
+				#--------------------------------------------------------------#
+				# 이 고아들은 입양될 수 없음                                   #
+				#--------------------------------------------------------------#
+
+				set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+				set_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty
+
+				save_event_target_as = mod_event_target_orphan
+				clear_event_target = mod_event_target_bastard_baby
+
+				#--------------------------------------------------------------#
+				# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.          #
+				#--------------------------------------------------------------#
+
+				set_orphan_character_relative_opinion_modifier_effect = yes
+
+				#--------------------------------------------------------------#
+				# 여기서 이벤트가 종료된다.                                    #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_player
+				clear_event_target = mod_event_target_father
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.1045
+	desc = EVTDESC_OPG_1045
+	picture = GFX_evt_nemo_rescued_orphan
+
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_father
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 궁정에 고아가 가신으로 들어온다.                                     #
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			move_character = ROOT
+
+			set_orphan_character_relative_opinion_modifier_effect = yes
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1045
+
+		#----------------------------------------------------------------------#
+		# A. 10년 동안 투옥/작위회수할 수 있는 명분을 얻는다.                  #
+		#----------------------------------------------------------------------#
+
+		opinion = {
+			modifier = opinion_mod_char_reason_revoking_imprisoning
+			who = event_target:mod_event_target_father
+			years = 10
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기서 이벤트가 종료된다.                                            #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_father
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1045
+
+		#----------------------------------------------------------------------#
+		# B. 이 자는 앞으로 나에 대항한 음모에 가담할 수 없다.                 #
+		#----------------------------------------------------------------------#
+
+		custom_tooltip = {
+			text = CUSTOM_TOOLTIP_OUT_OF_ALL_PLOT_AGAINST_ME
+			hidden_tooltip = {
+				event_target:mod_event_target_father = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_coerced_into_leaving_faction
+						months = 1200
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기서 이벤트가 종료된다.                                            #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_father
+	}
+
+	option = {
+		name = EVTOPTC_OPG_1045
+
+		#----------------------------------------------------------------------#
+		# C. 일년치 수입을 뇌물로 바쳐라                                       #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_father = {
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 1.0
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기서 이벤트가 종료된다.                                            #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_father
+	}
+
+	option = {
+		name = EVTOPTD_OPG_1045
+		
+		#----------------------------------------------------------------------#
+		# D. 이 자는 매우 감사할 것이다.                                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				event_target:mod_event_target_father = {
+					NOT = { owes_favor_to = ROOT }
+				}
+			}
+			ROOT = {
+				add_favor = event_target:mod_event_target_father
+			}
+		}
+
+		event_target:mod_event_target_father = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_very_pleased
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기서 이벤트가 종료된다.                                            #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_father
+	}
+}
+
+character_event = {
+
+	id = OPG.1046
+	desc = EVTDESC_OPG_1046
+	picture = GFX_evt_nemo_rescued_orphan
+
+	# mod_event_target_player (ROOT)
+	# mod_event_target_rescued_orphan
+	# mod_event_target_father
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 궁정에 고아가 가신으로 들어온다.                                     #
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			move_character = ROOT
+
+			set_orphan_character_relative_opinion_modifier_effect = yes
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1046
+
+		#----------------------------------------------------------------------#
+		# 여기서 이벤트가 종료된다.                                            #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_father
+	}
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+# 플레이어가 산책 중 어린 도둑들을 발견하다 (1051~1053) / 연결 이벤트          #
+# * WLK 모듈 연동                                                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1051
+	desc = EVTDESC_OPG_1051
+	picture = GFX_evt_nemo_default_orphanage
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 산책 중 고아를 발견하는 것은 숫자의 제한을 받지 않는다.   #
+		#----------------------------------------------------------------------#
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 고아 발견시 쿨 타임은 180일이다.                          #
+		#----------------------------------------------------------------------#
+
+		remove_character_modifier = mod_event_interval_notification_flag_modifier_go_on_a_walk
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 180
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1051
+
+		#----------------------------------------------------------------------#
+		# 두 명의 고아를 생성한다.                                             #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			capital_scope = {
+				ROOT = {
+					create_character = {
+						random_traits = yes
+						dynasty = NONE
+						female = yes
+						health = 5.1
+						age = 7
+						trait = rescued_orphan_by_player
+						race = THIS
+						culture = THIS
+						religion = THIS
+						attributes = {
+							learning = 2
+							martial = 2
+							diplomacy = 3
+							intrigue = 6
+							stewardship = 3
+						}
+					}
+					new_character = {
+						save_event_target_as = mod_target_beggars_girl
+						set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+						set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+						set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+					}
+
+					create_character = {
+						random_traits = yes
+						dynasty = NONE
+						female = no
+						health = 5.1
+						age = 6
+						trait = rescued_orphan_by_player
+						race = THIS
+						culture = THIS
+						religion = THIS
+						attributes = {
+							learning = 3
+							martial = 4
+							diplomacy = 4
+							intrigue = 3
+							stewardship = 2
+						}
+					}
+					new_character = {
+						save_event_target_as = mod_target_beggars_boy
+						set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+						set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+						set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+					}
+				}
+			}
+
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.1052
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1052
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+
+			## 플레이어를 타겟으로 잡는다.
+
+			save_event_target_as = mod_event_target_player
+
+			## 두 아이들의 부모를 생성한다.
+
+			capital_scope = {
+				ROOT = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						race = THIS
+						religion = THIS
+						culture = THIS
+						age = 37
+						female = no
+					}
+					new_character = {
+						save_event_target_as = mod_target_beggars_father
+					}
+
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						race = THIS
+						religion = THIS
+						culture = THIS
+						age = 35
+						female = yes
+					}
+					new_character = {
+						save_event_target_as = mod_target_beggars_mother
+					}
+
+					event_target:mod_target_beggars_father = {
+						event_target:mod_target_beggars_mother = {
+							add_spouse = PREV
+						}
+					}
+
+					event_target:mod_target_beggars_girl = {
+						set_father = event_target:mod_target_beggars_father
+						set_mother = event_target:mod_target_beggars_mother
+					}
+
+					event_target:mod_target_beggars_boy = {
+						set_father = event_target:mod_target_beggars_father
+						set_mother = event_target:mod_target_beggars_mother
+					}
+				}
+			}
+		}
+
+		## 부모는 사망한 것으로 처리해야 한다.
+
+		hidden_tooltip = {
+			event_target:mod_target_beggars_father = {
+				death = {
+					death_reason = death_accident
+				}
+			}
+			event_target:mod_target_beggars_mother = {
+				death = {
+					death_reason = death_accident
+				}
+			}
+		}
+
+		clear_event_target = mod_target_beggars_father
+		clear_event_target = mod_target_beggars_mother
+
+		## 고아들에게 트레잇 이외의 다른 오피니언 표지를 붙인다.
+
+		event_target:mod_target_beggars_girl = {
+			set_orphan_character_relative_opinion_modifier_effect = yes
+			piety = 3
+		}
+
+		event_target:mod_target_beggars_boy = {
+			set_orphan_character_relative_opinion_modifier_effect = yes
+			piety = 3
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료 (산책 이벤트 중이므로 그쪽으로 이동해야 한다.       #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+
+				clr_main_decision_event_flag_effect = yes
+
+				character_event = {
+					id = OPG.1053
+					days = 14
+					random = 16
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1053
+	desc = EVTDESC_OPG_1053
+	picture = GFX_evt_nemo_rescued_orphan_meets_benefactor
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1053
+
+		event_target:mod_target_beggars_girl = {
+			opinion = {
+				modifier = opinion_mod_cm_rescued_orphan
+				who = ROOT
+			}
+		}
+
+		event_target:mod_target_beggars_boy = {
+			opinion = {
+				modifier = opinion_mod_cm_rescued_orphan
+				who = ROOT
+			}
+		}
+
+		ROOT = {
+			clear_event_target = mod_target_beggars_girl
+			clear_event_target = mod_target_beggars_boy
+			clear_event_target = mod_event_target_player
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 플레이어가 참전 중 전쟁 고아를 발견하다 (1061~1064) / 트리거 이벤트          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1061
+	hide_window = yes
+	
+	ai = no
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 성인 플레이어 확인 / 현재 군대를 이끌고 있음             #
+		#----------------------------------------------------------------------#
+
+		ai = no
+		is_adult = yes
+		in_command = yes
+		prisoner = no
+		NOT = { trait = incapable }
+
+		#----------------------------------------------------------------------#
+		# 숫자 : 고아원 내 최대 고아 숫자를 넘기지 않도록 할 것                #
+		#----------------------------------------------------------------------#
+
+		is_max_orphan_in_orphanage = no
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 수도에 있지 않을 것                                             #
+		#----------------------------------------------------------------------#
+
+		is_player_in_capital_trigger = no
+	}
+
+	mean_time_to_happen = {
+		days = 45
+
+		modifier = {
+			factor = 4
+			trait = impaler
+		}
+		modifier = {
+			factor = 4
+			trait = cruel
+		}
+	}
+
+	immediate = {
+		random_list = {
+			20 = {
+				character_event = {
+					id = OPG.1062
+				}
+			}
+			80 = {
+
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1062
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 성별 결정 (A,B): 범위 보통(neutral) 선택 시 1:1 확률.                    #
+	#                  범위 외부(outer) 선택 시 3:1 비율로 남자가 많음.        #
+	#                  범위 내부(inner) 선택 시 3:1 비율로 여자가 많음.        #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 1.5
+					has_global_flag = mod_orphanage_policy_location_outer
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = mod_orphanage_policy_location_inner
+				}
+				location = {
+					ROOT = {
+						create_character = {
+							random_traits = yes
+							dynasty = NONE
+							female = no
+							age = 6
+							trait = rescued_orphan_by_player
+							race = PREV
+							culture = PREV
+							religion = PREV
+							attributes = {
+								learning = 3
+								martial = 3
+								diplomacy = 3
+								intrigue = 3
+								stewardship = 3
+							}
+						}
+						new_character = {
+							character_event = {
+								id = OPG.1063
+							}
+						}
+					}
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 1.5
+					has_global_flag = mod_orphanage_policy_location_inner
+				}
+				modifier = {
+					factor = 0.5
+					has_global_flag = mod_orphanage_policy_location_outer
+				}
+				location = {
+					ROOT = {
+						create_character = {
+							random_traits = yes
+							dynasty = NONE
+							female = yes
+							age = 6
+							trait = rescued_orphan_by_player
+							race = PREV
+							culture = PREV
+							religion = PREV
+							attributes = {
+								learning = 3
+								martial = 3
+								diplomacy = 3
+								intrigue = 3
+								stewardship = 3
+							}
+						}
+						new_character = {
+							character_event = {
+								id = OPG.1063
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1063
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = mod_event_target_orphan
+
+		add_trait = wounded
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1064
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1064
+	desc = EVTDESC_OPG_1064
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1064
+
+		ROOT = {
+			piety = 1
+			prestige = 1
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.                  #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_orphan_character_relative_opinion_modifier_effect = yes
+				piety = 2
+
+				move_character = ROOT
+
+				## 원본의 health_events.txt 이벤트 (부상이 치료, 흉터) ##
+
+				character_event = {
+					id = 6081
+					days = 7
+				}
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 플레이어가 참전 중 소년 암살자를 만나다 (1071~1089) / On-Actions 이벤트      #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1071
+	hide_window = yes
+	
+	is_triggered_only = yes
+	ai = no
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 성인 플레이어 확인 / 현재 군대를 이끌고 있음             #
+		#----------------------------------------------------------------------#
+
+		ai = no
+		is_adult = yes
+		in_command = yes
+		war = yes
+		prisoner = no
+		NOT = { trait = incapable }
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 수도에 있지 않을 것                                             #
+		#----------------------------------------------------------------------#
+
+		is_player_in_capital_trigger = no
+
+		#----------------------------------------------------------------------#
+		# 이벤트의 쿨 타임 내에 있지 않을 것                                   #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_assassin_boy_on_war }
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트의 발생 확률 : 30%                                          #
+		# 단, 이 이벤트의 마지막까지 진행한 경우 같은 군주에게는 발생하지 않음 #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			30 = {
+				character_event = {
+					id = OPG.1072
+				}
+			}
+			70 = {
+
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1072
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+		FROMFROM = {
+			save_event_target_as = mod_event_target_enemy_leader
+		}
+
+		location = {
+			ROOT = {
+				create_character = {
+					random_traits = no
+					dynasty = NONE
+					female = no
+					age = 8
+					health = 6.0
+					race = PREV
+					culture = PREV
+					religion = PREV
+					attributes = {
+						learning = 4
+						martial = 11
+						diplomacy = 5
+						intrigue = 6
+						stewardship = 5
+					}
+				}
+				new_character = {
+					add_trait = brave
+					add_trait = strong
+					character_event = {
+						id = OPG.1073
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1073
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = mod_event_target_orphan
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1074
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1074
+	desc = EVTDESC_OPG_1074
+	picture = GFX_evt_nemo_assassin_boy_on_war
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 일단 발생한 이상, 이 이벤트는 10년 내에 다시 발생하지 않는다.        #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_assassin_boy_on_war
+			duration = 3650
+			hidden = yes
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1074
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1075
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1075
+	desc = EVTDESC_OPG_1075
+	picture = GFX_evt_nemo_assassin_boy_on_war
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1075
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_1075
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1076
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1076
+	desc = EVTDESC_OPG_1076
+	picture = GFX_evt_nemo_assassin_boy_on_war
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1076
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_1076
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				move_character = ROOT
+				imprison = ROOT
+				character_event = {
+					id = OPG.1077
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1077
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 살아있지 않다면 이벤트를 중단시킨다.                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_alive = no
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 살아있지 않다면 이벤트를 중단시키고 캐릭터를 삭제한다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					is_alive = no
+				}
+			}
+			add_trait = ill
+			death = {
+				death_reason = death_trait
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 어떤 이유로든 이벤트 전에 감옥에서 풀려났으면 캐릭터를 삭제한다.     #
+		# (이벤트는 없던 일로)                                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				prisoner = no
+			}
+			add_trait = ill
+			death = {
+				death_reason = death_trait
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 수행중인 전쟁이 끝났을 것 : 이벤트 계속 진행                    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					war = no
+				}
+			}
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.1078
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 아직 전쟁 중 : 이벤트 유예                                           #
+		#----------------------------------------------------------------------#
+
+		repeat_event = { id = OPG.1077 days = 30 }
+	}
+}
+
+character_event = {
+
+	id = OPG.1078
+	desc = EVTDESC_OPG_1078
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1078
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_1078
+
+		event_target:mod_event_target_orphan = {
+			add_trait = incapable
+			death = {
+				death_reason = death_trait
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+		}
+	}
+	option = {
+		name = EVTOPTC_OPG_1078
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1079
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1079
+	desc = EVTDESC_OPG_1079
+	picture = GFX_evt_nemo_default_dungeon_cross
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1079
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1080
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1080
+	desc = EVTDESC_OPG_1080
+	picture = GFX_evt_nemo_default_dungeon_cross
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1080
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1081
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1081
+	desc = EVTDESC_OPG_1081
+	picture = GFX_evt_nemo_default_dungeon_cross
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1081
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.1082
+					days = 10
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1082
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 살아있지 않다면 이벤트를 중단시킨다.                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_alive = no
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 살아있지 않다면 이벤트를 중단시키고 캐릭터를 삭제한다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					is_alive = no
+				}
+			}
+			add_trait = ill
+			death = {
+				death_reason = death_trait
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 어떤 이유로든 이벤트 전에 감옥에서 풀려났으면 캐릭터를 삭제한다.     #
+		# (이벤트는 없던 일로)                                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				prisoner = no
+			}
+			add_trait = ill
+			death = {
+				death_reason = death_trait
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_enemy_leader
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 정상적인 성인 플레이어 상태 : 이벤트 계속 진행                  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					is_common_adult_player_trigger = yes
+				}
+			}
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.1083
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 아직 전쟁 중 : 이벤트 유예                                           #
+		#----------------------------------------------------------------------#
+
+		repeat_event = { id = OPG.1082 days = 30 }
+	}
+}
+
+character_event = {
+
+	id = OPG.1083
+	desc = EVTDESC_OPG_1083
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1083
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1084
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_1083
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1085
+				days = 1
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1084
+	desc = EVTDESC_OPG_1084
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1084
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				death = {
+					death_reason = death_battle
+				}
+
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_enemy_leader
+				clear_event_target = mod_event_target_player
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1085
+	desc = EVTDESC_OPG_1085
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1085
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.1086
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1086
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 공격자/방어자 세팅                                                   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			save_event_target_as = mod_event_target_duel_opposite
+		}
+
+		event_target:mod_event_target_player = {
+			save_event_target_as = mod_event_target_duel_player
+
+			set_variable = { which = MyHP value = 60 }
+			set_variable = { which = YourHP value = 60 }
+			set_variable = { which = Phase value = 1 }
+		}
+
+		#----------------------------------------------------------------------#
+		# 공격자와 방어자의 기술 수준 확인                                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				
+				# 플레이어의 기술 수준이 1 이상 높다
+
+				event_target:mod_event_target_duel_player = {
+					combat_rating_diff = {
+						character = event_target:mod_event_target_duel_opposite
+						value = 1
+					}
+				}
+			}
+
+			event_target:mod_event_target_duel_player = {
+				set_character_flag = mod_event_check_flag_duel_rating_player
+			}
+		}
+
+		if = {
+			limit = {
+				
+				# 상대방의 기술 수준이 1 이상 높다
+
+				event_target:mod_event_target_duel_opposite = {
+					combat_rating_diff = {
+						character = event_target:mod_event_target_duel_player
+						value = 1
+					}
+				}
+			}
+
+			event_target:mod_event_target_duel_player = {
+				set_character_flag = mod_event_check_flag_duel_rating_opposite
+			}
+		}
+
+		if = {
+			limit = {
+				
+				# 플레이어의 기술 수준이 1 이상 높다
+
+				event_target:mod_event_target_duel_player = {
+					combat_rating_diff = {
+						character = event_target:mod_event_target_duel_opposite
+						value = 0
+					}
+				}
+				event_target:mod_event_target_duel_opposite = {
+					combat_rating_diff = {
+						character = event_target:mod_event_target_duel_player
+						value = 0
+					}
+				}
+			}
+
+			event_target:mod_event_target_duel_player = {
+				set_character_flag = mod_event_check_flag_duel_rating_same
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 결투 돌입!                                                           #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1087
+			}
+		}
+	}
+}
+
+## Duel 페이즈 시작! 
+
+## 플레이어 방어 선택
+
+character_event = {
+
+	id = OPG.1087
+	desc = {
+		text = EVTDESC_OPG_1087_0
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				NOT = { has_character_flag = mod_event_check_flag_def_1 }
+				NOT = { has_character_flag = mod_event_check_flag_def_2 }
+				NOT = { has_character_flag = mod_event_check_flag_def_3 }
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1087_1
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_def_1
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1087_2
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_def_2
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1087_3
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_def_3
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_duel
+	
+	is_triggered_only = yes
+
+	# mod_event_target_duel_player 과 mod_event_target_duel_opposite 사용
+
+	# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_1
+			}
+			clr_character_flag = mod_event_check_flag_def_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_2
+			}
+			clr_character_flag = mod_event_check_flag_def_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_3
+			}
+			clr_character_flag = mod_event_check_flag_def_3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1087
+
+		#----------------------------------------------------------------------#
+		# 선택: 걷어낸다(1)                                                    #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_def_1
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1088
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1087
+
+		#----------------------------------------------------------------------#
+		# 선택: 비킨다(2)                                                      #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_def_2
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1088
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_1087
+
+		#----------------------------------------------------------------------#
+		# 선택: 맞받는다(3)                                                    #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_def_3
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1088
+				}
+			}
+		}
+	}
+}
+
+## 플레이어 방어 판정
+
+character_event = {
+
+	id = OPG.1088
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 첫 페이즈여서 상대방의 공격 옵션이 결정되어 있지 않은 경우           #
+		# 우선 상대방의 공격 옵션을 먼저 결정해야 한다.                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = { has_character_flag = mod_event_check_flag_off_1 }
+				NOT = { has_character_flag = mod_event_check_flag_off_2 }
+				NOT = { has_character_flag = mod_event_check_flag_off_3 }
+			}
+
+			# 플레이어가 기술수치가 더 높다 : 막히는 공격을 선택할 확률이 높다.
+			# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				random_list = {
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_2
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_1
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_1
+					}
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_3
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_2
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_2
+					}
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_1
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_3
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_3
+					}
+				}
+			}
+
+			# 플레이어가 기술수치가 더 낮다 : 뚫리는 공격을 선택할 확률이 높다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				random_list = {
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_2
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_1
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_1
+					}
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_3
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_2
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_2
+					}
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_1
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_def_3
+							}
+						}
+						set_character_flag = mod_event_check_flag_off_3
+					}
+				}
+			}
+
+			# 기술수치가 같다 : 모든 선택 확률이 같다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				random_list = {
+					33 = {
+						set_character_flag = mod_event_check_flag_off_1
+					}
+					33 = {
+						set_character_flag = mod_event_check_flag_off_2
+					}
+					33 = {
+						set_character_flag = mod_event_check_flag_off_3
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방의 공격 옵션에 대한 플레이어의 방어 판정                       #
+		#----------------------------------------------------------------------#
+
+		#----------------------------------------------------------------------#
+		# 1. 최대 데미지를 입는 경우 : 1-1, 2-2, 3-3                           #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+		
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_off_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_1
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_2
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_3
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -12 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -8 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -10 }
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 2. 중간 데미지를 입는 경우 : 1-3, 2-1, 3-2                           #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_off_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_3
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_1
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_2
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -6 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -4 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -5 }
+				}
+			}
+		}
+			
+		#----------------------------------------------------------------------#
+		# 3. 막아내는 경우 : 1-2, 2-3, 3-1                                     #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_off_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_2
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_3
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_off_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_def_1
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = -1 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = 0 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "MyHP" value = 0 }
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 플레이어 방어 종료 : 플레이어 HP 확인 - 0 이면 패배 확정             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					NOT = { check_variable = { which = "MyHP" value = 1 } }
+				}
+			}
+			event_target:mod_event_target_duel_player = {
+				character_event = {
+					id = OPG.1091
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 승부가 결정나지 않았으므로, 플레이어 공격 전에 상대방의 방어를 선택  #
+		# 한다.                                                                #
+		# 상대방의 방어는 앞에서 플레이어의 공격이 무엇이었느냐에 따라서 결정  #
+		# 된다.                                                                #
+		#----------------------------------------------------------------------#
+
+		# 상대가 무엇으로 공격했느냐에 따라서 85% 의 확률로 다음과 같이 선택 :
+		# 1. 공격자가 찔렀다 : 비킨다(2)
+		# 2. 공격자가 베었다 : 맞받는다(3)
+		# 3. 공격자가 내려침 : 걷어낸다(1)
+		
+		# 상대가 무엇으로 공격했느냐에 따라서 10% 의 확률로 다음과 같이 선택 :
+		# 1. 공격자가 찔렀다 : 맞받는다(3)
+		# 2. 공격자가 베었다 : 걷어낸다(1)
+		# 3. 공격자가 내려침 : 비킨다(2)
+
+		# 상대가 무엇으로 공격했느냐에 따라서 5% 의 확률로 다음과 같이 선택 :
+		# 1. 공격자가 찔렀다 : 걷어낸다(1)
+		# 2. 공격자가 베었다 : 비킨다(2)
+		# 3. 공격자가 내려침 : 맞받는다(3)
+
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_1
+			}
+			clr_character_flag = mod_event_check_flag_def_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_2
+			}
+			clr_character_flag = mod_event_check_flag_def_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_3
+			}
+			clr_character_flag = mod_event_check_flag_def_3
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_off_1
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_def_2
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_def_3
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_def_1
+				}
+			}
+		}	
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_off_2
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_def_3
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_def_1
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_def_2
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_off_3
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_def_1
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_def_2
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_def_3
+				}
+			}
+		}
+
+		event_target:mod_event_target_duel_player = {
+			character_event = {
+				id = OPG.1089
+			}
+		}
+	}
+}
+
+## 플레이어 공격 선택
+
+character_event = {
+
+	id = OPG.1089
+	desc = {
+		text = EVTDESC_OPG_1089_1
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_off_1
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1089_2
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_off_2
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1089_3
+		trigger = {
+			event_target:mod_event_target_duel_opposite = {
+				has_character_flag = mod_event_check_flag_off_3
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_duel
+	
+	is_triggered_only = yes
+
+	# mod_event_target_duel_player 과 mod_event_target_duel_opposite 사용
+
+	# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)
+
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_1
+			}
+			clr_character_flag = mod_event_check_flag_off_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_2
+			}
+			clr_character_flag = mod_event_check_flag_off_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_3
+			}
+			clr_character_flag = mod_event_check_flag_off_3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1089
+
+		#----------------------------------------------------------------------#
+		# 선택: 찌른다(1)                                                      #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_off_1
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1090
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1089
+
+		#----------------------------------------------------------------------#
+		# 선택: 벤다(2)                                                        #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_off_2
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1090
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_1089
+
+		#----------------------------------------------------------------------#
+		# 선택: 내려친다(3)                                                    #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			set_character_flag = mod_event_check_flag_off_3
+
+			event_target:mod_event_target_duel_opposite = {
+				character_event = {
+					id = OPG.1090
+				}
+			}
+		}
+	}
+}
+
+## 플레이어 공격 판정
+
+character_event = {
+
+	id = OPG.1090
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 첫 페이즈여서 상대방의 방어 옵션이 결정되어 있지 않은 경우           #
+		# 우선 상대방의 방어 옵션을 먼저 결정해야 한다.                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = { has_character_flag = mod_event_check_flag_def_1 }
+				NOT = { has_character_flag = mod_event_check_flag_def_2 }
+				NOT = { has_character_flag = mod_event_check_flag_def_3 }
+			}
+
+			# 플레이어가 기술수치가 더 높다 : 뚫리는 방어를 선택할 확률이 높다.
+			# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				random_list = {
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_1
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_3
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_1
+					}
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_2
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_1
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_2
+					}
+					33 = {
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_3
+							}
+						}
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_2
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_3
+					}
+				}
+			}
+
+			# 플레이어가 기술수치가 더 낮다 : 막는 방어를 선택할 확률이 높다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				random_list = {
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_1
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_3
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_1
+					}
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_2
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_1
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_2
+					}
+					33 = {
+						modifier = {
+							factor = 0.5
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_3
+							}
+						}
+						modifier = {
+							factor = 2
+							event_target:mod_event_target_duel_player = {
+								has_character_flag = mod_event_check_flag_off_2
+							}
+						}
+						set_character_flag = mod_event_check_flag_def_3
+					}
+				}
+			}
+
+			# 기술수치가 같다 : 모든 선택 확률이 같다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				random_list = {
+					33 = {
+						set_character_flag = mod_event_check_flag_def_1
+					}
+					33 = {
+						set_character_flag = mod_event_check_flag_def_2
+					}
+					33 = {
+						set_character_flag = mod_event_check_flag_def_3
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 플레이어의 공격에 대한 상대방의 방어 판정                            #
+		#----------------------------------------------------------------------#
+
+		#----------------------------------------------------------------------#
+		# 1. 최대 데미지를 주는 경우 : 1-1, 2-2, 3-3                           #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+		
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_def_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_1
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_2
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_3
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -8 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -12 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -10 }
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 2. 중간 데미지를 주는 경우 : 1-3, 2-1, 3-2                           #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_def_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_1
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_2
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_3
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -4 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -6 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -5 }
+				}
+			}
+		}
+			
+		#----------------------------------------------------------------------#
+		# 3. 막아내는 경우 : 1-2, 2-3, 3-1                                     #
+		# 찌른다(1), 벤다(2), 내려친다(3) / 걷어낸다(1), 비킨다(2), 맞받는다(3)#
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_character_flag = mod_event_check_flag_def_2
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_1
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_3
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_2
+						}
+					}
+					AND = {
+						has_character_flag = mod_event_check_flag_def_1
+						event_target:mod_event_target_duel_player = {
+							has_character_flag = mod_event_check_flag_off_3
+						}
+					}
+				}
+			}
+
+			# 플레이어의 기술수치가 더 낮다 : 데미지의 양이 줄어든다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_opposite
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = 0 }
+				}
+			}
+
+			# 플레이어의 기술수치가 더 높다 : 데미지의 양이 늘어난다.
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_player
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = -1 }
+				}
+			}
+
+			# 기술수치가 같다
+
+			if = {
+				limit = {
+					event_target:mod_event_target_duel_player = {
+						has_character_flag = mod_event_check_flag_duel_rating_same
+					}
+				}
+
+				event_target:mod_event_target_duel_player = {
+					change_variable = { which = "YourHP" value = 0 }
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 방어 종료 : 상대방 HP 확인 - 0 이면 승리 확정                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					NOT = { check_variable = { which = "YourHP" value = 1 } }
+				}
+			}
+			event_target:mod_event_target_duel_player = {
+				character_event = {
+					id = OPG.1093
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 승부가 결정나지 않았으므로, 플레이어 방어 전에 상대방의 공격을 선택  #
+		# 한다.                                                                #
+		# 상대방의 공격은 앞에서 플레이어의 방어가 무엇이었느냐에 따라서 결정  #
+		# 된다.                                                                #
+		#----------------------------------------------------------------------#
+
+		# 상대가 무엇으로 방어했느냐에 따라서 85% 의 확률로 다음과 같이 선택 :
+		# 1. 플레이어가 걷어냈다 : 찌른다(1)
+		# 2. 플레이어가 비켰다 : 벤다(2)
+		# 3. 플레이어가 맞받았다 : 내려친다(3)
+		
+		# 상대가 무엇으로 공격했느냐에 따라서 10% 의 확률로 다음과 같이 선택 :
+
+		# 1. 플레이어가 걷어냈다 : 벤다(2)
+		# 2. 플레이어가 비켰다 : 내려친다(3)
+		# 3. 플레이어가 맞받았다 : 찌른다(1)
+
+		# 상대가 무엇으로 공격했느냐에 따라서 5% 의 확률로 다음과 같이 선택 :
+		# 1. 플레이어가 걷어냈다 : 내려친다(3)
+		# 2. 플레이어가 비켰다 : 찌른다(1)
+		# 3. 플레이어가 맞받았다 : 벤다(2)
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_1
+			}
+			clr_character_flag = mod_event_check_flag_off_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_2
+			}
+			clr_character_flag = mod_event_check_flag_off_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_3
+			}
+			clr_character_flag = mod_event_check_flag_off_3
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_def_1
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_off_1
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_off_2
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_off_3
+				}
+			}
+		}	
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_def_2
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_off_2
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_off_3
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_off_1
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_duel_player = {
+					has_character_flag = mod_event_check_flag_def_3
+				}
+			}
+			random_list = {
+				85 = {
+					set_character_flag = mod_event_check_flag_off_3
+				}
+				10 = {
+					set_character_flag = mod_event_check_flag_off_1
+				}
+				5 = {
+					set_character_flag = mod_event_check_flag_off_2
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 페이즈 값을 1 늘리고, 다음으로 진행한다.                             #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_duel_player = {
+			change_variable = { which = "Phase" value = 1 }
+
+			character_event = {
+				id = OPG.1087
+			}
+		}
+	}
+}
+
+## Duel 페이즈 끝!
+
+## 플레이어가 패배 : 1091
+
+character_event = {
+
+	id = OPG.1091
+	desc = EVTDESC_OPG_1091
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# Duel 의 결과를 모두 삭제                                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_1
+			}
+			clr_character_flag = mod_event_check_flag_def_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_2
+			}
+			clr_character_flag = mod_event_check_flag_def_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_3
+			}
+			clr_character_flag = mod_event_check_flag_def_3
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_1
+			}
+			clr_character_flag = mod_event_check_flag_off_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_2
+			}
+			clr_character_flag = mod_event_check_flag_off_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_3
+			}
+			clr_character_flag = mod_event_check_flag_off_3
+		}
+
+		event_target:mod_event_target_duel_opposite = {
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_1
+				}
+				clr_character_flag = mod_event_check_flag_def_1
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_2
+				}
+				clr_character_flag = mod_event_check_flag_def_2
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_3
+				}
+				clr_character_flag = mod_event_check_flag_def_3
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_1
+				}
+				clr_character_flag = mod_event_check_flag_off_1
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_2
+				}
+				clr_character_flag = mod_event_check_flag_off_2
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_3
+				}
+				clr_character_flag = mod_event_check_flag_off_3
+			}
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_player
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_player
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_opposite
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_opposite
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_same
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_same
+		}
+
+		set_variable = { which = MyHP value = 0 }
+		set_variable = { which = YourHP value = 0 }
+		set_variable = { which = Phase value = 0 }
+
+		clear_event_target = mod_event_target_duel_player
+		clear_event_target = mod_event_target_duel_opposite
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1091
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.1092
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1092
+	desc = EVTDESC_OPG_1092
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1092
+
+		hidden_tooltip = {
+			remove_character_modifier = mod_event_interval_notification_flag_modifier_assassin_boy_on_war
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_assassin_boy_on_war
+				duration = -1
+				hidden = yes
+			}
+
+			event_target:mod_event_target_orphan = {
+				prisoner = no
+				move_character = event_target:mod_event_target_enemy_leader
+				death = {
+					death_reason = death_natural
+				} 
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_enemy_leader
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+## 플레이어가 승리 : 1093
+
+character_event = {
+
+	id = OPG.1093
+	desc = EVTDESC_OPG_1093
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# Duel 의 결과를 모두 삭제                                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_1
+			}
+			clr_character_flag = mod_event_check_flag_def_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_2
+			}
+			clr_character_flag = mod_event_check_flag_def_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_def_3
+			}
+			clr_character_flag = mod_event_check_flag_def_3
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_1
+			}
+			clr_character_flag = mod_event_check_flag_off_1
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_2
+			}
+			clr_character_flag = mod_event_check_flag_off_2
+		}
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_off_3
+			}
+			clr_character_flag = mod_event_check_flag_off_3
+		}
+
+		event_target:mod_event_target_duel_opposite = {
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_1
+				}
+				clr_character_flag = mod_event_check_flag_def_1
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_2
+				}
+				clr_character_flag = mod_event_check_flag_def_2
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_def_3
+				}
+				clr_character_flag = mod_event_check_flag_def_3
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_1
+				}
+				clr_character_flag = mod_event_check_flag_off_1
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_2
+				}
+				clr_character_flag = mod_event_check_flag_off_2
+			}
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_off_3
+				}
+				clr_character_flag = mod_event_check_flag_off_3
+			}
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_player
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_player
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_opposite
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_opposite
+		}
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_duel_rating_same
+			}
+			clr_character_flag = mod_event_check_flag_duel_rating_same
+		}
+
+		set_variable = { which = MyHP value = 0 }
+		set_variable = { which = YourHP value = 0 }
+		set_variable = { which = Phase value = 0 }
+
+		clear_event_target = mod_event_target_duel_player
+		clear_event_target = mod_event_target_duel_opposite
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1093
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.1094
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1094
+	desc = EVTDESC_OPG_1094
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1094
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.1095
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1095
+	desc = EVTDESC_OPG_1095
+	picture = GFX_evt_nemo_default_castle_at_night
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1095
+
+		hidden_tooltip = {
+			remove_character_modifier = mod_event_interval_notification_flag_modifier_assassin_boy_on_war
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_assassin_boy_on_war
+				duration = -1
+				hidden = yes
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			prisoner = no
+			move_character = ROOT
+
+			set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+			set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+			set_character_flag = mod_character_event_flag_experienced_abusing_event
+			set_character_flag = mod_event_character_flag_not_secret_agent
+			set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_rescued_orphan
+			}
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_eternal_benefactor
+			}
+
+			add_trait = rescued_orphan_by_player
+			set_orphan_character_relative_opinion_modifier_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_enemy_leader
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

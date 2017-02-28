@@ -1,0 +1,286 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+targetted_decisions = {
+
+	mod_main_decision_orphan_set_special_training = {
+
+		filter = home_court
+		ai_target_filter = home_court
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인                                        #
+			# 현재 수도에 있어야만 함                                          #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+			is_player_in_capital_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 기능이 활성화되어 있어야 함                                      #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_ORPHANAGE_GROWING_SUPPORT_ACTIVATED
+
+			#------------------------------------------------------------------#
+			# 고아원(Lv4) 건설 확인                                            #
+			#------------------------------------------------------------------#
+
+			has_orphanage_level_4_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 메인 이벤트이므로 다른 메인 이벤트와 중복 실행할 수 없음.        #
+			#------------------------------------------------------------------#
+
+			has_main_decision_event_flag_trigger = no
+
+			#------------------------------------------------------------------#
+			# 파견 보조자가 임명되어 존재할 것                                 #
+			#------------------------------------------------------------------#
+
+			any_courtier = {
+				is_orphanage_guardian_trigger = yes
+			}
+		}
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 5세 이상의 미성년 고아                                           #
+			#------------------------------------------------------------------#
+
+			is_orphan_character_trigger = yes
+			is_alive = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			age = 5
+			is_adult = no
+
+			#------------------------------------------------------------------#
+			# 고아원에 있는 고아로서, 플레이어가 주군으로 되어 있고 다른 이벤  #
+			# 트가 진행되고 있지 않아야 함                                     #
+			#------------------------------------------------------------------#
+
+			is_orphan_in_orphanage_trigger = yes
+			is_liege_human_player_character_trigger = yes
+			is_orphan_pending_special_event_trigger = no
+
+			#------------------------------------------------------------------#
+			# 이미 설정되어 있으면 안 됨                                       #
+			#------------------------------------------------------------------#
+
+			is_under_special_training_for_orphan_trigger = no
+		}
+		allow = {
+
+			#------------------------------------------------------------------#
+			# 고아원에 거주중인 5세 이상의 미성년 고아                         #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_SET_SPECIAL_TRAINING_1
+				hidden_tooltip = {
+					is_orphan_character_trigger = yes
+					is_alive = yes
+					prisoner = no
+					NOT = { trait = incapable }
+					age = 5
+					is_adult = no
+					is_orphan_in_orphanage_trigger = yes
+					is_liege_human_player_character_trigger = yes
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 다른 이벤트가 진행중이어서는 안 됨                               #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_SET_SPECIAL_TRAINING_2
+				hidden_tooltip = {
+					is_orphan_pending_special_event_trigger = no
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 일부 고아의 경우에는 설정이 불가능함                             #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_SET_SPECIAL_TRAINING_3
+				hidden_tooltip = {
+					
+					#----------------------------------------------------------#
+					# 생명의 은인 2 이벤트가 진행중인 고아에게는 설정 불가     #
+					#----------------------------------------------------------#
+
+					NOT = { has_any_opinion_modifier = opinion_mod_orphans_boss_of_intrigue }
+				}
+			}
+		}
+
+		effect = {
+			ROOT = {
+				hidden_tooltip = {
+					set_npc_is_pending_certain_event_flag_effect = yes
+				}
+			}
+			FROM = {
+				hidden_tooltip = {
+					set_main_decision_event_flag_effect = yes
+					character_event = {
+						id = OPG.1811
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+	mod_main_decision_orphan_release_special_training = {
+
+		filter = home_court
+		ai_target_filter = home_court
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인                                        #
+			# 현재 수도에 있어야만 함                                          #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+			is_player_in_capital_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 기능이 활성화되어 있어야 함                                      #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_ORPHANAGE_GROWING_SUPPORT_ACTIVATED
+
+			#------------------------------------------------------------------#
+			# 고아원(Lv4) 건설 확인                                            #
+			#------------------------------------------------------------------#
+
+			has_orphanage_level_4_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 메인 이벤트이므로 다른 메인 이벤트와 중복 실행할 수 없음.        #
+			#------------------------------------------------------------------#
+
+			has_main_decision_event_flag_trigger = no
+		}
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 5세 이상의 미성년 고아                                           #
+			#------------------------------------------------------------------#
+
+			is_orphan_character_trigger = yes
+			is_alive = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			age = 5
+			is_adult = no
+
+			#------------------------------------------------------------------#
+			# 고아원에 있는 고아로서, 플레이어가 주군으로 되어 있고 다른 이벤  #
+			# 트가 진행되고 있지 않아야 함                                     #
+			#------------------------------------------------------------------#
+
+			is_orphan_in_orphanage_trigger = yes
+			is_liege_human_player_character_trigger = yes
+			is_orphan_pending_special_event_trigger = no
+
+			#------------------------------------------------------------------#
+			# 현재 설정이 되어 있어야 함                                       #
+			#------------------------------------------------------------------#
+
+			is_under_special_training_for_orphan_trigger = yes
+		}
+		allow = {
+
+			#------------------------------------------------------------------#
+			# 고아원에 거주중인 5세 이상의 미성년 고아                         #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_SET_SPECIAL_TRAINING_1
+				hidden_tooltip = {
+					is_orphan_character_trigger = yes
+					is_alive = yes
+					prisoner = no
+					NOT = { trait = incapable }
+					age = 5
+					is_adult = no
+					is_orphan_in_orphanage_trigger = yes
+					is_liege_human_player_character_trigger = yes
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 다른 이벤트가 진행중이어서는 안 됨                               #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_SET_SPECIAL_TRAINING_2
+				hidden_tooltip = {
+					is_orphan_pending_special_event_trigger = no
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 해제 금지인 5년의 시간이 지났어야 함                             #
+			#------------------------------------------------------------------#
+
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_CLAUSE_CAN_RELEASE_SPECIAL_TRAINING_1
+				hidden_tooltip = {
+					NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_change_special_training }
+				}
+			}
+		}
+
+		effect = {
+			ROOT = {
+				hidden_tooltip = {
+					set_npc_is_pending_certain_event_flag_effect = yes
+				}
+			}
+			FROM = {
+				hidden_tooltip = {
+					set_main_decision_event_flag_effect = yes
+					character_event = {
+						id = OPG.1821
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

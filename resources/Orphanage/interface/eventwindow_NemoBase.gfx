@@ -1,0 +1,198 @@
+spriteTypes = 
+{
+	#----------------------------------------------------------------------#
+	# 각 모듈 공용 이미지들                                                #
+	#----------------------------------------------------------------------#
+
+	## 활성화 전용 공용 이미지
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_feudal_government"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_feudal_government.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_republic_government"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_republic_government.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_tribal_government"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_tribal_government.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_nomadic_government"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_nomadic_government.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_female_character"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_female_character.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_conclave_dlc"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_conclave_dlc.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_character_advantage"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_character_advantage.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_mod_setup_province_advantage"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_province_advantage.dds"
+		allwaystransparent = yes
+	}
+
+	## 기본 공용 이미지
+
+	spriteType = {
+		name = "GFX_evt_nemo_blank"
+		texturefile = "gfx\\event_pictures\\mod_nemo_blank.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_common_discuss"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_discuss.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_order_someone"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_order_someone.dds"
+		allwaystransparent = yes
+	}
+
+	## 부상, 사망
+
+	spriteType = {
+		name = "GFX_evt_nemo_wounded"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_wounded.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_nemo_dead"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_dead.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_suicided"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_suicided.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_executed"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_executed.dds"
+		allwaystransparent = yes
+	}
+
+	## 던전
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_dungeon"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_dungeon.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_secret_dungeon"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_dungeon_secret.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_dungeon_cross"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_dungeon_cross.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_dungeon_kneeling"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_dungeon_kneel.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_torture_chamber"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_dungeon_torture_chamber.dds"
+		allwaystransparent = yes
+	}
+
+	## 집
+
+	spriteType = {
+		name = "GFX_evt_nemo_common_town_house"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_town_house.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_common_town_house_inside"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_town_house_inside.dds"
+		allwaystransparent = yes
+	}
+
+	## 숲 속
+
+	spriteType = {
+		name = "GFX_evt_nemo_event_in_the_forest"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_in_the_forest.dds"
+		allwaystransparent = yes
+	}
+
+	## 여행 출발
+
+	spriteType = {
+		name = "GFX_evt_nemo_event_journey_departure"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_port_departure.dds"
+		allwaystransparent = yes
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_evt_nemo_common_letter"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_letter.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_parlor"
+		texturefile = "gfx\\event_pictures\\mod_nemo_default_parlor.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_default_castle_at_night"
+		texturefile = "gfx\\event_pictures\\mod_nemo_common_castle_at_night.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_event_duel"
+		texturefile = "gfx\\event_pictures\\mod_nemo_event_duel.dds"
+		allwaystransparent = yes
+	}
+
+}

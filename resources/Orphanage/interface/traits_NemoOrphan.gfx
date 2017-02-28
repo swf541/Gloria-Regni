@@ -1,0 +1,41 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_trait_rescued_orphan_by_player"
+		texturefile = "gfx/traits/rescued_orphan_by_player.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_trait_rescued_orphan_by_ai"
+		texturefile = "gfx/traits/rescued_orphan_by_ai.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_trait_adopted_orphan"
+		texturefile = "gfx/traits/adopted_orphan.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_trait_female_knights"
+		texturefile = "gfx/traits/female_knights.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_trait_orphan_infantry_leader"
+		texturefile = "gfx/traits/orphan_infantry_leader.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

@@ -1,0 +1,3708 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 6000~6099
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-05-09
+
+namespace = OPG
+
+#==============================================================================#
+# 전쟁 고아의 추억과 여행                                                      #
+# 전쟁 고아의 경우 특별히 성인이 된 이후에도 몇 가지 요건을 충족한다면 특별한  #
+# 이벤트가 발생할 수 있다.                                                     #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 전쟁 고아의 추억 (6001~6007) / 트리거 이벤트                                 #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6001
+	hide_window = yes
+
+	ai = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 고아원에 8살 이상의 전쟁 고아가 존재할 것                       #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+			age = 8
+			has_character_flag = mod_event_character_flag_war_orphan
+
+			is_orphan_in_orphanage_trigger = yes
+			is_liege_human_player_character_trigger = yes
+			is_orphan_pending_special_event_trigger = no
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 270
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				is_adult = no
+				age = 8
+				has_character_flag = mod_event_character_flag_war_orphan
+
+				is_orphan_in_orphanage_trigger = yes
+				is_liege_human_player_character_trigger = yes
+				is_orphan_pending_special_event_trigger = no
+			}
+
+			character_event = {
+				id = OPG.6002
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6002
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 모든 전쟁 고아가 추억 이벤트를 갖게 되는 것은 아니다. 확률은 75% 로  #
+		# 잡는다. 단, 다음의 경우에는 확률이 증가한다.                         #
+		# - 왕/황제 작위이고 백합 기사단이 활성화되지 않은 경우                #
+		# - 고아 출신 지휘자가 1명도 없는 경우                                 #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			75 = {
+				modifier = {
+					factor = 2.0
+					OR = {
+						AND = {
+							is_female_knights_title_active_trigger = no
+							liege = {
+								primary_title = {
+									OR = {
+										tier = KING
+										tier = EMPEROR
+									}
+								}
+							}
+						}
+						NOT = {
+							any_realm_character = {
+								trait = orphan_infantry_leader
+							}
+						}
+					}
+				}
+
+				ROOT = {
+					save_event_target_as = mod_event_target_orphan
+				}
+				FROM = {
+					save_event_target_as = mod_event_target_player
+				}
+
+				clr_character_flag = mod_event_character_flag_war_orphan
+				set_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+
+				event_target:mod_event_target_player = {
+					hidden_tooltip = {
+						character_event = {
+							id = OPG.6003
+						}
+					}	
+				}
+			}
+			25 = {
+				clr_character_flag = mod_event_character_flag_war_orphan
+				set_character_flag = mod_event_character_flag_war_orphan_without_reminiscence
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6003
+	desc = {
+		text = EVTDESC_OPG_6003
+		trigger = {
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6003_M
+		trigger = {
+			is_adult = no
+		}
+	}
+	picture = GFX_evt_nemo_orphan_leaning_against_a_wall
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_6003
+			trigger = {
+				is_adult = yes
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_6003_M
+			trigger = {
+				is_adult = no
+			}
+		}		
+			
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.6004
+			}
+		}	
+	}
+}
+
+character_event = {
+	id = OPG.6004
+	desc = {
+		text = EVTDESC_OPG_6004
+		trigger = {
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6004_M
+		trigger = {
+			is_adult = no
+		}
+	}
+	picture = GFX_evt_nemo_reminiscence_of_orphan
+
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_6004
+			trigger = {
+				is_adult = yes
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_6004_M
+			trigger = {
+				is_adult = no
+			}
+		}
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_character_flag = mod_event_temporary_flag_select_A
+				character_event = {
+					id = OPG.6005
+				}
+			}
+		}
+	}
+	option = {
+		name = {
+			text = EVTOPTB_OPG_6004
+			trigger = {
+				is_adult = yes
+			}
+		}
+		name = {
+			text = EVTOPTB_OPG_6004_M
+			trigger = {
+				is_adult = no
+			}
+		}
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_character_flag = mod_event_temporary_flag_select_B
+				character_event = {
+					id = OPG.6005
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = OPG.6005
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6006
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6006
+	desc = {
+		text = EVTDESC_OPG_6006_A
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6006_A_M
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+			is_adult = no
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6006_B
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6006_B_M
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+			is_adult = no
+		}
+	}
+	picture = GFX_evt_nemo_orphan_leaning_against_a_wall
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6006
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.6007
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_6006
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.6007
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6007
+	desc = {
+		text = EVTDESC_OPG_6007_A
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6007_A_M
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+			is_adult = no
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6007_B
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+			is_adult = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6007_B_M
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+			is_adult = no
+		}
+	}
+	picture = GFX_evt_nemo_orphan_leaning_against_a_wall
+
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6007
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_A
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			clr_character_flag = mod_event_temporary_flag_select_A
+
+			if = {
+				limit = {
+					NOT = { trait = affectionate }
+				}
+				add_trait = affectionate
+			}
+
+			if = {
+				limit = {
+					trait = haughty
+				}
+				remove_trait = haughty
+			}
+
+			if = {
+				limit = {
+					has_character_flag = was_haughty
+				}
+				clr_character_flag = was_haughty
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+	option = {
+		name = EVTOPTB_OPG_6007
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_flag = mod_event_temporary_flag_select_B
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			clr_character_flag = mod_event_temporary_flag_select_B
+
+			if = {
+				limit = {
+					NOT = { trait = brooding }
+				}
+				add_trait = brooding
+			}
+
+			if = {
+				limit = {
+					trait = willful
+				}
+				remove_trait = willful
+			}
+
+			if = {
+				limit = {
+					has_character_flag = was_willful
+				}
+				clr_character_flag = was_willful
+			}
+
+			clr_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+			set_character_flag = mod_event_character_flag_war_orphan_without_reminiscence
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+# 전쟁 고아의 여행 (6011~) / 트리거 이벤트                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6011
+	hide_window = yes
+
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 여행을 떠난 성인 고아가 없을 것                                 #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event }
+
+		#----------------------------------------------------------------------#
+		# 가신으로 작위나 직책을 갖지 않은 미혼의 고아가 존재할 것             #
+		# 아직 엔딩을 보지 않았을 것                                           #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_common_adult_npc_trigger = yes
+			is_landed = no
+			is_married = no
+			is_consort = no
+
+			has_job_title = no
+
+			is_orphanage_nurse_trigger = no
+
+			NOT = { has_minor_title = title_commander }
+			NOT = { has_minor_title = title_councilmember_king }
+			NOT = { has_minor_title = title_councilmember_emperor }
+
+			age = 19
+
+			has_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_ruined }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_normal }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_raped }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_eunuch }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_wounded }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_marry }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_parents }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_bro_sis }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_common_adult_npc_trigger = yes
+				is_landed = no
+				is_married = no
+				is_consort = no
+
+				has_job_title = no
+
+				is_orphanage_nurse_trigger = no
+
+				NOT = { has_minor_title = title_commander }
+				NOT = { has_minor_title = title_councilmember_king }
+				NOT = { has_minor_title = title_councilmember_emperor }
+
+				age = 19
+
+				has_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_ruined }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_normal }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_raped }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_eunuch }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_wounded }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_marry }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_parents }
+				NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_bro_sis }
+			}
+
+			character_event = {
+				id = OPG.6012
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6012
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		#----------------------------------------------------------------------#
+		# 문화가 동화된 경우는 이벤트의 실행을 취소한다.                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					culture = event_target:mod_event_target_player
+					event_target:mod_event_target_player = {
+						capital_scope = {
+							culture = PREVPREV
+						}
+					}
+				}
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 90% 의 확률로, 여행을 떠날 것을 요청한다.                            #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			90 = {
+				event_target:mod_event_target_player = {
+					hidden_tooltip = {
+						character_event = {
+							id = OPG.6013
+						}
+					}	
+				}
+			}
+			10 = {
+				remove_orphan_character_flag_reminiscence_effect = yes
+
+				clear_event_target = mod_event_target_orphan
+				clear_event_target = mod_event_target_player
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6013
+	desc = {
+		text = EVTDESC_OPG_6013_M
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6013_F
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_female = yes
+			}
+		}
+	}
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+
+	immediate = {
+		set_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+	}
+
+	option = {
+
+		#----------------------------------------------------------------------#
+		# A. 부탁을 받아들인다.                                                #
+		#----------------------------------------------------------------------#
+
+		name = {
+			text = EVTOPTA_OPG_6013_M
+			trigger = {
+				event_target:mod_event_target_orphan = { 
+					is_female = no
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_6013_F
+			trigger = {
+				event_target:mod_event_target_orphan = { 
+					is_female = yes
+				}
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				
+				set_npc_is_pending_certain_event_flag_effect = yes
+
+				character_event = {
+					id = OPG.6014
+					days = 2
+				}
+			}
+		}
+	}
+
+	option = {
+
+		#----------------------------------------------------------------------#
+		# B. 부탁을 받아들이지 않는다.                                         #
+		#----------------------------------------------------------------------#
+
+		name = {
+			text = EVTOPTB_OPG_6013_M
+			trigger = {
+				event_target:mod_event_target_orphan = { 
+					is_female = no
+				}
+			}
+		}
+		name = {
+			text = EVTOPTB_OPG_6013_F
+			trigger = {
+				event_target:mod_event_target_orphan = { 
+					is_female = yes
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 실망...                                                              #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_char_reject_orphan_journey
+			}
+
+			random = {
+				chance = 25
+				if = {
+					limit = {
+						NOT = { trait = depressed }
+					}
+					add_trait = depressed
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 양쪽에서 모두 플래그를 삭제한다.                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+character_event = {
+	id = OPG.6014
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player (FROM)
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 여행을 떠날 곳(가상의 고향)을 결정                                   #
+		#----------------------------------------------------------------------#
+
+		## 1. 같은 문화를 가진 군주가 있음
+
+		if = {
+			limit = {
+				any_playable_ruler = {
+					culture = ROOT
+				}				
+			}
+
+			random_playable_ruler = {
+				limit = {
+					culture = ROOT
+				}
+				character_event = {
+					id = OPG.6016
+				}
+
+				break = yes
+			}
+		}
+
+		## 2. 같은 문화를 가진 군주는 없지만, 같은 문화 그룹의 군주는 있음
+		##    (여기에 왔다는 건, 이미 같은 문화를 가진 군주가 없음을 의미)
+
+		if = {
+			limit = {
+				any_playable_ruler = {
+					culture_group = ROOT
+				}
+			}
+
+			random_playable_ruler = {
+				limit = {
+					culture_group = ROOT
+				}
+				character_event = {
+					id = OPG.6016
+				}
+
+				break = yes
+			}
+		}
+
+		## 3. 같은 문화 그룹의 군주가 없음
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6015
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = OPG.6015
+	desc = EVTDESC_OPG_6015
+	picture = GFX_evt_throne_room
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6015
+
+		#----------------------------------------------------------------------#
+		# 여행을 포기                                                          #
+		#----------------------------------------------------------------------#
+
+		#----------------------------------------------------------------------#
+		# 양쪽에서 모두 플래그를 삭제한다.                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			remove_orphan_character_flag_reminiscence_effect = yes
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			piety = 1
+		}
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+			piety = 1
+			prestige = 1
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+	id = OPG.6016
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	# mod_event_target_orphan
+	# mod_event_target_player
+	# mod_event_target_journey_province (PROVINCE)
+
+	#--------------------------------------------------------------------------#
+	# Random Ruler 는 단지 여행 목적지를 정하기 위한 것일 뿐 아무 의미가 없다. #
+	# 이후에는 프로빈스로 체크하게 된다.                                       #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+		location = {
+			save_event_target_as = mod_event_target_journey_province
+		}
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6017
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6017
+	desc = EVTDESC_OPG_6017
+	picture = GFX_evt_nemo_event_journey_departure
+
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6017
+		event_target:mod_event_target_orphan = {
+			add_trait = on_a_journey
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6018
+				}			
+			}
+		}
+		ROOT = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 전쟁 고아의 여행 : 엔딩 결정                                                 #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6018
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player 
+	# mod_event_target_journey_province [PROVINCE]
+
+	#--------------------------------------------------------------------------#
+	# 여행의 결과를 결정한다.                                                  #
+	#--------------------------------------------------------------------------#
+	# 일어날 수 있는 이벤트의 목록                                             #
+	#                                                                          #
+	# 1. 돌아오지 않는다 (사망)                                                #
+	#    엔딩 1) 고향으로 가는 도중 사망                                       #
+	#    엔딩 2) 전쟁에 휘말려 사망                                            #
+	# 2. 돌아오지 않는다 (생존)                                                #
+	#    엔딩 3) 현지 정착                                                     #
+	# 3. 돌아온다 (일반)                                                       #
+	#    엔딩 4) 폐허 이벤트                                                   #
+	#    엔딩 5) 납치강간 이벤트 [여성 한정, 임신]                             #
+	#    엔딩 6) 고자 이벤트 [남성 한정, 비잔틴 계열 지역의 경우]              #
+	#    엔딩 7) 가족(부,모,형제,자매 등)과 함께 돌아온다.                     #
+	#    엔딩 8) 결혼해서 돌아온다.                                            #
+	#    엔딩 9) 혼자서 무사히 돌아온다. (노멀 엔딩)                           #
+	#    엔딩 10) 부상을 입고 돌아온다. [남성 한정]                            #
+	#    엔딩 11) 여동생/남동생 구출 시도 이벤트                               #
+	#       엔딩 11-1) 성공                                                    #
+	#       엔딩 11-2) 실패                                                    #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 엔딩 1 : 여행 도중 사망 (남성: 5% / 여성: 10%)                       #
+		# - Weak 트레잇 및 건강 수치에 따라서 확률이 증가한다.                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_female = no
+			}
+
+			random = {
+				chance = 5
+				modifier = {
+					factor = 2.0
+					trait = weak
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 5.0 }
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 4.0 }
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 3.0 }
+				}
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6021
+						days = 10
+						random = 7
+					}
+				}
+				break = yes
+			}
+		}
+
+		if = {
+			limit = {
+				is_female = yes
+			}
+
+			random = {
+				chance = 10
+				modifier = {
+					factor = 2.0
+					trait = weak
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 5.0 }
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 4.0 }
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { trait = weak }
+					NOT = { health = 3.0 }
+				}
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6021
+						days = 10
+						random = 7
+					}
+				}
+				break = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 엔딩 2~11 : 남성/여성으로 구분하여 엔딩의 발생 확률을 조정한다.      #
+		# - 남성의 경우                                                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_female = no
+			}
+
+			#------------------------------------------------------------------#
+			# 엔딩 2,3,4,6,7,8,9,10,11                                         #
+			#------------------------------------------------------------------#
+
+			random_list = {
+
+				#--------------------------------------------------------------#
+				# 엔딩 2 : 전쟁에 휩쓸려 사망 (기본 10%)                       #
+				#--------------------------------------------------------------#
+
+				10 = {
+					modifier = {
+						factor = 2.0
+						trait = brave
+					}
+					modifier = {
+						factor = 0.6
+						trait = craven
+					}
+					modifier = {
+						factor = 1.5
+						event_target:mod_event_target_journey_province = {
+							has_siege = yes
+						}
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6024
+							days = 48
+							random = 12
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 3 : 현지에 정착 (기본 8%)                               #
+				#--------------------------------------------------------------#
+
+				8 = {
+					modifier = {
+						factor = 2.0
+						trait = deceitful
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6029
+							days = 68
+							random = 18
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 4 : 폐허 (기본 12%)                                     #
+				#--------------------------------------------------------------#
+
+				12 = {
+					modifier = {
+						factor = 1.8
+						event_target:mod_event_target_journey_province = {
+							has_siege = yes
+						}
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6034
+							days = 61
+							random = 11
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 6 : 투옥 (기본 17%) / 비잔틴이 아니라면 발생하지 않음   #
+				#--------------------------------------------------------------#
+
+				17 = {
+					modifier = {
+						factor = 0
+						event_target:mod_event_target_journey_province = {
+							owner = {
+								NOT = { culture_group = byzantine }
+							}
+						}
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6049
+							days = 83
+							random = 17
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 7 : 가족과 함께 복귀 (기본 11%)                         #
+				#--------------------------------------------------------------#
+
+				11 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6053
+							days = 66
+							random = 17
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 8 : 결혼해서 복귀 (기본 11%)                            #
+				#--------------------------------------------------------------#
+
+				11 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6058
+							days = 69
+							random = 10
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 9 : 혼자서 복귀 (노멀) (기본 31%)                       #
+				#--------------------------------------------------------------#
+
+				31 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6063
+							days = 55
+							random = 15
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 10 : 혼자서 복귀 (부상) (기본 8%)                       #
+				#--------------------------------------------------------------#
+
+				8 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6066
+							days = 58
+							random = 15
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 11 : 동생의 구출을 부탁 (기본 9%)                       #
+				#--------------------------------------------------------------#
+
+				9 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6069
+							days = 61
+							random = 9
+						}
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 엔딩 2~11 : 남성/여성으로 구분하여 엔딩의 발생 확률을 조정한다.      #
+		# - 여성의 경우                                                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_female = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 엔딩 2,3,4,5,7,8,9,11                                            #
+			#------------------------------------------------------------------#
+
+			random_list = {
+
+				#--------------------------------------------------------------#
+				# 엔딩 2 : 전쟁에 휩쓸려 사망 (기본 10%)                       #
+				#--------------------------------------------------------------#
+
+				10 = {
+					modifier = {
+						factor = 2.0
+						trait = brave
+					}
+					modifier = {
+						factor = 0.6
+						trait = craven
+					}
+					modifier = {
+						factor = 1.5
+						event_target:mod_event_target_journey_province = {
+							has_siege = yes
+						}
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6024
+							days = 48
+							random = 12
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 3 : 현지에 정착 (기본 6%)                               #
+				#--------------------------------------------------------------#
+
+				6 = {
+					modifier = {
+						factor = 2.0
+						trait = deceitful
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6029
+							days = 68
+							random = 18
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 4 : 폐허 (기본 12%)                                     #
+				#--------------------------------------------------------------#
+
+				12 = {
+					modifier = {
+						factor = 1.8
+						event_target:mod_event_target_journey_province = {
+							has_siege = yes
+						}
+					}
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6034
+							days = 61
+							random = 11
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 5 : 납치 (기본 14%)                                     #
+				#--------------------------------------------------------------#
+
+				14 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6038
+							days = 73
+							random = 12
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 7 : 가족과 함께 복귀 (기본 10%)                         #
+				#--------------------------------------------------------------#
+
+				10 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6053
+							days = 66
+							random = 17
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 8 : 결혼해서 복귀 (기본 11%)                            #
+				#--------------------------------------------------------------#
+
+				11 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6058
+							days = 69
+							random = 10
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 9 : 혼자서 복귀 (노멀) (기본 26%)                       #
+				#--------------------------------------------------------------#
+
+				26 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6063
+							days = 55
+							random = 15
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 엔딩 11 : 동생의 구출을 부탁 (기본 11%)                      #
+				#--------------------------------------------------------------#
+
+				11 = {
+					event_target:mod_event_target_player = {
+						character_event = {
+							id = OPG.6069
+							days = 61
+							random = 9
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 전쟁 고아의 여행을 겪어야 할 캐릭터가 결혼하는 경우 (On-Actions)             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6019
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# on_actions 에서 실행되는 스크립트이다.                                   #
+	# 아직 여행 이벤트를 겪지 않은 상태에서 결혼한 경우 여행 이벤트를 겪지 않  #
+	# 도록 처리한다.                                                           #
+	#--------------------------------------------------------------------------#
+	
+	trigger = {
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		FROM = {
+			is_common_adult_npc_trigger = yes
+
+			has_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_ruined }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_normal }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_raped }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_eunuch }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_wounded }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_marry }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_parents }
+			NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_bro_sis }
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+		FROM = {
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		if = {
+			limit = {
+				new_character = {
+					has_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_ruined }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_normal }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_raped }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_eunuch }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_wounded }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_marry }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_parents }
+					NOT = { has_character_flag = mod_event_check_flag_npc_journey_event_bro_sis }
+				}
+			}
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 엔딩 1. 가는 도중 사망 (6021~6022)                                           #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6021
+	desc = EVTDESC_OPG_6021
+	picture = GFX_evt_recieve_letter
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6021
+		ROOT = {
+			hidden_tooltip = {
+				letter_event = {
+					id = OPG.6022
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6022
+	desc = EVTDESC_OPG_6022
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6022
+
+		#----------------------------------------------------------------------#
+		# 고아 사망 (이유: 사고)                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_accident
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료. 고아가 사망하였으므로 고아 쪽은 처리할 게 없지만..      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 2. 전쟁에 휘말려 사망 (6024~6027)                                       #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6024
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	immediate = {
+		event_target:mod_event_target_journey_province = {
+			owner = {
+				hidden_tooltip = {
+					character_event = {
+						id = OPG.6025
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6025
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	# mod_event_target_orphan
+	# mod_event_target_player
+	# mod_event_target_journey_province [PROVINCE]
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이벤트의 상대방 얼굴 출력을 위한 핑 이벤트이므로 신경쓸 필요 없다.   #
+		# (이벤트의 상대방 : 여행을 간 그 프로빈스의 군주)                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6026
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6026
+	desc = EVTDESC_OPG_6026
+	picture = GFX_evt_recieve_letter
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6026
+		ROOT = {
+			hidden_tooltip = {
+				letter_event = {
+					id = OPG.6027
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6027
+	desc = EVTDESC_OPG_6027
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6027
+
+		#----------------------------------------------------------------------#
+		# 고아 사망 (이유: 전투)                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_battle
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료. 고아가 사망하였으므로 고아 쪽은 처리할 게 없지만..      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 3. 정착 (6029~6032)                                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6029
+	desc = EVTDESC_OPG_6029
+	picture = GFX_evt_recieve_letter
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6029
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6030
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6030
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			letter_event = {
+				id = OPG.6031
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6031
+	desc = EVTDESC_OPG_6031
+	
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6031
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.6032
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6032
+	desc = EVTDESC_OPG_6032
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6032
+
+		#----------------------------------------------------------------------#
+		# 고아가 해당 프로빈스로 옮겨가 그 프로빈스 군주의 가신이 된다.        #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_journey_province = {
+			owner = {
+				event_target:mod_event_target_orphan = {	
+					move_character = PREV
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아의 각종 트레잇을 제거한다.                                       #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				remove_trait = on_a_journey
+				remove_orphan_character_trait_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 4. 폐허 (6034~6036)                                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6034
+	desc = EVTDESC_OPG_6034
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6034
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6035
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6035
+	desc = EVTDESC_OPG_6035
+	picture = GFX_evt_nemo_orphan_journey_event_ruined
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6035
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6036
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6036
+	desc = EVTDESC_OPG_6036
+	picture = GFX_evt_nemo_orphan_journey_event_ruined
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	# mod_event_target_orphan (FROMFROMFROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6036
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_ruined
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 5. 납치 (6038~6047) / 여성의 경우만 발생                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6038
+	desc = EVTDESC_OPG_6038
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6038
+
+		#----------------------------------------------------------------------#
+		# A. 가신을 찾아가 본다.                                               #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {	
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6039
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6038
+
+		#----------------------------------------------------------------------#
+		# B. 가신을 찾아가지 않는다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6046
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6039
+	hide_window = yes
+
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player
+	# mod_event_target_journey_province [PROVINCE]
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6040
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6040
+	desc = EVTDESC_OPG_6040
+	picture = GFX_evt_nemo_common_town_house	# Base Module
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6040
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6041
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6041
+	desc = EVTDESC_OPG_6041
+	picture = GFX_evt_nemo_orphan_journey_event_kidnapped
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6041
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6042
+					days = 2
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6041
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6044
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6042
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6043
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6043
+	desc = EVTDESC_OPG_6043
+	picture = GFX_evt_nemo_common_town_house	# Base Module
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6043
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		# 부를 알 수 없는 임신 처리한다.                                       #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_raped
+			set_character_flag = mod_event_temporary_flag_npc_journey_event_raped
+
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+
+			hidden_tooltip = {
+				impregnate = yes
+			}
+			add_trait = pregnant
+
+			## 출산 이후에 이벤트가 있다.
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.6044
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6045
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6045
+	desc = EVTDESC_OPG_6045
+	picture = GFX_evt_nemo_dead		# Base Mod
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6045
+
+		#----------------------------------------------------------------------#
+		# 고아 사망 (이유: 자살)                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_raped
+
+			death = {
+				death_reason = death_suicide
+			} 
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.6046
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6047
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6047
+	desc = EVTDESC_OPG_6047
+	picture = GFX_evt_nemo_dead
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6047
+
+		#----------------------------------------------------------------------#
+		# 고아 사망 (이유: 자살)                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_raped
+
+			death = {
+				death_reason = death_suicide
+			} 
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 6. 거세(비잔틴) (6049~6051)                                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6049
+	desc = EVTDESC_OPG_6049
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	immediate = {
+		event_target:mod_event_target_orphan = {
+			add_trait = eunuch
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_6049
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6050
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6050
+	desc = EVTDESC_OPG_6050
+	picture = GFX_evt_nemo_orphan_journey_event_dungeon
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6050
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6051
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6051
+	desc = EVTDESC_OPG_6051
+	picture = GFX_evt_torture	# Original Game
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6051
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_eunuch
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 7. 가족과 함께 돌아오다 (6053~6056)                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6053
+	desc = EVTDESC_OPG_6053
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6053
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6054
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6054
+	hide_window = yes
+
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player
+	# mod_event_target_journey_province [PROVINCE]
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 가족을 생성한다.                                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_journey_province = {
+			owner = {
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					age = 48
+					female = no
+				}
+				new_character = {
+					add_random_education_trait = yes
+					save_event_target_as = mod_event_target_orphan_father
+				}
+
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					age = 48
+					female = yes
+				}
+				new_character = {
+					add_random_education_trait = yes
+					save_event_target_as = mod_event_target_orphan_mother
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가족을 연결한다.                                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_father = {
+			event_target:mod_event_target_orphan_mother = {
+				add_spouse = PREV
+				ROOT = {
+					set_father = PREVPREV
+					set_mother = PREV
+				}
+			}
+		}
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6055
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6055
+	desc = EVTDESC_OPG_6055
+	picture = GFX_evt_nemo_orphan_journey_event_country
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+	# mod_event_target_orphan_father
+	# mod_event_target_orphan_mother
+
+	option = {
+		name = EVTOPTA_OPG_6055
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6056
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6056
+	desc = EVTDESC_OPG_6056
+	picture = GFX_evt_nemo_orphan_journey_event_moved
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+	# mod_event_target_orphan_father
+	# mod_event_target_orphan_mother
+
+	option = {
+		name = EVTOPTA_OPG_6056
+
+		event_target:mod_event_target_orphan_father = {
+			move_character = ROOT
+		}
+		event_target:mod_event_target_orphan_mother = {
+			move_character = ROOT
+		}
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_parents
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan_father
+		clear_event_target = mod_event_target_orphan_mother
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 엔딩 8. 결혼해서 돌아오다 (6058~6061)                                        #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6058
+	desc = EVTDESC_OPG_6058
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6058
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.6059
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6059
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6060
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6060
+	desc = {
+		text = EVTDESC_OPG_6060
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6060
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = yes
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphan_journey_event_ruined
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6060
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6061
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6061
+	desc = {
+		text = EVTDESC_OPG_6061_1
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6061_2
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = yes
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphan_journey_event_married
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6061
+
+		#----------------------------------------------------------------------#
+		# A. 고아의 성별이 남성인 경우 - 여성 캐릭터를 생성해야 한다.          #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_marry
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 배우자 캐릭터를 생성하고 결혼시킴                                    #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			create_character = {
+				random_traits = yes
+				dynasty = none
+				religion = event_target:mod_event_target_orphan
+				culture = event_target:mod_event_target_orphan
+				age = 21
+				female = yes
+			}
+			new_character = {
+				add_random_education_trait = yes
+				move_character = ROOT
+				add_spouse = event_target:mod_event_target_orphan
+
+				hidden_tooltip = {
+					if = {
+						limit = {
+							trait = homosexual
+						}
+						remove_trait = homosexual
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6061
+
+		#----------------------------------------------------------------------#
+		# B. 고아의 성별이 여성인 경우 - 남성 캐릭터를 생성해야 한다.          #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_marry
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 배우자 캐릭터를 생성하고 결혼시킴 (모계 결혼. 의미는 없지만..)       #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			create_character = {
+				random_traits = yes
+				dynasty = none
+				religion = event_target:mod_event_target_orphan
+				culture = event_target:mod_event_target_orphan
+				age = 21
+				female = no
+			}
+			new_character = {
+				add_random_education_trait = yes
+				move_character = ROOT
+				add_spouse_matrilineal = event_target:mod_event_target_orphan
+
+				hidden_tooltip = {
+					if = {
+						limit = {
+							trait = homosexual
+						}
+						remove_trait = homosexual
+					}
+				}
+			}
+		}
+	
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 9. 무사히 돌아오다 (6063~6064)                                          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6063
+	desc = EVTDESC_OPG_6063
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6063
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6064
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6064
+	desc = EVTDESC_OPG_6064
+	picture = GFX_evt_nemo_orphan_journey_event_country
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6064
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_normal
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 10. 부상당한 채 돌아오다 (6066~6067)                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6066
+	desc = EVTDESC_OPG_6066
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	immediate = {
+		event_target:mod_event_target_orphan = {
+			add_trait = wounded
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_6066
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6067
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6067
+	desc = EVTDESC_OPG_6067
+	picture = GFX_evt_nemo_orphan_journey_event_robbed
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6067
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_wounded
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 11. 여동생/남동생 구하기 (6069~6076)                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6069
+	desc = EVTDESC_OPG_6069
+	picture = GFX_evt_recieve_letter
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6069
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6070
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6070
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				letter_event = {
+					id = OPG.6071
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6071
+	desc = EVTDESC_OPG_6071
+	
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6071
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.6072
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6072
+	desc = {
+		text = EVTDESC_OPG_6072_1
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6072_2
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = yes
+			}
+		}
+	}	
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6072
+		trigger = {
+			ROOT = {
+				wealth = 15
+			}
+		}
+		ROOT = {
+			wealth = -15
+		}
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6073
+					days = 21
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_6072
+		trigger = {
+			ROOT = {
+				NOT = { wealth = 15 }
+			}
+		}
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6075
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_OPG_6072
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6075
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6073
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player
+	# mod_event_target_journey_province [PROVINCE]
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 가족 구성원을 생성한다.                                              #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_journey_province = {
+			owner = {
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					age = 54
+					female = no
+				}
+				new_character = {
+					add_random_education_trait = yes
+					save_event_target_as = mod_event_target_orphan_father
+				}
+
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					age = 56
+					female = yes
+				}
+				new_character = {
+					add_random_education_trait = yes
+					save_event_target_as = mod_event_target_orphan_mother
+				}
+
+				#--------------------------------------------------------------#
+				# 여성이라면 남동생을 생성                                     #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						ROOT = {
+							is_female = yes
+						}
+					}
+					create_character = {
+						dynasty = none
+						religion = ROOT
+						culture = ROOT
+						age = 15
+						female = no
+						trait = genius
+						trait = content
+						attributes = {
+							diplomacy = 12
+							martial = 12
+							stewardship = 12
+							intrigue = 12
+							learning = 12
+						}
+					}
+					new_character = {
+						random_list = {
+							20 = {
+								add_trait = affectionate
+								add_trait = curious
+								set_focus = focus_ed_diplomacy
+							}
+							20 = {
+								add_trait = willful
+								set_character_flag = was_rowdy
+								set_focus = focus_ed_martial
+							}
+							20 = {
+								add_trait = brooding
+								add_trait = conscientious
+								set_focus = focus_ed_stewardship
+							}
+							20 = {
+								add_trait = playful
+								add_trait = fussy
+								set_focus = focus_ed_intrigue
+							}
+							20 = {
+								add_trait = timid
+								add_trait = idolizer
+								set_focus = focus_ed_learning
+							}
+						}
+
+						save_event_target_as = mod_event_target_orphan_brother_sister
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 남성이라면 여동생을 생성                                     #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					create_character = {
+						dynasty = none
+						religion = ROOT
+						culture = ROOT
+						age = 15
+						female = yes
+						trait = genius
+						trait = content
+						attributes = {
+							diplomacy = 12
+							martial = 12
+							stewardship = 12
+							intrigue = 12
+							learning = 12
+						}
+					}
+					new_character = {
+						random_list = {
+							20 = {
+								add_trait = affectionate
+								add_trait = curious
+								set_focus = focus_ed_diplomacy
+							}
+							20 = {
+								add_trait = willful
+								set_character_flag = was_rowdy
+								set_focus = focus_ed_martial
+							}
+							20 = {
+								add_trait = brooding
+								add_trait = conscientious
+								set_focus = focus_ed_stewardship
+							}
+							20 = {
+								add_trait = playful
+								add_trait = fussy
+								set_focus = focus_ed_intrigue
+							}
+							20 = {
+								add_trait = timid
+								add_trait = idolizer
+								set_focus = focus_ed_learning
+							}
+						}
+						save_event_target_as = mod_event_target_orphan_brother_sister
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가족 구성원을 연결한다.                                              #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_father = {
+			event_target:mod_event_target_orphan_mother = {
+				add_spouse = PREV
+				ROOT = {
+					set_father = PREVPREV
+					set_mother = PREV
+				}
+				event_target:mod_event_target_orphan_brother_sister = {
+					set_father = PREVPREV
+					set_mother = PREV
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 부/모는 사망 처리.                                                   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_father = {
+			death = {
+				death_reason = death_battle
+			} 
+		}
+		event_target:mod_event_target_orphan_mother = {
+			death = {
+				death_reason = death_battle
+			} 
+		}
+
+		clear_event_target = mod_event_target_orphan_father
+		clear_event_target = mod_event_target_orphan_mother
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6074
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6074
+	desc = {
+		text = EVTDESC_OPG_6074_1
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6074_2
+		trigger = {
+			event_target:mod_event_target_orphan = { 
+				is_female = yes
+			}
+		}
+	}
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6074
+
+		#----------------------------------------------------------------------#
+		# 구출된 남(여)동생에게 고아 트레잇 및 오피니언 모디파이어를 붙인다.   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_brother_sister = {
+			move_character = ROOT
+
+			add_trait = rescued_orphan_by_player
+			set_orphan_character_relative_opinion_modifier_effect = yes
+
+			set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+			set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+			set_character_flag = mod_character_event_flag_experienced_abusing_event
+		}
+
+		#----------------------------------------------------------------------#
+		# 여행에서 돌아옴 처리                                                 #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_npc_journey_event_bro_sis
+			remove_trait = on_a_journey
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_tadaima_okaeri_orphan_journey
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan_brother_sister
+	}
+}
+
+character_event = {
+
+	id = OPG.6075
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_player
+	# mod_event_target_journey_province [PROVINCE]
+
+	immediate = {
+		event_target:mod_event_target_orphan = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6076
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6076
+	desc = EVTDESC_OPG_6076
+	picture = GFX_evt_bad_news	# 원본 게임 이미지
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_player (ROOT)
+	# mod_event_target_journey_province [PROVINCE]
+
+	option = {
+		name = EVTOPTA_OPG_6076
+
+		#----------------------------------------------------------------------#
+		# 고아 사망 (이유: 처형)                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			death = {
+				death_reason = death_execution
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_journey_event
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+		}
+
+		clear_event_target = mod_event_target_journey_province
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan_brother_sister
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 엔딩 5 의 후속 이벤트 : 아기를 출산한 후.. (On-Actions 이벤트, 6091~6096)    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6091
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		mother = {
+			has_character_flag = mod_event_check_flag_npc_journey_event_raped
+			has_character_flag = mod_event_temporary_flag_npc_journey_event_raped
+		}
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 임시 플래그는 삭제한다.                                              #
+		#----------------------------------------------------------------------#
+
+		mother = {
+			clr_character_flag = mod_event_temporary_flag_npc_journey_event_raped
+		}
+
+		#----------------------------------------------------------------------#
+		# 우선 이벤트 타겟을 저장한 후                                         #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_bastard_baby
+		save_event_target_as = mod_event_target_orphan	# 선택지 대비
+
+		#----------------------------------------------------------------------#
+		# 그 어머니에게 이벤트를 실행한다.                                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				mother = {
+					liege = {
+						ai = no
+
+						OR = {
+							has_orphanage_level_1_trigger = yes
+							has_orphanage_level_2_trigger = yes
+							has_orphanage_level_3_trigger = yes
+							has_orphanage_level_4_trigger = yes
+						}
+					}
+				}
+			}
+			mother = {
+				character_event = { id = OPG.6092 }
+			}
+			break = yes
+		}
+
+		clear_event_target = mod_event_target_bastard_baby
+		clear_event_target = mod_event_target_orphan
+	}
+}
+
+character_event = {
+	id = OPG.6092
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		save_event_target_as = mod_event_target_bastard_baby_mother
+
+		liege = {
+			character_event = {
+				id = OPG.6093
+				days = 2
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6093
+	desc = EVTDESC_OPG_6093
+	picture = GFX_evt_nemo_order_someone
+
+	# mod_event_target_orphan
+	# mod_event_target_bastard_baby
+	# mod_event_target_bastard_baby_mother
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6093
+		hidden_tooltip = {
+			ROOT = {
+				save_event_target_as = mod_event_target_player
+			}
+			event_target:mod_event_target_bastard_baby_mother = {
+				character_event = {
+					id = OPG.6094
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_6093
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_bastard_baby
+		clear_event_target = mod_event_target_bastard_baby_mother
+	}
+}
+
+character_event = {
+	id = OPG.6094
+	hide_window = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_bastard_baby
+	# mod_event_target_player
+	# mod_event_target_bastard_baby_mother (ROOT)
+
+	is_triggered_only = yes
+	
+	#--------------------------------------------------------------------------#
+	# 주군의 제안을 받을지 말지를 결정한다.                                    #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+		random_list = {
+			50 = {
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6095
+						days = 1
+					}
+				}
+			}
+			50 = {
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6096
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6095
+	desc = EVTDESC_OPG_6095
+	picture = GFX_evt_nemo_order_someone
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_bastard_baby
+	# mod_event_target_player (ROOT)
+	# mod_event_target_bastard_baby_mother
+
+	option = {
+		name = EVTOPTA_OPG_6095
+
+		#----------------------------------------------------------------------#
+		# 주군의 배려에는 감사하지만, 아기는 직접 키우기로 결심했다.           #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_bastard_baby_mother = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_thanks_for_regard
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_bastard_baby
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_bastard_baby_mother
+	}
+}
+
+character_event = {
+	id = OPG.6096
+	desc = EVTDESC_OPG_6096
+	picture = GFX_evt_nemo_rescued_orphan
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphan
+	# mod_event_target_bastard_baby
+	# mod_event_target_player
+	# mod_event_target_bastard_baby_mother (ROOT)
+
+	option = {
+		name = EVTOPTA_OPG_6096
+
+		#----------------------------------------------------------------------#
+		# 주군의 제안을 받아들여, 아기는 고아원에 맡기기로 한다.               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_bastard_baby = {
+
+			remove_trait = bastard
+			add_trait = rescued_orphan_by_player
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이후 이벤트의 가능성을 열어두기 위해서, 진짜 부모와의 연결을 #
+				# 만들어 둔다.                                                 #
+				#--------------------------------------------------------------#
+
+				opinion = {
+					who = event_target:mod_event_target_bastard_baby_mother
+					modifier = opinion_mod_hidden_real_parent
+				}
+
+				#--------------------------------------------------------------#
+				# 부모의 정보를 삭제                                           #
+				#--------------------------------------------------------------#
+
+				set_mother = 0
+
+				#--------------------------------------------------------------#
+				# 이 고아들은 입양될 수 없음                                   #
+				#--------------------------------------------------------------#
+
+				set_character_flag = mod_event_character_flag_cannot_adopt_abroad
+				set_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty
+
+				set_character_flag = mod_event_character_flag_npc_born_of_raped_courtier
+
+				#--------------------------------------------------------------#
+				# 고아에게 트레잇 이외의 다른 오피니언 표지를 붙인다.          #
+				#--------------------------------------------------------------#
+
+				set_orphan_character_relative_opinion_modifier_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 주군의 배려에 감사                                                   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_bastard_baby_mother = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_thanks_for_regard
+			}
+		}
+
+		clear_event_target = mod_event_target_bastard_baby
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_bastard_baby_mother
+	}
+}
+
+
+
+
+
+
+

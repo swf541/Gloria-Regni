@@ -1,0 +1,933 @@
+
+#------------------------------------------------------------------------------#
+# 고아원 건물이 있는지 여부를 확인하는 조건문 트리거                           #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 플레이어                                                  #
+#------------------------------------------------------------------------------#
+
+has_building_orphanage_trigger = {
+	OR = {
+		AND = {
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+			}
+			capital_holding = {
+				OR = {
+					has_building = ca_orphanage_1
+					has_building = tb_orphanage_1
+					has_building = ca_orphanage_2
+					has_building = ca_orphanage_3
+					has_building = ca_orphanage_4
+				}
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				OR = {
+					has_building = fp_orphanage_1
+					has_building = fp_orphanage_2
+					has_building = fp_orphanage_3
+					has_building = fp_orphanage_4
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 특정한 레벨의 고아원 건물이 있는지 여부를 확인하는 조건문 트리거             #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 플레이어                                                  #
+#------------------------------------------------------------------------------#
+
+has_orphanage_level_1_trigger = {
+	OR = {
+		AND = {
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+			}
+			capital_holding = {
+				OR = {
+					has_building = ca_orphanage_1
+					has_building = tb_orphanage_1
+				}
+				NOT = { has_building = ca_orphanage_2 }
+				NOT = { has_building = ca_orphanage_3 }
+				NOT = { has_building = ca_orphanage_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_orphanage_1
+				NOT = { has_building = fp_orphanage_2 }
+				NOT = { has_building = fp_orphanage_3 }
+				NOT = { has_building = fp_orphanage_4 }
+			}
+		}
+	}
+}
+
+has_orphanage_level_2_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_orphanage_2
+				NOT = { has_building = ca_orphanage_3 }
+				NOT = { has_building = ca_orphanage_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_orphanage_2
+				NOT = { has_building = fp_orphanage_3 }
+				NOT = { has_building = fp_orphanage_4 }
+			}
+		}
+	}
+}
+
+has_orphanage_level_3_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_orphanage_3
+				NOT = { has_building = ca_orphanage_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_orphanage_3
+				NOT = { has_building = fp_orphanage_4 }
+			}
+		}
+	}
+}
+
+has_orphanage_level_4_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_orphanage_4
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_orphanage_4
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아원에 있는 고아 숫자의 제한을 넘지 않았는지 확인                          #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 플레이어                                                  #
+#------------------------------------------------------------------------------#
+
+is_max_orphan_in_orphanage = {
+	OR = {
+		AND = {
+			has_orphanage_level_1_trigger = yes
+			any_courtier = {
+				count = 5
+				is_orphan_character_trigger = yes
+				is_adult = no
+			}
+		}
+		AND = {
+			has_orphanage_level_2_trigger = yes
+			any_courtier = {
+				count = 10
+				is_orphan_character_trigger = yes
+				is_adult = no
+			}
+		}
+		AND = {
+			has_orphanage_level_3_trigger = yes
+			any_courtier = {
+				count = 15
+				is_orphan_character_trigger = yes
+				is_adult = no
+			}
+		}
+		AND = {
+			has_orphanage_level_4_trigger = yes
+			any_courtier = {
+				count = 25
+				is_orphan_character_trigger = yes
+				is_adult = no
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 현재 유년기 관심사 / 교육 목표가 설정되어 있는 상태인지 확인 [Conclave DLC]  #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 고아 (또는 미성년 캐릭터)                                 #
+#------------------------------------------------------------------------------#
+
+is_childhood_focus_set_trigger = {
+	OR = {
+		has_focus = focus_ch_pride
+		has_focus = focus_ch_humility
+		has_focus = focus_ch_duty
+		has_focus = focus_ch_etiquette
+		has_focus = focus_ch_thrift
+		has_focus = focus_ch_faith
+		has_focus = focus_ch_struggle
+		has_focus = focus_ch_heritage
+	}
+}
+
+is_education_focus_set_trigger = {
+	OR = {
+		has_focus = focus_ed_diplomacy
+		has_focus = focus_ed_martial
+		has_focus = focus_ed_stewardship
+		has_focus = focus_ed_intrigue
+		has_focus = focus_ed_learning
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아 여부를 확인하는 조건문 모음                                             #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 고아                                                      #
+#------------------------------------------------------------------------------#
+
+is_orphan_character_rescued_by_player_trigger = {
+	trait = rescued_orphan_by_player
+}
+
+is_orphan_character_rescued_by_ai_trigger = {
+	trait = rescued_orphan_by_ai
+}
+
+is_orphan_character_trigger = {
+	OR = {
+		is_orphan_character_rescued_by_player_trigger = yes
+		is_orphan_character_rescued_by_ai_trigger = yes
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아가 현재 특별한 이벤트가 실행중인 상태인가? (고아 스코프)                 #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 고아                                                      #
+#------------------------------------------------------------------------------#
+
+is_orphan_pending_special_event_trigger = {
+
+	OR = {
+		# 현재 소녀 정원사로 데리고 있는 아이나, 관계가 이어진 상태의 휘핑
+		# 보이의 경우
+
+		# has_any_opinion_modifier = opinion_mod_char_gardener_girl
+
+		# 현재 특별 교육 루프 중에 있는 아이인 경우
+
+		# has_character_flag = mod_event_pending_flag_npc_orphan_special_training_loop
+
+		#----------------------------------------------------------------------#
+		# 휘핑 보이로 이어진 캐릭터에게는 다른 이벤트가 발생하면 안된다.       #
+		#----------------------------------------------------------------------#
+
+		has_any_opinion_modifier = opinion_mod_char_heirs_whipping_boy
+
+		#----------------------------------------------------------------------#
+		# 특별한 친구로 이어진 캐릭터에게는 다른 이벤트가 발생하면 안된다.     #
+		#----------------------------------------------------------------------#
+
+		has_any_opinion_modifier = opinion_mod_char_friend_of_opposite_sex
+		
+		#----------------------------------------------------------------------#
+		# 그 외 뭔가 이벤트가 진행 중인 경우                                   #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_pending_flag_npc_event_is_under_way
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아를 데려갈 수 있는 외부 군주가 존재하는가?                                #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 플레이어 (PREV/PREVPREV 가 사용 스코프의 캐릭터)          #
+#------------------------------------------------------------------------------#
+
+is_ruler_exist_want_to_adopt_orphan_trigger = {
+
+	# 성인, 수감중이 아닐 것, 플레이어나 플레이어의 가문원이 아닐 것.
+	# 독립 군주이거나, 플레이어 또는 플레이어의 가문원의 봉신이 아닐 것.
+	# 고아 살해자 모디파이어가 붙은 상태가 아닐 것.
+
+	any_playable_ruler = {
+		is_adult = yes
+		prisoner = no
+		NOT = { character = PREV }
+		NOT = { dynasty = PREV }
+		OR = {
+			independent = yes
+			any_liege = {
+				NOT = { character = PREVPREV }
+				NOT = { dynasty = PREVPREV }
+			}
+		}
+		NOT = { has_character_modifier = mod_cm_dishonor_ruler_killed_orphan }
+	}
+}
+
+is_suitable_ruler_to_adopt_orphan_trigger = {
+	
+	#--------------------------------------------------------------------------#
+	# 위와 완전히 같은 코드.                                                   #
+	# mod_event_target_player 이 설정되어 있을 것이 요구된다.                  #
+	#--------------------------------------------------------------------------#
+
+	is_adult = yes
+	prisoner = no
+	NOT = { character = event_target:mod_event_target_player }
+	NOT = { dynasty = event_target:mod_event_target_player }
+	OR = {
+		independent = yes
+		any_liege = {
+			NOT = { character = event_target:mod_event_target_player }
+			NOT = { dynasty = event_target:mod_event_target_player }
+		}
+	}
+	NOT = { has_character_modifier = mod_cm_dishonor_ruler_killed_orphan }
+}
+
+#------------------------------------------------------------------------------#
+# 이 고아가 고아원에서 집단생활을 하는 고아가 맞는지 확인 [Conclave DLC]       #
+# - 현재 스코프는 반드시 고아 스코프일 것                                      #
+#------------------------------------------------------------------------------#
+
+is_orphan_in_orphanage_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 고아 트레잇을 가지고 있는 미성년 캐릭터                                  #
+	#--------------------------------------------------------------------------#
+
+	OR = {
+		trait = rescued_orphan_by_player
+		trait = rescued_orphan_by_ai
+	}
+	is_adult = no
+
+	#--------------------------------------------------------------------------#
+	# 고아원에 존재하는 고아인지를 체크하는 루틴                               #
+	#--------------------------------------------------------------------------#
+
+	OR = {
+		
+		#----------------------------------------------------------------------#
+		# Conclave DLC 를 사용하고 있지 않다면 항상 참 (구분할 필요가 없음)    #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_dlc = "Zeus" }
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 를 사용하고 있다면 구분할 필요가 있음                   #
+		#----------------------------------------------------------------------#
+
+		AND = {
+			has_dlc = "Zeus"
+
+			OR = {
+
+				#--------------------------------------------------------------#
+				# 섭정과 관계 없는 경우                                        #
+				#--------------------------------------------------------------#
+
+				educator = {
+					OR = {
+
+						## 1. 플레이어가 교육자인 경우
+
+						ai = no
+
+						## 2. 고아원 보모가 교육자인 경우 
+
+						is_orphanage_nurse_trigger = yes
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 섭정이 있는 경우 : 섭정이 교육자면 고아원에 있는 것으로 인정 #
+				#--------------------------------------------------------------#
+
+				## 1. ROOT 가 플레이어
+
+				AND = {
+					ROOT = {
+						ai = no
+						has_regent = yes
+					}
+					educator = {
+						ai = yes
+						ROOT = {
+							regent = {
+								character = PREVPREV
+							}
+						}
+					}
+				}
+					
+				## 3. ROOT 가 고아인 경우 (Liege 가 플레이어)
+
+				AND = {
+					liege = {
+						ai = no
+						has_regent = yes
+					}
+					ROOT = {
+						character = PREV
+					}
+					liege = {
+						regent = {
+							ROOT = {
+								educator = {
+									ai = yes
+									character = PREVPREV
+								}
+							}
+						}
+					}
+				}
+
+				## 4. ROOT 가 고아원 보모인 경우
+
+				AND = {
+					ROOT = {
+						ai = yes
+						is_orphanage_nurse_trigger = yes
+						liege = {
+							ai = no
+							has_regent = yes
+						}
+					}
+					educator = {
+						ai = yes
+						ROOT = {
+							liege = {
+								regent = {
+									character = PREVPREVPREV
+								}
+							}
+						}
+					}
+				}
+
+				## 5. ROOT 가 파견 보조자인 경우
+
+				AND = {
+					ROOT = {
+						ai = yes
+						is_orphanage_guardian_trigger = yes
+						liege = {
+							ai = no
+							has_regent = yes
+						}
+					}
+					educator = {
+						ai = yes
+						ROOT = {
+							liege = {
+								regent = {
+									character = PREVPREVPREV
+								}
+							}
+						}
+					}
+				}
+
+				## 6. ROOT 가 자문회원인 경우
+
+				AND = {
+					ROOT = {
+						ai = yes
+						OR = {
+							has_job_title = job_chancellor
+							has_job_title = job_marshal
+							has_job_title = job_treasurer
+							has_job_title = job_spymaster
+							has_job_title = job_spiritual
+						}
+						liege = {
+							ai = no
+							has_regent = yes
+						}
+					}
+					educator = {
+						ai = yes
+						ROOT = {
+							liege = {
+								regent = {
+									character = PREVPREVPREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 휘핑 보이 이벤트 : 필요 조건                                                 #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어이거나 플레이어의 미성년 후계자          #
+#------------------------------------------------------------------------------#
+
+is_needing_whippingboy_minor_real_player_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 휘핑보이를 필요로 하는 캐릭터가 미성년 실제 플레이어인가?                #
+	# (is_adult 의 경우 이벤트에서 Pre Trigger 로 제한되므로 굳이 필요없음)    #
+	#--------------------------------------------------------------------------#
+
+	ai = no
+	#is_adult = no
+}
+
+is_needing_whippingboy_ai_character_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 휘핑보이를 필요로 하는 캐릭터가 성인 플레이어의 미성년 후계자 AI인가?    #
+	# (is_adult 의 경우 이벤트에서 Pre Trigger 로 제한되므로 굳이 필요없음)    #
+	#--------------------------------------------------------------------------#
+
+	ai = yes
+	#is_adult = no
+	liege = {
+		ai = no
+		is_adult = yes
+		dynasty = PREV
+		current_heir = {
+			character = PREVPREV
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 휘핑 보이 이벤트 : 연결할 수 있는 고아 캐릭터가 존재하는가?                  #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어이거나 플레이어의 미성년 후계자          #
+#------------------------------------------------------------------------------#
+
+has_orphan_eligible_for_whippingboy_for_minor_real_player_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 현재 미성년 실제 플레이어에게 연결될 수 있는 휘핑보이 자격이 있는 고아가 #
+	# 존재하는가?                                                              #
+	#--------------------------------------------------------------------------#
+
+	any_realm_character = {
+
+		#----------------------------------------------------------------------#
+		# 1살 이상의 같은 성별의 고아                                          #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			trait = rescued_orphan_by_player
+			trait = rescued_orphan_by_ai
+		}
+		same_sex = PREV
+		age = 1
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아와 플레이어는 3살 이내의 차이가 나야 한다.                #
+		#----------------------------------------------------------------------#
+
+		NOT = { 
+			age_diff = {
+				who = PREV
+				years = 3
+			}
+		}
+
+		NOT = { is_older_than = PREV }
+
+		is_liege_human_player_character_trigger = yes
+		is_orphan_in_orphanage_trigger = yes
+		is_orphan_pending_special_event_trigger = no
+
+		#----------------------------------------------------------------------#
+		# 현재 미성년의 플레이어라면, 한번이라도 개인적 만남을 가졌어야.       #
+		#----------------------------------------------------------------------#
+
+		has_opinion_modifier = {
+			 who = PREV
+			 modifier = opinion_mod_made_a_good_relation
+		}
+
+		#----------------------------------------------------------------------#
+		# 이미 연결되어 있는 상태라면 안된다.                                  #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir }
+	}
+}
+
+has_orphan_eligible_for_whippingboy_for_ai_character_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 현재 플레이어의 미성년 후계자에게 연결될 수 있는 휘핑보이 자격이 있는    #
+	# 고아가 존재하는가?                                                       #
+	# 후계자의 주군의 가신들 스코프에서 찾아야 한다.                           #
+	#--------------------------------------------------------------------------#
+
+	liege = {
+		any_realm_character = {
+
+			#------------------------------------------------------------------#
+			# 1살 이상의 같은 성별의 고아                                      #
+			# PREV는 주군, PREVPREV 가 후계자 스코프                           #
+			#------------------------------------------------------------------#
+
+			OR = {
+				trait = rescued_orphan_by_player
+				trait = rescued_orphan_by_ai
+			}
+			same_sex = PREVPREV
+			age = 1
+
+			#------------------------------------------------------------------#
+			# 미성년 고아와 플레이어는 3살 이내의 차이가 나야 한다.            #
+			# PREV는 주군, PREVPREV 가 후계자 스코프                           #
+			#------------------------------------------------------------------#
+
+			NOT = { 
+				age_diff = {
+					who = PREVPREV
+					years = 3
+				}
+			}
+
+			NOT = { is_older_than = PREVPREV }
+
+			is_liege_human_player_character_trigger = yes
+			is_orphan_in_orphanage_trigger = yes
+			is_orphan_pending_special_event_trigger = no
+
+			#------------------------------------------------------------------#
+			# 이미 연결되어 있는 상태라면 안된다.                              #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir }
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 휘핑 보이 이벤트 : 현재 후계자에게 휘핑보이가 연결되어 있는가?               #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어이거나 플레이어의 미성년 후계자          #
+#------------------------------------------------------------------------------#
+
+is_exist_heirs_whipping_boy_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 현재의 후계자에게 휘핑 보이가 연결되어 있는가?                           #
+	#--------------------------------------------------------------------------#
+
+	OR = {
+		AND = {
+			
+			#------------------------------------------------------------------#
+			# 플레이어의 미성년 AI 후계자인 경우. ROOT 는 플레이어이다.        #
+			#------------------------------------------------------------------#
+
+			ai = no
+			is_adult = yes
+			current_heir = {
+				ai = yes
+				is_female = no
+				is_adult = no
+				dynasty = PREV
+
+				ROOT = {
+					any_realm_character = {
+						has_any_opinion_modifier = opinion_mod_char_heirs_whipping_boy
+						OR = {
+							trait = rescued_orphan_by_player
+							trait = rescued_orphan_by_ai
+						}
+						is_adult = no
+						is_alive = yes
+						is_female = no
+						NOT = { trait = incapable }
+						has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+						has_opinion_modifier = {
+							 who = PREVPREV
+							 modifier = opinion_mod_char_heirs_whipping_boy
+						}
+					}
+				}
+			}
+		}
+		AND = {
+
+			#------------------------------------------------------------------#
+			# 미성년 플레이어의 경우. ROOT 는 플레이어이다.                    #
+			#------------------------------------------------------------------#
+
+			ai = no
+			is_adult = no
+			is_female = no
+
+			any_realm_character = {
+				has_any_opinion_modifier = opinion_mod_char_heirs_whipping_boy
+				OR = {
+					trait = rescued_orphan_by_player
+					trait = rescued_orphan_by_ai
+				}
+				is_adult = no
+				is_alive = yes
+				is_female = no
+				NOT = { trait = incapable }
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+				has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_char_heirs_whipping_boy
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 휘핑 보이 이벤트 : 이 캐릭터가 휘핑 보이가 맞는지 체크하는 루틴              #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 해당 캐릭터 (플레이어가 ROOT 인 경우에만 사용할 것)       #
+#------------------------------------------------------------------------------#
+
+is_heirs_whipping_boy_trigger = {
+	ROOT = {
+		current_heir = {
+			reverse_has_opinion_modifier = {
+				 who = PREVPREV
+				 modifier = opinion_mod_char_heirs_whipping_boy
+			}
+		}
+	}
+}
+
+is_my_whipping_boy_trigger = {
+	has_opinion_modifier = {
+		 who = ROOT
+		 modifier = opinion_mod_char_heirs_whipping_boy
+	}
+}
+
+is_whipping_boy_trigger = {
+	OR = {
+		is_heirs_whipping_boy_trigger = yes
+		is_my_whipping_boy_trigger = yes
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 비밀 요원 이벤트: 비밀 요원이 연결되어 있는지 확인                           #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 플레이어                                                  #
+#------------------------------------------------------------------------------#
+
+is_exist_orphan_secret_agent_trigger = {
+
+	ai = no
+	is_adult = yes
+
+	any_realm_character = {
+		trait = rescued_orphan_by_player
+		is_adult = no
+		#is_female = no
+		has_opinion_modifier = {
+			 who = PREV
+			 modifier = opinion_mod_orphans_boss_of_intrigue
+		}
+		has_character_flag = mod_event_character_flag_secret_agent
+	}
+}
+
+is_in_orphanage_orphan_secret_agent_trigger = {
+
+	ai = no
+	is_adult = yes
+
+	any_courtier = {
+		trait = rescued_orphan_by_player
+		is_adult = no
+		has_opinion_modifier = {
+			 who = PREV
+			 modifier = opinion_mod_orphans_boss_of_intrigue
+		}
+		has_character_flag = mod_event_character_flag_secret_agent
+
+		is_orphan_in_orphanage_trigger = yes
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 특별한 교육 이벤트: 현재 이 캐릭터가 특별 교육 중인지 확인                   #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 고아                                                      #
+#------------------------------------------------------------------------------#
+
+is_under_special_training_for_orphan_trigger = {
+	OR = {
+		has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+		has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+		has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+		has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+		has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 이성 친구 이벤트 : 필요 조건                                                 #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어                                         #
+#------------------------------------------------------------------------------#
+
+is_needing_friend_of_opposite_sex_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 휘핑보이를 필요로 하는 캐릭터가 미성년 실제 플레이어인가?                #
+	# (is_adult 의 경우 이벤트에서 Pre Trigger 로 제한되므로 굳이 필요없음)    #
+	#--------------------------------------------------------------------------#
+
+	ai = no
+	#is_adult = no
+}
+
+#------------------------------------------------------------------------------#
+# 이성 친구 이벤트 : 연결할 수 있는 고아 캐릭터가 존재하는가?                  #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어                                         #
+#------------------------------------------------------------------------------#
+
+has_orphan_eligible_for_friend_of_opposite_sex_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 현재 미성년 실제 플레이어에게 연결될 수 있는 고아가 존재하는가?          #
+	#--------------------------------------------------------------------------#
+
+	any_realm_character = {
+
+		#----------------------------------------------------------------------#
+		# 1살 이상의 다른 성별의 고아                                          #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			trait = rescued_orphan_by_player
+			trait = rescued_orphan_by_ai
+		}
+		NOT = { same_sex = PREV }
+		age = 1
+
+		#----------------------------------------------------------------------#
+		# 이후 결혼의 문제까지 걸리므로, 문화는 동일해야 하는 것으로 설정!     #
+		#----------------------------------------------------------------------#
+
+		culture = PREV
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아와 플레이어는 3살 이내 차이가 나야 한다. 단 플레이어가 더 #
+		# 나이가 많아야 함.                                                    #
+		#----------------------------------------------------------------------#
+
+		NOT = { 
+			age_diff = {
+				who = PREV
+				years = 3
+			}
+		}
+
+		NOT = { is_older_than = PREV }
+
+		is_liege_human_player_character_trigger = yes
+		is_orphan_in_orphanage_trigger = yes
+		is_orphan_pending_special_event_trigger = no
+
+		#----------------------------------------------------------------------#
+		# 현재 미성년의 플레이어라면, 한번이라도 개인적 만남을 가졌어야.       #
+		#----------------------------------------------------------------------#
+
+		has_opinion_modifier = {
+			 who = PREV
+			 modifier = opinion_mod_made_a_good_relation
+		}
+
+		#----------------------------------------------------------------------#
+		# 이미 연결되어 있는 상태라면 안된다.                                  #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex }
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 이성 친구 이벤트 : 현재 플레이어에게 특별한 친구가 연결되어 있는가?          #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 미성년의 플레이어                                         #
+#------------------------------------------------------------------------------#
+
+is_exist_friend_of_opposite_sex_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 현재의 후계자에게 특별한 친구가 연결되어 있는가?                         #
+	#--------------------------------------------------------------------------#
+
+	ai = no
+
+	any_realm_character = {
+		has_any_opinion_modifier = opinion_mod_char_friend_of_opposite_sex
+		OR = {
+			trait = rescued_orphan_by_player
+			trait = rescued_orphan_by_ai
+		}
+		is_adult = no
+		is_alive = yes
+		NOT = { trait = incapable }
+		has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+
+		has_opinion_modifier = {
+			 who = PREV
+			 modifier = opinion_mod_char_friend_of_opposite_sex
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 이성 친구 이벤트 : 이 캐릭터가 이성 친구가 맞는지 체크하는 루틴              #
+#------------------------------------------------------------------------------#
+# 사용 가능 스코프 : 해당 캐릭터 (플레이어가 ROOT 인 경우에만 사용할 것)       #
+#------------------------------------------------------------------------------#
+
+is_my_friend_of_opposite_sex_trigger = {
+	has_opinion_modifier = {
+		 who = ROOT
+		 modifier = opinion_mod_char_friend_of_opposite_sex
+	}
+}
+

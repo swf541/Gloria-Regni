@@ -1,0 +1,28 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+decisions = {
+
+	mod_main_decision_setup_orphanage_mod = {
+
+		potential = {
+			ai = no
+			NOT = { has_global_flag = MOD_NEMO_OPG_SETUP_OK }
+			NOT = { has_global_flag = MOD_NEMO_OPG_SETUP_PROGRESS }
+		}
+		effect = {
+			hidden_tooltip = {
+				ROOT = {
+					long_character_event = {
+						id = SET.11
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

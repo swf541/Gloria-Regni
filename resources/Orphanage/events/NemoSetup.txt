@@ -1,0 +1,225 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+namespace = SET
+
+#------------------------------------------------------------------------------#
+# 캐릭터/수도 어드밴티지 활성화                                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = SET.201
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				has_global_flag = MOD_NEMO_ADV_SETUP_OK
+			}
+			long_character_event = {
+				id = SET.204
+			}
+			break = yes
+		}
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = MOD_NEMO_ADV_SETUP_OK }
+			}
+
+			set_global_flag = MOD_NEMO_ADV_SETUP_OK
+
+			long_character_event = {
+				id = SET.202
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.202
+	desc = EVTDESC_SET_202
+	picture = GFX_evt_nemo_mod_setup_character_advantage
+	title = EVTTITLE_SET_202
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_202
+		ROOT = {
+			wealth = 10000
+			add_character_modifier = {
+				name = mod_init_character_adventage_01
+				hidden = no
+				duration = -1
+			}
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.203
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SET_202
+		ROOT = {
+			add_character_modifier = {
+				name = mod_init_character_adventage_02
+				hidden = no
+				duration = -1
+			}
+			hidden_tooltip = {
+				any_realm_character = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_set_character_adventage
+					}
+				}
+
+				long_character_event = {
+					id = SET.203
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_SET_202
+		ROOT = {
+			add_character_modifier = {
+				name = mod_init_character_adventage_03
+				hidden = no
+				duration = -1
+			}
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.203
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_SET_202
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.203
+				}
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.203
+	desc = EVTDESC_SET_203
+	picture = GFX_evt_nemo_mod_setup_province_advantage
+	title = EVTTITLE_SET_203
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_203
+		ROOT = {
+			capital_scope = {
+				add_province_modifier = {
+					name = mod_init_capital_adventage_01
+					hidden = no
+					duration = 36500
+				}
+			}
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.204
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SET_203
+		ROOT = {
+			capital_scope = {
+				add_province_modifier = {
+					name = mod_init_capital_adventage_02
+					hidden = no
+					duration = 36500
+				}
+			}
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.204
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_SET_203
+		ROOT = {
+			capital_scope = {
+				add_province_modifier = {
+					name = mod_init_capital_adventage_03
+					hidden = no
+					duration = 36500
+				}
+			}
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.204
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_SET_203
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.204
+				}
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.204
+	desc = EVTDESC_SET_204
+	picture = GFX_evt_nemo_mod_setup
+	title = EVTTITLE_SET_204
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+		ROOT = {
+			capital_scope = {
+				add_province_modifier = {
+					name = mod_setup_capital_province
+					hidden = yes
+					duration = -1
+				}				
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_SET_204
+	}
+}
+
+long_character_event = {
+	id = SET.205
+	desc = EVTDESC_SET_204
+	picture = GFX_evt_nemo_mod_setup
+	title = EVTTITLE_SET_204
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_SET_204
+	}
+}

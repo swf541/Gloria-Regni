@@ -1,0 +1,515 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+namespace = SET
+
+#------------------------------------------------------------------------------#
+# 오프닝                                                                       #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+
+	id = SET.11
+	desc = EVTDESC_SET_11
+	picture = GFX_evt_nemo_orphanage_mod_introduction_1
+	title = EVTTITLE_SET_11
+
+	ai = no
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = MOD_NEMO_OPG_SETUP_PROGRESS
+	}
+	
+	option = {
+		name = EVTOPTA_SET_11
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.12
+				}
+			}
+		}
+	}
+}
+
+long_character_event = {
+
+	id = SET.12
+	desc = EVTDESC_SET_12
+	picture = GFX_evt_nemo_orphanage_mod_introduction_2
+	title = EVTTITLE_SET_12
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_SET_12
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.13
+				}
+			}
+		}
+	}
+}
+
+long_character_event = {
+
+	id = SET.13
+	desc = EVTDESC_SET_13
+	picture = GFX_evt_nemo_orphanage_mod_introduction_3
+	title = EVTTITLE_SET_13
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_13
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.101
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 설정 시작                                                                    #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+
+	id = SET.101
+	desc = EVTDESC_SET_101
+	picture = GFX_evt_nemo_orphanage_mod_setup
+	title = EVTTITLE_SET_101
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_SET_101
+		ROOT = {
+			hidden_tooltip = {
+				if = {
+					limit = {
+						is_feudal = yes
+					}
+					long_character_event = {
+						id = SET.102
+					}
+				}
+				if = {
+					limit = {
+						is_republic = yes
+					}
+					long_character_event = {
+						id = SET.103
+					}
+				}
+				if = {
+					limit = {
+						is_tribal = yes
+					}
+					long_character_event = {
+						id = SET.104
+					}
+				}
+				if = {
+					limit = {
+						is_nomadic = yes
+					}
+					long_character_event = {
+						id = SET.105
+					}
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 봉건정(Feudal)                                                               #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.102
+	desc = EVTDESC_SET_102
+	picture = GFX_evt_nemo_mod_setup_feudal_government
+	title = EVTTITLE_SET_102
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_102
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.111
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 공화정(Merchant Republic)                                                    #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.103
+	desc = EVTDESC_SET_103
+	picture = GFX_evt_nemo_mod_setup_republic_government
+	title = EVTTITLE_SET_103
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_102
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.111
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 부족정(Tribal)                                                               #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.104
+	desc = EVTDESC_SET_104
+	picture = GFX_evt_nemo_mod_setup_tribal_government
+	title = EVTTITLE_SET_104
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_SET_104
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.111
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 유목정(Nomadic)                                                              #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.105
+	desc = EVTDESC_SET_105
+	picture = GFX_evt_nemo_mod_setup_nomadic_government
+	title = EVTTITLE_SET_105
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_SET_105
+		ROOT = {
+			hidden_tooltip = {
+				clr_global_flag = MOD_NEMO_OPG_SETUP_PROGRESS
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_SET_105
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.201
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_SET_105
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.111
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 비밀 회의 DLC 의 사용 여부 확인                                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = SET.111
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				NOT = { has_dlc = "Zeus" }
+			}
+			long_character_event = {
+				id = SET.112
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+			character_event = {
+				id = SET.113
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.112
+	desc = EVTDESC_SET_112
+	picture = GFX_evt_nemo_mod_setup_conclave_dlc
+	title = EVTTITLE_SET_112
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_112
+		ROOT = {
+			hidden_tooltip = {
+				clr_global_flag = MOD_NEMO_OPG_SETUP_PROGRESS
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SET_112
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.201
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_SET_112
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.113
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 군주의 성별 확인                                                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = SET.113
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				is_female = yes
+			}
+			long_character_event = {
+				id = SET.114
+			}
+		}
+		if = {
+			limit = {
+				is_female = no
+			}
+			long_character_event = {
+				id = SET.121
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.114
+	desc = EVTDESC_SET_114
+	picture = GFX_evt_nemo_mod_setup_female_character
+	title = EVTTITLE_SET_114
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_114
+		ROOT = {
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.121
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_SET_114
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = SET.201
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 개별 모듈 활성화                                                             #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.121
+	desc = EVTDESC_SET_121
+	picture = GFX_evt_nemo_event_in_the_forest
+	title = EVTTITLE_SET_121
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_121
+		ROOT = {
+			set_global_flag = MOD_NEMO_WLK_SETUP_OK
+
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.122
+				}
+			}
+		}
+	}
+}
+
+long_character_event = {
+	id = SET.122
+	desc = EVTDESC_SET_122
+	picture = GFX_evt_nemo_default_orphanage
+	title = EVTTITLE_SET_122
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_122
+		ROOT = {
+			set_global_flag = MOD_NEMO_OPG_SETUP_OK
+			set_global_flag = MOD_NEMO_OPG_EVENT_01
+
+			if = {
+				limit = {
+					NOT = { has_global_flag = mod_orphanage_policy_location_outer }
+					NOT = { has_global_flag = mod_orphanage_policy_location_neutral }
+					NOT = { has_global_flag = mod_orphanage_policy_location_inner }
+				}
+				set_global_flag = mod_orphanage_policy_location_neutral
+			}
+
+			if = {
+				limit = {
+					NOT = { has_global_flag = mod_orphanage_policy_manage_level_high }
+					NOT = { has_global_flag = mod_orphanage_policy_manage_level_low }
+				}
+				set_global_flag = mod_orphanage_policy_manage_level_high
+			}
+
+			if = {
+				limit = {
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_0 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_1 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_2 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_3 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_4 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_5 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_6 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_7 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_8 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_9 }
+					NOT = { has_global_flag = mod_orphanage_policy_patrol_level_10 }
+				}
+				set_global_flag = mod_orphanage_policy_patrol_level_0
+			}
+
+			if = {
+				limit = {
+					NOT = { has_global_flag = mod_orphanage_policy_allow_set_heritage }
+					NOT = { has_global_flag = mod_orphanage_policy_always_set_heritage }
+					NOT = { has_global_flag = mod_orphanage_policy_disallow_set_heritage }
+				}
+				set_global_flag = mod_orphanage_policy_allow_set_heritage
+			}
+
+			hidden_tooltip = {
+				long_character_event = {
+					id = SET.151
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 일반적인 주의사항 : 모드 기본 활성화 작업 완료                               #
+#------------------------------------------------------------------------------#
+
+long_character_event = {
+	id = SET.151
+	desc = EVTDESC_SET_151
+	picture = GFX_evt_nemo_orphanage_mod_setup
+	title = EVTTITLE_SET_151
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_SET_151
+		ROOT = {
+			hidden_tooltip = {
+
+				clr_global_flag = MOD_NEMO_OPG_SETUP_PROGRESS
+				set_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+				#--------------------------------------------------------------#
+				# 어드밴티지 설정으로 이어진다 (BaseMod)                       #
+				#--------------------------------------------------------------#
+
+				character_event = {
+					id = SET.201
+				}
+			}
+		}
+	}
+}
+

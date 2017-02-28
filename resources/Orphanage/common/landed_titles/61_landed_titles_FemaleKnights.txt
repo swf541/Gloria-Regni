@@ -1,0 +1,30 @@
+
+d_female_knights_band = {
+	
+	color={ 210 165 110 }
+	color2={ 255 255 255 }
+	
+	capital = 106	# Nantes
+	#capital = 547	# Kiev
+
+	allow = {
+		ai = no
+	}
+
+	title = FEMIKNIGHT
+	title_female = FEMIKNIGHT
+	foa = FEMIKNIGHT_FOA
+	
+	landless = yes
+	mercenary = yes
+
+	mercenary_type = female_knights_band_composition
+
+	# religion =
+	# culture =
+	
+	primary = yes
+	strength_growth_per_century = 1.0
+
+	monthly_income = 8
+}

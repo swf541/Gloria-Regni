@@ -1,0 +1,3936 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 6500~6699
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-05-10
+
+namespace = OPG
+
+#==============================================================================#
+# 고아로 이루어진 부대                                                         #
+# 특정한 조건을 만족한 고아 출신 캐릭터는 특별한 군사지휘관으로 사용할 수 있다.#
+# 특정한 조건을 만족한 고아 출신 여성 캐릭터는 특별한 기사단을 창설할 수 있다. #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 지휘관 탄생 이벤트 (6501~)                                                   #
+# 폐허 이벤트를 겪은 고아 출신 남자 가신                                       #
+# 납치 이벤트를 겪은 고아 출신 여자 가신                                       #
+#------------------------------------------------------------------------------#
+# 혼자 훈련에 들어감 - 1년. 그 동안에는 해당자가 있더라도 이벤트 발생 안한다.  #
+# - 결과 : 성공, 성공(부상), 실패(불구), 실패(사망)                            #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6501
+	hide_window = yes
+
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 한 명이 훈련 중일 때는 다른 캐릭터가 들어갈 수 없다                  #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event }
+
+		#----------------------------------------------------------------------#
+		# 남자의 경우 폐허, 여자의 경우 폐허 또는 납치 이벤트를 겪은 경우      #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_common_adult_npc_trigger = yes
+			is_landed = no
+			is_married = no
+			is_consort = no
+
+			has_job_title = no
+
+			NOT = { trait = wounded }
+			NOT = { trait = maimed }
+
+			is_orphanage_nurse_trigger = no
+
+			NOT = { has_minor_title = title_commander }
+			NOT = { has_minor_title = title_councilmember_king }
+			NOT = { has_minor_title = title_councilmember_emperor }
+
+			NOT = { age = 40 }
+
+			OR = {
+				AND = {
+					is_female = no
+					has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+					had_character_flag = { flag = mod_event_check_flag_npc_journey_event_ruined days = 365 }
+				}
+				AND = {
+					is_female = yes
+					OR = {
+						has_character_flag = mod_event_check_flag_npc_journey_event_raped
+						has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+					}
+					OR = {
+						had_character_flag = { flag = mod_event_check_flag_npc_journey_event_raped days = 365 }
+						had_character_flag = { flag = mod_event_check_flag_npc_journey_event_ruined days = 365 }
+					}
+				}
+			}
+
+			NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_rejected }
+			NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated }
+			NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_failed }
+			NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_succeed }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_common_adult_npc_trigger = yes
+				is_landed = no
+				is_married = no
+				is_consort = no
+
+				has_job_title = no
+
+				NOT = { trait = wounded }
+				NOT = { trait = maimed }
+
+				is_orphanage_nurse_trigger = no
+
+				NOT = { has_minor_title = title_commander }
+				NOT = { has_minor_title = title_councilmember_king }
+				NOT = { has_minor_title = title_councilmember_emperor }
+
+				NOT = { age = 40 }
+
+				OR = {
+					AND = {
+						is_female = no
+						has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+						had_character_flag = { flag = mod_event_check_flag_npc_journey_event_ruined days = 365 }
+					}
+					AND = {
+						is_female = yes
+						OR = {
+							has_character_flag = mod_event_check_flag_npc_journey_event_raped
+							has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+						}
+						OR = {
+							had_character_flag = { flag = mod_event_check_flag_npc_journey_event_raped days = 365 }
+							had_character_flag = { flag = mod_event_check_flag_npc_journey_event_ruined days = 365 }
+						}
+					}
+				}
+
+				NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_rejected }
+				NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated }
+				NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_failed }
+				NOT = { has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_succeed }
+			}
+			character_event = {
+				id = OPG.6502
+				days = 6
+				random = 4
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6502
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+		ROOT = {
+			save_event_target_as = mod_event_target_trainee
+		}
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6503
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6503
+	desc = {
+		text = EVTDESC_OPG_6503_1
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = no
+				has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6503_2
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+				has_character_flag = mod_event_check_flag_npc_journey_event_ruined
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6503_3
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+				has_character_flag = mod_event_check_flag_npc_journey_event_raped
+			}
+		}
+	}
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+	}
+
+	option = {
+		name = EVTOPTA_OPG_6503
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = OPG.6504
+				}
+			}	
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.6504
+	desc = EVTDESC_OPG_6504
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6504
+
+		#----------------------------------------------------------------------#
+		# A. 허락한다.                                                         #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			set_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated
+
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6505
+					days = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_6504
+
+		#----------------------------------------------------------------------#
+		# B. 허락하지 않는다.                                                  #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			set_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_rejected
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_reject_orphan_journey
+			}
+		}
+		ROOT = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_trainee
+	}
+}
+
+character_event = {
+	id = OPG.6505
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6506
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6506
+	desc = EVTDESC_OPG_6506
+	picture = GFX_evt_nemo_event_journey_departure
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6506
+		event_target:mod_event_target_trainee = {
+			add_trait = on_a_journey
+
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6507
+				}
+			}	
+		}
+	}
+}
+
+## 수련 과정 이벤트 ##
+
+character_event = {
+	id = OPG.6507
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 훈련의 준비 : 어서와라 신병                                          #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1 }
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2 }
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3 }
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4 }
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5 }
+					NOT = { has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6 }
+				}
+			}
+			ROOT = {
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+
+				# Remove all education traits
+
+				remove_trait = amateurish_plotter
+				remove_trait = flamboyant_schemer
+				remove_trait = intricate_webweaver
+				remove_trait = elusive_shadow
+				remove_trait = naive_appeaser
+				remove_trait = underhanded_rogue
+				remove_trait = charismatic_negotiator
+				remove_trait = grey_eminence
+				remove_trait = indulgent_wastrel
+				remove_trait = thrifty_clerk
+				remove_trait = fortune_builder
+				remove_trait = midas_touched
+				remove_trait = misguided_warrior
+				remove_trait = tough_soldier
+				remove_trait = skilled_tactician
+				remove_trait = brilliant_strategist
+				remove_trait = detached_priest
+				remove_trait = martial_cleric
+				remove_trait = scholarly_theologian
+				remove_trait = mastermind_theologian
+
+				# Remove all strategy traits
+
+				remove_trait = flat_terrain_leader
+				remove_trait = rough_terrain_leader
+				remove_trait = mountain_terrain_leader
+				remove_trait = desert_terrain_leader
+				remove_trait = holy_warrior
+				remove_trait = unyielding_leader
+				remove_trait = light_foot_leader
+				remove_trait = heavy_infantry_leader
+				remove_trait = cavalry_leader
+				remove_trait = inspiring_leader
+				remove_trait = trickster
+				remove_trait = organizer
+				remove_trait = defensive_leader
+				remove_trait = experimenter
+				remove_trait = flanker
+				remove_trait = aggressive_leader
+				remove_trait = siege_leader
+				remove_trait = narrow_flank_leader
+				remove_trait = war_elephant_leader
+				remove_trait = jungle_terrain_leader
+				remove_trait = winter_soldier
+
+				# Remove all lifestyle traits
+
+				remove_trait = hedonist
+				remove_trait = scholar
+				remove_trait = gardener
+				remove_trait = mystic
+				remove_trait = impaler
+				remove_trait = duelist
+				remove_trait = hunter
+				remove_trait = seducer
+				remove_trait = seductress
+				remove_trait = administrator
+				remove_trait = architect
+				remove_trait = strategist
+				remove_trait = socializer
+				remove_trait = schemer
+				remove_trait = theologian
+				remove_trait = gamer
+				remove_trait = celibate
+				remove_trait = poet
+				remove_trait = falconer
+
+				# Remove all disease traits
+
+				cure_illness = yes
+
+				remove_trait = stressed
+				remove_trait = depressed
+				remove_trait = lunatic
+				remove_trait = possessed
+				remove_trait = wounded
+				remove_trait = maimed
+				remove_trait = infirm
+				remove_trait = incapable
+				remove_trait = drunkard
+
+				# Remove all bad traits
+
+				remove_trait = clubfooted
+				remove_trait = harelip
+				remove_trait = hunchback
+				remove_trait = lisp
+				remove_trait = stutter
+				remove_trait = ugly
+				remove_trait = dwarf
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = inbred
+				remove_trait = weak
+				remove_trait = dull
+				remove_trait = feeble
+
+				# Remove all religious traits
+
+				remove_trait = bad_priest_christian
+				remove_trait = bad_priest_muslim
+				remove_trait = bad_priest_norse
+				remove_trait = bad_priest_tengri
+				remove_trait = bad_priest_zoroastrian
+				remove_trait = bad_priest_aztec
+
+				remove_trait = sympathy_christendom
+				remove_trait = sympathy_islam
+				remove_trait = sympathy_pagans
+				remove_trait = sympathy_zoroastrianism
+				remove_trait = sympathy_judaism
+				remove_trait = sympathy_indian
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 6단계 : 마지막 훈련                                                  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# Martial +3 / Brilliant Strategist 지휘 트레잇과 적성 트레잇 얻음 #
+			#------------------------------------------------------------------#
+
+			ROOT = {
+				change_martial = 3
+				prestige = 10
+				
+				add_trait = brilliant_strategist
+				add_trait = orphan_infantry_leader
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			#------------------------------------------------------------------#
+			# 이제 돌아갈 수 있음                                              #
+			#------------------------------------------------------------------#
+
+			liege = {
+				character_event = {
+					id = OPG.6511
+					days = 30
+				}
+				break = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 5단계 : 고통을 참고 강해진다                                         #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+				}
+			}
+			ROOT = {
+				change_martial = 3
+				prestige = 8
+				health = 1.0
+				
+				add_trait = diligent
+				add_trait = patient
+				add_trait = strong
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 4단계 : 자신을 내려놓는다                                            #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+				}
+			}
+			ROOT = {
+				change_martial = 2
+				prestige = 5
+				
+				remove_trait = lustful
+				remove_trait = gluttonous
+				remove_trait = greedy
+				remove_trait = slothful
+				remove_trait = wroth
+				remove_trait = envious
+				remove_trait = proud
+
+				remove_trait = chaste
+				remove_trait = temperate
+				remove_trait = charitable
+				remove_trait = diligent
+				remove_trait = patient
+				remove_trait = kind
+				remove_trait = humble
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 3단계 : 모든 감정을 절제하라                                         #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+				}
+			}
+			ROOT = {
+				change_martial = 2
+				prestige = 3
+				
+				remove_trait = shy
+				remove_trait = ambitious
+				remove_trait = arbitrary
+				remove_trait = cynical
+				remove_trait = paranoid
+				remove_trait = trusting
+				remove_trait = zealous
+				remove_trait = cruel
+				remove_trait = honest
+				remove_trait = deceitful
+				remove_trait = homosexual
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 2단계 : 기본 적성의 판정                                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+				}
+			}
+			ROOT = {
+				change_martial = 2
+				prestige = 1
+
+				random_list = {
+					33 = {
+						add_trait = duelist
+					}
+					33 = {
+						add_trait = hunter
+					}
+					33 = {
+						add_trait = strategist
+					}
+				}
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 1단계 : 겁쟁이는 필요 없다                                           #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+				}
+			}
+			ROOT = {
+				change_martial = 1
+
+				if = {
+					limit = {
+						trait = craven
+					}
+					remove_trait = craven
+				}
+				
+				add_trait = brave
+
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+				set_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+		}
+		
+		#----------------------------------------------------------------------#
+		# 이 단계의 클리어 여부 판정                                           #
+		#----------------------------------------------------------------------#
+
+		## 사망 (기본 확률 2%, 1단계에서는 발생하지 않고 5단계에서는 x2.0)
+
+		random = {
+			chance = 2
+			modifier = {
+				factor = 0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+			modifier = {
+				factor = 2.0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			death = {
+				death_reason = death_accident
+			}
+
+			liege = {
+				character_event = {
+					id = OPG.6509
+				}
+			}
+			break = yes
+		}
+
+		## 의식불명 (기본 확률 5%, 1단계에서는 발생하지 않고 5단계에서는 x2.0)
+
+		random = {
+			chance = 5
+			modifier = {
+				factor = 0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+			modifier = {
+				factor = 2.0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			add_trait = incapable
+
+			liege = {
+				character_event = {
+					id = OPG.6508
+					days = 10
+				}
+			}
+			break = yes
+		}
+
+		## 불구 (기본 확률 10%, 1단계에서는 발생하지 않고 5단계에서는 x2.0)
+
+		random = {
+			chance = 10
+			modifier = {
+				factor = 0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+			modifier = {
+				factor = 0.3
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+			}
+			modifier = {
+				factor = 0.6
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+			}
+			modifier = {
+				factor = 2.0
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			add_trait = maimed
+
+			liege = {
+				character_event = {
+					id = OPG.6508
+					days = 10
+				}
+			}
+			break = yes
+		}
+
+		## 부상 (기본 확률 25%, 부상은 실패로 판정하지 않음.)
+
+		random = {
+			chance = 25
+			modifier = {
+				factor = 0.1
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+			modifier = {
+				factor = 0.4
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+			}
+			modifier = {
+				factor = 0.8
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+			}
+			modifier = {
+				factor = 1.2
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+			}
+			modifier = {
+				factor = 1.6
+				has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			add_trait = wounded
+		}
+
+		## 자연적으로 maimed 나 incapable 이 된 경우 여기서 실패 처리한다.
+
+		if = {
+			limit = {
+				OR = {
+					trait = maimed
+					trait = incapable
+				}
+			}
+			liege = {
+				character_event = {
+					id = OPG.6508
+					days = 10
+				}
+			}
+		} 
+
+		#----------------------------------------------------------------------#
+		# 이 단계 훈련 종료. 66일 후 다음 단계 훈련 이벤트 실행                #
+		#----------------------------------------------------------------------#
+
+		repeat_event = { id = OPG.6507 days = 66 }
+	}
+}
+
+## 부상으로 실패 ##
+
+character_event = {
+
+	id = OPG.6508
+	desc = EVTDESC_OPG_6508
+	picture = GFX_evt_nemo_wounded		# Base Mod
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6508
+		event_target:mod_event_target_trainee = {
+			remove_trait = on_a_journey
+
+			#------------------------------------------------------------------#
+			# 수련 실패 플래그를 달아준다.                                     #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated
+				}
+				clr_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated
+			}
+
+			set_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_failed
+
+			#------------------------------------------------------------------#
+			# 수련 단계 플래그가 남아 있을 것이므로 이를 제거해준다.           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+		}
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+## 사망 ##
+
+character_event = {
+
+	id = OPG.6509
+	desc = EVTDESC_OPG_6509
+	picture = GFX_evt_nemo_dead		# Base Mod
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6509
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 수련을 마치고 돌아오다 (6511)                                                #
+#------------------------------------------------------------------------------#
+# - 남자의 경우에는 자동으로 지휘관 마이너 타이틀을 부여하고, 일정 기간이 지난 #
+#   후 둠스택 1개 부대가 출현하는 이벤트가 출력된다.                           #
+# - 여자의 경우, 여성 지위 Lv 4가 오픈되어 있는 경우에는 남자와 동일하게 처리  #
+#   한다.                                                                      #
+#   여성 지위 Lv4 오픈이 안 되어 있는 경우에는 여성만의 기사단의 창설 이벤트를 #
+#   오픈한다. (단, 아직 창설이 안 되어 있는 경우. 만약 창설되어 있다면 그쪽으  #
+#   로 넘어가는 이벤트가 발생한다.)                                            #
+# - 만약 창설되어 있는 상태에서 여성 지위 Lv4 가 오픈되어 있는 경우에는 선택   #
+#   이벤트를 거치도록 한다.                                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6511
+	desc = {
+		text = EVTDESC_OPG_6511_1
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6511_2
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+			}
+			has_dlc = "Zeus"
+			ROOT = {
+				primary_title = {
+					has_law = status_of_women_4
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6511_3
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+			}
+			OR = {
+				NOT = { has_dlc = "Zeus" }
+				ROOT = {
+					primary_title = {
+						NOT = { has_law = status_of_women_4 }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphan_tough_training_completed
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_trainee = {
+
+			#------------------------------------------------------------------#
+			# 수련 성공 플래그를 대체해서 달아준다.                            #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated
+				}
+				clr_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_activated
+			}
+
+			set_character_flag = mod_event_check_flag_npc_adult_orphan_tough_training_event_succeed
+
+			#------------------------------------------------------------------#
+			# 수련 단계 플래그가 남아 있을 것이므로 이를 제거해준다.           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_1
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_2
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_3
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_4
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_5
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+				}
+				clr_character_flag = mod_event_check_flag_adult_orphan_tough_training_lv_6
+			}
+
+			#------------------------------------------------------------------#
+			# 공통 : 여행 트레잇을 떼고, 부상이 있다면 치료 이벤트를 연결한다. #
+			#------------------------------------------------------------------#
+
+			remove_trait = on_a_journey
+
+			if = {
+				limit = {
+					trait = wounded
+				}
+
+				## 원본의 health_events.txt 이벤트 (부상이 치료, 흉터) ##
+
+				character_event = {
+					id = 6081
+					days = 7
+					random = 14
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_6511
+
+		#----------------------------------------------------------------------#
+		# A. 남자 가신의 경우                                                  #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = no
+			}
+		}
+
+		event_target:mod_event_target_trainee = {
+
+			#------------------------------------------------------------------#
+			# 지휘관 타이틀을 수여                                             #
+			#------------------------------------------------------------------#
+
+			give_minor_title = title_commander
+
+			#------------------------------------------------------------------#
+			# 군사 모집 이벤트가 발생                                          #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6513
+				days = 30
+				random = 15
+			}
+		}
+
+		#clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		#clear_event_target = mod_event_target_trainee
+		#clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6511
+
+		#----------------------------------------------------------------------#
+		# B. 여자 가신의 경우 (여성 참정권이 최대인 경우)                      #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+			}
+			has_dlc = "Zeus"
+			ROOT = {
+				primary_title = {
+					has_law = status_of_women_4
+				}
+			}
+		}
+
+		event_target:mod_event_target_trainee = {
+
+			#------------------------------------------------------------------#
+			# 지휘관 타이틀을 수여                                             #
+			#------------------------------------------------------------------#
+
+			give_minor_title = title_commander
+
+			#------------------------------------------------------------------#
+			# 군사 모집 이벤트가 발생                                          #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6513
+				days = 30
+				random = 15
+			}
+		}
+
+		#clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		#clear_event_target = mod_event_target_trainee
+		#clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTC_OPG_6511
+
+		#----------------------------------------------------------------------#
+		# C. 여자 가신의 경우 (여성 참정권이 최대가 아닌 경우)                 #
+		#    Conclave DLC 가 없는 경우 항상 이 쪽으로 판단한다.                #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+			}
+			OR = {
+				NOT = { has_dlc = "Zeus" }
+				ROOT = {
+					primary_title = {
+						NOT = { has_law = status_of_women_4 }
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 여성은 지휘관이 될 수 없는 환경에서 아무것도 할 수 없다.             #
+		# 이에 대한 이벤트가 발생                                              #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			character_event = {
+				id = OPG.6521
+				days = 120
+				random = 60
+			}
+		}
+
+		#clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		#clear_event_target = mod_event_target_trainee
+		#clear_event_target = mod_event_target_player
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 이벤트 : 병력 모집 (6513~6514)                                               #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6513
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		if = {
+			limit = {
+				has_minor_title = title_commander
+			}
+
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.6514
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 만약 캐릭터가 지휘관에 임명되어 있지 않다면 둠스택을 얻을 수 없다.   #
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+		}
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.6514
+	desc = {
+		text = EVTDESC_OPG_6514_1
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_6514_2
+		trigger = {
+			event_target:mod_event_target_trainee = {
+				is_female = yes
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphan_infantry
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6514
+
+		#----------------------------------------------------------------------#
+		# 고아를 리더로 하는 둠스택 (경보병 800) 등장                          #
+		#----------------------------------------------------------------------#
+
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					earmark = orphan_infantry
+					province = PREV
+					home = PREV
+					owner = ROOT
+					leader = event_target:mod_event_target_trainee
+					troops = {
+						light_infantry = { 800 800 }
+					}
+					attrition = 0
+					maintenance_multiplier = 0.02
+					disband_on_peace = no
+					reinforces = no
+					can_toggle_looting = yes
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 이벤트 : 여자라서 (6521)                                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6521
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단이 활성화되어 있다면 캐릭터가 백합 기사단으로 이동        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_female_knights_title_active_trigger = yes
+			}
+
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.6557
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단이 활성화되어 있지 않다면 이벤트를 계속 발생시킨다.       #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6522
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6522
+	desc = EVTDESC_OPG_6522
+	picture = GFX_evt_nemo_female_cannot_be_commander
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6522
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.6523
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6523
+	desc = EVTDESC_OPG_6523
+	picture = GFX_evt_nemo_female_cannot_be_commander
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6523
+		trigger = {
+			ROOT = {
+				primary_title = {
+					OR = {
+						tier = KING
+						tier = EMPEROR
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# A. 내 권위로 밀어붙이겠다.                                           #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			event_target:mod_event_target_trainee = {
+				character_event = {
+					id = OPG.6526
+				}
+			}
+		}		
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6523
+
+		#----------------------------------------------------------------------#
+		# B. 봉신들의 반발을 무릅쓰고, 그녀에게 대장군의 자격을 준다.          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			set_character_flag = special_marshal
+		}
+
+		any_vassal = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_vassal_detest_my_decision
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTC_OPG_6523
+
+		#----------------------------------------------------------------------#
+		# C. 안타깝지만, 어찌할 수가 없다.                                     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			add_trait = depressed
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.6524
+					days = 7
+					random = 7
+				}		
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6524
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		random_list = {
+			40 = {
+				
+				#--------------------------------------------------------------#
+				# 자살을 선택                                                  #
+				#--------------------------------------------------------------#
+
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6525
+					}
+				}
+			}
+			60 = {
+
+				#--------------------------------------------------------------#
+				# 여기에서 이벤트 종료                                         #
+				#--------------------------------------------------------------#
+
+				FROM = {
+					clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+				}
+
+				clear_event_target = mod_event_target_trainee
+				clear_event_target = mod_event_target_player
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6525
+	desc = EVTDESC_OPG_6525
+	picture = GFX_evt_nemo_dead
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6522
+
+		#----------------------------------------------------------------------#
+		# 해당 여성 캐릭터가 자살                                              #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_trainee = {
+			death = {
+				death_reason = death_suicide
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 이벤트: 여성 기사단을 창설하기 위한 움직임                                   #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6526
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6527
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6527
+	desc = EVTDESC_OPG_6527
+	picture = GFX_evt_nemo_order_someone		# Base Mod
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6527
+		ROOT = {
+			prestige = -150
+		}
+		any_vassal = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_vassal_detest_my_decision
+			}
+		}
+
+		hidden_tooltip = {
+			event_target:mod_event_target_trainee = {
+				character_event = {
+					id = OPG.6528
+					days = 25
+					random = 15
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6528
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.6529
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6529
+	desc = EVTDESC_OPG_6529
+	picture = GFX_evt_recieve_letter
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6529
+		hidden_tooltip = {
+			letter_event = {
+				id = OPG.6530
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.6530
+	desc = EVTDESC_OPG_6530
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_6530
+
+		random_realm_province = {
+			add_province_modifier = {
+				name = mod_pm_loyal_decree_for_female_knights_province
+				months = 60
+			}
+		}
+
+		hidden_tooltip = {
+			event_target:mod_event_target_trainee = {
+				character_event = {
+					id = OPG.6531
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6531
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		random_list = {
+			50 = {
+				#--------------------------------------------------------------#
+				# 준비가 끝나지 않았다. 다시 OPG.6529~6530 이 실행된다.        #
+				#--------------------------------------------------------------#
+
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.6529
+						days = 25
+						random = 15
+					}
+				}
+			}
+			50 = {
+				#--------------------------------------------------------------#
+				# 준비가 완료되었다. 여성 기사단의 창설을 선포한다.            #
+				#--------------------------------------------------------------#
+				event_target:mod_event_target_player = {
+					letter_event = {
+						id = OPG.6532
+						days = 25
+						random = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+letter_event = {
+	id = OPG.6532
+	desc = EVTDESC_OPG_6532
+	border = GFX_event_letter_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_OPG_6532
+		hidden_tooltip = {
+			event_target:mod_event_target_trainee = {
+				character_event = {
+					id = OPG.6533
+					days = 2
+					random = 2
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6533
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			narrative_event = {
+				id = OPG.6534
+			}
+		}
+	}
+}
+
+narrative_event = {
+
+	id = OPG.6534
+	picture = GFX_evt_nemo_female_knights_founded
+	border = GFX_event_narrative_frame_war
+
+	title = EVTTITLE_OPG_6534
+	desc = EVTDESC_OPG_6534
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단의 작위를 해금한다.                                       #
+		#----------------------------------------------------------------------#
+
+		activate_title = { title = d_female_knights_band status = yes }
+
+		#----------------------------------------------------------------------#
+		# 기사단장의 작위를 수여하고, 백합 기사단을 플레이어의 직속 봉신으로   #
+		# 설정한다.                                                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+
+			set_title_flag = ban_to_select_succ_gavelkind
+			set_title_flag = ban_to_select_succ_elective_gavelkind
+			set_title_flag = ban_to_select_succ_seniority
+			set_title_flag = ban_to_select_succ_primogeniture
+			set_title_flag = ban_to_select_succ_feudal_elective
+			set_title_flag = ban_to_select_succ_tanistry
+			set_title_flag = ban_to_select_succ_ultimogeniture
+			set_title_flag = ban_to_select_succ_turkish_succession
+			set_title_flag = ban_to_select_succ_papal_succession
+			set_title_flag = ban_to_select_succ_appointment
+			#set_title_flag = ban_to_select_succ_open_elective
+			set_title_flag = ban_to_select_succ_catholic_bishopric
+			set_title_flag = ban_to_select_succ_patrician_elective
+			set_title_flag = ban_to_select_succ_nomad_succession
+			set_title_flag = ban_to_select_cognatic_succession
+			set_title_flag = ban_to_select_agnatic_succession
+			set_title_flag = ban_to_select_true_cognatic_succession
+			#set_title_flag = ban_to_select_enatic_succession
+			set_title_flag = ban_to_select_enatic_cognatic_succession
+
+			set_title_flag = allow_to_select_enatic_succession
+			set_title_flag = allow_to_select_succ_open_elective
+
+			grant_title = event_target:mod_event_target_trainee
+		}
+
+		d_female_knights_band = {
+			holder_scope = {
+				ROOT = {
+					set_defacto_vassal = PREV
+				}
+			}
+			culture = ROOT
+			religion = ROOT
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_6534
+
+		#----------------------------------------------------------------------#
+		# 연대기에 기록한다.                                                   #
+		#----------------------------------------------------------------------#
+
+		chronicle = {
+			entry = CHRONICLE_FOUND_KNIGHTS_OF_LILIES
+			portrait = [Root.GetID]
+		}
+
+		event_target:mod_event_target_trainee = {
+
+			#------------------------------------------------------------------#
+			# 기사단장에게 트레잇을 수여하고 오피니언 보정을 붙인다.           #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+				wealth = 15
+				add_trait = female_knights
+
+				reverse_opinion = {
+					who = ROOT
+					modifier = opinion_mod_cm_respect_to_patron_of_female_knight
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 백합 기사단의 다른 참가 기사들을 생성한다.                       #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6535
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.6535
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 7명의 초기 기사를 생성한다.                                          #
+		#----------------------------------------------------------------------#
+
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 15
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 19
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 17
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 18
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 16
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 17
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 16
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 20
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			attributes = {
+				martial = 18
+			}
+			culture = random
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 19
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 19
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 19
+		}
+		new_character = {
+			move_character = ROOT
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 17
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 18
+		}
+		new_character = {
+			move_character = ROOT
+		}
+
+		#----------------------------------------------------------------------#
+		# 시중 들 1명의 남성 환관                                              #
+		#----------------------------------------------------------------------#
+
+		create_character = {
+			random_traits = no
+			dynasty = none
+			religion = FROM
+			culture = FROM
+			female = no
+			trait = eunuch
+			age = 16
+		}
+		new_character = {
+			move_character = ROOT
+		}
+
+		#----------------------------------------------------------------------#
+		# 상속제도의 수정                                                      #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.6536
+			days = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6536
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		primary_title = {
+			set_female_knights_succession_law_effect = yes
+		}
+
+		recalc_succession = yes
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 백합 기사단의 관리 : 백그라운드에서 실행된다.                                #
+# 기본적으로 백합 기사단장의 스코프                                            #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6541
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 남성 캐릭터가 들어온 경우                                                #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 거세되지 않은 남성 캐릭터가 가신으로 존재하는 경우                   #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_female = no
+			is_adult = yes
+			NOT = { trait = eunuch }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 거세된 남성 캐릭터가 3명 미만인 경우는, 1명을 거세해서 남긴다.  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = {
+					any_courtier = {
+						count = 3
+						is_female = no
+						is_adult = yes
+						trait = eunuch
+					}
+				}
+			}
+			random_courtier = {
+				limit = {
+					is_female = no
+					is_adult = yes
+					NOT = { trait = eunuch }
+				}
+				add_trait = eunuch
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 거세된 남성 캐릭터가 3명 이상인 경우나, 위에서 걸러지지 않은 나 #
+		# 머지 남성들은 모두 자살시켜 게임에서 제거한다.                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_courtier = {
+					count = 3
+					is_female = no
+					is_adult = yes
+					trait = eunuch
+				}				
+			}
+			any_courtier = {
+				limit = {
+					is_female = no
+					is_adult = yes
+					NOT = { trait = eunuch }
+				}
+				death = {
+					death_reason = death_suicide
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6542
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 랜덤 여성 캐릭터가 들어온 경우                                           #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 랜덤 여성 캐릭터 (트레잇이 없는) 가 생성된 경우                      #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_female = yes
+			is_adult = yes
+			NOT = { trait = female_knights }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 무력 수치 15 이상인 자는 기사단원으로 받아들인다.                    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_courtier = {
+					martial = 15
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = female_knights }
+				}
+			}
+			random_courtier = {
+				limit = {
+					martial = 15
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = female_knights }
+				}
+				add_trait = female_knights
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 무력 수치 15 미만인 자는 자살시켜 게임에서 제거한다.                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_courtier = {
+					NOT = { martial = 15 }
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = female_knights }
+				}
+			}
+			any_courtier = {
+				limit = {
+					NOT = { martial = 15 }
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = female_knights }
+				}
+				death = {
+					death_reason = death_suicide
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6543
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 기사단의 여성 캐릭터가 6명 미만이 된 경우                                #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 기사단의 여성 캐릭터가 6명 미만 (최소 6명은 되어야 자문회 구성 가능) #
+		#----------------------------------------------------------------------#
+
+		NOT = {
+			any_courtier = {
+				count = 6
+				is_female = yes
+				is_adult = yes
+				trait = female_knights
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 2명의 기사를 추가한다.                                               #
+		#----------------------------------------------------------------------#
+
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 15
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 17
+		}
+		new_character = {
+			move_character = ROOT
+			character_event = {
+				id = OPG.6581
+			}
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 15
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 18
+		}
+		new_character = {
+			move_character = ROOT
+			character_event = {
+				id = OPG.6581
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6544
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 기사단 내에 30세 미만의 여성 캐릭터가 아무도 없다                        #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 기사단 내에 30세 미만의 여성 캐릭터가 아무도 없다                    #
+		# (30세 미만의 여성 캐릭터가 없으면 기사단장을 맡을 캐릭터가 없게 됨)  #
+		#----------------------------------------------------------------------#
+
+		NOT = {
+			any_courtier = {
+				count = 1
+				is_female = yes
+				is_adult = yes
+				trait = female_knights
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 1명의 16세 기사를 추가한다.                                          #
+		#----------------------------------------------------------------------#
+
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = random
+			attributes = {
+				martial = 15
+			}
+			female = yes
+			trait = female_knights
+			flag = special_marshal
+			age = 16
+		}
+		new_character = {
+			move_character = ROOT
+			character_event = {
+				id = OPG.6581
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6545
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 구성원이 아닌 여성 캐릭터가 트레잇을 가진 경우                           #
+	#--------------------------------------------------------------------------#
+	# 오직 여성 캐릭터에게만 실행되므로 only_women 으로 대상을 줄인다.         #
+	#--------------------------------------------------------------------------#
+
+	only_women = yes
+	min_age = 16
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 구성원이 아닌데 트레잇을 가지고 있는 경우                #
+		#----------------------------------------------------------------------#
+
+		trait = female_knights
+
+		d_female_knights_band = {
+			holder_scope = {
+				NOT = { character = ROOT }
+				ROOT = {
+					liege = {
+						NOT = { character = PREVPREV }
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 트레잇을 제거한다.                                       #
+		#----------------------------------------------------------------------#
+
+		remove_trait = female_knights
+	}
+}
+
+character_event = {
+
+	id = OPG.6546
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 기사단장이 랜덤으로 생성된 경우                                          #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	min_age = 16
+	max_age = 41
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		# 단장에게 트레잇이 없는 경우 (즉, 계승 비정상으로 잘못 생성)          #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+				NOT = { trait = female_knights }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 계승법이 잘못 되었을 수 있으므로 계승법을 다시 설정한다.             #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			set_character_flag = random_created_character
+			primary_title = {
+				set_female_knights_succession_law_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 성별이 여성이라면 트레잇을 주고 끝낸다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					is_female = yes
+				}
+			}
+			add_trait = female_knights
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 성별이 남성이라면 임의의 가신 여성에게 이벤트를 실행시킨다.          #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					is_female = no
+				}
+			}
+			random_courtier = {
+				limit = {
+					is_female = yes
+					prisoner = no
+					NOT = { age = 40 }
+				}
+				character_event = {
+					id = OPG.6547
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6547
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재의 기사단장(남)으로부터 기사단장 작위를 넘겨받는다.              #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				abdicate_to = ROOT
+			}
+
+			set_title_flag = ban_to_select_succ_gavelkind
+			set_title_flag = ban_to_select_succ_elective_gavelkind
+			set_title_flag = ban_to_select_succ_seniority
+			set_title_flag = ban_to_select_succ_primogeniture
+			set_title_flag = ban_to_select_succ_feudal_elective
+			set_title_flag = ban_to_select_succ_tanistry
+			set_title_flag = ban_to_select_succ_ultimogeniture
+			set_title_flag = ban_to_select_succ_turkish_succession
+			set_title_flag = ban_to_select_succ_papal_succession
+			set_title_flag = ban_to_select_succ_appointment
+			#set_title_flag = ban_to_select_succ_open_elective
+			set_title_flag = ban_to_select_succ_catholic_bishopric
+			set_title_flag = ban_to_select_succ_patrician_elective
+			set_title_flag = ban_to_select_succ_nomad_succession
+			set_title_flag = ban_to_select_cognatic_succession
+			set_title_flag = ban_to_select_agnatic_succession
+			set_title_flag = ban_to_select_true_cognatic_succession
+			#set_title_flag = ban_to_select_enatic_succession
+			set_title_flag = ban_to_select_enatic_cognatic_succession
+
+			set_title_flag = allow_to_select_enatic_succession
+			set_title_flag = allow_to_select_succ_open_elective
+		}
+
+		#----------------------------------------------------------------------#
+		# 해당 캐릭터는 다시 궁정으로 배치한다. 이후는 관리 코드에 따라 처리   #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			move_character = ROOT
+		}
+
+		#----------------------------------------------------------------------#
+		# 단장 변경 알림을 출력한다.                                           #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+
+			recalc_succession = yes
+
+			character_event = {
+				id = OPG.6585
+				days = 2
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6548
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 사망승계로 인해 단기 기사가 기사단장을 승계한 경우                       #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 외부에서 온 단기 기사 신분 플래그를 가지고 있다                      #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_check_flag_short_term_female_knights
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 즉시 종신 기사 신분이 되고, 돌아갈 수 없게 된다.                     #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			character_event = {
+				id = OPG.6556
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6549
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 플레이어가 작위를 잃는 등으로 독립하거나 타 군주의 봉신이 된 경우        #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+				liege = {
+					ai = yes
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 즉시 독립 용병단 형태가 된다.                                        #
+		# 이후 왕 이상의 작위를 회복한 경우 디시전으로 다시 복속시킬 수 있다.  #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6550
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 백합 기사단장이 기사단 작위 이외의 작위를 얻는 경우                      #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+				liege = {
+					ai = no
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단장이 백합 기사단장 이외의 다른 작위를 획득한 경우         #
+		#----------------------------------------------------------------------#
+
+		any_demesne_title = {
+			NOT = { title = d_female_knights_band }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단이 획득한 기사단 이외의 작위가 있는 경우 이는 플레이어에  #
+		# 게 넘겨진다.                                                         #
+		#----------------------------------------------------------------------#
+
+		liege = {
+			ROOT = {
+				any_demesne_title = {
+					limit = {
+						NOT = { title = d_female_knights_band }
+					}
+					gain_title = PREVPREV
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 캐릭터의 기사단 합류와 탈퇴, 종신 서원 (6551~6557)                           #
+#------------------------------------------------------------------------------#
+
+character_event = {
+	id = OPG.6551
+	hide_window = yes
+	
+	min_age = 16
+	max_age = 25
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	#--------------------------------------------------------------------------#
+	# 일반 여성 AI 캐릭터 : 기사단 입회를 결심할지 말지를 선택하는 이벤트      #
+	#--------------------------------------------------------------------------#	
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 작위가 없고, 결혼하거나 첩이 아니며 임신하지 않은 여성 캐릭터        #
+		# (연령제한은 Pre-Trigger 에서 하고 있으므로 제외)                     #
+		#----------------------------------------------------------------------#
+
+		is_landed = no
+		in_command = no
+		is_married = no
+		is_consort = no
+		is_pregnant = no
+		is_betrothed = no
+
+		#----------------------------------------------------------------------#
+		# 무력 수치가 17 이상일 것                                             #
+		#----------------------------------------------------------------------#
+
+		martial = 17
+
+		#----------------------------------------------------------------------#
+		# 자녀가 있어서는 안 됨                                                #
+		#----------------------------------------------------------------------#
+
+		NOT = {
+			any_child = {
+				count = 1
+				is_alive = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이미 기사단에 들어온 캐릭터는 다시 일어나면 안 되겠고                #
+		#----------------------------------------------------------------------#
+
+		NOT = { trait = female_knights }
+
+		#----------------------------------------------------------------------#
+		# 고아출신은 다른 경로가 있으므로 이 경로를 따르지 않는다.             #
+		#----------------------------------------------------------------------#
+
+		NOT = { trait = rescued_orphan_by_player }
+		NOT = {	trait = rescued_orphan_by_ai }
+
+		#----------------------------------------------------------------------#
+		# 이미 이 이벤트가 일어났거나, 일어나고 있거나, 과거 단원이었던 캐릭터 #
+		# 에게는 일어나지 않는다.                                              #
+		#----------------------------------------------------------------------#
+
+
+		NOT = { has_character_flag = mod_event_temporary_flag_wants_female_knights	}
+		NOT = { has_character_flag = mod_event_temporary_flag_denied_female_knights	}
+		NOT = { has_character_flag = mod_event_check_flag_ex_female_knights	}
+
+		#----------------------------------------------------------------------#
+		# 주군이 죄수이거나 행동불능 상태가 아니어야 한다.                     #
+		# HOST 와 LIEGE 가 동일한 상태, 즉 순수가신이어야 한다.                #
+		#----------------------------------------------------------------------#
+
+		liege = {
+			prisoner = no
+			NOT = { trait = incapable }
+			ROOT = {
+				host = {
+					character = PREVPREV
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 은신 상태, 순례 상태가 아니어야 한다.                                #
+		#----------------------------------------------------------------------#
+
+		NOT = { trait = in_hiding }
+		NOT = { trait = on_pilgrimage }
+		NOT = { trait = on_hajj }
+
+		#----------------------------------------------------------------------#
+		# 기사단에 너무 많은 인원수가 넘치는 사태를 막기 위해..                #
+		# - 기사단의 구성원이 20명 미만이거나,                                 #
+		# - 31세 미만의 기사단원이 3명 미만이거나,                             #
+		# - 캐릭터가 16세이고 무력이 20 이상인 경우                            #
+		#                                            에만 이벤트를 실행시킨다. #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				OR = {
+					NOT = {
+						any_courtier = {
+							count = 20
+							trait = female_knights
+						}
+					}
+					NOT = {
+						any_courtier = {
+							count = 3
+							trait = female_knights
+							NOT = { age = 31 }
+						}
+					}
+					ROOT = {
+						age = 16
+						NOT = { age = 17 }
+						martial = 20
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 본인 결심의 기본 확률은 50%, 트레잇 유무에 따라서 확률이 조정된다.   #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 2.2
+					trait = bastard
+				}
+				modifier = {
+					factor = 1.5
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.5
+					trait = brave
+				}
+				modifier = {
+					factor = 1.25
+					trait = berserker
+				}
+				modifier = {
+					factor = 1.25
+					trait = proud
+				}
+				modifier = {
+					factor = 1.25
+					trait = impaler
+				}
+				modifier = {
+					factor = 0.5
+					trait = slothful
+				}
+				modifier = {
+					factor = 0.5
+					trait = content
+				}
+				modifier = {
+					factor = 0.1
+					trait = craven
+				}
+				set_character_flag = mod_event_temporary_flag_wants_female_knights
+				liege = {
+					
+					#----------------------------------------------------------#
+					# 주군에게 허락을 요청하는 이벤트가 발생한다.              #
+					#----------------------------------------------------------#
+
+					character_event = {
+						id = OPG.6552
+					}
+				}
+			}
+			50 = {
+				set_character_flag = mod_event_temporary_flag_denied_female_knights
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6552
+	desc = EVTDESC_OPG_6552
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6552
+
+		#----------------------------------------------------------------------#
+		# A. 거부한다 (opinion_very_disappointed 는 원본에 있다.)              #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+		}
+
+		FROM = {
+			opinion = {
+				modifier = opinion_very_disappointed
+				years = 1
+				who = ROOT
+			}
+			clr_character_flag = mod_event_temporary_flag_wants_female_knights
+			set_character_flag = mod_event_temporary_flag_denied_female_knights
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_6552
+
+		#----------------------------------------------------------------------#
+		# B. 허락한다                                                          #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+		}
+
+		d_female_knights_band = {
+			holder_scope = {
+				FROM = {
+					clr_character_flag = mod_event_temporary_flag_wants_female_knights
+					set_character_flag = mod_event_check_flag_short_term_female_knights
+					add_trait = female_knights
+					set_character_flag = special_marshal
+					move_character = PREV
+				}
+			}
+		}
+
+		FROM = {
+			
+			#------------------------------------------------------------------#
+			# 다시 돌아올 수 있도록 6년의 카운터를 달아서 이벤트를 예약        #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6553
+				days = 2190
+			}
+			
+			#------------------------------------------------------------------#
+			# 플레이어에게 입회 알림 메시지를 띄우도록 한다.                   #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6581
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6553
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 단기 기사로 6년이 지난 시점                                              #
+	# 돌아갈지 계속 머무를지를 결정해야 한다.                                  #
+	#--------------------------------------------------------------------------#
+
+	is_triggered_only = yes
+
+	# ROOT : 기사단원, FROM : 전 주군
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 감옥에 갇혀 있거나, 전지에 나가 있는 경우 선택을 연기한다.      #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				ROOT = {
+					OR = {
+						in_command = yes
+						prisoner = yes
+					}
+				}
+			}
+			repeat_event = {
+				id = OPG.6553
+				days = 60
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 시점에서 원래의 주군이 살아있는 경우에만 돌아갈지를 선택한다.     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_check_flag_short_term_female_knights
+				trait = female_knights
+				FROM = { is_alive = yes }
+			}
+			character_event = {
+				id = OPG.6554
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 그 외의 경우에는 그냥 눌러앉는다.                                    #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.6556
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6554
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	## ROOT : 기사단원, FROMFROM : 전 주군 ##
+	
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# A. 기사단에 남는다 : 모든 클레임을 상실하고 종신 기사단원이 된다.    #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				d_female_knights_band = {
+					holder_scope = {
+						character = ROOT
+					}
+				}
+			}
+		}
+		ROOT = {
+			character_event = {
+				id = OPG.6556
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# B. 기사 생활을 종료하고 고향으로 돌아간다.                           #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			FROMFROM = { is_alive = yes }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				d_female_knights_band = {
+					holder_scope = {
+						character = ROOT
+					}
+				}
+			}
+		}
+
+		FROMFROM = {
+			
+			#------------------------------------------------------------------#
+			# 이 전 주군에게 돌아가는 이벤트를 실행한다.                       #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6555
+			}
+		}
+
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 플레이어에게 퇴단을 알리는 메시지를 출력한다.                    #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6583
+				days = 1
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6555
+	desc = EVTDESC_OPG_6555
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_6555
+
+		#----------------------------------------------------------------------#
+		# 기사단으로 떠났던 가신이 돌아왔다.                                   #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+
+			#------------------------------------------------------------------#
+			# 기사단 플래그를 삭제하고 전 기사단원 플래그를 대체한다.          #
+			# 캐릭터를 이동시키고 트레잇을 제거한다.                           #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_check_flag_ex_female_knights
+			clr_character_flag = mod_event_check_flag_short_term_female_knights
+
+			move_character = ROOT
+			remove_trait = female_knights
+
+			#------------------------------------------------------------------#
+			# 돌아가더라도 대장군에 임명될 수 있도록, special_marshal 은 지우  #
+			# 지 않는다.                                                       #
+			#------------------------------------------------------------------#
+
+			#clr_character_flag = special_marshal
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6556
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 기사단에 남기로 결정 : 종신단원이 되고, 가진 모든 클레임을 상실한다. #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			clr_character_flag = mod_event_check_flag_short_term_female_knights
+			any_claim = {
+				remove_claim = PREV
+			}
+		}
+	}
+}
+
+character_event = {
+	id = OPG.6557
+	desc = EVTDESC_OPG_6557
+	picture = GFX_evt_throne_room
+
+	#--------------------------------------------------------------------------#
+	# 고아 출신 여성 중 훈련을 마친 캐릭터가 기사단으로 이동 (6521 -> 6557)    #
+	#--------------------------------------------------------------------------#
+	
+	is_triggered_only = yes
+
+
+	# mod_event_target_trainee
+	# mod_event_target_player (ROOT)
+
+	option = {
+		name = EVTOPTA_OPG_6557
+
+		#----------------------------------------------------------------------#
+		# 훈련을 마친 고아출신 캐릭터가 이동하는 경우 무조건 종신 이동이다.    #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				event_target:mod_event_target_trainee = {
+					add_trait = female_knights
+					set_character_flag = special_marshal
+					move_character = PREV
+				}
+			}
+		}
+
+		event_target:mod_event_target_trainee = {
+			
+			#------------------------------------------------------------------#
+			# 플레이어에게 입회 알림 메시지를 띄우도록                         #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = OPG.6581
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 체인 종료                                                     #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_pending_flag_player_undergoing_adult_orphan_tough_training_event
+
+		clear_event_target = mod_event_target_trainee
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 백합 기사단의 관리: 극한 수련 캐릭터에게 지휘관 직위를 수여 (6558)           #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6558
+	hide_window = yes
+
+	only_rulers = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 극한 수련을 마친 캐릭터가 지휘 권한이 없이 존재하는 경우             #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_female = yes
+			is_adult = yes
+			trait = orphan_infantry_leader
+			NOT = { character = ROOT }
+			NOT = { has_job_title = job_marshal }
+			NOT = { has_minor_title = title_commander }
+			can_hold_title = title_commander
+		}
+
+		#----------------------------------------------------------------------#
+		# 극한 수련을 마치지 않은 캐릭터가 대장군이나 지휘관에 임명되어 있다   #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_female = yes
+			is_adult = yes
+			NOT = { trait = orphan_infantry_leader }
+			OR = {
+				has_job_title = job_marshal
+				has_minor_title = title_commander
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 대장군 자리를 우선으로 채운다...                                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_courtier = {
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = orphan_infantry_leader }
+					has_job_title = job_marshal
+				}
+			}
+			random_courtier = {
+				limit = {
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = orphan_infantry_leader }
+					has_job_title = job_marshal
+				}
+				remove_title = job_marshal
+			}
+			random_courtier = {
+				limit = {
+					is_female = yes
+					is_adult = yes
+					trait = orphan_infantry_leader
+					NOT = { character = ROOT }
+					NOT = { has_job_title = job_marshal }
+					NOT = { has_minor_title = title_commander }
+					can_hold_title = job_marshal				
+				}
+				give_job_title = job_marshal
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 그 다음 지휘관 자리를 채운다...                                      #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_courtier = {
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = orphan_infantry_leader }
+					has_minor_title = title_commander
+				}
+			}
+			random_courtier = {
+				limit = {
+					is_female = yes
+					is_adult = yes
+					NOT = { trait = orphan_infantry_leader }
+					has_minor_title = title_commander					
+				}
+				remove_title = title_commander
+			}
+			random_courtier = {
+				limit = {
+					is_female = yes
+					is_adult = yes
+					trait = orphan_infantry_leader
+					NOT = { character = ROOT }
+					NOT = { has_job_title = job_marshal }
+					NOT = { has_minor_title = title_commander }
+					can_hold_title = title_commander				
+				}
+				give_minor_title = title_commander
+			}
+
+			break = yes
+		}
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 기사단장 이양 선거 (6561~)                                                   #
+# - 기사단장은 5년마다, 혹은 40세 이상(정년)이 되면 자리를 넘겨주도록 한다.    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.6561
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	#--------------------------------------------------------------------------#
+	# 투표의 시작                                                              #
+	#--------------------------------------------------------------------------#
+	# 기사단장(16~40세 사이의 여성)에게만 실행되므로 ruler, women, age 로 제한 #
+	# 을 걸어서 시스템 부하를 낮춰준다.                                        #
+	#--------------------------------------------------------------------------#
+
+	only_rulers = yes
+	only_women = yes
+	min_age = 16
+	max_age = 41
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 타이틀 활성화 여부 확인                                  #
+		#----------------------------------------------------------------------#
+
+		is_female_knights_title_active_trigger = yes
+
+
+		#----------------------------------------------------------------------#
+		# 백합 기사단 단장에게만 이 이벤트가 발생함                            #
+		#----------------------------------------------------------------------#
+
+		d_female_knights_band = {
+			holder_scope = {
+				character = ROOT
+			}
+		}
+		OR = {
+			AND = {
+				ruled_years = 5
+				NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_long_term_boss }
+			}
+			age = 40
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	## 투표 실시 ##
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				age = 40
+			}
+		}
+
+		# 현재의 후계자가 조건에 맞는다면 그 후계자에게 넘긴다.
+
+		if = {
+			limit = {
+				current_heir = {
+					NOT = { has_character_flag = mod_event_check_flag_short_term_female_knights }
+					NOT = { age = 31 }
+					is_female = yes
+					trait = female_knights
+					NOT = { character = ROOT }
+				}
+			}
+			current_heir = {
+				character_event = {
+					id = OPG.6562
+				}
+			}
+
+			ROOT = {
+				character_event = {
+					id = OPG.6563
+					days = 1
+				}
+			}
+
+			break = yes
+		}
+
+		# 조건에 맞지 않는다면 랜덤한 다른 조건에 맞는 자에게..
+
+		if = {
+			limit = {
+				current_heir = {
+					always = yes
+				}
+			}
+			current_heir = {
+				character_event = {
+					id = OPG.6563
+					days = 1
+				}
+			}
+		}
+
+		random_courtier = {
+			limit = {
+				NOT = { has_character_flag = mod_event_check_flag_short_term_female_knights }
+				NOT = { age = 31 }
+				is_female = yes
+				trait = female_knights
+				NOT = { character = ROOT }
+			}
+			character_event = {
+				id = OPG.6562
+			}
+		}
+
+		ROOT = {
+			character_event = {
+				id = OPG.6563
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				age = 40
+			}
+		}
+
+		## 유임 ##
+
+		ROOT = {
+			add_character_modifier = { 
+				name = mod_event_interval_notification_flag_modifier_long_term_boss
+				duration = 1825
+			}
+
+			character_event = {
+				id = OPG.6585
+				days = 2
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6562
+	hide_window = yes
+
+	# ROOT : 새 기사단장, FROM : 전 기사단장
+
+	is_triggered_only = yes
+
+	immediate = {
+		d_female_knights_band = {
+			holder_scope = {
+				abdicate_to = ROOT
+			}
+
+			set_title_flag = ban_to_select_succ_gavelkind
+			set_title_flag = ban_to_select_succ_elective_gavelkind
+			set_title_flag = ban_to_select_succ_seniority
+			set_title_flag = ban_to_select_succ_primogeniture
+			set_title_flag = ban_to_select_succ_feudal_elective
+			set_title_flag = ban_to_select_succ_tanistry
+			set_title_flag = ban_to_select_succ_ultimogeniture
+			set_title_flag = ban_to_select_succ_turkish_succession
+			set_title_flag = ban_to_select_succ_papal_succession
+			set_title_flag = ban_to_select_succ_appointment
+			#set_title_flag = ban_to_select_succ_open_elective
+			set_title_flag = ban_to_select_succ_catholic_bishopric
+			set_title_flag = ban_to_select_succ_patrician_elective
+			set_title_flag = ban_to_select_succ_nomad_succession
+			set_title_flag = ban_to_select_cognatic_succession
+			set_title_flag = ban_to_select_agnatic_succession
+			set_title_flag = ban_to_select_true_cognatic_succession
+			#set_title_flag = ban_to_select_enatic_succession
+			set_title_flag = ban_to_select_enatic_cognatic_succession
+
+			set_title_flag = allow_to_select_enatic_succession
+			set_title_flag = allow_to_select_succ_open_elective
+		}
+
+		ROOT = {
+			wealth = FROM
+
+			character_event = {
+				id = OPG.6536
+				days = 3
+			}
+
+			character_event = {
+				id = OPG.6585
+				days = 2
+			}
+
+			any_claim = {
+				remove_claim = PREV
+			}
+
+			recalc_succession = yes
+		}
+
+		liege = {
+			reverse_opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_respect_to_patron_of_female_knight
+			}
+		}
+
+		FROM = {
+			clear_wealth = yes
+			move_character = ROOT
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6563
+	hide_window = yes
+
+	# ROOT : 전 기사단장
+
+	is_triggered_only = yes
+	
+	immediate = {
+		ROOT = {
+			remove_claim = d_female_knights_band
+		}
+	}
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+# 알림 이벤트 (6581~)                                                          #
+#------------------------------------------------------------------------------#
+
+## 알림 이벤트 : 입회 ##
+
+character_event = {
+
+	id = OPG.6581
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 여기는 알림 이벤트에서 FROM 을 기사단원으로 맞추기 위한 더미 이벤트.     #
+	# 따라서 ROOT 는 항상 기사단원이어야 한다.                                 #
+	#--------------------------------------------------------------------------#
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				d_female_knights_band = {
+					holder_scope = {
+						liege = {
+							ai = no
+						}
+					}
+				}
+			}
+			d_female_knights_band = {
+				holder_scope = {
+					liege = {
+						character_event = {
+							id = OPG.6582
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6582
+	desc = EVTDESC_OPG_6582
+
+	# ROOT : 플레이어, FROM : 기사단원(신입단원)
+
+	is_triggered_only = yes
+	notification = yes
+
+	option = {
+		name = OK
+	}
+}
+
+## 알림 이벤트 : 탈퇴 ##
+
+character_event = {
+
+	id = OPG.6583
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 여기는 알림 이벤트에서 FROM 을 기사단원으로 맞추기 위한 더미 이벤트.     #
+	# 따라서 ROOT 는 항상 기사단원이어야 한다.                                 #
+	#--------------------------------------------------------------------------#
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				d_female_knights_band = {
+					holder_scope = {
+						liege = {
+							ai = no
+						}
+					}
+				}
+			}
+			d_female_knights_band = {
+				holder_scope = {
+					liege = {
+						character_event = {
+							id = OPG.6584
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6584
+	desc = EVTDESC_OPG_6584
+
+	# ROOT : 플레이어, FROM : 기사단원(퇴단단원)
+
+	is_triggered_only = yes
+	notification = yes
+
+	option = {
+		name = OK
+	}
+}
+
+## 알림 이벤트 : 기사단장 ##
+
+character_event = {
+
+	id = OPG.6585
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# 여기는 알림 이벤트에서 FROM 을 기사단원으로 맞추기 위한 더미 이벤트.     #
+	# 따라서 ROOT 는 항상 기사단원이어야 한다.                                 #
+	#--------------------------------------------------------------------------#
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		if = {
+			limit = {
+				d_female_knights_band = {
+					holder_scope = {
+						liege = {
+							ai = no
+						}
+					}
+				}
+			}
+			d_female_knights_band = {
+				holder_scope = {
+					liege = {
+						character_event = {
+							id = OPG.6586
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.6586
+	desc = EVTDESC_OPG_6586
+
+	# ROOT : 플레이어, FROM : 신임 기사단장
+
+	is_triggered_only = yes
+	notification = yes
+
+	option = {
+		name = OK
+	}
+}
+
+
+
+
+
+
+
+

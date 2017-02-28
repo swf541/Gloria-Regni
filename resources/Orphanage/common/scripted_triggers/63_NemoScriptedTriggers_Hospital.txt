@@ -1,0 +1,126 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+#------------------------------------------------------------------------------#
+# 고아원 건물이 있는지 여부를 확인하는 조건문 트리거                           #
+#------------------------------------------------------------------------------#
+
+has_building_hospital_trigger = {
+	OR = {
+		AND = {
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+			}
+			capital_holding = {
+				OR = {
+					has_building = ca_hospital_1
+					has_building = tb_hospital_1
+					has_building = ca_hospital_2
+					has_building = ca_hospital_3
+					has_building = ca_hospital_4
+				}
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				OR = {
+					has_building = fp_hospital_1
+					has_building = fp_hospital_2
+					has_building = fp_hospital_3
+					has_building = fp_hospital_4
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 특정한 레벨의 고아원 건물이 있는지 여부를 확인하는 조건문 트리거             #
+#------------------------------------------------------------------------------#
+
+has_hospital_level_1_trigger = {
+	OR = {
+		AND = {
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+			}
+			capital_holding = {
+				OR = {
+					has_building = ca_hospital_1
+					has_building = tb_hospital_1
+				}
+				NOT = { has_building = ca_hospital_2 }
+				NOT = { has_building = ca_hospital_3 }
+				NOT = { has_building = ca_hospital_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_hospital_1
+				NOT = { has_building = fp_hospital_2 }
+				NOT = { has_building = fp_hospital_3 }
+				NOT = { has_building = fp_hospital_4 }
+			}
+		}
+	}
+}
+
+has_hospital_level_2_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_hospital_2
+				NOT = { has_building = ca_hospital_3 }
+				NOT = { has_building = ca_hospital_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_hospital_2
+				NOT = { has_building = fp_hospital_3 }
+				NOT = { has_building = fp_hospital_4 }
+			}
+		}
+	}
+}
+
+has_hospital_level_3_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_hospital_3
+				NOT = { has_building = ca_hospital_4 }
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_hospital_3
+				NOT = { has_building = fp_hospital_4 }
+			}
+		}
+	}
+}
+
+has_hospital_level_4_trigger = {
+	OR = {
+		AND = {
+			is_feudal = yes
+			capital_holding = {
+				has_building = ca_hospital_4
+			}
+		}
+		AND = {
+			is_republic = yes
+			family_palace = {
+				has_building = fp_hospital_4
+			}
+		}
+	}
+}

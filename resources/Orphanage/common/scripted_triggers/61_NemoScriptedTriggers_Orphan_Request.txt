@@ -1,0 +1,79 @@
+
+is_suitable_ruler_for_adopting_request_clause_trigger = {
+
+	#--------------------------------------------------------------------------#
+	# 플레이어의 any/random_playable_ruler = { } 안에서만 사용한다.            #
+	#--------------------------------------------------------------------------#
+
+	is_adult = yes
+	prisoner = no
+	NOT = { character = PREV }
+	NOT = { dynasty = PREV }
+	OR = {
+		independent = yes
+		any_liege = {
+			NOT = { character = PREVPREV }
+			NOT = { dynasty = PREVPREV }
+		}
+	}
+	NOT = { has_character_modifier = mod_cm_dishonor_ruler_killed_orphan }
+}
+
+is_suitable_orphan_for_monk_trigger = {
+
+	is_orphan_character_trigger = yes
+	age = 6
+	NOT = { age = 15 }
+	is_adult = no
+	is_female = no
+
+	is_orphan_pending_special_event_trigger = no
+	has_npc_is_pending_certain_event_flag_trigger = no
+	is_under_special_training_for_orphan_trigger = no
+
+	NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_abroad }
+}
+
+is_suitable_orphan_for_companion_trigger = {
+
+	is_orphan_character_trigger = yes
+	age = 6
+	NOT = { age = 15 }
+	is_adult = no
+
+	is_orphan_pending_special_event_trigger = no
+	has_npc_is_pending_certain_event_flag_trigger = no
+	is_under_special_training_for_orphan_trigger = no
+
+	NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_abroad }
+}
+
+is_suitable_orphan_for_concubine_trigger = {
+
+	is_orphan_character_trigger = yes
+	age = 13
+	NOT = { age = 15 }
+	is_adult = no
+	is_female = yes
+
+	is_orphan_pending_special_event_trigger = no
+	has_npc_is_pending_certain_event_flag_trigger = no
+	is_under_special_training_for_orphan_trigger = no
+
+	NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_abroad }
+}
+
+is_suitable_orphan_for_adopting_trigger = {
+
+	is_orphan_character_trigger = yes
+	age = 12
+	NOT = { age = 15 }
+	is_adult = no
+	is_female = no
+
+	is_orphan_pending_special_event_trigger = no
+	has_npc_is_pending_certain_event_flag_trigger = no
+	is_under_special_training_for_orphan_trigger = no
+
+	NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_abroad }
+}

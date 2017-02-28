@@ -1,0 +1,74 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+targetted_decisions = {
+
+	mod_main_decision_go_on_a_walk = {
+
+		filter = self
+		ai_target_filter = self
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_WLK_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인                                        #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 순례 중/여행 중이라면 산책을 사용할 수 없다                      #
+			#------------------------------------------------------------------#
+
+			is_not_character_on_pilgrimage_or_journey_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 메인 이벤트이므로 다른 메인 이벤트와 중복 실행할 수 없음.        #
+			#------------------------------------------------------------------#
+
+			has_main_decision_event_flag_trigger = no
+		}
+		allow = {
+			in_command = no
+			prisoner = no
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_GO_ON_A_WALK_COOLING_TIME
+				hidden_tooltip = {
+					NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_go_on_a_walk }
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_GO_ON_A_WALK
+				hidden_tooltip = {
+
+					#----------------------------------------------------------#
+					# 메인 이벤트 표시                                         #
+					#----------------------------------------------------------#
+
+					set_main_decision_event_flag_effect = yes
+
+					#----------------------------------------------------------#
+					# 발생시킬 이벤트를 결정한다.                              #
+					#----------------------------------------------------------#
+
+					character_event = {
+						id = WLK.1001
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,147 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+# Triggers are in Province scope. The From Scope contains the settlement holder (character)
+# start trigger is in title scope.
+ 
+#<tag> = {
+#	desc = description used in the tooltip of the building
+#	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+#	gold_cost = cost to build the building
+#	build_time = time to build, in days
+#	
+#	ai_creation_factor = weight that the AI uses to determine what building to build
+#	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+#}
+ 
+castle = {
+	ca_hospital_1 = {
+		desc = ca_hospital_1_desc
+		potential = {
+			always = no
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+		gold_cost = 150
+		build_time = 86
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	ca_hospital_2 = {
+		desc = ca_hospital_2_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 350
+		build_time = 298
+		upgrades_from = ca_hospital_1
+		prerequisites = { ca_town_1 }
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	ca_hospital_3 = {
+		desc = ca_hospital_3_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 600
+		build_time = 450
+		upgrades_from = ca_hospital_2
+		prerequisites = { ca_town_1 }
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	ca_hospital_4 = {
+		desc = ca_hospital_4_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 800
+		build_time = 550
+		upgrades_from = ca_hospital_3
+		prerequisites = { ca_town_2 }
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+}
+
+tribal = {
+	tb_hospital_1 = {
+		desc = ca_hospital_1_desc
+		potential = {
+			always = no
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+
+		convert_to_castle = ca_hospital_1
+
+		gold_cost = 150
+		build_time = 86
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+}
+
+family_palace = {
+
+	fp_hospital_1 = {
+		desc = fp_hospital_1_desc
+		potential = {
+			always = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+		}
+		gold_cost = 150
+		build_time = 86
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	fp_hospital_2 = {
+		desc = fp_hospital_2_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 350
+		build_time = 298
+		upgrades_from = fp_hospital_1
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	fp_hospital_3 = {
+		desc = fp_hospital_3_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 600
+		build_time = 450
+		upgrades_from = fp_hospital_2
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+
+	fp_hospital_4 = {
+		desc = fp_hospital_4_desc
+		potential = {
+			always = no
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 800
+		build_time = 550
+		upgrades_from = fp_hospital_3
+		ai_creation_factor = 0
+		extra_tech_building_start = 10.0
+	}
+}

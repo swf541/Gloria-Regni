@@ -1,0 +1,280 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+########################################################
+# MINOR TITLES
+# Characters can have any number of these
+########################################################
+#	grant_limit: Max number of holders.
+#	realm_in_name: Append the name of the country after the title (Queen [of Sweden])
+#	allow: conditions for the character to hold the title
+#	regent: This is the title for regents (not really "minor")
+#	gain_effect: fires when the title is granted
+#	lose_effect: fires when a title is lost if dismissal_trigger evaluates to false
+#	message: should fire a message to the its owner when set
+#	The other fields are all character modifiers.
+
+title_orphanage_nurse = {
+
+	dignity = 0.50
+	realm_in_name = no
+	grant_limit = 1
+	opinion_effect = 20
+	
+	monthly_salary = 0.03
+	monthly_prestige = 0.01
+
+	allowed_to_grant = {
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+		OR = {
+			has_global_flag = MOD_NEMO_OPG_EVENT_03
+			has_global_flag = MOD_NEMO_OPG_EVENT_04
+			has_global_flag = MOD_NEMO_OPG_EVENT_05
+			has_global_flag = MOD_NEMO_OPG_EVENT_06
+			has_global_flag = MOD_NEMO_OPG_EVENT_07
+			has_global_flag = MOD_NEMO_OPG_EVENT_08
+			has_global_flag = MOD_NEMO_OPG_EVENT_09
+		}
+
+		NOT = { has_global_flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR }
+
+		OR = {
+			AND = {
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
+				capital_holding = {
+					OR = {
+						has_building = ca_orphanage_1
+						has_building = ca_orphanage_2
+						has_building = ca_orphanage_3
+						has_building = ca_orphanage_4
+						has_building = tb_orphanage_1
+					}
+				}
+			}
+			AND = {
+				is_republic = yes
+				family_palace = {
+					OR = {
+						has_building = fp_orphanage_1
+						has_building = fp_orphanage_2
+						has_building = fp_orphanage_3
+						has_building = fp_orphanage_4
+					}
+				}
+			}
+		}
+	}
+
+	allowed_to_hold = {
+
+		is_adult = yes
+		is_female = yes
+		is_married = no
+		is_landed = no
+
+		NOT = { dynasty = FROM }
+
+		## 한번 잘리면 재임명이 안된다 ##
+
+		NOT = { has_character_flag = mod_event_character_flag_fired_orphanage_nurse }
+
+		## 겸임 불가 ##
+
+		NOT = { has_job_title = job_marshal }
+		NOT = { has_job_title = job_spymaster }
+		NOT = { has_job_title = job_treasurer }
+		NOT = { has_job_title = job_spiritual }
+		NOT = { has_job_title = job_chancellor }
+
+		NOT = { has_minor_title = title_commander }
+		NOT = { has_minor_title = title_councilmember_king }
+		NOT = { has_minor_title = title_councilmember_emperor }
+
+		NOT = { has_minor_title = title_orphanage_guardian }
+		NOT = { has_minor_title = title_orphanage_nurse_advisor }
+
+		host = { character = FROM }
+	}
+	gain_effect = {
+	}
+	lose_effect = {
+		set_character_flag = mod_event_character_flag_fired_orphanage_nurse
+	}
+
+	message = yes
+}
+
+title_orphanage_nurse_advisor = {
+
+	dignity = 0.75
+	realm_in_name = no
+	grant_limit = 1
+	opinion_effect = 20
+	is_voter = yes
+	
+	monthly_salary = 0.03
+	monthly_prestige = 0.01
+
+	allowed_to_grant = {
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+		OR = {
+			has_global_flag = MOD_NEMO_OPG_EVENT_03
+			has_global_flag = MOD_NEMO_OPG_EVENT_04
+			has_global_flag = MOD_NEMO_OPG_EVENT_05
+			has_global_flag = MOD_NEMO_OPG_EVENT_06
+			has_global_flag = MOD_NEMO_OPG_EVENT_07
+			has_global_flag = MOD_NEMO_OPG_EVENT_08
+			has_global_flag = MOD_NEMO_OPG_EVENT_09
+		}
+
+		has_global_flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR_ACTIVATED
+		has_global_flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR
+
+		OR = {
+			AND = {
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
+				capital_holding = {
+					OR = {
+						has_building = ca_orphanage_1
+						has_building = ca_orphanage_2
+						has_building = ca_orphanage_3
+						has_building = ca_orphanage_4
+						has_building = tb_orphanage_1
+					}
+				}
+			}
+			AND = {
+				is_republic = yes
+				family_palace = {
+					OR = {
+						has_building = fp_orphanage_1
+						has_building = fp_orphanage_2
+						has_building = fp_orphanage_3
+						has_building = fp_orphanage_4
+					}
+				}
+			}
+		}
+	}
+
+	allowed_to_hold = {
+
+		is_adult = yes
+		is_female = yes
+		is_married = no
+		is_landed = no
+
+		NOT = { dynasty = FROM }
+
+		## 한번 잘리면 재임명이 안된다 ##
+
+		NOT = { has_character_flag = mod_event_character_flag_fired_orphanage_nurse }
+
+		## 겸임 불가 ##
+
+		NOT = { has_job_title = job_marshal }
+		NOT = { has_job_title = job_spymaster }
+		NOT = { has_job_title = job_treasurer }
+		NOT = { has_job_title = job_spiritual }
+		NOT = { has_job_title = job_chancellor }
+
+		NOT = { has_minor_title = title_commander }
+		NOT = { has_minor_title = title_councilmember_king }
+		NOT = { has_minor_title = title_councilmember_emperor }
+
+		NOT = { has_minor_title = title_orphanage_guardian }
+		NOT = { has_minor_title = title_orphanage_nurse }
+
+		host = { character = FROM }
+	}
+	gain_effect = {
+	}
+	lose_effect = {
+		set_character_flag = mod_event_character_flag_fired_orphanage_nurse
+	}
+
+	message = yes
+}
+
+
+title_orphanage_guardian = {
+
+	dignity = 0.50
+	realm_in_name = no
+	grant_limit = 1
+	opinion_effect = 20
+	
+	monthly_salary = 0.03
+	monthly_prestige = 0.01
+
+	allowed_to_grant = {
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+		OR = {
+			has_global_flag = MOD_NEMO_OPG_EVENT_04
+			has_global_flag = MOD_NEMO_OPG_EVENT_05
+			has_global_flag = MOD_NEMO_OPG_EVENT_06
+			has_global_flag = MOD_NEMO_OPG_EVENT_07
+			has_global_flag = MOD_NEMO_OPG_EVENT_08
+			has_global_flag = MOD_NEMO_OPG_EVENT_09
+		}
+
+		OR = {
+			AND = {
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
+				capital_holding = {
+					has_building = ca_orphanage_4
+				}
+			}
+			AND = {
+				is_republic = yes
+				family_palace = {
+					has_building = fp_orphanage_4
+				}
+			}
+		}
+	}
+
+	allowed_to_hold = {
+
+		## 플레이어 캐릭터는 가질 수 없다 ##
+
+		ai = yes
+
+		is_adult = yes
+		is_married = no
+		is_landed = no
+
+		dynasty = FROM
+
+		## 겸임 불가 ##
+
+		NOT = { has_job_title = job_marshal }
+		NOT = { has_job_title = job_spymaster }
+		NOT = { has_job_title = job_treasurer }
+		NOT = { has_job_title = job_spiritual }
+		NOT = { has_job_title = job_chancellor }
+
+		NOT = { has_minor_title = title_commander }
+		NOT = { has_minor_title = title_councilmember_king }
+		NOT = { has_minor_title = title_councilmember_emperor }
+
+		is_orphanage_nurse_trigger = no
+
+		host = { character = FROM }
+	}
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}

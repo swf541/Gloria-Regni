@@ -1,0 +1,74 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+##################################################################################################
+# scriptable and usable for event-system below.
+##################################################################################################
+#
+# ICONS:
+#
+# Good 			<=> 		Bad
+#
+#  1 - Martial 				- 19
+#  2 - Learning 			- 20
+#  3 - Diplomacy 			- 21
+#  4 - Stewardship 			- 22
+#  5 - Intrigue 			- 23
+#  6 - Money 				- 24
+#  7 - Prestige 			- 25
+#  8 - Piety 				- 26
+#  9 - Titles 				- 27
+# 10 - Council 				- 28 
+# 11 - Laws 				- 29
+# 12 - Tech 				- 30 
+# 13 - Military 			- 31
+# 14 - Plots 				- 32
+# 15 - Messages 			- 33
+# 16 - Diplomatic actions 		- 34
+# 17 - Church 				- 35
+# 18 - Characters 			- 36
+# 37 - Prison 				- 38
+# 39 - Love 				- 40
+
+mod_init_character_adventage_01 = {
+	icon = 18
+	monthly_character_wealth = 5
+}
+mod_init_character_adventage_02 = {
+	icon = 18
+	global_revolt_risk = -0.3
+	plot_power_modifier = 0.3
+	plot_discovery_chance = 0.3
+}
+mod_init_character_adventage_03 = {
+	icon = 18
+	global_tax_modifier = 0.75
+	build_time_modifier = -0.5
+	build_cost_modifier = -0.5
+	demesne_size = 15
+}
+
+mod_init_capital_adventage_01 = {
+	icon = 9
+	local_revolt_risk = -0.20
+	assassinate_chance_modifier = 0.20
+	arrest_chance_modifier = 0.20
+}
+mod_init_capital_adventage_02 = {
+	icon = 9
+	garrison_size = 0.40
+	fort_level = 5
+	supply_limit = 5
+}
+mod_init_capital_adventage_03 = {
+	icon = 9
+	tech_growth_modifier_culture = 0.30
+	tech_growth_modifier_military = 0.30
+	tech_growth_modifier_economy = 0.30
+	culture_flex = -0.50
+	religion_flex = -0.50
+	disease_defence = 0.30
+}
+
+mod_setup_capital_province = {
+	icon = 9
+}

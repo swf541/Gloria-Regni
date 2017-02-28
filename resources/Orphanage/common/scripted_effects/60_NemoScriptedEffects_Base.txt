@@ -1,0 +1,25 @@
+
+#------------------------------------------------------------------------------#
+# 메인 디시전 이벤트 실행 중 플래그를 붙이고 뗀다                              #
+#------------------------------------------------------------------------------#
+
+set_main_decision_event_flag_effect = {
+	set_character_flag = mod_event_pending_flag_player_undergoing_main_decision_event
+}
+
+clr_main_decision_event_flag_effect = {
+	clr_character_flag = mod_event_pending_flag_player_undergoing_main_decision_event
+}
+
+#------------------------------------------------------------------------------#
+# NPC 에게 현재 이벤트가 진행중임을 확인하는 플래그를 붙이고 뗀다              #
+#------------------------------------------------------------------------------#
+
+set_npc_is_pending_certain_event_flag_effect = {
+	set_character_flag = mod_event_pending_flag_npc_event_is_under_way
+}
+
+clr_npc_is_pending_certain_event_flag_effect = {
+	clr_character_flag = mod_event_pending_flag_npc_event_is_under_way
+}
+

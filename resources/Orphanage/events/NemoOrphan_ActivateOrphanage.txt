@@ -1,0 +1,491 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 2000~2099
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-04-15
+
+namespace = OPG
+
+#==============================================================================#
+# 고아원 이벤트                                                                #
+# 고아원 해금, 고아원 레벨 업 등의 안내 이벤트들이 이 곳에서 처리된다.         #
+#------------------------------------------------------------------------------#
+# 다음의 해금은 순차적으로 이루어진다 :                                        #
+# - MOD_NEMO_OPG_EVENT_01 : 고아원 모듈이 활성화만 된 상태                     #
+# - MOD_NEMO_OPG_EVENT_02 : 고아원이 해금된 상태. 고아원 건설이 가능           #
+# - MOD_NEMO_OPG_EVENT_03 : 고아원 건물이 처음 건설되었음                      #
+# - MOD_NEMO_OPG_EVENT_04 : 첫 고아가 5살이 됨 - 봉신에게 교육 맡기기 해금     #
+#------------------------------------------------------------------------------#
+# 다음의 해금은 조건을 만족할 시 비순차적으로 이루어진다 :                     #
+# - MOD_NEMO_OPG_ORPHAN_ABROAD_ACTIVATED : 고아들을 다른 군주들에게 보내기 해금#
+# - MOD_NEMO_OPG_ADOPT_ORPHAN_ACTIVATED : 고아를 내 가문에 입양하기 해금       #
+# - MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR_ACTIVATED : 보모 자문위원 해금        #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 고아원의 해금 (2001~2004) / 트리거 이벤트                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2001
+	hide_window = yes
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 모드 활성화 이후 최소 365일이 지났을 것                              #
+		# 첫 고아 발견 이벤트 발생 이후 최소 14일이 지났을 것                  #
+		#----------------------------------------------------------------------#
+
+		had_global_flag = { flag = MOD_NEMO_OPG_SETUP_OK days = 365 }
+		had_character_flag = { flag = mod_event_chain_flag_rescue_first_orphan days = 14 }
+		has_character_flag = mod_event_chain_flag_rescue_first_orphan
+
+		#----------------------------------------------------------------------#
+		# 아직 고아원이 활성화되지 않았을 것                                   #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_EVENT_01
+
+		#----------------------------------------------------------------------#
+		# 플레이어의 궁정에 미성년 고아가 최소 1명 있을 것                     #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			trait = rescued_orphan_by_ai
+			is_adult = no
+		}
+
+		#----------------------------------------------------------------------#
+		# 재상, 재무관 또는 궁정 사제 중 한 명이 궁정에 존재할 것              #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			job_chancellor = {
+				is_npc_in_capital_trigger = yes
+			}
+			job_treasurer = {
+				is_npc_in_capital_trigger = yes
+			}
+			job_spiritual = {
+				is_npc_in_capital_trigger = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+
+		if = {
+			limit = {
+				job_spiritual = {
+					is_npc_in_capital_trigger = yes
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_orphanage_spiritual
+			job_spiritual = {
+				character_event = {
+					id = OPG.2002
+				}
+			}
+			break = yes
+		}
+
+		if = {
+			limit = {
+				job_chancellor = {
+					is_npc_in_capital_trigger = yes
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_orphanage_chancellor
+			job_chancellor = {
+				character_event = {
+					id = OPG.2002
+				}
+			}
+			break = yes
+		}
+
+		if = {
+			limit = {
+				job_treasurer = {
+					is_npc_in_capital_trigger = yes
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_orphanage_treasurer
+			job_treasurer = {
+				character_event = {
+					id = OPG.2002
+				}
+			}
+			break = yes
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2002
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_council_member
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2003
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2003
+	desc = {
+		text = EVTDESC_OPG_2003_S
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_orphanage_spiritual
+			event_target:mod_event_target_council_member = {
+				has_job_title = job_spiritual
+			}
+		} 
+	}
+	desc = {
+		text = EVTDESC_OPG_2003_C
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_orphanage_chancellor
+			event_target:mod_event_target_council_member = {
+				has_job_title = job_chancellor
+			}
+		} 
+	}
+	desc = {
+		text = EVTDESC_OPG_2003_T
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_orphanage_treasurer
+			event_target:mod_event_target_council_member = {
+				has_job_title = job_treasurer
+			}
+		} 
+	}
+	picture = GFX_evt_recieve_letter
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2003
+
+		hidden_tooltip = {
+			letter_event = {
+				id = OPG.2004
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2004
+	desc = EVTDESC_OPG_2004
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2004
+		ROOT = {
+			hidden_tooltip = {
+				set_global_flag = MOD_NEMO_OPG_EVENT_02
+				clr_global_flag = MOD_NEMO_OPG_EVENT_01
+
+				clr_character_flag = mod_event_chain_flag_rescue_first_orphan
+
+				clear_event_target = mod_event_target_council_member
+				clear_event_target = mod_event_target_player
+
+				clr_character_flag = mod_event_temporary_flag_orphanage_treasurer
+				clr_character_flag = mod_event_temporary_flag_orphanage_chancellor
+				clr_character_flag = mod_event_temporary_flag_orphanage_spiritual
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아원 설립 (2006) / 트리거 이벤트                                           #
+#------------------------------------------------------------------------------#
+
+narrative_event = {
+
+	id = OPG.2006
+	title = EVTTITLE_OPG_2006
+	desc = {
+		text = EVTDESC_OPG_2006_C
+		trigger = {
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2006_F
+		trigger = {
+			is_republic = yes
+		}
+	}
+	picture = GFX_evt_nemo_default_orphanage
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		ai = no
+
+		#----------------------------------------------------------------------#
+		# 고아원(Lv1) 건설 확인                                                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			AND = {
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
+				capital_holding = {
+					OR = {
+						has_building = ca_orphanage_1
+						has_building = tb_orphanage_1
+					}
+				}
+			}
+			AND = {
+				is_republic = yes
+				family_palace = {
+					has_building = fp_orphanage_1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원(Lv1) 건설 이벤트가 발생하지 않음                              #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_EVENT_02
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = EVTOPTA_OPG_2006
+
+		ROOT = {
+			set_global_flag = MOD_NEMO_OPG_EVENT_03
+			clr_global_flag = MOD_NEMO_OPG_EVENT_02
+
+			chronicle = {
+				entry = CHRONICLE_FOUND_ORPHANAGE
+				portrait = [Root.GetID]
+			}
+
+			create_character = {
+				random_traits = no
+				dynasty = NONE
+				female = yes
+				age = 17
+				religion = ROOT
+				culture = ROOT
+				trait = diligent
+				trait = kind
+			}
+			new_character = {
+				give_minor_title = title_orphanage_nurse
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아원 보모 사망 알림 (2008~2009) / On-Action 이벤트                         #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2008
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 사망한 캐릭터가 고아원 보모의 직함을 가지고 있을 것                  #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_trigger = yes
+	}
+
+	immediate = {
+		liege = {
+			character_event = {
+				id = OPG.2009
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2009
+	desc = EVTDESC_OPG_2009
+
+	is_triggered_only = yes
+	notification = yes
+
+	option = {
+		name = OK
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아원 레벨 4 (2011) / 트리거 이벤트                                         #
+#------------------------------------------------------------------------------#
+
+narrative_event = {
+
+	id = OPG.2011
+	title = EVTTITLE_OPG_2011
+	desc = {
+		text = EVTDESC_OPG_2011_C
+		trigger = {
+			is_feudal = yes
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2011_F
+		trigger = {
+			is_republic = yes
+		}
+	}
+	picture = GFX_evt_nemo_default_orphanage
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 성인 플레이어 확인                                       #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원(Lv4) 건설 확인                                                #
+		#----------------------------------------------------------------------#
+
+		has_orphanage_level_4_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트가 발생하지 않음                                            #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_global_flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR_ACTIVATED }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = EVTOPTA_OPG_2011
+
+		ROOT = {
+			set_global_flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR_ACTIVATED
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2012
+	desc = EVTDESC_OPG_2012
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2012
+
+		event_target:mod_event_target_orphanage_nurse = {
+			give_minor_title = title_orphanage_nurse_advisor
+		}
+
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+character_event = {
+
+	id = OPG.2013
+	desc = EVTDESC_OPG_2013
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2013
+
+		event_target:mod_event_target_orphanage_nurse = {
+			give_minor_title = title_orphanage_nurse
+		}
+
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}

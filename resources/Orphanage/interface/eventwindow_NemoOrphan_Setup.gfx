@@ -1,0 +1,30 @@
+spriteTypes = 
+{
+	#----------------------------------------------------------------------#
+	# 고아원 모드 셋업 화면 전용 이미지들                                  #
+	#----------------------------------------------------------------------#
+
+	spriteType = {
+		name = "GFX_evt_nemo_orphanage_mod_introduction_1"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_orphanage_introduction_1.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_orphanage_mod_introduction_2"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_orphanage_introduction_2.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_orphanage_mod_introduction_3"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_orphanage_introduction_3.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_nemo_orphanage_mod_setup"
+		texturefile = "gfx\\event_pictures\\mod_nemo_setup_orphanage_window.dds"
+		allwaystransparent = yes
+	}
+}

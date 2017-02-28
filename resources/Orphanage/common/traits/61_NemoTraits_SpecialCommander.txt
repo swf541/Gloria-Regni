@@ -1,0 +1,39 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+female_knights = {
+	random = no
+	inherit_chance = 0
+	customizer = no
+
+	#cannot_marry = yes
+	fertility = -100.0
+
+	same_opinion = 100
+
+	monthly_character_prestige = 0.50
+	monthly_character_wealth = 0.15
+}
+
+orphan_infantry_leader = {
+	random = no
+	inherit_chance = 0
+	customizer = no
+
+	leader = yes
+
+	#cannot_marry = yes
+	cannot_inherit = yes
+	fertility = -100.0
+
+	same_opinion = 100
+
+	command_modifier = {
+		speed = 1.1
+		damage = 0.6
+		morale_offence = 0.5
+		morale_defence = 0.5
+		siege = 0.5
+	}
+
+	leadership_traits = 2
+}

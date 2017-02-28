@@ -1,0 +1,591 @@
+#	Example:
+# 
+#	example_effect = {
+#		treasury = 100
+#		prestige = 50
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+# Naming convention:  xxxx_effect
+#
+
+#------------------------------------------------------------------------------#
+# 생성된 고아 캐릭터에게 관계를 설정하는 오피니언 모디파이어를 생성한다.       #
+#------------------------------------------------------------------------------#
+
+set_orphan_character_relative_opinion_modifier_effect = {
+
+	#--------------------------------------------------------------------------#
+	# mod_event_target_orphan (웬만하면 쓰지 않는다)                           #
+	# mod_event_target_player                                                  #
+	#                                                                          #
+	# 고아의 스코프에서 실행해야 한다.                                         #
+	#--------------------------------------------------------------------------#
+
+	#--------------------------------------------------------------------------#
+	# 기본 관계 모디파이어 :                                                   #
+	# 고아의 나이를 고려하여 오피니언 모디파이어의 기간을 조정한다.            #
+	#--------------------------------------------------------------------------#
+
+	if = {
+		limit = {
+			NOT = { has_any_opinion_modifier = opinion_mod_cm_orphan_in_orphanage }
+		}
+		
+		if = {
+			limit = {
+				age = 0
+				NOT = { age = 1 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 195
+			}
+		}
+
+		if = {
+			limit = {
+				age = 1
+				NOT = { age = 2 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 183
+			}
+		}
+
+		if = {
+			limit = {
+				age = 2
+				NOT = { age = 3 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 171
+			}
+		}
+
+		if = {
+			limit = {
+				age = 3
+				NOT = { age = 4 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 159
+			}
+		}
+
+		if = {
+			limit = {
+				age = 4
+				NOT = { age = 5 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 147
+			}
+		}
+
+		if = {
+			limit = {
+				age = 5
+				NOT = { age = 6 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 135
+			}
+		}
+
+		if = {
+			limit = {
+				age = 6
+				NOT = { age = 7 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 123
+			}
+		}
+
+		if = {
+			limit = {
+				age = 7
+				NOT = { age = 8 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 111
+			}
+		}
+
+		if = {
+			limit = {
+				age = 8
+				NOT = { age = 9 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 99
+			}
+		}
+
+		if = {
+			limit = {
+				age = 9
+				NOT = { age = 10 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 87
+			}
+		}
+
+		if = {
+			limit = {
+				age = 10
+				NOT = { age = 11 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 75
+			}
+		}
+
+		if = {
+			limit = {
+				age = 11
+				NOT = { age = 12 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 63
+			}
+		}
+
+		if = {
+			limit = {
+				age = 12
+				NOT = { age = 13 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 51
+			}
+		}
+
+		if = {
+			limit = {
+				age = 13
+				NOT = { age = 14 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 39
+			}
+		}
+
+		if = {
+			limit = {
+				age = 14
+				NOT = { age = 15 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 27
+			}
+		}
+
+		if = {
+			limit = {
+				age = 15
+				NOT = { age = 16 }
+			}
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_orphan_in_orphanage
+				months = 15
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아 캐릭터의 모디파이어나 플래그, 트레잇 등을 삭제한다.                     #
+#------------------------------------------------------------------------------#
+
+remove_orphan_character_relative_opinion_modifier_effect = {
+
+	#--------------------------------------------------------------------------#
+	# 고아 -> 플레이어의 단방향 모디파이어                                     #
+	#--------------------------------------------------------------------------#
+
+	any_opinion_modifier_target = {
+		limit = {
+			reverse_has_opinion_modifier = {
+				who = PREV
+				modifier = opinion_mod_cm_orphan_in_orphanage
+			}
+		}
+		# 현재 스코프 : 플레이어, PREV 스코프 : 고아
+		reverse_remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_cm_orphan_in_orphanage
+		}
+	}
+
+	any_opinion_modifier_target = {
+		limit = {
+			reverse_has_opinion_modifier = {
+				who = PREV
+				modifier = opinion_mod_cm_rescued_orphan
+			}
+		}
+		# 현재 스코프 : 플레이어, PREV 스코프 : 고아
+		reverse_remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_cm_rescued_orphan
+		}
+	}
+
+	#any_opinion_modifier_target = {
+	#	limit = {
+	#		ROOT = {
+	#			has_opinion_modifier = {
+	#				who = PREV
+	#				modifier = opinion_mod_char_gardener_girl
+	#			}
+	#		}
+	#	}
+	#	ROOT = {
+	#		remove_opinion = {
+	#			who = PREV
+	#			modifier = opinion_mod_char_gardener_girl
+	#		}
+	#	}
+	#}
+
+	#--------------------------------------------------------------------------#
+	# 고아 -> 플레이어, 플레이어 -> 고아 의 양방향 모디파이어                  #
+	# 양방향이므로 양방향을 모두 지워줘야 한다.                                #
+	#--------------------------------------------------------------------------#
+
+	any_opinion_modifier_target = {
+		limit = {
+			has_opinion_modifier = {
+				who = PREV
+				modifier = opinion_mod_made_a_good_relation
+			}
+		}
+		# 현재 스코프 : 플레이어, PREV 스코프 : 고아
+		remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_made_a_good_relation
+		}
+		reverse_remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_made_a_good_relation
+		}
+	}
+}
+
+remove_orphan_character_relative_opinion_intrigue_modifier_effect = {
+
+	# 현재 스코프 : 고아를 기준으로 한다. 이 오피니언은 단방향이므로 고아 쪽
+	# 에서만 지워주면 된다.
+
+	any_opinion_modifier_target = {
+		limit = {
+			reverse_has_opinion_modifier = {
+				who = PREV
+				modifier = opinion_mod_orphans_target_of_intrigue
+			}
+		}
+		reverse_remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_orphans_target_of_intrigue
+		}
+	}
+}
+
+remove_orphan_character_flag_effect = {
+
+	clr_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+	clr_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+	clr_character_flag = mod_character_event_flag_experienced_abusing_event
+	clr_character_flag = mod_character_event_flag_orphan_reject_health_care
+	clr_character_flag = mod_character_event_flag_change_culture
+
+	clr_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+
+	clr_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty
+	clr_character_flag = mod_event_character_flag_cannot_adopt_abroad
+
+	clr_character_flag = mod_event_character_flag_war_orphan
+	clr_character_flag = mod_event_character_flag_war_orphan_without_reminiscence
+}
+
+remove_orphan_character_flag_reminiscence_effect = {
+	clr_character_flag = mod_event_character_flag_war_orphan_with_reminiscence
+}
+
+remove_orphan_character_flag_intrigue_effect = {
+
+	clr_character_flag = mod_event_character_flag_not_secret_agent
+
+	clr_character_flag = mod_event_character_flag_loyalty_1
+	clr_character_flag = mod_event_character_flag_loyalty_2
+	clr_character_flag = mod_event_character_flag_loyalty_3
+
+	clr_character_flag = mod_event_character_flag_secret_agent
+	clr_character_flag = mod_event_character_flag_implicated_in_intrigue_murder
+	clr_character_flag = mod_event_character_flag_implicated_in_intrigue_discord
+	clr_character_flag = mod_event_character_flag_implicated_in_intrigue_gathering
+}
+
+remove_orphan_character_trait_effect = {
+
+	if = {
+		limit = {
+			trait = rescued_orphan_by_player
+		}
+		remove_trait = rescued_orphan_by_player
+	}
+	if = {
+		limit = {
+			trait = rescued_orphan_by_ai
+		}
+		remove_trait = rescued_orphan_by_ai
+	}
+
+	#--------------------------------------------------------------------------#
+	# 전쟁 고아 플래그는 고아의 성격을 완전히 잃을 때에만 삭제하므로 트레잇과  #
+	# 함께 삭제해준다.                                                         #
+	#--------------------------------------------------------------------------#
+
+	clr_character_flag = mod_event_character_flag_war_orphan
+}
+
+
+finish_adopting_orphan_abroad_event_effect = {
+
+	#clr_character_flag = mod_event_check_flag_spymaster_special_mission_in_progress
+
+	clear_event_target = mod_event_target_orphan
+	clear_event_target = mod_event_target_player
+	clear_event_target = mod_event_target_ruler
+	clear_event_target = mod_event_target_orphanage_nurse
+}
+
+clear_flag_modifier_orphan_under_guardianship_effect = {
+
+	#--------------------------------------------------------------------------#
+	# 보호자가 지정된 고아 플래그를 제거                                       #
+	#--------------------------------------------------------------------------#
+
+	clr_character_flag = mod_event_character_flag_guardian_selected_orphan
+}
+
+clear_abuse_flag_modifier_orphan_under_guardianship_effect = {
+
+	#--------------------------------------------------------------------------#
+	# 학대 관련 플래그 제거                                                    #
+	#--------------------------------------------------------------------------#
+
+	clr_character_flag = mod_nemo_event_flag_punished_orphan_child
+	clr_character_flag = mod_nemo_event_flag_severely_punished_orphan_child
+	clr_character_flag = mod_nemo_event_flag_sexual_harassment_orphan_child
+	clr_character_flag = mod_nemo_event_flag_sexually_abused_orphan_child
+	clr_character_flag = mod_nemo_event_flag_sexually_abused_orphan_child_after
+	clr_character_flag = mod_nemo_event_flag_homosexually_abused_orphan_child
+
+	clr_character_flag = mod_nemo_event_flag_neglected_orphan_child
+
+	#--------------------------------------------------------------------------#
+	# 학대 관련 오피니언 모디파이어 (연결용) 제거 : PREV 가 고아가 되도록      #
+	#--------------------------------------------------------------------------#
+
+	any_opinion_modifier_target = {
+		limit = {
+			reverse_has_opinion_modifier = {
+				who = PREV
+				modifier = opinion_mod_char_punished_harassed_or_abused_orphan
+			}
+		}
+		reverse_remove_opinion = {
+			who = PREV
+			modifier = opinion_mod_char_punished_harassed_or_abused_orphan
+		}
+	}
+}
+
+heir_or_minor_player_and_whippingboy_should_be_friends_effect = {
+
+	#--------------------------------------------------------------------------#
+	# 라이벌 지정이 되어 있다면 해제                                           #
+	#--------------------------------------------------------------------------#
+
+	if = {
+		limit = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				is_rival = event_target:mod_event_target_whippingboy
+			}
+		}
+		event_target:mod_event_target_heir_or_minor_player = {
+			remove_rival = event_target:mod_event_target_whippingboy
+		}
+	}
+
+	if = {
+		limit = {
+			event_target:mod_event_target_whippingboy = {
+				is_rival = event_target:mod_event_target_heir_or_minor_player
+			}
+		}
+		event_target:mod_event_target_whippingboy = {
+			remove_rival = event_target:mod_event_target_heir_or_minor_player
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 항상 친구로 설정                                                         #
+	#--------------------------------------------------------------------------#
+
+	if = {
+		limit = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				NOT = { is_friend = event_target:mod_event_target_whippingboy }
+			}
+		}
+		event_target:mod_event_target_heir_or_minor_player = {
+			add_friend = event_target:mod_event_target_whippingboy
+		}
+	}
+	if = {
+		limit = {
+			event_target:mod_event_target_whippingboy = {
+				NOT = { is_friend = event_target:mod_event_target_heir_or_minor_player }
+			}
+		}
+		event_target:mod_event_target_whippingboy = {
+			add_friend = event_target:mod_event_target_heir_or_minor_player
+		}
+	}
+}
+
+
+remove_special_training_for_orphan_flag_effect = {
+
+	if = {
+		limit = {
+			has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+		}
+		remove_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+	}
+
+	if = {
+		limit = {
+			has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+		}
+		remove_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+	}
+
+	if = {
+		limit = {
+			has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+		}
+		remove_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+	}
+
+	if = {
+		limit = {
+			has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+		}
+		remove_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+	}
+
+	if = {
+		limit = {
+			has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+		}
+		remove_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+	}
+}
+
+
+
+minor_player_and_friend_of_opposite_sex_should_be_friends_effect = {
+
+	#--------------------------------------------------------------------------#
+	# 라이벌 지정이 되어 있다면 해제                                           #
+	#--------------------------------------------------------------------------#
+
+	if = {
+		limit = {
+			event_target:mod_event_target_player = {
+				is_rival = event_target:mod_event_target_friend_of_opposite_sex
+			}
+		}
+		event_target:mod_event_target_player = {
+			remove_rival = event_target:mod_event_target_friend_of_opposite_sex
+		}
+	}
+
+	if = {
+		limit = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				is_rival = event_target:mod_event_target_player
+			}
+		}
+		event_target:mod_event_target_friend_of_opposite_sex = {
+			remove_rival = event_target:mod_event_target_player
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 항상 친구로 설정                                                         #
+	#--------------------------------------------------------------------------#
+
+	if = {
+		limit = {
+			event_target:mod_event_target_player = {
+				NOT = { is_friend = event_target:mod_event_target_friend_of_opposite_sex }
+			}
+		}
+		event_target:mod_event_target_player = {
+			add_friend = event_target:mod_event_target_friend_of_opposite_sex
+		}
+	}
+	if = {
+		limit = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				NOT = { is_friend = event_target:mod_event_target_player }
+			}
+		}
+		event_target:mod_event_target_friend_of_opposite_sex = {
+			add_friend = event_target:mod_event_target_player
+		}
+	}
+}

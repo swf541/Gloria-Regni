@@ -1,0 +1,7750 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 5020~5099
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-05-02
+
+namespace = OPG
+
+#==============================================================================#
+# 왕자와 고아 - 휘핑 보이 이벤트 (5021-5069)                                   #
+#------------------------------------------------------------------------------#
+# 현재 플레이어가 미성년으로 섭정이 있는 경우와,                               #
+# AI 자녀가 후계자로 있는 경우를 구분해서 작성해야 한다. (결정권자가 다르므로) #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 시작 (5021-5024) : 왕자가 고아와 친하게 지내고 있다. (5021-5024) - on_action #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5021
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 8
+
+	#--------------------------------------------------------------------------#
+	# min_age = 2 로 되어 있지만, Conclave DLC 의 on_yearly_childhood_pulse 가 #
+	# 6세부터 카운트되기 때문에 운 좋으면 6세, 보통은 7세에 이 이벤트가 실행이 #
+	# 된다.                                                                    #
+	#--------------------------------------------------------------------------#
+
+	capable_only = yes
+	prisoner = no
+	
+	#--------------------------------------------------------------------------#
+	# ROOT : 플레이어의 AI 후계자 또는 미성년 섭정 상태인 플레이어             #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생을 위해서는 최소한 고아원 레벨 3 이상이 필요하다.         #
+		# 최소 작위가 공작급 이상은 되어야 한다.                               #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			AND = {
+				ai = no
+				OR = {
+					has_orphanage_level_3_trigger = yes
+					has_orphanage_level_4_trigger = yes
+				}
+				primary_title = {
+					OR = {
+						tier = DUKE
+						tier = KING
+						tier = EMPEROR
+					}
+				}
+			}
+			AND = {
+				ai = yes
+				liege = {
+					ai = no
+					is_adult = yes
+					dynasty = PREV
+					OR = {
+						has_orphanage_level_3_trigger = yes
+						has_orphanage_level_4_trigger = yes
+					}
+					primary_title = {
+						OR = {
+							tier = DUKE
+							tier = KING
+							tier = EMPEROR
+						}
+					}
+					current_heir = {
+						character = PREVPREV
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 오직 남성의 경우만...                                                #
+		# 나이 조건은 Pre-Trigger 에서 걸러지므로 불필요하다.                  #
+		#----------------------------------------------------------------------#
+
+		is_female = no
+		is_adult = no
+		
+		age = 2
+		NOT = { age = 9 }
+
+		#----------------------------------------------------------------------#
+		# 왕자와 휘핑 보이의 연결 기회는 일생에 한 번뿐이다.                   #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_npc_heir_make_orphan_friend }
+		NOT = { has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend }
+		NOT = { has_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend }
+
+		#----------------------------------------------------------------------#
+		# 후계자와 연결될만한 남자 고아가 있는가?                              #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			AND = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+				has_orphan_eligible_for_whippingboy_for_minor_real_player_trigger = yes
+			}
+			AND = {
+				is_needing_whippingboy_ai_character_trigger = yes
+				has_orphan_eligible_for_whippingboy_for_ai_character_trigger = yes
+			}
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		clr_character_flag = mod_event_check_flag_not_matching_whippingboy
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+			}
+			save_event_target_as = mod_event_target_player
+		}
+
+		if = {
+			limit = {
+				is_needing_whippingboy_ai_character_trigger = yes
+			}
+			liege = {
+				save_event_target_as = mod_event_target_player
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 휘핑 보이가 될 수 있는 캐릭터를 찾는다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+				has_orphan_eligible_for_whippingboy_for_minor_real_player_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 플레이어가 미성년인 경우                                         #
+			#------------------------------------------------------------------#
+
+			random_realm_character = {
+				limit = {
+					same_sex = PREV
+					age = 1
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					NOT = { 
+						age_diff = {
+							who = PREV
+							years = 3
+						}
+					}
+
+					NOT = { is_older_than = PREV }
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+					is_orphan_pending_special_event_trigger = no
+
+					has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_made_a_good_relation
+					}
+
+					NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir }
+				}
+
+				character_event = {
+					id = OPG.5022
+				}
+
+				break = yes
+			}
+		}
+
+		if = {
+			limit = {
+				is_needing_whippingboy_ai_character_trigger = yes
+				has_orphan_eligible_for_whippingboy_for_ai_character_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 플레이어가 성년이고 AI 후계자를 가진 경우                        #
+			#------------------------------------------------------------------#
+
+			liege = {
+				random_realm_character = {
+					limit = {
+						same_sex = PREVPREV
+						age = 1
+						OR = {
+							trait = rescued_orphan_by_player
+							trait = rescued_orphan_by_ai
+						}
+						NOT = { 
+							age_diff = {
+								who = PREVPREV
+								years = 3
+							}
+						}
+
+						NOT = { is_older_than = PREVPREV }
+
+						is_liege_human_player_character_trigger = yes
+						is_orphan_in_orphanage_trigger = yes
+						is_orphan_pending_special_event_trigger = no
+
+						NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir }
+					}
+					character_event = {
+						id = OPG.5022
+					}
+
+					break = yes
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 휘핑 보이에 매칭할 캐릭터가 없다면 여기서 종료한다.                  #
+		#----------------------------------------------------------------------#
+
+		set_character_flag = mod_event_check_flag_not_matching_whippingboy
+		log = "OPG.5021: Event activated but Not Matching Whippingboy Character for [Root.GetFullName]!"
+
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5022
+	hide_window = yes
+
+	# 플레이어                      : mod_event_target_player
+	# 후계자 또는 미성년 플레이어   : mod_event_target_heir_or_minor_player (FROM)
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_whippingboy
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_heir_or_minor_player
+		}
+
+		#----------------------------------------------------------------------#
+		# 무조건 Current Player 를 대상으로 스코프를 잡는다. 따라서, 다음 이벤 #
+		# 트는 플레이어에게 무조건 보이게 되고, 출력되는 메시지 선택이나 효과  #
+		# 처리는 후계자 캐릭터가 AI 인가 아닌가를 기준으로 판단하면 된다.      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5023
+				days = 7
+				random = 10
+			}
+			break = yes
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5023
+	desc = {
+		text = EVTDESC_OPG_5023_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5023_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes	# Heir
+				liege = {
+					is_adult = yes
+					ai = no
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+				}
+			}
+		}
+	}
+
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+
+	# 플레이어                      : mod_event_target_player (ROOT)
+	# 후계자 또는 미성년 플레이어   : mod_event_target_heir_or_minor_player
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy (FROM)
+
+	option = {
+		name = EVTOPTA_OPG_5023
+
+		#----------------------------------------------------------------------#
+		# A. (미성년 플레이어) 그는 나의 가장 좋은 친구가 될 것 같다.          #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+
+		event_target:mod_event_target_whippingboy = {
+
+			#------------------------------------------------------------------#
+			# 이 고아 소년은 왕자의 휘핑 보이 후보자가 되었다.                 #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+			opinion = {
+				who = event_target:mod_event_target_heir_or_minor_player
+				modifier = opinion_mod_char_candidate_heirs_whipping_boy
+			}
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 이 후계자(나)는 평생의 친구를 찾았다.                            #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_make_orphan_friend
+
+			opinion = {
+				who = event_target:mod_event_target_whippingboy
+				modifier = opinion_mod_char_candidate_heirs_whipping_boy
+			}
+			
+			#------------------------------------------------------------------#
+			# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다.     #
+			#------------------------------------------------------------------#
+
+			heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+			clear_event_target = mod_event_target_heir_or_minor_player
+			clear_event_target = mod_event_target_whippingboy
+			clear_event_target = mod_event_target_player
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5023
+
+		#----------------------------------------------------------------------#
+		# B. (미성년 플레이어) 하지만 고아잖아? 친구가 될 수 없을지도 몰라.    #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 플레이어인 경우, 이 아이를 제끼고 1년 더 기다릴 수도 있다.    #
+		# (하지만 내년에도 똑같을 수도)                                        #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5023
+
+		#----------------------------------------------------------------------#
+		# B. (후계자 AI) ...괜찮을까?                                          #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes	# Heir
+				liege = {
+					is_adult = yes
+					ai = no
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+				}
+			}
+		}
+
+		event_target:mod_event_target_whippingboy = {
+			
+			#------------------------------------------------------------------#
+			# 이 고아 소년은 왕자의 휘핑 보이 후보자가 되었다.                 #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+			opinion = {
+				who = event_target:mod_event_target_heir_or_minor_player
+				modifier = opinion_mod_char_candidate_heirs_whipping_boy
+			}
+		}
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 이 후계자는 평생의 친구를 찾았다.                                #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_make_orphan_friend
+
+			opinion = {
+				who = event_target:mod_event_target_whippingboy
+				modifier = opinion_mod_char_candidate_heirs_whipping_boy
+			}
+
+			#------------------------------------------------------------------#
+			# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다.     #
+			#------------------------------------------------------------------#
+
+			heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+			clear_event_target = mod_event_target_heir_or_minor_player
+			clear_event_target = mod_event_target_whippingboy
+			clear_event_target = mod_event_target_player
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 휘핑보이 임명 (5025-5030) : 왕자와 고아의 친밀도가 더욱 깊어진다.            #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5025
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 10
+	capable_only = yes
+	prisoner = no
+
+	#--------------------------------------------------------------------------#
+	# ROOT : 플레이어의 후계자 또는 미성년 섭정 상태인 플레이어                #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 두 사람이 교류하기 시작한 지 최소 120일이 지난 후                    #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_pending_flag_npc_heir_make_orphan_friend
+		had_character_flag = { flag = mod_event_pending_flag_npc_heir_make_orphan_friend days = 120 }
+
+		#----------------------------------------------------------------------#
+		# 정식으로 임명되거나 깨지지 않았어야 함                               #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend }
+		NOT = { has_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend }
+
+		#----------------------------------------------------------------------#
+		# 상대방이 살아 있어야 한디.                                           #
+		#----------------------------------------------------------------------#
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_candidate_heirs_whipping_boy
+			}
+			is_adult = no
+			is_alive = yes
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+			}
+			save_event_target_as = mod_event_target_player
+		}
+
+		if = {
+			limit = {
+				is_needing_whippingboy_ai_character_trigger = yes
+			}
+			liege = {
+				save_event_target_as = mod_event_target_player
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트를 발생시킨다. 다만 이 이벤트는 현재 이벤트 발 #
+		# 생 캐릭터가 미성년 플레이어이거나 성년 플레이어의 미성년 후계자인 경 #
+		# 우에만 발생시켜야 한다. (이벤트 중간에 후계자가 교체된 경우도 있을수 #
+		# 있기 때문에, 이런 경우에는  구 후계자에게는 이벤트 진행이 중단되도록 #
+		# 해야 한다.)                                                          #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_needing_whippingboy_minor_real_player_trigger = yes
+					is_needing_whippingboy_ai_character_trigger = yes
+				}
+			}
+
+			random_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_char_candidate_heirs_whipping_boy
+					}
+					is_adult = no
+					is_alive = yes
+					NOT = { trait = incapable }
+					has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+				}
+				character_event = {
+					id = OPG.5026
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트가 실행되지 않았으므로 여기서 실행을 중단한다  #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5026
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# ROOT : 휘핑보이 예정자                                                   #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_whippingboy
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_heir_or_minor_player
+		}
+
+		#----------------------------------------------------------------------#
+		# 무조건 Current Player 를 대상으로 스코프를 잡는다. 따라서, 다음 이벤 #
+		# 트는 플레이어에게 무조건 보이게 되고, 출력되는 메시지 선택이나 효과  #
+		# 처리는 후계자 캐릭터가 AI 인가 아닌가를 기준으로 판단하면 된다.      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5027
+				days = 7
+				random = 10
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5027
+	desc = {
+		text = EVTDESC_OPG_5027_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5027_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes	# Heir
+				liege = {
+					is_adult = yes
+					ai = no
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+				}
+			}
+		}
+	}
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 이 이벤트는                                                              #
+	# - Root is Player : 섭정에게 허락을 받을지를 결정하는 이벤트로 기능한다.  #
+	# - Root is Heir   : 플레이어에게 허락 여부를 묻는 이벤트로 기능한다.      #
+	#                                                                          # 
+	# 플레이어                      : mod_event_target_player (ROOT)           #
+	# 후계자 또는 미성년 플레이어   : mod_event_target_heir_or_minor_player    #
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy (FROM)      #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_5027
+
+		#----------------------------------------------------------------------#
+		# A. 미성년 플레이어인 경우 : 섭정에게 승인을 요청한다. (이벤트 계속)  #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+		regent = {
+			character_event = {
+				id = OPG.5028
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5027
+
+		#----------------------------------------------------------------------#
+		# B. 미성년 플레이어인 경우 : 그냥 좋은 친구 사이로 남는다.            #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no		# Minor Player
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 휘핑 보이의 연결 기회는 더 이상 없다.                                #
+		#----------------------------------------------------------------------#
+
+		set_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5027
+
+		#----------------------------------------------------------------------#
+		# C. AI 후계자가 휘핑 보이 임명을 요구해왔다 : 승인한다.               #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes	# Heir
+				liege = {
+					is_adult = yes
+					ai = no
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+				}
+			}
+		}
+
+		event_target:mod_event_target_whippingboy = {
+
+			#------------------------------------------------------------------#
+			# 상대방 고아 캐릭터는 후계자의 휘핑 보이 지위를 얻는다.           #
+			#------------------------------------------------------------------#
+
+			opinion = {
+				who = event_target:mod_event_target_heir_or_minor_player
+				modifier = opinion_mod_char_heirs_whipping_boy
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = event_target:mod_event_target_heir_or_minor_player
+					modifier = opinion_mod_char_candidate_heirs_whipping_boy
+				}			
+			}
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 후계자는 상대방 고아를 휘핑 보이로 맞아들였다.                   #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+
+			opinion = {
+				who = event_target:mod_event_target_whippingboy
+				modifier = opinion_mod_char_heirs_whipping_boy
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = event_target:mod_event_target_whippingboy
+					modifier = opinion_mod_char_candidate_heirs_whipping_boy
+				}			
+
+				#--------------------------------------------------------------#
+				# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다. #
+				#--------------------------------------------------------------#
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+			}
+		}
+
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+		clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTD_OPG_5027
+
+		#----------------------------------------------------------------------#
+		# D. AI 후계자가 휘핑 보이 임명을 요구해왔다 : 승인하지 않는다.        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes	# Heir
+				liege = {
+					is_adult = yes
+					ai = no
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+				}
+			}
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 승인하지 않아서 플레이어와 우호도 페널티가 생긴다.               #
+			# 이 후계자에게 휘핑 보이의 연결 기회는 더 이상 없다.              #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_reject_heirs_whipping_boy
+			}
+		}
+
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5028
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# 플레이어                      : mod_event_target_player
+	# 후계자 또는 미성년 플레이어   : mod_event_target_heir_or_minor_player
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy
+
+	# ROOT : Regent (오직 미성년 플레이어의 경우만 여기로 온다.)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 섭정(AI) : 승인한다.                                                 #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 100
+		}
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5029
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 섭정(AI) : 거절한다. (AI는 이 옵션을 선택하지 않는다.)               #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 0
+		}
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5030
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5029
+	desc = EVTDESC_OPG_5029
+	picture = GFX_evt_child_talking
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 섭정이 승인한 경우                                                       #
+	#--------------------------------------------------------------------------#
+	# 플레이어 : mod_event_target_player (ROOT)                                #
+	#            = mod_event_target_heir_or_minor_player                       #
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy             #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_5029
+
+		event_target:mod_event_target_whippingboy = {
+
+			#------------------------------------------------------------------#
+			# 상대방 고아 캐릭터는 후계자의 휘핑 보이 지위를 얻는다.           #
+			#------------------------------------------------------------------#
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_heirs_whipping_boy
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_candidate_heirs_whipping_boy
+				}
+			}
+		}
+
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 후계자는 상대방 고아를 휘핑 보이로 맞아들였다.                   #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+
+			opinion = {
+				who = event_target:mod_event_target_whippingboy
+				modifier = opinion_mod_char_heirs_whipping_boy
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = event_target:mod_event_target_whippingboy
+					modifier = opinion_mod_char_candidate_heirs_whipping_boy
+				}
+
+				#--------------------------------------------------------------#
+				# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다. #
+				#--------------------------------------------------------------#
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+			}
+		}
+
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5030
+	desc = EVTDESC_OPG_5030
+	picture = GFX_evt_child_talking
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 섭정이 거부한 경우 (현재로서는 AI는 이 옵션을 선택하지 않는다.)          #
+	#--------------------------------------------------------------------------#
+	# 플레이어 : mod_event_target_player (ROOT)                                #
+	#            = mod_event_target_heir_or_minor_player                       #
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_whippingboy             #
+	#--------------------------------------------------------------------------#
+	
+	option = {
+		name = EVTOPTA_OPG_5029
+
+		ROOT = {
+			#------------------------------------------------------------------#
+			# 승인하지 않아서 섭정에 대해서 우호도 감소가 있다.                #
+			# 이 후계자에게 휘핑 보이의 연결 기회는 더 이상 없다.              #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend
+
+			opinion = {
+				who = FROM
+				modifier = opinion_mod_char_reject_heirs_whipping_boy
+			}
+		}
+
+		clear_event_target = mod_event_target_heir_or_minor_player
+		clear_event_target = mod_event_target_whippingboy
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 휘핑 보이 이벤트 (5031~) - Triggered by On-Actions                           #
+# 휘핑 보이가 연결되어 있는 동안, 모든 관련 이벤트는 여기를 통해서 실행된다.   #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5031
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 16
+
+	#--------------------------------------------------------------------------#
+	# min_age = 2 로 되어 있지만, Conclave DLC 의 on_yearly_childhood_pulse 가 #
+	# 6세부터 카운트되기 때문에 운 좋으면 7세, 보통은 8세부터 이 이벤트가 실행 #
+	# 된다.                                                                    #
+	#--------------------------------------------------------------------------#
+
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 이벤트의 시작은 후계자로부터 하도록 한다.                            #
+		#----------------------------------------------------------------------#
+
+		is_adult = no
+		has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+
+		#----------------------------------------------------------------------#
+		# 성장 이벤트는 후계자 또는 플레이어일 때에만 동작하도록 한다.         #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			is_needing_whippingboy_minor_real_player_trigger = yes
+			is_needing_whippingboy_ai_character_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방이 살아 있어야. 성장 이벤트는 양쪽 둘 다 미성년자여야 발생한다.#
+		#----------------------------------------------------------------------#
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_heirs_whipping_boy
+			}
+			is_adult = no
+			is_alive = yes
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+			}
+			save_event_target_as = mod_event_target_player
+		}
+
+		if = {
+			limit = {
+				is_needing_whippingboy_ai_character_trigger = yes
+			}
+			liege = {
+				save_event_target_as = mod_event_target_player
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트를 발생시킨다.                                 #
+		#----------------------------------------------------------------------#
+
+		random_opinion_modifier_target = {
+			limit = {
+				reverse_has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_char_heirs_whipping_boy
+				}
+				is_adult = no
+				is_alive = yes
+				NOT = { trait = incapable }
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+			}
+
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5032
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5032
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_whippingboy
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_heir_or_minor_player
+
+			character_event = {
+				id = OPG.5033
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5033
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player (ROOT)
+	# mod_event_target_player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 휘핑 보이 이벤트 실행 조건을 다시 확인한다.                          #
+		#----------------------------------------------------------------------#
+
+		# 1. 현재 ROOT 가 미성년 플레이어 또는 후계자일 것
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = no
+				is_needing_whippingboy_ai_character_trigger = no
+			}
+
+			clear_event_target = mod_event_target_whippingboy
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_heir_or_minor_player
+
+			break = yes
+		}
+
+		# 2. 두 캐릭터 중 어느 하나라도 성년이 되었다면 이벤트 중단.
+
+		if = {
+			limit = {
+				OR = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						is_adult = yes
+					}
+					event_target:mod_event_target_whippingboy = {
+						is_adult = yes
+					}
+				}
+			}
+
+			clear_event_target = mod_event_target_whippingboy
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_heir_or_minor_player
+
+			break = yes
+		}
+
+		# 3. 휘핑 보이 캐릭터는 살아 있고, 정상 상태인가?
+
+		if = {
+			limit = {
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						is_alive = no
+						trait = incapable
+						prisoner = yes
+					}
+				}
+			}
+
+			clear_event_target = mod_event_target_whippingboy
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_heir_or_minor_player
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 친구 관계 확인 : 언제나 두 사람은 친구 관계여야 한다.                #
+		#----------------------------------------------------------------------#
+
+		heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+		#----------------------------------------------------------------------#
+		# 성장 이벤트 : 트레잇이나 스탯을 주고받는 이벤트                      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+
+			random_list = {
+
+				#--------------------------------------------------------------#
+				# 트레잇 : 왕자로부터 고아에게                                 #
+				# 트레잇과 트레잇 대체 플래그를 둘 다 고려한다.                #
+				#--------------------------------------------------------------#
+
+				25 = {
+					modifier = {
+						factor = 0
+						NOT = { has_dlc = "Zeus" }
+					}
+
+					modifier = {
+						factor = 0
+						OR = {
+							#----------------------------------------------#
+							# 받는 사람에게 트레잇이 존재                  #
+							# 트레잇과 트레잇 대체 플래그 중 어느 하나라도 #
+							# 있으면 있는 걸로 처리한다.                   #
+							#----------------------------------------------#
+
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = haughty
+									has_character_flag = was_haughty
+								}
+							}
+
+							#----------------------------------------------#
+							# 주는 사람에게 트레잇이 부존재                #
+							# 주는 사람은 진짜 트레잇이 없으면 없는 것으로 #
+							# 처리한다.                                    #
+							#----------------------------------------------#
+
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = haughty }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = affectionate
+									has_character_flag = was_affectionate
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = affectionate }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = timid
+									has_character_flag = was_timid
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = timid }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = rowdy
+									has_character_flag = was_rowdy
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = rowdy }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = willful
+									has_character_flag = was_willful
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = willful }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = brooding
+									has_character_flag = was_brooding
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = brooding }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = indolent
+									has_character_flag = was_indolent
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = indolent }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = playful
+									has_character_flag = was_playful
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = playful }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = conscientious
+									has_character_flag = was_conscientious
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = conscientious }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = fussy
+									has_character_flag = was_fussy
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = fussy }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = curious
+									has_character_flag = was_curious
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = curious }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = idolizer
+									has_character_flag = was_idolizer
+								}
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = idolizer }
+							}
+						}
+					}
+
+					character_event = {
+						id = OPG.5074
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 트레잇 : 고아로부터 왕자에게                                 #
+				#--------------------------------------------------------------#
+
+				25 = {
+					modifier = {
+						factor = 0
+						NOT = { has_dlc = "Zeus" }
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							#----------------------------------------------#
+							# 받는 사람에게 트레잇이 존재                  #
+							# 트레잇과 트레잇 대체 플래그 중 어느 하나라도 #
+							# 있으면 있는 걸로 처리한다.                   #
+							#----------------------------------------------#
+
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = haughty
+									has_character_flag = was_haughty
+								}
+							}
+
+							#----------------------------------------------#
+							# 주는 사람에게 트레잇이 부존재                #
+							# 주는 사람은 진짜 트레잇이 없으면 없는 것으로 #
+							# 처리한다.                                    #
+							#----------------------------------------------#
+
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = haughty }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = affectionate
+									has_character_flag = was_affectionate
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = affectionate }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = timid
+									has_character_flag = was_timid
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = timid }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = rowdy
+									has_character_flag = was_rowdy
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = rowdy }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = willful
+									has_character_flag = was_willful
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = willful }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = brooding
+									has_character_flag = was_brooding
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = brooding }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = indolent
+									has_character_flag = was_indolent
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = indolent }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = playful
+									has_character_flag = was_playful
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = playful }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = conscientious
+									has_character_flag = was_conscientious
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = conscientious }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = fussy
+									has_character_flag = was_fussy
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = fussy }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = curious
+									has_character_flag = was_curious
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = curious }
+							}
+						}
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = idolizer
+									has_character_flag = was_idolizer
+								}
+							}
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = idolizer }
+							}
+						}
+					}
+
+					character_event = {
+						id = OPG.5075
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 스탯 증가                                                    #
+				#--------------------------------------------------------------#
+
+				30 = {
+					random_list = {
+						8 = {
+							character_event = {
+								id = OPG.5076
+							}
+						}
+						8 = {
+							character_event = {
+								id = OPG.5077
+							}
+						}
+						8 = {
+							character_event = {
+								id = OPG.5078
+							}
+						}
+						8 = {
+							character_event = {
+								id = OPG.5079
+							}
+						}
+						8 = {
+							character_event = {
+								id = OPG.5080
+							}
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 이벤트가 일어나지 않는다.                                    #
+				#--------------------------------------------------------------#
+
+				20 = {
+
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 후계자가 좋지 않은 트레잇을 가지고 있는 경우                         #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					trait = lustful
+					trait = gluttonous
+					trait = greedy
+					trait = slothful
+					trait = wroth
+					trait = envious
+					trait = proud
+					trait = craven
+					trait = arbitrary
+					trait = cruel
+					trait = cynical
+				}				
+			}
+
+			event_target:mod_event_target_whippingboy = {
+				character_event = {
+					id = OPG.5041
+					days = 10
+					random = 10
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 우울증 또는 스트레스를 달고 있는 경우                                #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					OR = {
+						trait = depressed
+						trait = stressed
+					}
+				}
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						trait = depressed
+						trait = stressed
+					}
+				}
+			}
+
+			event_target:mod_event_target_whippingboy = {
+				character_event = {
+					id = OPG.5045
+					days = 5
+					random = 4
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 후계자 교육 이벤트                                                   #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+
+				has_dlc = "Zeus"
+
+				event_target:mod_event_target_heir_or_minor_player = {
+					age = 13
+
+					OR = {
+						has_focus = focus_ed_diplomacy
+						has_focus = focus_ed_martial
+						has_focus = focus_ed_stewardship
+						has_focus = focus_ed_intrigue
+						has_focus = focus_ed_learning
+					}
+
+					OR = {
+						AND = {
+							has_focus = focus_ed_diplomacy
+							OR = {
+								trait = willful
+								trait = fussy
+								has_character_flag = was_willful
+								has_character_flag = was_fussy
+							}
+						}
+						AND = {
+							has_focus = focus_ed_martial
+							OR = {
+								trait = timid
+								trait = idolizer
+								has_character_flag = was_timid
+								has_character_flag = was_idolizer
+							}
+						}
+						AND = {
+							has_focus = focus_ed_stewardship
+							OR = {
+								trait = indolent
+								trait = haughty
+								has_character_flag = was_indolent
+								has_character_flag = was_haughty
+							}
+						}
+						AND = {
+							has_focus = focus_ed_intrigue
+							OR = {
+								trait = rowdy
+								trait = affectionate
+								has_character_flag = was_rowdy
+								has_character_flag = was_affectionate
+							}
+						}
+						AND = {
+							has_focus = focus_ed_learning
+							OR = {
+								trait = brooding
+								trait = playful
+								has_character_flag = was_brooding
+								has_character_flag = was_playful
+							}
+						}
+					}
+
+					# 이 이벤트는 오직 1번만 일어난다.
+
+					NOT = { has_character_flag = mod_nemo_event_flag_whippingboy_education }
+				}
+			}
+
+			event_target:mod_event_target_whippingboy = {
+				character_event = {
+					id = OPG.5057
+					days = 20
+					random = 30
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 재 실행 예약                                                         #
+		# 주의. month 값은 0~11 이다. (0이 1월, 11이 12월)                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+
+				#--------------------------------------------------------------#
+				# 현재 날짜가 1~8월인 경우에는 120일 후에 한번 더 실행한다.    #
+				#--------------------------------------------------------------#
+
+				NOT = { month = 8 }
+			}
+			repeat_event = { id = OPG.5033 days = 120 }
+			break = yes
+		}
+
+		if = {
+			limit = {
+
+				#--------------------------------------------------------------#
+				# 현재 날짜가 9~12월인 경우에는 더 이상 실행하지 않는다.       #
+				#--------------------------------------------------------------#
+
+				month = 8
+			}
+			break = yes
+		}
+	}
+}
+
+## 휘핑 보이 : 후계자가 좋지 않은 행실을 보이고 있다.
+
+character_event = {
+
+	id = OPG.5041
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	# mod_event_target_whippingboy (ROOT)
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 지연 실행이므로 체크를 해야 한다.                                    #
+		#----------------------------------------------------------------------#
+
+		# 1. 
+
+		# 2. 두 캐릭터 중 어느 하나라도 성년이 되었다면 이벤트 중단.
+
+		if = {
+			limit = {
+				OR = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						is_adult = yes
+					}
+					event_target:mod_event_target_whippingboy = {
+						is_adult = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		# 3. 휘핑 보이 캐릭터는 살아 있고, 정상 상태인가?
+
+		if = {
+			limit = {
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						is_alive = no
+						trait = incapable
+						prisoner = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 후계자가 좋지 않은 트레잇을 갖고 있는가?                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					OR = {
+						trait = lustful
+						trait = gluttonous
+						trait = greedy
+						trait = slothful
+						trait = wroth
+						trait = envious
+						trait = proud
+						trait = craven
+						trait = arbitrary
+						trait = cruel
+						trait = cynical
+					}
+				}
+			}
+
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.5042
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5042
+	desc = {
+		text = EVTDESC_OPG_5042_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5042_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphan_child_punishment
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5042_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5042_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			if = {
+				limit = {
+					trait = lustful
+				}
+				remove_trait = lustful
+			}
+			if = {
+				limit = {
+					trait = gluttonous
+				}
+				remove_trait = gluttonous
+			}
+			if = {
+				limit = {
+					trait = greedy
+				}
+				remove_trait = greedy
+			}
+			if = {
+				limit = {
+					trait = slothful
+				}
+				remove_trait = slothful
+			}
+			if = {
+				limit = {
+					trait = wroth
+				}
+				remove_trait = wroth
+			}
+			if = {
+				limit = {
+					trait = envious
+				}
+				remove_trait = envious
+			}
+			if = {
+				limit = {
+					trait = proud
+				}
+				remove_trait = proud
+			}
+			if = {
+				limit = {
+					trait = craven
+				}
+				remove_trait = craven
+			}
+			if = {
+				limit = {
+					trait = arbitrary
+				}
+				remove_trait = arbitrary
+			}
+			if = {
+				limit = {
+					trait = cruel
+				}
+				remove_trait = cruel
+			}
+			if = {
+				limit = {
+					trait = cynical
+				}
+				remove_trait = cynical
+			}
+		}
+		event_target:mod_event_target_whippingboy = {
+			if = {
+				limit = {
+					trait = lustful
+				}
+				random = {
+					chance = 60
+					remove_trait = lustful
+				}
+			}
+			if = {
+				limit = {
+					trait = gluttonous
+				}
+				random = {
+					chance = 60
+					remove_trait = gluttonous
+				}
+			}
+			if = {
+				limit = {
+					trait = greedy
+				}
+				random = {
+					chance = 60
+					remove_trait = greedy
+				}
+			}
+			if = {
+				limit = {
+					trait = slothful
+				}
+				random = {
+					chance = 60
+					remove_trait = slothful
+				}
+			}
+			if = {
+				limit = {
+					trait = wroth
+				}
+				random = {
+					chance = 60
+					remove_trait = wroth
+				}
+			}
+			if = {
+				limit = {
+					trait = envious
+				}
+				random = {
+					chance = 60
+					remove_trait = envious
+				}
+			}
+			if = {
+				limit = {
+					trait = proud
+				}
+				random = {
+					chance = 60
+					remove_trait = proud
+				}
+			}
+			if = {
+				limit = {
+					trait = craven
+				}
+				random = {
+					chance = 60
+					remove_trait = craven
+				}
+			}
+			if = {
+				limit = {
+					trait = arbitrary
+				}
+				random = {
+					chance = 60
+					remove_trait = arbitrary
+				}
+			}
+			if = {
+				limit = {
+					trait = cruel
+				}
+				random = {
+					chance = 60
+					remove_trait = cruel
+				}
+			}
+			if = {
+				limit = {
+					trait = cynical
+				}
+				random = {
+					chance = 60
+					remove_trait = cynical
+				}
+			}
+		}
+	}
+}
+
+## 휘핑 보이와 후계자 : 우울증 또는 스트레스 트레잇을 가진 경우
+
+character_event = {
+
+	id = OPG.5045
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	# mod_event_target_whippingboy (ROOT)
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 지연 실행이므로 체크를 해야 한다.                                    #
+		#----------------------------------------------------------------------#
+
+		# 1. 
+
+		# 2. 두 캐릭터 중 어느 하나라도 성년이 되었다면 이벤트 중단.
+
+		if = {
+			limit = {
+				OR = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						is_adult = yes
+					}
+					event_target:mod_event_target_whippingboy = {
+						is_adult = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		# 3. 휘핑 보이 캐릭터는 살아 있고, 정상 상태인가?
+
+		if = {
+			limit = {
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						is_alive = no
+						trait = incapable
+						prisoner = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 후계자가 좋지 않은 트레잇을 갖고 있는가?                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					OR = {
+						trait = depressed
+						trait = stressed
+					}
+				}
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						trait = depressed
+						trait = stressed
+					}
+				}
+			}
+
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.5046
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5046
+	desc = {
+		text = EVTDESC_OPG_5046_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5046_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5046_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5046_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+		event_target:mod_event_target_whippingboy  = {
+			if = {
+				limit = {
+					trait = depressed
+				}
+				remove_trait = depressed
+			}
+			if = {
+				limit = {
+					trait = stressed
+				}
+				remove_trait = stressed
+			}
+		}
+		event_target:mod_event_target_heir_or_minor_player  = {
+			if = {
+				limit = {
+					trait = depressed
+				}
+				remove_trait = depressed
+			}
+			if = {
+				limit = {
+					trait = stressed
+				}
+				remove_trait = stressed
+			}
+		}
+	}
+}
+
+## 후계자 교육 : 14세 이벤트
+
+character_event = {
+
+	id = OPG.5057
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# mod_event_target_whippingboy (ROOT)
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 지연 실행이므로 체크를 해야 한다.                                    #
+		#----------------------------------------------------------------------#
+
+		# 1. 
+
+		# 2. 두 캐릭터 중 어느 하나라도 성년이 되었다면 이벤트 중단.
+
+		if = {
+			limit = {
+				OR = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						is_adult = yes
+					}
+					event_target:mod_event_target_whippingboy = {
+						is_adult = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		# 3. 휘핑 보이 캐릭터는 살아 있고, 정상 상태인가?
+
+		if = {
+			limit = {
+				event_target:mod_event_target_whippingboy = {
+					OR = {
+						is_alive = no
+						trait = incapable
+						prisoner = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 교육 조건 다시 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					age = 13
+
+					OR = {
+						has_focus = focus_ed_diplomacy
+						has_focus = focus_ed_martial
+						has_focus = focus_ed_stewardship
+						has_focus = focus_ed_intrigue
+						has_focus = focus_ed_learning
+					}
+
+					OR = {
+						AND = {
+							has_focus = focus_ed_diplomacy
+							OR = {
+								trait = willful
+								trait = fussy
+								has_character_flag = was_willful
+								has_character_flag = was_fussy
+							}
+						}
+						AND = {
+							has_focus = focus_ed_martial
+							OR = {
+								trait = timid
+								trait = idolizer
+								has_character_flag = was_timid
+								has_character_flag = was_idolizer
+							}
+						}
+						AND = {
+							has_focus = focus_ed_stewardship
+							OR = {
+								trait = indolent
+								trait = haughty
+								has_character_flag = was_indolent
+								has_character_flag = was_haughty
+							}
+						}
+						AND = {
+							has_focus = focus_ed_intrigue
+							OR = {
+								trait = rowdy
+								trait = affectionate
+								has_character_flag = was_rowdy
+								has_character_flag = was_affectionate
+							}
+						}
+						AND = {
+							has_focus = focus_ed_learning
+							OR = {
+								trait = brooding
+								trait = playful
+								has_character_flag = was_brooding
+								has_character_flag = was_playful
+							}
+						}
+					}
+				}
+			}
+
+			event_target:mod_event_target_heir_or_minor_player = {
+				set_character_flag = mod_nemo_event_flag_whippingboy_education
+			}
+
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.5059
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5059
+	desc = {
+		text = EVTDESC_OPG_5059_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5059_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_study_punishment
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5059_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5059_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			if = {
+				limit = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						ai = yes
+						liege = {
+							dynasty = event_target:mod_event_target_heir_or_minor_player
+							ai = no
+						}
+					}
+				}
+				event_target:mod_event_target_heir_or_minor_player = {
+					character_event = {
+						id = OPG.5060
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						ai = no
+					}
+				}
+				event_target:mod_event_target_heir_or_minor_player = {
+					regent = {
+						character_event = {
+							id = OPG.5060
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5060
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5061
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5061
+	desc = {
+		text = EVTDESC_OPG_5061_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5061_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_default_parlor
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5061_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5061_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5062
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5062
+	desc = {
+		text = EVTDESC_OPG_5062_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5062_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_default_parlor
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5062_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5062_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			if = {
+				limit = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						ai = yes
+						liege = {
+							dynasty = event_target:mod_event_target_heir_or_minor_player
+							ai = no
+						}
+					}
+				}
+				event_target:mod_event_target_heir_or_minor_player = {
+					character_event = {
+						id = OPG.5063
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						ai = no
+					}
+				}
+				event_target:mod_event_target_heir_or_minor_player = {
+					regent = {
+						character_event = {
+							id = OPG.5063
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5063
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5064
+				days = 7
+				random = 5
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5064
+	desc = {
+		text = EVTDESC_OPG_5064_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5064_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_study
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5064_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5064_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			if = {
+				limit = {
+					has_focus = focus_ed_diplomacy
+				}
+
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = willful
+						}
+						remove_trait = willful
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = fussy
+						}
+						remove_trait = fussy
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_willful
+						}
+						clr_character_flag = was_willful
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_fussy
+						}
+						clr_character_flag = was_fussy
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { trait = affectionate }
+						NOT = { has_character_flag = was_affectionate }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_affectionate
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = curious }
+						NOT = { has_character_flag = was_curious }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_curious
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_focus = focus_ed_martial
+				}
+
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = timid
+						}
+						remove_trait = timid
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = idolizer
+						}
+						remove_trait = idolizer
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_timid
+						}
+						clr_character_flag = was_timid
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_idolizer
+						}
+						clr_character_flag = was_idolizer
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { trait = rowdy }
+						NOT = { has_character_flag = was_rowdy }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_rowdy
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = willful }
+						NOT = { has_character_flag = was_willful }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_willful
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_focus = focus_ed_stewardship
+				}
+
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = indolent
+						}
+						remove_trait = indolent
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = haughty
+						}
+						remove_trait = haughty
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_indolent
+						}
+						clr_character_flag = was_indolent
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_haughty
+						}
+						clr_character_flag = was_haughty
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { trait = brooding }
+						NOT = { has_character_flag = was_brooding }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_brooding
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = conscientious }
+						NOT = { has_character_flag = was_conscientious }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_conscientious
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_focus = focus_ed_intrigue
+				}
+
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = rowdy
+						}
+						remove_trait = rowdy
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = affectionate
+						}
+						remove_trait = affectionate
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_rowdy
+						}
+						clr_character_flag = was_rowdy
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_affectionate
+						}
+						clr_character_flag = was_affectionate
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { trait = playful }
+						NOT = { has_character_flag = was_playful }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_playful
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = fussy }
+						NOT = { has_character_flag = was_fussy }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_fussy
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_focus = focus_ed_learning
+				}
+
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = brooding
+						}
+						remove_trait = brooding
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							trait = playful
+						}
+						remove_trait = playful
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_brooding
+						}
+						clr_character_flag = was_brooding
+					}
+				}
+				random = {
+					chance = 85
+					if = {
+						limit = {
+							has_character_flag = was_playful
+						}
+						clr_character_flag = was_playful
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { trait = timid }
+						NOT = { has_character_flag = was_timid }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_timid
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = idolizer }
+						NOT = { has_character_flag = was_idolizer }
+					}
+					random = {
+						chance = 95
+						set_character_flag = was_idolizer
+					}
+				}
+			}
+		}
+
+		hidden_tooltip = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			event_target:mod_event_target_heir_or_minor_player = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 트레잇 전승
+
+character_event = {
+
+	id = OPG.5074
+	desc = {
+		text = EVTDESC_OPG_5074_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5074_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+
+	#--------------------------------------------------------------------------#
+	# 트레잇 : 왕자로부터 고아에게                                             #
+	#--------------------------------------------------------------------------#
+
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5074_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5074_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 사용 시                                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = haughty }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = haughty
+									has_character_flag = was_haughty
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = haughty
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = affectionate }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = affectionate
+									has_character_flag = was_affectionate
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = affectionate
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = timid }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = timid
+									has_character_flag = was_timid
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = timid
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = rowdy }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = rowdy
+									has_character_flag = was_rowdy
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = rowdy
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = willful }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = willful
+									has_character_flag = was_willful
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = willful
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = brooding }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = brooding
+									has_character_flag = was_brooding
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = brooding
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = indolent }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = indolent
+									has_character_flag = was_indolent
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = indolent
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = playful }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = playful
+									has_character_flag = was_playful
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = playful
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = conscientious }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = conscientious
+									has_character_flag = was_conscientious
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = conscientious
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = fussy }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = fussy
+									has_character_flag = was_fussy
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = fussy
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = curious }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = curious
+									has_character_flag = was_curious
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = curious
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_heir_or_minor_player = {
+								NOT = { trait = idolizer }
+							}
+							event_target:mod_event_target_whippingboy = {
+								OR = {
+									trait = idolizer
+									has_character_flag = was_idolizer
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_whippingboy = {
+						add_trait = idolizer
+					}
+				}
+				1 = {
+					event_target:mod_event_target_whippingboy = {
+						piety = 1
+					}
+				}	
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 미사용 시                                               #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = { has_dlc = "Zeus" }
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 트레잇 전승 끝!                                                      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			piety = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5075
+	desc = {
+		text = EVTDESC_OPG_5075_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5075_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5075_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5075_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 사용 시                                                 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = haughty }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = haughty
+									has_character_flag = was_haughty
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = haughty
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = affectionate }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = affectionate
+									has_character_flag = was_affectionate
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = affectionate
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = timid }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = timid
+									has_character_flag = was_timid
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = timid
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = rowdy }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = rowdy
+									has_character_flag = was_rowdy
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = rowdy
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = willful }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = willful
+									has_character_flag = was_willful
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = willful
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = brooding }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = brooding
+									has_character_flag = was_brooding
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = brooding
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = indolent }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = indolent
+									has_character_flag = was_indolent
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = indolent
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = playful }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = playful
+									has_character_flag = was_playful
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = playful
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = conscientious }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = conscientious
+									has_character_flag = was_conscientious
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = conscientious
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = fussy }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = fussy
+									has_character_flag = was_fussy
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = fussy
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = curious }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = curious
+									has_character_flag = was_curious
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = curious
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							event_target:mod_event_target_whippingboy = {
+								NOT = { trait = idolizer }
+							}
+							event_target:mod_event_target_heir_or_minor_player = {
+								OR = {
+									trait = idolizer
+									has_character_flag = was_idolizer
+								}
+							}
+						}
+					}
+					event_target:mod_event_target_heir_or_minor_player = {
+						add_trait = idolizer
+					}
+				}
+				1 = {
+					event_target:mod_event_target_heir_or_minor_player = {
+						piety = 1
+					}
+				}	
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 미사용 시                                               #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				NOT = { has_dlc = "Zeus" }
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 트레잇 전승 끝!                                                      #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_whippingboy = {
+			piety = 1
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5075
+
+		#----------------------------------------------------------------------#
+		# 이것은 실제 플레이어인 경우에만 선택 가능하다!                       #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+
+		event_target:mod_event_target_whippingboy = {
+			piety = 1
+		}
+	}
+}
+
+## 스탯
+
+character_event = {
+
+	id = OPG.5076
+	desc = {
+		text = EVTDESC_OPG_5076_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5076_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		## attribute diff 가 원하는 대로 동작하지 않아서, 그냥 원시적으로..
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 20
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 19
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 18
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 17
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 16
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 15
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 14
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 13
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 12
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 11
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 10
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 9
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 8
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 7
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 6
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 5
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 4
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 3
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 2
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							diplomacy = 1
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { diplomacy = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_diplomacy_attr_from_is_small
+		}
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 20
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 19
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 18
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 17
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 16
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 15
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 14
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 13
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 12
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 11
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 10
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 9
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 8
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 7
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 6
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 5
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 4
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 3
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 2
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							diplomacy = 1
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { diplomacy = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_diplomacy_attr_fromfrom_is_small
+		}
+	}
+
+
+	option = {
+		name = EVTOPTA_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_diplomacy_attr_fromfrom_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_diplomacy_attr_fromfrom_is_small
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			change_diplomacy = 1
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_diplomacy_attr_from_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_diplomacy_attr_from_is_small
+		}
+		event_target:mod_event_target_whippingboy = {
+			change_diplomacy = 1
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5076
+		trigger = {
+			NOT = { has_character_flag = mod_event_temporary_flag_diplomacy_attr_fromfrom_is_small }
+			NOT = { has_character_flag = mod_event_temporary_flag_diplomacy_attr_from_is_small }
+		}
+
+		event_target:mod_event_target_player = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5077
+	desc = {
+		text = EVTDESC_OPG_5077_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5077_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		## attribute diff 가 원하는 대로 동작하지 않아서, 그냥 원시적으로..
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 20
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 19
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 18
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 17
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 16
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 15
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 14
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 13
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 12
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 11
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 10
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 9
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 8
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 7
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 6
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 5
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 4
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 3
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 2
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							martial = 1
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { martial = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_martial_attr_from_is_small
+		}
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 20
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 19
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 18
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 17
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 16
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 15
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 14
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 13
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 12
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 11
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 10
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 9
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 8
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 7
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 6
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 5
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 4
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 3
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 2
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							martial = 1
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { martial = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_martial_attr_fromfrom_is_small
+		}
+	}
+
+
+	option = {
+		name = EVTOPTA_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_martial_attr_fromfrom_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_martial_attr_fromfrom_is_small
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			change_martial = 1
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_martial_attr_from_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_martial_attr_from_is_small
+		}
+		event_target:mod_event_target_whippingboy = {
+			change_martial = 1
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5076
+		trigger = {
+			NOT = { has_character_flag = mod_event_temporary_flag_martial_attr_fromfrom_is_small }
+			NOT = { has_character_flag = mod_event_temporary_flag_martial_attr_from_is_small }
+		}
+
+		event_target:mod_event_target_player = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5078
+	desc = {
+		text = EVTDESC_OPG_5078_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5078_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		## attribute diff 가 원하는 대로 동작하지 않아서, 그냥 원시적으로..
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 20
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 19
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 18
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 17
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 16
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 15
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 14
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 13
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 12
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 11
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 10
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 9
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 8
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 7
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 6
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 5
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 4
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 3
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 2
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							stewardship = 1
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { stewardship = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_stewardship_attr_from_is_small
+		}
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 20
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 19
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 18
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 17
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 16
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 15
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 14
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 13
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 12
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 11
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 10
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 9
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 8
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 7
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 6
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 5
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 4
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 3
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 2
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							stewardship = 1
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { stewardship = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_stewardship_attr_fromfrom_is_small
+		}
+	}
+
+
+	option = {
+		name = EVTOPTA_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_stewardship_attr_fromfrom_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_stewardship_attr_fromfrom_is_small
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			change_stewardship = 1
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_stewardship_attr_from_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_stewardship_attr_from_is_small
+		}
+		event_target:mod_event_target_whippingboy = {
+			change_stewardship = 1
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5076
+		trigger = {
+			NOT = { has_character_flag = mod_event_temporary_flag_stewardship_attr_fromfrom_is_small }
+			NOT = { has_character_flag = mod_event_temporary_flag_stewardship_attr_from_is_small }
+		}
+		event_target:mod_event_target_player = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5079
+	desc = {
+		text = EVTDESC_OPG_5079_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5079_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		## attribute diff 가 원하는 대로 동작하지 않아서, 그냥 원시적으로..
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 20
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 19
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 18
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 17
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 16
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 15
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 14
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 13
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 12
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 11
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 10
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 9
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 8
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 7
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 6
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 5
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 4
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 3
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 2
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							intrigue = 1
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { intrigue = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_intrigue_attr_from_is_small
+		}
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 20
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 19
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 18
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 17
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 16
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 15
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 14
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 13
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 12
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 11
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 10
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 9
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 8
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 7
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 6
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 5
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 4
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 3
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 2
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							intrigue = 1
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { intrigue = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_intrigue_attr_fromfrom_is_small
+		}
+	}
+
+
+	option = {
+		name = EVTOPTA_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_intrigue_attr_fromfrom_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_intrigue_attr_fromfrom_is_small
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			change_intrigue = 1
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_intrigue_attr_from_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_intrigue_attr_from_is_small
+		}
+		event_target:mod_event_target_whippingboy = {
+			change_intrigue = 1
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5076
+		trigger = {
+			NOT = { has_character_flag = mod_event_temporary_flag_intrigue_attr_fromfrom_is_small }
+			NOT = { has_character_flag = mod_event_temporary_flag_intrigue_attr_from_is_small }
+		}
+		event_target:mod_event_target_player = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5080
+	desc = {
+		text = EVTDESC_OPG_5080_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5080_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+	show_from_from = yes
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		## attribute diff 가 원하는 대로 동작하지 않아서, 그냥 원시적으로..
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 20
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 19
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 18
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 17
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 16
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 15
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 14
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 13
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 12
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 11
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 10
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 9
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 8
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 7
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 6
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 5
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 4
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 3
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 2
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_heir_or_minor_player = {
+							learning = 1
+						}
+						event_target:mod_event_target_whippingboy = {
+							NOT = { learning = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_learning_attr_from_is_small
+		}
+
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 20
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 20 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 19
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 19 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 18
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 18 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 17
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 17 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 16
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 16 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 15
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 15 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 14
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 14 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 13
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 13 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 12
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 12 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 11
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 11 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 10
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 10 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 9
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 9 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 8
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 8 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 7
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 7 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 6
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 6 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 5
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 5 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 4
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 4 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 3
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 3 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 2
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 2 }
+						}
+					}
+					AND = {
+						event_target:mod_event_target_whippingboy = {
+							learning = 1
+						}
+						event_target:mod_event_target_heir_or_minor_player = {
+							NOT = { learning = 1 }
+						}
+					}
+				}
+			}
+			set_character_flag = mod_event_temporary_flag_learning_attr_fromfrom_is_small
+		}
+	}
+
+
+	option = {
+		name = EVTOPTA_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_learning_attr_fromfrom_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_learning_attr_fromfrom_is_small
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+			change_learning = 1
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5076
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_learning_attr_from_is_small
+		}
+		ROOT = {
+			clr_character_flag = mod_event_temporary_flag_learning_attr_from_is_small
+		}
+		event_target:mod_event_target_whippingboy = {
+			change_learning = 1
+		}
+
+		event_target:mod_event_target_heir_or_minor_player = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_5076
+		trigger = {
+			NOT = { has_character_flag = mod_event_temporary_flag_learning_attr_fromfrom_is_small }
+			NOT = { has_character_flag = mod_event_temporary_flag_learning_attr_from_is_small }
+		}
+
+		event_target:mod_event_target_player = {
+			piety = 1
+			prestige = 1
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 후계자 또는 상대 휘핑 보이 중 어느 한 쪽이 성인이 되기 전 먼저 사망한 경우   #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5082
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		OR = {
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir	# Whipping Boy
+			has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend	# 후계자
+		}
+		has_any_opinion_modifier = opinion_mod_char_heirs_whipping_boy		# 현재 관계가 유지 중
+		
+		## 어느 한 쪽이 사망한 경우
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_heirs_whipping_boy
+			}
+			is_alive = no
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		## 후계자의 경우
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+			}
+			clr_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+			set_character_flag = mod_event_pending_flag_npc_heir_broken_orphan_friend
+
+			random_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_char_heirs_whipping_boy
+					}
+					is_alive = no
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_heirs_whipping_boy
+				}
+			}
+		}
+		
+		## 휘핑보이의 경우
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+			}
+			clr_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+
+			random_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_char_heirs_whipping_boy
+					}
+					is_alive = no
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_heirs_whipping_boy
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 후계자가 성년이 됨 (5083~)                                                   #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5083
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 이벤트의 시작은 후계자로부터 하도록 한다.                            #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_pending_flag_npc_heir_made_orphan_friend
+
+		#----------------------------------------------------------------------#
+		# 성장 이벤트는 후계자 또는 플레이어일 때에만 동작하도록 한다.         #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			is_needing_whippingboy_minor_real_player_trigger = yes
+			is_needing_whippingboy_ai_character_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방이 살아 있어야. 성인이건 아니건 관계없다.                      #
+		#----------------------------------------------------------------------#
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_heirs_whipping_boy
+			}
+			is_alive = yes
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_needing_whippingboy_minor_real_player_trigger = yes
+			}
+			save_event_target_as = mod_event_target_player
+		}
+
+		if = {
+			limit = {
+				is_needing_whippingboy_ai_character_trigger = yes
+			}
+			liege = {
+				save_event_target_as = mod_event_target_player
+			}
+		}
+
+		random_opinion_modifier_target = {
+			limit = {
+				reverse_has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_char_heirs_whipping_boy
+				}
+				is_alive = yes
+				NOT = { trait = incapable }
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_heir
+			}
+
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5084
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5084
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		ROOT = {
+			save_event_target_as = mod_event_target_whippingboy
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_heir_or_minor_player
+		}
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5085
+				days = 3
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5085
+	desc = {
+		text = EVTDESC_OPG_5085_1
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = yes
+				liege = {
+					dynasty = event_target:mod_event_target_heir_or_minor_player
+					ai = no
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5085_2
+		trigger = {
+			event_target:mod_event_target_heir_or_minor_player = {
+				ai = no
+			}
+		}
+	}
+	picture = GFX_evt_child_talking		# (원본 이미지)
+
+	# mod_event_target_whippingboy
+	# mod_event_target_heir_or_minor_player
+	# mod_event_target_player (ROOT)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_OPG_5085_1
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = yes
+					liege = {
+						dynasty = event_target:mod_event_target_heir_or_minor_player
+						ai = no
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_OPG_5085_2
+			trigger = {
+				event_target:mod_event_target_heir_or_minor_player = {
+					ai = no
+				}
+			}
+		}
+		event_target:mod_event_target_whippingboy  = {
+			prestige = 10
+			piety = 10
+		}
+		event_target:mod_event_target_heir_or_minor_player  = {
+			prestige = 10
+			piety = 10
+		}
+
+		hidden_tooltip = {
+
+			#------------------------------------------------------------------#
+			# 친구관계 여부를 확인 후 종료한다.                                #
+			#------------------------------------------------------------------#
+
+			event_target:mod_event_target_heir_or_minor_player = {
+
+				heir_or_minor_player_and_whippingboy_should_be_friends_effect = yes
+
+				clear_event_target = mod_event_target_heir_or_minor_player
+				clear_event_target = mod_event_target_whippingboy
+				clear_event_target = mod_event_target_player			
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#==============================================================================#
+# 이성 친구 이벤트 (5121-)                                                     #
+#------------------------------------------------------------------------------#
+# 성별에 관계 없이, 단 미성년 플레이어 상태인 경우에만 연결할 수 있다.         #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 시작 (5121-5124) : 후계자가 이성의 고아를 만났다. (5121-5124) - on_action    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5121
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 8
+
+	capable_only = yes
+	prisoner = no
+	
+	#--------------------------------------------------------------------------#
+	# ROOT : 미성년 섭정 상태인 플레이어                                       #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생을 위해서는 최소한 고아원 레벨 3 이상이 필요하다.         #
+		#----------------------------------------------------------------------#
+
+		ai = no
+		OR = {
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 성별은 무관하다.                                                     #
+		# 나이 조건은 Pre-Trigger 에서 걸러지므로 불필요하다.                  #
+		#----------------------------------------------------------------------#
+
+		is_adult = no
+		
+		#age = 2
+		#NOT = { age = 9 }
+
+		#----------------------------------------------------------------------#
+		# 일단 매칭이 되면 기회는 한 번뿐이다.                                 #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex }
+		NOT = { has_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex }
+		NOT = { has_character_flag = mod_event_pending_flag_broken_orphan_friend_of_opposite_sex }
+
+		#----------------------------------------------------------------------#
+		# 후계자와 연결될만한 이성의 고아가 있는가?                            #
+		#----------------------------------------------------------------------#
+
+		is_needing_friend_of_opposite_sex_trigger = yes
+		has_orphan_eligible_for_friend_of_opposite_sex_trigger = yes
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		set_character_flag = mod_event_check_flag_searching_friend_of_opposite_sex
+		clr_character_flag = mod_event_check_flag_not_matching_friend_of_opposite_sex
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_player
+
+		#----------------------------------------------------------------------#
+		# 상대 캐릭터를 찾는다.                                                #
+		#----------------------------------------------------------------------#
+
+		random_realm_character = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_player
+					trait = rescued_orphan_by_ai
+				}
+				NOT = { same_sex = PREV }
+				age = 1
+
+				culture = PREV
+
+				NOT = { 
+					age_diff = {
+						who = PREV
+						years = 3
+					}
+				}
+
+				NOT = { is_older_than = PREV }
+
+				is_liege_human_player_character_trigger = yes
+				is_orphan_in_orphanage_trigger = yes
+				is_orphan_pending_special_event_trigger = no
+
+				has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_made_a_good_relation
+				}
+
+				NOT = { has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex }
+			}
+
+			character_event = {
+				id = OPG.5122
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 매칭할 캐릭터가 없다면 여기서 종료한다.                              #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_check_flag_searching_friend_of_opposite_sex
+		set_character_flag = mod_event_check_flag_not_matching_friend_of_opposite_sex
+
+		log = "OPG.5121: Event activated but Not Matching Friend of Opposite Sex Character for [Root.GetFullName]!"
+
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5122
+	hide_window = yes
+
+	# 플레이어                      : mod_event_target_player
+	# 휘핑보이가 예정된 상대방 고아 : mod_event_target_friend_of_opposite_sex (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_friend_of_opposite_sex
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5123
+				days = 20
+				random = 10
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5123
+	desc = {
+		text = EVTDESC_OPG_5123_M
+		trigger = {
+			is_female = no
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5123_F
+		trigger = {
+			is_female = yes
+		}
+	}
+
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+
+	immediate = {
+		clr_character_flag = mod_event_check_flag_searching_friend_of_opposite_sex
+	}
+
+	#--------------------------------------------------------------------------#
+	# 플레이어		: mod_event_target_player (ROOT)                           #
+	# 상대방 고아	: mod_event_target_friend_of_opposite_sex (FROM)           #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_5123
+
+		#----------------------------------------------------------------------#
+		# A. 좋은 친구가 될 수 있을 거라고 생각해.                             #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_friend_of_opposite_sex = {
+
+			#------------------------------------------------------------------#
+			# 이 고아는 플레이어와 친구가 되었다.                              #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+			}
+		}
+
+		event_target:mod_event_target_player = {
+
+			#------------------------------------------------------------------#
+			# 이 후계자(나)는 평생의 친구를 찾았다.                            #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex
+
+			opinion = {
+				who = event_target:mod_event_target_friend_of_opposite_sex
+				modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+			}
+			
+			#------------------------------------------------------------------#
+			# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다.     #
+			#------------------------------------------------------------------#
+
+			minor_player_and_friend_of_opposite_sex_should_be_friends_effect = yes
+
+			clear_event_target = mod_event_target_friend_of_opposite_sex
+			clear_event_target = mod_event_target_player
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5123
+
+		#----------------------------------------------------------------------#
+		# B. 하지만.. 남자/여자와 친구가 될 수 있을까?                         #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 친밀감 (5125-5030) : 두 사람 사이의 친밀감이 더욱 깊어진다.                  #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5125
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 10
+	capable_only = yes
+	prisoner = no
+	ai = no
+
+	#--------------------------------------------------------------------------#
+	# ROOT : 미성년 섭정 상태인 플레이어                                       #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+		ai = no
+
+		#----------------------------------------------------------------------#
+		# 두 사람이 교류하기 시작한 지 최소 1년이 지난 후                      #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex
+		had_character_flag = { flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex days = 365 }
+
+		#----------------------------------------------------------------------#
+		# 정식으로 임명되거나 깨지지 않았어야 함                               #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex }
+		NOT = { has_character_flag = mod_event_pending_flag_broken_orphan_friend_of_opposite_sex }
+
+		#----------------------------------------------------------------------#
+		# 상대방이 살아 있어야 한디.                                           #
+		#----------------------------------------------------------------------#
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+			}
+			is_adult = no
+			is_alive = yes
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_player
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트를 발생시킨다.                                 #
+		#----------------------------------------------------------------------#
+
+		random_opinion_modifier_target = {
+			limit = {
+				reverse_has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+				}
+				is_adult = no
+				is_alive = yes
+				NOT = { trait = incapable }
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+			}
+			character_event = {
+				id = OPG.5126
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트가 실행되지 않았으므로 여기서 실행을 중단한다  #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5126
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_friend_of_opposite_sex
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5127
+				days = 20
+				random = 10
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5127
+	desc = {
+		text = EVTDESC_OPG_5127_M
+		trigger = {
+			is_female = no
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5127_F
+		trigger = {
+			is_female = yes
+		}
+	}
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 이 이벤트는 섭정에게 허락을 받을지를 결정하는 이벤트로 기능한다.         #
+	#                                                                          # 
+	# 플레이어    : mod_event_target_player (ROOT)                             #
+	# 상대방 고아 : mod_event_target_friend_of_opposite_sex (FROM)             #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_5127
+
+		#----------------------------------------------------------------------#
+		# A. 섭정에게 승인을 요청한다. (이벤트 계속)                           #
+		#----------------------------------------------------------------------#
+
+		regent = {
+			character_event = {
+				id = OPG.5128
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5127
+
+		#----------------------------------------------------------------------#
+		# B. 아직은 그럴 용기가 나지 않아.                                     #
+		#----------------------------------------------------------------------#
+
+		# 1년 후에 다시 이 이벤트를 실행하기 위해서, 캐릭터 플래그를 재 설정.
+
+		clr_character_flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex
+		set_character_flag = mod_event_pending_flag_make_orphan_friend_of_opposite_sex
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+	}
+
+
+	option = {
+		name = EVTOPTC_OPG_5127
+
+		#----------------------------------------------------------------------#
+		# C. 이성간에 친구라는 건 곤란해!                                      #
+		#----------------------------------------------------------------------#
+
+		#----------------------------------------------------------------------#
+		# 연결 기회는 더 이상 없다.                                            #
+		#----------------------------------------------------------------------#
+
+		set_character_flag = mod_event_pending_flag_broken_orphan_friend_of_opposite_sex
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+	}
+}
+
+character_event = {
+
+	id = OPG.5128
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# 플레이어    : mod_event_target_player
+	# 상대방 고아 : mod_event_target_friend_of_opposite_sex
+
+	# ROOT : Regent (오직 미성년 플레이어의 경우만 여기로 온다.)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 섭정(AI) : 승인한다.                                                 #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 100
+		}
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5129
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 섭정(AI) : 거절한다. (AI는 이 옵션을 선택하지 않는다.)               #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 0
+		}
+
+		event_target:mod_event_target_player = {
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.5130
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5129
+	desc = {
+		text = EVTDESC_OPG_5129_M
+		trigger = {
+			is_female = no
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_5129_F
+		trigger = {
+			is_female = yes
+		}
+	}
+	picture = GFX_evt_child_talking
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 섭정이 승인한 경우                                                       #
+	#--------------------------------------------------------------------------#
+	# 플레이어    : mod_event_target_player (ROOT)                             #
+	# 상대방 고아 : mod_event_target_friend_of_opposite_sex                    #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_5129
+
+		event_target:mod_event_target_friend_of_opposite_sex = {
+
+			#------------------------------------------------------------------#
+			# 상대방 고아 캐릭터는 특별한 친구의 지위를 얻는다.                #
+			#------------------------------------------------------------------#
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_friend_of_opposite_sex
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+				}
+			}
+		}
+
+		ROOT = {
+
+			#------------------------------------------------------------------#
+			# 플레이어는 상대방을 특별한 친구로 생각한다.                      #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex
+
+			opinion = {
+				who = event_target:mod_event_target_friend_of_opposite_sex
+				modifier = opinion_mod_char_friend_of_opposite_sex
+			}
+
+			hidden_tooltip = {
+				remove_opinion = {
+					who = event_target:mod_event_target_friend_of_opposite_sex
+					modifier = opinion_mod_char_candidate_friend_of_opposite_sex
+				}
+
+				#--------------------------------------------------------------#
+				# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다. #
+				#--------------------------------------------------------------#
+
+				minor_player_and_friend_of_opposite_sex_should_be_friends_effect = yes
+			}
+		}
+
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5130
+	desc = EVTDESC_OPG_5130
+	picture = GFX_evt_child_talking
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 섭정이 거부한 경우 (현재로서는 AI는 이 옵션을 선택하지 않는다.)          #
+	#--------------------------------------------------------------------------#
+	# 플레이어    : mod_event_target_player (ROOT)                             #
+	# 상대방 고아 : mod_event_target_friend_of_opposite_sex                    #
+	#--------------------------------------------------------------------------#
+	
+	option = {
+		name = EVTOPTA_OPG_5130
+
+		ROOT = {
+			#------------------------------------------------------------------#
+			# 승인하지 않아서 섭정에 대해서 우호도 감소가 있다.                #
+			# 이 후계자에게 이성 친구의 연결 기회는 더 이상 없다.              #
+			#------------------------------------------------------------------#
+
+			set_character_flag = mod_event_pending_flag_broken_orphan_friend_of_opposite_sex
+
+			opinion = {
+				who = FROM
+				modifier = opinion_mod_char_reject_heirs_whipping_boy
+			}
+		}
+
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 두 사람의 거리 (5131-5158) : 친구가 나를 피하는 느낌이 든다.                 #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5131
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	ai = no
+
+	#--------------------------------------------------------------------------#
+	# ROOT : 미성년 섭정 상태인 플레이어                                       #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+		ai = no
+
+		#----------------------------------------------------------------------#
+		# 두 사람이 특별한 친구가 된 지 최소 1년이 지난 후                     #
+		#----------------------------------------------------------------------#
+
+		has_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex
+		had_character_flag = { flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex days = 365 }
+
+		#----------------------------------------------------------------------#
+		# 상대방이 10세 이상이고, 살아 있어야 한디.                             #
+		#----------------------------------------------------------------------#
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_friend_of_opposite_sex
+			}
+			is_adult = no
+			is_alive = yes
+			age = 10
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+		}
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트는 단 1회만 발생한다.                                       #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal }
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 (수도에) 존재하는 상태여야 한다.                       #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphanage_nurse_in_capital_trigger = yes
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트가 발생하면 고아원 보모는 다른 이벤트를 진행할 수 없다.     #
+		#----------------------------------------------------------------------#
+
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+			}
+			set_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_player
+
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트를 발생시킨다.                                 #
+		#----------------------------------------------------------------------#
+
+		random_opinion_modifier_target = {
+			limit = {
+				reverse_has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_char_friend_of_opposite_sex
+				}
+				is_adult = no
+				is_alive = yes
+				age = 10
+				NOT = { trait = incapable }
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+			}
+			character_event = {
+				id = OPG.5132
+			}
+			break = yes
+		}
+		
+		#----------------------------------------------------------------------#
+		# 상대방 스코프로 이벤트가 실행되지 않았으므로 여기서 실행을 중단한다  #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+	}
+}
+
+character_event = {
+
+	id = OPG.5132
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		set_npc_is_pending_certain_event_flag_effect = yes
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트 체인에서 사용할 나머지 이벤트 타겟 고정                    #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_friend_of_opposite_sex
+
+		event_target:mod_event_target_player = {
+
+			set_character_flag = mod_event_character_flag_junction_of_friend_or_betrothal
+
+			character_event = {
+				id = OPG.5133
+				days = 20
+				random = 10
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5133
+	desc = EVTDESC_OPG_5133
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5133
+
+		event_target:mod_event_target_player = {
+
+			#------------------------------------------------------------------#
+			# 두 사람은 라이벌 관계가 될 수 없고, 항상 친구 관계여야 한다.     #
+			#------------------------------------------------------------------#
+
+			minor_player_and_friend_of_opposite_sex_should_be_friends_effect = yes
+		}
+
+		event_target:mod_event_target_friend_of_opposite_sex = {
+			character_event = {
+				id = OPG.5134
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5134
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5135
+				days = 14
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5135
+	desc = EVTDESC_OPG_5135
+	picture = GFX_evt_recieve_letter
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5135
+
+		event_target:mod_event_target_player = {
+			letter_event = {
+				id = OPG.5136
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.5136
+	desc = EVTDESC_OPG_5136
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5136
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.5137
+				}			
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.5137
+	desc = EVTDESC_OPG_5137
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5137
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5138
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5138
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			letter_event = {
+				id = OPG.5139
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.5139
+	desc = EVTDESC_OPG_5139
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5139
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.5140
+				}			
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.5140
+	desc = EVTDESC_OPG_5140
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5140
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.5141
+				}			
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.5141
+	desc = EVTDESC_OPG_5141
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5141
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5142
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5142
+	desc = EVTDESC_OPG_5142
+	picture = GFX_evt_nemo_default_orphanage_attic_room
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5142
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5143
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_5142
+		trigger = {
+			is_betrothed = no
+		}
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5145
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5143
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5144
+				days = 2
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5144
+	desc = EVTDESC_OPG_5144
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5144
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모의 이벤트 플래그를 제거한다.                              #
+		#----------------------------------------------------------------------#
+
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+			}
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료                                                          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_friend_of_opposite_sex = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+	}
+}
+
+character_event = {
+
+	id = OPG.5145
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5146
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5146
+	desc = EVTDESC_OPG_5146
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5146
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5147
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5147
+	desc = EVTDESC_OPG_5147
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5147
+
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5148
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5148
+	hide_window = yes
+
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5149
+				days = 3
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5149
+	desc = EVTDESC_OPG_5149
+	picture = GFX_evt_nemo_default_orphanage
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5149
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5150
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5150
+	desc = EVTDESC_OPG_5150
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5150
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5151
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5151
+	desc = EVTDESC_OPG_5151
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5151
+
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5152
+				}			
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5152
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5153
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5153
+	desc = EVTDESC_OPG_5153
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5153
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5154
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5154
+	desc = EVTDESC_OPG_5154
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5154
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5155
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5155
+	desc = EVTDESC_OPG_5155
+	picture = GFX_evt_nemo_default_parlor
+	
+	is_triggered_only = yes
+	show_from_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5155
+
+		ROOT = {
+			add_betrothal = event_target:mod_event_target_friend_of_opposite_sex
+		}
+
+		hidden_tooltip = {
+			event_target:mod_event_target_friend_of_opposite_sex = {
+				character_event = {
+					id = OPG.5156
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5156
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5157
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5157
+	desc = EVTDESC_OPG_5157
+	picture = GFX_evt_nemo_default_orphanage
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5157
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.5158
+			}			
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5158
+	desc = EVTDESC_OPG_5158
+	picture = GFX_evt_nemo_default_orphanage
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_5158
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모의 이벤트 플래그를 제거한다.                              #
+		#----------------------------------------------------------------------#
+
+		random_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+			}
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료                                                          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_friend_of_opposite_sex = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_friend_of_opposite_sex
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 후계자 또는 이성의 고아 중 어느 한 쪽이 성인이 되기 전 먼저 사망한 경우      #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5161
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	min_age = 2
+	max_age = 15
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		OR = {
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+			has_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex
+		}
+
+		has_any_opinion_modifier = opinion_mod_char_friend_of_opposite_sex		# 현재 관계가 유지 중
+		
+		## 어느 한 쪽이 사망한 경우
+
+		any_opinion_modifier_target = {
+			reverse_has_opinion_modifier = {
+				 who = PREV
+				 modifier = opinion_mod_char_friend_of_opposite_sex
+			}
+			is_alive = no
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		## 플레이어 캐릭터의 경우
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex
+			}
+			clr_character_flag = mod_event_pending_flag_made_orphan_friend_of_opposite_sex
+			set_character_flag = mod_event_pending_flag_broken_orphan_friend_of_opposite_sex
+
+			random_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_char_friend_of_opposite_sex
+					}
+					is_alive = no
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_friend_of_opposite_sex
+				}
+			}
+		}
+		
+		## 휘핑보이의 경우
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+			}
+			clr_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+
+			random_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_char_friend_of_opposite_sex
+					}
+					is_alive = no
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_friend_of_opposite_sex
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 두 사람의 결혼 (성년 이벤트에서 분기)                                        #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.5163
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.5164
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.5164
+	desc = EVTDESC_OPG_5164
+	picture = GFX_evt_nemo_lord_married_with_special_friend
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_5164
+
+		event_target:mod_event_target_orphan = {
+			prestige = 50
+			piety = 15
+		}
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				add_character_modifier = {
+					name = dismissed_proposal
+					duration = -1
+					hidden = yes
+				}
+			}		
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+

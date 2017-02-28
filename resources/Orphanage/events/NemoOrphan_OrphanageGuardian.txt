@@ -1,0 +1,2194 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 1800~1999
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-06-01
+
+namespace = OPG
+
+#==============================================================================#
+# 고아원 : 파견 보조자 이벤트                                                  #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 파견 보조자의 새로운 임무 (1801~1804) / 트리거 이벤트                        #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1801
+	hide_window = yes
+
+	ai = no
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 성인 플레이어 확인                                       #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원(Lv4) 건설 확인                                                #
+		#----------------------------------------------------------------------#
+
+		has_orphanage_level_4_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 파견 보조자가 임명되어 있을 것                                       #
+		# 파견 보조자가 Diligent, Kind 트레잇을 가지고 있을 것                 #
+		#----------------------------------------------------------------------#
+
+		any_dynasty_member = {
+			is_orphanage_guardian_trigger = yes
+			trait = diligent
+			trait = kind
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 존재해야 함 + 현재 수도에 있어야 함                    #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트가 발생하지 않음                                            #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_global_flag = MOD_NEMO_OPG_ORPHANAGE_GROWING_SUPPORT_ACTIVATED }
+		had_global_flag = { flag = MOD_NEMO_OPG_ORPHANAGE_NURSE_ADVISOR_ACTIVATED days = 730 }
+	}
+	
+	mean_time_to_happen = {
+		days = 730
+	}
+
+	immediate = {
+		random_dynasty_member = {
+			limit = {
+				is_orphanage_guardian_trigger = yes
+			}
+			character_event = {
+				id = OPG.1802
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1802
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_guardian
+		}
+
+		event_target:mod_event_target_player = {
+
+			random_courtier = {
+				limit = {
+					is_orphanage_nurse_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphanage_nurse
+			}
+
+			character_event = {
+				id = OPG.1803
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1803
+	desc = EVTDESC_OPG_1803
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1803
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1804
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1804
+	desc = EVTDESC_OPG_1804
+	title = EVTTITLE_OPG_1804
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1804
+
+		set_global_flag = MOD_NEMO_OPG_ORPHANAGE_GROWING_SUPPORT_ACTIVATED
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_guardian
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 파견 보조자 사망 알림 (1807~1808) / On-Action 이벤트                         #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1807
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 사망한 캐릭터가 파견 보조자의 직함을 가지고 있을 것                  #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_guardian_trigger = yes
+	}
+
+	immediate = {
+		liege = {
+			character_event = {
+				id = OPG.1808
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1808
+	desc = EVTDESC_OPG_1808
+
+	is_triggered_only = yes
+	notification = yes
+
+	option = {
+		name = OK
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 파견 보조자가 작위를 받은 경우 (1809) / 트리거 이벤트                        #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1809
+	hide_window = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 파견 보조자의 직함을 가지고 있을 것                                  #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_guardian_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 작위를 가짐                                                          #
+		#----------------------------------------------------------------------#
+
+		is_landed = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		remove_title = title_orphanage_guardian
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 교육의 방향을 설정 (1811~1816)                                               #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1811
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+		FROM = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		ROOT = {
+			save_event_target_as = mod_event_target_player
+		}
+		ROOT = {
+			random_courtier = {
+				limit = {
+					is_orphanage_guardian_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphanage_guardian
+
+				character_event = {
+					id = OPG.1812
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1812
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1813
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1813
+	desc = EVTDESC_OPG_1813
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1813
+
+		event_target:mod_event_target_orphan = {
+			
+			add_character_modifier = {
+				name = mod_event_identification_flag_modifier_under_special_training_diplomacy
+				duration = -1
+				hidden = no
+			}
+			character_event = {
+				id = OPG.1815
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1813
+
+		event_target:mod_event_target_orphan = {
+
+			add_character_modifier = {
+				name = mod_event_identification_flag_modifier_under_special_training_martial
+				duration = -1
+				hidden = no
+			}
+
+			character_event = {
+				id = OPG.1815
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_1813
+
+		event_target:mod_event_target_orphan = {
+
+			add_character_modifier = {
+				name = mod_event_identification_flag_modifier_under_special_training_stewardship
+				duration = -1
+				hidden = no
+			}
+
+			character_event = {
+				id = OPG.1815
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_1813
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.1814
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1814
+	desc = EVTDESC_OPG_1814
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_1814
+
+		event_target:mod_event_target_orphan = {
+
+			add_character_modifier = {
+				name = mod_event_identification_flag_modifier_under_special_training_intrigue
+				duration = -1
+				hidden = no
+			}
+
+			character_event = {
+				id = OPG.1815
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1814
+
+		event_target:mod_event_target_orphan = {
+
+			add_character_modifier = {
+				name = mod_event_identification_flag_modifier_under_special_training_learning
+				duration = -1
+				hidden = no
+			}
+
+			character_event = {
+				id = OPG.1815
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_1814
+		
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					is_orphanage_guardian_trigger = yes
+				}
+				character_event = {
+					id = OPG.1812
+				}
+			}		
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_1814
+
+		#----------------------------------------------------------------------#
+		# 선택하지 않고 종료                                                   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_main_decision_event_flag_effect = yes
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_orphanage_guardian
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+character_event = {
+
+	id = OPG.1815
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1816
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1816
+	desc = {
+		text = EVTDESC_OPG_1816_DIPLOMACY
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1816_MARTIAL
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1816_STEWARDSHIP
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1816_INTRIGUE
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_1816_LEARNING
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+			}
+		}
+	}
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 변경 가능 쿨 타임을 설정한다.                                        #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			add_character_modifier = {
+				name = mod_event_interval_notification_flag_modifier_change_special_training
+				duration = 1825
+				hidden = no
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_OPG_1816
+
+		#----------------------------------------------------------------------#
+		# 이 캐릭터가 파견 보조자의 교육 중임을 알리는 식별 모디파이어를 단다. #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+
+
+		
+		}
+
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료                                                          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			clr_main_decision_event_flag_effect = yes
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_orphanage_guardian
+		clear_event_target = mod_event_target_player
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 교육의 설정을 해제 (1821)                                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1821
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+		FROM = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		ROOT = {
+			save_event_target_as = mod_event_target_player
+		}
+		ROOT = {
+			random_courtier = {
+				limit = {
+					is_orphanage_guardian_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphanage_guardian
+
+				character_event = {
+					id = OPG.1822
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1822
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.1823
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1823
+	desc = EVTDESC_OPG_1823
+	picture = GFX_evt_nemo_orphanage_guardian_mission
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_1823
+
+		#----------------------------------------------------------------------#
+		# 교육 방향 설정을 해제                                                #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			remove_special_training_for_orphan_flag_effect = yes
+		}
+
+		event_target:mod_event_target_player = {
+			clr_main_decision_event_flag_effect = yes
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_orphanage_guardian
+		clear_event_target = mod_event_target_player
+	}
+
+	option = {
+		name = EVTOPTB_OPG_1823
+
+		event_target:mod_event_target_player = {
+			clr_main_decision_event_flag_effect = yes
+		}
+		event_target:mod_event_target_orphan = {
+			clr_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_orphanage_guardian
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+
+#------------------------------------------------------------------------------#
+# 교육 이벤트 (1831~1834) / On_Actions 이벤트                                  #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1831
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	min_age = 5
+	max_age = 15
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어가 주군 상태인 고아이면서, 현재 고아원에 있을 것        #
+		#----------------------------------------------------------------------#
+		
+		is_orphan_character_trigger = yes
+		is_alive = yes
+		prisoner = no
+		NOT = { trait = incapable }
+		age = 5
+		is_adult = no
+
+		is_orphan_in_orphanage_trigger = yes
+		is_liege_human_player_character_trigger = yes
+		#is_orphan_pending_special_event_trigger = no
+
+		#----------------------------------------------------------------------#
+		# 특별한 교육이 활성화되어 있을 것                                     #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_ORPHANAGE_GROWING_SUPPORT_ACTIVATED
+
+		#----------------------------------------------------------------------#
+		# 파견 보조자가 있을 것                                                #
+		# 고아원 레벨 4 이상                                                   #
+		#----------------------------------------------------------------------#
+
+		liege = {
+			has_orphanage_level_4_trigger = yes
+
+			any_courtier = {
+				is_orphanage_guardian_trigger = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 설정이 되어 있는 고아일 것                                           #
+		#----------------------------------------------------------------------#
+
+		is_under_special_training_for_orphan_trigger = yes
+	}
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				is_orphanage_guardian_trigger = yes
+			}
+			character_event = {
+				id = OPG.1832
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1832
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			save_event_target_as = mod_event_target_orphan
+			liege = {
+				save_event_target_as = mod_event_target_player
+			}
+		}
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_guardian
+		}
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.1833
+			}
+		}
+	}
+}
+
+## 수련 루프 (매년 반복되는 이벤트이다!) - 1차
+
+character_event = {
+
+	id = OPG.1833
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 성인이 된 경우/행동불능/사망 시 루프를 중단한다.                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_adult = yes
+					trait = incapable
+					is_alive = no
+				}
+			}
+
+			remove_special_training_for_orphan_flag_effect = yes
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원에 없는 경우 루프가 중단된다.                                  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_orphanage_guardian_trigger = no
+					is_orphan_in_orphanage_trigger = no
+					is_liege_human_player_character_trigger = no
+				}
+			}
+
+			remove_special_training_for_orphan_flag_effect = yes
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 설정이 없다면 (교육중단) 루프를 중단한다.                            #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_under_special_training_for_orphan_trigger = no
+			}
+
+			break = yes
+		}
+		
+		#----------------------------------------------------------------------#
+		# 파견 보조자가 없거나 달라졌다면 이벤트를 중단한다. (단순 중단)       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphanage_guardian = {
+					is_orphanage_guardian_trigger = no
+				}
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 골드가 부족하다면 이번 턴은 패스한다. (종료가 아니다)                #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					NOT = { wealth = 1 }
+					NOT = { scaled_wealth = 0.01 }
+				}
+			}
+
+			character_event = {
+				id = OPG.1834
+				days = 120
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기까지가 교육 중단/스킵 조건. 여기까지 해당하지 않았다면 이번의 교 #
+		# 육 액션을 시작한다.                                                  #
+		#----------------------------------------------------------------------#
+
+
+		#----------------------------------------------------------------------#
+		# 교육 비용을 지출한다. 최소 1골드, 연수입이 100을 넘으면 1%           #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					yearly_income = 100
+				}
+			}
+			event_target:mod_event_target_player = {
+				scaled_wealth = -0.01 
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					NOT = { yearly_income = 100 }
+				}
+			}
+			event_target:mod_event_target_player = {
+				wealth = -1
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 설정된 스탯을 1 올린다.                                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+				NOT = { martial = 20 }
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+				NOT = { diplomacy = 20 }
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+				NOT = { stewardship = 20 }
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+				NOT = { intrigue = 20 }
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+				NOT = { learning = 20 }
+			}
+			change_learning = 1
+		}
+
+		#----------------------------------------------------------------------#
+		# 12세 미만으로 교육 목표가 설정되지 않았다면 유년기 트레잇을 관리     #
+		# 설정한 교육 목표에 부합하는 유년기 트레잇을 55% 확률로 얻고, 설정한  #
+		# 교육 목표에 어긋나는 유년기 트레잇은 75% 확률로 상실하게 됨.         #
+		# 비밀회의 DLC 가 활성화되어 있는 경우에만 동작함.                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+			}
+
+			#------------------------------------------------------------------#
+			# Martial :                                                        #
+			#   + 떠들썩한(Rowdy), 고집센(Willful)                             #
+			#   - 소심한(Timid), 심취하는(Idolizer)                            #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = timid
+						has_character_flag = was_timid
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = timid
+					clr_character_flag = was_timid
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = idolizer
+						has_character_flag = was_idolizer
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = idolizer
+					clr_character_flag = was_idolizer
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = rowdy }
+				}
+				random = {
+					chance = 55
+					add_trait = rowdy
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = willful }
+				}
+				random = {
+					chance = 55
+					add_trait = willful
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+			}
+
+			#------------------------------------------------------------------#
+			# Diplomacy :                                                      #
+			#   + 다정한(Affectionate) 호기심 많은(Curious)                    #
+			#   - 고집센(Willful) 까다로운(Fussy)                              #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = willful
+						has_character_flag = was_willful
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = willful
+					clr_character_flag = was_willful
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = fussy
+						has_character_flag = was_fussy
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = fussy
+					clr_character_flag = was_fussy
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = affectionate }
+				}
+				random = {
+					chance = 55
+					add_trait = affectionate
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = curious }
+				}
+				random = {
+					chance = 55
+					add_trait = curious
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+			}
+
+			#------------------------------------------------------------------#
+			# Intrigue :                                                       #
+			#   + 쾌활한(Playful) 까다로운(Fussy)                              #
+			#   - 떠들썩한(Rowdy) 다정한(Affectionate)                         #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = rowdy
+						has_character_flag = was_rowdy
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = rowdy
+					clr_character_flag = was_rowdy
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = affectionate
+						has_character_flag = was_affectionate
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = affectionate
+					clr_character_flag = was_affectionate
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				random = {
+					chance = 55
+					add_trait = playful
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = fussy }
+				}
+				random = {
+					chance = 55
+					add_trait = fussy
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+			}
+
+			#------------------------------------------------------------------#
+			# Stewardship :                                                    #
+			#   + 사색하는(Brooding) 성실한(Conscientious)                     #
+			#   - 나태한(Indolent) 도도한(Haughty)                             #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = indolent
+						has_character_flag = was_indolent
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = indolent
+					clr_character_flag = was_indolent
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = haughty
+						has_character_flag = was_haughty
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = haughty
+					clr_character_flag = was_haughty
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = brooding }
+				}
+				random = {
+					chance = 55
+					add_trait = brooding
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = conscientious }
+				}
+				random = {
+					chance = 55
+					add_trait = conscientious
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+			}
+
+			#------------------------------------------------------------------#
+			# Learning :                                                       #
+			#   + 소심한(Timid) 심취하는(Idolizer)                             #
+			#   - 사색하는(Brooding) 쾌활한(Playful)                           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = brooding
+						has_character_flag = was_brooding
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = brooding
+					clr_character_flag = was_brooding
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = playful
+						has_character_flag = was_playful
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = playful
+					clr_character_flag = was_playful
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = timid }
+				}
+				random = {
+					chance = 55
+					add_trait = timid
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = idolizer }
+				}
+				random = {
+					chance = 55
+					add_trait = idolizer
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 끝. 2차 루프는 120일 후에 동작함                                     #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.1834
+			days = 120
+		}
+	}
+}
+
+## 수련 루프 (매년 반복되는 이벤트이다!) - 2차
+
+character_event = {
+
+	id = OPG.1834
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 성인이 된 경우/행동불능/사망 시 루프를 중단한다.                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_adult = yes
+					trait = incapable
+					is_alive = no
+				}
+			}
+
+			remove_special_training_for_orphan_flag_effect = yes
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원에 없는 경우 루프가 중단된다.                                  #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_orphanage_guardian_trigger = no
+					is_orphan_in_orphanage_trigger = no
+					is_liege_human_player_character_trigger = no
+				}
+			}
+
+			remove_special_training_for_orphan_flag_effect = yes
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 설정이 없다면 (교육중단) 루프를 중단한다.                            #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_under_special_training_for_orphan_trigger = no
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+		
+		#----------------------------------------------------------------------#
+		# 파견 보조자가 없거나 달라졌다면 이벤트를 중단한다.                   #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphanage_guardian = {
+					is_orphanage_guardian_trigger = no
+				}
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 골드가 부족하다면 이번 턴은 패스한다.                                #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					NOT = { wealth = 1 }
+					NOT = { scaled_wealth = 0.01 }
+				}
+			}
+
+			clear_event_target = mod_event_target_orphan
+			clear_event_target = mod_event_target_player
+			clear_event_target = mod_event_target_orphanage_guardian
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 여기까지가 교육 중단/스킵 조건. 여기까지 해당하지 않았다면 이번의 교 #
+		# 육 액션을 시작한다.                                                  #
+		#----------------------------------------------------------------------#
+
+
+		#----------------------------------------------------------------------#
+		# 교육 비용을 지출한다. 최소 1골드, 연수입이 100을 넘으면 1%           #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					yearly_income = 100
+				}
+			}
+			event_target:mod_event_target_player = {
+				scaled_wealth = -0.01 
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_player = {
+					NOT = { yearly_income = 100 }
+				}
+			}
+			event_target:mod_event_target_player = {
+				wealth = -1
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 설정된 스탯을 1 올린다.                                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+				NOT = { martial = 20 }
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+				NOT = { diplomacy = 20 }
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+				NOT = { stewardship = 20 }
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+				NOT = { intrigue = 20 }
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+				NOT = { learning = 20 }
+			}
+			change_learning = 1
+		}
+
+		#----------------------------------------------------------------------#
+		# 12세 미만으로 교육 목표가 설정되지 않았다면 유년기 트레잇을 관리     #
+		# 설정한 교육 목표에 부합하는 유년기 트레잇을 55% 확률로 얻고, 설정한  #
+		# 교육 목표에 어긋나는 유년기 트레잇은 75% 확률로 상실하게 됨.         #
+		# 비밀회의 DLC 가 활성화되어 있는 경우에만 동작함.                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+			}
+
+			#------------------------------------------------------------------#
+			# Martial :                                                        #
+			#   + 떠들썩한(Rowdy), 고집센(Willful)                             #
+			#   - 소심한(Timid), 심취하는(Idolizer)                            #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = timid
+						has_character_flag = was_timid
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = timid
+					clr_character_flag = was_timid
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = idolizer
+						has_character_flag = was_idolizer
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = idolizer
+					clr_character_flag = was_idolizer
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = rowdy }
+				}
+				random = {
+					chance = 55
+					add_trait = rowdy
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = willful }
+				}
+				random = {
+					chance = 55
+					add_trait = willful
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+			}
+
+			#------------------------------------------------------------------#
+			# Diplomacy :                                                      #
+			#   + 다정한(Affectionate) 호기심 많은(Curious)                    #
+			#   - 고집센(Willful) 까다로운(Fussy)                              #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = willful
+						has_character_flag = was_willful
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = willful
+					clr_character_flag = was_willful
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = fussy
+						has_character_flag = was_fussy
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = fussy
+					clr_character_flag = was_fussy
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = affectionate }
+				}
+				random = {
+					chance = 55
+					add_trait = affectionate
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = curious }
+				}
+				random = {
+					chance = 55
+					add_trait = curious
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+			}
+
+			#------------------------------------------------------------------#
+			# Intrigue :                                                       #
+			#   + 쾌활한(Playful) 까다로운(Fussy)                              #
+			#   - 떠들썩한(Rowdy) 다정한(Affectionate)                         #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = rowdy
+						has_character_flag = was_rowdy
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = rowdy
+					clr_character_flag = was_rowdy
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = affectionate
+						has_character_flag = was_affectionate
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = affectionate
+					clr_character_flag = was_affectionate
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				random = {
+					chance = 55
+					add_trait = playful
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = fussy }
+				}
+				random = {
+					chance = 55
+					add_trait = fussy
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+			}
+
+			#------------------------------------------------------------------#
+			# Stewardship :                                                    #
+			#   + 사색하는(Brooding) 성실한(Conscientious)                     #
+			#   - 나태한(Indolent) 도도한(Haughty)                             #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = indolent
+						has_character_flag = was_indolent
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = indolent
+					clr_character_flag = was_indolent
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = haughty
+						has_character_flag = was_haughty
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = haughty
+					clr_character_flag = was_haughty
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = brooding }
+				}
+				random = {
+					chance = 55
+					add_trait = brooding
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = conscientious }
+				}
+				random = {
+					chance = 55
+					add_trait = conscientious
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = { age = 12 }
+				has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+			}
+
+			#------------------------------------------------------------------#
+			# Learning :                                                       #
+			#   + 소심한(Timid) 심취하는(Idolizer)                             #
+			#   - 사색하는(Brooding) 쾌활한(Playful)                           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					OR = {
+						trait = brooding
+						has_character_flag = was_brooding
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = brooding
+					clr_character_flag = was_brooding
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = playful
+						has_character_flag = was_playful
+					}
+				}
+				random = {
+					chance = 75
+					remove_trait = playful
+					clr_character_flag = was_playful
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = timid }
+				}
+				random = {
+					chance = 55
+					add_trait = timid
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = idolizer }
+				}
+				random = {
+					chance = 55
+					add_trait = idolizer
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 끝.                                                                  #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_guardian
+	}
+}
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 파견 보조자 7선 이벤트 / On_Actions 이벤트                                   #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.1841
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	ai = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 파견 보조자일 것                                                     #
+		#----------------------------------------------------------------------#
+		
+		is_orphanage_guardian_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 4 가 지어져 있을 것                                      #
+		#----------------------------------------------------------------------#
+		
+		liege = {
+			ai = no
+			has_orphanage_level_4_trigger = yes
+		}
+	}
+	
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# On-Actions 이벤트이므로 실행 타이밍을 랜덤화한다.                    #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.1842
+			days = 1
+			random = 270
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1842
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 파견 보조자일 것                                                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_orphanage_guardian_trigger = no
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 4가 지어져 있을 것                                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				liege = {
+					OR = {
+						ai = yes
+						has_orphanage_level_4_trigger = no
+					}
+				}
+			}
+			break = yes
+		}
+		
+		#----------------------------------------------------------------------#
+		# 이벤트를 실행한다.                                                   #
+		#----------------------------------------------------------------------#		
+
+		random_list = {
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1851
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1852
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1853
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1854
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1855
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1856
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1857
+					}
+				}
+			}
+			10 = {
+				liege = {
+					character_event = {
+						id = OPG.1858
+					}
+				}
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					trait = stressed
+				}
+				liege = {
+					character_event = {
+						id = OPG.1859
+					}
+				}
+			}
+			8 = {
+				modifier = {
+					factor = 0
+					NOT = { trait = stressed }
+				}
+				liege = {
+					character_event = {
+						id = OPG.1860
+					}
+				}
+			}
+			10 = {
+
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.1851
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = chaste }
+				}
+
+				if = {
+					limit = {
+						trait = lustful
+					}
+					remove_trait = lustful
+				}
+
+				add_trait = chaste
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1852
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = temperate }
+				}
+
+				if = {
+					limit = {
+						trait = gluttonous
+					}
+					remove_trait = gluttonous
+				}
+
+				add_trait = temperate
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1853
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = charitable }
+				}
+
+				if = {
+					limit = {
+						trait = greedy
+					}
+					remove_trait = greedy
+				}
+
+				add_trait = charitable
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1854
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = diligent }
+				}
+
+				if = {
+					limit = {
+						trait = slothful 
+					}
+					remove_trait = slothful 
+				}
+
+				add_trait = diligent
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1855
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = patient }
+				}
+
+				if = {
+					limit = {
+						trait = wroth 
+					}
+					remove_trait = wroth 
+				}
+
+				add_trait = patient
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1856
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = kind }
+				}
+
+				if = {
+					limit = {
+						trait = envious 
+					}
+					remove_trait = envious 
+				}
+
+				if = {
+					limit = {
+						trait = cruel 
+					}
+					remove_trait = cruel 
+				}
+
+				add_trait = kind
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1857
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = humble }
+				}
+
+				if = {
+					limit = {
+						trait = proud 
+					}
+					remove_trait = proud 
+				}
+
+				add_trait = humble
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1858
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = just }
+				}
+
+				if = {
+					limit = {
+						trait = arbitrary 
+					}
+					remove_trait = arbitrary 
+				}
+
+				add_trait = just
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1859
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					NOT = { trait = stressed }
+				}
+
+				add_trait = stressed
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.1860
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					trait = stressed
+				}
+
+				remove_trait = stressed
+			}
+		}
+	}
+}
+
+
+
+

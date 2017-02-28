@@ -1,0 +1,510 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+targetted_decisions = {
+
+	mod_main_decision_adopt_orphan = {
+
+		filter = sub_realm
+		ai_target_filter = sub_realm
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 고아 가문 입양이 활성화되어 있어야 한다.                         #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_ADOPT_ORPHAN_ACTIVATED
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 성인 플레이어 확인                                   #
+			#------------------------------------------------------------------#
+
+			is_common_adult_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 건물 : 고아원 레벨 4 이상                                        #
+			#------------------------------------------------------------------#
+
+			has_orphanage_level_4_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 선택할 수 있는 상태이고 아직 아무도 선택하지 않은 상태여야 한다. #
+			#------------------------------------------------------------------#
+
+			has_character_flag = mod_event_pending_flag_player_adopt_orphan
+			NOT = { has_character_flag = mod_event_pending_flag_player_adopt_orphan_selected }
+		}
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 현재 고아원에 있는 미성년 고아 (나이의 제한을 두지 않는다)       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+
+			is_common_npc_trigger = yes
+			is_orphan_in_orphanage_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 뭔가 다른 이벤트가 진행 중이 아닐 것                             #
+			# 입양이 불가능한 캐릭터가 아닐 것                                 #
+			#------------------------------------------------------------------#
+
+			is_orphan_pending_special_event_trigger = no
+			has_npc_is_pending_certain_event_flag_trigger = no
+			is_under_special_training_for_orphan_trigger = no
+
+			has_opinion_modifier = {
+				who = FROM
+				modifier = opinion_mod_made_a_good_relation
+			}
+
+			NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_my_dynasty }
+		}
+		allow = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_adopt_orphans }
+		}
+
+		effect = {
+			FROM = {
+				hidden_tooltip = {
+					set_character_flag = mod_event_pending_flag_player_adopt_orphan_selected
+
+					character_event = {
+						id = OPG.2133
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mod_main_decision_meet_and_teach_orphan = {
+
+		filter = sub_realm
+		ai_target_filter = sub_realm
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인 (성인일 필요가 없다)                   #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 건물 : 고아원 레벨 3 이상                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 선택할 수 있는 상태이고 아직 아무도 선택하지 않은 상태여야 한다. #
+			#------------------------------------------------------------------#
+
+			has_character_flag = mod_event_pending_flag_meet_and_teach_orphan
+			NOT = { has_character_flag = mod_event_pending_flag_meet_and_teach_orphan_selected }
+		}
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 현재 고아원에 있는 미성년 고아 (나이의 제한을 두지 않는다)       #
+			#------------------------------------------------------------------#
+
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+
+			is_common_npc_trigger = yes
+			is_orphan_in_orphanage_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 뭔가 다른 이벤트가 진행 중이 아닐 것                             #
+			#------------------------------------------------------------------#
+
+			has_npc_is_pending_certain_event_flag_trigger = no
+		}
+		allow = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+		}
+
+		effect = {
+			ROOT = {
+				hidden_tooltip = {
+					set_npc_is_pending_certain_event_flag_effect = yes
+				}
+			}
+			FROM = {
+				hidden_tooltip = {
+					set_character_flag = mod_event_pending_flag_meet_and_teach_orphan_selected
+
+					character_event = {
+						id = OPG.2139
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mod_main_decision_adopt_orphan_abroad = {
+
+		filter = sub_realm
+		ai_target_filter = sub_realm
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 성인 플레이어 확인                                   #
+			#------------------------------------------------------------------#
+
+			is_common_adult_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 건물 : 고아원 레벨 3 이상                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 기능이 활성화되어 있어야만 한다                                  #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_ORPHAN_ABROAD_ACTIVATED
+
+			#------------------------------------------------------------------#
+			# 해당 메뉴 창이 떠 있는 상태에서만 사용 가능한 디시전이다.        #
+			#------------------------------------------------------------------#
+
+			has_character_flag = mod_event_pending_flag_player_adopt_orphan_abroad
+
+			#------------------------------------------------------------------#
+			# 아직 아무도 선택하지 않은 상태여야 한다.                         #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_flag = mod_event_pending_flag_player_adopt_orphan_abroad_selected }
+
+			#------------------------------------------------------------------#
+			# 쿨 타임 : 6개월마다 사용 가능하다.                               #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_adopt_orphan_abroad }
+		}
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 현재 고아원에 있는 5세 이상의 미성년 고아                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			age = 5
+			is_adult = no
+
+			is_common_npc_trigger = yes
+			is_orphan_in_orphanage_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 뭔가 고아에게 이벤트가 진행중인 경우에는 보낼 수 없다            #
+			#------------------------------------------------------------------#
+
+			is_orphan_pending_special_event_trigger = no
+			has_npc_is_pending_certain_event_flag_trigger = no
+
+			#------------------------------------------------------------------#
+			# 다른 군주에의 입양이 금지된 고아 캐릭터는 보낼 수 없다.          #
+			# (이건 allow 로 이동시키는 것도 고려해본다.)                      #
+			#------------------------------------------------------------------#
+
+			NOT = { has_character_flag = mod_event_character_flag_cannot_adopt_abroad }
+		}
+		allow = {
+			age = 5
+			NOT = { age = 15 }
+			is_adult = no
+			prisoner = no
+			OR = {
+				trait = rescued_orphan_by_player
+				trait = rescued_orphan_by_ai
+			}
+		}
+		effect = {
+			FROM = {
+				hidden_tooltip = {
+
+					#----------------------------------------------------------#
+					# 고아가 선택되었음을 체크하는 임시 플래그를 박는다.       #
+					#----------------------------------------------------------#
+
+					set_character_flag = mod_event_pending_flag_player_adopt_orphan_abroad_selected
+
+					#----------------------------------------------------------#
+					# 이벤트로 이동 : OPG.3052 (이 고아를 보낼 수 있는가?)     #
+					#----------------------------------------------------------#
+
+					character_event = { id = OPG.3052 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0	
+		}
+	}
+
+	mod_main_decision_take_orphan_to_orphanage = {
+
+		filter = sub_realm
+		ai_target_filter = sub_realm
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인                                        #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# Conclave DLC 가 필요함                                           #
+			#------------------------------------------------------------------#
+
+			has_dlc = "Zeus"
+
+			#------------------------------------------------------------------#
+			# 건물 : 고아원 레벨 1 이상                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_1_trigger = yes
+				has_orphanage_level_2_trigger = yes
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 고아를 가신/봉신에게 맡길 수 있는 상태                           #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_global_flag = MOD_NEMO_OPG_EVENT_04
+				has_global_flag = MOD_NEMO_OPG_EVENT_05
+				has_global_flag = MOD_NEMO_OPG_EVENT_06
+				has_global_flag = MOD_NEMO_OPG_EVENT_07
+				has_global_flag = MOD_NEMO_OPG_EVENT_08
+				has_global_flag = MOD_NEMO_OPG_EVENT_09
+			}
+		}
+
+		potential = {
+
+			#------------------------------------------------------------------#
+			# 현재 봉신/가신에게 맡겨진 미성년 고아 (나이의 제한을 두지 않는다)#
+			#------------------------------------------------------------------#
+
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+
+			is_common_npc_trigger = yes
+			is_orphan_in_orphanage_trigger = no
+
+			has_character_flag = mod_event_character_flag_guardian_selected_orphan
+
+			#------------------------------------------------------------------#
+			# 뭔가 다른 이벤트가 진행 중이 아닐 것                             #
+			# 입양이 불가능한 캐릭터가 아닐 것                                 #
+			#------------------------------------------------------------------#
+
+			is_orphan_pending_special_event_trigger = no
+			has_npc_is_pending_certain_event_flag_trigger = no
+		}
+		allow = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			is_adult = no
+		}
+
+		effect = {
+			FROM = {
+				hidden_tooltip = {
+					set_character_flag = mod_event_pending_flag_player_taken_orphan_to_orphanage
+
+					character_event = {
+						id = OPG.4016
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mod_main_decision_meet_friend_of_opposite_sex_directly = {
+
+		filter = sub_realm
+		ai_target_filter = sub_realm
+
+		from_potential = {
+
+			#------------------------------------------------------------------#
+			# 모드 셋업 여부 확인                                              #
+			#------------------------------------------------------------------#
+
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+			#------------------------------------------------------------------#
+			# 일반 상태의 플레이어 확인                                        #
+			#------------------------------------------------------------------#
+
+			is_common_player_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 건물 : 고아원 레벨 3 이상                                        #
+			#------------------------------------------------------------------#
+
+			OR = {
+				has_orphanage_level_3_trigger = yes
+				has_orphanage_level_4_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 특별한 친구가 있는 상태여야 한다.                                #
+			#------------------------------------------------------------------#
+
+			is_exist_friend_of_opposite_sex_trigger = yes
+
+			#------------------------------------------------------------------#
+			# 메인 이벤트이므로 다른 메인 이벤트와 중복 실행할 수 없음.        #
+			#------------------------------------------------------------------#
+
+			has_main_decision_event_flag_trigger = no
+		}
+
+		potential = {
+			OR = {
+				trait = rescued_orphan_by_player
+				trait = rescued_orphan_by_ai
+			}
+			is_adult = no
+			is_alive = yes
+			NOT = { trait = incapable }
+			has_character_flag = mod_event_pending_flag_npc_orphan_friend_of_opposite_sex
+
+			has_opinion_modifier = {
+				 who = FROM
+				 modifier = opinion_mod_char_friend_of_opposite_sex
+			}
+
+			liege = {
+				character = FROM
+			}
+
+			is_orphan_in_orphanage_trigger = yes
+			has_npc_is_pending_certain_event_flag_trigger = no
+		}
+		allow = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			has_any_opinion_modifier = opinion_mod_char_friend_of_opposite_sex
+			NOT = { has_character_flag = mod_event_check_flag_meet_directly }
+			FROM = {
+				NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_meet_friend_of_opposite_sex }
+			}
+		}
+
+		effect = {
+			ROOT = {
+				set_character_flag = mod_event_check_flag_meet_directly
+			}
+			FROM = {
+				hidden_tooltip = {
+					set_main_decision_event_flag_effect = yes
+
+					character_event = {
+						id = OPG.2153
+					}
+				}
+			}
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

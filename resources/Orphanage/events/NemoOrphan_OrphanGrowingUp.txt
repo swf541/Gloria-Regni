@@ -1,0 +1,7165 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 2300~2599
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-06-01
+
+namespace = OPG
+
+#==============================================================================#
+# 고아 성장 일반 이벤트                                                        #
+#------------------------------------------------------------------------------#
+# 고아가 성장하면서 성인이 될 때까지 겪는 일반적인 이벤트들                    #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 고아가 고아원에서 질병/사고를 겪다 (3세 이상) (2301~2304) / 트리거 이벤트    #
+# Conclave DLC 의 존재 여부와 관계 없이 적용된다.                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2301
+	hide_window = yes
+	
+	ai = no
+
+	#--------------------------------------------------------------------------#
+	# 3세 이상의 미성년 고아 NPC 에게 단 1회 발생하며, 발생 시 현재의 수도원   #
+	# 레벨에 따라서 일정 확률로 사고 또는 질병으로 사망한다.                   #
+	# 고아원 레벨 1 - 75%                                                      #
+	# 고아원 레벨 2 - 50%                                                      #
+	# 고아원 레벨 3 - 25%                                                      #
+	# 고아원 레벨 4 - 0%                                                       #
+	# 플레이어가 직접 구출한 고아의 경우 위 표보다 약간 확률이 낮다.           #
+	#--------------------------------------------------------------------------#
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 3세 혹은 그 이상의 (이벤트를 겪지 않은) 미성년 고아가 있어야 함      #
+		# 단, 현재 고아원에 있는 것으로 간주될 것이 필요함.                    #
+		# (따라서, Conclave DLC 하에서 가신이나 봉신에게 맡겨진 고아의 경우 이 #
+		# 이벤트가 발생하지 않으므로 사망하지 않음.)                           #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			age = 3
+			is_adult = no
+
+			NOT = { has_character_flag = mod_character_event_flag_orphan_jump_ones_fate }
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 183
+	}
+
+	immediate = {
+		random_realm_character = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				age = 3
+				is_adult = no
+				NOT = { has_character_flag = mod_character_event_flag_orphan_jump_ones_fate }
+				is_orphan_in_orphanage_trigger = yes
+			}
+			character_event = {
+				id = OPG.2302
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2302
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 4 에서는 이 이벤트로 고아가 사망하지 않는다.             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					has_orphanage_level_4_trigger = yes
+				}
+			}
+
+			random_list = {
+				95 = {
+					character_event = {
+						id = OPG.2303
+					}
+				}
+				5 = {
+					character_event = {
+						id = OPG.2303
+					}
+				}
+			}
+
+			break = yes	# 필요 없지만..
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 3: 25% 의 확률로 고아가 사망한다.                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					has_orphanage_level_3_trigger = yes
+				}
+			}
+
+			random_list = {
+				75 = {
+					modifier = {
+						factor = 1.14
+						trait = rescued_orphan_by_player
+					}
+					character_event = {
+						id = OPG.2303
+					}
+				}
+				25 = {
+					modifier = {
+						factor = 0.6
+						trait = rescued_orphan_by_player
+					}
+					FROM = {
+						character_event = {
+							id = OPG.2304
+						}
+					}
+				}
+			}
+
+			break = yes	# 필요 없지만..
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 2: 50% 의 확률로 고아가 사망한다.                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					has_orphanage_level_2_trigger = yes
+				}
+			}
+
+			random_list = {
+				50 = {
+					modifier = {
+						factor = 1.2
+						trait = rescued_orphan_by_player
+					}
+					character_event = {
+						id = OPG.2303
+					}
+				}
+				50 = {
+					modifier = {
+						factor = 0.8
+						trait = rescued_orphan_by_player
+					}
+					FROM = {
+						character_event = {
+							id = OPG.2304
+						}
+					}
+				}
+			}
+
+			break = yes	# 필요 없지만..
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 레벨 1: 75% 의 확률로 고아가 사망한다.                        #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			25 = {
+				modifier = {
+					factor = 1.4
+					trait = rescued_orphan_by_player
+				}
+				character_event = {
+					id = OPG.2303
+				}
+			}
+			75 = {
+				modifier = {
+					factor = 0.86
+					trait = rescued_orphan_by_player
+				}
+				FROM = {
+					character_event = {
+						id = OPG.2304
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2303
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# ROOT 가 고아. 살아남았으므로 따로 플레이어에게 발생시킬 이벤트는 없다.   #
+	# AI 가 발견한 고아의 경우 플레이어와 따로 만나는 이벤트가 없기 때문에, 여 #
+	# 기에서 관련 플래그까지 함께 박아넣는다.                                  #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		ROOT = {
+			if = {
+				limit = {
+					trait = rescued_orphan_by_ai
+				}
+				set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+			}
+
+			set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+
+			piety = 1
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2304
+	desc = EVTDESC_OPG_2304
+	picture = GFX_evt_nemo_dead		# Base
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			add_trait = ill
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 고아가 사망하였음을 알리고 실제로 사망에 이르게 하는 이벤트              #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_2304
+		FROM = {
+			death = {
+				death_reason = death_trait
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아가 생명의 은인을 만나다 (4세 이상) (2311~2313) / 트리거 이벤트           #
+# 플레이어가 구출한 고아의 경우에만 발생한다.                                  #
+# Conclave DLC 의 존재 여부와 관계 없이 적용된다.                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2311
+	hide_window = yes
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 4세 혹은 그 이상의 (이벤트를 겪지 않은) 미성년 고아가 있어야 함      #
+		# 단, 현재 고아원에 있는 것으로 간주될 것이 필요함.                    #
+		# (따라서, Conclave DLC 하에서 가신이나 봉신에게 맡겨진 고아의 경우 이 #
+		# 이벤트가 발생하지 않으므로 사망하지 않음.)                           #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			NOT = { has_character_flag = mod_character_event_flag_orphan_meet_my_benefactor }
+			trait = rescued_orphan_by_player
+			age = 4
+			is_adult = no
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	immediate = {
+		random_realm_character = {
+			limit = {
+				NOT = { has_character_flag = mod_character_event_flag_orphan_meet_my_benefactor }
+				trait = rescued_orphan_by_player
+				age = 4
+				is_adult = no
+
+				is_orphan_in_orphanage_trigger = yes
+			}
+
+			character_event = {
+				id = OPG.2312
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2312
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+
+		ROOT = {
+			set_character_flag = mod_character_event_flag_orphan_meet_my_benefactor
+		}
+
+		FROM = {
+			character_event = {
+				id = OPG.2313
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2313
+	desc = EVTDESC_OPG_2313
+	picture = GFX_evt_nemo_rescued_orphan_meets_benefactor
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2313
+		FROM = {
+			opinion = {
+				modifier = opinion_mod_cm_rescued_orphan
+				who = ROOT
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아가 유년기 관심사를 고른다 (5세 이상) (2321~2323) / 트리거 이벤트         #
+# Conclave DLC 가 있는 경우에만 (자동으로) 설정된다.                           #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2321
+	hide_window = yes
+	
+	ai = no
+			
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 비밀회의 DLC 대응 기능이므로 DLC 체크를 한다.                        #
+		#----------------------------------------------------------------------#
+		
+		has_dlc = "Zeus"
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인 (성인)                                     #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 5~12세 사이의 미성년 고아에게,                                       #
+		# - 아직 유년기 포커스가 설정되지 않았을 것                            #
+		# - 현재 고아원에 있는 것으로 간주될 것                                #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			age = 5
+			NOT = { age = 12 }
+
+			NOT = { has_focus = focus_ch_pride }
+			NOT = { has_focus = focus_ch_humility }
+			NOT = { has_focus = focus_ch_duty }
+			NOT = { has_focus = focus_ch_etiquette }
+			NOT = { has_focus = focus_ch_thrift }
+			NOT = { has_focus = focus_ch_faith }
+			NOT = { has_focus = focus_ch_struggle }
+			NOT = { has_focus = focus_ch_heritage }
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 고아원 보모가 임무 없이 수도에 있어야 함                        #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		any_realm_character = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				age = 5
+				NOT = { age = 12 }
+
+				NOT = { has_focus = focus_ch_pride }
+				NOT = { has_focus = focus_ch_humility }
+				NOT = { has_focus = focus_ch_duty }
+				NOT = { has_focus = focus_ch_etiquette }
+				NOT = { has_focus = focus_ch_thrift }
+				NOT = { has_focus = focus_ch_faith }
+				NOT = { has_focus = focus_ch_struggle }
+				NOT = { has_focus = focus_ch_heritage }
+
+				is_orphan_in_orphanage_trigger = yes
+			}
+			character_event = {
+				id = OPG.2322
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2322
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 플레이어를 괴롭히지 않도록, 선택지의 선택은 고아원 보모가 한다.      #
+		# 고아원 보모가 없는 경우에는 이벤트 자체가 실행되지 않으므로 무시.    #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			random_courtier = {
+				limit = {
+					is_orphanage_nurse_trigger = yes
+					NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+				}
+				save_event_target_as = mod_event_target_educator
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 주 이벤트 타겟을 설정한다.                                           #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모에게 이벤트 실행                                          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_educator = {
+			character_event = {
+				id = OPG.2323
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2323
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# 플레이어 : mod_event_target_player
+	# 고아     : mod_event_target_orphan
+	# 결정자   : mod_event_target_educator (ROOT)
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 전역 플래그로 설정된 아래 두 지시사항을 유의한다.                        #
+	#--------------------------------------------------------------------------#
+	# mod_orphanage_policy_disallow_set_heritage : Heritage 관심사 설정 금지   #
+	# mod_orphanage_policy_always_set_heritage : 문화/종교가 다르면 언제나 설정#
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+		ai_chance = {
+			factor = 25
+		}
+		
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					is_childhood_focus_set_trigger = no
+				}
+			}
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						has_global_flag = mod_orphanage_policy_always_set_heritage
+						event_target:mod_event_target_orphan = {
+							OR = {
+								NOT = { religion = event_target:mod_event_target_player }
+								NOT = { culture = event_target:mod_event_target_player }
+							}
+						}
+					}
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_faith
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_global_flag = mod_orphanage_policy_disallow_set_heritage
+							AND = {
+								religion = event_target:mod_event_target_player
+								culture = event_target:mod_event_target_player
+							}
+						}
+					}
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_heritage
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 0
+				has_global_flag = mod_orphanage_policy_always_set_heritage
+				event_target:mod_event_target_orphan = {
+					OR = {
+						NOT = { religion = event_target:mod_event_target_player }
+						NOT = { culture = event_target:mod_event_target_player }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					is_childhood_focus_set_trigger = no
+				}
+			}
+		
+			random_list = {
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_duty
+					}
+				}
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_thrift
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+
+	option = {
+		name = EVTOPTC_HIDDEN_EVENT
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 0
+				has_global_flag = mod_orphanage_policy_always_set_heritage
+				event_target:mod_event_target_orphan = {
+					OR = {
+						NOT = { religion = event_target:mod_event_target_player }
+						NOT = { culture = event_target:mod_event_target_player }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					is_childhood_focus_set_trigger = no
+				}
+			}		
+
+			random_list = {
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_pride
+					}
+				}
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_struggle
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+
+	option = {
+		name = EVTOPTD_HIDDEN_EVENT
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 0
+				has_global_flag = mod_orphanage_policy_always_set_heritage
+				event_target:mod_event_target_orphan = {
+					OR = {
+						NOT = { religion = event_target:mod_event_target_player }
+						NOT = { culture = event_target:mod_event_target_player }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					is_childhood_focus_set_trigger = no
+				}
+			}
+
+			random_list = {
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_humility
+					}
+				}
+				10 = {
+					event_target:mod_event_target_orphan = {
+						set_focus = focus_ch_etiquette
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아에게 교육 목표를 설정한다 (12세 이상) (2331~2333) / 트리거 이벤트        #
+# Conclave DLC 가 있는 경우에만 (자동으로) 설정된다.                           #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2331
+	hide_window = yes
+	
+	ai = no
+			
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 비밀회의 DLC 대응 기능이므로 DLC 체크를 한다.                        #
+		#----------------------------------------------------------------------#
+		
+		has_dlc = "Zeus"
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인 (성인)                                     #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 12세 이상의 미성년 고아에게                                          #
+		# - 아직 교육 목표가 설정되지 않았을 것                                #
+		# - 현재 고아원에 있는 것으로 간주될 것                                #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			age = 12
+			is_adult = no
+
+			NOT = { has_focus = focus_ch_pride }
+			NOT = { has_focus = focus_ch_humility }
+			NOT = { has_focus = focus_ch_duty }
+			NOT = { has_focus = focus_ch_etiquette }
+			NOT = { has_focus = focus_ch_thrift }
+			NOT = { has_focus = focus_ch_faith }
+			NOT = { has_focus = focus_ch_struggle }
+			NOT = { has_focus = focus_ch_heritage }
+
+			NOT = { has_focus = focus_ed_diplomacy }
+			NOT = { has_focus = focus_ed_martial }
+			NOT = { has_focus = focus_ed_stewardship }
+			NOT = { has_focus = focus_ed_intrigue }
+			NOT = { has_focus = focus_ed_learning }
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 고아원 보모가 임무 없이 수도에 있어야 함                        #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		random_realm_character = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				age = 12
+				is_adult = no
+
+				NOT = { has_focus = focus_ch_pride }
+				NOT = { has_focus = focus_ch_humility }
+				NOT = { has_focus = focus_ch_duty }
+				NOT = { has_focus = focus_ch_etiquette }
+				NOT = { has_focus = focus_ch_thrift }
+				NOT = { has_focus = focus_ch_faith }
+				NOT = { has_focus = focus_ch_struggle }
+				NOT = { has_focus = focus_ch_heritage }
+
+				NOT = { has_focus = focus_ed_diplomacy }
+				NOT = { has_focus = focus_ed_martial }
+				NOT = { has_focus = focus_ed_stewardship }
+				NOT = { has_focus = focus_ed_intrigue }
+				NOT = { has_focus = focus_ed_learning }
+
+				is_orphan_in_orphanage_trigger = yes
+			}
+			character_event = {
+				id = OPG.2332
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2332
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 플레이어를 괴롭히지 않도록, 선택지의 선택은 고아원 보모가 한다.      #
+		# 고아원 보모가 없는 경우에는 이벤트 자체가 실행되지 않으므로 무시.    #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			random_courtier = {
+				limit = {
+					is_orphanage_nurse_trigger = yes
+					NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+				}
+				save_event_target_as = mod_event_target_educator
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 주 이벤트 타겟을 설정한다.                                           #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모에게 이벤트 실행                                          #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_educator = {
+			character_event = {
+				id = OPG.2333
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2333
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# 플레이어 : mod_event_target_player
+	# 고아     : mod_event_target_orphan
+	# 결정자   : mod_event_target_educator (ROOT)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 육성의 방향을 지정한 경우, 다른 요소와 관계 없이 그 교육  #
+		# 을 시키도록 한다.                                                    #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_under_special_training_for_orphan_trigger = yes
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_modifier = mod_event_identification_flag_modifier_under_special_training_diplomacy
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				set_focus = focus_ed_diplomacy
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_modifier = mod_event_identification_flag_modifier_under_special_training_martial
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				set_focus = focus_ed_martial
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_modifier = mod_event_identification_flag_modifier_under_special_training_stewardship
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				set_focus = focus_ed_stewardship
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_modifier = mod_event_identification_flag_modifier_under_special_training_intrigue
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				set_focus = focus_ed_intrigue
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_modifier = mod_event_identification_flag_modifier_under_special_training_learning
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				set_focus = focus_ed_learning
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# 플레이어가 육성의 방향을 지정하지 않은 경우, 조건에 따라서 랜덤하게  #
+		# 교육 목표를 지정한다. 유년기에 얻은 유년기 특성 트레잇이 선택에 영향 #
+		# 을 미친다.                                                           #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_under_special_training_for_orphan_trigger = no
+			}
+		}
+
+		random_list = {
+			20 = {
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = affectionate
+					}
+				}
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = curious
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = willful
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = fussy
+					}
+				}
+				event_target:mod_event_target_orphan = {
+					set_focus = focus_ed_diplomacy
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = rowdy
+					}
+				}
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = willful
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = timid
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = idolizer
+					}
+				}
+				event_target:mod_event_target_orphan = {
+					set_focus = focus_ed_martial
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = brooding
+					}
+				}
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = conscientious
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = indolent
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = haughty
+					}
+				}
+				event_target:mod_event_target_orphan = {
+					set_focus = focus_ed_stewardship
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = playful
+					}
+				}
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = fussy
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = rowdy
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = affectionate
+					}
+				}
+				event_target:mod_event_target_orphan = {
+					set_focus = focus_ed_intrigue
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = timid
+					}
+				}
+				modifier = {
+					factor = 2.0
+					event_target:mod_event_target_orphan = {
+						trait = idolizer
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = brooding
+					}
+				}
+				modifier = {
+					factor = 0.5
+					event_target:mod_event_target_orphan = {
+						trait = playful
+					}
+				}
+				event_target:mod_event_target_orphan = {
+					set_focus = focus_ed_learning
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_educator
+		clear_event_target = mod_event_target_orphan
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아가 다 자라 성인이 되었습니다 (2341~2343) / On-Action 이벤트              #
+#                                                                              #
+# 플레이어의 렐름에 있는 (입양되지 않은) 모든 고아들은 성인이 되면서 이 이벤트 #
+# 를 거치게 된다.                                                              #
+#                                                                              #
+# 모든 캐릭터가 성년이 되면서 거쳐가는 On-Action 이므로, ROOT 는 고아 캐릭터이 #
+# 며, 플레이어는 liege 스코프가 ai = no 인지를 확인하여 잡는다.                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2341
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어가 주군 상태인 모든 고아                                #
+		#----------------------------------------------------------------------#
+		
+		OR = {
+			trait = rescued_orphan_by_player
+			trait = rescued_orphan_by_ai
+		}
+
+		is_liege_human_player_character_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 이 이벤트를 겪지 않았을 것                                           #
+		# (성인 여부 등은 on-action 을 통해 체크되므로 확인할 필요 없음.)      #
+		# (사실 이것도 필요 없지만...)                                         #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_character_event_flag_orphan_grown_up }
+	}
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+
+		set_character_flag = mod_character_event_flag_orphan_grown_up
+
+		#----------------------------------------------------------------------#
+		# 만약 성적 학대 후 after 플래그를 얻었다면 그쪽 이벤트로 진행한다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_flag = mod_nemo_event_flag_sexually_abused_orphan_child_after
+			}
+			character_event = {
+				id = OPG.4141
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 혹시 있을 잡다한 것들이 처리될 여유시간을 주기 위해 7일의 버퍼를 둠  #
+		# (다른 봉신들에게 맡겨졌던 고아들이 돌아오는 데도 충분한 시간)        #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.2342
+			days = 7
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2342
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이후의 이벤트를 대비하여 이벤트 타겟을 저장한다.                     #
+		#----------------------------------------------------------------------#
+
+		liege = {
+			save_event_target_as = mod_event_target_player
+		}
+		save_event_target_as = mod_event_target_orphan
+
+		#----------------------------------------------------------------------#
+		# 만약 고아가 잘못된 충성심 이벤트의 대상이었다면, 여기서 다른 결말로  #
+		# 가게 된다.                                                           #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_character_flag = mod_event_character_flag_secret_agent
+			}
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.7071
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 성년이 된 고아에 대한 처리 이벤트로 이동한다.                        #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2343
+			}
+		}
+		break = yes
+	}
+}
+
+character_event = {
+
+	id = OPG.2343
+	picture = GFX_evt_nemo_orphan_is_grown_up
+	desc = {
+		text = EVTDESC_OPG_2343_1
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 플레이어가 직접 구출한 고아로서 성년을 맞은 경우의 메시지        #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				trait = rescued_orphan_by_player
+				has_opinion_modifier = {
+					 who = PREV
+					 modifier = opinion_mod_cm_orphan_in_orphanage
+				}
+				is_whipping_boy_trigger = no
+				is_my_friend_of_opposite_sex_trigger = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_2
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 선대의 플레이어가 직접 구출한 고아로서 성년을 맞은 경우의 메시지 #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				trait = rescued_orphan_by_player
+				NOT = {
+					has_opinion_modifier = {
+						 who = PREV
+						 modifier = opinion_mod_cm_orphan_in_orphanage
+					}
+				}
+				is_whipping_boy_trigger = no
+				is_my_friend_of_opposite_sex_trigger = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_3
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# AI 가 구출한 고아로서 성년을 맞은 경우의 메시지                  #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				trait = rescued_orphan_by_ai
+				is_whipping_boy_trigger = no
+				is_my_friend_of_opposite_sex_trigger = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_4_1
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 후계자의 휘핑 보이로서 성년을 맞은 경우의 메시지                 #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				is_heirs_whipping_boy_trigger = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_4_2
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 플레이어의 휘핑 보이로서 성년을 맞은 경우의 메시지               #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				is_my_whipping_boy_trigger = yes
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_5_1
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 플레이어의 이성 친구로서 약혼의 단계에 이르지 못한 경우의 메시지 #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				is_my_friend_of_opposite_sex_trigger = yes
+				is_betrothed = no
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2343_5_2
+		trigger = {
+
+			#------------------------------------------------------------------#
+			# 플레이어의 이성 친구로서 약혼의 단계에 이른 경우의 메시지        #
+			#------------------------------------------------------------------#
+			event_target:mod_event_target_orphan = {
+				is_my_friend_of_opposite_sex_trigger = yes
+				is_betrothed = yes
+			}
+		}
+	}
+
+	## 그 외, 이후 추가할 소녀 정원사나 휘핑 보이의 성인 관련 메시지도 추가해야
+	## 하지만 일단 그 부분은 제외하고 작성
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 고아에게 Ambitious 트레잇은 있으면 안 된다.                          #
+		# 고아에게 항상 Content 트레잇을 달아준다.                             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					trait = ambitious
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				remove_trait = ambitious
+			}
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { trait = content }
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				add_trait = content
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# A. 가문의 일원으로 받아들인다.                                           #
+	#    주의. 휘핑 보이, 이성 친구의 경우는 이 선택지를 고를 수 없다.         #
+	#    기존의 가문의 일원으로 받아들일 수 있는 자격이 있어야만 선택지를 고를 #
+	#    수 있다.                                                              #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_OPG_2343
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_whipping_boy_trigger = no
+				is_my_friend_of_opposite_sex_trigger = no
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_mod_made_a_good_relation
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원의 레벨에 따라서 보정되는 추가 스탯을 설정.                    #
+		# 이 추가 스탯은 가신이나 봉신에게 양육된 경우에는 추가되지 않는다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { has_character_flag = mod_event_character_flag_guardian_selected_orphan }
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_1_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_2_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 2
+					change_martial = 2
+					change_stewardship = 2
+					change_intrigue = 2
+					change_learning = 2
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_3_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 3
+					change_martial = 3
+					change_stewardship = 3
+					change_intrigue = 3
+					change_learning = 3
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_4_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 5
+					change_martial = 5
+					change_stewardship = 5
+					change_intrigue = 5
+					change_learning = 5
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 성년 오피니언  #
+		# 모디파이어로 대체한다.                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아 트레잇을 제거하고 입양 세팅을 한다.                             #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			remove_orphan_character_trait_effect = yes
+
+			add_trait = adopted_orphan
+
+			if = {
+				limit = {
+					ROOT = {
+						is_female = yes
+					}
+				}
+				set_mother = ROOT
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						is_female = no
+					}
+				}
+				set_father = ROOT
+			}
+
+			dynasty = ROOT
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adopted_orphan
+			}
+		}
+
+		ROOT = {
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = mod_event_interval_notification_flag_modifier_adopt_orphans
+					duration = 365
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	#--------------------------------------------------------------------------#
+	# B. 고아의 종신 서원을 받아들인다                                         #
+	#    플레이어가 구출한 고아만이 종신 서원을 선택할 수 있다.                #
+	#    휘핑 보이와 이성 친구(약혼하지 않음)는 이 선택지를 선택 가능하다.     #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTB_OPG_2343
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				OR = {
+					is_whipping_boy_trigger = yes
+					AND = {
+						is_my_friend_of_opposite_sex_trigger = yes
+						is_betrothed = no
+					}
+					AND = {
+						trait = rescued_orphan_by_player
+						has_opinion_modifier = {
+							 who = PREV
+							 modifier = opinion_mod_cm_orphan_in_orphanage
+						}
+						is_my_friend_of_opposite_sex_trigger = no
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원의 레벨에 따라서 보정되는 추가 스탯을 설정.                    #
+		# 이 추가 스탯은 가신이나 봉신에게 양육된 경우에는 추가되지 않는다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { has_character_flag = mod_event_character_flag_guardian_selected_orphan }
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_1_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_2_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 2
+					change_martial = 2
+					change_stewardship = 2
+					change_intrigue = 2
+					change_learning = 2
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_3_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 3
+					change_martial = 3
+					change_stewardship = 3
+					change_intrigue = 3
+					change_learning = 3
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_4_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 5
+					change_martial = 5
+					change_stewardship = 5
+					change_intrigue = 5
+					change_learning = 5
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 종신 서원 고아의 모디파이어를 붙인다.                                #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			if = { 
+				limit = { 
+					is_female = yes
+				}
+				add_character_modifier = {
+					name = mod_cm_a_life_stewardess
+					duration = -1
+				}
+			}
+			if = { 
+				limit = { 
+					is_female = no
+				}
+				add_character_modifier = {
+					name = mod_cm_a_life_steward
+					duration = -1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 성년 오피니언  #
+		# 모디파이어로 대체한다.                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adult_orphan_a_life_steward
+			}
+
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	#--------------------------------------------------------------------------#
+	# C. 고아의 종신 서원을 허락하지 않는다 - 보통의 가신이 된다.              #
+	#    약혼한 이성 친구를 제외하고, 이 선택지는 선택에 제한이 없다.          #
+	#--------------------------------------------------------------------------#
+
+	option = {
+
+		name = {
+			text = EVTOPTC_OPG_2343_1
+			trigger = {
+				event_target:mod_event_target_orphan = {
+					OR = {
+						is_whipping_boy_trigger = yes
+						is_my_friend_of_opposite_sex_trigger = yes
+						AND = {
+							trait = rescued_orphan_by_player
+							has_opinion_modifier = {
+								 who = PREV
+								 modifier = opinion_mod_cm_orphan_in_orphanage
+							}
+						}
+					}
+				}
+			}
+		}
+		name = {
+			text = EVTOPTC_OPG_2343_2
+			trigger = {
+				event_target:mod_event_target_orphan = {
+					is_whipping_boy_trigger = no
+					is_my_friend_of_opposite_sex_trigger = no
+					OR = {
+						trait = rescued_orphan_by_ai
+						AND = {
+							trait = rescued_orphan_by_player
+							NOT = {
+								has_opinion_modifier = {
+									 who = PREV
+									 modifier = opinion_mod_cm_orphan_in_orphanage
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				NAND = {
+					is_my_friend_of_opposite_sex_trigger = yes
+					is_betrothed = yes
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원의 레벨에 따라서 보정되는 추가 스탯을 설정.                    #
+		# 이 추가 스탯은 가신이나 봉신에게 양육된 경우에는 추가되지 않는다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { has_character_flag = mod_event_character_flag_guardian_selected_orphan }
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_1_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_2_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 2
+					change_martial = 2
+					change_stewardship = 2
+					change_intrigue = 2
+					change_learning = 2
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_3_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 3
+					change_martial = 3
+					change_stewardship = 3
+					change_intrigue = 3
+					change_learning = 3
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_4_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 5
+					change_martial = 5
+					change_stewardship = 5
+					change_intrigue = 5
+					change_learning = 5
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 성년 오피니언  #
+		# 모디파이어로 대체한다.                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adult_orphan_normal_courtier
+			}
+
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	#--------------------------------------------------------------------------#
+	# D. 추방한다 : 문화권이 같은 어딘가의 궁정으로 떠날 것이다.               #
+	#    휘핑 보이/이성 친구는 추방할 수 없다.                                 #
+	#    플레이어가 구출한 고아는 추방할 수 없다.                              #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTD_OPG_2343
+
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_whipping_boy_trigger = no
+				is_my_friend_of_opposite_sex_trigger = no
+				OR = {
+					trait = rescued_orphan_by_ai
+					AND = {
+						trait = rescued_orphan_by_player
+						NOT = {
+							has_opinion_modifier = {
+								 who = PREV
+								 modifier = opinion_mod_cm_orphan_in_orphanage
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 추방한다.      #
+		# 고아 트레잇도 함께 제거하며, 그 결과 어떤 연결도 남아있지 않게 된다. #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_reminiscence_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+			remove_orphan_character_trait_effect = yes
+
+			banish = yes	# 추방
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+
+	#--------------------------------------------------------------------------#
+	# E. 약혼을 실행한다.                                                      #
+	#    약혼한 이성 친구의 경우 이 선택지만 선택 가능하다.                    #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTE_OPG_2343
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_my_friend_of_opposite_sex_trigger = yes
+				is_betrothed = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 결혼을 실행한다.                                                     #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_female = no
+			}
+			add_spouse = event_target:mod_event_target_orphan
+		}
+
+		if = {
+			limit = {
+				is_female = yes
+			}
+			add_spouse_matrilineal = event_target:mod_event_target_orphan
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원의 레벨에 따라서 보정되는 추가 스탯을 설정.                    #
+		# 이 추가 스탯은 가신이나 봉신에게 양육된 경우에는 추가되지 않는다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { has_character_flag = mod_event_character_flag_guardian_selected_orphan }
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_1_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_2_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 2
+					change_martial = 2
+					change_stewardship = 2
+					change_intrigue = 2
+					change_learning = 2
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_3_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 3
+					change_martial = 3
+					change_stewardship = 3
+					change_intrigue = 3
+					change_learning = 3
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_4_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 5
+					change_martial = 5
+					change_stewardship = 5
+					change_intrigue = 5
+					change_learning = 5
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 성년 오피니언  #
+		# 모디파이어로 대체한다.                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adult_orphan_normal_courtier
+			}
+
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 마지막 이벤트를 실행한다.                                            #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.5163
+				days = 1
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# F. 약혼을 취소한다.                                                      #
+	#    약혼한 이성 친구의 경우 이 선택지만 선택 가능하다.                    #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTF_OPG_2343
+		trigger = {
+			event_target:mod_event_target_orphan = {
+				is_my_friend_of_opposite_sex_trigger = yes
+				is_betrothed = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 약혼을 취소한다.                                                     #
+		#----------------------------------------------------------------------#
+
+		break_betrothal = event_target:mod_event_target_orphan
+
+		#----------------------------------------------------------------------#
+		# 고아원의 레벨에 따라서 보정되는 추가 스탯을 설정.                    #
+		# 이 추가 스탯은 가신이나 봉신에게 양육된 경우에는 추가되지 않는다.    #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					NOT = { has_character_flag = mod_event_character_flag_guardian_selected_orphan }
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_1_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_2_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 2
+					change_martial = 2
+					change_stewardship = 2
+					change_intrigue = 2
+					change_learning = 2
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_3_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 3
+					change_martial = 3
+					change_stewardship = 3
+					change_intrigue = 3
+					change_learning = 3
+				}
+			}
+
+			if = {
+				limit = {
+					has_orphanage_level_4_trigger = yes
+				}
+				event_target:mod_event_target_orphan = {
+					change_diplomacy = 5
+					change_martial = 5
+					change_stewardship = 5
+					change_intrigue = 5
+					change_learning = 5
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 가신/봉신에게 양육됨 플래그를 삭제한다.                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan = {
+					has_character_flag = mod_event_character_flag_guardian_selected_orphan
+				}
+			}
+			event_target:mod_event_target_orphan = {
+				clear_flag_modifier_orphan_under_guardianship_effect = yes
+				clear_abuse_flag_modifier_orphan_under_guardianship_effect = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 미성년 고아 모디파이어/오피니언 모디파이어를 제거하고 성년 오피니언  #
+		# 모디파이어로 대체한다.                                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_adult_orphan_normal_courtier
+			}
+
+			remove_orphan_character_flag_effect = yes
+			remove_orphan_character_flag_intrigue_effect = yes
+			remove_orphan_character_relative_opinion_modifier_effect = yes
+			remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 고아의 건강이 좋지 않습니다 (7세 이상)... (2351~2354) / 트리거 이벤트        #
+# Conclave DLC 의 존재 여부와 관계 없이 적용된다. (별도 파일)                  #
+#------------------------------------------------------------------------------#
+
+
+
+
+
+
+#------------------------------------------------------------------------------#
+# 고아의 생활 양식을 바꾸다 (2361~2363) (14세 이상) / 트리거 이벤트            #
+# Conclave DLC 의 존재 여부와 관계 없이 적용된다.                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2361
+	hide_window = yes
+	
+	ai = no
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인 (성인)                                     #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 14세 이상의 미성년 고아로 플레이어와 문화가 다른 경우                #
+		# - Conclave DLC 사용중인 경우 : 고아원에 남아 있는 경우               #
+		# - Conclave DLC 사용중이 아닌 경우 : 두 조건 중 하나를 만족시         #
+		#   1) 플레이어가 교육 중인 경우                                       #
+		#   2) 가신/봉신이 교육중이고 문화가 플레이어와 같은 경우              #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+			age = 14
+			is_adult = no
+			NOT = { culture = ROOT }
+			OR = {
+				AND = {
+					has_dlc = "Zeus"
+					is_orphan_in_orphanage_trigger = yes
+				}
+				AND = {
+					NOT = { has_dlc = "Zeus" }
+					guardian = {
+						OR = {
+							character = ROOT
+							culture = ROOT
+						}
+					}
+				}
+			}
+
+			NOT = { has_character_flag = mod_character_event_flag_change_culture }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+				age = 14
+				is_adult = no
+				NOT = { culture = ROOT }
+				OR = {
+					AND = {
+						has_dlc = "Zeus"
+						is_orphan_in_orphanage_trigger = yes
+					}
+					AND = {
+						NOT = { has_dlc = "Zeus" }
+						guardian = {
+							OR = {
+								character = ROOT
+								culture = ROOT
+							}
+						}
+					}
+				}
+
+				NOT = { has_character_flag = mod_character_event_flag_change_culture }
+			}
+
+			character_event = {
+				id = OPG.2362
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2362
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = mod_character_event_flag_change_culture
+			save_event_target_as = mod_event_target_orphan
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+			educator = {
+				save_event_target_as = mod_event_target_educator
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_dlc = "Zeus" }
+			}
+			guardian = {
+				save_event_target_as = mod_event_target_educator
+			}
+		}
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2363
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2363
+	desc = {
+		text = EVTDESC_OPG_2363_1
+		trigger = {
+			event_target:mod_event_target_educator = {
+				NOT = { character = ROOT }
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2363_2
+		trigger = {
+			event_target:mod_event_target_educator = {
+				character = ROOT
+			}
+		}
+	}
+	picture = GFX_evt_nemo_culture_of_orphan
+
+	# 플레이어 : mod_event_target_player
+	# 고아     : mod_event_target_orphan
+	# 교육자   : mod_event_target_educator
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2363
+
+		#----------------------------------------------------------------------#
+		# A. 고아의 문화를 변경한다.                                           #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan = {
+			culture = ROOT
+		}
+
+		if = {
+			limit = {
+				event_target:mod_event_target_educator = {
+					NOT = { character = ROOT }
+				}
+			}
+			random = {
+				chance = 65
+				event_target:mod_event_target_educator = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_cm_guardian_interfered_wards_culture
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_educator
+	}
+
+	option = {
+		name = {
+			text = EVTOPTB_OPG_2363_1
+			trigger = {
+				event_target:mod_event_target_educator = {
+					NOT = { character = ROOT }
+				}
+			}
+		}
+		name = {
+			text = EVTOPTB_OPG_2363_2
+			trigger = {
+				event_target:mod_event_target_educator = {
+					character = ROOT
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# B. 고아의 문화를 변경하지 않는다.                                    #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_educator
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 부모가 고아를 찾아 옴 (2371~2386) / On-Actions 이벤트 (10년)                 #
+#                                                                              #
+# 문화가 다른 고아에 한해서, 부모가 고아를 찾으러 오는 이벤트가 발생한다.      #
+#------------------------------------------------------------------------------#
+
+## 이벤트의 시작
+
+character_event = {
+
+	id = OPG.2371
+	hide_window = yes
+	
+	ai = no
+	is_triggered_only = yes
+		
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인 (성인)                                     #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 2 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 존재 (종군 효과가 지속 중 + 현재 종군중이 아님)        #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphanage_nurse_trigger = yes
+			NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+			has_character_modifier = mod_event_interval_notification_flag_modifier_mission_to_battlefield
+		}
+
+		#----------------------------------------------------------------------#
+		# 3~11세의 미성년 고아 중,                                             #
+		# - 플레이어와 문화 그룹이 다름.                                       #
+		# - 출생의 비밀 플래그 X                                               #
+		# - 현재 다른 이벤트가 진행중이 아님                                   #
+		#----------------------------------------------------------------------#
+
+		any_realm_character = {
+			OR = {
+				trait = rescued_orphan_by_ai
+				trait = rescued_orphan_by_player
+			}
+
+			NOT = { culture_group = ROOT }
+
+			age = 3
+			NOT = { age = 12 }
+
+			is_alive = yes
+			prisoner = no
+
+			is_orphan_pending_special_event_trigger = no
+
+			NOT = { has_character_flag = mod_event_character_flag_secret_on_birth }
+			NOT = { has_character_flag = mod_event_character_flag_secret_on_birth_2 }
+			NOT = { has_character_flag = mod_event_character_flag_secret_on_birth_3 }
+		}
+	}
+	
+	weight_multiplier = {
+		days = 30
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 플레이어 타겟팅                                                      #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_player
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모 타겟팅                                                   #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			limit = {
+				is_orphanage_nurse_trigger = yes
+				NOT = { has_character_flag = mod_character_event_flag_mission_to_battlefield }
+				has_character_modifier = mod_event_interval_notification_flag_modifier_mission_to_battlefield
+			}
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+
+		#----------------------------------------------------------------------#
+		# 대상이 될 고아 타겟팅                                                #
+		#----------------------------------------------------------------------#
+
+		random_realm_character = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_ai
+					trait = rescued_orphan_by_player
+				}
+
+				NOT = { culture_group = ROOT }
+
+				age = 3
+				NOT = { age = 12 }
+
+				is_alive = yes
+				prisoner = no
+
+				is_orphan_pending_special_event_trigger = no
+
+				NOT = { has_character_flag = mod_event_character_flag_secret_on_birth }
+				NOT = { has_character_flag = mod_event_character_flag_secret_on_birth_2 }
+				NOT = { has_character_flag = mod_event_character_flag_secret_on_birth_3 }
+			}
+			save_event_target_as = mod_event_target_orphan
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아를 데리러 올 군주를 타겟팅                                       #
+		# 35세 이상, 여성이거나 결혼한 군주, 선택된 고아와 문화가 같을 것      #
+		# 이미 선택되었던 캐릭터나 당시의 가문, 과거 고아였던 군주는 제외할 것 #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				any_playable_ruler = {
+					prisoner = no
+					age = 35
+					OR = {
+						is_female = yes
+						is_married = yes
+					}
+					culture = event_target:mod_event_target_orphan
+					NOT = { has_any_opinion_modifier = opinion_mod_cm_real_parent }
+					NOT = { has_any_opinion_modifier = opinion_mod_cm_eternal_benefactor }
+				}
+			}
+			random_playable_ruler = {
+				limit = {
+					prisoner = no
+					age = 35
+					OR = {
+						is_female = yes
+						is_married = yes
+					}
+					culture = event_target:mod_event_target_orphan
+					NOT = { has_any_opinion_modifier = opinion_mod_cm_real_parent }
+					NOT = { has_any_opinion_modifier = opinion_mod_cm_eternal_benefactor }
+				}
+				character_event = {
+					id = OPG.2372
+				}
+				break = yes
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 군주 타겟팅 실패 시 이벤트 종료                                      #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphanage_nurse
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan
+	}
+}
+
+character_event = {
+
+	id = OPG.2372
+	desc = EVTDESC_HIDDEN_EVENT
+	picture = GFX_evt_nemo_blank
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan
+	# ROOT : 선택된 군주
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HIDDEN_EVENT
+
+		#----------------------------------------------------------------------#
+		# A. 아이를 찾으러 가지 않는다 - 이벤트 종료 (기본 50%)                #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2.5
+				any_child = {
+					count = 3
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					AND = {
+						ROOT = {
+							has_ambition = obj_have_a_daughter
+						}
+						event_target:mod_event_target_orphan = { is_female = no }
+					}
+					AND = {
+						ROOT = {
+							has_ambition = obj_have_a_son
+						}
+						event_target:mod_event_target_orphan = { is_female = yes }
+					}
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					AND = {
+						ROOT = {
+							spouse = { has_ambition = obj_have_a_daughter }
+						}
+						event_target:mod_event_target_orphan = { is_female = no }
+					}
+					AND = {
+						ROOT = {
+							spouse = { has_ambition = obj_have_a_son }
+						}
+						event_target:mod_event_target_orphan = { is_female = yes }
+					}
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_orphanage_nurse
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan
+	}
+
+	option = {
+		name = EVTOPTB_HIDDEN_EVENT
+		
+		#----------------------------------------------------------------------#
+		# B. 아이를 찾으러 간다 - 이벤트 계속 (기본 50%)                       #
+		#----------------------------------------------------------------------#
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2.5
+				NOT = {
+					any_child = {
+						count = 1
+					}
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					AND = {
+						ROOT = {
+							has_ambition = obj_have_a_daughter
+						}
+						event_target:mod_event_target_orphan = { is_female = yes }
+					}
+					AND = {
+						ROOT = {
+							has_ambition = obj_have_a_son
+						}
+						event_target:mod_event_target_orphan = { is_female = no }
+					}
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					AND = {
+						ROOT = {
+							spouse = { has_ambition = obj_have_a_daughter }
+						}
+						event_target:mod_event_target_orphan = { is_female = yes }
+					}
+					AND = {
+						ROOT = {
+							spouse = { has_ambition = obj_have_a_son }
+						}
+						event_target:mod_event_target_orphan = { is_female = no }
+					}
+				}
+			}
+			modifier = {
+				factor = 2.5
+				has_focus = focus_family
+			}
+		}
+
+		save_event_target_as = mod_event_target_ruler
+
+		event_target:mod_event_target_orphanage_nurse = {
+			character_event = {
+				id = OPG.2373
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2373
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player
+	# mod_event_target_orphan
+	# mod_event_target_ruler
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2374
+			}
+		}
+	}
+}
+
+## 부모가 찾아옴
+
+character_event = {
+
+	id = OPG.2374
+	desc = EVTDESC_OPG_2374
+	picture = GFX_evt_nemo_default_orphanage
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphanage_nurse (FROM)
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler
+
+	option = {
+		name = EVTOPTA_OPG_2374
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				set_character_flag = mod_event_pending_flag_npc_event_is_under_way
+			}
+
+			event_target:mod_event_target_ruler = {
+				character_event = {
+					id = OPG.2375
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2375
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan
+	# mod_event_target_ruler (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2376
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2376
+	desc = EVTDESC_OPG_2376
+	picture = GFX_evt_nemo_event_orphan_meet_real_parent
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler (FROM)
+
+	option = {
+		name = EVTOPTA_OPG_2376
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2377
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2377
+	desc = EVTDESC_OPG_2377
+	picture = GFX_evt_nemo_event_orphan_meet_real_parent
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler (FROMFROM)
+
+	option = {
+		name = EVTOPTA_OPG_2377
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.2378
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2378
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_ruler
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2379
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2379
+	desc = EVTDESC_OPG_2379
+	picture = GFX_evt_nemo_event_orphan_meet_real_parent
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_ruler
+
+	option = {
+		name = EVTOPTA_OPG_2379
+		
+		event_target:mod_event_target_ruler = {
+
+			#------------------------------------------------------------------#
+			# 상대방 군주와 고아 사이에 부자(녀)/모자(녀) 관계 설정            #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					is_female = no
+				}
+				event_target:mod_event_target_orphan = {
+					set_father = PREV
+				}
+				spouse_even_if_dead = {
+					event_target:mod_event_target_orphan = {
+						set_mother = PREV
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					is_female = yes
+				}
+				event_target:mod_event_target_orphan = {
+					set_mother = PREV
+				}
+				spouse_even_if_dead = {
+					event_target:mod_event_target_orphan = {
+						set_father = PREV
+					}
+				}
+			}
+
+			event_target:mod_event_target_orphan = {
+				dynasty = event_target:mod_event_target_ruler
+			}
+
+			#------------------------------------------------------------------#
+			# 고아와 관련된 모든 태그를 삭제 - 이 아이는 원래 고아가 아니었던  #
+			# 것처럼 취급한다.                                                 #
+			#------------------------------------------------------------------#
+
+			hidden_tooltip = {
+				event_target:mod_event_target_orphan = {
+					clr_character_flag = mod_event_pending_flag_npc_event_is_under_way
+					move_character = PREV
+
+					remove_orphan_character_flag_effect = yes
+					remove_orphan_character_flag_reminiscence_effect = yes
+					remove_orphan_character_flag_intrigue_effect = yes
+					remove_orphan_character_relative_opinion_modifier_effect = yes
+					remove_orphan_character_relative_opinion_intrigue_modifier_effect = yes
+					remove_orphan_character_trait_effect = yes
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2380
+				days = 3
+				random = 7
+			}
+		}
+	}
+}
+
+## 떠남 이벤트
+
+character_event = {
+
+	id = OPG.2380
+	desc = EVTDESC_OPG_2380
+	picture = GFX_evt_nemo_event_journey_departure	# Base
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler
+
+	option = {
+		name = EVTOPTA_OPG_2380
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.2381
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2381
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_ruler
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 고아의 종교도 군주에 맞게 바꿔준다.                                  #
+		#----------------------------------------------------------------------#
+
+		religion = event_target:mod_event_target_ruler
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2382
+				days = 30
+				random = 15
+			}
+		}
+	}
+}
+
+## 편지 이벤트
+
+character_event = {
+
+	id = OPG.2382
+	desc = EVTDESC_OPG_2382
+	picture = GFX_evt_recieve_letter
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_ruler
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2382
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.2383
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2383
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+	# mod_event_target_ruler
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mod_event_target_player = {
+			letter_event = {
+				id = OPG.2384
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2384
+	desc = EVTDESC_OPG_2384
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan (FROM)
+	# mod_event_target_ruler
+
+	option = {
+		name = EVTOPTA_OPG_2384
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.2385
+				}			
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2385
+	desc = EVTDESC_OPG_2385
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan (FROMFROM)
+	# mod_event_target_ruler
+
+	option = {
+		name = EVTOPTA_OPG_2385
+		ROOT = {
+			piety = 10
+		}
+		event_target:mod_event_target_orphan = {
+			set_character_flag = mod_event_check_flag_ending_category_17
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_cm_eternal_benefactor
+			}
+		}
+		hidden_tooltip = {
+			event_target:mod_event_target_ruler = {
+				hidden_tooltip = {
+					character_event = {
+						id = OPG.2386
+					}			
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2386
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan
+	# mod_event_target_ruler (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			letter_event = {
+				id = OPG.2387
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2387
+	desc = EVTDESC_OPG_2387
+
+	is_triggered_only = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler (FROM)
+
+	option = {
+		name = EVTOPTA_OPG_2387
+		hidden_tooltip = {
+			ROOT = {
+				letter_event = {
+					id = OPG.2388
+				}			
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = OPG.2388
+	desc = EVTDESC_OPG_2388
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+	# mod_event_target_ruler (FROMFROM)
+
+	option = {
+		name = EVTOPTA_OPG_2388
+		ROOT = {
+			wealth = 1999
+			prestige = 100
+		}
+		event_target:mod_event_target_orphanage_nurse = {
+			prestige = 50
+			piety = 50
+		}
+
+		event_target:mod_event_target_ruler = {
+
+			opinion = {
+				who = event_target:mod_event_target_player
+				modifier = opinion_mod_cm_real_parent
+			}
+
+			any_spouse = {
+				opinion = {
+					who = event_target:mod_event_target_player
+					modifier = opinion_mod_cm_real_parent
+				}
+			}
+			any_consort = {
+				opinion = {
+					who = event_target:mod_event_target_player
+					modifier = opinion_mod_cm_real_parent
+				}
+			}
+			any_child = {
+				opinion = {
+					who = event_target:mod_event_target_player
+					modifier = opinion_mod_cm_real_parent
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_orphanage_nurse
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_ruler
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아원 경험 이벤트 / On-Actions 이벤트 (매년)                                #
+# - 고아원에 남아 있는 고아들을 대상으로 한다.                                 #
+# - 모든 이벤트의 발생 결과가 플레이어에게 보여진다.                           #
+# - On-Actions 이벤트이지만, 플레이어에서부터 시작한다.                        #
+# - 2501은 단체 이벤트(로부터 시작하여 개인 이벤트로 끝난다.)                  #
+# - 2503는 개인 이벤트 혹은 일반 이벤트                                        #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2501
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# Conclave DLC 가 필요함                                               #
+		#----------------------------------------------------------------------#
+
+		has_dlc = "Zeus"
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 5세 이상의 고아가 최소 1명 이상 있어야 한다.                         #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			OR = {
+				trait = rescued_orphan_by_player
+				trait = rescued_orphan_by_ai
+			}
+
+			is_liege_human_player_character_trigger = yes
+
+			age = 5
+			is_adult = no
+
+			is_orphan_in_orphanage_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 존재해야 함 + 현재 수도에 있어야 함                    #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+	}
+
+	immediate = {
+		random_list = {
+			
+			#------------------------------------------------------------------#
+			# 아무 일도 일어나지 않음                                          #
+			#------------------------------------------------------------------#
+
+			40 = {
+				
+			}
+
+			#------------------------------------------------------------------#
+			# 농장 이벤트                                                      #
+			#------------------------------------------------------------------#
+
+			30 = {
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2511
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 고아원 워 게임 (5세 이상 남자 4명 이상)                          #
+			#------------------------------------------------------------------#
+
+			30 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							count = 4
+							OR = {
+								trait = rescued_orphan_by_player
+								trait = rescued_orphan_by_ai
+							}
+							is_adult = no
+							age = 5
+							is_female = no
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2561
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 대장간 이벤트 (6세 이상 3명 이상)                                #
+			#------------------------------------------------------------------#
+
+			30 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							count = 3
+							OR = {
+								trait = rescued_orphan_by_player
+								trait = rescued_orphan_by_ai
+							}
+							is_adult = no
+							age = 6
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2581
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2503
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반 상태의 플레이어 확인                                            #
+		#----------------------------------------------------------------------#
+
+		is_common_player_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 건물 : 최소한 고아원 레벨 1 이상의 고아원 건물이 필요                #
+		#----------------------------------------------------------------------#
+
+		OR = {
+			has_orphanage_level_1_trigger = yes
+			has_orphanage_level_2_trigger = yes
+			has_orphanage_level_3_trigger = yes
+			has_orphanage_level_4_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원에 고아가 최소 1명 이상 있어야 한다. (연령제한 없음)           #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphan_character_trigger = yes
+			is_adult = no
+
+			is_liege_human_player_character_trigger = yes
+			is_orphan_in_orphanage_trigger = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 존재해야 함 + 현재 수도에 있어야 함                    #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+	}
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이벤트가 뭉쳐 일어나는 상황을 어느 정도 예방하기 위해서, 일정한 기간 #
+		# 을 두어 이벤트를 재실행하는 방법을 사용한다.                         #
+		#----------------------------------------------------------------------#
+
+		character_event = {
+			id = OPG.2504
+			days = 10
+			random = 60
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2504
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 이벤트를 발생시키는 시점이 조금 연기되었기 때문에, 현재 시점에서도   #
+		# 이벤트 실행 조건을 만족시키는지 여부를 체크해야만 한다.              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				OR = {
+					is_common_player_trigger = no
+					AND = {
+						has_orphanage_level_1_trigger = no
+						has_orphanage_level_2_trigger = no
+						has_orphanage_level_3_trigger = no
+						has_orphanage_level_4_trigger = no
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					any_courtier = {
+						is_orphan_character_trigger = yes
+						is_adult = no
+						is_liege_human_player_character_trigger = yes
+						is_orphan_in_orphanage_trigger = yes
+					}
+				}
+			}
+
+			break = yes
+		}
+
+		if = {
+			limit = {
+				is_orphanage_nurse_in_capital_trigger = no
+			}
+
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# 실행 조건을 만족했으므로, 이벤트 실행 루틴으로 넘어간다.             #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			
+			#------------------------------------------------------------------#
+			# 아무 일도 일어나지 않음                                          #
+			#------------------------------------------------------------------#
+
+			30 = {
+				
+			}
+
+			#------------------------------------------------------------------#
+			# 고아원의 뱀 이벤트                                               #
+			# - 고아원 보모에게 Brave 트레잇을 달게 해 주는 이벤트             #
+			#------------------------------------------------------------------#
+
+			10 = {
+				modifier = {
+					factor = 0.5
+					any_courtier = {
+						is_orphanage_nurse_trigger = yes
+						trait = brave
+					}
+				}
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2541
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 망쳐진 직물 이벤트                                               #
+			# - 고아원 보모에게 Patient 트레잇을 달게 해 주는 이벤트           #
+			#------------------------------------------------------------------#
+
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							is_orphan_character_trigger = yes
+							is_adult = no
+							NOT = { age = 5 }
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0.5
+					any_courtier = {
+						is_orphanage_nurse_trigger = yes
+						trait = patient
+					}
+				}
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2545
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 혼자 노는 고아 이벤트                                            #
+			# - 고아원 보모에게 Diligent 트레잇을 달게 해 주는 이벤트          #
+			#------------------------------------------------------------------#
+
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							is_orphan_character_trigger = yes
+							is_adult = no
+							NOT = { age = 5 }
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0.5
+					any_courtier = {
+						is_orphanage_nurse_trigger = yes
+						trait = diligent
+					}
+				}
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2549
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 저녁 식사 시간 이벤트                                            #
+			# - 고아원 보모에게 Kind, Patient, Temperate 트레잇을 달게 해 주는 #
+			#   이벤트                                                         #
+			#------------------------------------------------------------------#
+
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							is_orphan_character_trigger = yes
+							is_adult = no
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0.5
+					any_courtier = {
+						is_orphanage_nurse_trigger = yes
+						OR = {
+							trait = kind
+							trait = patient
+							trait = temperate
+						}
+					}
+				}
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2553
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 식사 준비 이벤트                                                 #
+			#------------------------------------------------------------------#
+
+			5 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_courtier = {
+							is_orphan_character_trigger = yes
+							is_adult = no
+							age = 3
+							NOT = { age = 6 }
+							is_female = yes
+
+							is_liege_human_player_character_trigger = yes
+							is_orphan_in_orphanage_trigger = yes
+						}
+					}
+				}
+				random_courtier = {
+					limit = {
+						is_orphanage_nurse_trigger = yes
+					}
+					character_event = {
+						id = OPG.2571
+					}
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아 단체 이벤트 : 밀 농장 (2501 -> 2511)                                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2511
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2512
+			}
+		}
+	}
+}
+
+## 시작 이벤트
+
+character_event = {
+
+	id = OPG.2512
+	desc = EVTDESC_OPG_2512
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2512
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생에 따른 기본 스탯 증감 처리                               #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					is_orphan_character_trigger = yes
+					age = 5
+					is_adult = no
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+
+				#--------------------------------------------------------------#
+				# 밀밭 노동 동원:                                              #
+				# 유년기 : Martial / 청년기 : Stewardship                      #
+				#--------------------------------------------------------------#
+				# Pride : -1                                                   #
+				# Humility : +1                                                #
+				# Duty : +2                                                    #
+				# Etiquette : 0                                                #
+				# Thrift : +1                                                  #
+				# Faith : +1                                                   #
+				# Struggle : 0                                                 #
+				# Heritage : +1                                                #
+				#--------------------------------------------------------------#
+				# Diplomacy : 0                                                #
+				# Martial : +2                                                 #
+				# Stewardship : +1                                             #
+				# Intrigue : 0                                                 #
+				# Learning : +1                                                #
+				#--------------------------------------------------------------#
+				# Conscientious : +2                                           #
+				# Indolent : -1                                                #
+				# Haughty : -1                                                 #
+				# Willful : +1                                                 #
+				#--------------------------------------------------------------#
+				# Female : +1                                                  #
+				# Male : +2                                                    #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_focus = focus_ch_pride
+					}
+					change_martial = -1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_humility
+					}
+					change_martial = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_duty
+					}
+					change_martial = 2
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_etiquette
+					}
+					change_martial = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_thrift
+					}
+					change_martial = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_faith
+					}
+					change_martial = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_struggle
+					}
+					change_martial = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_heritage
+					}
+					change_martial = 1
+				}
+
+				if = {
+					limit = {
+						has_focus = focus_ed_diplomacy
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_martial
+					}
+					change_stewardship = 2
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_stewardship
+					}
+					change_stewardship = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_intrigue
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_learning
+					}
+					change_stewardship = 1
+				}
+
+				if = {
+					limit = {
+						OR = {
+							trait = conscientious
+							trait = diligent
+						}
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = 2
+					}
+				}
+
+				if = {
+					limit = {
+						trait = indolent
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = -1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = -1
+					}
+				}
+
+				if = {
+					limit = {
+						trait = haughty
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = -1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = -1
+					}
+				}
+
+				if = {
+					limit = {
+						trait = willful
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = 1
+					}
+				}
+
+				if = {
+					limit = {
+						is_female = yes
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = 1
+					}
+				}
+
+				if = {
+					limit = {
+						is_female = no
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_martial = 2
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 연속 이벤트                                                          #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			random_list = {
+				
+				#--------------------------------------------------------------#
+				# 맹수의 습격 (2인)                                            #
+				#--------------------------------------------------------------#
+
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_courtier = {
+								count = 2
+								OR = {
+									trait = rescued_orphan_by_player
+									trait = rescued_orphan_by_ai
+								}
+
+								is_liege_human_player_character_trigger = yes
+
+								age = 5
+								is_adult = no
+
+								is_orphan_in_orphanage_trigger = yes
+							}
+						}
+					}
+					event_target:mod_event_target_orphanage_nurse = {
+						character_event = {
+							id = OPG.2514
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 낫질하다 다친 아이 (1인)                                     #
+				#--------------------------------------------------------------#
+
+				20 = {
+					event_target:mod_event_target_orphanage_nurse = {
+						character_event = {
+							id = OPG.2521
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 눈을 피해 숨은 아이 (1인)                                    #
+				#--------------------------------------------------------------#
+
+				20 = {
+					event_target:mod_event_target_orphanage_nurse = {
+						character_event = {
+							id = OPG.2525
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 추가 이벤트 없음. 즉시 종료 이벤트로 이동                    #
+				#--------------------------------------------------------------#
+
+				40 = {
+					character_event = {
+						id = OPG.2513
+						days = 5
+					}
+				}
+			}		
+		}
+	}
+}
+
+## 종결 이벤트
+
+character_event = {
+
+	id = OPG.2513
+	desc = EVTDESC_OPG_2513
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2513
+
+		#----------------------------------------------------------------------#
+		# 추가되는 운영비 계산 (고아 1인당 4골드)                              #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+				ROOT = {
+					wealth = 4
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료                                                          #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphanage_nurse
+		clear_event_target = mod_event_target_player
+	}
+}
+
+## 추가 이벤트 1. 맹수의 습격
+
+character_event = {
+
+	id = OPG.2514
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player 
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 2명이 있기 때문에 여기로 온 것. 따라서 2명을 그냥 뽑아내면 된다.     #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphan_1
+			}
+
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+
+					NOT = {
+						character = event_target:mod_event_target_orphan_1
+					}
+				}
+				save_event_target_as = mod_event_target_orphan_2
+			}
+		}
+
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2515
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2515
+	desc = EVTDESC_OPG_2515
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2515
+
+		#----------------------------------------------------------------------#
+		# A. 수색을 개시하라! 성의 병사들까지 동원해서!                        #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			random_list = {
+				
+				#--------------------------------------------------------------#
+				# 90% : -1. 영웅                                               #
+				#--------------------------------------------------------------#
+
+				90 = {
+					set_character_flag = mod_event_character_flag_select_1
+					character_event = {
+						id = OPG.2516
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 10% : -2. 땡땡이                                             #
+				#--------------------------------------------------------------#
+
+				10 = {
+					set_character_flag = mod_event_character_flag_select_1
+					character_event = {
+						id = OPG.2518
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_OPG_2515
+		
+		#----------------------------------------------------------------------#
+		# B. 어딘가에서 땡땡이를 치고 있는 거 아닌가?                          #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			random_list = {
+				
+				#--------------------------------------------------------------#
+				# 30% : -2. 땡땡이                                             #
+				#--------------------------------------------------------------#
+
+				30 = {
+					set_character_flag = mod_event_character_flag_select_2
+					character_event = {
+						id = OPG.2518
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 60% : -3. 사망                                               #
+				#--------------------------------------------------------------#
+
+				60 = {
+					set_character_flag = mod_event_character_flag_select_2
+					character_event = {
+						id = OPG.2519
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 10% : -1. 영웅                                               #
+				#--------------------------------------------------------------#
+
+				10 = {
+					set_character_flag = mod_event_character_flag_select_2
+					character_event = {
+						id = OPG.2516
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_OPG_2515
+
+		#----------------------------------------------------------------------#
+		# C. 조금 더 여기서 기다려보도록 하자.                                 #
+		#----------------------------------------------------------------------#
+		
+		hidden_tooltip = {
+			random_list = {
+				
+				#--------------------------------------------------------------#
+				# 30% : -2. 땡땡이                                             #
+				#--------------------------------------------------------------#
+
+				30 = {
+					set_character_flag = mod_event_character_flag_select_3
+					character_event = {
+						id = OPG.2518
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 50% : -3. 사망                                               #
+				#--------------------------------------------------------------#
+
+				50 = {
+					set_character_flag = mod_event_character_flag_select_3
+					character_event = {
+						id = OPG.2519
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 20% : -1. 영웅                                               #
+				#--------------------------------------------------------------#
+
+				20 = {
+					set_character_flag = mod_event_character_flag_select_3
+					character_event = {
+						id = OPG.2516
+					}
+				}
+			}
+		}		
+	}
+}
+
+## -1. 영웅
+
+character_event = {
+
+	id = OPG.2516
+	desc = {
+		text = EVTDESC_OPG_2516_1
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_1
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2516_2
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2516_3
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2516
+
+		event_target:mod_event_target_orphan_1 = {
+			add_trait = wounded
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2517
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2517
+	desc = {
+		text = EVTDESC_OPG_2517_1
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_1
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2516_2
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2516_3
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_3
+		}
+	}
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2517
+
+		#----------------------------------------------------------------------#
+		# 두 명의 고아는 서로 친밀한 사이가 되었다.                            #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan_1 = {
+					is_rival = event_target:mod_event_target_orphan_2
+				}
+			}
+			event_target:mod_event_target_orphan_1 = {
+				remove_rival = event_target:mod_event_target_orphan_2
+			}
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+			add_friend = event_target:mod_event_target_orphan_2
+		}
+
+		#----------------------------------------------------------------------#
+		# 첫째 고아는 scarred, robust 트레잇을, 둘째 고아는 brave 를 얻는다.   #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_1 = {
+			remove_trait = wounded
+			if = {
+				limit = {
+					trait = weak
+				}
+				remove_trait = weak
+			}
+			if = {
+				limit = {
+					trait = feeble
+				}
+				remove_trait = feeble
+			}			
+			add_trait = scarred
+			add_trait = robust
+		}
+
+		event_target:mod_event_target_orphan_2 = {
+			add_trait = brave
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_character_flag_select_1
+		clr_character_flag = mod_event_character_flag_select_2
+		clr_character_flag = mod_event_character_flag_select_3
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+## -2. 땡땡이
+
+character_event = {
+
+	id = OPG.2518
+	desc = {
+		text = EVTDESC_OPG_2518_1
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_1
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2518_2
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2518_3
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_3
+		}
+	}
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2518
+
+		#----------------------------------------------------------------------#
+		# 두 명의 고아는 서로 친밀한 사이가 되었다.                            #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_event_target_orphan_1 = {
+					is_rival = event_target:mod_event_target_orphan_2
+				}
+			}
+			event_target:mod_event_target_orphan_1 = {
+				remove_rival = event_target:mod_event_target_orphan_2
+			}
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+			add_friend = event_target:mod_event_target_orphan_2
+		}
+
+		#----------------------------------------------------------------------#
+		# 둘 모두 indolent 트레잇을 얻는다.                                    #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_1 = {
+			add_trait = indolent
+		}
+
+		event_target:mod_event_target_orphan_2 = {
+			add_trait = indolent
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_character_flag_select_1
+		clr_character_flag = mod_event_character_flag_select_2
+		clr_character_flag = mod_event_character_flag_select_3
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+## -3. 사망
+
+character_event = {
+
+	id = OPG.2519
+	desc = {
+		text = EVTDESC_OPG_2519_2
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2519_3
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_3
+		}
+	}
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2519
+
+		#----------------------------------------------------------------------#
+		# 늑대에게 물린 아이는 결국 사망한다.                                  #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_1 = {
+			death = {
+				death_reason = death_accident
+			} 
+		}
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2520
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2520
+	desc = {
+		text = EVTDESC_OPG_2520_2
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2520_3
+		trigger = {
+			has_character_flag = mod_event_character_flag_select_3
+		}
+	}
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2520
+
+		#----------------------------------------------------------------------#
+		# 살아남은 아이는 timid 트레잇을 얻는다.                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_orphan_2 = {
+			add_trait = timid
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clr_character_flag = mod_event_character_flag_select_2
+		clr_character_flag = mod_event_character_flag_select_3
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+
+## 추가 이벤트 2. 낫질하다 다친 아이
+
+character_event = {
+
+	id = OPG.2521
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player 
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphan
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.2522
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2522
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2523
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2523
+	desc = EVTDESC_OPG_2523
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2523
+
+		#----------------------------------------------------------------------#
+		# 30%의 확률로 willful을, 70%의 확률로 timid 를 얻는다                 #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			30 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = willful
+					change_stewardship = -1
+				}
+			}
+			70 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = timid
+					change_learning = 1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}		
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2523
+
+		#----------------------------------------------------------------------#
+		# 30%의 확률로 haughty 를, 70%의 확률로 curious 를 얻는다              #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			30 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = haughty
+					change_martial = 1
+				}
+			}
+			70 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = curious
+					change_stewardship = 1
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+## 추가 이벤트 3. 눈을 피해 숨은 아이
+
+character_event = {
+
+	id = OPG.2525
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player 
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphan
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.2526
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2526
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2527
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2527
+	desc = EVTDESC_OPG_2527
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2527
+
+		#----------------------------------------------------------------------#
+		# 30%의 확률로 fussy 을, 70%의 확률로 indolent 를 얻는다               #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			30 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = fussy
+				}
+			}
+			70 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = indolent
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}		
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2527
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2528
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2528
+	desc = EVTDESC_OPG_2528
+	picture = GFX_evt_nemo_wheat_farm
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2528
+
+		#----------------------------------------------------------------------#
+		# 90% 확률로 curious, 10% 확률로 idolizer.                             #
+		#----------------------------------------------------------------------#
+
+		random_list = {
+			10 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = idolizer
+				}
+			}
+			90 = {
+				event_target:mod_event_target_orphan = {
+					add_trait = curious
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2513
+					days = 5
+				}
+			}
+		}		
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아 개인 이벤트 : 고아원의 뱀 (2504 -> 2541)                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2541
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2542
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2542
+	desc = EVTDESC_OPG_2542
+	picture = GFX_evt_nemo_orphan_encounter_snake
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2542
+
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					is_adult = no
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				character_event = {
+					id = OPG.2543
+				}
+			}
+		}
+
+	}
+}
+
+character_event = {
+
+	id = OPG.2543
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2544
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2544
+	desc = EVTDESC_OPG_2544
+	picture = GFX_evt_nemo_orphan_encounter_snake
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2544
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = brave }
+				}
+				remove_trait = craven
+				add_trait = brave
+			}
+		}
+		event_target:mod_event_target_orphan = {
+			if = {
+				limit = {
+					NOT = { trait = curious }
+				}
+				add_trait = curious
+			}
+
+			#------------------------------------------------------------------#
+			# 만약 이 고아가 아직 Sudden Death 이벤트를 겪지 않았다면 살아남은 #
+			# 것으로 처리한다.                                                 #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					NOT = { has_character_flag = mod_character_event_flag_orphan_jump_ones_fate }
+				}
+				set_character_flag = mod_character_event_flag_orphan_jump_ones_fate
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아 개인 이벤트 : 망쳐진 직물 (2504 -> 2545)                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2545
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2546
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2546
+	desc = EVTDESC_OPG_2546
+	picture = GFX_evt_nemo_orphan_mess_cloth
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2546
+
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					is_adult = no
+					NOT = { age = 5 }
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				character_event = {
+					id = OPG.2547
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2547
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2548
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2548
+	desc = EVTDESC_OPG_2548
+	picture = GFX_evt_nemo_orphan_mess_cloth
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2548
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = patient }
+				}
+				remove_trait = wroth
+				add_trait = patient
+			}
+		}
+		event_target:mod_event_target_orphan = {
+			if = {
+				limit = {
+					NOT = { trait = rowdy }
+				}
+				add_trait = rowdy
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아 개인 이벤트 : 혼자 노는 고아 (2504 -> 2549)                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2549
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2550
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2550
+	desc = EVTDESC_OPG_2550
+	picture = GFX_evt_nemo_orphan_is_shy
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2550
+
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					is_adult = no
+					NOT = { age = 5 }
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				character_event = {
+					id = OPG.2551
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2551
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2552
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2552
+	desc = EVTDESC_OPG_2552
+	picture = GFX_evt_nemo_orphan_is_shy
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2552
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = diligent }
+				}
+				remove_trait = slothful 
+				add_trait = diligent
+			}
+		}
+		event_target:mod_event_target_orphan = {
+			if = {
+				limit = {
+					trait = timid
+				}
+				random = {
+					chance = 50
+					remove_trait = timid
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 고아 개인 이벤트 : 고아원의 저녁식사 (2504 -> 2553)                          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2553
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2554
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2554
+	desc = EVTDESC_OPG_2554
+	picture = GFX_evt_nemo_orphanage_dinner
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2554
+
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					is_adult = no
+					NOT = { age = 5 }
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				character_event = {
+					id = OPG.2555
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2555
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+
+		random_list = {
+			33 = {
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.2556
+					}
+				}
+			}
+			33 = {
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.2557
+					}
+				}
+			}
+			33 = {
+				event_target:mod_event_target_player = {
+					character_event = {
+						id = OPG.2558
+					}
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2556
+	desc = EVTDESC_OPG_2556
+	picture = GFX_evt_nemo_orphanage_dinner
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2556
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = kind }
+				}
+
+				if = {
+					limit = {
+						trait = envious
+					}
+					remove_trait = envious
+				}
+				if = {
+					limit = {
+						trait = cruel
+					}
+					remove_trait = cruel
+				}
+				
+				add_trait = kind
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+character_event = {
+
+	id = OPG.2557
+	desc = EVTDESC_OPG_2557
+	picture = GFX_evt_nemo_orphanage_dinner
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2557
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = patient }
+				}
+				if = {
+					limit = {
+						trait = wroth
+					}
+					remove_trait = wroth
+				}
+				add_trait = patient
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+character_event = {
+
+	id = OPG.2558
+	desc = EVTDESC_OPG_2558
+	picture = GFX_evt_nemo_orphanage_dinner
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2558
+
+		event_target:mod_event_target_orphanage_nurse = {
+			if = {
+				limit = {
+					NOT = { trait = temperate }
+				}
+				if = {
+					limit = {
+						trait = gluttonous
+					}
+					remove_trait = gluttonous
+				}
+				add_trait = temperate
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 고아 단체 이벤트 : 고아원 워 게임 (2501 -> 2561)                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2561
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2562
+			}
+		}
+	}
+}
+
+## 시작 이벤트
+
+character_event = {
+
+	id = OPG.2562
+	desc = EVTDESC_OPG_2562
+	picture = GFX_evt_nemo_default_orphanage
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2562
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2563
+				days = 2
+			}
+		}
+	}
+}
+
+## 게임 참가자 선택
+
+character_event = {
+
+	id = OPG.2563
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 게임에 참가할 두 명의 고아를 선정한다.                               #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+					is_female = no
+
+					is_orphan_in_orphanage_trigger = yes
+
+					NOT = { has_character_flag = mod_event_check_flag_wargame_winner }
+					NOT = { has_character_flag = mod_event_check_flag_wargame_loser }
+				}
+				save_event_target_as = mod_event_target_orphan_1
+			}
+
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+					is_female = no
+
+					is_orphan_in_orphanage_trigger = yes
+
+					NOT = { has_character_flag = mod_event_check_flag_wargame_winner }
+					NOT = { has_character_flag = mod_event_check_flag_wargame_loser }
+
+					NOT = {
+						character = event_target:mod_event_target_orphan_1
+					}
+				}
+				save_event_target_as = mod_event_target_orphan_2
+			}
+		}
+
+		event_target:mod_event_target_player = {
+
+			random_list = {
+				25 = {
+					set_character_flag = mod_event_temporary_flag_wargame_result_1
+				}
+				25 = {
+					set_character_flag = mod_event_temporary_flag_wargame_result_2
+				}
+				25 = {
+					set_character_flag = mod_event_temporary_flag_wargame_result_3
+				}
+				25 = {
+					set_character_flag = mod_event_temporary_flag_wargame_result_4
+				}
+			}
+
+			character_event = {
+				id = OPG.2564
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2564
+	desc = {
+		text = EVTDESC_OPG_2564_1
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_1
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2564_2
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_2
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2564_3
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_3
+		}
+	}
+	desc = {
+		text = EVTDESC_OPG_2564_4
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_4
+		}
+	}
+	picture = GFX_evt_nemo_orphan_wargame
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan_1
+	# mod_event_target_orphan_2
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2564
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_1
+		}
+
+		clr_character_flag = mod_event_temporary_flag_wargame_result_1
+
+		event_target:mod_event_target_orphan_2 = {
+
+			change_martial = 2
+			prestige = 2
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				add_trait = playful
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = genius }
+					NOT = { trait = quick }
+					NOT = { trait = shrewd }
+				}
+				if = {
+					limit = {
+						trait = slow
+					}
+					remove_trait = slow
+				}
+				if = {
+					limit = {
+						trait = imbecile
+					}
+					remove_trait = imbecile
+				}
+				add_trait = shrewd
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_winner
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+
+			change_martial = 1
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				add_trait = playful
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_loser
+		}
+
+		#----------------------------------------------------------------------#
+		# 다음 게임이 가능한가?                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2565
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_2564
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_2
+		}
+
+		clr_character_flag = mod_event_temporary_flag_wargame_result_2
+
+		event_target:mod_event_target_orphan_2 = {
+
+			change_martial = 2
+			prestige = 2
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				add_trait = playful
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = affectionate }
+				}
+				add_trait = affectionate
+			}
+			
+			hidden_tooltip = {
+				if = {
+					limit = {
+						is_rival = event_target:mod_event_target_orphan_1
+					}
+					remove_rival = event_target:mod_event_target_orphan_1
+				}
+
+				if = {
+					limit = {
+						NOT = { is_friend = event_target:mod_event_target_orphan_1 }
+					}
+					add_friend = event_target:mod_event_target_orphan_1
+				}
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_winner
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+
+			change_martial = 1
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { trait = playful }
+				}
+				add_trait = playful
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = affectionate }
+				}
+				add_trait = affectionate
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_loser
+		}
+
+		#----------------------------------------------------------------------#
+		# 다음 게임이 가능한가?                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2565
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_OPG_2564
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_3
+		}
+
+		clr_character_flag = mod_event_temporary_flag_wargame_result_3
+
+		event_target:mod_event_target_orphan_2 = {
+
+			change_martial = 2
+			prestige = 2
+
+			if = {
+				limit = {
+					NOT = { trait = haughty }
+				}
+				add_trait = haughty
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_winner
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+
+			change_martial = 1
+
+			if = {
+				limit = {
+					NOT = { trait = haughty }
+				}
+				add_trait = haughty
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = fussy }
+				}
+				add_trait = fussy
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_loser
+		}
+
+		#----------------------------------------------------------------------#
+		# 다음 게임이 가능한가?                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2565
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_OPG_2564
+		trigger = {
+			has_character_flag = mod_event_temporary_flag_wargame_result_4
+		}
+
+		clr_character_flag = mod_event_temporary_flag_wargame_result_4
+
+		event_target:mod_event_target_orphan_2 = {
+
+			change_martial = 2
+			prestige = 2
+
+			if = {
+				limit = {
+					NOT = { trait = brooding }
+				}
+				add_trait = brooding
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_winner
+		}
+
+		event_target:mod_event_target_orphan_1 = {
+
+			change_martial = 1
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { trait = brooding }
+				}
+				add_trait = brooding
+			}
+
+			set_character_flag = mod_event_check_flag_wargame_loser
+		}
+
+		#----------------------------------------------------------------------#
+		# 다음 게임이 가능한가?                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan_1
+		clear_event_target = mod_event_target_orphan_2
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2565
+				days = 1
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2565
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 다음 게임에 참가할 두 명의 고아가 있는가?                            #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			if = {
+				limit = {
+					any_courtier = {
+						count = 2
+						OR = {
+							trait = rescued_orphan_by_player
+							trait = rescued_orphan_by_ai
+						}
+
+						is_liege_human_player_character_trigger = yes
+
+						age = 5
+						is_adult = no
+						is_female = no
+
+						is_orphan_in_orphanage_trigger = yes
+
+						NOT = { has_character_flag = mod_event_check_flag_wargame_winner }
+						NOT = { has_character_flag = mod_event_check_flag_wargame_loser }
+					}
+				}
+				character_event = {
+					id = OPG.2563
+				}
+				break = yes
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_courtier = {
+							count = 2
+							OR = {
+								trait = rescued_orphan_by_player
+								trait = rescued_orphan_by_ai
+							}
+
+							is_liege_human_player_character_trigger = yes
+
+							age = 5
+							is_adult = no
+							is_female = no
+
+							is_orphan_in_orphanage_trigger = yes
+
+							NOT = { has_character_flag = mod_event_check_flag_wargame_winner }
+							NOT = { has_character_flag = mod_event_check_flag_wargame_loser }
+						}
+					}
+				}
+				character_event = {
+					id = OPG.2566
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2566
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 경기가 끝났다. 우승자를 정하고 플래그를 지운다.                      #
+		#----------------------------------------------------------------------#
+
+		random_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_player
+					trait = rescued_orphan_by_ai
+				}
+
+				is_liege_human_player_character_trigger = yes
+
+				age = 5
+				is_adult = no
+				is_female = no
+
+				is_orphan_in_orphanage_trigger = yes
+
+				has_character_flag = mod_event_check_flag_wargame_winner
+			}
+			save_event_target_as = mod_event_target_orphan
+		}
+
+		any_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_player
+					trait = rescued_orphan_by_ai
+				}
+
+				is_liege_human_player_character_trigger = yes
+
+				age = 5
+				is_adult = no
+				is_female = no
+
+				is_orphan_in_orphanage_trigger = yes
+
+				OR = {
+					has_character_flag = mod_event_check_flag_wargame_winner
+					has_character_flag = mod_event_check_flag_wargame_loser
+				}
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_wargame_winner
+				}
+				clr_character_flag = mod_event_check_flag_wargame_winner
+			}
+
+			if = {
+				limit = {
+					has_character_flag = mod_event_check_flag_wargame_loser
+				}
+				clr_character_flag = mod_event_check_flag_wargame_loser
+			}
+		}
+		
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.2567
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2567
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2568
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2568
+	desc = EVTDESC_OPG_2568
+	picture = GFX_evt_nemo_default_orphanage
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2568
+
+		event_target:mod_event_target_orphan = {
+			change_martial = 2
+			change_intrigue = 1
+			prestige = 5
+		}
+
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+					is_adult = no
+					is_orphan_in_orphanage_trigger = yes
+				}
+				random = {
+					chance = 50
+					change_learning = 1
+				}
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 고아 개인 이벤트 : 식사 준비 시간 (2504 -> 2571)                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2571
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+					is_adult = no
+					age = 3
+					NOT = { age = 6 }
+					is_female = yes
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				character_event = {
+					id = OPG.2572
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2572
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+		}
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2573
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2573
+	desc = EVTDESC_OPG_2573
+	picture = GFX_evt_nemo_orphanage_cooking
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2573
+
+		hidden_tooltip = {
+			character_event = {
+				id = OPG.2574
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.2574
+	desc = EVTDESC_OPG_2574
+	picture = GFX_evt_nemo_orphanage_dinner
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2574
+
+		event_target:mod_event_target_orphan = {
+			change_diplomacy = 1
+		}
+
+		random_courtier = {
+			limit = {
+				OR = {
+					trait = rescued_orphan_by_player
+					trait = rescued_orphan_by_ai
+				}
+				is_adult = no
+
+				is_liege_human_player_character_trigger = yes
+				is_orphan_in_orphanage_trigger = yes
+			}
+			if = {
+				limit = {
+					NOT = { trait = fussy }
+				}
+				add_trait = fussy
+			}
+		}
+
+		clear_event_target = mod_event_target_orphan
+		clear_event_target = mod_event_target_player
+		clear_event_target = mod_event_target_orphanage_nurse
+	}
+}
+
+
+
+#------------------------------------------------------------------------------#
+# 고아 단체 이벤트 : 대장간 (2501 -> 2581)                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.2581
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			save_event_target_as = mod_event_target_orphanage_nurse
+		}
+		FROM = {
+			save_event_target_as = mod_event_target_player
+
+			character_event = {
+				id = OPG.2582
+			}
+		}
+	}
+}
+
+## 시작 이벤트
+
+character_event = {
+
+	id = OPG.2582
+	desc = EVTDESC_OPG_2582
+	picture = GFX_evt_nemo_blacksmith
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2582
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생에 따른 기본 스탯 증감 처리                               #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 5
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+
+				#--------------------------------------------------------------#
+				# 대장간 노동 동원:                                            #
+				# 유년기 : Stewardship / 청년기 : Stewardship                  #
+				#--------------------------------------------------------------#
+				# Pride : -1                                                   #
+				# Humility : +1                                                #
+				# Duty : +2                                                    #
+				# Etiquette : 0                                                #
+				# Thrift : +1                                                  #
+				# Faith : 0                                                    #
+				# Struggle : 0                                                 #
+				# Heritage : 0                                                 #
+				#--------------------------------------------------------------#
+				# Diplomacy : 0                                                #
+				# Martial : +1                                                 #
+				# Stewardship : +2                                             #
+				# Intrigue : 0                                                 #
+				# Learning : +1                                                #
+				#--------------------------------------------------------------#
+				# Conscientious : +2                                           #
+				# Indolent : -1                                                #
+				# Haughty : -1                                                 #
+				# Willful : +1                                                 #
+				# Curious : +2                                                 #
+				#--------------------------------------------------------------#
+				# Female : +2 (Learning +1)                                    #
+				# Male : +2 (Martial +1)                                       #
+				#--------------------------------------------------------------#
+
+				if = {
+					limit = {
+						has_focus = focus_ch_pride
+					}
+					change_stewardship = -1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_humility
+					}
+					change_stewardship = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_duty
+					}
+					change_stewardship = 2
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_etiquette
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_thrift
+					}
+					change_stewardship = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_faith
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_struggle
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ch_heritage
+					}
+					change_stewardship = 0
+				}
+
+				if = {
+					limit = {
+						has_focus = focus_ed_diplomacy
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_martial
+					}
+					change_stewardship = 1
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_stewardship
+					}
+					change_stewardship = 2
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_intrigue
+					}
+					change_stewardship = 0
+				}
+				if = {
+					limit = {
+						has_focus = focus_ed_learning
+					}
+					change_stewardship = 1
+				}
+
+				if = {
+					limit = {
+						OR = {
+							trait = conscientious
+							trait = diligent
+						}
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = 2
+					}
+				}
+
+				if = {
+					limit = {
+						trait = indolent
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = -1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = -1
+					}
+				}
+
+				if = {
+					limit = {
+						trait = haughty
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = -1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = -1
+					}
+				}
+
+				if = {
+					limit = {
+						trait = willful
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = 1
+					}
+				}
+
+				if = {
+					limit = {
+						trait = curious
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = 2
+					}
+				}
+
+				if = {
+					limit = {
+						is_female = yes
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+						change_learning = 1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = 2
+						change_learning = 1
+					}
+				}
+
+				if = {
+					limit = {
+						is_female = no
+					}
+					if = {
+						limit = {
+							age = 12
+						}
+						change_stewardship = 2
+						change_martial = 1
+					}
+					if = {
+						limit = {
+							age = 5
+							NOT = { age = 12 }
+						}
+						change_stewardship = 2
+						change_martial = 1
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 연속 이벤트                                                          #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			random_list = {
+
+				#--------------------------------------------------------------#
+				# 여자아이 이벤트 (여자아이가 1명 이상 있는 경우)              #
+				#--------------------------------------------------------------#
+
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_courtier = {
+								OR = {
+									trait = rescued_orphan_by_player
+									trait = rescued_orphan_by_ai
+								}
+
+								age = 6
+								is_female = yes
+								is_adult = no
+
+								is_liege_human_player_character_trigger = yes
+								is_orphan_in_orphanage_trigger = yes
+							}
+						}
+					}
+					event_target:mod_event_target_orphanage_nurse = {
+						character_event = {
+							id = OPG.2584
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 남자아이 이벤트 (남자아이가 1명 이상 있는 경우)              #
+				#--------------------------------------------------------------#
+
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_courtier = {
+								OR = {
+									trait = rescued_orphan_by_player
+									trait = rescued_orphan_by_ai
+								}
+
+								age = 6
+								is_female = no
+								is_adult = no
+
+								is_liege_human_player_character_trigger = yes
+								is_orphan_in_orphanage_trigger = yes
+							}
+						}
+					}
+					event_target:mod_event_target_orphanage_nurse = {
+						character_event = {
+							id = OPG.2587
+						}
+					}
+				}
+
+				#--------------------------------------------------------------#
+				# 추가 이벤트 없음. 즉시 종료 이벤트로 이동                    #
+				#--------------------------------------------------------------#
+
+				40 = {
+					character_event = {
+						id = OPG.2583
+						days = 7
+					}
+				}
+			}		
+		}
+	}
+}
+
+## 종결 이벤트
+
+character_event = {
+
+	id = OPG.2583
+	desc = EVTDESC_OPG_2583
+	picture = GFX_evt_nemo_blacksmith
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_2583
+
+		#----------------------------------------------------------------------#
+		# 추가되는 운영비 계산 (6세 이상 고아 1인당 3골드)                     #
+		#----------------------------------------------------------------------#
+
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					is_liege_human_player_character_trigger = yes
+
+					age = 6
+					is_adult = no
+
+					is_orphan_in_orphanage_trigger = yes
+				}
+				ROOT = {
+					wealth = 3
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 이벤트 종료                                                          #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphanage_nurse
+		clear_event_target = mod_event_target_player
+	}
+}
+
+## 여자아이 일반 이벤트
+
+character_event = {
+
+	id = OPG.2584
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player 
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					age = 6
+					is_female = yes
+					is_adult = no
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphan
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.2585
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2585
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2586
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2586
+	desc = EVTDESC_OPG_2586
+	picture = GFX_evt_nemo_blacksmith
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2586
+
+		event_target:mod_event_target_orphan = {
+
+			if = {
+				limit = {
+					trait = indolent
+				}
+				remove_trait = indolent
+			}
+
+			if = {
+				limit = {
+					has_character_flag = was_indolent
+				}
+				clr_character_flag = was_indolent
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = conscientious }
+				}
+				add_trait = conscientious
+			}
+
+			change_diplomacy = 1
+			change_stewardship = 1
+		}
+
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2583
+					days = 7
+				}
+			}
+		}		
+	}
+}
+
+## 남자아이 일반 이벤트
+
+character_event = {
+
+	id = OPG.2587
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse (ROOT)
+	# mod_event_target_player 
+
+	is_triggered_only = yes
+
+	immediate = {
+
+		event_target:mod_event_target_player = {
+			random_courtier = {
+				limit = {
+					OR = {
+						trait = rescued_orphan_by_player
+						trait = rescued_orphan_by_ai
+					}
+
+					age = 6
+					is_female = no
+					is_adult = no
+
+					is_liege_human_player_character_trigger = yes
+					is_orphan_in_orphanage_trigger = yes
+				}
+				save_event_target_as = mod_event_target_orphan
+			}
+		}
+
+		event_target:mod_event_target_orphan = {
+			character_event = {
+				id = OPG.2588
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2588
+	hide_window = yes
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player
+	# mod_event_target_orphan (ROOT)
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.2589
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.2589
+	desc = EVTDESC_OPG_2589
+	picture = GFX_evt_nemo_blacksmith
+
+	# mod_event_target_orphanage_nurse
+	# mod_event_target_player (ROOT)
+	# mod_event_target_orphan
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_2589
+
+		event_target:mod_event_target_orphan = {
+
+			if = {
+				limit = {
+					trait = weak 
+				}
+				remove_trait = weak 
+			}
+			if = {
+				limit = {
+					trait = feeble  
+				}
+				remove_trait = feeble  
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = robust }
+				}
+				add_trait = robust
+			}
+
+			change_martial = 1
+		}
+
+
+		#----------------------------------------------------------------------#
+		# 이벤트 마무리로 간다.                                                #
+		#----------------------------------------------------------------------#
+
+		clear_event_target = mod_event_target_orphan
+
+		hidden_tooltip = {
+			event_target:mod_event_target_player = {
+				character_event = {
+					id = OPG.2583
+					days = 7
+				}
+			}
+		}		
+	}
+}

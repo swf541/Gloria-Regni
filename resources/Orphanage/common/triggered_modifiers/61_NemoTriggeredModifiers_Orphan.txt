@@ -1,0 +1,74 @@
+
+#------------------------------------------------------------------------------#
+# 건물 건설의 효과 중 캐릭터 효과를 실제로 받지 못하는 문제를 해결하기 위해서  #
+# 건물 건설의 효과를 트리거 모디파이어를 통해 구현하였다.                      #
+#------------------------------------------------------------------------------#
+
+has_building_orphanage_1 = {
+	potential = {
+		ai = no
+	}
+	
+	trigger = {
+		has_orphanage_level_1_trigger = yes
+	}
+	
+	icon = 18
+
+	monthly_character_piety = 0.1
+	monthly_character_prestige  = 0.1
+	church_opinion = 5
+	global_revolt_risk = -0.01
+}
+
+has_building_orphanage_2 = {
+	potential = {
+		ai = no
+	}
+	
+	trigger = {
+		has_orphanage_level_2_trigger = yes
+	}
+	
+	icon = 18
+
+	monthly_character_piety = 0.2
+	monthly_character_prestige  = 0.15
+	church_opinion = 10
+	global_revolt_risk = -0.01
+}
+
+has_building_orphanage_3 = {
+	potential = {
+		ai = no
+	}
+	
+	trigger = {
+		has_orphanage_level_3_trigger = yes
+	}
+	
+	icon = 18
+
+	monthly_character_piety = 0.3
+	monthly_character_prestige  = 0.2
+	church_opinion = 15
+	global_revolt_risk = -0.02
+}
+
+has_building_orphanage_4 = {
+	potential = {
+		ai = no
+	}
+	
+	trigger = {
+		has_orphanage_level_4_trigger = yes
+	}
+	
+	icon = 18
+
+	monthly_character_piety = 0.45
+	monthly_character_prestige  = 0.3
+	church_opinion = 25
+	global_revolt_risk = -0.02
+}
+

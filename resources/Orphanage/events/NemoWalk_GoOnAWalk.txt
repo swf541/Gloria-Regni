@@ -1,0 +1,4430 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : WLK
+# Reserved Event ID      : 1000~1299
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-04-16
+
+namespace = WLK
+
+#==============================================================================#
+# 산책 이벤트                                                                  #
+# 플레이어가 산책 중 발생할 수 있는 이벤트의 구현                              #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 디시전에서 연결 - 어느 이벤트를 발생시킬지를 결정 (1001) Decision -> 1001    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1001
+	hide_window = yes
+
+	ai = no
+	is_triggered_only = yes
+	
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 가신, 자문회원 또는 배우자를 만남 (기본 확률: 50%)               #
+			#------------------------------------------------------------------#
+
+			500 = {
+				modifier = {
+					factor = 0.6
+					is_player_in_capital_trigger = no
+				}
+				ROOT = {
+					character_event = {
+						id = WLK.1201
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 아무도 만나지 못함 (기본 확률: 32%)                              #
+			#------------------------------------------------------------------#
+
+			320 = {
+				modifier = {
+					factor = 1.8
+					is_player_in_capital_trigger = no
+				}
+				modifier = {
+					factor = 0.7
+					ROOT = { trait = gregarious }
+				}
+				modifier = {
+					factor = 1.3
+					ROOT = { trait = shy }
+				}
+				ROOT = {
+					character_event = {
+						id = WLK.1203
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 마을에서 어린 거지들을 만남 (기본 확률: 6%)                      #
+			#------------------------------------------------------------------#
+
+			60 = {
+				modifier = {
+					factor = 0
+					is_adult = no
+				}
+				modifier = {
+					factor = 0
+					is_player_in_capital_trigger = no
+				}
+				ROOT = {
+					character_event = {
+						id = WLK.1241
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 봉신의 부인을 구함 (기본 확률: 6%)                               #
+			#------------------------------------------------------------------#
+
+			60 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_vassal = {
+							is_female = no
+							is_married = yes
+							is_common_adult_npc_trigger = yes
+							NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_spouse_rescued_by_lord }
+							spouse = {
+								is_common_adult_npc_trigger = yes
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					is_player_in_capital_trigger = no
+				}
+				ROOT = {
+					character_event = {
+						id = WLK.1251
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 고아를 구함 (기본 확률: 6%, 고아원 모듈이 필요)                  #
+			#------------------------------------------------------------------#
+
+			60 = {
+				modifier = {
+					factor = 0
+					NOT = { has_global_flag = MOD_NEMO_OPG_SETUP_OK }
+				}
+				modifier = {
+					factor = 0
+					is_player_in_capital_trigger = no
+				}
+				ROOT = {
+					character_event = {
+						id = OPG.1021
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+#==============================================================================#
+# 가신, 자문회원 또는 배우자를 만나는 이벤트 (1201~)                           #
+# 플레이어가 수도에 없는 경우, 현재 위치하는 지역 군주의 가신들을 만나게 된다. #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 1201~1202 : 어떤 캐릭터를 만날지 선택 / 캐릭터 신분에 따른 이벤트 분기       #
+#             만약 만날 수 있는 캐릭터가 없는 경우에는 1203 으로 분기한다.     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1201
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Player
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 산책의 쿨 타임 (기본: 3일) 을 적용                                   #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 3
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어의 수도에 위치 중                                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_player_in_capital_trigger = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 만날 수 있는 가신이 1명 이상 존재한다.                           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					any_courtier = {
+						count = 1
+						is_common_adult_npc_trigger = yes
+						at_location = ROOT
+						NOT = { character = ROOT }
+					}
+				}
+
+				random_courtier = {
+					limit = {
+						is_common_adult_npc_trigger = yes
+						at_location = ROOT
+						NOT = { character = ROOT }
+					}
+
+					save_event_target_as = mod_target_npc_to_meet
+				}
+
+				character_event = {
+					id = WLK.1202
+				}
+
+				break = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 만날 수 있는 가신이 없다 : 보통은 발생하지 않지만...             #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = WLK.1203
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어가 타 지역에 위치 중 (주군의 자문회원 임무 등)          #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				is_player_in_capital_trigger = no
+			}
+
+			#------------------------------------------------------------------#
+			# 만날 수 있는 가신이 1명 이상 존재한다.                           #
+			#------------------------------------------------------------------#
+
+			if = {
+				limit = {
+					location = {
+						holder_scope = {
+							any_courtier = {
+								count = 1
+								is_common_adult_npc_trigger = yes
+								at_location = ROOT
+								NOT = { character = ROOT }
+							}
+						}
+					}
+				}
+
+				location = {
+					holder_scope = {
+						random_courtier = {
+							limit = {
+								is_common_adult_npc_trigger = yes
+								at_location = ROOT
+								NOT = { character = ROOT }
+							}
+
+							save_event_target_as = mod_target_npc_to_meet
+						}
+					}
+				}
+
+				character_event = {
+					id = WLK.1202
+				}
+
+				break = yes
+			}
+
+			#------------------------------------------------------------------#
+			# 만날 수 있는 가신이 없다 : 보통은 발생하지 않지만...             #
+			#------------------------------------------------------------------#
+
+			character_event = {
+				id = WLK.1203
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1202
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	#--------------------------------------------------------------------------#
+	# ROOT : Player                                                            #
+	#                                                                          #
+	# 만날 캐릭터는 WLK.1201에서 mod_target_npc_to_meet 이벤트 스코프에 넣었음 #
+	#--------------------------------------------------------------------------#
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# A. 나의 배우자 (배우자spouse 또는 첩consort) 를 만난 경우            #
+		#    (지역에 관계 없이)                                                #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					OR = {
+						any_spouse = {
+							character = ROOT
+						}
+						any_consort = {
+							character = ROOT
+						}
+					}
+				}
+			}
+
+			## 배우자 또는 첩을 만난 경우의 이벤트 : 항상 WLK.1210 으로
+
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1210
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# B. 자문회 구성원을 만난 경우                                         #
+		#    (내 자문회 구성원인 경우에만 의미가 있다.)                        #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					has_job_title = job_chancellor
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1205
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					has_job_title = job_marshal
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1206
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					has_job_title = job_treasurer
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1207
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					has_job_title = job_spymaster
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1208
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				event_target:mod_target_npc_to_meet = {
+					has_job_title = job_spiritual
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				character_event = {
+					id = WLK.1209
+				}
+			}
+			break = yes
+		}
+
+		#----------------------------------------------------------------------#
+		# C. 그 외 가신courtier을 만난 경우                                    #
+		#----------------------------------------------------------------------#
+
+		event_target:mod_target_npc_to_meet = {
+			character_event = {
+				id = WLK.1204
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1203: 아무도 만나지 못함                                                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1203
+	desc = EVTDESC_WLK_1203
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 산책의 쿨 타임 (기본: 3일) 을 적용                                   #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_WLK_1203
+		ROOT = {
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+
+		## 이벤트 체인 종료 ##
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 1204 : 일반 가신을 만난 경우 - 이벤트 선택 분기                              #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1204
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+			
+			#------------------------------------------------------------------#
+			# 일반 가신용 스탯 증가 이벤트 (기본 확률: 40%)                    #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0.75
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1211 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 1.5
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 15%)                              #
+			#------------------------------------------------------------------#
+
+			15 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 15%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			15 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 10%)                  #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			10 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 1205~1209 : 자문회 구성원을 만난 경우 - 이벤트 선택 분기                     #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1205
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 자문회(재상)용 스탯 증가 이벤트 (기본 확률: 40%)                 #
+			# 내 자문회 구성원이 아니라면 이 이벤트는 발생하지 않는다.         #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1231 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 2
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 12%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			12 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 8%)                   #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			8 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1206
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 자문회(대장군)용 스탯 증가 이벤트 (기본 확률: 40%)               #
+			# 내 자문회 구성원이 아니라면 이 이벤트는 발생하지 않는다.         #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1232 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 2
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 12%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			12 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 8%)                   #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			8 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1207
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 자문회(재무관)용 스탯 증가 이벤트 (기본 확률: 40%)               #
+			# 내 자문회 구성원이 아니라면 이 이벤트는 발생하지 않는다.         #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1233 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 2
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 12%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			12 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 8%)                   #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			8 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1208
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 자문회(첩보관)용 스탯 증가 이벤트 (기본 확률: 40%)               #
+			# 내 자문회 구성원이 아니라면 이 이벤트는 발생하지 않는다.         #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1234 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 2
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 12%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			12 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 8%)                   #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			8 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1209
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+
+		random_list = {
+
+			#------------------------------------------------------------------#
+			# 자문회(궁중 사제)용 스탯 증가 이벤트 (기본 확률: 40%)            #
+			# 내 자문회 구성원이 아니라면 이 이벤트는 발생하지 않는다.         #
+			#------------------------------------------------------------------#
+
+			40 = {
+				modifier = {
+					factor = 0
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1235 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 증가 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				modifier = {
+					factor = 2
+					liege = { NOT = { character = FROM } }
+				}
+				FROM = {
+					character_event = { id = WLK.1212 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 우호도 감소 이벤트 (기본 확률: 20%)                              #
+			#------------------------------------------------------------------#
+
+			20 = {
+				FROM = {
+					character_event = { id = WLK.1213 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 명성 상승/하락 이벤트 이벤트 (기본 확률: 12%)                    #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			12 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1214 }
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 신앙심 상승/하락 이벤트 이벤트 (기본 확률: 8%)                   #
+			# 플레이어가 미성년이라면 발생하지 않는다.                         #
+			#------------------------------------------------------------------#
+
+			8 = {
+				modifier = {
+					factor = 0
+					FROM = { is_adult = no }
+				}
+				FROM = {
+					character_event = { id = WLK.1219 }
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1210 : 첩 또는 배우자를 만난 경우 - 이벤트 선택 분기                         #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1210
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	# ROOT : Selected NPC, FROM : Player
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = WLK.1291
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1211: 스탯 증가 이벤트 (일반 가신을 만난 경우)                               #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1211
+	desc = EVTDESC_WLK_1211
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROM : Random Courtier
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 외교, 전투, 관리, 음모, 학력의 모든 스탯에 걸쳐, 자신의 스탯이 만난 가신 #
+	# 의 스탯보다 낮은 경우, 가신으로부터 배움을 얻어 해당 스탯에 +1 을 (항상) #
+	# 받게 된다.                                                               #
+	# - 단, 최대 상한 수치는 모든 스탯 공통으로 20까지이며,                    #
+	# - 플레이어의  스탯이 20을 넘는 항목은 이 이벤트에서 더 이상 증가시킬 수  #
+	#   없다.                                                                  #
+	# - 다섯 개의 항목 중 하나만 선택 가능하며, 최대 4개의 선택지만 지원되므로 #
+	#   5개 스탯 모두 사용자보다 우월한 NPC 인 경우 4개만 보여진다.            #
+	# - 대화의 상대가 된 NPC는 prestige +0.1 을 받는다.                        #
+	#--------------------------------------------------------------------------#
+	
+	option = {
+		name = EVTOPTA_WLK_1211
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = diplomacy
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { diplomacy = 20 }
+		}
+
+		FROM = {
+			prestige = 0.1
+		}
+		ROOT = {
+			change_diplomacy = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1211
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = stewardship
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { stewardship = 20 }
+		}
+
+		FROM = {
+			prestige = 0.1
+		}
+		ROOT = {
+			change_stewardship = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1211
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = intrigue
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { intrigue = 20 }
+		}
+
+		FROM = {
+			prestige = 0.1
+		}
+		ROOT = {
+			change_intrigue = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1211
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { learning = 20 }
+		}
+
+		FROM = {
+			prestige = 0.1
+		}
+		ROOT = {
+			change_learning = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTE_WLK_1211
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = martial
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { martial = 20 }
+		}
+
+		FROM = {
+			prestige = 0.1
+		}
+		ROOT = {
+			change_martial = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTF_WLK_1211
+
+		#----------------------------------------------------------------------#
+		# 우월한 스탯이 하나도 없는 경우에는 아무 효과도 없는 이 선택지 하나만 #
+		# 고를 수 있다.                                                        #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 1212: 우호도 증가 이벤트 (일반 가신/자문회원을 만난 경우)                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1212
+	desc = {
+		text = EVTDESC_WLK_1212_1
+		trigger = {
+			FROM = {
+				liege = {
+					character = ROOT
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_WLK_1212_2
+		trigger = {
+			FROM = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROM : Random Courtier
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 만난 가신과의 우호도가 증가한다. 증가폭은 플레이어의 Diplomacy 값에 따라 #
+	# 달라진다. 우호도의 유효 기간은 60개월이다.                               #
+	#                                                                          #
+	# - 만약 외교력이 12 이상이고, 현재 다른 지역에 와 있는 경우에는 가신 대신 #
+	#   가신의 군주에 대해 우호도를 끌어올리는 선택을 할 수 있다.              #
+	# - 만약 음모력이 12 이상이고, 현재 다른 지역에 와 있는 경우에는 그 가신과 #
+	#   그 가신의 군주 사이를 나쁘게 하는 선택을 할 수 있다.                   #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1212
+		
+		#----------------------------------------------------------------------#
+		# A. 플레이어와 만난 가신과의 사이에 우호도를 증가시킨다.              #
+		#----------------------------------------------------------------------#
+
+		FROM = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_meet_npc_good
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 7
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_good
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 10
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_good
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 15
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_good
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 20
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_good
+					}
+				}
+			}
+		}
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1212
+
+		#----------------------------------------------------------------------#
+		# B. 플레이어와 만난 가신의 주군과의 사이에 우호도를 증가시킨다.       #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			FROM = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+				independent = no
+			}
+			ROOT = {
+				diplomacy = 12
+			}
+		}
+		FROM = {
+			liege = {
+				opinion = {
+					who = ROOT
+					modifier = opinion_mod_char_meet_npc_good
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 14
+					}
+				}
+				FROM = {
+					liege = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_mod_char_meet_npc_good
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 16
+					}
+				}
+				FROM = {
+					liege = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_mod_char_meet_npc_good
+						}
+					}
+
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 18
+					}
+				}
+				FROM = {
+					liege = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_mod_char_meet_npc_good
+						}
+					}
+
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						diplomacy = 20
+					}
+				}
+				FROM = {
+					liege = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_mod_char_meet_npc_good
+						}
+					}
+
+				}
+			}
+		}
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1212
+
+		#----------------------------------------------------------------------#
+		# C. 만난 가신과 그 가신의 주군과의 사이에 우호도를 감소시킨다.        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			event_target:mod_target_npc_to_meet = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+				independent = no
+			}
+			ROOT = {
+				intrigue = 12
+			}
+		}
+		event_target:mod_target_npc_to_meet = {
+			liege = {
+				event_target:mod_target_npc_to_meet = {
+					opinion = {
+						who = PREV
+						modifier = opinion_mod_char_meet_npc_bad
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				ROOT = {
+					intrigue = 14
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				liege = {
+					event_target:mod_target_npc_to_meet = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_char_meet_npc_bad
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					intrigue = 16
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				liege = {
+					event_target:mod_target_npc_to_meet = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_char_meet_npc_bad
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					intrigue = 18
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				liege = {
+					event_target:mod_target_npc_to_meet = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_char_meet_npc_bad
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					intrigue = 20
+				}
+			}
+			event_target:mod_target_npc_to_meet = {
+				liege = {
+					event_target:mod_target_npc_to_meet = {
+						opinion = {
+							who = PREV
+							modifier = opinion_mod_char_meet_npc_bad
+						}
+					}
+				}
+			}
+		}
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1213: 우호도 감소 이벤트 (일반 가신/자문회원을 만난 경우)                    #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1213
+	desc = {
+		text = EVTDESC_WLK_1213_1
+		trigger = {
+			FROM = {
+				liege = {
+					character = ROOT
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_WLK_1213_2
+		trigger = {
+			FROM = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROM : Random Courtier
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 만난 가신과의 우호도가 감소한다. 감소폭은 플레이어의 Diplomacy 값에 따라 #
+	# 달라진다. 우호도의 유효 기간은 60개월이다.                               #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1213
+		FROM = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_meet_npc_bad
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { diplomacy = 15 }
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_bad
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { diplomacy = 10 }
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_bad
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { diplomacy = 7 }
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_bad
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { diplomacy = 1 }
+					}
+				}
+				FROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_bad
+					}
+				}
+			}
+		}
+		ROOT = {
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 1214~1218: 명성 상승/하락 이벤트 (일반 가신/자문회원을 만난 경우)            #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1214
+	desc = {
+		text = EVTDESC_WLK_1214_1
+		trigger = {
+			FROM = {
+				liege = {
+					character = ROOT
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_WLK_1214_2
+		trigger = {
+			FROM = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROM : Random Courtier
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 만난 가신과의 대화를 통해 명성이 상승 또는 하락한다.                     #
+	#                                                                          #
+	# - Learning 수치를 제외한 나머지 수치를 기준으로 결정된다.                #
+	# - 자신이 상대보다 높은 옵션을 고르면 플레이어의 명성이 상승하며, 상대방  #
+	#   캐릭터는 그 스탯을 1 키우게 된다. 스탯의 차이가 클수록 명성의 상승치가 #
+	#   크다.                                                                  #
+	# - 자신이 상대보다 낮은 옵션을 고르면 플레이어의 명성이 하락한다. 스탯의  #
+	#   차이가 클수록 명성의 하락치가 크다.                                    #
+	#--------------------------------------------------------------------------#
+	
+	option = {
+		name = EVTOPTA_WLK_1214
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1215
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_WLK_1214
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1216
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_WLK_1214
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1217
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_WLK_1214
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1218
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1215
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	desc = {
+		text = EVTDESC_WLK_1215_GOOD
+		trigger = {
+			attribute_diff = {
+				attribute = diplomacy
+				character = FROMFROM
+				value = 0
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESC_WLK_1215_BAD
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = diplomacy
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+	}
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1215
+		trigger = {
+			attribute_diff = {
+				attribute = diplomacy
+				character = FROMFROM
+				value = 0
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = diplomacy
+						character = FROMFROM
+						value = 10
+					}
+				}
+				ROOT = {
+					prestige = 2
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = diplomacy
+						character = FROMFROM
+						value = 7
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = diplomacy
+						character = FROMFROM
+						value = 4
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = diplomacy
+						character = FROMFROM
+						value = 1
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = diplomacy
+						character = FROMFROM
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						FROMFROM = {
+							NOT = { diplomacy = 18 }
+						}
+					}
+					FROMFROM = {
+						change_diplomacy = 1
+					}
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1215
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = diplomacy
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = diplomacy
+							character = FROMFROM
+							value = 0
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = diplomacy
+							character = FROMFROM
+							value = -4
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = diplomacy
+							character = FROMFROM
+							value = -7
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = diplomacy
+							character = FROMFROM
+							value = -10
+						}
+					}
+				}
+				ROOT = {
+					prestige = -2
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = WLK.1216
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	desc = {
+		text = EVTDESC_WLK_1216_GOOD
+		trigger = {
+			attribute_diff = {
+				attribute = martial
+				character = FROMFROM
+				value = 0
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESC_WLK_1216_BAD
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = martial
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+	}
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1216
+		trigger = {
+			attribute_diff = {
+				attribute = martial
+				character = FROMFROM
+				value = 0
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = martial
+						character = FROMFROM
+						value = 10
+					}
+				}
+				ROOT = {
+					prestige = 2
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = martial
+						character = FROMFROM
+						value = 7
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = martial
+						character = FROMFROM
+						value = 4
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = martial
+						character = FROMFROM
+						value = 1
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = martial
+						character = FROMFROM
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						FROMFROM = {
+							NOT = { martial = 18 }
+						}
+					}
+					FROMFROM = {
+						change_martial = 1
+					}
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1216
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = martial
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = martial
+							character = FROMFROM
+							value = 0
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = martial
+							character = FROMFROM
+							value = -4
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = martial
+							character = FROMFROM
+							value = -7
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = martial
+							character = FROMFROM
+							value = -10
+						}
+					}
+				}
+				ROOT = {
+					prestige = -2
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1217
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	desc = {
+		text = EVTDESC_WLK_1217_GOOD
+		trigger = {
+			attribute_diff = {
+				attribute = stewardship
+				character = FROMFROM
+				value = 0
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESC_WLK_1217_BAD
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = stewardship
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+	}
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1217
+		trigger = {
+			attribute_diff = {
+				attribute = stewardship
+				character = FROMFROM
+				value = 0
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = stewardship
+						character = FROMFROM
+						value = 10
+					}
+				}
+				ROOT = {
+					prestige = 2
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = stewardship
+						character = FROMFROM
+						value = 7
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = stewardship
+						character = FROMFROM
+						value = 4
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = stewardship
+						character = FROMFROM
+						value = 1
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = stewardship
+						character = FROMFROM
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						FROMFROM = {
+							NOT = { stewardship = 18 }
+						}
+					}
+					FROMFROM = {
+						change_stewardship = 1
+					}
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1217
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = stewardship
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = stewardship
+							character = FROMFROM
+							value = 0
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = stewardship
+							character = FROMFROM
+							value = -4
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = stewardship
+							character = FROMFROM
+							value = -7
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = stewardship
+							character = FROMFROM
+							value = -10
+						}
+					}
+				}
+				ROOT = {
+					prestige = -2
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1218
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	desc = {
+		text = EVTDESC_WLK_1218_GOOD
+		trigger = {
+			attribute_diff = {
+				attribute = intrigue
+				character = FROMFROM
+				value = 0
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESC_WLK_1218_BAD
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = intrigue
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+	}
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1218
+		trigger = {
+			attribute_diff = {
+				attribute = intrigue
+				character = FROMFROM
+				value = 0
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = intrigue
+						character = FROMFROM
+						value = 10
+					}
+				}
+				ROOT = {
+					prestige = 2
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = intrigue
+						character = FROMFROM
+						value = 7
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = intrigue
+						character = FROMFROM
+						value = 4
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = intrigue
+						character = FROMFROM
+						value = 1
+					}
+				}
+				ROOT = {
+					prestige = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = intrigue
+						character = FROMFROM
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						FROMFROM = {
+							NOT = { intrigue = 18 }
+						}
+					}
+					FROMFROM = {
+						change_intrigue = 1
+					}
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1218
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = intrigue
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = intrigue
+							character = FROMFROM
+							value = 0
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = intrigue
+							character = FROMFROM
+							value = -4
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = intrigue
+							character = FROMFROM
+							value = -7
+						}
+					}
+				}
+				ROOT = {
+					prestige = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = intrigue
+							character = FROMFROM
+							value = -10
+						}
+					}
+				}
+				ROOT = {
+					prestige = -2
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1219~1221: 신앙심 상승/하락 이벤트 (일반 가신/자문회원을 만난 경우)          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1219
+	desc = {
+		text = EVTDESC_WLK_1219_1
+		trigger = {
+			FROM = {
+				liege = {
+					character = ROOT
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_WLK_1219_2
+		trigger = {
+			FROM = {
+				liege = {
+					NOT = { character = ROOT }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROM : Random Courtier
+
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 만난 가신과의 대화를 통해 신앙심이 상승 혹은 하락한다. 상대가 이단이라면 #
+	# 개종 이벤트가 발생할 수도 있으며, 상대가 이교도일 경우 상대방이 개종하거 #
+	# 나 관계도가 하락할 수 있다. 효과를 원하지 않을 경우 회피할 수 있다.      #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1219
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1220
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_WLK_1219
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1221
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1220
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	desc = {
+		text = EVTDESC_WLK_1220_GOOD1
+		trigger = {
+			attribute_diff = {
+				attribute = learning
+				character = FROMFROM
+				value = 0
+			}
+			FROMFROM = {
+				religion_group = ROOT
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_WLK_1220_GOOD2
+		trigger = {
+			attribute_diff = {
+				attribute = learning
+				character = FROMFROM
+				value = 0
+			}
+			FROMFROM = {
+				religion_group = ROOT
+				religion = ROOT
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_WLK_1220_GOOD3
+		trigger = {
+			attribute_diff = {
+				attribute = learning
+				character = FROMFROM
+				value = 0
+			}
+			FROMFROM = {
+				NOT = { religion_group = ROOT }
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_WLK_1220_BAD1
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+			}
+			FROMFROM = {
+				religion_group = ROOT
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_WLK_1220_BAD2
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+			}
+			FROMFROM = {
+				religion_group = ROOT
+				religion = ROOT
+			}
+		}
+	}
+
+	desc = {
+		text = EVTDESC_WLK_1220_BAD3
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+			}
+			FROMFROM = {
+				NOT = { religion_group = ROOT }
+			}
+		}
+	}	
+
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = {
+			text = EVTOPTA_WLK_1220_GOOD1
+			trigger = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+				FROMFROM = {
+					religion_group = ROOT
+					NOT = { religion = ROOT }
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_WLK_1220_GOOD2
+			trigger = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+				FROMFROM = {
+					religion_group = ROOT
+					religion = ROOT
+				}
+			}
+		}
+		name = {
+			text = EVTOPTA_WLK_1220_GOOD3
+			trigger = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+				FROMFROM = {
+					NOT = { religion_group = ROOT }
+				}
+			}
+		}
+
+		trigger = {
+			attribute_diff = {
+				attribute = learning
+				character = FROMFROM
+				value = 0
+			}
+		}
+
+		ROOT = {
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 10
+					}
+				}
+				ROOT = {
+					piety = 2
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 7
+					}
+				}
+				ROOT = {
+					piety = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 4
+					}
+				}
+				ROOT = {
+					piety = 1
+				}
+			}
+			if = {
+				limit = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 1
+					}
+				}
+				ROOT = {
+					piety = 1
+				}
+			}
+
+			if = {
+				limit = {
+					FROMFROM = {
+						NOT = { learning = 18 }
+					}
+				}
+				FROMFROM = {
+					change_learning = 1
+				}
+			}
+
+			if = {
+				limit = {
+					FROMFROM = {
+						religion_group = ROOT
+						NOT = { religion = ROOT }
+					}
+				}
+				random = {
+					chance = 95
+					FROMFROM = {
+						religion = ROOT
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					FROMFROM = {
+						religion_group = ROOT
+						religion = ROOT
+					}
+				}
+				FROMFROM = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_mod_char_meet_npc_good
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					FROMFROM = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random_list = {
+					50 = {
+						FROMFROM = {
+							religion = ROOT
+						}
+					}
+					50 = {
+						FROMFROM = {
+							opinion = {
+								who = ROOT
+								modifier = opinion_mod_char_meet_npc_bad
+							}
+						}
+					}
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = {
+			text = EVTOPTB_WLK_1220_BAD1
+			trigger = {
+				NOT = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 0
+					}
+				}
+				FROMFROM = {
+					religion_group = ROOT
+					NOT = { religion = ROOT }
+				}
+			}
+		}
+
+		name = {
+			text = EVTOPTB_WLK_1220_BAD2
+			trigger = {
+				NOT = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 0
+					}
+				}
+				FROMFROM = {
+					religion_group = ROOT
+					religion = ROOT
+				}
+			}
+		}
+
+		name = {
+			text = EVTOPTB_WLK_1220_BAD3
+			trigger = {
+				NOT = {
+					attribute_diff = {
+						attribute = learning
+						character = FROMFROM
+						value = 0
+					}
+				}
+				FROMFROM = {
+					NOT = { religion_group = ROOT }
+				}
+			}
+		}	
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROMFROM
+					value = 0
+				}
+			}
+		}
+
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = learning
+							character = FROMFROM
+							value = 0
+						}
+					}
+				}
+				ROOT = {
+					piety = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = learning
+							character = FROMFROM
+							value = -4
+						}
+					}
+				}
+				ROOT = {
+					piety = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = learning
+							character = FROMFROM
+							value = -7
+						}
+					}
+				}
+				ROOT = {
+					piety = -1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						attribute_diff = {
+							attribute = learning
+							character = FROMFROM
+							value = -10
+						}
+					}
+				}
+				ROOT = {
+					piety = -2
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1221
+	desc = EVTDESC_WLK_1221
+	picture = GFX_evt_nemo_event_in_the_forest		# Base
+
+	# ROOT : Player, FROMFROM : Random Courtier
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1221
+		ROOT = {
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1231~1235: 자문회 구성원 만난 경우 - 개별 이벤트                             #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1231
+	desc = EVTDESC_WLK_1231
+	picture = GFX_evt_courtiers_talking		# CKII Original Picture
+
+	# ROOT : Player, FROM: Chancellor
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 자문관의 경우, 해당 자문관이 담당하는 스탯만 +1 해준다. 이 경우에도 자문 #
+	# 관의 스탯이 플레이어 스탯보다 높은 경우에 한하며, 한도는 19이다.         #
+	#                                                                          #
+	# 그러나, 플레이어의 스탯이 자문관의 스탯보다 더 높은 경우에도, 25%의 확률 #
+	# 로 해당 스탯의 +1이 가능하다. 이 때 자문관의 경우에도 5%의 확률로 스탯값 #
+	# +1 을 얻을 수 있다. 자문관의 경우 25까지만 오를 수 있고, 플레이어의 경우 #
+	# 한도의 제한이 없다. 플레이어의 스탯이 20을 넘는 경우에는 자문관의 스탯이 #
+	# 플레이어의 스탯보다 높은 경우에도 이 규칙을 따른다.                      #
+	#                                                                          #
+	# 또한, 자신의 자문회 구성원이고, 관련 스탯이 16을 넘는 경우 쿨 타임과 무  #
+	# 관하게 조우시마다 삶의 목표를 변경할 수 있다.                            #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1231
+
+		#----------------------------------------------------------------------#
+		# A. 자문관의 스탯이 높은 경우 (플레이어 스탯이 20 미만인 경우)        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = diplomacy
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { diplomacy = 20 }
+		}
+		ROOT = {
+			piety = 2
+			change_diplomacy = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1231
+
+		#----------------------------------------------------------------------#
+		# B. 자문관의 스탯이 낮거나 플레이어 스탯이 20 이상인 경우             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			OR = {
+				ROOT = {
+					diplomacy = 20
+				}
+				attribute_diff = {
+					attribute = diplomacy
+					character = FROM
+					value = 0
+				}
+			}
+		}
+		FROM = {
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { diplomacy = 25 }
+				}
+				random = {
+					chance = 5
+					change_diplomacy = 1
+				}
+			}
+		}
+		ROOT = {
+			piety = 2
+			random = {
+				chance = 25
+				change_diplomacy = 1
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1231
+
+		#----------------------------------------------------------------------#
+		# C. 삶의 방식 변경 1 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				diplomacy = 16
+				NOT = { has_focus = focus_family }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_family
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1231
+
+		#----------------------------------------------------------------------#
+		# D. 삶의 방식 변경 2 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				diplomacy = 16
+				NOT = { has_focus = focus_carousing }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_carousing
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1232
+	desc = EVTDESC_WLK_1232
+	picture = GFX_evt_nemo_event_training_yard
+
+	# ROOT : Player, FROM: Marshal
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 자문관의 경우, 해당 자문관이 담당하는 스탯만 +1 해준다. 이 경우에도 자문 #
+	# 관의 스탯이 플레이어 스탯보다 높은 경우에 한하며, 한도는 19이다.         #
+	#                                                                          #
+	# 그러나, 플레이어의 스탯이 자문관의 스탯보다 더 높은 경우에도, 25%의 확률 #
+	# 로 해당 스탯의 +1이 가능하다. 이 때 자문관의 경우에도 5%의 확률로 스탯값 #
+	# +1 을 얻을 수 있다. 자문관의 경우 25까지만 오를 수 있고, 플레이어의 경우 #
+	# 한도의 제한이 없다. 플레이어의 스탯이 20을 넘는 경우에는 자문관의 스탯이 #
+	# 플레이어의 스탯보다 높은 경우에도 이 규칙을 따른다.                      #
+	#                                                                          #
+	# 또한, 자신의 자문회 구성원이고, 관련 스탯이 16을 넘는 경우 쿨 타임과 무  #
+	# 관하게 조우시마다 삶의 목표를 변경할 수 있다.                            #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1232
+
+		#----------------------------------------------------------------------#
+		# A. 자문관의 스탯이 높은 경우 (플레이어 스탯이 20 미만인 경우)        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = martial
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { martial = 20 }
+		}
+		ROOT = {
+			piety = 2
+			change_martial = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1232
+
+		#----------------------------------------------------------------------#
+		# B. 자문관의 스탯이 낮거나 플레이어 스탯이 20 이상인 경우             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			OR = {
+				ROOT = {
+					martial = 20
+				}
+				attribute_diff = {
+					attribute = martial
+					character = FROM
+					value = 0
+				}
+			}
+		}
+		FROM = {
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { martial = 25 }
+				}
+				random = {
+					chance = 5
+					change_martial = 1
+				}
+			}
+		}
+		ROOT = {
+			piety = 2
+			random = {
+				chance = 25
+				change_martial = 1
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1232
+
+		#----------------------------------------------------------------------#
+		# C. 삶의 방식 변경 1 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				martial = 16
+				NOT = { has_focus = focus_hunting }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_hunting
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1232
+
+		#----------------------------------------------------------------------#
+		# D. 삶의 방식 변경 2 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				martial = 16
+				NOT = { has_focus = focus_war }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_war
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1233
+	desc = EVTDESC_WLK_1233
+	picture = GFX_evt_nemo_event_town_market
+
+	# ROOT : Player, FROM: Treasurer
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 자문관의 경우, 해당 자문관이 담당하는 스탯만 +1 해준다. 이 경우에도 자문 #
+	# 관의 스탯이 플레이어 스탯보다 높은 경우에 한하며, 한도는 19이다.         #
+	#                                                                          #
+	# 그러나, 플레이어의 스탯이 자문관의 스탯보다 더 높은 경우에도, 25%의 확률 #
+	# 로 해당 스탯의 +1이 가능하다. 이 때 자문관의 경우에도 5%의 확률로 스탯값 #
+	# +1 을 얻을 수 있다. 자문관의 경우 25까지만 오를 수 있고, 플레이어의 경우 #
+	# 한도의 제한이 없다. 플레이어의 스탯이 20을 넘는 경우에는 자문관의 스탯이 #
+	# 플레이어의 스탯보다 높은 경우에도 이 규칙을 따른다.                      #
+	#                                                                          #
+	# 또한, 자신의 자문회 구성원이고, 관련 스탯이 16을 넘는 경우 쿨 타임과 무  #
+	# 관하게 조우시마다 삶의 목표를 변경할 수 있다.                            #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1233
+
+		#----------------------------------------------------------------------#
+		# A. 자문관의 스탯이 높은 경우 (플레이어 스탯이 20 미만인 경우)        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = stewardship
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { stewardship = 20 }
+		}
+		ROOT = {
+			piety = 2
+			change_stewardship = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1233
+
+		#----------------------------------------------------------------------#
+		# B. 자문관의 스탯이 낮거나 플레이어 스탯이 20 이상인 경우             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			OR = {
+				ROOT = {
+					stewardship = 20
+				}
+				attribute_diff = {
+					attribute = stewardship
+					character = FROM
+					value = 0
+				}
+			}
+		}
+		FROM = {
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { stewardship = 25 }
+				}
+				random = {
+					chance = 5
+					change_stewardship = 1
+				}
+			}
+		}
+		ROOT = {
+			piety = 2
+			random = {
+				chance = 25
+				change_stewardship = 1
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1233
+
+		#----------------------------------------------------------------------#
+		# C. 삶의 방식 변경 1 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				stewardship = 16
+				NOT = { has_focus = focus_business }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_business
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1233
+
+		#----------------------------------------------------------------------#
+		# D. 삶의 방식 변경 2 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				stewardship = 16
+				NOT = { has_focus = focus_rulership }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_rulership
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1234
+	desc = EVTDESC_WLK_1234
+	picture = GFX_evt_nemo_event_caught_pickpocket
+
+	# ROOT : Player, FROM: Spymaster
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 자문관의 경우, 해당 자문관이 담당하는 스탯만 +1 해준다. 이 경우에도 자문 #
+	# 관의 스탯이 플레이어 스탯보다 높은 경우에 한하며, 한도는 19이다.         #
+	#                                                                          #
+	# 그러나, 플레이어의 스탯이 자문관의 스탯보다 더 높은 경우에도, 25%의 확률 #
+	# 로 해당 스탯의 +1이 가능하다. 이 때 자문관의 경우에도 5%의 확률로 스탯값 #
+	# +1 을 얻을 수 있다. 자문관의 경우 25까지만 오를 수 있고, 플레이어의 경우 #
+	# 한도의 제한이 없다. 플레이어의 스탯이 20을 넘는 경우에는 자문관의 스탯이 #
+	# 플레이어의 스탯보다 높은 경우에도 이 규칙을 따른다.                      #
+	#                                                                          #
+	# 또한, 자신의 자문회 구성원이고, 관련 스탯이 16을 넘는 경우 쿨 타임과 무  #
+	# 관하게 조우시마다 삶의 목표를 변경할 수 있다.                            #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1234
+
+		#----------------------------------------------------------------------#
+		# A. 자문관의 스탯이 높은 경우 (플레이어 스탯이 20 미만인 경우)        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = intrigue
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { intrigue = 20 }
+		}
+		ROOT = {
+			piety = 2
+			change_intrigue = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1234
+
+		#----------------------------------------------------------------------#
+		# B. 자문관의 스탯이 낮거나 플레이어 스탯이 20 이상인 경우             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			OR = {
+				ROOT = {
+					intrigue = 20
+				}
+				attribute_diff = {
+					attribute = intrigue
+					character = FROM
+					value = 0
+				}
+			}
+		}
+		FROM = {
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { intrigue = 25 }
+				}
+				random = {
+					chance = 5
+					change_intrigue = 1
+				}
+			}
+		}
+		ROOT = {
+			piety = 2
+			random = {
+				chance = 25
+				change_intrigue = 1
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1234
+
+		#----------------------------------------------------------------------#
+		# C. 삶의 방식 변경 1 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				intrigue = 16
+				NOT = { has_focus = focus_seduction }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_seduction
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1234
+
+		#----------------------------------------------------------------------#
+		# D. 삶의 방식 변경 2 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				intrigue = 16
+				NOT = { has_focus = focus_intrigue }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_intrigue
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1235
+	desc = EVTDESC_WLK_1235
+	picture = GFX_evt_monastery_monks	# CKII Original Picture
+
+	# ROOT : Player, FROM: Spiritual
+	
+	is_triggered_only = yes
+
+	#--------------------------------------------------------------------------#
+	# 자문관의 경우, 해당 자문관이 담당하는 스탯만 +1 해준다. 이 경우에도 자문 #
+	# 관의 스탯이 플레이어 스탯보다 높은 경우에 한하며, 한도는 19이다.         #
+	#                                                                          #
+	# 그러나, 플레이어의 스탯이 자문관의 스탯보다 더 높은 경우에도, 25%의 확률 #
+	# 로 해당 스탯의 +1이 가능하다. 이 때 자문관의 경우에도 5%의 확률로 스탯값 #
+	# +1 을 얻을 수 있다. 자문관의 경우 25까지만 오를 수 있고, 플레이어의 경우 #
+	# 한도의 제한이 없다. 플레이어의 스탯이 20을 넘는 경우에는 자문관의 스탯이 #
+	# 플레이어의 스탯보다 높은 경우에도 이 규칙을 따른다.                      #
+	#                                                                          #
+	# 또한, 자신의 자문회 구성원이고, 관련 스탯이 16을 넘는 경우 쿨 타임과 무  #
+	# 관하게 조우시마다 삶의 목표를 변경할 수 있다.                            #
+	#--------------------------------------------------------------------------#
+
+	option = {
+		name = EVTOPTA_WLK_1235
+
+		#----------------------------------------------------------------------#
+		# A. 자문관의 스탯이 높은 경우 (플레이어 스탯이 20 미만인 경우)        #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			NOT = {
+				attribute_diff = {
+					attribute = learning
+					character = FROM
+					value = 0
+				}
+			}
+			NOT = { learning = 20 }
+		}
+		ROOT = {
+			piety = 2
+			change_learning = 1
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1235
+
+		#----------------------------------------------------------------------#
+		# B. 자문관의 스탯이 낮거나 플레이어 스탯이 20 이상인 경우             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			OR = {
+				ROOT = {
+					learning = 20
+				}
+				attribute_diff = {
+					attribute = learning
+					character = FROM
+					value = 0
+				}
+			}
+		}
+		FROM = {
+			prestige = 1
+
+			if = {
+				limit = {
+					NOT = { learning = 25 }
+				}
+				random = {
+					chance = 5
+					change_learning = 1
+				}
+			}
+		}
+		ROOT = {
+			piety = 2
+			random = {
+				chance = 25
+				change_learning = 1
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_WLK_1235
+
+		#----------------------------------------------------------------------#
+		# C. 삶의 방식 변경 1 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				learning = 16
+				NOT = { has_focus = focus_theology }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_theology
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_WLK_1235
+
+		#----------------------------------------------------------------------#
+		# D. 삶의 방식 변경 2 (성인이고, 해당 스탯 16 이상인 경우)             #
+		#----------------------------------------------------------------------#
+
+		trigger = {
+			ROOT = {
+				learning = 16
+				NOT = { has_focus = focus_scholarship }
+				is_adult = yes
+			}
+		}
+		ROOT = {
+			clear_focus = yes
+			set_focus = focus_scholarship
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1241~1242: 마을에서 어린 거지들을 만남                                       #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1241
+	desc = EVTDESC_WLK_1241
+	picture = GFX_evt_nemo_event_meet_young_beggars
+
+	# ROOT : Player
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 산책의 쿨 타임 (기본: 3일) 을 적용                                   #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_WLK_1241
+		ROOT = {
+			if = {
+				limit = {
+					NOT = { trait = just }
+				}
+				if = {
+					limit = {
+						trait = arbitrary
+					}
+					remove_trait = arbitrary
+				}
+				add_trait = just
+			}
+
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_WLK_1241
+		ROOT = {
+			if = {
+				limit = {
+					NOT = { trait = cruel }
+				}
+				if = {
+					limit = {
+						trait = kind
+					}
+					remove_trait = kind
+				}
+				add_trait = cruel
+			}
+
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_WLK_1241
+		ROOT = {
+			if = {
+				limit = {
+					NOT = { trait = kind }
+				}
+				if = {
+					limit = {
+						trait = cruel
+					}
+					remove_trait = cruel
+				}
+				add_trait = kind
+			}
+
+			hidden_tooltip = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_WLK_1241
+		trigger = {
+			has_global_flag = MOD_NEMO_OPG_SETUP_OK
+			has_building_orphanage_trigger = yes
+		}
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1242
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1242
+	desc = EVTDESC_WLK_1242
+	picture = GFX_evt_nemo_event_meet_young_beggars
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_WLK_1242
+
+		#----------------------------------------------------------------------#
+		# 두 명의 고아가 고아원에 생성된다 : 이 부분은 OPG 모듈에서 처리       #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			piety = 10
+			hidden_tooltip = {
+				character_event = {
+					id = OPG.1051
+				}
+			}
+		}
+	}
+}
+
+
+#------------------------------------------------------------------------------#
+# 1251~1257: 봉신의 부인을 구함                                                #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1251
+	desc = EVTDESC_WLK_1251
+	picture = GFX_evt_nemo_event_in_the_forest
+
+	# ROOT : Player
+	
+	is_triggered_only = yes
+	hide_from = yes
+
+	immediate = {
+
+		#----------------------------------------------------------------------#
+		# 산책의 쿨 타임 (180일) 을 적용                                       #
+		#----------------------------------------------------------------------#
+
+		add_character_modifier = {
+			name = mod_event_interval_notification_flag_modifier_go_on_a_walk
+			duration = 180
+		}
+	}
+
+	option = {
+		name = EVTOPTA_WLK_1251
+		ROOT = {
+			hidden_tooltip = {
+				random_vassal = {
+					limit = {
+						is_female = no
+						is_married = yes
+						is_common_adult_npc_trigger = yes
+						spouse = {
+							is_common_adult_npc_trigger = yes
+						}
+						NOT = { has_character_modifier = mod_event_interval_notification_flag_modifier_spouse_rescued_by_lord }
+					}
+
+					#----------------------------------------------------------#
+					# 같은 봉신에게 5년간 이 이벤트는 발생하지 않는다.         #
+					#----------------------------------------------------------#
+
+					add_character_modifier = {
+						name = mod_event_interval_notification_flag_modifier_spouse_rescued_by_lord
+						duration = 1825
+						hidden = yes
+					}
+
+					#----------------------------------------------------------#
+					# 사건을 겪게 되는 배우자에게 이벤트를 발생시킨다.         #
+					#----------------------------------------------------------#
+
+					spouse = {
+						character_event = {
+							id = WLK.1252
+						}
+					}
+				}			
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1252
+	hide_window = yes
+
+	# ROOT : 선택된 봉신의 부인
+	# FROM : 플레이어
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = WLK.1253
+				}
+			}		
+		}
+	}
+}
+
+
+character_event = {
+
+	id = WLK.1253
+	desc = EVTDESC_WLK_1253
+	picture = GFX_evt_nemo_event_woman_being_robbed
+
+	# ROOT : Player
+	# FROM : 선택된 봉신의 부인
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1253
+		hidden_tooltip = {
+			ROOT = {
+				character_event = {
+					id = WLK.1254
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1254
+	desc = EVTDESC_WLK_1254
+	picture = GFX_evt_nemo_event_saved_woman
+
+	# ROOT : Player
+	# FROMFROM : 선택된 봉신의 부인
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1254
+		hidden_tooltip = {
+
+			#------------------------------------------------------------------#
+			# 해당 봉신에 대해서 후속 이벤트를 실행한다.                       #
+			#------------------------------------------------------------------#
+
+			FROMFROM = {
+				spouse = {
+					character_event = {
+						id = WLK.1255
+					}
+				}
+			}
+
+			#------------------------------------------------------------------#
+			# 일단 여기에서 이벤트는 종료되고, 이후는 후속 이벤트이므로 여기에 #
+			# 서 메인 디시전 이벤트 플래그를 해제해 준다.                      #
+			#------------------------------------------------------------------#
+
+			ROOT = {
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1255
+	hide_window = yes
+
+	# ROOT : 선택된 봉신 (부인이 아님!)
+	# FROM : Player
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = WLK.1256
+				days = 17
+				random = 13
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1256
+	desc = EVTDESC_WLK_1256
+	picture = GFX_evt_recieve_letter
+
+	# ROOT : Player
+	# FROM : 선택된 봉신 (부인이 아님!)
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1256
+		hidden_tooltip = {
+			letter_event = {
+				id = WLK.1257
+			}
+		}
+	}
+}
+
+letter_event = {
+
+	id = WLK.1257
+	desc = EVTDESC_WLK_1257
+
+	is_triggered_only = yes
+	show_from_from = yes
+
+	# ROOT : Player
+	# FROMFROM : 선택된 봉신
+
+	option = {
+		name = EVTOPTA_WLK_1257
+
+		#----------------------------------------------------------------------#
+		# 그 봉신의 플레이어에 대한 우호도 증가                                #
+		#----------------------------------------------------------------------#
+
+		FROMFROM = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_mod_char_save_my_wife
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 만약 Conclave DLC 를 사용중이라면 플레이어는 그 봉신으로부터 호의를  #
+		# 하나 얻을 수 있다.                                                   #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+				NOT = {
+					holds_favor_on = FROMFROM
+				}
+			}
+			ROOT = {
+				add_favor = FROMFROM
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
+# 1291~1293: 배우자 또는 첩을 만난 경우 - 개별 이벤트                          #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = WLK.1291
+	desc = EVTDESC_WLK_1291
+	picture = GFX_evt_nemo_event_in_the_forest
+
+	# ROOT : Player, FROM : Random Courtier (spouse, concubine)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1291
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1292
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WLK_1291
+		ROOT = {
+			hidden_tooltip = {
+				character_event = {
+					id = WLK.1293
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = WLK.1292
+	desc = EVTDESC_WLK_1292
+	picture = GFX_evt_nemo_love_in_the_forest
+
+	# ROOT, FROM : Player, FROMFROM : Random Courtier (spouse, concubine)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1292
+		ROOT = {
+			if = {
+				limit = {
+					NOT = { is_lover = FROMFROM }
+				}
+
+				random = {
+					chance = 70
+					add_lover = FROMFROM
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = envious }
+				}
+				random = {
+					chance = 20
+					if = {
+						limit = {
+							trait = kind
+						}
+						remove_trait = kind
+					}
+					add_trait = envious
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { trait = gregarious }
+				}
+				random = {
+					chance = 50
+					if = {
+						limit = {
+							trait = shy
+						}
+						remove_trait = shy
+					}
+					add_trait = gregarious
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = WLK.1293
+	desc = EVTDESC_WLK_1293
+	picture = GFX_evt_nemo_event_in_the_forest
+
+	# ROOT, FROM : Player, FROMFROM : Random Courtier (spouse, concubine)
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WLK_1293
+		ROOT = {
+			if = {
+				limit = {
+					NOT = { trait = kind }
+				}
+				random = {
+					chance = 75
+					if = {
+						limit = {
+							trait = envious
+						}
+						remove_trait = envious
+					}
+					if = {
+						limit = {
+							trait = cruel
+						}
+						remove_trait = cruel
+					}
+					add_trait = kind
+				}
+			}
+
+			hidden_tooltip = {
+
+				#--------------------------------------------------------------#
+				# 이벤트 체인 종료 : 플래그 제거                               #
+				#--------------------------------------------------------------#
+
+				clear_event_target = mod_target_npc_to_meet
+				clr_main_decision_event_flag_effect = yes
+			}
+		}
+	}
+
+	## Decision End ##
+}

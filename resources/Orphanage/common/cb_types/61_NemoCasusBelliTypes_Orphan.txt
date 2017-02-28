@@ -1,0 +1,266 @@
+## normal scopes(including posttitle scopes) ##
+# ROOT = receiver
+# FROM = giver
+# <no scope change> = attacker or receiver
+## title scopes ##
+# ROOT = receiver
+# FROM = giver
+# <no scope change> = thirdparty landed title	
+#
+# the following effects/triggers exists (example execution order: on_success->on_success_title->on_success_posttitle):
+# is_valid, is_valid_title, on_add, on_add_title, on_add_posttitle, on_success, on_success_title, on_success_posttitle, on_fail, on_fail_title, on_fail_posttitle, on_reverse_demand, on_reverse_demand_title, on_reverse_demand_posttitle
+#
+# Added on_attacker_leader_death, on_defender_leader_death and on_thirdparty_death, which all trigger when corresponding character dies
+# These three all have war scopes, which currently has the following scope changes: 
+# attacker, defender, thirdparty(only valid if thirdparty character is involved), thirdparty_title(only valid if thirdparty title is involved)
+#
+# ai_will_do: modifies value AI places on the CB compared to other CBs (default: 1) Note: is in title scope
+# can_use_gui: If otherwise valid, the CB is listed in the Diplo View, but you can't declare war unless 'can_use_gui' is also valid (also shows a trigger tooltip.)
+#
+
+## ROOT/FROM : 전쟁을 일으키려는 자가 ROOT, 전쟁의 상대방이 FROM 이다! 주의!!!
+
+mod_cb_punishment_for_killing_orphan = {
+	name = CB_NAME_PUNISHMENT_FOR_KILLING_ORPHAN
+	war_name = WAR_NAME_PUNISHMENT_FOR_KILLING_ORPHAN
+	sprite = 25
+	truce_days = 1825	# 사실상 1회만 사용할 수 있음.
+	
+	can_call_vassals = yes
+	can_call_allies = no
+	can_ask_to_join_war = no
+	allow_distant = yes
+
+	is_permanent = yes
+	check_all_titles = yes
+
+	can_use = {
+		ROOT = {
+			ai = no
+		}
+		FROM = {
+			OR = {
+				has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				any_realm_character = {
+					is_landed = yes
+					has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				}
+			}
+		}
+	}
+
+	can_use_title = {
+		FROM = {
+			primary_title = {
+				title = PREVPREV
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 유효조건 : 해당 군주의 비난 기간이 종료되면 전쟁 중이라도 명분 무효화    #
+	#--------------------------------------------------------------------------#
+
+	is_valid = {
+		FROM = {
+			OR = {
+				has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				any_realm_character = {
+					is_landed = yes
+					has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				}
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 전쟁에 승리한 경우                                                       #
+	#--------------------------------------------------------------------------#
+
+	on_success = {
+
+		#----------------------------------------------------------------------#
+		# 상대방 군주의 봉신들 중에 고아를 살해한 군주가 있는 경우             #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					any_realm_character = {
+						is_landed = yes
+						has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+					}
+				}
+			}
+			FROM = {
+				any_realm_character = {
+					limit = {
+						is_landed = yes
+						has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+					}
+
+					#----------------------------------------------------------#
+					# 명예와 신앙심 각 -100 씩 감소                            #
+					# 해당 군주의 2년치 수입을 전쟁배상금으로 징수             #
+					#----------------------------------------------------------#
+
+					piety = -100
+					prestige = -100
+					transfer_scaled_wealth = { to = ROOT value = 2.0 } 
+
+					#----------------------------------------------------------#
+					# 해당 군주가 압송되어 오면, 그 신병을 처리하기 위한 이벤  #
+					# 트가 발생함                                              #
+					#----------------------------------------------------------#
+
+					hidden_tooltip = {
+						character_event = {
+							id = OPG.3302
+						}					
+					}
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 군주가 고아를 살해한 군주인 경우                              #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				}
+			}
+			FROM = {
+
+				#--------------------------------------------------------------#
+				# 명예와 신앙심 각 -100 씩 감소                                #
+				# 해당 군주의 2년치 수입을 전쟁배상금으로 징수                 #
+				#--------------------------------------------------------------#
+
+				piety = -100
+				prestige = -100
+				transfer_scaled_wealth = { to = ROOT value = 2.0 }
+
+				#--------------------------------------------------------------#
+				# 해당 군주가 압송되어 오면, 그 신병을 처리하기 위한 이벤트가  #
+				# 발생함                                                       #
+				#--------------------------------------------------------------#
+
+				hidden_tooltip = {
+					character_event = {
+						id = OPG.3302
+					}					
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 공통 : 명예와 신앙심 각 100을 얻음                                   #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			piety = 100
+			prestige = 100
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 무조건 평화시                                                            #
+	#--------------------------------------------------------------------------#
+
+	on_fail = {
+		ROOT = {
+			piety = -50
+			prestige = -50
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 전쟁에 패배한 경우                                                       #
+	#--------------------------------------------------------------------------#
+
+	on_reverse_demand = {
+
+		#----------------------------------------------------------------------#
+		# 공통 : 명예와 신앙심 각 100을 잃음                                   #
+		#        2년치의 수입을 전쟁배상금으로 지급                            #
+		#----------------------------------------------------------------------#
+
+		ROOT = {
+			piety = -100
+			prestige = -100
+			transfer_scaled_wealth = { to = FROM value = 2.0 } 
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 군주의 봉신들 중에 고아를 살해한 군주가 있는 경우             #
+		#  : 고아 살해의 비난은 무효화됨                                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					any_realm_character = {
+						is_landed = yes
+						has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+					}
+				}
+			}
+			FROM = {
+				any_realm_character = {
+					limit = {
+						is_landed = yes
+						has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+					}
+					remove_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				}
+			}
+		}
+
+		#----------------------------------------------------------------------#
+		# 상대방 군주가 고아를 살해한 군주인 경우                              #
+		#  : 고아 살해의 비난은 무효화됨                                       #
+		#----------------------------------------------------------------------#
+
+		if = {
+			limit = {
+				FROM = {
+					has_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+				}
+			}
+			FROM = {
+				remove_character_modifier = mod_cm_dishonor_ruler_killed_orphan
+			}
+		}
+	}
+
+	#--------------------------------------------------------------------------#
+	# 개인적인 전쟁이므로, 양 편 리더가 사망시에는 전쟁 명분은 무효화 종료     #
+	#--------------------------------------------------------------------------#
+
+	on_attacker_leader_death = {
+		end_war = invalid
+	}
+
+	on_defender_leader_death = {
+		end_war = invalid
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+}

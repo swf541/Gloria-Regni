@@ -1,0 +1,52 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+
+rescued_orphan_by_player = {
+	random = no
+	customizer = no
+	inherit_chance = 0
+
+	#liege_opinion = 1000
+
+	opposites = {
+		rescued_orphan_by_ai
+		adopted_orphan
+	}
+
+	opposite_opinion = 100
+	same_opinion = 100
+}
+
+rescued_orphan_by_ai = {
+	random = no
+	inherit_chance = 0
+	customizer = no
+
+	#liege_opinion = 500
+
+	opposites = {
+		rescued_orphan_by_player
+		adopted_orphan
+	}
+
+	same_opinion = 100
+	opposite_opinion = 100
+}
+
+adopted_orphan = {
+	random = no
+	inherit_chance = 0
+	customizer = no
+
+	#liege_opinion = 1000
+
+	monthly_character_piety = 0.1
+
+	opposites = {
+		rescued_orphan_by_player
+		rescued_orphan_by_ai
+	}
+
+	same_opinion = 100
+	opposite_opinion = 100
+	vassal_opinion = -15
+}

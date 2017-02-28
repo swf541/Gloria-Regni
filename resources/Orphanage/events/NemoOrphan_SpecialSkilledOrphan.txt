@@ -1,0 +1,377 @@
+# This text file is a mod script file which uses by the Crusader Kings 2
+# Namespace              : OPG
+# Reserved Event ID      : 7600~7699
+# Suitable CK2 Version   : 2.5.x
+# Recently Modified Date : 2016-08-18
+
+namespace = OPG
+
+#==============================================================================#
+# 특수한 능력을 가진 고아 (7601-)                                              #
+#------------------------------------------------------------------------------#
+# 특수한 능력을 가진 고아는 한 플레이어 캐릭터 당 1회밖에 발생하지 않는다.     #
+#==============================================================================#
+
+#------------------------------------------------------------------------------#
+# 문서 위조범 : 고아원의 소란                                                  #
+#------------------------------------------------------------------------------#
+
+character_event = {
+
+	id = OPG.7601
+	hide_window = yes
+
+	ai = no
+	
+	trigger = {
+
+		#----------------------------------------------------------------------#
+		# 모드 셋업 여부 확인                                                  #
+		#----------------------------------------------------------------------#
+
+		has_global_flag = MOD_NEMO_OPG_SETUP_OK
+
+		#----------------------------------------------------------------------#
+		# 일반적인 성년의 플레이어. 현재 수도에 있어야만 한다.                 #
+		#----------------------------------------------------------------------#
+
+		is_common_adult_player_trigger = yes
+		is_player_in_capital_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 이벤트 발생을 위해서는 고아원 레벨 4 이상이 필요하다.                #
+		# 최소 작위가 공작급 이상은 되어야 한다.                               #
+		#----------------------------------------------------------------------#
+
+		has_orphanage_level_4_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 고아원 보모가 현재 수도에 있을 것                                    #
+		#----------------------------------------------------------------------#
+
+		is_orphanage_nurse_in_capital_trigger = yes
+
+		#----------------------------------------------------------------------#
+		# 가능한 고아가 존재할 것                                              #
+		# - 12세 이상의 남자 미성년 고아                                       #
+		# - 다른 이벤트가 진행중이거나 특별한 관계로 맺어지지 않았어야 함      #
+		# - 비밀 요원 이벤트가 진행중인 고아가 아니어야 함                     #
+		#----------------------------------------------------------------------#
+
+		any_courtier = {
+			is_orphan_character_trigger = yes
+			age = 12
+			is_female = no
+			is_adult = no
+			is_orphan_pending_special_event_trigger = no
+			NOT = { has_character_flag = mod_event_character_flag_loyalty_1 }
+			NOT = { has_character_flag = mod_event_character_flag_loyalty_2 }
+			NOT = { has_character_flag = mod_event_character_flag_loyalty_3 }
+			NOT = { has_character_flag = mod_event_character_flag_secret_agent }
+		}
+
+		#----------------------------------------------------------------------#
+		# 특수 능력을 가진 고아는 한 명의 플레이어마다 한 번만 생성된다.       #
+		#----------------------------------------------------------------------#
+
+		NOT = { has_character_flag = mod_event_character_flag_fabrication_skilled_orphan }
+	}
+
+	mean_time_to_happen = {
+		days = 730
+	}
+
+	immediate = {
+
+		set_character_flag = mod_event_character_flag_fabrication_skilled_orphan
+
+		#----------------------------------------------------------------------#
+		# 현재 플레이어 캐릭터(mod_event_target_player)의 스코프를 잡는다.     #
+		#----------------------------------------------------------------------#
+
+		save_event_target_as = mod_event_target_player
+
+		#----------------------------------------------------------------------#
+		# 가능한 고아 중에서 랜덤으로 한 명을 선택한다.                        #
+		#----------------------------------------------------------------------#
+
+		random_courtier = {
+			limit = {
+				is_orphan_character_trigger = yes
+				age = 12
+				is_female = no
+				is_adult = no
+				is_orphan_pending_special_event_trigger = no
+				NOT = { has_character_flag = mod_event_character_flag_loyalty_1 }
+				NOT = { has_character_flag = mod_event_character_flag_loyalty_2 }
+				NOT = { has_character_flag = mod_event_character_flag_loyalty_3 }
+				NOT = { has_character_flag = mod_event_character_flag_secret_agent }
+			}
+
+			character_event = {
+				id = OPG.7602
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7602
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+
+		ROOT = {
+			save_event_target_as = mod_event_target_orphan
+			set_npc_is_pending_certain_event_flag_effect = yes
+		}
+
+		FROM = {
+			character_event = {
+				id = OPG.7603
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7603
+	desc = EVTDESC_OPG_7603
+	picture = GFX_evt_nemo_historical_paper_in_orphanage
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_7603
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.7604
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7604
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.7605
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7605
+	desc = EVTDESC_OPG_7605
+	picture = GFX_evt_nemo_default_orphanage
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = EVTOPTA_OPG_7605
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.7606
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7606
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.7607
+				days = 7
+				random = 5
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7607
+	desc = EVTDESC_OPG_7607
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_7607
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.7608
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7608
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.7609
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7609
+	desc = EVTDESC_OPG_7609
+	picture = GFX_evt_nemo_order_someone
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_7609
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.7610
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7610
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.7611
+				days = 3
+			}
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7611
+	desc = EVTDESC_OPG_7611
+	picture = GFX_evt_nemo_historical_paper_in_orphanage
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_7611
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				character_event = {
+					id = OPG.7612
+				}
+			}		
+		}
+	}
+}
+
+character_event = {
+
+	id = OPG.7612
+
+	hide_window = yes	
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mod_event_target_player = {
+			character_event = {
+				id = OPG.7613
+			}
+		}
+	}
+}
+
+
+character_event = {
+
+	id = OPG.7613
+	desc = EVTDESC_OPG_7613
+	picture = GFX_evt_nemo_common_letter
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_OPG_7613
+
+		event_target:mod_event_target_player = {
+			piety = 95
+			change_stewardship = 1
+			change_intrigue = 2
+		}
+
+		hidden_tooltip = {
+			event_target:mod_event_target_orphan = {
+				clr_npc_is_pending_certain_event_flag_effect = yes
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_OPG_7613
+
+		event_target:mod_event_target_player = {
+			prestige = -25
+			change_diplomacy = -1
+		}
+
+		event_target:mod_event_target_orphan = {
+			add_character_modifier = {
+				name = mod_cm_skilled_orphan_fabrication
+				duration = -1
+				hidden = no
+			}
+
+			hidden_tooltip = {
+				clr_npc_is_pending_certain_event_flag_effect = yes
+			}
+		}
+	}
+}
+
+
