@@ -7,26 +7,10 @@
 # 5 - Archers
 # 6 - Special troops
 
+##CULTURAL RETINUES - these are made to not be available to roman governments (or other governments that use the standing army system), just like all other non-roman-government-specifc retinues (which make up the standing army system)
 
-ROMAN_CENTURIES_1 = {
-	first_type = 1
-	first_amount = 100
-	
-#	hire_cost = 100
-	
-	maintenance_multiplier = 0.1
-	
-	potential = {
-		government = roman_government
-	}
-	
-	modifier = {
-		heavy_infantry_defensive = 0.25
-		heavy_infantry_offensive = 0.25
-	}
-}
-
-ROMAN_KATAFRAKTOI_1 = {
+#This is the vannila cataphracts by default available to the Roman (vannila name: "byzantine") group, copied here and removed from the mod's version of "00_retinue_subunits" for easier editing
+RETTYPE_CUL_BYZ = {
 	first_type = 4
 	first_amount = 150
 	
@@ -36,59 +20,27 @@ ROMAN_KATAFRAKTOI_1 = {
 	special_troops = horse_archers
 	
 	potential = {
-		government = roman_government
+		NOT = { government = roman_government }
+		is_nomadic = no
+		culture_group = byzantine
 	}
 	
 	modifier = {
 		knights_offensive = 0.1
 		knights_defensive = 0.1
 		knights_morale = 0.2
-		horse_archers_morale = 0.2
-		horse_archers_defensive = 0.1
-		horse_archers_offensive = 0.1
 	}
 }
 
-ROMAN_KOURSORSES = {
-	first_type = 3
-	first_amount = 150
-	
-	second_type = 6
-	second_amount = 150
-
-	special_troops = horse_archers
-	
+#This is the "Latin (vannila name: "roman") cultural retinue", but it is made available to the whole Roman (vannila name: "byzantine") group
+Latin_Century = {
+	first_type = 1
+	first_amount = 100
 	potential = {
-		government = roman_government
-	}
-	
-	modifier = {
-		light_cavalry_offensive = 0.35
-		light_cavalry_defensive = 0.35
-		light_cavalry_morale = 0.35
-		horse_archers_morale = 0.2
-		horse_archers_defensive = 0.1
-		horse_archers_offensive = 0.1
+		NOT = ( government = roman_government )
+		is_nomadic = no
+		culture_group = byzantine
 	}
 }
 
-ROMAN_AKRITOI_1 = {
-	first_type = 0
-	first_amount = 150
-	
-	second_type = 5
-	second_amount = 50
-	
-#	hire_cost = 100
-	
-	maintenance_multiplier = 0.1
-	
-	potential = {
-		government = roman_government
-	}
-	
-	modifier = {
-		heavy_infantry_defensive = 0.25
-		heavy_infantry_offensive = 0.25
-	}
-}
+##STANDING ARMY SYSTEM RETINUES
