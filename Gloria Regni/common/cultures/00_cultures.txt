@@ -3268,7 +3268,29 @@ east_african = {
 
 		modifier = default_culture_modifier
 	}
-	
+    beta_yisraeli = { #Beta-Israel, originally compiled by Frostschaden, many more names added by cybrxkhan
+        graphical_culture = africangfx
+
+        color = { 0.3 0.35 0.25 }
+
+        male_names = {
+            Abatte Abba Abreham_Abraham Adam_Adam Adamu_Adam Adgeh Adisu Ammanuel_Manuel Aron_Aaron Baruch_Baruch Beniamin_Benjamin Benyam_Benjamin Bogale Caleb_Kaleb Dan Daniel_Daniel Gabriel_Gabriel Gedeyon_Gideon Goshen Ioseph_Joseph Isaiah_Isaiah Ishmael_Ishmael Jeremiah_Jeremy Joram Kabede Mulualem Phineas Pinchas Rada Radi Salomon_Solomon Shlomo_Solmon Sirak Taamerat Tadesse Yacobe_Jacob Yeshaq_Isaac Yieshak_Isaac Yohanan_John Yona Zalelew Zohar
+        }
+
+        female_names = {
+            Abaynesh Adina_Adina Aida Aster_Esther Chamashwork Chekolech Devorah_Deborah Edna Esti Eua_Eve Hagit Hosanna_Susana Iohanna_Joan Jakoba Mariam_Maria Mulualem Nikahywot Orit Pnina Rahel_Rachel Rut Sara_Sarah Sheba Yehudit_Judith Yeuvmert Yityish Yodit_Judith Zena
+        }
+
+        pat_grf_name_chance = 60
+        mat_grf_name_chance = 20
+        father_name_chance = 10
+        
+        pat_grm_name_chance = 40
+        mat_grm_name_chance = 20
+        mother_name_chance = 30
+        
+        modifier = default_culture_modifier
+    }	
 	somali = {
 		graphical_cultures = { africangfx }
 		secondary_event_pictures = bedouin_arabic
@@ -3324,7 +3346,7 @@ east_african = {
 	}
 	afar = {
 		graphical_cultures = { africangfx }
-		color = { 0.75 0.95 0.65 }
+		color = { 0.95 0.45 0.33 }
 	
 		male_names = {
 			Abdul Abdulkadir Adam Ahmad Ahmed Ali Alimirah Aref Asa Aydahis Badlay Basu Bourhan Daoud_David Dileita Gaas Garad Gashaw Habib Hanfere Illalta Jamal Jasa Kadhafo Kedafu Mafatah Mahammad_Muhammed Mansur Mirah Mohamooda_Mahmud Muhyadin Netsanet Redo Sabr Shamsa Umar Usman Yayyo_John
@@ -3334,6 +3356,44 @@ east_african = {
 		}
 
 		modifier = default_culture_modifier
+	}
+	sidamo = {
+		graphical_cultures = { africangfx }
+		color = { 0.75 0.95 0.65 }
+	
+		male_names = {
+			Minjo Iyâsû Taqla Hâymânôt Salômôn Yôhannes Hezqeyâs Zar'a Yâqob Ba'eda Mâryâm 
+			Quastantînôs 'Amda Seyôn Nâ'ôd Lebna Dengel Galâwdêwôs Mînâs Sarsa Dengel Yâ'qob Sûsenyôs 
+			Fâsîladas Têwôflôs Yôstôs Yônas Dâwît 'Amsa Gîyôrgîs Tuqla Gîyôrgîs Demetros Gîyôrgîs 
+			Fiqtor Menas Marqos Hamalmal Saga Krestos Malta Krestos Fâsîl 'Endreyâs Yeshaq Mika'el 
+			Amda Seyon Antenatewos Welde Giyorgis Mika'el Sehul Gusho Wand Bewossen Haile Wolda Gabrael 
+		}
+		female_names = {
+			Abeba Hagos Tenagne Habesha Abeba Abrihet Adanech Adina Alaworld Alitash Amhara Ayana Bathsheba Bekele 
+			Belkis Berhane Berta Desta Dilla Falasha Falashina Fana Fannah Genat Hagos Jahzara Jazarah Kayla Kelile 
+			Kelyle Keren Kess Kifle
+		}
+
+		modifier = default_culture_modifier
+	}	
+	tigray = {
+		graphical_cultures = { africangfx }
+		color = { 0.45 0.35 0.25 }
+	
+		male_names = {
+			Taqla Hâymânôt 'Amsa Gîyôrgîs Tuqla Gîyôrgîs Zar'a Yâqob Ba'eda Mâryâm 'Amda Seyôn Lebna 
+			Saga Krestos Malta Krestos Dengel Welde Giyorgis Mika'el Sehul Wolda Gabrael Wand Bewossen 
+			Amda Seyon Sarsa Dengel Iyâsû Quastantînôs Salômôn Yôhannes Hezqeyâs Nâ'ôd Galâwdêwôs Mînâs Yâ'qob 
+			Sûsenyôs Fâsîladas Têwôflôs Yôstôs Yônas Dâwît Demetros Gîyôrgîs Fiqtor Menas Marqos Hamalmal Fâsîl 
+			Endreyâs Yeshaq Mika'el Antenatewos Gusho Haile
+		}
+		female_names = {
+			Abeba Hagos Tenagne Habesha Abeba Abrihet Adanech Adina Alaworld Alitash Amhara Ayana Bathsheba Bekele 
+			Belkis Berhane Berta Desta Dilla Falasha Falashina Fana Fannah Genat Hagos Jahzara Jazarah Kayla Kelile 
+			Kelyle Keren Kess Kifle
+		}
+
+		modifier = default_culture_modifier	
 	}
     kushite  = {        #Meroitic or Old Nubian
         graphical_cultures = { africangfx }
@@ -3392,7 +3452,7 @@ east_african = {
 	}
 	fur = {
 		graphical_cultures = { africangfx }
-		color = { 0.95 0.9 0.65 }
+		color = { 0.95 0.55 0.75 }
 		male_names = {
 			Abakr Abdul Abubakr Adam Ali Appa Babikr Bahr Bakr Barka Bolad Bukr Dagul Dali Daoud_David Deriage Dinar Dirro Djibrine Dole Dul Duon Fagi Garu Gurangu Harun Hassan Ibrahim_Abraham Isa Kadungo Kewerta Kor Kulle Kurra Maama Madjub Mansur Mare Mir Mohammed Nour Numi Salah Seif Seisei Solon Solong Sulayman_Solomon Tegani Terab Tonga Uo Wahid Yahya_John Yusif_Joseph Yusuf_Joseph
 		}
