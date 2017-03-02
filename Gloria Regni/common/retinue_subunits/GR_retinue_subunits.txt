@@ -37,7 +37,7 @@ Latin_Century = {
 	first_type = 1
 	first_amount = 100
 	potential = {
-		NOT = ( government = roman_government )
+		NOT = { government = roman_government }
 		is_nomadic = no
 		culture_group = byzantine
 	}
