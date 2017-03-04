@@ -1,0 +1,201 @@
+
+#------------------------------------------------------------------------------#
+# 이벤트 모디파이어 / 오피니언 모디파이어                                      #
+#------------------------------------------------------------------------------#
+
+mod_event_interval_notification_flag_modifier_go_on_a_walk;영지를 산책하다.;;;;;;;;;;;;;x
+mod_event_interval_notification_flag_modifier_spouse_rescued_by_lord;주군이 배우자를 구함;;;;;;;;;;;;;x
+
+opinion_mod_char_meet_npc_good;산책 중 만남;;;;;;;;;;;;;x
+opinion_mod_char_meet_npc_bad;산책 중 만남;;;;;;;;;;;;;x
+
+opinion_mod_char_save_my_wife;내 부인의 생명을 구함;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 커스텀 툴팁                                                                  #
+#------------------------------------------------------------------------------#
+
+CUSTOM_TOOLTIP_GO_ON_A_WALK;영지를 산책하다 보면 이런저런 사람들을 만나게 될 수 있습니다. 그들로부터 무언가를 얻을 수도 있고, 아무 것도 얻지 못할 수도 있습니다.;;;;;;;;;;;;;x
+CUSTOM_TOOLTIP_GO_ON_A_WALK_COOLING_TIME;지난 산책 이후 일정 시간이 지나야만 합니다.;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 디시전                                                                  #
+#------------------------------------------------------------------------------#
+
+mod_main_decision_go_on_a_walk;MOD: 영지 산책하기;;;;;;;;;;;;;x
+mod_main_decision_go_on_a_walk_desc;[From.GetTitledFirstName]은(는) 영지에 산책을 나갑니다.;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 아무도 만나지 못함                                              #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1203;숲 속은 한적했다. [Root.GetTitledFirstName]은(는) 아무도 만나지 못했다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1203;그럭저럭 기분전환은 됐군!;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 일반 가신 / 스탯 증가                                           #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1211;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) 가신 [From.GetTitledFirstName]을(를) 만났다. [From.GetSheHeCap]는 급히 [Root.GetTitledFirstName]에게 달려와서 인사했다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1211;[From.GetSheHe]와 외교술의 향상에 대하여 대화;;;;;;;;;;;;;x
+EVTOPTB_WLK_1211;[From.GetSheHe]와 관리술의 향상에 대하여 대화;;;;;;;;;;;;;x
+EVTOPTC_WLK_1211;[From.GetSheHe]와 음모력의 향상에 대하여 대화;;;;;;;;;;;;;x
+EVTOPTD_WLK_1211;[From.GetSheHe]와 학력의 향상에 대하여 대화;;;;;;;;;;;;;x
+EVTOPTE_WLK_1211;[From.GetSheHe]와 무력의 향상에 대하여 대화;;;;;;;;;;;;;x
+EVTOPTF_WLK_1211;[From.GetSheHe]와 일상적인 대화를 나눈다.;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 공용 / 우호도 증가                                              #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1212_1;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) 가신 [From.GetTitledFirstName]을(를) 만났다. 그들은 잠시 동안 이런 저런 이야기를 나누었고, [Root.GetTitledFirstName]의 적당한 칭찬에 [From.GetSheHe]는 기분이 좋아진 것 같다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1212_2;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) [From.Liege.GetTitledName]의 가신 [From.GetTitledFirstName]을(를) 만났다. 그들은 잠시 동안 이런 저런 이야기를 나누었고, [Root.GetTitledFirstName]의 적당한 칭찬과 맞장구에 [From.GetSheHe]는 기분이 좋아진 것 같다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1212;[From.GetTitledFirstName]와(과) 좀 더 친해질 수 있겠군!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1212;[From.Liege.GetTitledName]와(과) 가까워질 기회다!;;;;;;;;;;;;;x
+EVTOPTC_WLK_1212;[From.Liege.GetTitledName]와(과) [From.GetSheHe]를 이간질할 기회다!;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 공용 / 우호도 감소                                              #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1213_1;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) 가신 [From.GetTitledFirstName]을(를) 만났다. 가벼운 인사로 화기애애하게 시작했던 대화 분위기는, [Root.GetTitledFirstName]의 실없는 농담 때문에 이내 차디차게 식어버렸다. [From.GetSheHe]는 기분이 많이 상한 듯 하다.;;;;;;;;;;;;;x
+EVTDESC_WLK_1213_2;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) [From.Liege.GetTitledName]의 가신 [From.GetTitledFirstName]을(를) 만났다. 가벼운 인사로 화기애애하게 시작했던 대화 분위기는, [Root.GetTitledFirstName]의 실없는 농담 때문에 이내 차디차게 식어버렸다. [From.GetSheHe]는 기분이 많이 상한 듯 하다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1213;이런 젠장!;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 공용 / 명예 증가 또는 감소                                      #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1214_1;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) 가신 [From.GetTitledFirstName]을(를) 만났다. [From.GetSheHe]는 [Root.GetTitledFirstName]에게 [Root.GetSheHe]의 명성에 걸맞는 가르침을 얻고 싶어 한다...;;;;;;;;;;;;;x
+EVTDESC_WLK_1214_2;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) [From.Liege.GetTitledName]의 가신 [From.GetTitledFirstName]을(를) 만났다. [From.GetSheHe]는 [Root.GetTitledFirstName]에게 [Root.GetSheHe]의 명성에 걸맞는 가르침을 얻고 싶어 한다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1214;[From.GetSheHe]에게 통치의 기술에 관해 강론한다.;;;;;;;;;;;;;x
+EVTOPTB_WLK_1214;[From.GetSheHe]에게 무기 다루는 법에 관해 강론한다.;;;;;;;;;;;;;x
+EVTOPTC_WLK_1214;[From.GetSheHe]에게 세금 징수에 관해 강론한다.;;;;;;;;;;;;;x
+EVTOPTD_WLK_1214;[From.GetSheHe]에게 궁중 음모에 관해 강론한다.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1215_GOOD;[Root.GetTitledFirstName]의 통치의 기술에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 움직였다! [FromFrom.GetSheHe]는 큰 깨달음을 얻은 듯 연신 고개를 끄덕였다. 아마도, 한동안은 [Root.GetTitledFirstName]의 지혜를 찬양하고 다닐 듯 하다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1215_BAD;[Root.GetTitledFirstName]은(는) 통치의 기술에 관해 [FromFrom.GetTitledFirstName]에게 이야기를 시작했지만, 그 이야기는 매우 진부했고, 또 일부는 시대에 뒤떨어진 내용이었다. [FromFrom.GetSheHe]는 크게 실망한 채 집으로 돌아갔다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1215;좋았어!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1215;...차라리 다른 내용에 대해 말할 걸 그랬어.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1216_GOOD;[Root.GetTitledFirstName]의 무기 다루는 법에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 움직였다! [FromFrom.GetSheHe]는 큰 깨달음을 얻은 듯 연신 고개를 끄덕였다. 아마도, 한동안은 [Root.GetTitledFirstName]의 지혜를 찬양하고 다닐 듯 하다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1216_BAD;[Root.GetTitledFirstName]은(는) 무기 다루는 법에 관해 [FromFrom.GetTitledFirstName]에게 이야기를 시작했지만, 그 이야기는 매우 진부했고, 또 일부는 시대에 뒤떨어진 내용이었다. [FromFrom.GetSheHe]는 크게 실망한 채 집으로 돌아갔다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1216;좋았어!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1216;...차라리 다른 내용에 대해 말할 걸 그랬어.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1217_GOOD;[Root.GetTitledFirstName]의 세금 징수에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 움직였다! [FromFrom.GetSheHe]는 큰 깨달음을 얻은 듯 연신 고개를 끄덕였다. 아마도, 한동안은 [Root.GetTitledFirstName]의 지혜를 찬양하고 다닐 듯 하다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1217_BAD;[Root.GetTitledFirstName]은(는) 세금 징수에 관해 [FromFrom.GetTitledFirstName]에게 이야기를 시작했지만, 그 이야기는 매우 진부했고, 또 일부는 시대에 뒤떨어진 내용이었다. [FromFrom.GetSheHe]는 크게 실망한 채 집으로 돌아갔다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1217;좋았어!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1217;...차라리 다른 내용에 대해 말할 걸 그랬어.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1218_GOOD;[Root.GetTitledFirstName]의 궁중 음모에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 움직였다! [FromFrom.GetSheHe]는 큰 깨달음을 얻은 듯 연신 고개를 끄덕였다. 아마도, 한동안은 [Root.GetTitledFirstName]의 지혜를 찬양하고 다닐 듯 하다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1218_BAD;[Root.GetTitledFirstName]은(는) 궁중 음모에 관해 [FromFrom.GetTitledFirstName]에게 이야기를 시작했지만, 그 이야기는 매우 진부했고, 또 일부는 시대에 뒤떨어진 내용이었다. [FromFrom.GetSheHe]는 크게 실망한 채 집으로 돌아갔다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1218;좋았어!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1218;...차라리 다른 내용에 대해 말할 걸 그랬어.;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 공용 / 신앙심 증가 또는 감소                                    #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1219_1;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) 가신 [From.GetTitledFirstName]을(를) 만났다. [From.GetSheHe]는 [Root.GetTitledFirstName]에게 [Root.GetSheHe]의 신앙심에 걸맞는 영적인 가르침을 얻고 싶어 한다...;;;;;;;;;;;;;x
+EVTDESC_WLK_1219_2;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) [From.Liege.GetTitledName]의 가신 [From.GetTitledFirstName]을(를) 만났다. [From.GetSheHe]는 [Root.GetTitledFirstName]에게 [Root.GetSheHe]의 신앙심에 걸맞는 영적인 가르침을 얻고 싶어 한다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1219;[From.GetSheHe]에게 [Root.Religion.GetRandomGodName]의 성스러움에 대해 말한다.;;;;;;;;;;;;;x
+EVTOPTB_WLK_1219;신성에 관한 이야기는 회피하는 게 좋겠다.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1220_GOOD1;[Root.GetTitledFirstName]의 신성에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 감화시켰다. [FromFrom.GetSheHe]는 자신이 평소 갖고 있던 [FromFrom.Religion.GetRandomGodName]에 관한 믿음이 진리에서 어긋나 있다는 점을 깨달은 듯했다. [FromFrom.GetSheHe]는 [Root.GetTitledFirstName]에게 감사를 표하고는 깊은 생각에 빠져 어디론가 사라졌다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1220_GOOD2;[Root.GetTitledFirstName]의 신성에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 감화시켰다. [FromFrom.GetSheHe]는 자신의 [FromFrom.Religion.GetRandomGodName]에 대한 신앙심이 더욱 강해진 것 같다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1220_GOOD3;[Root.GetTitledFirstName]의 신성에 관한 강론은 [FromFrom.GetTitledFirstName]을(를) 크게 감화시켰다. [FromFrom.GetSheHe]는 자신의 [FromFrom.Religion.GetRandomGodName]에 관한 믿음이 진리가 아닐 수도 있다는 의심을 하기 시작한 것 같다. [FromFrom.GetSheHe]는 [Root.GetTitledFirstName]에게 감사를 표하고는 깊은 생각에 빠져 어디론가 사라졌다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1220_BAD1;[Root.GetTitledFirstName]은 신앙에 대해 [FromFrom.GetTitledFirstName]에게 강론하기 시작했다. 그러나 [Root.GetSheHe]의 강론은 곧 허점을 드러냈고, 강론은 곧 신성에 관한 신학 논쟁으로 비화되었다. [FromFrom.GetSheHe]는 [Root.GetTitledFirstName]의 믿음이 이단이라고 여기게 된 것 같다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1220_BAD2;[Root.GetTitledFirstName]은 신앙에 대해 [FromFrom.GetTitledFirstName]에게 강론하기 시작했다. 그러나 [Root.GetSheHe]의 강론은 곧 허점을 드러냈고, 강론은 곧 신성에 관한 신학 논쟁으로 비화되었다. [FromFrom.GetSheHe]는 [Root.GetTitledFirstName]이(가) 진정한 믿음을 가지고 있는지 의심하는 듯 했다..;;;;;;;;;;;;;x
+EVTDESC_WLK_1220_BAD3;[Root.GetTitledFirstName]은 신앙에 대해 [FromFrom.GetTitledFirstName]에게 강론하기 시작했다. 그러나 [Root.GetSheHe]의 강론은 곧 허점을 드러냈고, 강론은 곧 신성에 관한 신학 논쟁으로 비화되었다. [FromFrom.GetSheHe]는 오히려 [Root.GetTitledFirstName]에게 자신의 믿음의 우월성을 전파하며 [Root.GetSheHe]를 설득하려 했다.;;;;;;;;;;;;;x
+
+EVTOPTA_WLK_1220_GOOD1;좋아!;;;;;;;;;;;;;x
+EVTOPTA_WLK_1220_GOOD2;좋아!;;;;;;;;;;;;;x
+EVTOPTA_WLK_1220_GOOD3;좋아!;;;;;;;;;;;;;x
+EVTOPTB_WLK_1220_BAD1;내가 [Root.Religion.GetRandomGodName]을(를) 욕되게 하다니..;;;;;;;;;;;;;x
+EVTOPTB_WLK_1220_BAD2;내가 [Root.Religion.GetRandomGodName]을(를) 욕되게 하다니..;;;;;;;;;;;;;x
+EVTOPTB_WLK_1220_BAD3;내가 [Root.Religion.GetRandomGodName]을(를) 욕되게 하다니..;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1221;[Root.GetTitledFirstName]은(는) 원론적인 이야기로 교묘하게 핵심을 피해갔다. [FromFrom.GetTitledFirstName]은(는) [Root.GetSheHe]의 답변에 의구심을 가진 듯했지만, 더 이상 파고들지는 않았다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1221;이런 이야기는 조심하는 것이 현명하지..;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 자문회원 가신 / 스탯 증가                                       #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1231;산책에서 돌아오는 길에 성문 앞에서 나의 [Root.GetChancellorName] [Root.job_chancellor.GetTitledFirstName]을(를) 만났다. 그에게서 최근에 만난 봉신들에 대해 이야기를 들었다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1231;다음에는 이렇게 해 볼까...;;;;;;;;;;;;;x
+EVTOPTB_WLK_1231;봉신들을 다루는 일은 역시 어려워...;;;;;;;;;;;;;x
+EVTOPTC_WLK_1231;봉신들보다 내 가족들과 먼저 좋은 관계를...;;;;;;;;;;;;;x
+EVTOPTD_WLK_1231;역시 가까워지는 데는 연회를...;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1232;숲 근처의 훈련장에서 나의 [Root.GetMarshalName] [Root.job_marshal.GetTitledFirstName]을(를) 만났다. 오랜만에 몸도 풀 겸, 그의 지도로 검술 수련을 했다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1232;몸이 좀 풀린 것 같다...;;;;;;;;;;;;;x
+EVTOPTB_WLK_1232;미묘해...;;;;;;;;;;;;;x
+EVTOPTC_WLK_1232;사냥을 통해서 시험해보자...;;;;;;;;;;;;;x
+EVTOPTD_WLK_1232;근질근질하군.. 전장에 나가고 싶어...;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1233;시장은 매우 북적거렸다. 나의 [Root.GetTreasurerName] [Root.job_treasurer.GetTitledFirstName]이(가) 시장 상인들과 이야기를 나누고 있었다. 나는 [From.GetSheHe]와 재정에 대해 잠시 이야기를 나누었다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1233;알 것 같기도, 모를 것 같기도...;;;;;;;;;;;;;x
+EVTOPTB_WLK_1233;어렵군...;;;;;;;;;;;;;x
+EVTOPTC_WLK_1233;뭔가 작은 사업으로 시험을...;;;;;;;;;;;;;x
+EVTOPTD_WLK_1233;내 영지 전체를 대상으로 무언가 해 볼까...;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1234;마을 광장에서 나의 [Root.GetSpymasterName] [Root.job_spymaster.GetTitledFirstName]을(를) 만났다. 그는 임무에서 돌아오다가 소매치기 하나를 막 잡은 참이었다. 그 자를 즉결하여 처벌하고 나서, 첩보관과 새로운 음모에 대해 이야기를 나누었다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1234;알 듯 모를 듯...;;;;;;;;;;;;;x
+EVTOPTB_WLK_1234;역시 음모는 어려운 것 같아...;;;;;;;;;;;;;x
+EVTOPTC_WLK_1234;우선 주변 사람들을 유혹하는 것부터...;;;;;;;;;;;;;x
+EVTOPTD_WLK_1234;나라면 누구의 뒤라도 캘 수 있어...;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1235;걷다 보니 어느 새 예배당 앞이었다. 온 김에 나의 [Root.GetLordSpiritualName] [From.GetTitledFirstName]을(를) 만나 신성에 대한 여러 가지 이야기를 나누었다...;;;;;;;;;;;;;x
+EVTOPTA_WLK_1235;알 것 같기도, 모를 것 같기도...;;;;;;;;;;;;;x
+EVTOPTB_WLK_1235;어렵군...;;;;;;;;;;;;;x
+EVTOPTC_WLK_1235;신성에 대해서 좀 더 연구해보고 싶어...;;;;;;;;;;;;;x
+EVTOPTD_WLK_1235;모든 것을 초월하는 절대진리를...;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 마을에서 어린 거지들을 만남                                     #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1241;그날따라, 평소에는 가지 않던 성 마을의 뒷골목으로 발걸음이 옮겨졌다. 모퉁이를 돌았을 때, [Root.GetTitledFirstName]은(는) 남루한 옷을 입은 두 명의 아이들을 발견했다. 그들은 [Root.GetSheHe]를 보자마자 도망치려 했으나, 이내 [Root.GetSheHe]를 호위하던 병사들에게 붙잡혀 왔다. 그들의 품 속에서는 마을 어딘가에서 훔친 것이 분명한 이런저런 물건들이 나왔다. 두 아이들은 잠시 후의 상황을 예상하듯 오들오들 떨고 있었다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1241;어린애들 아닌가. 훔친 물건들만 빼앗고 보내 주도록 하라.;;;;;;;;;;;;;x
+EVTOPTB_WLK_1241;도둑은 도둑이다. 법대로 손목을 자르고 성 밖으로 추방하라.;;;;;;;;;;;;;x
+EVTOPTC_WLK_1241;도둑질은 나무라야겠지만 그건 다음 일이다. 우선 빵을 가져와라.;;;;;;;;;;;;;x
+EVTOPTD_WLK_1241;불쌍한 아이들이다. 고아원에서 지낼 수 있도록 데려가도록 하라.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1242;[Root.GetTitledFirstName]은(는) 짐짓 무서운 표정으로 그 아이들을 다그쳤다. 아이들은 울면서 그 물건들은 간밤에 시장에서 훔친 것이라고 고백했다. 순찰하던 병사를 불러 그 물건들을 돌려주라고 한 후, [Root.GetSheHe]는 조금 누그러진 표정으로 그들에 대해 물었다. 그들은 부모가 모두 사망한 후 떠돌고 있는 남매지간이라고 했다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1242;너희들이 있을 곳을 마련해줄 테니, 다시는 도둑질을 해서는 안 된다.;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 봉신의 부인을 구출함                                            #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1251;그 날은 여러 병사들을 이끌고 산책을 나왔기에, 평소보다 성에서 더 멀리 떨어진 사냥용 숲까지 나왔다. 슬슬 성으로 돌아가려고 준비하던 중, 숲 안쪽에서 여성의 비명 소리가 크게 울렸다. [Root.GetTitledFirstName]은(는) 지체 없이 병사들을 이끌고 비명소리가 들린 쪽으로 뛰어갔다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1251;무슨 일인지 신속히 확인하라!;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1253;놀랍게도, 거기서는 한 부인이 두 명의 도적들에게 칼로 위협을 당하고 있었다. [Root.GetTitledFirstName]와(과) 병사들을 본 도적들은 당황해서 [From.GetSheHe]를 두고 도망치려 했으나, 잠시 후 [Root.GetSheHe]와 [Root.GetSheHe]의 병사들에게 모두 잡혀왔다. 도적들을 포박하여 병사들에게 감옥으로 호송토록 한 후, [Root.GetTitledFirstName]은(는) 그 여성의 안위를 확인했다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1253;괜찮으십니까 부인?;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1254;다행스럽게도 그녀는 별다른 상처는 없는 듯했다. 단지 조금 놀랐을 뿐이었다. 그녀는 [FromFrom.Spouse.GetTitledName]의 부인으로, [Root.Capital.GetName]으로 향하던 중 도적들의 계략에 걸려 호위병사들과 떨어졌다고 했다. 얼마 후, 숲 속을 헤매던 [FromFrom.GetSheHe]의 호위병사들이 나타났고, [Root.GetTitledFirstName] 일행은 [FromFrom.GetSheHe]의 호위병사들과 함께 [FromFrom.GetSheHe]를 성으로 안내했다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1254;필요하신 만큼 쉬어 가십시오.;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1256;얼마 후, [Root.GetTitledFirstName]은(는) [From.GetTitledName](으)로부터 한 통의 편지를 받았다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1256;무슨 편지지?;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1257;경애하는 주군 [Root.GetTitledFirstName]께\n\n일전에 제 부인이 주군께 큰 은혜를 입었다는 보고를 받았습니다. 언젠가 은혜를 갚을 기회가 있다면 제가 직접 나서서 적극적으로 돕겠습니다.\n\n-당신의 충실한\n[FromFrom.GetFullName].;;;;;;;;;;;;;x
+EVTOPTA_WLK_1257;좋아!;;;;;;;;;;;;;x
+
+#------------------------------------------------------------------------------#
+# 산책 이벤트: 플레이어의 부인 혹은 첩을 만남                                  #
+#------------------------------------------------------------------------------#
+
+EVTDESC_WLK_1291;숲 속을 걷던 중, [Root.GetTitledFirstName]은(는) [Root.GetSheHe]의 배우자 [From.GetTitledFirstName]을(를) 보았다. [From.GetSheHeCap]는 시녀와 함께 나무 밑 그늘에 앉아 이야기를 나누고 있었다. 그늘 사이로 쏟아지는 햇빛이 [From.GetSheHe]를 더욱 아름답게 만드는 듯 했다..;;;;;;;;;;;;;x
+EVTOPTA_WLK_1291;[From.GetSheHe]에게 다가간다.;;;;;;;;;;;;;x
+EVTOPTB_WLK_1291;[From.GetSheHe]만의 시간을 방해하면 안 되지!;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1292;[Root.GetTitledFirstName]은(는) [FromFrom.GetTitledFirstName]에게 다가갔다. [Root.GetSheHe]를 본 [FromFrom.GetSheHe]가 웃으며 일어나 맞이했다. 그들은 잠시 동안 즐거운 시간을 보냈다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1292;즐거운 시간이었어!;;;;;;;;;;;;;x
+
+EVTDESC_WLK_1293;[FromFrom.GetTitledFirstName]만의 시간을 방해하지 않기 위해 [Root.GetSheHe]는 조용히 다른 길로 접어들었다. [FromFrom.GetSheHe]의 웃음소리가 들려오다가 사라졌다.;;;;;;;;;;;;;x
+EVTOPTA_WLK_1293;[FromFrom.GetSheHe]가 즐거운 시간을 보냈다면 된 거야.;;;;;;;;;;;;;x
+
