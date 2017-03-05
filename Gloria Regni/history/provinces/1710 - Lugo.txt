@@ -1,0 +1,30 @@
+# 155 - Asturias de Oviedo
+
+# County Title
+title = c_lugo
+
+# Settlements
+max_settlements = 4
+b_lugo1 = castle
+b_lugo2 = city
+b_lugo3 = temple
+
+
+# Misc
+culture = suebi
+religion = imperial
+
+# History
+
+867.1.1 = {
+	b_lugo1 = ca_town_1
+	b_lugo1 = ca_keep_1
+	b_lugo1 = ca_stable_1
+	b_lugo1 = ca_militia_barracks_1
+	b_lugo1 = ca_wall_1
+	b_lugo1 = ca_wall_2
+}
+
+931.1.1 = {
+	culture = portuguese
+}

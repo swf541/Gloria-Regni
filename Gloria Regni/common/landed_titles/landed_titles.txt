@@ -25514,6 +25514,18 @@ e_spain = {
 				b_norena = {
 				}
 			}
+			c_castrillon = {
+				color = { 244 154 58 }
+				color2 = { 255 255 255 }
+				
+				b_castrillon1 = { }
+				b_castrillon2 = { }
+				b_castrillon3 = { }
+				b_castrillon4 = { }
+				b_castrillon5 = { }
+				b_castrillon6 = { }
+				b_castrillon7 = { }
+			}
 			c_astorga = {
 				color = { 243 158 51 }
 				color2={ 255 255 255 }
@@ -25654,6 +25666,30 @@ e_spain = {
 				b_triacastela = {
 				}
 			}
+			c_lugo = {
+				color = { 138 181 151 }
+				color2 = { 255 255 255 }
+				
+				b_lugo1 = { }
+				b_lugo2 = { }
+				b_lugo3 = { }
+				b_lugo4 = { }
+				b_lugo5 = { }
+				b_lugo6 = { }
+				b_lugo7 = { }
+			}
+			c_viveiro = {
+				color = { 155 240 56 }
+				color2 = { 255 255 255 }
+				
+				b_viveiro1 = { }
+				b_viveiro2 = { }
+				b_viveiro3 = { }
+				b_viveiro4 = { }
+				b_viveiro5 = { }
+				b_viveiro6 = { }
+				b_viveiro7 = { }
+			}
 			c_santiago = {
 				color = { 243 158 51}
 				color2={ 255 255 255 }
@@ -25676,6 +25712,18 @@ e_spain = {
 				}
 				b_vilagarcia = {
 				}
+			}
+			c_ourense = {
+				color = { 245 233 145 }
+				color2 = { 255 255 255 }
+				
+				b_ourense1 = { }
+				b_ourense2 = { }
+				b_ourense3 = { }
+				b_ourense4 = { }
+				b_ourense5 = { }
+				b_ourense6 = { }
+				b_ourense7 = { }
 			}
 		}
 	}
@@ -26042,6 +26090,15 @@ e_spain = {
 				}
 			}
 		}
+	}
+	
+	k_umayyad = {
+		color = { 31 138 40 }
+		color2={ 255 255 255 }
+		
+		capital = 181 # Cordoba
+		
+		culture = andalusian_arabic
 	}
 	
 	k_andalusia = {
