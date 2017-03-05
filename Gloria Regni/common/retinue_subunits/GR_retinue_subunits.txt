@@ -70,6 +70,10 @@ Greek_Cataphract_Standing = {
 
 	special_troops = horse_archers
 	
+	hire_cost = 0
+	
+	maintenance_multiplier = 0.25
+	
 	potential = {
 		government = roman_government
 	}
@@ -88,6 +92,10 @@ Greek_Cataphract_Standing = {
 Latin_Century_Standing = {
 	first_type = 1
 	first_amount = 100
+	
+	hire_cost = 0
+	
+	maintenance_multiplier = 0.25
 	
 	potential = {
 		government = roman_government
