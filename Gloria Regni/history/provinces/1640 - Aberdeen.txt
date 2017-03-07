@@ -1,0 +1,28 @@
+# 41 - Buchan
+
+# County Title
+title = c_aberdeen
+
+# Settlements
+max_settlements = 6
+b_aberdeen1 = tribal
+#b_aberdeen = city
+#b_st_machar = temple
+
+
+# Misc
+culture = pictish
+religion = imperial
+terrain = hills
+
+# History
+
+848.1.1={
+	culture = scottish
+}
+1000.1.1 = {
+	b_aberdeen1 = castle
+	b_aberdeen2 = city
+	b_aberdeen3 = temple
+}
+1054.7.6 = { religion = catholic }

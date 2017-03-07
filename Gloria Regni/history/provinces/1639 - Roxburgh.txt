@@ -1,0 +1,26 @@
+# 38 - Teviotdale
+
+# County Title
+title = c_roxburgh
+
+# Settlements
+max_settlements = 4
+b_roxburgh1 = tribal
+#b_roxburgh2 = city
+#b_roxburgh3 = temple
+
+# Misc
+culture = britonic
+religion = imperial
+
+# History
+700.1.1 = { culture = saxon }
+867.1.1 = {
+	b_roxburgh1 = castle
+}
+1054.7.6 = { religion = catholic }
+
+1100.11.11 = { culture = english }
+1124.1.1 = { b_roxburgh2 = city }
+1235.9.25 = { culture = scottish }
+

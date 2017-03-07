@@ -1,0 +1,31 @@
+# 39 - Ross
+
+# County Title
+title = c_sutherland
+
+# Settlements
+max_settlements = 4
+b_sutherland1 = tribal
+b_sutherland2 = temple
+
+#b_dingwall = city
+#b_fortrose = castle
+#b_fearn = castle
+#b_applecross = castle
+#b_cromarty = castle
+#b_avoch = castle
+
+# Misc
+culture = pictish
+religion = imperial
+terrain = hills
+
+# History
+
+848.1.1={
+	culture = scottish
+}
+1000.1.1 = {
+	b_sutherland1 = castle
+}
+1054.7.6 = { religion = catholic }

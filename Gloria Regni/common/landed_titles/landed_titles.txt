@@ -26800,6 +26800,18 @@ e_britannia = {
 				b_mitford = {
 				}
 			}
+			c_alnwick = {
+				color = { 111 51 145 }
+				color2={ 255 255 255 }
+
+				b_alnwick1 = { }
+				b_alnwick2 = { }
+				b_alnwick3 = { }
+				b_alnwick4 = { }
+				b_alnwick5 = { }
+				b_alnwick6 = { }
+				b_alnwick7 = { }
+			}
 			c_durham = {
 				color={ 255 15 0 }
 				color2={ 255 255 255 }
@@ -26850,6 +26862,18 @@ e_britannia = {
 				}
 				b_dacre = {
 				}
+			}
+			c_arthuret = {
+				colot = { 133 22 155 }
+				color2 = { 255 255 255 }
+				
+				b_arthuret1 = { }
+				b_arthuret2 = { }
+				b_arthuret3 = { }
+				b_arthuret4 = { }
+				b_arthuret5 = { }
+				b_arthuret6 = { }
+				b_arthuret7 = { }
 			}
 		}
 		d_lancaster = {
@@ -27605,12 +27629,11 @@ e_britannia = {
 		irish = "Bhreatain Bheag"
 
 		allow = {
-			hidden_tooltip = {
-				OR = {
-					ai = no
-					culture_group = celtic
-				}
+			OR = {
+				ai = no
+				culture_group = celtic
 			}
+			num_of_duke_titles = 3
 		}
 		
 		d_gwynedd = {
@@ -27619,9 +27642,19 @@ e_britannia = {
 			
 			capital = 64 # Gwynedd
 			
+			allow = {
+				culture_group = celtic
+			}
+			
 			c_gwynedd = {
 				color={ 175 80 10 }
 				color2={ 255 255 255 }
+				
+				english = "Caernarvon"
+				saxon = "Caernarvon"
+				norman = "Caernarvon"
+				frankish = "Caernarvon"
+				occitan = "Caernarvon"
 				
 				b_caernarfon = {
 				}
@@ -27633,6 +27666,9 @@ e_britannia = {
 					norwegian = Ongullsøy
 					english = Anglesey
 					saxon = Anglesey
+					norman = Anglesey
+					frankish = Gallesey
+					occitan = Gallesey
 				}
 				b_harlech = {
 				}
@@ -27643,9 +27679,35 @@ e_britannia = {
 				b_llanbadarn = {
 				}
 			}
+			c_anglesey = {
+				color = { 175 98 24 }
+				color2 = { 255 255 255 }
+					norwegian = Ongullsøy
+					english = Anglesey
+					saxon = Anglesey
+					norman = Anglesey
+					frankish = Gallesey
+					occitan = Gallesey
+					welsh = Aberffraw
+					britonic = Aberffraw
+				
+				b_anglesey1 = { }
+				b_anglesey2 = { }
+				b_anglesey3 = { }
+				b_anglesey4 = { }
+				b_anglesey5 = { }
+				b_anglesey6 = { }
+				b_anglesey7 = { }
+			}
 			c_perfeddwlad = {
 				color={ 175 85 15 }
 				color2={ 255 255 255 }
+				
+				english = "Denbigh"
+				saxon = "Denbigh"
+				norman = "Denbigh"
+				frankish = "Denbigh"
+				occitan = "Denbigh"
 				
 				b_denbigh = {
 				}
@@ -27655,8 +27717,6 @@ e_britannia = {
 				}
 				b_flint = {
 				}
-				b_ruthin = {
-				}
 				b_basingwerk = {
 				}
 				b_ewloe = {
@@ -27664,33 +27724,128 @@ e_britannia = {
 				b_hawarden = {
 				}
 			}
-		}
-		d_powys = {
-			color={ 180 130 0 }
-			color2={ 255 255 255 }
-				
-			capital = 66 # Shrewsbury
-
-			c_powys = {
-				color={ 175 90 20 }
+			c_meirionnydd = {
+				color={ 255 206 0 }
 				color2={ 255 255 255 }
 				
-				b_caersws = {
+				english = "Merioneth"
+				saxon = "Merioneth"
+				norman = "Merioneth"
+				frankish = "Merioneth"
+				occitan = "Merioneth"
+				
+				b_borth = { 
 				}
-				b_mathrafal = {
+				b_aberystwyth = { 
 				}
-				b_llangollen = {
+				b_llanidoes = { 
 				}
-				b_llandinam = {
+				b_tywyn = { 
 				}
-				b_glascwm = {
+				b_llangelynin = { 
 				}
-				b_radnor = {
+			}
+		}
+		d_deheubarth = {
+			color={ 125 51 3 }
+			color2={ 255 255 255 }
+			capital = 18 #Dyfed
+			
+			allow = {
+				custom_tooltip = {
+					text = controls_dyfed
+					hidden_tooltip = {
+						18 = { # Dyfed
+							owner = {
+								OR = {
+									is_liege_or_above = ROOT
+									character = ROOT
+								}
+							}
+						}
+					}
 				}
-				b_montgomery = {
+				culture_group = celtic
+			}
+			
+			c_dyfed = {
+				color={ 155 75 5 }
+				color2={ 255 255 255 }
+				
+				english = "Pembroke"
+				saxon = "Pembroke"
+				norman = "Pembroke"
+				frankish = "Pembroke"
+				occitan = "Pembroke"
+			
+				b_carmarthen = {
 				}
-				b_rhayader = {
+				b_dinefwr = {
 				}
+				b_st_davids = {
+					welsh = Tyddewi
+					norwegian = "Ramsøy"
+				}
+				b_kidwelly = {
+					welsh = Cydweli
+				}
+				b_llandeilo = {
+				}
+				b_narberth = {
+				}
+				b_haverford = {
+				}
+				b_pembroke = {
+				}
+			}
+			c_ceredigion = {
+				color={ 248 235 0 }
+				color2={ 0 0 0 }
+				
+				english = "Cardigan"
+				saxon = "Cardigan"
+				norman = "Cardigan"
+				frankish = "Cardigan"
+				occitan = "Cardigan"
+				
+				b_aberaeron = { 
+				}
+				b_gaer_penrhos = { 
+				}
+				b_llangeitho = { 
+				}
+				b_tregaron = { 
+				}
+				b_abermagwr = { 
+				}
+			}
+			c_ystrad_tywi = {
+				color={ 0 189 0 }
+				color2={ 255 0 0 }
+				
+				english = "Carmarthen"
+				saxon = "Carmarthen"
+				norman = "Carmarthen"
+				frankish = "Carmarthen"
+				occitan = "Carmarthen"
+				
+				b_cetguili = { 
+				}
+				b_llanelli = { 
+				}
+				b_gorseynon = { 
+				}
+				b_camrose = { 
+				}
+			}
+		}
+		d_powys = {
+			color={ 210 110 70 }
+			color2={ 255 255 255 }
+			capital = 65 #Maelor
+			
+			allow = {
+				culture_group = celtic
 			}
 			c_shrewsbury = {
 				color={ 241 55 25 }
@@ -27740,41 +27895,114 @@ e_britannia = {
 				}
 				b_brobury = {
 				}
+			}			
+			c_maelor = {
+				english = "Chirkland"
+				saxon = "Chirkland"
+				norman = "Chirkland"
+				frankish = "Chirkland"
+				occitan = "Chirkland"
+			
+				color={ 56 35 0 }
+				color2={ 255 255 240 }
+				b_mathrafal = {
+				}
+				b_caersws = {
+				}
+				b_llangollen = {
+				}
+				b_dinas_bran = { 
+				}
+				b_ruthin = {
+				}
+				b_radnor = { #Has to be here: spawns in the province at game start no matter what
+				}
+			}
+			c_cyfeiliog = {
+				color={ 76 28 19 }
+				color2={ 248 235 0 }
+				
+				english = "Montgomery"
+				saxon = "Montgomery"
+				norman = "Montgomery"
+				frankish = "Montgomery"
+				occitan = "Montgomery"
+				
+				b_llandinam = {
+				}
+				b_glascwm = {
+				}
+				b_montgomery = {
+				}
+				b_rhayader = {
+				}
+				b_cynwyd = { 
+				}
+			}
+			c_maelienydd = {
+				color={ 175 90 20 }
+				color2={ 248 235 0 }
+				
+				english = "Radnor"
+				saxon = "Radnor"
+				norman = "Radnor"
+				frankish = "Radnor"
+				occitan = "Radnor"
+				
+				b_crug_eryr = { 
+				}
+				b_elfael = { 
+				}
+				b_buellt = { 
+					english = "Builth"
+					saxon = "Builth"
+					norman = "Builth"
+					frankish = "Builth"
+					occitan = "Builth"
+				}
 			}
 		}
-		d_deheubarth = {
-			color={ 125 51 3 }
+		d_morgannwg = {
+			color={ 155 61 3 }
 			color2={ 255 255 255 }
+			capital = 19 #Glywysing
 			
-			capital = 18 # Dyfed
+			allow = {
+				culture_group = celtic
+			}
 			
-			c_dyfed = {
-				color={ 155 75 5 }
+			c_gwent = {
+				color={ 160 75 5 }
 				color2={ 255 255 255 }
+				
+				english = "Monmouth"
+				saxon = "Monmouth"
+				norman = "Monmouth"
+				frankish = "Monmouth"
+				occitan = "Monmouth"
 			
-				b_carmarthen = {
+				b_caerwent = {
 				}
-				b_dinefwr = {
+				b_chepstow = {
 				}
-				b_st_davids = {
-					welsh = Tyddewi
-					norwegian = "Ramsøy"
+				b_monmouth = {
 				}
-				b_kidwelly = {
-					welsh = Cydweli
+				b_caerleon = {
 				}
-				b_llandeilo = {
+				b_newport = {
 				}
-				b_pembroke = {
-				}
-				b_narberth = {
-				}
-				b_haverford = {
+				b_tintern = {
 				}
 			}
-			c_glamorgan = {
+			c_glywysing = { #All moved
 				color={ 155 120 15 }
 				color2={ 255 255 255 }
+				
+				english = "Glamorgan"
+				saxon = "Glamorgan"
+				norman = "Glamorgan"
+				frankish = "Glamorgan"
+				occitan = "Glamorgan"
 			
 				b_cardiff = {
 				}
@@ -27793,25 +28021,25 @@ e_britannia = {
 				b_ogmore = {
 				}
 			}
-			c_gwent = {
-				color={ 160 75 5 }
-				color2={ 255 255 255 }
-			
-				b_caerwent = {
+			c_brycheiniog = {
+				color={ 210 152 23 }
+				color2={ 38 78 121 }
+				
+				english = "Brecon"
+				saxon = "Brecon"
+				norman = "Brecon"
+				frankish = "Brecon"
+				occitan = "Brecon"
+				
+				b_brecon = { #Moved
 				}
-				b_chepstow = {
+				b_llangorse = { 
 				}
-				b_abergavenny = {
+				b_merthyr_tydfil = { 
 				}
-				b_monmouth = {
+				b_ystradgynlais = { 
 				}
-				b_caerleon = {
-				}
-				b_newport = {
-				}
-				b_brecon = {
-				}
-				b_tintern = {
+				b_abergavenny = { #Moved
 				}
 			}
 		}
@@ -28518,6 +28746,18 @@ e_britannia = {
 					irish = "Baile na h-Aodhàn"
 				}
 			}
+			c_roxburgh = {
+				color = { 125 185 160 }
+				color2 = { 255 255 255 }
+				
+				b_roxburgh1 = { }
+				b_roxburgh2 = { }
+				b_roxburgh3 = { }
+				b_roxburgh4 = { }
+				b_roxburgh5 = { }
+				b_roxburgh6 = { }
+				b_roxburgh7 = { }
+			}
 		}
 		d_albany = {
 			color={ 25 85 160 }
@@ -28735,6 +28975,19 @@ e_britannia = {
 			welsh = "Gwrturio"
 			irish = "Muireb"
 			
+			c_inverness = {
+				color = { 120 185 43 }
+				color2 = { 255 255 255 }
+				
+				b_inverness1 = { }
+				b_inverness2 = { }
+				b_inverness3 = { }
+				b_inverness4 = { }
+				b_inverness5 = { }
+				b_inverness6 = { }
+				b_inverness7 = { }
+			}
+			
 			c_moray = {
 				color={ 20 85 243 }
 				color2={ 255 255 255 }
@@ -28783,6 +29036,18 @@ e_britannia = {
 					welsh = "Aercardden"
 					irish = "Airdchartdan"
 				}
+			}
+			c_sutherland = {
+				color = { 155 155 245 }
+				color2 = { 255 255 255 }
+			
+				b_sutherland1 = { }
+				b_sutherland2 = { }
+				b_sutherland3 = { }
+				b_sutherland4 = { }
+				b_sutherland5 = { }
+				b_sutherland6 = { }
+				b_sutherland7 = { }
 			}
 			c_ross = {
 				color={ 15 55 243 }
@@ -28835,6 +29100,30 @@ e_britannia = {
 					welsh = "Aberauc"
 					irish = "Abhach"
 				}
+			}
+			c_aberdeen = {
+				color = { 144 117 155 }
+				color2 = { 255 255 255 }
+				
+				b_aberdeen1 = { }
+				b_aberdeen2 = { }
+				b_aberdeen3 = { }
+				b_aberdeen4 = { }
+				b_aberdeen5 = { }
+				b_aberdeen6 = { }
+				b_aberdeen7 = { }
+			}
+			c_kincadine = {
+				color = { 44 117 155 }
+				color2 = { 255 255 255 }
+				
+				b_kincadine1 = { }
+				b_kincadine2 = { }
+				b_kincadine3 = { }
+				b_kincadine4 = { }
+				b_kincadine5 = { }
+				b_kincadine6 = { }
+				b_kincadine7 = { }
 			}
 			c_buchan = {
 				color={ 40 227 250 }
