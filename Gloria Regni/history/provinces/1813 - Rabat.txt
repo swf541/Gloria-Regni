@@ -1,0 +1,24 @@
+# 842 - Infa
+
+# County Title
+title = c_rabat
+
+# Settlements
+max_settlements = 4
+
+b_rabat1 = tribal
+
+# Misc
+culture = maghreb_arabic
+religion = shiite
+
+# History
+767.1.1 = { religion = ibadi }
+867.1.1 = {
+	b_rabat1 = castle
+	b_rabat2 = city
+	b_rabat3 = temple
+	b_rabat4 = city
+}
+
+974.1.1 = { religion = sunni }
