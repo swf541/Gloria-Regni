@@ -8093,6 +8093,12 @@ faction_increase_council_power = {
 		modifier = {
 			factor = 0.5
 			opinion = { who = LIEGE value = 0 }
+			NOT = {	
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_coerced_into_joining_faction
+				}
+			}
 		}
 		
 		modifier = {
@@ -8115,6 +8121,10 @@ faction_increase_council_power = {
 					modifier = opinion_coerced_into_joining_faction
 				}
 			}
+		}
+		modifier = {
+			factor = 4
+			is_voter = yes
 		}
 
 		modifier = {

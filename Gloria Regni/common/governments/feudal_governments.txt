@@ -48,6 +48,7 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
+		capital_move_delay = 600
 	}
 	holy_roman_government = {
 		preferred_holdings = { CASTLE }
@@ -95,6 +96,7 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
+		capital_move_delay = 600
 	}	
 	muslim_government = {
 		preferred_holdings = { CASTLE }
@@ -148,6 +150,7 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
+		capital_move_delay = 600
 	}
 	roman_government = {
 		preferred_holdings = { CITY }
@@ -212,5 +215,6 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
+		capital_move_delay = 600
 	}	
 }

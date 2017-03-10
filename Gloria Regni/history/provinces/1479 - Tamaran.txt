@@ -1,0 +1,26 @@
+# 849 - Canarias
+
+# County Title
+title = c_tamaran
+
+# Settlements
+max_settlements = 3
+
+b_tamaran1 = tribal
+
+#b_tenerife = city
+#b_lagomera = temple
+#b_lanzarote = castle
+#b_tamaran = castle
+#b_lagraciosa = castle
+#b_alegranza = castle
+#b_lapalma = castle
+
+# Misc
+culture = maghreb_arabic
+religion = west_african_pagan
+
+# History
+1062.1.1 = {
+	b_tamaran1 = castle
+}

@@ -1,0 +1,23 @@
+# 845 - Anti-Atlas
+
+# County Title
+title = c_taroudant
+
+# Settlements
+max_settlements = 4
+
+b_taroudant1 = tribal
+
+# Misc
+culture = maghreb_arabic
+religion = shiite
+
+# History
+
+947.1.1 = { religion = sunni }
+1062.1.1 = {
+	b_taroudant1 = castle
+	b_taroudant2 = city
+	b_taroudant3 = temple
+}
+

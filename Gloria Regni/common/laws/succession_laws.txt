@@ -49,7 +49,22 @@ succession_laws = {
 			holder_scope = {
 				OR = {
 					is_tribal = no
-					NOT = { religion_group = pagan_group }
+					custom_tooltip = { 
+						text = TT_NOT_UNREFORMED_PAGAN
+						hidden_tooltip = {
+							NOR = { 
+								religion = norse_pagan
+								religion = slavic_pagan
+								religion = baltic_pagan
+								religion = finnish_pagan
+								religion = zun_pagan
+								religion = tengri_pagan
+								religion = west_african_pagan
+								religion = aztec
+								religion = pagan
+							}
+						}
+					}
 				}
 			}
 			NAND = { 
@@ -142,8 +157,13 @@ succession_laws = {
 					}
 				}
 				
-				NOT = { religion_group = muslim }
-				NOT = { religion_group = indian_group }
+                OR = {
+                    NOR = {
+						religion_group = muslim
+						religion_group = indian_group 
+					}
+                    is_patrician = yes
+                }
 				
 				OR = {
 					NOT = { religion_group = pagan_group }
@@ -345,6 +365,7 @@ succession_laws = {
 						religion_group = indian_group
 					}
 					has_law = succession_voting_power_1
+					has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
 				}
 				is_merchant_republic = no
 				is_patrician = no
@@ -993,8 +1014,10 @@ gender_laws = {
 		female_dynasty_opinion = 10
 		
 		potential = {
-			religion = basque_pagan
-			religion = basque_pagan_reformed
+			or = {
+				religion = basque_pagan
+				religion = basque_pagan_reformed
+			}
 		}
 		allow = {
 			always=yes
@@ -1012,8 +1035,10 @@ gender_laws = {
 		female_dynasty_opinion = 5
 		
 		potential = {
-			religion = basque_pagan
-			religion = basque_pagan_reformed
+			or = {
+				religion = basque_pagan
+				religion = basque_pagan_reformed
+			}
 		}
 		allow = {
 			always=yes

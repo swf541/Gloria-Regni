@@ -45,6 +45,7 @@ job_chancellor = {
 		remove_title = title_councillor
 	}
 	
+	action = action_statecraft
 	action = action_improve_relations
 	action = action_fabricate_claims
 	action = action_clan_sentiment # Replaces Fabricate Claims for Nomads
@@ -89,6 +90,7 @@ job_marshal = {
 		remove_title = title_councillor
 	}
 	
+	action = action_organize_army
 	action = action_assist_arrest
 	action = action_train_troops
 	action = action_train_troops_nomadic
@@ -134,6 +136,7 @@ job_treasurer = {
 		remove_title = title_councillor
 	}
 	
+	action = action_administer_realm
 	action = action_squeeze_peasants
 	action = action_collect_tribute # Replaces action_squeeze_peasants for Nomads
 	action = action_settle_tribe # Replaces action_squeeze_peasants for Tribes
@@ -180,7 +183,10 @@ job_spymaster = {
 	}
 	
 	action = action_uncover_plots
+	action = action_uncover_plots_offmap	# Replaces action_uncover_plots if mystics is activated.
+	action = action_sabotage_province
 	action = action_organize_spies
+	action = action_organize_spies_mystics
 	action = action_study_technology
 
 	lift_neighbor_fow = yes
@@ -234,6 +240,7 @@ job_spiritual = {
 		}
 	}
 	
+	action = action_hunt_heretics
 	action = action_inquisition
 	action = action_advance_cul_tech
 	action = action_improve_rel_relations

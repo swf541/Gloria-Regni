@@ -1,0 +1,23 @@
+# 845 - Anti-Atlas
+
+# County Title
+title = c_tin_mal
+
+# Settlements
+max_settlements = 4
+
+b_tin_mal1 = tribal
+
+# Misc
+culture = maghreb_arabic
+religion = shiite
+
+# History
+
+947.1.1 = { religion = sunni }
+1062.1.1 = {
+	b_tin_mal1 = castle
+	b_tin_mal2 = city
+	b_tin_mal3 = temple
+}
+
