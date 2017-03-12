@@ -999,7 +999,7 @@ postbabylonian = {
         color = { 0.44 0.63 0.18 }
 
         male_names = {
-            Apra Anus_Enos Anusag Anusal Anusta Anusaprit Anusprit Bihram Bhrm Bihran Bhrmduk Br Hiia Haui Hwai Gadana Gdii Hibil Hebil Hurmizdukt Hurmiz Hurmis Iuhana_John Nu_Noah Ramuja Remai Sabur Sitluia Siluia Sitil Sum_Shem Zakia Zakuia Ziua Ziiul
+            Apra Anus_Enos Anusag Anusal Anusta Anusaprit Anusprit Bihram Bhrm Bihran Bhrmduk Br Hiia Haui Hwai Gadana Gdii Hibil Hebil Hurmizdukt Hurmiz Hurmis Iuhana_John Nu_Noah Ramuja Remai Sabur Sitluia Siluia Sitil Sum_Shem Zakia Zakuia Ziua Ziiul Yurba
         }
         female_names = {
             Anat Anut Bibia Bbai Dinarta Dinartia Dukt Dukta Nbh Nuba Anus Azad Anuba Eqaimat Handa Hndu Mahnus Mhanus Mamuia Mamai Mami Miriai_Mary Qiumta Zadia Zad Zaduia
@@ -1013,7 +1013,47 @@ postbabylonian = {
 
         modifier = default_culture_modifier
     }
-	aramean = {
+	babylonian = {	#Late Southern Mesopatamian Aramaic
+		graphical_cultures = {arabicgfx byzantinegfx }
+		
+		color = { 0.45 66 44 }
+			male_names = {
+				Mattai Yohannah Yohannan Teomah Rabbel Shalmlahi Zamiri Abibail Palasar Ador Akhiban Belshar Bineil 
+				Baryamin Gabarel Khonayn Khazael Khammu Yumadan Lammuel Ebraya Maroel Nabuel Natan Rabiel Rammel Shmuel 
+				Sharu Monobaz Aprahat Hiran Habel Elahbel Apshi Nashum Shamshi Yurba
+				Apra Anus_Enos Anusag Anusal Anusta Anusaprit Anusprit Bihram Bhrm Bihran Bhrmduk Br Hiia Haui Hwai Gadana Gdii Hibil Hebil Hurmizdukt Hurmiz Hurmis Iuhana_John Nu_Noah Ramuja Remai Sabur Sitluia Siluia Sitil Sum_Shem Zakia Zakuia Ziua Ziiul
+				Tôlmay_Bartholomew Daniel_Daniel Yochanan_John Yohannon_John Yônâ_Jonah Sargon
+				Aba_Abba Abahu_Abahu Abaya_Abaya Abaye_Abaya Abayi_Abaya Abba_Abba Abdima 'Abdisho' Abgar Abimalek Abraham_Abraham Abris Abrisius_Abrisius Acacius Achan Achina Addai_Thaddeus Adlai Aggai Ahai_Ahha Ahadabui Ahha_Ahha "Akha d'abuh'" Akh-es-Samain Aqib-Alaha Asa_Asa Ashur_Asher Avahu Avda_Abahu Avdima_Avdima Avdimi_Avdima Avina Avira Azai
+				Babaeus_Babaeus Babai_Babaeus Babowai_Babaeus Babwahi_Babaeus Bar Bar-Abba Barba'shimin Bar-Nabha Bar-Talmai Bar-Timai Bar-Tolmai Bustan_Bustan Caiaphas Cephas_Peter Cephus_Peter Chadlai Chama Chanin_Chanin Chanina_Chanin Chaninai_Chanin Chinena_Chanin
+				Chozai_Chozai Chuma Chunya_Chunya Clopas Dadisho' Denha Dikla_Dikla Diklah_Dikla Dimi Dinkha Dunanu Elisha'_Elisha Eliya Emmanuel_Emmanuel Enosh Ezekiel_Ezekiel Farbokht_Farbokht Foma Giwargis_George Grwgari_Gregory Hanina_Chanin Hnanisho' Hozai_Chozai Idan Idra Ila Isaac_Isaac Isho' Isho'yahb Israel_Israel Kaiapha Karna Katsiu Kelaya Laszio_Lazarus Lazar_Lazarus
+				Lazare_Lazarus Lazaro_Lazarus Lazaros_Lazarus Lazarus_Lazarus Lazarz_Lazarus Lazer_Lazarus Lebbaeus Maadai Macabee_Macabee Maccabee_Macabee Magna_Ma'na Makkikha Maluch Ma'na_Ma'na Marabokht_Farbokht Maremmeh Mari Mikha'il_Michael Moqli Muna Nahir_Nahir Nahor_Nahir Nahur_Nahir Narsai Nazuk Nechunya_Chunya
+				Nehor_Nahir Nehorai Niv Nun Nur Oran_Nahir Pappa Paul_Paul Pethion Petros_Peter Petuel Qaligh Qayyoma Raca_Raka Rachim_Chanin Rahim_Chanin Raka_Raka Raz Raziel_Raphael Rubil Saad Saba_Saba Sabah_Saba Sabba'e_Saba Sabrisho'_Sabrisho' Sabr-Ishu_Sabrisho' Salu Samal Sami_Sami Samiy_Sami Sagi_Sagi Sargis Sava_Saba Sawma
+				Shafer Shahdost Shahlufa Shai Shalmai Shama Shamir Shammai Shemaiah Shem'on_Simon Sheraga_Sheraga Shila Shovai Shraga_Sheraga Sima Sliba-zkha Surin Tabbai Taddai_Thaddeus Talia_Talia Taliah_Talia Talmai_Bartholomew Talya_Talia Tam_Thomas
+				Tam'as_Thomas Ta'mhas_Thomas Targhal Tauma Tavi_Tavi Tavish_Tavi Tevis_Tavis Th'amhais_Thomas Thoma_Thomas Timai_Timothy Tiv Toba Todos Tolmai_Bartholomew Tomarsa_Tomarsa Tamuza_Tomarsa Tulmay_Bartholomew Ukba Yahballaha Yanai Ya'qob_Jacob Yeshua_Joshua Yohannan_John Yosip_Joseph Yousef_Joseph Yunanis_John Zerika
+
+				#Pre Islamic Arab Names
+				Wadal al-El Waqiha'el Abdishams Abdathar Wa'el Abrahim 
+				Harith Jutham Salih Azar Serug Ikrimah Ishaq Imru Othman Omar Obaydah Hatim Fadl Habib Hanzala Kaab Khabab Khalid Shamun 
+				Moath Labid Rabiah Saad Safwan Salem Shadad Suhaib Soheil Suraq 
+				Ubay Utbah Umair Habaquq Harun Habel Imran Haman Uzair Yahya Yuhannah al-Aziz al-Samiri 
+				Zayd Miqdad Yasir Usama Abbas Adim Akthom
+		}
+
+		female_names = {
+				Ariel Emmitha Eilina Elibrat Abita Beteil Brateil Domarinah Haniyatah Sepporah Khannah Shaperta Yata Mariya Maryam Bratyama Martha Shimsha Aqmat Athayah Tiklak Tamma Gamilat Hagru Haganu Huldu Mariya Miriyam Hind Hajar
+				Anat Anut Bibia Bbai Dinarta Dinartia Dukt Dukta Nbh Nuba Anus Azad Anuba Eqaimat Handa Hndu Mahnus Mhanus Mamuia Mamai Mami Miriai_Mary Qiumta Zadia Zad Zaduia
+				Adva Alya Anena Anina Bustan_Bustan Chanina Chasina Chayuta_Chayuta China_Hina Chiyuta_Chayuta Dikla_Dikla Diklah_Dikla Diklit_Dikla Duvsha Hanina_Chanin Hasna Hayuta_Chayuta Hina_Hina Ketina Kitra
+				Magdala Mahalia_Mahalia Mahalie_Mahalia Marfa_Martha Mariam_Mary Marta_Martha Marte_Martha Martha_Martha Marthe_Martha Marti_Martha Martita_Martha Mehalia_Mahalia Meiriona_Meirona Meirona_Meirona Morta_Martha
+				Nahara_Nura Nura_Nura Raz Reuma Saba_Saba Sabah_Saba Samantha Sameah_Sami Samee_Sami Sameea_Sami Samiya_Sami Samiyah_Sami Samiyya_Sami Samya_Sami Sava_Saba Shapira Sima Tabatha_Tabitha Tabby_Tabitha Tabetha_Tabitha
+				Tabitha_Tabitha Tadea_Thaddea Talia_Talia Taliah_Talia Talya_Talia Talitha Tam_Thomasa Tamasin_Thomasa Tami_Thomasa Tammy_Thomasa Tamsin_Thomasa Tamsyn_Thomasa Tamzin_Thomasa Thaddea_Thaddea Thomasa_Thomasa Zeita_Zeta Zeta_Zeta
+				Anina Bat-Zabbai_Zenobia Chanina Tabeitha Diklah_Dikla Hasna Ketina Magdala Mariam Martha Morta Nura Saba Samantha Samiah Samiyah Samya Tabetha
+				Tam Tammy Tavi Thomasina Bustan Chasina Dikla Ciklit Hanina_Hannah Kitra Mahalie Marta Mehalia Nahara Sameah Samia Samiya Samiyya Tab Tabby_Tabitha 
+				Tabitha Tadea Thomasa Zeta Zeita Talya Taliah Talia Sima Sava Sabah Saba Raz Nura Meiriona Adva Alya Anena Anina Chayuta Duvsha Hayuta_Chayuta Hina 
+				Mahalia Mehalia Bartola Bustan Chaseana Chasenah Chasina Chau Dinorah Dorcas Chasyna
+		}
+		modifier = default_culture_modifier
+	}
+	aramean = {	#Syriac
 		graphical_cultures = { byzantinegfx }
 		
 		color = { 0.7 0.15 0.33 }
