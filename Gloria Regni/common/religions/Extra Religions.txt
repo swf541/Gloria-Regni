@@ -839,4 +839,107 @@ chinese_group = {
 	}
 }
 	
-	
+indian_group = {
+	hindukush = {
+		graphical_culture = hindugfx
+		secondary_event_pictures = sunni
+
+		icon = 44
+		heresy_icon = 45
+		
+		color = { 1.0 0.0 0.0 }
+		
+		high_god_name = GOD_INDR
+		
+		god_names = {
+			GOD_INDR THE_THUNDERER GOD_DEZAU GOD_MUNJEM_MALIK GOD_MAHANDEO GOD_JESTAK GOD_DEZALIK MONSTER_APSARAS MONSTER_VAROTI MONSTER_JACH
+		}
+		
+		evil_god_names = {
+			GOD_JESTAN THE_VINAYAKAS THE_DARK_SPIRITS
+		}
+		
+		can_grant_divorce = yes
+		priests_can_inherit = no
+		priests_can_marry = yes
+		allow_looting = yes
+		max_consorts = 3
+
+
+		
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			heavy_infantry_offensive = 0.50
+			knights_offensive = 0.50
+			pikemen_offensive = 0.50
+			land_morale = 0.3
+		}
+		
+		religious_clothing_head = 8
+		religious_clothing_priest = 8
+
+		scripture_name = THE_VEDAS
+		priest_title = ISTIKAVAN 
+		piety_name = KARMA
+
+		intermarry = hindu		
+		intermarry = jain
+		intermarry = buddhist
+		intermarry = zun_pagan
+		intermarry = zun_pagan_reformed
+		
+	}	
+
+	hindukush_reformed = {
+		graphical_culture = hindugfx
+		secondary_event_pictures = sunni
+
+		icon = 44
+		heresy_icon = 45
+		
+		color = { 1.0 0.0 0.0 }
+		
+		high_god_name = GOD_INDR
+		
+		god_names = {
+			GOD_INDR THE_THUNDERER GOD_DEZAU GOD_MUNJEM_MALIK GOD_MAHANDEO GOD_JESTAK GOD_DEZALIK MONSTER_APSARAS MONSTER_VAROTI MONSTER_JACH
+		}
+		
+		evil_god_names = {
+			GOD_JESTAN THE_VINAYAKAS THE_DARK_SPIRITS
+		}
+		
+		can_grant_divorce = yes
+		priests_can_inherit = no
+		priests_can_marry = yes
+		allow_looting = yes
+		max_consorts = 3
+		
+		
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			heavy_infantry_offensive = 0.50
+			knights_offensive = 0.50
+			pikemen_offensive = 0.50
+			land_morale = 0.3
+		}
+		
+		religious_clothing_head = 8
+		religious_clothing_priest = 8
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_VEDAS
+		priest_title = ISTIKAVAN 
+		piety_name = KARMA
+
+		intermarry = hindu		
+		intermarry = jain
+		intermarry = buddhist
+		intermarry = zun_pagan
+		intermarry = zun_pagan_reformed
+			
+		allow_in_ruler_designer = no	
+	}	
+}
