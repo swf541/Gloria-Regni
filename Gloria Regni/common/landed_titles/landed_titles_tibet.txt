@@ -1,0 +1,433 @@
+e_tibet = {
+	color = { 233 145 31 }
+	color2 = { 220 220 20 }
+	capital = 1683 # Lhasa
+
+	short_name = yes
+	
+	culture = tibetan
+
+	k_tibet  = {
+		color = { 227 201 168 }
+		color2 = { 255 255 255 }
+		capital = 1683 # Lhasa
+		
+		culture = tibetan
+		d_ngari = {
+		    color = { 255 201 40 }
+			color2 = { 255 255 255 }
+			capital = 2178 # Gegyai
+			
+			c_gegyai = {
+				color = { 255 201 40 }
+				color2 = {255 255 255}
+				
+				b_gegyai = {
+				}
+			}
+			c_rutong = {
+				color = { 255 10 101 }
+				color2 = { 255 255 255 }
+				
+				b_rutong = {
+				}
+				b_jiaweichao = {
+				}
+				b_dejiao = {
+				}
+				b_rituzhen = {
+				}
+			}
+			c_gar = {
+				color = { 255 101 40 }
+				color2 = { 255 255 255}
+				
+				b_gar = {	
+				}
+			}
+			c_gerzi = {
+				color = { 255 1 40}
+				color2 = {255 255 255}
+				
+				b_gerzi = {
+				}
+			}
+		}
+		d_golok = {
+		    color = { 207 231 198 }
+			color2 = { 255 255 255 }
+			capital = 1687 # Youdunzi
+			
+			c_youdunzi = {
+				color = { 45 231 78 }
+				color2 = { 255 255 255 }
+				
+				holy_site = tibetan_pagan
+				holy_site = tibetan_pagan_reformed
+				
+				b_youdunzi = {
+				}
+			}
+			c_madoi = {
+				color = { 10 255 0 }
+				color2 = { 255 255 255 }
+				
+				b_madoi = {
+				}
+			}
+			c_tuyuhun = {
+				color = {50 250 80}
+				color2 ={255 255 255}
+				
+				b_tuyuhun = {
+				}
+			}
+			c_machen = {
+				color = {150 250 80}
+				color2 ={255 255 255}
+				
+				b_machen = {
+				}
+			}			
+		}
+		d_amdo = {
+		    color = { 127 101 238 }
+			color2 = { 255 255 255 }
+			capital = 1879
+						
+			c_naggu = {
+				color = { 25 98 169 }
+				color2 = { 255 255 255 }
+				
+				b_naggu = {
+				}
+			}
+			c_tangula = {
+				color = { 35 110 150 }
+				color2 = { 255 255 255 }
+				
+				b_tangula = {
+				}
+			}
+			c_sumpa = {
+				color = {30 100 180}
+				color2 ={255 255 255}
+				
+				b_sumpa = {
+				}
+			}
+			c_shuanghu = {
+				color = {40 120 160}
+				color2 = {255 255 255}
+				
+				b_shuanghu = {
+				}
+			}			
+		}
+		d_kham = {
+		    color = { 227 201 123 }
+			color2 = { 255 255 255 }
+			capital = 1685 # Qamdo
+			
+			c_qamdo = {
+				color = { 89 45 201 }
+				color2 = { 255 255 255 }
+				
+				b_qamdo = {
+				}
+				b_biru = {
+				}
+				b_sog = {
+				}
+			}
+			c_medog = {
+				color = { 20 245 23 }
+				color2 = { 255 255 255 }
+				
+				b_medog = {
+				}
+			}
+			c_chamdo = {
+				color = {89 45 23 }
+				color2 = {255 255 255}
+				
+				b_chamdo = {
+				}
+			}
+			c_nyingtri = {
+				color ={ 20 45 23}
+				color2 = {255 255 255}
+				
+				b_nyingtri = {
+				}
+			}
+			c_litang = {
+				color = {20 245 201}
+				color2 ={255 255 255}
+				
+				b_litang = {
+				}
+			}
+			c_barkam = {
+				color = {89 245 1}
+				color2 = {255 255 255}
+				
+				b_barkam = {
+				}
+			}
+		}
+		d_bhutan = {
+		    color = { 227 248 168 }
+			color2 = { 255 255 255 }
+			capital = 1680 # Thimpu
+
+			c_thimpu = {
+				color = { 155 100 0 }
+				color2 = { 255 255 255 }
+				
+				b_thimpu = {
+				}
+			}
+			c_mongar = {
+				color = { 200 150 50 }
+				color2 = { 255 255 255 }
+				
+				b_mongar = {
+				}
+			}
+			c_batang= {
+				color = { 200 200 50 }
+				color2 = {255 255 255}
+				
+				b_batang = {
+				}
+			}			
+		}
+		d_tsang = {
+		    color = { 255 301 80 }
+			color2 = { 255 255 255 }
+			capital = 2186 # Shigatse
+			
+			c_shigatse = {
+				color = {255 301 80}
+				color2 = {255 255 255}
+					
+				b_shigatse = {
+				}
+			}
+			c_ngambring = {
+				color = {255 301 1}
+				color2 = {255 255 255}
+				
+				b_ngambring = {
+				}
+			}
+			c_nyima = {
+				color = {255 101 1}
+				color2 = {255 255 255}
+				
+				b_nyima = {
+				}
+			}
+			c_sakya = {
+				color = {255 301 40 }
+				color2 ={ 255 255 255}
+				
+				b_sakya = {
+				}
+			}
+			c_saga = {
+				color = {255 201 80 }
+				color2 = {255 255 255}
+				
+				b_saga = {
+				}
+			}
+			c_coqen = {
+				color = {255 1 80 }
+				color2 = {255 255 255}
+				
+				b_coqen = {
+				}
+			}
+			c_zhongba = {
+				color = {255 101 80}
+				color2 = {255 255 255}
+				
+				b_zhongba = {
+				}
+			}
+		}		
+		d_u = {
+		    color = { 255 101 0 }
+			color2 = { 255 255 255 }
+			capital = 1683 # Lhasa
+			
+			c_lhasa = {
+				color = {255 101 0}
+				color2 = {255 255 255}
+				
+				holy_site = tibetan_pagan
+				holy_site = tibetan_pagan_reformed
+				
+				b_lhasa = {
+				}
+				b_jokhang = {
+				}
+				b_kunggar = {
+				}
+			}	
+			c_gyantse = {
+				color = { 255 255 1}
+				color2 = { 255 255 255}
+				
+				b_gyantse = {
+				}
+			}
+			c_nagchu = {
+				color = {255 201 1}
+				color2 = {255 255 255}
+				
+				b_nagchu = {
+				}
+			}			
+			c_tsetang = {
+				color = {255 1 1}
+				color2 = {255 255 255}
+				
+				b_tsetang = {
+				}
+			}
+		}
+	}
+	k_ladakh = {
+		color = { 200 200 150 }
+		color2 = { 255 255 255 }
+		capital = 1692	# Jammu
+		
+		culture = kashmiri
+		
+		d_jammu = {
+			color = { 200 20 2 }
+			color2 = { 255 255 255 }
+			
+			capital = 1692 # Jammu
+			
+			c_jammu = {
+				color = { 220 20 2 }
+				color2 = { 255 255 255 }
+				
+				holy_site = amidist
+				
+				b_jammu2 = {
+				}
+			}
+			c_himachalpradesh = {
+				color = { 200 40 2 }
+				color2 = { 255 255 255 }
+				
+				b_himachalpradesh = {
+				}
+			}
+			c_dharamsala = {
+				color = { 200 20 22 }
+				color2 = { 255 255 255 }
+				
+				b_dharamsala = {
+				}
+			}
+		}
+		d_baltistan = {
+			color = { 2 20 200 }
+			color2 = { 255 255 255 }
+			
+			capital = 1694 # Leh
+		
+			c_leh = {
+				color = { 22 20 200 }
+				color2 = { 255 255 255 }
+				
+				holy_site = tibetan_pagan
+				holy_site = tibetan_pagan_reformed
+				
+				b_leh = {
+				}
+			}
+			c_kupwara = {
+				color = { 2 40 200 }
+				color2 = { 255 255 255 }
+				
+				b_kupwara = {
+				}
+			}			
+		}
+	}
+	k_nepal = {
+		color = { 100 15 15 }
+		color2 = { 255 255 255 }
+		capital = 1677	# Kathmandu
+		
+		culture = nepali
+		
+		d_katmandu = {
+			color = { 50 50 80 }
+			color2 = { 255 255 255 }
+			
+			capital = 1677 # Kathmandu
+			
+			c_katmandu = {
+				color = { 66 113 170 }
+				color2 = { 255 255 255 }
+				
+				holy_site = tibetan_pagan
+				holy_site = tibetan_pagan_reformed
+				
+				b_katmandu = {
+				}
+				b_lalitpur = {
+				}
+				b_bhaktapur = {
+				}
+			}
+			c_dadelhura = {
+				color = { 111 55 231 }
+				color2 = { 255 255 255 }
+				
+				b_dadelhura = {
+				}
+				b_kusinagara2 = {
+				}
+				b_mahasone = {
+				}
+			}
+			c_karakoram = {
+				color = { 255 201 0 }
+				color2 = { 255 255 255 }
+				
+				b_karakoram = {
+				}
+			}
+		}
+		d_ilam = {
+			color = { 80 50 50 }
+			color2 = { 255 255 255 }
+			
+			capital = 1678 # Ilam
+			
+			c_nepali_ilam = {
+				color = { 99 230 12 }
+				color2 = { 255 255 255 }
+				
+				b_ilam2 = {
+				}
+			}
+			c_darjeeling = {
+				color = { 23 20 90 }
+				color2 = { 255 255 255 }
+				
+				b_darjeeling = {
+				}
+			}
+		}
+	}
+}

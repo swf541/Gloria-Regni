@@ -1167,3 +1167,91 @@ chinese = {
 		modifier = default_culture_modifier
 	}
 }
+tibeto_burman_group = {  
+	graphical_cultures = { mongolgfx muslimgfx }	#tibetangfx tangutgfx
+
+	tibetan = {
+		graphical_cultures = { mongolgfx muslimgfx } #tibetangfx
+		secondary_event_pictures = bedouin_arabic
+		
+		
+		color = { 0.2 0.50 0.90 }
+
+		male_names = {
+			Dorjee Kalden Karma Mingma Nawang Nima Chodak Choden Choegyal Choejor Chophel Dawa Dhargey Dorje Duga Gyaltsen Jamyang Jinpa Jungney 
+			Pema Phuntsok Rabten Rinchen Samdup Sangye Sonam Tashi Tenzin Thekchen Thokmay Thubten Tinley Tsering Tseten Tsewang Wangchuk Wangdak Wangdue Yama Yonten
+			Kalsang Kunchen Lhundup Lobsang Ngawang Ngodup Norbu Palden Badam Bonpa Bzanba Byema Curdo Cumalon Cheem-po Chepo Jalus Jampa Jomo Daprug Despa Dgapo Dkonpa Don
+                        Rama Khyi Kra Niyma Nymashar Ralug Ur-do
+		}
+		female_names = {
+			Choden Dechen Diki Dohna Dolkar Lhamu Pema Pemba Sangmu Yangchen Aara Ache Lhamo A-ho Akaru Amdo Ampo Amra Amrita An An?Apa Ashu Canda Cara Cin-tsha Cespa
+			Cimba Dadpa Donno Dontse Dorje Gser Gandan Gelme Kaba Kalsang Khadag Takari
+		}
+		
+		from_dynasty_prefix = "of "
+                prefix = no
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 25
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 25
+		mat_grm_name_chance = 25
+		mother_name_chance = 0
+		modifier = default_culture_modifier
+	}
+}
+indo_aryan_group = {
+
+	nepali = { # Indo-Aryan
+		graphical_cultures = { indiangfx muslimgfx }
+		secondary_event_pictures = bedouin_arabic
+		
+		color = { 0.7 0.5 0.0 }
+	
+		male_names = {
+			Agabala Aggabodhi Agibuti Ananda Balavarman Bhaskarvarman Bhattamahabahu Bhutivarman Birapala Brahmapala Chandramukhavarman 
+			Dharmapala Ganapativarman Gopala Harjjaravarman Harshadeva Harshapala Harshavarman 
+			Indrapala Jayamala Jayapala Kalyanavarman Kumarapala Mahendravarman Narayanavarman 
+			Pralambha Purandelapala Pushyavarman Ratnadhwajpala Ratnapala 
+			Salasthamba Samudravarman Sthitavarman Supratisthitavarman Susthitavarman 
+			Timgyadeva Tyagasimha Ummoka Vanamalavarmadeva Vigrahastambha Vijaya Virabahu
+		}
+		female_names = {
+			Ahiavadevi Abijliguta Ahali Anula Anurada Bhogavati Dattadevi Devavati Durlabha Gandharavati Kuladevi Nayanadevi
+			Ratnavati Suvrata Syamadevi Vasumati Vijnanavati Vijnayavati Yajiyavati Yajnavati
+		}
+		
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+		
+		modifier = default_culture_modifier
+	}
+
+	kashmiri = { # Indo-Aryan
+		graphical_cultures = { indiangfx muslimgfx }
+		secondary_event_pictures = bedouin_arabic
+		
+		color = { 0.9 0.5 0.4 }
+	
+		male_names = {
+			Ajit Amar "Amar Dasi" Amir Angad Arjun Atar Basawa Bhagwant Bhaimani Budh Chand Charat 
+			Damodar Dasu Datu Dayaram Didar Farid Fateh Gobind Gurdita 
+			Hargobind Hari "Har Krishan" "Har Rai" "Jai Ram" Jetha Jujhar 
+			Kalyan Kapur Kehar Kharak Khushal Lahna Lakhmichand Laxman 
+			Mahadev Mohan Mohri Nanak Narayan Nodha Partap Pheru Prithichand Prithvi "Ram Rai" Ranjit Ranjor 
+			Sahdev Shamsher Sher Srichand "Tegh Bahadur" "Tej Bhan" Thakur Zorawar
+		}
+		female_names = {
+			Amro Anokhi Anup Begum Bhani Dani Gujri Jodhabai Khivi Kishan 
+			Lachmi Nanaki Nihal Ramo Sabhirai Sahib Sulakhni Sundari Tripta 
+		}
+		
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+		
+		modifier = default_culture_modifier
+	}
+}
