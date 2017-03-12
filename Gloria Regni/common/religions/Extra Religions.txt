@@ -1215,12 +1215,7 @@ indian_group = {
 		priest_title = ISTIKAVAN 
 		piety_name = KARMA
 
-		intermarry = hindu		
-		intermarry = jain
-		intermarry = buddhist
-		intermarry = zun_pagan
-		intermarry = zun_pagan_reformed
-		
+		intermarry = indian_group
 	}	
 
 	hindukush_reformed = {
@@ -1266,12 +1261,102 @@ indian_group = {
 		priest_title = ISTIKAVAN 
 		piety_name = KARMA
 
-		intermarry = hindu		
-		intermarry = jain
-		intermarry = buddhist
-		intermarry = zun_pagan
-		intermarry = zun_pagan_reformed
+		intermarry = indian_group
 			
 		allow_in_ruler_designer = no	
 	}	
+	
+		zun_pagan_reformed = {
+		graphical_culture = muslimgfx
+
+		icon = 49
+		heresy_icon = 50
+
+		ai_convert_other_group = 2 # always try to convert
+		
+		color = { 0.9 1.0 0.0 }
+		
+		high_god_name = GOD_ZUN
+		
+		god_names = {
+			GOD_ZUN GOD_THE_SUN GOD_THE_GIVER_OF_JUSTICE GOD_SHIVA GOD_SURYA GOD_GANESHA GOD_NANDI GOD_DURGA GOD_KARTIKEYA 
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3
+			
+			key = "OFF_RELIGION"
+		}
+		
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+
+		priests_can_marry = yes
+		can_call_crusade = yes
+		max_consorts = 3
+		
+		religious_clothing_head = 6
+		religious_clothing_priest = 4
+
+		intermarry = indian_group
+		intermarry = zoroastrian_group
+		
+		allow_in_ruler_designer = no
+	}
+	
+	zun_pagan = {
+		graphical_culture = muslimgfx
+
+		icon = 48
+		heresy_icon = 50
+		
+		color = { 0.9 1.0 0.0 }
+		
+		high_god_name = GOD_ZUN
+		
+		god_names = {
+			GOD_ZUN GOD_THE_SUN GOD_THE_GIVER_OF_JUSTICE GOD_SHIVA GOD_SURYA GOD_GANESHA GOD_NANDI GOD_DURGA GOD_KARTIKEYA 
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3	
+	
+			key = "OFF_RELIGION"
+		}
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+
+		priests_can_marry = yes
+		defensive_attrition = yes
+		max_consorts = 3
+		reformed = zun_pagan_reformed
+		
+		religious_clothing_head = 6
+		religious_clothing_priest = 4
+
+		intermarry = indian_group
+		intermarry = zoroastrian_group
+		
+		dislike_tribal_organization = yes
+	}
+	
 }
