@@ -12,9 +12,10 @@ b_raqqa3 = temple
 
 
 # Misc
-culture = levantine_arabic
-religion = orthodox
+culture = aramean
+religion = miaphysite
 
-# History
-
-1270.1.1 = { religion = sunni }
+1270.1.1 = {
+	religion = sunni 
+	culture = levantine_arabic
+}

@@ -38,6 +38,47 @@ zoroastrian_group = {
                 religious_clothing_head = 5
                 religious_clothing_priest = 5
         }
+		
+       sogdian_zoroastrian = {        
+                graphical_culture = persiangfx
+                
+                secondary_event_pictures = sunni
+                
+                icon = 10
+                heresy_icon = 12
+                
+                color = { 0.75 0.80 0.88 }
+
+				parent = zoroastrian
+                
+                crusade_name = GREAT_HOLY_WAR
+                scripture_name = THE_GATHAS
+
+				high_god_name = GOD_AHURA_MAZDA
+                
+                god_names = {
+                        GOD_AHURA_MAZDA GOD_ZURVAN GOD_OHRMAZD GOD_MANAH PROPHET_ZOROASTER GOD_MITHRA GOD_ANAHITA
+						GOD_ISHTAR GOD_SHIVA GOD_DURGA GOD_MAHADEVA-VESHPARKAR GOD_BRAHMA-ZRAVAN GOD_INDRA-ABDAB
+                }
+                evil_god_names = {
+                        AHRIMAN ANGRA_MAINYU
+                }
+                
+                can_grant_divorce = yes
+                can_call_crusade = yes
+                can_grant_invasion_cb = invasion
+                female_temple_holders = yes
+                
+                max_consorts = 3 # Can take concubines
+                
+                divine_blood = yes # Sacred Xwedodah close-kin marriage mechanics
+                pc_marriage = yes
+                bs_marriage = yes
+                allow_rivermovement = yes
+
+                religious_clothing_head = 5
+                religious_clothing_priest = 5
+        }
 
 	armenian_pagan = {
 		graphical_culture = westerngfx

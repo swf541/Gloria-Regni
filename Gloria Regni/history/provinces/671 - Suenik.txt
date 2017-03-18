@@ -15,10 +15,15 @@ b_noravank = temple
 #b_gandzassar = temple
 
 # Misc
-culture = armenian
-religion = miaphysite
+culture = aghbanian
+religion = armenian_pagan
 
 # History
+700.1.1 = {
+	religion = imperial
+}
+900.1.1 = { culture = armenian }
+900.1.1 = { religion = miaphysite }
 
 1320.1.1 = { 
 	culture = kurdish 

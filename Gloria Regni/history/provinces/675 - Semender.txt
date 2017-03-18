@@ -17,15 +17,18 @@ b_kumukh = tribal
 #b_tarki = city
 
 # Misc
-culture = alan
-religion = tengri_pagan
+culture = awaral
+religion = imperial
 
 # History
 
 865.1.1 = {
-	religion = sunni
 	
 	b_kumukh = castle
 	b_semender = temple
 	b_khattibaku = city
+}
+1054.1.1 = { religion = orthodox }
+1100.1.1 = {
+	religion = sunni
 }

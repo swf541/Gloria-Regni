@@ -16,9 +16,12 @@ b_awas = temple
 #b_samj = castle
 
 # Misc
-culture = levantine_arabic
-religion = sunni
+culture = bedouin_arabic
+religion = monophysite
 
 # History
-
+700.1.1 = {
+	religion = sunni
+	culture = levantine_arabic
+}
 1016.1.1 = { religion = druze }

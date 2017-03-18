@@ -16,8 +16,8 @@ b_absheron = temple
 #b_altiagay = city
 
 # Misc
-culture = persian
-religion = zoroastrian
+culture = aghbanian
+religion = armenian_pagan
 
 # History
 651.1.1 = {
@@ -25,7 +25,10 @@ religion = zoroastrian
 	b_lankaran = ct_marketplace_1
 	b_absheron = tp_town_1
 }
-
+700.1.1 = {
+	religion = zoroastrian
+}
+900.1.1 = { culture = persian }
 900.1.1 = { religion = sunni }
 1187.1.1 = { b_shakhriyar = castle }
 1320.1.1 = { religion = shiite }

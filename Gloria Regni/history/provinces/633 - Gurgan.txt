@@ -16,8 +16,10 @@ b_komishdepa = temple
 #b_khanbebin = castle
 
 # Misc
-culture = persian
-religion = zoroastrian
+culture = parthian
+religion = sogdian_zoroastrian
+
+# History
 
 # History
 651.1.1 = {
@@ -31,7 +33,10 @@ religion = zoroastrian
 	b_gonbadeqabus = ct_marketplace_1
 	b_komishdepa = tp_town_1
 }
-
+1000.1.1 = {
+	religion = zoroastrian
+	culture = persian
+}
 1187.1.1 = {
 	religion = shiite
 }
