@@ -1,0 +1,46 @@
+decisions = {
+	PATRONS_KHU_1 = {
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			not = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+				}
+			NOT = {
+				has_character_modifier = patron_desi
+				has_character_modifier = patron_nanaiya
+				has_character_modifier = patron_parn
+				has_character_modifier = patron_weshparkar
+				has_character_modifier = patron_wishaghn
+				has_character_modifier = patron_zurvan		
+			}
+			religion = khurmazta
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_KHU.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+}

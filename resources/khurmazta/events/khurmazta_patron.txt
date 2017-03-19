@@ -1,0 +1,77 @@
+#KHURMAZTA1
+character_event = {
+	id = PATRONS_KHU.1
+	desc = PATRONS_KHU.1.desc
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PATRONS_KHU.1.a
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_desi
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.1.b
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_nanaiya
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.1.c
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_parn
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.1.d
+		hidden_tooltip = { character_event = { id = PATRONS_KHU.2 } }
+	}
+}
+
+#KHURMAZTA
+character_event = {
+	id = PATRONS_KHU.2
+	desc = PATRONS_KHU.2.desc
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PATRONS_KHU.2.a
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_weshparkar
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.2.b
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_wishaghn
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.2.c
+		set_character_flag = patron_chosen
+		add_character_modifier = {
+			name = patron_zurvan
+			duration = -1
+		}
+	}
+	option = {
+		name = PATRONS_KHU.2.d
+		hidden_tooltip = { character_event = { id = PATRONS_KHU.1 } }
+	}
+}

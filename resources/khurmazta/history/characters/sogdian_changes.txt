@@ -1,0 +1,93 @@
+188774 = {
+	name="Wakhushakk" # fictional Sogdian ruler
+	dynasty=1042188 # Sogdia
+	religion="khurmazta"
+	culture="sogdian"
+	trait=sympathy_pagans
+	743.1.1={
+		birth=yes
+	}
+	800.1.1={
+		death=yes
+	}
+}
+
+217323 = {
+	name = Khaydhar
+	dynasty = 1051145
+	religion = khurmazta
+	culture = sogdian
+	trait = skilled_tactician
+	father = 217324
+	801.3.16 = { # unknown
+		birth = yes
+	}
+	820.10.2 = {
+		religion = sunni
+		trait = sympathy_zoroastrianism
+	}
+	841.5.15 = {
+		death = yes
+	}
+}
+217324 = {
+	name = Kawus
+	dynasty = 1051145
+	religion = khurmazta
+	culture = sogdian
+	father = 217325
+	782.6.15 = { # unknown
+		birth = yes
+	}
+	822.4.10 = {
+		religion = sunni
+		trait = sympathy_zoroastrianism
+	}
+	827.10.5 = { # unknown
+		death = yes
+	}
+	
+}
+217325 = {
+	name = Kharakhuruh
+	dynasty = 1051145
+	religion = khurmazta
+	culture = sogdian
+	751.12.27 = { # unknown
+		birth = yes
+	}
+	793.10.5 = { # unknown
+		death = yes
+	}
+}
+217326 = {
+	name = Fazl
+	dynasty = 1051145
+	religion = khurmazta
+	culture = sogdian
+	father = 217324
+	804.2.15 = { # unknown
+		birth = yes
+	}
+	830.5.20 = { # unknown
+		religion = sunni
+		trait = sympathy_zoroastrianism
+	}
+	854.1.24 = { # unknown
+		death = yes
+	}
+}
+
+188681 = {
+	name="Hashim"
+	dynasty=1042148
+	religion="khurmazta"
+	culture="sogdian"
+	trait=secretly_buddhism
+	731.1.1={
+		birth=yes
+	}
+	783.1.1={
+		death=yes
+	}
+}
