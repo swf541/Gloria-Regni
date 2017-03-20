@@ -16,11 +16,13 @@ b_shumen = temple
 #b_samuil = castle
 
 # Misc
-culture = bulgarian
-religion = orthodox
+culture = thracian
+religion = imperial
 
 # History
 681.1.1= { religion = tengri_pagan } 
-865.1.1= { religion = orthodox } 
+681.1.1 = { culture = bulgarian }
+865.1.1= { religion = imperial } 
+1054.1.1 = { religion = orthodox }
 
 1187.1.1 = { b_slivopole = castle } 

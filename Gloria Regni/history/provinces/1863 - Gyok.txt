@@ -1,0 +1,23 @@
+# 450 - Sopron
+
+# County Title
+title = c_gyok
+
+# Settlements
+max_settlements = 4
+b_gyok1 = castle
+b_gyok2 = city
+b_gyok3 = temple
+
+
+# Misc
+culture = pannonian
+religion = imperial
+
+800.1.1 = {
+culture = croatian
+religion = slavic_pagan
+}
+# History
+950.1.1 = { culture = hungarian }
+1054.1.1 = { religion = catholic }

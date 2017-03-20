@@ -17,12 +17,14 @@ b_kaliakra = temple
 #b_smyadovo = castle
 
 # Misc
-culture = bulgarian
-religion = orthodox
+culture = thracian
+religion = imperial
 
 # History
 681.1.1= { religion = tengri_pagan } 
-875.1.1= { religion = orthodox } 
+681.1.1 = { culture = bulgarian }
+865.1.1= { religion = imperial } 
+1054.1.1 = { religion = orthodox }
 
 1187.1.1 = { b_prezlav = castle } 
 1207.1.1 = { trade_post = b_doria }

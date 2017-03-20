@@ -16,14 +16,19 @@ b_bihar = tribal
 #b_elesd = castle
 
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = gepid
+religion = arian
 
 # History
+700.1.1 = {
+	culture = avar
+	religion = tengri_pagan
+}
 800.1.1 = {
 	b_bihar = castle
 	b_debrecen = city
 	b_nagyvarad = temple
 }
-890.1.1 = { religion = catholic }
+890.1.1 = { religion = imperial }
 950.1.1 = { culture = hungarian }
+1054.1.1 = { religion = catholic }

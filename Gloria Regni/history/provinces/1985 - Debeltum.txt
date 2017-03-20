@@ -1,0 +1,23 @@
+# 498 - Mesembria
+
+# County Title
+title = c_debeltum
+
+# Settlements
+max_settlements = 5
+
+b_debeltum1 = castle
+b_debeltum2 = city
+b_debeltum3 = temple
+
+# Misc
+culture = thracian
+religion = hellenic_pagan
+
+# History
+865.1.1 = { culture = bulgarian }
+865.1.1= { religion = imperial } 
+1054.1.1 = { religion = orthodox }
+
+ 
+1337.1.1 = { b_debeltum4 = castle }

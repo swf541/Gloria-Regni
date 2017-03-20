@@ -6,26 +6,18 @@ title = c_fejer
 # Settlements
 max_settlements = 4
 
-b_sarbogard = tribal
-
-#b_adony = temple
-#b_mor = city
-#b_val = castle
-#b_szekszard = castle
-#b_dombovar = castle
-#b_tamasi = castle
-#b_bonyhad = castle
+b_sarbogard = castle
+b_mor = city
+b_adony = temple
 
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = pannonian
+religion = imperial
 
 # History
-800.1.1 = {
-	b_sarbogard = castle
-	b_mor = city
-	b_adony = temple
-}
-890.1.1 = { religion = catholic }
-950.1.1 = { culture = hungarian }
+800.1.1 = { culture = avar }
+800.1.1 = { religion = tengri_pagan }
 
+950.1.1 = { religion = imperial }
+950.1.1 = { culture = hungarian }
+1054.1.1 = { religion = catholic }

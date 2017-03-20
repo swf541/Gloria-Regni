@@ -12,10 +12,12 @@ b_cernavoda3 = temple
 
 
 # Misc
-culture = dacian
+culture = ostrogothic
 religion = imperial
 
 # History
+800.1.1= { religion = tengri_pagan } 
+800.1.1 = { culture = bulgarian }
 892.1.1 = { culture = romanian }
 #900.1.1 = { religion = imperial }
 1054.1.1 = { religion = orthodox }

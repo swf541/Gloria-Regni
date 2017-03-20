@@ -1,0 +1,23 @@
+# 461 - Fejer
+
+# County Title
+title = c_veszprem
+
+# Settlements
+max_settlements = 4
+
+b_veszprem1 = castle
+b_veszprem2 = city
+b_veszprem3 = temple
+
+# Misc
+culture = pannonian
+religion = imperial
+
+# History
+800.1.1 = { culture = avar }
+800.1.1 = { religion = tengri_pagan }
+
+950.1.1 = { religion = imperial }
+950.1.1 = { culture = hungarian }
+1054.1.1 = { religion = catholic }

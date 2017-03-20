@@ -1,0 +1,28 @@
+# 523 - Heves
+
+# County Title
+title = c_debrecen
+
+# Settlements
+max_settlements = 4
+b_debrecen1 = tribal
+
+#b_gyongyos = city
+#b_miskolc = castle
+#b_petervasara = castle
+#b_hatvan = castle
+#b_tiszafured = castle
+#b_mezokovesd = castle
+
+# Misc
+culture = avar
+religion = tengri_pagan
+
+# History
+800.1.1 = {
+	b_debrecen1 = castle
+	b_debrecen2 = city
+	b_debrecen3 = temple
+}
+900.1.1 = { religion = catholic }
+950.1.1 = { culture = hungarian }

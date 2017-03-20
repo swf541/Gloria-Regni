@@ -16,8 +16,11 @@ b_arad = temple
 #b_tovis = castle
 
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = dacian
+religion = zalmoxism
+
+# History
+
 
 # History
 800.1.1 = {
@@ -25,4 +28,5 @@ religion = tengri_pagan
 	b_gyulafehervar = city
 }
 892.1.1 = { culture = romanian }
-900.1.1 = { religion = orthodox }
+892.1.1 = { religion = imperial }
+1054.1.1 = { religion = orthodox }

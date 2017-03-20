@@ -17,12 +17,13 @@ b_oescus = temple
 #b_knezha = castle
 
 # Misc
-culture = bulgarian
-religion = orthodox
+culture = thracian
+religion = imperial
 
 # History
 681.1.1= { religion = tengri_pagan } 
-865.1.1= { religion = orthodox } 
+681.1.1 = { culture = bulgarian }
+865.1.1= { religion = imperial } 
 970.1.1 = { religion = paulician }
 1030.1.1= { religion = bogomilist }
 1400.1.1= { religion = orthodox } 

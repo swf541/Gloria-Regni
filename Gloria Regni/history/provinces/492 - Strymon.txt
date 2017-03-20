@@ -17,10 +17,13 @@ b_strumica = temple
 #b_kratovo = castle
 
 # Misc
-culture = serbian
-religion = orthodox
+culture = thracian
+religion = imperial
 
-# History
+700.1.1 = {
+	culture = serbian
+	religion = imperial
+}
 865.1.1 = { culture = bulgarian }
 950.1.1= { religion = bogomilist }
 1050.1.1= { religion = orthodox } 

@@ -15,14 +15,19 @@ b_maramarossziget = tribal
 #b_felsoviso = castle
 
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = gepid
+religion = arian
 
 # History
+700.1.1 = {
+	culture = avar
+	religion = tengri_pagan
+}
 800.1.1 = {
 	b_maramarossziget = castle
 	b_nagykaroly = city
 	b_nagybanya = temple
 }
-900.1.1 = { religion = catholic }
+890.1.1 = { religion = imperial }
 950.1.1 = { culture = hungarian }
+1054.1.1 = { religion = catholic }

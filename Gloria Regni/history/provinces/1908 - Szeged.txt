@@ -1,0 +1,22 @@
+# 523 - Heves
+
+# County Title
+title = c_szeged
+
+# Settlements
+max_settlements = 4
+b_szeged1 = tribal
+
+
+# Misc
+culture = avar
+religion = tengri_pagan
+
+# History
+800.1.1 = {
+	b_szeged1 = castle
+	b_szeged2 = city
+	b_szeged3 = temple
+}
+900.1.1 = { religion = catholic }
+950.1.1 = { culture = hungarian }
