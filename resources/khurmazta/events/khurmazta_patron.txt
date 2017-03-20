@@ -1,14 +1,15 @@
 #KHURMAZTA1
+namespace = PATRONS_KHU
 character_event = {
 	id = PATRONS_KHU.1
-	desc = PATRONS_KHU.1.desc
+	desc = PATRONS_KHU_1_desc
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
 	
 	option = {
-		name = PATRONS_KHU.1.a
+		name = PATRONS_KHU_1_a
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_desi
@@ -16,7 +17,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.1.b
+		name = PATRONS_KHU_1_b
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_nanaiya
@@ -24,7 +25,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.1.c
+		name = PATRONS_KHU_1_c
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_parn
@@ -32,7 +33,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.1.d
+		name = PATRONS_KHU_1_d
 		hidden_tooltip = { character_event = { id = PATRONS_KHU.2 } }
 	}
 }
@@ -40,14 +41,14 @@ character_event = {
 #KHURMAZTA
 character_event = {
 	id = PATRONS_KHU.2
-	desc = PATRONS_KHU.2.desc
+	desc = PATRONS_KHU_2_desc
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
 	
 	option = {
-		name = PATRONS_KHU.2.a
+		name = PATRONS_KHU_2_a
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_weshparkar
@@ -55,7 +56,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.2.b
+		name = PATRONS_KHU_2_b
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_wishaghn
@@ -63,7 +64,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.2.c
+		name = PATRONS_KHU_2_c
 		set_character_flag = patron_chosen
 		add_character_modifier = {
 			name = patron_zurvan
@@ -71,7 +72,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = PATRONS_KHU.2.d
+		name = PATRONS_KHU_2_d
 		hidden_tooltip = { character_event = { id = PATRONS_KHU.1 } }
 	}
 }
