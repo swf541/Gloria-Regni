@@ -17,10 +17,14 @@ b_chancelade = temple
 #b_perigueux = city
 
 #Misc
-religion = imperial
-culture = occitan
+culture = gallic
+religion = hellenic_pagan
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
 1054.7.6 = { religion = catholic }
 
 1240.1.1   = { b_perigueux = city }

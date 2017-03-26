@@ -14,9 +14,16 @@ b_etain = city # Étain
 #b_doaumont = castle # Douaumont
 
 # Misc
-culture = old_frankish
-religion = catholic
+culture = belgic
+religion = imperial
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
+600.1.1 = {
+	culture = old_frankish
+}
 790.1.1 = { culture = frankish }
 1134.1.1 = { capital = b_verdun }

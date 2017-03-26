@@ -17,10 +17,14 @@ b_bayeux = temple #for gp reason, in fact a castle
 #b_mortain = castle
 
 # Misc
-culture = galloroman
-religion = imperial
+culture = belgic
+religion = celtic_pagan
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
 790.1.1 = { culture = frankish }
 911.1.1 = { # Viking takeover
 	remove_settlement = b_caen

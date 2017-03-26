@@ -18,10 +18,14 @@ b_hesdin = city
 #b_ardres = castle
 
 # Misc
-culture = galloroman
-religion = imperial
+culture = belgic
+religion = celtic_pagan
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
 790.1.1 = { culture = frankish }
 1054.7.6 = { religion = catholic }
 1187.1.1 = { b_fauquembergues = castle }

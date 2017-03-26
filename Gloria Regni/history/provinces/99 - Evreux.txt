@@ -15,10 +15,14 @@ b_lisieux = temple
 #b_verneuil = castle
 
 # Misc
-culture = galloroman
-religion = imperial
+culture = belgic
+religion = celtic_pagan
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
 790.1.1 = { culture = frankish }
 911.1.1 = { # Viking takeover
 	remove_settlement = b_alencon

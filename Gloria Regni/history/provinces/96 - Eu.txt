@@ -16,10 +16,14 @@ b_forges = city
 #b_neufchatel-en-bray = castle
 
 # Misc
-culture = galloroman
-religion = imperial
+culture = belgic
+religion = celtic_pagan
 
 # History
+500.1.1 = {
+	culture = galloroman
+	religion = imperial
+}
 790.1.1 = { culture = frankish }
 911.1.1 = { # Viking takeover
 	b_eu = ca_keep_1
