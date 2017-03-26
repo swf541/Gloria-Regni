@@ -41,7 +41,16 @@ christian = {
 		evil_god_names = {
 			SATAN LUCIFER THE_DEVIL
 		}
+		unit_modifier = {
+			land_morale = 0.2	
+			
+			key = "OFF_RELIGION"
+		}
 
+		character_modifier = {
+			learning = 3
+		}	
+		
 		autocephaly = yes
 		can_excommunicate = yes
 		can_grant_divorce = yes
@@ -331,6 +340,15 @@ christian = {
 		evil_god_names = {
 			SATAN LUCIFER THE_DEVIL
 		}
+		unit_modifier = {
+			land_morale = 0.1	
+			
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			learning = 2
+		}		
 		
 		investiture = yes
 		can_have_antipopes = yes
@@ -474,6 +492,15 @@ christian = {
 		evil_god_names = {
 			SATAN LUCIFER THE_DEVIL
 		}
+		unit_modifier = {
+			land_morale = 0.1	
+			
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			learning = 2
+		}	
 		
 		autocephaly = yes
 		can_excommunicate = yes
@@ -511,6 +538,10 @@ christian = {
 		evil_god_names = {
 			SATAN LUCIFER THE_DEVIL
 		}
+		
+		character_modifier = {
+			learning = 2
+		}			
 		
 		autocephaly = yes
 		can_excommunicate = yes
@@ -592,6 +623,10 @@ christian = {
 		color = { 0.8 0.4 0.1 }
 
 		parent = miaphysite
+
+		character_modifier = {
+			learning = 2
+		}	
 		
 		crusade_name = CRUSADE
 
@@ -667,6 +702,10 @@ christian = {
 		
 		color = { 0.9 0.6 0.6 }
 
+		character_modifier = {
+			learning = 2
+		}			
+		
 		parent = imperial
 		
 		crusade_name = CRUSADE
@@ -706,6 +745,10 @@ christian = {
 		evil_god_names = {
 			SATAN LUCIFER THE_DEVIL
 		}
+
+		character_modifier = {
+			learning = 2
+		}	
 		
 		autocephaly = yes
 		can_excommunicate = yes
@@ -1981,11 +2024,15 @@ pagan_group = {
 			THE_DARK_SPIRITS THE_DARKNESS MONSTER_TYPHON
 		}
 		unit_modifier = {
-			levy_size = 0.3
-			land_morale = 0.3
+			levy_size = 0.2
+			land_morale = 0.1			
 			
 			key = "OFF_RELIGION"
 		}
+
+		character_modifier = {
+			learning = 2
+		}	
 		
 		crusade_name = GREAT_HOLY_WAR
 		can_call_crusade = no
@@ -2022,15 +2069,18 @@ pagan_group = {
 		}
 		unit_modifier = {
 			levy_size = 0.3
-			land_morale = 0.3
-			learning = 4			
+			land_morale = 0.3	
 			
 			key = "OFF_RELIGION"
 		}
 		
+		character_modifier = {
+			learning = 4
+		}			
+		
 		crusade_name = GREAT_HOLY_WAR
 		can_call_crusade = yes
-		scripture_name = THE_THEOGONY
+		scripture_name = THE_CHALDEAN_ORACLES
 		priest_title = AUGUR
 		priests_can_marry = yes
 		female_temple_holders = yes
@@ -2790,6 +2840,10 @@ zoroastrian_group = {
 		evil_god_names = {
 			AHRIMAN ANGRA_MAINYU
 		}
+
+		character_modifier = {
+			learning = 2
+		}	
 		
 		can_grant_divorce = yes
 		can_call_crusade = yes
@@ -2826,6 +2880,10 @@ zoroastrian_group = {
 		god_names = {
 			GOD_ZURVAN GOD_AHURA_MAZDA GOD_MANAH PROPHET_MAZDAK
 		}
+
+		character_modifier = {
+			learning = 2
+		}	
 		
 		parent = zoroastrian
 		
