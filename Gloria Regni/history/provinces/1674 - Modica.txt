@@ -12,13 +12,17 @@ b_modica3 = temple
 
 # Misc
 culture = greek
-religion = imperial
+religion = hellenic_pagan
 terrain = hills
 
 # History
-904.1.1={ culture = maghreb_arabic religion = sunni }
+
+558.1.1 = { religion = imperial }
+904.1.1 = { culture = maghreb_arabic }
+904.1.1 = { religion = sunni }
 
 
-1116.1.1={ culture = italian religion = catholic }
+1116.1.1 = { culture = italian }
+1116.1.1 = { religion = catholic }
 
 1232.1.1 = { b_enna4 = city }
