@@ -19423,6 +19423,88 @@ e_persia = {
 		zoroastrian_group = 4000 # Crusade target weight
 		zun_pagan_reformed = 100 # Crusade target weight
 		
+		d_kermanshah = { # Luristan
+			color={ 55 144 95 }
+			color2={ 255 255 255 }
+			
+			capital = 657 # Luristan
+			
+			c_ardalan = {
+				color = { 66 133 110 }
+				color2 = { 255 255 255 }
+				
+				b_ardalan1 = { }
+				b_ardalan2 = { }
+				b_ardalan3 = { }
+				b_ardalan4 = { }
+				b_ardalan5 = { }
+				b_ardalan6 = { }
+				b_ardalan7 = { }
+			}
+			c_qazwin = {
+				color={ 55 144 90 }
+				color2={ 255 255 255 }
+				
+				b_lambsar = {
+				}
+				b_qazwin = {
+				}
+				b_ahmadabad = {
+				}
+				b_avaj = {
+				}
+				b_abeyek = {
+				}
+				b_takestan = {
+				}
+				b_alvand = {
+				}
+				b_buinzahra = {
+				}
+			}
+			c_kermanshah = {
+				color={ 75 114 90 }
+				color2={ 255 255 255 }
+				
+				b_javanroud = {
+				}
+				b_kermanshah = {
+				}
+				b_hulwan = {
+				}
+				b_paveh = {
+				}
+				b_mahalkufa = {
+				}
+				b_kangavar = {
+				}
+				b_kuzaran = {
+				}
+				b_ravansar = {
+				}
+			}
+			c_luristan = {
+				color={ 75 164 110 }
+				color2={ 255 255 255 }
+				
+				b_dezbar = {
+				}
+				b_khorramabad = {
+				}
+				b_borujerd = {
+				}
+				b_dorood = {
+				}
+				b_aligoodarz = {
+				}
+				b_koohdasht = {
+				}
+				b_poledokhtar = {
+				}
+				b_alashtar = {
+				}
+			}
+		}
 		d_khorasan = {
 			color={ 99 150 9 }
 			color2={ 255 255 255 }
@@ -19658,6 +19740,18 @@ e_persia = {
 				b_ardestan = {
 				}
 			}
+			c_ardakan = {
+				color = { 155 190 100 }
+				color2 = { 255 255 255 }
+				
+				b_ardakan1 = { }
+				b_ardakan2 = { }
+				b_ardakan3 = { }
+				b_ardakan4 = { }
+				b_ardakan5 = { }
+				b_ardakan6 = { }
+				b_ardakan7 = { }
+			}
 			c_yazd = {
 				color={ 148 182 90 }
 				color2={ 255 255 255 }
@@ -19679,6 +19773,30 @@ e_persia = {
 				b_dar_anjir = {
 				}
 			}
+			c_susa = {
+				color = { 161 174 121 }
+				color2 = { 255 255 255 }
+				
+				b_susa1 = { }
+				b_susa2 = { }
+				b_susa3 = { }
+				b_susa4 = { }
+				b_susa5 = { }
+				b_susa6 = { }
+				b_susa7 = { }
+			}
+			c_gondeshapur = {
+				color = { 171 158 100 }
+				color2 = { 255 255 255 }
+				
+				b_gondeshapur1 = { }
+				b_gondeshapur2 = { }
+				b_gondeshapur3 = { }
+				b_gondeshapur4 = { }
+				b_gondeshapur5 = { }
+				b_gondeshapur6 = { }
+				b_gondeshapur7 = { }
+			}
 			c_avhaz = {
 				color={ 151 185 93 }
 				color2={ 255 255 255 }
@@ -19699,6 +19817,42 @@ e_persia = {
 				}
 				b_farsan = {
 				}
+			}
+			c_istakhr = {
+				color = { 144 166 102 }
+				color2 = { 255 255 255 }
+				
+				b_istakhr1 = { }
+				b_istakhr2 = { }
+				b_istakhr3 = { }
+				b_istakhr4 = { }
+				b_istakhr5 = { }
+				b_istakhr6 = { }
+				b_istakhr7 = { }
+			}
+			c_larestan = { 
+				color = { 150 144 108 }
+				color2 = { 255 255 255 }
+				
+				b_larestan1 = { }
+				b_larestan2 = { }
+				b_larestan3 = { }
+				b_larestan4 = { }
+				b_larestan5 = { }
+				b_larestan6 = { }
+				b_larestan7 = { }				
+			}
+			c_abarquh = {
+				color = { 155 142 120 }
+				color2 = { 255 255 255 }
+				
+				b_abarquh1 = { }
+				b_abarquh2 = { }
+				b_abarquh3 = { }
+				b_abarquh4 = { }
+				b_abarquh5 = { }
+				b_abarquh6 = { }
+				b_abarquh7 = { }
 			}
 			c_shiraz = {
 				color={ 154 188 96 }
@@ -19792,6 +19946,18 @@ e_persia = {
 				b_fin = {
 				}
 			}
+			c_mogostan = {
+				color = { 124 152 88 }
+				color2 = { 255 255 255 }
+				
+				b_mogostan1 = { }
+				b_mogostan2 = { }
+				b_mogostan3 = { }
+				b_mogostan4 = { }
+				b_mogostan5 = { }
+				b_mogostan6 = { }
+				b_mogostan7 = { }
+			}
 			c_ladistan = {
 				color={ 114 134 79 }
 				color2={ 255 255 255 }
@@ -19863,6 +20029,18 @@ e_persia = {
 				b_khafr = {
 				}
 			}
+			c_kazrun = {
+				color = { 99 122 10 }
+				color2 = { 255 255 255 }
+				
+				b_kazrun1 = { }
+				b_kazrun2 = { }
+				b_kazrun3 = { }
+				b_kazrun4 = { }
+				b_kazrun5 = { }
+				b_kazrun6 = { }
+				b_kazrun7 = { }
+			}
 			c_hendjan = {
 				color={ 93 132 26 }
 				color2={ 255 255 255 }
@@ -19883,6 +20061,18 @@ e_persia = {
 				}
 				b_jayzan = {
 				}
+			}
+			c_yasuj = {
+				color = { 84 144 35 }
+				color2 = { 255 255 255 }
+				
+				b_yasuj1 = { }
+				b_yasuj2 = { }
+				b_yasuj3 = { }
+				b_yasuj4 = { }
+				b_yasuj5 = { }
+				b_yasuj6 = { }
+				b_yasuj7 = { }
 			}
 			c_khozistan = {
 				color={ 95 134 28 }
@@ -19933,6 +20123,30 @@ e_persia = {
 				b_jafariyeh = {
 				}
 			}
+			c_nahavand = {
+				color={ 170 251 128 }
+				color2={ 255 255 255 }
+				
+				b_nahavand1 = { }
+				b_nahavand2 = { }
+				b_nahavand3 = { }
+				b_nahavand4 = { }
+				b_nahavand5 = { }
+				b_nahavand6 = { }
+				b_nahavand7 = { }
+			}
+			c_ecbatana = {
+				color={ 210 244 110 }
+				color2={ 255 255 255 }
+				
+				b_ecbatana1 = { }
+				b_ecbatana2 = { }
+				b_ecbatana3 = { }
+				b_ecbatana4 = { }
+				b_ecbatana5 = { }
+				b_ecbatana6 = { }
+				b_ecbatana7 = { }
+			}
 			c_hamadan = {
 				color={ 190 231 118 }
 				color2={ 255 255 255 }
@@ -19957,6 +20171,18 @@ e_persia = {
 				}
 				b_roudavar = {
 				}
+			}
+			c_tehran = {
+				color = { 200 222 111 }
+				color2 = { 255 255 255 }
+					
+				b_tehran1 = { }
+				b_tehran2 = { }
+				b_tehran3 = { }
+				b_tehran4 = { }
+				b_tehran5 = { }
+				b_tehran6 = { }
+				b_tehran7 = { }
 			}
 			c_rayy = {
 				color={ 193 234 121 }
@@ -20031,6 +20257,30 @@ e_persia = {
 				}
 				b_salmas = {
 				}
+			}
+			c_ganzak = {
+				color = { 81 155 52 }
+				color2 = { 255 255 255 }
+				
+				b_ganzak1 = { }
+				b_ganzak2 = { }
+				b_ganzak3 = { }
+				b_ganzak4 = { }
+				b_ganzak5 = { }
+				b_ganzak6 = { }
+				b_ganzak7 = { }
+			}
+			c_sultaniyeh = {
+				color = { 115 135 77 }
+				color2 = { 255 255 255 }
+				
+				b_sultaniyeh1 = { }
+				b_sultaniyeh2 = { }
+				b_sultaniyeh3 = { }
+				b_sultaniyeh4 = { }
+				b_sultaniyeh5 = { }
+				b_sultaniyeh6 = { }
+				b_sultaniyeh7 = { }
 			}
 			c_gilan = {
 				color={ 106 143 61 }
@@ -20398,6 +20648,32 @@ e_persia = {
 			
 			zun_pagan_reformed = 300 # Crusade target weight
 			
+			c_hadda = {
+				color={ 153 104 22 }
+				color2={ 255 255 255 }		
+
+				b_hadda1 = { }
+				b_hadda2 = { }
+				b_hadda3 = { }
+				b_hadda4 = { }
+				b_hadda5 = { }
+				b_hadda6 = { }
+				b_hadda7 = { }
+			}
+			
+			c_bagram = {
+				color={ 115 97 53 }
+				color2={ 255 255 255 }		
+
+				b_bagram1 = { }
+				b_bagram2 = { }
+				b_bagram3 = { }
+				b_bagram4 = { }
+				b_bagram5 = { }
+				b_bagram6 = { }
+				b_bagram7 = { }
+			}
+			
 			c_kabul = {
 				color={ 135 90 30 }
 				color2={ 255 255 255 }
@@ -20435,6 +20711,18 @@ e_persia = {
 				b_shibar = {
 				}
 			}
+			c_termez = {
+				color = { 166 122 44 }
+				color2 = { 255 255 255 }
+				
+				b_termez1 = { }
+				b_termez2 = { }
+				b_termez3 = { }
+				b_termez4 = { }
+				b_termez5 = { }
+				b_termez6 = { }
+				b_termez7 = { }
+			}
 			c_kunduz = {
 				color={ 155 110 30 }
 				color2={ 255 255 255 }
@@ -20467,6 +20755,18 @@ e_persia = {
 				b_katawaz = {}
 				b_sharana = {}
 				b_sangar = {}
+			}
+			c_sajawand = {
+				color = { 188 115 65 }
+				color2 = { 255 255 255 }
+				
+				b_sajawand1 = { }
+				b_sajawand2 = { }
+				b_sajawand3 = { }
+				b_sajawand4 = { }
+				b_sajawand5 = { }
+				b_sajawand6 = { }
+				b_sajawand7 = { }
 			}
 		}
 		
@@ -20501,6 +20801,19 @@ e_persia = {
 				}
 				b_panjwai = {
 				}
+			}
+			
+			c_kandahar = {
+				color = { 200 120 65 }
+				color2 = { 255 255 255 }
+				
+				b_kandahar1 = { }
+				b_kandahar2 = { }
+				b_kandahar3 = { }
+				b_kandahar4 = { }
+				b_kandahar5 = { }
+				b_kandahar6 = { }
+				b_kandahar7 = { }
 			}
 			
 			c_farrah = {
@@ -20544,7 +20857,18 @@ e_persia = {
 				b_nimeh = {
 				}
 			}
-			
+			c_chaghcharan = {
+				color = { 177 132 108 }
+				color2 = { 255 255 255 }
+				
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+				b_chaghcharan = { }
+			}
 			c_mandesh = {
 				color={ 183 150 94 }
 				color2={ 255 255 255 }
@@ -20771,7 +21095,18 @@ e_persia = {
 				b_sakarcage = {
 				}
 			}
-			
+			c_murghab = {
+				color = { 189 217 67 }
+				color2 = { 255 255 255 }
+				
+				b_murghab1 = { }
+				b_murghab2 = { }
+				b_murghab3 = { }
+				b_murghab4 = { }
+				b_murghab5 = { }
+				b_murghab6 = { }
+				b_murghab7 = { }
+			}
 			c_maymana = {
 				color={ 179 214 53 }
 				color2={ 255 255 255 }
@@ -20917,76 +21252,6 @@ e_persia = {
 		zun_pagan_reformed = 300 # Crusade target weight
 		jewish_group = 500 # Crusade target weight
 		
-		d_kermanshah = { # Luristan
-			color={ 55 144 95 }
-			color2={ 255 255 255 }
-			
-			capital = 657 # Luristan
-			
-			c_qazwin = {
-				color={ 55 144 90 }
-				color2={ 255 255 255 }
-				
-				b_lambsar = {
-				}
-				b_qazwin = {
-				}
-				b_ahmadabad = {
-				}
-				b_avaj = {
-				}
-				b_abeyek = {
-				}
-				b_takestan = {
-				}
-				b_alvand = {
-				}
-				b_buinzahra = {
-				}
-			}
-			c_kermanshah = {
-				color={ 75 114 90 }
-				color2={ 255 255 255 }
-				
-				b_javanroud = {
-				}
-				b_kermanshah = {
-				}
-				b_hulwan = {
-				}
-				b_paveh = {
-				}
-				b_mahalkufa = {
-				}
-				b_kangavar = {
-				}
-				b_kuzaran = {
-				}
-				b_ravansar = {
-				}
-			}
-			c_luristan = {
-				color={ 75 164 110 }
-				color2={ 255 255 255 }
-				
-				b_dezbar = {
-				}
-				b_khorramabad = {
-				}
-				b_borujerd = {
-				}
-				b_dorood = {
-				}
-				b_aligoodarz = {
-				}
-				b_koohdasht = {
-				}
-				b_poledokhtar = {
-				}
-				b_alashtar = {
-				}
-			}
-		}
 		d_tigris = {
 			color={ 113 150 32 }
 			color2={ 255 255 255 }

@@ -1,0 +1,28 @@
+# 643 - Fars
+
+# County Title
+title = c_kazrun
+
+# Settlements
+max_settlements =5
+b_kazrun1 = castle
+b_kazrun2 = city
+b_kazrun3 = temple
+
+# Misc
+culture = persian
+religion = zoroastrian
+
+# History
+
+867.1.1 = { 
+	b_kazrun1 = ca_keep_1
+	b_kazrun1 = ca_stable_1
+	b_kazrun1 = ca_militia_barracks_1
+	b_kazrun1 = ca_wall_1
+	b_kazrun1 = ca_wall_2
+}
+
+1337.1.1 = {
+	b_kazrun4 = castle
+}

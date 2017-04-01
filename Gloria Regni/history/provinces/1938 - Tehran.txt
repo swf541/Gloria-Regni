@@ -1,0 +1,23 @@
+# 663 - Rayy
+
+# County Title
+title = c_tehran
+
+# Settlements
+max_settlements = 7
+
+b_tehran1 = castle
+b_tehran2 = castle
+b_tehran3 = city
+b_tehran4 = temple 
+
+# Misc
+culture = persian
+religion = nestorian
+
+# History
+900.1.1 = { religion = shiite }
+1066.1.1 = { 
+	b_tehran5 = city
+	b_tehran6 = temple
+}
