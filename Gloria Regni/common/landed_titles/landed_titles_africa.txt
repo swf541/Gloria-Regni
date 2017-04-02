@@ -4304,18 +4304,6 @@ e_arabia = {
 				b_sidimansour = {
 				}
 			}
-			c_gafsa = {
-				color = { 44 211 155 }
-				color2 = { 255 255 255 }
-				
-				b_gafsa1 = { }
-				b_gafsa2 = { }
-				b_gafsa3 = { }
-				b_gafsa4 = { }
-				b_gafsa5 = { }
-				b_gafsa6 = { }
-				b_gafsa7 = { }
-			}
 			c_sidi_bouzid = {
 				color = { 45 240 120 }
 				color2 = { 255 255 255 }
@@ -4373,9 +4361,20 @@ e_arabia = {
 				b_kerkennah6 = { }
 				b_kerkennah7 = { }
 			}
+		}
+		d_gabes = {
+			color = { 38 250 113 }
+			color2={ 255 255 255 }
+
+			capital = 814 # Gabes
+
+			vandal = "Capsa Iustiniana"
+
 			c_gabes = {
 				color={ 38 250 113 }
 				color2={ 255 255 255 }
+
+				vandal = "Thiges"
 			
 				b_gabes = {
 				}
@@ -4394,6 +4393,20 @@ e_arabia = {
 				b_alqalah = {
 				}
 			}
+			c_gafsa = {
+				color = { 44 211 155 }
+				color2 = { 255 255 255 }
+
+				vandal = "Capsa Iustiniana"
+				
+				b_gafsa1 = { }
+				b_gafsa2 = { }
+				b_gafsa3 = { }
+				b_gafsa4 = { }
+				b_gafsa5 = { }
+				b_gafsa6 = { }
+				b_gafsa7 = { }
+			}
 			c_tataouine = {
 				color = { 45 255 118 }
 				color2 = { 255 255 255 }
@@ -4409,6 +4422,8 @@ e_arabia = {
 			c_kebili = {
 				color = { 49 245 125 }
 				color2 = { 255 255 255 }	
+
+				vandal = "Telmine"
 
 				b_kebili1 = { }
 				b_kebili2 = { }
