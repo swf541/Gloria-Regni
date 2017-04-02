@@ -16,9 +16,12 @@ b_taghaza = tribal
 #b_alouarta = castle #El Ouarta
 
 # Misc
-culture = maghreb_arabic
+culture = bafour
 religion = west_african_pagan
 
 # History
 
-900.1.1 = { religion = sunni }
+850.1.1 = { 
+	religion = sunni 
+	culture = maghreb_arabic
+}
