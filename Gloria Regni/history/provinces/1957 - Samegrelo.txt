@@ -1,13 +1,12 @@
-# 680 - Tao
+# 601 - Imeretia
 
 # County Title
-title = c_tao
+title = c_samegrelo
 
 # Settlements
 max_settlements = 4
-b_panaskerti = castle
-b_artanuji = city
-b_khakhuli = temple
+b_samegrelo = castle
+b_samegrelo = city
 
 
 # Misc
@@ -16,4 +15,4 @@ religion = imperial
 
 # History
 1054.1.1 = { religion = orthodox }
-1187.1.1 = { b_khakhuli = temple }
+1269.1.1 = { trade_post = b_spinola }
