@@ -12,11 +12,15 @@ b_wight3 = city
 
 # Misc
 culture = british
-religion = imperial
+religion = hellenic_pagan
 
 # History
-800.1.1 = {
-	culture = saxon
+
+530.1.1 = { religion = germanic_pagan }
+530.1.1 = { culture = saxon }
+
+687.1.1 = {
+	religion = imperial
 }
 
 1054.7.6 = { religion = catholic }

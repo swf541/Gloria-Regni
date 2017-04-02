@@ -1421,21 +1421,25 @@ celtic = {
 			Sisuile Sláíne_Slaine Sorcha_Sorcha Suaibsech Sáerlaith Sétach Síthmaith Tailefhlaith Tailltiu Temair Tuathflaith Tómnat Uallach Uasal Úna_Una
 		}
 		
+		dynasty_title_names = yes
 		dukes_called_kings = yes
-		
-		from_dynasty_prefix = "de "
+		from_dynasty_prefix = "Uí "
 		male_patronym = "mac "
 		female_patronym = "nic "
 		prefix = yes
 
 		modifier = default_culture_modifier
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 15
-		father_name_chance = 5
+		pat_grf_name_chance = 20
+		mat_grf_name_chance = 10
+		father_name_chance = 3
 		
-		pat_grm_name_chance = 30
-		mat_grm_name_chance = 15
-		mother_name_chance = 10
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 10
+		mother_name_chance = 5
+		
+		allow_looting = yes
+		seafarer = yes
+		
 	}
 	scottish = {
 		graphical_cultures = { celticgfx }
@@ -1502,76 +1506,69 @@ celtic = {
 		
 		dukes_called_kings = yes
 		
-		male_patronym = "map "
-		female_patronym = "verch "
+
+		from_dynasty_prefix = "of "
 		prefix = yes
+		male_patronym = "map "
+		#female_patronym = "Nic "
 
 		modifier = default_culture_modifier
 		
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 15
+		pat_grf_name_chance = 20
+		mat_grf_name_chance = 10
 		father_name_chance = 5
 		
-		pat_grm_name_chance = 30
-		mat_grm_name_chance = 15
-		mother_name_chance = 10
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 10
+		mother_name_chance = 5
 		
 		tribal_name = "TRIBAL_NAME_PROV_CLAN"
-	}
-	britonic = {
-		graphical_cultures = { celticgfx }
 		
-		color = { 0.1 0.9 0.9 }
+		allow_looting = yes
+		seafarer = yes
+		
+	}
+	cumbrian = {
+		graphical_cultures = { celticgfx westerngfx }
+	
+		color = { 0.37 0.63 0.43 }
 
 		male_names = {
-			Adda Aeddan Alan_Alan Alcun_Alwyn Aliotus Alisander_Alexander Alwyn Amlawdd Anaraut_Anarawd Anarawd Aneirin_Aneurin Aneurin Annun Araut_Arod 
-			Ardun Arod Artgal Arthfael Arthuir_Arthur Arthuis Arthuis_Artorius Arthur_Arthur Arthus_Artorius Arthwr_Arthur Arthws_Artorius Arthwyr_Arthur 
-			Arthwys_Artorius Asa Asaph Awst_Augustus Awstin_Augustine Bangar Bedwyr Beli Bleddyn Branwaladr_Brendan Brochfael_Brogmaglus Brochmael_Brogmaglus 
-			Brut_Brutus Brwt_Brutus Brwyn Brychan Brân Cadell_Catellus Cadeyrn Cadfael Cadfan_Gideon Cadoc_Cadog Cadog Cadraut_Cadrod Cadvael_Cadfael Cadvan_Gideon 
-			Cadwal Cadwaladr Cadwallon_Catualon Cadwgan Cai_Gaius Caid Cain Calchynydd Caradauc_Caradog Caradog Casnar Caswallaun_Catualon Caswallon_Catualon Cawdaf 
-			Cawrdaf_Cawdaf Cedic_Cedig Cedig Cedwyn Ceneu Ceredic_Ceredig Ceredig Cinuit Clinoch Clydno Clydog Coel Coledauc_Coledog Cubricht Cunedda_Kenneth Custeint_Constantius 
-			Custennin_Constantine Cwric_Cyriacus Cynan_Cynan Cynddelw Cynddylan Cyndeyrn_Kentigern Cynfarch Cynfawr Cynfeddw Cynfelyn Cynfyn Cyngar_Cyngar Cyngen Cynwal Cynwallon 
-			Cynwyd Cynyr Dafydd_David Deheuwant Deheweint_Deheuwant Deiniol Deiniol_Daniel Derfyl Dewi Dingat_Duncan Diwg_Dwywg Dogfael Drystan_Tristan Dubric_Dyfrig Dumnagual_Donald 
-			Dunod Dyfnwal Dyfnwal_Donald Dyngad_Duncan Dynod_Donatus Dywel Edern_Eternus Ednowain_Ednywain Ednyfed_Edmund Ednywain Edwyn_Edwin Einion_Enoch Elfin Elidir_Eleutherius Elis 
-			Elisedd Eliudd Elud Elystan Elystan_Aethelstan Elyw_Alexius Emrys_Ambrosius Emyr_Himerius Eochaid Erb_Urban Erbin_Urban Erclwv_Heracles Ernwin Erp_Urban Eudaf_Octavius Eudav_Octavius 
-			Eugein Eugein_Eugene Ewyas Ffilip_Philip Ffrioc_Ffriog Ffriog Ffwdwr Fragan Fychan Fyrsil Gamon Garbon_Germanus Garbonian_Germanianus Geraint_Gerontius Gerallt_Gerald Gereint_Gerontius 
-			Glywis_Claudius Glywys_Claudius Goronwy Goscubrycht Gosmungo Gospatric Greidal Grifiud_Griffith Gronw Gruffydd Gureit Gurgant_Gwrgant Guriat_Gwriad Gurmael_Gwrfael Gwalchafed_Gareth Gwalchafet_Gareth 
-			Gwalchmai_Gawain Gwallauc_Walter Gwallog Gwallog_Walter Gwen Gwenddoleu Gwenwynwyn Gwerstan_Werestan Gwerthefyr_Vortimer Gwertheyrn_Vortigern Gwidir_Victor Gwidyr Gwilym_William Gwrast Gwrast_Gwrast
-			Gwrfael Gwrgant Gwriad Gwrin Gwyar Gwynllyw Hyfaidd_Hubert Hywel Iago_Jacob Iddon_Ethan Idwal Idwallon Iestyn_Justinianus Ieuan_John Ifor_Ivar Ifwr Io Iolo_Edward Iorwerth_Edward Ithel Iudgual_Idwal 
-			Iudguallon_Idwallon Llaennog Lludd Llyr Llywarch Llywelyn Llywernauc_Llywernog Llywernog Macsen_Maximus Madauc_Madog Madog Mael Maelauc_Maelog Maelcwn_Malcolm Maelgwn_Malcolm Maelog March_Marcus Maredudd 
-			Mascwyt Masgwid Math_Matthew Medraut_Mordred Meilir_Meilyr Meilyr Meirchion Meirchion_Marcianus Meirion_Marianus Merchwyn_Marcianus Merfyn Meuric_Maurice Meurig_Maurice Mor_Marius Morcant_Morgan Morfyn Morgan 
-			Neithon Neithon_Nathan Nudd Ohan Oswallt_Oswald Owain Owain_Eugene Oweyn_Eugene Pabo Padarn_Paternus Padern_Paternus Padrig_Patrick Pandoff Pascent_Pasgen Pasgen Patric_Patrick Paul_Paul Pawl_Paul Pedr_Peter 
-			Peredur_Peredyr Peredyr Petr_Peter Pryderi Publig Pwydion Pwyll Pyr Rhainallt_Reginald Rhicert_Richard Rhirid Rhiwallon Rhobert_Robert Rhodri_Roderick Rhudauc_Rhydog Rhudderch_Roderick Rhufon_Roman Rhun 
-			Rhydderch_Roderick Rhydog Rhygyfarch Rhys Ridauc_Rhydog Riderc Riderch_Roderick Rigadaf_Riothamus Rotri Sandde_Sanctus Sandef_Sanctus Sawyl Sawyl_Samuel Seferus Seiriol_Cyril Seisyll_Cecil Selyf_Solomon 
-			Selyfan_Solomon Senllyt Senyllt Sion Siwauna Steffen_Stephen Sulien Sulien_Julian Taliesin Taudar Tegfan Tegid_Tacticus Tegonwy Tegwyd Tegyth_Tacticus Teilo Teudebur Tewdos_Theodosius Tewdric_Theodoric 
-			Tewdrig_Theodoric Tewdwr_Theodore Tomos_Thomas Tothail Trahaearn Tudwal_Theodowalaunus Tudwallon_Theodowalaunus Tutagual Tutgual_Theodowalaunus Tutguallon_Theodowalaunus Tydy Tyfodedd Typipion Tysilio 
-			Urien Uthyr_Victor wMar Ynyr Ynyr_Honorius Ysfael
+			Adda Aeddan Alan_Alan Alisander_Alexander Annun Araut Arod Arthfael Arthuis Artorius Aliotus Ardun Artgal Agravain
+			Bedwyr Bleddyn Brân Branwal Brochfael Brogmaglus Brychan Cadell Cadeyrn Cadvael Cadvan
+			Caddan Cadfan Cadog Cadwal Cadwallon Caelgyn Cai Caid Cain Caleddin Caradoc Caraled Carawain Cavan Casnar
+			Caswallon Cerdig Cerdoc Cerfin Cerlyn Cerwain Ceredig Cinuit Clinoch Coel Cubricht Cynfarch Cunomarcus Custennin_Constantine
+			Cynddylan Cynfawr Cynfelyn Cynfyn Cynwallon Cynyr Cedwyn Ceneu Cynan Combuthreus Dynod Dafydd_David
+			Deheuwant Derella Dingat Dorfael Drystan Dyfnwal_Donald Edern Ednyfed Ednywain Edwyn_Edwin
+			Einion Eldoc Elgwyn Ellyn Elther Elwain Elwydd Elis Elisedd Elud Elystan Emrys_Ambrose Ermid Ewyas Esca Fragan Fyrsil
+			Deiniol Dunod Dyfnwal Elfin Eochaid Ernwin Eugein Gwallog Ganval Garbon Gospatric Greidal Gwalchafe Gwerstan Gaheris
+			Gwrast Gergant Hyfaidd Hywel Iudgual Ithel Lludd Llywarch Llywelyn Llanval Llaennog Masgwid Meirchion Menw Mael
+			Medraut Merfyn Meuric Mor Morcant Morfyn Nasiens Owan Owain Padarn Peredur Riderch Seferus			
+			Rhun Teud Teudebur Tutgwal Tysilio Urien
 		}
 		female_names = {
-			Addiena Aelwyd Aeronwen Aeronwy Afrella Alys Angharad Annes_Anna Annest Annwyl Anowed Arddyn Arianrhod Blodwen Bronwen Catrin_Catherine Ceindrech_Ceindrych Ceindrych Ceridwen Cerie Cerys Cicely Clarisant 
-			Cristin_Christina Danhadlwen Delyth Denis Denyw Dwynwen Dwywai Dyddgu Efa Eferddyl Effros_Euphrasia Eiliwedd Elaine Elen Eleri Elinion Elinor_Eleanor Ellyn Enid Enynny Essyllt_Isolde Eugeina_Eugenia Euronwy 
-			Ffelis Ffion Fflur Ffraid Glynys Gwawl Gwen Gwenasedd Gwenfrewy Gwenhwyfach Gwenhwyfar Gwenllian Gwenwyn Gwerfyl Gwladys Gwladys_Claudia Gwledyr Gwrygan_Gwrygon Gwrygon Haer Hawis Heledd Hellawes Heulwen Hunydd 
-			Hywela Ilud Isabel_Elisabeth Iseult Languoreth Llear_Clara Llecci Lleigy Lleuca Lleuca_Lucia Lleucu_Lucia Lowry Mabyn Maches Madrun Maelrys Mair Mali Mallt Marared Marchell Margred_Margaret Marwyn_Marwenna 
-			Mawd_Matilda Melisant_Melisende Morfydd Morganna Morien Morwyn_Morwenna Myfanwy Mynfrewy Nest_Agnes Nesta_Agnes Nyfain Olwen Owena_Eugenia Oweyna_Eugenia Prawst Ragnell Rhiainfelt_Regina Rhiannon Rhonwen 
-			Riemmelth_Regina Sannant Sara_Sarah Senena Sibyl_Sibylla Sioned_Joan Siwan Siân_Joan Susanna_Susana Tangwystl Thaney Ysbail_Elizabeth Ystradwel
+			Aeronwen Aelwyd Ailleann Anna Ceinwyn Cicely Cerie Denyw Elen Fiona Gwal Gwyn Gwladas Helledd Languoreth
+			Mair Melisant Morwenna Morgause Nyfain Nefyn Onnen Riemmelth Rowena Ygerna Ystradwel
 		}
 
-		from_dynasty_prefix = "de "
+		from_dynasty_prefix = "of "
 		male_patronym = "ap "
-		female_patronym = "ferch "
+		#female_patronym = "ferch "
 		prefix = yes
 
-		modifier = default_culture_modifier
+		modifier = cumbrian_culture_modifier
+		
+		dukes_called_kings = yes
 
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 80
+		pat_grf_name_chance = 20
 		mat_grf_name_chance = 0
 		father_name_chance = 0
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
 		pat_grm_name_chance = 10
-		mat_grm_name_chance = 50
+		mat_grm_name_chance = 30
 		mother_name_chance = 0
+
+		allow_looting = yes
 	}
 	welsh = {
 		graphical_cultures = { celticgfx }
@@ -1704,14 +1701,14 @@ celtic = {
 
 		modifier = default_culture_modifier
 		
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 80
-		mat_grf_name_chance = 0
-		father_name_chance = 0
+		dukes_called_kings = yes
+
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 10
+		father_name_chance = 2
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
 		pat_grm_name_chance = 10
-		mat_grm_name_chance = 50
+		mat_grm_name_chance = 20
 		mother_name_chance = 0
 	}
 }

@@ -16,10 +16,13 @@ b_ilchester = city
 #b_cleeve = castle
 
 # Misc
-culture = british
-religion = imperial
+culture = breton
+religion = celtic_pagan
 
 # History
+
+490.1.1 = { religion = imperial }
+
 800.1.1 = {
 	culture = saxon
 }
