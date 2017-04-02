@@ -10,10 +10,11 @@ b_luxor2 = city
 b_luxor3 = temple
 
 # Misc
-culture = coptic
+culture = kemetic
 religion = egyptian_pagan
 
 # History
-500.1.1 { religion = imperial }
+500.1.1 = { religion = miaphysite}
+500.1.1 = { culture = coptic }
 1171.1.1 = { religion = sunni }
 1171.1.1 = { culture = egyptian_arabic }
