@@ -4202,28 +4202,25 @@ e_arabia = {
 				b_nabeul6 = { }
 				b_nabeul7 = { }
 			}
-			c_medjerda = {
-				color={ 26 238 101 }
+			c_mahdia = {
+				color={ 35 247 110 }
 				color2={ 255 255 255 }
-
-				holy_site = west_african_pagan
-				holy_site = west_african_pagan_reformed			
-				
-				b_medjerda = {
+			
+				b_mahdia = {
 				}
-				b_lekef = {
+				b_monastir = {
 				}
-				b_siliana = {
+				b_sfax = {
 				}
-				b_kasserine = {
+				b_msaken = {
 				}
-				b_qaafur = {
+				b_agareb = {
 				}
-				b_sidimubarak = {
+				b_neffatia = {
 				}
-				b_dougga = {
+				b_lalaouza = {
 				}
-				b_elkrib = {
+				b_lacroix = {
 				}
 			}
 			c_siliana = {
@@ -4283,9 +4280,46 @@ e_arabia = {
 				b_jendouba6 = { }
 				b_jendouba7 = { }
 			}
+		}
+		d_haidra = {
+			color={ 26 238 101 }
+			color2={ 255 255 255 }
+
+			capital = 818 # Medjerda
+
+			vandal = "Ammaedara"
+
+			c_medjerda = {
+				color={ 26 238 101 }
+				color2={ 255 255 255 }
+
+				vandal = "Ammaedara"
+
+				holy_site = west_african_pagan
+				holy_site = west_african_pagan_reformed			
+				
+				b_medjerda = {
+				}
+				b_lekef = {
+				}
+				b_siliana = {
+				}
+				b_kasserine = {
+				}
+				b_qaafur = {
+				}
+				b_sidimubarak = {
+				}
+				b_dougga = {
+				}
+				b_elkrib = {
+				}
+			}
 			c_kairwan = {
 				color={ 32 244 107 }
 				color2={ 255 255 255 }
+
+				vandal = "Sufes"
 			
 				b_kairouan = {
 				}
@@ -4307,6 +4341,8 @@ e_arabia = {
 			c_sidi_bouzid = {
 				color = { 45 240 120 }
 				color2 = { 255 255 255 }
+
+				vandal = "Sufetula"
 				
 				b_sidi_bouzid1 = { }
 				b_sidi_bouzid2 = { }
@@ -4316,30 +4352,11 @@ e_arabia = {
 				b_sidi_bouzid6 = { }
 				b_sidi_bouzid7 = { }
 			}
-			c_mahdia = {
-				color={ 35 247 110 }
-				color2={ 255 255 255 }
-			
-				b_mahdia = {
-				}
-				b_monastir = {
-				}
-				b_sfax = {
-				}
-				b_msaken = {
-				}
-				b_agareb = {
-				}
-				b_neffatia = {
-				}
-				b_lalaouza = {
-				}
-				b_lacroix = {
-				}
-			}
 			c_sfax = {
 				color = { 128 190 115 }
 				color2 = { 255 255 255 }
+
+				vandal = "Thysdrus"
 				
 				b_sfax1 = { }
 				b_sfax2 = { }
@@ -4352,6 +4369,8 @@ e_arabia = {
 			c_kerkennah = {
 				color = { 128 190 115 }
 				color2 = { 255 255 255 }
+
+				vandal = "Thanae"
 				
 				b_kerkennah1 = { }
 				b_kerkennah2 = { }
