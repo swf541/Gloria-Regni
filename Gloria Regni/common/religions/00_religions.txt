@@ -1875,9 +1875,12 @@ pagan_group = {
 		graphical_culture = africangfx
 		
 		secondary_event_pictures = west_african_pagan
-
+		
 		icon = 35
 		heresy_icon = 36
+
+		ai_convert_other_group = 2 # always try to convert
+		ai_convert_same_group = 2 # always try to convert
 		
 		ai_convert_other_group = 2 # always try to convert
 		
@@ -2050,6 +2053,8 @@ pagan_group = {
 		heresy_icon = 110
 		
 		ai_convert_other_group = 2 # always try to convert
+		ai_convert_same_group = 2 # always try to convert
+
 		
 		color = { 0.6 0.1 0.1 }
 		high_god_name = { 
@@ -2094,6 +2099,9 @@ pagan_group = {
 		heresy_icon = 112
 		
 		ai_convert_other_group = 2 # always try to convert
+		ai_convert_same_group = 2 # always try to convert
+
+
 		
 		color = { 0.6 0.1 0.1 }
 		high_god_name = { 

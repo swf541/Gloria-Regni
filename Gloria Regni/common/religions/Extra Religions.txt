@@ -986,7 +986,139 @@ pagan_group = {
 		
 		allow_in_ruler_designer = no
 	}
+	berber_pagan = { # Kemetic
+		graphical_culture = africangfx
+		
+
+		icon = 106
+		heresy_icon = 107
+
+		color = { 0.3 0.1 0.1 }
+		
+		scripture_name = THE_LEGENDS
+		crusade_name = GREAT_HOLY_WAR
+		high_god_name = GOD_AMUN
+		priest_title = SHAMAN
+		
+		god_names = {
+			GOD_AMON GOD_AMANAI GOD_THE_SUN GOD_GURZIL GOD_IFRI GOD_ISIS GOD_ANTI GOD_SATURN GOD_SET GOD_TINJIS GOD_MASTINAM GOD_ANZAR GOD_TANNIT GOD_POSEIDON GOD_YUR GOD_IDIR
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			garrison_size = 0.4
+			
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3	
 	
+			key = "OFF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
+		allow_rivermovement = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		allow_looting = yes
+		
+		max_consorts = 3
+		
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		dislike_tribal_organization = yes
+		aggression = 0.1 # AI aggression factor
+
+		reformed = berber_pagan_reformed
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		
+	}
+	
+	berber_pagan_reformed = { # Berber
+		graphical_culture = africangfx
+
+		
+		icon = 108
+		heresy_icon = 109
+
+		ai_convert_other_group = 2 # always try to convert
+		ai_convert_same_group = 2 # always try to convert
+
+		color = { 0.5 0.3 0.3 }
+		
+		scripture_name = THE_LEGENDS
+		crusade_name = GREAT_HOLY_WAR
+		high_god_name = GOD_AMUN
+		priest_title = SHAMAN
+		
+		god_names = {
+			GOD_AMON GOD_AMANAI GOD_THE_SUN GOD_GURZIL GOD_IFRI GOD_ISIS GOD_ANTI GOD_SATURN GOD_SET GOD_TINJIS GOD_MASTINAM GOD_ANZAR GOD_TANNIT GOD_POSEIDON GOD_YUR GOD_IDIR
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			garrison_size = 0.4
+			
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3	
+	
+			key = "OFF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
+		allow_rivermovement = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		allow_looting = yes
+		
+		max_consorts = 3
+		
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		dislike_tribal_organization = yes
+		aggression = 0.1 # AI aggression factor
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		
 }
 	
 	
