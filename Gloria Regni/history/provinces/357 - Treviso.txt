@@ -15,10 +15,13 @@ b_oderzo = temple
 #b_paese = castle
 
 # Misc
-culture = lombard
-religion = imperial
+culture = old_italian
+religion = hellenic_pagan
 
 # History
+
+558.1.1 = { religion = imperial }
+769.1.1 = { culture = lombard }
 789.1.1 = { culture = italian }
 
 1054.7.6 = { religion = catholic }

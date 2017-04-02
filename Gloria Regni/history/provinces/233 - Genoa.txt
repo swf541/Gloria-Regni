@@ -16,11 +16,13 @@ b_savona = city
 #b_fosdinovo = castle
 
 # Misc
-culture = lombard
-religion = imperial
+culture = old_italian
+religion = hellenic_pagan
 
 # History
 
+558.1.1 = { religion = imperial }
+769.1.1 = { culture = lombard }
 849.1.1 = { culture = italian }
 867.1.1 = { 
 	b_genoa = ct_wall_1
