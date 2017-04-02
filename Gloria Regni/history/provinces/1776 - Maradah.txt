@@ -11,11 +11,14 @@ b_maradah2 = city
 b_maradah3 = temple
 
 # Misc
-culture = vandal
+culture = maghreb_arabic
 religion = berber_pagan
 
 # History
-
+600.1.1 = {
+	culture = maghreb_arabic
+	religion = imperial
+}
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni }
 
