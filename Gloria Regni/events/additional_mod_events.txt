@@ -470,50 +470,6 @@ character_event = {
 }
 
 character_event = {
-	id = PA.10323
-	
-        hide_window = yes
-	
-        trigger = {
-                has_law = vassal_wars_2
-		NOT = { has_law = crown_authority_2 }
-		NOT = { has_law = crown_authority_3 }
-		NOT = { has_law = crown_authority_4 }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-	        name = OK
-                primary_title = { add_law = vassal_wars_1 }
-	}
-}
-
-character_event = {
-	id = PA.10324
-	
-        hide_window = yes
-	
-        trigger = {
-                has_law = vassal_wars_1
-		NOT = { has_law = crown_authority_2 }
-		NOT = { has_law = crown_authority_3 }
-		NOT = { has_law = crown_authority_4 }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-	        name = OK
-                primary_title = { add_law = vassal_wars_0 }
-	}
-}
-
-character_event = {
 	id = PA.10325
 	
         hide_window = yes
@@ -2832,78 +2788,7 @@ letter_event = {
 	}
 }
 
-character_event = {
-	id = PA.10385
 
-        hide_window = yes
-
-	trigger = {
-		is_patrician = no
-                independent = yes
-		is_merchant_republic = no
-                NOT = { has_law = legislature_1 }
-		has_law = imperial_administration
-                NOT = { government = imperial_government }
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = OK
-                set_government_type = imperial_government
-	}
-}
-
-character_event = {
-	id = PA.10386
-
-        hide_window = yes
-
-	trigger = {		                
-	        is_patrician = no
-                independent = yes
-                has_law = legislature_1 
-		is_merchant_republic = no
-		has_law = imperial_administration
-		NOT = { government = constitutional_government }
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = OK
-                set_government_type = constitutional_government
-	}
-}
-
-
-character_event = {
-	id = PA.10387
-
-        hide_window = yes
-
-	trigger = {
-	        is_patrician = no
-                independent = yes
-                has_law = legislature_0
-		is_merchant_republic = no
-	        has_law = imperial_administration
-                government = consitutional_government
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = OK
-                set_government_type = imperial_government
-	}
-}
 
 character_event = {
 	id = PA.10388
