@@ -3837,7 +3837,32 @@ e_arabia = {
 			color2={ 255 255 255 }
 			
 			capital = 831 # Al Djazir
-			
+		
+			c_atlas_mnt = {
+				color={ 49 196 83 }
+				color2={ 255 255 255 }
+
+				holy_site = west_african_pagan
+				holy_site = west_african_pagan_reformed
+				holy_site = ibadi
+				
+				b_tiaret = {
+				}
+				b_djelfa = {
+				}
+				b_bordj = {
+				}
+				b_elyourh = {
+				}
+				b_selmana = {
+				}
+				b_ainrich = {
+				}
+				b_ainzmila = {
+				}
+				b_hassibenmadjeb = {
+				}
+			}
 			c_lemdiyya = {
 				color={ 51 198 85 }
 				color2={ 255 255 255 }
@@ -3903,38 +3928,6 @@ e_arabia = {
 				b_bumerdes5 = { }
 				b_bumerdes6 = { }
 				b_bumerdes7 = { }
-			}
-		}
-		d_atlas = {
-			color={ 49 196 83 }
-			color2={ 255 255 255 }
-
-			capital = 833 # Atlas Mtn
-
-			c_atlas_mnt = {
-				color={ 49 196 83 }
-				color2={ 255 255 255 }
-
-				holy_site = west_african_pagan
-				holy_site = west_african_pagan_reformed
-				holy_site = ibadi
-				
-				b_tiaret = {
-				}
-				b_djelfa = {
-				}
-				b_bordj = {
-				}
-				b_elyourh = {
-				}
-				b_selmana = {
-				}
-				b_ainrich = {
-				}
-				b_ainzmila = {
-				}
-				b_hassibenmadjeb = {
-				}
 			}
 			c_mzab = {
 				color={ 39 157 50 }
