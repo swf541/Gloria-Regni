@@ -4152,6 +4152,8 @@ e_arabia = {
 			color2={ 255 255 255 }
 			
 			capital = 817 # Tunis
+
+			vandal = "Carthago"
 		
 			c_tunis = {
 				color={ 23 235 98 }
@@ -4160,6 +4162,8 @@ e_arabia = {
 				holy_site = hellenic_pagan			
 				holy_site = hellenic_pagan_reformed
 				holy_site = sol_invictus
+
+				vandal = "Carthago"
 
 				b_tunis = {
 				}
@@ -4181,6 +4185,8 @@ e_arabia = {
 			c_zaghouan = {
 				color = { 16 79 60 }
 				color2 = { 255 255 255 }
+
+				vandal = "Ziqua"
 				
 				b_zaghouan1 = { }
 				b_zaghouan2 = { }
@@ -4194,6 +4200,8 @@ e_arabia = {
 				color = { 116 145 115 }
 				color2 = { 255 255 255 }
 
+				vandal = "Neapolis"
+
 				b_nabeul1 = { }
 				b_nabeul2 = { }
 				b_nabeul3 = { }
@@ -4205,6 +4213,8 @@ e_arabia = {
 			c_mahdia = {
 				color={ 35 247 110 }
 				color2={ 255 255 255 }
+
+				vandal = "Hadrumetum"
 			
 				b_mahdia = {
 				}
@@ -4223,9 +4233,20 @@ e_arabia = {
 				b_lacroix = {
 				}
 			}
+		}
+		d_bizerte = {
+			color = { 35 220 124 }
+			color2 = { 255 255 255 }
+
+			capital = 819 # Bizerte
+
+			vandal = "Hippo Diarrhytus"
+
 			c_siliana = {
 				color = { 35 220 124 }
 				color2 = { 255 255 255 }
+
+				vandal = "Drusiliana"
 				
 				b_siliana1 = { }
 				b_siliana2 = { }
@@ -4238,6 +4259,8 @@ e_arabia = {
 			c_kef = { 
 				color = { 124 26 160 }
 				color2 = { 255 255 255 }
+
+				vandal = "Sicca Veneria"
 				
 				b_kef1 = { }
 				b_kef2 = { }
@@ -4250,6 +4273,8 @@ e_arabia = {
 			c_bizerte = {
 				color={ 29 241 104 }
 				color2={ 255 255 255 }
+
+				vandal = "Hippo Diarrhytus"
 			
 				b_bizerte = {
 				}
@@ -4271,6 +4296,8 @@ e_arabia = {
 			c_jendouba = {
 				color = { 37 230 143 }
 				color2 = { 255 255 255 }
+
+				vandal = "Vaga"
 				
 				b_jendouba1 = { }
 				b_jendouba2 = { }
@@ -4831,6 +4858,34 @@ e_arabia = {
 				b_mechreck = {
 				}
 			}
+			c_bejaija = {
+				color={ 49 255 106 }
+				color2={ 255 255 255 }
+			
+				b_bejaija = {
+				}
+				b_setif = {
+				}
+				b_mila = {
+				}
+				b_elbekara = {
+				}
+				b_jijel = {
+				}
+				b_boudaoud = {
+				}
+				b_gantas = {
+				}
+				b_eldjabia = {
+				}
+			}
+		}
+		d_constantine = {
+			color={ 45 251 102 }
+			color2={ 255 255 255 }
+
+			capital = 821 # Constantine
+
 			c_constantine = {
 				color={ 45 251 102 }
 				color2={ 255 255 255 }
@@ -4863,27 +4918,6 @@ e_arabia = {
 				b_tebessa5 = { }
 				b_tebessa6 = { }
 				b_tebessa7 = { }
-			}
-			c_bejaija = {
-				color={ 49 255 106 }
-				color2={ 255 255 255 }
-			
-				b_bejaija = {
-				}
-				b_setif = {
-				}
-				b_mila = {
-				}
-				b_elbekara = {
-				}
-				b_jijel = {
-				}
-				b_boudaoud = {
-				}
-				b_gantas = {
-				}
-				b_eldjabia = {
-				}
 			}
 			c_jijel = {
 				color = { 56 244 125 }
