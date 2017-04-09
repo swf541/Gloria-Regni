@@ -3832,15 +3832,15 @@ e_arabia = {
 				b_tisserdmine = {}
 			}
 		}
-		d_alger = {
-			color={ 32 150 43 }
+		d_atlas = {
+			color={ 49 196 83 }
 			color2={ 255 255 255 }
-			
-			capital = 831 # Al Djazir
+
+			capital = 833 # Atlas Mtn		
 		
-			c_atlas_mnt = {
-				color={ 49 196 83 }
-				color2={ 255 255 255 }
+		c_atlas_mnt = {
+			color={ 49 196 83 }
+			color2={ 255 255 255 }
 
 				holy_site = west_african_pagan
 				holy_site = west_african_pagan_reformed
@@ -3863,6 +3863,35 @@ e_arabia = {
 				b_hassibenmadjeb = {
 				}
 			}
+			c_mzab = {
+				color={ 39 157 50 }
+				color2={ 255 255 255 }
+			
+				b_mzab = {
+				}
+				b_noumerat = {
+				}
+				b_sebseb = {
+				}
+				b_elalia = {
+				}
+				b_ouargla = {
+				}
+				b_zelfana = {
+				}
+				b_bermane = {
+				}
+				b_elbour = {
+				}
+			}
+		}
+		d_alger = {
+			color={ 32 150 43 }
+			color2={ 255 255 255 }
+			
+			capital = 831 # Al Djazir
+		
+
 			c_lemdiyya = {
 				color={ 51 198 85 }
 				color2={ 255 255 255 }
@@ -3929,27 +3958,7 @@ e_arabia = {
 				b_bumerdes6 = { }
 				b_bumerdes7 = { }
 			}
-			c_mzab = {
-				color={ 39 157 50 }
-				color2={ 255 255 255 }
 			
-				b_mzab = {
-				}
-				b_noumerat = {
-				}
-				b_sebseb = {
-				}
-				b_elalia = {
-				}
-				b_ouargla = {
-				}
-				b_zelfana = {
-				}
-				b_bermane = {
-				}
-				b_elbour = {
-				}
-			}
 			c_ouled_nail = {
 				color={ 41 159 52 }
 				color2={ 255 255 255 }
