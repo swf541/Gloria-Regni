@@ -1,5 +1,75 @@
 decisions = {
 
+	celebrate_ludi_solis = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			or = {
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+			prisoner = no
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_ludi_solis_timer
+				liege = { has_character_flag = holding_ludi_solis }
+				has_character_flag = holding_ludi_solis
+				has_character_flag = planning_ludi_solis
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 11 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_ludi_solis
+			custom_tooltip = {
+				text = prepare_ludi_solis_feast
+				hidden_tooltip = { 
+					character_event = { id = LUS.700 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
 	attempt_to_join_the_samo_thracian_mysteries  = {
 		potential = {
 			or = {
