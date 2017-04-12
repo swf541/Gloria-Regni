@@ -10,11 +10,15 @@
 		
 		capital = 913 # Kumbi Saleh
 		
+		soninke = "Ghana"
+		
 		d_awkar = { #Ghana
 			color={ 90 130 30 }
 			color2={ 255 255 255 }
 	
 			capital = 913 # Kumbi Saleh
+			
+			soninke = "Ghana"
 		
 			c_kumbi_saleh = { #Ghana
 				color={ 130 180 61 }
@@ -48,7 +52,7 @@
 				color2={ 255 255 255 }
 
 				b_bassikinu = {}
-				b_tendirma = {}
+				b_tendirma2 = {}
 			}
 			c_walata = {
 				color={ 130 180 61 }
@@ -64,7 +68,7 @@
 				b_fassekra = {}
 			}
 		}
-		d_wagadu
+		d_wagadu = {
 			color={ 190 160 120 }
 			color2={ 255 255 255 }
 	
@@ -121,7 +125,7 @@
 				b_mbissel = {}
 			}
 		}
-		d_wadan
+		d_wadan = {
 			color={ 130 170 90 }
 			color2={ 255 255 255 }
 	
@@ -3640,7 +3644,7 @@ e_arabia = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 			
-				b_laghwat = {} #Laghouat
+				b_righ = {} #Laghouat
 				
 			}
 			c_tehouda = { 
@@ -3820,7 +3824,7 @@ e_arabia = {
 				}
 				b_ich = {
 				}
-				b_bechar = {
+				b_bechar2 = {
 				}
 				b_boudnib = {
 				}
