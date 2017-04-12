@@ -68,11 +68,9 @@
 				b_fassekra = {}
 			}
 		}
-		d_wagadu = {
+		d_wagadu
 			color={ 190 160 120 }
 			color2={ 255 255 255 }
-
-			capital = 2063 # Wagadu
 	
 			c_wagadu = {
 				color={ 130 180 61 }
@@ -127,11 +125,9 @@
 				b_mbissel = {}
 			}
 		}
-		d_wadan = {
+		d_wadan
 			color={ 130 170 90 }
 			color2={ 255 255 255 }
-
-			capital = 920 # Wadan
 	
 			c_wadan = {
 				color={ 130 180 61 }
@@ -520,7 +516,7 @@
 				color2={ 255 255 255 }
 				
 				b_kukiya = {}
-				b_tendirma2 = {}
+				b_tendirma = {}
 				b_bersana = {} #Guessed El Idrisi/El Bekri city
 			}
 		}	
@@ -3648,21 +3644,25 @@ e_arabia = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 			
-				b_righ = {} #Laghouat
+				b_laghwat = {} #Laghouat
 				
 			}
 			c_tehouda = { 
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
+				
+				greco_roman = "Thabudeos"
 			
-				b_tehouda = {}
+				b_tehouda = {
+					greco_roman = "Thabudeos"
+					}
 			}
 			c_sijilmassa = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 			
 				b_sijilmassa = {}
-				b_bechar2 = {}
+				b_bechar = {}
 			}
 		}
 		
