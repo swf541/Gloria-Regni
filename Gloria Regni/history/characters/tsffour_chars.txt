@@ -2,8 +2,6 @@
 	name = "Kusoy"
 	dynasty = 1000124310
 	
-	father = 73880
-	
 	religion = west_african_pagan
 	culture = soninke
 	
@@ -11,18 +9,16 @@
 		birth = yes
 	}
 	516.1.1 = { 
-		add_spouse=184210 
+		add_spouse=184211
 	}
 	555.1.1 = {
 		death = yes
 	}
 }
 184211 = {
-	name = "Kusoy"
+	name = "Lorane"
 	dynasty = 0
 	female = yes
-	
-	father = 73880
 	
 	religion = west_african_pagan
 	culture = soninke
@@ -31,6 +27,69 @@
 		birth = yes
 	}
 	555.1.1 = {
+		death = yes
+	}
+}
+184212 = {
+	name = "Mamoudou"
+	dynasty = 1000124311
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	502.1.1  = {
+		birth = yes
+	}
+	562.1.1 = {
+		death = yes
+	}
+}
+184213 = {
+	name = "Reidja"
+	dynasty = 1000124312
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	491.1.1  = {
+		birth = yes
+	}
+	512.1.1 = { 
+		add_spouse=184214
+	}
+	551.1.1 = {
+		death = yes
+	}
+}
+184214 = {
+	name = "Siya"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	496.1.1  = {
+		birth = yes
+	}
+	556.1.1 = {
+		death = yes
+	}
+}
+184215 = {
+	name = "Soumaoro"
+	dynasty = 1000124312
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	father = 184213
+	mother = 184214
+	
+	517.1.1  = {
+		birth = yes
+	}
+	577.1.1 = {
 		death = yes
 	}
 }
