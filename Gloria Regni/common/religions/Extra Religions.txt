@@ -1535,5 +1535,85 @@ indian_group = {
 		
 		dislike_tribal_organization = yes
 	}
+	canaanite_pagan_reformed = { # Mesopotamian
+		graphical_culture = persiangfx
+		icon = 131
+		heresy_icon = 132		
+		color = { 221 115 2 }	
+		
+		crusade_name = "GREAT_HOLY_WAR"
+		scripture_name = THE_STELES
+
+		high_god_name = GOD_BEL	
+		
+		god_names = {
+			GOD_BEL GOD_THE_THUNDERER GOD_ASTARTE_BELTI GOD_AL_LAT GOD_BAALSHAMIN GOD_YARHIBOL GOD_MALAKBEL GOD_AGLIBOL GOD_ATARGATIS GOD_ABGAL GOD_ELAGABALUS GOD_BAAL_HAMON GOD_NABU GOD_NERGAL GOD_AZIZOS GOD_ARSU GOD_SAMS GINNAYE   
+		}
+
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+		
+		piety_name = PIETY
+		priest_title = PRIEST
+		
+		unit_modifier = {
+			levy_size = 0.3
+			
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3	
 	
+			key = "OFF_RELIGION"
+		}
+		
+		allow_rivermovement = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		max_wives = 4
+		pc_marriage = yes
+		bs_marriage = yes
+		can_call_crusade = yes
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		allow_in_ruler_designer = no		
+	}
+	
+	canaanite_pagan = { # Palmyran
+		graphical_culture = persiangfx
+		icon = 133
+		heresy_icon = 134
+		color = { 219 110 0 }	
+		
+		crusade_name = "GREAT_HOLY_WAR"
+		scripture_name = THE_STELES
+		
+		reformed = canaanite_pagan_reformed		
+
+		high_god_name = GOD_BEL	
+		
+		god_names = {
+			GOD_BEL GOD_THE_THUNDERER GOD_ASTARTE_BELTI GOD_AL_LAT GOD_BAALSHAMIN GOD_YARHIBOL GOD_MALAKBEL GOD_AGLIBOL GOD_ATARGATIS GOD_ABGAL GOD_ELAGABALUS GOD_BAAL_HAMON GOD_NABU GOD_NERGAL GOD_AZIZOS GOD_ARSU GOD_SAMS GINNAYE   
+		}
+
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+		
+		piety_name = PIETY
+		priest_title = PRIEST
+		
+		allow_rivermovement = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		max_wives = 4
+		pc_marriage = yes
+		bs_marriage = yes
+		can_call_crusade = yes
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}	
 }
