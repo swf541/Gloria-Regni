@@ -18,15 +18,17 @@ b_gangra = temple
 
 # Misc
 culture = greek
-religion = orthodox
+religion = novatianism
 
 # History
-730.1.1 = { religion = orthodox } #iconoclast
+520.1.1 = { religion = imperial }
 #850.1.1 = { religion = orthodox }
 
 
 # The Seljuks take over Anatolia
-
+1054.1.1 = {
+	religion = orthodox
+}
 1097.8.26 = { culture = turkish }
 1097.8.26 = { religion = sunni }
 

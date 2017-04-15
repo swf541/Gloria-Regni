@@ -298,6 +298,37 @@ christian = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 	}
+	
+	encratites = {
+		graphical_culture = westerngfx
+
+		icon = 100
+		heresy_icon = 101
+		
+		color = { 0.45 0.15 0.7 }
+
+		parent = imperial
+
+		scripture_name = THE_NEW_TESTAMENT
+
+		god_names = {
+			GOD_GOD GOD_JESUS GOD_THE_STRANGER GOD_MONAD PROPHET_PAUL
+		}
+		
+		evil_god_names = {
+			GOD_YALTABAOTH 
+		}
+		
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_retire_to_monastery = yes
+		female_temple_holders = no
+		
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+	}
 
 	priscillianism = {
 		graphical_culture = westerngfx
@@ -438,6 +469,32 @@ christian = {
                 character_modifier = {
 			temple_tax_modifier = -1 
 	        }
+	}
+	
+	montanism = {
+		graphical_culture = westerngfx
+
+		icon = 1
+		heresy_icon = 6
+		
+		color = { 0.25 0.45 0.82 }
+
+		parent = imperial
+		
+		crusade_name = CRUSADE
+
+		can_retire_to_monastery = yes
+		female_temple_holders = yes
+		feminist = yes # Nullifies the negative opinion modifier that vassals normally get if ruler is female or has female heir
+		allow_rivermovement = yes
+		
+		religious_clothing_head = 0
+		religious_clothing_priest = 1
+
+        character_modifier = {
+			learning = 1
+			intrigue = 1
+	    }
 	}
 	
 	fraticelli = {
