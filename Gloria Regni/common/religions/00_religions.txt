@@ -1296,7 +1296,7 @@ pagan_group = {
 
 	mesopotamian_paganism = { # Mesopotamian
 		graphical_culture = persiangfx
-		icon = 71
+		icon = 208
 		color = { 0.3 0.5 1.0 }
 		crusade_name = "CRUSADE"
 		scripture_name = PLACEHOLDER
@@ -1315,7 +1315,8 @@ pagan_group = {
 	
 	mesopotamian_paganism_reformed = { # Mesopotamian
 		graphical_culture = persiangfx
-		icon = 71
+		icon = 209
+		heresy_icon = 210
 		color = { 0.5 0.7 1.2 }
 		crusade_name = "CRUSADE"
 		scripture_name = PLACEHOLDER
@@ -1327,6 +1328,7 @@ pagan_group = {
 		priests_can_marry = no
 		female_temple_holders = yes
 		max_consorts = 3
+		allow_in_ruler_designer = no
 	}	
 	
 	norse_pagan_reformed = {
@@ -2106,8 +2108,58 @@ pagan_group = {
 	zalmoxism = {
 		graphical_culture = westerngfx
 
-		icon = 49
-		heresy_icon = 50
+		icon = 153
+		heresy_icon = 154
+		
+		color = { 0.1 0.5 0.8 }
+		
+		crusade_name = "CRUSADE"
+		scripture_name = THE_LEGENDS
+		god_names = {
+			GOD_ZALMOXIS
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.3
+			levy_size = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
+		reformer_head_of_religion = yes
+		reformed = zalmoxism_reformed
+		can_grant_divorce = yes
+		can_grant_claim = yes
+		can_call_crusade = no
+		allow_looting = yes
+		#peace_prestige_loss = yes # Lose Prestige while at peace
+		raised_vassal_opinion_loss = no
+		
+		max_consorts = 3
+		
+	}
+
+	zalmoxism_reformed = {
+		graphical_culture = westerngfx
+
+		icon = 214
+		heresy_icon = 154
 		
 		color = { 0.1 0.5 0.8 }
 		
@@ -2146,9 +2198,8 @@ pagan_group = {
 		allow_looting = yes
 		#peace_prestige_loss = yes # Lose Prestige while at peace
 		raised_vassal_opinion_loss = no
-		
 		max_consorts = 3
-		
+		allow_in_ruler_designer = no
 	}
 	
 	hellenic_pagan = {
@@ -2674,6 +2725,7 @@ pagan_group = {
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
+		allow_in_ruler_designer = no
 	}
 	
 
@@ -2792,6 +2844,7 @@ pagan_group = {
 		
 		religious_clothing_head = 6
 		religious_clothing_priest = 4
+		allow_in_ruler_designer = no
 	}
 	
 
