@@ -1117,7 +1117,8 @@ pagan_group = {
 		
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
-		allow_in_ruler_designer = no		
+		allow_in_ruler_designer = no
+	}
 }
 	
 	
@@ -1616,3 +1617,64 @@ indian_group = {
 		religious_clothing_priest = 5
 	}	
 }
+
+
+bosporan_group = {
+	graphical_culture = jewishgfx
+	crusade_cb = crusade
+	playable = yes
+	ai_peaceful = yes # Will make Hordes lose their super aggressiveness
+	
+	ai_convert_same_group = 2 # always try to convert
+	ai_convert_other_group = 2# try to convert if ai_zeal is high
+	
+	color = { 1.0 1.0 0.68 }
+	
+	male_names = {
+		Belet Ezra Hanukkah Hezekiah Isaac Levi Manasseh Nisi Simeon Yavdi Zebulun
+	}
+
+	bosporan_faith = { # Hypsistarian
+		graphical_culture = jewishgfx
+		
+		icon =  131
+		heresy_icon = 132
+		
+		color = { 0.15 0.1 0.6 }
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+		
+		high_god_name = GOD_HYPSISTOS
+		god_names = {
+			GOD_BOSPORAN GOD_THE_HERO GOD_THE_THREE_MOTHERS GOD_HYPSISTOS GOD_SABAZIOS
+		}
+		evil_god_names = {
+			SATAN THE_DARKNESS THE_DARK_SPIRITS
+		}
+		
+		can_grant_divorce = yes
+		can_call_crusade = yes
+		can_grant_invasion_cb = invasion
+
+		short_reign_opinion_year_mult = 0 # No short reign penalty
+
+		character_modifier = { 
+			fertility = 0.10
+			learning = 2
+		}
+	
+		defensive_attrition = yes
+		independence_war_score_bonus = 50
+		attacking_same_religion_piety_loss = yes
+ 		
+		priests_can_marry = yes
+ 		
+		religious_clothing_head = 7
+		religious_clothing_priest = 7
+		
+		general_opinion = -10
+		same_opinion_if_same_religion = 20
+		infidel_opinion = -20
+	}
+ }
