@@ -127,7 +127,7 @@
 }
 184218 = {
 	name = "Akoi"
-	dynasty = 1000124312
+	dynasty = 1000124313
 	
 	religion = west_african_pagan
 	culture = soninke
@@ -139,6 +139,101 @@
 		birth = yes
 	}
 	574.1.1 = {
+		death = yes
+	}
+}
+184219 = {
+	name = "Birayma"
+	dynasty = 1000124314
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	490.1.1  = {
+		birth = yes
+	}
+	511.1.1 = { 
+		add_spouse=184220
+	}
+	550.1.1 = {
+		death = yes
+	}
+}
+184220 = {
+	name = "Binta"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	495.1.1  = {
+		birth = yes
+	}
+	555.1.1 = {
+		death = yes
+	}
+}
+184221 = {
+	name = "Birawa"
+	dynasty = 1000124314
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	father = 184219
+	mother = 184220
+	
+	516.1.1  = {
+		birth = yes
+	}
+	576.1.1 = {
+		death = yes
+	}
+}
+184222 = {
+	name = "Dawud"
+	dynasty = 1000124315
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	492.1.1  = {
+		birth = yes
+	}
+	513.1.1 = { 
+		add_spouse=184223
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184223 = {
+	name = "Aminata"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	497.1.1  = {
+		birth = yes
+	}
+	557.1.1 = {
+		death = yes
+	}
+}
+184224 = {
+	name = "Alieu"
+	dynasty = 1000124316
+	
+	religion = west_african_pagan
+	culture = jolof
+	
+	486.1.1  = {
+		birth = yes
+	}
+	546.1.1 = {
 		death = yes
 	}
 }
