@@ -93,3 +93,52 @@
 		death = yes
 	}
 }
+184216 = {
+	name = "Takoi"
+	dynasty = 1000124313
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	488.1.1  = {
+		birth = yes
+	}
+	509.1.1 = { 
+		add_spouse=184217
+	}
+	548.1.1 = {
+		death = yes
+	}
+}
+184217 = {
+	name = "Aminata"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	493.1.1  = {
+		birth = yes
+	}
+	553.1.1 = {
+		death = yes
+	}
+}
+184218 = {
+	name = "Akoi"
+	dynasty = 1000124312
+	
+	religion = west_african_pagan
+	culture = soninke
+	
+	father = 184216
+	mother = 184217
+	
+	514.1.1  = {
+		birth = yes
+	}
+	574.1.1 = {
+		death = yes
+	}
+}
