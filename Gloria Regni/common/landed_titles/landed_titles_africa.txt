@@ -268,6 +268,75 @@
 		color2={ 255 255 255 }
 		
 		
+		d_kangaba = {
+			color={ 40 120 170 }
+			color2={ 255 255 255 }
+	
+			c_niani = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_niani = {}
+				b_ka_ba = {}
+				b_kulun = {}
+				b_kulita = {}
+				b_banbe = {}
+				b_fello = {}
+				b_kalaya = {}
+			}
+			c_sibiridugu = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_bamako = {}
+				b_krina = {}
+				b_soussa = {}
+				b_dialakoro = {}
+				b_bougouni = {}
+				b_baguineda = {}
+				b_safo = {}
+			}
+			
+			c_bure = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_kurussa = {}
+				b_bure = {}
+				b_gonku = {}
+				b_nettere = {}
+				b_tugui = {}
+				b_sannu = {}
+				b_koyin = {}
+				b_pilimini = {}
+			}
+			
+			c_do = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_do_walata = {}
+				b_nanako = {}
+				b_melia = {}
+				b_hudi = {}
+				b_buguli = {}
+				b_ilaina = {}
+				b_lope = {}
+			}
+			c_segu = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_segu = {}
+				b_wenia = {}
+				b_didieni = {}
+				b_banamba = {}
+				b_mourdiah = {}
+				b_gumbu = {}
+				b_korola = {}
+			}
+		}
+
 		d_guinea = {
 			color={ 170 220 90 }
 			color2={ 255 255 255 }
@@ -330,75 +399,6 @@
 				b_mabinti = {}
 			}
 		}
-		d_kangaba = {
-			color={ 40 120 170 }
-			color2={ 255 255 255 }
-	
-			c_sibiridugu = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_bamako = {}
-				b_krina = {}
-				b_soussa = {}
-				b_dialakoro = {}
-				b_bougouni = {}
-				b_baguineda = {}
-				b_safo = {}
-			}
-			c_niani = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_niani = {}
-				b_ka_ba = {}
-				b_kulun = {}
-				b_kulita = {}
-				b_banbe = {}
-				b_fello = {}
-				b_kalaya = {}
-			}
-			
-			c_bure = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_kurussa = {}
-				b_bure = {}
-				b_gonku = {}
-				b_nettere = {}
-				b_tugui = {}
-				b_sannu = {}
-				b_koyin = {}
-				b_pilimini = {}
-			}
-			
-			c_do = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_do_walata = {}
-				b_nanako = {}
-				b_melia = {}
-				b_hudi = {}
-				b_buguli = {}
-				b_ilaina = {}
-				b_lope = {}
-			}
-			c_segu = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_segu = {}
-				b_wenia = {}
-				b_didieni = {}
-				b_banamba = {}
-				b_mourdiah = {}
-				b_gumbu = {}
-				b_korola = {}
-			}
-		}
-
 		d_jenne_jeno = {
 			color={ 80 220 170 }
 			color2={ 255 255 255 }
@@ -566,6 +566,9 @@
 				color2={ 255 255 255 }
 
 				b_azawad = {}
+				b_guezzam = {}
+				b_tamanrasset = {}
+				b_tazrouk = {}
 			}
 			c_arawan = {
 				color={ 130 180 61 }
@@ -576,9 +579,6 @@
 				b_aguelhok = {}
 				b_abalessa = {}
 				b_tinzaouten = {}
-				b_guezzam = {}
-				b_tamanrasset = {}
-				b_tazrouk = {}
 			}
 			c_taghaza = {
 				color={ 130 180 61 }
@@ -598,6 +598,10 @@
 				color2={ 255 255 255 }
 			
 				b_tabalbala = {}
+				b_lofti = {}
+				b_cheraia = {}
+				b_zeraib = {}
+				b_boutbiga = {}
 			}
 		}
 		d_gao = {
@@ -4063,13 +4067,6 @@ e_arabia = {
 				b_tehouda = {
 					greco_roman = "Thabudeos"
 					}
-			}
-			c_sijilmassa = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-			
-				b_sijilmassa = {}
-				b_bechar = {}
 			}
 		}
 		
