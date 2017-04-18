@@ -233,7 +233,92 @@
 	486.1.1  = {
 		birth = yes
 	}
+	507.1.1 = {
+		add_spouse = 184225
+	}
 	546.1.1 = {
+		death = yes
+	}
+}
+184225 = {
+	name = "Binata"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	491.1.1  = {
+		birth = yes
+	}
+	557.1.1 = {
+		death = yes
+	}
+}
+184226 = {
+	name = "Abdou"
+	dynasty = 1000124316
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	father = 184224
+	mother = 184225
+	
+	512.1.1  = {
+		birth = yes
+	}
+	572.1.1 = {
+		death = yes
+	}
+}
+184227 = {
+	name = "Fatoumata"
+	female="yes"
+	dynasty = 1000124316
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	father = 184224
+	mother = 184225
+	
+	517.1.1  = {
+		birth = yes
+	}
+	577.1.1 = {
+		death = yes
+	}
+}
+184228 = {
+	name = "Saloum"
+	dynasty = 1000124317
+	
+	religion = west_african_pagan
+	culture = jolof
+	
+	493.1.1  = {
+		birth = yes
+	}
+	514.1.1 = {
+		add_spouse=184229
+	}
+	553.1.1 = {
+		death = yes
+	}
+}
+184229 = {
+	name = "Kolonkan"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	498.1.1  = {
+		birth = yes
+	}
+	558.1.1 = {
 		death = yes
 	}
 }
