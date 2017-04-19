@@ -16,7 +16,10 @@ b_shubak = temple
 #b_afra = castle
 
 # Misc
-culture = levantine_arabic
-religion = sunni
+culture = nabatean
+religion = monophysite
 
-# History
+700.1.1 = { 
+	religion = sunni 
+	culture = levantine_arabic
+}

@@ -16,9 +16,11 @@ b_jarash = temple
 #b_elemtaih = castle
 
 # Misc
-culture = levantine_arabic
-religion = imperial
+culture = nabatean
+religion = monophysite
 
-# History
-700.1.1 = { religion = sunni }
+700.1.1 = { 
+	religion = sunni 
+	culture = levantine_arabic
+}
 1110.1.1 = { b_buwayda = castle }
