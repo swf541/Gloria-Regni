@@ -16,10 +16,12 @@ b_terwaan = temple
 #b_bapaume = castle
 
 # Misc
-culture = old_frankish
-religion = imperial
+culture = galloroman
+religion = hellenic_pagan
 
 # History
+430.1.1 = { culture = old_frankish }
+430.1.1 = { religion = germanic_pagan }
 790.1.1 = { culture = frankish }
 1054.7.6 = { religion = catholic }
 
