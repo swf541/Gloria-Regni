@@ -267,11 +267,26 @@
 		color={ 110 190 60 }
 		color2={ 255 255 255 }
 		
+		capital = 925 #Bamako
 		
 		d_kangaba = {
 			color={ 40 120 170 }
 			color2={ 255 255 255 }
+			
+			capital = 925 #Bamako
 	
+			c_bamako = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+
+				b_bamako = {}
+				b_krina = {}
+				b_soussa = {}
+				b_dialakoro = {}
+				b_bougouni = {}
+				b_baguineda = {}
+				b_safo = {}
+			}
 			c_niani = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
@@ -284,38 +299,23 @@
 				b_fello = {}
 				b_kalaya = {}
 			}
-			c_sibiridugu = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-
-				b_bamako = {}
-				b_krina = {}
-				b_soussa = {}
-				b_dialakoro = {}
-				b_bougouni = {}
-				b_baguineda = {}
-				b_safo = {}
-			}
-			
 			c_bure = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 
-				b_kurussa = {}
 				b_bure = {}
+				b_kurussa = {}
 				b_gonku = {}
 				b_nettere = {}
 				b_tugui = {}
 				b_sannu = {}
 				b_koyin = {}
-				b_pilimini = {}
 			}
-			
 			c_do = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 
-				b_do_walata = {}
+				b_do = {}
 				b_nanako = {}
 				b_melia = {}
 				b_hudi = {}

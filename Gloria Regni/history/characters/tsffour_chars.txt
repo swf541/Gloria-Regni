@@ -97,7 +97,7 @@
 	name = "Takoi"
 	dynasty = 1000124313
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = soninke
 	
 	488.1.1  = {
@@ -115,7 +115,7 @@
 	dynasty = 0
 	female = yes
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = soninke
 	
 	493.1.1  = {
@@ -129,7 +129,7 @@
 	name = "Akoi"
 	dynasty = 1000124313
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = soninke
 	
 	father = 184216
@@ -227,7 +227,7 @@
 	name = "Alieu"
 	dynasty = 1000124316
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = jolof
 	
 	486.1.1  = {
@@ -245,7 +245,7 @@
 	dynasty = 0
 	female = yes
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = bafour
 	
 	491.1.1  = {
@@ -259,7 +259,7 @@
 	name = "Abdou"
 	dynasty = 1000124316
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = bafour
 	
 	father = 184224
@@ -277,7 +277,7 @@
 	female="yes"
 	dynasty = 1000124316
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = bafour
 	
 	father = 184224
@@ -294,7 +294,7 @@
 	name = "Saloum"
 	dynasty = 1000124317
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = jolof
 	
 	493.1.1  = {
@@ -312,13 +312,80 @@
 	dynasty = 0
 	female = yes
 	
-	religion = west_african_pagan
+	religion = serer
 	culture = bafour
 	
 	498.1.1  = {
 		birth = yes
 	}
 	558.1.1 = {
+		death = yes
+	}
+}
+184230 = {
+	name = "Kukuray"
+	dynasty = 1000124318
+	
+	religion = serer
+	culture = manden
+	
+	487.1.1  = {
+		birth = yes
+	}
+	508.1.1 = {
+		add_spouse = 184231
+	}
+	547.1.1 = {
+		death = yes
+	}
+}
+184231 = {
+	name = "Ina"
+	dynasty = 0
+	female = yes
+	
+	religion = serer
+	culture = manden
+	
+	492.1.1  = {
+		birth = yes
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184232 = {
+	name = "Mamoudou"
+	dynasty = 1000124318
+	
+	religion = serer
+	culture = manden
+	
+	father = 184230
+	mother = 184231
+	
+	513.1.1  = {
+		birth = yes
+	}
+	573.1.1 = {
+		death = yes
+	}
+}
+184233 = {
+	name = "Sassouma"
+	female="yes"
+	dynasty = 1000124318
+	
+	religion = serer
+	culture = manden
+	
+	father = 184230
+	mother = 184231
+	
+	518.1.1  = {
+		birth = yes
+	}
+	578.1.1 = {
 		death = yes
 	}
 }
