@@ -209,6 +209,43 @@ north_germanic = {
 }
 east_germanic = {
 	graphical_cultures = { westerngfx }
+	
+	langobard = {
+		graphical_culture = germangfx
+		
+		color = { 0.7 0.7 0.1 }
+
+		male_names = {
+			Adaloald Adelchis Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago Ahthari Aimeric_Aymeric Aistulf Aiulf_Aiulf
+			Ajo_Aiulf Alahis Alboin_Alwin Aldihoc Alo_Adolf Altpert Anselm_Anselm Ansfrid Ansprand Ardoin Ariald_Harold Aripert_Herbert Arichis Arioald_Harold
+			Aripert_Herbert Ariulf Arnefrid Atenulf Atto Audoin_Adalwin Audelahis Aunepert Authari_Ottar Berin_Berin Bernard_Bernard Birinus_Berin Cacco Cleph
+			Corvulus Cunincpert_Kunibert Daufer_Daufer Erchempert Erchinoald Erlembald Ewin Fara Faroald Ferdulf Flodoard Fulcoald Garibald_Gerald Gisulf Godehoc
+			Godepert Godescalc_Gottschalk Grasulf Grimoald_Grimaldo Gumpert Gundo_Gundoald Gundoald_Gundoald Hilderic Hildeprand_Hildebrand Hildigis
+			Hilmagis Hrodgaud Hucpert_Hugh Ibor Ildiches Indulf Ingoald Ioann_John Irnerius_Werner Laiamicho_Laiamicho Laidulf_Laidulf Lambert_Lambert Lamissio_Laiamicho Landar
+			Lando_Lando Lantpert Landulf_Landolf Landenulf Lethuc Liutbald_Leopold Liutpert_Lutbert Liutprand Liutward Lupus_Lupo Maginulf_Meginulf Nordepert_Norbert
+			Odilo Odoin_Otwin Orso Pando Pandulf_Pandulf Pandenulf Pemmo Perctarit_Berthold Peter_Peter Poppo_Poppo Radelchis Radelgar Radoald Raginpert Ratchis
+			Reccared_Richard Risiulf Rodoald Rodolf_Rolf Romuald Rotari_Rothari Rothari_Rothari Saxo Sico Sikard Siconulf Sigibuld Sigiprand
+			Sinibald_Sinibald Taino Tasso_Tasso Tassilo_Tasso Tato Theodelap Theodicius Theodo_Diether Theotpert Theudoald_Theudoald Thrasimund_Trasimondo
+			Unichis Unnolf Wacho Waifar_Waifar Waimar_Waimar Waldipert Walthari_Walter Wechtar Wido_Guy Zotto Zuchilo
+		}
+		female_names = {
+			Adelchisa Adelgrima Adelperga Altruda_Adeltrudis Ansa_Ansa Anselperga Aurona Cotani Cunigunda_Kunigunde Desiderata Gaitelgrima Gambara Gemma Geretrudis_Gertrude Gerperga_Gerberga Giseltrude_Gisela Gundeperga Guntrud_Gudrun Hermelinda_Herlinda
+			Imma_Emma Liutperga Maria_Maria Marozia Menia Pilitrud Rodelinde Rosamund Rotrud Rumetruda Serenahilt_Serhilda Sichelgaita Swanahild_Swanahild Theodelinde Theoderada Theodota Uta_Ute
+			Walderada_Waltrud Wisigarda
+		}
+		from_dynasty_prefix = "von "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}	
 	gepid = {
 		graphical_cultures = { germangfx }
 		
@@ -412,8 +449,9 @@ east_germanic = {
 		mother_name_chance = 0
 	}	
 }
-central_germanic = {
-	graphical_cultures = { germangfx }
+
+west_germanic = {
+	graphical_cultures = { westerngfx }
 
 	german = {
 		graphical_cultures = { germangfx }
@@ -460,52 +498,7 @@ central_germanic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-	}
-	lombard = {
-		graphical_cultures = { germangfx }
-		
-		color = { 0.6 0.6 0.8 }
-
-		male_names = {
-			Adalgis Adaloald Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago Ahthari Aimeric_Aymeric
-			Aistulf Aiulf_Aiulf Ajo_Aiulf Alahis Alboin_Alwin Aldihoc Alo_Adolf Altpert_Albert Amefrith Anselm_Anselm Ansfrid Ansfrith
-			Ansprand Ardoin Arechis Ariald_Harold Aribert_Herbert Arichis Aripert_Herbert Ariulf Arnefrith Arnifrid Artavasdas Atenulf
-			Atto Audelahis Audoin_Alwin Aunepert Ausfrid Authari_Ottar Berin_Berin Bernard_Bernard Birinus_Berin Cleph Corvulus
-			Daufer Desiderius Donnolo Erchempert Erchinoald Erlembald Ewin Fara Faroald Ferdulf Gacco Garibald_Gerald Gisulf Godehoc
-			Godepert Godescalc_Gottschalk Grasulf Grimoald Guaifer_Guaifer Guaimar_Guaimar Gumpert Gundo_Gundoald Gundoald_Gundoald
-			Hermenfred Hildeprand_Hildebrand Hilderic Hildigis Hilmagis Hrodgaud_Rodgand Hucpert_Hugh Ibor_Ivar Ildiches Indulf_Adolf
-			Ingoald Ioann_John Irnerius_Werner Kakko Kunibert Laiamicho Laidulf Lambert_Lambert Landari Landenulf Lando_Lando
-			Landulf_Landolf Lantpert Laudari Liutbald_Leopold Liutbrand Liutpert_Lutbert Liutprand Liutward Lupus_Lupo Maginulf Manso Munichis
-			Nordepert_Norbert Odilo Odoaker Odoin_Otwin Orson Pandenulf Pandulf_Randolph Pemmo Penno Perctarit_Berthold Petrus_Peter
-			Poppo Radelchis Radelgar Radgis_Radgis Radwald Raginpert Ratchis_Radgis Reccared_Richard Risiulf Rochus Rodgand_Rodgand
-			Rodoald_Rodwald Rodolf_Ralph Rodwald_Rodwald Romuald Rothari Saxo Sico_Sicco Siconulf Sigibuld Sigisbert_Sigisbert Sigisbrand Sikard_Sigurd
-			Sinibald_Sinibald Taino Taso Theodelap Theoderich_Theoderic Theodicius Theodo_Dieter Theodorich_Thierry Theotpert Theudoald Thrasimund
-			Unichis Unigild Unulf Ursus_Ursus Vacho Waifar_Guaifer Waimar_Guaimar Waldchis Waldipert Walthari_Walter Wechthari Wido_Guy Zotto Zuchilo
-		}
-		female_names = {
-			Adelberga Adelchisa Adelgrima Adelperga Altruda_Adeltrudis Amalasuintha Amalberga Amalfrida Ansa_Ansa Anselberga Anselperga Ansia
-			Appa Areagne Aurona Chlotsuintha Cotani Cunigunda_Kunigunde Desiderata Ereleuva Erelieva Gaatha Gaila Gaitelgrima Gambara Geila
-			Gemma Geretrudis_Gertrude Gerperga_Gerberga Giseltrude_Gisela Giso Glismoda Gudeliva Gundeperga Guntrud_Gudrun Helchen Hermelinda_Herlinda
-			Hunila Imma_Emma Kriemhild Liutberga Liutperga Liutpirc Maria_Maria Marozia Matasuntha Menia Pilitrud Rodelinda Rosamund Rotrude Rumetruda
-			Serenahilt_Serhilda Sichelgaita Sunigilda Sunilda Swanahild_Swanahild Theodarada Theodelinda Theodorada Theodota Theuderada Thiudigotho Uta_Ute
-			Vadamerca Valdamerca Walderada Wilgefortis Wisigarda
-		}
-
-		from_dynasty_prefix = "de "
-		grammar_transform = french
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 25
-		mat_grf_name_chance = 5
-		father_name_chance = 40
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 5
-		mother_name_chance = 25
-
-		modifier = default_culture_modifier
-	}
+	}	
 	old_frankish = {
 		graphical_cultures = { frankishgfx }
 		
@@ -599,11 +592,6 @@ central_germanic = {
 
 		modifier = default_culture_modifier
 	}
-}
-
-west_germanic = {
-	graphical_cultures = { westerngfx }
-
 	english = {
 		graphical_cultures = { englishgfx }
 		
@@ -1191,6 +1179,51 @@ latin = {
 		
 		seafarer = yes
 	}
+	lombard = {
+		graphical_cultures = { germangfx }
+		
+		color = { 0.6 0.6 0.8 }
+
+		male_names = {
+			Adalgis Adaloald Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago Ahthari Aimeric_Aymeric
+			Aistulf Aiulf_Aiulf Ajo_Aiulf Alahis Alboin_Alwin Aldihoc Alo_Adolf Altpert_Albert Amefrith Anselm_Anselm Ansfrid Ansfrith
+			Ansprand Ardoin Arechis Ariald_Harold Aribert_Herbert Arichis Aripert_Herbert Ariulf Arnefrith Arnifrid Artavasdas Atenulf
+			Atto Audelahis Audoin_Alwin Aunepert Ausfrid Authari_Ottar Berin_Berin Bernard_Bernard Birinus_Berin Cleph Corvulus
+			Daufer Desiderius Donnolo Erchempert Erchinoald Erlembald Ewin Fara Faroald Ferdulf Gacco Garibald_Gerald Gisulf Godehoc
+			Godepert Godescalc_Gottschalk Grasulf Grimoald Guaifer_Guaifer Guaimar_Guaimar Gumpert Gundo_Gundoald Gundoald_Gundoald
+			Hermenfred Hildeprand_Hildebrand Hilderic Hildigis Hilmagis Hrodgaud_Rodgand Hucpert_Hugh Ibor_Ivar Ildiches Indulf_Adolf
+			Ingoald Ioann_John Irnerius_Werner Kakko Kunibert Laiamicho Laidulf Lambert_Lambert Landari Landenulf Lando_Lando
+			Landulf_Landolf Lantpert Laudari Liutbald_Leopold Liutbrand Liutpert_Lutbert Liutprand Liutward Lupus_Lupo Maginulf Manso Munichis
+			Nordepert_Norbert Odilo Odoaker Odoin_Otwin Orson Pandenulf Pandulf_Randolph Pemmo Penno Perctarit_Berthold Petrus_Peter
+			Poppo Radelchis Radelgar Radgis_Radgis Radwald Raginpert Ratchis_Radgis Reccared_Richard Risiulf Rochus Rodgand_Rodgand
+			Rodoald_Rodwald Rodolf_Ralph Rodwald_Rodwald Romuald Rothari Saxo Sico_Sicco Siconulf Sigibuld Sigisbert_Sigisbert Sigisbrand Sikard_Sigurd
+			Sinibald_Sinibald Taino Taso Theodelap Theoderich_Theoderic Theodicius Theodo_Dieter Theodorich_Thierry Theotpert Theudoald Thrasimund
+			Unichis Unigild Unulf Ursus_Ursus Vacho Waifar_Guaifer Waimar_Guaimar Waldchis Waldipert Walthari_Walter Wechthari Wido_Guy Zotto Zuchilo
+		}
+		female_names = {
+			Adelberga Adelchisa Adelgrima Adelperga Altruda_Adeltrudis Amalasuintha Amalberga Amalfrida Ansa_Ansa Anselberga Anselperga Ansia
+			Appa Areagne Aurona Chlotsuintha Cotani Cunigunda_Kunigunde Desiderata Ereleuva Erelieva Gaatha Gaila Gaitelgrima Gambara Geila
+			Gemma Geretrudis_Gertrude Gerperga_Gerberga Giseltrude_Gisela Giso Glismoda Gudeliva Gundeperga Guntrud_Gudrun Helchen Hermelinda_Herlinda
+			Hunila Imma_Emma Kriemhild Liutberga Liutperga Liutpirc Maria_Maria Marozia Matasuntha Menia Pilitrud Rodelinda Rosamund Rotrude Rumetruda
+			Serenahilt_Serhilda Sichelgaita Sunigilda Sunilda Swanahild_Swanahild Theodarada Theodelinda Theodorada Theodota Theuderada Thiudigotho Uta_Ute
+			Vadamerca Valdamerca Walderada Wilgefortis Wisigarda
+		}
+
+		from_dynasty_prefix = "de "
+		grammar_transform = french
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 5
+		father_name_chance = 40
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 5
+		mother_name_chance = 25
+
+		modifier = default_culture_modifier
+	}	
 	italian = {
 		graphical_cultures = { italiangfx southerngfx }
 		
