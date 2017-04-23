@@ -14,10 +14,12 @@ b_tivoli = castle
 b_sutri = city
 
 # Misc
-culture = old_italian
-religion = imperial
+culture = roman
+religion = hellenic_pagan
 
 # History
+313.1.1 = { religion = imperial }
+569.1.1 = { culture = old_italian }
 #100.1.1 = {
 	#b_sutri = ct_circus_maximus_1
 	#b_sutri = ct_colosseum_1 
