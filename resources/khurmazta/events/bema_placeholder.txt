@@ -1,0 +1,457 @@
+
+# Invite vassals to festival
+character_event = {
+	id = manicheanplaceholder.20000
+	desc = EVTDESC_manicheanplaceholder_20000
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20000
+		any_vassal = {
+			limit = {
+				prisoner = no
+				war = no
+				in_command = no
+				NOT = { trait = incapable }
+				religion = manichean
+				age = 16
+				NOT = { has_character_flag = do_not_disturb }
+			}
+			letter_event = {
+				id = manicheanplaceholder.20001
+				tooltip = EVTTOOLTIP1_RoI_1000
+			}
+		}
+		hidden_tooltip = { 
+			character_event = { id = manicheanplaceholder.20020 days = 12 } 
+			character_event = { id = manicheanplaceholder.20025 days = 4 }  #Fast
+		}
+	}
+}
+
+# Vassal receives invitation
+letter_event = {
+	id = manicheanplaceholder.20001
+	desc = EVTDESC_manicheanplaceholder_20001
+	picture = GFX_placeholder
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20001 #Travel to the feast
+		ai_chance = {
+			factor = 2
+			modifier  = {
+				factor = 0.1
+				ai = yes
+				trait = in_hiding
+			}
+			modifier  = {
+				factor = 2
+				opinion = { who = from value = -30 }
+			}
+			modifier  = {
+				factor = 5
+				opinion = { who = from value = -15 }
+			}
+			modifier  = {
+				factor = 5
+				opinion = { who = from value = 0 }
+			}
+		}
+		set_character_flag = do_not_disturb
+		hidden_tooltip = { character_event = { id = manicheanplaceholder.20005 days = 12 } } # Hidden - arrives at feast
+		hidden_tooltip = { character_event = { id = manicheanplaceholder.20099 days = 42 } } # Safety event for clearing all flags
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+		}
+	}
+	option = {
+		name = EVTOPTB_RoI_1001 #Refuse invitation
+		ai_chance = {
+			factor = 1
+			modifier  = {
+				factor = 0
+				opinion = { who = FROM value = 25 }
+				NOT = { trait = in_hiding }
+			}
+			modifier  = {
+				factor = 5
+				NOT = {
+					religion = manichean
+				}
+			}
+		}
+		FROM = {
+			letter_event = {
+				id = manicheanplaceholder.20002
+				#days = 3
+				tooltip = EVTTOOLTIP1_RoI_2001
+			}
+		}
+	}
+}
+
+# If vassal refuses to come to the feast
+letter_event = {
+	id = manicheanplaceholder.20002
+	desc = EVTDESC_manicheanplaceholder_20002
+	picture = GFX_placeholder
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20002 
+		opinion = {
+			modifier = opinion_dislike
+			who = FROM
+			years = 2
+		}
+	}
+}
+
+# Festival begins
+character_event = {
+	id = manicheanplaceholder.20020
+	desc = EVTDESC_manicheanplaceholder_20020
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20020
+		set_character_flag = bema_feast_begun
+		hidden_tooltip = { character_event = { id = manicheanplaceholder.20095 days = 10 } } # End festival
+		hidden_tooltip = { character_event = { id = manicheanplaceholder.20099 days = 31 } } # Clearing all flags and modifiers after feast
+		hidden_tooltip = {
+			character_event = { 
+				id = manicheanplaceholder.20030
+				days = 3 
+			} # Singing of Hymns
+			character_event = {
+				id = manicheanplaceholder.20040
+				days = 5
+			} # Feast
+			character_event = {
+				id = manicheanplaceholder.20050
+				days = 6
+			} # Picture Book
+			character_event = { 
+				id = manicheanplaceholder.20060
+				days = 7 
+			} # Sermon
+		}
+		any_courtier = {
+			limit = {
+				is_adult = yes
+				is_ruler = no
+				NOT = { trait = incapable }
+				religion = manichean
+			}
+			set_character_flag = attending_bema_feast
+			character_event = { id = manicheanplaceholder.20030 days = 3 } 
+			character_event = { id = manicheanplaceholder.20040 days = 5 } 
+			character_event = { id = manicheanplaceholder.20050 days = 6 } 
+			character_event = { id = manicheanplaceholder.20060 days = 7 } 
+			hidden_tooltip = { character_event = { id = manicheanplaceholder.20099 days = 31 } } # Clearing all flags and modifiers after feast
+		}
+	}
+}
+
+# Vassal arrives at festival
+character_event = {
+	id = manicheanplaceholder.20005
+	desc = EVTDESC_manicheanplaceholder_20020
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20020
+		hidden_tooltip = {
+			if = {
+				limit = {
+					religion = manichean
+				}
+				character_event = { 
+					id = manicheanplaceholder.20030 
+					days = 3 
+				} 
+				character_event = { 
+					id = manicheanplaceholder.20040 
+					days = 5 
+				} 
+				character_event = { 
+					id = manicheanplaceholder.20050 
+					days = 6 
+				} 
+			}
+			character_event = { 
+				id = manicheanplaceholder.20060 
+				days = 7 
+			} # Sermon
+		}
+	}
+}
+
+# Festival ends
+character_event = {
+	id = manicheanplaceholder.20095
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		character_event = { id = manicheanplaceholder.20096 }
+		any_vassal = {
+			limit = {
+				has_character_flag = attending_bema_feast
+				ROOT = { is_liege_of = THIS }
+			}
+			character_event = { id = manicheanplaceholder.20098 }
+		}
+	}
+}
+
+# Festival is over - host
+character_event = {
+	id = manicheanplaceholder.20096
+	desc = EVTDESC_manicheanplaceholder_20096
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20096
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 1825
+			hidden = yes
+		}
+		remove_character_modifier = holding_bema_feast
+		clr_character_flag = bema_feast_begun
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Festival is over - guest
+character_event = {
+	id = manicheanplaceholder.20098
+	desc = EVTDESC_manicheanplaceholder_20096
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20096
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 365
+			hidden = yes
+		}
+		opinion = {
+			modifier = opinion_enjoyed_feast
+			who = FROM
+			years = 2
+		}
+		clr_character_flag = attending_bema_feast
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Clear all character flags and modifiers - safety catch
+character_event = {
+	id = manicheanplaceholder.20099
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_character_modifier = holding_bema_feast
+		clr_character_flag = attending_bema_feast
+		clr_character_flag = bema_feast_begun
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Singing of Hymns
+character_event = {
+	id = manicheanplaceholder.20030
+	title = EVTTITLE_manicheanplaceholder_20030
+	desc = EVTDESC_manicheanplaceholder_20030
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	capable_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20030
+		piety = 10
+		hidden_tooltip = {
+			random_list = {
+				10 = { character_event = { id = manicheanplaceholder.20036 } } # shy
+				10 = { character_event = { id = manicheanplaceholder.20037 } } # Character becomes zealous
+				100 = {} # No event
+			}
+		}
+	}
+}
+# FAST
+character_event = {
+	id = manicheanplaceholder.20025
+	title = EVTTITLE_manicheanplaceholder_20025
+	desc = EVTDESC_manicheanplaceholder_20025
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	capable_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20025
+		piety = 20
+		prestige = 20
+		random_list = {
+			30 = { health = -1 } 
+			30 = { add_trait = temperate } 
+			40 = {} # No event
+		}
+	}
+	option = {
+		name = EVTOPTB_manicheanplaceholder_20025
+		piety = 5
+		random_list = {
+			10 = { health = -1 } 
+			10 = { add_trait = temperate } 
+			80 = {} # No event
+		}
+	}
+	option = {
+		name = EVTOPTC_manicheanplaceholder_20025
+		piety = -20
+		random_list = {
+			30 = { add_trait = gluttonous } 
+			70 = {} # No event
+		}
+	}
+}
+
+# Character can't sing
+character_event = {
+	id = manicheanplaceholder.20036
+	desc = EVTDESC_manicheanplaceholder_20036
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20036
+		add_trait = shy
+		prestige = -50
+	}
+}
+
+# Character becomes zealous
+character_event = {
+	id = manicheanplaceholder.20037
+	desc = EVTDESC_manicheanplaceholder_20037
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20037
+		add_trait = zealous
+	}
+}
+
+# Feast
+character_event = {
+	id = manicheanplaceholder.20040
+	title = EVTTITLE_manicheanplaceholder_20040
+	desc = EVTDESC_manicheanplaceholder_20040
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	trigger = {
+		trait = monk
+	}
+	
+	capable_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20040
+		piety = 30
+		prestige = 30
+	}
+}
+
+#Read the  Arzhang
+character_event = {
+	id = manicheanplaceholder.20050
+	title = EVTTITLE_manicheanplaceholder_20050
+	desc = EVTDESC_manicheanplaceholder_20050
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = EVTOPTA_manicheanplaceholder_20050
+		random_list = {
+			10 = {
+				add_trait = zealous
+			}
+			10 = {
+				change_learning = 1
+			}
+			30 = {
+				piety = 50
+			}
+			50 = { }
+		}
+	}
+}
+
+# Absolution of Sins
+character_event = {
+	id = manicheanplaceholder.20060
+	desc = EVTDESC_manicheanplaceholder_20060
+	picture = GFX_placeholder
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_manicheanplaceholder_20060
+		piety = 10
+		add_character_modifier = {
+			name = large_feast_timer
+			duration = 365
+			hidden = yes
+		}
+	}
+}
