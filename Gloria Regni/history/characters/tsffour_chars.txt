@@ -641,3 +641,119 @@
 		death = yes
 	}
 }
+184249 = {
+	name = "Kinkin"
+	dynasty = 1000124322
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	487.1.1  = {
+		birth = yes
+	}
+	508.1.1 = {
+		add_spouse = 184250
+	}
+	547.1.1 = {
+		death = yes
+	}
+}
+184250 = {
+	name = "Lorane"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	492.1.1  = {
+		birth = yes
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184251 = {
+	name = "Kukuray"
+	dynasty = 1000124322
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	father = 184249
+	mother = 184250
+	
+	513.1.1  = {
+		birth = yes
+	}
+	573.1.1 = {
+		death = yes
+	}
+}
+184252 = {
+	name = "Nana"
+	female="yes"
+	dynasty = 1000124322
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	father = 184249
+	mother = 184250
+	
+	518.1.1  = {
+		birth = yes
+	}
+	578.1.1 = {
+		death = yes
+	}
+}
+184253 = {
+	name = "Ali-Fay"
+	dynasty = 1000124323
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	489.1.1  = {
+		birth = yes
+	}
+	510.1.1 = {
+		add_spouse = 184254
+	}
+	549.1.1 = {
+		death = yes
+	}
+}
+184254 = {
+	name = "Aminata"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	494.1.1  = {
+		birth = yes
+	}
+	554.1.1 = {
+		death = yes
+	}
+}
+184255 = {
+	name = "Bannu"
+	dynasty = 1000124323
+	
+	religion = west_african_pagan
+	culture = manden
+	
+	father = 184253
+	mother = 184254
+	
+	515.1.1  = {
+		birth = yes
+	}
+	575.1.1 = {
+		death = yes
+	}
+}
