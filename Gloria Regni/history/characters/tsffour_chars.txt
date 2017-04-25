@@ -216,6 +216,8 @@
 	religion = west_african_pagan
 	culture = bafour
 	
+	add_trait = pregnant
+	
 	497.1.1  = {
 		birth = yes
 	}
@@ -754,6 +756,243 @@
 		birth = yes
 	}
 	575.1.1 = {
+		death = yes
+	}
+}
+184256 = {
+	name = "Zalil"
+	dynasty = 1000124324
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	485.1.1  = {
+		birth = yes
+	}
+	506.1.1 = {
+		add_spouse = 184257
+	}
+	545.1.1 = {
+		death = yes
+	}
+}
+184257 = {
+	name = "Chindi"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	490.1.1  = {
+		birth = yes
+	}
+	550.1.1 = {
+		death = yes
+	}
+}
+184258 = {
+	name = "Ammar"
+	dynasty = 1000124324
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184256
+	mother = 184257
+	
+	511.1.1  = {
+		birth = yes
+	}
+	571.1.1 = {
+		death = yes
+	}
+}
+184259 = {
+	name = "Huseina"
+	female="yes"
+	dynasty = 1000124324
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184256
+	mother = 184257
+	
+	516.1.1  = {
+		birth = yes
+	}
+	576.1.1 = {
+		death = yes
+	}
+}
+184260 = {
+	name = "Yaqub"
+	dynasty = 1000124325
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	484.1.1  = {
+		birth = yes
+	}
+	505.1.1 = {
+		add_spouse = 184261
+	}
+	544.1.1 = {
+		death = yes
+	}
+}
+184261 = {
+	name = "Azzah"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	489.1.1  = {
+		birth = yes
+	}
+	549.1.1 = {
+		death = yes
+	}
+}
+184262 = {
+	name = "Al-Hajj"
+	dynasty = 1000124325
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184260
+	mother = 184261
+	
+	510.1.1  = {
+		birth = yes
+	}
+	570.1.1 = {
+		death = yes
+	}
+}
+184263 = {
+	name = "Hassana"
+	female="yes"
+	dynasty = 1000124325
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184260
+	mother = 184261
+	
+	515.1.1  = {
+		birth = yes
+	}
+	575.1.1 = {
+		death = yes
+	}
+}
+184264 = {
+	name = "Wunka"
+	dynasty = 1000124326
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	483.1.1  = {
+		birth = yes
+	}
+	504.1.1 = {
+		add_spouse = 184265
+	}
+	543.1.1 = {
+		death = yes
+	}
+}
+184265 = {
+	name = "Alkammiisa"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	add_trait = pregnant
+	
+	488.1.1  = {
+		birth = yes
+	}
+	548.1.1 = {
+		death = yes
+	}
+}
+184266 = {
+	name = "Zakoi"
+	dynasty = 1000124326
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184264
+	mother = 184265
+	
+	509.1.1  = {
+		birth = yes
+	}
+	569.1.1 = {
+		death = yes
+	}
+}
+184267 = {
+	name = "Chindi"
+	female="yes"
+	dynasty = 1000124326
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184264
+	mother = 184265
+	
+	514.1.1  = {
+		birth = yes
+	}
+	574.1.1 = {
+		death = yes
+	}
+}
+184268 = {
+	name = "Tunka"
+	dynasty = 1000124327
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	492.1.1  = {
+		birth = yes
+	}
+	513.1.1 = { 
+		add_spouse=184269
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184269 = {
+	name = "Adja"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = bafour
+	
+	add_trait = pregnant
+	
+	497.1.1  = {
+		birth = yes
+	}
+	557.1.1 = {
 		death = yes
 	}
 }
