@@ -996,3 +996,102 @@
 		death = yes
 	}
 }
+184270 = {
+	name = "Ishaq"
+	dynasty = 1000124328
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	496.1.1  = {
+		birth = yes
+	}
+	517.1.1 = { 
+		add_spouse=184271
+	}
+	556.1.1 = {
+		death = yes
+	}
+}
+184271 = {
+	name = "Tarifa"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	501.1.1  = {
+		birth = yes
+	}
+	561.1.1 = {
+		death = yes
+	}
+}
+184272 = {
+	name = "Huseini"
+	dynasty = 1000124329
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	484.1.1  = {
+		birth = yes
+	}
+	505.1.1 = {
+		add_spouse = 184273
+	}
+	544.1.1 = {
+		death = yes
+	}
+}
+184273 = {
+	name = "Nuru"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	489.1.1  = {
+		birth = yes
+	}
+	549.1.1 = {
+		death = yes
+	}
+}
+184274 = {
+	name = "Karay"
+	dynasty = 1000124329
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184272
+	mother = 184273
+	
+	510.1.1  = {
+		birth = yes
+	}
+	570.1.1 = {
+		death = yes
+	}
+}
+184263 = {
+	name = "Aminah"
+	female="yes"
+	dynasty = 1000124329
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184272
+	mother = 184273
+	
+	515.1.1  = {
+		birth = yes
+	}
+	575.1.1 = {
+		death = yes
+	}
+}
