@@ -1046,7 +1046,7 @@
 	}
 }
 184273 = {
-	name = "Nuru"
+	name = "Teko"
 	dynasty = 0
 	female = yes
 	
@@ -1077,7 +1077,7 @@
 		death = yes
 	}
 }
-184263 = {
+184275 = {
 	name = "Aminah"
 	female="yes"
 	dynasty = 1000124329
@@ -1092,6 +1092,87 @@
 		birth = yes
 	}
 	575.1.1 = {
+		death = yes
+	}
+}
+184276 = {
+	name = "Ankabi"
+	dynasty = 1000124330
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	488.1.1  = {
+		birth = yes
+	}
+	509.1.1 = { 
+		add_spouse=184277
+	}
+	548.1.1 = {
+		death = yes
+	}
+}
+184277 = {
+	name = "Chindi"
+	dynasty = 0
+	female = yes
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	493.1.1  = {
+		birth = yes
+	}
+	553.1.1 = {
+		death = yes
+	}
+}
+184278 = {
+	name = "Baru"
+	dynasty = 1000124330
+	
+	religion = west_african_pagan
+	culture = songhai
+	
+	father = 184276
+	mother = 184277
+	
+	514.1.1  = {
+		birth = yes
+	}
+	574.1.1 = {
+		death = yes
+	}
+}
+184279 = {
+	name = "Hanga"
+	dynasty = 1000124331
+	
+	religion = bori
+	culture = songhai
+	
+	472.1.1 = {
+		birth = yes
+	}
+	493.1.1 = {
+		add_spouse = 184280
+	}
+	532.1.1 = {
+		death = yes
+	}
+}
+184280 = {
+	name = "Fitila"
+	female = "yes"
+	dynasty = "0"
+	
+	religion = bori
+	culture = songhai
+	
+	477.1.1 = {
+		birth = yes
+	}
+	537.1.1 = {
 		death = yes
 	}
 }
