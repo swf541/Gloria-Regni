@@ -15,10 +15,12 @@ b_boston = city
 #b_bardney = castle
 
 # Misc
-culture = saxon
-religion = germanic_pagan
+culture = british
+religion = imperial
 
 # History
+480.1.1 = { religion = germanic_pagan }
+480.1.1 = { culture = saxon }
 700.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 

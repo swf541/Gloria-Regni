@@ -16,10 +16,13 @@ b_lynn = city
 #b_chatteris = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+450.1.1 = { religion = germanic_pagan }
+450.1.1 = { culture = saxon }
+630.1.1 = { religion = imperial }
 1054.1.1 = { religion = catholic }
 
 1100.11.11 = { culture = english }

@@ -16,10 +16,13 @@ b_sandwich = city
 #b_tonbridge = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+463.1.1 = { religion = germanic_pagan }
+463.1.1 = { culture = saxon }
+640.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }

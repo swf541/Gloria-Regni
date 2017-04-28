@@ -16,10 +16,13 @@ b_bury = city
 #b_bungay = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+450.1.1 = { religion = saxon }
+450.1.1 = { culture = germanic_pagan }
+630.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }
