@@ -1,4 +1,4 @@
-# 52 - Northumberland
+# 1545 - Alnwick
 
 # County Title
 title = c_alnwick
@@ -10,10 +10,13 @@ b_alnwick2 = city
 b_alnwick3 = castle
 
 # Misc
-culture = saxon
-religion = imperial
+culture = cumbric
+religion = celtic_pagan
 
 # History
+510.1.1 = { religion = germanic_pagan }
+510.1.1 = { culture = saxon }
+651.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }

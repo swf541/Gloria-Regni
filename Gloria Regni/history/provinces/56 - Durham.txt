@@ -16,10 +16,13 @@ b_hartlepool = city
 #b_raby = castle
 
 # Misc
-culture = saxon
-religion = imperial
+culture = cumbric
+religion = celtic_pagan
 
 # History
+547.1.1 = { religion = germanic_pagan }
+547.1.1 = { culture = saxon }
+651.1.1 = { religion = imperial }
 962.1.1 = { capital = b_st_cuthbert }
 1054.7.6 = { religion = catholic }
 

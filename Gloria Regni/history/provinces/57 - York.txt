@@ -14,10 +14,18 @@ b_scarborough = city
 #b_hull = castle
 
 # Misc
-culture = saxon
-religion = imperial
+culture = british
+religion = hellenic_pagan
 
 # History
+
+325.1.1 = { religion = imperial }
+
+559.1.1 = { religion = germanic_pagan }
+559.1.1 = { culture = saxon }
+
+634.1.1 = { religion = imperial }
+
 866.1.1 = {
 	culture = norse 
 	religion = norse_pagan
