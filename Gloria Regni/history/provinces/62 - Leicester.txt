@@ -16,11 +16,13 @@ b_nottingham = city
 b_newstead = temple
 
 # Misc
-culture = saxon
-religion = germanic_pagan
+culture = british
+religion = imperial
 
 # History
-700.1.1 = { religion = imperial }
+530.1.1 = { culture = saxon }
+530.1.1 = { religion = germanic_pagan }
+655.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }

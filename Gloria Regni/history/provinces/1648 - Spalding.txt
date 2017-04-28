@@ -10,11 +10,13 @@ b_spalding2 = temple
 b_spalding3 = city
 
 # Misc
-culture = saxon
-religion = germanic_pagan
+culture = british
+religion = imperial
 
 # History
-700.1.1 = { religion = imperial }
+480.1.1 = { religion = germanic_pagan }
+480.1.1 = { culture = saxon }
+630.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1100.11.11 = { culture = english }
