@@ -16,10 +16,13 @@ b_stafford = city
 #b_dudley = castle
 
 # Misc
-culture = saxon
+culture = british
 religion = imperial
 
 # History
+530.1.1 = { culture = saxon }
+530.1.1 = { religion = germanic_pagan }
+655.1.1 = { religion = imperial }
 900.1.1 = { remove_settlement = b_tamworth }
 1054.7.6 = { religion = catholic }
 
