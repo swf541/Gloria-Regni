@@ -16,10 +16,16 @@ b_bar = temple
 #b_drivast = castle
 
 # Misc
-culture = serbian
-religion = slavic_pagan
+culture = dalmatian
+religion = hellenic_pagan
 
 # History
+356.1.1 = { religion = imperial }
+
+632.1.1 = { 
+	religion = slavic_pagan
+	culture = serbian
+}
 870.1.1 = {
 	religion = orthodox
 }
