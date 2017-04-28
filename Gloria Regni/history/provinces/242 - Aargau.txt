@@ -16,11 +16,12 @@ b_basel = temple
 #b_laufenburg = castle
 
 # Misc
-culture = german
-religion = imperial
+culture = galloroman
+religion = hellenic_pagan
 
 # History
-
+356.1.1 = { religion = imperial }
+700.1.1 = { culture = german }
 1054.7.6 = { religion = catholic }
 
 
