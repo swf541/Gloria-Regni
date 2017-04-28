@@ -11,10 +11,12 @@ b_sveg = tribal
 #b_tannas = temple
 
 # Misc
-culture = norse
-religion = norse_pagan
+culture = lappish
+religion = finnish_pagan
 
 # History
+890.1.1 = { culture = norse } 
+890.1.1 = { religion = norse_pagan } 
 1066.1.1 = { culture = norwegian }
 1090.1.1 = { religion = catholic }
 1300.1.1 = {

@@ -12,10 +12,12 @@ b_mjalleborgen = tribal
 #b_vasterhus = temple
 
 # Misc
-culture = norse
-religion = norse_pagan
+culture = lappish
+religion = finnish_pagan
 
 # History
+885.1.1 = { culture = norse } 
+885.1.1 = { religion = norse_pagan } 
 1066.1.1 = { culture = norwegian }
 1090.1.1 = { religion = catholic }
 1300.1.1 = {
