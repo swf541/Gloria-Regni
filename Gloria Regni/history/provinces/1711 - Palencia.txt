@@ -10,12 +10,16 @@ b_palencia2 = city
 b_palencia3 = temple
 b_palencia4 = castle
 
-culture = hispanic
-religion = imperial
+# Misc
+culture = cantabrian
+religion = celtic_pagan
 terrain = hills
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 945.1.1 = { culture = castillan }
 
 1054.7.6 = { religion = catholic }

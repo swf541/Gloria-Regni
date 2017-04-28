@@ -9,12 +9,16 @@ b_trancoso1 = castle
 b_trancoso2 = city
 b_trancoso3 = temple
 
+
 # Misc
-culture = hispanic
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 931.1.1 = {
 	culture = portuguese
 }

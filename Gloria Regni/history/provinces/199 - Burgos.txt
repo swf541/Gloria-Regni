@@ -14,12 +14,16 @@ b_castrobarte = castle
 #b_arandadeduero = temple
 #b_carrion = castle
 
-culture = hispanic
-religion = imperial
+# Misc
+culture = cantabrian
+religion = celtic_pagan
 terrain = hills
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 700.1.1 = {
 	b_palencia = ca_town_1
 	b_palencia = ca_keep_1

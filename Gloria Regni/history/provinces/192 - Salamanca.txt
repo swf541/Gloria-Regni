@@ -14,12 +14,16 @@ b_ciudadrodrigo = temple
 #b_carbajosadelasagrada = castle
 #b_lumbrales = castle
 
+
 # Misc
-culture = hispanic
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 867.1.1 = { 
 	b_salamanca = ca_town_1
 	b_salamanca = ca_keep_1

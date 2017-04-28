@@ -16,11 +16,14 @@ b_laredo = temple
 #b_sanvicente = castle
 
 # Misc
-culture = hispanic
-religion = imperial
+culture = cantabrian
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 945.1.1 = {
 	culture = castillan
 }

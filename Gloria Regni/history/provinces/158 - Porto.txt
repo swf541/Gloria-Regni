@@ -14,12 +14,16 @@ b_guimaraes = city
 #b_arcosdevaldevez = castle
 #b_moncao = castle
 
+
 # Misc
-culture = hispanic
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 867.1.1 = {
 	b_porto = ca_town_1
 	b_porto = ca_keep_1

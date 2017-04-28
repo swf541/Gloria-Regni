@@ -15,11 +15,14 @@ b_segovia = temple
 #b_iscar = city
 
 # Misc
-culture = hispanic
-religion = imperial
+culture = cantabrian
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 867.1.1 = { 
 	b_valladolid = ca_town_1
 	b_valladolid = ca_keep_1

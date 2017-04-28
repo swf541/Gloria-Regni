@@ -11,11 +11,14 @@ b_lugo3 = temple
 
 
 # Misc
-culture = suebi
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 867.1.1 = {
 	b_lugo1 = ca_town_1
 	b_lugo1 = ca_keep_1

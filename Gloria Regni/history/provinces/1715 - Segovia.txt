@@ -9,11 +9,15 @@ b_segovia1 = castle
 b_segovia2 = city
 b_segovia3 = temple
 
+
 # Misc
-culture = hispanic
-religion = imperial
+culture = cantabrian
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 950.1.1 = { culture = castillan }
 1054.7.6 = { religion = catholic }

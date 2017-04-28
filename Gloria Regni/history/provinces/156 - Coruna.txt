@@ -15,11 +15,14 @@ b_mondonedo = temple
 #b_triacastela = castle
 
 # Misc
-culture = suebi
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 867.1.1 = {
 	b_corunna = ca_town_1
 	b_corunna = ca_keep_1

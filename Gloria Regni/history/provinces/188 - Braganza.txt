@@ -15,11 +15,14 @@ b_chaves = temple
 #b_azinhoso = castle
 
 # Misc
-culture = hispanic
-religion = imperial
+culture = galician
+religion = celtic_pagan
 
 # History
-
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 926.1.1 = {
 	culture = portuguese
 }

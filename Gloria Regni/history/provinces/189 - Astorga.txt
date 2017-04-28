@@ -15,10 +15,14 @@ b_astorga = temple
 #b_toreno = castle
 
 # Misc
-culture = hispanic
-religion = imperial
+culture = astures
+religion = celtic_pagan
 
 # History
+700.1.1 = {
+	religion = imperial 
+	culture = hispanic
+}
 700.1.1 = {
 	b_ponferrada = ca_town_1
 	b_ponferrada = ca_keep_1
