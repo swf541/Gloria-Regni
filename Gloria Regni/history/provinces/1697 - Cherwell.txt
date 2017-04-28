@@ -1,4 +1,4 @@
-# 22 - Oxford
+#1697 - Cherwell
 
 # County Title
 title = c_cherwell
@@ -15,9 +15,11 @@ culture = british
 religion = imperial
 
 # History
-800.1.1 = {
-	culture = saxon
-}
+
+520.1.1 = { religion = germanic_pagan }
+520.1.1 = { culture = saxon }
+
+655.1.1 = { religion = imperial }
 
 1054.7.6 = { religion = catholic }
 
