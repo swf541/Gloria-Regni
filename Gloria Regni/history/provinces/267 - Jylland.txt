@@ -17,10 +17,14 @@ b_aarhus = temple
 #b_skagen = castle
 
 # Misc
-culture = norse
-religion = norse_pagan
+culture = jute
+religion = germanic_pagan
 
 # History
+470.1.1 = {
+	religion = norse_pagan
+	culture = norse
+}
 867.1.1 = {
 	b_jelling = tb_shipyard_1
 	b_aarhus = tp_shipyard_1

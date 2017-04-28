@@ -17,10 +17,14 @@ b_slesvig = tribal
 #b_kolding = castle
 
 # Misc
-culture = norse
-religion = norse_pagan
+culture = angle
+religion = germanic_pagan
 
 # History
+470.1.1 = {
+	religion = norse_pagan
+	culture = norse
+}
 800.1.1 = {
 	b_slesvig = tb_shipyard_1
 }
