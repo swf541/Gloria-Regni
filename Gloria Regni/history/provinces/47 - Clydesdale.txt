@@ -18,8 +18,10 @@ b_st_kentigern = temple
 
 # Misc
 culture = cumbrian
-religion = imperial
+religion = celtic_pagan
 
+#history
+410.1.1 = { religion = imperial }
 1000.1.1 = {
 	b_dumbarton = castle
 	b_glasgow = city

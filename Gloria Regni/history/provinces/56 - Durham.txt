@@ -20,8 +20,10 @@ culture = cumbrian
 religion = celtic_pagan
 
 # History
-547.1.1 = { religion = germanic_pagan }
-547.1.1 = { culture = saxon }
+547.1.1 = {
+	religion = germanic_pagan
+	culture = saxon
+}
 651.1.1 = { religion = imperial }
 962.1.1 = { capital = b_st_cuthbert }
 1054.7.6 = { religion = catholic }

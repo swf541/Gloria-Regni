@@ -13,10 +13,12 @@ culture = cumbrian
 religion = celtic_pagan
 
 # History
-460.1.1 = { religion = imperial }
+510.1.1 = { religion = imperial }
 
-559.1.1 = { religion = germanic_pagan }
-559.1.1 = { culture = saxon }
+559.1.1 = { 
+	religion = germanic_pagan
+	culture = saxon
+}
 
 866.1.1 = {
 	culture = norse 
