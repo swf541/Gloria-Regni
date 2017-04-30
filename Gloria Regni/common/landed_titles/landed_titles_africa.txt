@@ -3,6 +3,249 @@
 	color2={ 255 255 255 }
 
 	capital = 913 # Kumbi Saleh
+	
+	k_sahara = {
+		color = { 65 125 145 }
+		color2 = { 255 255 255 }
+		
+		capital = 1485
+		
+		d_murzuk = {
+			color = { 145 200 94 }
+			color2 = { 255 255 255 }
+			
+			c_tazirbu = {
+				color = { 145 200 94 }
+				color2 = { 255 255 255 }
+				
+				b_tazirbu1 = { }
+				b_tazirbu2 = { }
+				b_tazirbu3 = { }
+				b_tazirbu4 = { }
+				b_tazirbu5 = { }
+				b_tazirbu6 = { }
+				b_tazirbu7 = { }
+			}
+			c_kufra = {
+				color = { 145 200 94 }
+				color2 = { 255 255 255 }
+				
+				b_kufra1 = { }
+				b_kufra2 = { }
+				b_kufra3 = { }
+				b_kufra4 = { }
+				b_kufra5 = { }
+				b_kufra6 = { }
+				b_kufra7 = { }
+			}
+			c_augila = {
+				color = { 145 200 94 }
+				color2 = { 255 255 255 }
+				
+				b_augila = { }
+				b_augila2 = { }
+				b_augila3 = { }
+				b_augila4 = { }
+				b_augila5 = { }
+				b_augila6 = { }
+				b_augila7 = { }
+			}
+		}
+		
+		d_fezzan = {
+			color={ 120 190 110 }
+			color2={ 255 255 255 }
+			
+			capital = 2077
+	
+			c_murzuk = {	#Use as Template
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+				
+				b_murzuk = {}
+				b_zawila = {}
+				b_traghan = {}
+				b_murzuk2 = {}
+				b_murzuk3 = {}
+				b_murzuk4 = {}
+				b_murzuk5 = {}
+			}
+			c_tajhari = {	#Already has Prov Made
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+				
+				b_tajhari = {}
+				b_tajhari2 = {}
+				b_tajhari3 = {}
+				b_tajhari4 = {}
+				b_tajhari5 = {}
+				b_tajhari6 = {}
+				b_tajhari7 = {}
+			}
+			c_sabha = {
+				color={ 120 190 77 }
+				color2={ 255 255 255 }
+				
+				b_sabha = {}
+				b_sabha2 = {}
+				b_sabha3 = {}
+				b_sabha4 = {}
+				b_sabha5 = {}
+				b_sabha6 = {}
+				b_sabha7 = {}
+			}	
+			c_fuqaha = {
+				color={ 120 190 77 }
+				color2={ 255 255 255 }
+				
+				b_fuqaha = {}
+				b_fuqaha2 = {}
+				b_fuqaha3 = {}
+				b_fuqaha4 = {}
+				b_fuqaha5 = {}
+				b_fuqaha6 = {}
+				b_fuqaha7 = {}
+			}				
+		}		
+		d_ghadames = {
+			color = { 65 125 145 }
+			color2 = { 255 255 255 }
+		
+			capital = 1484		
+			
+			c_ghadames = { 
+				color = { 65 125 145 }
+				color2 = { 255 255 255 }
+				
+				b_ghadames = { }
+				b_ghadames2 = { }
+				b_ghadames3 = { }
+				b_ghadames4 = { }
+				b_ghadames5 = { }
+				b_ghadames6 = { }
+				b_ghadames7 = { }
+			}
+			c_brak = {
+				color = { 45 135 175 }
+				color2 = { 255 255 255 }
+				
+				b_brak = { }
+				b_brak2 = { }
+				b_brak3 = { }
+				b_brak4 = { }
+				b_brak5 = { }
+				b_brak6 = { }
+				b_brak7 = { }
+			}
+			c_ghat = {
+				color = { 48 175 155 }
+				color2 = { 255 255 255 }
+				
+				b_ghat = { }
+				b_ghat2 = { }
+				b_ghat3 = { }
+				b_ghat4 = { }
+				b_ghat5 = { }
+				b_ghat6 = { }
+				b_ghat7 = { }
+			}
+			c_garama = {
+				color = { 75 145 125 }
+				color2 = { 255 255 255 }
+				
+				b_garama = { }
+				b_garama2 = { }
+				b_garama3 = { }
+				b_garama4 = { }
+				b_garama5 = { }
+				b_garama6 = { }
+				b_garama7 = { }
+			}
+			c_illizi = {
+				color = { 75 145 125 }
+				color2 = { 255 255 255 }
+				
+				b_illizi = { }
+				b_illizi2 = { }
+				b_illizi3 = { }
+				b_illizi4 = { }
+				b_illizi5 = { }
+				b_illizi6 = { }
+				b_illizi7 = { }
+			}
+		}
+		d_mzab = {
+			color={ 180 150 20 }
+			color2={ 255 255 255 }
+			
+			capital = 1801
+	
+			c_wargla = { #Ouargla
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+			
+				b_wargla = {} #Ouargla
+				b_wargla2 = {} #Ouargla
+				b_wargla3 = {} #Ouargla
+				b_wargla4 = {} #Ouargla
+				b_wargla5 = {} #Ouargla
+				b_wargla6 = {} #Ouargla
+				b_wargla7 = {} #Ouargla
+			}
+			c_ghardia = { #Taghardaïat
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+			
+				b_ghardia = {} #Taghardaïat
+				b_ghardia2 = {} #Taghardaïat
+				b_ghardia3 = {} #Taghardaïat
+				b_ghardia4 = {} #Taghardaïat
+				b_ghardia5 = {} #Taghardaïat
+				b_ghardia6 = {} #Taghardaïat
+				b_ghardia7 = {} #Taghardaïat
+			}
+			c_laghwat = { #Laghouat
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+			
+				b_laghwat = {} #Laghouat
+				b_laghwat2 = {} #Laghouat
+				b_laghwat3 = {} #Laghouat
+				b_laghwat4 = {} #Laghouat
+				b_laghwat5 = {} #Laghouat
+				b_laghwat6 = {} #Laghouat
+				b_laghwat7 = {} #Laghouat
+			}
+			c_tehouda = { 
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+				
+				greek = "Thabudeos"
+			
+				b_tehouda = {
+					greek = "Thabudeos"
+				}
+				b_tehouda2 = {
+					greek = "Thabudeos"
+				}
+				b_tehouda3 = {
+					greek = "Thabudeos"
+				}
+				b_tehouda4 = {
+					greek = "Thabudeos"
+				}
+				b_tehouda5 = {
+					greek = "Thabudeos"
+				}
+				b_tehouda6 = {
+					greek = "Thabudeos"
+				}
+				b_tehouda7 = {
+					greek = "Thabudeos"
+				}
+			}
+		}
+	}
 
 	k_awkar = {
 		color={ 60 150 120 }
@@ -224,7 +467,7 @@
 				b_kanel = {}
 				b_ouro_sogui = {}
 			}
-			c_brakna = {
+			c_ghatna = {
 				color={ 130 180 61 }
 				color2={ 255 255 255 }
 			
@@ -821,49 +1064,6 @@
 				b_baiomari = {}
 			}
 		}		
-		d_east_azbin = {
-			color={ 180 200 180 }
-			color2={ 255 255 255 }
-	
-			c_zinder = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_zinder = {}
-				b_boure = {}
-				b_tanout = {}
-				b_garazu = {}
-				b_gamu = {}
-				b_zermu = {}
-				b_mirria = {}
-			}
-			c_tenere = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_aghram = {}
-				b_fachi = {}
-				b_tenere = {}
-			}
-			c_kawar = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_kawar = {}
-				b_abzar = {}
-				b_ankalas = {}
-				b_agadem = {}
-				b_bilma = {}
-			}
-			c_djado = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_djado = {}
-				b_aney = {}
-				b_dirku = {}
-			}
-		}
 		d_kanem = {
 			color={ 150 130 50 }
 			color2={ 255 255 255 }
@@ -2257,6 +2457,18 @@ e_arabia = {
 				}
 				b_shammas = {
 				}
+			}
+			c_bahariya = {
+				color={ 116 215 150 }
+				color2={ 255 255 255 }	
+
+				b_bahariya1 = { }
+				b_bahariya2 = { }
+				b_bahariya3 = { }
+				b_bahariya4 = { }
+				b_bahariya5 = { }
+				b_bahariya6 = { }
+				b_bahariya7 = { }				
 			}
 			c_quattara = {
 				color={ 106 225 140 }
@@ -4066,49 +4278,6 @@ e_arabia = {
 			}
 		}
 		
-		d_mzab = {
-			color={ 180 150 20 }
-			color2={ 255 255 255 }
-	
-			c_wargla = { #Ouargla
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-			
-				b_wargla = {} #Ouargla
-			}
-			c_ghardia = { #Taghardaïat
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-			
-				b_ghardia = {} #Taghardaïat
-				
-			}
-			c_laghwat = { #Laghouat
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-			
-				b_laghwat = {} #Laghouat
-				
-			}
-			c_righ = { #Laghouat
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-			
-				b_righ = {} #Laghouat
-				
-			}
-			c_tehouda = { 
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				greco_roman = "Thabudeos"
-			
-				b_tehouda = {
-					greco_roman = "Thabudeos"
-					}
-			}
-		}
-		
 		d_tangiers = {
 			color={ 45 255 3 }
 			color2={ 255 255 255 }
@@ -4573,6 +4742,18 @@ e_arabia = {
 				b_bougtob = {
 				}
 			}
+			c_naama = {
+				color = { 44 255 88 }
+				color2 = { 255 255 255 }
+				
+				b_naama1 = { }
+				b_naama2 = { }
+				b_naama3 = { }
+				b_naama4 = { }
+				b_naama5 = { }
+				b_naama6 = { }
+				b_naama7 = { }
+			}
 			c_snassen = {
 				color={ 36 248 71 }
 				color2={ 255 255 255 }
@@ -4805,6 +4986,18 @@ e_arabia = {
 				b_elkrib = {
 				}
 			}
+			c_tozeur = {
+				color={ 130 180 161 }
+				color2={ 255 255 255 }
+				
+				b_tozeur1 = { }	
+				b_tozeur2 = { }
+				b_tozeur3 = { }
+				b_tozeur4 = { }
+				b_tozeur5 = { }
+				b_tozeur6 = { }
+				b_tozeur7 = { }
+			}
 			c_kairwan = {
 				color={ 32 244 107 }
 				color2={ 255 255 255 }
@@ -4941,26 +5134,6 @@ e_arabia = {
 				b_kebili5 = { }
 				b_kebili6 = { }
 				b_kebili7 = { }
-			}
-		}
-		
-		d_fezzan = {
-			color={ 120 190 110 }
-			color2={ 255 255 255 }
-	
-			c_murzuk = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_murzuk = {}
-				b_zawila = {}
-				b_traghan = {}
-			}
-			c_tajhari = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_tajhari = {}
 			}
 		}
 		
@@ -5694,6 +5867,18 @@ e_abyssinia = {
 				b_adulis5 = { }
 				b_adulis6 = { }
 				b_adulis7 = { }
+			}
+			c_saho = {
+				color = { 188 144 75 }
+				color2 = { 255 255 255 }
+				
+				b_saho1 = { }
+				b_saho2 = { }
+				b_saho3 = { }
+				b_saho4 = { }
+				b_saho5 = { }
+				b_saho6 = { }
+				b_saho7 = { }
 			}
 			c_akordat = {
 				color={ 186 135 70 }
@@ -6450,6 +6635,18 @@ e_abyssinia = {
 				b_naqis6 = { }
 				b_naqis7 = { }
 			}
+			c_medri_bahri = {
+				color = { 135 210 145 }
+				color2 = { 255 255 255 }
+				
+				b_medri_bahri1 = { }
+				b_medri_bahri2 = { }
+				b_medri_bahri3 = { }
+				b_medri_bahri4 = { }
+				b_medri_bahri5 = { }
+				b_medri_bahri6 = { }
+				b_medri_bahri7 = { }
+			}
 			c_aydhab = {
 				color = { 125 120 65 }
 				color2={ 255 255 255 }
@@ -6743,6 +6940,30 @@ e_abyssinia = {
 				b_mukden = {
 				}
 			}
+			c_marya = {
+				color = { 188 100 54 }
+				color2 = { 255 255 255 }
+				
+				b_marya1 = { }
+				b_marya2 = { }
+				b_marya3 = { }
+				b_marya4 = { }
+				b_marya5 = { }
+				b_marya6 = { }
+				b_marya7 = { }
+			}
+			c_ka'bir = {
+				color = { 200 111 67 }
+				color2 = { 255 255 255 }
+				
+				b_ka'bir1 = { }
+				b_ka'bir2 = { }
+				b_ka'bir3 = { }
+				b_ka'bir4 = { }
+				b_ka'bir5 = { }
+				b_ka'bir6 = { }
+				b_ka'bir7 = { }
+			}
 			c_hayya = {
 				color={ 186 91 41 }
 				color2={ 255 255 255 }
@@ -6792,6 +7013,18 @@ e_abyssinia = {
 				b_butana5 = { }
 				b_butana6 = { }
 				b_butana7 = { }
+			}
+			c_wolqayt = {
+				color = { 115 145 144 }
+				color2 = { 255 255 255 }
+				
+				b_wolqayt1 = { }
+				b_wolqayt2 = { }
+				b_wolqayt3 = { }
+				b_wolqayt4 = { }
+				b_wolqayt5 = { }
+				b_wolqayt6 = { }
+				b_wolqayt7 = { }
 			}
 		}
 		d_darfur = {
