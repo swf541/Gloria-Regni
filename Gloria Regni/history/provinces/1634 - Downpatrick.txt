@@ -1,0 +1,22 @@
+# 5 - Ulster
+
+# County Title
+title = c_downpatrick
+
+# Settlements
+max_settlements = 4
+b_downpatrick1 = tribal
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_downpatrick1 = castle
+	b_downpatrick2 = city
+	b_downpatrick3 = temple
+}
+
+1054.7.6 = { religion = catholic }
+

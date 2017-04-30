@@ -1,0 +1,23 @@
+# 13 - Thomond
+
+# County Title
+title = c_tipperary
+
+# Settlements
+max_settlements = 4
+b_tipperary1 = tribal
+b_tipperary2 = temple
+
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_tipperary1 = castle
+	b_tipperary3 = city
+}
+
+
+1054.7.6 = { religion = catholic }

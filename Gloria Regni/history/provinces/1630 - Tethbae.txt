@@ -1,0 +1,22 @@
+# 10 - Kildare
+
+# County Title
+title = c_tethbae
+
+# Settlements
+max_settlements = 4
+b_tethbae1 = tribal
+b_tethbae2 = temple
+
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_tethbae1 = castle
+	b_tethbae3 = city
+}
+
+1054.7.6 = { religion = catholic }

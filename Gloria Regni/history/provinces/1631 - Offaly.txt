@@ -1,0 +1,22 @@
+# 10 - Kildare
+
+# County Title
+title = c_offaly
+
+# Settlements
+max_settlements = 4
+b_offaly1 = tribal
+b_offaly2 = temple
+
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_offaly1 = castle
+	b_offaly3 = city
+}
+
+1054.7.6 = { religion = catholic }

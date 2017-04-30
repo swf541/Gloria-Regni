@@ -1,0 +1,20 @@
+# 16 - Leinster
+
+# County Title
+title = c_wexford
+
+# Settlements
+max_settlements = 4
+b_wexford1 = tribal
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_wexford1 = castle
+	b_wexford2 = city
+	b_wexford3 = temple
+}
+1054.7.6 = { religion = catholic }

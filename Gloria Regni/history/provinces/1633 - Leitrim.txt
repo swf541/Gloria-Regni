@@ -1,0 +1,22 @@
+# 8 - Breifne
+
+# County Title
+title = c_leitrim
+
+# Settlements
+max_settlements = 3
+b_leitrim1 = tribal
+
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_leitrim1 = castle
+	b_leitrim2 = city
+	b_leitrim3 = temple
+}
+
+1054.7.6 = { religion = catholic }

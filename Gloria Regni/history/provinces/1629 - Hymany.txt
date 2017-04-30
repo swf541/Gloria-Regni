@@ -1,0 +1,22 @@
+# 8 - Breifne
+
+# County Title
+title = c_hymany
+
+# Settlements
+max_settlements = 3
+b_hymany1 = tribal
+
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_hymany1 = castle
+	b_hymany2 = city
+	b_hymany3 = temple
+}
+
+1054.7.6 = { religion = catholic }

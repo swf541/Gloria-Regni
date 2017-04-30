@@ -1,0 +1,22 @@
+# 5 - Ulster
+
+# County Title
+title = c_derry
+
+# Settlements
+max_settlements = 4
+b_derry1 = tribal
+
+# Misc
+culture = irish
+religion = imperial
+
+# History
+1000.1.1 = {
+	b_derry1 = castle
+	b_derry2 = city
+	b_derry3 = temple
+}
+
+1054.7.6 = { religion = catholic }
+

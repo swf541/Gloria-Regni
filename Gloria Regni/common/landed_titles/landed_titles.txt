@@ -30095,6 +30095,31 @@ e_britannia = {
 			norse = Strangfjorðr
 			irish = Ulaidh
 			
+			c_downpatrick = {
+				color = { 15 166 200 }
+				color2 = { 255 255 255 }
+				
+				b_downpatrick1 = { }
+				b_downpatrick2 = { }
+				b_downpatrick3 = { }
+				b_downpatrick4 = { }
+				b_downpatrick5 = { }
+				b_downpatrick6 = { }
+				b_downpatrick7 = { }
+			}
+
+			c_derry = {
+				color = { 135 166 192 }
+				color2 = { 255 255 255 }
+				
+				b_derry1 = { }
+				b_derry2 = { }
+				b_derry3 = { }
+				b_derry4 = { }
+				b_derry5 = { }
+				b_derry6 = { }
+				b_derry7 = { }
+			}			
 			c_ulster = {
 				color={ 25 230 35 }
 				color2={ 255 255 255 }
@@ -30239,7 +30264,45 @@ e_britannia = {
 			capital = 9 # Connacht
 			
 			irish = "Connachta"
-		
+
+			c_roscommon = {
+				color = { 115 145 125 }
+				color2 = { 255 255 255 }
+				
+				b_roscommon1 = { }
+				b_roscommon2 = { }
+				b_roscommon3 = { }
+				b_roscommon4 = { }
+				b_roscommon5 = { }
+				b_roscommon6 = { }
+				b_roscommon7 = { }
+			}
+			
+			c_hymany = {
+				color = { 115 66 20 }
+				color2 = { 255 255 255 }
+				
+				b_hymany1 = { }
+				b_hymany2 = { }
+				b_hymany3 = { }
+				b_hymany4 = { }
+				b_hymany5 = { }
+				b_hymany6 = { }
+				b_hymany7 = { }
+			}
+			c_leitrim = {
+				color = { 155 66 200 }
+				color2 = { 255 255 255 }
+				
+				b_leitrim1 = { }
+				b_leitrim2 = { }
+				b_leitrim3 = { }
+				b_leitrim4 = { }
+				b_leitrim5 = { }
+				b_leitrim6 = { }
+				b_leitrim7 = { }
+			}
+			
 			c_breifne = {
 				color={ 40 230 65 }
 				color2={ 255 255 255 }
@@ -30327,7 +30390,31 @@ e_britannia = {
 				}
 				religion = "norse_pagan"
 			}
-		
+			
+			c_tethbae = {
+				color = { 200 66 200 }
+				color2 = { 255 255 255 }
+				
+				b_tethbae1 = { }
+				b_tethbae2 = { }
+				b_tethbae3 = { }
+				b_tethbae4 = { }
+				b_tethbae5 = { }
+				b_tethbae6 = { }
+				b_tethbae7 = { }
+			}
+			c_offaly = {
+				color = { 40 88 145 }
+				color2 = { 255 255 255 }
+				
+				b_offaly1 = { }
+				b_offaly2 = { }
+				b_offaly3 = { }
+				b_offaly4 = { }
+				b_offaly5 = { }
+				b_offaly6 = { }
+				b_offaly7 = { }
+			}		
 			c_kildare = {
 				color={ 102 248 65 }
 				color2={ 255 255 255 }
@@ -30406,6 +30493,19 @@ e_britannia = {
 			danish = Veisafjord
 			norse = Veisafjorðr
 			irish = Laigin
+			
+			c_wexford = {
+				color = { 122 145 120 }
+				color2 = { 255 255 255 }
+				
+				b_wexford1 = { }
+				b_wexford2 = { }
+				b_wexford3 = { }
+				b_wexford4 = { }
+				b_wexford5 = { }
+				b_wexford6 = { }
+				b_wexford7 = { }
+			}
 			
 			c_leinster = {
 				color={ 65 210 85 }
@@ -30489,7 +30589,34 @@ e_britannia = {
 			swedish = "Lymrek"
 			norse = "Hlymrek"
 			irish = "Mumu"
-		
+			
+			c_clare = {
+				color = { 155 166 200 }
+				color2 = { 255 255 255 }
+				
+				b_clare1 = { }
+				b_clare2 = { }
+				b_clare3 = { }
+				b_clare4 = { }
+				b_clare5 = { }
+				b_clare6 = { }
+				b_clare7 = { }
+			}
+
+			c_tipperary = {
+				color = { 89 160 20 }
+				color2 = { 255 255 255 }
+				
+				b_tipperary1 = { }
+				b_tipperary2 = { }
+				b_tipperary3 = { }
+				b_tipperary4 = { }
+				b_tipperary5 = { }
+				b_tipperary6 = { }
+				b_tipperary7 = { }
+			}
+
+			
 			c_thomond = {
 				color={ 90 221 111 }
 				color2={ 255 255 255 }
@@ -30566,6 +30693,18 @@ e_britannia = {
 				b_fethard = {
 					irish = "Fiodh Ard"
 				}
+			}
+			c_kerry = {
+				color = { 155 166 200 }
+				color2 = { 255 255 255 }
+
+				b_kerry1 = { }
+				b_kerry2 = { }
+				b_kerry3 = { }
+				b_kerry4 = { }
+				b_kerry5 = { }
+				b_kerry6 = { }
+				b_kerry7 = { }
 			}
 			c_desmond = {
 				color={ 100 221 90 }
