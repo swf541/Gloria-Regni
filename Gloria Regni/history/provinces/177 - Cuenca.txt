@@ -16,11 +16,12 @@ b_siguenza = temple
 #b_sisante
 
 culture = hispanic
-religion = imperial
+religion = hellenic_pagan
 terrain = hills
 
 # History
-
+600.1.1 = { religion = imperial }
+714.1.1 = { b_kunka = castle } # Kunka
 955.1.1 = {
 	culture = castillan
 }
