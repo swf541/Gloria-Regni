@@ -1,4 +1,4 @@
-# 35 - Innse Gall
+# 1651 - Islay
 
 # County Title
 title = c_islay
@@ -10,10 +10,11 @@ b_islay2 = temple
 
 # Misc
 culture = irish
-religion = imperial #celtic_pagan
+religion = celtic_pagan
 terrain = hills
 
 # History
+584.1.1 = { religion = imperial }
 855.1.1={
 	culture = norse
 	religion = norse_pagan

@@ -17,11 +17,13 @@ b_iona = temple
 #b_dunyveg = castle
 
 # Misc
-culture = irish
-religion = imperial #celtic_pagan
+culture = pictish
+religion = celtic_pagan
 terrain = hills
 
 # History
+450.1.1 = { culture = irish }
+584.1.1 = { religion = imperial }
 855.1.1={
 	culture = norse
 	religion = norse_pagan
