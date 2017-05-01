@@ -16,8 +16,10 @@ b_manbij = temple
 
 # Misc
 culture = aramean
-religion = miaphysite
+religion = canaanite_pagan
 
+# History
+364.1.1 = { religion = miaphysite }
 1098.1.1 = { culture = armenian }
 1170.1.1 = { culture = levantine_arabic
 	     religion = sunni }

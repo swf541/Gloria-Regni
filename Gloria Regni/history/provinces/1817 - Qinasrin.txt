@@ -1,4 +1,4 @@
-# 733 - Aleppo
+# 1817 - Qinasrin
 
 # County Title
 title = c_qinasrin
@@ -11,9 +11,12 @@ b_qinasrin3 = temple
 
 # Misc
 culture = aramean
-religion = miaphysite
+religion = canaanite_pagan
+
+# History
+364.1.1 = { religion = miaphysite }
 900.1.1 = {
-culture = levantine_arabic
-religion = sunni
+	culture = levantine_arabic
+	religion = sunni
 }
 
