@@ -17,11 +17,14 @@ b_halbah = temple
 #b_riyaq = castle
 
 # Misc
-culture = levantine_arabic
-religion = monothelite
+culture = aramean
+religion = canaanite_pagan
 
 # History
-
-867.1.1 = { religion = sunni }
+537.1.1 = { religion = miaphysite }
+867.1.1 = {
+	religion = sunni
+	culture = levantine_arabic
+ }
 1016.1.1 = { religion = druze }
 1187.1.1 = { b_riyaq = castle }
