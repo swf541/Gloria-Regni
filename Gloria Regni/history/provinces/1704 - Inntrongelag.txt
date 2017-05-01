@@ -1,0 +1,33 @@
+# 274 - Bergenshus
+
+# County Title
+title = c_inntrongelag
+
+# Settlements
+max_settlements = 4
+b_inntrongelag1 = tribal
+
+# Misc
+culture = norse
+religion = norse_pagan
+terrain = mountain
+
+# History
+800.1.1 = {
+	b_inntrongelag1 = tb_shipyard_1
+}
+1000.1.1 = {
+	b_inntrongelag1 = castle
+	b_inntrongelag2 = city
+	b_inntrongelag3 = temple
+
+	b_inntrongelag2 = ct_port_1
+	b_inntrongelag1 = ca_shipyard_1
+	b_inntrongelag3 = tp_shipyard_1
+}
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = {
+	culture = norwegian
+	religion = catholic
+}

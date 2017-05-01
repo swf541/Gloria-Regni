@@ -1,0 +1,25 @@
+# 273 - Oppland
+
+# County Title
+title = c_romerike
+
+# Settlements
+max_settlements = 3
+b_romerike1 = tribal
+
+
+# Misc
+culture = norse
+religion = norse_pagan
+
+# History
+1000.1.1 = {
+	b_romerike1 = castle
+	b_romerike2 = city
+}
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = {
+	culture = norwegian
+	religion = catholic
+}

@@ -1,0 +1,33 @@
+# 274 - Bergenshus
+
+# County Title
+title = c_sogn
+
+# Settlements
+max_settlements = 4
+b_sogn1 = tribal
+
+# Misc
+culture = norse
+religion = norse_pagan
+terrain = mountain
+
+# History
+800.1.1 = {
+	b_sogn1 = tb_shipyard_1
+}
+1000.1.1 = {
+	b_sogn1 = castle
+	b_sogn2 = city
+	b_sogn3 = temple
+
+	b_sogn2 = ct_port_1
+	b_sogn1 = ca_shipyard_1
+	b_sogn3 = tp_shipyard_1
+}
+1054.7.6 = { religion = catholic }
+
+1066.1.1 = {
+	culture = norwegian
+	religion = catholic
+}
