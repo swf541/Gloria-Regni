@@ -18,11 +18,14 @@ b_gorz = castle
 #b_stveit = temple
 
 # Misc
-culture = croatian
-religion = imperial
+culture = dalmatian
+religion = hellenic_pagan
 
 # History
-
+650.1.1 = {
+	religion = slavic_pagan
+	culture = croatian
+}
 846.1.1 = { culture = german }
 
 1054.7.6 = { religion = catholic }

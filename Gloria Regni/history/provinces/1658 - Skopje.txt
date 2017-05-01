@@ -11,11 +11,15 @@ b_skopje2 = city
 b_skopje3 = temple
 
 # Misc
-culture = serbian
+culture = dalmatian
 religion = hellenic_pagan
 
 # History
 325.1.1 = { religion = imperial }
+650.1.1 = {
+	religion = slavic_pagan
+	culture = serbian
+}
 865.1.1 = { culture = bulgarian }
 950.1.1= { religion = bogomilist }
 1050.1.1= { religion = orthodox } 

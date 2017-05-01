@@ -10,9 +10,13 @@ b_opatija2 = city
 b_opatija3 = temple
 
 # Misc
-culture = croatian
-religion = imperial
+culture = dalmatian
+religion = hellenic_pagan
 
 # History
+650.1.1 = { 
+	religion = slavic_pagan
+	culture = croatian
+}
 1054.7.6 = { religion = catholic }
 1110.1.1 = { trade_post = b_contarini }

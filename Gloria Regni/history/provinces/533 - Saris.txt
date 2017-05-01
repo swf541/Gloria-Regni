@@ -16,11 +16,14 @@ b_saris = tribal
 #b_hethars = castle
 
 # Misc
-culture = croatian # White Croats
-religion = slavic_pagan
+culture = dalmatian
+religion = hellenic_pagan
 
 # History
-
+650.1.1 = {
+	religion = slavic_pagan
+	culture = croatian #White Croats
+}
 900.1.1 = { religion = catholic }
 950.1.1 = { culture = hungarian }
 1000.1.1 = {

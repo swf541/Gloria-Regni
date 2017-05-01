@@ -16,10 +16,14 @@ b_samobor = temple
 #b_zvornik = castle
 
 # Misc
-culture = serbian
-religion = slavic_pagan
+culture = dalmatian
+religion = hellenic_pagan
 
 # History
+650.1.1 = {
+	religion = slavic_pagan
+	culture = serbian
+}
 870.1.1 = {
 	religion = imperial
 }
