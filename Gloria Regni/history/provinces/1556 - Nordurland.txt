@@ -1,0 +1,28 @@
+# 2 - Austisland
+
+# County Title
+title = c_nordurland
+
+# Settlements
+max_settlements = 2
+b_nordurland1 = tribal
+
+
+
+# Misc
+culture = norse
+religion = norse_pagan
+
+# History
+867.1.1 = {
+	b_nordurland1 = tb_shipyard_1
+}
+1000.1.1 = {
+	culture = norwegian
+	religion = imperial
+	b_nordurland1 = castle
+	b_nordurland1 = ca_shipyard_1
+}
+
+1054.7.6 = { religion = catholic }
+
