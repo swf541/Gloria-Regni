@@ -1017,40 +1017,6 @@ muslim = {
 		uses_decadence = yes
 		uses_jizya_tax = yes
 	}
-	yazidi = {
-		graphical_culture = muslimgfx
-
-		icon = 3
-		heresy_icon = 8
-		
-		color = { 0.2 0.2 0.7 }
-		
-		crusade_name = JIHAD
-		scripture_name = THE_BOOK_OF_ILLUMINATION
-		priest_title = SHEIKH_PRIEST
-		
-		high_god_name = GOD_SHAYTAN
-		
-		god_names = {
-			GOD_THE_PEACOCK_ANGEL GOD_TAWUSE_MELEK GOD_SHAYTAN
-		}
-		
-		evil_god_names = {
-			THE_DARK_SPIRITS
-		}
-		
-		parent = sunni
-		priests_can_marry = yes
-		can_excommunicate = yes
-		can_call_crusade = yes
-		max_wives = 4
-		matrilineal_marriages = no
-		
-		landed_kin_prestige_bonus = yes
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-	}
 	ibadi = {
 		graphical_culture = muslimgfx
 
@@ -3128,6 +3094,36 @@ zoroastrian_group = {
 		Hormazd Maziar Shapur Vandad Zartosht
 	}
 
+	yazidi = {
+		graphical_culture = persiangfx
+		secondary_event_pictures = sunni
+
+		icon = 3
+		heresy_icon = 8
+		
+		color = { 0.2 0.2 0.7 }
+		
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_BOOK_OF_ILLUMINATION
+		priest_title = SHEIKH_PRIEST
+		
+		high_god_name = GOD_SHAYTAN
+		
+		god_names = {
+			GOD_THE_PEACOCK_ANGEL GOD_TAWUSE_MELEK GOD_SHAYTAN
+		}
+		
+		evil_god_names = {
+			THE_DARK_SPIRITS
+		}
+		
+		priests_can_marry = yes
+		can_excommunicate = yes
+		can_call_crusade = yes
+		max_wives = 4
+		matrilineal_marriages = no
+	}
+	
 	zoroastrian = {
 		graphical_culture = persiangfx
 		secondary_event_pictures = sunni
