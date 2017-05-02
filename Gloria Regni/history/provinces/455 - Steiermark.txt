@@ -17,11 +17,16 @@ b_lavant = temple
 
 # Misc
 culture = german
-religion = imperial
+religion = hellenic_pagan
 
 # History
+595.1.1 = {
+	religion = slavic_pagan
+}
 
-
+784.1.1 = {
+	religion = imperial
+}
 
 1054.7.6 = { religion = catholic }
 
