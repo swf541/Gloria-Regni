@@ -1,4 +1,4 @@
-# 450 - Sopron
+# 1863 - Gyok
 
 # County Title
 title = c_gyok
@@ -12,12 +12,15 @@ b_gyok3 = temple
 
 # Misc
 culture = pannonian
-religion = imperial
+religion = hellenic_pagan
+
+# History
+540.1.1 = { religion = imperial }
 
 800.1.1 = {
-culture = croatian
-religion = slavic_pagan
+	culture = croatian
+	religion = slavic_pagan
 }
-# History
+
 950.1.1 = { culture = hungarian }
 1054.1.1 = { religion = catholic }
