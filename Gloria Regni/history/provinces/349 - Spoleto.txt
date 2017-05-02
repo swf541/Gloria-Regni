@@ -15,13 +15,14 @@ b_assisi = temple
 #b_terni
 
 # Misc
-culture = lombard
+culture = old_italian
 religion = hellenic_pagan
 
 # History
 363.1.1 = {
 	religion = imperial
 }
+569.1.1 = { culture = lombard }
 849.1.1 = { culture = italian }
 
 1054.7.6 = { religion = catholic }
