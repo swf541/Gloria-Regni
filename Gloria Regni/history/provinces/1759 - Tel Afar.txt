@@ -1,4 +1,4 @@
-# 698 - Al Jazira
+# 1759 - Tel Afar
 
 # County Title
 title = c_tel_afar
@@ -11,8 +11,10 @@ b_tel_afar3 = temple
 
 #Misc
 culture = assyrian
-religion = nestorian
+religion = mesopotamian_paganism
 
+# History
+537.1.1 = { religion = nestorian }
 900.1.1 = {
 	culture = levantine_arabic
 	religion = sunni

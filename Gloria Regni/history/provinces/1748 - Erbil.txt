@@ -11,10 +11,12 @@ b_erbil3 = temple
 b_erbil4 = city
 
 #Misc
-culture = kurdish
-religion = nestorian
+culture = assyrian
+religion = mesopotamian_paganism
 
 # History
+537.1.1 = { religion = nestorian }
 900.1.1 = {
+	culture = kurdish
 	religion = sunni
 }

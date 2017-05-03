@@ -16,10 +16,11 @@ b_chuartan = city
 #b_kifri = castle
 
 #Misc
-culture = kurdish
-religion = nestorian
+culture = assyrian
+religion = mesopotamian_paganism
 
 # History
+537.1.1 = { religion = nestorian }
 
 867.1.1 = { 
 	b_kirkuk = ca_keep_1
@@ -32,5 +33,6 @@ religion = nestorian
 	b_kirkuk = ca_wall_2
 }
 900.1.1 = {
+	culture = kurdish
 	religion = sunni
 }

@@ -13,10 +13,12 @@ b_hammar = castle
 
 # Misc
 culture = babylonian
-religion = nestorian
+religion = mesopotamian_paganism
 
 # History
+537.1.1 = { religion = nestorian }
 700.1.1 = {
-culture = bedouin_arabic
+	culture = bedouin_arabic
+	religion = sunni
 }
 850.1.1 = { religion = shiite}
