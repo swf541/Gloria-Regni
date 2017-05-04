@@ -407,6 +407,51 @@ east_germanic = {
 
 		modifier = default_culture_modifier
 	}
+	burgundian = {
+		graphical_cultures = { occitangfx westerngfx }
+		
+		color = { 0.67 0.54 0.7 }
+
+		male_names = {
+			Athalbert_Adalbert Athalrik_Adalric Alberik Aldowin Aldrin Alduwin Amalgar Amerik Angilbert 
+			Anton_Antonius Arkanbald Arnulf Arnwald Athalwolf_Adalwolf Audamar_Audamar Baldowin Berhard Berinhard 
+			Bermond Bernhard Berthramm Bertrand Boso Burgundarik Burgundofaro Burkard_Burchard Dankrat_Tancred 
+			Dankwart_Tancward Ekbert Endulf Eustach Faro Filibert Fridrik Fulk Gausbert Gebikar Gerhard_Gerhard 
+			Gernot Gervas Gerwald Gilebert Gisalbert Giselher Giswald Godafres Godefrid Godigisel Godomar Gohard 
+			Gundahar_Gunther Gundiok Gundobad Gundomar Gundowech Gunthram Hatubrant Hagano_Hagen Hamdino 
+			Hilderik_Childeric Hilperik_Chilperic Hiltibrant Hlodwig_Chlodowig Hrothger_Roger Hrothwolf_Hrólfr 
+			Hugo Hugonin Hunbert Indisk Karl_Karl Konrad Odo_Otto Odon Ortuwin Rado Raginald_Reginald Raginheri 
+			Renald Roderik_Roderick Savarik_Savarik Sigifrid_Siegfried Sigimund Sigirik_Sigeric Thiubald Thiudarik 
+			Ubald_Ubald Ubert Vaast Vetes Vido Walramm Walthar_Walter Warin_Warin Wido Willelmu_William
+			
+		}
+		female_names = {
+			Athalgundi Athalheidi Adamardi Adela Anordi Arelata Aremburgi Bertha Bonne Burgundofara Chroma Chrona 
+			Ermenberga Ermesenda Fara Galswinth Gertrude Gisela Gundoegia Gundswinth Haduwig Heldoarga Hermesendis 
+			Hilda Hiltigardi_Hildegard Hiltigund_Hildegunde Hiltiko_Ildico Hlodihilti_Clothild Ida Ika Ildiko 
+			Ingundi_Ingonde Krimhild Matihilti_Mathilda Prunihilti_Brunhilde Ragesenda Rekkibergis Sigirada_Sigirada 
+			Simihilti 
+			Swanohilti_Swanhild Swavegotha Ute
+		}
+		
+		from_dynasty_prefix = "of "
+		male_patronym = "son of "
+		prefix = yes
+		
+		dukes_called_kings = yes
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 40
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}		
 	vandal = {
 		graphical_cultures = { occitangfx westerngfx }
 		
@@ -622,7 +667,7 @@ west_germanic = {
 		mother_name_chance = 5
 	}
 	saxon = {
-		graphical_cultures = { saxongfx }
+		graphical_cultures = { saxongfx westerngfx }
 		
 		color = { 0.8 0.3 0.3 }
 		
@@ -675,100 +720,101 @@ west_germanic = {
 	old_saxon = {
 		graphical_cultures = { saxongfx }
 		
-		color = { 0.5 0.1 0.1 }
+		color = { 72 11 32 }
 		
 		male_names = {
-			Abo Adalbero_Adalbero Adalbert_Albert Adalbrand_Alebrand Adaldag Adalgar Adalgod Adolf_Adolf Aelle_Alwin Albrecht_Albert Alebrand_Alebrand
-			Altfrid Ansgar Arnd_Arnold Arnold_Arnold Asig_Asig Balduin_Baldwin Balthasar_Baltasar Banzleib Beneke_Benedict Benno_Bernard Bernd_Bernard
-			Bernhard_Bernard Bertold_Berthold Bertram_Bertrand Boddic Brun_Bruno Bruno_Bruno Burchard_Bouchard Cissa Claus_Nicholas Cobbo Cord_Konrad
-			Cyprian_Cyprianus Dago_Dag Dedo Dethard Detleff Detmar_Dietmar Diederik_Thierry Donar_Thor Eggerd_Ekkehard Egilmar Ekbert_Egbert Engelbert_Engelbert
-			Engelhard Erik_Erik Erp_Albert Esiko_Asig Everd_Everard Ewald Floribert Freawine Frederik_Frederick Gehrke_Gerard Gelder Gero Gerold_Gerard Gevert_Gebhard
-			Ghert_Gerard Giselher Giselmar Gosschalk_Gottschalk Goswin Gunzelin_Günther Gödke_Godfrey Günther_Günther Hans_Hans Harthgate Hartwig Heideke
-			Hengest Henneke Herberd_Herbert Hermann_Herman Hinrik_Henry Hoger Hulderic Humfried Immed Isidor_Isidoros Jacob_Jacob Jaspar_Caspar Jochim_Joakim
-			Johann_John Juries Kersten_Christian Köpke_Jacob Laurentz_Laurence Lembert_Lambert Leuderic Liawizo Liemar Liudger Luder-Udo_Otto
-			Luder_Lothair Ludolf_Ludolf Ludwig_Louis Magnus_Magnus Marbold Marquard_Markward Mathias_Matthew Meinwerk Merten_Martin Michael_Michael
-			Norbert_Norbert Odo_Otto Ordulf Peter_Peter Philipp_Philip Radke_Ralph Reginbern_Reinbern Reinbern_Reinbern Reineke_Renard Reinmar Rudigar_Roger
-			Rudolf_Ralph Sigbert_Sigisbert Sigfrid_Siegfried Sigward_Sigurd Simon_Simon Steffen_Stephen Thankmar Theoderic_Theoderic Theodoric_Thierry
-			Theodwin Thimo_Timothy Thomas_Thomas Tobe Tymmeke_Dietmar Udo_Otto Unwan Viric Volkwin Volrad Walbert Waldemar_Vladimir Waldered Waltard
-			Warin_Werner Warinechin Wecta_Victor Wenzel_Vaclav Werneke_Werner Weybrecht Wichbert Wichmann Wicho_Guy Widukind Wigebert Wilbrand
-			Willichin Withgils Witikind Witta Wlencing Wolter_Walter Wulff_Ulf
+			Irmin_Eormen Radolf_Radulf Widukind Folcmar Æðalgar_Æðelgar Haguna_Hagen Ulrik_Ulrich Wine_Wine Bieda_Bæda 
+			Beorhtfrith Beorhthelm Beorhtmær Beorhtnoth Beorhtric Beorhtsige Beorhtwine_Beorhtwine Beorn_Beorn Beornræd Beornwulf
+			Burgheard_Bouchard Byrhtnoth Cearl_Charles Cenfus Cenræd_Konrad Cenwulf Ceolwulf Cerdic_Caradog Copsige
+			Cuthberht_Cuthbert Cuthræd Cynehelm Cynewulf Cytelbearn Eadberht Eadfrith Eadgar_Edgar Eadmund_Edmund Eadmær Eadric
+			Eadræd Eadsige Eadulf_Adolf Eadweald Eadweard Eadwig Eadwine_Edwin Eadwulf_Adolf Ealdhun Ealdmund Ealdræd Ealdwine_Alwin
+			Ealdwulf Eanberht Eanfrith Eanhere Eardwulf Eastmund Ecgberht Ecgfrith Gamall Godwine Gospatric Guthfrith_Godfrey Guthmund_Gudmund
+			Gyrth Hacon_Hakon Harold_Harold Heahberht Hereberht_Herbert Hereweald_Hereweald Hereweard Hlothere_Lothair Hrodberht_Robert Inwær_Ingvar Leofheah Leofhelm
+			Leofric Leofweald Leofwine Maccus_Maccus Morcar_Marcus Mærleswegn Offa_Uffe Onlaf_Olaf Ordgar
+			Oscytel Oshere Osmund Osric Osræd Osulf_Osulf Osweald Oswine Oswulf_Osulf Petre_Peter Rædwulf_Ralph Rægenweald_Reginald Scule_Skule
+			Sigeberht Sigehelm Sigeric Sigeræd Sighere Siweard_Sigurd Stigand Swegn_Sven Swithelm Swithræd Swæfræd Sæbert Sælræd Sæweald
+			Sæxbald Sæxræd Thoræd Thurcytel_Torkel Thurfrith Tostig_Toste Uhtræd_Uhtred Ulf_Ulf Ulfcytel Waltheof_Waltheof Werestan_Werestan Wiglaf Wihtræd_Withred
+			Wistan Wulf_Ulf Wulfgar Wulfgeat Wulfhelm Wulfhere Wulfmær Wulfnoth Wulfstan Ælfgar Ælfmær Ælfnoth Ælfric Ælfræd_Alfred Ælfsige
+			Ælfstan_Alstan Ælfwald Ælfweard Ælfwig Ælfwine_Alwin Ælle_Alwin Æthelbald Æthelberht_Albert Æthelfrith_Ethelfrith Æthelhere Æthelmær_Adémar
+			Æthelric Æthelræd_Ailred Æthelsige Æthelstan_Alstan Æthelweald_Æthelwold Æthelweard Æthelwine_Alwin Æthelwold_Æthelwold Æthelwulf_Adolf
+			Eormenred Eorcenberht Eormenric_Ermanaric Eadbald Rædwald Vœrmund_Wermund Bata_Bata Hama_Hamo
 		}
 		female_names = {
-			Addila_Adela Adelheid_Adelaide Alof Agnes_Agnes Anna_Anna Athela Beatrix_Beatrice Bertha_Bertha Bertrada Bia_Beatrice Bisina Bithild
-			Brigida_Brigid Christina_Christina Diedke Eilika Elisabeth_Elisabeth Enda Frederuna Geilana Gerberga_Gerberga Gertrud_Gertrude Gisela_Gisela
-			Glismod Hadwig_Hedwig Hasala Heilwig Helene_Helen Hildegard_Hildegard Hrothwina Ida_Ida Imma_Emma Irmgard_Ermengarde Irminburg
-			Jutta_Judith Katharina_Catherine Kunigunde_Kunigunde Luitgard_Luitgard Margarete_Margaret Mathilde_Matilda Mechthild_Matilda Oda_Ute
-			Othelindis Radegund Reginlint Richardis_Ricarda Rodelinda Sophia_Sophia Suanhilde_Swanahild Theodrada Thiedburga Wienke Wiltrud Wulfhild_Ulfhild
+			Gerswindis
+			Agatha_Agatha Balthild Beorhtflæd Beorhtgifu Beorhtgyth Beorhtwaru Beorhtwynn Beornflæd Beorngyth Blæja Burgflæd Ceolflæd Cristina_Christina
+			Cuthburg Cwenburg Cyneburg Cynegyth Cynehild Cyneswith Cynethryth Eadburg Eadflæd Eadgifu Eadgyth_Edith Eadhburh Eadhild Ealdgyth_Edith
+			Ealhflæd Ealhswith Eanswith Ecgfrida Ecgwyn Godgifu Gunhilda_Gunhild Gytha_Gyda Helga_Helga Heregyth Hereswith Hextilda Hungifu Judith_Judith
+			Leofflæd Leofgifu Leofrun Leofwaru Leofwynn Margaret_Margaret Maud_Matilda Mildrith Octreda Sifflæd Sigrid_Sigrid Sæthryth Wulfflæd Wulfgifu
+			Wulfgyth Wulfhild Wulfrun Wulfthryth Wulfwaru Wulfwynn Wynnflæd Wærburg Æbba Ælfflæd_Ælflæda Ælfgifu Ælfgyth Ælflæda_Ælflæda Ælfrida
+			Ælfswith Ælfthryth Ælfwynn Æthelflæd Æthelgifu Æthelhild Æthelræda_Æthelreda Æthelswith Æthelthryth_Æthelreda
+			Æthelburh Seaxburh Wihtburh
+			Swanahilda_Swanhild Aþalburh_Adalburg Hildeliða_Hildeliða Cwenburh_Cwenburh
 		}
-		
-		baron_titles_hidden = yes
-		count_titles_hidden = yes
 
-		from_dynasty_prefix = "of "
-
-		male_patronym = "sson"
+		from_dynasty_prefix = "af "
+		male_patronym = "ssunu"
 		female_patronym = "sdohtor"
-		prefix = no # The patronym is added as a suffix
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 5
+		prefix = no
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
+		dukes_called_kings = yes
+		
+		modifier = oldsaxon_culture_modifier
+		
+		disinherit_from_blinding = yes
+		
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 10
+		father_name_chance = 2
+		
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 10
+		mother_name_chance = 2
+		
+		allow_looting = yes
+		seafarer = yes
 	}
 	frisian = {
-		graphical_cultures = { saxongfx }
+		graphical_cultures = { saxongfx frankishgfx }
 		
-		color = { 0.7 0.3 0.0 }
+		color = { 0.82 0.73 0.37 }
 		
 		male_names = {
-			Adelbrik Aitet Aldgisl Audulf Auutet Avin Avo Avuko Avutet Bavo Bentet Bernhard_Bernard Blekulf Blithulf Brunhard
-			Bubo Bôio Edulf_Adolf Egildeg Eilbern Eilherd Eilulf Eilward Eldei Elderd Elhard Engilbald Enhard Entet Esulf Euitet
-			Euuerhard Eðelbern Eðelulf Eðelwi Focko Folcbald Folkbern Folkhard Folkward Frethirik Frethold Frethuhard Frethwi
-			Frithunath Geldulf Geltet Gerbald_Gerald Gerbrand Gerbruht Gerdeg Gerhard_Gerard Gerold_Gerald Gerulf Gerwar
-			Gosse Habo Haring Hathuward Hebetet Helibad Hessel Hobern Hoitet Hroðhard Hroðward Juw_Julius Liaftet Liudbad
-			Liudbald Liudger Liudgod Liudulf_Ludolf Liudward_Liutward Liuppo_Lupo Lubbiko Magnus_Magnus Meginbraht Meginhard
-			Meginulf Meintet Menbold Menfrid_Manfred Menger Menhard Menhold Meniko Mentet Menward Merulf Miginward Notheri
-			Occo Odo_Otto Osnath Osnoð Popetet Poppo Raeddeg Rauantet Redbad Reginhard_Reginald Reinbern_Reinbern Reinier_Rayner
-			Renhard_Renard Renward Riklef Rikwi Rodbern Saco Salaco Sibod Sibraht Sidei Sikke_Sicco Silef Siward_Sigurd Siwi
-			Sjoerd_Sigurd Sytse Taco Tadaco Tado Thancward Thankbern Thiadbold_Theobald Thiadbrund Thiaddi_Thaddeus Thiaderd
-			Thiadulf Thiadward Thiadwi Thiedold Thonkrik Wambald Wening Wentet Wibad Wibraht Wibrund Wiftet Wigbald Wigerd
-			Wihard Wilbrand Wilco Wiltet Wulfnoth Ygo
+			Abba_Abba Bata_Bata Beornhard_Bernhard Beornlaf_Bernlef Ceorl_Charles Cristihanu_Christianus Degeberht_Dagobert Docco Eadgils_Eadgils 
+			Eadwulf_Audwulf Ege_Eise Egebern Egedeg_Egildag Elfbodo_Alfbad Eþelbeorn_Aþalbern Eþelberht_Æthelberht Eþelhere_Æthelhere Eþelwine_Æthelwine 
+			Finn_Finn Folcbeorn_Folkbern Folcwald_Folcwald Frealaf_Frealaf Freomann_Freeman Friðuger_Fredegar Friðuhard_Friduhard Friðuwulf_Friedwulf 
+			Gerdeg_Gerdeg Gerhard_Gerhard Gerwulf_Gerulf Gifuwulf_Gefwulf Goderic_Godric Groni Guðbodo_Gundebold Guðher_Guthere Hama_Hamo Harilo Hengest_Hengist 
+			Hildegrimo_Hildegrim Hludger_Liudger Hludgod_Liudgod Horsa_Horsa Hreðric_Roderick Jonnes_John Megenberht_Meginbert Megenhard_Meginhard 
+			Megenwulf_Meginwulf Osberht_Osbert Owon_Owen Poppo_Poppo Redbodo_Radbod Redwald_Rædwald Renwulf_Ranwulf Scanomodu Ubba_Ubbe Waldger_Waldger 
+			Willbodo_Willibald Willfrið_Wilfrid Willhelm_William Wine_Wine Winifrið_Winfried Wuffa_Wuffa Wulf_Wolf Wulfram_Wulfram Wurssing Wursso 
+			Þeodberht_Theodbert Þeodric_Theoderic 
 		}
 		female_names = {
-			Aleberna Alena_Adela Aleydis_Adelaide Alretieren Amalburga Amelgeir Atghardis Aue Auesoete Badeloghen Baua Berta_Bertha
-			Bet_Elisabeth Breghlent Brundonis Dieuwke Douwen Eingeliadis Elke_Adelaide Emgelberna Erkenradis Ermegardis_Ermengarde
-			Esa Femke Fenna Folqui Gerburgis_Gerberga Ghela Ghodelde Hadewigis Heike Hersewindis Hodine Imma_Emma Imsoete Inka_Inga
-			Itsburgis Jeltsje Lenildis Liedelde Liudburgis Lutghardis Lys_Elisabeth Maike_Maria Mareike_Maria Mette Minke Nienke_Catherine
-			Rengnalda Volcwiif Wendelmodis Wiebke Wobbe Yda_Ida Ymmekine Ælidis
+			Beornwalda_Beroalda Ceolwalda_Ceolwalda Cristihana_Christina Cwenburh_Cwenburh Cyneburh_Cyneburh Eanfled_Eanflæd Elfgifu_Ælfgifu 
+			Eþelguðe_Algunde Eþelþryð_Æthelthryth Folcwalda_Folcwalda Friða_Frida Gerþryð_Gertrude Hildeburh_Hildeburh Lefburh_Liafburg Osþryð_Osthryth 
+			Seaxburh_Seaxburh Werburh_Wærburh Þeodliþe_Theodelinda Þeodreda_Theodrada Þeodswiða_Theudesinda
 		}
 		
-		baron_titles_hidden = yes
-		count_titles_hidden = yes
-
-		from_dynasty_prefix = "von "
-
-		male_patronym = "sson"
+		from_dynasty_prefix = "af "
+		male_patronym = "ssunu"
 		female_patronym = "sdohtor"
-		prefix = no # The patronym is added as a suffix
-
+		prefix = no
+		
+		dukes_called_kings = yes
+		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
 		pat_grf_name_chance = 30
 		mat_grf_name_chance = 10
-		father_name_chance = 5
+		father_name_chance = 0
 		
 		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
+		pat_grm_name_chance = 10
 		mat_grm_name_chance = 40
-		mother_name_chance = 5
+		mother_name_chance = 0
+		
+		allow_looting = yes
+		seafarer = yes
 
-		modifier = default_culture_modifier
+		modifier = frisian_culture_modifier
 	}
 	dutch = {
 		graphical_cultures = { germangfx }
@@ -856,51 +902,6 @@ west_germanic = {
 		
 		allow_looting = yes
 	}
-	burgundian = {
-		graphical_cultures = { occitangfx westerngfx }
-		
-		color = { 0.67 0.54 0.7 }
-
-		male_names = {
-			Athalbert_Adalbert Athalrik_Adalric Alberik Aldowin Aldrin Alduwin Amalgar Amerik Angilbert 
-			Anton_Antonius Arkanbald Arnulf Arnwald Athalwolf_Adalwolf Audamar_Audamar Baldowin Berhard Berinhard 
-			Bermond Bernhard Berthramm Bertrand Boso Burgundarik Burgundofaro Burkard_Burchard Dankrat_Tancred 
-			Dankwart_Tancward Ekbert Endulf Eustach Faro Filibert Fridrik Fulk Gausbert Gebikar Gerhard_Gerhard 
-			Gernot Gervas Gerwald Gilebert Gisalbert Giselher Giswald Godafres Godefrid Godigisel Godomar Gohard 
-			Gundahar_Gunther Gundiok Gundobad Gundomar Gundowech Gunthram Hatubrant Hagano_Hagen Hamdino 
-			Hilderik_Childeric Hilperik_Chilperic Hiltibrant Hlodwig_Chlodowig Hrothger_Roger Hrothwolf_Hrólfr 
-			Hugo Hugonin Hunbert Indisk Karl_Karl Konrad Odo_Otto Odon Ortuwin Rado Raginald_Reginald Raginheri 
-			Renald Roderik_Roderick Savarik_Savarik Sigifrid_Siegfried Sigimund Sigirik_Sigeric Thiubald Thiudarik 
-			Ubald_Ubald Ubert Vaast Vetes Vido Walramm Walthar_Walter Warin_Warin Wido Willelmu_William
-			
-		}
-		female_names = {
-			Athalgundi Athalheidi Adamardi Adela Anordi Arelata Aremburgi Bertha Bonne Burgundofara Chroma Chrona 
-			Ermenberga Ermesenda Fara Galswinth Gertrude Gisela Gundoegia Gundswinth Haduwig Heldoarga Hermesendis 
-			Hilda Hiltigardi_Hildegard Hiltigund_Hildegunde Hiltiko_Ildico Hlodihilti_Clothild Ida Ika Ildiko 
-			Ingundi_Ingonde Krimhild Matihilti_Mathilda Prunihilti_Brunhilde Ragesenda Rekkibergis Sigirada_Sigirada 
-			Simihilti 
-			Swanohilti_Swanhild Swavegotha Ute
-		}
-		
-		from_dynasty_prefix = "of "
-		male_patronym = "son of "
-		prefix = yes
-		
-		dukes_called_kings = yes
-		
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 0
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 10
-		mat_grm_name_chance = 40
-		mother_name_chance = 0
-
-		modifier = default_culture_modifier
-	}	
 	
 	thuringian = {				#b->w & k->g, Old High German
 		graphical_cultures = { saxongfx westerngfx }
@@ -1603,6 +1604,59 @@ brythonic = {
 
 		allow_looting = yes
 	}
+	briton = {
+		graphical_cultures = { celticgfx westerngfx }
+		
+		color = { 0.3 0.7 0.6 }
+
+		male_names = {
+			Agrafin Alan Alisander_Alexander Alwyn_Alwyn Amhar Annan Apon Aradig Aradoc Arawain Arod Arthfael Arthwr_Arthur
+			Balin Balise Bedwyr Bedwyn Bleddyn Bleiddig Britannicus Brochvael Brochmael Brwyn Brychan Brân_Bran
+			Caddan Cadell Cadfael Cadog Cadwal Cadwallon Caelgyn Cai Carig Cain Caleddin Caradoc Caraled Carawain Cavan
+			Caswallon Cerdig Cerdoc Cerfin Cerlyn Cerwain Cedwyn Celwin Ceredig Coel Custennin_Constantine
+			Cynfarch Cynfawr Cynfelyn Cynfyn Cynwallon Cynyr Culhwch Cythryn Cynlas
+			Dafydd_David Deiniol Derella Dinas Dyrrig Dyfrig Dorfael Drystan Edern Edwyn_Edwin Erbin
+			Einion Eldoc Elgwyn Eachern Elwain Elwydd Elystan Emrys_Ambrose Ermid Fragan Fergal Feldan
+			Gadric Galed Gareth Gawain Gerdin Gereint Geralt_Gerhard Gergant Gerled Gerlyd Gerreth Gerwain Griffid
+			Gruffydd Gudovan Gundleus Gwen_Finn Gwerthern Gwidyr Gwilym Gwydre Gwylyddyn Gyllad
+			Hywel Hygwydd Jacob Idwal Idfael Iorweth_Edward Ithel Issa
+			Lanval Lavaine Licat Ligessac Llanval Lladarn Llystan Llyr Llywarch Lwellwyn Loholt Malaine Mardoc Madog
+			Mael Maelgwn Maelfin Maelgyr Maelgwyn Maelgore Mapon Mared Menw
+			Meilyr Meirion Meric Meriadoc Merfyn Meurig Minac Morfans Morien Morridig Morydd Nasiens
+			Oreth Owain Padarn Padern Pellinore Perddel Peredyr Peredur Quintus
+			Rowain Severus Sestus
+			Taliesin Tegwyd Tertius Tristan Tudwal Tudwallon Tyllwn Urien Uther Valerin Ynyr Ysfael
+		}
+		female_names = {
+			Aliena Aelwyd Aeronwen Aeronwy Ailleann Alys Annes_Anna Annwyl Boudicca
+			Blodwen Bronwen Ceridwen Cerie Cerys Clarisant Ceinwyn Dian Delyth Denis_Denise Dwynwen
+			Efa_Eve Elaine_Elaine Elen Elinion Elinor_Eleanor Ellyn Enid Fion
+			Glynys Guinevere Gwen_Gwen Gwenda Gwenhwyfar Gwenllian Gwenwyn Gwerfyl Gwladys Heledd Heulwen Hywella
+			Ilud Igraine Isabel Iseult Isolde Ladwys Leanor Lunete Matilda
+			Margred_Margaret Marwenna Melisant_Melisende Morgan_Morgana Morgause Myrien Norwenna Nwylle
+			Nefyn Olwen Owena Ralla Rowena Sarlinna Senena Sibyl_Sibylla Seren
+			Siân_Joan Susanna Veneva
+		}
+
+		from_dynasty_prefix = "of "
+		male_patronym = "ap "
+		female_patronym = "ferch "
+		prefix = yes
+		
+		modifier = briton_culture_modifier
+		
+		dukes_called_kings = yes
+
+		pat_grf_name_chance = 20
+		mat_grf_name_chance = 10
+		father_name_chance = 0
+		
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 20
+		mother_name_chance = 0
+		
+		allow_looting = yes
+	}	
 	welsh = {
 		graphical_cultures = { celticgfx }
 		
@@ -1653,6 +1707,8 @@ brythonic = {
 		male_patronym = "ap "
 		female_patronym = "ferch "
 		prefix = yes
+		
+		parent = briton		
 
 		modifier = default_culture_modifier
 
@@ -1666,8 +1722,50 @@ brythonic = {
 		mat_grm_name_chance = 50
 		mother_name_chance = 0
 	}
+	armorican = {
+		graphical_cultures = { celticgfx westerngfx }
+		
+		color = { 0.75 0.75 0.75 }
+		
+		male_names = {
+			Alain_Alan Alwyn Anton_Antonius Aldred Arnald Arthur_Arthur
+			Baldoen_Baldwin Ban Bertram Benabic Bleiddig Bors Brandon Brian_Brian
+			Brient Budic Cadoc Carig Camran Celwin Conrad Corineus Daniel Derrien Donoal_Donald Dinas Ector Edern Edouard Eon
+			Erwan Fragan Everard Feldan Fychan Galahad Gawain Geoffroy_Godfrey Gregor_Gregory
+			Guy_Guy Guimarc'h Guyomarc'h Guyomarc Guimarc
+			Hoël Ilan Jacob Jehan_John Gilbert Jord_Jordan
+			Karl_Charles Kevan Klaod 
+			Lavaine Laorans_Laurence Louis Lucas Maelog Maeliaw Martin Meagon Meriadog Malaine
+			Mikael_Michael Morvan Morfans Nabur Nicholas Nominoë Podric_Patrick Peredur
+			Renan Riaged Roparz_Robert Ronan Stefen_Stephen Rivod
+			Taliesin Urvod Yann_John
+		}
+		female_names = {
+			Ade Adela_Adela Agnez_Agnes Ailleann Alana Aliena Annick Anna_Anna Aouregan Aourell Argentael Alya
+			Delyth Elena_Elaine Eliza Elesbed_Elisabeth Enora Enougen Gwenllian
+			Gwen_Gwen Hoela Isolde Isabel Janed Jenovefa Karidwen Katell Konstanza_Constance Laoransa Leanor Loeiza_Louise Maela Mari_Maria
+			Matilin_Magdalena Melisant Mona Morgane Morgause Morvana Nolwenne Ronanne
+			Rosenn Sibyl_Sibylla Urielle Joan Ysabelle Viola
+		}
+
+		from_dynasty_prefix = "of "
+
+		modifier = armorican_culture_modifier
+		
+		dukes_called_kings = yes
+
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 10
+		father_name_chance = 2
+		
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 20
+		mother_name_chance = 0
+
+	}
+	
 	breton = {
-		graphical_cultures = { celticgfx }
+		graphical_cultures = { celticgfx westerngfx }
 		
 		color = { 0.3 0.5 0.4 }
 		
@@ -1685,7 +1783,7 @@ brythonic = {
 			Culmin_Culmin Custent_Constans Custentin_Constantine Dauid_David Deniel_Daniel Denis Deroch Derrien Deui_David Deurhoiarn Domnoret Domuel_Dywel
 			Donual_Donald Donuallon_Dyfnwallon Drogon_Drogo Duenerth Dumnarth_Donyarth Edern_Eternus Edouart_Edward Eguen_Eugene Eon Erispoë Erouan_Yves
 			Estienne_Stephen Etgual Eudon_Otto Euhocar Euhoiarn Eusebi_Eusebius Even_Eugene Evrard_Everard Farinmael_Ffernfael Ferant_Ferdinand Fracan_Fragan
-			Framual Fransaz_Francis Frioc_Friog Garmon_German Geofroi_Godfrey Geralt_Gerald Gereint_Gerontius Gestin_Justin Gilbert_Gilbert Godefroi_Godfrey
+			Framual Fransaz_Francis Frioc_Friog Garmon_German Geofroi_Godfrey Geralt_Gerhard Gereint_Gerontius Gestin_Justin Gilbert_Gilbert Godefroi_Godfrey
 			Goennoc Gouesnon Goulwen Gouremor_Gwrfawr Gourmaelon Gralon Gratcant Gregor_Gregory Grifiud_Ruffinus Guallon Gualter_Walter Gudual Guecon Guenerdon
 			Guenhael Guentanet Guentiern Gui_Guy Guiharan Guihomarch Guihomart Guilherm_William Guincalon Guincum Guinhael Guinhoiarn Guinoc Guinol_Winaloe
 			Guithrit Guitol_Vitalis Guobrian Guocon Guoedanau Guoedatoe Guoednou Guoethoiarn Guoletec Guorbili Guordotal Guoretan Guorethoiarn Guorhoiarn
@@ -1724,24 +1822,26 @@ brythonic = {
 			Tanguistl_Tancostyla Tedvil Tephaine Thomine Tibourge_Tiburge Trifine Tristana Uriell
 		}
 		
-		dukes_called_kings = yes
+		parent = armorican
 		
-		from_dynasty_prefix = "de "
+		#dukes_called_kings = yes
+		
+		from_dynasty_prefix = "of "
 		
 		male_patronym = "mab "
 		female_patronym = "verch "
 		prefix = yes
 
-		modifier = default_culture_modifier
+		modifier = breton_culture_modifier
 		
-		dukes_called_kings = yes
-
-		pat_grf_name_chance = 25
-		mat_grf_name_chance = 10
-		father_name_chance = 2
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 80
+		mat_grf_name_chance = 0
+		father_name_chance = 0
 		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
 		pat_grm_name_chance = 10
-		mat_grm_name_chance = 20
+		mat_grm_name_chance = 50
 		mother_name_chance = 0
 	}
 }
@@ -4409,7 +4509,7 @@ dravidian_group = {
 	}
 }
 
-iberian = {
+vasconian = {
 	graphical_cultures = { occitangfx }
 
 	basque = {
@@ -4453,6 +4553,41 @@ iberian = {
 berber = {
 	graphical_cultures = { muslimgfx }
 	
+	general_berber = {
+		graphical_cultures = { muslimgfx }
+		
+		color = { 1 0.8 0.3 }
+		
+		male_names = {
+			Abacandus Abazius Abidines Acadaius Adalus Aderbalus Adergazus Admerus Adumus Aelalus Agamas Agaphaes Agdadas Agdunes Agecheres Agilus 
+			Aleames Amaius Amauales Ambaius Amdegus Amellas Amennaius Amessanus Amodus Amraius Annaberus Antalus Aphagus Apherus Aras Asires Auinagus 
+			Aulagus Auzalus Axerus Axilus Bagaius Bercanus Capussa Causena Cenanus Cucundus Cussiles Gaesanus Gala Ganimus Gildus Gumerus Iabdas Iagmuras Iaphtenus 
+			Iattius Icenus Igerus Igidres Iglaphus Ilaius Ilienus Immegaras Immelus Ionis Iphseres Irgenus Isalces Issamus Itberus Juba Jugurtha Lacumaches 
+			Leunis Maesares Magsenus Massinissa Mastanabalus Maziccus Medenus Mellalus Mennadus Mezuares Misagenes Missenus Oesalces Ogoestanus 
+			Phrauses Salomonus Sammerus Siphales Sissa Stembanos Sugotus Tabathus Tannus Tapharinas Tegamas Tilaedus Tiphanus Uregus 
+			Uzmires Uzza Zelalsen
+		}
+		female_names = {
+			Azzia Adiana Bahacca Baghnata Bibea Canea Duripha Dasinia Edza Pharissa Phedada Pheruddia Gedduta Gida Ganima Guraea Guedia Hedda Herrua 
+			Ittyna Izza Gadira Eddega Cahina Canimanna Cenua Quella Lalla Laesa Lemta Lomasia Lunea Luizza Mamma Massa Megidda Menna Menza Mernissa 
+			Meassa Randea Rula Seccura Silea Simanna Tadephia Tadla Taphrara Taphsua Taguilla Taccama Taleata Tamenta Tamimunta Tamrusta Tanasarta 
+			Tanebba Tanesta Taninna Tariuelta Tassa Tasselaeta Tatea Taucinta Tauentia Taunatta Taerea Tassira Tarurta Tella Temsia Tophita Tigmea 
+			Ticinna Tilellea Timmea Tisenta Tizemta Tiziria Trea Tuderta Turecta Oltaphea Guentia Unissa Zadianta Zarga Zagua Zamba Zibba Zilgumma 
+			Zunagga Zuina Zuira
+		}
+		
+		# founder_named_dynasties = yes 
+		
+		from_dynasty_prefix = "of " # from
+		
+		male_patronym = "bun "
+		female_patronym = "bitt "
+		prefix = yes 
+
+		modifier = african_culture_modifier
+
+		dynasty_title_names = yes
+	}
 	
 	maghreb_arabic = { # Berber
 		graphical_cultures = { arabicgfx muslimgfx }
