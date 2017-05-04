@@ -143,4 +143,27 @@ israelite = {
 
 		modifier = default_culture_modifier
 	}
+    beta_yisraeli = { #Beta-Israel, originally compiled by Frostschaden, many more names added by cybrxkhan
+        graphical_culture = africangfx
+
+        color = { 0.3 0.35 0.25 }
+
+        male_names = {
+            Abatte Abba Abreham_Abraham Adam_Adam Adamu_Adam Adgeh Adisu Ammanuel_Manuel Aron_Aaron Baruch_Baruch Beniamin_Benjamin Benyam_Benjamin Bogale Caleb_Kaleb Dan Daniel_Daniel Gabriel_Gabriel Gedeyon_Gideon Goshen Ioseph_Joseph Isaiah_Isaiah Ishmael_Ishmael Jeremiah_Jeremy Joram Kabede Mulualem Phineas Pinchas Rada Radi Salomon_Solomon Shlomo_Solmon Sirak Taamerat Tadesse Yacobe_Jacob Yeshaq_Isaac Yieshak_Isaac Yohanan_John Yona Zalelew Zohar
+        }
+
+        female_names = {
+            Abaynesh Adina_Adina Aida Aster_Esther Chamashwork Chekolech Devorah_Deborah Edna Esti Eua_Eve Hagit Hosanna_Susana Iohanna_Joan Jakoba Mariam_Maria Mulualem Nikahywot Orit Pnina Rahel_Rachel Rut Sara_Sarah Sheba Yehudit_Judith Yeuvmert Yityish Yodit_Judith Zena
+        }
+
+        pat_grf_name_chance = 60
+        mat_grf_name_chance = 20
+        father_name_chance = 10
+        
+        pat_grm_name_chance = 40
+        mat_grm_name_chance = 20
+        mother_name_chance = 30
+        
+        modifier = default_culture_modifier
+    }		
 }

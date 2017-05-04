@@ -3393,29 +3393,6 @@ east_african = {
 
 		modifier = default_culture_modifier
 	}
-    beta_yisraeli = { #Beta-Israel, originally compiled by Frostschaden, many more names added by cybrxkhan
-        graphical_culture = africangfx
-
-        color = { 0.3 0.35 0.25 }
-
-        male_names = {
-            Abatte Abba Abreham_Abraham Adam_Adam Adamu_Adam Adgeh Adisu Ammanuel_Manuel Aron_Aaron Baruch_Baruch Beniamin_Benjamin Benyam_Benjamin Bogale Caleb_Kaleb Dan Daniel_Daniel Gabriel_Gabriel Gedeyon_Gideon Goshen Ioseph_Joseph Isaiah_Isaiah Ishmael_Ishmael Jeremiah_Jeremy Joram Kabede Mulualem Phineas Pinchas Rada Radi Salomon_Solomon Shlomo_Solmon Sirak Taamerat Tadesse Yacobe_Jacob Yeshaq_Isaac Yieshak_Isaac Yohanan_John Yona Zalelew Zohar
-        }
-
-        female_names = {
-            Abaynesh Adina_Adina Aida Aster_Esther Chamashwork Chekolech Devorah_Deborah Edna Esti Eua_Eve Hagit Hosanna_Susana Iohanna_Joan Jakoba Mariam_Maria Mulualem Nikahywot Orit Pnina Rahel_Rachel Rut Sara_Sarah Sheba Yehudit_Judith Yeuvmert Yityish Yodit_Judith Zena
-        }
-
-        pat_grf_name_chance = 60
-        mat_grf_name_chance = 20
-        father_name_chance = 10
-        
-        pat_grm_name_chance = 40
-        mat_grm_name_chance = 20
-        mother_name_chance = 30
-        
-        modifier = default_culture_modifier
-    }	
 	somali = {
 		graphical_cultures = { africangfx }
 		secondary_event_pictures = bedouin_arabic
@@ -4553,7 +4530,7 @@ vasconian = {
 berber = {
 	graphical_cultures = { muslimgfx }
 	
-	general_berber = {
+	generic_berber = {
 		graphical_cultures = { muslimgfx }
 		
 		color = { 1 0.8 0.3 }
@@ -4721,5 +4698,512 @@ berber = {
 		
 		allow_looting = yes
 		seafarer = yes		
+	}
+	tashellhit = { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.5 0.34 0.34 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+	tamazight = { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.5 0.64 0.34 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+	riffian= { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.9 0.64 0.34 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+	shenwa = { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.9 0.6 0.2 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+	taqbaylit= { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.9 0.04 0.54 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	} 
+	tacawit = { # Berber
+		graphical_cultures = { muslimgfx }
+		
+		horde = yes
+		
+		color = { 0.075 0.27 0.37 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	} 
+	nafusi = { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.3 0.3 0.05 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	} 
+	mzab_wargla= { # Berber
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.6 0.6 0.15 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	} 
+	tuareg = { # Berber
+		graphical_cultures = { tuareggfx muslimgfx }
+
+		horde = yes
+		
+		color = { 0.1 0.1 0.75 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+	garamantian = { # Berber
+		graphical_cultures = { muslimgfx }
+		
+		horde = yes
+		
+		color = { 0.29 0.215 0.15 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
+	}
+
+	libyan = { # Ancient Libyan
+		graphical_cultures = { muslimgfx }
+
+		horde = yes
+		
+		color = { 0.22 0.33 0.4 }
+
+		male_names = {
+			Aderfu Afalkay Afaw Afer Amalu Amanar Amayyas Amazigh Amazzak Amamzu Ameqran Amesggin
+			Amess Améstida Amêzyan Amnay Anaruz Areksim Aslal Atbir Awsim Aylal Azêllay Badis Bukkus
+			Magpie Gwafa Gwasila Idder Idir Ides Igider Ikken Ilatig Ilayatmas Irate Isula Itri 
+			Izdârasen Izem Izemrasen Izîl Masinissa Massensen Massin Maysar Meddur Menna Merin 
+			Munatas Saden Sifaks Tacfin Takfarinas Tanana Tariq Udad Ugwistan Usem Usus Wimmiden 
+			Winaruz Winifsan Winsen Wiwurgh Yani Yattuy Yuba Yufayyur Yufitran Yuften Yugerten Ziri  
+		}
+		female_names = {
+			Basil Damyan Dassin Dihya Guraya Hennu Herru Ijja Illi Ittu
+			Kella Kweller Lalla Lunja Mamma Mammas Markunda Meghighda 
+			Menna Siman Tadêfi Taderfit Tadla Tafalkayt Tafsut Tagafayt
+			Taghbalut Tagwerramt Tagwilalt Tagwizult Thiyya Tajeddigt
+			Takensust Takama Taksimt Tala Tamalut Tamanart Tamazzalt 
+			Tamenzut Tameqrant Tanazârt Tanebdatt Tanirt Tanemghurt 
+			Rate Tasafut Tatbirt Taweckint Tawenza Tawzalt Taylat Tayri 
+			Tazêllayt Tidir Tinghan Tilelli Tinifsan Tintziri Tuftifawt
+			Tumert Tunaruz Tzeddig Tzila Ultafa Ultasila 
+		}
+		
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "Mmi "
+		female_patronym = "Yeggi  "
+		prefix = yes
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
 	}	
 }
