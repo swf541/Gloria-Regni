@@ -18,10 +18,11 @@ b_coulogne = temple
 #b_coulogne = temple
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = imperial
 
 # History
+350.1.1 = { culture = old_frankish }
 790.1.1 = { culture = frankish }
 1054.7.6 = { religion = catholic }
 1187.1.1 = { b_calais = city }

@@ -16,11 +16,15 @@ b_sponheim = castle
 #b_bitburg = castle
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = hellenic_pagan
 
 # History
 325.1.1 = { religion = imperial }
+350.1.1 = {
+	culture = old_frankish
+	religion = german_pagan
+}
 790.1.1 = { culture = german }
 
 1054.7.6 = { religion = catholic }

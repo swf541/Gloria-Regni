@@ -17,10 +17,14 @@ b_bastogne = city
 #b_salm = castle
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = imperial
 
 # History
+350.1.1 = {
+	culture = old_frankish
+	religion = german_pagan
+}
 790.1.1 = { culture = frankish }
 850.1.1 = {
 	capital = b_liege

@@ -10,10 +10,14 @@ b_strasburg2 = city
 b_strasburg3 = temple
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = hellenic_pagan
 
 # History
+350.1.1 = {
+	culture = old_frankish
+	religion = german_pagan
+}
 362.1.1 = { religion = imperial }
 790.1.1 = { culture = german }
 

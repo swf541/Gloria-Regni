@@ -13,14 +13,15 @@ b_rosebeke = temple
 #b_diksmuide = castle
 #b_menen = castle
 #b_roeselare = city
-#b_Poperinge = city
+#b_poperinge = city
 #b_wervik = city
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = imperial
 
 # History
+350.1.1 = { culture = old_frankish }
 790.1.1 = { culture = dutch }
 1054.7.6 = { religion = catholic }
 1187.1.1 = { b_roeselare = city }

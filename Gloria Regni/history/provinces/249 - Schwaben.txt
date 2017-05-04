@@ -16,13 +16,14 @@ b_konstanz = temple
 #b_lindau = castle
 
 # Misc
-culture = german
+culture = rhaetian
 religion = hellenic_pagan
 
 # History
 397.1.1 = {
 	religion = imperial
 }
+555.1.1 = { culture = german }
 1054.7.6 = { religion = catholic }
 
 1120.1.1 = { b_hohenberg = castle } 

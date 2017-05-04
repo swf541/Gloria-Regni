@@ -16,13 +16,14 @@ b_melk = temple
 #b_steyr = castle
 
 # Misc
-culture = german
+culture = rhaetian
 religion = hellenic_pagan
 
 # History
 540.1.1 = {
 	religion = imperial
 }
+555.1.1 = { culture = german }
 1054.7.6 = { religion = catholic }
 
 1187.1.1 = { b_steyr = castle } 

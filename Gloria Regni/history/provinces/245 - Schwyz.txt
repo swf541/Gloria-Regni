@@ -16,13 +16,14 @@ b_altdorf = castle
 #b_winterthur = city
 
 # Misc
-culture = german
+culture = rhaetian
 religion = hellenic_pagan
 
 # History
 540.1.1 = {
 	religion = imperial
 }
+555.1.1 = { culture = german }
 1054.7.6 = { religion = catholic }
 
 1291.7.15 = { capital = b_zurich } 

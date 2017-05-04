@@ -17,10 +17,11 @@ b_tilburg = temple
 #b_horn = castle
 
 # Misc
-culture = old_frankish
+culture = galloroman
 religion = imperial
 
 # History
+350.1.1 = { culture = old_frankish }
 790.1.1 = { culture = dutch }
 1054.7.6 = { religion = catholic }
 1333.1.1 = { trade_post = b_warendorp }
