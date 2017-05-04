@@ -328,6 +328,75 @@ byzantine = {
 
 		modifier = default_culture_modifier
 	}
+	pontic = {
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0.7 0.6 0.5 }
+
+		male_names = {
+			Achaemenes_Haxamanish Ariamnes_Ariyamna Ariarathes_Aryawratha Ariobarzanes_Ariyabrdhna Arsaces_Arshaka Arsames_Arshama Artabanus_Artabanus Artavasdes_Artavardiya Artaxerxes_Artaxshasa Atropates_Aturpat 
+			Cambyses_Kambuyija Cyaxares_Uvaxshtra Cyrus_Kuru Darius_Darayavahu Gobryas_Gaubaruva Gotarzes_Gotarzes Hydarnes_Vindarna Hystaspes_Vishtaspa Intaphernes_Vindafarnah Mardonius_Marduniya Megabyzus_Bagabuxsha 
+			Mithridates_Mithridates Orodes_Orodes Osroes_Osroes Otanes_Utana Pacorus_Pacorus Parthamaspates_Parthamaspetes Phraates_Phraates Phrataphernes_Phrataphernes Sanatruces_Sanatruk Smerdis_Bardiya Teispes_Cishpi 
+			Tiridates_Turdat Vardanes_Vardanes Vonones_Vonones Xerxes_Xshayarshan       
+		}
+		female_names = {
+			Agape_Agape Agathe_Agathe Aikaterine_Aikaterine Alexandra_Alexandra Ambrosia_Ambrosia Anastasia_Anastasia Anthousa_Anthousa Aphrodisia_Aphrodisia 
+			Apollonia_Apollonia Aristomache_Aristomache Artemisia_Artemisia Aspasia_Aspasia Athanasia_Athanasia Athenais_Athenais Berenike_Pherenike Charis_Charis 
+			Charmion_Charmion Chloe_Chloe Chrysanthe_Chrysanthe Demetria_Demetria Demostrate_Demostrate Eirene_Eirene Elpis_Elpis Euanthe_Euanthe 
+			Eudokia_Eudokia Eudoxia_Eudoxia Eugeneia_Eugeneia Eulalia_Eulalia Eumelia_Eumelia Eunike_Eunike Euphemia_Euphemia Euphrasia_Euphrasia 
+			Eupraxia_Eupraxia Eurydike_Eurydike Euthalia_Euthalia Euthymia_Euthymia Eutropia_Eutropia Eutychia_Eutychia Gaiane_Gaiane Galene_Galene Hagne_Hagne 
+			Helene_Helene Hypatia_Hypatia Isidora_Isidora Kallisto_Kallisto Kallistrate_Kallistrate Kassandra_Kassandra Kleopatria Korinna_Korinna 
+			Ligeia_Ligeia Lysandra_Lysandra Lysistrate_Lysistrate Melissa_Melissa Metrodora_Metrodora Myrrine_Myrrine Nikaia_Nikaia Nike_Nike Olympias_Olympias 
+			Pelagia_Pelagia Phila_Phila Phoibe_Phoibe Photine_Photine Ptolemais_Ptolemais Rhode_Rhode Roxane_Roxane Sappho_Sappho 
+			Sophia_Sophia Sostrate_Sostrate Stratonike_Stratonike Syntyche_Syntyche Thais_Thais Theodora_Theodora Theodosia_Theodosia Theokleia_Theokleia Theophania_Theophania 
+			Theophila_Theophila Timo_Timo Timothea_Timothea Tryphaina_Tryphaina Tryphosa_Tryphosa Xanthe_Xanthe Xanthippe_Xanthippe Xenia_Xenia 
+			Xeno_Xeno Zenais_Zenais Zenobia_Zenobia Zoe_Zoe Zosime_Zosime
+		}
+	koine = {
+		graphical_cultures = { byzantinegfx }
+		
+		color = { 0.4 0.8 1 }
+		
+		male_names = {
+			Achaios_Achaios Adeimantos_Adeimantos Agapetos_Agapetos Agathon_Agathon Ainesidemos_Ainesidemos Aischines_Aischines Aischylos_Aischylos Aisopos_Aisopos Akakios_Akakios Akron_Akron Alexandros_Alexandros 
+			 Alexis_Alexis Alkaios_Alkaios Alkiphron_Alkiphron Ambrosios_Ambrosios Ampelios_Ampelios Amyntas_Amyntas 
+		 Anaxagoras_Anaxagoras Anaxilas_Anaxilas Anaximenes_Anaximenes Androkles_Androkles Andronikos_Andronikos Androtion_Androtion Antiphon_Antiphon Aphrodisios_Aphrodisios Apollodoros_Apollodoros Apollonios_Apollonios
+			Araros_Araros Archelaos_Archelaos Archimedes_Archimedes Archippos_Archippos Argyros_Argyros Aristarchos_Aristarchos Aristeides_Aristeides Aristogeiton_Aristogeiton Aristokles_Aristokles 
+			Ariston_Ariston Aristophanes_Aristophanes Aristoteles_Aristoteles Arkadios_Arkadios Arkesilas_Arkesilas Arkesios_Arkesios Arsenios_Arsenios Artemidoros_Artemidoros Asklepiades_Asklepiades 
+		Atrtemisios_Atrtemisios Basileios_Basileios Bion_Bion Chariton_Chariton Chrysanthos_Chrysanthos Damasias_Damasias Dareios_Dareios 
+			Demetrios_Demetrios Demokritos_Demokritos Demosthenes_Demosthenes Dexippos_Dexippos Diodorus_Diodorus Diodotos_Diodotos Diogenes_Diogenes Diokles_Diokles Dionysodoros_Dionysodoros 
+			Drakon_Drakon Eirenaios_Eirenaios Ekphantos_Ekphantos Epaminondas_Epaminondas Epaphroditos_Epaphroditos Epikouros_Epikouros Epiktetos_Epiktetos Epilykos_Epilykos Erasistratos_Erasistratos Eratosthenes_Eratosthenes Euaristos_Euaristos Euboulos_Euboulos Eudoxos_Eudoxos
+			Eukleides_Eukleides Euktemon_Euktemon Eumenes_Eumenes Euphemios_Euphemios Euphranor_Euphranor Euripides_Euripides Eusebios_Eusebios Eustathios_Eustathios 
+			Eutychios_Eutychios Eutychos_Eutychos Galenos_Galenos Gelon_Gelon Glaukon_Glaukon Harmodios_Harmodios Heliodoros_Heliodoros Herakleitos_Herakleitos 
+			Hermias_Hermias Hermogenes_Hermogenes Hermokrates_Hermokrates Hermolaos_Hermolaos Herodes_Herodes Herodotus_Herodotus Heron_Heron Hesiod_Hesiod 
+			Hiketas_Hiketas Hieron_Hieron Hieronymos_Hieronymos Hippalos_Hippalos Hipparchos_Hipparchos Hippokrates_Hippokrates Hippolytos_Hippolytos Hipponax_Hipponax Homeros_Homeros Hyakinthos_Hyakinthos Hypsikles_Hypsikles 
+			Hypatos_Hypatos Iason_Iason Ion_Ion Iphikrates_Iphikrates Isagoras_Isagoras Isidoros_Isidoros Isokrates_Isokrates Kallias_Kallias Kallikrates_Kallikrates Kallisthenes_Kallisthenes Kallistos_Kallistos Karneades_Karneades 
+			Kassandros_Kassandros Kephalos_Kephalos Kleisthenes_Kleisthenes Kleitos_Kleitos Kleon_Kleon Konon_Konon Kylon_Kylon Kyros_Kyros Laomedon_Laomedon 
+			Leon_Leon Leukon_Leukon Linos_Linos Loukianos_Loukianos Lykourgos_Lykourgos Lysandros_Lysandros Lysimachos_Lysimachos Mantitheos_Mantitheos Megakles_Megakles Menexenos_Menexenos Menon_Menon Metrodoros_Metrodoros Miltiades_Miltiades 
+			Myron_Myron Neophytos_Neophytos Nikandros_Nikandros Nikanor_Nikanor Nikephoros_Nikephoros Nikias_Nikias Nikolaos_Nikolaos Nikomachos_Nikomachos Nikomedes_Nikomedes Nikokreon_Nikokreon 
+			Olympiodoros_Olympiodoros Ophellas_Ophellas Pankratios_Pankratios Pantaleon_Pantaleon Parmenion_Parmenion Pausanias_Pausanias Periandros_Periandros Perikles_Perikles Pheidias_Pheidias Philandros_Philandros Philokrates_Philokrates Phokion_Phokion
+			Platon_Platon Ploutarchos_Ploutarchos Praxiteles_Praxiteles Prodikos_Prodikos Sokrates_Sokrates Solon_Solon Sosigenes_Sosigenes Stilpon_Stilpon 
+			Straton_Straton Themistokles_Themistokles Theodoros_Theodoros Theodosios_Theodosios Theodotos_Theodotos Theophanes_Theophanes Theron_Theron Thrasyboulos_Thrasyboulos
+			Tychon_Tychon Xenon_Xenon Xenophon_Xenophon Zephyros_Zephyros Zeuxidamas_Zeuxidamas        
+		}
+		female_names = {
+			Adrasteia_Adrasteia Agathe_Agathe Aglaia_Aglaia Alexandra_Alexandra Alkippe_Alkippe Amastris_Amastris Anthousa_Anthousa Antigone_Antigone Aphrodisia_Aphrodisia 
+			Apollonia_Apollonia Aristomache_Aristomache Arsinoe_Arsinoe Artemisia_Artemisia Aspasia_Aspasia Athanasia_Athanasia Athenais_Athenais Berenike_Pherenike Charis_Charis 
+			Charmion_Charmion Chloe_Chloe Chrysanthe_Chrysanthe Demetria_Demetria Demostrate_Demostrate Eirene_Eirene Elpis_Elpis Euanthe_Euanthe 
+			Eudokia_Eudokia Eudoxia_Eudoxia Eugeneia_Eugeneia Eulalia_Eulalia Eumelia_Eumelia Eunike_Eunike Euphemia_Euphemia Euphrasia_Euphrasia 
+			Eupraxia_Eupraxia Eurydike_Eurydike Euthalia_Euthalia Euthymia_Euthymia Eutropia_Eutropia Eutychia_Eutychia Gaiane_Gaiane Galene_Galene Hagne_Hagne 
+			Helene_Helene Hypatia_Hypatia Isidora_Isidora Kallisto_Kallisto Kallistrate_Kallistrate Kassandra_Kassandra Korinna_Korinna Laodike_Laodike Ligeia_Ligeia 
+			Lysandra_Lysandra Lysistrate_Lysistrate Melissa_Melissa Metrodora_Metrodora Myrrine_Myrrine Nikaia_Nikaia Nike_Nike Olympias_Olympias Pelagia_Pelagia 
+			Phila_Phila Phoibe_Phoibe Photine_Photine Ptolemais_Ptolemais Rhode_Rhode Roxane_Roxane Sappho_Sappho Sophia_Sophia 
+			Sostrate_Sostrate Stratonike_Stratonike Syntyche_Syntyche Thais_Thais Theodora_Theodora Theodosia_Theodosia Theokleia_Theokleia Theophania_Theophania Thessalonike_Thessalonike
+			Timo_Timo Timothea_Timothea Tryphaina_Tryphaina Tryphosa_Tryphosa Xanthe_Xanthe Xanthippe_Xanthippe Xenia_Xenia Xeno_Xeno 
+			Zenais_Zenais Zenobia_Zenobia Zoe_Zoe Zosime_Zosime                
+		}
+  
+		from_dynasty_prefix = "of "
+  
+		modifier = hellenic_culture_modifier
+	}
 	nabatean = {
 		graphical_cultures = { byzantinegfx }
 		
@@ -586,29 +655,6 @@ byzantine = {
 		
 		disinherit_from_blinding = yes
 
-		modifier = default_culture_modifier
-	}
-	
-	dacian = {
-		graphical_cultures = { easternslavicgfx }
-		
-		color = { 0.7 0.4 0.3 } 
-
-		male_names = {
-			Bastiza Bikilis Brasus Burebista Comosicus Cotiso Dablosa Daizus 
-			Damanais Dapyg Dardanos Decaeneus Decebalus Dicomes Diegis Diurpaneus 
-			Driglisa Dromichaetes Komakiza Komozoi Mucapor Mucatra Natoporus Oroles 
-			Petoporus Pieporus Rescuturme Rigozus Scorylo Tarbus Thiamarkos Tiati 
-			Tsinna Tsiru Vezina Zyraxes		
-		}
-		female_names = {
-			Brasia Comosia Cotisa Daiza Damanaia Dardana Diegia Diurpanea 
-			Komozia Natopora Orola Petopora Piepora Scoryla Tarba Vezineia 
-			Zia Zyraxa		
-		}
-  
-		from_dynasty_prefix = "of "
-	
 		modifier = default_culture_modifier
 	}
 	
@@ -1775,7 +1821,173 @@ east_african = {
 	}		
 }
 
-west_germanic = {
-	graphical_cultures = { westerngfx }
+anatolian_group = {
+	graphical_cultures = { hellengfx byzantinegfx }
+
+	isaurian = {
+		graphical_cultures = { hellengfx byzantinegfx }
+		
+		color = { 0.35 0.25 0.5 }
+
+		male_names = {
+            Akakios_Akakios Alkimos_Alkimos Anatolios_Anatolios Antonios_Anthony Antonios_Antonios
+            Appalios_Appalios Arbazakios_Arbazak Armaronzas_Armasharruma Arnoubandas_Arnuuanda
+            Artemidoros_Artemidoros Artemios_Artemios Aspalios_Appalios Athenodoros_Athenodoros
+            Aurelios_Aurelius Basilios_Basil Bematios_Bematios Bisylas_Bisylas Blas_Pala
+            Boniphatios_Boniface Bos_Bos Diodoros_Diodoros Diomedes_Diomedes Diophantos_Diophantos
+            Domitios_Domitius Eianbias_Iiapiia Elpidios_Elpidios Epiphanios_Epiphanios Ermamoas_Armamuua
+            Ermapias_Armapiia Ermapias_Armapiia Eulalios_Eulalios Euphemios_Euphemios Euphronios_Euphronios
+            Euskhemon_Euschemon Eustathios_Eustace Georgios_George Helenos_Helenos Helladios_Helladios
+            Iakobos_Jacob Iazarmas_Iiasharruma Illas_Illos Illios_Illos Illos_Illos Indakos_Indakos
+            Indas_Indos Indes_Indos Indos_Indos Indous_Indos Ioannes_John Isidoros_Isidore Kerkenios_Cercenius
+            Khrisapias_Kirshapiia Khrysippos_Chrysippos Kinyras_Kinaru Kirsamoas_Kirshamuua Klaudios_Claudius
+            Kodisas_Kodisas Kodisseus_Kodisas Kolarbasis_Kulaarpa Konon_Konon Konstantinos_Constantine
+            Kosmas_Kosmas Kotones_Kottones Kottones_Kottones Kottounes_Kottones Kouas_Kuua Koudeis_Kuuata
+            Koulapias_Kulapiia Koundes_Kuuata Koundis_Kuuata Krates_Kratos Kydramouas_Kudramuua
+            Kyriakos_Kyriakos Kyrillos_Cyril Laios_Laios Lalas_Lalas Lalos_Lalas Leon_Leo Longinos_Longinus
+            Loupos_Lupus Lydios_Lydios Mamas_Mamas Marinos_Marinus Markianos_Marcian Markos_Mark
+            Maximinos_Maximinus Maximos_Maximos Mennas_Menas Menodoros_Menodoros Mirasetas_Mirazita
+            Mompraios_Mompraios Mopsos_Muksa Mosetas_Muuaziti Motas_Mutta Moupsos_Muksa Moutas_Mutta
+            Nanios_Nannas Nannas_Nannas Nanneis_Nannas Nikias_Nikias Nounekhios_Nounechios Oadas_Oadas
+            Obamoutas_Ubamutta Opramoas_Upparamuua Opramos_Upparamuua Orbalasetas_Uarpaziti Ouprasetas_Upparaziti
+            Ouramoutas_Uramutta Palphourios_Palfurius Paulinos_Pauline Paulos_Paul Peison_Piso Phabios_Fabius
+            Philippos_Philip Philopator_Philopator Phlaouios_Flavius Phlavios_Flavius Polemon_Polemon
+            Rhondas_Runta Rhondberras_Runtapara Rhondbies_Runtapiia Rhonderbemis_Kurunizurumeri Rhondes_Runta
+            Rhonzdrumeris_Kurunizurumeri Rhozarmas_Kurusharma Roarbasis_Kuruarpa Sandas_Shanta Sandatis_Shanta
+            Solon_Solon Sosandros_Sosandros Stephanos_Stephen Straton_Straton Styrax_Styrax Tarasios_Tarasis
+            Tarasis_Tarasis Tarazis_Tarasis Tarkhimos_Tarhumuua Tarkhondimotos_Tarhumuuata Tarkhymbios_Tarhupiia
+            Tberasetas_Taparaziti Tberemosis_Taparamuua Tedianos_Tati Theodoros_Theodore Theodosios_Theodosios
+            Theophanes_Theophanes Tiberios_Tiberius Tlamoas_Tlamuua Touanabias_Tuhanapiia Trokhoarbasis_Tarhuarpa
+            Trokhongilanis_Tarhunhila Trokhozarmas_Tarhusharruma Trokondas_Tarhukuuata Trokoundes_Tarhukuuata
+            Tyrannos_Tyrannus Valentinos_Valentine Zakharias_Zachariah
+        }
+        female_names = {
+            Agathe_Agatha Aglaia_Aglaia Agne_Agnes Ailia_Aelia Akakia_Akakia Anatolia_Anatolia Antonia_Antonia
+            Arara_Arara Aris_Ari Artemidora_Artemidora Artemis_Artemis Athenodora_Athenodora Aurelia_Aurelia
+            Basilia_Basilia Diodora_Diodora Domitia_Domitia Elpis_Elpis Epiphania_Epiphania Eudoxia_Eudoxia
+            Eulalia_Eulalia Euphemia_Euphemia Euphronia_Euphronia Eustathia_Eustathia Georgia_Georgia Helene_Helen
+            Ioanne_Joan Ioulia_Julia Ioulitta_Juliet Isaura_Isaura Isidora_Isidora Katerina_Catherine
+            Kerkenia_Cercenia Khrysippe_Chrysippe Klara_Klara Klaudia_Claudia Konnis_Kunni Konstantina_Constantina
+            Kottoneis_Kottoneis Kyriake_Kyriake Kyrilla_Cyrilla Lala_Lala Lalis_Lala Lalla_Lala Lallia_Lala
+            Lallis_Lala Laloa_Lala Leontia_Leontia Longina_Longina Loukia_Lucia Loupa_Lupa Lydia_Lydia
+            Marina_Marina Markia_Marcia Markiane_Marciana Maxima_Maxima Maximina_Maximina Menodora_Menodora
+            Nena_Nino Nenis_Nino Palphouria_Palfuria Paula_Paula Pauline_Paulina Pelagia_Pelagia Phabia_Fabia
+            Philippa_Philippa Phlavia_Flavia Rhonesis_Kurunashi Sophia_Sophia Stephania_Stephania Tedinenis_Tatinani
+            Thekla_Thekla Theodora_Theodora Theodosia_Theodosia Theophane_Theophane Tiberia_Tiberia Trebeis_Tarpa
+            Trebemis_Tarpamira Trokondeis_Trokondeis Valeria_Valeria Valentina_Valentina Verina_Verina
+        }
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+		
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+	}
+	lycaonian = {
+		graphical_cultures = { hellengfx byzantinegfx }
+		
+		color = { 0.43 0.1 0.15 }
+
+		male_names = {
+			Longius Konon Leontios Leo Adrasus Celenderis Codaca Daliaandus Lauzaduz Lamus Germanicas Dometio Diocaesar Cardabunta Snrmutium Kannedeli
+			Tito Olba Heliose Illus Ardabur Aspar Julis Rhetorius Marcus Mattiarici Tarasis Kodisa Traskalisseus Rousoumbladeottes Musbanda Syca Iotapa 
+		}
+		female_names = {
+			Lallis Valeria Longina Ariadne Arcadia Topisa Meloë Musbanda Titia Iotapa Celenderis Antiochia Parva Olba Syca Hieralia 
+		}
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+		
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+	}
+}
+
+thracian_group = {
+	old_thracian = {
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0.6 0.3 0 }
+
+		male_names = {
+			Abrupolis_Abrupolis Amatokos_Amatokos Bas_Bas Beithys_Beithys Bergaios_Bergaios Berisades_Berisades Boteiras_Boteiras Cersobleptes_Cersobleptes 
+			Cetriporis_Cetriporis Cosingas_Cosingas Cothelas Cotys_Cotys Diegylis_Diegylis Doedalses_Doedalses Dromichaetes_Dromichaetes Etazeta_Etazeta Getas_Getas 
+			Hebryzelmis_Hebryzelmis Langarus_Langarus Olorus_Olorus Pleurates_Pleurates Pleuratus_Pleuratus Rabocentus_Rabocentus Raiskoyporis_Raiskoyporis Raizdos_Raizdos 
+			Rhescuporis_Rhescuporis Rhoemetalces_Rhoemetalces Roigos_Roigos Sadalas_Sadalas Seuthes_Seuthes Sitalces_Sitalces Sparatocos_Sparatocos Syrmus_Syrmus 
+			Teres_Teres Ziaelas_Ziaelas Zibelmius_Zibelmius Zipoetes_Zipoetes Ziselmius_Ziselmius Zisemis_Zisemis        
+		}
+		female_names = {
+			Pythodoris_Pythodoris Sura_Sura Tryphaena_Tryphaena        
+		}
+  
+		from_dynasty_prefix = "of "
+    	dynasty_title_names = yes
+		modifier = thracian_culture_modifier
+	}
+	phrygian = {
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0 0.4 0.5 }
+
+		male_names = {
+			Abrupolis_Abrupolis Adrastus Amatokos_Amatokos Bas_Bas Beithys_Beithys Bergaios_Bergaios Berisades_Berisades Boteiras_Boteiras 
+			Cersobleptes_Cersobleptes Cetriporis_Cetriporis Cosingas_Cosingas Cotys_Cotys Diegylis_Diegylis Doedalses_Doedalses Dromichaetes_Dromichaetes Etazeta_Etazeta 
+			Getas_Getas Gordias Hebryzelmis_Hebryzelmis Langarus_Langarus Midas Olorus_Olorus Pleurates_Pleurates Pleuratus_Pleuratus 
+			Rabocentus_Rabocentus Raiskoyporis_Raiskoyporis Raizdos_Raizdos Rhescuporis_Rhescuporis Rhoemetalces_Rhoemetalces Roigos_Roigos Sadalas_Sadalas Seuthes_Seuthes 
+			Sitalces_Sitalces Sparatocos_Sparatocos Syrmus_Syrmus Teres_Teres Ziaelas_Ziaelas Zibelmius_Zibelmius Zipoetes_Zipoetes Ziselmius_Ziselmius 
+			Zisemis_Zisemis        
+		}
+		female_names = {
+			Eurynome Pythodoris_Pythodoris Sura_Sura Tryphaena_Tryphaena        
+		}
+  
+		from_dynasty_prefix = "of "
+    
+		modifier = anatolian_culture_modifier
+	}
+	old_dacian = {
+		graphical_cultures = { byzantinegfx }
+		color = { 0.4 0.2 0.1 }
+
+		male_names = {
+			Bastiza Bikilis Brasus Burebista Comosicus Cotiso Dablosa Daizus 
+			Damanais Dapyg Dardanos Decaeneus Decebalus Dicomes Diegis Diurpaneus 
+			Driglisa Dromichaetes Komakiza Komozoi Mucapor Mucatra Natoporus Oroles 
+			Petoporus Pieporus Rescuturme Rigozus Scorylo Tarbus Thiamarkos Tiati 
+			Tsinna Tsiru Vezina Zyraxes        
+		}
+		female_names = {
+			Brasia Comosia Cotisa Daiza Damanaia Dardana Diegia Diurpanea 
+			Komozia Natopora Orola Petopora Piepora Scoryla Tarba Vezineia 
+			Zia Zyraxa        
+		}
+  
+		from_dynasty_prefix = "of "
 	
-	
+		modifier = thracian_culture_modifier
+	}
