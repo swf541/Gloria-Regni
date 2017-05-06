@@ -1332,3 +1332,137 @@
 		death = yes
 	}
 }
+184290 = {
+	name = "Bikorum"
+	dynasty = 1000124333
+	
+	religion = bori
+	culture = kanuri
+	
+	485.1.1 = {
+		birth = yes
+	}
+	506.1.1 = {
+		add_spouse = 184291
+	}
+	545.1.1 = {
+		death = yes
+	}
+}
+184291 = {
+	name = "Daniyah"
+	dynasty = 0
+	female = yes
+	
+	religion = bori
+	culture = kanuri
+	
+	490.1.1 = {
+		birth = yes
+	}
+	550.1.1 = {
+		death = yes
+	}
+}
+184292 = {
+	name = "Bukar"
+	dynasty = 1000124333
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184290
+	mother = 184291
+	
+	511.1.1 = {
+		birth = yes
+	}
+	571.1.1 = {
+		death = yes
+	}
+}
+184293 = {
+	name = "Fatima"
+	female="yes"
+	dynasty = 1000124333
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184290
+	mother = 184291
+	
+	516.1.1 = {
+		birth = yes
+	}
+	576.1.1 = {
+		death = yes
+	}
+}
+184294 = {
+	name = "Abdul"
+	dynasty = 1000124334
+	
+	religion = bori
+	culture = kanuri
+	
+	486.1.1 = {
+		birth = yes
+	}
+	507.1.1 = {
+		add_spouse = 184295
+	}
+	546.1.1 = {
+		death = yes
+	}
+}
+184295 = {
+	name = "Amina"
+	dynasty = 0
+	female = yes
+	
+	religion = bori
+	culture = kanuri
+	
+	491.1.1 = {
+		birth = yes
+	}
+	551.1.1 = {
+		death = yes
+	}
+}
+184296 = {
+	name = "Alhaji"
+	dynasty = 1000124333
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184294
+	mother = 184295
+	
+	512.1.1 = {
+		birth = yes
+	}
+	572.1.1 = {
+		death = yes
+	}
+}
+184297 = {
+	name = "Fatima"
+	female="yes"
+	dynasty = 1000124333
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184294
+	mother = 184295
+	
+	517.1.1 = {
+		birth = yes
+	}
+	577.1.1 = {
+		death = yes
+	}
+}
