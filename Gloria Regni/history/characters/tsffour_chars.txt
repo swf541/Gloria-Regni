@@ -1466,3 +1466,137 @@
 		death = yes
 	}
 }
+184298 = {
+	name = "Modu"
+	dynasty = 1000124335
+	
+	religion = bori
+	culture = kanuri
+	
+	487.1.1 = {
+		birth = yes
+	}
+	508.1.1 = {
+		add_spouse = 184299
+	}
+	547.1.1 = {
+		death = yes
+	}
+}
+184299 = {
+	name = "Nadia"
+	dynasty = 0
+	female = yes
+	
+	religion = bori
+	culture = kanuri
+	
+	add_trait = pregnant
+	
+	492.1.1 = {
+		birth = yes
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184300 = {
+	name = "Salmana"
+	dynasty = 1000124335
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184298
+	mother = 184299
+	
+	513.1.1 = {
+		birth = yes
+	}
+	573.1.1 = {
+		death = yes
+	}
+}
+184301 = {
+	name = "Katakarmabe"
+	dynasty = 1000124336
+	
+	religion = bori
+	culture = kanuri
+	
+	490.1.1 = {
+		birth = yes
+	}
+	511.1.1 = {
+		add_spouse = 184302
+	}
+	550.1.1 = {
+		death = yes
+	}
+}
+184302 = {
+	name = "Mina"
+	dynasty = 0
+	female = yes
+	
+	religion = bori
+	culture = kanuri
+	
+	495.1.1 = {
+		birth = yes
+	}
+	555.1.1 = {
+		death = yes
+	}
+}
+184303 = {
+	name = "Mufioma"
+	dynasty = 1000124336
+	
+	religion = bori
+	culture = kanuri
+	
+	father = 184301
+	mother = 184302
+	
+	516.1.1 = {
+		birth = yes
+	}
+	576.1.1 = {
+		death = yes
+	}
+}
+184304 = {
+	name = "Mahmoud"
+	dynasty = 1000124337
+	
+	religion = bori
+	culture = kanuri
+	
+	492.1.1 = {
+		birth = yes
+	}
+	513.1.1 = {
+		add_spouse = 184305
+	}
+	552.1.1 = {
+		death = yes
+	}
+}
+184305 = {
+	name = "Rashida"
+	dynasty = 0
+	female = yes
+	
+	religion = bori
+	culture = kanuri
+	
+	add_trait = pregnant
+	
+	497.1.1 = {
+		birth = yes
+	}
+	557.1.1 = {
+		death = yes
+	}
+}
