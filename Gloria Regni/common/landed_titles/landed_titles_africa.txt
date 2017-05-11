@@ -6070,157 +6070,6 @@ e_abyssinia = {
 		
 		jewish_group = 100
 		
-		d_harer = { # Berbera
-			color={ 127 151 52 }
-			color2={ 255 255 255 }
-			
-			capital = 872 # Berbera
-		
-			c_busaso = {
-				color={ 127 151 52 }
-				color2={ 255 255 255 }
-			
-				b_mosylon = {
-				}
-				b_bandaraassim = {
-				}
-				b_lasanod = {
-				}
-				b_garoowe = {
-				}
-				b_qardho = {
-				}
-				b_erigavo = {
-				}
-				b_hadaftimo = {
-				}
-				b_buraan = {
-				}
-			}
-			c_qardho = {
-				color={ 127 151 52 }
-				color2={ 255 255 255 }
-
-				b_qardho1 = { }
-				b_qardho2 = { }
-				b_qardho3 = { }
-				b_qardho4 = { }
-				b_qardho5 = { }
-				b_qardho6 = { }
-				b_qardho7 = { }
-			}
-			c_hafun = {
-				color={ 210 151 152 }
-				color2={ 255 255 255 }	
-				
-				b_hafun1 = { }
-				b_hafun2 = { }
-				b_hafun3 = { }
-				b_hafun4 = { }
-				b_hafun5 = { }
-				b_hafun6 = { }
-				b_hafun7 = { }
-			}
-			c_berbera = {
-				color={ 127 151 52 }
-				color2={ 255 255 255 }
-			
-				b_berbera = {
-				}
-				b_maydh = {
-				}
-				b_gabiley = {
-				}
-				b_burco = {
-				}
-				b_mandera = {
-				}
-				b_daarbuduq = {
-				}
-				b_shiikh = {
-				}
-			}
-			c_togdher = {
-				color = { 128 190 57 }
-				color2 = { 255 255 255 }
-				
-				b_togdher1 = { }
-				b_togdher2 = { }
-				b_togdher3 = { }
-				b_togdher4 = { }
-				b_togdher5 = { }
-				b_togdher6 = { }
-				b_togdher7 = { }
-			}
-			
-			c_sanaag = {
-				color = { 199 200 80 }
-				color2 = { 255 255 255 }
-				
-				b_sanaag1 = { }
-				b_sanaag2 = { }
-				b_sanaag3 = { }
-				b_sanaag4 = { }
-				b_sanaag5 = { }
-				b_sanaag6 = { }
-				b_sanaag7 = { }
-			}
-			c_zeila = {
-				color={ 127 151 52 }
-				color2={ 255 255 255 }
-			
-				b_zeila = {
-				}
-				b_hargeysa = {
-				}
-				b_borama = {
-				}
-				b_amud = {
-				}
-				b_jijiga = {
-				}
-				b_dilla = {
-				}
-				b_lughaya = {
-				}
-			}
-			c_mora = {
-				color = { 140 175 177 }
-				color2 = { 255 255 255 }
-				
-				b_mora1 = { }
-				b_mora2 = { }
-				b_mora3 = { }
-				b_mora4 = { }
-				b_mora5 = { }
-				b_mora6 = { }
-				b_mora7 = { }
-			}
-			c_hargeisa = {
-				color = { 120 145 177 }
-				color2 = { 255 255 255 }
-
-				b_hargeisa1 = { }
-				b_hargeisa2 = { }
-				b_hargeisa3 = { }
-				b_hargeisa4 = { }
-				b_hargeisa5 = { }
-				b_hargeisa6 = { }
-				b_hargeisa7 = { }
-			}
-			c_deghabur = {
-				color = { 50 160 80 }
-				color2 = { 255 255 255 }
-				
-				b_deghabur1 = { }
-				b_deghabur2 = { }
-				b_deghabur3 = { }
-				b_deghabur4 = { }
-				b_deghabur5 = { }
-				b_deghabur6 = { }
-				b_deghabur7 = { }
-			}
-		}
 		
 		d_axum = {
 			color={ 186 135 70 }
@@ -6777,6 +6626,291 @@ e_abyssinia = {
 				b_shewa5 = { }
 				b_shewa6 = { }
 				b_shewa7 = { }
+			}
+		}
+	}
+	
+	k_somalia = {
+		color = { 145 188 200 }
+		
+		capital =872
+		
+		d_harer = { # Berbera
+			color={ 127 151 52 }
+			color2={ 255 255 255 }
+			
+			capital = 872 # Berbera
+		
+			c_busaso = {
+				color={ 127 151 52 }
+				color2={ 255 255 255 }
+			
+				b_mosylon = {
+				}
+				b_bandaraassim = {
+				}
+				b_lasanod = {
+				}
+				b_garoowe = {
+				}
+				b_qardho = {
+				}
+				b_erigavo = {
+				}
+				b_hadaftimo = {
+				}
+				b_buraan = {
+				}
+			}
+			c_qardho = {
+				color={ 127 151 52 }
+				color2={ 255 255 255 }
+
+				b_qardho1 = { }
+				b_qardho2 = { }
+				b_qardho3 = { }
+				b_qardho4 = { }
+				b_qardho5 = { }
+				b_qardho6 = { }
+				b_qardho7 = { }
+			}
+			c_hafun = {
+				color={ 210 151 152 }
+				color2={ 255 255 255 }	
+				
+				b_hafun1 = { }
+				b_hafun2 = { }
+				b_hafun3 = { }
+				b_hafun4 = { }
+				b_hafun5 = { }
+				b_hafun6 = { }
+				b_hafun7 = { }
+			}
+			c_berbera = {
+				color={ 127 151 52 }
+				color2={ 255 255 255 }
+			
+				b_berbera = {
+				}
+				b_maydh = {
+				}
+				b_gabiley = {
+				}
+				b_burco = {
+				}
+				b_mandera = {
+				}
+				b_daarbuduq = {
+				}
+				b_shiikh = {
+				}
+			}
+			c_togdher = {
+				color = { 128 190 57 }
+				color2 = { 255 255 255 }
+				
+				b_togdher1 = { }
+				b_togdher2 = { }
+				b_togdher3 = { }
+				b_togdher4 = { }
+				b_togdher5 = { }
+				b_togdher6 = { }
+				b_togdher7 = { }
+			}
+			
+			c_sanaag = {
+				color = { 199 200 80 }
+				color2 = { 255 255 255 }
+				
+				b_sanaag1 = { }
+				b_sanaag2 = { }
+				b_sanaag3 = { }
+				b_sanaag4 = { }
+				b_sanaag5 = { }
+				b_sanaag6 = { }
+				b_sanaag7 = { }
+			}
+			c_zeila = {
+				color={ 127 151 52 }
+				color2={ 255 255 255 }
+			
+				b_zeila = {
+				}
+				b_hargeysa = {
+				}
+				b_borama = {
+				}
+				b_amud = {
+				}
+				b_jijiga = {
+				}
+				b_dilla = {
+				}
+				b_lughaya = {
+				}
+			}
+			c_mora = {
+				color = { 140 175 177 }
+				color2 = { 255 255 255 }
+				
+				b_mora1 = { }
+				b_mora2 = { }
+				b_mora3 = { }
+				b_mora4 = { }
+				b_mora5 = { }
+				b_mora6 = { }
+				b_mora7 = { }
+			}
+			c_hargeisa = {
+				color = { 120 145 177 }
+				color2 = { 255 255 255 }
+
+				b_hargeisa1 = { }
+				b_hargeisa2 = { }
+				b_hargeisa3 = { }
+				b_hargeisa4 = { }
+				b_hargeisa5 = { }
+				b_hargeisa6 = { }
+				b_hargeisa7 = { }
+			}
+			c_deghabur = {
+				color = { 50 160 80 }
+				color2 = { 255 255 255 }
+				
+				b_deghabur1 = { }
+				b_deghabur2 = { }
+				b_deghabur3 = { }
+				b_deghabur4 = { }
+				b_deghabur5 = { }
+				b_deghabur6 = { }
+				b_deghabur7 = { }
+			}
+		}
+		d_hobyo = {
+			color = { 188 177 201 }
+			color2 = { 255 255 255 }
+			
+			capital = 1602
+			
+			c_afder = {
+				color = { 199 172 193 }
+				color2 = { 255 255 255 }
+				
+				b_afder1 = { }
+				b_afder2 = { }
+				b_afder3 = { }
+				b_afder4 = { }
+				b_afder5 = { }
+				b_afder6 = { }
+				b_afder7 = { }
+			}
+			c_odagen = {
+				color = { 210 172 177 }
+				color2 = { 255 255 255 }	
+				
+				b_odagen1 = { }
+				b_odagen2 = { }
+				b_odagen3 = { }
+				b_odagen4 = { }
+				b_odagen5 = { }
+				b_odagen6 = { }
+				b_odagen7 = { }
+			}
+			c_beledweyne = {
+				color = { 205 177 193 }
+				color2 = { 255 255 255 }
+
+				b_beledweyne1 = { }
+				b_beledweyne2 = { }
+				b_beledweyne3 = { }
+				b_beledweyne4 = { }
+				b_beledweyne5 = { }
+				b_beledweyne6 = { }
+				b_beledweyne7 = { }
+			}
+			c_el_buur = {
+				color = { 201 152 204 }
+				color2 = { 255 255 255 }
+
+				b_el_buur1 = { }
+				b_el_buur2 = { }
+				b_el_buur3 = { }
+				b_el_buur4 = { }
+				b_el_buur5 = { }
+				b_el_buur6 = { }
+				b_el_buur7 = { }
+			}
+			c_warsheikh = {
+				color = { 132 183 195 }
+				color2 = { 255 255 255 }	
+
+				b_warsheikh1 = { }
+				b_warsheikh2 = { }
+				b_warsheikh3 = { }
+				b_warsheikh4 = { }
+				b_warsheikh5 = { }
+				b_warsheikh6 = { }
+				b_warsheikh7 = { }
+			}
+			c_meregh = {
+				color = { 205 183 165 }
+				color2 = { 255 255 255 }	
+
+				b_meregh1 = { }
+				b_meregh2 = { }
+				b_meregh3 = { }
+				b_meregh4 = { }
+				b_meregh5 = { }
+				b_meregh6 = { }
+				b_meregh7 = { }
+			}
+			c_hobyo = {
+				color = { 188 177 201 }
+				color2 = { 255 255 255 }
+
+				b_hobyo1 = { }
+				b_hobyo2 = { }
+				b_hobyo3 = { }
+				b_hobyo4 = { }
+				b_hobyo5 = { }
+				b_hobyo6 = { }
+				b_hobyo7 = { }
+			}
+			c_gedo = {
+				color = { 210 193 199 }
+				color2 = { 255 255 255 }	
+
+				b_gedo1 = { }
+				b_gedo2 = { }
+				b_gedo3 = { }
+				b_gedo4 = { }
+				b_gedo5 = { }
+				b_gedo6 = { }
+				b_gedo7 = { }
+			}
+			c_galkayo = {
+				color = { 182 188 144 }
+				color2 = { 255 255 255 }		
+				
+				b_galkayo1 = { }
+				b_galkayo2 = { }
+				b_galkayo3 = { }
+				b_galkayo4 = { }
+				b_galkayo5 = { }
+				b_galkayo6 = { }
+				b_galkayo7 = { }
+			}
+			c_garoowe = {
+				color = { 199 172 193 }
+				color2 = { 255 255 255 }
+
+				b_garoowe1 = { }
+				b_garoowe2 = { }
+				b_garoowe3 = { }
+				b_garoowe4 = { }
+				b_garoowe5 = { }
+				b_garoowe6 = { }
+				b_garoowe7 = { }
 			}
 		}
 	}
