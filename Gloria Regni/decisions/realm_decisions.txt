@@ -7,6 +7,7 @@ decisions = {
 		potential = {
 			is_playable = yes
 			NOR = {
+				has_character_modifier = epic_tournament
 				has_character_flag = epic_tournament
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
@@ -19,7 +20,10 @@ decisions = {
 			}
 			independent = yes
 			NOT = { is_nomadic = yes }
-			NOT = { is_female = yes	}
+			OR = {
+				gender_equality_trigger = yes
+				NOT = { is_female = yes	}
+			}
 			OR = {
 				tier = king
 				tier = emperor 
@@ -42,7 +46,11 @@ decisions = {
 			}
 		}
 		effect = {
-			set_character_flag = epic_tournament
+			add_character_modifier = {
+				name = epic_tournament
+				years = 100
+				hidden = yes
+			}
 			set_character_flag = do_not_disturb
 			clr_character_flag = tournament_has_ended
 			hidden_tooltip = { character_event = { id = 70999 days = 300 } } # Safety catch flag clearing
@@ -70,13 +78,16 @@ decisions = {
 	buy_indulgence_for_sins = {
 		only_playable = yes
 		potential = {
-			is_playable = yes
+
 			religion = catholic
 			age = 16
 			demesne_size = 1
 			NOT = { has_character_flag = ask_for_indulgence }
 		}
 		allow = {
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			scaled_wealth = 1.0
 			wealth = 25
 			is_heretic = no
@@ -238,11 +249,16 @@ decisions = {
 		potential = {
 			is_playable = yes
 			independent = yes
-			NOT = {
+			NOR = {
+
 				has_character_flag = epic_tournament_furusiyya
+				has_character_modifier = epic_tournament_furusiyya
 			}
 			religion_group = muslim
-			NOT = { is_female = yes	}
+			OR = {
+				gender_equality_trigger = yes
+				NOT = { is_female = yes	}
+			}
 			OR = {
 				tier = king
 				tier = emperor 
@@ -266,7 +282,11 @@ decisions = {
 		}
 		effect = {
 			set_character_flag = do_not_disturb
-			set_character_flag = epic_tournament_furusiyya
+			add_character_modifier = {
+				name = epic_tournament_furusiyya
+				years = 100
+				hidden = yes
+			}
 			clr_character_flag = tournament_has_ended_furusiyya
 			hidden_tooltip = { character_event = { id = 88999 days = 300 } } # Safety catch flag clearing
 			wealth = -200
@@ -299,7 +319,7 @@ decisions = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_wre
 			}
-			or= {
+			or = {
 				religion_group = christian
 				religion = hellenic_pagan
 				religion = hellenic_pagan_reformed
@@ -374,60 +394,95 @@ decisions = {
 			religion_authority = 0.9
 			completely_controls = c_byzantion
 			b_hagiasophia = {
+
+
+
 				holder_scope = {
+
 					OR = {
 						religion = orthodox
 						religion = paulician
 						religion = monothelite
 						religion = iconoclast
+
+
+
 					}
 					is_heretic = no
 				}
 			}
 			completely_controls = c_antiocheia
 			b_antiocheia = {
+
+
+
 				holder_scope = {
+
 					OR = {
 						religion = orthodox
 						religion = paulician
 						religion = monothelite
 						religion = iconoclast
+
+
+
 					}
 					is_heretic = no
 				}
 			}
 			completely_controls = c_jerusalem
 			b_jerusalem = {
+
+
+
 				holder_scope = {
+
 					OR = {
 						religion = orthodox
 						religion = paulician
 						religion = monothelite
 						religion = iconoclast
+
+
+
 					}
 					is_heretic = no
 				}
 			}
 			completely_controls = c_alexandria
 			b_alexandria = {
+
+
+
 				holder_scope = {
+
 					OR = {
 						religion = orthodox
 						religion = paulician
 						religion = monothelite
 						religion = iconoclast
+
+
+
 					}
 					is_heretic = no
 				}
 			}
 			completely_controls = c_roma
 			b_roma = {
+
+
+
 				holder_scope = {
+
 					OR = {
 						religion = orthodox
 						religion = paulician
 						religion = monothelite
 						religion = iconoclast
+
+
+
 					}
 					is_heretic = no
 				}
@@ -824,15 +879,21 @@ decisions = {
 			piety = 1500
 		}
 		effect = {
-			hidden_tooltip = {
-				narrative_event = { id = TOG.6000 }
-			}
+
+
+
 			set_global_flag = saoshyant_appears
 			give_nickname = nick_the_saoshyant
 			add_trait = saoshyant
 			prestige = 500
 			piety = 500
 			
+			hidden_tooltip = {
+				narrative_event = { id = TOG.6000 }
+				any_child = {
+					character_event = { id = TOG.6001 }
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -856,6 +917,7 @@ decisions = {
 			primary_title = { title = k_asturias }
 			completely_controls = d_leon
 			completely_controls = d_asturias
+			is_vice_royalty = no
 		}
 		effect = {
 			activate_title = { title = k_leon status = yes }
@@ -1334,6 +1396,9 @@ decisions = {
 				religion_group = jewish_group
 				has_character_modifier = expelled_jewish
 				is_nomadic = yes
+				secret_religion = jewish
+				secret_religion = samaritan
+				secret_religion = karaite
 			}
 			age = 16
 		}
@@ -1441,7 +1506,6 @@ decisions = {
 			}
 		}
 	}
-	
 	embrace_mutazila = {
 		only_playable = yes
 		
@@ -1553,8 +1617,7 @@ decisions = {
 				factor = 0.005 # Slow it down
 			}
 		}
-	}
-	
+	}	
 	become_samrat_chakravartin = {
 		only_independent = yes
 		
@@ -1748,9 +1811,10 @@ decisions = {
 			NOT = { has_global_flag = rome_restored }
 			independent = yes
 			OR = {
+				religion = imperial
 				religion = catholic
 				religion = fraticelli
-				religion = imperial
+
 			}
 			NOT = { has_landed_title = e_byzantium }
 		}
@@ -2950,6 +3014,7 @@ decisions = {
 			has_landed_title = e_roman_empire
 			any_realm_lord = { has_landed_title = c_byzantion }
 		}
+
 		effect = {
 			ROOT = {
 				c_byzantion = {
