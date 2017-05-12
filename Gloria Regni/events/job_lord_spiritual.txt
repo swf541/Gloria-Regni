@@ -37,6 +37,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		NOT = { location = { religion = ROOT } }
 		location = {
 			owner = { same_realm = ROOT }
@@ -53,7 +54,16 @@ character_event = {
 				ai = yes
 			}
 		}
-		
+		modifier = {
+			factor = 0.25
+			has_province_modifier = european_immigrants
+		}
+		modifier = {
+			factor = 0.75
+			liege = {
+				has_artifact = finger_of_st_john
+			}
+		}
 		modifier = {
 			factor = 0.75
 			location = { culture_group = ROOT }
@@ -79,8 +89,8 @@ character_event = {
 			location = { has_province_modifier = depopulated_3 }
 		}
 		modifier = {
-			factor = 0.25
-			has_province_modifier = european_immigrants
+			factor = 3.0
+			location = { is_hard_to_convert = yes }
 		}
 		modifier = {
 			factor = 1.25
@@ -149,6 +159,13 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			religion_authority = 0.9
+		}
+		modifier = {
+			factor = 0.75
+			liege = {
+				society_member_of = monastic_order_dominican
+				society_rank >= 4
+			}
 		}
 		
 		# Hindus and Buddhists have a hard time converting other Indian religions
@@ -272,7 +289,7 @@ character_event = {
 	id = 20001
 	desc = EVTDESC20001
 	picture = GFX_evt_heretic
-	border = GFX_event_letter_frame_religion
+	border = GFX_event_normal_frame_religion
 	
 	is_triggered_only = yes
 	
@@ -297,6 +314,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			any_province_character = {
 				is_adult = yes
@@ -493,6 +511,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			NOT = { religion = ROOT }
 			owner = { same_realm = ROOT }
@@ -648,16 +667,22 @@ character_event = {
 }
 
 # 20022: Inform the Liege about wounding
-letter_event = {
+character_event = {
 	id = 20022
-	desc = "EVTDESC20022"
-	border = GFX_event_letter_frame_religion
+	desc = EVTDESC20022
+	picture = GFX_evt_peasants
+	border = GFX_event_normal_frame_religion
 	
 	is_triggered_only = yes
+	notification = yes
+	
+	immediate = {
+		prestige = -10
+	}
 	
 	option = {
-		name = "EVTOPTA20022"
-		prestige = -10
+		name = EVTOPTA20022
+		tooltip = { prestige = -10 }
 	}
 }
 
@@ -691,6 +716,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		NOT = { religion_group = pagan_group }
 		NOT = { religion_group = indian_group }
 		trait = zealous
@@ -986,6 +1012,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			NOT = { religion = ROOT }
 			NOT = { has_province_modifier = religious_tension }
@@ -1136,6 +1163,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		NOT = { has_character_flag = preacher_arrives }
 		location = {
 			owner = {
@@ -1178,6 +1206,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			owner = {
 				is_adult = yes
@@ -1306,6 +1335,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			owner = {
 				NOT = { character = ROOT }
@@ -1407,6 +1437,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_inquisition
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			owner = {
 				NOT = { character = ROOT }
@@ -1503,6 +1534,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_improve_rel_relations
+		NOT = { has_character_modifier = in_seclusion }
 		location = { 
 			any_province_lord = {
 				NOT = { character = ROOT }
@@ -1639,6 +1671,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_improve_rel_relations
+		NOT = { has_character_modifier = in_seclusion }
 		NOT = { religion_group = indian_group }
 		religion_head = {
 			NOT = { character = liege }
@@ -1778,6 +1811,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_advance_cul_tech
+		NOT = { has_character_modifier = in_seclusion }
 	}
 	
 	mean_time_to_happen = {
@@ -1878,8 +1912,10 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_advance_cul_tech
+		NOT = { has_character_modifier = in_seclusion }
 		NOT = { religion_group = indian_group }
 		is_heretic = no
+		has_secret_religion = no
 		OR = {
 			religion_group = christian
 			religion_group = muslim
@@ -1963,9 +1999,45 @@ letter_event = {
 		FROM = { imprison = yes }
 	}
 	option = {
+		name = "EVTOPTC20270"
+		trigger = {
+			NOR = {
+				religion = FROM
+				has_secret_religion = yes
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_secret_religion = { target_type = public target = FROM }
+		FROM = { letter_event = { id = 20271 } }
+	}
+	option = {
 		name = "EVTOPTB20270"
 		ai_chance = { factor = 0 }
 		religion = FROM
+	}
+}
+
+letter_event = {
+	id = 20271
+	desc = EVTDESC20271
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA20271
+		religion = FROM
+		set_secret_religion = { target_type = true target = FROM }
+		hidden_tooltip = {
+			liege = { letter_event = { id = 20271 } }
+		}
+		
+		ai_chance = { factor = 10 }
+	}
+	option = {
+		name = EVTOPTB20271
+		
+		ai_chance = { factor = 5 }
 	}
 }
 
@@ -1988,6 +2060,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_charity
+		NOT = { has_character_modifier = in_seclusion }
 		location = { 
 			any_province_lord = {
 				religion = ROOT
@@ -2121,6 +2194,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_charity
+		NOT = { has_character_modifier = in_seclusion }
 		location = {
 			religion = ROOT
 			owner = { same_realm = ROOT }
@@ -2274,6 +2348,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_charity
+		NOT = { has_character_modifier = in_seclusion }
 	}
 	
 	mean_time_to_happen = {
@@ -2347,6 +2422,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_charity
+		NOT = { has_character_modifier = in_seclusion }
 	}
 	
 	mean_time_to_happen = {
@@ -2426,6 +2502,7 @@ character_event = {
 	
 	trigger = {
 		has_job_action = action_build_zeal
+		NOT = { has_character_modifier = in_seclusion }
 		liege = {
 			is_adult = yes
 			prisoner = no
