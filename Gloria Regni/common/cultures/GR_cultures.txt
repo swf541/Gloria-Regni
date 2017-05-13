@@ -3406,7 +3406,7 @@ italian_group = {
 	}	
 	ligurian = {
 		graphical_cultures = { italiangfx southerngfx }
-		color = { 0.6 0.9 0.5 }
+		color = { 0.33 0.88 0.25 }
 
 		male_names = {
 			Adalgis Adaloald Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago Ahthari Aimeric_Aymeric
@@ -3497,8 +3497,8 @@ italian_group = {
 		mother_name_chance = 5
 	}
 	venetian = { # Veneziano
-		graphical_culture = italiangfx
-		color = { 0.75 0.75 0.15 }
+		graphical_cultures = { italiangfx }
+		color = { 0.22 0.25 0.77 }
 
 		male_names = {
 			Albertino_Albert Alberto_Albert Alessandro_Alexander Almerico Aluysio_Aluysio Andrea_Andrew Andream_Andrew Anechino Angelo_Angel Antonio_Antoninus Antonolo_Antoninus Arrigo Aureo Baiamonte Baldasera Balsamo Barbus Bartolomeo_Bartolomeus Benasuto Benghi Benintendi Benvenuto Bernabas Bernardo_Bernard Bertuccio Bertucio Blasio Blaxio Bolezino Bonifacio_Bonifacius Bucello Cataldo Checo Clario Cristiano Cristofo Cristoforo Daniele Danieli Dardi Dionisio_Dionysus Domenico_Dominic Donato Dragano Enrico_Henry Ermolao Facio Federico Federigo_Frederick Felle Francescino_Francis Francesco_Francis Frangibus Galaxio Gallo Gasparo Geminiano Geragio Gerardo_Gerard Giacomo_Jacob Gian_John Giorgio_George Giovanni_John Giuliano Giustiniano Gregorio_Gregory Guido_Guy Guilelmo Gurian Iacobino_Jacob Jacobello_Jacob Jacobino_Jacob Jacobo_Jacob Jacomelo_Jacob Jacopo_Jacob Lenuzo_Leo Leonardo Lorenzo Loysio_Aluysio Luca Luchas Luysio_Aluysio Maddaleno Mafeo_Matthew Mapheo_Matthew Marco_Marcus Marin Marino Martino_Martin Matheo_Matthew Medardo Michael_Michael Michaleto_Michael Mora Moreto Morosino Nanino_John Nicolaus_Nicholas Nicoleto_Nicholas Nicolino_Nicholas Nicolo_Nicholas Oliverio_Oliver Paladin Palmerio Panelo Pangratio Pantaleone Pantalione Paolino_Paul Paolo_Paul Pascal Phylipo Pietro_Peter Poluccia Prelatus Puzinello Raffiano Rambaldo Raniero Raynucio Riccardo_Richard Righi Rigi Rigoberto Rizardo Rolandino Romaso Saraceno Sclavo Semelino Simon_Simon Simoneto_Simon Tarvixio Thadeo Thomas_Thomas Tomaso_Thomas Triadano Tusco Tuscus Ubertino_Humbert Uberto_Humbert Vendramino Victor Vitaliano Vito Vitti Zanino_John Zilio Zonta Zusto
@@ -3520,10 +3520,9 @@ italian_group = {
 		modifier = default_culture_modifier
 		}
 	tuscan = {
-		graphical_culture = southerngfx
-		second_graphical_culture = occitangfx # Fallback type
+		graphical_cultures = { occitangfx southerngfx }
 		
-		color = { 0.95 0.95 0.75 }
+		color = { 0.95 0.75 0.75 }
 
 		male_names = {
 			Acciaiolo Adalberto_Albert Adriano_Adrian Agano_Aganos Agnolo_Angelus
@@ -3607,10 +3606,10 @@ italian_group = {
 		mother_name_chance = 5
 	}
 	sardinian = {
-		graphical_culture = southerngfx
-		second_graphical_culture = occitangfx # Fallback type
+	
+		graphical_cultures = { southerngfx occitangfx }
 		
-		color = { 0.95 0.95 0.75 }
+		color = { 0.95 0.55 0.95 }
 
 		male_names = {
 			Adàmu_Adam Adriànu_Adrian Alessandru_Alexander Alfonsu_Alphonse
