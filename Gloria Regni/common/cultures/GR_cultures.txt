@@ -343,7 +343,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
    
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}
 	arcadian = {
 		graphical_cultures = { byzantinegfx }
@@ -388,7 +388,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
    
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}
 	tsakonian = {
 		graphical_cultures = { byzantinegfx }
@@ -433,7 +433,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}
 	italiote = {
 		graphical_cultures = { byzantinegfx }
@@ -449,7 +449,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}	
 	ionian = { 
 		graphical_cultures = { byzantinegfx }
@@ -494,7 +494,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}
 	macedonian = {
 		graphical_cultures = { byzantinegfx }
@@ -539,7 +539,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}	
 	libyco_greek = {
 		graphical_cultures = { byzantinegfx }
@@ -592,6 +592,21 @@ byzantine = {
 			Theophila_Theophila Timo_Timo Timothea_Timothea Tryphaina_Tryphaina Tryphosa_Tryphosa Xanthe_Xanthe Xanthippe_Xanthippe Xenia_Xenia 
 			Xeno_Xeno Zenais_Zenais Zenobia_Zenobia Zoe_Zoe Zosime_Zosime
 		}
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+
+		modifier = default_culture_modifier		
 	}
 	koine = {
 		graphical_cultures = { byzantinegfx }
@@ -636,7 +651,7 @@ byzantine = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = hellenic_culture_modifier
+		modifier = default_culture_modifier
 	}
 	nabatean = {
 		graphical_cultures = { byzantinegfx }
