@@ -777,25 +777,6 @@ byzantine = {
 		
 		modifier = default_culture_modifier
 	}
-	albanian = {
-		graphical_cultures = { westernslavicgfx }
-		
-		color = { 0.6 0.1 0.1 }
-
-		male_names = {
-			Adnan Afrim Agim Agon Alban Alek Aleksander Andrea Ardian Ardit Arianit Armend Bajram Bashkim Behar Besian Besnik Blerim Bua Burim Dardan Depa 
-			Dhimitër Dimitri Dritan Dëfrim Edon Endrit Engjëll Fatmir Fisnik Flamur Gjergj Gjin Gjon Gojko Grigor Gulam Jakub Jetmir Jeton Koja Kostandin Kreshnik 
-			Kushtrim Leka Lekë Leotrim Leutrim Liridon Lulëzim Moisi Muriq Muzaka Pal Perparim Pjetër Progon Pëllumb Skender Tanush Teodor Valon Veli Visar Vladan Ylli Zameer Zamyr
-		}
-		female_names = {
-			Afërdita Arjeta Blerina Blerta Blerte Bolja Bora Bosa Boxia Boša Boža Dardana Diellza Edona Era Fatmire Flutura Jehona Lindita Liridona Lule Luljeta Mirjeta Pranvera Shpresa 
-			Shqipe Teuta Tirana Vera Yllka
-		}		
-		
-		from_dynasty_prefix = "e "
-		
-		modifier = default_culture_modifier
-	}
 	
 	dacian = {
         graphical_cultures = { latingfx romangfx byzantinegfx }
@@ -917,64 +898,6 @@ byzantine = {
 		mother_name_chance = 5
 	}
 
-	illyrian = {
-		graphical_cultures = { byzantinegfx }
-  
-		color = { 0.8 0.5 0.1 } 
-
-		male_names = {
-			Ætius Agrippa Albanus Albus Ambrosinus Antoninus Appius Attilius Aulus Aurelius Ariovistus Arrius
-			Brutus Caecilius Caius Camillus Cassianus Cassius Cato Claudius Decius Crixus
-			Cornelius Domitianus Dubricius Eunius Fulvius Gaius Germanus Gratianus Galerius Gallienus Gelasius
-			Gannicus Horatius Iulius Iulianus Julius Livius Longinus Liscus Lucretius Lyciscus Marcellus
-			Marcus Marianus Marius Maximianus Maximus Maugannius Mummolus Nero Numerius Octavianus Octavius Olybrius
-			Paulus Piramus Plinius Pontius Publius Quintus Regulus Romolus Rufus Pertinax
-			Secundus Sertorius Septimus Severus Sextus Tacitus Tadioceus Tertius Titus
-			Varius Victorinus Avitus Alethius Mercurius Sanus
-			Vindotorix Verutius Sedullus Luctemarus Lugo Ceretiacus Cerevanus Adiarius Callistus Carinus Cassiodorus
-			Critiacus Ceredumnus Brennus Convictogenus Rianorius Lutacos Vibius
-
-			Maroveus_Merovech Eufronius Venantius Fortunatus Junianus Gregorius Privatus Censorius Montanus Remigius_Remi Mummolus_Mummolus Peonius 
-			Emilius Vedastus_Gaston Principius Apollinaris Arcadius Sollius Sidonius Ennodius Felix Eparchius Ruricius_Roderick Deciderius_Deciderius 
-			Parthenius Firminus Tonantius Anicius Ommatius Philagrius Leontius Constantius Aurelianus Rusticus Lupicinus Aquilinus Eulalius 
-			Decimus Florentinus Nicetius Alcimus Ecdicius Claudianus Mamertus Ferreolus Nectaridus_Nectaridus Medardus Gallus_Gall Aprunculus Fibicius
-			Modestus Miletius Mauritius_Maurice Goarus_Goar Hesychius Aega 
-			Eleutherius_Eleutherius Romanus Lupus Bonifatius_Bonifatius Honoratus Anthemiolus Agricola Agroecius Caesarius
-			Amandus Acarius Iustus Alpinus Martinus Elpidius Antiochus Sicarius Sacerdos Christianus_Christian
-		}
-		female_names = {
-			Ælia Æliana Æmilia Agrippina Alba Antonia Aquilina Augusta Augustina Aurelia
-			Caecilia Caelia Canthara Camilla Cassia Claudia Cloelia Cornelia Decima Diana Domitia Domitilla
-			Fabiana Faustina Flavia Fulvia Galeria Galla Germana Glaucia Gratiana Iulia Julia Livia Leta
-			Lucia Lucilla Lucretia Marcella Martina Nerva Nævia Octavia Paula Petronia Pomponia Rubelia
-			Porcia Priscilla Sabina Sura Saturnina Severina Tacita Tullia Valeria Viola Virginia
-			Arduinna Damantia Morgantia Senerta Volcila Siricca Mira
-			Appia Attia Aula Cæsula Fausta Gaia Gnæa Placidia Prisca Prudentia Petiliana
-			Tiberia Tulla Vibia Volusa Vopisca
-			Baudovinia Papianilla Hiberia Artemia Gallia Ommatia Tarsicia Protagia Corbiniana Severiana Roscia Alcima Tetradia Deuteria Adia 
-			Agatha_Agatha Clarissa_Clarissa
-		}
-		
-		from_dynasty_prefix = "ad "
-		#male_patronym = "filius "
-		#female_patronym = "filia "
-		#prefix = yes
-		
-		modifier = default_culture_modifier
-		
-		disinherit_from_blinding = yes
-
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 5
-		
-		pat_grm_name_chance = 10
-		mat_grm_name_chance = 30
-		mother_name_chance = 0
-		
-		dynasty_title_names = yes
-	}
-
 	hispanic = {
 		graphical_cultures = { southerngfx }
 		
@@ -1061,39 +984,62 @@ byzantine = {
 		modifier = default_culture_modifier
 	}
 	dalmatian = {
-		graphical_cultures = { italiangfx }
-			
-		color = { 0.75 0.75 0.6 }
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0.8 0.5 0.1 } 
 
 		male_names = {
-			Adam_Adam Aguastin_Augustine Alecuandur_Alexander Aliau_Aelius Aliard Andre_Andrew Antune_Anthony Antuone_Anthony Blasi_Blaise Buartol_Bartholomew Bunedec_Benedict Bunin_Bonino Caunstantin_Constantine
-			Caurnel_Cornelius Clemiant_Clement Crastin_Christian Cuarl_Karl Dimitre_Demetrius Domienc_Dominic Domienja_Dominic Fabri_Fabrician Faguor Fiaurens_Florence Filip_Philip Frane_Francis
-			Giorgi_George Guaspar_Casper Jacop_Jacob Jiolian_Julian Joan_John Jualb_Albus Liaun_Leon Marc_Mark Marjan_Marinus Matei_Matthew Mihial_Michael Mouro_Maurus Muerten_Martin Nadual_Natale Nicaul_Nicholas
-			Paladen_Paladin Piar_Peter Ponsio_Pontius Puol_Paul Puoskal_Pascal Raimaun_Raymond Savjan_Savino Simaun_Simon Sismaun_Sigismond Stanislau_Stanislav Sthepan_Stephen Taumas_Thomas Taumasin_Thomasine
-			Teodor_Theodore Timotei_Timothy Vait_Vito Valdemaur_Vladimir Vidual_Vitale Vittaur_Victor
+			Ætius Agrippa Albanus Albus Ambrosinus Antoninus Appius Attilius Aulus Aurelius Ariovistus Arrius
+			Brutus Caecilius Caius Camillus Cassianus Cassius Cato Claudius Decius Crixus
+			Cornelius Domitianus Dubricius Eunius Fulvius Gaius Germanus Gratianus Galerius Gallienus Gelasius
+			Gannicus Horatius Iulius Iulianus Julius Livius Longinus Liscus Lucretius Lyciscus Marcellus
+			Marcus Marianus Marius Maximianus Maximus Maugannius Mummolus Nero Numerius Octavianus Octavius Olybrius
+			Paulus Piramus Plinius Pontius Publius Quintus Regulus Romolus Rufus Pertinax
+			Secundus Sertorius Septimus Severus Sextus Tacitus Tadioceus Tertius Titus
+			Varius Victorinus Avitus Alethius Mercurius Sanus
+			Vindotorix Verutius Sedullus Luctemarus Lugo Ceretiacus Cerevanus Adiarius Callistus Carinus Cassiodorus
+			Critiacus Ceredumnus Brennus Convictogenus Rianorius Lutacos Vibius
+
+			Maroveus_Merovech Eufronius Venantius Fortunatus Junianus Gregorius Privatus Censorius Montanus Remigius_Remi Mummolus_Mummolus Peonius 
+			Emilius Vedastus_Gaston Principius Apollinaris Arcadius Sollius Sidonius Ennodius Felix Eparchius Ruricius_Roderick Deciderius_Deciderius 
+			Parthenius Firminus Tonantius Anicius Ommatius Philagrius Leontius Constantius Aurelianus Rusticus Lupicinus Aquilinus Eulalius 
+			Decimus Florentinus Nicetius Alcimus Ecdicius Claudianus Mamertus Ferreolus Nectaridus_Nectaridus Medardus Gallus_Gall Aprunculus Fibicius
+			Modestus Miletius Mauritius_Maurice Goarus_Goar Hesychius Aega 
+			Eleutherius_Eleutherius Romanus Lupus Bonifatius_Bonifatius Honoratus Anthemiolus Agricola Agroecius Caesarius
+			Amandus Acarius Iustus Alpinus Martinus Elpidius Antiochus Sicarius Sacerdos Christianus_Christian
 		}
-	
 		female_names = {
-			Aguastina_Augustina Amaica Amaura Alecuandra_Alexandra Amilja_Emily Andreja_Andrea Anna_Anna Antunja_Antonia Antuonja_Antonia Arziantina_Argentina Ava_Eva Biala_Bella
-			Blanca_Bianca Bruva Buni_Bonne Catriana_Catherine Cauleta_Nicoletta Caunstantina_Constance Clemianta_Clementia Draguana_Dragana Dobre Domienca_Dominica Doroteja_Dorothy
-			Dulsassa Eloisa_Elizabeth Fiaura_Flora Filippa_Philippa Franussa Fualja Joana_Joan Lucia_Lucia Maraja_Mary Margarait_Margaret Marjana_Marina Muadalena_Magdalena Muertina_Martina Naduala_Natalie
-			Nicauleta_Nicoletta Pernaica Piara_petra Puola_Paula Ruosa_Rose Saufija_Sophia Suzana_Susana Sviatlana_Svjetlana Taumasina_Thomasina Valerja_Valeria Virgina_virginia
-			Viola_Yolanda Vittaurja_Victoria
+			Ælia Æliana Æmilia Agrippina Alba Antonia Aquilina Augusta Augustina Aurelia
+			Caecilia Caelia Canthara Camilla Cassia Claudia Cloelia Cornelia Decima Diana Domitia Domitilla
+			Fabiana Faustina Flavia Fulvia Galeria Galla Germana Glaucia Gratiana Iulia Julia Livia Leta
+			Lucia Lucilla Lucretia Marcella Martina Nerva Nævia Octavia Paula Petronia Pomponia Rubelia
+			Porcia Priscilla Sabina Sura Saturnina Severina Tacita Tullia Valeria Viola Virginia
+			Arduinna Damantia Morgantia Senerta Volcila Siricca Mira
+			Appia Attia Aula Cæsula Fausta Gaia Gnæa Placidia Prisca Prudentia Petiliana
+			Tiberia Tulla Vibia Volusa Vopisca
+			Baudovinia Papianilla Hiberia Artemia Gallia Ommatia Tarsicia Protagia Corbiniana Severiana Roscia Alcima Tetradia Deuteria Adia 
+			Agatha_Agatha Clarissa_Clarissa
 		}
-
-		from_dynasty_prefix = "de "
-
+		
+		from_dynasty_prefix = "ad "
+		#male_patronym = "filius "
+		#female_patronym = "filia "
+		#prefix = yes
+		
 		modifier = default_culture_modifier
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		
+		disinherit_from_blinding = yes
+
 		pat_grf_name_chance = 30
-		mat_grf_name_chance = 15
-		father_name_chance = 25
-	
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 10
-		}	
+		mat_grf_name_chance = 10
+		father_name_chance = 5
+		
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+		
+		dynasty_title_names = yes
+	}
 		
 	african_latin = {
 		graphical_cultures = { arabicgfx byzantinegfx }
@@ -2262,6 +2208,27 @@ anatolian_group = {
 }
 
 thracian_group = {
+
+	albanian = {
+		graphical_cultures = { westernslavicgfx }
+		
+		color = { 0.6 0.1 0.1 }
+
+		male_names = {
+			Adnan Afrim Agim Agon Alban Alek Aleksander Andrea Ardian Ardit Arianit Armend Bajram Bashkim Behar Besian Besnik Blerim Bua Burim Dardan Depa 
+			Dhimitër Dimitri Dritan Dëfrim Edon Endrit Engjëll Fatmir Fisnik Flamur Gjergj Gjin Gjon Gojko Grigor Gulam Jakub Jetmir Jeton Koja Kostandin Kreshnik 
+			Kushtrim Leka Lekë Leotrim Leutrim Liridon Lulëzim Moisi Muriq Muzaka Pal Perparim Pjetër Progon Pëllumb Skender Tanush Teodor Valon Veli Visar Vladan Ylli Zameer Zamyr
+		}
+		female_names = {
+			Afërdita Arjeta Blerina Blerta Blerte Bolja Bora Bosa Boxia Boša Boža Dardana Diellza Edona Era Fatmire Flutura Jehona Lindita Liridona Lule Luljeta Mirjeta Pranvera Shpresa 
+			Shqipe Teuta Tirana Vera Yllka
+		}		
+		
+		from_dynasty_prefix = "e "
+		
+		modifier = default_culture_modifier
+	}
+	
 	old_thracian = {
 		graphical_cultures = { byzantinegfx }
   
