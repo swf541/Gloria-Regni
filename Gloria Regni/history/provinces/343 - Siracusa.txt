@@ -16,12 +16,16 @@ b_lentini = temple
 #b_augusta = castle
 
 # Misc
-culture = sikelian
+culture = italiote
 religion = imperial
 terrain = hills
 
 # History
-904.1.1={ culture = maghreb_arabic religion = sunni }
+395.1.17 = { culture = sikelian }
+904.1.1= { 
+	culture = maghreb_arabic 
+	religion = sunni 
+}
 
 1101.1.1 = { trade_post = b_ziani }
 
