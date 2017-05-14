@@ -4259,3 +4259,179 @@ italian_group = {
 		mother_name_chance = 5
 	}
 }
+old_slavic = {
+	graphical_cultures = { westernslavicgfx easternslavicgfx }
+		
+		
+	sklavene = {
+		graphical_cultures = { westernslavicgfx }
+		
+		color = { 0.8 0.4 0.22 }
+
+		male_names = {
+			Adam_Adam Andrija Bartol_Bartolomeus Besar Bojan Boris Branimir Castimir Danail_Daniel Dmitar Dobromir Dragan Dragomir Drzislav Dujam Duym Filip_Philip Gaspar Gheorghe_George Grigorii_Gregory
+			Hranislav Hrvoje Igor Ioan_John Ivan_John Ivanis Jitej Karlo_Charles Koloman_Koloman Kresimir Ladislav Ljudevit Ljutomisl Lovro Matej_Matthew Mihajlo Milman Mislav Mutimir
+			Nikolitza_Nicholas Ognjen Petar_Peter Prohor Radomir Ratimir Sebeslav Seslav Slavich Stanislav_Stanislav Stjepan Sulvan Teodor Tomislav Tvrdoslav Tvrtko Ulfo_Ulf Vid Vitomir Vlaicu
+			Vukan Zvonimir
+		}
+		female_names = {
+			Adriana Anna_Anna Borislava Cededa Doroteja_Dorothy Ekaterina_Catherine Helena_Helen Jadviga Jovana Kera Ladika Maria_Maria Mihaela Nada Petra Viola_Yolanda Jadranka Mare
+			Antonija Capeka Dragana Dubravka Emilija_Emily Gordana Jagoda Jelena Jelka Lucija_Lucia Katalin_Catherine Marija_Maria Marijana Mirjana Mirna Mojca Natalija Nata?a
+			Rijeka Silvija Snjezana Sofija_Sophia Suzana_Susana Svjetlana Suronja Tatjana Tihana Valerija Vedrana Visnja Vjekoslava Zlata Zvonimira
+		}
+		
+		from_dynasty_prefix = "od "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 10
+		father_name_chance = 10
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+		
+	}
+	venete = {
+		graphical_cultures = { westernslavicgfx }
+		
+		color = { 0.3 0.88 0.67 }
+
+		male_names = {
+			Aleksander_Alexander Andrzej_Andrew Bartosz_Bartolomeus Bezprym Boguchwal Bogumil Boleslaw_Boleslav Boncza_Bonifacius Borzyslaw Bozydar_Theodat Borzywoj_Borijov Budziwuj Czcibor_Ctibor Czyrzniech
+			Dalimir Daniel_Daniel Dobieslaw Dobrogost Dobromir Doman Domawuj Dytryk_Thierry Eustachy_Eustace Gaudenty Gierolt_Gerald Gniewomir Gniewosz Gosciwuj Goszczon Henryk_Henry Imram
+			Izbor Józef_Joseph Jacek_Hyacinth Jaksa_Jacob Jakub_Jacob Jakusz Jan_John Janislaw_John Janko_John Janusz_John Jaroslaw_Jaroslav Jerzy_George Karol_Charles Kazimierz Konrad_Konrad Krystyn_Christian Krzeslaw Lambert_Lambert Leszek
+			Maciej_Matthew Macko_Matthew Malowuj Marcin_Martin Maslaw Mateusz_Matthew Mieszko Mikolaj_Nicholas Milobrat Milosz_Milosz Miroslaw_Miroslav Msciwoj Mszczuj Nadbor Niezamysl Odon_Otto Pawel_Paul Pelka
+			Piotr_Peter Piskla Prendota Przemyslaw_Premysl Przybor Sambor Sedziej Sedzimir Sieciech Siemomysl Siemowit Skarbimir Snowid Spytko Stanislaw_Stanislav
+			Stefan_Stephen Stoigniew Strasz Sulislaw Sulistryj Swietopelk_Svatopluk Swietoslaw_Sviatoslav Szczesny_Felix Tomasz_Thomas Trojden Twardomir Usciech Waclaw_Vaclav Wanko_Vaclav Wawrzyniec_Laurence
+			Wielislaw Wieslaw Wincenty_Vincent Wit_Guy Witosz Wladyslaw_Vladislav Wojciech_Albert Wojuta Wszebor_Vsebor Zbigniew_Zbynek Zbyszko_Zbynek Zegota_Ignatius Zelibrat
+			Zygmunt_Sigmund
+		}
+		female_names = {
+			Adelajda Adleta Agnieszka_Agnes Aldona Anastazja_Anastasia Anna_Anna Beata Bozena Danuta Dobrawa Dobronega Elzbieta_Elisabeth Eufemia_Euphemia Eufrozyna Gertruda_Gertrude Grzymislawa
+			Helena_Helen Jadwiga Jolanta_Yolanda Judyta_Judith Katarzyna_Catherine Kazimiera Kenna Kinga Konstancja_Constance Krystyna_Christina Kunegunda Lucja_Lucia Ludmila Magdalena_Magdalena Malgorzata Maria_Maria
+			Matylda_Matilda Milena Nadzieja Nawoja Pechna Rycheza Ryksa Salomea Samboja Scholastyka Smiechna Stanislawa Swietoslawa Wislawa Wojslawa
+			Wolislawa Wszebora Wszemila Zofia_Sophia Zwinislawa
+		}
+		from_dynasty_prefix = "of "
+		
+		#male_patronym = "owski"
+		#female_patronym = "owska"
+		#prefix = no
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 10
+		father_name_chance = 10
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+	slovene = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.35 0.75 0.25 }
+
+		male_names = {
+			Briachislav_Bretislaus Demid Dobrynia Fedot_Theodat Gleb Igor Iliya Iziaslav Lev_Leo Mitrofan Mstislav_Mstislav
+			Nikita Putiata Radoslav Rodislav Rogvolod Rostislav Ruslan Stanislav_Stanislav Sudislav Svetozar Sviatopolk_Svatopluk Sviatoslav_Sviatoslav Terentiy Trifon Viacheslav Vladimir_Vladimir Vladislav_Vladislav Voislav Volodar Vseslav
+			Vsevolod Vyshata Vysheslav Yaropolk Yaroslav_Jaroslav Yefimiy Yelisey Yeremey Yevstafiy
+		}
+		female_names = {
+			Boleslava Darya Dobrava Dobronega Dobroslava Yefimia_Euphemia Yefrosinia_Euphrosyne Fevronia Gorislava Gradislava Gremislava
+			Liubava Liudmila Malfrida Malusha Maria_Maria Marina Olena_Helen Olga Pereyaslava Praskovya Praxida Prebrana Predslava
+			Premyslava Pribislava Rogneda Rostislava Sbyslava Sviatoslava Tatyana Ulita Ulyana Varvara Vasilisa Veleslava Verkhoslava
+			Vseslava Viacheslava Yaroslava Zabava Zvenislava
+		}
+		from_dynasty_prefix = "of "
+		
+		male_patronym = "ovich"
+		female_patronym = "ovna"
+		prefix = no
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 40
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}
+	krivich = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.55 0.6 0.35 }
+
+		male_names = {
+			Briachislav_Bretislaus Demid Dobrynia Fedot_Theodat Gleb Igor Iliya Iziaslav Lev_Leo Mitrofan Mstislav_Mstislav
+			Nikita Putiata Radoslav Rodislav Rogvolod Rostislav Ruslan Stanislav_Stanislav Sudislav Svetozar Sviatopolk_Svatopluk Sviatoslav_Sviatoslav Terentiy Trifon Viacheslav Vladimir_Vladimir Vladislav_Vladislav Voislav Volodar Vseslav
+			Vsevolod Vyshata Vysheslav Yaropolk Yaroslav_Jaroslav Yefimiy Yelisey Yeremey Yevstafiy
+		}
+		female_names = {
+			Boleslava Darya Dobrava Dobronega Dobroslava Yefimia_Euphemia Yefrosinia_Euphrosyne Fevronia Gorislava Gradislava Gremislava
+			Liubava Liudmila Malfrida Malusha Maria_Maria Marina Olena_Helen Olga Pereyaslava Praskovya Praxida Prebrana Predslava
+			Premyslava Pribislava Rogneda Rostislava Sbyslava Sviatoslava Tatyana Ulita Ulyana Varvara Vasilisa Veleslava Verkhoslava
+			Vseslava Viacheslava Yaroslava Zabava Zvenislava
+		}
+		from_dynasty_prefix = "of "
+		
+		male_patronym = "ovich"
+		female_patronym = "ovna"
+		prefix = no
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 40
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}
+	ante = {
+		graphical_cultures = { easternslavicgfx }
+		
+		color = { 0.62 0.85 0.55 }
+
+		male_names = {
+			Briachislav_Bretislaus Demid Dobrynia Fedot_Theodat Gleb Igor Iliya Iziaslav Lev_Leo Mitrofan Mstislav_Mstislav
+			Nikita Putiata Radoslav Rodislav Rogvolod Rostislav Ruslan Stanislav_Stanislav Sudislav Svetozar Sviatopolk_Svatopluk Sviatoslav_Sviatoslav Terentiy Trifon Viacheslav Vladimir_Vladimir Vladislav_Vladislav Voislav Volodar Vseslav
+			Vsevolod Vyshata Vysheslav Yaropolk Yaroslav_Jaroslav Yefimiy Yelisey Yeremey Yevstafiy
+		}
+		female_names = {
+			Boleslava Darya Dobrava Dobronega Dobroslava Yefimia_Euphemia Yefrosinia_Euphrosyne Fevronia Gorislava Gradislava Gremislava
+			Liubava Liudmila Malfrida Malusha Maria_Maria Marina Olena_Helen Olga Pereyaslava Praskovya Praxida Prebrana Predslava
+			Premyslava Pribislava Rogneda Rostislava Sbyslava Sviatoslava Tatyana Ulita Ulyana Varvara Vasilisa Veleslava Verkhoslava
+			Vseslava Viacheslava Yaroslava Zabava Zvenislava
+		}
+		from_dynasty_prefix = "of "
+		
+		male_patronym = "ovich"
+		female_patronym = "ovna"
+		prefix = no
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 40
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+
+		modifier = default_culture_modifier
+	}
+}
