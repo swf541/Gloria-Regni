@@ -17,12 +17,16 @@ b_lisdra = temple
 #b_sauatra = castle
 
 # Misc
-culture = greek
+culture = isaurian
 religion = encratites
 
 # History
+
 520.1.1 = { religion = imperial } 
 720.1.1 = { religion = iconoclast }
+800.1.1 = {
+	culture = greek
+}
 #855.1.1 = { religion = orthodox }
 
 1091.8.26 = { culture = turkish }

@@ -15,11 +15,13 @@ b_irenopolis = temple
 #b_anemurium = castle
 
 # Misc
-culture = greek
+culture = isaurian
 religion = imperial
 
 # History
-
+800.1.1 = {
+	culture = greek
+}
 1054.7.6 = { religion = orthodox }
 1117.1.1 = { culture = armenian }
 1117.1.1 = { religion = miaphysite }
