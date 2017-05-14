@@ -2212,7 +2212,7 @@ anatolian_group = {
   
 		from_dynasty_prefix = "of "
     
-		modifier = anatolian_culture_modifier
+		modifier = default_culture_modifier
 	}
 	cappadocian = {
 		graphical_cultures = { muslimgfx }
@@ -2232,7 +2232,7 @@ anatolian_group = {
   
 		from_dynasty_prefix = "of "
   
-		modifier = anatolian_culture_modifier
+		modifier = default_culture_modifier
 	}	
 }
 
@@ -2255,7 +2255,7 @@ thracian_group = {
   
 		from_dynasty_prefix = "of "
     	dynasty_title_names = yes
-		modifier = thracian_culture_modifier
+		modifier = default_culture_modifier
 	}
 	phrygian = {
 		graphical_cultures = { byzantinegfx }
@@ -2276,7 +2276,7 @@ thracian_group = {
   
 		from_dynasty_prefix = "of "
     
-		modifier = anatolian_culture_modifier
+		modifier = default_culture_modifier
 	}
 	old_dacian = {
 		graphical_cultures = { byzantinegfx }
@@ -2297,7 +2297,7 @@ thracian_group = {
   
 		from_dynasty_prefix = "of "
 	
-		modifier = thracian_culture_modifier
+		modifier = default_culture_modifier
 	}
 	old_illyrian = {
 		graphical_cultures = { byzantinegfx }
@@ -2316,7 +2316,7 @@ thracian_group = {
   
 		from_dynasty_prefix = "of "
     
-		modifier = illyrian_culture_modifier
+		modifier = default_culture_modifier
 		dynasty_title_names = yes
 	}
 	paeonian = {
@@ -2335,7 +2335,7 @@ thracian_group = {
   
 		from_dynasty_prefix = "of "
     
-		modifier = illyrian_culture_modifier
+		modifier = default_culture_modifier
 	}
 }	
 
@@ -3359,6 +3359,7 @@ iranian = {
 
 italian_group = {
 	graphical_cultures = { italiangfx }
+	
 	lombard = {
 		graphical_cultures = { italiangfx germangfx }
 		
