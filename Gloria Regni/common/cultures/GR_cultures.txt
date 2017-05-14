@@ -3384,6 +3384,42 @@ iranian = {
 
 italian_group = {
 	graphical_cultures = { italiangfx }
+
+	new_dalmatian = {
+		graphical_cultures = { italiangfx }
+			
+		color = { 1.75 2.75 0.1 }
+
+		male_names = {
+			Adam_Adam Aguastin_Augustine Alecuandur_Alexander Aliau_Aelius Aliard Andre_Andrew Antune_Anthony Antuone_Anthony Blasi_Blaise Buartol_Bartholomew Bunedec_Benedict Bunin_Bonino Caunstantin_Constantine
+			Caurnel_Cornelius Clemiant_Clement Crastin_Christian Cuarl_Karl Dimitre_Demetrius Domienc_Dominic Domienja_Dominic Fabri_Fabrician Faguor Fiaurens_Florence Filip_Philip Frane_Francis
+			Giorgi_George Guaspar_Casper Jacop_Jacob Jiolian_Julian Joan_John Jualb_Albus Liaun_Leon Marc_Mark Marjan_Marinus Matei_Matthew Mihial_Michael Mouro_Maurus Muerten_Martin Nadual_Natale Nicaul_Nicholas
+			Paladen_Paladin Piar_Peter Ponsio_Pontius Puol_Paul Puoskal_Pascal Raimaun_Raymond Savjan_Savino Simaun_Simon Sismaun_Sigismond Stanislau_Stanislav Sthepan_Stephen Taumas_Thomas Taumasin_Thomasine
+			Teodor_Theodore Timotei_Timothy Vait_Vito Valdemaur_Vladimir Vidual_Vitale Vittaur_Victor
+		}
+	
+		female_names = {
+			Aguastina_Augustina Amaica Amaura Alecuandra_Alexandra Amilja_Emily Andreja_Andrea Anna_Anna Antunja_Antonia Antuonja_Antonia Arziantina_Argentina Ava_Eva Biala_Bella
+			Blanca_Bianca Bruva Buni_Bonne Catriana_Catherine Cauleta_Nicoletta Caunstantina_Constance Clemianta_Clementia Draguana_Dragana Dobre Domienca_Dominica Doroteja_Dorothy
+			Dulsassa Eloisa_Elizabeth Fiaura_Flora Filippa_Philippa Franussa Fualja Joana_Joan Lucia_Lucia Maraja_Mary Margarait_Margaret Marjana_Marina Muadalena_Magdalena Muertina_Martina Naduala_Natalie
+			Nicauleta_Nicoletta Pernaica Piara_petra Puola_Paula Ruosa_Rose Saufija_Sophia Suzana_Susana Sviatlana_Svjetlana Taumasina_Thomasina Valerja_Valeria Virgina_virginia
+			Viola_Yolanda Vittaurja_Victoria
+		}
+
+		from_dynasty_prefix = "de "
+		parent = dalmatian
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 15
+		father_name_chance = 25
+	
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 10
+		}	
 	
 	lombard = {
 		graphical_cultures = { italiangfx germangfx }
