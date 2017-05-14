@@ -607,47 +607,139 @@ west_germanic = {
 	suebi = {
 		graphical_cultures = { germangfx }
 		
-		color = { 0.7 0.7 0.7 }
-
+		color = { 0.4 0.55 0.35 }
+		
 		male_names = {
-			Adeqisio Adoric Agimadus Agriulfum Alamiro Algaster Anila Ansuario Argiovitus Ariamir Arosinda Audeca
-			Badamundus Baldemarius Balderedo Baltarius Baudemiro Becilla Berteiro Bonesindus Boniza Cagildo Cartemiro
-			Chararici Commundus Crodemiro Dagaredus Daildus Damiro Docemiro Donazarius Donegildus Dulcemirus Eboric
-			Egenio_Eugene Eimiro Eirigu Eisindus Eldegotus Eldesindus Elperico Engomiro Ensaldus Ermaric Evosindo Fagildus
-			Felmiro Fralenko Framuldo Francolino Fredoaldus Froatingus Fromildus Frumeiro Gardingus Gaudesindo Gomedei
-			Gomulfus Gresumarus Gudesteus Gumarius Gundivaldo Guntato Gunterotis Heremigar Hermeric Hespanisco Hildemir
-			Hilderic Hunisco Huniscus Leodegasti Leoderigus Leodulfus Leovaldo Lodemiro Magitus Malaredus Malaric Maldras
-			Marcosendus Massilan Mervigius Miro Moderido Nandaricus Nantildo Neufila Nitigis Notarius Odamiro Odemundus
-			Odericus Onemiro Onoricus Osdulfus Osorico Ostromirus Otualdo Pabregildus Pantard Pantinus Pappinus Pederagildu
-			Pennio Pipinus Provaredo Quedesendo Quedulfus Quidemiro Quidericus Ragimiro Ragolfus Rakericus Randinus
-			Randuarius Ranisclus Rechiar Rechila Refulfo Reirigus Remismund Remisol Rendericus Ricardo_Richard Richimund Rodomiro
-			Roelindus Romanisco Romarigus Sagatus Saxomero Segomirus Sentarius Sescutus Sisulfus Spanarius Spoderigo Suavarius
-			Sunila Teobald_Theobald Teoderedus Theodemar Todegogia Trasmira Trasoldi Tumtuldo Uittimer Venedario Veremund Viamundus
-			Vidraldus Villisendo Vistremiro Zamarius Zendasindo
+			Abbelin Abragast Abrekan Adorik Agriulfum Agriwulf Aiwarik Alamir Aldered Alduward Aliverk 
+			Allifred Alowind Alvar Amalarik Amedon Anila Ardabast Ardald Ardebred Ardulf Argilo Argivast 
+			Ariamir Arias Ariast Arnald Askarik Askulf Athalfons Attila Audekka Audikka Badamund Badesind 
+			Badila Bagino Bakkina Baldemir Baldesind Baltar Balto Baril Bati Baton Bazar Bekkilla Bela 
+			Belesar Berosind Blandila Bliviarik Bonemir Burgila Crizila Dada Dadila Dadinus Danila Desterik 
+			Dokemir Domerik Dukila Dulkemir Dulkemund Eborik Eimorik Eldan Eldegeses Eldemir Eldemund 
+			Eldesind Eldibert Eldin Eldiverik Eldo Eldowig Ellekka Elpandus Elperik Emiso Endulf Entrud 
+			Erifuns Ermaldus Ermarik Ermefred Ermegild Ermemir Ermiar Ermila Eruulfus Espallo Faffila 
+			Fagila Fagildus Fakino Fakko Fandila Fannus Fatered Fatu Felellus Felemir Filibert Filon 
+			Floresind Fofo Fonso Fralenko Framilla Framta Frankila Franko Frariko Frauwino Fredamund 
+			Fredemir Fredenand_Ferdinand Frederik_Frederick Fredisk Fredowald Fredowin Fredulf Fredus 
+			Freduwar Fridibert Frogila Frogiulf Froila Frojo_Froio Fronosila Frowarenk Frumar Frumir Frunila 
+			Fruwarik Fulkared Gademir Gaella Gaffo Gagikka Gaidus Gaifar Ganati Gandila Gandinus Gandulf 
+			Ganila Ganoi Garding Gastre Gaton Gaudemir Gauderik Gaudesind Gaudila Gaudilani Gaudinas 
+			Gaufred Gaulf Gavila Gebuld Geda Gega Geldemir Gelmir Gemund Gendo Genila Genlo Gentoi Gera 
+			Germund Gero Gesa Gesemir Geserik_Geisericus Gesulf Geterik Getila Gidibert Gigel Gildarik 
+			Gildo Gilloi Girald_Gerhard Gismund Gisofred Gisvad Gitarius Gitesind Gitio Givellan Gladila 
+			Godefred Godegild Godellus Godemir Godesind Godomund Gogila Gogitus Goldegild Goldred Goldregod 
+			Golfarik Golinus Gollo Gomald Gomared Gomarik Gomedei Gomesind Gomulf Gomund Gonso Gontemund 
+			Gontere Gontoi Gontuwald Gotesend Goto Goton Goymund Gramila Granilo Gresomar Grima Grisulf 
+			Grundemar Gudegis Gudenand Gudered Guderik Gudesind Gudestes Gudila Gudilo Gudilulf Guginus 
+			Guldar Gulderes Gulderik Gulfar Gulfemir Gumar Gumel Gumila Gumito Gundarius Gundebred Gundelin 
+			Gunderam Gunderik Gundesila Gundesind Gundifort Gundila Gundisalf Gundiskalk Gundivad Gundivald 
+			Gundon Gundulf Gunkitus Guntato Guntellus Guntemir Gunterotis Guntiesklo Guntikio Gutemir 
+			Gutemund Gutila Gutinus Gutumar Guwalamar Guwalamir Guwaldar Guwaldejo Guwaldramir Guwandalar 
+			Guwandalisko Guwandila Guwantal Guwimarik Gwendo Gwilbert Gwimir Gwina Gwinus Gwirik Gwisind 
+			Hamdino Heremigar Hermekisk Hermerik Herus Hidibert Hildebrad Hildefuns Hildemir Hilderik_Hilderik 
+			Hildowi Hildras Hildulfus Hitault Hitimund Hlewomir Hlutar_Chlotar Igo Ikila Indisk Itila 
+			Ivolik Janard Jenserik Jerulf Jonarik Jonila Justiarik Justri Juswandus Kagild Kagitus Kalendus 
+			Kamund Kanut_Canute Kararik Karlo_Karl Karmir Kartin Kedisilo Keila Kendas Kendemir Kendered 
+			Kendon Kendulf Ketenand Keti Ketoi Koniarik Kwalavala Kwedesend Kwedulf Kwella Kwidemir 
+			Kwiderik Kwintila Kwintilo Kwitarius Kwitoi Kwitre Lalla Lallinus Lallus Lilo Liubald Liubegild 
+			Liubegoto Liubegutus Liubellus Liubered Liuberik Liubert Liubesind Liubila Liubilo Liubus Lovoi 
+			Lubinus Magan Magila Magit Magnit Malared Malarik Malasko Maldras Mandila Mandin Mandulf 
+			Manello Maniarik Manilla Maninus Maniulf Manna Manno Manosind Manowim Mantellus Manulf Manuwald 
+			Markitus Marko Markosind Martila_Martin Masdras Massila Materiks Matroi Matrosind Mauran 
+			Maurentan Maurikan Mauron Megild Meitila Meitins Meitulf Merila Mervig_Merovech Miro Mirosind 
+			Miruwaldo Moderid Moderik Modila Modild Monderik Mondoi Monefuns Monobred Mudarjo Mudila Mund 
+			Mundel Mundila Munisk Naustila Neufila Nitigis Niufila Notar Nwilla Nwillo Odorik Ofila_Offa 
+			Oldarik Onared Onegildo Onemir Onesind Onorik_Honorius Oppa Oppila Osdulf Osmund Pantar Pantin 
+			Panto Pappo_Poppo Pennino Pepi_Pepin Pipernik Rademund Radesind Radulf Ragesind Ragian 
+			Ragifred_Ragnfred Ragimir Ragito Ragolf Raiola Rakerik Ramila Ramon Ramulo Ranar_Ragnarr 
+			Randemir Randila Rando Randuwar Ranemir Ranemund Ranibert Ranilo Ranisk Ranosind Ranulf 
+			Ranuwald Ratar Raupar Redemir Refulfo Regaulf Reginald_Reginald Reimund_Raymond Reirik 
+			Rekkafred Rekkared_Richard Rekkela Rekkemir Rekkemund Rekkerit Rekkesind Rekkeswind_Rekeswinth 
+			Rekkiar Rekkila Rekkilod Rekkimund Rekkoi Rekkuwald Remegild Remesar Remesila Remesind Remest 
+			Remismund Remisol Renderik Resterik Reterik Rikkigar Rodebert Rodemir Rodowug Romarik Romila 
+			Rososild Ruderik_Roderick Rudesind Rudila Rudilo Rufred Rulind Sabared Sabegoto Sabila Sabitus 
+			Sagatus Sagild Sagulf Salamir Salla Sandimir Santimir Saroi Saruwila Savarik_Savarik Savegod 
+			Savoi Sawarak Saxo Sedeges Sedino Segemund Segesind Segestro Segga Segika Segimar Segio Segioi 
+			Seguwin_Sigewin Seixomir Selmir Seloi Senda Sendamir Sendel Senderik Sendin Sendoi Sendon 
+			Sendred Sendulf Senduwitu Seniared Seniulf Senta Sentar Senuldo Seririgo Serulf Servald Seserik 
+			Seskut Sesmir Sesmund Sesoi Sesuwito Sevegild Sigebert_Sigebert Sigefrid_Siegfried Sigered 
+			Sigerik Sigesind Sigila Sigu Sigunterik Sindamund Sindibert Sindigis Sindila Sindilo Sindo 
+			Sinifred Sisebut Sisel Sisibert Sisil Sisila Sisilu Sisinus Sisnand Sisuld Sisulf Sisuwald 
+			Sitagel Siti Sitivid Skapa Skarkila Skerin Smerlo Sonegild Songimer Soniarik Sonifred Sonna 
+			Sontrila Spanar Spanarik Spandarik Spanilo Spanosind Sperautan Spintilo Spodemir Spoderik 
+			Struko Sundemir Suniagisk Suniar Sunila Sunilo Sunimir Sunitus Suwabas Suwavar Suwered Suwimir 
+			Tandus Tankila Tankin Tankus Tankwila Tata Teadario Tedoi Tegila Tegino Tegio Tegit Teobald 
+			Teoda Teodebert Teodefred Teodegild Teodekut Teodemir_Theodemer Teodemund Teodenand Teoderad 
+			Teoderik_Theoderic Teodesind Teodevad Teodila Teodilo Teodinus Teodisila Teodisk Teodiskes 
+			Teodiu Teoduldo Teodulf Teton Titila Torsario Tota Tradin Tradus Trakin Trasar Trasarik 
+			Trasendus Trasido Trasiuwadus Trasmiro Trasmund Trasoi Trassemut Trastalo Trastemir Trastulf 
+			Trasulf Trasuwar Trevuls Trudigild Trudilo Trudinus Trudulf Truktemir Truktemund Trukterik 
+			Truktesind Truktila Truktin Truktus Truwitellus Truwitero Tumtuldo Tundulfus Tuntila Turisulf 
+			Unemund Unila Unisk Usegild Valaris Vamba Vandino Vasaridus Vederoi Vedragese Venedario 
+			Venetrik Venze Vermund Viamund Viarik Vidragild Vidrald Vidramir Vidubas Vigila Vigilo Vigiltu 
+			Vigoi Viktemir Vikterik Vilesind Vilian Viliar Viliarik Vilifred Vilifuns Viligus 
+			Villelmus_William Villiamir Villo Viman Visald Visandus Visellu Visklafred Visklamir Visklamund 
+			Visklario Vistemund Visterlo Vistesind Vistibert Vistiklo Vistragild Vistramund Vistrarik 
+			Vistremir Vistresind Vitar Vitas Vitila Vitildus Vitinus Vitisk Vitiza Viza Vizamund Vizila 
+			Vizoi Vuwanda Wadamund Wademir Wegitus Weremund Wiliared Willoi Wimared Wistiz Wistrela Wisulf 
+			Wita Wittimer Zazitus Zazo Zendasind Zenzitus Zisila
 		}
 		female_names = {
-			Acilo Ailo Alatrudia Aliverga Aliverta Aniedrudia Ansetrudia Astriverga Bagina Berina Cenabrida Cisilo Dadilo Dagadruida
-			Desteilli Donadildi Drusilla Ebragundia Ebrildi Eldegundia Emilo Entrudi Ermedrudia Ermildi Espallo Facalo Fagilo Faquilo
-			Fradegundia Framilli Fremosilli Frogildi Froilo Frolio Fronosili Frumildi Frunilo Gelvira Genlo Godoigia Goldrerona Granilo
-			Guandilo Gundiverga Guntedrudia Ildiverga Kindiverga Lallina Liuvilo Mansuara Margilli Mirosinda Penefreda Penetrudia
-			Ragesenda Randilo Raniverta Recerona Recesenda Recesuinda Rezevera Riquilo Rudilo Sabegoto Senuita Sindiverga
-			Sisilli Sisiverta Sitividis Sontrilli Sparuildi Stodildi Suevisco Tanquilli Tederona Tenildi Teodevirga Teodiverta Teodoriga
-			Teudileova Texilli Tractuilli Trasavara Trasmira Trastivigia Vergina Viscaverga Visterlo Vistravara Vistrildi Zanina
+			Adegundia Adikka Adila Adosinda Alatrudia Alia Alowinda Attina Badosinda Baga Baita Begikka 
+			Bekkosinda Belavrida Bellerta Berina Boniza Brunildi_Brunhild Burgala Dadildi Danili Dukili 
+			Eldebona Eldegundia Eldesinda Eldigia Elperika Emildi Engoreda Ensalda Entrudi 
+			Ermedrudia_Ermentrude Ermega Ermegundia Ermengont Ermesinda Ermildi Ermulfa Eva_Eva Evosinda 
+			Faffili Fagili Fakkili Fata Ferildi Floresinda Fofeldi Fonsa Fonselli Fradegundia Framilli 
+			Framulda Frankildi Frauwina Freda Fredegundia Fredenanda Fredesinda Fredilli Frogeva Frogildi 
+			Frogina Froiloba Froisinda Fronildi Fronosili Fruma Frunili Gadenanda Gaeldi Gandilli Gandina 
+			Ganilla Gardinga Gasuwildi Gaudesinda Gaudilli Gavildi Gavina Gefera Gelowira Gendina Genildi 
+			Genitigia Genobreda Gesmira Getilli Gitesinda Gladilli Godella Godenanda Godesinda Godoigia 
+			Gogia Gogilli Gogina Gomesinda Gomita Gondella Gondenanda Gonkeria Gonta Gonza Gota Goysinda 
+			Gramildi Gudigeba Gudili Gudiliuba Gudiverga Guma Gumildi Gundebrida Gundelina Gunderona 
+			Gundertia Gundesilli Gundesinda Gundigeva Gundili Gundisalva Gundivera Gunkita Guntedrudia 
+			Gunti Guntina Guntwigia Guta Gutilli Gutina Gutumara Guwadla Guwalamira Guwanadildi Guwandilli 
+			Gwinilli Gwisinda Hildiverga Hildonika Hilduwara Ibilli Ika Ikilli Itildi Janarda Jonilde 
+			Justesenda Justila Kagilda Kagita Kartina Keilli Kenabrida Kendamara Kenseriga Kenusenda 
+			Kenusinda Ketemera Ketenanda Kindiverga Kisla Kwalatrudia Kwidemira Kwintildi Kwizino Lalli 
+			Lallina Lelina Lilla Liuba_Lioba Liubesinda Liubilli Magilda_Mathilda Mandilli Manildi 
+			Maniliuba Manilli Manni Manosinda Mansuwara Manusildi Margilli Markosinda Matrosinda Meduma 
+			Meitilli Mektubrida Menegundia Merowildi Mira Mirella Mirosinda Miruwalda Modilli Monderika 
+			Mundildi Naustilli Niufilli Nwilli Oda Ofilli Olda Onildi Onosinda Oppilli Orosinda Ossila 
+			Panta Penetrudia Radesinda Ragesinda Raiolli Ramildi Randildi Ranemira Raniberta Ranosinda 
+			Refulfa Reikionda Rekkebrida Rekkedrudia Rekkelli Rekkemera Rekkerita Rekkesinda Rekkeswinda 
+			Rekkiloda Remesilli Remesinda Remisiwera Resterika Rezevera Rimionda Rodosildi Romildi 
+			Rudesinda Rudilli Rumaria Sabilli Sabita Sanigia Saruwilli Savarika Savildi Segemunda Segesinda 
+			Senatrudia Senderiga Sendina Seniberta Senildi Senuwita Sesina Sevegildi Sigefrida Sigesgundia 
+			Sigesinda Sigilli Sindi Sindiberga Sindiliuba Sindilli Sinduwara Sinerta Sisa Sisegundia 
+			Siseguntia Sisegutia Sisiberta Sisiliuba Sisilli Sisivigia Sisuwalda Sisuwita Skarkilli 
+			Sontrilli Spanosinda Spanubrida Sparuwildi Stanildi Stodildi Sunildi Suntria Suwimira 
+			Swinthiliuba Tankilli Tankwili Tatina Tegilli Teksilli Teodeberga Teodegondia Teodenanda 
+			Teoderona Teodesinda Teodiberta Teodildi Teodina Teodisilli Teodoriga Tetina Thuresmuda Todegia 
+			Todegogia Toduldo Trasavara Trasilli Trasmira Trastala Trastidia Trastivigia Traswinda Truda 
+			Trudildi Trudina Trukta Truktesinda Truktilli Tuntilli Unilli Uniska Uwaduwara Uwenildi 
+			Vedrailli Vera Viariga Vidila Vigilli Viklavara Vilesinda Vilitra Villelma Vimara Vinkila 
+			Viskaberga Visterla Vistesinda Vistiberga Vistivara Vistravara Vistresilli Vistresinda 
+			Vistrildi Vitilli Vitregia Vivilda Vizildi Wistrelli Wistriliuba Witi Wittina Zazita Zendasinda 
+			Zenzita Zisilli
+			
 		}
-
-		from_dynasty_prefix = "von "
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 50
-		mat_grf_name_chance = 5
-		father_name_chance = 10
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 10
-		mat_grm_name_chance = 50
-		mother_name_chance = 5
-
+		from_dynasty_prefix = "ab "
+		male_patronym = "ssunu"
+		female_patronym = "stohter"
+		prefix = no # The patronym is added as a suffix
+	
 		modifier = default_culture_modifier
+		
+		disinherit_from_blinding = yes
+
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 15
+		father_name_chance = 0
+		
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 15
+		mother_name_chance = 0
 	}
 	english = {
 		graphical_cultures = { englishgfx }
@@ -874,28 +966,30 @@ west_germanic = {
 	alemannic = {				#t->d, th->d, p->b, ch x
 		graphical_cultures = { frankishgfx westerngfx }
 		
-		color = { 0.45 0.5 0.35 }
+		color = { 0.42 0.53 0.37 }
 		male_names = {
-			Adalberahd_Adalbert Adalrigi_Adalrik Agnarigi_Agenarich Berdwald_Bertwald Budilin Burghard_Burchard Daginberahd_Dagobert Dassilo_Tassilo 
-			Dello_Tello Diodbald_Theudebald Diodfridu_Theodefrid Drokdulf Eburhard_Eberhard Eddo Erganbald_Archibald Ewarigi_Eric Garibald_Garibald Gebawuld_Gibuld 
-			Gerbold_Gerbald Godfridu_Gottfried Grimowald Gundfridu_Hunfried Gundkellin_Uncelen Gundmagt_Gundmad Gundmari_Gunnarr Gunzo Hamo_Hamo 
-			Heribald_Hariobaud Heriberahd_Herbert Heriland_Erlendr Herimenrigi_Hermeric Herimiger_Heremigarius Heriwolf_Herulf Hludfridu_Liutfried 
-			Hludheri_Chlothar Hnabi_Hnaef Hokking_Huoching Hrodberahd_Robert Hrodland_Roland Hrodnend_Hrodnand Judung Konirad_Conrad Kroka 
-			Landagar_Landachar Landfridu_Landfried Maganagar_Magnachar Mariwig_Merovech Medrigi_Mederich Odilo_Odilo Odmar_Otmar Odo_Otto Rando 
-			Rigila_Richila Swabaheri Swomari Ur Waifaro_Waifar Walahfridu_Walafried Waldmari_Vadomar Wesdralb_Vestralp Willaheri_Willehari 
-			Wodalrigi_Odalrich Wolf_Wolf Zakko Áigil_Egill Áigilwolf_Agilulf
+			Adalberahd_Adalbert Adalrigi_Adalric Agnarigi_Agenarich Ansger_Ansgar Batso_Bata Berdwald_Bertwald Budilin Burghard_Burchard 
+			Daginberahd_Dagobert 
+			Dassilo_Tassilo Dello_Tello Diodbald_Theudebald Diodfridu_Theodefrid Drokdulf Eburhard_Eberhard Eddo Erganbald_Archibald Ewarigi_Eric 
+			Garibald_Garibald Gebawuld_Gibuld Gerbold_Gerbald Gibuka_Gjúki Godfridu_Gottfried Grimowald Gundfridu_Hunfried Gundkellin_Uncelen 
+			Gundmagt_Gundmad Gundmari_Gunnarr Gunzo Hadubrand_Hadubrand Hamo_Hamo Heribald_Hariobaud Heriberahd_Herbert Heriland_Erlendr 
+			Herimenrigi_Hermeric Herimiger_Heremigarius Heriwolf_Herulf Hildibrand_Hildebrand Hludfridu_Liutfried Hludhard_Liuthard Hludheri_Chlothar 
+			Hnabi_Hnaef Hokking_Huoching Hrodoberahd_Robert Hrodland_Roland Hrodnend_Hrodnand Judung Konirad_Conrad Kroka Landagar_Landachar 
+			Landfridu_Landfried Maganagar_Magnachar Mariwig_Merovech Medrigi_Mederich Odilo_Odilo Odmar_Otmar Odo_Otto Rando Rigila_Richila Swabaheri 
+			Swomari Ur Waifaro_Waifar Walahfridu_Walafried Waldmari_Vadomar Wesdralb_Vestralp Willaheri_Willehari Wodalrigi_Odalrich Wolf_Wolf Zakko 
+			Áigil_Egill Áigilwolf_Agilulf
 		}
 		female_names = {
 			Adalburga_Adalburg Adalgunda_Adalgund Adalhaid_Adelaide Albfridu_Alfrida Awila Berahdhilda_Berthild Berahdwalda_Bertwalda Budilinda 
 			Diodhilda_Theodhild Diodila_Theutila Friduburga_Fridiburga Fridugisal_Fritigil Gerdruda_Gertrude Gundburga_Guntberga Gundfrida_Gundfrida 
-			Gundruna_Gundrun Heriswinda_Heriswind Hidda Hildagunda_Hildigund Hildgarda_Hildegard Hildruda_Hiltrude Ida Irma_Emma Konirada_Conrada 
+			Gundruna_Gundrun Heriswinda_Heriswind Hidda Hildagunda_Hildgund Hildgarda_Hildegard Hildruda_Hiltrude Ida_Ida Irma_Emma Konirada_Conrada 
 			Landhilda_Landhilde Magdhilda_Mathilda Odberga_Otberga Odfleda_Audofleda Randa Regarda_Regarde Rigilinda_Regilinda Walda_Walda 
 			Willagunda_Willgund Áilrun_Alarun
 		}
 		
-		from_dynasty_prefix = "of "
+		from_dynasty_prefix = "ab "
 		male_patronym = "ssunu"
-		female_patronym = "sdogder"
+		female_patronym = "sdohder"
 		prefix = no
 		
 		dukes_called_kings = yes
