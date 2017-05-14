@@ -2837,6 +2837,38 @@ indo_aryan_group = {
 iranian = {
 	graphical_cultures = { muslimgfx }
 
+	taifal = {
+		graphical_cultures = { alangfx occitangfx westerngfx }
+		
+		color = { 0.56 0.52 0.45 }
+		
+		male_names = {
+			Alfrid_Alfred Ardo Audowaker_Odoacer Avagis Badwila_Badwila Boghoris_Bogoris Bulgar Dag_Dag Ervig_Erwig Evoriks_Eboric Geskher_Gäskär 
+			Giberiks_Giberic Gisalriks_Gisalric Gunthemar_Gunthemar Hadalfuns_Adalfuns Hathalriks_Adalric	Haiwariks_Eric Hathus Hermengild_Eormengild 
+			Hildefuns_Hildefuns Hildus_Ildus Hilgis_Ilgiz Hirek_Irek Hiulius_Iulius Huldin_Uldin Hulmuls_Hulmuls Hunuwils_Hunuwil Kniwa_Kniwa 
+			Kunimunds_Cunimund Rawhil_Rawil Rikhila_Richila Rikhimer_Ricimer Rusthem_Röstäm Sabbas Safrak Senog Sinthula_Zinetula Siseberts_Sisebert 
+			Tathra_Tatra Tathugeks_Tat-Ugek Thudariks_Theodoric Timher_Timer Tothila Vulfilhas_Wulfilas Vunds_Vund Wermunds_Wermund Widuks
+		}
+		female_names = {
+			Adosindha_Adosind Alsu_Alsu Brunhildha_Brunhild Eibanhus_Aibanu Eilho_Eillo Frihaja_Firaya Gagak_Chachak Goswindha_Goswintha Guselja_Güzäliä Heva 
+			Hildhuwara_Hildwara Hildikho_Ildico Hilsat_Ilsat Ispasandha_Ispasanda Liuva_Lioba Mafthuka_Maftukha Oda Rathagondha_Ratigund Rikhiberga_Rikiberga 
+			Sisigunthis Thansilu_Tansilu Thrashildha_Trashilda Wenera
+		}
+		
+		from_dynasty_prefix = "of "
+		
+		modifier = nomadic_iranian_culture_modifier
+		
+		disinherit_from_blinding = yes
+
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 15
+		father_name_chance = 0
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 15
+		mother_name_chance = 0
+	}
 	
 	sarmatian = {
 		graphical_cultures = { persiangfx muslimgfx }
