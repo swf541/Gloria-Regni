@@ -16,10 +16,11 @@ b_sandomierz = tribal
 #b_wilczyce = castle
 
 # Misc
-culture = polish
+culture = venete
 religion = slavic_pagan
 
 # History
+900.1.1 = { culture = polish }
 999.7.1 = {
 	religion = catholic
 	b_sandomierz = castle

@@ -16,7 +16,7 @@ b_praha = tribal
 #b_zbraslav = castle
 
 # Misc
-culture = bohemian
+culture = venete
 religion = slavic_pagan
 
 # History
@@ -26,8 +26,9 @@ religion = slavic_pagan
 	b_brevnov = temple
 	b_karlstein = castle
 }
-883.1.1 = { religion = catholic }
-
+883.1.1 = { religion = imperial }
+900.1.1 = { culture = bohemian }
+1054.1.1 = { religion = catholic }
 1130.1.1 = { b_slany = castle }
 
 

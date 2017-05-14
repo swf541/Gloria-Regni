@@ -16,7 +16,7 @@ b_litomysl = temple
 #b_pardubice = castle
 
 # Misc
-culture = bohemian
+culture = venete
 religion = slavic_pagan
 
 # History
@@ -24,7 +24,8 @@ religion = slavic_pagan
 883.1.1 = {
 	b_hradeckralove = castle
 	b_chrudim = city
-	religion = catholic
+	religion = imperial
 }
-
+900.1.1 = { culture = bohemian }
+1054.1.1 = { religion = catholic }
 1240.1.1 = { b_jihlava = city }

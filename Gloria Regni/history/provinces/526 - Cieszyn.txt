@@ -16,10 +16,11 @@ b_cieszyn = tribal
 #b_zebrydowice = castle
 
 # Misc
-culture = polish
+culture = venete
 religion = slavic_pagan
 
 # History
+900.1.1 = { culture = polish }
 990.1.1 = { religion = catholic }
 1000.1.1 = {
 	b_cieszyn = castle

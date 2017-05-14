@@ -16,14 +16,16 @@ b_ostrava = tribal
 #b_moravskatrebova = castle
 
 # Misc
-culture = bohemian
+culture = venete
 religion = slavic_pagan
 
 # History
 
-853.1.1 = { religion = catholic }
+853.1.1 = { religion = imperial }
+900.1.1 = { culture = bohemian }
 900.1.1 = {
 	b_ostrava = castle
 	b_unicov = city
 	b_olomouc = temple
 }
+1054.1.1 = { religion = catholic }
