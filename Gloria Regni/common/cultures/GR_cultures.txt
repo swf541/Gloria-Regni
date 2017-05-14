@@ -445,7 +445,7 @@ byzantine = {
 	pontic = {
 		graphical_cultures = { byzantinegfx }
   
-		color = { 0.7 0.6 0.5 }
+		color = { 0.3 0.9 2 }
 
 		male_names = {
 			Achaemenes_Haxamanish Antinous_Antinous Ariamnes_Ariyamna Ariarathes_Aryawratha Ariobarzanes_Ariyabrdhna Arsaces_Arshaka Arsames_Arshama Artabanus_Artabanus Artavasdes_Artavardiya Artaxerxes_Artaxshasa Atropates_Aturpat 
@@ -485,7 +485,7 @@ byzantine = {
 	koine = {
 		graphical_cultures = { byzantinegfx }
 		
-		color = { 0.4 0.8 1 }
+		color = { 0.7 0.2 0.6 }
 		
 		male_names = {
 			Achaios_Achaios Adeimantos_Adeimantos Agapetos_Agapetos Agathon_Agathon Ainesidemos_Ainesidemos Aischines_Aischines Aischylos_Aischylos Aisopos_Aisopos Akakios_Akakios Akron_Akron Alexandros_Alexandros 
@@ -902,6 +902,7 @@ byzantine = {
 		disinherit_from_blinding = yes
 
 		modifier = default_culture_modifier
+		parent = koine
 	}
 	
 	thracian = {
