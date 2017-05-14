@@ -16,11 +16,15 @@ b_rees = temple
 #b_emmerich = castle
 
 # Misc
-culture = german
+culture = galloroman
 religion = imperial
 
 # History
-
+350.1.1 = { 
+	culture = frankish 
+	religion = germanic_pagan
+}
+700.1.1 = { religion = imperial }
 1054.7.6 = { religion = catholic }
 
 1187.1.1 = { b_wesel = city } 
