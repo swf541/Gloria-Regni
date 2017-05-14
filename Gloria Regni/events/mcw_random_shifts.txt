@@ -130,25 +130,6 @@ province_event = {
 			terrain = steppe
 			owner = {
 				is_nomadic = no
-				NOR = {
-					culture = turkish
-					culture = pecheneg
-					culture = avar
-					culture = cuman
-					culture = karluk
-					culture = hungarian
-					culture = horse
-					culture = khazar
-					culture = mongol
-					culture = khitan
-					culture = alan
-					culture = bolghar
-					culture = kirghiz
-					culture = uyghur
-					culture = awaral
-					culture = hunnic					
-					culture = scythian	
-				}
 			}
 		}
 		
@@ -167,6 +148,8 @@ province_event = {
 					culture = fur
 					culture = guanche
 					culture = numidian
+					culture = tuareg
+					culture = libyan
 				}
 			}
 		}
@@ -232,72 +215,6 @@ province_event = {
 		}
 	}
 }
-
-# Random culture shift along a border (commented out for now since the option might not work)
-#province_event = {
-#	id = MCW.2
-#	desc = EVTDESC_MCW_2
-#	picture = GFX_evt_culture_change
-#
-#	trigger = {
-#		has_owner = yes
-#		owner = {
-#			is_nomadic = no
-#		}
-#		any_neighbor_province = {
-#			culture_group = ROOT # if a province has a neighbour with a culture in the same group
-#			religion = ROOT # and the same religion (people don't like adopting heathen customs)
-#			NOT = {
-#				culture = ROOT # but a different specific culture
-#			}
-#		}
-#		NOT = { # And the province isn't excluded for this vanilla reason
-#			AND = {
-#				owner = { culture = norse }
-#				ROOT = {
-#					OR = {
-#						culture = swedish
-#						culture = norwegian
-#						culture = danish
-#						culture = norman
-#					}
-#				}
-#				NOT = {	has_global_flag = norse_culture_flipping }
-#			}
-#		}
-#	}
-#	
-#	mean_time_to_happen = {
-#		months = 6000 # then there's a chance that once in 500 years an event will occur
-#		modifier = {
-#			factor = 0
-#			has_game_rule = {
-#				name = mcw_culture_shift
-#				value = off # unless random culture shifts are off, in which case it's reduced to zero
-#			}
-#		}
-#		modifier = {
-#			factor = 2
-#			has_game_rule = {
-#				name = mcw_culture_shift
-#				value = historical # or if random culture shifts are set to historical, in which case it's reduced to once in a millennium
-#			}
-#		}
-#	}
-#
-#	option = {
-#		name = EVTOPTA_MCW_2
-#		any_neighbor_province = {
-#			limit = {
-#				culture_group = ROOT
-#				religion = ROOT
-#			}
-#			ROOT = {
-#				culture = PREV
-#			}
-#		}
-#	}
-#}
 
 #### RANDOM MIGRATION ####
 # Basic migration event
@@ -376,25 +293,6 @@ province_event = {
 			terrain = steppe
 			owner = {
 				is_nomadic = no
-				NOR = {
-					culture = turkish
-					culture = pecheneg
-					culture = avar
-					culture = cuman
-					culture = karluk
-					culture = hungarian
-					culture = horse
-					culture = khazar
-					culture = mongol
-					culture = khitan
-					culture = alan
-					culture = bolghar
-					culture = kirghiz
-					culture = uyghur
-					culture = awaral
-					culture = hunnic					
-					culture = scythian	
-				}
 			}
 		}
 		modifier = {
@@ -412,6 +310,8 @@ province_event = {
 					culture = fur
 					culture = guanche
 					culture = numidian
+					culture = tuareg
+					culture = libyan
 				}
 			}
 		}
