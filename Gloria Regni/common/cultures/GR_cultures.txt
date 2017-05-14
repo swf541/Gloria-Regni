@@ -273,6 +273,120 @@ gaulish = {
 
 byzantine = {
 	graphical_cultures =  { easterngfx }
+
+	romanoaquitanian = {			
+		graphical_cultures = { occitangfx westerngfx }
+		
+		color = {  0.59 0.59 0.39  }
+
+		male_names = {
+			# Actual Aquitanian names (put in Vasconian instead?)
+			Aius Andos Arixoni Betunus Harsi Iluni Ilunosi Ilurberrixo Leherenni Lohisi Maurus Sembe Sempronius Ubeltso 
+			
+			# Romano-Gallic placeholders
+			Abientius_Abientius Achilleus_Achilles Acius_Acius Actherius_Actherius Acutulus_Acutulus Adelphus_Adelphus Adolentius_Adolentius 
+			Adventius_Adventius Aegidius_Aegidius Aegnanus_Aegnanus Aemilius_Aemilius Aeonius_Aeonius Aeternus_Aeternus Afranius_Afranius Africanus_Africanus 
+			Agapius_Agapius Agatheus_Agatheus Agitus_Agitus Agricius_Agricius Agricola_Agricola Agrippinus_Agrippinus Agroecius_Agroecius Agustius_Agustius 
+			Alchas_Alchas Alcimus_Alcimus Alethius_Alethius Alexander_Alexander Alithus_Alithus Alpinus_Alpinus Amabilis_Amabilis Amandus_Amandus Amator_Amator 
+			Ambrosius_Ambrosius Amicus_Amicus Amon_Amon Anatolius_Anatolius Andreas_Andrew Anectarius_Anectarius Anemius_Anemius Anianus_Anianus 
+			Anthemius_Anthemius Antidius_Antidius Antistius_Antistius Antoninus_Antoninus Antonius_Antonius Apollinaris_Apollinaris Aprunculus_Aprunculus 
+			Aptatus_Aptatus Aptonius_Aptonius Aquilinus_Aquilinus Arbogastes_Arbogast Arborius_Arborius Arcadius_Arcadius Arcontius_Arcontius Aredius_Aredius 
+			Arigius_Arigius Armagilus_Armagilus Armentarius_Armentarius Arsenius_Arsenius Arsius_Arsius Artemius_Artemius Arthemius_Arthemius Arvandus_Arvandus 
+			Asclepiodotus_Asclepiodotus Asterius_Asterius Athenius_Athenius Atilius_Atilius Auctor_Auctor Auditor_Auditor Augustinus_Augustinus Aulus_Aulus 
+			Aunacharius_Aunacharius Aurelianus_Aurelianus Aurelius_Aurelius Ausonius_Ausonius Auspicius_Auspicius Aussonius_Aussonius Austadius_Austadius 
+			Austremonius_Austremonius Auxanius_Auxanius Auxibius_Auxibius Auxilius_Auxilius Aventinus_Aventinus Avitianus_Avitianus Avitus_Avitus Avolus_Avolus 
+			Babianus_Babianus Barnabas_Barnabas Barucius_Barucius Basilius_Basilius Bassolus_Bassolus Baudilus_Baudilus Benedictus_Benedictus 
+			Benenatus_Benenatus Bennagius_Bennagius Boecius_Boecius Bonifatius_Bonifatius Bonitus_Bonitus Bonosus_Bonosus Bricius_Bricius Britto_Britto 
+			Caesarius_Caesarius Calminius_Calminius Cannatus_Cannatus Caprasius_Caprasius Cariathus_Cariathus Cariundus_Cariundus Cassianus_Cassianus 
+			Castor_Castor Castus_Castus Catulinus_Catulinus Censurius_Censurius Ceratus_Ceratus Ceraunus_Ceraunus Cerunius_Cerunius Chanarus_Charanus 
+			Chariatus_Chariatus Chelidonius_Chelidonius Christianus_Christian Chronopus_Chronopus Clarus_Clarus Claudianus_Claudianus Claudius_Claudius 
+			Clemens_Clemens Cogerimus_Cogerimus Concessus_Concessus Concordius_Concordius Consolinus_Consolinus Constantinus_Constantinus 
+			Constantius_Constantius Contestus_Contestus Corbus_Corbus Corentinus_Corentinus Cornelius_Cornelius Crescentus_Crescentus Cyprianus_Cyprianus 
+			Cyrillus_Cyrillus Dalmatius_Dalmatius Debo_Debo Decimius_Decimius Decimus_Decimus Defensor_Defensor Delphidius_Delphidius Delphinus_Delphinus 
+			Desideratus_Desideratus Desiderius_Desiderius Dinfius_Dinfius Diogenes_Diogenes Dionysius_Dionysius Dominicus_Dominicus Domnolus_Domnolus 
+			Domnus_Domnus Donatianus_Donatianus Donatus_Donatus Dromus_Dromus Dulcidus_Dulcidus Dutherius_Dutherius Dynamius_Dynamius Ebarcius_Ebarcius 
+			Ecdidius_Ecdidius Edibius_Edibius Edibus_Edibus Elaphius_Elaphius Eligius_Eligius Elladius_Helladius Elotherus_Elotherus Elpidius_Elpidius 
+			Ennodius_Ennodius Eparchius_Eparchius Epiphanius_Epiphanius Ereptiolus_Ereptiolus Ermenius_Ermenius Etherius_Etherius Etherus_Etherus 
+			Eucadius_Eucadius Eucherius_Eucherius Eufronius_Eufronius Euladius_Euladius Eulogius_Eulogius Eumachius_Eumachius Euphemerus_Euphemerus 
+			Euphrasius_Euphrasius Euphronius_Euphronius Euribus_Euribus Eurus_Eurus Eusebius_Eusebius Eustachius_Eustachius Evantius_Evantius Evodus_Evodus 
+			Expectatus_Expectatus Expitius_Expitius Exuperius_Exuperius Faustinus_Faustinus Faustus_Faustus Felix_Felix Ferreolus_Ferreolus 
+			Ferrocinctus_Ferrocinctus Ferrutius_Ferrutius Filienus_Filienus Firminus_Firminus Flavianus_Flavanius Flavius_Flavius Florandus_Florandus 
+			Florentius_Florentius Fortunatus_Fortunatus Fratemus_Fratemus Fraternus_Fraternus Fronimius_Fronimius Frontonius_Frontonius Frotarius_Frotarius 
+			Fulcherius_Fulcherius Fulcilius_Fulcilius Gallicinus_Gallicinus Gallus_Gallus Gatianus_Gatianus Gaudentius_Gaudentius Gaugericus_Gaugericus 
+			Gelasius_Gelasius Gelsimus_Gelsimus Genesius_Genesius Gennadius_Gennadius Georgius_George Germanius_Germanius Germanus_Germanus Germerius_Germerius 
+			Gervasius_Gervasius Gisandus_Gisandus Graecus_Graecus Grammatius_Grammatius Gratus_Gratus Gregorius_Gregorius Gyroindus_Gyroindus Haynius_Haynius 
+			Hecherius_Hecherius Hector_Hector Hegemonius_Hegemonius Heraclius_Heraclius Hermenarius_Hermenarius Hervaeus_Hervaeus Hesperius_Hesperius 
+			Hieronymus_Hieronymus Hilarius_Hilarius Hippolytus_Hippolytus Hispicius_Hispicius Honestus_Honestus Honoratus_Honoratus Honorius_Honorius 
+			Horatius_Horatius Hypodimius_Hypodimius Iamblichus_Iamblichus Ianuarius_Ianuarius Illidius_Illidius Iniuriosus_Iniuriosus Innocentius_Innocentius 
+			Ionas_Jonah Iosephus_Joseph Isicius_Isicius Iulianus_Iulianus Iulius_Iulius Iustus_Iustus Lascivius_Lascivius Latinus_Latinus Latuinus_Latuinus 
+			Lauderius_Lauderius Laudus_Laudus Launus_Launus Laurentius_Laurentius Lazarus_Lazarus Legonius_Legonius Legontius_Legontius Leo_Leo 
+			Leobardus_Leobardus Leontianus_Leontianus Leontius_Leontius Leucadius_Leucadius Lexerus_Lexerus Liborius_Liborius Licerius_Licerius 
+			Licinianus_Licinianus Licinius_Licinius Linguinus_Linguinus Liscus_Liscus Listus_Listus Litorius_Litorius Livinus_Livinus Longinus_Longinus 
+			Lunarius_Lunarius Lupercianus_Lupercianus Lupicinus_Lupicinus Lupus_Lupus Magnentius_Magnentius Magnus_Magnus Maiolus_Maiolus Malsonus_Malsonus 
+			Mamertus_Mamertus Mappinus_Mappinus Marcellianus_Marcellianus Marcellinus_Marcellinus Marcellus_Marcellus Marcus_Marcus Marinus_Marinus 
+			Martialus_Martialus Martinus_Martinus Maspicianus_Maspicianus Maternus_Maternus Mauricius_Mauricius Maurilius_Maurilius Maurinus_Maurinus 
+			Mauritius_Mauritius Maurontus_Maurontus Maurusius_Maurusius Maximinus_Maximinus Maximus_Maximus Melancus_Melancus Melanius_Melanius 
+			Mellonius_Mellonius Memorialis_Memorialis Menephalus_Menephalus Mercurius_Mercurius Mevennus_Mevennus Migetius_Migetius Miletius_Miletius 
+			Modestus_Modestus Namatius_Namatius Nebridius_Nebridius Nectarius_Nectarius Nepotianus_Nepotianus Nicasius_Nicasius Nicetas_Nicetas 
+			Nicetius_Nicetius Nicolaus_Nicholas Nonnechius_Nonnechius Numerianus_Numerianus Numitius_Numitius Nymphidius_Nymphidius Oliba_Oliba 
+			Ommatius_Ommatius Onesimus_Onesimus Opportunus_Opportunus Optatus_Optatus Optianus_Optianus Palladius_Palladius Pancratius_Pancratius 
+			Pandevius_Pandevius Papionus_Papionus Papulus_Papulus Parthenius_Parthenius Pascentius_Pascentius Pascharius_Pascharius Paschasius_Paschasius 
+			Passivus_Passivus Paternus_Paternus Pathus_Pathus Patientus_Patientus Patricius_Patricius Patroclus_Patroclus Paulinus_Paulinus Paulus_Paul 
+			Pelagius_Pelagius Pentadius_Pentadius Peregrinus_Peregrinus Perpetuus_Perpetuus Petrus_Peter Philagrius_Philagrius Philippus_Philippus 
+			Phoebadius_Phoebadius Phronimius_Phronimius Pientius_Pientius Plato_Plato Polemius_Polemius Polychronius_Polychronius Pomerius_Pomerius 
+			Pontius_Pontius Porcarius_Porcarius Portianus_Portianus Possessor_Possessor Potentissimus_Potentissimus Pothinus_Pothinus Praetextatus_Praetextatus 
+			Pragmatius_Pragmatius Principius_Principius Priseus_Priseus Prix_Prix Probatius_Probatius Probus_Probus Proculus_Proculus Prodictor_Prodictor 
+			Protadius_Protadius Protasius_Protasius Providerius_Providerius Prudentius_Prudentius Quintianus_Quintianus Ramnatius_Ramnatius Regilius_Regilius 
+			Remedius_Remedius Remessarius_Remessarius Remigius_Remigius Reticius_Reticius Rhodanius_Rhodanius Rogus_Rogus Romanus_Romanus Rufinianus_Rufinianus 
+			Rufus_Rufus Rumoridus_Rumoridus Rumpharius_Rumpharius Ruricius_Ruricius Rusticus_Rusticus Sabaudus_Sabaudus Sabinus_Sabinus Sacerdos_Sacerdos 
+			Sagittarius_Sagittarius Salapius_Salapius Sallustius_Sallustius Salonius_Salonius Salutaris_Salutaris Salvius_Salvius Sanctinus_Sanctinus 
+			Sanctius_Sanctius Sapaudus_Sapaudus Sarmatius_Sarmatius Saturninus_Saturninus Scaricus_Scaricus Sebastianus_Sebastianus Sedulius_Sedulius 
+			Senator_Senator Senior_Senior Septimus_Septimus Serenus_Serenus Sergius_Sergius Servatius_Servatius Severinus_Severinus Severus_Severus 
+			Sextius_Sextius Sicarius_Sicarius Sidonius_Sidonius Sidranius_Sidranius Silvester_Silvester Silvius_Silvius Simplicius_Simplicius 
+			Solemnius_Solemnius Sonnatius_Sonnatius Stabilis_Stabilis Stephanus_Steven Suliacus_Suliacus Sulpicius_Sulpicius Sulpitius_Sulpitius 
+			Syagrius_Syagrius Sylvius_Sylvius Symphorianus_Symphorianus Tacitus_Tacitus Taurinus_Taurinus Tauritianus_Tauritianus Terentius_Terentius 
+			Ternatius_Ternatius Tetradius_Tetradius Tetricus_Tetricus Thalasius_Thalasius Thaumastus_Thaumastus Themerus_Themerus Theodatus_Theodatus 
+			Theodorus_Theodoros Theodosius_Theodosios Tigridus_Tigridus Tomanius_Tomanius Tonantius_Tonantius Triferius_Triferius Trophimus_Trophimus 
+			Turibius_Turibius Urbanus_Urbanus Urbicus_Urbicus Urbitius_Urbitius Ursicinus_Ursicinus Ursinianus_Ursinianus Ursinicus_Ursinicus Ursinus_Ursinus 
+			Ursolus_Ursolus Ursus_Ursus Valentinus_Valentinus Valeolus_Valeolus Valerianus_Valerianus Valerius_Valerius Valeus_Valeus Vedastus_Vedastus 
+			Vellesius_Vellesius Venantius_Venantius Venator_Venator Venerandus_Venerandus Venerius_Venerius Veranius_Veranius Veredemius_Veredemius Verus_Verus 
+			Veteranius_Veteranius Viator_Viator Victorinus_Victorinus Victorius_Victorius Victricius_Victricius Victurius_Victurius Vigilantius_Vigilantius 
+			Vigilius_Vigilius Vigorus_Vigorus Villicus_Villicus Vincentius_Vincentius Vindicianus_Vindicianus Vitalianus_Vitalianus Vitalis_Vitalis 
+			Vitonus_Vitonus Viventiolus_Viventiolus Viventius_Viventius Volusianus_Volusianus
+		}
+		female_names = {
+			# Actual Aquitanian names (put in Vasconian instead?)
+			Andere Arai Araica Bihoxus Edunxe Hahanni Illunnosi Maura Nescato
+			
+			# Romano-Gallic placeholders
+			Abra_Abra Adia_Adia Aemilia_Aemilia Africana_Africana Agatha_Agatha Alba_Alba Alcima_Alcima Antonia_Antonia Aredia_Aredia Armentaria_Armentaria 
+			Arsenia_Arsenia Artemia_Artemia Ascyla_Ascyla Athenia_Athenia Austadiola_Austadiola Baudovinia_Baudovinia Caesaria_Caesaria Christiana_Christiana 
+			Clarissa_Clarissa Claudia_Claudia Corbiniana_Corbiniana Delphina_Delphina Deuteria_Deuteria Donatiana_Donatiana Eustachia_Eustachia Fausta_Fausta 
+			Ferreola_Ferreola Fides_Fides Flavia_Flavia Fuscina_Fuscina Gallia_Gallia Germana_Germana Germanilla_Germanilla Gervasia_Gervasia Hervaea_Hervaea 
+			Hibernia_Hibernia Hilaria_Hilaria Hispicia_Hispicia Industria_Industria Isicia_Isicia Iulia_Iulia Lunaria_Lunaria Martha_Martha 
+			Maxellenda_Maxellende Modesta_Modesta Namadia_Namadia Nebridia_Nebridia Ommatia_Ommatia Opportuna_Opportuna Papianilla_Papianilla Papiona_Papiona 
+			Pascentia_Pascentia Praetextata_Praetextata Protagia_Protagia Provideria_Provideria Roscia_Roscia Salonia_Salonia Severiana_Severiana 
+			Severina_Severina Sidonia_Sidonia Syagria_Syagria Sylvia_Sylvia Symphoriana_Symphoriana Tarsicia_Tarsicia Tullia_Tullia Valeria_Valeria 
+			Venera_Venera Veronica_Veronica Victoria_Victoria Vigilantia_Vigilantia
+		}
+		
+		from_dynasty_prefix = "ad "
+		#male_patronym = "filius "
+		#female_patronym = "filia "
+		#prefix = yes
+		
+		modifier = default_culture_modifier
+		
+		disinherit_from_blinding = yes
+
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 5
+		
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+	}
 	
 	greco_egyptian = {
 		graphical_cultures = { byzantinegfx }
@@ -956,29 +1070,61 @@ byzantine = {
 		color = { 0.8 0.2 0.2 }
 		
 		male_names = {
-			"Agis" "Ariston" "Audoleon" "Bastareus" "Didas" "Dokidan" "Dokim" "Dropion" "Dyplaios" "Euergetes" "Langarus" "Leon" "Lycceius" "Main" "Mantyes" "Nicharchos" "Patraeus" "Patraus" "Pigres" "Symnon" "Teutamado" "Teutaos"
+			Ætius Agrippa Albanus Albus Ambrosinus Antoninus Appius Attilius Aulus Aurelius Ariovistus Arrius
+			Brutus Caecilius Caius Camillus Cassianus Cassius Cato Claudius Decius Crixus
+			Cornelius Domitianus Dubricius Eunius Fulvius Gaius Germanus Gratianus Galerius Gallienus Gelasius
+			Gannicus Horatius Iulius Iulianus Julius Livius Longinus Liscus Lucretius Lyciscus Marcellus
+			Marcus Marianus Marius Maximianus Maximus Maugannius Mummolus Nero Numerius Octavianus Octavius Olybrius
+			Paulus Piramus Plinius Pontius Publius Quintus Regulus Romolus Rufus Pertinax
+			Secundus Sertorius Septimus Severus Sextus Tacitus Tadioceus Tertius Titus
+			Varius Victorinus Avitus Alethius Mercurius Sanus
+			Vindotorix Verutius Sedullus Luctemarus Lugo Ceretiacus Cerevanus Adiarius Callistus Carinus Cassiodorus
+			Critiacus Ceredumnus Brennus Convictogenus Rianorius Lutacos Vibius
+
+			Maroveus_Merovech Eufronius Venantius Fortunatus Junianus Gregorius Privatus Censorius Montanus Remigius_Remi Mummolus_Mummolus Peonius 
+			Emilius Vedastus_Gaston Principius Apollinaris Arcadius Sollius Sidonius Ennodius Felix Eparchius Ruricius_Roderick Deciderius_Deciderius 
+			Parthenius Firminus Tonantius Anicius Ommatius Philagrius Leontius Constantius Aurelianus Rusticus Lupicinus Aquilinus Eulalius 
+			Decimus Florentinus Nicetius Alcimus Ecdicius Claudianus Mamertus Ferreolus Nectaridus_Nectaridus Medardus Gallus_Gall Aprunculus Fibicius
+			Modestus Miletius Mauritius_Maurice Goarus_Goar Hesychius Aega 
+			Eleutherius_Eleutherius Romanus Lupus Bonifatius_Bonifatius Honoratus Anthemiolus Agricola Agroecius Caesarius
+			Amandus Acarius Iustus Alpinus Martinus Elpidius Antiochus Sicarius Sacerdos Christianus_Christian
 		}
 		female_names = {
-			"Agis" "Ariston" "Audoleon" "Bastareus" "Didas" "Dokidan" "Dokim" "Dropion" "Dyplaios" "Euergetes" "Langarus" "Leon" "Lycceius" "Main" "Mantyes" "Nicharchos" "Patraeus" "Patraus" "Pigres" "Symnon" "Teutamado" "Teutaos"
+			Ælia Æliana Æmilia Agrippina Alba Antonia Aquilina Augusta Augustina Aurelia
+			Caecilia Caelia Canthara Camilla Cassia Claudia Cloelia Cornelia Decima Diana Domitia Domitilla
+			Fabiana Faustina Flavia Fulvia Galeria Galla Germana Glaucia Gratiana Iulia Julia Livia Leta
+			Lucia Lucilla Lucretia Marcella Martina Nerva Nævia Octavia Paula Petronia Pomponia Rubelia
+			Porcia Priscilla Sabina Sura Saturnina Severina Tacita Tullia Valeria Viola Virginia
+			Arduinna Damantia Morgantia Senerta Volcila Siricca Mira
+			Appia Attia Aula Cæsula Fausta Gaia Gnæa Placidia Prisca Prudentia Petiliana
+			Tiberia Tulla Vibia Volusa Vopisca
+			Baudovinia Papianilla Hiberia Artemia Gallia Ommatia Tarsicia Protagia Corbiniana Severiana Roscia Alcima Tetradia Deuteria Adia 
+			Agatha_Agatha Clarissa_Clarissa
 		}
-		from_dynasty_prefix = "of "
-
+		
+		from_dynasty_prefix = "ad "
+		#male_patronym = "filius "
+		#female_patronym = "filia "
+		#prefix = yes
+		
 		modifier = default_culture_modifier
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		
+		disinherit_from_blinding = yes
+
 		pat_grf_name_chance = 30
 		mat_grf_name_chance = 10
-		father_name_chance = 25
+		father_name_chance = 5
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
+		
 	}
 
 	hispanic = {
 		graphical_cultures = { southerngfx }
 		
-		color = { 0.55 0.55 0.15 }
+		color = { 0.5 0.55 0.28 }
 
 		male_names = {
 			Abbelino Abellonio Abraham_abraham Abrentius Abrecco Acerrimus Acimirus Acterius Adamantius Adarius Adaulfus Adefonsus_alphons Adivertus Adolindus Adrianus_adrian Atrianus_adrian Anfilocius Anastasius
@@ -1044,7 +1190,12 @@ byzantine = {
 			Visclavara Valatrudia Valadrudia Valamira Vana Valeria Vegicia Vegila Vergina Vilocia Vindemiola Viniola Virginia Vistivara
 			Yberia Ytilia
 		}
-		from_dynasty_prefix = "de "
+		from_dynasty_prefix = "ad "
+		#male_patronym = "filius "
+		#female_patronym = "filia "
+		#prefix = yes
+		
+		disinherit_from_blinding = yes		
 
 		modifier = default_culture_modifier
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -1165,34 +1316,111 @@ byzantine = {
 		}	
 	
 	galloroman = {
-		graphical_cultures = { frankishgfx }
+		graphical_cultures = { occitangfx westerngfx }
 		
 		color = { 0.45 0.75 0.45 }
 
 		male_names = {
-		Aegidius Agiric Agrippinus Amantius Angelbert Aprus Aubert Barnabas Barucius Baudinus Bennage Betause Bricius Carégisile Chrotbert Dido Dinfius Domitianus Donatianus Egidius Eufronius Eusebe Eustochius Evartius Flavius Francilio Gatianus Gaudentius Ginaldus Gravien Gregorius_Gregory Gunthar Herling Ibbon Injuriosus Iovinus Joseph_Joseph Lando Landrus Latinus Leonius_Leo Leobald_Leo Leudigisil Licinius Litorius Lupare Mappinus Martinus_Martin Maternien Modegisile Nicasius Ommatius Ostald Papolene Pelage Perpetuus Remigius Rigobert Rimbert Romanus Romulph Severus_Severus Sigelaicus Silvanus Sinicius Sixtus Sonnatius Syagrius Theodore_Theodor Valatus Verus Vincentius Volusianus
+			Abientius_Abientius Achilleus_Achilles Acius_Acius Actherius_Actherius Acutulus_Acutulus Adelphus_Adelphus Adolentius_Adolentius 
+			Adventius_Adventius Aegidius_Aegidius Aegnanus_Aegnanus Aemilius_Aemilius Aeonius_Aeonius Aeternus_Aeternus Afranius_Afranius Africanus_Africanus 
+			Agapius_Agapius Agatheus_Agatheus Agitus_Agitus Agricius_Agricius Agricola_Agricola Agrippinus_Agrippinus Agroecius_Agroecius Agustius_Agustius 
+			Alchas_Alchas Alcimus_Alcimus Alethius_Alethius Alexander_Alexander Alithus_Alithus Alpinus_Alpinus Amabilis_Amabilis Amandus_Amandus Amator_Amator 
+			Ambrosius_Ambrosius Amicus_Amicus Amon_Amon Anatolius_Anatolius Andreas_Andrew Anectarius_Anectarius Anemius_Anemius Anianus_Anianus 
+			Anthemius_Anthemius Antidius_Antidius Antistius_Antistius Antoninus_Antoninus Antonius_Antonius Apollinaris_Apollinaris Aprunculus_Aprunculus 
+			Aptatus_Aptatus Aptonius_Aptonius Aquilinus_Aquilinus Arbogastes_Arbogast Arborius_Arborius Arcadius_Arcadius Arcontius_Arcontius Aredius_Aredius 
+			Arigius_Arigius Armagilus_Armagilus Armentarius_Armentarius Arsenius_Arsenius Arsius_Arsius Artemius_Artemius Arthemius_Arthemius Arvandus_Arvandus 
+			Asclepiodotus_Asclepiodotus Asterius_Asterius Athenius_Athenius Atilius_Atilius Auctor_Auctor Auditor_Auditor Augustinus_Augustinus Aulus_Aulus 
+			Aunacharius_Aunacharius Aurelianus_Aurelianus Aurelius_Aurelius Ausonius_Ausonius Auspicius_Auspicius Aussonius_Aussonius Austadius_Austadius 
+			Austremonius_Austremonius Auxanius_Auxanius Auxibius_Auxibius Auxilius_Auxilius Aventinus_Aventinus Avitianus_Avitianus Avitus_Avitus Avolus_Avolus 
+			Babianus_Babianus Barnabas_Barnabas Barucius_Barucius Basilius_Basilius Bassolus_Bassolus Baudilus_Baudilus Benedictus_Benedictus 
+			Benenatus_Benenatus Bennagius_Bennagius Boecius_Boecius Bonifatius_Bonifatius Bonitus_Bonitus Bonosus_Bonosus Bricius_Bricius Britto_Britto 
+			Caesarius_Caesarius Calminius_Calminius Cannatus_Cannatus Caprasius_Caprasius Cariathus_Cariathus Cariundus_Cariundus Cassianus_Cassianus 
+			Castor_Castor Castus_Castus Catulinus_Catulinus Censurius_Censurius Ceratus_Ceratus Ceraunus_Ceraunus Cerunius_Cerunius Chanarus_Charanus 
+			Chariatus_Chariatus Chelidonius_Chelidonius Christianus_Christian Chronopus_Chronopus Clarus_Clarus Claudianus_Claudianus Claudius_Claudius 
+			Clemens_Clemens Cogerimus_Cogerimus Concessus_Concessus Concordius_Concordius Consolinus_Consolinus Constantinus_Constantinus 
+			Constantius_Constantius Contestus_Contestus Corbus_Corbus Corentinus_Corentinus Cornelius_Cornelius Crescentus_Crescentus Cyprianus_Cyprianus 
+			Cyrillus_Cyrillus Dalmatius_Dalmatius Debo_Debo Decimius_Decimius Decimus_Decimus Defensor_Defensor Delphidius_Delphidius Delphinus_Delphinus 
+			Desideratus_Desideratus Desiderius_Desiderius Dinfius_Dinfius Diogenes_Diogenes Dionysius_Dionysius Dominicus_Dominicus Domnolus_Domnolus 
+			Domnus_Domnus Donatianus_Donatianus Donatus_Donatus Dromus_Dromus Dulcidus_Dulcidus Dutherius_Dutherius Dynamius_Dynamius Ebarcius_Ebarcius 
+			Ecdidius_Ecdidius Edibius_Edibius Edibus_Edibus Elaphius_Elaphius Eligius_Eligius Elladius_Helladius Elotherus_Elotherus Elpidius_Elpidius 
+			Ennodius_Ennodius Eparchius_Eparchius Epiphanius_Epiphanius Ereptiolus_Ereptiolus Ermenius_Ermenius Etherius_Etherius Etherus_Etherus 
+			Eucadius_Eucadius Eucherius_Eucherius Eufronius_Eufronius Euladius_Euladius Eulogius_Eulogius Eumachius_Eumachius Euphemerus_Euphemerus 
+			Euphrasius_Euphrasius Euphronius_Euphronius Euribus_Euribus Eurus_Eurus Eusebius_Eusebius Eustachius_Eustachius Evantius_Evantius Evodus_Evodus 
+			Expectatus_Expectatus Expitius_Expitius Exuperius_Exuperius Faustinus_Faustinus Faustus_Faustus Felix_Felix Ferreolus_Ferreolus 
+			Ferrocinctus_Ferrocinctus Ferrutius_Ferrutius Filienus_Filienus Firminus_Firminus Flavianus_Flavanius Flavius_Flavius Florandus_Florandus 
+			Florentius_Florentius Fortunatus_Fortunatus Fratemus_Fratemus Fraternus_Fraternus Fronimius_Fronimius Frontonius_Frontonius Frotarius_Frotarius 
+			Fulcherius_Fulcherius Fulcilius_Fulcilius Gallicinus_Gallicinus Gallus_Gallus Gatianus_Gatianus Gaudentius_Gaudentius Gaugericus_Gaugericus 
+			Gelasius_Gelasius Gelsimus_Gelsimus Genesius_Genesius Gennadius_Gennadius Georgius_George Germanius_Germanius Germanus_Germanus Germerius_Germerius 
+			Gervasius_Gervasius Gisandus_Gisandus Graecus_Graecus Grammatius_Grammatius Gratus_Gratus Gregorius_Gregorius Gyroindus_Gyroindus Haynius_Haynius 
+			Hecherius_Hecherius Hector_Hector Hegemonius_Hegemonius Heraclius_Heraclius Hermenarius_Hermenarius Hervaeus_Hervaeus Hesperius_Hesperius 
+			Hieronymus_Hieronymus Hilarius_Hilarius Hippolytus_Hippolytus Hispicius_Hispicius Honestus_Honestus Honoratus_Honoratus Honorius_Honorius 
+			Horatius_Horatius Hypodimius_Hypodimius Iamblichus_Iamblichus Ianuarius_Ianuarius Illidius_Illidius Iniuriosus_Iniuriosus Innocentius_Innocentius 
+			Ionas_Jonah Iosephus_Joseph Isicius_Isicius Iulianus_Iulianus Iulius_Iulius Iustus_Iustus Lascivius_Lascivius Latinus_Latinus Latuinus_Latuinus 
+			Lauderius_Lauderius Laudus_Laudus Launus_Launus Laurentius_Laurentius Lazarus_Lazarus Legonius_Legonius Legontius_Legontius Leo_Leo 
+			Leobardus_Leobardus Leontianus_Leontianus Leontius_Leontius Leucadius_Leucadius Lexerus_Lexerus Liborius_Liborius Licerius_Licerius 
+			Licinianus_Licinianus Licinius_Licinius Linguinus_Linguinus Liscus_Liscus Listus_Listus Litorius_Litorius Livinus_Livinus Longinus_Longinus 
+			Lunarius_Lunarius Lupercianus_Lupercianus Lupicinus_Lupicinus Lupus_Lupus Magnentius_Magnentius Magnus_Magnus Maiolus_Maiolus Malsonus_Malsonus 
+			Mamertus_Mamertus Mappinus_Mappinus Marcellianus_Marcellianus Marcellinus_Marcellinus Marcellus_Marcellus Marcus_Marcus Marinus_Marinus 
+			Martialus_Martialus Martinus_Martinus Maspicianus_Maspicianus Maternus_Maternus Mauricius_Mauricius Maurilius_Maurilius Maurinus_Maurinus 
+			Mauritius_Mauritius Maurontus_Maurontus Maurusius_Maurusius Maximinus_Maximinus Maximus_Maximus Melancus_Melancus Melanius_Melanius 
+			Mellonius_Mellonius Memorialis_Memorialis Menephalus_Menephalus Mercurius_Mercurius Mevennus_Mevennus Migetius_Migetius Miletius_Miletius 
+			Modestus_Modestus Namatius_Namatius Nebridius_Nebridius Nectarius_Nectarius Nepotianus_Nepotianus Nicasius_Nicasius Nicetas_Nicetas 
+			Nicetius_Nicetius Nicolaus_Nicholas Nonnechius_Nonnechius Numerianus_Numerianus Numitius_Numitius Nymphidius_Nymphidius Oliba_Oliba 
+			Ommatius_Ommatius Onesimus_Onesimus Opportunus_Opportunus Optatus_Optatus Optianus_Optianus Palladius_Palladius Pancratius_Pancratius 
+			Pandevius_Pandevius Papionus_Papionus Papulus_Papulus Parthenius_Parthenius Pascentius_Pascentius Pascharius_Pascharius Paschasius_Paschasius 
+			Passivus_Passivus Paternus_Paternus Pathus_Pathus Patientus_Patientus Patricius_Patricius Patroclus_Patroclus Paulinus_Paulinus Paulus_Paul 
+			Pelagius_Pelagius Pentadius_Pentadius Peregrinus_Peregrinus Perpetuus_Perpetuus Petrus_Peter Philagrius_Philagrius Philippus_Philippus 
+			Phoebadius_Phoebadius Phronimius_Phronimius Pientius_Pientius Plato_Plato Polemius_Polemius Polychronius_Polychronius Pomerius_Pomerius 
+			Pontius_Pontius Porcarius_Porcarius Portianus_Portianus Possessor_Possessor Potentissimus_Potentissimus Pothinus_Pothinus Praetextatus_Praetextatus 
+			Pragmatius_Pragmatius Principius_Principius Priseus_Priseus Prix_Prix Probatius_Probatius Probus_Probus Proculus_Proculus Prodictor_Prodictor 
+			Protadius_Protadius Protasius_Protasius Providerius_Providerius Prudentius_Prudentius Quintianus_Quintianus Ramnatius_Ramnatius Regilius_Regilius 
+			Remedius_Remedius Remessarius_Remessarius Remigius_Remigius Reticius_Reticius Rhodanius_Rhodanius Rogus_Rogus Romanus_Romanus Rufinianus_Rufinianus 
+			Rufus_Rufus Rumoridus_Rumoridus Rumpharius_Rumpharius Ruricius_Ruricius Rusticus_Rusticus Sabaudus_Sabaudus Sabinus_Sabinus Sacerdos_Sacerdos 
+			Sagittarius_Sagittarius Salapius_Salapius Sallustius_Sallustius Salonius_Salonius Salutaris_Salutaris Salvius_Salvius Sanctinus_Sanctinus 
+			Sanctius_Sanctius Sapaudus_Sapaudus Sarmatius_Sarmatius Saturninus_Saturninus Scaricus_Scaricus Sebastianus_Sebastianus Sedulius_Sedulius 
+			Senator_Senator Senior_Senior Septimus_Septimus Serenus_Serenus Sergius_Sergius Servatius_Servatius Severinus_Severinus Severus_Severus 
+			Sextius_Sextius Sicarius_Sicarius Sidonius_Sidonius Sidranius_Sidranius Silvester_Silvester Silvius_Silvius Simplicius_Simplicius 
+			Solemnius_Solemnius Sonnatius_Sonnatius Stabilis_Stabilis Stephanus_Steven Suliacus_Suliacus Sulpicius_Sulpicius Sulpitius_Sulpitius 
+			Syagrius_Syagrius Sylvius_Sylvius Symphorianus_Symphorianus Tacitus_Tacitus Taurinus_Taurinus Tauritianus_Tauritianus Terentius_Terentius 
+			Ternatius_Ternatius Tetradius_Tetradius Tetricus_Tetricus Thalasius_Thalasius Thaumastus_Thaumastus Themerus_Themerus Theodatus_Theodatus 
+			Theodorus_Theodoros Theodosius_Theodosios Tigridus_Tigridus Tomanius_Tomanius Tonantius_Tonantius Triferius_Triferius Trophimus_Trophimus 
+			Turibius_Turibius Urbanus_Urbanus Urbicus_Urbicus Urbitius_Urbitius Ursicinus_Ursicinus Ursinianus_Ursinianus Ursinicus_Ursinicus Ursinus_Ursinus 
+			Ursolus_Ursolus Ursus_Ursus Valentinus_Valentinus Valeolus_Valeolus Valerianus_Valerianus Valerius_Valerius Valeus_Valeus Vedastus_Vedastus 
+			Vellesius_Vellesius Venantius_Venantius Venator_Venator Venerandus_Venerandus Venerius_Venerius Veranius_Veranius Veredemius_Veredemius Verus_Verus 
+			Veteranius_Veteranius Viator_Viator Victorinus_Victorinus Victorius_Victorius Victricius_Victricius Victurius_Victurius Vigilantius_Vigilantius 
+			Vigilius_Vigilius Vigorus_Vigorus Villicus_Villicus Vincentius_Vincentius Vindicianus_Vindicianus Vitalianus_Vitalianus Vitalis_Vitalis 
+			Vitonus_Vitonus Viventiolus_Viventiolus Viventius_Viventius Volusianus_Volusianus
 		}
 		female_names = {
-		Aegidia Agirica Amantia Angelberta Apra Auberta Barucia Baudina Bennage Betaae Bricia Chrotberta Didona Dinfia Domitiana Eatochia Egidia Eufronia Evartia Flavia Gatiana Gaudentia Ginalda Ibbona Injuriosa Iovina Léobalda Licinia Litoria Mappina Martina Nicasia Ommatia Ostalda Papolena Perpetua Remigia Rigoberta Rimberta Romana Severa Sigélaica Silvana Sinicia Sixta Sonnatia Syagria Theodora Valata Vera Volaiana 
+			Abra_Abra Adia_Adia Aemilia_Aemilia Africana_Africana Agatha_Agatha Alba_Alba Alcima_Alcima Antonia_Antonia Aredia_Aredia Armentaria_Armentaria 
+			Arsenia_Arsenia Artemia_Artemia Ascyla_Ascyla Athenia_Athenia Austadiola_Austadiola Baudovinia_Baudovinia Caesaria_Caesaria Christiana_Christiana 
+			Clarissa_Clarissa Claudia_Claudia Corbiniana_Corbiniana Delphina_Delphina Deuteria_Deuteria Donatiana_Donatiana Eustachia_Eustachia Fausta_Fausta 
+			Ferreola_Ferreola Fides_Fides Flavia_Flavia Fuscina_Fuscina Gallia_Gallia Germana_Germana Germanilla_Germanilla Gervasia_Gervasia Hervaea_Hervaea 
+			Hibernia_Hibernia Hilaria_Hilaria Hispicia_Hispicia Industria_Industria Isicia_Isicia Iulia_Iulia Lunaria_Lunaria Martha_Martha 
+			Maxellenda_Maxellende Modesta_Modesta Namadia_Namadia Nebridia_Nebridia Ommatia_Ommatia Opportuna_Opportuna Papianilla_Papianilla Papiona_Papiona 
+			Pascentia_Pascentia Praetextata_Praetextata Protagia_Protagia Provideria_Provideria Roscia_Roscia Salonia_Salonia Severiana_Severiana 
+			Severina_Severina Sidonia_Sidonia Syagria_Syagria Sylvia_Sylvia Symphoriana_Symphoriana Tarsicia_Tarsicia Tullia_Tullia Valeria_Valeria 
+			Venera_Venera Veronica_Veronica Victoria_Victoria Vigilantia_Vigilantia
 		}
-			disinherit_from_blinding = yes
-			from_dynasty_prefix = "of "
-	
-			# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-			pat_grf_name_chance = 20
-			mat_grf_name_chance = 10
-			father_name_chance = 10
 		
-			# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-			pat_grm_name_chance = 20
-			mat_grm_name_chance = 10
-			mother_name_chance = 10
+		parent = roman
+		
+		from_dynasty_prefix = "ad "
+		#male_patronym = "filius "
+		#female_patronym = "filia "
+		#prefix = yes
+		
+		modifier = default_culture_modifier
+		
+		disinherit_from_blinding = yes
 
-			dukes_called_kings = yes
-			baron_titles_hidden = yes
-			count_titles_hidden = yes	
-			parent = roman
-			modifier = default_culture_modifier
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 5
+		
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 30
+		mother_name_chance = 0
 	}
 
 	old_italian = {
@@ -1422,7 +1650,6 @@ byzantine = {
 		pat_grm_name_chance = 10
 		mat_grm_name_chance = 30
 		
-		allow_in_ruler_designer = no
 	}
 	
 	pannonian = { # Pannonian Romance

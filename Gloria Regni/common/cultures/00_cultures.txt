@@ -529,6 +529,64 @@ east_germanic = {
 west_germanic = {
 	graphical_cultures = { westerngfx }
 
+	franconian = {
+		graphical_cultures = { frankishgfx westerngfx }
+		
+		color = { 0.64 0.56 0.28 }
+		male_names = {
+			Agirik Agiwulf_Agiwulf Alawari_Oliver Aldafriþu_Eldefred Angulhramn_Engelram Ansoberht_Ansbert Ansogisal_Ansgisel Ansomund_Osmond Ansowald_Answald 
+			Arbogast_Arbogast Arngisal_Arngisel Arnwulf_Arnwulf Askarik Audahari_Audecharius Audamer_Audomar Audawin_Audoin Audo_Otto Austergisal_Austregisilus 
+			Austerwig_Austrapius Aþalberht_Albert Aþalger_Adalger Aþalgisal_Adalgisel Aþalhard_Adalhard Aþalhelm_Adalhelm Aþalrik_Adalrik Aþalwin_Æthelwine 
+			Basogast Berhtfriþu_Bertfried Berhthari_Berthar Berhtrand_Bertrand Berhtwald_Bertold Bernhard_Bernhard Berowulf_Berwulf Bibin_Pepin Bladast_Bladast 
+			Boso_Boso Dagaberht_Dagobert Eburo_Jöfurr Eburogisal_Ebergisel Eburohard_Everett Eburowin_Ebroin Eburowulf_Eberwulf Erkinwald_Erkenwald Ermina_Emma 
+			Erminafriþu_Ermenfried Faramund_Faramund Faro_Faro Franko_Francis Friþuberht_Friedbert Friþurik_Frederick Friþuwulf_Friedwolf Fulko_Fulco Galberht 
+			Gautafriþu_Geoffrey Gautalind_Jocelyn Gerahard_Gerhard Gerarik_Geirrekr Gerawald_Gerwald Gisalaberht_Gilbert Gisalamer_Giselmar Godafriþu_Godfrey 
+			Godawin_Godwin Grimowald_Grimwald Gundobald_Gundbald Gundogisal_Gundgisel Gundohari_Gunther Gundohramn_Guntram Gundolant_Gundoland 
+			Gundowald_Gundoald Gundowulf_Gundwulf Hagano_Hagen Haganowald_Chagnoald Haimabald_Himbald Haimarik_Heinrich Hararik_Chararic Hariberht_Herbert 
+			Hariwald_Harold Hildaberht_Childebert Hildabrant_Hildebrand Hildager_Hildegar Hildarik_Childeric Hlodo_Chlodio Hlodohari_Chlothar Hlodomer_Chlodomer 
+			Hlodorik_Chloderic Hlodowald_Chlodoald Hlodowig_Louis Hlodowulf_Chlodulf Hramn_Raven Hroþi_Hrodi Hroþiberht_Robert Hroþigang_Chrodegang 
+			Hroþilant_Roland Hroþiman_Romanus Hroþirik_Roderick Hugo_Hugh Hugobald_Hugobald Hugoberht_Hubert Hulpirik_Chilperic Inghramn_Ingram Jahan_John 
+			Karl_Charles Karlgisal Karloman_Carloman Koniberht_Cunibert Konirad_Konrad Landaberht_Lambert Landarad_Landrad Landarik_Landry Lando_Land 
+			Ledabald_Letbald Lewohard_Leonard Liudager_Ludger Maganberht_Maganbert Maganhari_Magnar Maganrik_Maganrik Mahtfriþu_Matfrid Markamer_Marcomer 
+			Meginhard_Maynard Merabald Meragisal Merawig_Merovech Mundarik Newogast Rado_Rado Radowulf_Ralph Ragnafriþu_Raginfried Ragnahard_Reinhard 
+			Ragnahari_Ragnarr Ragnamer_Rignomer Ragnawald_Reginald Rikaberht_Rikbert Rikabodo_Rikbod Rikahard_Richard Rikahari_Ricchar Rikamer_Richomeres 
+			Rikawulf_Rikwulf Samson_Samson Sigibald_Siegbald Sigiberht_Siegbert Sigibrant_Siegbrand Sigihramn_Siegraven Sigiswald_Siegwald Sigo_Sieg Sunno 
+			Trudo_Trudo Walhalind_Vauquelin Wandrogisal_Wandrille Warnahari_Werner Werrato_Waratton Wido_Vitus Willihelm_William Wulfhramn_Wolfram Wulfilaik 
+			Wulfohadu_Wulfad Wulfowald_Wulfwald Þeodabald_Theodbald Þeodaberht_Theodbert Þeodagisal_Theodgisel Þeodagrim_Theodgrim Þeodahard_Theodhard 
+			Þeodahari_Theotar Þeodamer_Theodemer Þeodarik_Theoderic Þeodawald_Theodwald
+		}
+		female_names = {
+			Alfahaida_Elfheid Ansofeoda_Ansfleda Ansotruda_Anstrude Arbofeoda_Aboflede Auda_Auda Audafeoda_Audofleda Audawara_Audovera Austerhilda Aþala_Adela 
+			Aþalgunda_Adalgonde Aþalhaida_Adelaide Aþallinda_Adallind Aþalsinda_Adalsinda Aþaltruda_Adaltrude Baldahilda_Balthild Begga_Begga Berhta_Bertha 
+			Berhtrada_Bertrada Berhttruda_Bertrude Bernharda_Bernharda Bliktruda_Plectrude Brunihilda_Brunhild Doda_Doda Eragauta_Argotta Erminagart_Ermengarde 
+			Erminatruda_Ermentrude Ewohilda_Evochildis Faileoba Fastarada_Fastrada Friþa_Frida Friþugunda_Fredegund Geraberga_Gerberge Geratruda_Gertrude 
+			Gisala_Gisela Godahilda_Godehilde Gundasena_Chunsina Haduwiga_Hedwig Hailawida_Heloise Haldetruda Hildagart_Hildegard Hildasinda_Hildsind 
+			Hildatruda_Hildetrude Hlodohilda_Clothilde Hlodosinda_Chlodosind Hroþiberga_Chrodoberge Hroþihaida_Ruodhaid Hroþihilda_Chrodechildis 
+			Hroþisinda_Chrodesinde Hroþitruda_Rotrude Ida_Ida Idaberga_Idburg Kuniwefa_Genevieve Lanthilda_Lanthild Lantrada_Landrada Mahthilda_Matilda 
+			Markatruda Nanþhilda_Nanthild Rikagunda_Rigunth Rikahilda_Richilde Rikatruda_Rictrude Sigihilda_Sichilde Swanahilda_Swanhild Waldarada_Waldrada 
+			Wuldatruda Þeodahilda_Theodhild Þeodarada_Theodrada
+		}
+		
+		from_dynasty_prefix = "af "
+		male_patronym = "ssunu"
+		female_patronym = "sdohter"
+		prefix = no
+		
+		dukes_called_kings = yes
+
+		modifier = default_culture_modifier
+		
+		disinherit_from_blinding = yes
+
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 10
+		father_name_chance = 5
+		
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 10
+		mother_name_chance = 3
+	}	
+	
 	bavarian = {
 		graphical_cultures = { germangfx frankishgfx westerngfx }
 		
