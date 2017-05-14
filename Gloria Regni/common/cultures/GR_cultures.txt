@@ -411,6 +411,37 @@ byzantine = {
 
 		modifier = default_culture_modifier
 	}
+	lycaonian = {
+		graphical_cultures = { hellengfx byzantinegfx }
+		
+		color = { 0.43 0.1 0.15 }
+
+		male_names = {
+			Longius Konon Leontios Leo Adrasus Celenderis Codaca Daliaandus Lauzaduz Lamus Germanicas Dometio Diocaesar Cardabunta Snrmutium Kannedeli
+			Tito Olba Heliose Illus Ardabur Aspar Julis Rhetorius Marcus Mattiarici Tarasis Kodisa Traskalisseus Rousoumbladeottes Musbanda Syca Iotapa 
+		}
+		female_names = {
+			Lallis Valeria Longina Ariadne Arcadia Topisa Meloë Musbanda Titia Iotapa Celenderis Antiochia Parva Olba Syca Hieralia 
+		}
+
+		from_dynasty_prefix = "of "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		
+		disinherit_from_blinding = yes
+		
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+	}	
 	pontic = {
 		graphical_cultures = { byzantinegfx }
   
@@ -2115,37 +2146,6 @@ anatolian_group = {
             Thekla_Thekla Theodora_Theodora Theodosia_Theodosia Theophane_Theophane Tiberia_Tiberia Trebeis_Tarpa
             Trebemis_Tarpamira Trokondeis_Trokondeis Valeria_Valeria Valentina_Valentina Verina_Verina
         }
-
-		from_dynasty_prefix = "of "
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 50
-		mat_grf_name_chance = 50
-		father_name_chance = 0
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 50
-		mat_grm_name_chance = 50
-		mother_name_chance = 0
-		
-		disinherit_from_blinding = yes
-		
-		founder_named_dynasties = yes
-
-		modifier = default_culture_modifier
-	}
-	lycaonian = {
-		graphical_cultures = { hellengfx byzantinegfx }
-		
-		color = { 0.43 0.1 0.15 }
-
-		male_names = {
-			Longius Konon Leontios Leo Adrasus Celenderis Codaca Daliaandus Lauzaduz Lamus Germanicas Dometio Diocaesar Cardabunta Snrmutium Kannedeli
-			Tito Olba Heliose Illus Ardabur Aspar Julis Rhetorius Marcus Mattiarici Tarasis Kodisa Traskalisseus Rousoumbladeottes Musbanda Syca Iotapa 
-		}
-		female_names = {
-			Lallis Valeria Longina Ariadne Arcadia Topisa Meloë Musbanda Titia Iotapa Celenderis Antiochia Parva Olba Syca Hieralia 
-		}
 
 		from_dynasty_prefix = "of "
 
