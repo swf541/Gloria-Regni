@@ -53,18 +53,41 @@ north_germanic = {
 		# Þ 222 þ 254 Ð 208 ð 240 æ
 		
 		male_names = {
-			Ale Alfr_Alf Alfgeir Anders_Andrew Anlaufr Anundr_Anund Arnbjörn Arngrimr Arni_Arne Arnfast Asbjörn_Asbjörn Bagge Baldr_Balder Barid Bengt_Benedict Bersi Bertil Birger Björn_Beorn Bo Borkvard Botulfr Bragi_Brage Buðli
-			Dag Dan Dyre Eilif Egill_Egil Emund Einarr_Einar Eirikr_Erik Eskild Falki Faste Filip_Philip Fredrik_Frederick Frirek Froði_Frode Freyr_Frej Folki_Folke Gandalfr Geirr Georg_George Gnupa_Gnupa Gorm_Gorm Greger_Gregory Grimr_Grim Guðfrið_Godfrey Guðmundr_Gudmund Guðröðr_Gudröd Gunnarr_Gunnar Hakon_Hakon Halsten Haraldr_Harold Haukr Helgi_Helge
-			Hemming Holmger Hrafn Hrolfr_Rolf Hrane Hæsteinn Hjalmar_Hjalmar Hroðgar Hroðulfr Hrörekr_Rurik Hysing Ingólfr_Ingolf Ingemar Ingjald Ivar_Ivar Jedvard_Edward Jon_John Karl_Charles Kettil Kettilmund Kjartan Klas Knut_Knut Kol Kolbjörn Magnus_Magnus Markus_Marcus 
-			Mats_Matthew Nils_Nicholas Niklas_Nicholas Oddr_Odd Ofeig Olafr_Olaf Ormr_Orm Ottarr_Ottar Refr Refil Ragnarr_Ragnar Rikulfr Rögnvaldr_Ragnvald Skuli_Skule Snorri Sigbjörn Sigtrygg Sigurðr_Sigurd Starkaðr_Starkad Steinn_Sten Sturla Styrbjörn Styrkar Sumarliði_Somerled Suni_Sune Sveinn_Sven
-			Sverker Sæmundr_Sämund Sölvi_Sölve Sörkver Tjudmund_Tjudmund Toke_Toke Tolir Þorbjörn_Torbjörn Þorfinn_Torfinn Þorbrandr_Torbrand Þordr_Tord Þorgil_Torkel Þorsteinn_Torsten Þorolfr_Thorolf Toste Totil Tryggve Tyke Ulfr_Ulf Vagn Valdemar_Vladimir Åke Yngvar_Ingvar Örvar_Orvar Öysteinn_Eysteinn
+			Agharjar_Agnar Agi_Agni Agilamundur_Ögmundr Agilar_Egill Agiwaldar_Ögvaldr Agiþewar_Ecgþeow Aglaivar_Ecglaf Agvarr_Ögurr Agwala_Ecgwela 
+			Ainalivar_Æilífr Aiwamundur_Eanmund Aiwarikiar_Eric Aiwigairar Aiwiharjar_Ævarr Ala_Ala Alarikiar_Alaric Albigairar_Alfgeirr Albiharjar_Alfarr 
+			Albir_Alfr Alugoda Alunir_Ölnir Aluwíhar_Ölvér Anagæirr_Anager Andswarur_Andsvarr Angaþewar_Angantyr Ansubernur_Ásbjörn Ansulaivar_Áslæifr 
+			Anugairar_Agæirr Anugairar_Ávæirr Anuherr_Ánarr Anula_Áli Anulaivar_Anleifr Anumundur_Ámundr Anuwandur_Anundr Arnubernur_Arnbjörn 
+			Arnukatil_Arnkætill Askaharjar_Æschere Asugis Asugisalar_Ásgísl Aujastainar_Eysteinn Aujawindur_Eyvindr Auþabernur_Audbjörn Auþawinir_Auðvin 
+			Awiomundur_Eymundr Aþagíslar_Eadgils Aþawinir_Ánn Aþawulfar_Adalwolf Banastainar_Banstan Baðufriður_Bároðr Baðuheldio_Böðvildr Baðuherr_Bödvarr 
+			Bergiar_Birgir Bernur_Björn Bewwarjar_Beowa Bijowulfar_Beowulf Brekka_Breca Brond Domaharjar_Dómarr Domawaldar_Dómaldi Duggwi_Dyggvi 
+			Eldaiarn_Eldjárn Erminlaivar_Yrmenlaf Erminmarir_Arminius Erminrikiar_Ermanaric Etunabernur_Jötunbjörn Evurar_Eofor Feldunir_Fjolnir 
+			Finnalba_Finnalf Finnar_Finn Fraujabernur_Freybjörn Fraujagarðio_Freygard Fraujastainar_Freystein Frawaradar Fróði_Fróði Gairaþewar_Geirþjófr 
+			Garðio_Gard Gautar_Goth Gautawulfar_Getwulf Gisur_Gissur Givuka_Gjúki Godabrandar_Godbrand Godafriður_Godfrey Godaga Godagastir_Goðgestr 
+			Godalaivar_Guðlaf Godamundur_Gudmund Godaþormar_Guðormr Gramar_Gram Granamarir_Granmarr Greipar_Greip Gríma_Grim Gulvir_Gylfir Gunþaharjar_Gunther 
+			Habukoþur Hagani_Hagen Hagustaldar_Höðskuldr Hailaga_Helgi Haiðiokyn_Hæþcyn Haki_Hoc Halbadanir_Halfdan Hallukatil_Hallkell Halluþónr_Hallþórr 
+			Harabanar_Raven Hariuha Hariwulfar_Hærulfr Harjabalðar_Herebeald Harjagairar_Heorogar Harjamodar_Heremod Harjar_Harry Harjawaldar_Haraldr 
+			Harjaþewar_Herþjófr Harðuraðar_Hardrada Haukoþur Havaþónr_Hafþórr Haþubroddar_Hothbrodd Haþulaivar_Heaðolaf Haþuwarður_Hávarðr Haþuwulfar_Aulfr 
+			Heldar Heldio_Hildi Heldiowulfar_Hildulfr Heruwardur_Hjörvarðr Heruwulfar_Hiörulfr Hilmir_Hilmir Hjalmar_Helm Hjalmharjar_Hjalmarr 
+			Hlewagastir_Hlégestr Hlewar_Chlothar Hnavi_Hnæf Hok_Hoc Hraþar_Hrœrir Hringar_Hring Hrussabernur_Hrossbjörn Hróþigairar_Roger Hróþilar_Hreðel 
+			Hróþimundur_Hroðmund Hróþirikiar_Hreðric Hróþiwulfar_Hrólfr Hróþiwíhar_Hróðvér Hróþuwulfar_Hróðulfr Hugilaikar_Hygelac Hunafriður_Unferð 
+			Hunaþewar_Hunthjóf Ingwar_Ingvarr Ingwiamundur_Ingmund Ingwiawaldar_Ingeld Ingwiawinir_Yngwin Janas_John Jarawindur_Jörundr Kjuwwi_Tyggi 
+			Kristan_Christian Kunimundur_Cunimund Laivar_Leif Leugar Muha Móðwíhar_Móir Naudigastir Niþahaþur_Níðuðr Ohtaharjar_Óttarr Pal_Paul Petir_Peter 
+			Raginaharjar_Ragnarr Raginalba_Rugalf Raginawaldar_Reginald Raumar_Raumr Raunijar Resir_Ræsir Saiwafara_Sæfari Saluga_Sölgi Sawilagar 
+			Sigisfriður_Siegfried Sigisgairar_Siggeirr Sigisharjar_Sighere Sigismundur_Sigmund Sigistrug_Sigtrygg Sigiswaldar_Sigwald Sigiswarður_Sigvard 
+			Sigiwarur_Syvurr Skelbaþewar Skilf_Scylf Skuld_Scyld Snaiwar_Snow Sowihar_Sölvér Spærðla_Spærla Stainawarijar_Steinarr Starkahaþur_Starkad 
+			Sturgarðio_Styrgurd Swabaharjar Swanar_Swan Swartingar_Swerting Swartkatil_Syrkæll Swipdagar_Svipdagr Tunþa Túkiar_Týki Ubar Waigomundur_Wægmund 
+			Waihalar Walhar_Wæls Wandarádar_Vandráðr Wanilandar_Vanlandi Wanilo_Wallia Welandar_Wayland Wikoharjar_Víkarr Wiwar Woduridar Wonraðar_Wonred 
+			Wulfagairar_Wulfgar Wulfar_Wolf Wulþur_Ullr Wulþuwíhar Wulþuþewar Wurmar_Orm Wíhabernur_Víbiörn Wíhagarðio_Vegard Wíhar Wíhastainar_Vístæinn 
+			Wíhlaivar_Wiglaf Wíwila_Vífill Þengilar_Thengel Þijalfiharjar_Þialfarr Þrawówindur_Þróndr Þrummar_Trymr Þunragarðio_Thorgard Þunragautar_Þórgautr 
+			Þunrastainar_Þórsteinn Þunrawulfar_Þórulfr Þunrawíhar_Þórvér
+			Ansmundur_Osmond
 		}
 		female_names = {
-			Aleta Alfhildr_Alfhild Alfrið_Alfridh Alvör Anna_Anna Asa_Åsa Aslaug Asta_Asta Astrid_Astrid Beata Birgitta_Brigid Björg Bodil Bothildr_Bothild Cecilia_Cecilia
-			Edla Elin Elisabet_Elizabeth Freyja_Freja Gerðr Gloð Grima Gunnhildr_Gunhild Gurli Guðrun_Gudrun Gyla Gyrið Gyða_Gytha Hafrid Halla Helena_Helen Holmfrid
-			Iliana Inga_Inga Ingfrid Ingibjörg_Ingeborg Ingjerðr_Ingegerd Ingrid_Ingrid Karin_Catherine Katarina_Catherine Kraka Kristina_Christina Linda Maer
-			Malmfrið_Malmfrid Margareta_Margaret Maria_Maria Rikissa Rögnfrið_Ragnfrid Rögnhildr_Ragnhild Saga Sara_Sarah Sif Sigrid_Sigrid Skuld Sofia_Sophia
-			Svanhildr_Svanhild Ulfhildr_Ulvhilde Vigdis Ylva_Ylva Yrsa Þora_Thora Þordis_Thordis Þyra_Thyra
+			Agilamundo Albiheldio_Alfhild Alla Ansufriþior_Ásfríðr Ansulaug_Aslaug Anulaug_Ólaug Arnudís_Arndís Aujadís_Eydís Baunila_Beyla Brunheldio_Brunhild 
+			Dagahaiðio_Dagheiðr Druhti_Drótti Evurarunþi_Iórunnr Fraujadís_Freydís Fraujawarjar_Freawaru Godaruno_Gudrún Grimaheldio_Grímhildr 
+			Gudowaigo_Guðveig Hailaga_Helga Haiðio_Heiðr Haiðioruno_Heiðrún Hallagarðio_Hallgerðr Heldioburgo_Hildeburh Ingwiaheldio_Yngvildr 
+			Kristano_Christina Nanþi_Nanna Raginaheldio_Ragnhild Ranawaigo_Rannveig Sigisfriþior_Sigfriðr Sigisniwja_Signy Skulddís_Skjalddís Sowwaigo_Sölveig 
+			Ursa_Yrsa Vrinda_Vrindr Walhaþewa_Wealþeow Wiwjo Wiðusternu Wulfaheldio_Ulfhildr Wíhdís_Vígdís Þruþi_Trude Þunragarðio_Þorgerðr
 		}
 		
 		dukes_called_kings = yes
@@ -506,6 +529,52 @@ east_germanic = {
 west_germanic = {
 	graphical_cultures = { westerngfx }
 
+	bavarian = {
+		graphical_cultures = { germangfx frankishgfx westerngfx }
+		
+		used_for_random = no
+		
+		color = { 0.36 0.39 0.39 }
+		male_names = {
+			Angulsgalk_Engelschalk Ansgoar_Ansgar Arnwolf_Arnulf Atalboaraht_Adalbert Atalwolf_Adalwolf Bernharti_Bernhard Boarahtholt_Berthold 
+			Burghoarti_Burchard Eburhart_Everhard Erganbalt_Archibald Fritunent_Ferdinand Garibalt_Garibald Gerharti_Gerhard Gibuka_Gjúki 
+			Gotboaraht_Gozbert Gotfritu_Gottfried Gotloaba_Gautleif Gotwalt_Gautbald Grimwalt_Grimwald Guntheri_Gunther Hadubrant_Hadubrand Hamo_Hamo
+			Heriharti_Herhard Heriman_Herman Herimerigi_Hermeric Hildibrant_Hildebrand Hluwitbald_Leopold Hluwitheri_Chlothar Hluwitwig_Louis 
+			Hugboaraht_Hubert Huwiltawolf_Hildulf Lantboaraht_Landbert Oaribo_Arbo Oatilo_Odilo Oto_Otto Sigibalt_Siegbald Sigifritu_Siegfried 
+			Tassuwilo_Tassilo Thiotbalt_Theodbald Thiotboaraht_Theodbert Thioto_Theodo Thiotrigi_Theoderic
+		}
+		female_names = {
+			Boarahta_Bertha Burghoarta_Burcharda Buwiltruta_Biltrude Eburharta_Everharda Foara_Fara Frita_Frida Gerhuwilta_Gerhild Gertruta_Gertrude 
+			Gisala_Giselle Grimhuwilta_Kriemhild Gunttruta_Guntrude Hluwitbalda_Leopolda Hluwithilta_Clothilde Hluwitswint_Luitswind Hrota_Hroda 
+			Hrotoheita_Hrodheid Huwiltagarta_Hildegard Huwiltagunta_Hildgund Huwiltatruta_Hilditrut Irma_Emma Ita_Ida Linta_Linda Magthilta_Mathilda 
+			Ota_Oda Othuwilda_Odila Reginhuwilta_Reginhild Reginlinta_Reginlind Regintruta_Regintrud Sigilinta_Sieglind Svanhuwilta_Swanhild 
+			Thiotberga_Theodberga Thiotlinta_Theodelinda Walta_Walda Waltrata_Waldrada Walttruta_Waltrud Willaburga_Wilburg
+		}
+		
+		from_dynasty_prefix = "ab "
+		male_patronym = "ssunu"
+		female_patronym = "stohter"
+		prefix = no
+		
+		dukes_called_kings = yes
+
+		modifier = default_culture_modifier
+		
+		disinherit_from_blinding = yes
+
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 15
+		father_name_chance = 0
+		
+		pat_grm_name_chance = 30
+		mat_grm_name_chance = 15
+		mother_name_chance = 0
+		
+		allow_looting = yes
+		
+		allow_in_ruler_designer = no
+	}	
+	
 	german = {
 		graphical_cultures = { germangfx }
 		
@@ -773,51 +842,59 @@ west_germanic = {
 	saxon = {
 		graphical_cultures = { saxongfx westerngfx }
 		
-		color = { 0.8 0.3 0.3 }
+		color = { 0.65 0.15 0.1 }
 		
 		male_names = {
-			Arncytel Balthere Beorhtfrith Beorhthelm Beorhtmær Beorhtnoth Beorhtric Beorhtsige Beorhtwine_Beorhtwine Beorn_Beorn Beornræd Beornwulf
-			Burgheard_Bouchard Byrhtnoth Cearl_Charles Cenfus Cenræd_Konrad Cenwulf Ceolwulf Cerdic_Caradog Copsige
-			Cuthberht_Cuthbert Cuthræd Cynehelm Cynewulf Cytelbearn Eadberht Eadfrith Eadgar_Edgar Eadmund_Edmund Eadmær Eadric
-			Eadræd Eadsige Eadulf_Adolf Eadweald Eadweard Eadwig Eadwine_Edwin Eadwulf_Adolf Ealdhun Ealdmund Ealdræd Ealdwine_Alwin
-			Ealdwulf Eanberht Eanfrith Eanhere Eardwulf Eastmund Ecgberht Ecgfrith Gamall Godwine Gospatric Guthfrith_Godfrey Guthmund_Gudmund
-			Gyrth Hacon_Hakon Harold_Harold Heahberht Hereberht_Herbert Hereweald_Hereweald Hereweard Hlothere_Lothair Hrodberht_Robert Inwær_Ingvar Leofheah Leofhelm
-			Leofric Leofweald Leofwine Maccus_Maccus Morcar_Marcus Mærleswegn Offa_Uffe Onlaf_Olaf Ordgar
-			Oscytel Oshere Osmund Osric Osræd Osulf_Osulf Osweald Oswine Oswulf_Osulf Petre_Peter Rædwulf_Ralph Rægenweald_Reginald Scule_Skule
-			Sigeberht Sigehelm Sigeric Sigeræd Sighere Siweard_Sigurd Stigand Swegn_Sven Swithelm Swithræd Swæfræd Sæbert Sælræd Sæweald
-			Sæxbald Sæxræd Thoræd Thurcytel_Torkel Thurfrith Tostig_Toste Uhtræd_Uhtred Ulf_Ulf Ulfcytel Waltheof_Waltheof Werestan_Werestan Wiglaf Wihtræd_Withred
-			Wistan Wulf_Ulf Wulfgar Wulfgeat Wulfhelm Wulfhere Wulfmær Wulfnoth Wulfstan Ælfgar Ælfmær Ælfnoth Ælfric Ælfræd_Alfred Ælfsige
-			Ælfstan_Alstan Ælfwald Ælfweard Ælfwig Ælfwine_Alwin Ælle_Alwin Æthelbald Æthelberht_Albert Æthelfrith_Ethelfrith Æthelhere Æthelmær_Adémar
-			Æthelric Æthelræd_Ailred Æthelsige Æthelstan_Alstan Æthelweald_Æthelwold Æthelweard Æthelwine_Alwin Æthelwold_Æthelwold Æthelwulf_Adolf
-			Eormenred Eorcenberht Eormenric Eadbald Rædwald
+			Ælaf_Olaf Aelle Æsc Æscwine Æthelbeald Æthelberht_Albert Æthelfrith Æthelhere Æthelmær Æthelræd Æthelstan Æthelweard 
+			Æthelwine_Æthelwine Æthelweald Æthelwealh Æthelwulf_Adalwolf Ealdræd Ealdwine Ealdwulf Ælfgar Ælfheah Ælfræd_Alfred Ælfweald Ælfweard Ælfwine 
+			Æðelgar_Æðelgar Badulf Baldræd Balin Berhtwulf Berhtric Burghræd Centwine Ceolræd Ceolweald Ceolwulf Coenræd Coenwulf Cuthberht Cuthræd 
+			Cwichelm Cynebeald Cynefrith Cyneheard Cynemær Cyneric Cyneweald Cynewulf Cymen Deorwine Eadbeald Eadberht Eadfrith Eadgar_Edgar Eadmund_Edmund 
+			Eadraed Eadric Eadweald Eadweard_Edward Eadwig Eadwine Eadwulf Ealdfrith Ealdwine_Alwin Eanberht Eanfrith Eanhere Eardwulf Earnweald_Arnold 
+			Earled Eboric_Eboric Ecgberht_Egbert Elfrith Eorcenberht Eoric Eormengild Eormenric_Ermanaric Eormenræd Eorweald Eowa Eastmund Eoforwine 
+			Frearic Freamund Freawulf Gerald_Gerhard Hengist Glædwine Godric Godwine Guðhere_Gunther Guthrum Halfdan Heaberht Heoroweard_Hjörvarðr 
+			Hereweald_Harold Hreðel_Hreðel Hreðric_Roderick Hroðgar_Roger Hloþhere_Chlothar Hloðwic_Louis Hygelac Leofdæg Leofric Leofwine Liofa 
+			Maldræd Morcær_Marcus Nothelm Offa_Offa Ohthere_Óttarr Onwine_Onwine Osbeorn_Osbern Osberht_Osbert Osgar Osmund Osræd Osulf Œthelwald Œthelwine 
+			Œthelbehrt Œthelræd Osweald Oswine Oswig Pæga Pænda Hrodberht_Robert Rædwald_Reginald Ricberht Ricehard_Richard Ricsige Sæbert Sælræd Sæweald 
+			Seaxbald Seaxweard Seaxræd Sigeberht_Siegbert Sigefrith_Siegfried Sigehelm Sigeræd Sigeweard_Sigvard Stigand Swæfberht Swæfheard Swæfræd 
+			Swithelm Swithun Swithræd Theodhere Theodræd Theodric_Theoderic Theodwulf_Theodwulf Thoræd Uhtræd Vœrmund_Wermund Wulf_Ulf Wealtheof Wealdhere_Walter 
+			Wigberht Wigmund Wiglaf Wigstan Wihtræd Wilfrith Wilheard Wilmær Willelm_William Winefrith Wlencing Wlenca Wulfhere Wulfric Wulfstan
+			Beorhtweald_Bertwald Witta_Witta Leodgar_Ludger Ælfric_Alfric Æthelric_Adalric Bealdwine_Baldwin Beornmund_Bermond Bata_Bata Hama_Hamo 
+			Ongenþeow_Angantyr:0 Þengel_Thengel
 		}
 		female_names = {
-			Agatha_Agatha Balthild Beorhtflæd Beorhtgifu Beorhtgyth Beorhtwaru Beorhtwynn Beornflæd Beorngyth Blæja Burgflæd Ceolflæd Cristina_Christina
-			Cuthburg Cwenburg Cyneburg Cynegyth Cynehild Cyneswith Cynethryth Eadburg Eadflæd Eadgifu Eadgyth_Edith Eadhburh Eadhild Ealdgyth_Edith
-			Ealhflæd Ealhswith Eanswith Ecgfrida Ecgwyn Godgifu Gunhilda_Gunhild Gytha_Gyda Helga_Helga Heregyth Hereswith Hextilda Hungifu Judith_Judith
-			Leofflæd Leofgifu Leofrun Leofwaru Leofwynn Margaret_Margaret Maud_Matilda Mildrith Octreda Sifflæd Sigrid_Sigrid Sæthryth Wulfflæd Wulfgifu
-			Wulfgyth Wulfhild Wulfrun Wulfthryth Wulfwaru Wulfwynn Wynnflæd Wærburg Æbba Ælfflæd_Ælflæda Ælfgifu Ælfgyth Ælflæda_Ælflæda Ælfrida
-			Ælfswith Ælfthryth Ælfwynn Æthelburg Æthelflæd Æthelgifu Æthelhild Æthelræda_Æthelreda Æthelswith Æthelthryth_Æthelreda
-			Æthelburh Seaxburh Wihtburh
+			Æbbe_Æbbe Æffe Ælfgifu Ælfhild Ælflæd Ælfswith Ælfthryth_Alfrida Ælfwynn_Ælfwynn Æthelflæd Æthelgifu Æthelgyth Æthelhild Æthelswith
+			Æthelthryth Æthelwynn Æscwynn Ætte Berhtgifu Berhtwynn Beornflæd Beorngyth Beornthryth Beornwynn Burghild Ceolburh Ceolflæd Ceolthryth
+			Ceolwynn Cuthswith Cwen Cwenburh Cwengyth Cwenthryth Cyneburh Cynegyth Cyneleofu Cyneswith
+			Cynethryth Cynewynn Dunne Eadburh Eadflæd Eadgifu Eadgyth_Edith Eadhild 
+			Eadleofu Eadwynn Ealdgyth Ecgwynn Ealhburh Ealhflæd Ealhgyth Ealhswith Ealhthryth Ealhwynn Eanburh Eanflæd Eanswith Erce Enna
+			Eormenhild Eoforhild Friðuswiþ_Friðuswiþ Gænburh Gode Godgifu Godwif Gunhilda_Gunhild Gytha
+			Heregyth Hereswith Hild Leofcwen Leofe Leofflæd Leofgifu Leofrun Leofwynn Lioba_Lioba Malla Merwyn Mildgyth Mildthryth Nothgyth Osthryth Ralla Sæflæd Sæthryth
+			Saxa Seleburh Selethryth Sigeburh Sigeflæd Sunngifu Tole Walenburh Wærburh Wærthryth Wealhthryth
+			Wihtflæd Wilflæd Winflæd Wulfgifu Wulfgyth Wulfhild Wulfrun Wulfswith Wulfthryth Wulfwynn
+			Theodhild_Theodhild Æþelburga_Adalburg Hildegyð_Hildgund
 		}
 
-		dukes_called_kings = yes
-
-		from_dynasty_prefix = "of "
-
-		male_patronym = "sson"
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		
+		from_dynasty_prefix = "æf "
+		male_patronym = "ssunu"
 		female_patronym = "sdohtor"
 		prefix = no # The patronym is added as a suffix
-
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 5
 		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		dukes_called_kings = yes
+
+		disinherit_from_blinding = yes
+		
+		pat_grf_name_chance = 20
+		mat_grf_name_chance = 10
+		father_name_chance = 2
+		
 		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
+		mat_grm_name_chance = 10
+		mother_name_chance = 2
+		
+		allow_looting = yes
 
 		modifier = default_culture_modifier
 	}
