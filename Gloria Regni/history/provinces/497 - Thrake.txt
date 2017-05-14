@@ -21,11 +21,11 @@ b_phinopolis = city
 
 	
 # Misc
-culture = greek
+culture = koine
 religion = imperial
 
 # History
-
+395.1.17 = { culture = greek }
 #4th crusade, Constantinople sacked.
 1054.1.1 = { religion = orthodox }
 1204.5.16= { remove_settlement = b_phinopolis }

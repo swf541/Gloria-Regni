@@ -12,10 +12,11 @@ b_chalcedon3 = temple
 b_chalcedon4 = city
 
 # Misc
-culture = greek
+culture = koine
 religion = imperial
 
 # History
+395.1.17 = { culture = greek }
 1054.1.1 = { religion = orthodox } # iconoclast
 
 1187.1.1 = { b_praenetos = castle } 

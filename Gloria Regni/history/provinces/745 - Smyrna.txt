@@ -17,11 +17,12 @@ b_klazomeanai = city
 #b_chio = castle
 
 # Misc
-culture = greek
+culture = koine
 religion = imperial
 terrain = hills
 
 # History
+395.1.17 = { culture = greek }
 1054.1.1 = { religion = orthodox }
 
 1077.1.1 = { remove_settlement = b_klazomeanai }

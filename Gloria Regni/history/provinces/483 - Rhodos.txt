@@ -17,11 +17,12 @@ b_kos = city
 #b_koskinou = castle
 
 # Misc
-culture = greek
+culture = koine
 religion = imperial
 terrain = mountain
 
 # History
+395.1.17 = { culture = greek }
 1054.1.1 = { religion = orthodox }
 1166.1.1 = { trade_post = b_morosini }
 

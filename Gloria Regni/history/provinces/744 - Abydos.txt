@@ -17,11 +17,12 @@ b_lampsakos = temple # Hellenic Holy Site
 #b_elaia = castle
 
 # Misc
-culture = greek
+culture = koine
 religion = macedonianism
 terrain = hills
 
 # History
+395.1.17 = { culture = greek }
 765.1.1 = { religion = imperial } 
 1054.1.1 = { religion = orthodox }
 #787.10.23 = { religion = orthodox }
