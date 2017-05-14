@@ -604,7 +604,7 @@ narrative_event = {
 	}
 }
 
-# Italo-Roman province converts to Italian
+# Fragmentation of Italian and Lombard Language
 province_event = {
 	id = PA.10330
 	desc = EVTDESCPA.10330
@@ -612,8 +612,18 @@ province_event = {
 
 	trigger = {
                 year = 867
-		culture = old_italian
-                NOT = { year = 1000 }
+			OR = {
+				AND = {
+					culture = old_italian
+					NOT = { county = { duchy = { title = d_latium } } }
+				}
+				AND = {
+					culture = lombard
+					NOT = { county = { duchy = { title = d_lombardia } } }
+					NOT = { county = { duchy = { title = d_susa } } }
+				}
+			}
+             NOT = { year = 1000 }
 		OR = { 
 			county = { kingdom = { title = k_lombardy } }
 			county = { kingdom = { title = k_sicily } }
@@ -632,7 +642,64 @@ province_event = {
 
 	option = {
 		name = EVTOPTA_CM_2
-		culture = italian
+		if = {
+			limit = {
+				county = { kingdom = { title = k_sicily } }
+			}
+			culture = beneventan
+		}
+		if = {
+			limit = {
+				OR = {
+					county = { duchy = { title = d_spoleto } }
+					county = { duchy = { title = d_ancona } }
+				}	
+			}
+			culture = umbrian
+		}
+		if = {
+			limit = {
+				OR = {
+					county = { duchy = { title = d_pisa } }
+					county = { duchy = { title = d_toscana } }
+					county = { duchy = { title = d_corsica } }
+				}	
+			}
+			culture = tuscan
+		}
+		if = {
+			limit = {
+				OR = {
+					county = { duchy = { title = d_sardinia } }
+				}	
+			}
+			culture = sardinian
+		}
+		if = {
+			limit = {
+				OR = {
+					county = { duchy = { title = d_genoa } }
+					county = { duchy = { title = d_provence } }
+				}	
+			}
+			culture = ligurian
+		}
+		if = {
+			limit = {
+				OR = {
+					county = { duchy = { title = d_venice } }
+					county = { duchy = { title = d_carinthia } }
+					county = { duchy = { title = d_verona } }
+				}	
+			}
+			culture = venetian
+		}
+		if = {
+			limit = {
+				county = { duchy = { title = d_ferrara } }
+			}
+			culture = romagnan
+		}
 	}
 }
 

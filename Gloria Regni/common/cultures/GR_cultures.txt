@@ -347,6 +347,25 @@ byzantine = {
   
 		modifier = default_culture_modifier
 	}
+	
+
+	sikelian = {
+		graphical_cultures = { byzantinegfx }
+  
+		color = { 0.75 0.25 0.9 }
+
+		male_names = {
+			Abraam_Abraham Adeodatos_Adeodatus Agathios_Agathios Agathon_Agathon Agathonikos_Agathonikos Agathopos_Agathopos Amakhios_Amachios Alexandros_Alexander Alphios_Alphios Anastasios_Anastastios Andreas_Andrew Aphrikanos_Africanus Apollonaris_Apollonaris Arkhagathos_Archagathos Arkymanes_Arkymanes Aristokles_Aristokles Arkoudes_Arkoudes Artemias_Artemios Asbolios_Asbolios Asklepiodoros_Asklepiodoros Athenobios_Athenobios Athenodoros_Athenodoros Attinis_Attinos Bartholomaios_Bartholomew Basileios_Basil Basiles_Basil Bassianos_Bassianus Benignos_Benignus Berberes_Berberes Beryllos_Beryllos Blasios_Blaise Bolimarion_Bolimarion Boniphatios_Boniface Byzantios_Byzantios Damalas_Damalas Daphnianos_Daphnianos Demetrios_Demetrios Diodoros_Diodoros Dionysios_Dionysios Dioskouros_Dioskouros Domninos_Domninus Donatos_Donatus Eirenaios_Eirenaios Elias_Elijah Erasmios_Erasmus Eudokimos_Eudokimos Eudoxios_Eudoxios Eugarios_Eugarios Eugenios_Eugene Eulalios_Eulalios Euphemios_Euphemios Euplos_Euplos Eupraxios_Eupraxios Eusebios_Eusebios Euthymios_Euthymios Eutykhes_Eutyches Eutykhetos_Eutychetos Eutykhides_Eutychides Eutykhion_Eutychion Eutykhis_Eutyches Eutykhios_Eutychios Euthymios_Euthymios Everos_Everos Georgios_George Germanos_Germanus Gregorios_Gregory Heliodoros_Heliodoros Helix_Helix Hephaistion_Hephaistion Herakles_Herakles Iakobos_Jacob Iason_Jason Ienaris_Ianuarius Ioannes_John Iordanes_Jordan Iosephos_Joseph Ioulianos_Julian Iounios_Iunius Ioustos_Iustus Isaakios_Isaac Kalendion_Kalendio Kallistos_Kallistos Kammarotos_Kammarotos Kandos_Kandos Kapylas_Kapylas Karamales_Karamales Karthagon_Carthago Kassiodoros_Kassiodoros Khlemes_Clemens Khreseleos_Khreseleos Khrestos_Chrestos Khristodoulos_Christodoulos Khristophoros_Christopher Khryses_Khryses Kitharios_Kitharios Klemes_Clemens Kondos_Kondos Konstantinos_Konstantinos Kordelles_Kordelles Kosmas_Kosmas Kyboklises_Kyboklises Kreskonios_Cresconius Kyprianos_Kyprianos Kyrenos_Kyrenos Kyriakos_Kyriakos Laurentios_Laurence Leon_Leo Leontios_Leontios Leosthenes_Leosthenes Lepidos_Lepidus Libertinos_Libertinus Livas_Livas Loukas_Luke Magis_Magis Makarios_Makarios Markianos_Marcianus Marion_Marius Markellos_Marcellus Markianos_Marcianus Martinos_Martin Maximianos_Maximianus Methodios_Methodios Mikhail_Michael Neilos_Neilos Nektarios_Nektarios Nikandros_Nikandros Nikephoros_Nikephoros Niketas_Niketas Nikodemos_Nikodemos Nikolaos_Nicholas Nikon_Nikon Nikostratos_Nikostratos Nopheios_Nympheios Noumerion_Numerius Nympheios_Nympheios Orestes_Orestes Pankalos_Pankalos Pankratios_Pankratios Paskhalis_Pascal Paulos_Paul Peregrinos_Peregrinos Petros_Peter Phantinos_Phantinos Phelix_Felix Philadelphos_Philadelphos Philagathos_Philagathos Philaretos_Philaretos Philippos_Philip Philoumenos_Philomenos Phortounatos_Fortunatus Photes_Photes Photios_Photios Poseidonios_Poseidonios Potamios_Potamios Poulkharios_Pulcherius Proklos_Proklos Psapharos_Psapharos Pythagoras_Pythagoras Romanos_Roman Rouphos_Rufus Sabas_Sabas Samouel_Samuel Sarantares_Sarantares Satourninos_Saturninus Senator_Senator Sergios_Sergius Sgouros_Sgouros Sophronios_Sophronios Stephanos_Stephen Symeon_Simon Syrakosios_Syrakosios Theodoros_Theodore Theodosios_Theodosios Theodotos_Theodotos Theodoulos_Theodoulos Theophanes_Theophanes Theophilos_Theophilos Timotheos_Timothy Tripodes_Tripodes Vales_Valens Viator_Viator Viktor_Victor Viktorinos_Victorinus Vitalios_Vitalis Vitos_Vitus Xystos_Xystos Zosimianos_Zosimianos Zosimas_Zosimos Zosimion_Zosimion Zosimos_Zosimos
+		}
+			# note: "Ienaris" represents a local form of Januarius, reflected also in Sicilian Latin "Ianarius", "Genarius", "Genaras". "Nopheios" represents a Latin corruption of Greek Nympheios into "Nyphius", here transliterated back into Greek. "Euplos" Latinises to "Euplius."
+		female_names = {
+			Adeodata_Adeodata Agathe_Agatha Agrime_Agrime Agrippine_Agrippina Aimilia_Aemilia Albine_Albina Anastasia_Anastasia Anna_Hannah Antelia_Antelia Aphrodito_Aphrodite Apollonia_Apollonia Asklepiodeneia_Asklepiodeneia Asklepiodora_Asklepiodora Athenais_Athenais Benigne_Benigna Berenike_Berenike Daphne_Daphne Demetria_Demetria Diodora_Diodora Dionysia_Dionysia Dominata_Dominata Eirena_Irene Eulogia_Eulogia Eupraxis_Eupraxia Eusebia_Eusebia Eutykhe_Eutyche Eutykhia_Eutychhia Eutykhiane_Eutykhiane Eutykhis_Eutykhe Georgia_Georgia Glauke_Glauke Gregoria_Gregoria Hephaistia_Hephaistia Herais_Herais Ienara_Ianuaria Ioanne_Joan Iouliana_Juliana Iounia_Iunia Ispes_Spes Kale_Kale Kalanna_Hannah Kailia_Caelia Kalliope_Kalliope Kalliste_Kalliste Kamille_Camilla Katherina_Catherine Klara_Klara Klementia_Clementia Konddena_Konddena Kyriake_Kyriake Leontia_Leontia Longine_Longina Loukia_Lucia Makaria_Makaria Maria_Maria Marina_Marina Markelle_Marcella Markelline_Marcellina Markia_Marcia Markiane_Marciana Martha_Martha Martine_Martina Matrone_Matrona Meleis_Meleis Naseiana_Nasiana Nike_Nike Nikopole_Nikopole Nikostrate_Nikostrate Nymphe_Nymphe Nyphe_Nymphe Paula_Paula Pauline_Pauline Peristerena_Peristerena Petra_Petra Poseidonia_Poseidonia Poulkheria_Pulcheria Prosdokia_Prosdokia Rebekka_Rebecca Romanille_Romanilla Sophia_Sophia Stephania_Stephania Terentia_Terentia Theodora_Theodora Theodosia_Theodosia Theodoule_Theodoule Theophano_Theophano Timothea_Timothea Valeria_Valeria Viktoria_Victoria Vita_Vita Voulkatia_Vulcatia Zoe_Zoe Zosime_Zosime Zotike_Zotike
+		}
+  
+		from_dynasty_prefix = "of "
+  
+		modifier = default_culture_modifier
+	}
 	italiote = {
 		graphical_cultures = { byzantinegfx }
   
@@ -3425,6 +3444,51 @@ italian_group = {
 
 		modifier = default_culture_modifier
 	}	
+	beneventan = {
+		graphical_cultures = { southerngfx }
+		
+		color = { 0.6 0.6 0.8 }
+
+		male_names = {
+			Adalgis Adaloald Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago Ahthari Aimeric_Aymeric
+			Aistulf Aiulf_Aiulf Ajo_Aiulf Alahis Alboin_Alwin Aldihoc Alo_Adolf Altpert_Albert Amefrith Anselm_Anselm Ansfrid Ansfrith
+			Ansprand Ardoin Arechis Ariald_Harold Aribert_Herbert Arichis Aripert_Herbert Ariulf Arnefrith Arnifrid Artavasdas Atenulf
+			Atto Audelahis Audoin_Alwin Aunepert Ausfrid Authari_Ottar Berin_Berin Bernard_Bernard Birinus_Berin Cleph Corvulus
+			Daufer Desiderius Donnolo Erchempert Erchinoald Erlembald Ewin Fara Faroald Ferdulf Gacco Garibald_Gerald Gisulf Godehoc
+			Godepert Godescalc_Gottschalk Grasulf Grimoald Guaifer_Guaifer Guaimar_Guaimar Gumpert Gundo_Gundoald Gundoald_Gundoald
+			Hermenfred Hildeprand_Hildebrand Hilderic Hildigis Hilmagis Hrodgaud_Rodgand Hucpert_Hugh Ibor_Ivar Ildiches Indulf_Adolf
+			Ingoald Ioann_John Irnerius_Werner Kakko Kunibert Laiamicho Laidulf Lambert_Lambert Landari Landenulf Lando_Lando
+			Landulf_Landolf Lantpert Laudari Liutbald_Leopold Liutbrand Liutpert_Lutbert Liutprand Liutward Lupus_Lupo Maginulf Manso Munichis
+			Nordepert_Norbert Odilo Odoaker Odoin_Otwin Orson Pandenulf Pandulf_Randolph Pemmo Penno Perctarit_Berthold Petrus_Peter
+			Poppo Radelchis Radelgar Radgis_Radgis Radwald Raginpert Ratchis_Radgis Reccared_Richard Risiulf Rochus Rodgand_Rodgand
+			Rodoald_Rodwald Rodolf_Ralph Rodwald_Rodwald Romuald Rothari Saxo Sico_Sicco Siconulf Sigibuld Sigisbert_Sigisbert Sigisbrand Sikard_Sigurd
+			Sinibald_Sinibald Taino Taso Theodelap Theoderich_Theoderic Theodicius Theodo_Dieter Theodorich_Thierry Theotpert Theudoald Thrasimund
+			Unichis Unigild Unulf Ursus_Ursus Vacho Waifar_Guaifer Waimar_Guaimar Waldchis Waldipert Walthari_Walter Wechthari Wido_Guy Zotto Zuchilo
+		}
+		female_names = {
+			Adelberga Adelchisa Adelgrima Adelperga Altruda_Adeltrudis Amalasuintha Amalberga Amalfrida Ansa_Ansa Anselberga Anselperga Ansia
+			Appa Areagne Aurona Chlotsuintha Cotani Cunigunda_Kunigunde Desiderata Ereleuva Erelieva Gaatha Gaila Gaitelgrima Gambara Geila
+			Gemma Geretrudis_Gertrude Gerperga_Gerberga Giseltrude_Gisela Giso Glismoda Gudeliva Gundeperga Guntrud_Gudrun Helchen Hermelinda_Herlinda
+			Hunila Imma_Emma Kriemhild Liutberga Liutperga Liutpirc Maria_Maria Marozia Matasuntha Menia Pilitrud Rodelinda Rosamund Rotrude Rumetruda
+			Serenahilt_Serhilda Sichelgaita Sunigilda Sunilda Swanahild_Swanahild Theodarada Theodelinda Theodorada Theodota Theuderada Thiudigotho Uta_Ute
+			Vadamerca Valdamerca Walderada Wilgefortis Wisigarda
+		}
+
+		from_dynasty_prefix = "de "
+		grammar_transform = french
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 5
+		father_name_chance = 40
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 5
+		mother_name_chance = 25
+
+		modifier = default_culture_modifier
+	}	
 	ligurian = {
 		graphical_cultures = { italiangfx southerngfx }
 		color = { 0.33 0.88 0.25 }
@@ -3470,6 +3534,102 @@ italian_group = {
 		modifier = default_culture_modifier
 	}		
 	italian = {
+		graphical_cultures = { italiangfx southerngfx }
+		
+		color = { 0.95 0.95 0.75 }
+
+		male_names = {
+			Abbondanzio Abbondio Abelardo Abelino Achille Adalberto_Albert Adelfo Adelmio Adelmo Adone Adriano Agapito Agostino Aimone Alamanno Alarico
+			Albano Alberico Alberto_Albert Albino Alboino Alcide Aldobrandino Aleardo Aleramo Alessandro_Alexander Alessio Alighiero Alvise Ambrogio Amedeo Anastasio  Andrea_Andrew Angelo_Angel Annibale Anselmo Antonino_Antoninus Antonio_Antoninus Antoniotto Arcibaldo Arderico Armando Arnolfo  Arrigo Arsenio Artemio Ascanio Astorre
+			Atenolfo Attilio Augusto Aurelio_Aurelius Ausilio Ausonio Averado Azzo Azzone Baldassarre Baldovino_Baldwin Barnaba Bartolomeo_Bartolomeus Basilio_Basil Bassiano Basso
+			Battista Beltrano Benedetto_Benedict Benvenuto Berardo Bernabò_Bernard Bernardo_Bernard Berto Bertoldo Biagio Bonaventura Bonifacio_Bonifacius Borso Bruno Bruto Buonconte
+			Buoso Callisto Camillo_Camillus Candido Cangrande Carlo Cassio Castore Cataldo Catone Cecco Cesare Chiaffredo Chiano Ciro Ciuccio Claudio Clemente_Clement
+			Comita Conone Cornelio_Cornelius Corradino Corrado_Konrad Cosimo Cosma Costante Costantino Costanzo Cristoforo_Christopher Damiano_Damian Davide_David Demetrio_Demetrius Dioniso_Dionysus Doménico_Dominic
+			Durante Eduardo_Edward Elio Emmanuele_Manuel Ennio Enrico_Henry Enzio Enzo Ercole Eriprando Ermenegildo Ettore Eugenio_Eugene Ezio Ezzelino Fabrizio Fausto Federigo_Frederick
+			Felice_Felix Ferdinando_Ferdinand Ferruccio Filippo_Philip Fiorello Flavio Folco_Folke Fortunato Fosco Francesco_Francis Fresco Gabriele Gabrino Gaetano Galasso Galeazzo
+			Galeotto Gaspare Gastone_Gaston Gelasio Gentile Geraldo_Gerald Gerardo_Gerard Germano Gerolamo Gherardo Giacinto Giacomo Gian Gianfranco Gianleone Giano
+			Giberto Gilberto_Gilbert Giolio Giordano Giorgio_George Giovanni Giulio Giuseppe Goffredo_Godfrey Gregorio_Gregory Gualtiero Guarnito Guerrino Guglielmo Guido_Guy Guidone_Guy
+			Guigliadore Iacopo Igino Innocenzo Ippolito Isnardo Jacopo_Jacob Lamberto_Lambert Landolfo Landone Lanfranco Lattanzio Lazzarino Lazzaro
+			Lealdo Leonardo Leone_Leo Leonello Leopoldo Libero Lionello Livio Lodovico Lorenzo Luca Luchino Lucio_Lucius Luigi Malacresta Manfredo Manuele_Manuel
+			Marco_Marcus Mariano_Marius Marino Mario_Marius Marsiglio Martino_Martin Massimo Mastino Matteo_Matthew Merigo Michelangelo Michele_Michael  Napoleone Nazareno Nestore Niccolò Nicola
+			Nino Nolfo Oberto Obizzino Obizzo Oddone Omero Onorio Oreste Orlando Ottavio Ottobono Ottone_Otto Pagano Pancrazio Pandolfo Paolo Pasquale_Pascal
+			Patrizio_Patrick Pellegrino Pericle Pietro_Peter Pio Prospero Rafaello Radul Raimondo_Raymond Rainero Raineri Riccardo_Richard Rinaldo_Reinhold Rizzardo Roberto_Robert Rodolfo Rolando
+			Rosso Ruggiero Salinguerra Salvatore Salvestro Sante_Sancho Saverio Sciarra Sebastiano_Sebastian Secondotto Serafino Sergio Sesto Settimio Severino Severo
+			Silvano Silvestro Simone_Simon Simonetto Sinibaldo Sinucello Sozzo Spinetto Stefano_Stephen Stentore Taddeo Tedaldo Tedice Teodoro Tibaldo_Theobald Tiziano Tommaso
+			Torgodorio Torquato Ubaldo Uberto Ugo_Hugh Ugoccione Ugolino Umberto_Humbert Urbano Valentino_Valentin Valerio Vincentello Vincenzo_Vincent Virginio Vitale Vittore Vittorio Zaccaria
+		}
+		female_names = {
+			Abelina Adalberta Adalgisa Adelaida_Adelaide Adelasia Adelia_Adela Adriana Agalina Agnese_Agnes Agostina Albina Alda Alessandra Alfonsina Alisia_Alice Aloisia
+			Amalia_Amelia Ambrosia Anastasia_Anastasia Anna_Anna Antonella Antonia Argentina Augusta Aurelia Ausilia Ausonia Beatrice_Beatrice Benedetta_Benedicta Benilde Berenice
+			Berta Bianca_Blanche Bona_Bonne Brunilde_Brunhilda Camilla Candida Caracosa Carla Carola Caterina_Catherine Cecilia_Cecilia Clara_Clara Claudia Clorinda 
+			Clotilde_Clotilde Constanza_Constance Cornelia Delinda Dora Edda Elena_Helen Eleonora_Eleanor Elisa_Elisabeth Elisabetta_Elisabeth Ermenegilda Eudossia Eugenia
+			Fausta Felicia Felicita Filippa_Philippa Filomena Flavia Flora_Flora Fortunata Fosca Francesca_Francesca Froizza Giacinta Ginevra Giovanna Giuditta Giulia_Juliana 
+			Giuseppa Ippolita Isabella_Elisabeth Joscella Laura_Laura Lavinia Leonide Letizia Lidia Livia Lodovica Lucia_Lucia Lucinetta Lucrezia Maddalena_Magdalena Marcella 
+			Margherita_Margaret Maria_Maria Mariana Marietta Martina Matilda_Matilda Micaela Nunzia Paola_Paula Patrizia_Patricia Renata Ricciarda_Ricarda Silvana
+			Sofia_Sophia Stefania_Stephania Tiziana Tomasina Valentina Violante_Yolanda Virginia
+		}
+		from_dynasty_prefix = "di "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+	sicilian = {
+		graphical_cultures = { southerngfx }
+		
+		color = { 0.25 0.95 0.25 }
+
+		male_names = {
+			Abbondanzio Abbondio Abelardo Abelino Achille Adalberto_Albert Adelfo Adelmio Adelmo Adone Adriano Agapito Agostino Aimone Alamanno Alarico
+			Albano Alberico Alberto_Albert Albino Alboino Alcide Aldobrandino Aleardo Aleramo Alessandro_Alexander Alessio Alighiero Alvise Ambrogio Amedeo Anastasio  Andrea_Andrew Angelo_Angel Annibale Anselmo Antonino_Antoninus Antonio_Antoninus Antoniotto Arcibaldo Arderico Armando Arnolfo  Arrigo Arsenio Artemio Ascanio Astorre
+			Atenolfo Attilio Augusto Aurelio_Aurelius Ausilio Ausonio Averado Azzo Azzone Baldassarre Baldovino_Baldwin Barnaba Bartolomeo_Bartolomeus Basilio_Basil Bassiano Basso
+			Battista Beltrano Benedetto_Benedict Benvenuto Berardo Bernabò_Bernard Bernardo_Bernard Berto Bertoldo Biagio Bonaventura Bonifacio_Bonifacius Borso Bruno Bruto Buonconte
+			Buoso Callisto Camillo_Camillus Candido Cangrande Carlo Cassio Castore Cataldo Catone Cecco Cesare Chiaffredo Chiano Ciro Ciuccio Claudio Clemente_Clement
+			Comita Conone Cornelio_Cornelius Corradino Corrado_Konrad Cosimo Cosma Costante Costantino Costanzo Cristoforo_Christopher Damiano_Damian Davide_David Demetrio_Demetrius Dioniso_Dionysus Doménico_Dominic
+			Durante Eduardo_Edward Elio Emmanuele_Manuel Ennio Enrico_Henry Enzio Enzo Ercole Eriprando Ermenegildo Ettore Eugenio_Eugene Ezio Ezzelino Fabrizio Fausto Federigo_Frederick
+			Felice_Felix Ferdinando_Ferdinand Ferruccio Filippo_Philip Fiorello Flavio Folco_Folke Fortunato Fosco Francesco_Francis Fresco Gabriele Gabrino Gaetano Galasso Galeazzo
+			Galeotto Gaspare Gastone_Gaston Gelasio Gentile Geraldo_Gerald Gerardo_Gerard Germano Gerolamo Gherardo Giacinto Giacomo Gian Gianfranco Gianleone Giano
+			Giberto Gilberto_Gilbert Giolio Giordano Giorgio_George Giovanni Giulio Giuseppe Goffredo_Godfrey Gregorio_Gregory Gualtiero Guarnito Guerrino Guglielmo Guido_Guy Guidone_Guy
+			Guigliadore Iacopo Igino Innocenzo Ippolito Isnardo Jacopo_Jacob Lamberto_Lambert Landolfo Landone Lanfranco Lattanzio Lazzarino Lazzaro
+			Lealdo Leonardo Leone_Leo Leonello Leopoldo Libero Lionello Livio Lodovico Lorenzo Luca Luchino Lucio_Lucius Luigi Malacresta Manfredo Manuele_Manuel
+			Marco_Marcus Mariano_Marius Marino Mario_Marius Marsiglio Martino_Martin Massimo Mastino Matteo_Matthew Merigo Michelangelo Michele_Michael  Napoleone Nazareno Nestore Niccolò Nicola
+			Nino Nolfo Oberto Obizzino Obizzo Oddone Omero Onorio Oreste Orlando Ottavio Ottobono Ottone_Otto Pagano Pancrazio Pandolfo Paolo Pasquale_Pascal
+			Patrizio_Patrick Pellegrino Pericle Pietro_Peter Pio Prospero Rafaello Radul Raimondo_Raymond Rainero Raineri Riccardo_Richard Rinaldo_Reinhold Rizzardo Roberto_Robert Rodolfo Rolando
+			Rosso Ruggiero Salinguerra Salvatore Salvestro Sante_Sancho Saverio Sciarra Sebastiano_Sebastian Secondotto Serafino Sergio Sesto Settimio Severino Severo
+			Silvano Silvestro Simone_Simon Simonetto Sinibaldo Sinucello Sozzo Spinetto Stefano_Stephen Stentore Taddeo Tedaldo Tedice Teodoro Tibaldo_Theobald Tiziano Tommaso
+			Torgodorio Torquato Ubaldo Uberto Ugo_Hugh Ugoccione Ugolino Umberto_Humbert Urbano Valentino_Valentin Valerio Vincentello Vincenzo_Vincent Virginio Vitale Vittore Vittorio Zaccaria
+		}
+		female_names = {
+			Abelina Adalberta Adalgisa Adelaida_Adelaide Adelasia Adelia_Adela Adriana Agalina Agnese_Agnes Agostina Albina Alda Alessandra Alfonsina Alisia_Alice Aloisia
+			Amalia_Amelia Ambrosia Anastasia_Anastasia Anna_Anna Antonella Antonia Argentina Augusta Aurelia Ausilia Ausonia Beatrice_Beatrice Benedetta_Benedicta Benilde Berenice
+			Berta Bianca_Blanche Bona_Bonne Brunilde_Brunhilda Camilla Candida Caracosa Carla Carola Caterina_Catherine Cecilia_Cecilia Clara_Clara Claudia Clorinda 
+			Clotilde_Clotilde Constanza_Constance Cornelia Delinda Dora Edda Elena_Helen Eleonora_Eleanor Elisa_Elisabeth Elisabetta_Elisabeth Ermenegilda Eudossia Eugenia
+			Fausta Felicia Felicita Filippa_Philippa Filomena Flavia Flora_Flora Fortunata Fosca Francesca_Francesca Froizza Giacinta Ginevra Giovanna Giuditta Giulia_Juliana 
+			Giuseppa Ippolita Isabella_Elisabeth Joscella Laura_Laura Lavinia Leonide Letizia Lidia Livia Lodovica Lucia_Lucia Lucinetta Lucrezia Maddalena_Magdalena Marcella 
+			Margherita_Margaret Maria_Maria Mariana Marietta Martina Matilda_Matilda Micaela Nunzia Paola_Paula Patrizia_Patricia Renata Ricciarda_Ricarda Silvana
+			Sofia_Sophia Stefania_Stephania Tiziana Tomasina Valentina Violante_Yolanda Virginia
+		}
+		from_dynasty_prefix = "di "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+	neapolitan = {
 		graphical_cultures = { italiangfx southerngfx }
 		
 		color = { 0.95 0.95 0.75 }
@@ -3665,6 +3825,91 @@ italian_group = {
 			Sabina_Sabina Susanna_Susan Teresa_Teresa
 		}
 		from_dynasty_prefix = "de "
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+	romagnan = {
+		graphical_cultures = { italiangfx southerngfx }
+		color = { 0.80 0.55 0.25 }	
+
+		male_names = {
+			Acciaiolo Adalberto_Albert Adriano_Adrian Agano_Aganos Agnolo_Angelus
+			Agostino_August Aimone_Aymon Alamanno_Alamann Alberto_Albert
+			Albizzone_Albitio Aldobrandino_Aldebrand Alessandro_Alexander
+			Alesso_Alexander Alfonso_Alphonse Alighiero_Adalgar Ambrogio_Ambrose
+			Amerigo_Aymeric Amodeo_Amadeus Anastasio_Anastasius Andrea_Andrew
+			Andreotto Andreuccio Angelo_Angelus Anselmo_Anselm Antonio_Anthony
+			Apollonio_Apollo Ardengo Arigerio Aristotile_Aristotle Arrigo_Henry
+			Atto_Hatto Aurelio_Aurelius Averardo_Abelard Azzolino_Ascelyn Bacciameo
+			Baccio Baldassarre_Balthazar Ballolfo Bandino_Brand Bando_Brand
+			Bartolo_Bartholomew Bartolomeo_Bartholomew Bastiano_Sebastian
+			Battista_Baptist Beato_Beat Bellincione Belisario_Belisarius
+			Benedetto_Benedict Benozzo Bencivenni_Benvenutus Bernardetto_Bernard
+			Bernardo_Bernard Berto_Bert Bertoldo_Bertold Biagio_Blaise Bicci
+			Bonaventura_Bonaventure Bonfiglio Bongianni Bonaccorso_Bonaccorso
+			Bonifacio_Bonifacius Bonino_Bonus Bono_Bonus Brigata_Bragadin Brunetto_Bruno
+			Bruno_Bruno Buonaccorso_Bonaccorso Cambio Canzio_Cantius Carlino_Charles
+			Carlo_Charles Carlone_Charles Catello_Catellus Cenni Cherico Chiarissimo
+			Cola Corrado_Conrad Costantino_Constantine Coppo_Jacob Corso_Bonaccorso
+			Cosimo_Cosmas Crescenzio_Crescent Cristofano_Christopher
+			Daimberto_Dagobert Damiano_Damian Davide_David Dello Dino_Dino
+			Diotisalvi Dodone Domenico_Dominic Donato_Donat Donosdeus Durante_Durand
+			Egidio_Egidius Eldizio Elinardo_Elinard Emanuele_Manuel Enea_Aeneas
+			Ercole_Heracles Eugerio Fabio_Fabius Fazio_Bonifacius Federigo_Frederick
+			Felice_Felix Filippo_Philip Folco_Folke Forese Franceschino_Francis
+			Francesco_Francis Gabriele_Gabriel Gaddo_Gerard Gebizzo Gelasio_Gelasius
+			Gerio_Geryon Gherardo_Gerard Giacchinotto Giacomo_Jacob
+			Giambattista_Jean-Baptiste Giambuono Gian_John Gianfrancesco
+			Giannozzo_John Gionata_Jonathan Giordano_Jordan Giovanni_John
+			Giovenco_John Girolamo_Jerome Giuliano_Julian Giulio_Julius
+			Giuseppe_Joseph Giusto_Justus Gualfredo_Walfrid Gugliarello
+			Guglielmo_William Guidalotto Guido_Guy Guidotto_Guy Guiscardo_Wiscard
+			Gunterone_Gunnar Ildebrando_Hildebrand Innocenzo_Innocent
+			Ippolito_Hippolyte Ischiano Jacopo_Jacob Lamberto_Lambert
+			Lambertuccio_Lambert Lanfranco_Lanfranc Lapo_Jacob Leonardo_Leonard
+			Leone_Leon Leonetto_Leon Lodovico_Louis Lorenzo_Lawrence Loso
+			Lottieri_Lothar Luca_Lucas Lucido_Lucas Luigi_Louis Lupo_Lupo
+			Manetto_Meinard Marco_Marcus Mariano_Marianus Mario_Marius
+			Mariotto_Marius Martino_Martin Maso_Thomas Matteo_Matthew
+			Maturino_Maturus Medico Megliore Michelangelo Michele_Michael Michelozzo
+			Monte Nanne_John Neri_Ragnar Nereo_Nereus Niccolò_Nicholas Nino_Ninus
+			Nunziato_Annuncius Oddo_Otto Oderrigo_Roderick Offreduccio
+			Onofrio_Onuphrius Orlando_Roland Ottaviano_Octavian Ottone_Otto
+			Pagano_Pagan Pagno_Boncompagno Palla Pandolfino_Pandulf Paolo_Paul
+			Pazzino_Pazzo Pazzo_Pazzo Pepo_Jacob Pierfrancesco Piero_Peter Pievano
+			Pigello Pinaccio Pisano Poggio Puccio_Jacob Radaldo_Radald
+			Raffaele_Raphael Raimondo_Raymond Rainerio_Reynard Ranieri_Ragnar
+			Renato_Renatus Ridolfo_Rolf Rinaldo_Reynold Roberto_Robert Rodolfo_Rolf
+			Romano_Roman Romulo_Romulus Rossello_Rosso Rosso_Rosso Ruggero_Roger
+			Sallustio_Sallustius Salvestro_Silvester Salvino_Salvador Schiatta
+			Sciarra Silvestro_Silvester Silvio_Silvius Simone_Simon Simonetto_Simon
+			Stefano_Stephen Stoldo Strozza Taddeo_Thaddeus Tito_Titus Tommaso_Thomas
+			Trasmondo Truffino Ubaldo_Hubald Ubertino_Hubert Uberto_Hubert Ugo_Hugh
+			Uguccione_Hugh Ugolino_Hugh Valentino_Valentin Vanni_John
+			Vespasiano_Vespasian Vieri_Oliver Villano_Villanus Vincenzo_vincent
+			Vinizzone Viviano_Vivian Zanobi_Zenobios
+		}
+		female_names = {
+			Alessandra_Alexandra Alfonsina_Alphonsine Beatrice_Beatrice
+			Bianca_Blanche Camilla_Camilla Caterina_Catherine Chiara_Clare
+			Clarice_Clarice Claudia_Claudia Contessina Elena_Helen Eleonoraa_Eleanor
+			Emilia_Emily Francesca_Francesca Ginevra_Jennifer Giulia_Julia 
+			Giuliana_Juliana Iacopa_Jacqueline Isabella_Isabella Laudomia
+			Lisa_Elisabeth Lisabetta_Elisabeth Lucrezia_Lucretia Luisa_Louise
+			Maddalena_Magdalena Margherita_Margaret Maria_Maria Paola_Paula
+			Piccarda Porzia_Portia Selvaggia_Selvaggia Semiramide_Semiramis
+			Taddea Umiliana
+		}
+		from_dynasty_prefix = "di "
 
 		modifier = default_culture_modifier
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.

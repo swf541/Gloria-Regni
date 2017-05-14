@@ -10456,11 +10456,11 @@ e_italy = {
 			}
 		}
 		
-		d_sardinia = {
-			color={ 217 159 255 }
-			color2={ 255 255 255 }
+		d_corsica = {
+			color = { 220 167 220 }
+			color2 = { 255 255 255 }
 			
-			capital = 326 # Cagliari
+			capital = 324
 			
 			c_cap_corse = {
 				color = { 111 123 15 }
@@ -10496,6 +10496,14 @@ e_italy = {
 				b_aleria = {
 				}
 			}
+		}
+			
+		d_sardinia = {
+			color={ 217 159 255 }
+			color2={ 255 255 255 }
+			
+			capital = 326 # Cagliari
+			
 			c_gallura = {
 				color = { 124 111 170 }
 				color2 = { 255 255 255 }

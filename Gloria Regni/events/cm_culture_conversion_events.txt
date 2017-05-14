@@ -62,49 +62,6 @@ province_event = {
 	}
 }
 
-# Lombard province converts to Italian
-province_event = {
-	id = CM.2
-	desc = EVTDESC_CM_2
-	picture = GFX_evt_stone_church
-
-	trigger = {
-		culture = lombard
-		region = world_europe_south_italy
-		any_province_holding = {
-			NOT = { holding_type = nomad }
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 2400
-		modifier = {
-			factor = 0.3
-			owner = {
-				culture_group = latin
-			}
-		}
-		modifier = {
-			factor = 0.3
-			OR = {
-				has_game_rule = {
-					name = culture_conversion
-					value = faster_melting_pots
-				}
-				has_game_rule = {
-					name = culture_conversion
-					value = faster_melting_pots_and_slower_normal
-				}
-			}
-		}
-	}
-
-	option = {
-		name = EVTOPTA_CM_2
-		culture = italian
-	}
-}
-
 # Old Saxon or Old Frankish or Frisian province converts to Dutch
 province_event = {
 	id = CM.3
