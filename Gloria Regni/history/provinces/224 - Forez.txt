@@ -19,14 +19,14 @@ b_montbrison = city
 #b_stetienne = city
 
 # Misc
-culture = galloroman
+culture = romano_aquitanian
 religion = hellenic_pagan
 
 # History
 540.1.1 = {
 	religion = imperial
 }
-769.1.1 = { occitan }
+867.1.1 = { culture = occitan }
 1054.7.6 = { religion = catholic }
 
 1187.1.1 = { b_roanne = castle }
