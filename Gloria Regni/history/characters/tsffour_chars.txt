@@ -1600,3 +1600,360 @@
 		death = yes
 	}
 }
+184306={
+	name=Mamoudou
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	549.5.25={ birth=yes }
+	570.1.1={ add_spouse=184319 }
+	598.12.4={ death=yes }
+}
+184307={
+	name=Tandian
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184306	#Mamoudou
+	mother=184319	#Tekhaye
+	573.6.19={ birth=yes }
+	594.1.1={ add_spouse=184320 }
+	633.1.17={ death=yes }
+}
+184308={
+	name=Niakhaté
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184306	#Mamoudou
+	mother=184319	#Tekhaye
+	577.2.4={ birth=yes }
+	638.3.14={ death=yes }
+}
+184309={
+	name=Sylla
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184306	#Mamoudou
+	mother=184319	#Tekhaye
+	580.1.23={ birth=yes }
+	638.6.9={ death=yes }
+}
+184310={
+	name=Zakoi
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184307	#Tandian
+	mother=184320	#Zeinab
+	598.3.14={ birth=yes }
+	619.1.1={ add_spouse=184321 }
+	670.1.2={ death=yes }
+}
+184311={
+	name=Safiatou
+	female=yes
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184307	#Tandian
+	mother=184320	#Zeinab
+	600.7.11={ birth=yes }
+	663.3.13={ death=yes }
+}
+184312={
+	name=Takoi
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184307	#Tandian
+	mother=184320	#Zeinab
+	604.10.8={ birth=yes }
+	671.3.26={ death=yes }
+}
+184313={
+	name=Yasiboy
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184307	#Tandian
+	mother=184320	#Zeinab
+	608.8.19={ birth=yes }
+	661.3.14={ death=yes }
+}
+184314={
+	name=Djenly
+	female=yes
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184307	#Tandian
+	mother=184320	#Zeinab
+	611.8.3={ birth=yes }
+	656.3.3={ death=yes }
+}
+184315={
+	name=Kanafa
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184310	#Zakoi
+	mother=184321	#Sidibé
+	621.7.10={ birth=yes }
+	674.6.15={ death=yes }
+}
+184316={
+	name=Sané
+	female=yes
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184310	#Zakoi
+	mother=184321	#Sidibé
+	623.11.7={ birth=yes }
+	674.12.19={ death=yes }
+}
+184317={
+	name=Djire
+	female=yes
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184310	#Zakoi
+	mother=184321	#Sidibé
+	626.1.20={ birth=yes }
+	695.1.4={ death=yes }
+}
+184318={
+	name=Djeneba
+	female=yes
+	dynasty=1000124338
+	culture=soninke 
+	religion=west_african_pagan
+	father=184310	#Zakoi
+	mother=184321	#Sidibé
+	630.10.4={ birth=yes }
+	680.12.11={ death=yes }
+}
+184319={
+	name=Tekhaye
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	549.1.1={ birth=yes }
+	598.1.1={ death=yes }
+}
+184320={
+	name=Zeinab
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	573.1.1={ birth=yes }
+	633.1.1={ death=yes }
+}
+184321={
+	name=Sidibé
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	598.1.1={ birth=yes }
+	670.1.1={ death=yes }
+}
+184322={
+	name=Tib
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	559.3.14={ birth=yes }
+	580.1.1={ add_spouse=184330 }
+	626.11.29={ death=yes }
+}
+184323={
+	name=Soumaba
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184322	#Tib
+	mother=184330	#Kolonkan
+	582.2.8={ birth=yes }
+	603.1.1={ add_spouse=184331 }
+	654.1.13={ death=yes }
+}
+184324={
+	name=Aoua
+	female=yes
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184322	#Tib
+	mother=184330	#Kolonkan
+	584.10.19={ birth=yes }
+	648.6.16={ death=yes }
+}
+184325={
+	name=Aichata
+	female=yes
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184323	#Soumaba
+	mother=184331	#Fatoumata
+	607.1.19={ birth=yes }
+	656.3.3={ death=yes }
+}
+184326={
+	name=Youma
+	female=yes
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184323	#Soumaba
+	mother=184331	#Fatoumata
+	611.2.19={ birth=yes }
+	676.4.5={ death=yes }
+}
+184327={
+	name=Majan
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184323	#Soumaba
+	mother=184331	#Fatoumata
+	613.9.4={ birth=yes }
+	675.12.5={ death=yes }
+}
+184328={
+	name=Alima
+	female=yes
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184323	#Soumaba
+	mother=184331	#Fatoumata
+	616.1.19={ birth=yes }
+	679.1.14={ death=yes }
+}
+184329={
+	name=Salman
+	dynasty=1000124339
+	culture=soninke 
+	religion=west_african_pagan
+	father=184323	#Soumaba
+	mother=184331	#Fatoumata
+	621.12.27={ birth=yes }
+	687.2.17={ death=yes }
+}
+184330={
+	name=Kolonkan
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	559.1.1={ birth=yes }
+	626.1.1={ death=yes }
+}
+184331={
+	name=Fatoumata
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	582.1.1={ birth=yes }
+	654.1.1={ death=yes }
+}
+184332={
+	name=Kabayo
+	dynasty=1000124340
+	culture=soninke 
+	religion=west_african_pagan
+	560.8.22={ birth=yes }
+	581.1.1={ add_spouse=184339 }
+	612.8.21={ death=yes }
+}
+184333={
+	name=Soumaba
+	dynasty=1000124340
+	culture=soninke 
+	religion=west_african_pagan
+	father=184332	#Kabayo
+	mother=184339	#Lorane
+	581.6.8={ birth=yes }
+	602.1.1={ add_spouse=184340 }
+	654.4.1={ death=yes }
+}
+184334={
+	name=Amita
+	female=yes
+	dynasty=1000124340
+	culture=soninke 
+	religion=west_african_pagan
+	father=184332	#Kabayo
+	mother=184339	#Lorane
+	584.6.1={ birth=yes }
+	649.8.29={ death=yes }
+}
+184335={
+	name=Wali
+	dynasty=1000124340
+	culture=soninke 
+	religion=west_african_pagan
+	father=184332	#Kabayo
+	mother=184339	#Lorane
+	586.7.26={ birth=yes }
+	643.10.7={ death=yes }
+}
+184336={
+	name=Wali
+	dynasty=1000124340
+	dna="ejgmmjginlh"
+	culture=soninke 
+	religion=west_african_pagan
+	father=184332	#Kabayo
+	mother=184339	#Lorane
+	591.7.1={ birth=yes }
+	656.4.10={ death=yes }
+}
+184337={
+	name=Kolonkan
+	female=yes
+	dynasty=1000124340
+	culture=soninke 
+	religion=west_african_pagan
+	father=184333	#Soumaba
+	mother=184340	#Siya
+	608.12.15={ birth=yes }
+	666.10.20={ death=yes }
+}
+184338={
+	name=Kaba
+	dynasty=1000124340
+	dna="efahdomjiel"
+	culture=soninke 
+	religion=west_african_pagan
+	father=184333	#Soumaba
+	mother=184340	#Siya
+	612.8.11={ birth=yes }
+	674.12.2={ death=yes }
+}
+184339={
+	name=Lorane
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	560.1.1={ birth=yes }
+	612.1.1={ death=yes }
+}
+184340={
+	name=Siya
+	female=yes
+	dynasty=0
+	culture=soninke
+	religion=west_african_pagan
+	581.1.1={ birth=yes }
+	654.1.1={ death=yes }
+}
