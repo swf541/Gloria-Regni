@@ -77,50 +77,6 @@ israelite = {
 		modifier = israelite_culture_modifier
 
 	}
-	iberiani = {
-		graphical_cultures = { byzantinegfx }
-		
-		color = { 0.8 0.5 0.8 }
-
-		male_names = {
-			Ach'av Adalya Adinah Adlai Adoniyah Aharon Amaryahu Amnon Amos Anat Ari'el Asher Aviram Barak Barukh Belshatzzar Benayahu Binyamin Boaz Chananya Chanokh Chavaqquq Chizqiyahu Dan Daniyyel Daryawesh Dawid Delayahu Diklah Efrayim Ehud Eiran Eitan El'Azar Eli Eli'ezer Elifalet Elifelet Elihu Elisha Eliyyahu Elkanah Ezra Gavri'el Gedalyahu Gemaryahu Gershom Gid'on Gilad Golyat Haran Hevel Hillel Hiram Hoshea Immanuel Ira' Itamar Ittay Iyyov Kalev Kayin Keinan Kenanyahu Koresh Lemuel Lewi Lot Machlah Machli Mal'akhi Mattan Mattanyahu Menachem Menashsheh Meshullam Metushelach Mikha'el Mikhah Mikhayhu Mordokhay Moshe Nachum Nadav Natan Nechemyah Neriah Nethanel Noach Nogah Ofir Ofrah Omri Ovadyah Oved Peleg Penuel Peretz Pinchas Rafa'el Rueven Seraiah Sha'ul Shelomoh Shem Shema'yah Shemu'el Shet Shimon Shimshon Talmai Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah Uri Uriy'el Uzzi Uzziel Yaakov Yachin Yadon Yair Ya'rah Yechezkel Yechi'el Yedidyah Yefet Yeho'ash Yehochanan Yehonatan Zekharyah Zerach Zevadyah Zevulun
-		}
-		female_names = {
-			Achinoam Anat Asenat Ashtoret Atalyah Atarah Avigayil Avishag Avital Aviyah Basmat Bat-Sheva Beulah Bityah Chaggit Channah Chawwah Cheftzi-Bah Chuldah Delilah Devorah Diklah Dinah Ednah Efrat Elisheba Ester Hadassah Hagar Hodiyah Izevel Keren-Happukh Ketzi'ah Leah Machalat Machlah Meheitav'el Merav Mikhal Mikhayhu Miriam Moriah Na'amah Na'omi No'ah Nogah Ofir Orpah Rachel Rivqah Rut Sarah Sarai Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah Washti Yael Yedidah Yehudit Yemima Yerushah Yiskah Yocheved Yuval Zilpah
-		}
-		
-		from_dynasty_prefix = "of "
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 50
-		mat_grf_name_chance = 25
-		father_name_chance = 15
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 50
-		mat_grm_name_chance = 25
-		mother_name_chance = 15
-		
-		modifier = israelite_culture_modifier
-
-	}
-	romaniote = {
-		graphical_cultures = { byzantinegfx }
-      
-		color = { 0.35 0.45 0.35 } 
-
-		male_names = {
-		Abraham_Abraham Adam_Adam Aharon_Aaron Alexandros_Alexander Alexios_Alexis Amnon Amon Andzelos_Angelos Ariel_Ariel Askinazi Avraam Barouch Bartholomaios_Bartolomeus Bechoraki Benjamin_Benjamin Daniel_Daniel David_David Davijon Eli'ezer Eliezer Elijah_Elijah Esdras Gabriel_Gabriel Georgios_George Iacob_Jacob Iakobos_Jacob Ilias Ioannes_John Iosef_Joseph Isaak_Isaac Isaakios_Isaac Ishmael_Ishmael Israel_Israel Matsel Meir Mikhael_Michael Moisis Molhos Mordechai Mordos Moshe_Moses Moskos Natanel Nissim Noah Ovadia_Obadia Petros_Peter Rabenu_Reuben Raphael Sabbatai Samuel_Samuel Sason_Samson Saul Shalom Shlomo Simon_Simon Solomon_Solomon Symeon_Simon Tzaddik Yohanan_John Zacharias_Zacharias
-		}
-		female_names = {
-		Ada_Ada Alexandra Amalia Anna_Anna Dana_Dana Deborah_Deborah Dina_Dinah Dorothea_Dorothy Eftihia Eirene_Irene Gracia_Grace Hanna_Hannah Ioanna_Joan Maria_Maria Marika_Mary Martha_Martha Mina_Mina Miriam_Maria Naomi Perna Rachel_Rachel Rae Ruth_Ruth Sarah_Sarah Simone_Simonis Sophia_Sophia Stemma Sterina_Esther Susanna_Susana Tamar_Tamar Velleli_Bella Yehudis_Judith Yohana_Joan Zoe
-		}
-		male_patronym = "ben "
-		female_patronym = "bat "
-		prefix = no
-
-		modifier = default_culture_modifier
-	}
-
 	jewish_aramean = { 
 		graphical_cultures = { muslimgfx }
 		
@@ -188,7 +144,7 @@ israelite = {
 		modifier = default_culture_modifier
 	}
     beta_yisraeli = { #Beta-Israel, originally compiled by Frostschaden, many more names added by cybrxkhan
-        graphical_cultures = { africangfx }
+        graphical_culture = africangfx
 
         color = { 0.3 0.35 0.25 }
 
@@ -210,52 +166,4 @@ israelite = {
         
         modifier = default_culture_modifier
     }		
-	ashkenazi = {
-		graphical_cultures = { byzantinegfx }
-		
-		color = { 0.6 0.3 0.6 }
-
-		male_names = {
-			Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi Baruch
-			Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel
-			Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel 
-			Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam 
-			Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi 
-			Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi 
-			Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah 
-			Yisrael Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
-		}
-		female_names = {
-			Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-			Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil
-		}
-		
-		from_dynasty_prefix = "of "
-
-		modifier = default_culture_modifier
-	}
-	sephardi = {
-		graphical_cultures = { byzantinegfx }
-		
-		color = { 0.7 0.2 0.7 }
-
-		male_names = {
-			Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi Baruch
-			Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel
-			Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel 
-			Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam 
-			Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi 
-			Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi 
-			Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah
-			Yisrael Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
-		}
-		female_names = {
-			Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-			Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil
-		}
-		
-		from_dynasty_prefix = "of "
-
-		modifier = default_culture_modifier
-	}
 }
