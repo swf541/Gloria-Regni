@@ -9,7 +9,7 @@ decisions = {
                                 NOT = { religion = hellenic_pagan_reformed }
                                 NOT = { religion = sol_invictus }
                                 NOT = { trait = zealous } 
-                                NOT = { secretly_hellenic_pagan }
+                                NOT = {secret_society = secretly_hellenic_pagan}
                                 OR = {
                                         has_landed_title = e_wre
                                         has_landed_title = e_roman_empire
