@@ -4,10 +4,19 @@ bm_constantine = {
 	date = 321.1.1
 	
 }
-bm_Julian = {
+bm_julian = {
 	name = "bm_julian"
 	desc = "BM_JULIAN_INFO"
 	date = 355.11.6 
+
+	selectable_character = {
+		id = 145237 # Julian
+	}
+
+	selectable_character = {
+		id = 70521 # Constantius	
+	}
+	
 }
 bm_majorian = {
 	name = "bm_majorian"
