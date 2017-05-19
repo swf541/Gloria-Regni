@@ -4,6 +4,11 @@ bm_constantine = {
 	date = 321.1.1
 	
 }
+bm_Julian = {
+	name = "bm_julian"
+	desc = "BM_JULIAN_INFO"
+	date = 355.11.6 
+}
 bm_majorian = {
 	name = "bm_majorian"
 	desc = "BM_MAJORIAN_INFO"
@@ -254,7 +259,7 @@ bm_the_old_gods = {
 	### These are not shown unless the player is viewing custom bookmarks
 
 	selectable_character = {
-		id = 33358 # Æthelred
+		id = 33358 # Ã†thelred
 	}
 
 	selectable_character = {
@@ -390,7 +395,7 @@ bm_fate_of_england = {
 	}
 
 	selectable_character = {
-		id = 102531 # Harald Hårdråde
+		id = 102531 # Harald HÃ¥rdrÃ¥de
 	}
 
 	selectable_character = {
@@ -734,7 +739,7 @@ bm_100_years_war = {
 	}
 
 	selectable_character = {
-		id = 480000 # Özbeg Khan of Golden Horde
+		id = 480000 # Ã–zbeg Khan of Golden Horde
 		age = 55
 		name = ERA_CHAR_NAME_480000
 		title = e_golden_horde
