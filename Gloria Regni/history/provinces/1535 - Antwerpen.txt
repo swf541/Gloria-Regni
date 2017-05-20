@@ -1,4 +1,4 @@
-# 92 - Breda
+# 1535 - Antwerpen
 
 # County Title
 title = c_antwerpen
@@ -17,7 +17,11 @@ culture = galloroman
 religion = imperial
 
 # History
-350.1.1 = { culture = old_frankish }
+350.1.1 = { 
+	culture = old_frankish 
+	religion = germanic_pagan
+}
+700.1.1 = { religion = imperial }
 790.1.1 = { culture = dutch }
 1054.1.1 = { religion = catholic }
 
