@@ -15,12 +15,14 @@ b_ardara = temple
 #b_santaigia = castle
 
 # Misc
-culture = old_italian
+culture = roman
 religion = hellenic_pagan
 terrain = mountain
 
 # History
 558.1.1 = { religion = imperial }
+
+629.1.1 = { culture = old_italian }
 867.1.1 = { culture = sardinian }
 1054.7.6 = { religion = catholic }
 1066.1.1 = { trade_post = b_visconti }

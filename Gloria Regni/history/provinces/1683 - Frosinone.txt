@@ -1,4 +1,4 @@
-# 333 - Roma
+# 1683 - Frosinone
 
 # County Title
 title = c_frosinone
@@ -12,10 +12,13 @@ b_frosinone4 = castle
 
 
 # Misc
-culture = old_italian
+culture = roman
 religion = imperial
 
 # History
+
+629.1.1 = { culture = old_italian }
+
 867.1.1 = { 
 	culture = italian
 }
