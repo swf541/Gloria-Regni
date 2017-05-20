@@ -7,7 +7,7 @@ decisions = {
                                 NOT = { has_character_flag = attempting_to_join_Return_Zoroastrian_Religion }
                                 NOT = { religion =  zoroastrian }
                                 NOT = { trait = zealous } 
-                                NOT = { secretly_zoroastrian}
+                                NOT = { secret_society = secretly_zoroastrian }
                                 OR = {
                                       culture_group = iranian
                                       culture = persian
