@@ -5,10 +5,10 @@ decisions = {
                                 age = 16
                                 NOT = { trait = on_pilgrimage }
                                 NOT = { has_character_flag = attempting_to_join_Restore_Germanic_Religion }
-                                NOT = {religion = germanic_pagan}
-				NOT = {religion = germanic_pagan_reformed}
+                                NOT = { religion = germanic_pagan }
+				NOT = { religion = germanic_pagan_reformed }
                                 NOT = { trait = zealous } 
-				NOT = { secretly_germanic_pagan }
+				NOT = { secret_society = secretly_germanic_pagan }
                                 OR = {
                                       culture_group = north_germanic
 				      culture_group = west_germanic
