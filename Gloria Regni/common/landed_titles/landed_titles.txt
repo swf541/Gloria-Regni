@@ -3953,6 +3953,27 @@ e_germany = {
 				b_stubing = {
 				}
 			}
+			c_karnten = {
+				color={ 125 225 195 }
+				color2={ 255 255 255 }
+				
+				b_villach = {
+				}
+				b_klagenfurt = {
+				}
+				b_ossiach = {
+				}
+				b_laibach = {
+				}
+				b_treffen = {
+				}
+				b_sann = {
+				}
+				b_pettau = {
+				}
+				b_wolfsberg = {
+				}
+			}
 		}
 		
 		d_tyrol = {  
@@ -4046,7 +4067,50 @@ e_germany = {
 				b_zuoz = {
 				}
 			}
+			c_grisons = {
+				color={ 255 241 230 }
+				color2={ 255 255 255 }
+				
+				b_bellinzona = {
+				}
+				b_disentis = {
+				}
+				b_locarno = {
+				}
+				b_biasca = {
+				}
+				b_domo = {
+				}
+				b_lugano = {
+				}
+				b_musso = {
+				}
+				b_mendrisio = {
+				}
+			}
+			c_schwyz = {
+				color={ 167 28 66 }
+				color2={ 255 255 255 }
+				
+				b_schwyz = {
+				}
+				b_engelberg = {
+				}
+				b_zurich = {
+				}
+				b_zug = {
+				}
+				b_altdorf = {
+				}
+				b_stans = {
+				}
+				b_glarus = {
+				}
+				b_winterthur = {
+				}
+			}
 		}
+		
 		
 		d_carinthia = {
 			color={ 165 255 250 }
@@ -4114,27 +4178,6 @@ e_germany = {
 				b_zerknitz = {
 				}
 				b_stveit = {
-				}
-			}
-			c_karnten = {
-				color={ 125 225 195 }
-				color2={ 255 255 255 }
-				
-				b_villach = {
-				}
-				b_klagenfurt = {
-				}
-				b_ossiach = {
-				}
-				b_laibach = {
-				}
-				b_treffen = {
-				}
-				b_sann = {
-				}
-				b_pettau = {
-				}
-				b_wolfsberg = {
 				}
 			}
 			
@@ -7603,6 +7646,18 @@ e_byzantium = {
 				}
 				b_topraisar = {
 				}
+			}
+			c_cernavoda = {
+				color = { 215 115 233 }
+				color2 = { 255 255 255 }
+				
+				b_cernavoda1 = { }
+				b_cernavoda2 = { }
+				b_cernavoda3 = { }
+				b_cernavoda4 = { }
+				b_cernavoda5 = { }
+				b_cernavoda6 = { }
+				b_cernavoda7 = { }
 			}
 		}
 	}
@@ -13637,38 +13692,6 @@ e_wendish_empire = {
 			
 			capital = 429 # Gnieznenskie
 		
-			c_lubusz = {
-				color={ 135 30 30 }
-				color2={ 255 255 255 }
-				
-				german = Lebus
-				swedish = Lebus
-				norse = Lebus
-				norwegian = Lebus
-				danish = Lebus
-			
-				b_lubusz = {
-					german = Lebus
-					swedish = Lebus
-					norse = Lebus
-					norwegian = Lebus
-					danish = Lebus
-				}
-				b_mysliborz = {
-				}
-				b_kostrzyn = {
-				}
-				b_cedynia = {
-				}
-				b_pryzyce = {
-				}
-				b_sulecin = {
-				}
-				b_santok = {
-				}
-				b_zielonagora = {
-				}
-			}
 			c_gnieznienskie = {
 				color={ 125 6 2 }
 				color2={ 255 255 255 }
@@ -14260,6 +14283,38 @@ e_wendish_empire = {
 				b_pyritz = {
 				}
 			}
+			c_lubusz = {
+				color={ 135 30 30 }
+				color2={ 255 255 255 }
+				
+				german = Lebus
+				swedish = Lebus
+				norse = Lebus
+				norwegian = Lebus
+				danish = Lebus
+			
+				b_lubusz = {
+					german = Lebus
+					swedish = Lebus
+					norse = Lebus
+					norwegian = Lebus
+					danish = Lebus
+				}
+				b_mysliborz = {
+				}
+				b_kostrzyn = {
+				}
+				b_cedynia = {
+				}
+				b_pryzyce = {
+				}
+				b_sulecin = {
+				}
+				b_santok = {
+				}
+				b_zielonagora = {
+				}
+			}
 		}
 		d_pomeralia = {
 			color={ 95 135 77 }
@@ -14344,7 +14399,6 @@ e_wendish_empire = {
 				}
 			}
 		}
-		
 		d_saxony = {
 			color={ 70 70 70 }
 			color2={ 255 255 255 }
@@ -22639,18 +22693,6 @@ e_carpathia = {
 				b_crisan = {
 				}
 			}
-			c_cernavoda = {
-				color = { 215 115 233 }
-				color2 = { 255 255 255 }
-				
-				b_cernavoda1 = { }
-				b_cernavoda2 = { }
-				b_cernavoda3 = { }
-				b_cernavoda4 = { }
-				b_cernavoda5 = { }
-				b_cernavoda6 = { }
-				b_cernavoda7 = { }
-			}
 		}
 		d_moldau = {
 			color={ 223 202 145 }
@@ -25517,27 +25559,6 @@ e_france = {
 			
 			capital = 135 # Bourgogne
 			
-			c_grisons = {
-				color={ 255 241 230 }
-				color2={ 255 255 255 }
-				
-				b_bellinzona = {
-				}
-				b_disentis = {
-				}
-				b_locarno = {
-				}
-				b_biasca = {
-				}
-				b_domo = {
-				}
-				b_lugano = {
-				}
-				b_musso = {
-				}
-				b_mendrisio = {
-				}
-			}
 			
 			c_neuchatel = {
 				color={ 163 24 62 }
@@ -25579,27 +25600,6 @@ e_france = {
 				b_kyburg = {
 				}
 				b_sursee = {
-				}
-			}
-			c_schwyz = {
-				color={ 167 28 66 }
-				color2={ 255 255 255 }
-				
-				b_schwyz = {
-				}
-				b_engelberg = {
-				}
-				b_zurich = {
-				}
-				b_zug = {
-				}
-				b_altdorf = {
-				}
-				b_stans = {
-				}
-				b_glarus = {
-				}
-				b_winterthur = {
 				}
 			}
 			c_aargau = {
