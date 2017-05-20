@@ -17,10 +17,14 @@ b_tholen = temple # Norse Pagan Holy Site
 #b_zierikzee = city
 
 # Misc
-culture = frisian
-religion = germanic_pagan
+culture = galloroman
+religion = hellenic_pagan
 
 # History
+350.1.1 = { 
+	culture = frisian
+	religion = germanic_pagan
+}
 700.1.1 = { religion = imperial }
 790.1.1 = { culture = dutch }
 1054.7.6 = { religion = catholic }
