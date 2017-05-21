@@ -1,0 +1,124 @@
+targetted_decisions = {
+	appoint_vestal_virgin = { 
+		only_playable = yes
+		ai_target_filter = realm
+		filter = realm	
+
+		potential = {
+			NOT = { trait = incapable }
+			is_landed = no
+			is_female = yes
+			is_heir = no
+			age = 6
+			NOT = { age = 11 }
+			religion = FROM
+			NAND = {
+				is_society_rank_full = { 
+					society = the_vestal_virgins
+					rank = 1
+				}
+			}
+		}
+		
+		from_potential = {
+			has_DLC = "Mystics"
+			tier = emperor
+			or = { 
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+			is_adult = yes
+			NOT = { trait = incapable }
+			completely_controls = c_roma
+		}
+		
+		allow = {
+
+
+		}
+		
+		effect = {
+			join_society = the_vestal_virgins
+
+		}
+		
+		revoke_allowed = {
+		always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0.01
+			}
+			#modifier = {
+			#	factor = 0
+			#}
+		}
+	}
+	
+	appoint_virgo_vestalis_maxima = { 
+		only_playable = yes
+		ai_target_filter = realm
+		filter = realm	
+	
+		potential = {
+			NOT = { trait = incapable }
+			is_landed = no
+			is_female = yes
+			age = 6
+			NOT = { age = 11 }
+			religion = FROM
+			is_heir = no
+			NAND = {
+				is_society_rank_full = { 
+					society = the_vestal_virgins
+					rank = 1
+				}
+			}
+			NAND = {
+				is_society_rank_full = { 
+					society = the_vestal_virgins
+					rank = 2
+				}
+			}
+		}
+		
+		from_potential = {
+			has_DLC = "Mystics"
+			tier = emperor
+			or = { 
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+			is_adult = yes
+			NOT = { trait = incapable }
+			completely_controls = c_roma
+		}
+		
+		allow = {
+
+		}
+		
+		effect = {
+			join_society = the_vestal_virgins
+			society_rank_up = 1
+		}
+		
+		revoke_allowed = {
+		always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0.01
+			}
+			#modifier = {
+			#	factor = 0
+			#}
+		}
+	}
+}
+
+
