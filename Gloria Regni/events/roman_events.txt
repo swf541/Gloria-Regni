@@ -630,7 +630,7 @@ narrative_event = {
 				narrative_event = { id = LoR.21 }
 			}
 		}
-		add_trait = augustus
+#		add_trait = augustus
 		give_nickname = nick_the_glorious
 	}
 }
@@ -922,53 +922,5 @@ narrative_event = {
 		name = EVTOPTALoR.40
 		set_global_flag = roman_borders
 		prestige = 1000
-	}
-}
-
-### The Augustus Trait
-
-# Augustus Trait Gained
-character_event = {
-	id = LoR.45
-	desc = EVTDESCLoR.45
-	picture = GFX_evt_rome_restored_byzantine
-	
-	trigger = {
-		has_dlc = "Legacy of Rome"
-        is_female = no
-		NOT = { trait = augustus }
-		has_landed_title = e_roman_empire
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = EVTOPTALoR.45
-		add_trait = augustus
-	}
-}
-
-# Augustus Trait Lost
-character_event = {
-	id = LoR.46
-	desc = EVTDESCLoR.46
-	picture = GFX_evt_rome_restored_byzantine
-		
-	trigger = {
-		has_dlc = "Legacy of Rome"
-		trait = augustus
-		is_alive = yes
-		NOT = { has_landed_title = e_roman_empire }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = EVTOPTALoR.46
-		remove_trait = augustus
 	}
 }
