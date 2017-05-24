@@ -2716,43 +2716,41 @@
 184416={
 	name=Dankaran
 	dynasty=1000124347
-	dna="eibjenbfjfl"
-	culture=manden religion=bori
-	martial=7 diplomacy=7 stewardship=6 intrigue=8 learning=5
-	add_trait=misguided_warrior add_trait=charitable add_trait=proud add_trait=diligent add_trait=shy 
+	culture=manden 
+	religion=bori
 	549.9.23={ birth=yes }
+	570.1.1={ add_spouse=184432 }
 	601.2.3={ death=yes }
 }
 184417={
 	name=Demba
 	dynasty=1000124347
-	dna="gkbaknddjge"
-	culture=manden religion=bori
-	martial=7 diplomacy=7 stewardship=6 intrigue=4 learning=7
-	add_trait=martial_cleric add_trait=proud add_trait=envious add_trait=temperate add_trait=wroth 
-	add_trait=lustful add_trait=cruel 
+	culture=manden 
+	religion=bori
 	father=184416	#Dankaran
+	mother=184432	#Namandjé
 	573.5.26={ birth=yes }
+	594.1.1={ add_spouse=184433 }
 	633.8.7={ death=yes }
 }
 184418={
 	name=Namandjé
 	female=yes
 	dynasty=1000124347
-	dna="jnkjehbfjce"
-	culture=manden religion=bori
+	culture=manden 
+	religion=bori
 	father=184416	#Dankaran
+	mother=184432	#Namandjé
 	577.5.12={ birth=yes }
 	629.1.24={ death=yes }
 }
 184419={
 	name=Majan
 	dynasty=1000124347
-	dna="libfenijjje"
-	culture=manden religion=bori
-	martial=5 diplomacy=4 stewardship=8 intrigue=7 learning=7
-	add_trait=mastermind_theologian add_trait=ambitious add_trait=lustful 
+	culture=manden 
+	religion=bori
 	father=184416	#Dankaran
+	mother=184432	#Namandjé
 	579.4.22={ birth=yes }
 	636.3.2={ death=yes }
 }
@@ -2760,21 +2758,20 @@
 	name=Hawa
 	female=yes
 	dynasty=1000124347
-	dna="ehbjenbakfe"
-	culture=manden religion=bori
+	culture=manden 
+	religion=bori
 	father=184416	#Dankaran
+	mother=184432	#Namandjé
 	582.6.12={ birth=yes }
 	657.2.15={ death=yes }
 }
 184421={
 	name=Kambine
 	dynasty=1000124347
-	dna="eebjmnfjbfd"
-	culture=manden religion=bori
-	martial=5 diplomacy=4 stewardship=7 intrigue=5 learning=6
-	add_trait=misguided_warrior add_trait=greedy add_trait=craven add_trait=proud add_trait=temperate 
-	add_trait=honest add_trait=wounded 
+	culture=manden 
+	religion=bori
 	father=184416	#Dankaran
+	mother=184432	#Namandjé
 	586.2.12={ birth=yes }
 	639.7.5={ death=yes }
 }
@@ -2782,21 +2779,22 @@
 	name=Hargani
 	dynasty=1000124347
 	dna="gkbakniiage"
-	culture=manden religion=bori
-	martial=4 diplomacy=6 stewardship=6 intrigue=4 learning=4
-	add_trait=midas_touched add_trait=mystic add_trait=lustful add_trait=greedy add_trait=paranoid 
-	add_trait=arbitrary add_trait=diligent add_trait=depressed 
+	culture=manden 
+	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	599.7.5={ birth=yes }
+	620.1.1={ add_spouse=184434 }
 	649.3.25={ death=yes }
 }
 184423={
 	name=Aichata
 	female=yes
 	dynasty=1000124347
-	dna="gkeaknddjgh"
-	culture=manden religion=bori
+	culture=manden 
+	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	602.10.5={ birth=yes }
 	664.11.14={ death=yes }
 }
@@ -2804,9 +2802,10 @@
 	name=Ina
 	female=yes
 	dynasty=1000124347
-	dna="dpmpcnkocge"
-	culture=manden religion=bori
+	culture=manden 
+	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	606.11.8={ birth=yes }
 	664.10.4={ death=yes }
 }
@@ -2814,9 +2813,10 @@
 	name=Djire
 	female=yes
 	dynasty=1000124347
-	dna="gknaknkephe"
-	culture=manden religion=bori
+	culture=manden 
+	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	609.10.1={ birth=yes }
 	665.4.27={ death=yes }
 }
@@ -2824,10 +2824,10 @@
 	name=Bintou
 	female=yes
 	dynasty=1000124347
-	dna="akedhncgjke"
 	culture=manden 
 	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	612.12.11={ birth=yes }
 	660.7.15={ death=yes }
 }
@@ -2837,6 +2837,7 @@
 	culture=manden 
 	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	616.5.12={ birth=yes }
 	675.2.7={ death=yes }
 }
@@ -2846,6 +2847,7 @@
 	culture=manden 
 	religion=bori
 	father=184417	#Demba
+	mother=184433	#Aichata
 	618.2.10={ birth=yes }
 	654.11.14={ death=yes }
 }
@@ -2855,6 +2857,7 @@
 	culture=manden 
 	religion=bori
 	father=184422	#Hargani
+	mother=184434	#Halima
 	620.9.19={ birth=yes }
 	704.3.11={ death=yes }
 }
@@ -2865,6 +2868,7 @@
 	culture=manden 
 	religion=bori
 	father=184422	#Hargani
+	mother=184434	#Halima
 	621.4.16={ birth=yes }
 	667.10.7={ death=yes }
 }
@@ -2874,6 +2878,34 @@
 	culture=manden 
 	religion=bori
 	father=184422	#Hargani
+	mother=184434	#Halima
 	625.3.2={ birth=yes }
 	687.8.4={ death=yes }
+}
+184432={
+	name=Namandjé
+	female=yes
+	dynasty=0
+	culture=manden
+	religion=bori
+	549.11.14={ birth=yes }
+	601.4.8={ death=yes }
+}
+184433={
+	name=Aichata
+	female=yes
+	dynasty=0
+	culture=manden
+	religion=bori
+	573.11.14={ birth=yes }
+	633.4.8={ death=yes }
+}
+184434={
+	name=Halima
+	female=yes
+	dynasty=0
+	culture=manden
+	religion=bori
+	599.11.14={ birth=yes }
+	649.4.8={ death=yes }
 }
