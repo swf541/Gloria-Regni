@@ -16,11 +16,11 @@ b_rammala = castle
 #b_saintsamuel = temple
 
 # Misc
-culture = levantine_arabic
+culture = melkite
 religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
+
 867.1.1 = { 
 	b_mirabel = ca_keep_1
 	b_mirabel = ca_training_grounds_1
@@ -35,3 +35,6 @@ religion = imperial
 	b_jerusalem = tp_wall_1
 	b_jerusalem = tp_barracks_1
 }
+1054.1.1 = { religion = orthodox }
+1187.1.1 = { religion = sunni }
+1187.1.1 = { culture = levantine_arabic }

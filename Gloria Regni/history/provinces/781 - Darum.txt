@@ -16,9 +16,12 @@ b_gaza = temple
 #b_abasan = castle
 
 # Misc
-culture = levantine_arabic
+culture = melkite
 religion = imperial
 
 # History
-867.1.1 = { religion = sunni }
+867.1.1 = { 
+	religion = sunni 
+	culture = levantine_arabic
+}
 1259.1.1 = { trade_post = b_morosini }

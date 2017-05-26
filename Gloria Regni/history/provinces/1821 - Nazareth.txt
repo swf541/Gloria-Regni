@@ -12,10 +12,13 @@ b_nazareth3 = temple
 
 
 # Misc
-culture = levantine_arabic
-religion = imperial
+culture = samaritan
+religion = samaritan
 
 # History
+700.1.1 = { culture = melkite }
+700.1.1 = { religion = imperial }
 1054.7.6 = { religion = orthodox }
 
+1270.1.1 = { culture = levantine_arabic }
 1270.1.1 = { religion = sunni }

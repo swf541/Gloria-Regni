@@ -10,11 +10,16 @@ b_bethlehem2 = city
 b_bethlehem3 = temple
 
 # Misc
-culture = levantine_arabic
-religion = imperial
+culture = jewish_aramean 
+religion = jewish
 
 # History
+700.1.1 = {
+	culture = melkite
+	religion = imperial
+}
 1054.1.1 = {
 	religion = orthodox
 }
 1300.1.1 = { religion = sunni }
+1300.1.1 = { culture = levantine_arabic }

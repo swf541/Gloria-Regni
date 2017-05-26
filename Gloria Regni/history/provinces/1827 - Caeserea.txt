@@ -10,11 +10,17 @@ b_caeserea2 = city
 b_caeserea3 = temple
 
 # Misc
-culture = levantine_arabic
-religion = imperial
+culture = samaritan
+religion = samaritan
 
 # History
-867.1.1 = { religion = sunni }
+700.1.1 = {
+	culture = melkite
+	religion = imperial
+}
+1054.7.6 = { religion = orthodox }
+1295.1.1 = { religion = sunni } 
+1295.1.1 = { culture = levantine_arabic }
 
 
 
