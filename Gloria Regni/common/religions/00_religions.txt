@@ -2455,7 +2455,7 @@ pagan_group = {
 		unit_modifier = {
 			levy_size = 0.3
 	
-			key = "OFF_RELIGION"
+			key = "DEF_RELIGION"
 		}
 		
 		unit_home_modifier = {
@@ -2463,9 +2463,11 @@ pagan_group = {
 			light_infantry_defensive = 0.2
 			light_cavalry_offensive = 0.3
 			light_cavalry_defensive = 0.3	
-			key = "OFF_RELIGION"
-		}		
+			key = "DEF_RELIGION"
+		}	
 		
+		allow_looting = yes
+		defensive_attrition = yes		
 		allow_rivermovement = yes
 		priests_can_marry = yes
 		female_temple_holders = yes
@@ -2507,7 +2509,7 @@ pagan_group = {
 		unit_modifier = {
 			levy_size = 0.3
 	
-			key = "OFF_RELIGION"
+			key = "DEF_RELIGION"
 		}
 		
 		unit_home_modifier = {
@@ -2515,9 +2517,11 @@ pagan_group = {
 			light_infantry_defensive = 0.2
 			light_cavalry_offensive = 0.3
 			light_cavalry_defensive = 0.3	
-			key = "OFF_RELIGION"
+			key = "DEF_RELIGION"
 		}		
-		
+
+		allow_looting = yes
+		defensive_attrition = yes		
 		allow_rivermovement = yes
 		priests_can_marry = yes
 		female_temple_holders = yes
