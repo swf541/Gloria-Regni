@@ -2786,8 +2786,8 @@ pagan_group = {
 		
 		color = { 0.9 0.5 0.2 }
 		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_ASATEYR
-		priest_title = IMAM_PRIEST
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
 		
 		high_god_name = GOD_HUBAL
 		god_names = {
@@ -2840,7 +2840,10 @@ pagan_group = {
 		heresy_icon = 70
 		
 		color = { 0.525 0.075 0.2 }
-
+		crusade_name = GREAT_HOLY_WAR		
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST	
+		
 		high_god_name = GOD_HUBAL
 		god_names = {
 			GOD_WADD GOD_NASR GOD_MANAF GOD_AMM GOD_TALAB GOD_DHULHALASA GOD_AlQUAM GOD_DUSHARA GOD_HUBAL GOD_SUWA GOD_YAGHUTH GOD_YAUQ
@@ -2871,10 +2874,7 @@ pagan_group = {
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
-	
-		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_LEGENDS
-		priest_title = SHAMAN
+		
 		dislike_tribal_organization = yes
 		priests_can_marry = yes
 		allow_looting = yes
@@ -3113,6 +3113,121 @@ pagan_group = {
 		intermarry = pagan_group
 		intermarry = zoroastrian_group
 	}
+	south_semitic_pagan_reformed = {
+		graphical_culture = muslimgfx
+
+		icon = 71
+		heresy_icon = 72
+
+		ai_convert_other_group = 2 # always try to convert
+		
+		color = { 1.3 0.2 0.2 }
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+		
+		high_god_name = GOD_ASHTAR
+		god_names = {
+			GOD_ASHTAR GOD_BEHER GOD_MAHER GOD_ALMAQAH GOD_SHAMS GOD_WARAKH GOD_UZZAYAN GOD_AR_RABBAT GOD_NASR GOD_KHOMAR GOD_BASAMUM GOD_TALAB GOD_MIRTADAM GOD_KAWIM GOD_ANBAY GOD_HAWKAM GOD_ISAT GOD_NAKRUH GOD_ZAT-BADAR  			
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.3
+			levy_size = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
+		priests_can_marry = yes
+		female_temple_holders = yes
+		can_call_crusade = yes
+		allow_looting = yes
+		max_consorts = 3
+
+
+		religious_clothing_head = 3
+		religious_clothing_priest = 3
+		allow_in_ruler_designer = no
+	}
+	
+
+	south_semitic_pagan = { 
+		graphical_culture = muslimgfx
+
+		icon = 69
+		heresy_icon = 70
+		
+		color = { 1.5 0.4 0.4 }
+		crusade_name = GREAT_HOLY_WAR		
+		scripture_name = THE_LEGENDS
+		priest_title = PRIEST
+		
+		high_god_name = GOD_ASHTAR
+		god_names = {
+			GOD_ASHTAR GOD_BEHER GOD_MAHER GOD_ALMAQAH GOD_SHAMS GOD_WARAKH GOD_UZZAYAN GOD_AR_RABBAT GOD_NASR GOD_KHOMAR GOD_BASAMUM GOD_TALAB GOD_MIRTADAM GOD_KAWIM GOD_ANBAY GOD_HAWKAM GOD_ISAT GOD_NAKRUH GOD_ZAT-BADAR  			
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.3
+			levy_size = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			camel_cavalry_defensive = 0.8
+			war_elephants_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+	
+		dislike_tribal_organization = yes
+		priests_can_marry = yes
+		allow_looting = yes
+		peace_prestige_loss = yes # Lose Prestige while at peace
+		raised_vassal_opinion_loss = no
+		max_consorts = 3
+		reformed = south_semitic_pagan_reformed
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		
+		short_reign_opinion_year_mult = 1.5 # The default is 2
+		
+		aggression = 2.0 # AI aggression factor
+		
+		religious_clothing_head = 6
+		religious_clothing_priest = 4
+	}	
 }
 
 zoroastrian_group = {
