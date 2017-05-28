@@ -4844,6 +4844,34 @@ south_semitic = {
 		modifier = default_culture_modifier
 	}	
 	
+	soqotri = {
+		graphical_cultures = { arabicgfx muslimgfx }
+		
+		color = { 3.2 0.45 0.35 }
+
+		male_names = {
+			Shu-Nuwas Dhu-Shanatir Abu Kariba Assad Ramlat Musnad Zabur Job Sayhad al-Sab'atayn Raydan Bulugh Ahwal al-'Arab
+			Ammyitha Abydada Hufn Sadiq Ilyafa Abyada Waqah'il Abkarib Itha'il Tubba'karib Hayu Waqah'il 
+		}
+		female_names = {
+			Aisha Aziza Duha Farida Golbahar Gulnar Gulnaz Gulpari Hafsa Hasti Huma Ibtisam Jalila Kamala Karima Khandan Khaterah Khatira Kinah Lala Madiha Mahdokht
+			Mahsa Mahwash Marwa Mastana Mehri Mina Minoo Munawwar Muzhdah Nahal Najela Nasiba Nastaran Nazaneen Nazy Neelab Negar Niki Nikoo Noushin Rabiya
+			Rajiya Sadiya Salma Sitara Thana Zahra_Zahra Zuhayra
+		}
+		from_dynasty_prefix = "mn "
+		
+		male_patronym = "'il"
+		female_patronym = "'illi"
+		bastard_dynasty_prefix = "nsabat"
+
+		prefix = no
+		
+		dynasty_title_names = no
+		founder_named_dynasties = yes
+
+		modifier = default_culture_modifier
+	}		
+	
 	ethiopian = {
 		graphical_cultures = { africangfx }
 		secondary_event_pictures = bedouin_arabic
