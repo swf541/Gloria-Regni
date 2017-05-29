@@ -36,6 +36,122 @@ bm_ridda_wars = {
 	desc = "BM_CHARLEMAGNE_ERA_INFO"
 	date = 632.6.8
 }
+bm_zoroastian_rebellion = {
+	name = "BM_767_ERA"
+	desc = "BM_CHARLEMAGNE_ERA_INFO"
+	date = 767.1.1
+	
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_image_1
+	
+	selectable_character = {
+		id = 6392 # Charlemagne
+		age = 26
+		name = ERA_CHAR_NAME_6392
+		title = k_france
+		title_name = WEST_FRANCIA
+		
+		character = {
+			dna = bcedirmbfcy
+			properties = aj00bc00000
+			religion="catholic"
+			culture="old_frankish"
+			government = feudal_government
+			dynasty=25061
+		}
+	}
+
+	selectable_character = {
+		id = 144999 # Carloman
+		age = 18
+		name = ERA_CHAR_NAME_144999
+		title = k_lotharingia
+		title_name = k_lotharingia
+		
+		character = {
+			dna = bcalbhabgal
+			properties = aj0aca000000
+			religion="catholic"
+			culture="old_frankish"
+			government = feudal_government
+			dynasty=25061
+		}
+	}
+
+	selectable_character = {
+		id = 190347 # Desiderius
+		age = 52
+		name = ERA_CHAR_NAME_190347
+		title = k_lombardy
+		title_name = LOMBARD_KINGDOM
+		
+		character = {
+			dna = aldccxlhgaf
+			properties = ai0afa000000
+			religion="catholic"
+			culture="lombard"
+			government = feudal_government
+			dynasty=1044053
+		}
+	}
+
+	selectable_character = {
+		id = 73679 # Abd-Al-Rahman
+		age = 37
+		name = ERA_CHAR_NAME_73679
+		title = k_andalusia
+		title_name = ERA_UMAYYAD_EMPIRE
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		
+		character = {
+			dna = cmedkpffaax
+			properties = mj0afa000000
+			religion="sunni"
+			culture="bedouin_arabic"
+			government = muslim_government
+			dynasty=597
+		}
+	}
+
+	selectable_character = {
+		id = 34002 # Al-Mansur
+		age = 55
+		name = ERA_CHAR_NAME_34002
+		title = e_arabia
+		title_name = d_abbasid	
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		
+		character = {
+			dna = beegiscaaad
+			properties = ml0ag0000000
+			religion="sunni"
+			culture="bedouin_arabic"
+			government = muslim_government
+			dynasty=101727
+		}
+	}
+
+	selectable_character = {
+		id = 74413 # Krishna Rashtrakuta
+		age = 64
+		name = ERA_CHAR_NAME_74413
+		title = k_maharastra
+		title_name = ERA_RASHTRAKUTA_KINGDOM
+		coa_dynasty = yes
+		dlc = "Rajas of India"
+		
+		character = {
+			dna = dhcjffdbaaa
+			properties = ag0aea000000
+			religion="hindu"
+			culture="kannada"
+			government = feudal_government
+			dynasty=1043003
+		}
+	}
+}
 bm_charlemagne = {
 	name = "BM_CHARLEMAGNE_ERA"
 	desc = "BM_CHARLEMAGNE_ERA_INFO"
