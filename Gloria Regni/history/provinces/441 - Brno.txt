@@ -18,11 +18,13 @@ b_prerov = temple
 
 # Misc
 culture = venete
-religion = slavic_pagan
+religion = germanic_pagan
 
 # History
-
-842.1.1 = {
+520.1.1 = { 
+	culture = venete
+	religion = slavic_pagan
+}842.1.1 = {
 	religion = catholic
 }
 900.1.1 = { culture = slovak }

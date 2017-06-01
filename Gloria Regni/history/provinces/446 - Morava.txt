@@ -20,10 +20,13 @@ b_trebic = temple
 
 # Misc
 culture = venete
-religion = slavic_pagan
+religion = germanic_pagan
 
 # History
-
+520.1.1 = { 
+	culture = venete
+	religion = slavic_pagan
+}
 831.1.1 = { religion = imperial }
 950.1.1 = { culture = bohemian }
 1054.7.6 = { religion = catholic }

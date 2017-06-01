@@ -17,9 +17,13 @@ b_roth = city
 
 # Misc
 culture = german
-religion = imperial
+religion = germanic_pagan
 
 # History
+550.1.1 = {
+	culture = german
+	religion = imperial
+}
 1054.7.6 = { religion = catholic }
 
 1337.1.1 = { b_ansbach = castle }
