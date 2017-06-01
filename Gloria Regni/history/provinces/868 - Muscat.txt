@@ -17,8 +17,9 @@ b_ibra = city
 
 # Misc
 culture = omani
-religion = nestorian
+religion = south_semitic_pagan
 
 # History
-700.1.1 { culture = bedouin_arabic }
+350.1.1 = { religion = nestorian }
+700.1.1 = { culture = bedouin_arabic }
 700.1.1 = { religion = ibadi }

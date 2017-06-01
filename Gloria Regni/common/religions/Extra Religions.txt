@@ -197,38 +197,6 @@ zoroastrian_group = {
 
 		allow_in_ruler_designer = no
 	}		
-		
-	mandean = {
-		graphical_culture = persiangfx
-		
-		secondary_event_pictures = sunni
-		
-		icon = 10
-		heresy_icon = 12
-		
-		color = { 0.7 0.7 0.4 }
-
-		parent = zoroastrian
-
-		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_GINZA
-		priest_title = PRIEST
-
-		god_names = {
-			GOD_GOD PROPHET_NOAH PROPHET_JOHN
-		}
-		evil_god_names = {
-			THE_DEMIURGE GOD_PTAHIL GOD_YUSHAMIN GOD_ABATHUR
-		}
-
-		can_call_crusade = yes
-		can_grant_invasion_cb = invasion
-		max_wives = 4
-                allow_rivermovement = yes
-		
-		religious_clothing_head = 5
-		religious_clothing_priest = 5
-	}
 }
 
 jewish_group = {
@@ -1777,3 +1745,299 @@ bosporan_group = {
 		infidel_opinion = -20
 	}
  }
+ 
+ gnostic_group = {
+ 	has_coa_on_barony_only = yes
+	graphical_culture = westerngfx
+	crusade_cb = crusade
+	playable = yes
+	
+	ai_convert_same_group = 2 # always try to convert
+	ai_convert_other_group = 2 # always try to convert
+	
+	# Names given only to Gnostic characters (base names)
+	male_names = {
+		Andrew Antoninus Bartolomeus Benedict Christian Christopher Clement Constantine David Demetrius Eustace George Gregory 
+		Hans Isaac Joakim Jacob John Jordan Joseph Laurence Magnus Marcus Martin Matthew Michael Nicholas Patrick Paul Peter Philip 
+		Salvador Samuel Sebastian Simon Stephen Thomas Abraham Alexander Daniel Jesus Job Joshua Cyrus Luke Joseph Zachariah
+	}
+	female_names = {
+		Anna Beatrice Benedicta Brigid Catherine Cecilia Christina Clementia Constance Dorothy Elisabeth Joan Judith Juliana Helen 
+		Magdalena Margaret Maria Marine Patricia Philippa Rachel 
+		Sarah Sophia Stephania
+	}
+	
+	marcionism = {
+		graphical_culture = westerngfx
+
+		icon = 100
+		heresy_icon = 101
+		
+		color = { 0.8 0.1 0.9 }
+
+		parent = imperial
+
+		scripture_name = THE_NEW_TESTAMENT
+
+		god_names = {
+			GOD_GOD GOD_JESUS GOD_THE_STRANGER GOD_MONAD PROPHET_PAUL
+		}
+		
+		evil_god_names = {
+			GOD_YALTABAOTH 
+		}
+		
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_retire_to_monastery = yes
+		female_temple_holders = no
+		
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+	}
+
+	priscillianism = {
+		graphical_culture = westerngfx
+
+		icon = 100
+		heresy_icon = 101
+		
+		color = { 0.5 0.7 0.5 }
+
+		parent = imperial
+
+		god_names = {
+			GOD_JESUS LOGOS THE_AEONS
+		}
+
+		evil_god_names = {
+			THE_DEMIURGE
+		}
+
+		feminist = yes
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_retire_to_monastery = yes
+		female_temple_holders = yes
+
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+	}
+
+	valentinianism = {
+		graphical_culture = westerngfx
+
+		icon = 100
+		heresy_icon = 101
+		
+		color = { 0.7 0.0 0.2 }
+
+		parent = imperial
+
+		crusade_name = CRUSADE
+
+		scripture_name = GOSPEL_OF_PHILIP
+		priest_title = PRIEST
+
+                high_god_name = OGDOAD  
+
+		god_names = {
+			GOD_JESUS SOPHIA LOGOS THE_AEONS
+		}
+		
+		evil_god_names = {
+			THE_DEMIURGE
+		}
+		
+		feminist = yes
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_retire_to_monastery = yes
+		female_temple_holders = yes
+		divine_blood = yes # Sacred Xwedodah close-kin marriage mechanics
+		pc_marriage = yes
+		bs_marriage = yes
+
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+	}
+
+	manichean = {
+		graphical_culture = persiangfx
+		
+		secondary_event_pictures = sunni
+		
+		icon = 58
+		heresy_icon = 59
+		
+		color = { 0.3 0.3 0.7 }
+		crusade_name = GREAT_HOLY_WAR
+		
+		high_god_name = GOD_ZURVAN
+		
+		god_names = {
+			PROPHET_MANI 
+		}
+		
+		can_grant_divorce = yes
+		can_call_crusade = yes
+		can_grant_invasion_cb = invasion
+		
+		max_consorts = 3 # Can take concubines
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		
+		intermarry = zun_pagan
+		intermarry = zun_pagan_reformed
+	}	
+	
+	mandean = {
+		graphical_culture = persiangfx
+		
+		secondary_event_pictures = sunni
+		
+		icon = 10
+		heresy_icon = 12
+		
+		color = { 0.7 0.7 0.4 }
+
+		parent = zoroastrian
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_GINZA
+		priest_title = PRIEST
+
+		god_names = {
+			GOD_GOD PROPHET_NOAH PROPHET_JOHN
+		}
+		evil_god_names = {
+			THE_DEMIURGE GOD_PTAHIL GOD_YUSHAMIN GOD_ABATHUR
+		}
+
+		can_call_crusade = yes
+		can_grant_invasion_cb = invasion
+		max_wives = 4
+                allow_rivermovement = yes
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}
+
+	bogomilist = {
+		graphical_culture = westerngfx
+
+		icon = 2
+		heresy_icon = 7
+		
+		color = { 0.6 0.2 0.2 }
+
+		parent = orthodox
+		
+		crusade_name = CRUSADE
+
+		can_retire_to_monastery = yes
+		female_temple_holders = yes
+		feminist = yes # Nullifies the negative opinion modifier that vassals normally get if ruler is female or has female heir
+		allow_rivermovement = yes
+		
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+
+                character_modifier = {
+			temple_tax_modifier = -1 
+	        }
+	}
+
+	paulician = {
+		graphical_culture = westerngfx
+
+		icon = 2
+		heresy_icon = 7
+		
+		color = { 1 0.6 0 }
+		
+		parent = miaphysite
+		
+		crusade_name = CRUSADE
+		
+		evil_god_names = {
+			SATAN LUCIFER THE_DEVIL THE_DEMIURGE
+		}
+
+		can_hold_temples = yes
+
+		can_retire_to_monastery = yes
+		priests_can_inherit = no
+		allow_rivermovement = yes
+		
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+
+                character_modifier = {
+			temple_tax_modifier = -1 
+	        }
+	}
+
+	cathar = {
+		graphical_culture = westerngfx
+
+		icon = 1
+		heresy_icon = 6
+		
+		color = { 0.5 0.5 0.9 }
+
+		parent = catholic
+		
+		crusade_name = CRUSADE
+
+		can_retire_to_monastery = yes
+		female_temple_holders = yes
+		feminist = yes # Nullifies the negative opinion modifier that vassals normally get if ruler is female or has female heir
+		allow_rivermovement = yes
+		
+		religious_clothing_head = 0
+		religious_clothing_priest = 1
+
+                character_modifier = {
+			temple_tax_modifier = -1 
+	        }
+	}
+
+	encratites = {
+		graphical_culture = westerngfx
+
+		icon = 100
+		heresy_icon = 101
+		
+		color = { 0.45 0.15 0.7 }
+
+		parent = imperial
+
+		scripture_name = THE_NEW_TESTAMENT
+
+		god_names = {
+			GOD_GOD GOD_JESUS GOD_THE_STRANGER GOD_MONAD PROPHET_PAUL
+		}
+		
+		evil_god_names = {
+			GOD_YALTABAOTH 
+		}
+		
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_retire_to_monastery = yes
+		female_temple_holders = no
+		
+		religious_clothing_head = 2
+		religious_clothing_priest = 2
+	}
+}	
