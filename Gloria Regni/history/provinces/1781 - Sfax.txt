@@ -1,4 +1,4 @@
-# 816 - Mahdia
+# 1781 - Sfax
 
 # County Title
 title = c_sfax
@@ -12,9 +12,12 @@ b_sfax3 = city
 b_sfax4 = castle
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
-800.1.1 = { religion = sunni }
+800.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
 

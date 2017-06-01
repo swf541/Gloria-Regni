@@ -12,11 +12,12 @@ b_jijel3 = temple
 b_jijel4 = castle
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
-
-909.1.1 = { religion = sunni }
-
+909.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
 
