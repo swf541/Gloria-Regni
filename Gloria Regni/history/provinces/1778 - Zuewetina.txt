@@ -1,4 +1,4 @@
-# 808 - Benghazi
+# 1778 - Zuewetina
 
 # County Title
 title = c_zuewetina
@@ -11,10 +11,15 @@ b_zuewetina3 = temple
 b_zuewetina4 = castle
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
+
+700.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
+
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni }

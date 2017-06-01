@@ -1,4 +1,4 @@
-# 809 - Syrte
+# 1777 - Ajdabiya
 
 # County Title
 title = c_ajdabiya
@@ -11,11 +11,16 @@ b_ajdabiya2 = city
 b_ajdabiya3 = temple
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
+
+700.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
+
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni }
 

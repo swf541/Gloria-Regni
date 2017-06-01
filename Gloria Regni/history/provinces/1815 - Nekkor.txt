@@ -13,13 +13,15 @@ b_nekkor4 = castle
 
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
-
 
 # History
 
-947.1.1 = { religion = sunni }
+947.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
 
 
 

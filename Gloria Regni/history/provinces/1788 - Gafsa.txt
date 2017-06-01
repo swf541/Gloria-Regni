@@ -12,11 +12,14 @@ b_gafsa3 = temple
 b_gafsa4 = castle
 
 # Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
+700.1.1 = {
+	religion = shiite
+	culture = maghreb_arabic
+}
 
 
 

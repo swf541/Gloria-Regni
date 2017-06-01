@@ -1,4 +1,4 @@
-# 810 - Leptis Magna
+# 1482 - Thenteos
 
 # County Title
 title = c_thenteos
@@ -12,11 +12,15 @@ b_thenteos3 = temple
 
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
 
-750.1.1 = { religion = sunni }
+750.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
+
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni }

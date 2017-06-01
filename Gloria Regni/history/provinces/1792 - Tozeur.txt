@@ -1,4 +1,4 @@
-# 832 - Orania
+# 1792 - Tozeur
 
 # County Title
 title = c_tozeur
@@ -12,10 +12,11 @@ b_tozeur3 = temple
 b_tozeur4 = castle
 
 # Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
-
-
+700.1.1 = {
+	religion = shiite
+	culture = maghreb_arabic
+}

@@ -1,4 +1,4 @@
-# 813 - Djerba
+# 1767 - Nalut
 
 # County Title
 title = c_nalut
@@ -12,9 +12,12 @@ b_nalut3 = temple
 
 
 # Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-700.1.1 { religion = ibadi }
+909.1.1 = {
+	religion = ibadi
+	culture = maghreb_arabic
+}
 909.1.1 = { religion = sunni }

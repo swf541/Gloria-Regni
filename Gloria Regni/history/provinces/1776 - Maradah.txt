@@ -1,4 +1,4 @@
-# 809 - Syrte
+# 1776 - Maradah
 
 # County Title
 title = c_maradah
@@ -10,15 +10,16 @@ b_maradah1 = castle
 b_maradah2 = city
 b_maradah3 = temple
 
-# Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-600.1.1 = {
+
+909.1.1 = {
+	religion = shiite
 	culture = maghreb_arabic
-	religion = imperial
 }
+
 909.1.1 = { religion = shiite }
 1171.1.1 = { religion = sunni }
 

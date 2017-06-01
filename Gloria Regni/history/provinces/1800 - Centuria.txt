@@ -1,4 +1,4 @@
-# 832 - Orania
+# 1800 - Centuria
 
 # County Title
 title = c_centuria
@@ -12,11 +12,13 @@ b_centuria3 = temple
 b_centuria4 = castle
 
 # Misc
-culture = maghreb_arabic
+culture = african_latin
 religion = imperial
 
 # History
 
-909.1.1 = { religion = sunni }
-
+909.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
 

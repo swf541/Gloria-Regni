@@ -17,8 +17,11 @@ b_kasserine = city
 #b_elkrib = castle
 
 # Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-900.1.1 = { religion = sunni }
+909.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}

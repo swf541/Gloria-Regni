@@ -1,4 +1,4 @@
-# 832 - Orania
+# 1790 - Tatouine
 
 # County Title
 title = c_tataouine
@@ -12,11 +12,13 @@ b_tataouine3 = temple
 b_tataouine4 = castle
 
 # Misc
-culture = maghreb_arabic
-religion = berber_pagan
+culture = african_latin
+religion = imperial
 
 # History
-700.1.1 = { religion = sunni }
-
+700.1.1 = {
+	religion = sunni
+	culture = maghreb_arabic
+}
 
 
