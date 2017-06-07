@@ -3583,6 +3583,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	540.1.1={ birth=yes }
+	561.1.1={ add_spouse=184517 }
 	593.6.6={ death=yes }
 }
 184502={
@@ -3591,7 +3592,9 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184501	#Abdulkareem
+	mother=184517	#Daura
 	562.2.26={ birth=yes }
+	583.1.1={ add_spouse=184515 }
 	607.2.6={ death=yes }
 }
 184503={
@@ -3600,6 +3603,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184501	#Abdulkareem
+	mother=184517	#Daura
 	565.8.27={ birth=yes }
 	622.12.16={ death=yes }
 }
@@ -3609,6 +3613,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184501	#Abdulkareem
+	mother=184517	#Daura
 	568.10.11={ birth=yes }
 	655.4.13={ death=yes }
 }
@@ -3619,6 +3624,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184501	#Abdulkareem
+	mother=184517	#Daura
 	570.11.25={ birth=yes }
 	641.3.10={ death=yes }
 }
@@ -3628,7 +3634,9 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184502	#Aminu
+	mother=184515	#Naimah
 	586.12.27={ birth=yes }
+	607.1.1={ add_spouse=184516 }
 	634.4.1={ death=yes }
 }
 184507={
@@ -3638,6 +3646,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184502	#Aminu
+	mother=184515	#Naimah
 	590.10.9={ birth=yes }
 	655.9.30={ death=yes }
 }
@@ -3648,6 +3657,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184502	#Aminu
+	mother=184515	#Naimah
 	593.12.10={ birth=yes }
 	653.3.11={ death=yes }
 }
@@ -3657,6 +3667,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184502	#Aminu
+	mother=184515	#Naimah
 	596.6.16={ birth=yes }
 	656.3.21={ death=yes }
 }
@@ -3666,6 +3677,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184502	#Aminu
+	mother=184515	#Naimah
 	600.11.6={ birth=yes }
 	655.3.9={ death=yes }
 }
@@ -3675,6 +3687,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184506	#Mahmoud
+	mother=184516	#Atikah
 	612.1.15={ birth=yes }
 	664.3.24={ death=yes }
 }
@@ -3684,6 +3697,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184506	#Mahmoud
+	mother=184516	#Atikah
 	616.12.20={ birth=yes }
 	687.6.29={ death=yes }
 }
@@ -3694,6 +3708,7 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184506	#Mahmoud
+	mother=184516	#Atikah
 	621.1.7={ birth=yes }
 	667.3.30={ death=yes }
 }
@@ -3703,6 +3718,343 @@
 	culture=hausa 
 	religion=west_african_pagan
 	father=184506	#Mahmoud
+	mother=184516	#Atikah
 	623.12.13={ birth=yes }
 	680.10.14={ death=yes }
+}
+184515={
+	name=Naimah
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	562.11.14={ birth=yes }
+	607.4.8={ death=yes }
+}
+184516={
+	name=Atikah
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	586.11.14={ birth=yes }
+	634.4.8={ death=yes }
+}
+184517={
+	name=Daura
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	540.11.14={ birth=yes }
+	593.4.8={ death=yes }
+}
+184518={
+	name=Bakr
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	559.2.1={ birth=yes }
+	580.1.1={ add_spouse=184526 }
+	620.9.15={ death=yes }
+}
+184519={
+	name=Al-Hajj
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184518	#Bakr
+	mother=184526	#Chindi
+	580.10.12={ birth=yes }
+	601.1.1={ add_spouse=184527 }
+	662.12.28={ death=yes }
+}
+184520={
+	name=Bada
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184518	#Bakr
+	mother=184526	#Chindi
+	584.5.11={ birth=yes }
+	630.2.17={ death=yes }
+}
+184521={
+	name=Daara
+	female=yes
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184518	#Bakr
+	mother=184526	#Chindi
+	587.4.25={ birth=yes }
+	635.5.10={ death=yes }
+}
+184522={
+	name=Medina
+	female=yes
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184518	#Bakr
+	mother=184526	#Chindi
+	589.5.21={ birth=yes }
+	642.6.10={ death=yes }
+}
+184523={
+	name=Bani
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184518	#Bakr
+	mother=184526	#Chindi
+	593.7.27={ birth=yes }
+	642.9.18={ death=yes }
+}
+184524={
+	name=Azzah
+	female=yes
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184519	#Al-Hajj
+	mother=184527	#Aisha
+	602.11.15={ birth=yes }
+	660.4.23={ death=yes }
+}
+184525={
+	name=Kayna
+	dynasty=1000124355
+	culture=songhai 
+	religion=west_african_pagan
+	father=184519	#Al-Hajj
+	mother=184527	#Aisha
+	608.10.1={ birth=yes }
+	679.2.22={ death=yes }
+}
+184526={
+	name=Chindi
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	559.11.14={ birth=yes }
+	620.4.8={ death=yes }
+}
+184527={
+	name=Aisha
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	580.11.14={ birth=yes }
+	662.4.8={ death=yes }
+}
+184528={
+	name=Samsou-Beri
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	549.9.20={ birth=yes }
+	570.1.1={ add_spouse=184536 }
+	594.12.17={ death=yes }
+}
+184529={
+	name=Dankataya
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184528	#Samsou-Beri
+	mother=184536	#Hassana
+	577.9.5={ birth=yes }
+	598.1.1={ add_spouse=184538 }
+	624.8.2={ death=yes }
+}
+184530={
+	name=Ize
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184528	#Samsou-Beri
+	mother=184536	#Hassana
+	582.12.14={ birth=yes }
+	650.3.5={ death=yes }
+}
+184531={
+	name=Kouton
+	female=yes
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184528	#Samsou-Beri
+	mother=184536	#Hassana
+	586.4.8={ birth=yes }
+	631.11.2={ death=yes }
+}
+184532={
+	name=Geyka
+	female=yes
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184528	#Samsou-Beri
+	mother=184537	#Aminah
+	587.3.18={ birth=yes }
+	649.10.25={ death=yes }
+}
+184533={
+	name=Dawud
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184529	#Dankataya
+	mother=184537	#Hassana
+	607.1.4={ birth=yes }
+	666.5.18={ death=yes }
+}
+184534={
+	name=Al-Hajj
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184529	#Dankataya
+	mother=184537	#Hassana
+	610.12.12={ birth=yes }
+	657.3.2={ death=yes }
+}
+184535={
+	name=Hassana
+	female=yes
+	dynasty=1000124356
+	culture=songhai 
+	religion=west_african_pagan
+	father=184529	#Dankataya
+	mother=184537	#Hassana
+	613.1.21={ birth=yes }
+	683.4.14={ death=yes }
+}
+184536={
+	name=Aminah
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	549.11.14={ birth=yes }
+	594.4.8={ death=yes }
+}
+184537={
+	name=Hassana
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	577.11.14={ birth=yes }
+	624.4.8={ death=yes }
+}
+184538={
+	name=Kanafa
+	dynasty=1000124357
+	dna="fhbchogclpa"
+	culture=songhai religion=west_african_pagan
+	martial=8 diplomacy=5 stewardship=8 intrigue=4 learning=5
+	add_trait=intricate_webweaver add_trait=impaler add_trait=arbitrary add_trait=gluttonous add_trait=lisp 
+	549.3.15={ birth=yes }
+	609.1.27={ death=yes }
+}
+184539={
+	name=Zunku
+	dynasty=1000124357
+	dna="fbbcpmopopa"
+	culture=songhai religion=west_african_pagan
+	martial=4 diplomacy=6 stewardship=8 intrigue=4 learning=4
+	add_trait=midas_touched add_trait=mystic add_trait=cynical add_trait=patient add_trait=cruel 
+	add_trait=slothful add_trait=chaste add_trait=wounded 
+	father=184538	#Kanafa
+	574.9.20={ birth=yes }
+	639.4.27={ death=yes }
+}
+184540={
+	name=Huseina
+	female=yes
+	dynasty=1000124357
+	dna="ehbcbobclol"
+	culture=songhai religion=west_african_pagan
+	father=184538	#Kanafa
+	577.11.8={ birth=yes }
+	643.5.19={ death=yes }
+}
+184541={
+	name=Kuli
+	dynasty=1000124357
+	dna="epbchchkhpa"
+	culture=songhai religion=west_african_pagan
+	martial=5 diplomacy=7 stewardship=5 intrigue=5 learning=7
+	add_trait=flamboyant_schemer add_trait=humble add_trait=envious add_trait=craven add_trait=deceitful 
+	add_trait=just 
+	father=184538	#Kanafa
+	581.10.11={ birth=yes }
+	644.10.25={ death=yes }
+}
+184542={
+	name=Kayna
+	dynasty=1000124357
+	dna="fbbnpconopp"
+	culture=songhai religion=west_african_pagan
+	martial=6 diplomacy=4 stewardship=6 intrigue=6 learning=6
+	add_trait=midas_touched add_trait=brave add_trait=just 
+	father=184539	#Zunku
+	601.5.23={ birth=yes }
+	648.2.1={ death=yes }
+}
+184543={
+	name=Kumay
+	dynasty=1000124357
+	dna="cfbpjhnnopi"
+	culture=songhai religion=west_african_pagan
+	martial=4 diplomacy=5 stewardship=7 intrigue=8 learning=4
+	add_trait=midas_touched add_trait=mystic add_trait=gluttonous add_trait=kind 
+	father=184539	#Zunku
+	606.12.26={ birth=yes }
+	661.2.19={ death=yes }
+}
+184544={
+	name=Aminah
+	female=yes
+	dynasty=1000124357
+	dna="oebipcknbge"
+	culture=songhai religion=west_african_pagan
+	father=184542	#Kayna
+	621.9.9={ birth=yes }
+	686.3.13={ death=yes }
+}
+184545={
+	name=Baru
+	dynasty=1000124357
+	dna="fdbipcolono"
+	culture=songhai religion=west_african_pagan
+	martial=4 diplomacy=7 stewardship=8 intrigue=5 learning=6
+	add_trait=misguided_warrior add_trait=just add_trait=proud add_trait=brave add_trait=patient 
+	add_trait=content add_trait=envious add_trait=harelip 
+	father=184542	#Kayna
+	624.7.8={ birth=yes }
+	683.9.22={ death=yes }
+}
+184546={
+	name=Kusur
+	dynasty=1000124357
+	culture=songhai 
+	religion=west_african_pagan
+	father=184542	#Kayna
+	625.6.2={ birth=yes }
+	675.4.29={ death=yes }
+}
+184547={
+	name=Medina
+	female=yes
+	dynasty=1000124357
+	culture=songhai 
+	religion=west_african_pagan
+	father=184542	#Kayna
+	628.12.6={ birth=yes }
+	701.1.14={ death=yes }
 }
