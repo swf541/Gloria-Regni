@@ -3954,66 +3954,62 @@
 184538={
 	name=Kanafa
 	dynasty=1000124357
-	dna="fhbchogclpa"
-	culture=songhai religion=west_african_pagan
-	martial=8 diplomacy=5 stewardship=8 intrigue=4 learning=5
-	add_trait=intricate_webweaver add_trait=impaler add_trait=arbitrary add_trait=gluttonous add_trait=lisp 
+	culture=songhai 
+	religion=west_african_pagan
 	549.3.15={ birth=yes }
+	570.1.1={ add_spouse=184548 }
 	609.1.27={ death=yes }
 }
 184539={
 	name=Zunku
 	dynasty=1000124357
-	dna="fbbcpmopopa"
-	culture=songhai religion=west_african_pagan
-	martial=4 diplomacy=6 stewardship=8 intrigue=4 learning=4
-	add_trait=midas_touched add_trait=mystic add_trait=cynical add_trait=patient add_trait=cruel 
-	add_trait=slothful add_trait=chaste add_trait=wounded 
+	culture=songhai 
+	religion=west_african_pagan
 	father=184538	#Kanafa
+	mother=184548	#Medina
 	574.9.20={ birth=yes }
+	595.1.1={ add_spouse=184549 }
 	639.4.27={ death=yes }
 }
 184540={
 	name=Huseina
 	female=yes
 	dynasty=1000124357
-	dna="ehbcbobclol"
-	culture=songhai religion=west_african_pagan
+	culture=songhai 
+	religion=west_african_pagan
 	father=184538	#Kanafa
+	mother=184548	#Medina
 	577.11.8={ birth=yes }
 	643.5.19={ death=yes }
 }
 184541={
 	name=Kuli
 	dynasty=1000124357
-	dna="epbchchkhpa"
-	culture=songhai religion=west_african_pagan
-	martial=5 diplomacy=7 stewardship=5 intrigue=5 learning=7
-	add_trait=flamboyant_schemer add_trait=humble add_trait=envious add_trait=craven add_trait=deceitful 
-	add_trait=just 
+	culture=songhai 
+	religion=west_african_pagan
 	father=184538	#Kanafa
+	mother=184548	#Medina
 	581.10.11={ birth=yes }
 	644.10.25={ death=yes }
 }
 184542={
 	name=Kayna
 	dynasty=1000124357
-	dna="fbbnpconopp"
-	culture=songhai religion=west_african_pagan
-	martial=6 diplomacy=4 stewardship=6 intrigue=6 learning=6
-	add_trait=midas_touched add_trait=brave add_trait=just 
+	culture=songhai 
+	religion=west_african_pagan
 	father=184539	#Zunku
+	mother=184549	#Huseina
 	601.5.23={ birth=yes }
+	622.1.1={ add_spouse=184550 }
 	648.2.1={ death=yes }
 }
 184543={
 	name=Kumay
 	dynasty=1000124357
-	dna="cfbpjhnnopi"
-	culture=songhai religion=west_african_pagan
-	martial=4 diplomacy=5 stewardship=7 intrigue=8 learning=4
-	add_trait=midas_touched add_trait=mystic add_trait=gluttonous add_trait=kind 
+	culture=songhai 
+	religion=west_african_pagan
 	father=184539	#Zunku
+	mother=184549	#Huseina
 	606.12.26={ birth=yes }
 	661.2.19={ death=yes }
 }
@@ -4021,21 +4017,20 @@
 	name=Aminah
 	female=yes
 	dynasty=1000124357
-	dna="oebipcknbge"
-	culture=songhai religion=west_african_pagan
+	culture=songhai 
+	religion=west_african_pagan
 	father=184542	#Kayna
+	mother=184550	#Hassana
 	621.9.9={ birth=yes }
 	686.3.13={ death=yes }
 }
 184545={
 	name=Baru
 	dynasty=1000124357
-	dna="fdbipcolono"
-	culture=songhai religion=west_african_pagan
-	martial=4 diplomacy=7 stewardship=8 intrigue=5 learning=6
-	add_trait=misguided_warrior add_trait=just add_trait=proud add_trait=brave add_trait=patient 
-	add_trait=content add_trait=envious add_trait=harelip 
+	culture=songhai 
+	religion=west_african_pagan
 	father=184542	#Kayna
+	mother=184550	#Hassana
 	624.7.8={ birth=yes }
 	683.9.22={ death=yes }
 }
@@ -4045,6 +4040,7 @@
 	culture=songhai 
 	religion=west_african_pagan
 	father=184542	#Kayna
+	mother=184550	#Hassana
 	625.6.2={ birth=yes }
 	675.4.29={ death=yes }
 }
@@ -4055,6 +4051,149 @@
 	culture=songhai 
 	religion=west_african_pagan
 	father=184542	#Kayna
+	mother=184550	#Hassana
 	628.12.6={ birth=yes }
 	701.1.14={ death=yes }
+}
+184548={
+	name=Medina
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	549.11.14={ birth=yes }
+	609.4.8={ death=yes }
+}
+184549={
+	name=Huseina
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	574.11.14={ birth=yes }
+	639.4.8={ death=yes }
+}
+184550={
+	name=Hassana
+	female=yes
+	dynasty=0
+	culture=hausa
+	religion=west_african_pagan
+	601.11.14={ birth=yes }
+	648.4.8={ death=yes }
+}
+184551={
+	name=Tomo
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	549.10.8={ birth=yes }
+	621.2.28={ death=yes }
+}
+184552={
+	name=Nari
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184551	#Tomo
+	577.3.9={ birth=yes }
+	644.3.30={ death=yes }
+}
+184553={
+	name=Silman
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184551	#Tomo
+	580.8.10={ birth=yes }
+	649.12.18={ death=yes }
+}
+184554={
+	name=Missi
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184551	#Tomo
+	584.12.11={ birth=yes }
+	656.9.19={ death=yes }
+}
+184555={
+	name=Huseina
+	female=yes
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184551	#Tomo
+	587.12.27={ birth=yes }
+	640.12.1={ death=yes }
+}
+184556={
+	name=Biyo
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184552	#Nari
+	mother=184561	#Amina
+	603.5.7={ birth=yes }
+	624.1.1={ add_spouse=184562 }
+	690.1.13={ death=yes }
+}
+184557={
+	name=Samsou
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184552	#Nari
+	mother=184561	#Amina
+	606.11.18={ birth=yes }
+	679.3.20={ death=yes }
+}
+184558={
+	name=Hargani
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184556	#Biyo
+	mother=184562	#Nuru
+	626.6.4={ birth=yes }
+	684.10.30={ death=yes }
+}
+184559={
+	name=Uthman
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184556	#Biyo
+	mother=184562	#Nuru
+	630.1.22={ birth=yes }
+	696.1.30={ death=yes }
+}
+184560={
+	name=Adama
+	female=yes
+	dynasty=1000124358
+	culture=songhai 
+	religion=bori
+	father=184556	#Biyo
+	mother=184562	#Nuru
+	631.12.15={ birth=yes }
+	689.8.7={ death=yes }
+}
+184561={
+	name=Amina
+	female=yes
+	dynasty=0
+	culture=songhai
+	religion=bori
+	549.11.14={ birth=yes }
+	621.4.8={ death=yes }
+}
+184562={
+	name=Nuru
+	female=yes
+	dynasty=0
+	culture=songhai
+	religion=bori
+	577.11.14={ birth=yes }
+	644.4.8={ death=yes }
 }
