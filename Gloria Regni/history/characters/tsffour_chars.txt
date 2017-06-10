@@ -4197,3 +4197,126 @@
 	577.11.14={ birth=yes }
 	644.4.8={ death=yes }
 }
+184563={
+	name=Musa
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	560.7.5={ birth=yes }
+	581.1.1={ add_spouse=184573 }
+	613.3.28={ death=yes }
+}
+184564={
+	name=Duru
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184563	#Musa
+	mother=184573	#Teko
+	581.10.12={ birth=yes }
+	602.1.1={ add_spouse=184574 }
+	643.8.17={ death=yes }
+}
+184565={
+	name=Hawa
+	female=yes
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184563	#Musa
+	mother=184573	#Teko
+	583.2.11={ birth=yes }
+	641.10.17={ death=yes }
+}
+184566={
+	name=Tib
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184563	#Musa
+	mother=184573	#Teko
+	587.9.20={ birth=yes }
+	621.6.14={ death=yes }
+}
+184567={
+	name=Harun
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184563	#Musa
+	mother=184573	#Teko
+	588.2.23={ birth=yes }
+	621.2.13={ death=yes }
+}
+184568={
+	name=Daara
+	female=yes
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184563	#Musa
+	mother=184573	#Teko
+	592.1.24={ birth=yes }
+	645.10.10={ death=yes }
+}
+184569={
+	name=Duru
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184564	#Duru
+	mother=184574	#Alkammiisa
+	604.6.12={ birth=yes }
+	658.1.10={ death=yes }
+}
+184570={
+	name=Fatimah
+	female=yes
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184564	#Duru
+	mother=184574	#Alkammiisa
+	608.5.4={ birth=yes }
+	677.3.1={ death=yes }
+}
+184571={
+	name=Fatimah
+	female=yes
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184564	#Duru
+	mother=184574	#Alkammiisa
+	613.10.8={ birth=yes }
+	677.5.21={ death=yes }
+}
+184572={
+	name=Gando
+	female=yes
+	dynasty=1000124359
+	culture=songhai 
+	religion=west_african_pagan
+	father=184564	#Duru
+	mother=184574	#Alkammiisa
+	616.6.22={ birth=yes }
+	671.5.8={ death=yes }
+}
+184573={
+	name=Teko
+	female=yes
+	dynasty=0
+	culture=songhai
+	religion=west_african_pagan
+	560.11.14={ birth=yes }
+	613.4.8={ death=yes }
+}
+184574={
+	name=Alkammiisa
+	female=yes
+	dynasty=0
+	culture=songhai
+	religion=west_african_pagan
+	581.11.14={ birth=yes }
+	643.4.8={ death=yes }
+}
