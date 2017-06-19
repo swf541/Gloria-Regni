@@ -4458,6 +4458,7 @@
 	culture=kanuri 
 	religion=bori
 	559.3.10={ birth=yes }
+	570.1.1={ add_spouse=184600 }
 	621.6.13={ death=yes }
 }
 184589={
@@ -4467,6 +4468,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	585.3.26={ birth=yes }
 	640.6.17={ death=yes }
 }
@@ -4477,6 +4479,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	587.9.19={ birth=yes }
 	640.6.14={ death=yes }
 }
@@ -4486,7 +4489,9 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	591.5.5={ birth=yes }
+	612.1.1={ add_spouse=184601 }
 	657.7.1={ death=yes }
 }
 184592={
@@ -4495,6 +4500,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	595.9.27={ birth=yes }
 	643.5.12={ death=yes }
 }
@@ -4504,6 +4510,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	599.9.2={ birth=yes }
 	682.3.27={ death=yes }
 }
@@ -4513,6 +4520,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	603.3.1={ birth=yes }
 	643.8.30={ death=yes }
 }
@@ -4523,6 +4531,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184588	#Shu
+	mother=184600	#Daniyah
 	605.3.19={ birth=yes }
 	646.9.25={ death=yes }
 }
@@ -4532,6 +4541,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184591	#Amr
+	mother=184601	#Khadija
 	617.9.1={ birth=yes }
 	675.1.16={ death=yes }
 }
@@ -4542,6 +4552,7 @@
 	culture=kanuri 
 	religion=bori
 	father=184591	#Amr
+	mother=184601	#Khadija
 	621.11.6={ birth=yes }
 	665.12.15={ death=yes }
 }
@@ -4552,16 +4563,672 @@
 	culture=kanuri 
 	religion=bori
 	father=184591	#Amr
+	mother=184601	#Khadija
 	624.4.22={ birth=yes }
 	680.7.4={ death=yes }
 }
 184599={
 	name=Gana
 	dynasty=1000124361
-	dna="gklngnppbhn"
 	culture=kanuri 
 	religion=bori
 	father=184591	#Amr
+	mother=184601	#Khadija
 	628.10.25={ birth=yes }
 	673.9.12={ death=yes }
+}
+184600={
+	name=Daniyah
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	559.11.14={ birth=yes }
+	621.4.8={ death=yes }
+}
+184601={
+	name=Khadija
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	591.11.14={ birth=yes }
+	657.4.8={ death=yes }
+}
+184602={
+	name=Kashim
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	559.8.4={ birth=yes }
+	580.1.1={ add_spouse=184612 }
+	613.5.7={ death=yes }
+}
+184603={
+	name=Idris
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184602	#Kashim
+	mother=184612	#Rashida
+	582.2.18={ birth=yes }
+	603.1.1={ add_spouse=184613 }
+	643.6.6={ death=yes }
+}
+184604={
+	name=Mamane
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184602	#Kashim
+	mother=184612	#Rashida
+	584.6.14={ birth=yes }
+	656.9.23={ death=yes }
+}
+184605={
+	name=Wahida
+	female=yes
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184602	#Kashim
+	mother=184612	#Rashida
+	585.6.24={ birth=yes }
+	640.12.8={ death=yes }
+}
+184606={
+	name=Karima
+	female=yes
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184602	#Kashim
+	mother=184612	#Rashida
+	589.7.11={ birth=yes }
+	657.10.12={ death=yes }
+}
+184607={
+	name=Amin
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184603	#Idris
+	mother=184613	#Cinta
+	607.8.2={ birth=yes }
+	628.1.1={ add_spouse=184614 }
+	657.5.17={ death=yes }
+}
+184608={
+	name=Salmama
+	dynasty=1000124362
+	dna="cbdhanfagpe
+	culture=kanuri 
+	religion=bori
+	father=184603	#Idris
+	mother=184613	#Cinta
+	611.3.12={ birth=yes }
+	673.8.19={ death=yes }
+}
+184609={
+	name=Jalila
+	female=yes
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184603	#Idris
+	mother=184613	#Cinta
+	614.5.11={ birth=yes }
+	649.12.16={ death=yes }
+}
+184610={
+	name=Fatima
+	female=yes
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184607	#Amin
+	mother=184614	#Layla
+	627.7.20={ birth=yes }
+	701.6.30={ death=yes }
+}
+184611={
+	name=Adam
+	dynasty=1000124362
+	culture=kanuri 
+	religion=bori
+	father=184607	#Amin
+	mother=184614	#Layla
+	631.10.22={ birth=yes }
+	689.9.27={ death=yes }
+}
+184612={
+	name=Rashida
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	559.11.14={ birth=yes }
+	613.4.8={ death=yes }
+}
+184613={
+	name=Cinta
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	582.11.14={ birth=yes }
+	643.4.8={ death=yes }
+}
+184614={
+	name=Layla
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	607.11.14={ birth=yes }
+	657.4.8={ death=yes }
+}
+184615={
+	name=Umar
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	570.6.21={ birth=yes }
+	591.1.1={ add_spouse=184623 }
+	629.12.15={ death=yes }
+}
+184616={
+	name=Bakhita
+	female=yes
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184615	#Umar
+	mother=184623	#Aliyah
+	596.10.25={ birth=yes }
+	645.5.19={ death=yes }
+}
+184617={
+	name=Buyuma
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184615	#Umar
+	mother=184623	#Aliyah
+	600.3.27={ birth=yes }
+	621.1.1={ add_spouse=184624 }
+	670.8.29={ death=yes }
+}
+184618={
+	name=Bikorom
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184615	#Umar
+	mother=184623	#Aliyah
+	604.3.4={ birth=yes }
+	661.12.15={ death=yes }
+}
+184619={
+	name=Ya
+	female=yes
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184615	#Umar
+	mother=184623	#Aliyah
+	605.12.9={ birth=yes }
+	667.9.22={ death=yes }
+}
+184620={
+	name=Bakhita
+	female=yes
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184615	#Umar
+	mother=184623	#Aliyah
+	607.7.9={ birth=yes }
+	675.10.30={ death=yes }
+}
+184621={
+	name=Tandja
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184617	#Buyuma
+	mother=184624	#Ya
+	626.6.17={ birth=yes }
+	695.10.29={ death=yes }
+}
+184622={
+	name=Sukda
+	female=yes
+	dynasty=1000124363
+	culture=kanuri 
+	religion=bori
+	father=184617	#Buyuma
+	mother=184624	#Ya
+	629.4.2={ birth=yes }
+	708.7.13={ death=yes }
+}
+184623={
+	name=Aliyah
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	570.11.14={ birth=yes }
+	629.4.8={ death=yes }
+}
+184624={
+	name=Ya
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	600.11.14={ birth=yes }
+	670.4.8={ death=yes }
+}
+184625={
+	name=Baram
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	579.12.11={ birth=yes }
+	600.1.1={ add_spouse=184631 }
+	637.4.27={ death=yes }
+}
+184626={
+	name=Mina
+	female=yes
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	father=184625	#Baram
+	mother=184631	#Bakhita
+	599.4.22={ birth=yes }
+	667.11.28={ death=yes }
+}
+184627={
+	name=Abubakar
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	father=184625	#Baram
+	mother=184631	#Bakhita
+	604.3.18={ birth=yes }
+	625.1.1={ add_spouse=184632 }
+	664.7.3={ death=yes }
+}
+184628={
+	name=Cinta
+	female=yes
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	father=184625	#Baram
+	mother=184631	#Bakhita
+	607.2.5={ birth=yes }
+	640.10.20={ death=yes }
+}
+184629={
+	name=Abubakar
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	father=184627	#Abubakar
+	mother=184632	#Karima
+	625.2.16={ birth=yes }
+	672.11.6={ death=yes }
+}
+184630={
+	name=Suleyman
+	dynasty=1000124364
+	culture=kanuri 
+	religion=bori
+	father=184627	#Abubakar
+	mother=184632	#Karima
+	628.7.23={ birth=yes }
+	702.6.19={ death=yes }
+}
+184631={
+	name=Bakhita
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	579.11.14={ birth=yes }
+	637.4.8={ death=yes }
+}
+184632={
+	name=Karima
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	604.11.14={ birth=yes }
+	664.4.8={ death=yes }
+}
+184633={
+	name=Mohammed
+	dynasty=1000124365
+	culture=kanuri 
+	religion=bori
+	579.11.1={ birth=yes }
+	600.1.1={ add_spouse=184638 }
+	636.12.17={ death=yes }
+}
+184634={
+	name=Mamane
+	dynasty=1000124365
+	culture=kanuri 
+	religion=bori
+	father=184633	#Mohammed
+	mother=184638	#Khadija
+	603.4.17={ birth=yes }
+	624.1.1={ add_spouse=184639 }
+	663.6.29={ death=yes }
+}
+184635={
+	name=Bukar
+	dynasty=1000124365
+	culture=kanuri 
+	religion=bori
+	father=184633	#Mohammed
+	mother=184638	#Khadija
+	606.9.9={ birth=yes }
+	648.12.31={ death=yes }
+}
+184636={
+	name=Said
+	dynasty=1000124365
+	culture=kanuri 
+	religion=bori
+	father=184633	#Mohammed
+	mother=184638	#Khadija
+	610.11.5={ birth=yes }
+	673.4.4={ death=yes }
+}
+184637={
+	name=Ya
+	female=yes
+	dynasty=1000124365
+	culture=kanuri 
+	religion=bori
+	father=184634	#Mamane
+	mother=184639	#Jalila
+	628.3.26={ birth=yes }
+	676.10.10={ death=yes }
+}
+184638={
+	name=Khadija
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	579.11.14={ birth=yes }
+	636.4.8={ death=yes }
+}
+184639={
+	name=Jalila
+	female=yes
+	dynasty=0
+	culture=kanuri
+	religion=bori
+	603.11.14={ birth=yes }
+	663.4.8={ death=yes }
+}
+184640={
+	name=Brahim
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	580.7.22={ birth=yes }
+	601.1.1={ add_spouse=184651 }
+	634.12.3={ death=yes }
+}
+184641={
+	name=Ibrahim
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	603.1.19={ birth=yes }
+	624.1.1={ add_spouse=184652 }
+	674.11.20={ death=yes }
+}
+184642={
+	name=Goukouni
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	606.11.1={ birth=yes }
+	653.2.9={ death=yes }
+}
+184643={
+	name=Timan
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	609.3.1={ birth=yes }
+	668.2.28={ death=yes }
+}
+184644={
+	name=Khalila
+	female=yes
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	610.5.22={ birth=yes }
+	679.6.27={ death=yes }
+}
+184645={
+	name=Ning
+	female=yes
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	615.5.14={ birth=yes }
+	685.1.19={ death=yes }
+}
+184646={
+	name=Mariam
+	female=yes
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184640	#Brahim
+	mother=184651	#Eya
+	618.1.2={ birth=yes }
+	672.4.12={ death=yes }
+}
+184647={
+	name=Omer
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184641	#Ibrahim
+	mother=184652	#Hadurah
+	622.10.11={ birth=yes }
+	675.2.24={ death=yes }
+}
+184648={
+	name=Abdulraham
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184641	#Ibrahim
+	mother=184652	#Hadurah
+	625.6.3={ birth=yes }
+	661.10.22={ death=yes }
+}
+184649={
+	name=Bakhita
+	female=yes
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184641	#Ibrahim
+	mother=184652	#Hadurah
+	628.6.11={ birth=yes }
+	694.5.15={ death=yes }
+}
+184650={
+	name=Minni
+	dynasty=1000124366
+	culture=zaghawa 
+	religion=bori
+	father=184641	#Ibrahim
+	mother=184652	#Hadurah
+	631.10.7={ birth=yes }
+	696.7.1={ death=yes }
+}
+184651={
+	name=Eya
+	female=yes
+	dynasty=0
+	culture=zaghawa
+	religion=bori
+	580.11.14={ birth=yes }
+	634.4.8={ death=yes }
+}
+184652={
+	name=Hadurah
+	female=yes
+	dynasty=0
+	culture=zaghawa
+	religion=bori
+	603.11.14={ birth=yes }
+	674.4.8={ death=yes }
+}
+184653={
+	name=Musa
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	560.9.11={ birth=yes }
+	581.1.1={ add_spouse=184663 }
+	630.4.3={ death=yes }
+}
+184654={
+	name=Sumah
+	female=yes
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184653	#Musa
+	mother=184663	#Tele
+	585.7.19={ birth=yes }
+	656.7.23={ death=yes }
+}
+184655={
+	name=Tele
+	female=yes
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184653	#Musa
+	mother=184663	#Tele
+	587.1.19={ birth=yes }
+	663.11.22={ death=yes }
+}
+184656={
+	name=Abbas
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184653	#Musa
+	mother=184663	#Tele
+	590.5.1={ birth=yes }
+	611.1.1={ add_spouse=184664 }
+	653.5.20={ death=yes }
+}
+184657={
+	name=Ingir
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184653	#Musa
+	mother=184663	#Tele
+	593.7.19={ birth=yes }
+	643.4.4={ death=yes }
+}
+184658={
+	name=Sora
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184656	#Abbas
+	mother=184664	#Yasmin
+	611.12.23={ birth=yes }
+	681.8.14={ death=yes }
+}
+184659={
+	name=Minni
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184656	#Abbas
+	mother=184664	#Yasmin
+	612.6.12={ birth=yes }
+	660.6.28={ death=yes }
+}
+184660={
+	name=Musa
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184656	#Abbas
+	mother=184664	#Yasmin
+	615.5.4={ birth=yes }
+	646.9.17={ death=yes }
+}
+184661={
+	name=Hadurah
+	female=yes
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184656	#Abbas
+	mother=184664	#Yasmin
+	616.1.26={ birth=yes }
+	678.8.12={ death=yes }
+}
+184662={
+	name=Okiramaj
+	dynasty=1000124367
+	culture=zaghawa 
+	religion=bori
+	father=184656	#Abbas
+	mother=184664	#Yasmin
+	619.1.9={ birth=yes }
+	680.11.8={ death=yes }
+}
+184663={
+	name=Tele
+	female=yes
+	dynasty=0
+	culture=zaghawa
+	religion=bori
+	560.11.14={ birth=yes }
+	630.4.8={ death=yes }
+}
+184664={
+	name=Yasmin
+	female=yes
+	dynasty=0
+	culture=zaghawa
+	religion=bori
+	590.11.14={ birth=yes }
+	653.4.8={ death=yes }
 }
