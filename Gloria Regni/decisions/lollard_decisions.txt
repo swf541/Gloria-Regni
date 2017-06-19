@@ -18,7 +18,7 @@ decisions = {
 			piety = -500
 			set_dynasty_flag = dissolution_lollard
 			scaled_wealth = 10.0
-			add_character_modifier = { name = lollard_looter duration -1 }
+			add_character_modifier = { name = lollard_looter duration = -1 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -43,7 +43,7 @@ decisions = {
 		}
 		effect = {
 			piety = -50
-			add_character_modifier = { name = lollard_former_monk duration -1 }
+			add_character_modifier = { name = lollard_former_monk duration = -1 }
 			remove_trait = monk
 			remove_trait = nun
 		}
