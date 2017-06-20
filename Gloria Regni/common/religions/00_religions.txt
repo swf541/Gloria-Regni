@@ -12,7 +12,7 @@ christian = {
 	male_names = {
 		Andrew Antoninus Bartolomeus Benedict Christian Christopher Clement Constantine David Demetrius Eustace George Gregory 
 		Hans Isaac Joakim Jacob John Jordan Joseph Laurence Magnus Marcus Martin Matthew Michael Nicholas Patrick Paul Peter Philip 
-		Salvador Samuel Sebastian Simon Stephen Thomas Abraham Alexander Daniel Jesus Job Joshua Cyrus Luke Joseph Zachariah
+		Salvador Samuel Sebastian Simon Stephen Thomas Abraham Alexander Daniel Jesus Job Joshua Cyrus Luke Zachariah
 	}
 	female_names = {
 		Anna Beatrice Benedicta Brigid Catherine Cecilia Christina Clementia Constance Dorothy Elisabeth Joan Judith Juliana Helen 
@@ -366,9 +366,9 @@ christian = {
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+	    }
 	}
 	
 	waldensian = {
@@ -392,9 +392,9 @@ christian = {
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+	    }
 	}
 	
 	lollard = {
@@ -416,9 +416,9 @@ christian = {
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+		}
 	}
 	
 	orthodox = {
@@ -2467,7 +2467,7 @@ pagan_group = {
 		religious_clothing_priest = 3
 	}
 
-	east_germanic_pagan = { 
+	east_germanic_pagan_reformed = { 
 		graphical_culture = norsegfx
 
 		icon = 98
@@ -2599,7 +2599,7 @@ pagan_group = {
 		high_god_name = GOD_WODAN
 		god_names = {
 			GOD_WODAN GOD_THE_ALLFATHER GOD_DONAR GOD_TIW 
-			GOD_BEALDOR GOD_EOSTRE GOD_WELAND GOD_FRIGE 
+			GOD_BEALDOR GOD_EOSTRE GOD_WELAND
 			GOD_FRIGE GOD_SEAXNEAT
 		}		
 		evil_god_names = {
@@ -2656,7 +2656,7 @@ pagan_group = {
 		high_god_name = GOD_WODAN
 		god_names = {
 			GOD_WODAN GOD_THE_ALLFATHER GOD_DONAR GOD_TIW 
-			GOD_BEALDOR GOD_EOSTRE GOD_WELAND GOD_FRIGE 
+			GOD_BEALDOR GOD_EOSTRE GOD_WELAND
 			GOD_FRIGE GOD_SEAXNEAT
 		}		
 		evil_god_names = {
@@ -3419,8 +3419,8 @@ indian_group = {
 		intermarry = zun_pagan
 		intermarry = zun_pagan_reformed
 		intermarry = buddhist
-		intermarry = mahayana_buddhist
-		intermarry = vajrayana_buddhist
+		#intermarry = mahayana_buddhist
+		#intermarry = vajrayana_buddhist
 		
 	}
 	buddhist = {
@@ -3467,8 +3467,8 @@ indian_group = {
 		intermarry = zun_pagan
 		intermarry = zun_pagan_reformed
 		intermarry = buddhist
-		intermarry = mahayana_buddhist
-		intermarry = vajrayana_buddhist
+		#intermarry = mahayana_buddhist
+		#intermarry = vajrayana_buddhist
 	}
 	jain = {
 		graphical_culture = jaingfx
@@ -3511,7 +3511,7 @@ indian_group = {
 		intermarry = zun_pagan
 		intermarry = zun_pagan_reformed
 		intermarry = buddhist
-		intermarry = mahayana_buddhist
-		intermarry = vajrayana_buddhist
+		#intermarry = mahayana_buddhist
+		#intermarry = vajrayana_buddhist
 	}
 }

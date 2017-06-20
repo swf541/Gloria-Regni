@@ -956,7 +956,7 @@ pagan_group = {
 		
 		high_god_name = GOD_ARMAZI
 		god_names = {
-			GOD_ARMAZI GOD_ADGILIS_DEDA GOD_AMIRANI GOD_ARMAZI GOD_BAADURI GOD_DALI GOD_LAMARA GOD_MORIGE GOD_OCHOPINTRE GOD_TAMARI GOD_ZADENI GOD_GATSI GOD_GAIMI
+			GOD_ARMAZI GOD_ADGILIS_DEDA GOD_AMIRANI GOD_BAADURI GOD_DALI GOD_LAMARA GOD_MORIGE GOD_OCHOPINTRE GOD_TAMARI GOD_ZADENI GOD_GATSI GOD_GAIMI
 		}
 		evil_god_names = {
 			GOD_ROKAPI MONSTER_DEVI MONSTER_ALI  
@@ -1009,7 +1009,7 @@ pagan_group = {
 		
 		high_god_name = GOD_ARMAZI
 		god_names = {
-			GOD_ARMAZI GOD_ADGILIS_DEDA GOD_AMIRANI GOD_ARMAZI GOD_BAADURI GOD_DALI GOD_LAMARA GOD_MORIGE GOD_OCHOPINTRE GOD_TAMARI GOD_ZADENI GOD_GATSI GOD_GAIMI
+			GOD_ARMAZI GOD_ADGILIS_DEDA GOD_AMIRANI GOD_BAADURI GOD_DALI GOD_LAMARA GOD_MORIGE GOD_OCHOPINTRE GOD_TAMARI GOD_ZADENI GOD_GATSI GOD_GAIMI
 		}
 		evil_god_names = {
 			GOD_ROKAPI MONSTER_DEVI MONSTER_ALI  
@@ -1759,7 +1759,7 @@ bosporan_group = {
 	male_names = {
 		Andrew Antoninus Bartolomeus Benedict Christian Christopher Clement Constantine David Demetrius Eustace George Gregory 
 		Hans Isaac Joakim Jacob John Jordan Joseph Laurence Magnus Marcus Martin Matthew Michael Nicholas Patrick Paul Peter Philip 
-		Salvador Samuel Sebastian Simon Stephen Thomas Abraham Alexander Daniel Jesus Job Joshua Cyrus Luke Joseph Zachariah
+		Salvador Samuel Sebastian Simon Stephen Thomas Abraham Alexander Daniel Jesus Job Joshua Cyrus Luke Zachariah
 	}
 	female_names = {
 		Anna Beatrice Benedicta Brigid Catherine Cecilia Christina Clementia Constance Dorothy Elisabeth Joan Judith Juliana Helen 
@@ -1950,9 +1950,9 @@ bosporan_group = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+	    }
 	}
 
 	paulician = {
@@ -1980,9 +1980,9 @@ bosporan_group = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+	    }
 	}
 
 	cathar = {
@@ -2005,9 +2005,9 @@ bosporan_group = {
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
 
-                character_modifier = {
-			temple_tax_modifier = -1 
-	        }
+        character_modifier = {
+			temple_vassal_tax_modifier = -1.00
+	    }
 	}
 
 	encratites = {

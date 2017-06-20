@@ -15,12 +15,10 @@ the_vestal_virgins = {
 	
 	can_join_society = {
 		hidden_trigger = {
-			NAND = {
-				is_society_rank_full = { 
+			is_society_rank_full = { 
 					society = the_vestal_virgins
 					rank = 1
 				}
-			}
 			always = no
 		}
 		OR = {
