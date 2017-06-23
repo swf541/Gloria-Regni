@@ -4,3 +4,4 @@ user_dir = "Gloria Regni"
 
 replace_path="history\provinces"
 replace_path = "gfx/loadingscreens"
+replace_path = "history/technology"
