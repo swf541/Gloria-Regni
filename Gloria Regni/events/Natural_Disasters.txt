@@ -2,6 +2,7 @@ namespace = DIS
 
 province_event = {	#Minor Flooding
 	id = DIS.1
+	desc = "DIS.1DESC"
 
 	is_triggered_only = yes
 	
@@ -18,12 +19,13 @@ province_event = {	#Minor Flooding
 	}
 	
 	option = {
-		name = ok
+		name = OK
 	}
 }
 
 province_event = {	#Major Flooding
 	id = DIS.2
+	desc = "DIS.2DESC"
 
 	is_triggered_only = yes
 	
@@ -52,7 +54,7 @@ province_event = {	#Major Flooding
 	}
 	
 	option = {
-		name = ok
+		name = OK
 	}
 }
 

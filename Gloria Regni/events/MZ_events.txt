@@ -44,7 +44,7 @@ character_event = {
 	}
 	option = {
 		name = "EVTOPTAZOR.94001"
-		wealth = -30
+		cash = -30
 		piety = 50
 		random_list = {
 			85 = {}
@@ -55,7 +55,7 @@ character_event = {
 	}
 	option = {
 		name = "EVTOPTBZOR.94001"
-		wealth = -50
+		cash = -50
 		prestige = 20
 	}
 	option = {
@@ -93,7 +93,7 @@ character_event = {
 	}
 	option = {
 		name = "EVTOPTAZOR.94002"
-		wealth = -75
+		cash = -75
 		piety = 20
 		add_character_modifier = {
 			name = zoroastrian_tolerance
@@ -228,7 +228,7 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTAZOR.94010" # Rebuild just the royal palace.
-		wealth = -100
+		cash = -100
 		capital_scope = {
 			add_province_modifier = { name = "rebuilding_persepolis_local" duration = 730 }
 			}
@@ -237,7 +237,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTBZOR.94010" # Rebuild the entire city.
-		wealth = -200
+		cash = -200
 		capital_scope = {
 			add_province_modifier = { name = "rebuilding_persepolis_local" duration = 1460 }
 			}
@@ -246,7 +246,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTCZOR.94010" # Make it the greatest city there ever was!
-		wealth = -300
+		cash = -300
 		capital_scope = {
 			add_province_modifier = { name = "rebuilding_persepolis_local" duration = 2920 }
 			}
