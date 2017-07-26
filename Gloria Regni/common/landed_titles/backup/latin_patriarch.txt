@@ -1,0 +1,30 @@
+d_constantinople = {
+    color={ 150 90 30 }
+    color2={ 220 220 0 }
+
+    capital = 496 # Constantinople
+
+    title = "Patriarch"
+    title_prefix = "Patriarchate of"
+    foa = "ECUMENICAL_PATRIARCH_FOA"
+
+    # Always exists
+    landless = yes
+
+    religion = catholic
+
+    # Cannot be held as a secondary title
+    primary = yes
+
+    dynasty_title_names = no # Will not be named "Seljuk", etc.
+
+    # Regnal names
+    male_names = {
+        Alexios Anastasios Arsenios Athanasios Antonios    Basileios Dositheos Eustathios Eustratios
+        Euthymios Georgios Gerasimos Germanos Gregorios Ignatios Ioannes Ioseph Isaias Isidoros
+        Kallistos Konstantinos Kosmas Leon Loukas Makarios Manuel Matthaios Maximos Methodios
+        Metrophanes Michael Neophytos Nephon Nikolaos Nikephoros Nilos Pavlos Philotheos Photios
+        Polyeuktos Sergios Sisinnios Stephanos Tarasios Theodoros Theodosios Theodotos Theoleptos
+        Theophanes Theophylaktos Tryphon Zacharias
+    }
+}
