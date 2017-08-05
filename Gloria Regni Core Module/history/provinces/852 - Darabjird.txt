@@ -1,0 +1,29 @@
+# 852 - Darabjird
+
+# County Title
+title = c_darabjird
+
+# Settlements
+max_settlements = 5
+b_darabjird = castle
+b_darkan = city
+b_furg = temple
+b_qutruh = castle
+
+#b_niriz = city
+#b_istahbanat = castle
+
+# Misc
+culture = persian
+religion = zoroastrian
+
+# History
+967.1.1 = { religion = sunni }
+1065.1.1 = { culture = kurdish }
+1065.1.1 = { b_darabjird = tribal }
+1065.10.10 = {
+      remove_settlement = b_furg
+      remove_settlement = b_qutruh
+}
+1066.1.1 = { b_niriz = city }
+1149.1.1 = { b_furg = temple }

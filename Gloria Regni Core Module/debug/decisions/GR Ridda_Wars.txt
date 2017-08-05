@@ -1,0 +1,24 @@
+decisions = {
+	unify_arabia = {
+		is_high_prio = yes
+		potential = {
+			NOT = { year = 700 }
+			completely_controls = k_arabia
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { has_global_flag = ridda_wars_end }
+		}
+		allow = {
+			completely_controls = k_arabia
+		}
+		effect = {
+			set_global_flag = ridda_wars_end
+			narrative_event = { id = IHS.1 }
+			prestige = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

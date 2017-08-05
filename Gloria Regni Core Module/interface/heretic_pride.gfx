@@ -1,0 +1,763 @@
+spriteTypes = {
+	spriteType = {
+                name = "GFX_trait_yazidi_pilgrim"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_taus"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_israfel"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_azrael"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_mihael"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_dardael"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_samael"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_trait_koasasa_nurael"
+                texturefile = "gfx/traits/yazidi_koasasa.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_obj_yazidi_peace"
+                texturefile = "gfx/heretic_pride/obj_yazidi_peace.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_study_shamanism"
+                texturefile = "gfx/heretic_pride/obj_shaman.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_obj_monu"
+                texturefile = "gfx/heretic_pride/obj_monu.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+	spriteType = {
+                name = "GFX_obj_karramiya_preach"
+                texturefile = "gfx/heretic_pride/obj_karramiya_preach.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		#Hurufi
+		spriteType = {
+                name = "GFX_trait_hurufi_mystic_a"
+                texturefile = "gfx/traits/hurufi_mystic_1.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_hurufi_mystic_b"
+                texturefile = "gfx/traits/hurufi_mystic_2.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_hurufi_mystic_c"
+                texturefile = "gfx/traits/hurufi_mystic_3.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_hurufi_diwan"
+                texturefile = "gfx/traits/hurufi_poet.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+			name = "GFX_evt_diwan_poetry"
+			texturefile = "gfx/event/diwan_poetry.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+			name = "GFX_evt_tangs"
+			texturefile = "gfx/event/tangs.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+			name = "GFX_evt_hp_crusader"
+			texturefile = "gfx/event/hp_crusader.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+			name = "GFX_evt_hp_muslim"
+			texturefile = "gfx/event/hp_muslim.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+			name = "GFX_evt_girl_with_cat"
+			texturefile = "gfx/event/girl_with_cat.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+			name = "GFX_evt_samaritan_event"
+			texturefile = "gfx/event/samaritan_event.tga"
+			allwaystransparent = yes
+		}
+		spriteType = {
+                name = "GFX_trait_druze_uqqal"
+                texturefile = "gfx/traits/druze_star.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_druze_ajawid"
+                texturefile = "gfx/traits/druze_star_2.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_druze_taqiyya"
+                texturefile = "gfx/traits/druze_star_gray.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_obj_druze_esoteric_learning"
+                texturefile = "gfx/traits/druze_star_gray.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+                name = "GFX_trait_zikri_mahdi"
+                texturefile = "gfx/traits/zikri_mahdi.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+        }
+		spriteType = {
+			name = "GFX_evt_zikri_mountains"
+			texturefile = "gfx/event/zikri_mountains.tga"
+			allwaystransparent = yes
+		}
+	spriteType = {
+			name = "GFX_evt_yazidi_pil"
+			texturefile = "gfx/event/yazidi_pil.tga"
+			allwaystransparent = yes
+		}
+	spriteType = {
+		name = "GFX_evt_mani_art"
+		texturefile = "gfx/event/mani_art.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_druze_loc"
+		texturefile = "gfx/event/druze_loc.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_wald_event"
+		texturefile = "gfx/event/Wald_event.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_messalian_sin"
+		texturefile = "gfx/event/messalian_sin.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_mazdaki_event"
+		texturefile = "gfx/event/mazdaki_event.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_heretic_pride_event"
+		texturefile = "gfx/event/heretic_pride_event.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_heresy_defeated"
+		texturefile = "gfx/event/heresy_defeated.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_mary_magdalene"
+		texturefile = "gfx/event/mary_magdalene.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_silk_road"
+		texturefile = "gfx/event/silk_road.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_sr_monastery"
+		texturefile = "gfx/event/sr_monastery.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_aditya"
+		texturefile = "gfx/event/aditya.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_ynglism"
+		texturefile = "gfx/event/ynglism.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_bonfire"
+		texturefile = "gfx/event/bonfire.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_serer"
+		texturefile = "gfx/event/serer.tga"
+		allwaystransparent = yes
+	}
+	#DECISIONS
+	spriteType = {
+		name = "GFX_create_zikri_caliphate"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_restore_order_samarra"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_observe_peacock_feasting"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_yazidi_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_pact_of_time"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_druze_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_druze_retreat"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_study_hurufi_one"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_study_hurufi_two"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_study_hurufi_three"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_hurufi_omens"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_yazidi_pilgrimage"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_manichean_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_observe_bema_feasting"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}spriteType = {
+		name = "GFX_go_manichean_elect"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_preb"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_bish"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_apo"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_create_manichean_leader"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_create_karaite_high_priesthood"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_consolamentum"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_create_cathar_papacy"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_cathar_adoption"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_create_iconoclast_patriarch"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_glut"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_greed"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_sloth"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_arbitrary"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_cynical"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_drunk"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_hed"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_dec"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_name"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_raise_zealot_units"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_dissolution_of_the_monastery"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_kafir_clear_dec"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_mend_chalcedon_schism"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_end_heresy_schism"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_paul_pogrom"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_resettle_paul"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_create_samaria"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_rebulid_the_altar"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_adopt_samaritan_tribe"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_claim_throne_of_israel"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_claim_throne_of_david"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_wald_path"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_wald_char"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_claim_throne_of_israel"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_become_messalian_master"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_form_army_of_lucifer"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_donate_money_to_army_of_lucifer"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_expel_army_of_lucifer"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_messalian_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_messalian_castrate"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_messalian_expel_daemon"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_messalian_init"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_restore_mazdaki_priesthood"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_mazdaki_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_observe_bema_feasting"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_manichean_patron_deity"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_elect"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_preb"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_bish"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_go_manichean_apo"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "create_manichean_leader"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_patronize_art"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_church_of_st_bogomil"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_get_formalize_bogomilist_church"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_organize_bogomilist_church"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_formalize_bogomilist_church"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_begin_formalize_bogomilist_church"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_force_formalize_bogomilist_church"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_twelver_decadence"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	spriteType = {
+		name = "GFX_choose_shia_sect"
+		texturefile = "gfx/heretic_pride/heretic_pride_decision.tga"
+	}
+	#END DECISIONS
+	spriteType = {
+        name = "GFX_trait_kharijite_kafir"
+        texturefile = "gfx/traits/kharijite_k.tga"
+        noOfFrames = 1
+        norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+    }
+	spriteType = {
+                name = "GFX_trait_anarchy_at_samarra_trait"
+                texturefile = "gfx/traits/anarchy_at_samarra.tga"
+                noOfFrames = 1
+                norefcount = yes
+                effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_on_pilgrimage_yazidi"
+		texturefile = "gfx/traits/pilgrim_hp.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+		spriteType = {
+		name = "GFX_trait_on_pilgrimage_druze"
+		texturefile = "gfx/traits/pilgrim_hp.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+		
+	spriteType = {
+		name = "GFX_trait_iconoclast_trait"
+		texturefile = "gfx/traits/iconoclast_trait.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_sandaliati"
+		texturefile = "gfx/traits/Wald_Sand.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_novellani"
+		texturefile = "gfx/traits/Wald_nov.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_doctores"
+		texturefile = "gfx/traits/Wald_Doc.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_perfecti"
+		texturefile = "gfx/traits/cathar_perfecti.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_tolerance"
+		texturefile = "gfx/traits/tolerance.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_fearless"
+		texturefile = "gfx/traits/fearless.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_become_fearless"
+		texturefile = "gfx/heretic_pride/obj_fearless.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_adopted"
+		texturefile = "gfx/traits/adopted.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_tribe_of_manasseh"
+		texturefile = "gfx/traits/tribe_of_manasseh.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_tribe_of_levi"
+		texturefile = "gfx/traits/tribe_of_levi.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_tribe_of_benjamin"
+		texturefile = "gfx/traits/tribe_of_benjamin.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_tribe_of_ephraim"
+		texturefile = "gfx/traits/tribe_of_ephraim.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_house_of_david"
+		texturefile = "gfx/traits/house_of_david.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_manichean_elect"
+		texturefile = "gfx/traits/manichean_elect.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_messalian_master"
+		texturefile = "gfx/traits/perfect_messalian.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_cult_of_lucifer"
+		texturefile = "gfx/traits/go_lucifer.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_twelver"
+		texturefile = "gfx/traits/twelver.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_fiver"
+		texturefile = "gfx/traits/fiver.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_ismali"
+		texturefile = "gfx/traits/ismali.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_shaman"
+		texturefile = "gfx/traits/shaman.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_taaraism_monu"
+		texturefile = "gfx/traits/taaraism_monu.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_saltigue"
+		texturefile = "gfx/traits/saltigue.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_vegetarian"
+		texturefile = "gfx/traits/vegetarian.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_zohd"
+		texturefile = "gfx/traits/zohd.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	#NEED NEW GRAPHICS
+	
+}

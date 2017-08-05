@@ -1,0 +1,71 @@
+namespace = PA
+
+# Grain Supply Resumed
+character_event = {
+	id = PA.10009
+	desc = EVTDESCPA.10009
+	picture = GFX_evt_market_byzantine
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = grain_supply_resumed }
+		OR = {
+			has_landed_title = e_wre
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+        }
+		completely_controls = d_damietta
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OPTPA_10009
+                set_global_flag = grain_supply_resumed
+                add_character_modifier = {
+                        name = egyptian_grain        
+                        duration = -1
+		        inherit = yes
+		}
+	}
+}
+
+# Grain Supply Interrupted
+character_event = {
+	id = PA.10010
+	desc = EVTDESCPA.10010
+	picture = GFX_evt_market_byzantine
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+        trigger = {
+		has_dlc = "Legacy of Rome"
+		has_global_flag = grain_supply_resumed
+		OR = {
+			has_landed_title = e_wre
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+                }
+		NOT = { completely_controls = d_damietta }
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+	        name = OPTPA_10010
+                clr_global_flag = grain_supply_resumed
+                remove_character_modifier = egyptian_grain
+	}
+}

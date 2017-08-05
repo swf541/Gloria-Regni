@@ -1,0 +1,143 @@
+# Mod Character
+# Omani: 1.000.258.700 - 1.000.258.799
+
+1000258103 = {
+	name="Amr"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	510.1.1 = {
+		birth = yes
+	}
+	577.1.1 = {
+		death = yes
+	}
+}
+1000258104 = {
+	name="Imran"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258103
+	535.1.1 = {
+		birth = yes
+	}
+	609.1.1 = {
+		death = yes
+	}
+}
+1000258105 = {
+	name="Malik"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258104
+	560.1.1 = {
+		birth = yes
+	}
+	627.1.1 = {
+		death = yes
+	}
+}
+1000258106 = {
+	name="Laqeet"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258105
+	589.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = sunni
+	}
+	632.6.8 = {
+		religion = pagan
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+1000258107 = {
+	name="Abd al-Jalandi"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258104
+	569.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = sunni
+	}
+	632.1.1 = {
+		death = yes
+	}
+}
+1000258108 = {
+	name="Abu Suffrah"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258107
+	590.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = sunni
+	}
+	657.1.1 = {
+		death = yes
+	}
+}
+1000258109 = {
+	name="Amr"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258106
+	608.1.1 = {
+		birth = yes
+	}
+	628.1.1 = {
+		religion = sunni
+	}
+	632.6.8 = {
+		religion = pagan
+	}
+	633.1.1 = {
+		religion = sunni
+	}
+	670.1.1 = {
+		death = yes
+	}
+}
+1000258110 = {
+	name="Imran"
+	dynasty = 1042181
+	religion = pagan
+	culture = omani
+	father = 1000258109
+	630.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		religion = sunni
+	}
+	694.1.1 = {
+		death = yes
+	}
+}
+1000258111 = {
+	name="Masud"
+	dynasty = 1042181
+	religion = sunni
+	culture = omani
+	father = 1000258110
+	659.1.1 = {
+		birth = yes
+	}
+	726.1.1 = {
+		death = yes
+	}
+}

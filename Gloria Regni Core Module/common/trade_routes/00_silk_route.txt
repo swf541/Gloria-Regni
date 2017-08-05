@@ -1,0 +1,64 @@
+silk_road = {
+	wealth = 100			# Total base wealth of silk route
+
+	modifier = {			# How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.15
+		city_tax_modifier = 0.15
+		temple_tax_modifier = 0.15
+		trade_route_value = 1
+	}
+
+	start = {				# Start provinces of trade route
+		1464 # Anxi
+		1465 # Kundina
+	}
+
+	# Northern Silk Route
+	path = {	# Anxi-Dunhuang-Khotan-Kashgar
+		1464 1448 1447 1442 1441 1440 1438 1439
+	}
+	path = {	# Dunhuang-Turpan-Kucha-Kashgar
+		1448 1450 1446 1443 1444 1445 1439
+	}
+	path = {	# Kashgar-Khojand
+		1439 1423 887
+	}
+	path = {	# Ushrushana-Herat
+		887 1181 903 628 853 630 905
+	}
+	path = {	# Herat-Baghdad
+		905 634 660 663 658 688 657 693
+	}
+	path = {	# Herat-Hormuz
+		905 635 639 640 641
+	}
+	path = {	# Kerman-Wasit
+		639 638 646 648 713
+	}
+	path = {	# Wasit-Baghdad
+		713 693
+	}
+	path = {	# Khojand-Turkestan-Itil-Tana
+		887 1186 1431 901 900 622 621 618 620 605 607 596
+	}
+	path = {	# Bagdad-Antioch
+		693 696 695 697 684 733 764
+	}
+	path = {	# Samarra-Acre
+		696 690 730 728 773 772
+	}
+
+	# Southern Silk Route
+	path = {	# Kundina-Pundravardhana-Candradvipa-Vijayawada(Masulipatam)-Mahoyadapuram(Muziris)-Bharuch-Banbhore
+		1465 1177 1418 1321 1381 1325 1319 1236 1411 1410 1409 1407 1221 1406 1405 1403 1402 1401 1114 1400 1399 1127 1398 1397 1297
+	}
+	path = {	# Yarkand-Kasmira-Nandana-Indus Valley-Banbhore
+		1438 1161 1341 1340 1338 1337 1339 1138 1303 1297
+	}
+	path = {	# Banbhore-Hormuz-Basra-Wasit(Baghdad)
+		1297 1396 1392 1393 641 1394 1395 649 713
+	}
+	path = {	# Banbhore-Muscat-Aden-Mecca-Cairo-Alexandria
+		1297 1412 1391 868 1390 1389 1388 1387 858 1386 1385 1384 719 1383 791 794 795 796 799 802
+	}
+}

@@ -1,0 +1,77 @@
+diadochi = {
+	customizer = no
+	
+	vassal_opinion = 15
+	monthly_character_prestige = 0.5
+
+
+	male_compliment = COMPL_DIADOCHI
+	female_compliment = COMPL_DIADOCHI	
+}
+
+cultist = {
+	customizer = no
+	
+	monthly_character_piety = 0.5
+
+}
+
+divine = {
+	customizer = yes
+	random = no
+	
+	diplomacy = 50
+        martial = 50
+        stewardship = 50
+        intrigue = 50
+        learning = 50
+
+        health = 100
+        fertility = 1
+
+        immortal = yes
+
+	ruler_designer_cost = 0
+}
+
+qaisar = {
+	customizer = no
+	
+	vassal_opinion = 10
+	monthly_character_prestige = 0.5
+
+	male_compliment = COMPL_QAISAR
+	female_compliment = COMPL_QAISAR
+}
+
+qaisara = {
+	customizer = no
+	
+	vassal_opinion = 10
+	monthly_character_prestige = 0.5
+
+
+	male_compliment = COMPL_QAISARA
+	female_compliment = COMPL_QAISARA
+}
+
+imperator = {
+	customizer = no
+	
+	vassal_opinion = 10
+	monthly_character_prestige = 0.5
+
+	male_compliment = COMPL_IMPERATOR
+	female_compliment = COMPL_IMPERATOR
+}
+
+imperatrix = {
+	customizer = no
+	
+	vassal_opinion = 10
+	monthly_character_prestige = 0.5
+
+
+	male_compliment = COMPL_IMPERATRIX
+	female_compliment = COMPL_IMPERATRIX
+}

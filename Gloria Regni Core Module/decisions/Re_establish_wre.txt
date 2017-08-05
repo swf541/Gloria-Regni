@@ -1,0 +1,78 @@
+targetted_decisions = {
+
+	reestablish_western_empire = {
+		only_playable = yes
+		filter = dynasty
+		ai_target_filter = dynasty
+	
+		from_potential = {
+			completely_controls_region = world_europe_south_italy
+		}
+		
+		potential = {
+			is_female = no
+			age = 16
+			is_ruler = no
+			NOT = {
+				FROM = { is_primary_heir = ROOT }
+			}
+		}
+		
+		allow = {
+			piety = 100
+			prestige = 100
+		}
+		
+		effect = {
+			e_wre = {
+				grant_title = ROOT
+				make_primary_title = yes
+			}
+			FROM = {
+				#any_realm_title = {
+				#	limit = {
+				#		capital_scope = { location = { region = world_europe_south_italy } }
+				#	}
+				#	set_defacto_liege = ROOT
+				#}
+				k_italia_suburbicaria = {
+					set_defacto_liege = ROOT
+					destroy_landed_title = THIS
+				}	
+				k_italia_annonaria = {
+					set_defacto_liege = ROOT
+					de_jure_liege = e_wre
+					destroy_landed_title = THIS
+				}	
+				k_italy = {
+					set_defacto_liege = ROOT
+					destroy_landed_title = THIS
+				}
+				k_sicily = {
+					set_defacto_liege = ROOT
+					destroy_landed_title = THIS
+				}
+				k_italy = {
+					de_jure_liege = e_wre
+				}
+				k_sicily = {
+					de_jure_liege = e_wre
+				}
+				k_italia_annonaria = {
+					de_jure_liege = e_wre
+				}
+				k_italia_suburbicaria = {
+					de_jure_liege = e_wre
+				}					
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+}

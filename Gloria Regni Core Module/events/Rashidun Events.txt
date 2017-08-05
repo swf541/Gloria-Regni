@@ -1,0 +1,178 @@
+namespace = IHS
+
+character_event = {
+	id = IHS.001
+
+	hide_window = yes 
+
+	is_triggered_only = yes
+	
+	trigger = {
+		year = 632
+		NOT = { year = 640 }
+		has_landed_title = k_arabia
+	}     
+	
+	immediate = {
+		
+		spawn_unit = {
+		  owner = ROOT
+		  province = 719
+		  home = 719
+		  troops = {
+			archers = { 1000 1000 }
+			light_infantry = { 3500 3500 }
+			heavy_infantry = { 500 500 }
+			light_cavalry = { 5000 5000 }
+			horse_archers = { 2000 2000 }
+			knights = { 500 500 }
+		  }
+		  attrition = 0.5
+		  reinforces = yes
+		  disband_on_peace = no
+		  maintenance_multiplier = 0.25
+		  earmark = rashidun_forces
+		}
+
+		piety = 1000
+		prestige = 250
+		wealth = 100
+		e_byzantium = {
+			any_realm_province = {
+				add_province_modifier = {
+					modifier = war_exhaustion
+					years = 30
+				}
+			}
+		}
+		e_persia = {
+			any_realm_province = {
+				add_province_modifier = {
+					modifier = war_exhaustion
+					years = 30
+				}
+			}
+		}
+		any_independent_ruler  = {
+			limit = {
+				capital_scope = { region = custom_arabia }
+				NOT = { religion = sunni }
+				NOT = { has_landed_title = c_socotra }
+			}
+			primary_title = {
+				ROOT = { add_claim = PREVPREV }
+				holder_scope = {
+					reverse_war = {
+						target = ROOT
+						casus_belli = unify_arabia_ridda
+						thirdparty_title = k_arabia
+						infamy = 0
+					}
+				}
+			}
+			primary_title = {
+				holder_scope = {
+					reverse_war = {
+						target = ROOT
+						casus_belli = unify_arabia_ridda
+						thirdparty_title = k_oman
+						infamy = 0
+					}
+				}
+			}
+			c_asir = {
+				holder_scope = {
+					reverse_war = {
+						target = ROOT
+						casus_belli = unify_arabia_ridda
+						thirdparty_title = k_arabia
+						infamy = 0
+					}
+				}
+			}
+			primary_title = {
+				holder_scope = {
+					reverse_war = {
+						target = ROOT
+						casus_belli = unify_arabia_ridda
+						thirdparty_title = k_yemen
+						infamy = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = IHS.002
+	desc = EVTDESCJR.250
+	
+	picture = "GFX_evt_desert"
+
+	is_triggered_only = yes
+	
+	trigger = {
+		completely_controls = d_medina
+		completely_controls = d_asir
+		completely_controls = d_oman
+		completely_controls = d_sanaa
+		completely_controls = d_nefoud
+		completely_controls = d_damman
+	}     
+	
+	option = {		#Invade the Levant
+		name = EVTOPTB_IHS_002
+		disband_event_forces = rashidun_forces
+		spawn_unit = {
+		  owner = ROOT
+		  province = 719
+		  home = 719
+		  troops = {
+			archers = { 4000 4000 }
+			light_infantry = { 14000 14000 }
+			heavy_infantry = { 2000 2000 }
+			light_cavalry = { 20000 20000 }
+			horse_archers = { 8000 8000 }
+			knights = { 2000 2000 }
+		  }
+		  attrition = 0.5
+		  reinforces = yes
+		  disband_on_peace = no
+		  maintenance_multiplier = 0.25
+		  earmark = rashidun_forces
+		}
+		add_claim = k_nabatea
+		e_byzantium = {
+			holder_scope = {
+				reverse_war = {
+					target = ROOT
+					casus_belli = muslim_invasion_2
+					thirdparty_title = k_jerusalem
+					infamy = 0
+				}
+			}
+		}
+		e_persia = {
+			holder_scope = {
+				reverse_war = {
+					target = ROOT
+					casus_belli = muslim_invasion_2
+					thirdparty_title = k_mesopotamia
+					infamy = 0
+				}
+			}
+		}
+		k_nabatea = {
+			holder_scope = {
+				reverse_war = {
+					target = ROOT
+					casus_belli = claim
+					thirdparty_title = k_nabatea
+					infamy = 0
+				}
+			}
+		}
+	}
+}
+

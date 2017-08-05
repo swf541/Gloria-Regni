@@ -1,0 +1,27 @@
+decisions = {
+	restore_constantinople = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+
+		}
+		allow = {
+			wealth = 1000
+			completely_controls = d_thrace
+			completely_controls = d_adrianopolis
+			completely_controls = d_nikaea
+			NOT = { 496 = { num_of_settlements = 5 } }
+		}
+		effect = {
+			wealth = -1000
+			496 = {
+				build_holding = { title = b_pempton type = city holder = ROOT }
+				build_holding = { title = b_deuteron type = castle holder = ROOT }			
+				build_holding = { title = b_hieron type = city holder = ROOT }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

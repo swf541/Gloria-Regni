@@ -1,0 +1,93 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# samaritan
+
+tribe_of_manasseh = {
+    potential = {
+        religion = samaritan
+    }
+	opposites =  {
+		tribe_of_benjamin
+		tribe_of_levi
+		tribe_of_ephraim
+	}
+	martial = 1
+	stewardship = -1
+	opposite_opinion = -20
+	same_opinion = 20
+	religious = yes
+    random = yes
+	agnatic = yes
+}
+tribe_of_ephraim = {
+    potential = {
+        religion = samaritan
+    }
+	opposites =  {
+		tribe_of_benjamin
+		tribe_of_levi
+		tribe_of_manasseh
+	}
+	intrigue = -1
+	stewardship = 1
+	opposite_opinion = -20
+	same_opinion = 20
+	religious = yes
+    random = yes
+	agnatic = yes
+}
+tribe_of_benjamin = {
+    potential = {
+        religion = samaritan
+    }
+	opposites =  {
+		tribe_of_ephraim
+		tribe_of_levi
+		tribe_of_manasseh
+	}
+	diplomacy = 1
+	learning = -1
+	opposite_opinion = -20
+	same_opinion = 20
+	religious = yes
+    random = yes
+	agnatic = yes
+}
+tribe_of_levi = {
+    potential = {
+        religion = samaritan
+    }
+	opposites =  {
+		tribe_of_ephraim
+		tribe_of_benjamin
+		tribe_of_manasseh
+	}
+	martial = -1
+	learning = 1
+	opposite_opinion = -20
+	same_opinion = 20
+	monthly_character_piety = 0.05
+	religious = yes
+    random = yes
+	agnatic = yes
+}
+house_of_david = {
+    potential = {
+       OR = { 
+			religion = samaritan
+			religion = jewish
+			religion = karaite
+		}
+    }
+	general_opinion = 30
+	same_religion_opinion = 30
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	agnatic = yes
+	#religious = yes
+    random = no
+}

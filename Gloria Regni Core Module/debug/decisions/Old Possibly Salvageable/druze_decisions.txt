@@ -1,0 +1,182 @@
+decisions = {
+	pact_of_time = {
+                potential = {
+                        age = 16
+                        prisoner = no
+                        religion = druze
+                        NOT = { trait = incapable }
+                        NOT = { trait = druze_taqiyya }
+                }
+                allow = {
+                        piety = 10
+                }
+                effect = {
+                        piety = -10
+                        character_event = { id = HPdruze.4010 } 
+                }
+                revoke_allowed = {
+                        always = no
+                }
+                ai_will_do = {
+                        factor = 1                     
+                }
+	}
+        choose_druze_patron_deity = {
+                potential = {
+                        has_dlc = "Rajas of India"
+                        is_playable = yes
+                        age = 16
+                        not = { trait = incapable }
+                        religion = druze
+                        NOT = {
+                                has_character_modifier = patron_aql
+                                has_character_modifier = patron_nafs
+                                has_character_modifier = patron_kalima
+                                has_character_modifier = patron_sabiq
+                                has_character_modifier = patron_tali
+                        }
+                }
+                allow = {
+                        prisoner = no
+                }
+                effect = {
+                        character_event = { id = HPdruze.4100 }
+                }
+                revoke_allowed = {
+                        always = no
+                }
+                ai_will_do = {
+                        factor = 1
+                        modifier = {
+                                factor = 5
+                                trait = zealous
+                        }
+                        modifier = {
+                                factor = 0.5
+                                trait = cynical
+                        }
+                }
+        }
+	druze_retreat = {
+        potential = {
+			has_dlc = "Sons of Abraham"
+			is_playable = yes
+			age = 30
+			not = { trait = incapable }
+			religion = druze
+			NOT = { has_character_flag = druze_vacation }
+			OR = {
+				trait = druze_uqqal
+				trait = druze_ajawid
+			}
+		}
+		allow = {
+				prisoner = no
+				war = no
+				has_focus = focus_theology
+		}
+		effect = {
+				character_event = { id = HPdruze.4800 }
+				set_character_flag = druze_vacation
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 1
+				modifier = {
+						factor = 5
+						trait = decadent
+				}
+				modifier = {
+						factor = 0.5
+						trait = cynical
+				}
+		}
+    }
+	druze_matri = {
+		potential = {
+			religion = druze
+			current_heir = { 
+				is_female = yes 
+				age = 16
+				is_married = no
+				NOT = { independent = yes }
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			current_heir = {
+				prestige = 300
+				create_character = {
+                        random_traits = yes
+                        dynasty = random
+                        female = no
+                        age = 22
+                        religion = ROOT
+                        culture = ROOT
+                }
+                new_character = {
+                        add_spouse_matrilineal = PREV
+                        hidden_tooltip = {
+                                add_lover = PREV
+                        }
+                        opinion = {
+                                modifier = opinion_grateful
+                                who = ROOT
+                        }
+                }
+			}
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 1000
+
+		}
+    }
+	druze_matri_2 = {
+		potential = {
+			religion = druze
+			is_female = yes 
+			age = 16
+			is_married = no
+			is_ruler = yes
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+				prestige = 300
+				create_character = {
+                        random_traits = yes
+                        dynasty = random
+                        female = no
+                        age = 22
+                        religion = ROOT
+                        culture = ROOT
+                }
+                new_character = {
+                        add_spouse_matrilineal = ROOT
+                        hidden_tooltip = {
+                                add_lover = ROOT
+                        }
+                        opinion = {
+                                modifier = opinion_grateful
+                                who = ROOT
+                        }
+                }
+		}
+		revoke_allowed = {
+				always = no
+		}
+		ai_will_do = {
+				factor = 1000
+		}
+    }
+
+}
+

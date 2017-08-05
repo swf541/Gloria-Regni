@@ -1,0 +1,921 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Mazdaki   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPmazdaki
+#Babak and Banu 's Rebellion
+province_event = {
+	id = HPmazdaki.19000
+	desc = EVTDESC_HRP_19000
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_war
+
+	trigger = {
+		province_id = 658
+		NOT = { has_global_flag = babak_and_banu }
+		year = 816
+		NOT = { year = 830 }
+		owner = {
+			top_liege = {
+				has_landed_title = d_sunni
+			}
+		}
+		kingdom = {
+			has_holder = no
+
+		}
+	}
+	mean_time_to_happen = {
+		days = 100
+	}
+		
+	immediate = {
+		
+		set_global_flag = babak_and_banu
+		create_character = {
+			random_traits = yes
+			dynasty = 100639 #Khorramdin
+			name = "Babak"
+			religion = mazdaki
+			culture = persian
+			female = no
+			age = 24
+			attributes = {
+				martial = 15
+				learning = 7
+				diplomacy = 12
+			}
+			trait = just
+			trait = brave
+			trait = gregarious
+			trait = ambitious
+			trait = skilled_tactician
+			trait = unyielding_leader
+			trait = holy_warrior
+			trait = mountain_terrain_leader
+			trait = peasant_leader
+		}
+		
+		new_character = {
+			set_character_flag = nationalist_rebel
+			set_character_flag = babak
+			character_event = { id = HPmazdaki.19003 days = 2 }
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "Khorramdin Rebellion"
+				holder = THIS
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = none
+				name = "Banu"
+				religion = mazdaki
+				culture = persian
+				female = yes
+				age = 19
+				attributes = {
+					martial = 15
+					learning = 7
+				}
+				trait = just
+				trait = brave
+				trait = skilled_tactician
+				trait = unyielding_leader
+				trait = holy_warrior
+				trait = mountain_terrain_leader
+				trait = peasant_leader
+				set_character_flag = special_marshal
+				set_character_flag = banu
+				
+			}
+			new_character = {
+				character_event = { id = HPmazdaki.19004 days = 1 }
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 2.75
+					troops = {
+						archers = { 6 6 }
+						knights = { 4 4 }
+						heavy_infantry = { 10 10 }
+					}
+					attrition = 0.0
+					disband_on_peace = yes
+				}
+				
+			}
+			random_list = {
+				34 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.75
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = mazdaki
+						culture = THIS
+						female = no
+						age = 24
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = mazdaki
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								heavy_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.75
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 2 2 }
+							heavy_infantry = { 12 12 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = shia
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = mazdaki
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.75
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = mazdaki
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = mazdaki
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.75
+							troops = {
+								archers = { 6 6 }
+								heavy_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = liberation_revolt
+							thirdparty_title = ROOT # The county...
+							tier = KING # ... but really the de jure kingdom
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			top_liege = { # Inform the lieges
+				character_event = {
+					id = HPmazdaki.19001
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_TOG_1020"
+	}
+}
+
+character_event = {
+	id = HPmazdaki.19001
+	desc = EVTDESC_HRP_19001
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_1020
+		hidden_tooltip = { narrative_event = { id = HPmazdaki.19002 days = 3} }
+	}
+}
+narrative_event = {
+	id = HPmazdaki.19002
+	desc = EVTDESC_HRP_19002
+	title = EVTTITLE_HRP_19002
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = EVTOPTA_HRP_19002
+		trigger = {
+			not = { has_landed_title = d_sunni }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_19002
+		trigger = {
+			has_landed_title = d_sunni
+		}
+		hidden_tooltip = {
+			character_event = { id = HPmazdaki.19005 days = 3 }
+		}
+		
+		
+	}
+}
+character_event = {
+        id = HPmazdaki.19003
+        title = "EVTNAME10042"
+        desc = "EVTDESC10042"
+        picture = GFX_evt_marriage
+
+        is_triggered_only = yes
+		hide_from = yes
+
+        immediate = {
+                name =  "EVTOPTA10042"
+                prestige = 100
+                        random_courtier = {
+							limit = {
+									has_character_flag = banu
+							}
+							prestige = 100
+							add_spouse = PREV
+							hidden_tooltip = {
+									add_lover = PREV
+							}
+                        }
+        }
+	option = {
+		name = "EVTOPTA_TOG_1020"
+	}
+}
+character_event = {
+        id = HPmazdaki.19004
+        title = "EVTNAME10042"
+        desc = "EVTDESC10042"
+        picture = GFX_evt_marriage
+
+        is_triggered_only = yes
+		hide_from = yes
+
+        immediate = {
+                #name =  "EVTOPTA10042"
+				set_character_flag = banu
+                prestige = 100
+                        liege = {
+							prestige = 100
+							random_courtier = {
+								limit = {
+									has_character_flag = banu
+								}
+								add_spouse = PREV
+								add_lover = PREV
+							}
+                        }
+        }
+	option = {
+		name = "EVTOPTA_TOG_1020"
+	}
+}
+character_event = {
+	id = HPmazdaki.19005
+	desc = EVTDESC_HRP_19005
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name =  EVTOPTA_HRP_19005
+	
+		create_character = {
+			random_traits = yes
+			dynasty = 9999998 #al-Afshin
+			name = "Khaydhar ibn Kawus"
+			religion = sunni
+			culture = persian
+			female = no
+			age = 24
+			attributes = {
+				martial = 11
+				intrigue = 8
+				learning = 3
+				diplomacy = 2
+			}
+			trait = just
+			trait = brave
+			trait = deceitful
+			trait = ambitious
+			trait = skilled_tactician
+			trait = aggressive_leader
+			trait = holy_warrior
+			trait = mountain_terrain_leader
+			trait = sympathy_zoroastrianism
+		}
+		new_character = {
+			set_defacto_liege = ROOT 
+		}
+	}
+	option = {
+		name =  EVTOPTB_HRP_19005
+		prestige = 10
+	}
+}
+character_event = {
+	id = HPmazdaki.19010
+	desc = EVTDESC_HRP_19010
+	picture = GFX_evt_mazdaki_event
+	
+	trigger = {
+		NOT = { year = 840 }
+		has_landed_title = d_sunni
+		any_courtier = {
+            prisoner = yes
+			has_character_flag = babak
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19010
+
+		random_courtier = {
+			limit = {
+				prisoner = yes
+				has_character_flag = babak
+			}
+			death = { 
+				death_reason = death_execution
+				killer = ROOT
+            }
+		}
+		hidden_tooltip = {
+			random_independent_ruler = {
+				limit = {
+					has_landed_title = e_byzantium
+				}
+				character_event = { id = HPmazdaki.19012 days = 31 }
+			}
+		}
+	}
+
+}
+character_event = {
+	id = HPmazdaki.19012
+	desc = EVTDESC_HRP_19012
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name =  EVTOPTA_HRP_19012
+	
+		create_character = {
+			random_traits = yes
+			dynasty = 100638
+			name = "Theophobos"
+			religion = ROOT
+			culture = persian
+			female = no
+			age = 31
+			attributes = {
+				martial = 11
+				intrigue = 8
+				learning = 3
+				diplomacy = 2
+			}
+			trait = just
+			trait = brave
+			trait = content
+			trait = skilled_tactician
+			trait = rough_terrain_leader
+			trait = inspiring_leader
+			trait = mountain_terrain_leader
+			trait = sympathy_zoroastrianism
+		}
+		new_character = {
+			set_defacto_liege = ROOT 
+			character_event = { id = HPmazdaki.19200 days = 7000 }
+			spawn_unit = {
+				province = 496
+				home = 496
+				owner = PREV
+				troops = {
+					heavy_infantry = { 3200 3200 }
+					light_cavalry = { 600 600 }
+					archers = { 1300 1300 }
+				}
+				attrition = 0.0
+			}
+		}
+	}
+}
+character_event = {
+	id = HPmazdaki.19100
+	desc = EVTDESC_HRP_19100
+	picture = GFX_evt_mazdaki_event
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_0
+			has_law = maz_1
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19100
+
+		add_character_modifier = {
+			name = feudal_pleased
+			duration = 700
+		}
+	}
+
+}
+character_event = {
+	id = HPmazdaki.19101
+	desc = EVTDESC_HRP_19101
+	picture = GFX_evt_mazdaki_event
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_0
+			has_law = maz_1
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19101
+
+		random_realm_province = {
+			add_province_modifier = {
+					name = religious_tension
+					duration = 3650
+                }
+		}
+		random_realm_province = {
+			add_province_modifier = {
+				name = religious_tension
+				duration = 3650
+			}
+		}
+	}
+
+}
+character_event = {
+	id = HPmazdaki.19102
+	desc = EVTDESC_HRP_19102
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_0
+			has_law = maz_1
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19102
+		prestige = -50
+		random_demesne_province = {
+			province_event = { id = TOG.1000 }
+		}
+	}
+}
+character_event = {
+	id = HPmazdaki.19103
+	desc = EVTDESC_HRP_19103
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_0
+			has_law = maz_1
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19102
+		prestige = -100
+	}
+}
+character_event = {
+	id = HPmazdaki.19110
+	desc = EVTDESC_HRP_19110
+	picture = GFX_evt_mazdaki_event
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_3
+			has_law = maz_4
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19110
+
+		add_character_modifier = {
+			name = feudal_angry
+			duration = 700
+		}
+	}
+
+}
+character_event = {
+	id = HPmazdaki.19111
+	desc = EVTDESC_HRP_19111
+	picture = GFX_evt_mazdaki_event
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_4
+			has_law = maz_3
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19111
+
+		change_stewardship = 1
+		culture_techpoints = 25
+	}
+
+}
+character_event = {
+	id = HPmazdaki.19112
+	desc = EVTDESC_HRP_19112
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_3
+			has_law = maz_4
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19112
+		piety = 100
+	}
+}
+character_event = {
+	id = HPmazdaki.19113
+	desc = EVTDESC_HRP_19113
+	picture = GFX_evt_mazdaki_event
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = mazdaki
+		OR = {
+			has_law = maz_3
+			has_law = maz_4
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19113
+		scaled_wealth = -1.0
+	}
+}
+character_event = {
+	id = HPmazdaki.19200
+	desc = EVTDESC_HRP_19200
+	picture = GFX_evt_rome_falls
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_claim = e_byzantium
+			has_landed_title = e_byzantium
+			trait = eunuch
+			trait = blinded
+		}
+		top_liege = {
+			has_landed_title = e_byzantium
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_19200
+		add_claim = e_byzantium
+		set_defacto_liege = ROOT
+		create_title = {
+			tier = DUKE
+			landless = yes
+			temporary = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+			holder = ROOT
+		}
+		spawn_unit = {
+			province = ROOT
+			home = ROOT
+			owner = ROOT
+			troops = {
+				heavy_infantry = { 3200 3200 }
+				light_cavalry = { 500 500 }
+				archers = { 1300 1300 }
+			}
+			disband_on_peace = yes
+			attrition = 0.0
+		}
+		set_character_flag = claimant_adventurer
+		e_byzantium = {
+			holder_scope = {
+				reverse_war = {
+					target = root
+					casus_belli = claim
+					thirdparty_title = PREV
+				}
+				letter_event = { id = HPmazdaki.19201 }
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = ambitious
+			}
+		}
+		
+	}
+	option = {
+		name = EVTOPTB_HRP_19200
+		add_weak_claim = e_byzantium
+		prestige = 100
+		piety = 100
+		e_byzantium = {
+			holder_scope = {
+				letter_event = { id = HPmazdaki.19202 }
+				
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 10
+				trait = content
+			}
+		}
+		
+	}
+}
+letter_event = {
+	id = HPmazdaki.19201
+	desc = EVTDESC_HRP_19201
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_19201
+		
+	}
+}
+letter_event = {
+	id = HPmazdaki.19202
+	desc = EVTDESC_HRP_19202
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_19202
+		FROM = {
+			opinion = {
+				modifier = opinion_loyal_servant
+				who = ROOT
+				months = 1200
+			}
+		}
+		
+	}
+}
+###############################
+# Mazdak 'patrons'
+# Discernment, Understanding, Preservation and Joy
+###############################
+character_event = {
+        id = HPmazdaki.19260
+        desc = EVTDESC_HRP_19260
+        picture = GFX_evt_mazdaki_event
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_19260
+                add_character_modifier = {
+                        name = patron_discernment
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_19260
+                add_character_modifier = {
+                        name = patron_understanding
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTC_HRP_19260
+                add_character_modifier = {
+                        name = patron_preservation
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_19260
+                add_character_modifier = {
+                        name = patron_joy
+                        duration = -1
+                }
+        }
+}

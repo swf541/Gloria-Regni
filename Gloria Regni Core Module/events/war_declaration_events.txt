@@ -1,0 +1,150 @@
+namespace = PA
+
+# Norman Invasion
+narrative_event = {
+	id = PA.10111
+	title = EVTNAMEPA.10111
+	desc = EVTDESCPA.10111
+        picture = GFX_evt_crusaders
+	
+	trigger = {
+		war = no
+		year = 1068
+		NOT = { year = 1072 }
+		character = 1128
+		has_landed_title = d_calabria
+		has_landed_title = c_apulia
+		NOT = { has_landed_title = d_apulia }
+		NOT = { has_global_flag = norman_conquest }
+		d_apulia = {
+			holder_scope = {
+				culture = greek
+				religion = orthodox
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = OPTAPA_10111
+		ai_chance = { factor = 1 }
+		d_apulia = {
+			holder_scope = {
+				reverse_war = {
+					target = ROOT
+					casus_belli = claim
+					thirdparty_title = PREV
+				}
+			}
+		}
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					owner = d_calabria
+					troops = {
+						light_infantry = { 1000 1000 }
+						heavy_infantry = { 3000 3000 }
+						pikemen = { 1000 1000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 1000 1000 }
+						knights = { 400 400 }
+					}
+				}
+			}
+		}
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					owner = d_calabria
+					troops = {
+						light_infantry = { 1000 1000 }
+						heavy_infantry = { 3000 3000 }
+						pikemen = { 1000 1000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 1000 1000 }
+						knights = { 400 400 }
+					}
+				}
+			}
+		}
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					owner = d_calabria
+					troops = {
+						light_infantry = { 1000 1000 }
+						heavy_infantry = { 3000 3000 }
+						pikemen = { 1000 1000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 1000 1000 }
+						knights = { 400 400 }
+					}
+				}
+			}
+		}
+		wealth = 200
+		set_global_flag = norman_conquest
+	}
+	option = {
+		name = OPTBPA_10111
+		ai_chance = { factor = 0 }
+		prestige = -100
+		set_global_flag = norman_conquest
+	}
+}
+
+# Early Bulgarian Conquest
+narrative_event = {
+	id = PA.10252
+	title = EVTNAMEPA.10252
+	desc = EVTDESCPA.10252
+        picture = GFX_evt_melee
+	
+	trigger = {
+		war = no
+		year = 800
+		always = no
+		has_landed_title = k_bulgaria
+		NOT = { has_landed_title = c_serdica }
+		NOT = { has_landed_title = c_naissus }
+		NOT = { has_global_flag = bulgarian_conquest }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTAPA_100252
+		ai_chance = { factor = 1 }
+		e_byzantium = {
+			holder_scope = {
+				reverse_war = {
+					target = k_bulgaria
+					casus_belli = tribal_invasion
+					thirdparty_title = k_bulgaria
+				}
+			}
+		}
+		wealth = 200
+		prestige = 750
+		set_global_flag = bulgarian_conquest
+	}
+	option = {
+		name = OPTBPA_10252
+		ai_chance = { factor = 0 }
+		prestige = -100
+		set_global_flag = bulgarian_conquest
+		
+	}
+}

@@ -1,0 +1,24 @@
+# 729 - Qinasrin #Former Tadmor
+
+# County Title
+title = c_qinasrin
+
+# Settlements
+max_settlements = 4
+b_qinasrin = castle
+b_suwaida = city
+b_sarmin = temple
+
+#b_arriha = castle
+#b_maaratnuman = castle
+#b_barzuya = castle
+
+# Misc
+culture = aramean
+religion = miaphysite
+810.1.1 = {
+culture = levantine_arabic
+religion = sunni
+}
+
+1187.1.1 = { b_arriha = castle }

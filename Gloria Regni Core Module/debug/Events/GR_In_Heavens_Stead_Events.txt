@@ -1,0 +1,2260 @@
+# Unification of the Arabs: First External Invasions
+namespace = IHS
+narrative_event = {
+	id = IHS.1
+	title = EVTNAMEIHS.1
+	desc = EVTDESCIHS.1
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAIHS.1
+		war = { target = e_persia casus_belli = muslim_invasion thirdparty_title = k_mesopotamia tier = KING }
+	}
+	option = {
+		name = EVTOPTBIHS.1
+		war = { target = e_byzantium casus_belli = muslim_invasion thirdparty_title = k_syria tier = KING }
+	}
+	option = {
+		name = EVTOPTCIHS.1
+	}
+}
+
+# Fall of Mecca to Tulyaha
+narrative_event = {
+	id = IHS.2
+	title = EVTNAMEIHS.2
+	desc = EVTDESCIHS.2
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_tulayha
+		completely_controls = c_mecca
+		NOT = { has_global_flag = tulayha_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.2
+		set_global_flag = tulayha_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Sajah
+narrative_event = {
+	id = IHS.3
+	title = EVTNAMEIHS.3
+	desc = EVTDESCIHS.3
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_sajah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = sajah_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.3
+		set_global_flag = sajah_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Musaylimah
+narrative_event = {
+	id = IHS.4
+	title = EVTNAMEIHS.4
+	desc = EVTDESCIHS.4
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = is_musaylimah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = musaylimah_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.4
+		set_global_flag = musaylimah_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Byzantium
+narrative_event = {
+	id = IHS.5
+	title = EVTNAMEIHS.5
+	desc = EVTDESCIHS.5
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_byzantium
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.5
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Persia
+narrative_event = {
+	id = IHS.6
+	title = EVTNAMEIHS.6
+	desc = EVTDESCIHS.6
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_persia
+		has_character_flag = is_musaylimah
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.6
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# Fall of Mecca to Aksum
+narrative_event = {
+	id = IHS.7
+	title = EVTNAMEIHS.7
+	desc = EVTDESCIHS.7
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_landed_title = e_abyssinia
+			has_landed_title = k_abyssinia
+		}
+		completely_controls = c_mecca
+		NOT = { has_global_flag = ridda_wars_end }
+		NOT = { has_global_flag = byzantium_mecca }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.7
+		set_global_flag = byzantium_mecca
+		set_global_flag = demise_of_islam
+		activate_title = { title = d_sunni status = no }	
+		activate_title = { title = d_shiite status = no }	
+	}
+}
+
+# The Sinicization of Central Asia
+narrative_event = {
+	id = IHS.8
+	title = EVTNAMEIHS.8
+	desc = EVTDESCIHS.8
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		completely_controls = k_khotan
+		culture = han
+		religion = buddhist
+		year = 720
+	}
+	
+	option = {
+		name = EVTOPTAIHS.8
+		set_global_flag = chinese_influence_central_asia
+	}
+}
+
+# Manichaens Breakout Into Steppe
+narrative_event = {
+	id = IHS.9
+	title = EVTNAMEIHS.9
+	desc = EVTDESCIHS.9
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture_group = altaic
+		religion = tengri_pagan
+		year = 720
+		NOT = { has_global_flag = manichaen_steppe }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.9
+		set_global_flag = manichaen_steppe
+		religion = manichean
+		any_realm_character = manichean
+		any_vassal = {
+			clan = yes
+			religion = manichean
+		}
+	}
+}
+
+# Christianization of the Turks
+narrative_event = {
+	id = IHS.10
+	title = EVTNAMEIHS.10
+	desc = EVTDESCIHS.10
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = turkish
+		religion = tengri_pagan
+		year = 720
+		NOT = { has_global_flag = christian_turks }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.10
+		set_global_flag = christian_turks
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+}
+
+# The Sinicization of Central Asia Part 2
+narrative_event = {
+	id = IHS.11
+	title = EVTNAMEIHS.11
+	desc = EVTDESCIHS.11
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = chinese_influence_central_asia
+		government = nomadic_government	
+		or = {
+			culture = mongol
+			culture = uyghur
+		}
+		religion = tengri_pagan
+		year = 720
+	}
+	
+	option = {
+		name = EVTOPTAIHS.11
+		religion = buddhist
+		# Add Event Modifier Here
+	}
+}
+
+# Christianization of the Mongols
+narrative_event = {
+	id = IHS.12
+	title = EVTNAMEIHS.12
+	desc = EVTDESCIHS.12
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = mongol
+		religion = tengri_pagan
+		year = 820
+		NOT = { has_global_flag = christian_mongols }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.12
+		set_global_flag = christian_mongols
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+}
+
+# Khazar Conversion In Heaven Stead Variant 
+narrative_event = {
+	id = IHS.13
+	title = EVTNAMEIHS.13
+	desc = EVTDESCIHS.13
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = nomadic_government	
+		has_global_flag = demise_of_islam
+		culture = khazar
+		religion = tengri_pagan
+		year = 700
+		NOT = { has_global_flag = khazar_decision }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.13
+		set_global_flag = khazar_decision
+		religion = nestorian
+		any_realm_character = nestorian
+		any_vassal = {
+			clan = yes
+			religion = nestorian
+		}
+	}
+	option = {
+		name = EVTOPTBIHS.13
+		set_global_flag = khazar_decision
+		religion = buddhist
+		any_realm_character = buddhist
+		any_vassal = {
+			clan = yes
+			religion = buddhist
+		}
+	}
+	option = {
+		name = EVTOPTCIHS.13
+		set_global_flag = khazar_decision
+		religion = jewish
+		any_realm_character = jewish
+		any_vassal = {
+			clan = yes
+			religion = jewish
+		}
+	}
+	option = {
+		name = EVTOPTDIHS.13
+		set_global_flag = khazar_decision
+		religion = manichean
+		any_realm_character = manichean
+		any_vassal = {
+			clan = yes
+			religion = manichean
+		}
+	}
+}
+#Erosion of Zoroastrian Nobility in Persia
+narrative_event = {
+	id = IHS.14
+	title = EVTNAMEIHS.14
+	desc = EVTDESCIHS.14
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		trait = sympathy_christendom
+	}
+	
+	option = {
+		name = EVTOPTAIHS.14
+		religion = nestorian
+	}
+	option = {
+		name = EVTOPTBIHS.14
+		piety = 20
+	}
+}
+
+#Nestorian Prince Event Chain
+narrative_event = {
+	id = IHS.15
+	title = EVTNAMEIHS.15
+	desc = EVTDESCIHS.15
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		e_persia = { holder_scope = { is_father_real_father = ROOT } }
+		e_persia = { holder_scope = { religion = zoroastrian } }
+		mother_even_if_dead = { religion = nestorian }
+	}
+	
+	option = {
+		name = EVTOPTAIHS.15
+		add_trait = sympathy_christendom
+		set_character_flag = closet_nestorian
+	}
+}
+
+narrative_event = {
+	id = IHS.16
+	title = EVTNAMEIHS.16
+	desc = EVTDESCIHS.16
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_persia
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		has_character_flag = closet_nestorian
+	}
+	
+	option = {
+		name = EVTOPTAIHS.16
+		religion = nestorian
+		narrative_event = { id = IHS.20 }	# Christianization of Persia
+	}
+	option = {
+		name = EVTOPTBIHS.16
+	}
+}
+
+narrative_event = {
+	id = IHS.17
+	title = EVTNAMEIHS.17
+	desc = EVTDESCIHS.17
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = demise_of_islam
+		culture = persian
+		religion = zoroastrian
+		has_character_flag = closet_nestorian
+		trait = zealous
+	}
+	
+	option = {
+		name = EVTOPTAIHS.17
+		religion = nestorian
+		e_persia = { holder_scope = { narrative_event = { id = IHS.18 } } }
+	}
+	option = {
+		name = EVTOPTBIHS.17
+	}
+}
+
+narrative_event = {
+	id = IHS.18
+	title = EVTNAMEIHS.18
+	desc = EVTDESCIHS.18
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {	#Attempt to Imprison
+		name = EVTOPTAIHS.18
+		random_list = {
+		  50 = {
+			imprison = FROM
+		  }
+		  50 = {
+			FROM = { banish = yes }
+			FROM = { narrative_event = { id = IHS.19 } }
+		  }
+		}
+	}
+	option = {	#Leave them Be
+		name = EVTOPTBIHS.18
+	}
+}
+
+narrative_event = {
+	id = IHS.19
+	title = EVTNAMEIHS.19
+	desc = EVTDESCIHS.19
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.19
+		e_byzantium = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}
+	option = {
+		name = EVTOPTBIHS.19
+		k_khotan = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}
+	option = {
+		name = EVTOPTCCHS.19
+		k_abyssinia = { holder_scope = { move_character = ROOT } }
+		e_persia = { add_pressed_claim = ROOT }
+	}	
+}
+
+
+narrative_event = {
+	id = IHS.20
+	title = EVTNAMEIHS.20
+	desc = EVTDESCIHS.20
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.20
+		religion = nestorian
+		any_courtier = nestorian
+		any_vassal = {
+			narrative_event = { id = IHS.21 }
+		}
+	}
+}
+
+narrative_event = {
+	id = IHS.21
+	title = EVTNAMEIHS.21
+	desc = EVTDESCIHS.21
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAIHS.21
+		religion = nestorian
+		any_courtier = nestorian
+	}
+	option = {
+		name = EVTOPTBIHS.21
+	}
+}
+narrative_event = {
+	id = IHS.22
+	title = EVTNAMEIHS.22
+	desc = EVTDESCIHS.22
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		num_of_king_titles = 1
+		religion_group = zoroastrian_group
+		culture_group = iranian
+		e_persia = { holder_scope = { culture_group = iranian } }
+		e_persia = { holder_scope = { culture_group = zoroastrian_group } }
+		e_persia = { capital_scope = { controlled_by = ROOT } }
+		any_war = { war_score = 25 }	
+	}
+	
+	option = {
+		name = EVTOPTAIHS.21
+		e_persia = { capital_scope = { usurp_title = ROOT } }
+		e_persia = { usurp_title = { ROOT } }
+	}
+}
+
+# Arabs sack Ctesiphon
+narrative_event = {
+	id = IHS.23
+	title = EVTNAMEIHS.23
+	desc = EVTDESCIHS.23
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_bagdad }
+		NOT = { has_global_flag = arabs_sack_baghdad }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+
+	immediate = {
+		set_global_flag = arabs_sack_baghdad
+	}		
+	
+	option = {
+		name = "EVTOPTAIHS.23"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.23"
+		trigger = { NOT = { religion_group = muslim } }
+	}
+	option = {
+		name = "EVTOPTAIHS.23"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+# Arabs sack Damascus
+narrative_event = {
+	id = IHS.24
+	title = EVTNAMEIHS.24
+	desc = EVTDESCIHS.24
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_damascus }
+		NOT = { has_global_flag = arabs_sack_damascus }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+
+	immediate = {
+		set_global_flag = arabs_sack_damascus
+	}		
+	
+	option = {
+		name = "EVTOPTAIHS.24"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.24"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.24"
+		trigger = { religion_group = christian }
+	}
+}
+# Arabs sack Jerusalem
+narrative_event = {
+	id = IHS.25
+	title = EVTNAMEIHS.25
+	desc = EVTDESCIHS.25
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_jerusalem }
+		NOT = { has_global_flag = arabs_sack_jerusalem }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	immediate = {
+		set_global_flag = arabs_sack_jerusalem
+	}	
+	
+	option = {
+		name = "EVTOPTAIHS.25"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.25"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.25"
+		trigger = { religion_group = christian }
+	}
+}
+# Arabs sack Alexandria
+narrative_event = {
+	id = IHS.26
+	title = EVTNAMEIHS.26
+	desc = EVTDESCIHS.26
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_alexandria }
+		NOT = { has_global_flag = arabs_sack_alexandria }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_alexandria	
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.26"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.26"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.26"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Antioch
+narrative_event = {
+	id = IHS.27
+	title = EVTNAMEIHS.27
+	desc = EVTDESCIHS.27
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_antiocheia }
+		NOT = { has_global_flag = arabs_sack_antiocheia }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_antiocheia
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.27"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.27"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.27"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Nikaea
+narrative_event = {
+	id = IHS.28
+	title = EVTNAMEIHS.28
+	desc = EVTDESCIHS.28
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_nikaea }
+		NOT = { has_global_flag = arabs_sack_nikaea }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_nikaea
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.28"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.28"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.28"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Thessaloniki
+narrative_event = {
+	id = IHS.29
+	title = EVTNAMEIHS.29
+	desc = EVTDESCIHS.29
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_thessaloniki }
+		NOT = { has_global_flag = arabs_sack_thessaloniki }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_thessaloniki
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.29"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.29"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.29"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Athens
+narrative_event = {
+	id = IHS.30
+	title = EVTNAMEIHS.30
+	desc = EVTDESCIHS.30
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_athens }
+		NOT = { has_global_flag = arabs_sack_athens }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_athens
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.30"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.30"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.30"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Constantinople
+narrative_event = {
+	id = IHS.31
+	title = EVTNAMEIHS.31
+	desc = EVTDESCIHS.31
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_constantinople }
+		NOT = { has_global_flag = arabs_sack_constantinople }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_constantinople
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.31"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.31"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.31"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Carthage
+narrative_event = {
+	id = IHS.32
+	title = EVTNAMEIHS.32
+	desc = EVTDESCIHS.32
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_tunis }
+		NOT = { has_global_flag = arabs_sack_carthage }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_carthage
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.32"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.32"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.32"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Syracuse
+narrative_event = {
+	id = IHS.33
+	title = EVTNAMEIHS.33
+	desc = EVTDESCIHS.33
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_syracusa }
+		NOT = { has_global_flag = arabs_sack_syracusa }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_syracusa
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.33"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.33"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.33"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Rome
+narrative_event = {
+	id = IHS.34
+	title = EVTNAMEIHS.34
+	desc = EVTDESCIHS.34
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_roma }
+		NOT = { has_global_flag = arabs_sack_roma }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_roma
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.34"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.34"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.34"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Ravenna
+narrative_event = {
+	id = IHS.35
+	title = EVTNAMEIHS.35
+	desc = EVTDESCIHS.35
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_ravenna }
+		NOT = { has_global_flag = arabs_sack_ravenna }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_ravenna
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.35"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.35"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.35"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Milan
+narrative_event = {
+	id = IHS.36
+	title = EVTNAMEIHS.36
+	desc = EVTDESCIHS.36
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_milano }
+		NOT = { has_global_flag = arabs_sack_milano }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_milano
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.36"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.36"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.36"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Cordoba
+narrative_event = {
+	id = IHS.37
+	title = EVTNAMEIHS.37
+	desc = EVTDESCIHS.37
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_cordoba }
+		NOT = { has_global_flag = arabs_sack_cordoba }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_cordoba
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.37"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.37"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.37"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Toledo
+narrative_event = {
+	id = IHS.38
+	title = EVTNAMEIHS.38
+	desc = EVTDESCIHS.38
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_toledo }
+		NOT = { has_global_flag = arabs_sack_toledo }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_toledo
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.38"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.38"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.38"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Barcelona
+narrative_event = {
+	id = IHS.39
+	title = EVTNAMEIHS.39
+	desc = EVTDESCIHS.39
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_barcelona }
+		NOT = { has_global_flag = arabs_sack_barcelona }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_barcelona
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.39"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.39"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.39"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Arabs sack Toulouse
+narrative_event = {
+	id = IHS.40
+	title = EVTNAMEIHS.40
+	desc = EVTDESCIHS.40
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_toulouse }
+		NOT = { has_global_flag = arabs_sack_toulouse }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = arabs_sack_toulouse
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.40"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.40"
+		trigger = { NOT = { religion_group = christian } }
+	}
+	option = {
+		name = "EVTOPTAIHS.40"
+		trigger = { religion_group = christian }
+	}
+}
+
+# Persians sack Damascus
+narrative_event = {
+	id = IHS.41
+	title = EVTNAMEIHS.41
+	desc = EVTDESCIHS.41
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { title = b_damascus }
+		NOT = { has_global_flag = persians_sack_damascus }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}
+	}
+
+	immediate = {
+		set_global_flag = persians_sack_damascus
+	}		
+	
+	option = {
+		name = "EVTOPTAIHS.41"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.41"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.41"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+# Persians sack Jerusalem
+narrative_event = {
+	id = IHS.42
+	title = EVTNAMEIHS.42
+	desc = EVTDESCIHS.42
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_jerusalem }
+		NOT = { has_global_flag = persians_sack_jerusalem }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	immediate = {
+		set_global_flag = persians_sack_jerusalem
+	}	
+	
+	option = {
+		name = "EVTOPTAIHS.42"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.42"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.42"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+# Persians sack Alexandria
+narrative_event = {
+	id = IHS.43
+	title = EVTNAMEIHS.43
+	desc = EVTDESCIHS.43
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_alexandria }
+		NOT = { has_global_flag = persians_sack_alexandria }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_alexandria	
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.43"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.43"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.43"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Antioch
+narrative_event = {
+	id = IHS.44
+	title = EVTNAMEIHS.44
+	desc = EVTDESCIHS.44
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_antiocheia }
+		NOT = { has_global_flag = persians_sack_antiocheia }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_antiocheia
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.44"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.44"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.44"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Nikaea
+narrative_event = {
+	id = IHS.45
+	title = EVTNAMEIHS.45
+	desc = EVTDESCIHS.45
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_nikaea }
+		NOT = { has_global_flag = persians_sack_nikaea }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_nikaea
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.45"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.45"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.45"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Thessaloniki
+narrative_event = {
+	id = IHS.46
+	title = EVTNAMEIHS.46
+	desc = EVTDESCIHS.46
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_thessaloniki }
+		NOT = { has_global_flag = persians_sack_thessaloniki }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_thessaloniki
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.46"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.46"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.46"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Athens
+narrative_event = {
+	id = IHS.47
+	title = EVTNAMEIHS.47
+	desc = EVTDESCIHS.47
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_athens }
+		NOT = { has_global_flag = persians_sack_athens }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_athens
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.47"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.47"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.47"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Constantinople
+narrative_event = {
+	id = IHS.48
+	title = EVTNAMEIHS.48
+	desc = EVTDESCIHS.48
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_constantinople }
+		NOT = { has_global_flag = persians_sack_constantinople }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_constantinople
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.48"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.48"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.48"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Carthage
+narrative_event = {
+	id = IHS.49
+	title = EVTNAMEIHS.49
+	desc = EVTDESCIHS.49
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_tunis }
+		NOT = { has_global_flag = persians_sack_carthage }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_carthage
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.49"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.49"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.49"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Syracuse
+narrative_event = {
+	id = IHS.50
+	title = EVTNAMEIHS.50
+	desc = EVTDESCIHS.50
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_syracusa }
+		NOT = { has_global_flag = persians_sack_syracusa }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_syracusa
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.50"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.50"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.50"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Rome
+narrative_event = {
+	id = IHS.51
+	title = EVTNAMEIHS.51
+	desc = EVTDESCIHS.51
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_roma }
+		NOT = { has_global_flag = persians_sack_roma }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_roma
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.51"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.51"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.51"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Ravenna
+narrative_event = {
+	id = IHS.52
+	title = EVTNAMEIHS.52
+	desc = EVTDESCIHS.52
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_ravenna }
+		NOT = { has_global_flag = persians_sack_ravenna }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_ravenna
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.52"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.52"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.52"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Milan
+narrative_event = {
+	id = IHS.53
+	title = EVTNAMEIHS.53
+	desc = EVTDESCIHS.53
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_milano }
+		NOT = { has_global_flag = persians_sack_milano }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_milano
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.53"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.53"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.53"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Cordoba
+narrative_event = {
+	id = IHS.54
+	title = EVTNAMEIHS.54
+	desc = EVTDESCIHS.54
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_cordoba }
+		NOT = { has_global_flag = persians_sack_cordoba }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}		
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_cordoba
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.54"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.54"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.54"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Toledo
+narrative_event = {
+	id = IHS.55
+	title = EVTNAMEIHS.55
+	desc = EVTDESCIHS.55
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_toledo }
+		NOT = { has_global_flag = persians_sack_toledo }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_toledo
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.55"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.55"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.55"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Barcelona
+narrative_event = {
+	id = IHS.56
+	title = EVTNAMEIHS.56
+	desc = EVTDESCIHS.56
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_barcelona }
+		NOT = { has_global_flag = persians_sack_barcelona }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_barcelona
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.56"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.56"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.56"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Persians sack Toulouse
+narrative_event = {
+	id = IHS.57
+	title = EVTNAMEIHS.57
+	desc = EVTDESCIHS.57
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	
+	
+	trigger = {
+		FROM = { title = b_toulouse }
+		NOT = { has_global_flag = persians_sack_toulouse }
+		OR = {
+			has_landed_title = e_persia
+			liege = { has_landed_title = e_persia }
+			top_liege = { has_landed_title = e_persia }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = persians_sack_toulouse
+	}
+	
+	option = {
+		name = "EVTOPTAIHS.57"
+		trigger = { religion_group = christian }
+	}
+	option = {
+		name = "EVTOPTBIHS.57"
+		trigger = { NOT = { religion_group = zoroastrian_group } }
+	}
+	option = {
+		name = "EVTOPTAIHS.57"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Arabs sack Nineveh
+narrative_event = {
+	id = IHS.58
+	title = EVTNAMEIHS.58
+	desc = EVTDESCIHS.58
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_mosul }
+		NOT = { has_global_flag = arabs_sack_mosul }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+
+	immediate = {
+		set_global_flag = arabs_sack_mosul
+	}		
+	
+	option = {
+		name = "EVTOPTAIHS.58"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.58"
+		trigger = { NOT = { religion_group = muslim } }
+	}
+	option = {
+		name = "EVTOPTAIHS.58"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# 632 War Exhaustion Byzantines and Persia
+narrative_event = {
+	id = IHS.59
+	hide_window = yes # Only fires for unplayable landless characters
+	
+	is_triggered_only = yes
+	
+	
+	trigger = {
+		year = 630
+		NOT = { year = 700 }
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_persia
+		}		
+	}
+
+	immediate = {
+		any_realm_province = {
+			add_province_modifier = { name = war_exhaustion duration = 7000 }
+		}
+	}			
+}
+
+# Arabs sack Fars
+narrative_event = {
+	id = IHS.60
+	title = EVTNAMEIHS.60
+	desc = EVTDESCIHS.60
+	major = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	culture = bedouin_arabic
+	
+	trigger = {
+		FROM = { title = b_perozabad }
+		NOT = { has_global_flag = arabs_sack_fars }
+		religion_group = muslim
+		
+		NOT = {
+			FROM = {
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}		
+	}
+
+	immediate = {
+		set_global_flag = arabs_sack_fars
+	}		
+	
+	option = {
+		name = "EVTOPTAIHS.60"
+		trigger = { religion_group = muslim }
+	}
+	option = {
+		name = "EVTOPTBIHS.60"
+		trigger = { NOT = { religion_group = muslim } }
+	}
+	option = {
+		name = "EVTOPTAIHS.60"
+		trigger = { religion_group = zoroastrian_group }
+	}
+}

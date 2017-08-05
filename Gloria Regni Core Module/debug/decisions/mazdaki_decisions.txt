@@ -1,0 +1,84 @@
+decisions = {
+	restore_mazdaki_priesthood = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "The Old Gods"
+			religion = mazdaki
+			NOT = { has_global_flag = mazdaki_priesthood_founded }
+		}
+		allow = {
+			has_landed_title = k_persia
+			piety = 300
+		}
+		effect = {
+			set_global_flag = mazdaki_priesthood_founded
+			piety = -300
+			activate_title = { title = d_mazdaki status = yes }
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = mazdaki
+					culture = persian
+					dynasty = random
+					female = no
+					age = 41
+				}
+				new_character = {
+					d_mazdaki = {
+						grant_title = PREV
+					}
+					narrative_event = { id = TOG.6004 days = 2 }
+				}
+			}
+			d_mazdaki = {
+				holder_scope = {
+					k_persia = {
+						holder_scope = {
+							set_defacto_vassal = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	choose_mazdaki_patron_deity = {
+                potential = {
+                        has_dlc = "Rajas of India"
+                        is_playable = yes
+                        age = 16
+                        not = { trait = incapable }
+                        religion = mazdaki
+                        NOT = {
+                                has_character_modifier = patron_discernment
+                                has_character_modifier = patron_understanding
+                                has_character_modifier = patron_preservation
+                                has_character_modifier = patron_joy
+                        }
+                }
+                allow = {
+                        prisoner = no
+                }
+                effect = {
+                        character_event = { id = HPmazdaki.19260 }
+                }
+                revoke_allowed = {
+                        always = no
+                }
+                ai_will_do = {
+                        factor = 1
+                        modifier = {
+                                factor = 5
+                                trait = zealous
+                        }
+                        modifier = {
+                                factor = 0.5
+                                trait = cynical
+                        }
+                }
+        }
+
+}

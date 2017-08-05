@@ -1,0 +1,107 @@
+1000255000 = {
+	name="Zacco"
+	dynasty = 1000124399
+	religion = imperial
+	culture = roman
+	570.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+
+1000255001 = {
+	name="Victor"
+	dynasty = 1000124399
+	religion = imperial
+	culture = roman
+	father = 1000255000
+	590.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000255002 = {
+	name="Claudius"
+	dynasty = 1000124418
+	religion = imperial
+	culture = gallo_roman
+	580.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000255003 = {
+	name = Marcus
+	dynasty = 1000124465
+	religion = imperial
+	culture = roman
+	600.1.1 = {
+		birth = yes
+	}
+	643.1.1 = {
+		death = yes
+	}
+}
+1000255004 = {
+	name = Ospitone
+	dynasty = 1000124472
+	religion = pagan
+	culture = roman
+	570.1.1 = {
+		birth = yes
+	}
+	594.1.1 = {
+		religion = imperial
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000255005 = {
+	name = Paulus
+	dynasty = 1000124475
+	religion = imperial
+	culture = roman
+	600.1.1 = {
+		birth = yes
+	}
+	670.1.1 = {
+		death = yes
+	}
+}
+1000255006 = {
+	name = Marcellus
+	dynasty = 1000124475
+	father = 1000255005
+	religion = imperial
+	culture = roman
+	630.1.1 = {
+		birth = yes
+	}
+	690.1.1 = {
+		death = yes
+	}
+}
+1000255007 = {
+	name = Paullocio
+	dynasty = 1000124475
+	father = 1000255006
+	religion = imperial
+	culture = roman
+	660.1.1 = {
+		birth = yes
+	}
+	700.1.1 = {
+		culture = italian
+	}
+	726.1.1 = {
+		death = yes
+	}
+}
+	

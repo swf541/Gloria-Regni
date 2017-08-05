@@ -1,0 +1,44 @@
+plot_decisions = {
+
+	plot_byzantine_coup_decision = {
+		is_high_prio = yes
+		
+		potential = {
+			age = 16
+			has_plot = plot_byzantine_coup
+			NOT = { has_character_flag = plot_byzantine_coup_decision_taken }
+		}
+		allow = {
+			plot_power = 0.8
+			num_of_plot_backers = 1
+			plot_target_char = {
+				NOT = {
+					any_war = {
+						defender = {
+							character = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			plot_target_char = {
+				letter_event = { id = MG.300 days = 3 tooltip = "EVTTOOLTIPMG300" }
+			}
+			hidden_tooltip = {
+				set_character_flag = plot_byzantine_coup_decision_taken
+				activate_plot = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { plot_power = 0.9 }
+			}
+		}
+	}
+}

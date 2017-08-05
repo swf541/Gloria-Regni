@@ -1,0 +1,2563 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- kharijite   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPkharijite
+
+###########################################
+# Anarchy at Samarra  					  #
+###########################################
+
+narrative_event = {
+	id = HPkharijite.5900
+	title = EVTTITLE_HRP_5900
+	desc = EVTDESC_HRP_5900
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	trigger = {
+		has_landed_title = d_sunni
+		year = 800
+		NOT = { year = 900 }
+		is_adult = yes
+		NOT = { diplomacy = 10 }
+		NOT = { martial = 10 }
+		NOT = { stewardship = 10 }
+		NOT = { intrigue = 10 }
+		#OR = {
+		#	NOT = { religion_authority = 0.75 }
+		#	decadence = 50
+		#}
+		NOT = { has_global_flag = anarchy_at_samarra }
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	major_trigger = {
+		is_ruler = yes
+	}
+	immediate = {
+		set_global_flag = anarchy_at_samarra
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_5900
+		trigger = {
+			has_landed_title = d_sunni
+		}
+		add_trait = anarchy_at_samarra_trait
+		crownlaw_title = {
+			if = {
+					limit = { has_law = bi_1 }
+					add_law_w_cooldown = bi_0
+				}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_5900
+		trigger = {
+			NOT = { has_landed_title = d_sunni }
+			religion_group = muslim
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_5900
+		trigger = {
+			NOT = { has_landed_title = d_sunni }
+			NOT = { religion_group = muslim }
+		}
+	}
+}
+
+#On replacement
+character_event = {
+	id = HPkharijite.5904
+	desc = EVTDESC_HRP_5904
+	#hide_window = yes
+	
+	
+	trigger = {
+		not = { year = 900 }
+		has_global_flag = anarchy_at_samarra
+		has_landed_title = d_sunni
+		NOT = { trait = anarchy_at_samarra_trait }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = EVTOPTA_HRP_5904
+		add_trait = anarchy_at_samarra_trait
+	}
+}
+
+# Restore Order
+narrative_event = {
+	id = HPkharijite.5902
+	title = EVTTITLE_HRP_5902
+	desc = EVTDESC_HRP_5902
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	is_triggered_only = yes
+	major_trigger = {
+		is_ruler = yes
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_5902
+		trigger = {
+			has_landed_title = d_sunni
+		}
+		remove_trait = anarchy_at_samarra_trait
+		clr_global_flag = anarchy_at_samarra
+	}
+	option = {
+		name = EVTOPTB_HRP_5902
+		trigger = {
+			NOT = { has_landed_title = d_sunni }
+			religion_group = muslim
+		}
+		if = {
+			limit = {
+				trait = anarchy_at_samarra_trait
+			}
+			remove_trait = anarchy_at_samarra_trait
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_5902
+		trigger = {
+			NOT = { has_landed_title = d_sunni }
+			NOT = { religion_group = muslim }
+		}
+	}
+}
+#Dissolution
+character_event = {
+	id = HPkharijite.5907
+	desc = EVTDESC_HRP_5907
+	hide_window = yes
+	
+	
+	trigger = {
+		not = { year = 900 }
+		has_global_flag = anarchy_at_samarra
+		has_landed_title = d_sunni
+		trait = anarchy_at_samarra_trait
+		
+	}
+	mean_time_to_happen = {
+		years = 3
+	}
+
+	immediate = {
+		random_realm_lord = {
+			limit = { 
+				higher_tier_than = count
+				war = no
+				NOT = {
+					dynasty = root
+				}
+				NOT = {
+					reverse_opinion = { who = ROOT value = 50 }
+				}
+			}
+			character_event = { id = HPkharijite.5908 }
+		}	
+	}
+}
+character_event = {
+	id = HPkharijite.5908
+	desc = EVTDESC_HRP_5908
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_5908
+		set_defacto_liege = ROOT
+		FROM = {
+			letter_event = { id = HPkharijite.5909 }
+		}
+		ai_chance = {
+			factor = 4
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_5908
+		piety = 50
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+letter_event = {
+	id = HPkharijite.5909
+	desc = EVTDESC_HRP_5909
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5909
+	}
+}
+###########################################################
+# 
+###########################################################
+# Peasant Rebels rise up (temporary rebel title created, with a leader and a war)
+# Triggered from "on_rebel_revolt"
+province_event = {
+	id = HPkharijite.5903
+	desc = EVTDESC_HRP_5903
+	picture = GFX_evt_peasants
+	border = GFX_event_normal_frame_war
+
+	trigger = {
+		has_global_flag = anarchy_at_samarra
+		province_id = 697
+		NOT = { has_global_flag = kharijite_revolt }
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+		
+	immediate = {
+		
+		set_global_flag = kharijite_revolt
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			name = "Musawir"
+			religion = kharijite
+			culture = ROOT
+			female = no
+			age = 32
+			attributes = {
+				martial = 15
+				learning = 7
+			}
+			trait = heresiarch
+			trait = zealous
+			trait = skilled_tactician
+			trait = unyielding_leader
+			trait = holy_warrior
+		}
+		
+		new_character = {
+			set_character_flag = heretic_revolter
+			
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "Kharijite Rebellion"
+				holder = THIS
+			}
+			
+			random_list = {
+				34 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.7
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = kharijite
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.7
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 2 2 }
+							light_infantry = { 12 12 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = kharijite
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.7
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = kharijite
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.7
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = heretic_revolt
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = {
+					id = HPkharijite.5905
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_TOG_1020"
+	}
+}
+
+character_event = {
+	id = HPkharijite.5905
+	desc = EVTDESC_HRP_5905
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_1020
+		hidden_tooltip = { narrative_event = { id = HPkharijite.5906 days = 3} }
+	}
+}
+narrative_event = {
+	id = HPkharijite.5906
+	desc = EVTDESC_HRP_5906
+	title = EVTTITLE_HRP_5906
+	picture = GFX_evt_heretic
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5906
+		trigger = {
+			not = { religion = sunni }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_5906
+		trigger = {
+			religion = sunni
+		}
+	}
+}
+letter_event = {
+	id = HPkharijite.5000
+	desc = EVTDESC_HRP_5001
+	
+	is_triggered_only = yes
+	
+
+	option = {
+		name = EVTOPTA_HRP_5001
+		add_trait = kharijite_kafir
+		decadence = 10
+		crownlaw_title = {
+			if = {
+					limit = {
+						independent = yes 
+						has_law = bi_1 
+					}
+					add_law_w_cooldown = bi_0
+				}
+		}
+	}
+}
+letter_event = {
+	id = HPkharijite.5001
+	desc = EVTDESC_HRP_5001
+	
+	is_triggered_only = yes
+	
+
+	option = {
+		name = EVTOPTA_HRP_5001
+		add_trait = kharijite_kafir
+		decadence = 10
+	}
+}
+character_event = {
+	id = HPkharijite.5005
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = kharijite_kafir }
+	}
+
+	immediate = {
+		random_list = {
+			30 = { character_event = { id = HPkharijite.5007 } }
+			70 = { character_event = { id = HPkharijite.5008 } }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5006
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = kharijite_kafir }
+	}
+
+	immediate = {
+		random_list = {
+			70 = { character_event = { id = HPkharijite.5007 } }
+			30 = { character_event = { id = HPkharijite.5008 } }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5007
+	desc = EVTDESC_HRP_5007
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5007
+		add_trait = kharijite_kafir
+		decadence = 10
+		crownlaw_title = {
+			if = {
+					limit = { 
+						has_law = bi_1
+						independent = yes
+					 }
+					add_law_w_cooldown = bi_0
+				}
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5008
+	desc = EVTDESC_HRP_5008
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5008
+		decadence = 15
+	}
+}
+# CLEAR name
+character_event = {
+	id = HPkharijite.5100
+	desc = EVTDESC_HRP_5100
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5100
+		add_character_modifier = { name = strong_fast duration = 10 }
+		hidden_tooltip = { character_event = { id = HPkharijite.5101 days = 10 } }
+	}
+}
+character_event = {
+	id = HPkharijite.5101
+	desc = EVTDESC_HRP_5101
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5101
+		remove_trait = gluttonous
+		random_list = {
+			10 = { add_trait = weak }
+			30 = { add_trait = temperate }
+			60 = { health = -1 }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5102
+	desc = EVTDESC_HRP_5102
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5102
+		remove_trait = greedy
+		scaled_wealth = -10.0
+		random_list = {
+			50 = { add_trait = charitable }
+			50 = { }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5103
+	desc = EVTDESC_HRP_5103
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5103
+		remove_trait = slothful
+		change_learning = 1
+		add_trait = stressed
+	}
+}
+character_event = {
+	id = HPkharijite.5104
+	desc = EVTDESC_HRP_5104
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5104
+		remove_trait = arbitrary 
+		prestige = -300
+		change_stewardship = -2
+	}
+}
+character_event = {
+	id = HPkharijite.5105
+	desc = EVTDESC_HRP_5105
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5105
+		remove_trait = cynical 
+		prestige = -500
+		random_list = {
+			50 = { add_trait = deceitful }
+			50 = { add_trait = zealous }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5110
+	desc = EVTDESC_HRP_5110
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5110
+		remove_trait = drunkard 
+		prestige = -500
+		random_list = {
+			50 = { add_trait = humble }
+			10 = { change_diplomacy = 1 }
+			10 = { change_martial = 1 }
+			10 = { change_intrigue = 1 }
+			20 = { }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5111
+	desc = EVTDESC_HRP_5110
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5110
+		remove_trait = hedonist 
+		prestige = -500
+		random_list = {
+			50 = { add_trait = humble }
+			10 = { change_diplomacy = 1 }
+			10 = { change_martial = 1 }
+			10 = { change_intrigue = 1 }
+			20 = { }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5112
+	desc = EVTDESC_HRP_5110
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5110
+		remove_trait = drunkard 
+		prestige = -500
+		random_list = {
+			50 = { add_trait = humble }
+			10 = { change_diplomacy = 1 }
+			10 = { change_martial = 1 }
+			10 = { change_intrigue = 1 }
+			20 = { }
+		}
+	}
+}
+character_event = {
+	id = HPkharijite.5115
+	desc = EVTDESC_HRP_5115
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5115
+		remove_trait = kharijite_kafir 
+	}
+}
+######################################################
+# Prisoner Execution - 5200
+# Event modelled after Blot Events in Old Gods
+# Triggered by target decision on diplomacy Screen
+# Events go in order of reverse order of importance.
+# If a prisoner is a Viking Fylkr King, he will be
+# level 10, 'Any Pagan Religious Head'. If he was the
+# Emperor of Scandinavia, he'd be killed as level 8
+######################################################
+# Bounce for scope correction
+character_event = {
+	id = HPkharijite.5299
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { # Prisoner
+			character_event = { id = HPkharijite.5200 }
+		}
+	}
+}
+# Execute Prisoner -- ROOT is prisoner, FROM is ruler 
+character_event = {
+	id = HPkharijite.5200
+	desc = EVTDESC_HRP_5200
+	picture = GFX_evt_bad_news
+	border = FX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5200
+		hidden_tooltip = {
+			if = {
+				limit = { # Generic
+					NOT = {
+						#KIN SPECIALS
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						# Religious Head / Power Rulers
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						} #1 Saoshyant
+						has_landed_title = k_papal_state # 2 Pope
+						has_landed_title = k_orthodox #3 Patriarch
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						} #4 Any Caliph
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						} #5 Any Jewish Head
+						has_landed_title = d_zoroastrian #6 Zoro
+						has_landed_title = k_israel #7 King of Israel
+						tier = EMPEROR #8 Any Emperor
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						} #9 Any other Christian HEad
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						} #10 Any Pagan Head
+						tier = KING #11 Any King
+						trait = crusader #12
+						trait = sayyid #13
+						tier = DUKE #14 Any Duke
+						trait = kharijite_kafir #15
+						trait = viking #16
+						trait = genius  #17
+						trait = imbecile #18 Less piety lose prestige
+						tier = COUNT #19
+							
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5210 } }
+			} # END GENERIC
+			### SAOSHYANT -- Level 1 
+			if = {
+				limit = { 
+					OR = {
+						trait = saoshyant
+						trait = saoshyant_descendant
+					}
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5211 } }
+			}
+			### POPE -- Level 2
+			if = {
+				limit = { 
+					has_landed_title = k_papal_state
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}	
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5212 } }
+			}
+			### PATRIARCH -- Level 3
+			if = {
+				limit = { 
+					has_landed_title = k_orthodox
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5213 } }
+			}
+			### ANY CALIPH -- Level 4
+			if = {
+				limit = { 
+					OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+					}
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5214 } }
+			}
+			### ANY JEWISH HEAD -- Level 5
+			if = {
+				limit = { 
+					OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5215 } }
+			}
+			### ANY ZORO HEAD -- Level 6
+			if = {
+				limit = { 
+					has_landed_title = d_zoroastrian
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5216 } }
+			}
+			### KING OF ISRAEL -- Level 7
+			if = {
+				limit = { 
+					has_landed_title = k_israel
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5217 } }
+			}
+			### ANY EMPEROR -- Level 8
+			if = {
+				limit = { 
+					tier = EMPEROR
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5218 } }
+			}
+			### ANY Other XTAIN HEAD -- Level 9
+			if = {
+				limit = { 
+					OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+					}
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5219 } }
+			}
+			### ANY PAGAN HEAD -- Level 10
+			if = {
+				limit = { 
+					OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+					}
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5220 } }
+			}
+			### Any King -- Level 11
+			if = {
+				limit = { 
+					tier = KING
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5221 } }
+			}
+			### Any Crusader -- Level 12
+			if = {
+				limit = { 
+					trait = crusader
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING 
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5222 } }
+			}
+			### Any Sayyid -- Level 13
+			if = {
+				limit = { 
+					trait = sayyid
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5223 } }
+			}
+			### Any DUKE -- Level 14
+			if = {
+				limit = { 
+					tier = DUKE
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5224 } }
+			}
+			### Any Apostate -- Level 15
+			if = {
+				limit = { 
+					trait = kharijite_kafir
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+						tier = DUKE
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5225 } }
+			}
+			### Any Pirate -- Level 16
+			if = {
+				limit = { 
+					trait = viking
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+						tier = DUKE
+						trait = kharijite_kafir
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5226 } }
+			}
+			### Any SmartyPants -- Level 17
+			if = {
+				limit = { 
+					trait = genius
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+						tier = DUKE
+						trait = kharijite_kafir
+						trait = viking
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5227 } }
+			}
+			### Any Retard -- Level 18
+			if = {
+				limit = { 
+					trait = imbecile
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+						tier = DUKE
+						trait = kharijite_kafir
+						trait = viking
+						trait = genius
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5228 } }
+			}
+			### Any Count -- Level 19
+			if = {
+				limit = { 
+					tier = COUNT
+					NOT = { # FAMILY ABOVE ALL
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+						OR = {
+							trait = saoshyant
+							trait = saoshyant_descendant
+						}
+						has_landed_title = k_papal_state
+						has_landed_title = k_orthodox
+						OR = {
+							has_landed_title = e_sunni
+							has_landed_title = e_shiite
+							has_landed_title = d_sunni
+							has_landed_title = d_shiite
+							has_landed_title = d_yazidi
+							has_landed_title = d_ibadi
+							has_landed_title = d_hurufi
+							has_landed_title = d_zikri
+						}
+						OR = {
+							has_landed_title = d_jewish
+							has_landed_title = d_samaritan
+							has_landed_title = d_karaite
+						}
+						has_landed_title = d_zoroastrian
+						has_landed_title = k_israel
+						tier = EMPEROR
+						OR = { 
+							has_landed_title = d_miaphysite
+							has_landed_title = d_monophysite
+							has_landed_title = d_nestorian
+							has_landed_title = d_paulician
+							has_landed_title = d_monothelite
+							has_landed_title = d_fraticelli
+							has_landed_title = d_iconoclast
+						}
+						OR = {
+							has_landed_title = d_norse_pagan_reformed
+							has_landed_title = d_tengri_pagan_reformed
+							has_landed_title = d_baltic_pagan_reformed
+							has_landed_title = d_finnish_pagan_reformed
+							has_landed_title = d_slavic_pagan_reformed
+							has_landed_title = d_aztec_reformed
+							has_landed_title = d_west_african_pagan_reformed
+							has_landed_title = d_zun_pagan_reformed
+							has_landed_title = d_manichean
+							has_landed_title = d_mazdaki
+						}
+						tier = KING
+						trait = crusader
+						trait = sayyid
+						tier = DUKE
+						trait = kharijite_kafir
+						trait = viking
+						trait = genius
+						trait = imbecile
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5229 } }
+			}
+			if = {
+				limit = { # Brother
+					sibling = FROM
+					is_female = no
+				}
+				FROM = { character_event = { id = HPkharijite.5230 } }
+			}
+			if = {
+				limit = { # Sister
+					sibling = FROM
+					is_female = yes
+				}
+				FROM = { character_event = { id = HPkharijite.5231 } }
+			}
+			if = {
+				limit = { # Father
+					any_child = { character = FROM }
+					is_female = no
+				}
+				FROM = { character_event = { id = HPkharijite.5232 } }
+			}
+			if = {
+				limit = { # Mother
+					any_child = { character = FROM }
+					is_female = yes
+				}
+				FROM = { character_event = { id = HPkharijite.5233 } }
+			}
+			if = {
+				limit = { # Son
+					OR = {
+						father = { character = FROM }
+						mother = { character = FROM }
+					}
+					is_female = no
+				}
+				FROM = { character_event = { id = HPkharijite.5234 } }
+			}
+			if = {
+				limit = { # Daughter
+					OR = {
+						father = { character = FROM }
+						mother = { character = FROM }
+					}
+					is_female = yes
+				}
+				FROM = { character_event = { id =HPkharijite.5235 } }
+			}
+			if = {
+				limit = { # Kin
+					any_dynasty_member = { character = FROM}
+					NOT = {
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5236 } }
+			}
+			if = {
+				limit = { # Spouse
+					any_spouse = { character = FROM }
+					NOT = {
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+					}
+				}
+				FROM = { character_event = { id = HPkharijite.5237 } }
+			}
+		}
+	}
+}
+
+# Execution Generic (Liege) 
+character_event = {
+	id = HPkharijite.5210
+	desc = EVTDESC_HRP_5210
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5210
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 5
+		piety = 50
+	}
+}
+# Execution Saoshyant (Liege) 
+character_event = {
+	id = HPkharijite.5211
+	desc = EVTDESC_HRP_5211
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5211
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 100
+		piety = 1000
+	}
+}
+# Execution Pope (Liege) 
+character_event = {
+	id = HPkharijite.5212
+	desc = EVTDESC_HRP_5212
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5212
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution Pat (Liege) 
+character_event = {
+	id = HPkharijite.5213
+	desc = EVTDESC_HRP_5213
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5213
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution Caliph (Liege) 
+character_event = {
+	id = HPkharijite.5214
+	desc = EVTDESC_HRP_5214
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5214
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution Jew (Liege) 
+character_event = {
+	id = HPkharijite.5215
+	desc = EVTDESC_HRP_5215
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5215
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution Zoro (Liege) 
+character_event = {
+	id = HPkharijite.5216
+	desc = EVTDESC_HRP_5216
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5216
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution K-israel (Liege) 
+character_event = {
+	id = HPkharijite.5217
+	desc = EVTDESC_HRP_5217
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5217
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution Emperor (Liege) 
+character_event = {
+	id = HPkharijite.5218
+	desc = EVTDESC_HRP_5218
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5218
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 50
+		piety = 500
+	}
+}
+# Execution OTHER XTIAN (Liege) 
+character_event = {
+	id = HPkharijite.5219
+	desc = EVTDESC_HRP_5219
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5219
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 40
+		piety = 400
+	}
+}
+# Execution Pagan (Liege) 
+character_event = {
+	id = HPkharijite.5220
+	desc = EVTDESC_HRP_5220
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5220
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 30
+		piety = 300
+	}
+}
+# Execution King (Liege) 
+character_event = {
+	id = HPkharijite.5221
+	desc = EVTDESC_HRP_5221
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5221
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 25
+		piety = 250
+	}
+}
+# Execution crusader (Liege) 
+character_event = {
+	id = HPkharijite.5222
+	desc = EVTDESC_HRP_5222
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5222
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 20
+		piety = 200
+	}
+}
+# Execution sayyid (Liege) 
+character_event = {
+	id = HPkharijite.5223
+	desc = EVTDESC_HRP_5223
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5223
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 15
+		piety = 150
+	}
+}
+# Execution duke (Liege) 
+character_event = {
+	id = HPkharijite.5224
+	desc = EVTDESC_HRP_5224
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5224
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 15
+		piety = 150
+	}
+}
+# Execution kafir (Liege) 
+character_event = {
+	id = HPkharijite.5225
+	desc = EVTDESC_HRP_5225
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5225
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 10
+		piety = 100
+	}
+}
+# Execution viking (Liege) 
+character_event = {
+	id = HPkharijite.5226
+	desc = EVTDESC_HRP_5226
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5226
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 10
+		piety = 100
+	}
+}
+# Execution genius (Liege) 
+character_event = {
+	id = HPkharijite.5227
+	desc = EVTDESC_HRP_5227
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5227
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 10
+		piety = 75
+	}
+}
+# Execution imbecile (Liege) 
+character_event = {
+	id = HPkharijite.5228
+	desc = EVTDESC_HRP_5228
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5228
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 10
+	}
+}
+# Execution count (Liege) 
+character_event = {
+	id = HPkharijite.5229
+	desc = EVTDESC_HRP_5229
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5229
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = 7
+		piety = 70
+	}
+}
+# Execution Brother (Liege) 
+character_event = {
+	id = HPkharijite.5230
+	desc = EVTDESC_HRP_5230
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5230
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 50
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5230
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Sister (Liege) 
+character_event = {
+	id = HPkharijite.5231
+	desc = EVTDESC_HRP_5231
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5231
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 50
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5231
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Father (Liege) 
+character_event = {
+	id = HPkharijite.5232
+	desc = EVTDESC_HRP_5232
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5232
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 100
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5232
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Mother (Liege) 
+character_event = {
+	id = HPkharijite.5233
+	desc = EVTDESC_HRP_5233
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5233
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 50
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5233
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Son (Liege) 
+character_event = {
+	id = HPkharijite.5234
+	desc = EVTDESC_HRP_5234
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5234
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 150
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5234
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Daughter (Liege) 
+character_event = {
+	id = HPkharijite.5235
+	desc = EVTDESC_HRP_5235
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5235
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 50
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5235
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Kin (Liege) 
+character_event = {
+	id = HPkharijite.5236
+	desc = EVTDESC_HRP_5236
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5236
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -50
+		piety = 150
+		add_trait = kinslayer
+	}
+	option = {
+		name = EVTOPTB_HRP_5236
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -100
+	}
+}
+# Execution Wife (Liege) 
+character_event = {
+	id = HPkharijite.5237
+	desc = EVTDESC_HRP_5237
+	picture = GFX_evt_hp_muslim
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_5237
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		prestige = -25
+		piety = 25
+		add_trait = cruel
+	}
+	option = {
+		name = EVTOPTB_HRP_5237
+		FROM = {
+			imprison = no
+		}
+		prestige = 10
+		piety = -50
+	}
+}

@@ -1,0 +1,30 @@
+settlement_decisions = {
+	settlement_destroy = {
+		filter = sub_realm_owned
+		ai_target_filter = sub_realm_owned
+		
+		from_potential = {
+		}
+		
+		potential = {
+			holder_scope = {
+				character = FROM
+			}
+		}
+		allow = {
+			holder_scope = {
+				war = no
+			}
+		}
+		effect = {
+			destroy_settlement = THIS
+		}
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+}

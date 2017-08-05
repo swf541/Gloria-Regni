@@ -1,0 +1,1931 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Fraticelli   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPfraticelli
+
+
+#Brother Angelo
+narrative_event = {
+	id = HPfraticelli.15000
+	title = EVTTITLE_HRP_15000
+	desc = EVTDESC_HRP_15000
+	picture = GFX_evt_heretic_pride_event
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = fraticelli_reform }
+		year = 1000
+		has_landed_title = k_papal_state
+		OR = {
+			trait = bad_priest_christian
+			NOT = { religion_authority = 0.60 }
+		}
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+	option = {
+		name = EVTOPTA_HRP_15000
+		trigger = {
+			has_landed_title = k_papal_state
+		}
+		religion_authority = {
+			modifier = fraticelli_reforms
+			years = 15
+		}
+		set_global_flag = fraticelli_reform
+		piety = -200
+	}
+	option = {
+		name = EVTOPTB_HRP_15000
+		trigger = {
+			NOT = { has_landed_title = k_papal_state }
+			religion = catholic
+		}
+	}
+	option = {
+		name = EVTOPTD_HRP_15000
+		trigger = {
+			NOT = { has_landed_title = k_papal_state }
+			#ai = yes
+			religion = catholic
+			OR = {
+				is_priest = yes
+				any_province_holding = {
+					holding_type = temple
+				}
+				trait = mastermind_theologian
+			}
+		}
+		character_event = { id = HPfraticelli.15001 }
+	}
+	option = {
+		name = EVTOPTC_HRP_15000
+		trigger = {
+			NOT = { has_landed_title = k_papal_state }
+			NOT = { religion = catholic }
+		}
+	}
+	
+	
+}
+character_event = { 
+	id = HPfraticelli.15002
+	desc = EVTDESC_HRP_15002
+	picture = GFX_evt_heretic_pride_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			90 = { }
+			10 = {
+				character_event = { id = HPfraticelli.15001 }
+			}
+		}
+	}
+}
+	
+character_event = { #yearly bounce
+	id = HPfraticelli.15001
+	desc = EVTDESC_HRP_15001
+	picture = GFX_evt_heretic_pride_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholic
+		OR = {
+			trait = mastermind_theologian
+			has_focus = focus_theology
+			trait = monk
+			trait = nun
+			is_theocracy = yes
+			NOT = { rightful_religious_head = ROOT }
+		}
+		NOT = { religion_authority = 0.60 }
+		NOT = { trait = zealous }
+		has_global_flag = fraticelli_reform
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_15001
+		religion = fraticelli
+		piety = 100
+	}
+	option = {
+		name = EVTOPTB_HRP_15001
+		piety = 50
+	}
+}
+letter_event = {
+	id = HPfraticelli.15900
+	desc = EVTDESC_HRP_15900
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15900
+		religion = FROMFROM
+		FROMFROM = {letter_event = { id = HPfraticelli.15901 } }
+		clr_character_flag = considering_conversion
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_15900
+		clr_character_flag = considering_conversion
+		FROMFROM = {letter_event = { id = HPfraticelli.15902 } }
+		piety = 50
+		opinion = {
+			modifier = opinion_hatred
+			who = FROMFROM
+			years = 5
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				has_character_flag = ai_flag_refuse_conversion
+			}
+		}
+	}
+}
+letter_event = {
+	id = HPfraticelli.15901
+	desc = EVTDESC_HRP_15901
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15901
+		
+	}
+}
+letter_event = {
+	id = HPfraticelli.15902
+	desc = EVTDESC_HRP_15902
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15902
+		
+	}
+}
+character_event = { 
+	id = HPfraticelli.15400
+	desc = EVTDESC_HRP_15400
+	picture = GFX_evt_heretic_pride_event
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		liege = {
+			NOT = { has_landed_title = k_papal_state }
+		}
+		OR = {
+			has_job_title = job_spymaster
+			has_job_title = job_treasurer
+			has_job_title = job_chancellor
+			has_job_title = job_marshal
+		}
+		prestige = 75
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_15400
+		liege = {
+			random_demesne_title = {
+				limit = {
+					is_primary_holder_title = yes
+				}
+				ROOT = {
+					add_weak_claim = prev
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_15400
+		trigger = { 
+			has_job_title = job_chancellor
+			liege = {
+				religion_group = muslim
+			}
+		}
+		liege = {
+			random_demesne_title = {
+				limit = {
+					is_primary_holder_title = yes
+				}
+				ROOT = {
+					add_claim = prev
+				}
+			}
+		}
+	}
+}
+#### Become a Monk! - Replaces the Standard Option to prevent targeting of Lollards
+letter_event = {
+	id = HPfraticelli.15920
+	desc = EVTDESC_HRP_15920
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = { #Agree
+		name = EVTOPTA_HRP_15920
+		if = {
+			limit = {
+				is_female = yes
+			}
+			add_trait = nun
+		}
+		if = {
+			limit = {
+				is_female = no
+			}
+			add_trait = monk
+		}
+		FROMFROM = {letter_event = { id = HPfraticelli.15921 } }
+		clr_character_flag = considering_vows
+		imprison = no
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 4
+				learning = 12
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = celibate
+					trait = zealous
+					trait = chaste
+					trait = humble
+				}
+			}
+			modifier = {
+				factor = 100
+				prisoner = yes
+			}
+			modifier = {
+				factor = 0.2
+				NOT = { reverse_opinion = { who = FROM value = 0 } }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_15920
+		clr_character_flag = considering_vows
+		FROMFROM = {letter_event = { id = HPfraticelli.15922 } }
+		piety = 50
+		opinion = {
+			modifier = opinion_hatred
+			who = FROMFROM
+			years = 5
+		}
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0.1
+				OR = {
+					trait = lustful
+					trait = hedonist
+					trait = drunkard
+					trait = cynical
+				}
+			}
+		}
+	}
+}
+letter_event = {
+	id = HPfraticelli.15921
+	desc = EVTDESC_HRP_15921
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15921
+		
+	}
+}
+letter_event = {
+	id = HPfraticelli.15922
+	desc = EVTDESC_HRP_15922
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15922
+		
+	}
+}
+
+
+
+
+#################################################
+# Stranger in a Strange Land 
+#
+#################################################
+# Stranger at the Gate (hidden)
+character_event = {
+	id = HPfraticelli.15700
+	desc = EVTDESC_HRP_15700
+	picture = GFX_evt_carriage
+	
+	capable_only = yes
+	prisoner = no
+	
+	only_independent = yes
+	hide_window = yes
+	
+	trigger = {
+		is_adult = yes
+		is_ruler = yes
+		in_command = no
+
+		NOT = { trait = in_hiding }
+	}
+	
+	mean_time_to_happen = {
+		months = 780
+	}
+	
+	immediate = {
+		if = {
+			limit = { 
+				NOT = { year = 1000 }
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_hre }
+							empire = { title = e_germany }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_france }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_spain  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_britannia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_italy  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15720 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_scandinavia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_wendish_empire  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_russia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_tartaria }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15720 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_carpathia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_byzantium }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15720 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_arabia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15720 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_persia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15720 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_abyssinia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_mali }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_rajastan }
+							empire = { title = e_bengal }
+							empire = { title = e_deccan }
+							empire = { title = e_india }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15716 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_golden_horde }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_il-khanate }
+							empire = { title = e_timurids  }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_mongol_empire }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15702 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15718 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_roman_empire }
+							empire = { title = e_latin_empire }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15706 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				year = 1000
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_hre }
+							empire = { title = e_germany }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15708 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_france }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15708 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_spain  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15708 } }
+					1 = { character_event = { id = HPfraticelli.15709 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_britannia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_italy  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15708 } }
+					1 = { character_event = { id = HPfraticelli.15709 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_scandinavia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15722 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_wendish_empire  }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_russia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_tartaria }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_carpathia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_byzantium }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_arabia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_persia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_abyssinia }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_mali }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15703 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15709 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_rajastan }
+							empire = { title = e_bengal }
+							empire = { title = e_deccan }
+							empire = { title = e_india }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_golden_horde }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_il-khanate }
+							empire = { title = e_timurids  }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15717 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						empire = { title = e_mongol_empire }
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15704 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15713 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							empire = { title = e_roman_empire }
+							empire = { title = e_latin_empire }
+						}
+					}
+				}
+				random_list = {
+					1 = { character_event = { id = HPfraticelli.15701 } }
+					1 = { character_event = { id = HPfraticelli.15705 } }
+					1 = { character_event = { id = HPfraticelli.15707 } }
+					1 = { character_event = { id = HPfraticelli.15710 } }
+					1 = { character_event = { id = HPfraticelli.15711 } }
+					1 = { character_event = { id = HPfraticelli.15712 } }
+					1 = { character_event = { id = HPfraticelli.15714 } }
+					1 = { character_event = { id = HPfraticelli.15715 } }
+					1 = { character_event = { id = HPfraticelli.15719 } }
+					1 = { character_event = { id = HPfraticelli.15721 } }
+					
+				}
+			}
+		}
+	}		
+		
+}
+
+
+
+
+#####
+# Characters
+#####
+# 1: Mia General
+character_event = {
+	id = HPfraticelli.15701
+	desc = EVTDESC_HRP_15701
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.8
+		create_random_soldier = {
+			random_traits = no
+			dynasty = random
+			female = no
+			age = 30
+			religion = miaphysite
+			culture = armenian
+			trait = brave
+			trait = patient
+			trait = quick
+			trait = brilliant_strategist
+			attributes = {
+				diplomacy = 6
+				martial = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 2: Mani Mystic
+character_event = {
+	id = HPfraticelli.15702
+	desc = EVTDESC_HRP_15702
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		piety = -50
+		scaled_wealth = -0.4
+		create_random_intriguer = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 40
+			religion = manichean
+			culture = kirghiz
+			trait = mystic
+			trait = quick
+			trait = mastermind_theologian 
+			attributes = {
+				intrigue = 10
+				learning = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 3: Druze Merchant
+character_event = {
+	id = HPfraticelli.15703
+	desc = EVTDESC_HRP_15703
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.5
+		create_random_steward = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 27
+			religion = druze
+			culture = levantine_arabic
+			trait = greedy
+			trait = midas_touched  
+			attributes = {
+				stewardship = 12
+				diplomacy = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 4: Druze HW
+character_event = {
+	id = HPfraticelli.15704
+	desc = EVTDESC_HRP_15704
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		piety = -20
+		scaled_wealth = -0.6
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 27
+			religion = druze
+			culture = levantine_arabic
+			trait = holy_warrior
+			trait = brave
+			trait = strong
+			trait = tough_soldier  
+			attributes = {
+				martial = 8
+				diplomacy = 4
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 5: Coptic Slave Eunuch
+character_event = {
+	id = HPfraticelli.15705
+	desc = EVTDESC_HRP_15705
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.7
+		create_random_steward = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 21
+			religion = monophysite
+			culture = ethiopian
+			trait = eunuch
+			trait = ugly
+			attributes = {
+				martial = 7
+				stewardship = 7
+				intrigue = 7
+				diplomacy = 7
+				learning = 3
+			}
+			flag = ai_flag_refuse_conversion
+		}
+		new_character = {
+			random_list = {
+				1 = { religion = monophysite }
+				1 = { religion = miaphysite }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 6: Norse Viking
+character_event = {
+	id = HPfraticelli.15706
+	desc = EVTDESC_HRP_15706
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.3
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 25
+			religion = norse_pagan
+			culture = norse
+			trait = viking
+			trait = kinslayer
+			trait = strong
+			trait = cruel
+			trait = brave
+			attributes = {
+				martial = 14
+				diplomacy = 1
+				learning = 2
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 7: Norse Merchant
+character_event = {
+	id = HPfraticelli.15707
+	desc = EVTDESC_HRP_15707
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.5
+		create_random_steward = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 27
+			religion = norse_pagan
+			culture = norse
+			trait = greedy
+			trait = midas_touched  
+			attributes = {
+				stewardship = 12
+				diplomacy = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 8: Engineer
+character_event = {
+	id = HPfraticelli.15708
+	desc = EVTDESC_HRP_15708
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -1.5
+		create_random_steward = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 27
+			religion = sunni
+			culture = andalusian_arabic
+			trait = administrator
+			trait = architect
+			trait = genius
+			attributes = {
+				stewardship = 6
+				learning = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 9: El Cid
+character_event = {
+	id = HPfraticelli.15709
+	desc = EVTDESC_HRP_15709
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -1.5
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 23
+			religion = catholic
+			culture = castillan
+			trait = brave
+			trait = greedy
+			trait = strong
+			trait = brilliant_strategist
+			attributes = {
+				diplomacy = 6
+				martial = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 10: Geographer
+character_event = {
+	id = HPfraticelli.15710
+	desc = EVTDESC_HRP_15710
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		prestige = 100
+		scaled_wealth = -0.5
+		create_random_steward = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 35
+			religion = sunni
+			culture = bedouin_arabic
+			trait = proud
+			trait = quick
+			attributes = {
+				diplomacy = 6
+				stewardship = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 11: Russian Monk
+character_event = {
+	id = HPfraticelli.15711
+	desc = EVTDESC_HRP_15711
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		piety = 10
+		scaled_wealth = -0.1
+		create_random_priest = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 42
+			religion = orthodox
+			culture = russian
+			trait = monk
+			attributes = {
+				learning = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 12: Bulgarian Monk
+character_event = {
+	id = HPfraticelli.15712
+	desc = EVTDESC_HRP_15712
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		piety = 10
+		scaled_wealth = -0.1
+		create_random_priest = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 38
+			religion = bogomilist
+			culture = bulgarian
+			trait = monk
+			attributes = {
+				learning = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 13: Hurufi Poet
+character_event = {
+	id = HPfraticelli.15713
+	desc = EVTDESC_HRP_15713
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.5
+		create_random_intriguer = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 22
+			religion = hurufi
+			culture = kurdish
+			trait = hurufi_diwan
+			trait = quick
+			trait = lustful
+			attributes = {
+				learning = 8
+				diplomacy = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 14: Byz Doctor
+character_event = {
+	id = HPfraticelli.15714
+	desc = EVTDESC_HRP_15714
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -2.0
+		health = 1
+		create_random_intriguer = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 38
+			religion = iconoclast
+			culture = greek
+			trait = genius
+			trait = scholar
+			attributes = {
+				learning = 6
+				diplomacy = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+		new_character = {
+			random_list = {
+				1 = { religion = iconoclast }
+				1 = { religion = orthodox }
+			}
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 15: Yazidi Alchemisit
+character_event = {
+	id = HPfraticelli.15715
+	desc = EVTDESC_HRP_15715
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -1.2
+		prestige = 50
+		create_random_intriguer = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 29
+			religion = yazidi
+			culture = bedouin_arabic
+			trait = quick
+			trait = scholar
+			health = -1
+			attributes = {
+				learning = 10
+				diplomacy = 2
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 16: Zoro Noble Refuge
+character_event = {
+	id = HPfraticelli.15716
+	desc = EVTDESC_HRP_15716
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -1.1
+		piety = 50
+		create_random_diplomat = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 29
+			religion = zoroastrian
+			culture = persian
+			trait = administrator
+			health = -1
+			attributes = {
+				stewardship = 6
+				diplomacy = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+		new_character = {
+			random_list = {
+				1 = { religion = zoroastrian }
+				1 = { religion = mazdaki }
+			}
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 16: Omani Seafarer (IE Sinbad the Sailor)
+character_event = {
+	id = HPfraticelli.15716
+	desc = EVTDESC_HRP_15716
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.5
+		create_random_steward = {
+			random_traits = yes
+			dynasty = random
+			name = "Sinbad"
+			female = no
+			age = 25
+			religion = ibadi
+			culture = persian
+			trait = genius
+			health = -1
+			attributes = {
+				stewardship = 6
+				diplomacy = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 18: Nestor Monk
+character_event = {
+	id = HPfraticelli.15718
+	desc = EVTDESC_HRP_15718
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.1
+		piety = 10
+		create_random_priest = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 38
+			religion = nestorian
+			culture = kirghiz
+			trait = monk
+			attributes = {
+				learning = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 19: Wald Merchant
+character_event = {
+	id = HPfraticelli.15719
+	desc = EVTDESC_HRP_15719
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.8
+		create_random_steward = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 27
+			religion = waldensian
+			culture = occitan
+			trait = greedy
+			trait = midas_touched  
+			attributes = {
+				stewardship = 12
+				diplomacy = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 20: Paul Merc
+character_event = {
+	id = HPfraticelli.15720
+	desc = EVTDESC_HRP_15720
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -1.2
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			age = 23
+			religion = paulician
+			culture = armenian
+			trait = fearless
+			trait = greedy
+			trait = strong
+			trait = brilliant_strategist
+			attributes = {
+				diplomacy = 6
+				martial = 10
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 21: Mess Mystic
+character_event = {
+	id = HPfraticelli.15721
+	desc = EVTDESC_HRP_15721
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.5
+		piety = -80
+		create_random_intriguer = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 40
+			religion = messalian
+			culture = greek
+			trait = mystic
+			trait = lunatic
+			trait = quick
+			trait = mastermind_theologian 
+			attributes = {
+				intrigue = 10
+				learning = 6
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+# 22: Frat Monk
+character_event = {
+	id = HPfraticelli.15722
+	desc = EVTDESC_HRP_15722
+	picture = GFX_evt_carriage
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_15700
+		scaled_wealth = -0.1
+		piety = 80
+		create_random_priest = {
+			random_traits = yes
+			dynasty = none
+			female = no
+			age = 38
+			religion = fraticelli
+			culture = italian
+			trait = monk
+			attributes = {
+				learning = 8
+			}
+			flag = ai_flag_refuse_conversion
+		}
+
+	}
+	option = {
+		name = EVTOPTB_HRP_15700
+		prestige = 5
+	}
+}
+
+# Title Clean Up
+character_event = {
+	id = HPfraticelli.15998
+	picture = GFX_evt_carriage
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = hp_startup }
+	}
+
+
+
+	immediate = {
+		set_global_flag = hp_startup
+		#A little cleanup for the Messalians, instead of using a new event
+		d_army_lucifer = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_army_lucifer status = no }
+		d_mazdaki = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_mazdaki status = no }
+		d_cathar = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_cathar status = no }
+		d_bogomilist = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_bogomilist status = no }
+		d_exilarch = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_exilarch status = no }
+		d_karaite = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_karaite status = no }
+		k_kara_khitan = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = k_kara_khitan status = no }
+		d_army_light = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_army_light status = no }
+		d_sons_of_jeroboam = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_sons_of_jeroboam status = no }
+		d_ynglism = {
+						unsafe_destroy_landed_title = THIS
+				}
+		d_knights_of_hyperboria = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_knights_of_hyperboria status = no }
+		d_dievturi = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_dievturi status = no }
+		d_serer = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_serer status = no }
+		d_qarmatian = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_qarmatian status = no }
+		d_bahrein_qarm = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_bahrein_qarm status = no }
+		d_karramiya = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_karramiya status = no }
+		d_karramiya = {
+						unsafe_destroy_landed_title = THIS
+				}
+		activate_title = { title = d_karramiya status = no }
+		#Tag Clean up
+		if = {
+			limit = { 
+				year = 950
+			}
+			set_global_flag = crusader_tangs
+			set_global_flag = bogomil_lives
+			set_global_flag = fall_of_the_tangs
+		}
+		if = {
+			limit = { 
+				year = 1050
+			}
+			set_global_flag = druze_hamza
+			set_global_flag = exilarch_set
+			set_global_flag = leader_murdered
+			set_global_flag = al_hakim_dies
+			set_global_flag = druze_hamza
+			set_global_flag = the_qarmatians
+			set_global_flag = the_magian
+			set_global_flag = constatine_return
+			d_manichean = {
+						unsafe_destroy_landed_title = THIS
+				}
+			activate_title = { title = d_manichean status = no }
+		}
+		if = {
+			limit = { 
+				year = 1200
+			}
+			set_global_flag = rise_cathar
+			set_global_flag = poor_lyons
+			set_global_flag = fraticelli_reform
+			set_global_flag = fall_of_the_liao
+			set_global_flag = the_karramiya
+		}
+	}
+	
+}
+

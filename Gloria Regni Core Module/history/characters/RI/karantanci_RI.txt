@@ -1,0 +1,116 @@
+1000257600 = {
+	name = Samo #Ruler of the first know Slavic polity
+	dynasty = 1000124489
+	culture = karantanci #Either a Frankish or a Carinthian merchant, making him the latter due to gameplay decision.
+	religion = slavic_pagan #Unknown, presumably pagan, either germanic or slavic.
+	martial = 7
+	diplomacy = 8
+	intrigue = 5
+	stewardship = 8
+	learning = 6
+	trait = "midas_touched"
+	trait = "quick"
+	trait = "brave"
+	590.1.1 = {
+		birth = yes
+	}
+	611.1.1 = {
+		add_spouse = 1000257601
+	}
+	658.1.1 = {
+		death = yes
+	}
+}
+
+1000257601 = {
+	name = Anuska
+	female = yes
+	culture = karantanci
+	religion = slavic_pagan
+	595.1.1 = {
+		birth = yes
+	}
+	611.1.1 = {
+		add_spouse = 1000257600
+	}
+	665.1.1 = {
+		death = yes
+	}
+}
+
+1000257602 = {
+	name = Samo
+	dynasty = 1000124489
+	culture = karantanci
+	religion = slavic_pagan
+	trait = "brave"
+	father = 1000257600
+	mother = 1000257601
+	613.1.1 = {
+		birth = yes
+	}
+	673.1.1 = {
+		death = yes
+	}
+}
+
+1000257603 = {
+	name = Dunja
+	dynasty = 1000124489
+	culture = karantanci
+	religion = slavic_pagan
+	father = 1000257600
+	mother = 1000257601
+	615.1.1 = {
+		birth = yes
+	}
+	680.1.1 = {
+		death = yes
+	}
+}
+
+1000257604 = {
+	name = Burimir
+	dynasty = 1000124489
+	culture = karantanci
+	religion = slavic_pagan
+	trait = "brave"
+	father = 1000257600
+	mother = 1000257601
+	620.1.1 = {
+		birth = yes
+	}
+	684.1.1 = {
+		death = yes
+	}
+}
+
+1000257605 = {
+	name = Tezika
+	dynasty = 1000124489
+	culture = karantanci
+	religion = slavic_pagan
+	female = yes
+	father = 1000257600
+	mother = 1000257601
+	622.1.1 = {
+		birth = yes
+	}
+	685.1.1 = {
+		death = yes
+	}
+}
+
+1000257606 = {
+	name = Valuk
+	dynasty = 1000124492
+	culture = karantanci
+	religion = slavic_pagan
+	trait = "brave"
+	595.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}

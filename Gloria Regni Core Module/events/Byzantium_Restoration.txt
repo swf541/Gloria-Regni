@@ -1,0 +1,150 @@
+# The Restoration of Rome
+namespace = BYZ
+narrative_event = {
+	id = BYZ.20
+	title = EVTNAMEBYZ.20
+	desc = EVTDESCBYZ.20
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTABYZ.20
+		activate_title = { title = e_byzantium status = yes }
+		e_byzantium = {
+			grant_title = ROOT
+			make_primary_title = yes
+		}
+		character_event = { id = ROMEGOV.1 }
+		if = { 
+			limit = {
+				has_landed_title = e_nicaea
+			}
+			e_nicaea = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = e_nicaea
+				copy_title_history = e_nicaea
+			}
+			activate_title = { title = e_nicaea status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = k_epirus
+			}
+			k_epirus = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = k_epirus
+				copy_title_history = k_epirus
+			}
+			activate_title = { title = k_epirus status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = e_thessalonica
+			}
+			e_thessalonica = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = e_thessalonica
+				copy_title_history = e_thessalonica
+			}
+			activate_title = { title = e_thessalonica status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = e_trebizond
+			}
+			e_trebizond = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = e_trebizond
+				copy_title_history = e_trebizond
+			}
+			activate_title = { title = e_trebizond status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = e_bulgaria
+			}
+			e_bulgaria = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = e_bulgaria
+				copy_title_history = e_bulgaria
+			}
+			activate_title = { title = e_bulgaria status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = k_rum
+			}
+			k_rum = {
+				destroy_landed_title = THIS
+			}
+			e_byzantium = {
+				copy_title_laws = k_rum
+			}
+			activate_title = { title = k_rum status = no }
+		}
+		if = { 
+			limit = {
+				has_landed_title = k_georgia
+			}
+			e_byzantium = {
+				copy_title_laws = k_georgia
+			}
+		}
+		if = { 
+			limit = {
+				has_landed_title = k_armenia
+			}
+			e_byzantium = {
+				copy_title_laws = k_armenia
+			}
+		}
+		if = { 
+			limit = {
+				has_landed_title = k_serbia
+			}
+			e_byzantium = {
+				copy_title_laws = k_serbia
+			}
+		}
+		
+		hidden_tooltip = {
+			activate_title = { title = e_byzantium status = no }
+			any_playable_ruler = {
+				limit = {
+					NOT = { has_landed_title = e_byzantium }
+					ai = no
+				}
+				narrative_event = { id = BYZ.21 }
+			}
+		}
+		add_trait = augustus
+		give_nickname = nick_the_glorious
+	}
+}
+
+# Informed about Restoration of Rome
+narrative_event = {
+	id = BYZ.21
+	title = EVTNAMEBYZ.21
+	desc = EVTDESCBYZ.21
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTABYZ.21
+	}
+}

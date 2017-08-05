@@ -1,0 +1,43 @@
+##Mod characters - RoI
+
+1000255100 = {
+	name = "Dauritas" #fl. 577-579, added due to lack of characters
+	dynasty = 1000124502
+	religion = imperial
+	culture = dacian
+	579.1.1 = {
+		birth = yes
+	}
+	634.1.1 = {
+		death = yes
+	}
+}
+
+1000255101 = {
+	name = "Dauritas" #fictional son
+	dynasty = 1000124502
+	religion = imperial
+	culture = dacian
+	father = 1000255100
+	600.1.1 = {
+		birth = yes
+	}
+	659.1.1 = {
+		death = yes
+	}
+}
+
+1000255102 = {
+	name = "Vlac" #fictional
+	dynasty = 1000124502
+	religion = imperial
+	culture = dacian
+	father = 1000255101
+	620.1.1 = {
+		birth = yes
+	}
+	681.1.1 = {
+		death = yes
+	}
+}
+

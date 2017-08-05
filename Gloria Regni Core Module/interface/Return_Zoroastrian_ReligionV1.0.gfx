@@ -1,0 +1,23 @@
+spriteTypes = {
+        spriteType = {
+               name = "GFX_evt_Changan_city"
+	       texturefile = "gfx/event_pictures/Changan_city.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+               effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_chagan"
+	       texturefile = "gfx/event_pictures/chagan.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }
+        spriteType = {
+	       name = "GFX_evt_Changan_palace"
+	       texturefile = "gfx/event_pictures/Changan_palace.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+}

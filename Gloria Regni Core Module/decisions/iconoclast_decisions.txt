@@ -1,0 +1,31 @@
+decisions = {
+	create_iconoclast_patriarch = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			independent = yes
+			NOT = { trait = incapable }
+			religion = iconoclast
+			NOT = { is_title_active = d_iconoclast }
+		}
+		allow = {
+			has_landed_title = e_byzantium
+			496 = { 
+				owner = {
+					OR = {
+						is_liege_or_above = ROOT
+						character = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			character_event = { id = HPiconoclast.6200 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

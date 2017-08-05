@@ -1,0 +1,152 @@
+decisions = {
+	qarmatian_republic = {
+		is_high_prio = yes
+		potential = {
+			#is_tribal = yes
+			independent = yes
+			religion = qarmatian
+			OR = {
+				ai = yes
+				has_dlc = "The Republic"
+			}
+			NOT = { has_landed_title = k_bahrein_qarm }
+			NOT = { tier = emperor }
+		}
+		allow = {
+			completely_controls = c_bahrein
+			has_landed_title = c_bahrein
+		}
+		effect = {
+			prestige = 650
+			custom_tooltip = {
+				text = adopt_republicanism_tooltip_1
+				hidden_tooltip = {
+					capital_scope = {
+						convert_to_city = yes
+						usurp_title = b_manama
+						b_manama = { province_capital = yes }
+						#usurp_title = b_manama
+						#convert_to_city = yes
+						refill_holding_levy = yes
+					}
+					#b_umm_al_nasan = { convert_to_castle = yes }
+				} 
+			}
+			hidden_tooltip = {
+				k_bahrein_qarm = {
+					grant_title = PREV
+				}
+				
+			}
+			#create_family_palace = yes
+			hidden_tooltip = {
+				#create_family_palace = yes
+				any_unique_dynasty_vassal = { # gives random vassals a family palace
+					count = 4
+					limit = {
+						is_female = no
+						#OR = {
+						#	is_republic = yes
+						#	is_tribal = yes
+						#	religion = qarmatian
+						#}
+						prisoner = no
+						NOT = { trait = incapable }
+						is_adult = yes
+						NOT = { 
+							dynasty = none 
+						}
+					}
+					#create_family_palace = yes
+				}
+			}
+
+			if = {
+				limit = {
+					ai = no
+				}
+				chronicle = {
+					entry = CHRONICLE_FOUNDED_MERCHANT_REPUBLIC
+					picture = GFX_evt_busy_trading_dock_republic
+				}
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = {
+							is_crown_law_title = yes
+						}
+						add_law = crown_authority_0
+					}
+				}
+			}
+			narrative_event = { id = HPqarmatian.29002 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 100 
+		}
+	}
+	ransom_stone = {
+		is_high_prio = yes
+		potential = {
+			#is_tribal = yes
+			religion = qarmatian
+			capital_scope = {
+				has_province_modifier = the_black_stone
+			}
+			NOT = { has_character_modifier = the_black_stone_cooldown }
+		}
+		allow = {
+			719 = {
+				owner = { 
+					top_liege = {
+						wealth = 1500
+					}
+				}
+			}
+		}
+		effect = {
+			719 = {
+				owner = { 
+					top_liege = {
+						letter_event = { id = HPqarmatian.29040 }
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	claim_d_qarmatian = {
+		is_high_prio = yes
+		potential = {
+			religion = qarmatian
+			NOT = { is_title_active = d_qarmatian }
+			has_global_flag = the_magian
+		}
+		allow = {
+			piety = 2000
+			num_of_holy_sites = 2
+			completely_controls = c_bahrein
+
+		}
+		effect = {
+			activate_title = { title = d_qarmatian status = yes }
+
+			d_qarmatian = {
+				grant_title = PREV
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+

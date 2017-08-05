@@ -1,0 +1,131 @@
+##############################################
+###Religous Minority System Coded by swf541###
+##############################################
+
+decisions = {
+	persecute_lollard = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			is_landed = yes
+			age = 16
+			NOT = { religion = lollard }
+			NOT = { 
+				trait = incapable
+				trait = infirm
+			}
+			any_realm_province = { 
+				OR = {
+						AND = {
+							religion = lollard
+							any_province_holding = { holding_type = city }
+						}
+					any_province_holding = {
+						has_building = ct_lollard_community_1
+					}	
+					any_province_holding = {
+						has_building = ct_lollard_community_2
+					}
+					any_province_holding = {
+						has_building = ct_lollard_community_3
+					}
+					
+				}
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			any_realm_province = { 
+				limit = {
+					OR = {
+						AND = {
+							religion = lollard
+							any_province_holding = { holding_type = city }
+						}
+						any_province_holding = {
+							has_building = ct_lollard_community_1
+						}	
+						any_province_holding = {
+							has_building = ct_lollard_community_2
+						}
+						any_province_holding = {
+							has_building = ct_lollard_community_3
+						}
+						
+					}
+				}	
+				province_event = { id = VFS.115 }
+			}
+			any_realm_character = {
+				limit = { 
+					is_ruler = true 
+					religion = lollard
+				}
+				character_event = { id = VFS.800 }
+			}
+			any_realm_character = {
+				limit = { 
+					NOT = {  is_ruler = true } 
+					religion = lollard
+				}
+				character_event = { id = VFS.801 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001 # Less likely to do it
+			}
+			modifier = {
+				factor = 0
+				any_courtier = {
+					religion = lollard
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+			modifier = {
+				factor = 0
+				any_friend = {
+					religion = lollard
+				}
+			}
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion = lollard
+				}
+			}
+			modifier = {
+				factor = 0
+				any_child = {
+					religion = lollard
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+

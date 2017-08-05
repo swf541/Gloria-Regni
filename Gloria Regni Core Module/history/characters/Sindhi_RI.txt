@@ -1,0 +1,1046 @@
+217870 = {
+	name="Sahasi II"
+	dynasty=1100124521 
+	religion="hindu"
+	culture="sindhi"
+	trait=kshatriya
+	600.1.1={
+		birth=yes
+	}
+	620.1.1 = {
+		add_spouse=217871
+	}
+	633.1.1={
+		death=yes
+	}
+}
+
+217871 = {
+	name="Suhanadi"
+	dynasty=1100124521 
+	religion="hindu"
+	culture="sindhi"
+	trait=kshatriya
+	female=yes
+	602.5.3={
+		birth=yes
+	}
+	633.1.1={
+		death=yes
+	}
+}
+
+217872 = {
+	name="Chach"
+	dynasty=1100124522
+	religion="hindu"
+	culture="sindhi"
+	trait=brahamin
+	600.1.1={
+		birth=yes
+	}
+	633.1.1 = {
+		add_spouse=217871
+	}
+	711.1.1={
+		death=yes
+	}
+}
+
+217873 = {
+	name="Khinkhila"
+	dynasty = 1100124523
+	religion = zoroastrian 
+	culture = bactrian
+	trait = "zealous"
+	trait = "brave"
+	580.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+
+217874 = {
+	name="Yudhishthira"
+	dynasty = 1100124523
+	father = 217873
+	religion = zoroastrian 
+	culture = bactrian
+	trait = "zealous"
+	trait = "brave"
+	610.1.1 = {
+		birth = yes
+	}
+	633.1.1 = {
+		death = yes
+	}
+}
+
+217875 = {
+	name="Bulcsu"
+	dynasty=1100124526 
+	religion="tengri_pagan"
+	culture="hungarian"
+	600.1.2={
+		birth = yes
+	}
+	665.1.2={
+		death="665.1.2"
+	}
+}
+217876 = {
+	name="Nectias"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	602.4.2={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+217877 = {
+	name="Theodorus"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	595.7.22={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+217878 = {
+	name="Kudis"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	599.6.12={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+217879 = {
+	name="Marcus"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	604.2.8={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+217880 = {
+	name="Manuel"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	602.4.17={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+217881 = {
+	name="Ioannes"
+#	dynasty=1000124568 
+	religion="imperial"
+	culture="greek"
+	604.3.14={
+		birth = yes
+	}
+	633.1.2={
+		death = yes
+	}
+}
+
+217882 = {
+	 name="Gregory"
+	 dynasty=1022137
+	 religion="imperial"
+	 culture="greek"
+	 trait="diligent"
+	 trait="brave"
+	 trait="skilled_tactician"
+	 trait="zealous"
+	605.3.7={
+		birth = yes
+	}
+	647.1.2={
+		death = yes
+	}
+}
+
+217883 = {
+	 name="Peter"
+	 religion="imperial"
+	 culture="greek"
+	602.3.7={
+		birth = yes
+	}
+	647.1.2={
+		death = yes
+	}
+}
+
+217884 = {
+	name="Kwestantinos"
+	dynasty=7246
+	religion="miaphysite"
+	culture="ethiopian"
+
+	599.2.8={
+		birth = yes
+	}
+	650.1.1={
+		death = yes
+	}
+}
+217885 = {
+	name="Phineas II" #Placeholder
+	dynasty = 1022242
+	religion = jewish
+	culture = beta_yisraeli
+	600.1.1 = {
+		birth = yes
+	}
+	664.1.1 = {
+		death = yes
+	}
+}
+
+217886 = {
+	name="Tabat" 
+	dynasty = 1100124524
+	religion = imperial
+	culture = maghreb_arabic
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217887 = {
+	name="Dihya" 
+	dynasty = 1100124524
+	religion = imperial
+	culture = maghreb_arabic
+	female=yes
+	father=217886
+	
+	632.1.1 = {
+		birth = yes
+	}
+	700.1.1 = {
+		death = yes
+	}
+}
+
+217888 = {
+	name="Tulemeju_Ptolemaios" 
+	dynasty = 1100124525
+	religion = imperial
+	culture = african_latin
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217889 = {
+	name="Justinian"
+	# AKA: Descendant of Ioustinianos 'the Great'
+	dynasty=1022186
+	religion="imperial"
+	culture="greek"
+	609.1.9 = {
+		birth = yes
+		add_claim = e_byzantium
+	}
+	648.1.1 = {
+		death = yes
+	}
+}
+
+217890 = {
+	name="Assefa"
+	dynasty=1042636
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	603.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217891 = {
+	name="Mengesha"
+	dynasty=1042639
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	602.3.4 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217892 = {
+	name="Teferi"
+	dynasty=1042640
+	religion="east_african_pagan"
+	culture="ethiopian"
+
+	610.7.9 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+217893 = {
+	name="Qalidurut"
+	religion="miaphysite"
+	culture="nubian"
+	father=166185
+	600.1.1 = {
+		birth = yes
+	}
+	664.1.1 = {
+		death = yes
+	}
+}
+217894 = {
+	name="Shallagea"
+	dynasty=1000124574 
+	religion="egyptian_pagan"
+	culture="beja"
+	610.1.1 = {
+		birth = yes
+	}
+	664.1.1 = {
+		death = yes
+	}
+}
+
+217895 = {
+	name="Barkiarok"
+	dynasty=7521
+	religion = tengri_pagan
+	culture = turkish
+	600.1. = {
+		birth = yes
+	}
+	690.1.1 = {
+		death = yes
+	}
+}
+
+217896 = {
+	name="Törtogul" # fictional
+	dynasty=852 # Kimak
+	religion="tengri_pagan"
+	culture="cuman"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217897 = {
+	name="Kegen" # fictional found of Havuksingila clan
+	dynasty=1042052
+	religion="manichean"
+	culture="pecheneg"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217898 = {
+	name="Bönek"	# fictional
+	dynasty=1042185 # Karlukid
+	religion="tengri_pagan"
+	culture="karluk"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+217899 = {
+	name="Bayanchur" # or Moyanchur
+	dynasty=1042190 # Uyghurid
+	religion="tengri_pagan"
+	culture="kirghiz" # uyghur
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+
+217900 = {	#10257430
+	name="Yi'nan"
+	dynasty=1100124527 
+	religion="tengri_pagan"
+	culture="uyghur"
+	600.1.1={
+		birth=yes
+	}
+	675.1.1={
+		death=yes
+	}
+}
+
+217901 = {
+	name="Aggabodhi III"
+	dynasty=100124574
+	religion="buddhist"
+	culture="sinhala"
+	trait=kshatriya
+	trait=theravada_buddhist
+	610.1.1={
+		birth="610.1.1"
+	}
+	640.1.1={
+		death="640.1.1"
+	}
+}
+217902 = { #189999412
+	name="Cezhiyan Cendan" 
+	dynasty=1043009
+	religion="hindu"
+	culture="tamil"
+	trait=kshatriya
+	trait=shaivist_hindu 
+	600.1.1={
+		birth="600.1.1"
+	}
+	640.1.1={
+		death="640.1.1"
+	}
+}
+217903 = {	#189999413
+	name="Narasimhavarman I" 
+	dynasty=1043007
+	religion="hindu"
+	culture="tamil"
+	trait=kshatriya
+	trait=shaivist_hindu 
+	600.1.1={
+		birth="600.1.1"
+	}
+	668.1.1={
+		death="668.1.1"
+	}
+}
+217904 = {	#189999414
+	name="Varma" # Sthanu Ravi Kulasekhara
+	dynasty=1043010
+	religion="hindu"
+	culture="tamil"
+	trait=kshatriya
+	trait=shaivist_hindu 
+	590.1.1={
+		birth="590.1.1"
+	}
+	670.1.1={
+		death="670.1.1"
+	}
+}
+
+217905 = { #189999415
+	name="Buddharaja"
+	dynasty=12320
+	religion="hindu"
+	culture="kannada"
+	trait=kshatriya
+	trait=shaivist_hindu
+
+	600.1.1={
+		birth=yes
+	}
+	635.1.1={
+		death=yes
+	}
+}
+217906 = { #189999420
+	name="Vishnuvardhana"
+	dynasty=1043012
+	religion="hindu"
+	culture="kannada"
+	trait=kshatriya
+	trait=shaivist_hindu
+	father=74720
+	600.1.1={
+		birth=yes
+	}
+	641.1.1={
+		death=yes
+	}
+}
+217907 = { 
+	name="Harivarma II"
+	dynasty=12324
+	religion="hindu"
+	culture="kannada"
+	trait=kshatriya
+	trait=shaivist_hindu
+	father=74720
+	602.1.1={
+		birth=yes
+	}
+	651.1.1={
+		death=yes
+	}
+}
+#Empire of Harsha Royal Family and Court
+217908 = {
+	name="Harsha"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	trait=genius
+	trait=scholar
+	trait=brilliant_strategist
+	trait=brave
+	trait=diligent
+	trait=poet
+	father=217912
+	mother=217913
+
+	590.1.1={
+		birth=yes
+	}
+	610.1.1 ={
+		add_spouse = 217909
+	}
+	647.1.1={
+		death=yes
+	}
+}
+217909 = {
+	name="Durgavati"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	female=yes
+
+	590.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+2179010 = {
+	name="Vagyavardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father = 217908
+	mother = 217909
+
+	610.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+217911 = {
+	name="Kalyanvardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father = 217908
+	mother = 217909
+
+	612.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+
+217912 = {
+	name="Prabhakaravardhana"
+	dynasty=100124575
+	religion="hindu"
+	culture="hindustani"
+	trait=kshatriya
+
+	560.1.1={
+		birth=yes
+	}
+	576.1.1 ={
+		add_spouse = 217913
+	}
+	604.1.1={
+		death=yes
+	}
+}
+
+217913 = {
+	name="Mahasenagupta"
+	dynasty=100124576
+	religion="hindu"
+	culture="hindustani"
+	trait=kshatriya
+	female=yes
+
+	562.1.1={
+		birth=yes
+	}
+	604.1.1={
+		death=yes
+	}
+}
+217914 = {
+	name="Rajyavardhana"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father=217912
+	mother=217913
+
+	585.1.1={
+		birth=yes
+	}
+	606.1.1={
+		death=yes
+	}
+}
+217915 = {
+	name="Rajyashri"
+	dynasty=100124575
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+	father=217912
+	mother=217913
+	female=yes
+
+	591.1.1={
+		birth=yes
+	}
+	650.1.1={
+		death=yes
+	}
+}
+2117919 = {
+	name="Arunashwa"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+
+	592.1.1={
+		birth=yes
+	}
+	670.1.1={
+		death=yes
+	}
+}
+#Court Poet
+217916 = {
+	name="Bana"
+	religion="buddhist"
+	culture="hindustani"
+	trait=kshatriya
+
+	590.1.1={
+		birth=yes
+	}
+	647.1.1={
+		death=yes
+	}
+}
+#End of Harsha Empire  Royal Family and Court
+217917 = {	#188999417
+	name="Pulindasena"
+	dynasty=100124577 
+	religion="buddhist"
+	culture="oriya"
+	trait="kshatriya"
+
+	600.1.1={
+		birth=yes
+	}
+	680.1.1={
+		death=yes
+	}
+}
+217918 = {	
+	name="Indradhawala" 
+	dynasty=1043000
+	religion="buddhist"
+	culture="bengali"
+	trait="kshatriya"
+	trait="mahayana_buddhist"
+	602.1.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+217919 = {	
+	name="Nomedas" 
+	dynasty=9540
+	religion="baltic_pagan"
+	culture="prussian"
+	602.1.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179290 = {	
+	name="Lubartas" 
+	religion="baltic_pagan"
+	culture="lithuanian"
+	604.5.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179291 = {	
+	name="Girdenis" 
+	religion="baltic_pagan"
+	culture="lithuanian"
+	603.5.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179292 = {	
+	name="Hoovatõiv" 
+	religion="finnish_pagan"
+	culture="ugricbaltic"
+	601.7.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179293 = {	
+	name="Rahuleid" 
+	religion="finnish_pagan"
+	culture="ugricbaltic"
+	602.9.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179294 = {	
+	name="Karijotas" 
+	religion="baltic_pagan"
+	culture="lettigallish"
+	601.2.6={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179295 = {	
+	name="Velmayka" 
+	religion="finnish_pagan"
+	culture="komi"
+	602.9.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179296 = {	
+	name="Kyldysin" 
+	religion="finnish_pagan"
+	culture="khanty"
+	603.4.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179297 = {	
+	name="Pekko" 
+	religion="finnish_pagan"
+	culture="finnish"
+	603.4.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179298 = {	
+	name="Armas" 
+	religion="finnish_pagan"
+	culture="finnish"
+	602.7.12={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179299 = {	
+	name="Vesa" 
+	religion="finnish_pagan"
+	culture="finnish"
+	605.2.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179300 = {	
+	name="Tutyra" 
+	religion="finnish_pagan"
+	culture="mordvin"
+	601.8.15={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179301 = {	
+	name="Vechkas" 
+	religion="finnish_pagan"
+	culture="mordvin"
+	605.4.18={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179302 = {	
+	name="Shindyay" 
+	religion="finnish_pagan"
+	culture="mordvin"
+	603.3.25={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+
+2179303 = {
+	name="Dingfang"	
+	religion="buddhist"	#Make Confusian Later
+	culture="han"
+	dynasty=1090013 
+	591.1.1={
+		birth="591.1.1"
+	}
+	667.1.1={
+		death="667.1.1"
+	}
+}
+2179304 = {	
+	name="Samatu" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	603.3.25={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179305 = {	
+	name="Hasaba" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	608.12.1={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179306 = {	
+	name="Kharuchi" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	602.11.25={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179307 = {	
+	name="Syudbya" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	605.3.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179308 = {	
+	name="Pudak" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	603.4.15={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179309 = {	
+	name="Xëryuchi" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	607.7.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179310 = {	
+	name="Yapti" 
+	religion="finnish_pagan"
+	culture="samoyed"
+	604.2.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179311 = {	
+	name="Omurtag" 
+	dynasty = 1029159
+	religion="tengri_pagan"
+	culture="bolghar"
+	604.2.5={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+
+2179312 = {	
+	name="Zuber_Zubeyr" 
+	religion="east_african_pagan"
+	culture="somali"
+	603.3.18={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179313 = {	
+	name="Hamalmal" 
+	religion="east_african_pagan"
+	culture="somali"
+	605.1.14={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179314 = {	
+	name="Naleye" 
+	religion="east_african_pagan"
+	culture="somali"
+	607.4.8={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179315 = {	
+	name="Ajdir" 
+	dynasty = 1027006
+	religion="imperial"
+	culture="maghreb_arabic"
+	603.10.8={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179316 = {	
+	name="Buwayh" 
+	dynasty = 100124578
+	religion="imperial"
+	culture="maghreb_arabic"
+	606.5.12={
+		birth=yes
+	}
+	687.1.1={
+		death=yes
+	}
+}
+2179317 = {	
+	name="Stephanus" 
+	dynasty = 100124579
+	religion="hellenic_pagan"
+	culture="greek"
+	599.5.12={
+		birth=yes
+	}
+	620.1.1 = {
+		employer=145071
+	}
+	687.1.1={
+		death=yes
+	}
+}

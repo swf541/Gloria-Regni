@@ -1,0 +1,30 @@
+spriteTypes = {
+        spriteType = {
+               name = "GFX_evt_library_of_alexandria"
+	       texturefile = "gfx/event_pictures/library_of_alexandria.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+               effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_city_of_alexandria"
+	       texturefile = "gfx/event_pictures/city_of_alexandria.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_room_with_scrolls"
+	       texturefile = "gfx/event_pictures/room_with_scrolls.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+        spriteType = {
+	       name = "GFX_evt_pharaoh"
+	       texturefile = "gfx/event_pictures/pharaoh.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+}

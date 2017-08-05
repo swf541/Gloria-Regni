@@ -1,0 +1,50 @@
+decisions = {
+        Restore_Hellenism = {
+             is_high_prio = yes
+             potential = {
+                                age = 16
+                                NOT = { trait = on_pilgrimage }
+                                NOT = { has_character_flag = attempting_to_join_Restore_Hellenism }
+                                NOT = { religion = hellenic_pagan }
+                                NOT = { religion = hellenic_pagan_reformed }
+                                NOT = { religion = sol_invictus }
+                                NOT = { trait = zealous } 
+                                NOT = {secret_society = secretly_hellenic_pagan}
+                                OR = {
+                                        has_landed_title = e_wre
+                                        has_landed_title = e_roman_empire
+                                        has_landed_title = e_byzantium
+                                }
+                }
+                allow = {
+                       
+
+                }
+                effect = {                  
+                        set_character_flag = attempting_to_Restore_Hellenism
+                        add_trait = on_pilgrimage
+                        character_event = { id = RRR.1 }
+           }
+                ai_will_do = {
+                        factor = 1
+                        modifier = {
+                                factor = 0
+                                ai = yes
+                                OR = {
+                                         NOT = { religion = hellenic_pagan }
+                                         NOT = { religion = hellenic_pagan_reformed }
+                                         NOT = { religion = sol_invictus }
+                                        } 
+                                        piety = 0
+                                               religion_authority = 0 
+                                        OR = {
+                                        has_landed_title = e_wre
+                                        has_landed_title = e_roman_empire
+                                        has_landed_title = e_byzantium   
+                                        }
+	
+                              }     
+                        }
+                }
+        }
+}

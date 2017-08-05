@@ -1,0 +1,231 @@
+namespace = DEMES
+
+character_event = {
+	id = DEMES.400
+	desc = EVTDESCDEMES.400
+	picture = GFX_evt_hippodrome_byzantine
+
+	
+	is_triggered_only = yes
+	
+	
+	option = { # Attend Chariot Race
+		name = EVTOPTADEMES.400
+		wealth = -25
+		set_character_flag = attending_chariot_race
+	}
+	option = { # Do Not Attend
+		name = EVTOPTBDEMES.400
+		prestige = -10
+	}
+}
+
+# Hippodrome Race
+character_event = {
+	id = DEMES.500
+	desc = EVTDESCDEMES.500
+	picture = GFX_evt_hippodrome_byzantine
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		random_list = {
+			50 = {
+				character_event = { id = DEMES.900 days = 20  }
+				any_realm_character = {
+					limit = { 
+						has_character_flag = attending_chariot_race
+					}
+					set_character_flag =  peaceful_race 
+					character_event = { id = DEMES.900 days = 20  }
+				}
+				any_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = feast_drunkard }
+						trait = drunkard
+					}
+					set_character_flag = feast_drunkard
+					random = {
+						chance = 25
+						character_event = { id = DEMES.720 }
+					}
+				}	
+				any_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = feast_wroth }
+						trait = wroth
+					}
+					set_character_flag = feast_wroth
+					random = {
+						chance = 10
+						character_event = { id = DEMES.820 }
+					}
+				}				
+			}
+			35 = {
+				character_event = { id = DEMES.900 days = 20  }
+				any_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = feast_drunkard }
+						trait = drunkard
+					}
+					set_character_flag = feast_drunkard
+					random = {
+						chance = 50
+						character_event = { id = DEMES.720 }
+					}
+				}	
+				any_realm_character = {
+					limit = {
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = feast_wroth }
+						trait = wroth
+					}
+					set_character_flag = feast_wroth
+					random = {
+						chance = 50
+						character_event = { id = DEMES.820 }
+					}
+				}				
+			}
+			15 = {
+				any_realm_character = {
+					limit = { 
+						has_character_flag = attending_chariot_race
+					}
+					set_character_flag = rioting_race 
+					character_event = { id = DEMES.900 days = 20  }
+				}
+				any_realm_character = {
+					limit = {
+						independent = no
+						has_character_flag = attending_chariot_race
+						NOT = { has_character_flag = rioter }
+						OR = {
+							trait = wroth
+							trait = drunkard
+							trait = possessed
+							trait = lunatic
+							trait = lustful
+							trait = greedy
+						}
+					}
+					set_character_flag = rioter
+					random = { 
+						chance = 35
+						character_event = { id = DEMES.920 }
+					}
+				}					
+				
+				random_list = {
+					35 = {
+						random_realm_character = {
+							limit = {
+								has_character_flag = attending_chariot_race
+								is_voter = yes
+
+							}
+							save_event_target_as = senator_rebel
+						}
+						random_realm_character = {
+							limit = {
+								is_pretender = yes
+							}
+							save_event_target_as = riot_king
+						}
+						character_event = { id = DEMES.960 }
+						}	
+					65 = { }
+				
+				}
+			}
+		}
+	}
+	
+	option = { # Support Green Team
+		name = EVTOPTADEMES.500
+		wealth = -25
+		random_list = {
+			50 = {
+				character_event = { id = DEMES.503   }	#503
+				
+				any_realm_character = {
+					limit = { 
+						trait = blue_deme 
+						has_character_flag = attending_chariot_race
+					}
+					character_event = { id = DEMES.502 } #502
+				}
+				any_realm_character = {
+					limit = { 
+						trait = green_deme
+						has_character_flag = attending_chariot_race						
+					}
+					character_event = { id = DEMES.503 } #503
+				}
+			}
+			50 = {
+				character_event = { id = DEMES.504 }	#504
+				any_realm_character = {
+					limit = { 
+						trait = blue_deme 
+						has_character_flag = attending_chariot_race
+					}
+					character_event = { id = DEMES.501 } #501
+				}
+				any_realm_character = {
+					limit = { 
+						trait = green_deme
+						has_character_flag = attending_chariot_race						
+					}
+					character_event = { id = DEMES.504 } #504
+				}
+			}
+		}
+	}
+	option = { # Support Blue Team
+		name = EVTOPTBDEMES.500
+		wealth = -25
+		random_list = {
+			50 = {
+				character_event = { id = DEMES.501 }	#501
+				any_realm_character = {
+					limit = { 
+						trait = blue_deme 
+						has_character_flag = attending_chariot_race
+					}
+					character_event = { id = DEMES.501 } #501
+				}
+				any_realm_character = {
+					limit = { 
+						trait = green_deme
+						has_character_flag = attending_chariot_race						
+					}
+					character_event = { id = DEMES.504 } #504
+				}
+			}
+			50 = {
+				character_event = { id = DEMES.502 }	#502
+				any_realm_character = {
+					limit = { 
+						trait = blue_deme 
+						has_character_flag = attending_chariot_race
+					}
+					character_event = { id = DEMES.502 } 	#502
+				}
+				any_realm_character = {
+					limit = { 
+						trait = green_deme 
+						has_character_flag = attending_chariot_race
+					}
+					character_event = { id = DEMES.503 } #503 
+				}
+			}
+		}
+	}
+}
+

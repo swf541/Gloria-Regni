@@ -1,0 +1,223 @@
+namespace = TRO
+character_event = {		#Arrival at the Temple
+	id = TRO.1
+	title = "EVTNAMETRO.1"
+	desc = "EVTDESCTRO.1"
+	picture = "GFX_evt_small_town_latin"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.1" # 
+		piety = 10
+		character_event = { id = TRO.2 }
+	}
+}
+character_event = {		#Sacrifice to Cronus
+	id = TRO.2
+	title = "EVTNAMETRO.2"
+	desc = "EVTDESCTRO.2"
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.2" # 
+		piety = 10		
+		character_event = { id = TRO.3 }
+	}
+}
+
+character_event = {		#Sacrifice to Apollo 
+	id = TRO.3
+	title = "EVTNAMETRO.3"
+	desc = "EVTDESCTRO.3"
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.3" # 
+		piety = 10
+		character_event = { id = TRO.4 }
+	}
+}
+
+character_event = {		#Sacrifice to Zeus
+	id = TRO.4
+	title = "EVTNAMETRO.4"
+	desc = "EVTDESCTRO.4"
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.4" # 
+		piety = 10
+		character_event = { id = TRO.5 }
+	}
+}
+
+character_event = {		#Sacrifice to Hera the Charioteer
+	id = TRO.5
+	title = "EVTNAMETRO.5"
+	desc = "EVTDESCTRO.5"
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.5" # 
+		piety = 10
+		character_event = { id = TRO.7 }
+	}
+}
+
+character_event = {		#Sacrifice to Demeter-Europa
+	id = TRO.7
+	title = "EVTNAMETRO.7"
+	desc = "EVTDESCTRO.7"	
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.7" # 
+		piety = 10
+		character_event = { id = TRO.8 }
+	}
+}
+character_event = {		#Prepare Human Sacrifice at Night
+	id = TRO.8
+	title = "EVTNAMETRO.8"
+	desc = "EVTDESCTRO.8"
+	picture = "GFX_evt_dark_valley"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.8" # 
+		piety = 10
+		character_event = { id = TRO.9 days = 2 }
+		random_courtier = {
+			limit = { 
+				prisoner = yes 
+				host = { character = ROOT }
+				age = 16
+			}
+			character_event = { id = TRO.606 }
+		}
+	}
+}
+character_event = {		#Drink from the Lethe and Mnemosyne and Descent into the Cave
+	id = TRO.9
+	title = "EVTNAMETRO.9"
+	desc = "EVTDESCTRO.9"
+	picture = "GFX_evt_dark_valley"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.9" # 
+		piety = 10
+		character_event = { id = TRO.10 }
+	}
+}
+
+character_event = {		#Exiting the Cave and rambling to the priest
+	id = TRO.10
+	title = "EVTNAMETRO.10"
+	desc = "EVTDESCTRO.10"
+	picture = "GFX_evt_dark_priests"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTATRO.10" # 
+		piety = 10
+		character_event = { id = TRO.11 }
+	}
+}
+
+character_event = {		#Initiated into the Cult and Ramblings Deciphered into an Prophecy 
+	id = TRO.11
+	title = "EVTNAMETRO.11"
+	desc = "EVTDESCTRO.11"
+	picture = "GFX_evt_dark_priests"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBTRO.11" # 
+		piety = 50
+		prestige = 10
+		add_trait = trophonius_initiate
+		remove_trait = on_pilgrimage
+		random_list = {
+			18 = {
+				character_event = { id = SWF.10178 }			
+			}
+			16 = {
+				character_event = { id = SWF.10179 }			
+			}
+			17 = {
+				character_event = { id = SWF.10180 }
+			}
+			16 = {
+				character_event = { id = SWF.10181 }
+			}
+			17 = {
+				character_event = { id = SWF.10182 }
+			}
+			16 = {
+				character_event = { id = SWF.10183 }
+			}
+		}
+	}
+}
+
+character_event = {	#Doesnt need localized
+	id = TRO.606
+	desc = EVTDESC_TRO_606
+	picture = GFX_evt_human_sacrifice
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TRO_606
+		hidden_tooltip = {
+			if = {
+				limit = { # Generic
+					NOT = {
+						sibling = FROM
+						father = { character = FROM }
+						mother = { character = FROM }
+						any_spouse = { character = FROM }
+						any_child = { character = FROM }
+						any_dynasty_member = { character = FROM}
+					}
+				}
+				FROM = { character_event = { id = TRO.610 } } 
+				}
+			}
+		}
+	}
+character_event = {	#Actual Sacrifice Event
+	id = TRO.610
+	desc = EVTDESC_TRO_610
+	picture = GFX_evt_human_sacrifice
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TRO_610
+		FROM = {
+			death = {
+				death_reason = death_sacrificed
+				killer = ROOT
+			}
+		}
+	}
+}

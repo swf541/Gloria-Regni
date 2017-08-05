@@ -1,0 +1,191 @@
+namespace = SRF_RRT
+
+### The Augustus/Augusta Traits
+
+# Augustus Trait Gained
+character_event = {
+	id = SRF_RRT.1
+	desc = EVTDESCSRF_RRT.1
+	picture = GFX_evt_rome_restored_byzantine
+	
+	only_playable = yes
+	has_global_flag = rome_restored
+	has_dlc = "Legacy of Rome"
+	
+	trigger = {
+		has_landed_title = e_roman_empire
+		NOT = { trait = augustus }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTASRF_RRT.1
+		add_trait = augustus
+	}
+}
+
+# Augustus Trait Lost
+character_event = {
+	id = SRF_RRT.2
+	desc = EVTDESCSRF_RRT.2
+	picture = GFX_evt_rome_restored_byzantine
+	
+	has_dlc = "Legacy of Rome"
+	has_global_flag = rome_restored
+		
+	trigger = {
+		trait = augustus
+		NOT = { has_landed_title = e_roman_empire }
+		is_alive = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTASRF_RRT.2
+		remove_trait = augustus
+	}
+}
+
+# Augusta Trait Gained
+character_event = {
+	id = SRF_RRT.3
+	desc = EVTDESCPA.10000
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+        is_female = yes
+		NOT = { trait = augusta }
+		has_landed_title = e_roman_empire
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10000
+		add_trait = augusta
+	}
+}
+
+# Augusta Trait Lost
+character_event = {
+	id = SRF_RRT.4
+	desc = EVTDESCPA.10001
+	picture = GFX_evt_rome_restored_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		trait = augusta
+		is_alive = yes
+		NOT = { has_landed_title = e_roman_empire }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10001
+		remove_trait = augusta
+	}
+}
+
+### The Autokrator/Autokrateira Traits
+
+# Autokrator Trait Gained
+character_event = {
+	id = SRF_RRT.5
+	desc = EVTDESCPA.10012
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_female = no
+		NOT = { trait = autokrator }
+		has_landed_title = e_byzantium
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10012
+		add_trait = autokrator
+	}
+}
+
+# Autokrator Trait Lost
+character_event = {
+	id = SRF_RRT.6
+	desc = EVTDESCPA.10013
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrator
+		is_alive = yes
+		NOT = { has_landed_title = e_byzantium }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10013
+		remove_trait = autokrator
+	}
+}
+
+# Autokrateira Trait Gained
+character_event = {
+	id = SRF_RRT.7
+	desc = EVTDESCPA.10014
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_female = yes
+		NOT = { trait = autokrateira }
+		has_landed_title = e_byzantium
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10014
+		add_trait = autokrateira
+	}
+}
+
+# Autokrateira Trait Lost
+character_event = {
+	id = SRF_RRT.8
+	desc = EVTDESCPA.10015
+	picture = GFX_evt_holy_emperor
+	
+	trigger = {
+		trait = autokrateira
+		is_alive = yes
+		NOT = { has_landed_title = e_byzantium }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10015
+		remove_trait = autokrateira
+	}
+}

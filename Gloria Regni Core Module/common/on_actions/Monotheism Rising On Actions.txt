@@ -1,0 +1,394 @@
+on_startup = {
+	events = {
+		PA.10432	#Heresy Setup in Post 1054
+		SEN.1
+		ROMEGOV.1
+		ROMEGOV.2
+		ROMEGOV.3
+		RITE.1
+		COPT.1
+		AGH.1
+		BUL.1
+		#VFS.1
+		IHS.001
+	}
+}
+
+on_birth = {
+	events = {
+		#ROMEGOV.5
+		##ROMEGOV.7
+		ROMEGOV.8
+		ExIs.6001
+		RITE.2
+		ROMEGOV.14
+		ENA.1
+	}
+	random_events = {
+		1 = MET.10000 # Reincarnation?
+		1 = HPyazidi.1500 # Reincarnation?
+		#1 = HPdruze.4500 # Reincarnation?
+	}
+}
+on_yearly_pulse = {
+	events = {
+		IHS.002
+		ROMEGOV.1
+		ROMEGOV.9
+		CHALC.2
+		CHALC.3
+		HPhurufi.3015 # Hurufi Poem Bouncer
+		HPdecadence.50000
+		HPdecadence.50001
+		HPdecadence.50002
+		HPdecadence.50003
+		RITE.1
+		#SCHISM.17
+		SCHISM.2
+		SCHISM.4
+		SCHISM.8
+		SCHISM.12
+		SCHISM.16
+		SCHISM.19
+		COPT.1
+	
+	}
+	random_events = {
+	
+		# HERETIC PRIDE
+		#50 = HPfraticelli.15001
+		100 = HPwaldensian.13300
+		100 = HPwaldensian.13301
+		100 = HPwaldensian.13302
+		75 = HPcathar.12103
+		100 = HPcathar.12106
+		100 = HPmonothelite.9100
+		100 = HPmonothelite.9101
+		100 = HPmonothelite.9102
+		150 = HPmonothelite.9104
+		150 = HPmonothelite.9105
+		150 = HPmonothelite.9106
+		100 = HPmonothelite.9110
+		20 = HPpaul.8110
+		50 = HPsamaritan.16100
+		50 = HPsamaritan.16102
+		100 = HPsamaritan.16030
+		100 = HPsamaritan.16031
+		100 = HPsamaritan.16032
+		100 = HPsamaritan.16033
+		100 = HPsamaritan.16034
+		100 = HPsamaritan.16035
+		100 = HPsamaritan.16036
+		100 = HPsamaritan.16037
+		100 = HPkaraite.15000
+		100 = HPkaraite.15002
+		100 = HPmanichean.20120 
+		100 = HPmanichean.20121
+		100 = HPmazdaki.19100
+		100 = HPmazdaki.19101
+		100 = HPmazdaki.19102
+		100 = HPmazdaki.19103
+		100 = HPmazdaki.19110
+		100 = HPmazdaki.19111
+		100 = HPmazdaki.19112
+		100 = HPmazdaki.19113
+		70 = HPmanichean.20400
+		50 = HPmanichean.20401
+		50 = HPmanichean.20402
+		50 = HPmanichean.20403
+		100 = HPmanichean.20404
+		50 = HPmanichean.20405
+		75 = HPmanichean.20406
+		100 = HPmanichean.20407
+		10 = HPmanichean.20408
+		200 = HPqarmatian.29051
+		50 = HPqarmatian.29052
+		150 = HPdecadence.50005
+		150 = HPdecadence.50006
+
+		
+
+		### Council weak claim
+		#300 = HPfraticelli.15400
+		
+		
+		15 = JS.101
+		15 = JS.103
+		15 = JS.105
+		15 = JS.107
+		15 = JS.109
+		15 = JS.111
+		10 = KS.101
+		
+		10 = DEMES.1
+		10 = DEMES.2
+		10 = DEMES.3
+		10 = DEMES.4
+		
+		10 = conv.1	
+		10 = conv.2
+		10 = conv.3	
+		10 = conv.4	
+		10 = conv.5	
+		
+		
+		# Reincarnation: Memories of the previous life
+		1000 = HPyazidi.1520
+		1000 = HPyazidi.1521
+		1000 = HPyazidi.1522
+		#1000 = HPdruze.1520
+		#1000 = HPdruze.1521
+		#1000 = HPdrzue.1522
+		1000 = RoI.10020
+		1000 = RoI.10021
+		1000 = RoI.10022
+		1 = ENA.2
+	}
+}
+
+on_war_started = {
+	events = {
+		ROMEGOV.13
+	}
+}
+
+on_war_ended_victory = {
+	events = {
+		ROMEGOV.1
+		ROMEGOV.1
+		#IHS.2
+		#IHS.3
+		#IHS.4
+		#IHS.5
+		#IHS.6
+		#IHS.7
+	}
+}
+# From = Attacker, Root = Defender
+on_war_ended_whitepeace = {
+	events = {
+		ROMEGOV.1
+	}
+}
+
+# From = Attacker, Root = Defender
+on_war_ended_defeat = {
+	events = {
+		ROMEGOV.1
+	}
+}
+
+	
+on_five_year_pulse = {
+	random_events = {
+		#----  misc traits needing revision below...
+		
+		3 = HPdecadence.50010
+
+		#Silk Road Pulse
+		5 = conv.1	
+		5 = conv.2
+		5 = conv.3	
+		5 = conv.4	
+		5 = conv.5	
+	
+	}
+}
+
+on_yearly_childhood_pulse = {
+	events = {
+		ExIs.115	#Bar Mitzvah
+		ExIs.117	#Bat Mitzvah
+	}
+	random_events = {		
+		### HERETIC PRIDE
+		5000 = HPyazidi.1510 # Acknowledged reincarnated child acquires trait from previous personality
+		#5000 = HPdruze.1510 # Acknowledged reincarnated child acquires trait from previous personality
+		100 = HPwaldensian.13400 #Wald Charity
+		1000 = HPcathar.12100 # Cathar Chaste
+		100 = HPcathar.12101
+		100 = HPcathar.12102 
+		100 = HPmonothelite.9103 # Monothelite Tolerance
+		70 = HPpaul.8111
+		94 = HPmanichean.20110 #Math is hard...
+	}
+}
+
+on_new_holder = {
+	events = {
+		ROMEGOV.1
+		SCHISM.1
+		SCHISM.3
+		SCHISM.5
+		SCHISM.6
+		SCHISM.7
+		SCHISM.11
+		SCHISM.13
+		SCHISM.15
+		SCHISM.18
+		COPT.1
+	}
+}
+
+on_war_ended_defeat = {
+	events = {
+		#SCHISM.17
+		SCHISM.2
+		SCHISM.4
+		SCHISM.8
+		SCHISM.12
+		SCHISM.16
+		SCHISM.19
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+#on_new_holder_inheritance = {
+#	events = {
+#		ROMEGOV.4
+#		ROMEGOV.2
+#		ROMEGOV.3
+#	}
+#}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		ROMEGOV.1
+
+	}
+}
+
+on_law_vote_passed = {
+	events = {
+		ROMEGOV.2
+		ROMEGOV.3
+	}
+}
+
+on_battle_won = {
+	events = {
+		#ROMEGOV.5
+	}
+}
+
+# any leader in battle on winning side is ROOT - opponent army leader is FROM
+on_major_battle_won = {
+	events = {
+		#ROMEGOV.5
+	}
+}
+
+on_death = {
+	events = {
+		#ROMEGOV.6
+		######HERETIC PRIDE
+		#HPdruze.4402 #Mad caliph dies, druze is scattered
+		HPdecadence.50900
+		HPdecadence.50901
+	}
+}
+
+on_bi_yearly_pulse = {
+	random_events = {
+
+		# HERETIC PRIDE
+		1000 = HPdecadence.50011
+	}
+}
+
+#on combat pulse
+on_combat_pulse = {
+	random_events = {
+		### HERETIC PRIDE
+		50 = HPpaul.8100 # Fearless
+		75 = HPpaul.8101
+		75 = HPpaul.8102
+		75 = HPpaul.8103
+		75 = HPpaul.8104
+	}
+}
+
+on_major_battle_won_leader = {
+	random_events = {
+		100 = HPmanichean.20300 #Army of the Light
+	}
+}
+
+on_major_battle_lost = {
+	##### HERETIC PRIDE
+	random_events = {
+		100 = HPiconoclast.6110 # Constatine's Return
+		100 = HPmanichean.20301 #Darkfriends Win
+	}
+}
+
+on_siege_over_winner = {
+	events = {
+		### HERETIC PRIDE
+		HPwaldensian.13101
+		HPwaldensian.13102
+		HPwaldensian.13103
+		HPwaldensian.13104
+		HPqarmatian.29010 # Sack of Mecca
+	}
+	random_events = {
+		### HERETIC PRIDE
+		50 = HPlollard.14100
+		50 = HPwaldensian.13100
+	}
+}
+
+on_marriage = {
+	#### HERETIC PRIDE
+	random_events = {
+		50 = HPsamaritan.16025
+		50 = HPsamaritan.16026
+	}
+}
+
+on_loot_settlement = {
+	random_events = {
+		5 = HPqarmatian.29050
+	}
+}
+
+on_chronicle_start = {
+	events = {
+		#HPfraticelli.15998
+	}
+}
+
+on_vassal_accepts_religious_conversion = {
+	events = {
+		RITE.3
+	}
+}
+
+# Character converts religion, for whatever reason. ROOT is the character after conversion and the FROM scope has the old religion.
+on_character_convert_religion = {
+	events = {
+		RITE.3
+		CHALC.1
+		CHALC.100
+	}
+}
+
+#on_rebel_revolt = {
+#	events = {
+#		ROMEGOV.13
+#	}
+#}
+
+# When province defects to rebels
+#on_defect_to_rebels = {
+#	events = {
+#		ROMEGOV.13
+#	}
+#}
+on_reform_religion = {
+	events = {
+		39680
+		ENA.1000
+	}
+}

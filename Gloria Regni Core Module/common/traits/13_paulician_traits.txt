@@ -1,0 +1,32 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# PAULICIAN
+
+fearless = {
+    potential = {
+        religion = paulician
+    }
+	opposites = {
+		craven
+	}
+	opposite_opinion = -50
+	same_opinion = 30
+	monthly_character_prestige = 0.2
+	religious = yes
+    customizer = no
+    random = yes
+	martial = 2
+	intrigue = -3
+	vassal_opinion = 10
+	combat_rating = -5
+	health = -1
+	
+	command_modifier = {
+		morale_offence = 0.3
+		morale_defence = 0.3
+	}
+}

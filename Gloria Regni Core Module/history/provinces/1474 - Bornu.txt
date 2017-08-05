@@ -1,0 +1,25 @@
+# 763 - Bornu
+
+# County Title
+title = c_bornu
+
+# Settlements
+max_settlements = 6
+b_bornu = tribal
+b_zamtam = castle
+b_sao = temple
+b_ngazargamu = city
+
+#b_diaka = temple
+#b_yao = city
+#b_fika = castle
+
+# Misc
+culture = kanuri
+religion = west_african_pagan
+
+# History
+#1070.1.1 = { remove_settlement = b_bornu }
+#1070.1.1 = { b_bornu = castle }
+1070.1.1 = { capital = b_bornu }
+1120.1.1 = { b_yao = city }

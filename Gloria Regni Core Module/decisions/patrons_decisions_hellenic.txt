@@ -1,0 +1,49 @@
+decisions = {
+
+	#HELLENIC
+	patrons_hel = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				has_character_modifier = patron_jupiter
+				has_character_modifier = patron_mars
+				has_character_modifier = patron_pluto
+				has_character_modifier = patron_mercury
+				has_character_modifier = patron_minerva
+				has_character_modifier = patron_venus
+			}
+			religion = hellenic_pagan
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_HEL.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+}

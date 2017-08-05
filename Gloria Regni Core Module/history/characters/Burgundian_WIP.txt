@@ -1,0 +1,948 @@
+###################################
+####   VISIGOTHIC CHARACTERS   ####
+####     IDS 38000 - 39999     ####
+###################################
+
+
+
+110003 = {			# Queen Clotilde of the Franks
+
+	name="Hroþihilda"
+
+	female=yes
+
+	dynasty=6000084
+
+	dna="daagh0cica0"
+
+  	properties="ke0cdkbebb"
+
+	martial=5
+
+	diplomacy=11
+
+	intrigue=10
+
+	stewardship=8
+
+	learning=8
+
+	culture="burgundian"
+
+	religion="imperial"
+
+	add_trait="zealous"
+
+	add_trait="just"
+
+	add_trait="kind"
+
+	add_trait="ambitious"
+
+	add_trait="temperate"
+
+	add_trait="patient"
+
+	add_trait = quick
+
+	father=110021
+
+	mother=310065
+
+	475.1.1={
+
+		birth=yes
+
+		prestige=200
+
+		piety=500
+
+	}
+
+	545.1.1={
+
+		death=yes
+
+	}
+
+} 
+
+
+110016 = {			# Guntheuc, Queen of Orleans
+
+	name="Gunþsweiha"
+	
+	dynasty=6000084
+
+	religion=arian
+
+	culture="burgundian"
+
+	female = yes
+
+	father=310062
+
+	#mother=
+
+	497.1.1={
+
+		birth=yes
+
+	}
+	
+	512.1.1 = {
+	
+		add_spouse = 168679	# King Chlodomer of Orleans
+		
+	}
+
+	532.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110019 = {			# King Gundioc of Burgundy, father of Gundobad
+
+	name="Gunþsweihs"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	martial=9
+
+	diplomacy=13
+
+	intrigue=12
+
+	stewardship=10
+
+	learning=9
+
+	culture="burgundian"
+
+	add_trait="brave"
+
+	add_trait="skilled_tactician"
+
+	add_trait="ambitious"
+
+	add_trait="proud"
+
+	father=310039
+
+	#mother=
+
+	418.1.1={
+
+		birth=yes
+
+		prestige=975
+
+	}
+	
+	438.1.1={
+		add_spouse=310060
+	}
+
+	473.1.1={
+
+		add_trait="wounded"
+
+		death = { death_reason = death_trait }
+
+	}
+
+}
+
+
+
+110020 = {			# King Gundobad of Burgundy									# KING
+
+	name="Gunþsbad"
+
+	dynasty=6000084
+
+	dna="dlfga0gica0"
+
+	properties="bh0mbkbcbb"
+
+	religion="arian"
+
+	martial=11
+
+	diplomacy=6
+
+	intrigue=7
+
+	stewardship=8
+
+	learning=7
+
+	culture="burgundian"
+
+
+	add_trait="intricate_webweaver"
+
+	add_trait="ambitious"
+
+	add_trait="cruel"
+
+	add_trait="deceitful"
+
+	add_trait="proud"
+	
+	add_trait = quick
+
+	father=110019
+
+	mother=310060
+
+	452.1.1={
+
+		birth=yes
+
+		prestige=615
+
+	}
+
+	516.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110021 = {			# King Chilperic II of Burgundy
+
+	name="Hildspreiks"
+
+	dynasty=6000084
+
+	dna="dmddf0moca0"
+
+	properties="ki0eakbcbb"
+
+	religion="arian"
+
+	martial=10
+
+	diplomacy=10
+
+	intrigue=9
+
+	stewardship=8
+
+	learning=8
+
+	culture="burgundian"
+
+	add_trait="tough_soldier"
+
+	add_trait="paranoid"
+
+	add_trait="ambitious"
+
+	add_trait="craven"
+
+	add_trait="deceitful"
+
+	add_trait="proud"
+
+	father=110019
+
+	mother=310060
+
+	450.1.1={
+
+		birth=yes
+
+		prestige=630
+
+	}
+	
+	
+	465.1.1 = {
+	
+		add_spouse = 310065		# Carétène
+		
+	}
+
+	493.1.1={
+
+		death=yes
+
+	}
+
+}
+
+
+110022 = {			# King Sigismund of Burgundy
+
+	name="Sigismunds"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+
+	father=110020
+
+	#mother=
+	
+	add_trait = wroth
+
+	480.1.1={
+
+		birth=yes
+
+	}
+	
+	#494.1.1 = {
+	#
+	#	add_spouse = 1125		# Ostrogotha of Ostrogoths
+	#	
+	#}
+	
+	510.1.1 = {	
+	
+		religion = imperial
+		
+	}
+	
+	517.1.1 = {
+	
+	#	add_spouse = 1127		# Princess Hjordis of Vandals
+	
+		add_trait = kinslayer
+		
+	}
+
+	524.5.1={
+
+		death={
+		
+			death_reason = death_murder
+			
+			killer = 168679			# King Chlodomer of Orleans
+			
+		}
+
+	}
+
+}
+
+110023 = {			# Suavegotha of Burgundy, Queen of Austrasia
+
+	name="Swabasguta"
+
+	dynasty=6000084
+
+	religion=imperial
+
+	culture="burgundian"
+	
+	female = yes
+	
+	father=110022
+
+	#mother=1125
+
+	496.1.1={
+
+		birth=yes
+
+	}
+	
+	523.1.1 = {
+	
+	#	add_spouse = 1104		# King Theuderic of Austrasia
+		
+	}
+
+	543.1.1={
+
+		death=yes
+
+	}
+
+}
+
+110024 = {			# King Godomar II of Burgundy
+
+	name="Gutamari"
+
+	dynasty=6000084
+
+	religion="imperial"
+
+	culture="burgundian"
+
+	father=110020
+
+	#mother=
+
+	485.1.1={
+
+		birth=yes
+
+	}
+	
+	515.1.1 = {
+	
+		religion = imperial
+		
+	}
+
+	534.1.1={
+
+		
+			death = yes
+			
+			#killer = 1111		# King Childebert of Neustria
+
+	}
+
+}
+
+110026 = {			# Prince Sigeric of Burgundy
+
+	name="Sigisreiks"
+
+	dynasty=6000084
+
+	religion=arian
+
+	culture="burgundian"
+	
+	father=110022
+
+	#mother=1125
+
+	495.1.1={
+
+		birth=yes
+
+	}
+
+	517.1.1={
+
+		death = {
+		
+			death_reason = death_murder
+			
+			killer = 110022		# King Sigismund of Burgundy
+			
+		}
+
+	}
+
+}
+
+110028 = {			# Prince Gisald of Burgundy
+
+	name="Gaislwald"
+
+	dynasty=6000084
+
+	religion=imperial
+
+	culture="burgundian"
+	
+	father=110022
+
+	#mother=1127
+
+	518.1.1={
+
+		birth=yes
+
+	}
+
+	524.5.1={
+
+		death={
+		
+			death_reason = death_murder
+			
+			killer = 168679			# King Chlodomer of Orleans
+			
+		}
+
+	}
+
+}
+
+110029 = {			# Prince Gondebaud of Burgundy
+
+	name="Gunþsbad"
+
+	dynasty=6000084
+
+	religion=imperial
+
+	culture="burgundian"
+	
+	father=110022
+
+	#mother=1127
+
+	520.1.1={
+
+		birth=yes
+
+	}
+
+	524.5.1={
+
+		death={
+		
+			death_reason = death_murder
+			
+			killer = 168679			# King Chlodomer of Orleans
+			
+		}
+
+	}
+
+}
+
+310036 = {			# King Gebicar of the Burgundians
+	
+	name = Gebika
+	
+	dynasty=6000084
+
+	religion="germanic_pagan"
+
+	culture="burgundian"
+
+	#father=
+
+	#mother=
+
+	357.1.1={
+		birth=yes
+	}
+
+	407.1.1={
+		death=yes
+	}
+
+}
+
+310037 = {			# King Godomar I of the Burgundians
+	
+	name = "Gutamari"
+	
+	dynasty=6000084	
+	
+	religion="germanic_pagan"
+
+	culture="burgundian"
+
+	father=310036	
+
+	#mother=
+
+	381.1.1={
+		birth=yes
+	}
+
+	411.1.1={
+		death=yes
+	}
+
+}
+
+310038 = {			# King Giselher of the Burgundians
+	
+	name = "Gaislharjis" 
+	
+	dynasty=6000084
+
+	religion="germanic_pagan"
+
+	culture="burgundian"
+
+	father=310036	
+
+	#mother=
+
+	386.1.1={
+		birth=yes
+	}
+
+	420.1.1={
+		death=yes
+	}
+
+}
+
+310039 = {			# King Gundahar of the Burgundians
+	
+	name = Gunþsharjis 
+	
+	dynasty=6000084
+
+	religion="germanic_pagan"
+
+	culture="burgundian"
+
+	father=310036	
+
+	#mother=
+
+	390.1.1={
+		birth=yes
+	}
+
+	437.1.1={
+		death = yes
+	}
+
+}
+
+310041 = {			# King Chilperic I of Burgundy
+	
+	name = Hildspreiks
+	
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+	
+	add_trait = ambitious
+
+	father=310039
+
+	#mother=
+
+	420.1.1={
+		birth=yes
+	}
+
+	479.1.1={
+		death=yes
+	}
+
+}
+
+310042 = {
+	
+	name = Hroma
+	
+	female=yes
+	
+	dynasty=6000084
+
+	religion="imperial"
+
+	culture="burgundian"
+
+	father=110021
+
+	mother=310065
+
+	470.1.1={
+		birth=yes
+	}
+
+	530.1.1={
+		death=yes
+	}
+
+}
+
+310043 = {			# King Godomar II of Burgundy
+
+	name="Gutamari"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+	
+	add_trait = ambitious
+
+	father=110019
+
+	mother=310060
+
+	455.1.1={
+
+		birth=yes
+
+	}
+
+	486.1.1={
+
+		death = yes
+
+	}
+
+}
+
+310044 = {			# King Godegisel of Burgundy
+
+	name="Gutagaisl"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+
+	father=110019
+
+	mother=310060
+	
+	diplomacy = 8
+	
+	martial = 7
+	
+	add_trait = deceitful
+	
+	add_trait = skilled_tactician
+
+	458.1.1={
+
+		birth=yes
+
+	}
+	
+	
+	478.1.1 = {
+	
+		add_spouse = 310061		# Theolinda of Burgundy
+		
+	}
+
+	500.1.1={
+
+		death = yes
+
+	}
+
+}
+
+
+310061 = {			# Theodolinda, wife of King Godegisel of Burgundy
+
+	name="Þiudaswinþa"
+
+	dynasty=0
+
+	religion="imperial"
+
+	culture="burgundian"
+	
+	female = yes
+
+	#father=
+
+	#mother=
+
+	462.1.1={
+
+		birth=yes
+
+	}
+	
+	477.1.1 = {
+	
+		add_spouse = 310044		# Godegisel of Burgundy
+		
+	}
+
+	500.1.1={
+
+		death = yes
+
+	}
+
+}
+
+310062 = {			# Unnamed first son of Godegisel and Theodolinda
+
+	name="Bairanhards"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+
+	father=310044
+
+	mother=310061
+
+	479.1.1={
+
+		birth=yes
+
+	}
+
+	500.1.1={
+
+		death = yes
+
+	}
+
+}
+
+310063 = {			# Unnamed second son of Godegisel and Theodolinda
+
+	name="Sigisfridu"
+	
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+
+	father=310044
+
+	mother=310061
+
+	482.1.1={
+
+		birth=yes
+
+	}
+
+	500.1.1={
+
+		death = yes
+
+	}
+
+}
+
+310064 = {			# Sédéleubeude, sister of Guntheuc and grandaughter of Godegisel
+
+	name="Siþiliubada"
+
+	dynasty=6000084
+	
+	female = yes
+
+	religion="arian"
+
+	culture="burgundian"
+
+	father=310062
+
+	#mother=
+
+	498.1.1={
+
+		birth=yes
+
+	}
+
+	542.1.1={
+
+		death = yes
+
+	}
+
+}
+
+
+310065 = {			# Carétène, wife of King Chilperic II of Burgundy
+
+	name="Kartaina"
+
+	dynasty=0
+
+	religion="imperial"
+
+	culture="burgundian"
+	
+	female = yes
+	
+	#father=
+
+	#mother=
+
+	452.1.1={
+
+		birth=yes
+
+	}
+	
+	465.1.1 = {
+	
+		add_spouse = 110021		# King Chilperic II of Burgundy
+		
+	}
+
+	506.1.1={
+
+		death = yes
+
+	}
+
+}
+
+310066 = {			# Unnamed first son of Chilperic II and Carétène of Burgundy
+
+	name="Gaislharjis"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+	
+	father=110021
+
+	mother=310065
+
+	467.1.1={
+
+		birth=yes
+
+	}
+
+	493.1.1={
+
+		death = yes
+
+	}
+}
+
+310067 = {			# Unnamed second son of Chilperic II and Carétène of Burgundy
+
+	name="Aldswins"
+
+	dynasty=6000084
+
+	religion="arian"
+
+	culture="burgundian"
+	
+	father=110021
+
+	mother=310065
+
+	473.1.1={
+
+		birth=yes
+
+	}
+
+	493.1.1={
+
+		death = yes
+
+	}
+}

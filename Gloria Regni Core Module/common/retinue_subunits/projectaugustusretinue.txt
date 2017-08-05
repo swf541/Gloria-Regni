@@ -1,0 +1,104 @@
+RETTYPE_CUL_ROMAN = {
+	first_type = 1
+	first_amount = 450
+	
+	second_type = 2
+	second_amount = 50
+	
+	hire_cost = 180
+	
+	potential = {
+		is_nomadic = no
+		culture = roman
+	}
+	
+	modifier = {
+		heavy_infantry_morale = 0.4
+		heavy_infantry_offense = 0.4
+		heavy_infantry_defense = 0.2
+		pikemen_offensive = 0.2
+		pikemen_defensive = 0.4
+		pikemen_morale = 0.4
+	}
+}
+
+RETTYPE_CUL_ROMAN2 = {
+	first_type = 4
+	first_amount = 400
+	
+	second_type = 6
+	second_amount = 100
+	
+	hire_cost = 280
+
+	special_troops = horse_archers
+	
+	potential = {
+		is_nomadic = no
+		culture = roman
+	}
+	
+	modifier = {
+		knights_morale = 0.4
+		knights_offensive = 0.4
+		knights_defensive = 0.4
+		horse_archers_morale = 0.2
+		horse_archers_offensive = 0.4
+	}
+}
+
+RETTYPE_NAT_MAC = {
+	first_type = 2
+	first_amount = 450
+
+	second_type = 1
+	second_amount = 50
+	
+	hire_cost = 180
+	
+	potential = {
+		is_nomadic = no
+		OR = {
+			vassal_of = k_macedonia
+			vassal_of = e_macedonia
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+	}
+	
+	modifier = {
+		pikemen_offensive = 0.2
+		pikemen_defensive = 0.4
+		pikemen_morale = 0.4
+		archers_offensive = 0.4
+		archers_defensive = 0.2
+		archers_morale = 0.2
+	}
+}
+
+RETTYPE_NAT_MAC2 = {
+	first_type = 4
+	first_amount = 400
+
+	second_type = 3
+	second_amount = 100
+	
+	hire_cost = 260
+	
+	potential = {
+		is_nomadic = no
+		OR = {
+			vassal_of = k_macedonia
+			vassal_of = e_macedonia
+			has_landed_title = k_macedonia
+			has_landed_title = e_macedonia
+		}
+	}
+	
+	modifier = {
+		knights_morale = 0.4
+		knights_offensive = 0.4
+		knights_defensive = 0.2
+		light_cavalry_morale = 0.2
+	}
+}

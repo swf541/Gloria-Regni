@@ -1,0 +1,162 @@
+decisions = {
+	select_liturgical_rite = {
+		potential = {
+			religion = imperial
+			NOR = {
+				trait = roman_rite
+				trait = ambrosian_rite
+				trait = byzantine_rite
+				trait = celtic_rite
+				trait = alexandrian_rite
+				trait = mozarabic_rite
+				trait = antiochene_rite
+				trait = african_rite
+				trait = aquileian_rite
+			}
+		}
+		allow = {
+			war = no
+			has_regent = no
+		}
+		effect = {
+			character_event = { id = RITE.2 } 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	make_constantinople_center_of_episcopal_authority = {
+		potential = {
+			has_landed_title = e_byzantium
+			not = { has_global_flag = con_center_authority }
+			completely_controls = d_latium
+		}
+		
+		allow = {
+			prestige = 100
+			piety = 100
+		}
+		
+		effect = {
+			set_global_flag = con_center_authority
+			d_constantinople = {
+				holder_scope = { save_event_target_as = byz_patriarch }
+			}
+			d_imperial = { usurp_title = event_target:byz_patriarch } 
+			d_imperial = { change_variable = { which = schism value = 40 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+	make_rome_center_of_episcopal_authority = {
+		potential = {
+			has_landed_title = e_byzantium
+			not = { has_global_flag = con_center_authority }
+			completely_controls = d_thrace
+			completely_controls = d_latium
+		}
+		
+		allow = {
+			prestige = 100
+			piety = 100
+		}
+		
+		effect = {
+			clr_global_flag = con_center_authority
+			d_rome = {
+				holder_scope = { save_event_target_as = rome_patriarch }
+			}
+			d_imperial = { usurp_title = event_target:rome_patriarch } 
+			d_imperial = { change_variable = { which = schism value = 40 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+
+	put_sicily_under_the_byzantine_patriarch = {
+		potential = {
+			has_landed_title = k_sicily
+			religion = imperial
+			NOT = { has_global_flag = greek_sicily }
+		}    
+
+		allow = {
+			prestige = 100
+			piety = 100
+		}		
+		
+		effect = {		
+			add_trait = byzantine_rite
+			
+			clr_global_flag = latin_sicily
+			set_global_flag = greek_sicily
+			
+			k_sicily = {
+				set_pentarchy_title = d_constantinople
+			}
+			any_realm_character ={
+				limit = { religion = imperial }
+				
+				add_trait = byzantine_rite
+				remove_trait = ambrosian_rite
+				remove_trait = roman_rite
+				remove_trait = celtic_rite
+				remove_trait = alexandrian_rite
+				remove_trait = mozarabic_rite
+				remove_trait = antiochene_rite
+				remove_trait = african_rite
+				remove_trait = aquileian_rite
+			}
+			d_imperial = { change_variable = { which = schism value = 20 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+	put_sicily_under_the_pope = {
+		potential = {
+			has_landed_title = k_sicily_2
+			NOT = { has_landed_title = e_byzantium }
+			independent = yes
+			religion = imperial
+			has_global_flag = greek_sicily 
+		}    
+
+		allow = {
+			prestige = 100
+			piety = 100
+		}		
+		
+		effect = {		
+			clr_global_flag = greek_sicily
+			set_global_flag = latin_sicily
+			add_trait = byzantine_rite
+			
+			set_global_flag = greek_sicily
+			
+			k_sicily = {
+				set_pentarchy_title = d_rome
+			}
+			any_realm_character ={
+				limit = { religion = imperial }
+				
+				add_trait = roman_rite
+				remove_trait = ambrosian_rite
+				remove_trait = byzantine_rite 
+				remove_trait = celtic_rite
+				remove_trait = alexandrian_rite
+				remove_trait = mozarabic_rite
+				remove_trait = antiochene_rite
+				remove_trait = african_rite
+				remove_trait = aquileian_rite
+			}
+			d_imperial = { change_variable = { which = schism value = 20 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+	}
+
+}

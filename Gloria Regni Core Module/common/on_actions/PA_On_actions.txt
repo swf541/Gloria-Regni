@@ -1,0 +1,36 @@
+on_death = {
+	events = {
+		appointment.1
+		inherit.1
+	}
+}
+
+# ROOT is the creating character, FROM is the title
+on_create_title = {
+	events = {
+		inherit.6
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		inherit.7
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_inheritance = {
+	events = {
+		inherit.7
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		inherit.7
+	}
+}
+
+

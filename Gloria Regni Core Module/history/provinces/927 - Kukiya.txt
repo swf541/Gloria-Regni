@@ -1,0 +1,23 @@
+# 927 - Kukiya
+
+# County Title
+title = c_zarma
+
+# Settlements
+max_settlements = 5
+b_kukiya = tribal
+b_tillaberi = temple
+
+#b_ansongo = city
+#b_ouallam = castle
+#b_tera = castle
+
+# Misc
+culture = songhai
+religion = west_african_pagan
+
+# History
+1100.1.1 = {
+	b_kukiya = castle
+	b_ansongo = city 
+}

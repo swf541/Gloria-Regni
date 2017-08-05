@@ -1,0 +1,160 @@
+10002842 = {
+	name="Giacinto" # Later Pope Celestine III
+	dynasty=2 # House Orsini
+	martial=7
+	diplomacy=6
+	intrigue=10
+	stewardship=8
+	learning=12 # He would become a Pope in the end
+	religion="catholic"
+	culture="italian"
+	trait="proud" # Above Holy italian Emperor
+	trait="arbitrary" # Too much casual excommunications
+	trait="scholarly_theologian"
+	1106.1.1 = {
+		birth="1106.1.1"
+	}
+	1198.6.22 = {
+		death="1198.6.22"
+	}
+}
+
+10002843 = { #Fictional Son
+	name="Giordano"
+	dynasty=2 # House Orsini
+	religion=catholic
+	culture=italian
+	father=10002842
+	1142.1.1 = {
+		birth="1142.1.1"
+	}
+	1158.6.22 = {
+		death="1158.6.22"
+	}
+}
+
+10002844 = {
+	name="Giovanni" # Later Cardinal, nothing is known (fictionary?)
+	dynasty=13019 # House Colonna
+	martial=7
+	diplomacy=12 # At least you could have a mediocre chancellor
+	intrigue=4
+	stewardship=6
+	learning=7
+	religion="catholic"
+	culture="italian"
+	trait="underhanded_rogue"
+	# I don't know when (if) is born neither when (if) is dead
+	1110.1.1 = {
+		birth="1110.1.1"
+	}
+	1155.6.22 = {
+		death="1155.6.22"
+	}
+}
+
+10002845 = { #Fictional Son
+	name="Ferdinando" #
+	dynasty=13019 # House Colonna
+	religion="catholic"
+	culture="italian"
+	father=10002844 
+	1143.1.1 = {
+		birth="1143.1.1"
+	}
+	1155.6.22 = {
+		death="1155.6.22"
+	}
+}
+
+10002848 = {
+	# Nothing is known of this house in this period neverthless seems
+	# important. This Riccardo is not the Cardinal of XIV century, 
+	# but a fictionary character.	
+	name="Riccardo"
+	dynasty=1042107 # House Annibaldi
+	martial=13
+	diplomacy=6
+	intrigue=10
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="just"
+	trait="cynical"
+	trait="brave"
+	trait="gregarious"
+	trait="elusive_shadow"
+	1110.1.1 = {
+		birth="1110.1.1"
+	}
+	1155.6.22 = {
+		death="1155.6.22"
+	}
+}
+10002849 = { #Fictional Son
+	name="Alessandro"
+	dynasty=1042107 # House Annibaldi
+	religion="catholic"
+	culture="italian"
+	father=10002848
+	1141.1.1 = {
+		birth="1141.1.1"
+	}
+	1155.6.22 = {
+		death="1155.6.22"
+	}
+}
+
+#71800 = { #Pope against whom the war is fought
+#	name="Gregorio"
+#	dynasty=13042
+#	martial=5
+#	diplomacy=8
+#	intrigue=6
+#	stewardship=7
+#	religion="catholic"
+#	culture="italian"
+#	trait="zealous"
+#	trait="brave"
+#	trait="honest"
+#	trait="mastermind_theologian"
+#	father=71801
+#	
+#	1070.1.1 = {
+#		birth="1070.1.1"
+#	}
+#	1130.2.13 = {
+#	name="Innocent"
+#	# AKA: Gregorio
+#	1143.1.1 = {
+#		add_claim = c_roma #To allow the war
+#	}
+#	1143.9.24 = {
+#		death="1143.9.24"
+#	}
+#}
+
+10028410 = { #"Count" of Tusculum
+	name="Giacomo"
+	dynasty=1042108 #of Tusculum
+	martial=8
+	diplomacy=6
+	intrigue=12
+	stewardship=10
+	learning=15
+	religion=catholic
+	culture="italian"
+	trait="mastermind_theologian"
+	trait="chaste"
+	trait="trusting"
+	trait="depressed"
+	trait="proud"
+	trait="brave"
+	
+	1130.1.1 = {
+		birth="1130.1.1"
+	}
+	1147.1.1 = {
+		death="1147.1.1"
+	}
+}

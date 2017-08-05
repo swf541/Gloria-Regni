@@ -1,0 +1,183 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ #<tag> = {
+ #	desc = description used in the tooltip of the building
+ #	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+ #	gold_cost = cost to build the building
+ #	build_time = time to build, in days
+ #	
+ #	ai_creation_factor = weight that the AI uses to determine what building to build
+ #	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+ #}
+
+# City
+city = {
+	ct_slave_market = {
+		desc = ct_slave_market_1_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { 
+			always = no
+		}
+		#upgrades_from = 
+		gold_cost = 200
+		build_time = 730
+		tax_income = 10
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+	ct_plantation_1 = {
+		desc = ct_plantation_1_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { has_province_flag = slaves_1 }
+		#upgrades_from = 
+		gold_cost = 200
+		build_time = 730
+		tax_income = 3
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+	ct_plantation_2 = {
+		desc = ct_plantation_2_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { has_province_flag = slaves_2 }
+		upgrades_from = ct_plantation_1
+		gold_cost = 200
+		build_time = 730
+		tax_income = 3
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+	ct_plantation_3 = {
+		desc = ct_plantation_3_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { has_province_flag = slaves_2 }
+		upgrades_from = ct_plantation_1
+		gold_cost = 200
+		build_time = 730
+		tax_income = 3
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+	ct_plantation_4 = {
+		desc = ct_plantation_4_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { has_province_flag = slaves_4 }
+		upgrades_from = ct_plantation_1
+		gold_cost = 200
+		build_time = 730
+		tax_income = 3
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+	ct_plantation_5 = {
+		desc = ct_plantation_2_desc
+		port = yes
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		prerequisites = { has_province_flag = slaves_2 }
+		upgrades_from = ct_plantation_1
+		gold_cost = 200
+		build_time = 730
+		tax_income = 3
+		ai_creation_factor = 108
+
+		extra_tech_building_start = 0.2
+	}
+}
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+
+trade_post = {
+	tr_slave_port_republic_1 = {
+		potential = {
+			port = yes
+			FROM = {
+				is_patrician = yes
+			}
+			IF = {
+				FROM = {
+					religion_group = christian
+				}
+				NOT = { 
+					religion_group = christian 
+					religion_group = jewish
+				}	
+			}
+		}
+		desc = tr_port_1_desc
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+		gold_cost = 100
+		build_time = 182
+		ai_creation_factor = 95
+		
+		tradevalue = 20
+		tax_income = 2
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_slave_port_republic_2 = {
+		potential = {
+			port = yes
+			FROM = {
+				is_patrician = yes
+			}
+			IF = {
+				FROM = {
+					religion_group = christian
+				}
+				NOT = { 
+					religion_group = christian 
+					religion_group = jewish
+				}	
+			}
+		}
+		desc = tr_port_1_desc
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+		gold_cost = 100
+		build_time = 182
+		ai_creation_factor = 95
+		
+		tradevalue = 20
+		tax_income = 2
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_slave_port_republic_3 = {
+		potential = {
+			port = yes
+			FROM = {
+				is_patrician = yes
+			}
+			IF = {
+				FROM = {
+					religion_group = christian
+				}
+				NOT = { 
+					religion_group = christian 
+					religion_group = jewish
+				}	
+			}
+		}
+		desc = tr_port_1_desc
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+		gold_cost = 100
+		build_time = 182
+		ai_creation_factor = 95
+		
+		tradevalue = 20
+		tax_income = 2
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+}
+

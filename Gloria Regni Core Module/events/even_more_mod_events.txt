@@ -1,0 +1,596 @@
+namespace = PA
+
+# THE START OF THE CHRISTIAN CRUSADES - BYZANTIUM FAILING
+character_event = {
+	id = PA.10421
+	
+	hide_window = yes
+	
+	trigger = {
+		year = 900
+		religion = imperial
+		controls_religion = yes
+		NOT = { has_global_flag = imperial_crisis }
+		
+		OR = {
+			e_byzantium = {
+				holder_scope = {
+					NOT = { religion_group = christian }
+				}
+			}
+			496 = { # Constantinople
+				NOT = { owner = { religion_group = christian } }
+			}
+			753 = { # Ancyra
+				NOT = { owner = { religion_group = christian } }
+			}
+			AND = {
+				482 = { # Athens
+					NOT = { owner = { religion_group = christian } }
+				}
+				481 = { # Corinth
+					NOT = { owner = { religion_group = christian } }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		set_global_flag = imperial_crisis
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+# THE START OF THE CHRISTIAN CRUSADES - ROME HAS FALLEN
+character_event = {
+	id = PA.10422
+	
+	hide_window = yes
+	
+	trigger = {
+		year = 900
+		religion = imperial
+		controls_religion = yes
+		NOT = { has_global_flag = imperial_crisis }
+		
+		333 = { # Rome
+			owner = {
+				OR = {
+					NOT = { religion_group = christian }
+					is_heretic = yes
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		set_global_flag = imperial_crisis
+	}
+	
+	option = {
+		name = ok
+        }
+}
+
+# THE START OF THE CHRISTIAN CRUSADES - EUROPE
+character_event = {
+	id = PA.10423
+	
+	hide_window = yes
+	
+	trigger = {
+		year = 900
+		religion = imperial
+		controls_religion = yes
+		NOT = { has_global_flag = imperial_crisis }
+		
+		OR = {
+			221 = { # Provence
+				NOT = { owner = { religion_group = christian } }
+			}
+			214 = { # Toulouse
+				NOT = { owner = { religion_group = christian } }
+			}
+			112 = { # Paris
+				NOT = { owner = { religion_group = christian } }
+			}
+			AND = {
+				119 = { # Cologne
+					religion_group = christian
+					NOT = { owner = { religion_group = christian } }
+				}
+			}
+			AND = {
+				257 = { # Braunschweig
+					religion_group = christian
+					NOT = { owner = { religion_group = christian } }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		set_global_flag = imperial_crisis
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+narrative_event = {
+	id = PA.10424
+	title = EVTNAMEPA.10424
+	desc = EVTDESCPA.10424
+	picture = GFX_evt_great_schism
+
+	major = yes
+	religion = imperial
+	
+	trigger = {
+		has_global_flag = strike_one
+		has_global_flag = strike_two
+		has_global_flag = strike_three
+		NOT = { has_global_flag = great_schism }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = great_schism
+		if = {
+			limit = {
+				religion = imperial
+				OR = {
+					culture_group = latin
+					culture_group = magyar
+					culture_group = baltic
+					culture_group = celtic
+					culture_group = vasconic
+					culture_group = west_slavic
+					culture_group = west_african
+					culture_group = mesoamerican
+					culture_group = west_germanic
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture = andalusian_arabic
+					culture = maghreb_arabic
+					culture = neo_punic
+					culture = ashkenazi
+					culture = sephardi
+				}
+			}
+			religion = catholic
+			}
+		if = {
+			limit = {
+				religion = imperial
+				OR = {
+					culture_group = altaic
+					culture_group = balkan
+					culture_group = iranian
+					culture_group = byzantine
+					culture_group = finno_ugric
+					culture_group = east_slavic
+					culture_group = south_slavic
+					culture_group = east_african
+					culture_group = east_germanic
+					culture_group = dravidian_group
+					culture_group = indo_aryan_group
+					culture = levantine_arabic
+					culture = egyptian_arabic
+					culture = bedouin_arabic
+					culture = old_arabic
+					culture = assyrian
+					culture = aramean
+					culture = mandaic
+					culture = mizrahi
+				}
+			}
+			religion = orthodox
+        }
+		any_playable_ruler = {
+				character_event = { id = PA.10432 }
+		}
+		any_playable_ruler = {
+				character_event = { id = PA.10433 }
+		}
+		any_playable_ruler = {
+				narrativr_event = { id = PA.10435 }
+		}
+    }
+	
+	option = {
+		name = OPTAPA_10424
+		trigger = {
+			religion_group = christian
+		}
+	}
+
+	option = {
+		name = OPTBPA_10424
+		trigger = {
+			NOT = { religion_group = christian }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10425
+	desc = EVTDESCPA.10425
+	picture = GFX_evt_great_schism
+	
+	is_triggered_only = yes
+	
+	weight_multiplier = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10425
+	}
+}
+
+character_event = {
+	id = PA.10426
+	
+	hide_window = yes
+	
+	trigger = {
+		has_landed_title = k_christ
+		NOT = { trait = divine }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ok
+		add_trait = divine
+	}
+}
+
+character_event = {
+	id = PA.10427
+
+        hide_window = yes
+	
+	trigger = {
+		religion = iconoclast
+		has_landed_title = e_byzantium
+		NOT = { has_global_flag = strike_one }
+	}     
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ok
+		set_global_flag = strike_one
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+			}
+			character_event = { id = PA.10428 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10428
+	desc = EVTDESCPA.10428
+	picture = GFX_evt_great_schism
+	
+	is_triggered_only = yes
+	
+	weight_multiplier = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10428
+	}
+}
+
+character_event = {
+	id = PA.10429
+
+	hide_window = yes
+	
+	trigger = {
+		has_landed_title = k_imperial
+		NOT = { has_global_flag = strike_three }
+		d_constantinople = {
+			NOT = { 
+				reverse_opinion = {
+					who = ROOT
+					value = -50
+				}
+			}
+		}
+	}		
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ok
+		set_global_flag = strike_three
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+			}
+			character_event = { id = PA.10430 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10430
+	desc = EVTDESCPA.10430
+	picture = GFX_evt_great_schism
+	
+	is_triggered_only = yes
+	
+	weight_multiplier = {
+		days = 1
+	}
+	
+	option = {
+		name = OPTPA_10230
+	}
+}
+
+character_event = {
+	id = PA.10431
+
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = great_schism }
+	}     
+	
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+		set_parent_religion = { religion = iconoclast parent = imperial }
+		set_parent_religion = { religion = monothelite parent = imperial }
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = PA.10432
+
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = great_schism
+	}     
+	
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+		set_parent_religion = { religion = arian parent = catholic }
+		set_parent_religion = { religion = donatism parent = catholic }
+		set_parent_religion = { religion = adoptionism parent = orthodox }
+		set_parent_religion = { religion = sabellianism parent = catholic }
+		set_parent_religion = { religion = pelagianism parent = catholic }
+		set_parent_religion = { religion = macedonianism parent = orthodox }
+		set_parent_religion = { religion = marcionism parent = orthodox }
+		set_parent_religion = { religion = priscillianism parent = catholic }
+		set_parent_religion = { religion = valentinianism parent = catholic }
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = PA.10433
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	weight_multiplier = {
+			days = 1
+	}
+
+	immediate = {
+		any_realm_province = {
+			limit = {
+				religion = imperial
+				OR = {
+					culture_group = latin
+					culture_group = magyar
+					culture_group = baltic
+					culture_group = celtic
+					culture_group = vasconic
+					culture_group = west_slavic
+					culture_group = west_african
+					culture_group = mesoamerican
+					culture_group = west_germanic
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture = andalusian_arabic
+					culture = maghreb_arabic
+					culture = neo_punic
+					culture = ashkenazi
+					culture = sephardi
+				}
+			}
+			religion = catholic
+		}
+		any_realm_province = {
+			limit = {
+				religion = imperial
+				OR = {
+					culture_group = altaic
+					culture_group = balkan
+					culture_group = iranian
+					culture_group = byzantine
+					culture_group = finno_ugric
+					culture_group = east_slavic
+					culture_group = south_slavic
+					culture_group = east_african
+					culture_group = east_germanic
+					culture_group = dravidian_group
+					culture_group = indo_aryan_group
+					culture = levantine_arabic
+					culture = egyptian_arabic
+					culture = bedouin_arabic
+					culture = old_arabic
+					culture = assyrian
+					culture = aramean
+					culture = mandaic
+					culture = mizrahi
+				}
+			}
+			religion = orthodox
+		}
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = PA.10434
+
+	hide_window = yes
+
+	trigger = {
+		religion = imperial
+		has_landed_title = b_hagiasophia
+		NOT = { has_landed_title = d_constantinople }
+	}
+
+	weight_multiplier = {
+			days = 1
+	}
+
+	option = {
+		name = ok
+		d_constantinople = {
+			grant_title = ROOT
+		}
+	}
+}
+
+narrative_event = {
+	id = PA.10435
+	title = EVTNAMEPA.10434
+	desc = EVTDESCPA.10434
+
+	is_triggered_only = yes
+
+	weight_multiplier = {
+		days = 1
+	}
+
+	option = {
+		name = OPTPA_10434
+	}
+}
+
+character_event = {
+	id = PA.10436
+
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = great_schism
+	}     
+	
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+		set_parent_religion = { religion = iconoclast parent = orthodox }
+		set_parent_religion = { religion = monothelite parent = orthodox }
+	}
+	
+	option = {
+		name = ok
+	}
+}
+
+character_event = {
+	id = PA.10437
+
+	hide_window = yes
+
+	trigger = {
+		NOT = { government = constitutional_government }
+	    has_character_modifier = { constitutional_monarch }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		remove_character_modifier = { constitutional_monarch }
+	}
+}
+
+character_event = {
+	id = PA.10438
+
+	hide_window = yes
+
+	trigger = {
+		government = constitutional_government
+	    NOT = { has_character_modifier = { constitutional_monarch } }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		add_character_modifier = {
+			name = constitutional_monarch
+		    duration = -1
+		}
+	}
+}

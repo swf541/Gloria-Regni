@@ -1,0 +1,32 @@
+# 733 - Aleppo
+
+# County Title
+title = c_aleppo
+
+# Settlements
+max_settlements = 6
+b_aleppo = castle
+b_azaz = city
+b_buzaa = temple 
+b_artah = castle
+
+#b_albab = castle
+#b_harim = castle
+#b_alatarib = castle
+
+# Misc
+culture = aramean
+religion = miaphysite
+810.1.1 = {
+culture = levantine_arabic
+religion = sunni
+}
+# History
+
+1110.1.1 = { b_albab = castle } 
+
+1272.1.1 = { remove_settlement = b_albab }
+
+1272.1.1 = { b_artah = castle } 
+
+

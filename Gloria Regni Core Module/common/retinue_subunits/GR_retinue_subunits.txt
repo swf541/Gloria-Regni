@@ -1,0 +1,110 @@
+# Types:
+# 0 - Light Infantry
+# 1 - Heavy Infantry
+# 2 - Pikemen
+# 3 - Light Cavalry
+# 4 - Heavy Cavalry
+# 5 - Archers
+# 6 - Special troops
+
+###CULTURAL RETINUES - these are made to not be available to roman governments (or other governments that use the standing army system), just like all other non-roman-government-specifc retinues (which make up the standing army system)
+
+##ROMAN (VANNILA NAME: "BYZANTINE")  GROUP
+
+#This is the vannila cataphracts by default available to the Roman (vannila name: "byzantine") group, copied here and removed from the mod's version of "00_retinue_subunits" for easier editing
+RETTYPE_CUL_BYZ = {
+	first_type = 4
+	first_amount = 150
+	
+	second_type = 6
+	second_amount = 100
+
+	special_troops = horse_archers
+	
+	potential = {
+		NOT = { government = roman_government }
+		is_nomadic = no
+		culture_group = byzantine
+	}
+	
+	modifier = {
+		knights_offensive = 0.1
+		knights_defensive = 0.1
+		knights_morale = 0.2
+		horse_archers_offensive = 0.1
+		horse_archers_defensive = 0.1
+		horse_archers_morale = 0.2
+	}
+}
+
+#This is the "Latin (vannila name: "roman") cultural retinue", but it is made available to the whole Roman (vannila name: "byzantine") group
+Latin_Century = {
+	first_type = 1
+	first_amount = 100
+	
+	potential = {
+		NOT = { government = roman_government }
+		is_nomadic = no
+		culture_group = byzantine
+	}
+	
+	modifier = { 
+		heavy_infantry_offensive = 0.2
+		heavy_infantry_defensive = 0.2
+		heavy_infantry_morale = 0.2
+	
+	}
+}
+
+###STANDING ARMY SYSTEM RETINUES
+
+##ROMAN GOVERNMENT
+
+#Cataphract Standing Army
+Greek_Cataphract_Standing = {
+	first_type = 4
+	first_amount = 150
+	
+	second_type = 6
+	second_amount = 100
+
+	special_troops = horse_archers
+	
+	hire_cost = 0
+	
+	maintenance_multiplier = 0.25
+	
+	potential = {
+		government = roman_government
+	}
+	
+	modifier = {
+		knights_offensive = 0.1
+		knights_defensive = 0.1
+		knights_morale = 0.2
+		horse_archers_offensive = 0.1
+		horse_archers_defensive = 0.1
+		horse_archers_morale = 0.2
+	}
+}
+
+#Century Standing Army
+Latin_Century_Standing = {
+	first_type = 1
+	first_amount = 100
+	
+	hire_cost = 0
+	
+	maintenance_multiplier = 0.25
+	
+	potential = {
+		government = roman_government
+	}
+	
+	modifier = { 
+		heavy_infantry_offensive = 0.2
+		heavy_infantry_defensive = 0.2
+		heavy_infantry_morale = 0.2
+	
+	}
+}

@@ -1,0 +1,25 @@
+# 697 - Mosul
+
+# County Title
+title = c_mosul
+
+# Settlements
+max_settlements = 6
+b_mosul = castle
+b_karamlish = temple # Yazidi Holy Place
+b_bartella = city
+b_baqofah = castle
+
+#b_shekhan = castle
+#b_aqrah = castle
+
+#Misc
+culture = kurdish
+religion = nestorian
+
+# History
+867.1.1 = { religion = sunni }
+1187.1.1 = { remove_settlement = b_bartella }
+1200.1.1 = {
+	religion = yazidi
+}

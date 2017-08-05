@@ -1,0 +1,613 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Cathar    	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPcathar
+
+
+#CATHAR events
+# Child gains chaste
+character_event = {
+	id = HPcathar.12100
+	desc = EVTDESC_HRP_12100
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	
+	min_age = 6
+	max_age = 16
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = lustful }
+		NOT = { trait = chaste }
+		has_guardian = yes
+		religion = cathar
+	}
+	option = {
+		name = EVTOPTA_HRP_12100
+		add_trait = chaste
+	}
+}
+# Child catches teh gay (male)
+character_event = {
+	id = HPcathar.12101
+	desc = EVTDESC_HRP_12101
+	picture = GFX_evt_brothel
+	
+	min_age = 13
+	max_age = 18
+	only_men = yes
+	
+	trigger = {
+		is_married = no
+		NOT = {
+			trait = homosexual
+		}
+		NOT = {
+			trait = celibate
+		}
+		religion = cathar
+	}
+
+	mean_time_to_happen = {
+		months = 960
+		modifier = {
+			factor = 0.75
+			martial = 10
+			trait = fair
+		}
+		
+		modifier = {
+			factor = 0.75
+			trait = shy
+			learning = 10
+		}
+		
+		modifier = {
+			factor = 0.75
+			trait = trusting
+			any_courtier = {
+				age = 12
+				not = { age = 18 }
+				trait = homosexual
+				reverse_opinion = { who = ROOT value = 25 }
+			}		
+		} 
+	}
+	
+	option = {
+		name = "EVTOPTA1980"
+		add_trait = homosexual
+	}
+}
+# Child catches teh gay (yuri style)
+character_event = {
+	id = HPcathar.12102
+	desc = EVTDESC_HRP_12102
+	picture = GFX_evt_garden
+	
+	min_age = 12
+	max_age = 17
+	only_women = yes
+	
+	trigger = {
+		is_married = no
+		religion = cathar
+		NOT = {
+			trait = homosexual
+		}
+		NOT = {
+			trait = celibate
+		}		
+	}
+
+	mean_time_to_happen = {
+		months = 960
+		
+		modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		
+		modifier = {
+			factor = 0.5
+			trait = chaste
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1980"
+		add_trait = homosexual
+	}
+}
+# Adult goes celibate
+character_event = {
+	id = HPcathar.12103
+	desc = EVTDESC_HRP_12103
+	picture = GFX_evt_brothel
+	
+	min_age = 25
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cathar
+		trait = zealous
+		NOT = { trait = celibate }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_12103
+		add_trait = celibate
+	}
+}
+#[on_birth] Child malus
+character_event = {
+	id = HPcathar.12104
+	desc = EVTDESC_HRP_12104
+	picture = GFX_evt_brothel
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cathar
+		OR = {
+			father = {
+				religion = cathar
+			}
+			mother = {
+				religion = cathar
+			}
+		}
+	}
+	immediate = {
+		father = {
+			character_event = {
+				id = HPcathar.12105
+				days = 3
+			}
+		}
+		mother = {
+			character_event = {
+				id = HPcathar.12105
+				days = 3
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HPcathar.12105
+	desc = EVTDESC_HRP_12105
+	picture = GFX_evt_lovers
+	is_triggered_only = yes
+	trigger = {
+		religion = cathar
+	}
+	option = {
+		name = EVTOPTA_HRP_12105
+		piety = -50
+		prestige = -50
+	}
+}
+
+#####
+# BROTHER JOINS MOVEMENT
+character_event = {
+	id = HPcathar.12106
+	desc = EVTDESC_HRP_12106
+	picture = GFX_evt_lovers
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		NOT = { religion = cathar }
+		any_realm_province = {
+			religion = cathar
+		}
+		any_sibling = {
+			age = 16
+			is_ruler = no
+			is_female = no
+			NOT = {
+				religion = cathar
+			}
+		}			
+	}
+	immediate = {
+		random_sibling = {
+			limit = {
+				age = 16
+				is_ruler = no
+				is_female = no
+				NOT = {
+					religion = cathar
+				}
+			}
+			character_event = {
+				id = HPcathar.12107
+			}
+		}
+	}
+}
+character_event = {
+	id = HPcathar.12107
+	desc = EVTDESC_HRP_12107
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_12107
+		piety = 50
+		religion = cathar
+		FROM = {
+			letter_event = {
+				id = HPcathar.12108
+			}
+		}
+	} 
+	option = {
+		name = EVTOPTB_HRP_12107
+		add_trait = stressed
+	}
+}
+letter_event = {
+	id = HPcathar.12108
+	desc = EVTDESC_HRP_12108
+	border = GFX_event_letter_frame_religion
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_12108
+	}
+}
+character_event = {
+	id = HPcathar.12200
+	desc = EVTDESC_HRP_12200
+	picture = GFX_evt_child_talking
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_12200
+		piety = 50
+		ROOT = {
+			create_character = {
+				dynasty = ROOT
+				religion = cathar
+				culture = ROOT
+				female = no
+				age = 5
+				health = 6.5
+				fertility = 0.4
+				attributes = {
+					learning = 2
+					diplomacy = 2
+					martial = 2
+					stewardship = 2
+					intrigue = 2
+				}
+			}
+			new_character = {
+				ROOT = {
+					if = {
+						limit = {
+							is_female = no 
+						}
+						PREV = {
+							set_father = ROOT
+						}
+					}
+				}
+				ROOT = {
+					if = {
+						limit = {
+							is_female = yes 
+						}
+						PREV = {
+							set_mother = ROOT
+						}
+					}
+				}
+				
+				random_list = {
+					1 = {
+						add_trait = genius
+					}
+					3 = {
+						add_trait = quick
+					}
+					3 = {
+						add_trait = ugly
+					}
+					2 = {
+						add_trait = slow
+					}
+					4 = {
+						add_trait = fair
+					}
+					4 = {
+						add_trait = legit_bastard
+					}
+					10 = { }
+				}
+				add_trait = adopted
+				add_trait = shy
+				is_primary_heir = yes
+				recalc_succession = yes
+			}
+		}
+	} 
+}
+#The Rise of the Cathar
+#Council of Saint-Félix
+narrative_event = {
+	id = HPcathar.12000
+	title = EVTTITLE_HRP_12000
+	desc = EVTDESC_HRP_12000
+	picture = GFX_evt_mary_magdalene
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = rise_cathar }
+		year = 1167
+		has_landed_title = c_carcassonne
+		religion = catholic
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = EVTOPTA_HRP_12000
+		trigger = {
+			has_landed_title = c_carcassonne
+		}
+		set_global_flag = rise_cathar
+		piety = -100
+		213 = {
+			religion = cathar
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_12000
+		trigger = {
+			NOT = { has_landed_title = c_carcassonne }
+			religion = catholic
+			has_landed_title = c_toulouse
+		}
+		214 = {
+			religion = cathar
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_12000
+		trigger = {
+			NOT = { has_landed_title = c_carcassonne }
+			NOT = { has_landed_title = c_toulouse }
+			religion = catholic
+			has_landed_title = c_foix
+		}
+		210 = {
+			religion = cathar
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTA_HRP_12000
+		trigger = {
+			NOT = { has_landed_title = c_carcassonne }
+			NOT = { has_landed_title = c_toulouse }
+			NOT = { has_landed_title = c_foix }
+			religion = catholic
+			has_landed_title = c_narbonne
+		}
+		212 = {
+			religion = cathar
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_12000
+		trigger = {
+			religion = catholic
+			NOT = { has_landed_title = c_carcassonne }
+			NOT = { has_landed_title = c_toulouse }
+			NOT = { has_landed_title = c_foix }
+			NOT = { has_landed_title = c_narbonne }
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_12000
+		trigger = {
+			NOT = { religion = catholic }
+			NOT = { religion = bogomilist }
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_12000
+		trigger = {
+			religion = bogomilist
+		}
+		hidden_tooltip = {
+			character_event = { id = HPbogomilist.10210 days = 2 }
+		}
+	}
+}
+narrative_event = {
+	id = HPcathar.12001
+	title = EVTTITLE_HRP_12001
+	desc = EVTDESC_HRP_12001
+	major = yes
+	
+	picture = GFX_evt_heresy_defeated
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		religion = cathar
+		war = yes
+		is_primary_war_defender = yes
+		NOT = { has_global_flag = cathar_war }
+		any_war = {
+			OR = {
+				using_cb = crusade
+				using_cb = religious
+				using_cb = religious_revolt
+				using_cb = pagan_holy_war
+				using_cb = buddhist_holy_war
+				using_cb = muslim_invasion
+				using_cb = manifest_destiny_invasion
+			}
+		}
+	}
+	mean_time_to_happen = {
+                days = 50
+        }
+	major_trigger = {
+		religion = cathar
+	}
+	immediate = {
+		set_global_flag = cathar_war
+	}
+	option = {
+		name = EVTOPTA_HRP_12001
+	}
+}
+character_event = {
+	id = HPcathar.12010
+	desc = EVTDESC_HRP_12010
+	picture = GFX_evt_pope
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_12010
+		ROOT = {
+			create_character = {
+				dynasty = random
+				religion = cathar
+				culture = ROOT
+				age = 35
+				health = 7
+				fertility = 0.0
+				trait = quick
+				
+				trait = mastermind_theologian
+				attributes = {
+					learning = 5
+					diplomacy = 5
+					martial = 2
+					stewardship = 5
+					intrigue = 5
+				}
+			}
+			new_character = {
+				add_trait = perfecti
+				activate_title = { title = d_cathar status = yes }
+				d_cathar = {
+					grant_title = PREV
+				}
+				set_defacto_liege = ROOT
+			}
+		}
+		hidden_tooltip = { narrative_event = { id = HPcathar.12011 days = 3 } }
+	} 
+}
+narrative_event = {
+	id = HPcathar.12011
+	title = EVTTITLE_HRP_12011
+	desc = EVTDESC_HRP_12011
+	major = yes
+	
+	picture = GFX_evt_pope
+	border = GFX_event_narrative_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_HRP_12011
+		trigger = { NOT = { religion = cathar } }
+	}
+	option = {
+		name = EVTOPTB_HRP_12011
+		trigger = { religion = cathar }
+	}
+}
+narrative_event = {
+	id = HPcathar.12012
+	title = EVTTITLE_HRP_12012
+	desc = EVTDESC_HRP_12012
+	major = yes
+	
+	picture = GFX_evt_mary_magdalene
+	border = GFX_event_narrative_frame_intrigue
+	
+	trigger = {
+		has_landed_title = d_cathar
+		is_female = yes
+		not = { has_global_flag = popess }
+	}
+	immediate = {
+		set_global_flag = popess
+	}
+	option = {
+		name = EVTOPTA_HRP_12012
+		trigger = { NOT = { religion = cathar } }
+	}
+	option = {
+		name = EVTOPTB_HRP_12012
+		trigger = { 
+			religion = cathar 
+			NOT = { has_landed_title = d_cathar }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_12012
+		trigger = { 
+			religion = cathar 
+			has_landed_title = d_cathar
+		}
+		religion_authority = {
+			modifier = popess
+			years = 20
+		}
+	}
+}
+character_event = {
+	id = HPcathar.12999
+	desc = EVTDESC_HRP_12999
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+
+	trigger = {
+		religion = cathar
+		has_character_flag = consolamentum_taken
+		NOT = { trait = perfecti }
+		NOT = { has_character_modifier = cathar_fallen_perfecti }
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = {
+		name = EVTOPTA_HRP_12999
+		add_character_modifier = { name = cathar_fallen_perfecti duration = -1 }
+		piety = -200
+	}
+}

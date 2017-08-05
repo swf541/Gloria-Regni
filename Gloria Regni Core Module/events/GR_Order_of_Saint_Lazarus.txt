@@ -1,0 +1,102 @@
+namespace = OSL
+# Formation of the Order of Saint Lazarus
+narrative_event = {
+	id = OSL.39101
+	title = "EVTNAMEOSL.39101"
+	desc = "EVTDESCOSL.39101"
+	picture = "GFX_evt_crusaders"
+	border = "GFX_event_narrative_frame_religion"
+	
+	major = yes
+	only_playable = yes
+	only_men = yes
+	religion_group = christian
+	has_global_flag = christian_crusades_unlocked
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
+		}
+		is_heretic = no
+		
+		NOT = { year = 1312 }
+		NOT = { is_title_active = d_order_of_saint_lazarus }
+	
+		
+		OR = {
+			year = 1118	# Historical
+			
+			e_byzantium = {
+				holder_scope = {
+					NOT = { religion_group = christian }
+				}
+			}
+			496 = { # Constantinople
+				NOT = { owner = { religion_group = christian } }
+			}
+			753 = { # Ancyra
+				NOT = { owner = { religion_group = christian } }
+			}
+			333 = { # Rome
+				NOT = { owner = { religion_group = christian } }
+			}
+			AND = {
+				482 = { # Athens
+					NOT = { owner = { religion_group = christian } }
+				}
+				481 = { # Corinth
+					NOT = { owner = { religion_group = christian } }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		activate_title = { title = d_order_of_saint_lazarus status = yes }
+		create_random_soldier = {
+			dynasty = none
+			random_traits = yes
+			religion = ROOT
+		}
+		new_character = {
+			d_order_of_saint_lazarus = {
+				grant_title = PREV
+			}
+			set_defacto_liege = THIS
+			wealth = 600
+			set_government_type = feudal_government
+		}
+		
+		religion_authority = {
+			modifier = religious_order_formed
+			years = 10
+		}
+	}
+	option = {
+		name = "EVTOPTAOSL.39101"
+		trigger = {
+			religion = ROOT
+		}
+	}
+	option = {
+		name = "EVTOPTBOSL.39101"
+		trigger = {
+			NOT = { religion_group = christian }
+		}
+	}
+	option = {
+		name = "EVTOPTC39100"
+		trigger = {
+			religion_group = christian
+			NOT = { religion = ROOT }
+		}
+	}
+}

@@ -1,0 +1,360 @@
+namespace = SCHISM
+character_event = { 
+	id = SCHISM.1
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = miaphysite
+			religion = monothelite
+			religion = iconoclast
+			religion = nestorian
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_rome }
+		has_landed_title = b_roma
+	}
+
+	immediate = {
+		name = OK
+		top_liege = { save_event_target_as = root_liege }
+		if = { 
+			limit = {
+				NOT = { has_global_flag = con_center_authority }
+			}
+			k_imperial = {
+				usurp_title = ROOT
+			}
+			k_imperial = {
+				grant_title = ROOT
+			}
+		}
+		d_rome = {
+			usurp_title = ROOT
+		}
+		d_rome = {
+			grant_title = ROOT
+		}
+		d_rome = {
+			set_defacto_liege = event_target:root_liege
+		}
+	}
+}
+
+# Rome De-Established
+character_event = {
+	id = SCHISM.2
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+
+	trigger = {
+		has_landed_title = d_rome
+		OR = {
+			NOT = { has_landed_title = b_roma }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = miaphysite
+					religion = monothelite
+					religion = iconoclast
+					religion = nestorian
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+
+	immediate = {
+		name = OK
+		d_rome = { unsafe_destroy_landed_title = THIS }
+	}
+}
+
+
+## Patriarchate of Constantinople
+
+# Constantinople Re-Established
+character_event = { 
+	id = SCHISM.3
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			religion = imperial
+			religion = arian
+			religion = donatism
+			religion = adoptionism
+			religion = sabellianism
+			religion = pelagianism
+			religion = macedonianism
+			religion = marcionism
+			religion = priscillianism
+			religion = valentinianism
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+		}
+
+		is_theocracy = yes
+		NOT = { has_landed_title = d_constantinople }
+		has_landed_title = b_hagiasophia
+	}
+
+
+	immediate = {
+		name = OK
+		if = { 
+			limit = {
+				has_global_flag = con_center_authority 
+			}
+			k_imperial = {
+				usurp_title = ROOT
+			}
+			k_imperial = {
+				grant_title = ROOT
+			}
+		}
+		top_liege = { save_event_target_as = root_liege }
+		d_constantinople = {
+			grant_title = ROOT
+		}
+		d_constantinople = {
+			set_defacto_liege = event_target:root_liege
+		}
+	}
+}
+
+# Constantinople De-Established
+character_event = {
+	id = SCHISM.4
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+
+	trigger = {
+		has_landed_title = d_constantinople
+		OR = {
+			NOT = { has_landed_title = b_hagiasophia }
+			NOT = { is_theocracy = yes }
+			NOT = { 
+				OR = {
+					religion = imperial
+					religion = arian
+					religion = donatism
+					religion = adoptionism
+					religion = sabellianism
+					religion = pelagianism
+					religion = macedonianism
+					religion = marcionism
+					religion = priscillianism
+					religion = valentinianism
+					religion = orthodox
+					religion = monothelite
+					religion = iconoclast
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		name = OK
+		d_constantinople = { unsafe_destroy_landed_title = THIS }
+	}
+}
+
+# Constantinople Reformed (Orthodox)
+character_event = {
+	id = SCHISM.5
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_orthodox
+		d_constantinople = {
+			holder_scope = {
+				AND = {
+					religion = orthodox
+					NOT = { has_landed_title = k_orthodox }
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		name = OK
+		d_constantinople = { grant_title = ROOT }
+		b_hagiasophia = { grant_title = ROOT }
+	}
+}
+
+# Constantinople Reformed (Iconoclast)
+character_event = {
+	id = SCHISM.6
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = d_iconoclast
+		d_constantinople = {
+			holder_scope = {
+				AND = {
+					religion = iconoclast
+					NOT = { has_landed_title = d_iconoclast }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		name = OK
+		d_constantinople = { grant_title = ROOT }
+		b_hagiasophia = { grant_title = ROOT }
+	}
+}
+
+# Establishing Liege for the Pentarchs
+
+character_event = {
+	id = SCHISM.17
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_landed_title = d_rome
+			has_landed_title = d_constantinople
+			has_landed_title = d_pentarch_alexandria
+			has_landed_title = d_pentarch_antioch
+			has_landed_title = d_pentarch_jerusalem	
+		}
+		independent = yes
+		NOT = {
+			num_of_count_titles = 1
+			num_of_king_titles = 1
+			num_of_emperor_titles = 1
+		}
+	}
+
+	immediate = {
+		name = OK
+		capital_holding = {
+			dejure_liege_title = {
+				holder_scope = {
+					top_liege = {
+						set_defacto_vassal = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = { 
+	id = SCHISM.18
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		religion = imperial
+		OR = {
+			AND = {
+				has_landed_title = d_rome
+				NOT = { has_global_flag = con_center_authority }
+			}
+			AND = {
+				has_landed_title = d_constantinople
+				has_global_flag = con_center_authority 
+			}
+		}
+		is_theocracy = yes
+		NOT = { has_landed_title = k_imperial }
+		has_landed_title = b_roma
+	}
+
+	immediate = {
+		name = OK
+		top_liege = { save_event_target_as = root_liege }
+		k_imperial = {
+			grant_title = ROOT
+		}
+		k_imperial = {
+			set_defacto_liege = event_target:root_liege
+		}
+	}
+}
+character_event = {
+	id = SCHISM.19
+	desc = OK
+	picture = GFX_evt_bishop_byzantine
+
+	hide_window = yes
+
+	trigger = {
+		has_landed_title = k_imperial
+		NOT = { has_global_flag = con_center_authority }
+		NOT = { has_landed_title = d_rome }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		name = OK
+		k_imperial = { unsafe_destroy_landed_title = THIS }
+	}
+}

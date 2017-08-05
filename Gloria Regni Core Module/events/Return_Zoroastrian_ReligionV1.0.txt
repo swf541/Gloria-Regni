@@ -1,0 +1,105 @@
+namespace = RZR
+character_event = {                        #Arival at china 
+	id = RZR.1
+        title = "EVTNAMERZR.1"
+	desc = "EVTDESCRZR.1"
+	picture = "GFX_evt_chagan"
+
+        is_triggered_only = yes
+                        
+	option = {
+		name = "EVTOPTARZR.1" #
+                add_trait = cynical 
+                Prestige = 100
+                character_event = { id = RZR.2 }
+}
+	option = {
+		name = "EVTOPTBRZR.1" #
+                add_trait = zealous 
+                piety = 100 
+                remove_trait = on_pilgrimage
+         }
+}
+character_event = {                        #You arived at Ch’ang-an
+        id = RZR.2
+        title = "EVTNAMERZR.2"
+        desc = "EVTDESCRZR.2"
+        picture = "GFX_evt_Changan_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARZR.2" # 
+		Prestige = 100	
+                add_trait = sympathy_zoroastrianism
+                character_event = { id = RZR.3 }
+	}
+}
+character_event = {                        #you meed a men who says he can bring in contact with a relative of King Peroz
+        id = RZR.3
+        title = "EVTNAMERZR.3"
+        desc = "EVTDESCRZR.3"
+        picture = "GFX_evt_Changan_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARZR.3" # 
+		Prestige = 100	
+		character_event = { id = RZR.4 }
+	}
+}
+
+character_event = {                        #You learnt that he was a royal guard of the tang dynasty
+        id = RZR.4
+        title = "EVTNAMERZR.4"
+        desc = "EVTDESCRZR.4"
+        picture = "GFX_evt_Changan_palace"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARZR.4" # 
+		Prestige = 100
+                character_event = { id = RZR.5 }	
+}              
+        option = {
+                name = "EVTOPTBRZR.4" # 
+                add_trait = zealous
+                piety = 150 
+                
+        }
+  }
+character_event = {                        #The leader of the tang dynasty sent some guards with you to the place where the last relatives live
+        id = RZR.5
+        title = "EVTNAMERZR.5"
+        desc = "EVTDESCRZR.5"
+        picture = "GFX_evt_Changan_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARZR.5" # 
+		piety = 100	
+                religion = zoroastrian
+                remove_trait = on_pilgrimage	
+                add_trait = zealous 
+                prestige = 50
+}
+        option = { 
+                name = "EVTOPTBRZR.5" # 
+		piety = 100	
+                religion = zoroastrian
+                remove_trait = on_pilgrimage	
+                add_trait = zealous
+                Prestige = 10
+}
+        option = { 
+                name = "EVTOPTCRZR.5" # 
+		piety = 100	
+                remove_trait = on_pilgrimage
+				}
+}
+
+
+

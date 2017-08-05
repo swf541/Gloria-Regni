@@ -1,0 +1,469 @@
+namespace = ZOR
+narrative_event = {
+	id = ZOR.10
+	title = EVTNAMEZOR.10
+	desc =EVTDESC_ZOR.10
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = sogdia_reconquered }
+		completely_controls = k_khiva
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.10
+		set_global_flag = sogdia_reconquered 
+		prestige = 100
+		k_khiva = { set_name = Sogdia }
+	}
+}
+
+narrative_event = {
+	id = ZOR.11
+	title = EVTNAMEZOR.11
+	desc = EVTDESC_ZOR.11
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = bactria_reconquered }
+		completely_controls = k_afghanistan
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.11
+		set_global_flag = bactria_reconquered 
+		prestige = 100
+		k_afghanistan = { set_name = Bactria }
+	}
+}
+
+narrative_event = {
+	id = ZOR.12
+	title = EVTNAMEZOR.12
+	desc = EVTDESC_ZOR.12
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = baluchistan_reconquered }
+		completely_controls = k_baluchistan 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.12
+		set_global_flag = baluchistan_reconquered 
+		prestige = 100
+		k_baluchistan = { set_name = Gedrosia }
+	}
+}
+
+narrative_event = {
+	id = ZOR.13
+	title = EVTNAMEZOR.13
+	desc = EVTDESC_ZOR.13
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = northern_persia_reconquered }
+		completely_controls = d_azerbaijan 
+		completely_controls = d_mazandaran 
+		completely_controls = d_tabriz
+		completely_controls = d_khorasan  
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.13
+		set_global_flag = northern_persia_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.14
+	title = EVTNAMEZOR.14
+	desc = EVTDESC_ZOR.14
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = central_persia_reconquered }
+		completely_controls = d_hamadan 
+		completely_controls = d_kermanshah 
+		completely_controls = d_esfahan 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.14
+		set_global_flag = central_persia_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.15
+	title = EVTNAMEZOR.15
+	desc = EVTDESC_ZOR.15
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = southern_persia_reconquered }
+		completely_controls = d_fars 
+		completely_controls = d_kerman 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.15
+		set_global_flag = southern_persia_reconquered 
+		prestige = 100
+	}
+}
+
+
+narrative_event = {
+	id = ZOR.16
+	title = EVTNAMEZOR.16
+	desc = EVTDESC_ZOR.16
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = assyria_reconquered }
+		completely_controls = d_jazira
+		completely_controls = d_mosul
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.16
+		set_global_flag = assyria_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.17
+	title = EVTNAMEZOR.17
+	desc = EVTDESC_ZOR.17
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = ctesiphon_seleucia_reconquered }
+		completely_controls = d_baghdad 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.17
+		set_global_flag = ctesiphon_seleucia_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.18
+	title = EVTNAMEZOR.18
+	desc = EVTDESC_ZOR.18
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+		NOT = { has_global_flag = southern_mesopatamia_reconquered }
+		completely_controls = d_tigris
+		completely_controls = d_basra
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.18
+		set_global_flag = southern_mesopatamia_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.19
+	title = EVTNAMEZOR.19
+	desc = EVTDESC_ZOR.19
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+		NOT = { has_global_flag = armenia_reconquered }
+		completely_controls = k_armenia
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTALoR.19
+		set_global_flag = armenia_reconquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.20
+	title = EVTNAMEZOR.20
+	desc = EVTDESC_ZOR.20
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+		NOT = { has_global_flag = georgia_conquered }
+		completely_controls = k_georgia
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.20
+		set_global_flag = armenia_conquered 
+		prestige = 100
+	}
+}
+ 
+narrative_event = {
+	id = ZOR.21
+	title = EVTNAMEZOR.21
+	desc = EVTDESC_ZOR.21
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = turkestan_conquered }
+		completely_controls = k_turkestan
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.21
+		set_global_flag = turkestan_conquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.22
+	title = EVTNAMEZOR.22
+	desc = EVTDESC_ZOR.22
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = syria_conquered }
+		completely_controls = k_syria
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.22
+		set_global_flag = syria_conquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.23
+	title = EVTNAMEZOR.23
+	desc = EVTDESC_ZOR.23
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = alania_conquered }
+		completely_controls = k_alania
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.23
+		set_global_flag = alania_conquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.24
+	title = EVTNAMEZOR.24
+	desc = EVTDESC_ZOR.24
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = egypt_conquered }
+		completely_controls = k_egypt
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.22
+		set_global_flag = egypt_conquered 
+		prestige = 100
+	}
+}
+
+narrative_event = {
+	id = ZOR.25
+	title = EVTNAMEZOR.25
+	desc = EVTDESC_ZOR.25
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	ai = no
+	
+	trigger = {
+		religion_group = zoroastrian_group 
+
+		NOT = { has_global_flag = jerusalem_conquered }
+		completely_controls = k_jerusalem
+		OR = {
+			has_landed_title = e_persia
+			has_landed_title = k_persia
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTAZOR.22
+		set_global_flag = jerusalem_conquered 
+		prestige = 100
+	}
+}

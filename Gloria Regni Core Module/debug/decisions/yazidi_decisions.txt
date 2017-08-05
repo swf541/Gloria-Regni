@@ -1,0 +1,112 @@
+decisions = {
+        choose_yazidi_patron_deity = {
+                potential = {
+                        has_dlc = "Rajas of India"
+                        is_playable = yes
+                        age = 16
+                        not = { trait = incapable }
+                        religion = yazidi
+                        NOT = {
+                                has_character_modifier = patron_taus
+                                has_character_modifier = patron_israfel
+                                has_character_modifier = patron_azrael
+                                has_character_modifier = patron_mihael
+                                has_character_modifier = patron_dardael
+                                has_character_modifier = patron_samael
+								has_character_modifier = patron_nurael
+                        }
+                }
+                allow = {
+                        prisoner = no
+                }
+                effect = {
+                        character_event = { id = HPyazidi.1120 }
+                }
+                revoke_allowed = {
+                        always = no
+                }
+                ai_will_do = {
+                        factor = 1
+                        modifier = {
+                                factor = 5
+                                trait = zealous
+                        }
+                        modifier = {
+                                factor = 0.5
+                                trait = cynical
+                        }
+                }
+        }
+	yazidi_pilgrimage = { 
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			religion = yazidi
+			NOT = { trait = yazidi_pilgrim }
+			NOT = { has_character_flag = pilgrimage_to_lalish }
+			NOT = { has_character_flag = do_not_disturb }
+			
+		}
+		allow = {
+			war = no
+			in_command = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			month = 7
+			NOT = { month = 9 }
+			prisoner = no
+			NOT = { trait = in_hiding }
+			scaled_wealth = 0.2
+			age = 16
+			custom_tooltip = {
+				text = health_travel_condition
+				hidden_tooltip = {
+					NOT = {	trait = pregnant }
+					NOT = {	trait = incapable }
+					NOT = {	trait = blinded }
+					NOT = {	trait = has_tuberculosis }
+					NOT = {	trait = has_typhoid_fever }
+					NOT = {	trait = has_typhus }
+					NOT = {	trait = has_bubonic_plague }
+					NOT = {	trait = has_measles }
+					NOT = {	trait = has_small_pox }
+					NOT = {	trait = has_aztec_disease }
+				}
+			}
+		}
+		effect = {
+			scaled_wealth = -0.2
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { 
+					id = HPyazidi.1600
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.5             # Only a minority of Yazidi ever go on a pilgrimage
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+			}			
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+
+}

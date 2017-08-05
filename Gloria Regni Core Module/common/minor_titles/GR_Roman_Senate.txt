@@ -1,0 +1,117 @@
+# Gloria Regni Roman and Byzantine Senate Titles
+title_senator = {
+	dignity = 0.25
+	realm_in_name = yes
+	grant_limit = 28
+	opinion_effect = 15
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.50
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_drafter_of_laws = {
+	dignity = 0.3
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 20
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.15
+	monthly_prestige = 0.75
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_protomagistros = {
+	dignity = 0.35
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 25
+	revoke_allowed = yes
+	is_voter = yes
+	
+	monthly_salary = 0.2
+	monthly_prestige = 1
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}

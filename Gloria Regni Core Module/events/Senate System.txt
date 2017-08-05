@@ -1,0 +1,35 @@
+namespace = SEN
+character_event = {
+	id = SEN.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			OR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_wre
+			}
+        }     
+
+        immediate = {
+			any_courtier = {
+				limit = { has_minor_title = title_senator }
+					remove_title = title_senator
+				}
+			any_courtier = {
+				limit = { has_minor_title = title_drafter_of_laws }
+					remove_title = title_drafter_of_laws
+				}
+			any_courtier = {
+				limit = { has_minor_title = title_protomagistros }
+					remove_title = title_protomagistros
+				}
+			}
+	
+	option = {
+		name = ok
+	}
+}

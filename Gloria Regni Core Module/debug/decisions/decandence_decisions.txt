@@ -1,0 +1,216 @@
+decisions = {
+	reduce_decadence_levels_count = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			tier = count
+			NOT = { trait = incapable }
+			religion_group = muslim
+			NOT = { has_character_flag = able_to_lower }
+			OR = {
+				AND = {
+					has_law = hp_decadence_4
+					NOT = { decadence = 80 }
+				}
+				AND = {
+					has_law = hp_decadence_3
+					NOT = { decadence = 60 }
+				}
+				AND = {
+					has_law = hp_decadence_2
+					NOT = { decadence = 40 }
+				}
+				AND = {
+					has_law = hp_decadence_1
+					NOT = { decadence = 20 }
+				}
+			}
+		}
+		allow = {
+			piety = 250
+		}
+		effect = {
+			set_character_flag = able_to_lower 
+			piety = -200
+			decadence = -10
+			religion_authority = {
+				modifier = undecadent_ruler_count
+				years = 10
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	reduce_decadence_levels_duke = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			tier = duke
+			NOT = { trait = incapable }
+			religion_group = muslim
+			NOT = { has_character_flag = able_to_lower }
+			OR = {
+				AND = {
+					has_law = hp_decadence_4
+					NOT = { decadence = 80 }
+				}
+				AND = {
+					has_law = hp_decadence_3
+					NOT = { decadence = 60 }
+				}
+				AND = {
+					has_law = hp_decadence_2
+					NOT = { decadence = 40 }
+				}
+				AND = {
+					has_law = hp_decadence_1
+					NOT = { decadence = 20 }
+				}
+			}
+		}
+		allow = {
+			piety = 500
+		}
+		effect = {
+			set_character_flag = able_to_lower 
+			piety = -450
+			decadence = -10
+			religion_authority = {
+				modifier = undecadent_ruler_duke
+				years = 10
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	reduce_decadence_levels_king = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			tier = king
+			NOT = { trait = incapable }
+			religion_group = muslim
+			NOT = { has_character_flag = able_to_lower }
+			OR = {
+				AND = {
+					has_law = hp_decadence_4
+					NOT = { decadence = 80 }
+				}
+				AND = {
+					has_law = hp_decadence_3
+					NOT = { decadence = 60 }
+				}
+				AND = {
+					has_law = hp_decadence_2
+					NOT = { decadence = 40 }
+				}
+				AND = {
+					has_law = hp_decadence_1
+					NOT = { decadence = 20 }
+				}
+			}
+		}
+		allow = {
+			piety = 1000
+		}
+		effect = {
+			set_character_flag = able_to_lower 
+			piety = -950
+			decadence = -10
+			religion_authority = {
+				modifier = undecadent_ruler_king
+				years = 10
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	reduce_decadence_levels_emperor = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			tier = emperor
+			NOT = { trait = incapable }
+			religion_group = muslim
+			NOT = { has_character_flag = able_to_lower }
+			OR = {
+				AND = {
+					has_law = hp_decadence_4
+					NOT = { decadence = 80 }
+				}
+				AND = {
+					has_law = hp_decadence_3
+					NOT = { decadence = 60 }
+				}
+				AND = {
+					has_law = hp_decadence_2
+					NOT = { decadence = 40 }
+				}
+				AND = {
+					has_law = hp_decadence_1
+					NOT = { decadence = 20 }
+				}
+			}
+		}
+		allow = {
+			piety = 2000
+		}
+		effect = {
+			set_character_flag = able_to_lower 
+			piety = -1950
+			decadence = -10
+			religion_authority = {
+				modifier = undecadent_ruler_emperor
+				years = 10
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	decadence_dissolution = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			higher_tier_than = duke
+			is_patrician = no
+			war = no
+			OR = {
+				has_law = hp_decadence_0
+				has_law = hp_decadence_1
+			}
+			liege = {
+				crownlaw_title = {
+					has_law = crown_authority_0
+				}
+				independent = yes
+				has_law = hp_decadence_4
+			}
+			NOT = { trait = incapable }
+			religion_group = muslim
+			NOT = { has_character_flag = able_to_lower }
+		}
+		allow = {
+			piety = 200
+			prestige = 200
+			NOT = { opinion = { who = liege value = -25 } }
+		}
+		effect = {
+			character_event = { id = HPdecadence.50910 }
+			decadence = -10
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+	}
+
+
+}

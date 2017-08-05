@@ -1,0 +1,78 @@
+law_groups = {
+	 standing_army_roman = {
+		law_type = realm
+	}
+}
+
+laws = {
+	standing_army_roman_0 = {
+		group = standing_army_roman
+		allow = {
+			has_law = standing_army_roman_1
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = {
+				government = roman_government
+				independent = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+			character_event = { id = ROMEGOV.2 } 
+		}
+		effect = {			
+			hidden_tooltip = {
+				revoke_law = standing_army_roman_1
+			}
+		}
+		
+	#levy_size = -0.9
+	#retinuesize_perc = 10
+	}
+	standing_army_roman_1 = {
+		group = standing_army_roman
+		allow = {
+			OR = {
+				has_law = standing_army_roman_1
+				has_law = standing_army_roman_0
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = {
+				government = roman_government
+				independent = yes
+				NOT = { completely_controls = k_anatolia }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		pass_effect = {
+			character_event = { id = ROMEGOV.3 } 
+		}
+		effect = {
+			
+			hidden_tooltip = {
+				revoke_law = standing_army_roman_0
+			}
+	#levy_size = -0.5
+	#retinuesize_perc = 7
+		}
+	}
+}

@@ -1,0 +1,26 @@
+# 914 - Gao
+
+# County Title
+title = c_gao
+
+# Settlements
+max_settlements = 6
+b_gao = tribal
+b_gaosaney = temple #Gao-Saney
+
+#b_sarnah = city 
+#b_bourem = castle
+#b_menaka = castle #Ménaka
+#b_gabero = castle
+
+# Misc
+culture = songhai
+religion = west_african_pagan
+
+# History
+
+1070.1.1 = {
+	religion = sunni
+	b_gao = castle
+	b_sarnah = city 
+}

@@ -1,0 +1,50 @@
+decisions = {	
+	import_saqaliba_slave_army = {
+		only_playable = yes
+		is_high_prio = yes
+		is_mercenary = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			NOT = { has_character_modifier = recently_imported_saqaliba }
+			government = muslim_government
+			any_realm_province = {
+				or = {
+					region = world_middle_east
+					region = world_europe
+					region = world_africa_north
+				}
+			}
+		}
+		allow = {
+			wealth = 500
+		}
+		effect = {
+		wealth = -500
+			capital_scope = {
+				PREV = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 500 500 }
+							light_infantry = { 1500 1500 }
+							light_cavalry = { 500 500 }
+						}
+						attrition = 1.0
+						disband_on_peace = no
+						maintenance_multiplier = 1.5
+						reinforces = yes
+						earmark = saqaliba
+					}
+				}
+			}
+			break = yes
+			add_character_modifier = { name = recently_imported_saqaliba duration = 1825 }	
+		}
+		ai_will_do = {
+			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
+		}
+	}
+}

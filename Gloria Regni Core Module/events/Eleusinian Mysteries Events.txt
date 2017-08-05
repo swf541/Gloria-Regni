@@ -1,0 +1,330 @@
+namespace = ELE
+character_event = {		#Arrival at the Temple
+	id = ELE.1
+	title = "EVTNAMEELE.1"
+	desc = "EVTDESCELE.1"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.1" # 
+		piety = 10
+		character_event = { id = ELE.2 }
+	}
+}
+character_event = {		#Sacrifice Pig to Demeter and Kore (Persephone) 
+	id = ELE.2
+	title = "EVTNAMEELE.2"
+	desc = "EVTDESCELE.2"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.2" # 
+		piety = 10		
+		character_event = { id = ELE.3 }
+	}
+}
+
+character_event = {		#Priet's Escort you to the Next Phase
+	id = ELE.3
+	title = "EVTNAMEELE.3"
+	desc = "EVTDESCELE.3"
+	picture = "GFX_evt_dark_priests"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.3" # 
+		piety = 10
+		character_event = { id = ELE.4 }
+	}
+}
+
+character_event = {		#Watching Drama Play's Representing the Miseries of the Soul while in subjection to the body	
+	id = ELE.4
+	title = "EVTNAMEELE.4"
+	desc = "EVTDESCELE.4"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.4" # 
+		piety = 10
+		character_event = { id = ELE.5 }
+	}
+}
+
+character_event = {		#Explanation of the need to be elevated to the realities of intellectual [spiritual] vision	
+	id = ELE.5
+	title = "EVTNAMEELE.5"
+	desc = "EVTDESCELE.5"
+	picture = "GFX_evt_dark_priests"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.5" # 
+		piety = 10
+		character_event = { id = ELE.6 }
+	}
+}
+
+character_event = {		#Purification in the River Illisos
+	id = ELE.6
+	title = "EVTNAMEELE.6"
+	desc = "EVTDESCELE.6"
+	picture = "GFX_evt_castle_coastal"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.6" # 
+		piety = 10
+		character_event = { id = ELE.7 }
+	}
+}
+character_event = {		#Formal Initiation
+	id = ELE.7
+	title = "EVTNAMEELE.7"
+	desc = "EVTDESCELE.7"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.7" # 
+		piety = 10
+		add_trait = mystai_eleusinian
+		remove_trait = on_pilgrimage
+	}
+}
+
+character_event = {		#Arrival at the Temple
+	id = ELE.8
+	title = "EVTNAMEELE.8"
+	desc = "EVTDESCELE.8"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.8" # 
+		piety = 10
+		character_event = { id = ELE.9 }
+	}
+}
+
+character_event = {		#Priests Declare Start of the Ceremony
+	id = ELE.9
+	title = "EVTNAMEELE.9"
+	desc = "EVTDESCELE.9"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.9" # 
+		piety = 10
+		character_event = { id = ELE.10 }
+	}
+}
+
+character_event = {		#Purification in the Sea
+	id = ELE.10
+	title = "EVTNAMEELE.10"
+	desc = "EVTDESCELE.10"
+	picture = "GFX_evt_castle_coastal"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.10" # 
+		piety = 10
+		character_event = { id = ELE.11 }
+	}
+}
+
+character_event = {		#Start of Epidauria, a festival for Asklepios
+	id = ELE.11
+	title = "EVTNAMEELE.11"
+	desc = "EVTDESCELE.11"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.11" # 
+		piety = 10
+		character_event = { id = ELE.12 }
+	}
+}
+
+character_event = {		#Procession leading to the Eleusinion
+	id = ELE.12
+	title = "EVTNAMEELE.12"
+	desc = "EVTDESCELE.12"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.12" # 
+		piety = 10
+		character_event = { id = ELE.13 }
+	}
+}
+ 
+character_event = {		#Great Sacrifice for the Epidauria
+	id = ELE.13
+	title = "EVTNAMEELE.13"
+	desc = "EVTDESCELE.13"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.13" # 
+		piety = 10
+		character_event = { id = ELE.14 }
+	}
+}
+
+character_event = {		#Epidauria Pannykhís (All night great feast)
+	id = ELE.14
+	title = "EVTNAMEELE.14"
+	desc = "EVTDESCELE.14"
+	picture = "GFX_evt_feast_1"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.14" # 
+		piety = 10
+		character_event = { id = ELE.15 }
+	}
+}
+
+character_event = {		#(Next Day) Procession Starting from Kerameikos (The Atheian Graveyard) to the Eleusinion
+	id = ELE.15
+	title = "EVTNAMEELE.15"
+	desc = "EVTDESCELE.15"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.15" # 
+		piety = 10
+		character_event = { id = ELE.16 }
+	}
+}
+
+character_event = {		#All Night Vigil for Kore and Demeter and drinking of the kykeon
+	id = ELE.16
+	title = "EVTNAMEELE.16"
+	desc = "EVTDESCELE.16"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.16" # 
+		piety = 10
+		character_event = { id = ELE.17 }
+	}
+}
+
+character_event = {		#Wait for the Hierophants to prepare the next event
+	id = ELE.17 	
+	title = "EVTNAMEELE.17"
+	desc = "EVTDESCELE.17"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.17" # 
+		piety = 10
+		character_event = { id = ELE.18 }
+	}
+}
+
+character_event = {		#Entering the Telesterion, they would recite, "I have fasted, I have drunk the kykeon, I have taken from the kiste ("box") and after working it have put it back in the kalathos ("open basket")
+	id = ELE.18
+	title = "EVTNAMEELE.18"
+	desc = "EVTDESCELE.18"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.18" # 
+		piety = 10
+		character_event = { id = ELE.19 }
+	}
+}
+
+character_event = {		#Holy Visions of Fire
+	id = ELE.19
+	title = "EVTNAMEELE.19"
+	desc = "EVTDESCELE.19"
+	picture = "GFX_evt_holy_light"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.19" # 
+		piety = 10
+		character_event = { id = ELE.20 }
+	}
+}
+
+character_event = {		#the Pannychis, an all-night feast
+	id = ELE.20
+	title = "EVTNAMEELE.20"
+	desc = "EVTDESCELE.20"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.20" # 
+		piety = 10
+		character_event = { id = ELE.21 }
+	}
+}
+
+character_event = {		#Libations for the dead the morning after
+	id = ELE.21
+	title = "EVTNAMEELE.21"
+	desc = "EVTDESCELE.21"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.21" # 
+		piety = 10
+		character_event = { id = ELE.22 }
+	}
+}
+
+character_event = {		#Ending of Initiation
+	id = ELE.22
+	title = "EVTNAMEELE.22"
+	desc = "EVTDESCELE.22"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAELE.22" # 
+		piety = 10
+		add_trait = greater_mystai_eleusinian
+		remove_trait = on_pilgrimagem
+	}
+}

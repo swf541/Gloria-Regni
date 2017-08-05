@@ -1,0 +1,44 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# CATAHR
+
+perfecti = {
+    potential = {
+        religion = cathar
+    }
+	opposites = {
+		lustful
+		gluttonous
+		slothful
+		envious
+		pride
+		wroth
+		greedy
+	}
+	opposite_opinion = -30
+	fertility = -100
+	health = -3
+	combat_rating = -5
+	same_religion_opinion = 20
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	religious = yes
+    customizer = no
+    random = no
+}
+adopted = {
+    potential = {
+        religion = cathar
+    }
+	diplomacy = -1
+	vassal_opinion = -10
+	same_opinion = 20
+	monthly_character_prestige = -0.1
+	#religious = yes
+    customizer = no
+    random = no
+}

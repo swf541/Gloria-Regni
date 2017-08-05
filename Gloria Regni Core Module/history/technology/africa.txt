@@ -1,0 +1,162 @@
+#DEVELOPED AFRICA
+
+technology = {
+	titles = {
+		d_axum
+		d_semien
+		d_wag
+		d_nobatia
+		d_nubia
+		d_harer
+		d_ghana
+		d_mali
+		d_songhay
+		d_jeno
+		d_kano
+		d_bornu
+		d_wadai
+		d_darfur
+	}
+
+	769 = {
+		military = 0.6
+		economy = 0.9
+		culture = 0.6
+		
+		TECH_TRADE_PRACTICES = 1.9
+	}
+	
+	1337 = {
+		military = 3.8
+		economy = 3.8
+		culture = 3.8
+	}
+}
+
+#POORER AFRICA
+
+technology = {
+	titles = {
+		d_sennar
+		d_damot
+		d_shewa
+		d_berbera
+		d_afar
+	}
+	
+	769 = {
+		military = 0.3
+		economy = 0.5
+		culture = 0.3
+		
+	}
+	
+	1337 = {
+		military = 3.5
+		economy = 3.5
+		culture = 3.5
+	}
+}
+
+#EGYPT
+
+technology = {
+	titles = {
+		d_alexandria
+		d_damietta
+		d_cairo
+		d_aswan
+	}
+
+	769 = {
+		military = 0.6
+		economy = 1.3
+		culture = 1.3
+	}
+		
+	1337 = {
+		military = 4.5
+		economy = 4.5
+		culture = 4.5
+	}
+}
+
+#COASTAL MAGHREB
+
+technology = {
+	titles = {
+		d_tangiers
+		d_tunis
+		d_alger
+		d_kabylia
+	}
+
+	769 = {
+		military = 0.6
+		economy = 1.2
+		culture = 1.1
+	}
+		
+	1337 = {
+		military = 4.2
+		economy = 4.2
+		culture = 4.2
+	}
+}
+#DESERT MAGHREB
+
+technology = {
+	titles = {
+		d_marrakech
+		d_zab
+		d_tlemcen
+		d_fes
+		d_sijilmasa
+		d_jerid
+		d_tripolitania
+		d_cyrenaica
+	}
+
+	769 = {
+		military = 0.8
+		economy = 0.8
+		culture = 1.1
+
+		TECH_CAVALRY = 2.0
+		}
+		
+	1337 = {
+		military = 4
+		economy = 4
+		culture = 4
+	}
+}
+
+#SAHARA
+
+technology = {
+	titles = {
+		d_alwahat
+		d_timbuktu
+		d_draa
+		d_kawar
+		d_adrar
+		d_fezzan
+		d_hayya #Aydhab
+		d_kassala
+	}
+	
+	769 = {
+		military = 0.8
+		economy = 0.5
+		culture = 0.2
+		
+		TECH_CAVALRY = 2.0
+	}
+	
+	1337 = {
+		military = 3.5
+		economy = 3.5
+		culture = 3.5
+	}
+}

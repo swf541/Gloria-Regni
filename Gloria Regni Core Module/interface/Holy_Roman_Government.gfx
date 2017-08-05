@@ -1,0 +1,41 @@
+spriteTypes = {
+	
+	### character stuff
+	spriteType = {
+		name = "GFX_charframe_150_holy_roman"
+		texturefile = "gfx\\interface\\\\romangov\\charframe_150_roman.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_100_holy_roman"
+		texturefile = "gfx\\interface\\romangov\\charframe_100_roman.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_75_holy_roman"
+		texturefile = "gfx\\interface\\romangov\\charframe_75_roman.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_50_holy_roman"
+		texturefile = "gfx\\interface\\romangov\\charframe_50_roman.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_34_holy_roman"
+		texturefile = "gfx\\interface\\romangov\\charframe_34_roman.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	### government icons
+	spriteType = {
+		name = "GFX_icon_holy_roman_government"
+		texturefile = "gfx\\interface\\romangov\\government_icon_roman.tga"
+	}
+
+}

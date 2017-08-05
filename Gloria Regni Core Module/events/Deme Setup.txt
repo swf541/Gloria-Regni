@@ -1,0 +1,160 @@
+namespace = DEMES
+character_event = {
+	id = DEMES.1
+	desc = EVTDESCDEMES.1
+
+	picture = GFX_evt_hippodrome_byzantine
+	border = GFX_event_normal_frame_war
+	
+    is_triggered_only = yes
+	
+		trigger = {
+			trait = blue_deme
+			any_friend = { trait = green_deme }
+        }     
+	
+	option = {
+	name = EVTOPTADEMES.1
+		add_trait = green_deme
+		remove_trait = blue_deme
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+	}
+	option = {
+	name = EVTOPTBDEMES.1
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+	}
+}
+
+character_event = {
+	id = DEMES.2
+	desc = EVTDESCDEMES.2
+
+	picture = GFX_evt_hippodrome_byzantine
+	border = GFX_event_normal_frame_war
+	
+    is_triggered_only = yes
+	
+	trigger = {
+		trait = green_deme
+		any_friend = { trait = blue_deme }
+    }     
+	
+	option = {
+	name = EVTOPTADEMES.2
+		add_trait = blue_deme 
+		remove_trait = green_deme
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+	}
+	option = {
+	name = EVTOPTBDEMES.2
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+	}
+}
+
+character_event = {
+	id = DEMES.3
+	desc = EVTDESCDEMES.3
+
+	picture = GFX_evt_hippodrome_byzantine
+	border = GFX_event_normal_frame_war
+	
+    is_triggered_only = yes
+	
+		trigger = {
+			trait = blue_deme
+			any_friend = { trait = green_deme }
+        }     
+	
+	option = {
+	name = EVTOPTADEMES.3
+		add_trait = green_deme
+		remove_trait = blue_deme
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+	}
+	option = {
+	name = EVTOPTBDEMES.3
+		any_friend = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+		any_friend = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+	}
+}
+
+character_event = {
+	id = DEMES.4
+	desc = EVTDESCDEMES.4
+
+	picture = GFX_evt_hippodrome_byzantine
+	border = GFX_event_normal_frame_war
+	
+    is_triggered_only = yes
+	
+	trigger = {
+		trait = green_deme
+		any_spouse = { trait = blue_deme }
+    }     
+	
+	option = {
+	name = EVTOPTADEMES.4
+		add_trait = blue_deme 
+		remove_trait = green_deme
+		any_spouse = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+		any_spouse = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+	}
+	option = {
+	name = EVTOPTBDEMES.4
+		any_spouse = { 
+			limit = { trait = blue_deme }
+			opinion = { modifier = opinion_unhappy who = ROOT years = 5 }
+		}
+		any_spouse = { 
+			limit = { trait = green_deme }
+			opinion = { modifier = opinion_happy who = ROOT years = 5 }
+		}
+	}
+}

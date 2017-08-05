@@ -1,0 +1,432 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ #<tag> = {
+ #	desc = description used in the tooltip of the building
+ #	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+ #	gold_cost = cost to build the building
+ #	build_time = time to build, in days
+ #	
+ #	ai_creation_factor = weight that the AI uses to determine what building to build
+ #	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+ #}
+
+# City
+city = {
+#Stable, gives light cavalry and some heavy cavalry
+	ct_con_wall_6 = { # Theodosian Walls
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_wall_5
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_rom_wall_4 = { # Theodosian Walls
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_rom_wall_6 = { # Theodosian Walls
+		potential = {
+			has_global_flag = rome_wall_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_rom_wall_4
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_colosseum_1 = { 
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_colosseum_2 = { 
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	
+	ct_circus_maximus_1 = { 
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_circus_maximus_2 = { 
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_shipyard_4_rom = {
+		potential = {
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}	
+	
+	ct_shipyard_5_rom = {
+		potential = {
+			has_global_flag = rome_city_restored
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		upgrades_from = ct_shipyard_4_rom
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}		
+	ct_great_palace_rom = { 
+		potential = {
+			has_global_flag = rome_great_palace
+			FROMFROM = { title = b_sutri }
+		}
+		desc = ca_con_wall_6_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 100
+	}
+	ct_great_palace_byz = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_great_palace_byz_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_boukoleon = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_boukoleon_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_hippodrome = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_hippodrome_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_kontoskalion = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_hippodrome_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+	ct_stable_1 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 100
+		build_time = 365
+		light_cavalry = 35
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 0.4
+	}
+	ct_stable_2 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_stable_1
+		gold_cost = 120
+		build_time = 547
+		light_cavalry = 45
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 0.8
+	}
+	ct_stable_3 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+		prerequisites = { ct_wall_2 }
+		upgrades_from = ct_stable_2
+		gold_cost = 200
+		build_time = 730
+		light_cavalry = 55
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.2
+	}
+	ct_stable_4 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+		upgrades_from = ct_stable_3
+		gold_cost = 300
+		build_time = 1095
+		light_cavalry = 55
+		knights = 5
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.2
+	}
+	ct_stable_5 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+		upgrades_from = ct_stable_4
+		gold_cost = 400
+		build_time = 2190
+		light_cavalry = 55
+		knights = 10
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ct_stable_6 = {
+		desc = ca_stable_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+		upgrades_from = ct_stable_5
+		gold_cost = 500
+		build_time = 2190
+		light_cavalry = 55
+		knights = 20
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	
+	ct_shipyard_7_byz = {
+		potential = {
+			FROMFROM = { title = b_constantinople }
+		}
+		desc = ct_shipyard_7_byz_desc
+		port = yes
+		trigger = { TECH_NAVAL = 4 }
+		upgrades_from = ct_shipyard_4
+		gold_cost = 100
+		build_time = 1460
+		galleys = 20
+		ai_creation_factor = 97
+		
+		extra_tech_building_start = 0.2
+	}
+	# Militia barracks, gives light infantry and archers.
+	ct_militia_barracks_1 = {
+		desc = ca_militia_barracks_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 100
+		build_time = 365
+		light_infantry = 80
+		archers = 10
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+	ct_militia_barracks_2 = {
+		desc = ca_militia_barracks_2_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 1 }
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_militia_barracks_1
+		gold_cost = 120
+		build_time = 547
+		light_infantry = 50
+		archers = 50
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+	ct_militia_barracks_3 = {
+		desc = ca_militia_barracks_3_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 5 }
+		upgrades_from = ct_militia_barracks_2
+		gold_cost = 200
+		build_time = 1095
+		light_infantry = 20
+		archers = 90
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ct_militia_barracks_4 = {
+		desc = ca_militia_barracks_3_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 7 }
+		upgrades_from = ct_militia_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 30
+		archers = 120
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	# Byzantine Cataphracts
+	ct_culture_group_byzantine_1 = {
+		desc = ct_culture_group_byzantine_1_desc
+		potential = {
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		prerequisites = { ct_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		knights = 10
+		horse_archers = 10
+		knights_offensive = 0.075
+		horse_archers_offensive = 0.075
+		ai_creation_factor = 101
+		
+		extra_tech_building_start = 0.8
+	}
+	ct_culture_group_byzantine_2 = {
+		desc = ct_culture_group_byzantine_1_desc
+		potential = {
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 1 }
+		upgrades_from = ct_culture_group_byzantine_1
+		gold_cost = 300
+		build_time = 1095
+		knights = 15
+		horse_archers = 10
+		knights_offensive = 0.075
+		horse_archers_offensive = 0.075
+		ai_creation_factor = 101
+		
+		extra_tech_building_start = 0.8
+	}
+	ct_culture_group_byzantine_3 = {
+		desc = ct_culture_group_byzantine_1_desc
+		potential = {
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+		upgrades_from = ct_culture_group_byzantine_2
+		gold_cost = 400
+		build_time = 2190
+		knights = 15
+		horse_archers = 20
+		knights_offensive = 0.075
+		horse_archers_offensive = 0.075
+		ai_creation_factor = 101
+		
+		extra_tech_building_start = 0.8
+	}
+	ct_culture_group_byzantine_4 = {
+		desc = ct_culture_group_byzantine_1_desc
+		potential = {
+			OR = {
+				FROM = { culture_group = byzantine }
+				FROM = { culture = roman }
+			}
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+		upgrades_from = ct_culture_group_byzantine_3
+		gold_cost = 500
+		build_time = 2190
+		knights = 20
+		horse_archers = 20
+		knights_offensive = 0.075
+		horse_archers_offensive = 0.075
+		ai_creation_factor = 101
+		
+		extra_tech_building_start = 0.8
+	}
+
+}
+
+castle = {
+	ca_soc_isle = { 
+		potential = {
+			FROMFROM = { title = b_qualnsiyah }
+		}
+		desc = ca_ca_soc_isle_desc
+		gold_cost = 150
+		build_time = 1460 #4y
+		fort_level = 4.0
+		levy_size = 0.25
+		tax_income = 1
+		light_infantry = 1250
+		heavy_infantry = 750
+		archers = 500
+		light_cavalry = 500
+		galleys = 25
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.0
+	}
+}
+

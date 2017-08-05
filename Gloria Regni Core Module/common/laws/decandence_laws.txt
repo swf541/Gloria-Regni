@@ -1,0 +1,236 @@
+# Demesne type (de facto) laws (set for the PRIMARY title in a demesne but affects the whole demesne)
+
+laws = {
+	######################################
+	# HERETIC PRIDE -- DECADENCE
+	# 
+	######################################
+	#hp_decadence
+	hp_decadence_0 = {
+		group = hp_decadence
+		demesne_size = 1
+		vassal_limit = 5
+		global_revolt_risk = 0.02
+		feudal_opinion = 5
+		temple_opinion = 10
+		city_opinion = -20
+		global_tax_modifier = -0.75
+		potential = {
+			holder_scope = { 
+				religion_group = muslim
+				higher_tier_than = baron
+			}
+		}
+		allow = {
+			holder_scope = { 
+
+				NOT = { decadence = 20 }
+				has_law = hp_decadence_1
+				has_character_flag = able_to_lower
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				clr_character_flag = able_to_lower
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = hp_decadence_0
+				revoke_law = hp_decadence_1
+				revoke_law = hp_decadence_2
+				revoke_law = hp_decadence_3
+				revoke_law = hp_decadence_4
+			}
+		}
+	}
+	hp_decadence_1 = {
+		group = hp_decadence
+		default = yes
+		#demesne_size = -1
+		#vassal_limit = -5
+		#global_revolt_risk = 0.05
+		#feudal_opinion = 5
+		temple_opinion = 5
+		city_opinion = -10
+		global_tax_modifier = -0.5
+		potential = {
+			holder_scope = { 
+				religion_group = muslim
+				higher_tier_than = baron
+			}
+		}
+		allow = {
+			holder_scope = {
+				has_character_flag = able_to_lower
+				NOT = { decadence = 40 }
+				has_law = hp_decadence_2
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				clr_character_flag = able_to_lower
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = hp_decadence_0
+				revoke_law = hp_decadence_1
+				revoke_law = hp_decadence_2
+				revoke_law = hp_decadence_3
+				revoke_law = hp_decadence_4
+			}
+		}
+	}
+
+	hp_decadence_2 = {
+		group = hp_decadence
+		demesne_size = -1
+		vassal_limit = -5
+		#global_revolt_risk = 0.05
+		feudal_opinion = -5
+		temple_opinion = -5
+		#city_opinion = -10
+		global_tax_modifier = -0.25
+		potential = {
+			holder_scope = { 
+				religion_group = muslim
+				higher_tier_than = baron
+			}
+		}
+		allow = {
+			holder_scope = {
+				has_character_flag = able_to_lower
+				NOT = { decadence = 60 }
+				has_law = hp_decadence_3
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				clr_character_flag = able_to_lower
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = hp_decadence_0
+				revoke_law = hp_decadence_1
+				revoke_law = hp_decadence_2
+				revoke_law = hp_decadence_3
+				revoke_law = hp_decadence_4
+			}
+		}
+	}
+	hp_decadence_3 = {
+		group = hp_decadence
+		demesne_size = -2
+		vassal_limit = -10
+		global_revolt_risk = 0.05
+		feudal_opinion = -10
+		temple_opinion = -20
+		city_opinion = 10
+		global_tax_modifier = 0.05
+		potential = {
+			holder_scope = { 
+				religion_group = muslim
+				higher_tier_than = baron
+			}
+		}
+		allow = {
+			holder_scope = {
+				has_character_flag = able_to_lower
+				NOT = { decadence = 80 }
+				has_law = hp_decadence_4
+			}
+		}
+		pass_effect = {
+			holder_scope = {
+				clr_character_flag = able_to_lower
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = hp_decadence_0
+				revoke_law = hp_decadence_1
+				revoke_law = hp_decadence_2
+				revoke_law = hp_decadence_3
+				revoke_law = hp_decadence_4
+			}
+		}
+	}
+	hp_decadence_4 = {
+		group = hp_decadence
+		demesne_size = -3
+		vassal_limit = -15
+		global_revolt_risk = 0.10
+		feudal_opinion = -20
+		temple_opinion = -50
+		city_opinion = 20
+		global_tax_modifier = 0.2
+		potential = {
+			holder_scope = { 
+				religion_group = muslim
+				higher_tier_than = baron
+			}
+		}
+		allow = {
+			always = no
+		}
+		pass_effect = {
+
+		}
+		revoke_allowed = {
+			always = no
+		}			
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = hp_decadence_0
+				revoke_law = hp_decadence_1
+				revoke_law = hp_decadence_2
+				revoke_law = hp_decadence_3
+				revoke_law = hp_decadence_4
+			}
+		}
+	}
+}

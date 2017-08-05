@@ -1,0 +1,2248 @@
+namespace = gladiators
+
+character_event = { #Disbanding of the Gladiators
+	id = gladiators.1
+	title = "EVTNAMEgladiators.1"
+	desc = "EVTDESCgladiators.1"
+	picture = GFX_evt_roman_legion_marching
+	
+	trigger = {
+		war = no
+		has_global_flag = colosseum
+		has_character_flag = gladiator_mercenaries
+		age = 16
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.1"
+		clr_character_flag = gladiator_mercenaries
+		activate_title = { title = d_gladiators status = no }
+		any_courtier = {
+			limit = {
+				trait = gladiator
+			}
+			remove_trait = gladiator
+			add_trait = ex-gladiator
+		}
+		prestige = 300
+		wealth = 75
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.1"
+		clr_character_flag = gladiator_mercenaries 
+		set_character_flag = unjust_mercs
+		prestige = -500
+		wealth = -200
+		add_character_modifier = {
+				name = gladiator_mercenaries
+				duration = -1
+				inherit = yes
+		}
+	}
+}
+
+character_event = { #Second Chance at Disbandment
+	id = gladiators.2
+	desc = "EVTDESCgladiators.2"
+	picture = GFX_evt_roman_legion_marching
+	
+	trigger = {
+		has_character_flag = unjust_mercs
+		war = no
+		age = 16
+		NOT = { trait = incapable }
+	}
+
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.5
+			trait = just
+		}
+		modifier = {
+			factor = 0.4
+			trait = honest
+		}
+		modifier = {
+			factor = 0.9
+			trait = paranoid
+		}
+		modifier = {
+			factor = 0.7
+			trait = content
+		}
+		modifier = {
+			factor = 1.8
+			trait = deceitful
+		}
+		modifier = {
+			factor = 0.7
+			trait = kind
+		}
+		modifier = {
+			factor = 2
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.4
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.7
+			trait = cruel
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.2"
+		clr_character_flag = gladiator_mercenaries
+		activate_title = { title = d_gladiators status = no }
+		any_courtier = {
+			limit = {
+				trait = gladiator
+			}
+			remove_trait = gladiator
+			add_trait = ex-gladiator
+		}
+		prestige = 300
+		wealth = 75
+		clr_character_flag = unjust_mercs
+		remove_character_modifier = gladiator_mercenaries
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.2"
+		prestige = -500
+		wealth = -200
+	}
+}
+
+character_event = { #The Colosseum has been built
+	id = gladiators.3
+	title = "EVTNAMEgladiators.3"
+	desc = "EVTDESCgladiators.3"
+	picture = GFX_evt_colosseum
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = colosseum_building
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.3"
+		prestige = 250
+		piety = -100
+		b_viterbo = {
+				add_building = ct_colosseum
+		}
+		wealth = -200
+		clr_character_flag = colosseum_building
+		set_global_flag = colosseum
+	}
+}
+
+character_event = { #Gladiator give his money to owner
+	id = gladiators.4
+	
+	trigger = {
+		trait = gladiator
+		wealth = 200
+	}
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 1.9
+			trait = greedy
+		}
+		modifier = {
+			factor = 1.8
+			trait = deceitful
+		}
+		modifier = {
+			factor = 1.6 
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			trait = ambitious 
+		}
+		modifier = {
+			factor = 0.5
+			trait = honest
+		}
+		modifier = {
+			factor = 1.7
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.7
+			trait = craven
+		}
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+	}
+			
+	option = {
+		name = "EVTOPTAgladiators.4"
+		wealth = -150
+		prestige = 200
+		hidden_tooltip = {
+			liege = { letter_event = { id = gladiators.5 } }
+		}
+	}
+}
+
+letter_event = { #Liege gets gladiators money
+	id = gladiators.5
+	desc = "EVTDESCgladiators.5"
+	border = GFX_event_letter_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { #keep the money
+		name = "EVTOPTAgladiators.5"
+		wealth = 150
+		piety = -50
+	}
+	
+	option = { #Returm the money
+		name = "EVTOPTBgladiators.5"
+		random_list = {
+			33 = {
+				piety = 100
+				prestige = -100
+				if = {
+					limit = {
+						NOT = {
+							trait = charitable
+						}
+					}
+					add_trait = charitable
+				}
+			}
+			33 = {
+				piety = 100
+				prestige = -100
+				if = {
+					limit = {
+						NOT = {
+							trait = kind
+						}
+					}
+					add_trait = kind
+				}
+			}
+			33 = {
+				piety = 100
+				prestige = -100
+			}
+		}
+		FROM = {
+			character_event = { id = gladiators.6 }
+		}
+	}
+}
+
+
+character_event = { #money has been returned
+	id = gladiators.6
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.6"
+		wealth = 150
+	}
+}
+
+letter_event = { #A courtier has become a gladiator and requests outfitting
+	id = gladiators.7
+	desc = "EVTDESCgladiators.7"
+	picture = GFX_evt_outfitting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.7"
+		wealth = -100
+		prestige = 200
+		FROM = {
+			prestige = 100
+			change_martial = 3
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.7"
+		prestige = -150
+		FROM = {
+			prestige = -50
+		}
+	}
+}
+
+		
+##################################
+
+#Building Events
+
+character_event = { #Delayed Construction
+	id = gladiators.8
+	desc = "EVTDESCgladiators.8"
+	picture = GFX_evt_colosseum
+
+	trigger = {
+		has_character_flag = colosseum_building
+		age = 16
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = slow
+		}
+		modifier = {
+			factor = 1.5
+			trait = patient
+		}
+		modifier = {
+			factor = 1.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 2
+			trait = scholar
+		}
+		modifier = {
+			factor = 0.2
+			stewardship = 6
+		}
+		modifier = {
+			factor = 0.4
+			stewardship = 8
+		}
+		modifier = {
+			factor = 0.6
+			stewardship = 10
+		}
+		modifier = {
+			factor = 0.8
+			stewardship = 12
+		}
+		modifier = {
+			factor = 1.2
+			stewardship = 14
+		}
+		modifier = {
+			factor = 1.4
+			stewardship = 16
+		}
+		modifier = {
+			factor = 1.6
+			stewardship = 18
+		}
+		modifier = {
+			factor = 1.8
+			stewardship = 20
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.8"
+		wealth = -100
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.8"
+		prestige = -800
+		custom_tooltip = {
+			text = delay_construction
+			hidden_tooltip = {
+				333 = {
+					add_province_modifier = {
+						name = sabotaged_building
+						duration = 750
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Insufficient Tech
+	id = gladiators.9
+	desc = "EVTDESCgladiators.9"
+	picture = GFX_evt_Council_Around_Table
+	
+	trigger = {
+		333 = {
+			NOT = {
+				TECH_CONSTRUCTION = 4
+			}
+		}
+		age = 16
+		has_character_flag = colosseum_building
+		NOT = { 
+			has_global_flag = colosseum_tech
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 1.5
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.7
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.4
+			trait = patient
+		}
+	}
+	
+	option = { #Researches 
+		name = "EVTOPTAgladiators.9"
+		wealth = -200
+		set_global_flag = colosseum_tech
+		random_list = {
+			25 = {
+				add_trait = scholar
+					}
+			}
+			25 = {
+				change_learning = 2
+			}
+			25 = {
+				economy_techpoints = 100
+			}
+			25 = {
+			}
+		}
+	
+	option = { #Who Cares
+		name = "EVTOPTBgladiators.9"
+		prestige = -500
+		set_global_flag = colosseum_tech
+		military_techpoints = -50
+		economy_techpoints = -50
+		culture_techpoints = -50
+	}
+}
+
+character_event = { #Allow the flooding of the Colosseum 
+	id = gladiators.10
+	desc = "EVTDESCgladiators.10"
+	picture = GFX_evt_colosseum
+	
+	trigger = {
+		has_character_flag = colosseum_building
+		age = 16
+		NOT = {
+			has_global_flag = colosseum_flooding
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.7
+			trait = proud
+		}
+	}
+	
+	option = { #Yes
+		name = "EVTOPTAgladiators.10"
+		wealth = -200
+		set_global_flag = colosseum_flooding
+		333 = {
+			add_province_modifier = {
+				name = naval_colosseum
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.10"
+		prestige = -500
+		set_global_flag = colosseum_flooding
+	}
+}
+
+character_event = { #How Many Can Sit
+	id = gladiators.11
+	desc = "EVTDESCgladiators.11"
+	picture = GFX_evt_colosseum
+	
+	trigger =  {
+		has_character_flag = colosseum_building
+		age = 16
+		NOT = {
+			has_global_flag = colosseum_seats
+		}
+	}
+	
+	mean_time_to_happen = { 
+		months = 6
+		modifier = {
+			factor = 0.6
+			trait = proud
+		}
+	}
+	
+	option = { #1000
+		name = "EVTOPTAgladiators.11"
+		wealth = -100
+		prestige = 100
+		set_global_flag = colosseum_seats
+	}
+	
+	option = { #10000
+		name = "EVTOPTBgladiators.11"
+		wealth = -200
+		prestige = 500
+		set_global_flag = colosseum_seats
+	}
+	
+	option = { #All of Rome!
+		name = "EVTOPTCgladiators.11"
+		wealth = -500
+		prestige = 1000
+		set_global_flag = colosseum_seats
+		333 = {
+			add_province_modifier = {
+				name = huge_colosseum
+				duration = -1
+			}
+		}
+	}
+}
+
+character_event = { 
+	id = gladiators.23
+	desc = "EVTDESCgladiators.23"
+	picture = GFX_evt_colosseum
+	
+	trigger = {
+		has_character_flag = colosseum_building
+		age = 16
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 1.8
+			stewardship = 6
+		}
+		modifier = {
+			factor = 1.6
+			stewardship = 8
+		}
+		modifier = {
+			factor = 1.4
+			stewardship = 10
+		}
+		modifier = {
+			factor = 1.2
+			stewardship = 12
+		}
+		modifier = {
+			factor = 0.8
+			stewardship = 14
+		}
+		modifier = {
+			factor = 0.6
+			stewardship = 16
+		}
+		modifier = {
+			factor = 0.4
+			stewardship = 18
+		}
+		modifier = {
+			factor = 0.2
+			stewardship = 20
+		}
+	} 
+	
+	option = {
+		name = "EVTOPTAgladiators.23"
+		wealth = 100
+	}
+}
+
+character_event = { 
+	id = gladiators.24
+	desc = "EVTDESCgladiators.24"
+	picture = GFX_evt_colosseum
+	
+	trigger = {
+		has_character_flag = colosseum_building
+		age = 16
+	}
+	
+	mean_time_to_happen = {
+		months =  18
+		modifier = {
+			factor = 1.8
+			stewardship = 6
+		}
+		modifier = {
+			factor = 1.6
+			stewardship = 8
+		}
+		modifier = {
+			factor = 1.4
+			stewardship = 10
+		}
+		modifier = {
+			factor = 1.2
+			stewardship = 12
+		}
+		modifier = {
+			factor = 0.8
+			stewardship = 14
+		}
+		modifier = {
+			factor = 0.6
+			stewardship = 16
+		}
+		modifier = {
+			factor = 0.4
+			stewardship = 18
+		}
+		modifier = {
+			factor = 0.2
+			stewardship = 20
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.24"
+		prestige = 500
+	}
+}
+
+character_event = { 
+	id = gladiators.25
+	desc = "EVTDESCgladiators.25"
+	picture = GFX_evt_colosseum
+	
+	trigger = {
+		has_character_flag = colosseum_building
+		age = 16
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 1.8
+			stewardship = 6
+		}
+		modifier = {
+			factor = 1.6
+			stewardship = 8
+		}
+		modifier = {
+			factor = 1.4
+			stewardship = 10
+		}
+		modifier = {
+			factor = 1.2
+			stewardship = 12
+		}
+		modifier = {
+			factor = 0.8
+			stewardship = 14
+		}
+		modifier = {
+			factor = 0.6
+			stewardship = 16
+		}
+		modifier = {
+			factor = 0.4
+			stewardship = 18
+		}
+		modifier = {
+			factor = 0.2
+			stewardship = 20
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.25"
+		piety = 500
+	}
+}
+
+province_event = { #Squatters Revolt
+	id = gladiators.12
+	desc = "EVTDESCgladiators.12"
+	picture = GFX_evt_gladiator_revolt
+	
+	trigger = {
+		age = 16
+		has_character_flag = colosseum_building
+		NOT = { # Not if there is already an ongoing revolt
+			owner = {
+				top_liege = {
+					war = yes
+					any_war = {
+						defender = { character = PREV }
+						OR = {
+							AND = {
+								using_cb = peasant_revolt
+								war_title = ROOT # The county
+							}
+							AND = {
+								using_cb = heretic_revolt
+								attacker = { religion = ROOT }
+							}
+							AND = {
+								using_cb = religious_revolt
+								attacker = { religion = ROOT }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+			attributes = {
+				martial = 5
+			}
+			trait = peasant_leader
+			trait = tough_soldier
+		}
+		
+		new_character = {
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "PEASANT_REVOLT"
+				holder = THIS
+			}
+			
+			random_list = {
+				17 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.75
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				17 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.5
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				16 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.75
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 3 3 }
+							light_infantry = { 11 11 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 3 3 }
+								light_infantry = { 11 11 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 3 3 }
+								light_infantry = { 11 11 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				17 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.5
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 3 3 }
+							light_infantry = { 11 11 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 3 3 }
+								light_infantry = { 11 11 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 3 3 }
+								light_infantry = { 11 11 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				16 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.75
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.75
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				17 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 0.5
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 31
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 0.5
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+#						set_defacto_vassal = PREVPREVPREV
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = peasant_revolt
+							thirdparty_title = ROOT # The county
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.12"
+		prestige = -100
+		wealth = -50
+	}
+}
+
+###################################
+
+#A Fight, A Random list with many possibilities, determined based off martial score, triggers the following
+character_event = {
+	id = gladiators.13
+	picture = GFX_evt_colosseum
+	
+	trigger = {
+		trait = gladiator
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 1.5
+			trait = humble
+		}
+		modifier = {
+			factor = 1.5
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.6
+			trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.2
+			trait = duelist
+		}
+		modifier = {
+			factor = 0.6
+			martial = 15
+		}
+		modifier = {
+			factor = 1.8
+			trait = scholar
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 0.5
+			trait = tough_soldier
+		}
+	}
+
+	option = {
+		name = "EVTOPTAgladiators.13"
+		if = {
+			limit = {
+				martial = 8
+			}
+			random_list = {
+				60 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				20 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				10 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				5 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 10
+			}
+			random_list = {
+				50 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				30 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				15 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				5 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 12
+			}
+			random_list = {
+				40 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				30 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				20 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				10 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 14
+			}
+			random_list = {
+				25 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				15 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				10 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				30 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 16
+			}
+			random_list = {
+				20 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				10 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				5 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				40 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 18
+			}
+			random_list = {
+				15 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				10 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				5 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				60 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				martial = 20
+			}
+			random_list = {
+				10 = {
+					death = {
+						death_reason = death_duel
+					}
+					liege = {
+						character_event = { id = gladiators.16 }
+					}
+				}
+				10 = {
+					add_trait = maimed
+					liege = {
+						character_event = { id = gladiators.15 }
+					}
+				}
+				10 = {
+					add_trait = wounded
+					liege = {
+						character_event = { id = gladiators.15 } 
+					}
+				}
+				70 = {
+					prestige = 100
+					liege = {
+						character_event = { id = gladiators.14 } 
+					}
+				}
+			}
+		}
+	}
+}
+		
+#The Owner Receives Money
+character_event = {
+	id = gladiators.14
+	desc = "EVTDESCgladiators.14"
+	picture = GFX_evt_rome_gladiator
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.14"
+		wealth = 50
+	}
+	option = {
+		name = "EVTOPTBgladiators.14"
+		prestige = 100
+	}
+}
+
+#The Owner loses money
+character_event = {
+	id = gladiators.15
+	desc = "EVTDESCgladiators.15"
+	picture = GFX_evt_rome_gladiator
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.15"
+		wealth = -25
+		prestige = -50
+	}
+}
+
+#The Gladiator Dies
+character_event = {
+	id = gladiators.16
+	desc = "EVTDESCgladiators.16"
+	picture = GFX_evt_rome_gladiator
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.16"
+		wealth = -30
+		prestige = -75
+	}
+}
+##########################
+
+#Buy a Gladiator
+character_event = {
+	id = gladiators.17
+	desc = "EVTDESCgladiators.17"
+	picture = GFX_evt_gladiator2
+	
+	trigger = {
+		has_global_flag = colosseum
+		NOT = {
+			has_character_flag = gladiator_mercs
+			has_character_flag = unjust_mercs
+		}
+		culture = roman
+	}
+	
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			factor = 0.5
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.6
+			stewardship = 14
+		}
+		modifier = {
+			factor = 1.6
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.8
+			trait = duelist
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.17"
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = no
+			age = 20
+			religion = ROOT
+			culture = ROOT
+			trait = tough_soldier
+			trait = gladiator
+			trait = duelist
+			attributes = {
+				martial = 12
+			}
+		}
+		wealth = -50
+		prestige = 25
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.17"
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = no
+			age = 20
+			religion = ROOT
+			culture = ROOT
+			trait = tough_soldier
+			trait = brave
+			trait = gladiator
+			trait = duelist
+			attributes = {
+				martial = 16
+			}
+		}
+		wealth = -75
+		prestige = 50
+	}
+	
+	option = {
+		name = "EVTOPTCgladiators.17"
+		create_character = {
+			random_traits = no
+			dynasty = NONE
+			female = no
+			age = 20
+			religion = ROOT
+			culture = ROOT
+			trait = tough_soldier
+			trait = gladiator
+			trait = duelist
+			trait = brave
+			trait = wroth
+			attributes = {
+				martial = 18
+			}
+		}
+		wealth = -100
+		prestige = 75
+	}
+	
+	option = {
+		name = "EVTOPTDgladiators.17"
+		piety = 100
+		prestige = -100
+	}
+}
+
+#Thumbs Up or Thumbs Down
+character_event = {
+	id = gladiators.18
+	desc = "EVTDESCgladiators.18"
+	picture = GFX_evt_roman_emperor_colosseum
+	
+	trigger = {
+		has_global_flag = colosseum
+		OR = {
+			has_landed_title = k_roman_republic
+			has_landed_title = e_wre
+		}
+		any_courtier = {
+			trait = gladiator
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 0.5
+			trait = duelist
+		}
+		modifier = {
+			factor = 0.7
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.6
+			trait = hedonist
+		}
+		modifier = {
+			factor = 0.7
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.6
+			prestige = 750
+		}
+		modifier = {
+			factor = 0.5
+			prestige = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.18"
+		prestige = -100
+		create_character = {
+			random_traits = yes
+			dynasty = NONE
+			female = no
+			age = 20
+			religion = ROOT
+			culture = ROOT
+			trait = gladiator
+			trait = tough_soldier
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.18"
+		any_courtier = {
+			limit = {
+				trait = gladiator
+			}
+			death = {
+				death_reason = death_duel
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = cruel
+				}
+			}
+			random = {
+				chance = 50
+				
+				add_trait = cruel
+			}
+		}
+	}
+}
+#Gladiators Revolt 
+province_event = {
+	id = gladiators.19
+	title = "EVTNAMEgladiators.19"
+	desc = "EVTDESCgladiators.19"
+	picture = GFX_evt_gladiator_revolt
+	
+	trigger = {
+		has_global_flag = colosseum
+		age = 16
+		culture = roman
+	}
+	
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 0.5
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.7
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.6
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.6
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.8
+			trait = kind
+		}
+		modifier = {
+			factor = 2
+			trait = just
+		}
+	}
+	
+	immediate = {
+		create_character = {
+			random_traits = yes
+			name = "Spartacus"
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+			attributes = {
+				martial = 10
+			}
+			trait = gladiator
+			trait = tough_soldier
+		}
+		
+		new_character = {
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "GLADIATOR_REVOLT"
+				holder = THIS
+			}
+			
+		random_list = {
+				34 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.0
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.0
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 2 2 }
+							light_infantry = { 12 12 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 2.0
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 1.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = gladiator
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 2.0
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			
+			ROOT = {
+				owner = {
+					top_liege = {
+#						set_defacto_vassal = PREVPREVPREV
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = gladiator_revolt
+							thirdparty_title = ROOT # The county
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.19"
+		prestige = -100
+	}
+}
+
+#Place A Bet
+character_event = {
+	id = gladiators.20
+	desc = "EVTDESCgladiators.20"
+	picture = GFX_evt_gladiator2
+	
+	trigger = {
+		has_global_flag = colosseum
+		age = 16
+		NOT = {
+			trait = zealous
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 2
+		modifier = {
+			factor = 0.7
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.5
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.6
+			trait = brave
+		}
+		modifier = {
+			factor = 1.8
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			piety = 250
+		}
+		modifier = {
+			factor = 1.6
+			piety = 500
+		}
+		modifier = {
+			factor = 1.7
+			piety = 750
+		}
+		modifier = {
+			factor = 1.8
+			piety = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.20"
+		wealth = -25
+		if = {
+			random_list = {
+				50 = {
+					wealth = 50
+				}
+				50 = {
+					prestige = -25
+				}
+			}
+		}
+	}
+		
+	option = {
+		name = "EVTOPTBgladiators.20"
+		wealth = -50
+		if = {
+			random_list = {
+				50 = {
+					wealth = 100
+				}
+				50 = {
+					prestige = -50
+				}
+			}
+		}
+	}
+		
+	option = {
+		name = "EVTOPTCgladiators.20"
+		wealth = -100
+		if = {
+			random_list = {
+				50 = {
+					wealth = 200
+				}
+				50 = {
+					prestige = -100
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTDgladiators.20"
+		piety = 50
+		random = {
+			chance = 50
+			
+			add_trait = zealous
+		}
+	}
+}
+
+#Go Down to the Ring
+character_event = {
+	id = gladiators.21
+	desc = "EVTDESCgladiators.21"
+	picture = GFX_evt_roman_emperor_salute
+	
+	trigger = {
+		age = 16
+		is_female = no
+		has_global_flag = colosseum
+		NOT = {
+			trait = craven
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.1
+			trait = duelist
+		}
+		modifier = {
+			factor = 0.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.7
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.7
+			trait = tough_soldier
+		}
+		modifier = {
+			factor = 0.8
+			education = military
+		}
+		modifier = {
+			factor = 1.5
+			trait = craven
+		}
+		modifier = {
+			factor = 1.7
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.6
+			trait = paranoid
+		}
+		modifier = {
+			factor = 0.6
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAgladiators.21"
+		custom_tooltip = {
+			text = try_a_fight
+			hidden_tooltip = {
+				if = {
+					limit = {
+						martial = 16
+					}
+					random_list = {
+						30 = {
+							character_event = { id = gladiators.22 }
+						}
+						20 = {
+							if = {
+								limit = {
+									NOT = { trait = brave } 
+								}
+								add_trait = brave
+							}
+						}
+						15 = {
+							add_trait = wounded
+						}
+						10 = {
+							add_trait = maimed
+						}
+						5 = {
+							death = {
+								death_reason = death_accident
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							martial = 16
+						}
+					}
+					random_list = {
+						20 = {
+							character_event = { id = gladiators.22 } 
+						}
+						25 = {
+							if = {
+								limit = {
+									NOT = {
+										trait = brave
+									}
+								}
+								add_trait = brave
+								add_trait = wounded
+							}
+						}
+						20 = {
+							add_trait = wounded
+						}
+						15 = {
+							add_trait = maimed
+						}
+						10 = {
+							death = {
+								death_reason = death_accident
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBgladiators.21"
+		piety = 100
+		prestige = -50
+	}
+}
+
+#You Got Martial
+character_event = {
+	id = gladiators.22
+	desc = "EVTDESCgladiators.22"
+	picture = GFX_evt_roman_soldiers_training
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAgladiators.22"
+		change_martial = 3
+		prestige = 100
+	}
+}
+	
+############################
+
+#Great Games

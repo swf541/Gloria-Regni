@@ -1,0 +1,2929 @@
+targetted_decisions = {
+	
+	convert_to_liege_religion = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			ai = no
+			is_ruler = yes
+			liege = {
+				NOT = { character = ROOT }
+				NOT = { religion = ROOT }
+				religion_group = ROOT
+			}
+			controls_religion = no
+		}
+		allow = {
+			NOT = { trait = zealous }
+		}
+		effect = {
+			hidden_tooltip = {
+			remove_character_modifier = patron_forseti
+			remove_character_modifier = patron_thor
+			remove_character_modifier = patron_njordr
+			remove_character_modifier = patron_loki
+			remove_character_modifier = patron_odin
+			remove_character_modifier = patron_freyja
+			remove_character_modifier = patron_dazbog
+			remove_character_modifier = patron_perun
+			remove_character_modifier = patron_porewit
+			remove_character_modifier = patron_crnobog
+			remove_character_modifier = patron_rod
+			remove_character_modifier = patron_jarilo
+			remove_character_modifier = patron_jupiter
+			remove_character_modifier = patron_mars
+			remove_character_modifier = patron_pluto
+			remove_character_modifier = patron_mercury
+			remove_character_modifier = patron_minerva
+			remove_character_modifier = patron_bacchus
+			remove_character_modifier = patron_dievas
+			remove_character_modifier = patron_perkunas
+			remove_character_modifier = patron_zemyna
+			remove_character_modifier = patron_velnias
+			remove_character_modifier = patron_laima
+			remove_character_modifier = patron_ausrine
+			remove_character_modifier = patron_jumala
+			remove_character_modifier = patron_ukko
+			remove_character_modifier = patron_akka
+			remove_character_modifier = patron_kuu
+			remove_character_modifier = patron_antero_vipunen
+			remove_character_modifier = patron_akras
+			remove_character_modifier = patron_nsamanfo
+			remove_character_modifier = patron_tano
+			remove_character_modifier = patron_abosom
+			remove_character_modifier = patron_anansi
+			remove_character_modifier = patron_nyame
+			remove_character_modifier = patron_asase_ya
+			remove_character_modifier = patron_yer
+			remove_character_modifier = patron_kayra
+			remove_character_modifier = patron_gun_ana
+			remove_character_modifier = patron_ay_dede
+			remove_character_modifier = patron_ulgan
+			remove_character_modifier = patron_umay
+			remove_character_modifier = patron_peter
+			remove_character_modifier = patron_george
+			remove_character_modifier = patron_ambrose
+			remove_character_modifier = patron_gregory
+			remove_character_modifier = patron_augustine
+			remove_character_modifier = patron_anthony
+			remove_character_modifier = patron_mary
+			remove_character_modifier = patron_thomas
+			remove_character_modifier = patron_john
+			remove_character_modifier = patron_vohu_manah
+			remove_character_modifier = patron_khshathra_vairya
+			remove_character_modifier = patron_haurvatat
+			remove_character_modifier = patron_asha_vahishta
+			remove_character_modifier = patron_armaiti
+			remove_character_modifier = patron_ameretat	}
+			clr_character_flag = patron_chosen
+			prestige = -500
+			piety = 250
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			liege = {
+				reverse_religion = ROOT
+			}
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+			if = {
+				limit = { liege = { trait = shaivist_hindu } }
+				add_trait = shaivist_hindu
+			}
+			if = {
+				limit = { liege = { trait = vaishnavist_hindu } }
+				add_trait = vaishnavist_hindu
+			}
+			if = {
+				limit = { liege = { trait = shaktist_hindu } }
+				add_trait = shaktist_hindu
+			}
+			if = {
+				limit = { liege = { trait = smartist_hindu } }
+				add_trait = smartist_hindu
+			}
+			if = {
+				limit = { liege = { trait = mahayana_buddhist } }
+				add_trait = mahayana_buddhist
+			}
+			if = {
+				limit = { liege = { trait = vajrayana_buddhist } }
+				add_trait = vajrayana_buddhist
+			}
+			if = {
+				limit = { liege = { trait = theravada_buddhist } }
+				add_trait = theravada_buddhist
+			}
+			if = {
+				limit = { liege = { trait = digambara_jain } }
+				add_trait = digambara_jain
+			}
+			if = {
+				limit = { liege = { trait = svetambara_jain } }
+				add_trait = svetambara_jain
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_liege_religion_on_liege = {
+		filter = liege
+		ai_target_filter = liege
+		
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			controls_religion = no
+		}
+		potential = {
+			NOT = { character = FROM }
+			NOT = { religion = FROM }
+			religion_group = FROM
+		}
+		
+		allow = {
+			FROM = { NOT = { trait = zealous } }
+		}
+		
+		effect = {
+			FROM = {
+				prestige = -500
+				piety = 250
+				if = {
+					limit = { higher_tier_than = BARON }
+					religion_authority = {
+						modifier = ruler_converted_from
+					}
+				}
+				religion = ROOT
+				if = {
+					limit = { higher_tier_than = BARON }
+					hidden_tooltip = {
+						religion_authority = {
+							modifier = ruler_converted_to
+						}
+					}
+				}
+				if = {
+					limit = { ROOT = { trait = shaivist_hindu } }
+					add_trait = shaivist_hindu
+				}
+				if = {
+					limit = { ROOT = { trait = vaishnavist_hindu } }
+					add_trait = vaishnavist_hindu
+				}
+				if = {
+					limit = { ROOT = { trait = shaktist_hindu } }
+					add_trait = shaktist_hindu
+				}
+				if = {
+					limit = { ROOT = { trait = smartist_hindu } }
+					add_trait = smartist_hindu
+				}
+				if = {
+					limit = { ROOT = { trait = mahayana_buddhist } }
+					add_trait = mahayana_buddhist
+				}
+				if = {
+					limit = { ROOT = { trait = vajrayana_buddhist } }
+					add_trait = vajrayana_buddhist
+				}
+				if = {
+					limit = { ROOT = { trait = theravada_buddhist } }
+					add_trait = theravada_buddhist
+				}
+				if = {
+					limit = { ROOT = { trait = digambara_jain } }
+					add_trait = digambara_jain
+				}
+				if = {
+					limit = { ROOT = { trait = svetambara_jain } }
+					add_trait = svetambara_jain
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_liege_culture_on_liege = {
+		filter = liege
+		ai_target_filter = liege
+		
+		from_potential = {
+			is_ruler = yes
+		}
+		
+		potential = {
+			NOT = { character = FROM }
+			NOT = { culture = FROM }
+		}
+		allow = {
+			FROM = { prestige = 200 }
+		}
+		effect = {
+			FROM = {
+				prestige = -200
+				culture = ROOT
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_liege_culture = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			liege = {
+				NOT = { character = ROOT }
+				NOT = { culture = ROOT }
+			}
+		}
+		allow = {
+			prestige = 200
+		}
+		effect = {
+			prestige = -200
+			liege = {
+				reverse_culture = ROOT
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_local_culture = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			is_nomadic = no
+			capital_scope = {
+				NOT = { culture = ROOT }
+			}
+			OR = {
+				independent = yes
+				liege = {
+					NOT = { culture = ROOT }
+				}
+			}
+			holy_order = no
+			mercenary = no
+			has_dlc = "Rajas of India"
+		}
+		allow = {
+			prestige = 500
+		}
+		effect = {
+			prestige = -500
+			capital_scope = {
+				reverse_culture = ROOT
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.01
+			}
+			modifier = {
+				factor = 0
+				primary_title = {
+					is_conquered = yes
+					conquest_culture = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				any_vassal = {
+					culture = ROOT
+					OR = {
+						tier = duke
+						tier = king
+						AND = {
+							tier = count
+							ROOT = { tier = duke }
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				capital_scope = {
+					OR = {
+						AND = {
+							culture = norse
+							NOT = {	has_global_flag = norse_culture_flipping }
+							ROOT = {
+								OR = {
+									culture = swedish 
+									culture = norwegian
+									culture = danish
+									culture = norman
+								}
+							}
+						}
+						AND = {
+							culture = saxon
+							ROOT = {
+								OR = {
+									culture = norman 
+									culture = english
+								}
+							}
+						}
+						AND = {
+							culture = norman
+							ROOT = {
+								OR = {
+									culture = english 
+									culture = saxon
+								}
+							}
+						}
+						AND = {
+							culture_group = east_slavic
+							ROOT = {
+								culture = russian
+							}
+						}
+						AND = {
+							culture = pictish
+							ROOT = {
+								culture = scottish
+							}
+						}
+						AND = {
+							culture = lombard
+							ROOT = {
+								culture = italian
+							}
+						}
+						AND = {
+							culture = old_frankish
+							ROOT = {
+								culture = frankish
+							}
+						}
+						AND = {
+							culture = frisian
+							ROOT = {
+								culture = dutch
+							}
+						}
+						AND = {
+							culture = old_saxon
+							ROOT = {
+								culture = german
+							}
+						}
+						AND = {
+							culture = hispanic
+							ROOT = {
+								OR = {
+									culture = andalusian_arabic
+									culture = occitan
+									religion_group = muslim
+								}
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				culture = nahuatl
+			}
+		}
+	}
+	
+	convert_to_local_religion = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			ai = no
+			is_ruler = yes
+			is_nomadic = no
+			capital_scope = {
+				NOT = { religion = ROOT }
+			}
+			OR = {
+				independent = yes
+				liege = {
+					NOT = { religion = ROOT }
+				}
+			}
+			
+			# The Indian religions can convert to each other anyway
+			OR = {
+				NOT = { religion_group = indian_group }
+				capital_scope = {
+					NOT = { religion_group = indian_group }
+				}
+			}
+			
+			controls_religion = no
+			holy_order = no
+			
+			has_dlc = "Rajas of India"
+			
+			NOT = {
+				AND = {
+					has_dlc = "Charlemagne"
+					has_landed_title = e_byzantium  # May instead renounce iconoclasm
+					has_landed_title = c_byzantion
+					religion = iconoclast
+					capital_scope = { religion = orthodox }
+				}
+			}
+		}
+		allow = {
+			NOT = { trait = zealous }
+			OR = {
+				AND = {
+					prestige = 500
+					capital_scope = {
+						religion_group = ROOT
+					}
+				}
+				AND = {
+					prestige = 1000
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+			remove_character_modifier = patron_forseti
+			remove_character_modifier = patron_thor
+			remove_character_modifier = patron_njordr
+			remove_character_modifier = patron_loki
+			remove_character_modifier = patron_odin
+			remove_character_modifier = patron_freyja
+			remove_character_modifier = patron_dazbog
+			remove_character_modifier = patron_perun
+			remove_character_modifier = patron_porewit
+			remove_character_modifier = patron_crnobog
+			remove_character_modifier = patron_rod
+			remove_character_modifier = patron_jarilo
+			remove_character_modifier = patron_jupiter
+			remove_character_modifier = patron_mars
+			remove_character_modifier = patron_pluto
+			remove_character_modifier = patron_mercury
+			remove_character_modifier = patron_minerva
+			remove_character_modifier = patron_bacchus
+			remove_character_modifier = patron_dievas
+			remove_character_modifier = patron_perkunas
+			remove_character_modifier = patron_zemyna
+			remove_character_modifier = patron_velnias
+			remove_character_modifier = patron_laima
+			remove_character_modifier = patron_ausrine
+			remove_character_modifier = patron_jumala
+			remove_character_modifier = patron_ukko
+			remove_character_modifier = patron_akka
+			remove_character_modifier = patron_kuu
+			remove_character_modifier = patron_antero_vipunen
+			remove_character_modifier = patron_akras
+			remove_character_modifier = patron_nsamanfo
+			remove_character_modifier = patron_tano
+			remove_character_modifier = patron_abosom
+			remove_character_modifier = patron_anansi
+			remove_character_modifier = patron_nyame
+			remove_character_modifier = patron_asase_ya
+			remove_character_modifier = patron_yer
+			remove_character_modifier = patron_kayra
+			remove_character_modifier = patron_gun_ana
+			remove_character_modifier = patron_ay_dede
+			remove_character_modifier = patron_ulgan
+			remove_character_modifier = patron_umay
+			remove_character_modifier = patron_peter
+			remove_character_modifier = patron_george
+			remove_character_modifier = patron_ambrose
+			remove_character_modifier = patron_gregory
+			remove_character_modifier = patron_augustine
+			remove_character_modifier = patron_anthony
+			remove_character_modifier = patron_mary
+			remove_character_modifier = patron_thomas
+			remove_character_modifier = patron_john
+			remove_character_modifier = patron_vohu_manah
+			remove_character_modifier = patron_khshathra_vairya
+			remove_character_modifier = patron_haurvatat
+			remove_character_modifier = patron_asha_vahishta
+			remove_character_modifier = patron_armaiti
+			remove_character_modifier = patron_ameretat }
+			clr_character_flag = patron_chosen
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				prestige = -1000
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						religion_group = ROOT
+					}
+				}
+				prestige = -500
+			}
+			piety = 250
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+			if = {
+				limit = {
+					religion_group = christian
+					NOT = { trait = sympathy_christendom }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_christendom
+				}
+			}
+			if = {
+				limit = {
+					religion_group = muslim
+					NOT = { trait = sympathy_islam }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_islam
+				}
+			}
+			if = {
+				limit = {
+					religion_group = pagan_group
+					NOT = { trait = sympathy_pagans }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_pagans
+				}
+			}
+			if = {
+				limit = {
+					religion_group = zoroastrian_group
+					NOT = { trait = sympathy_zoroastrianism }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_zoroastrianism
+				}
+			}
+			if = {
+				limit = {
+					religion_group = jewish_group
+					NOT = { trait = sympathy_judaism }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_judaism
+				}
+			}
+			if = {
+				limit = {
+					religion_group = indian_group
+					NOT = { trait = sympathy_indian }
+					capital_scope = {
+						NOT = { religion_group = ROOT }
+					}
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_indian
+				}
+			}
+			capital_scope = {
+				reverse_religion = ROOT
+			}
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_parent_religion = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			ai = no
+			is_ruler = yes
+			independent = yes
+			controls_religion = no
+			is_heretic = yes
+		    NOT = { religion = yazidi }
+			NOT = {
+				AND = {
+					has_dlc = "Charlemagne"
+					has_landed_title = e_byzantium  # May instead renounce iconoclasm
+					has_landed_title = c_byzantion
+					religion = iconoclast
+					is_heresy_of = orthodox
+				}
+			}
+		}
+		allow = {
+			NOT = { trait = zealous }
+		}
+		effect = {
+			hidden_tooltip = {
+			remove_character_modifier = patron_forseti
+			remove_character_modifier = patron_thor
+			remove_character_modifier = patron_njordr
+			remove_character_modifier = patron_loki
+			remove_character_modifier = patron_odin
+			remove_character_modifier = patron_freyja
+			remove_character_modifier = patron_dazbog
+			remove_character_modifier = patron_perun
+			remove_character_modifier = patron_porewit
+			remove_character_modifier = patron_crnobog
+			remove_character_modifier = patron_rod
+			remove_character_modifier = patron_jarilo
+			remove_character_modifier = patron_jupiter
+			remove_character_modifier = patron_mars
+			remove_character_modifier = patron_pluto
+			remove_character_modifier = patron_mercury
+			remove_character_modifier = patron_minerva
+			remove_character_modifier = patron_bacchus
+			remove_character_modifier = patron_dievas
+			remove_character_modifier = patron_perkunas
+			remove_character_modifier = patron_zemyna
+			remove_character_modifier = patron_velnias
+			remove_character_modifier = patron_laima
+			remove_character_modifier = patron_ausrine
+			remove_character_modifier = patron_jumala
+			remove_character_modifier = patron_ukko
+			remove_character_modifier = patron_akka
+			remove_character_modifier = patron_kuu
+			remove_character_modifier = patron_antero_vipunen
+			remove_character_modifier = patron_akras
+			remove_character_modifier = patron_nsamanfo
+			remove_character_modifier = patron_tano
+			remove_character_modifier = patron_abosom
+			remove_character_modifier = patron_anansi
+			remove_character_modifier = patron_nyame
+			remove_character_modifier = patron_asase_ya
+			remove_character_modifier = patron_yer
+			remove_character_modifier = patron_kayra
+			remove_character_modifier = patron_gun_ana
+			remove_character_modifier = patron_ay_dede
+			remove_character_modifier = patron_ulgan
+			remove_character_modifier = patron_umay
+			remove_character_modifier = patron_peter
+			remove_character_modifier = patron_george
+			remove_character_modifier = patron_ambrose
+			remove_character_modifier = patron_gregory
+			remove_character_modifier = patron_augustine
+			remove_character_modifier = patron_anthony
+			remove_character_modifier = patron_mary
+			remove_character_modifier = patron_thomas
+			remove_character_modifier = patron_john
+			remove_character_modifier = patron_vohu_manah
+			remove_character_modifier = patron_khshathra_vairya
+			remove_character_modifier = patron_haurvatat
+			remove_character_modifier = patron_asha_vahishta
+			remove_character_modifier = patron_armaiti
+			remove_character_modifier = patron_ameretat	}
+			clr_character_flag = patron_chosen
+			prestige = -500
+			piety = 250
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			
+			abandon_heresy = yes
+			
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_to_swedish = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = norse
+			capital_scope = {
+				region = custom_swedish
+			}
+			any_realm_province = {
+				culture = swedish
+			}
+		}
+		allow = {
+			culture = norse
+		}
+		effect = {
+			culture = swedish
+			any_courtier = {
+				limit = {
+					culture = norse
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = swedish
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = { # Do not flip if we're in a huge Norse empire
+				factor = 0
+				top_liege = { culture = norse }
+				290 = { # Uppland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				272 = { # Akershus
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				266 = { # Sjaelland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = swedish }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = swedish }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = swedish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = swedish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = swedish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = swedish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = swedish
+				}
+			}
+		}
+	}
+	convert_to_norwegian = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = norse
+			capital_scope = {
+				region = custom_norwegian
+			}
+			any_realm_province = {
+				culture = norwegian
+			}
+		}
+		allow = {
+			culture = norse
+		}
+		effect = {
+			culture = norwegian
+			any_courtier = {
+				limit = {
+					culture = norse
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = norwegian
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = { # Do not flip if we're in a huge Norse empire
+				factor = 0
+				top_liege = { culture = norse }
+				290 = { # Uppland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				272 = { # Akershus
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				266 = { # Sjaelland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = norwegian }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = norwegian }
+			}
+			
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = norwegian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = norwegian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = norwegian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = norwegian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = norwegian
+				}
+			}
+		}
+	}
+	convert_to_danish = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = norse
+			capital_scope = {
+				region = custom_danish
+			}
+			any_realm_province = {
+				culture = danish
+			}
+		}
+		allow = {
+			culture = norse
+		}
+		effect = {
+			culture = danish
+			any_courtier = {
+				limit = {
+					culture = norse
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = danish
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = { # Do not flip if we're in a huge Norse empire
+				factor = 0
+				top_liege = { culture = norse }
+				290 = { # Uppland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				272 = { # Akershus
+					owner = {
+						same_realm = ROOT
+					}
+				}
+				266 = { # Sjaelland
+					owner = {
+						same_realm = ROOT
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = danish }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = danish }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = danish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = danish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = danish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = danish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = danish
+				}
+			}
+		}
+	}
+	convert_to_norman = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = norse
+			capital_scope = {
+				culture = norman
+			}
+		}
+		allow = {
+			culture = norse
+		}
+		effect = {
+			culture = norman
+			any_courtier = {
+				limit = {
+					culture = norse
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = norman
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = { # Do not flip if we're in a huge Norse empire
+				factor = 0
+				top_liege = { culture = norse }
+				OR = {
+					top_liege = {
+						tier = emperor
+					}
+					AND = {
+						290 = { # Uppland
+							owner = {
+								same_realm = ROOT
+							}
+						}
+						272 = { # Akershus
+							owner = {
+								same_realm = ROOT
+							}
+						}
+						266 = { # Sjaelland
+							owner = {
+								same_realm = ROOT
+							}
+						}
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 1.2
+				liege = { culture = norman }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = norman
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = norman
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = norman
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = norman
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = norman
+				}
+			}
+		}
+	}
+	
+	convert_to_reformed = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			is_heretic = yes
+			OR = {
+				religion = norse_pagan
+				religion = finnish_pagan
+				religion = baltic_pagan
+				religion = tengri_pagan
+				religion = slavic_pagan
+				religion = aztec
+				religion = west_african_pagan
+				religion = zun_pagan
+			}
+		}
+		allow = {
+			NOT = { trait = zealous }
+			piety = 50
+		}
+		effect = {
+			piety = -50
+			if = {
+				limit = { religion = norse_pagan }
+				religion = norse_pagan_reformed
+			}
+			if = {
+				limit = { religion = finnish_pagan }
+				religion = finnish_pagan_reformed
+			}
+			if = {
+				limit = { religion = baltic_pagan }
+				religion = baltic_pagan_reformed
+			}
+			if = {
+				limit = { religion = tengri_pagan }
+				religion = tengri_pagan_reformed
+			}
+			if = {
+				limit = { religion = slavic_pagan }
+				religion = slavic_pagan_reformed
+			}
+			if = {
+				limit = { religion = aztec }
+				religion = aztec_reformed
+			}
+			if = {
+				limit = { religion = west_african_pagan }
+				religion = west_african_pagan_reformed
+			}
+			if = {
+				limit = { religion = zun_pagan }
+				religion = zun_pagan_reformed
+			}
+			
+			hidden_tooltip = {
+				any_courtier = {
+					limit = {
+						is_heresy_of = ROOT
+						employer = { character = ROOT }
+					}
+					religion = ROOT
+				}
+				any_vassal = {
+					limit = {
+						is_ruler = no
+						is_heresy_of = ROOT
+					}
+					religion = ROOT
+				}
+				capital_scope = {
+					if = {
+						limit = { is_heresy_of = ROOT }
+						religion = ROOT
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1 # On average ca 1 year before taken
+			modifier = {
+				factor = 0.025 # Generally quite a slow process - ca 40 years
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					trait = slow
+					trait = dull
+				}
+			}
+			modifier = {
+				factor = 0.1
+				trait = imbecile
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 2.0
+				OR = {
+					trait = quick
+					trait = shrewd
+				}
+			}
+			modifier = {
+				factor = 4.0
+				trait = genius
+			}
+			modifier = {
+				factor = 5.0
+				trait = cynical # It's the future..
+			}
+			modifier = {
+				factor = 2.0
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0
+				independent = no
+				any_liege = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+	
+	convert_to_hinduism = {
+		filter = self
+		ai_target_filter = self
+	
+		potential = {
+			ai = no
+			is_ruler = yes
+			religion_group = indian_group
+			NOT = { religion = hindu }
+			is_theocracy = no
+		}
+		allow = {
+			is_adult = yes
+			prestige = 500
+			NOT = { trait = zealous }
+			any_realm_province = {
+				religion = hindu
+			}
+			custom_tooltip = {
+				text = indian_has_not_converted
+				NOT = { has_character_flag = india_converted }
+			}
+		}
+		effect = {
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			religion = hindu
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+			set_character_flag = india_converted
+			prestige = -500
+			piety = 100
+			hidden_tooltip = { character_event = { id = RoI.110 } } # Choose branch
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	convert_to_buddhism = {
+		filter = self
+		ai_target_filter = self
+	
+		potential = {
+			ai = no
+			is_ruler = yes
+			religion_group = indian_group
+			NOT = { religion = buddhist }
+			is_theocracy = no
+		}
+		allow = {
+			is_adult = yes
+			prestige = 500
+			NOT = { trait = zealous }
+			any_realm_province = {
+				religion = buddhist
+			}
+			custom_tooltip = {
+				text = indian_has_not_converted
+				NOT = { has_character_flag = india_converted }
+			}
+		}
+		effect = {
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			religion = buddhist
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+			set_character_flag = india_converted
+			prestige = -500
+			piety = 100
+			hidden_tooltip = { character_event = { id = RoI.111 } } # Choose branch
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	convert_to_jainism = {
+		filter = self
+		ai_target_filter = self
+	
+		potential = {
+			ai = no
+			is_ruler = yes
+			religion_group = indian_group
+			NOT = { religion = jain }
+			is_theocracy = no
+		}
+		allow = {
+			is_adult = yes
+			prestige = 500
+			NOT = { trait = zealous }
+			any_realm_province = {
+				religion = jain
+			}
+			custom_tooltip = {
+				text = indian_has_not_converted
+				NOT = { has_character_flag = india_converted }
+			}
+		}
+		effect = {
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			religion = jain
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+			set_character_flag = india_converted
+			prestige = -500
+			piety = 100
+			hidden_tooltip = { character_event = { id = RoI.112 } } # Choose branch
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	convert_indian_branch = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			ai = no
+			is_ruler = yes
+			is_adult = yes
+			is_theocracy = no
+			religion_group = indian_group
+		}
+		allow = {
+			NOT = { trait = zealous }
+			prestige = 50
+			custom_tooltip = {
+				text = indian_has_not_converted
+				NOT = { has_character_flag = india_branch_converted }
+			}
+		}
+		
+		effect = {
+			set_character_flag = india_branch_converted
+			prestige = -50
+			piety = 25
+			if = {
+				limit = { religion = hindu }
+				character_event = { id = RoI.115 } # Choose branch
+			}
+			if = {
+				limit = { religion = buddhist }
+				character_event = { id = RoI.116 } # Choose branch
+			}
+			if = {
+				limit = { religion = jain }
+				character_event = { id = RoI.117 } # Confirm conversion
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Carolingian renaissance - Old Frankish conversion to French
+	convert_to_french = {
+		filter = self
+		ai_target_filter = self
+	
+		potential = {
+			is_ruler = yes
+			culture = old_frankish
+			capital_scope = {
+				region = world_europe_west_francia
+			}
+			any_realm_province = {
+				culture = frankish
+			}
+		}
+		allow = {
+			culture = old_frankish
+		}
+		effect = {
+			culture = frankish
+			any_courtier = {
+				limit = {
+					culture = old_frankish
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = frankish
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = frankish }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = frankish }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = frankish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = frankish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = frankish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = frankish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = frankish
+				}
+			}
+		}
+	}
+	
+	# Pictish character may convert to Scottish
+	convert_to_scottish = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = pictish
+			capital_scope = {
+				region = custom_scotland
+			}
+			any_realm_province = {
+				culture = scottish
+			}
+		}
+		allow = {
+			culture = pictish
+		}
+		effect = {
+			culture = scottish
+			any_courtier = {
+				limit = {
+					culture = pictish
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = scottish
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = scottish }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = scottish }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = scottish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = scottish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = scottish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = scottish
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = scottish
+				}
+			}
+		}
+	}
+	
+	# Arabic or Hispanic character may convert to Andalusian
+	convert_to_andalusian = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			OR = {
+				religion_group = muslim
+				top_liege = { religion_group = muslim }
+			}
+			OR = {
+				culture = hispanic
+				culture_group = arabic
+			}
+			capital_scope = {
+				region = custom_andalusian
+			}
+			any_realm_province = {
+				culture = andalusian_arabic
+			}
+			NOT = {
+				culture = andalusian_arabic
+			}
+		}
+		effect = {
+			culture = andalusian_arabic
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = andalusian_arabic
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = andalusian_arabic }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = andalusian_arabic }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = andalusian_arabic
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = andalusian_arabic
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = andalusian_arabic
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = andalusian_arabic
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = andalusian_arabic
+				}
+			}
+		}
+	}
+
+	# Hispanic character may convert to Castillan
+	convert_to_castillan = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = hispanic
+			religion_group = christian
+			capital_scope = {
+				region = custom_castillian
+			}
+			any_realm_province = {
+				culture = castillan
+			}
+		}
+		allow = {
+			culture = hispanic
+		}
+		effect = {
+			culture = castillan
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = castillan
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = castillan }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = castillan }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = castillan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = castillan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = castillan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = castillan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = castillan
+				}
+			}
+		}
+	}	
+
+	# Hispanic character may convert to catalan
+	convert_to_catalan = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = hispanic
+			religion_group = christian
+			capital_scope = {
+				region = custom_catalan
+			}
+			any_realm_province = {
+				culture = catalan
+			}
+		}
+		allow = {
+			culture = hispanic
+		}
+		effect = {
+			culture = catalan
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = catalan
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = catalan }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = catalan }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = catalan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = catalan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = catalan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = catalan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = catalan
+				}
+			}
+		}
+	}	
+
+	# Hispanic character may convert to Portuguese
+	convert_to_portuguese = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+		    culture = hispanic
+			religion_group = christian
+			capital_scope = {
+				region = custom_portuguese
+			}
+			any_realm_province = {
+				culture = portuguese
+			}
+		}
+		allow = {
+			culture = hispanic
+		}
+		effect = {
+			culture = portuguese
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = portuguese
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = portuguese }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = portuguese }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = portuguese
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = portuguese
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = portuguese
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = portuguese
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = portuguese
+				}
+			}
+		}
+	}
+	
+	# Old Frankish or Old Saxon character may convert to dutch
+	convert_to_dutch = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			OR = {
+				culture = old_frankish
+				culture = old_saxon
+				culture = frisian
+			}
+			capital_scope = {
+				region = custom_frisia
+			}
+			any_realm_province = {
+				culture = dutch
+			}
+		}
+		allow = {
+			culture = ROOT
+		}
+		effect = {
+			culture = dutch
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = dutch
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = dutch }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = dutch }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = dutch
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = dutch
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = dutch
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = dutch
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = dutch
+				}
+			}
+		}
+	}
+	
+	# Lombard character may convert to italian
+	convert_to_italian = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = lombard
+			capital_scope = {
+				region = world_europe_south_italy
+			}
+			any_realm_province = {
+				culture = italian
+			}
+			OR = {
+				year = 786
+				top_liege = {
+					NOT = { culture = lombard }
+				}
+			}
+		}
+		allow = {
+			culture = lombard
+			capital_scope = {
+				region = world_europe_south_italy
+			}
+			any_realm_province = {
+				culture = italian
+			}
+		}
+		effect = {
+			culture = italian
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = italian
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					independent = yes
+					top_liege = { culture = lombard }
+				}
+			}
+
+			modifier = {
+				factor = 0.1 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = italian }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = italian }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = italian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = italian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = italian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = italian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = italian
+				}
+			}
+		}
+	}
+	
+	# Hispanic character may convert to occitan
+	convert_to_occitan = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture = hispanic
+			religion_group = christian
+			capital_scope = {
+				region = world_europe_west_francia
+			}
+			any_realm_province = {
+				culture = occitan
+			}
+		}
+		allow = {
+			culture = ROOT
+		}
+		effect = {
+			culture = occitan
+			any_courtier = {
+				limit = {
+					culture = ROOT
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = occitan
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = occitan }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = occitan }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = occitan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = occitan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = occitan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = occitan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = occitan
+				}
+			}
+		}
+	}
+
+	# East Slavic character may convert to Russian
+	convert_to_russian = {
+		filter = self
+		ai_target_filter = self
+		
+		potential = {
+			is_ruler = yes
+			culture_group = east_slavic
+			NOT = { culture = russian }
+			any_realm_province = {
+				culture = russian
+			}
+		}
+		allow = {
+			culture_group = east_slavic
+			NOT = { culture = russian }
+		}
+		effect = {
+			culture = russian
+			any_courtier = {
+				limit = {
+					culture_group = east_slavic
+					NOT = { culture = russian }
+					employer = { character = ROOT }
+					dynasty = ROOT
+				}
+				culture = russian
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.2 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0.01
+				capital_scope = {
+					NOT = { culture = russian }
+				}
+			}
+			modifier = {
+				factor = 2.0
+				liege = { culture = russian }
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 2
+					culture = russian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 4
+					culture = russian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 6
+					culture = russian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 8
+					culture = russian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				num_culture_realm_provs = {
+					value = 10
+					culture = russian
+				}
+			}
+		}
+	}
+
+	convert_to_spouse_religion= {
+		filter = home_court
+		ai_target_filter = home_court
+	
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			religion_group = pagan_group
+			controls_religion = no
+		}
+		
+		potential = {
+			OR = {
+				spouse = {
+					character = FROM
+				}
+				consort = {
+					character = FROM
+				}
+			}
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				religion_group = jewish_group
+				religion_group = indian_group
+			}
+			is_alive = yes
+		}
+		
+		allow = {
+			FROM = { NOT = { trait = zealous } }
+		}
+		
+		effect = {
+			FROM = {
+				prestige = -500
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			
+				if = {
+					limit = {
+						trait = cynical
+					}
+					random = {
+						chance = 60
+						add_trait = sympathy_pagans
+					}
+				}
+				if = {
+					limit = {
+						NOT = { trait = cynical }
+					}
+					random = {
+						chance = 50
+						add_trait = sympathy_pagans
+					}
+				}		
+			
+				religion = ROOT
+				
+				#When spouse is Hindu
+				if = {
+					limit = {
+						ROOT = {
+							trait = shaivist_hindu
+						}
+					}
+					add_trait = shaivist_hindu
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = vaishnavist_hindu
+						}
+					}
+					add_trait = vaishnavist_hindu
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = shaktist_hindu
+						}
+					}
+					add_trait = shaktist_hindu
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = smartist_hindu
+						}
+					}
+					add_trait = smartist_hindu
+				}
+				
+				#When spouse is Buddhist
+				if = {
+					limit = {
+						ROOT = {
+							trait = mahayana_buddhist
+						}
+					}
+					add_trait = mahayana_buddhist
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = vajrayana_buddhist
+						}
+					}
+					add_trait = vajrayana_buddhist
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = theravada_buddhist
+						}
+					}
+					add_trait = theravada_buddhist
+				}
+				
+				#When spouse is Jain
+				if = {
+					limit = {
+						ROOT = {
+							trait = digambara_jain
+						}
+					}
+					add_trait = digambara_jain
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = svetambara_jain
+						}
+					}
+					add_trait = svetambara_jain
+				}
+				
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+				piety = 200
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+decisions = {
+	
+	# Weak or unreformed religions are allowed to convert to the attacker's religion when under Holy War
+	convert_to_attacker_religion = {
+		is_high_prio = yes
+		
+		potential = {
+			is_ruler = yes
+			OR = {
+				AND = {
+					religion_group = pagan_group
+					is_reformed_religion = no
+					NOT = { religion_authority = 0.4 }
+				}
+				NOT = { religion_authority = 0.3 }
+			}
+			controls_religion = no
+			
+			war = yes
+			any_war = {
+				defender = { character = ROOT }
+				attacker = {
+					NOT = { religion = ROOT }
+					religion_authority = 0.5
+					OR = {
+						NOT = { religion_group = pagan_group }
+						is_reformed_religion = yes
+					}
+				}
+				OR = {
+					using_cb = crusade
+					using_cb = religious
+					using_cb = muslim_invasion
+					using_cb = buddhist_holy_war
+					using_cb = pagan_holy_war
+				}
+			}
+		}
+		
+		allow = {
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			prestige = -500
+			piety = 100
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+			
+			hidden_tooltip = {
+				any_war = {
+					limit = {
+						defender = { character = ROOT }
+						attacker = {
+							NOT = { religion = ROOT }
+							religion_authority = 0.5
+							OR = {
+								NOT = { religion_group = pagan_group }
+								is_reformed_religion = yes
+							}
+						}
+						OR = {
+							using_cb = crusade
+							using_cb = religious
+							using_cb = muslim_invasion
+							using_cb = buddhist_holy_war
+							using_cb = pagan_holy_war
+						}
+					}
+					attacker = {
+						save_event_target_as = enemy_attacker
+					}
+				}
+			}
+			
+			if = {
+				limit = { event_target:enemy_attacker = { NOT = { religion_group = ROOT } } }
+				if = {
+					limit = { religion_group = pagan_group }
+					add_trait = sympathy_pagans
+				}
+				
+				if = {
+					limit = { religion_group = zoroastrian_group }
+					add_trait = sympathy_zoroastrianism
+				}
+				
+				if = {
+					limit = { religion_group = christian }
+					add_trait = sympathy_christendom
+				}
+				
+				if = {
+					limit = { religion_group = muslim }
+					add_trait = sympathy_islam
+				}
+				
+				if = {
+					limit = { religion_group = jewish_group }
+					add_trait = sympathy_judaism
+				}
+				
+				if = {
+					limit = { religion_group = indian_group }
+					add_trait = sympathy_indian
+				}
+			}
+			
+			event_target:enemy_attacker = {
+				hidden_tooltip = {
+					letter_event = { id = 62800 }
+					ROOT = {
+						any_courtier = {
+							limit = {
+								religion = ROOT
+								employer = { character = ROOT }
+							}
+							religion = PREVPREV
+						}
+						any_vassal = {
+							limit = {
+								is_ruler = no
+								religion = ROOT
+							}
+							religion = PREVPREV
+						}
+						capital_scope = {
+							if = {
+								limit = { religion = ROOT }
+								religion = PREVPREV
+							}
+						}
+					}
+				}
+				reverse_religion = ROOT 
+			}
+			
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.05
+				is_hard_to_convert = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					any_war = {
+						defender = { character = ROOT }
+						attacker = {
+							NOT = { religion = ROOT }
+							religion_authority = 0.45
+							OR = {
+								NOT = { religion_group = pagan_group }
+								is_reformed_religion = yes
+							}
+						}
+						OR = {
+							using_cb = crusade
+							using_cb = religious
+							using_cb = muslim_invasion
+							using_cb = buddhist_holy_war
+							using_cb = pagan_holy_war
+						}
+						war_score = 50
+						thirdparty_title_scope = {
+							ROOT = {
+								primary_title = {
+									title = PREVPREV
+								}
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_war = {
+					defender = { character = ROOT }
+					attacker = {
+						NOT = { religion = ROOT }
+						religion_authority = 0.45
+						OR = {
+							NOT = { religion_group = pagan_group }
+							is_reformed_religion = yes
+						}
+					}
+					OR = {
+						using_cb = crusade
+						using_cb = religious
+						using_cb = muslim_invasion
+						using_cb = buddhist_holy_war
+						using_cb = pagan_holy_war
+					}
+					war_score = 75
+					thirdparty_title_scope = {
+						ROOT = {
+							primary_title = {
+								title = PREVPREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# Byzantine Emperor may renounce Iconoclasm
+	renounce_iconoclasm = {
+		is_high_prio = yes
+
+		potential = {
+			religion = iconoclast
+			has_dlc = "Charlemagne"
+			has_landed_title = e_byzantium
+			NOT = { has_character_flag = renounced_iconoclasm }
+		}
+		allow = {
+			has_landed_title = e_byzantium
+			has_landed_title = c_byzantion
+			any_realm_province = { religion = imperial }
+			NOT = { trait = zealous }
+			NOT = { year = 900 }
+			war = no
+		}
+		effect = {
+			set_character_flag = renounced_iconoclasm
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+			religion = imperial
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+			custom_tooltip = {
+				text = renounce_iconoclasm_muslim_opinion_tooltip
+				hidden_tooltip = {
+					any_independent_ruler = {
+						any_realm_lord = {
+							limit = { religion_group = muslim }
+							opinion = {
+								who = ROOT
+								modifier = opinion_idolater
+								months = 120
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = renounce_iconoclasm_province_tooltip
+				hidden_tooltip = {
+					any_realm_province = {
+						if = {
+							limit = { religion = imperial }
+							add_province_modifier = {
+								name = appeased_religious
+								months = 60
+							}
+						}
+					}
+				}
+			}
+			k_papal_state = {
+				holder_scope = {
+					opinion = {
+						who = ROOT
+						modifier = opinion_renounced_iconoclasm
+						months = 120
+					}
+				}
+			}
+			hidden_tooltip = {
+				any_realm_character = {
+					limit = {
+						religion = iconoclast
+						NOT = { character = ROOT }
+						can_change_religion = yes
+					}
+					character_event = { id = CM.4200 }
+				}
+			}
+			create_character = {
+				random_traits = yes
+				religion = ROOT
+				culture = ROOT
+				dynasty = NONE
+				female = no
+				age = 56
+				trait = scholarly_theologian
+				}
+				new_character = {
+					d_constantinople = {
+						grant_title = PREV
+					}
+                                	b_hagiasophia = {
+                                        	grant_title = PREV
+                                	}
+                        	}
+			k_iconoclast = {
+				hidden_tooltip = { destroy_landed_title = THIS }
+			}
+			activate_title = { title = k_iconoclast status = no }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1 # slow it down
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+		}
+	}
+}

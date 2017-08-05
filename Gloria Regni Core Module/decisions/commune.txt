@@ -1,0 +1,257 @@
+decisions = {
+
+western_roman_empire = {
+	is_high_prio = yes	
+	potential = {
+		has_landed_title = k_roman_republic
+		NOT = {
+			has_global_flag = western_roman_empire
+		}
+	}
+	allow = {
+		prestige = 1000
+		wealth = 300
+		independent = yes
+                # At this point the Kingdom of Italy should not exists
+               	# anymore being replaced totally by S.P.Q.R. 
+		has_landed_title = k_sicily
+		has_landed_title = k_roman_republic
+		# As for the vanilla's decision of "Empire of Francia" and 
+                # "Empire of Italia" you need another King level title or
+                # it will be too easy...
+		any_demesne_title = {
+			tier = king
+			NOT = { title = k_roman_republic }
+			NOT = { title = k_sicily }
+		}
+	}
+
+	effect = {
+		set_global_flag = western_roman_empire
+		prestige = 1000	
+		narrative_event = { id = commune.5 } 
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+republic_of_rome = {
+	is_high_prio = yes
+	potential = {
+		has_landed_title = d_commune_of_rome
+		culture = italian
+		NOT = {
+			has_global_flag = republic_of_rome
+		}
+	}
+	allow = {
+		prestige = 1000
+		wealth = 300
+		has_landed_title = c_roma
+		completely_controls = c_orbetello
+		completely_controls = c_orvieto
+	}
+	effect = {
+			set_global_flag = republic_of_rome
+			prestige = 500
+			narrative_event = { id = commune.1 } 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+legio_italia = {
+	is_high_prio = yes
+	potential = {
+		OR = {
+			has_landed_title = e_wre
+ 			has_landed_title = k_roman_republic
+		}
+		NOT = {
+			has_landed_title = k_italy
+			has_global_flag = legio_italia
+		}
+	}
+	allow = {
+		wealth = 200
+		has_landed_title = c_roma
+	}
+	effect = {
+		set_global_flag = legio_italia
+		wealth = -200
+		prestige = 500
+		hidden_tooltip = { narrative_event = { id = legion.1 } }
+	}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+gladiators = {
+	is_high_prio = yes
+	potential = {
+		OR = {
+			has_landed_title = e_wre
+			has_landed_title = k_roman_republic
+		}
+		has_global_flag = colosseum
+		war = yes
+		any_courtier = {
+			trait = gladiator
+		}
+		NOT = {
+			has_character_flag = gladiator_mercenaries
+		}
+	}
+	effect = {
+		set_character_flag = gladiator_mercenaries
+		prestige = -1000
+		activate_title = { title = d_gladiators status = yes }
+		hidden_tooltip = {
+			create_character = {
+				random_traits = yes
+				religion = ROOT
+				culture = italian
+				dynasty = NONE
+				female = no
+				age = 34
+				trait = skilled_tactician
+				trait = gladiator
+			}
+			new_character = {
+				d_gladiators = {
+					grant_title = PREV
+				}
+				set_defacto_liege = ROOT
+			}
+		}
+	}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+renovate_the_colosseum = {
+	is_high_prio = yes
+	potential = {
+		age = 16
+		OR = {
+			has_landed_title = k_roman_republic
+			has_landed_title = e_wre
+		}
+		NOT = {
+			#has_landed_title = k_italy
+			has_landed_title = e_italy
+			has_global_flag = colosseum
+			has_character_flag = colosseum_building
+		}
+	}
+	allow = {
+		wealth = 300
+		prestige = 1000
+		war = no
+		prisoner = no
+		has_landed_title = c_roma
+	}
+	effect = {
+		prestige = 750
+		wealth = -300
+		set_character_flag = colosseum_building
+		hidden_tooltip = { province_event = { id = gladiators.3 days = 1000 } }
+	}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+become_a_gladiator = {
+	potential = {
+		is_female = no
+		NOT = {
+			wealth = 200
+			OR = {
+				trait = gladiator
+				trait = ex-gladiator
+				trait = proud
+				trait = craven
+				trait = inbred
+				trait = weak
+				trait = infirm
+				trait = incapable
+				trait = scholar
+				trait = slothful
+			}
+		}
+		has_global_flag = colosseum
+		age = 16
+		is_landed = no
+		is_ruler = no
+		liege = {
+			culture = italian
+		}
+	}
+	effect = {
+		add_trait = gladiator
+		wealth = -100
+		prestige = 100
+		hidden_tooltip = {
+			liege = { letter_event = { id = gladiators.7 } }
+		}
+	}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+		
+retire_from_fighting = {
+	potential = {
+		trait = gladiator
+		OR = {
+			age = 50
+			trait = maimed
+		}
+	}
+	allow = {
+		prestige = 500
+		wealth = 100
+	}
+	effect = {
+		prestige = -500
+		wealth = 200
+		remove_trait = gladiator
+		add_trait = ex-gladiator
+	}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+form_the_praetorians = {
+	potential = {
+		OR = {
+			has_landed_title = k_roman_republic
+			has_landed_title = e_wre
+		}
+		culture = italian
+		NOT = {
+			has_global_flag = praetorians
+		}
+	}
+	allow = {
+		wealth = 500
+		independent = yes
+	}
+	effect = {
+		wealth = -500
+		set_global_flag = praetorians
+		prestige = 500
+		hidden_tooltip = {
+			narrative_event = { id = legion.18 }
+		}
+	}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+		

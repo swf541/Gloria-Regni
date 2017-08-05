@@ -1,0 +1,131 @@
+decisions = {
+	consolamentum = {
+		potential = {
+			age = 25
+			prisoner = no
+			religion = cathar
+			NOT = { trait = incapable }
+			NOT = { has_character_flag = consolamentum_taken }
+		}
+		allow = {
+			piety = 0
+			NOT = { trait = cynical }
+		}
+		effect = {
+			add_trait = perfecti
+			set_character_flag = consolamentum_taken
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					age = 40
+				}
+			}
+		}
+	}
+	cathar_adoption = {
+        potential = {
+			is_playable = yes
+			age = 40
+			not = { trait = incapable }
+			religion = cathar
+			NOT = {
+				any_child = {
+					is_alive = yes
+				}
+			}
+		}
+		allow = {
+			prisoner = no
+			war = no
+			any_realm_province = {
+				NOT = { religion = cathar }
+			}
+		}
+		effect = {
+			character_event = { id = HPcathar.12200 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	create_cathar_papacy = {
+		is_high_prio = yes
+		potential = {
+			is_adult = yes
+			prisoner = no
+			independent = yes
+			NOT = { trait = incapable }
+			religion = cathar
+			NOT = { has_global_flag = cathar_papacy }
+		}
+		allow = {
+			OR = {
+				trait = perfecti
+				piety = 2000
+			}
+			OR = {
+				tier = king
+				tier = emperor
+			}
+			OR = {
+				213 = { 
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+				774 = { # Jerusalem
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+				227 = { # Lyon
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+				333 = { # Roma
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+				499 = { # Tyrnovo
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			character_event = { id = HPcathar.12010 }
+			set_global_flag = cathar_papacy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

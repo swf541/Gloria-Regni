@@ -1,0 +1,25 @@
+# 925 - Mali
+
+# County Title
+title = c_mali #Manding
+
+# Settlements
+max_settlements = 6
+b_niani = tribal
+b_kangaba = temple
+
+#b_bamako = city
+#b_keyla = city
+#b_odiene = castle
+#b_kangare = castle
+
+# Misc
+culture = manden
+religion = west_african_pagan
+
+# History
+1111.1.1 = { remove_settlement = b_niani }
+1111.1.1 = { b_niani = castle }
+1111.1.1 = { capital = b_niani }
+1121.1.1 = { b_bamako = city }
+1235.1.1 = { b_keyla = city }

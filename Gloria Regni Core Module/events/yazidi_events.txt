@@ -1,0 +1,2303 @@
+namespace = PA
+
+# Peacock's Feather
+narrative_event = {
+	id = PA.10123
+	title = EVTNAMEPA.10123
+	desc = EVTDESCPA.10123
+	picture = GFX_evt_monk_muslim
+
+	min_age = 16
+
+	trigger = {
+		is_ruler = yes
+		religion = yazidi
+		NOT = { has_character_modifier = peacocks_feather }
+
+	}
+
+	mean_time_to_happen = {
+		months = 2400
+	}
+
+	option = {
+		name = OPTPA_10123
+		add_character_modifier = {
+			name = peacocks_feather
+			duration = -1
+		 }
+	}
+}
+
+### Yazidi Tawusgeran
+
+# Holy Idols
+character_event = {
+	id = PA.10124
+	desc = EVTDESCPA.10124
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_10124
+		piety = 50
+		wealth = 50
+		hidden_tooltip = { 
+			character_event = { id = PA.10125 }
+		}
+	}
+}
+
+# Invitations Sent (Liege)
+character_event = {
+	id = PA.10125
+	desc = EVTDESCPA.10125
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = OPTPA_10125
+		any_vassal = {
+			limit = {
+				age = 16
+				prisoner = no
+				war = no
+				NOT = { trait = incapable }
+			}
+			character_event = { id = PA.10127 tooltip = EVTTOOLTIPPA_100127 }
+		}
+		hidden_tooltip = { character_event = { id = PA.10129 days = 10 } }
+	}
+}
+
+# Invitations Received (Vassals)
+character_event = {
+	id = PA.10127
+	desc = EVTDESCPA.10127
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTAPA_100127
+		trigger = {
+			religion = yazidi
+		}
+		set_character_flag = attending_tawusgeran
+		set_character_flag = do_not_disturb
+		hidden_tooltip = { character_event = { id = TOG.899 days = 100 } } # Safety catch flag clearing
+		end_inaccessibility_effect = yes #removes in hiding or in_seclusion
+		hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+	}
+	option = {
+		name = OPTBPA_1000127
+		trigger = {
+			NOT = {
+				religion = yazidi
+			}
+		}
+		FROM = {
+			character_event = { id = PA.10128 days = 5 tooltip = DIPLOWINDOW_REJECT }
+			opinion = {
+				modifier = opinion_refused_tawusgeran
+				who = ROOT
+			}
+		}
+	}
+}
+
+# Invitation Refused (Liege)
+character_event = {
+	id = PA.10128
+	desc = EVTDESCPA.10128
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_10128
+		tooltip = {
+			opinion = {
+				modifier = opinion_refused_tawusgeran
+				who = FROM
+			}
+		}
+	}
+}
+
+# Celebration Begins (Liege)
+character_event = {
+	id = PA.10129
+	desc = EVTDESCPA.10129
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = OPTPA_10129
+		custom_tooltip = {
+			text = tawusgeran_begins
+			hidden_tooltip = {
+				any_vassal = {
+					limit = { has_character_flag = attending_tawusgeran }
+					character_event = { id = PA.10130 }
+				}
+				character_event = { id = PA.10131 days = 10 }
+			}
+		}
+	}
+}
+
+# Celebration Begins (Vassals)
+character_event = {
+	id = PA.10130
+	desc = EVTDESCPA.10130
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OPTPA_10130
+		custom_tooltip = { text = tawusgeran_begins }
+	}
+}
+
+# Feast Begins (Liege)
+character_event = {
+	id = PA.10131
+	desc = EVTDESCPA.10131
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_TOG_705
+		
+		custom_tooltip = {
+			text = feast_begins
+			hidden_tooltip = {
+				any_vassal = {
+					limit = { has_character_flag = attending_tawusgeran }
+					character_event = { id = PA.10132 }
+				}
+				character_event = { id = PA.10133 days = 25 }
+				random_list = {
+					10 = { character_event = { id = PA.10156 days = 3 } } 
+					10 = { character_event = { id = PA.10157 days = 3 } }
+					10 = { character_event = { id = PA.10158 days = 3 } }
+					10 = { character_event = { id = PA.10159 days = 3 } }
+					10 = { character_event = { id = PA.10160 days = 3 } }
+					10 = { character_event = { id = PA.10161 days = 3 } }
+					10 = { character_event = { id = PA.10162 days = 3 } }
+				}
+				random_list = {
+					10 = { character_event = { id = PA.10156 days = 8 } } 
+					10 = { character_event = { id = PA.10157 days = 8 } }
+					10 = { character_event = { id = PA.10158 days = 8 } }
+					10 = { character_event = { id = PA.10159 days = 8 } }
+					10 = { character_event = { id = PA.10160 days = 8 } }
+					10 = { character_event = { id = PA.10161 days = 8 } }
+					10 = { character_event = { id = PA.10162 days = 8 } }
+				}
+				random_list = {
+					10 = { character_event = { id = PA.10156 days = 13 } } 
+					10 = { character_event = { id = PA.10157 days = 13 } }
+					10 = { character_event = { id = PA.10158 days = 13 } }
+					10 = { character_event = { id = PA.10159 days = 13 } }
+					10 = { character_event = { id = PA.10160 days = 13 } }
+					10 = { character_event = { id = PA.10161 days = 13 } }
+					10 = { character_event = { id = PA.10162 days = 13 } }
+				}
+				random_list = {
+					10 = { character_event = { id = PA.10156 days = 18 } } 
+					10 = { character_event = { id = PA.10157 days = 18 } }
+					10 = { character_event = { id = PA.10158 days = 18 } }
+					10 = { character_event = { id = PA.10159 days = 18 } }
+					10 = { character_event = { id = PA.10160 days = 18 } }
+					10 = { character_event = { id = PA.10161 days = 18 } }
+					10 = { character_event = { id = PA.10162 days = 18 } }
+				}
+			}
+		}
+	}
+}
+
+# Feast Begins (Vassals)
+character_event = {
+	id = PA.10132
+	desc = EVTDESCPA.10132
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_705
+		set_character_flag = tawusgeran_feast_vassal
+		custom_tooltip = { text = feast_begins }
+	}
+}
+
+# Feast Ends (Liege)
+character_event = {
+	id = PA.10133
+	desc = EVTDESCPA.10133
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_TOG_707
+		any_vassal = {
+			limit = { has_character_flag = attending_tawusgeran }
+			opinion = {
+				modifier = opinion_tawusgeran
+				who = ROOT
+			}
+		}
+		hidden_tooltip = {
+			any_vassal = {
+				limit = { has_character_flag = attending_tawusgeran }
+				character_event = { id = PA.10134 }
+			}
+		}
+		add_character_modifier = {
+			name = held_tawusgeran_timer
+			duration = 1825
+			hidden = yes
+		}
+		prestige = 100
+		piety = 100
+		clr_character_flag = holding_tawusgeran
+		clr_character_flag = feast_drunkard
+		clr_character_flag = feast_gluttonous
+		clr_character_flag = feast_lunatic
+		clr_character_flag = feast_lustful
+		clr_character_flag = feast_homosexual
+		clr_character_flag = do_not_disturb
+	}
+}
+
+# Feast Ends (Vassals)
+character_event = {
+	id = PA.10134
+	desc = EVTDESCPA.10134
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_707
+		clr_character_flag = attending_tawusgeran
+		clr_character_flag = tawusgeran_feast_vassal
+		clr_character_flag = feast_drunkard
+		clr_character_flag = feast_gluttonous
+		clr_character_flag = feast_lunatic
+		clr_character_flag = feast_lustful
+		clr_character_flag = feast_friendship
+		clr_character_flag = feast_homosexual
+		clr_character_flag = do_not_disturb
+	}
+}
+
+## Tawusgeran Feast Events
+
+# Drunkard (Guest)
+character_event = {
+	id = PA.10135
+	desc = EVTDESC_TOG_650
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_drunkard }
+		liege = { 
+			has_character_flag = holding_tawusgeran
+			NOT = { has_character_flag = feast_drunkard }
+		}
+		trait = drunkard
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_650
+		tooltip_info = drunkard
+		set_character_flag = feast_drunkard
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_drunkard
+				character_event = { id = PA.10136 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = PA.10136 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = drunkard } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = drunkard }
+					opinion = {
+						modifier = opinion_drinking_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = drunkard }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						trait = drunkard
+					}
+					opinion = {
+						modifier = opinion_drinking_buddy
+						who = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+# Drunkard (Host and Other Guests)
+character_event = {
+	id = PA.10136
+	desc = EVTDESC_TOG_651
+	picture = GFX_evt_drunk
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_651
+		trigger = { 
+			NOT = { trait = drunkard } 
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_651
+		tooltip_info = drunkard
+		trigger = { 
+			trait = drunkard
+		}
+		opinion = {
+			modifier = opinion_drinking_buddy
+			who = FROM
+		}
+	}
+}
+
+# Gluttonous (Victim Hidden)
+character_event = {
+	id = PA.10137
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		liege = {
+			has_character_flag = holding_tawusgeran
+			NOT = { has_character_flag = feast_gluttonous }
+			any_vassal = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_gluttonous }
+				trait = gluttonous
+				NOT = { character = ROOT }
+			}
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		liege = {
+			set_character_flag = feast_gluttonous
+			random_vassal = {
+				limit = {
+					has_character_flag = tawusgeran_feast_vassal
+					trait = gluttonous
+					NOT = { character = ROOT }
+				}
+				character_event = { id = PA.10138 }
+				set_character_flag = feast_gluttonous
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Gluttonous (Guest)
+character_event = {
+	id = PA.10138
+	desc = EVTDESC_TOG_653
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_653
+		tooltip_info = gluttonous
+		FROM = {
+			character_event = { id = PA.10139 tooltip = EVTTOOLTIP_TOG_654 }
+		}	
+		hidden_tooltip = {
+			liege = {
+				character_event = { id = PA.10140 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { 
+							character = ROOT 
+							character = FROM
+						}
+					}
+					character_event = { id = PA.10140 }
+				}
+			}
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_vomit
+					who = ROOT
+				}
+			}
+			liege = {
+				opinion = {
+					modifier = opinion_feast_scandal
+					who = ROOT
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { 
+							character = ROOT 
+							character = FROM
+						}
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+# Gluttonous (Victim)
+character_event = {
+	id = PA.10139
+	desc = EVTDESC_TOG_654
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_654
+		opinion = {
+			modifier = opinion_vomit
+			who = FROM
+		}
+	}
+}
+
+# Gluttonous (Host and Other Guests)
+character_event = {
+	id = PA.10140
+	desc = EVTDESC_TOG_655
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_655
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+}
+
+# Lunatic (Guest)
+character_event = {
+	id = PA.10141
+	desc = EVTDESC_TOG_656
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	hide_from = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_lunatic }
+		liege = { 
+			has_character_flag = holding_tawusgeran 
+			NOT = { has_character_flag = feast_lunatic }
+		}
+		trait = lunatic
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_656
+		tooltip_info = lunatic
+		set_character_flag = feast_lunatic
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lunatic
+				character_event = { id = PA.10142 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = PA.10142 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lunatic } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lunatic }
+					opinion = {
+						modifier = opinion_feast_friend
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lunatic }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						trait = lunatic
+					}
+					opinion = {
+						modifier = opinion_feast_friend
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+}
+
+# Lunatic (Host and Other Guests)
+character_event = {
+	id = PA.10142
+	desc = EVTDESC_TOG_657
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_657
+		trigger = {
+			NOT = { trait = lunatic }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = ROOT
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_657
+		tooltip_info = lunatic
+		trigger = {
+			trait = lunatic
+		}
+		opinion = {
+			modifier = opinion_feast_friend
+			who = ROOT
+		}
+	}
+}
+
+# Lustful (Guest)
+character_event = {
+	id = PA.10143
+	desc = EVTDESC_TOG_658
+	picture = GFX_evt_brothel
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	hide_from = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_lustful }
+		liege = { 
+			has_character_flag = holding_tawusgeran 
+			NOT = { has_character_flag = feast_lustful }
+		}
+		trait = lustful
+		is_female = no
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPTA_TOG_658
+		tooltip_info = lustful
+		set_character_flag = feast_lustful
+		trigger = {
+			is_married = no
+		}
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lustful
+				character_event = { id = PA.10144 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = PA.10144 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lustful } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lustful }
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lustful }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						trait = lustful
+					}
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+	option = {
+		name = EVTOPTB_TOG_658
+		tooltip_info = lustful
+		set_character_flag = feast_lustful
+		trigger = {
+			is_married = yes
+		}
+		hidden_tooltip = {
+			liege = {
+				set_character_flag = feast_lustful
+				character_event = { id = TOG.729 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+					}
+					character_event = { id = PA.10144 }
+				}
+			}
+		}
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = lustful } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = lustful }
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = lustful }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						trait = lustful
+					}
+					opinion = {
+						modifier = opinion_lustful_buddy
+						who = ROOT
+					}
+				}
+			}
+			any_spouse = {
+				opinion = {
+					modifier = opinion_mad_as_hell
+					who = ROOT
+					years = 1
+				}
+			}
+		}	
+	}
+}
+
+# Lustful (Host and Other Guests)
+character_event = {
+	id = PA.10144
+	desc = EVTDESC_TOG_659
+	picture = GFX_evt_brothel
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_659
+		trigger = {
+			NOT = { trait = lustful }
+			NOT = { any_spouse = { character = FROM } }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_659
+		tooltip_info = lustful
+		trigger = {
+			trait = lustful
+			NOT = { any_spouse = { character = FROM } }
+		}
+		opinion = {
+			modifier = opinion_lustful_buddy
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTC_TOG_659
+		trigger = {
+			any_spouse = { character = FROM }
+		}
+		opinion = {
+			modifier = opinion_mad_as_hell
+			who = FROM
+			years = 1
+		}
+	}
+}
+
+# Friendship Formed (Guest 1 Hidden)
+character_event = {
+	id = PA.10145
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_friendship }
+		liege = { 
+			has_character_flag = holding_tawusgeran
+			any_vassal = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_friendship }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  20 }
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 60
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_friendship
+		liege = { 
+			random_vassal = {
+				limit = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  20 }
+				}
+				character_event = { id = PA.10146 }
+				set_character_flag = feast_friendship
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+				reverse_opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}		
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Friendship Formed (Guest 2)
+character_event = {
+	id = PA.10146
+	desc = EVTDESC_TOG_661
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_661
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = PA.10147 }
+			}
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_feast_friend
+				who = FROM
+			}
+		}
+	}
+}
+
+# Friendship Formed (Guest 1)
+character_event = {
+	id = PA.10147
+	desc = EVTDESC_TOG_661
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_661
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = opinion_feast_friend
+					who = ROOT
+				}
+			}
+			opinion = {
+				modifier = opinion_feast_friend
+				who = FROM
+			}
+		}
+	}
+}
+
+# Homosexual Male (Guest 1 Hidden)
+character_event = {
+	id = PA.10148
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_homosexual }
+		trait = homosexual
+		is_female = no
+		has_lover = no
+		liege = { 
+			has_character_flag = holding_tawusgeran
+			NOT = { has_character_flag = feast_homosexual }
+			any_vassal = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  0 }
+				trait = homosexual
+				is_female = no
+				has_lover = no
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 40
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_homosexual
+		liege = { 
+			set_character_flag = feast_homosexual
+			random_vassal = {
+				limit = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  0 }
+					trait = homosexual
+					is_female = no
+				}
+				character_event = { id = PA.10149 }
+				add_lover = FROM
+				set_character_flag = feast_homosexual
+			}		
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Homosexual Male (Guest 2)
+character_event = {
+	id = PA.10149
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = PA.10150 }
+			}
+			liege = {
+				character_event = { id = PA.10155 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = {
+							character = ROOT
+							character = FROM
+						}
+					}
+					character_event = { id = PA.10155 }
+				}
+			}
+		}
+		tooltip = {
+			random = {
+				chance = 50
+				character_event = { id = PA.10154 tooltip = EVTTOOLTIP_TOG_669 }
+			}
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Male (Guest 1)
+character_event = {
+	id = PA.10150
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		random = {
+			chance = 50
+			character_event = { id = PA.10154 tooltip = EVTTOOLTIP_TOG_669 }
+			hidden_tooltip = {
+				FROM = {
+					character_event = { id = PA.10154 }
+				}
+			}
+		}
+		tooltip = {
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Female (Guest 1 Hidden)
+character_event = {
+	id = PA.10151
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = tawusgeran_feast_vassal
+		NOT = { has_character_flag = feast_homosexual }
+		trait = homosexual
+		is_female = yes
+		has_lover = no
+		liege = { 
+			has_character_flag = holding_tawusgeran
+			NOT = { has_character_flag = feast_homosexual }
+			any_vassal = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				NOT = { character = ROOT }
+				opinion = { who = ROOT value =  0 }
+				trait = homosexual
+				is_female = yes
+				has_lover = no
+			}		
+		}
+	}
+	
+#	mean_time_to_happen = {
+#		days = 40
+#		
+#		modifier = {
+#			factor = 1.1
+#			liege = { num_of_vassals = 10 }
+#		}
+#		modifier = {
+#			factor = 1.2
+#			liege = { num_of_vassals = 20 }
+#		}
+#		modifier = {
+#			factor = 1.3
+#			liege = { num_of_vassals = 30 }
+#		}
+#		modifier = {
+#			factor = 1.4
+#			liege = { num_of_vassals = 40 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			liege = { num_of_vassals = 50 }
+#		}
+#		modifier = {
+#			factor = 3
+#			liege = { num_of_vassals = 100 }
+#		}
+#	}
+	
+	immediate = {
+		set_character_flag = feast_homosexual
+		liege = { 
+			set_character_flag = feast_homosexual
+			random_vassal = {
+				limit = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = ROOT }
+					opinion = { who = ROOT value =  0 }
+					trait = homosexual
+					is_female = yes
+				}
+				character_event = { id = PA.10152 }
+				set_character_flag = feast_homosexual
+				add_lover = FROM
+			}		
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Homosexual Female (Guest 2)
+character_event = {
+	id = PA.10152
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = TOG.738 }
+			}
+			liege = {
+				character_event = { id = PA.10154 }
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = {
+							character = ROOT
+							character = FROM
+						}
+					}
+					character_event = { id = PA.10154 }
+				}
+			}			
+		}
+		tooltip = {
+			random = {
+				chance = 50
+				character_event = { id = PA.10154 tooltip = EVTTOOLTIP_TOG_669 }
+			}
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Female (Guest 1)
+character_event = {
+	id = PA.10153
+	desc = EVTDESC_TOG_664
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_664
+		tooltip_info = homosexual
+		random = {
+			chance = 50
+			character_event = { id = PA.10154 tooltip = EVTTOOLTIP_TOG_669 }
+			hidden_tooltip = {
+				FROM = {
+					character_event = { id = PA.10154 }
+				}
+			}
+		}
+		tooltip = {
+			add_lover = FROM
+		}
+	}
+}
+
+# Homosexual Caught
+character_event = {
+	id = PA.10154
+	desc = EVTDESC_TOG_669
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_669
+		tooltip = {
+			liege = {
+				if = {
+					limit = { NOT = { trait = homosexual } }
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				if = {
+					limit = { trait = homosexual }
+					opinion = {
+						modifier = opinion_homosexual_sympathy
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						NOT = { trait = homosexual }
+					}
+					opinion = {
+						modifier = opinion_feast_scandal
+						who = ROOT
+					}
+				}
+				any_vassal = {
+					limit = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { character = ROOT }
+						trait = homosexual
+					}
+					opinion = {
+						modifier = opinion_homosexual_sympathy
+						who = ROOT
+					}
+				}
+			}
+		}	
+	}
+}
+
+# Homosexual Caught (Host and Other Guests)
+character_event = {
+	id = PA.10155
+	desc = EVTDESC_TOG_670
+	picture = GFX_evt_feast
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_670
+		trigger = {
+			NOT = { trait = homosexual }
+		}
+		opinion = {
+			modifier = opinion_feast_scandal
+			who = FROM
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_670
+		tooltip_info = homosexual
+		trigger = {
+			trait = homosexual
+		}
+		opinion = {
+			modifier = opinion_homosexual_sympathy
+			who = FROM
+		}
+	}
+}
+
+### Feast event bounces
+character_event = { #feast_drunkard
+	id = PA.10156
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_tawusgeran
+		NOT = { has_character_flag = feast_drunkard }
+		any_vassal = {
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_drunkard }
+			trait = drunkard
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				trait = drunkard
+			}
+			character_event = { id = PA.10135 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10157 #feast_gluttonous
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_tawusgeran
+		NOT = { has_character_flag = feast_gluttonous }
+		any_vassal = {
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_gluttonous }
+			trait = gluttonous
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				trait = gluttonous
+			}
+			character_event = { id = PA.10137 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10158 #feast_lunatic
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_tawusgeran
+		NOT = { has_character_flag = feast_lunatic }
+		any_vassal = {
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_lunatic }
+			trait = lunatic
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				trait = lunatic
+			}
+			character_event = { id = PA.10141 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10159 #feast_lustful
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_tawusgeran
+		NOT = { has_character_flag = feast_lustful }
+		any_vassal = { 
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_lustful }
+			trait = lustful
+			is_female = no
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				trait = lustful
+				is_female = no
+			}
+			character_event = { id = PA.10143 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10160 #feast_friendship
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_character_flag = holding_tawusgeran
+		NOT = { has_character_flag = feast_friendship }
+		has_character_flag = tawusgeran_feast_vassal
+		any_vassal = {
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_friendship }
+			liege = { 
+				any_vassal = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { has_character_flag = feast_friendship }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  20 }
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_friendship }
+				liege = { 
+					any_vassal = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { has_character_flag = feast_friendship }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  20 }
+					}		
+				}
+			}
+			character_event = { id = PA.10145 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10161 #male_homosexual
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		NOT = { has_character_flag = feast_homosexual }
+		has_character_flag = holding_tawusgeran
+		any_vassal = { 
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_homosexual }
+			trait = homosexual
+			is_female = no
+			has_lover = no
+			liege = { 
+				any_vassal = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  0 }
+					trait = homosexual
+					is_female = no
+					has_lover = no
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				trait = homosexual
+				is_female = no
+				has_lover = no
+				liege = { 
+					any_vassal = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { has_character_flag = feast_homosexual }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  0 }
+						trait = homosexual
+						is_female = no
+						has_lover = no
+					}		
+				}
+			}
+			character_event = { id = PA.10148 }
+		}
+	}
+}
+
+character_event = {
+	id = PA.10162 #female_homosexual
+	
+	is_triggered_only = yes
+	
+	hide_window = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		NOT = { has_character_flag = feast_homosexual }
+		has_character_flag = holding_tawusgeran
+		any_vassal = { 
+			has_character_flag = tawusgeran_feast_vassal
+			NOT = { has_character_flag = feast_homosexual }
+			trait = homosexual
+			is_female = yes
+			has_lover = no
+			liege = { 
+				any_vassal = {
+					has_character_flag = tawusgeran_feast_vassal
+					NOT = { has_character_flag = feast_homosexual }
+					NOT = { character = PREVPREV }
+					opinion = { who = PREVPREV value =  0 }
+					trait = homosexual
+					is_female = yes
+					has_lover = no
+				}		
+			}
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = tawusgeran_feast_vassal
+				NOT = { has_character_flag = feast_homosexual }
+				trait = homosexual
+				is_female = yes
+				has_lover = no
+				liege = { 
+					any_vassal = {
+						has_character_flag = tawusgeran_feast_vassal
+						NOT = { has_character_flag = feast_homosexual }
+						NOT = { character = PREVPREV }
+						opinion = { who = PREVPREV value =  0 }
+						trait = homosexual
+						is_female = yes
+						has_lover = no
+					}		
+				}
+			}
+			character_event = { id = PA.10151 }
+		}
+	}
+}
+
+# Yazidi Pilgrimage
+
+character_event = {
+	id = PA.10163
+	desc = EVTDESCPA.10163
+	picture = GFX_evt_merchant_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10163
+		hidden_tooltip = {
+			character_event = { id = PA.10164 }
+		}
+	}
+}
+
+
+# Sheikh's Tomb
+
+character_event = {
+	id = PA.10164
+	desc = EVTDESCPA.10164
+	picture = GFX_evt_merchant_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10164
+		hidden_tooltip = {
+			set_character_flag = yazidi_pilgrimage
+		}
+	}
+}	
+
+# Good Arrival
+
+narrative_event = {
+	id = PA.10165
+	title = EVTNAMEPA.10165
+	desc = EVTDESCPA.10165
+	picture = GFX_evt_religious_exultation
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = bad_yazidi_pilgrimage }
+		NOT = { has_character_flag = good_yazidi_pilgrimage }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	option = {
+		name = OPTPA_10165
+		hidden_tooltip = {
+			clr_character_flag = yazidi_pilgrimage
+			set_character_flag = good_yazidi_pilgrimage
+			character_event = { id = PA.10167 days = 10 }
+		}
+	}
+}
+
+# Bad Arrival
+
+narrative_event = {
+	id = PA.10166
+	title = EVTNAMEPA.10166
+	desc = EVTDESCPA.10166
+	picture = GFX_evt_market
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage				
+		NOT = { has_character_flag = bad_yazidi_pilgrimage }
+		NOT = { has_character_flag = good_yazidi_pilgrimage }                	
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	option = {
+		name = OPTPA_10166
+		hidden_tooltip = {
+			clr_character_flag = yazidi_pilgrimage
+				set_character_flag = bad_yazidi_pilgrimage
+				character_event = { id = PA.10168 days = 10 }
+		}
+	}
+}
+
+# Good Journey
+
+character_event = {
+	id = PA.10167
+	desc = EVTDESCPA.10167
+	picture = GFX_evt_imam
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10167
+		add_trait = pilgrim
+		piety = 100
+		clr_character_flag = yazidi_pilgrimage
+	}
+}
+
+# Bad Journey
+
+character_event = {
+	id = PA.10168
+	desc = EVTDESCPA.10168
+	picture = GFX_evt_imam
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10168
+		add_trait = pilgrim
+		piety = -100
+		clr_character_flag = yazidi_pilgrimage
+	}
+}
+
+# Pilgrimage Bandits
+
+character_event = {
+	id = PA.10169
+	desc = EVTDESCPA.10169
+	picture = GFX_evt_moors
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_bandits }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = OPTAPA_100169
+		set_character_flag = pilgrimage_bandits
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = brave
+			}
+			modifier = {
+				factor = 0
+				trait = craven
+			}			
+		}
+		random_list = {
+			50 = { hidden_tooltip = { character_event = { id = PA.10170 } } }
+			30 = {	add_trait = brave hidden_tooltip = { ROOT = { character_event = { id = PA.10170 } } } }
+			20 = {	death = { death_reason = death_battle } }
+		}		
+	}
+	option = {
+		name = OPTBPA_1000169
+		set_character_flag = pilgrimage_bandits
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 0
+				trait = brave
+			}
+			modifier = {
+				factor = 5
+				trait = craven
+			}
+		}			
+		random_list = {
+			70 = { hidden_tooltip = { character_event = { id = PA.10171 } } }
+			30 = { add_trait = craven hidden_tooltip = { ROOT = { character_event = { id = PA.10171 } } } }		
+	    }
+	}
+}
+
+character_event = {
+	id = PA.10170
+	desc = EVTDESCPA.10170
+	picture = GFX_evt_melee
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10170
+		prestige = 50
+	}
+}
+
+
+character_event = {
+	id = PA.10171
+	desc = EVTDESCPA.10171
+	picture = GFX_evt_moors
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10171
+		prestige = -50
+	}
+}
+
+# Pilgrimage Oasis
+
+character_event = {
+	id = PA.10172
+	desc = EVTDESCPA.10172
+	picture = GFX_evt_fishing
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_oasis }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = OPTAPA_100172
+		set_character_flag = pilgrimage_oasis
+		add_character_modifier = {
+			name = desert_heat
+			duration = 30
+		}
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = strong
+			}
+			modifier = {
+				factor = 0
+				trait = ill
+			}
+		}			
+	}
+	option = {
+		name = OPTBPA_1000172
+		set_character_flag = pilgrimage_oasis
+		add_character_modifier = {
+			name = fresh_water
+			duration = 30
+		}
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = ill
+			}
+			modifier = {
+				factor = 0
+				trait = strong
+			}	
+		}						
+	}
+}	 
+
+# Pilgrimage Peacock
+
+character_event = {
+	id = PA.10173
+	desc = EVTDESCPA.10173
+	picture = GFX_evt_desert
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_peacock }
+	}
+
+	mean_time_to_happen = {
+		days = 220
+	}
+
+	option = {
+		name = OPTAPA_100173
+		set_character_flag = pilgrimage_peacock
+		custom_tooltip = { text = approach_peacock }
+		hidden_tooltip = { 
+			character_event = { id = PA.10174 } 
+		}
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+		 }			
+	}
+	option = {
+		name = OPTBPA_1000173
+		set_character_flag = pilgrimage_peacock
+		custom_tooltip = { text = confront_peacock }
+		hidden_tooltip = { 
+			character_event = { id = PA.10175 } 
+		}
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = cynical
+			}
+			modifier = {
+				factor = 0
+				trait = zealous
+			}	
+		}						
+	}
+}  
+	
+character_event = {
+	id = PA.10174
+	desc = EVTDESCPA.10174
+	picture = GFX_evt_religious_exultation
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10174
+		add_character_modifier = {
+			name = peacocks_feather
+			duration = -1
+		}
+	}
+}
+
+character_event = {
+	id = PA.10175
+	desc = EVTDESCPA.10175
+	picture = GFX_evt_moors
+
+	is_triggered_only = yes
+
+	option = {
+		name = OPTPA_10175
+		piety = -100
+	}
+}
+
+# Pilgrimage Samaritan
+
+character_event = {
+	id = PA.10176
+	desc = EVTDESCPA.10176
+	picture = GFX_evt_bloody_man
+
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_samaritan }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = OPTAPA_100176
+		set_character_flag = pilgrimage_samaritan
+		piety = 50
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+			modifier = {
+				factor = 0
+				trait = cruel
+			}
+		}			
+	}
+	option = {
+		name = OPTBPA_1000176
+		set_character_flag = pilgrimage_samaritan
+		piety = -50
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = cruel
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}	
+		}						
+	}
+} 
+
+# Pilgrimage Beggar
+
+character_event = {
+	id = PA.10177
+	desc = EVTDESCPA.10177
+	picture = GFX_evt_market
+	
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_beggar }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = OPTAPA_100177
+		set_character_flag = pilgrimage_beggar					
+		piety = 50
+		wealth = -20
+		ai_chance = { 
+		factor = 5
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+			modifier = {
+				factor = 0
+				trait = cruel
+			}
+		}			
+	}
+	option = {
+		name = OPTBPA_1000178
+		set_character_flag = pilgrimage_beggar
+		prestige = 50
+		piety = -50
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = cruel
+			}
+			modifier = {
+				factor = 0
+				trait = kind
+			}	
+		}					
+	}
+}  
+
+# Pilgrimage Lost
+
+character_event = {
+	id = PA.10178
+	desc = EVTDESCPA.10178
+	picture = GFX_evt_desert
+	
+	trigger = {
+		has_character_flag = yazidi_pilgrimage
+		NOT = { has_character_flag = pilgrimage_lost_lalish }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = OPTAPA_100178
+		set_character_flag = pilgrimage_lost_lalish
+		prestige = -50
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = patient
+			}
+			modifier = {
+				factor = 0
+				trait = wroth
+			}
+		}			
+	}
+	option = {
+		name = OPTBPA_1000178
+		set_character_flag = pilgrimage_lost_lalish
+		add_character_modifier = {
+			name = desert_heat
+			duration = 30
+		}
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 5
+				trait = wroth
+			}
+			modifier = {
+				factor = 0
+				trait = patient
+			}	
+		}						
+	}
+}  

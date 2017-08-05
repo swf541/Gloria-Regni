@@ -1,0 +1,23 @@
+spriteTypes = {
+        spriteType = {
+               name = "GFX_evt_irminsul"
+	       texturefile = "gfx/event_pictures/irminsul.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+               effectFile = "gfx/FX/buttonstate.lua"
+               }
+       spriteType = {
+	       name = "GFX_evt_Osnabruck"
+	       texturefile = "gfx/event_pictures/Osnabruck.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+        spriteType = {
+	       name = "GFX_evt_ceremony_at_the_irminsul"
+	       texturefile = "gfx/event_pictures/ceremony_at_the_irminsul.tga"
+	       noOfFrames = 1
+	       norefcount = yes
+	       effectFile = "gfx/FX/buttonstate.lua"
+               }    
+}

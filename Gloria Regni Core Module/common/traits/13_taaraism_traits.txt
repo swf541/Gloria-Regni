@@ -1,0 +1,25 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# Taara
+
+taaraism_monu = {
+    potential = {
+        religion = taaraism
+    }
+	opposites = {
+		stressed
+		depressed
+	}
+
+	health = 0.5
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	intrigue = -2
+	religious = yes
+    customizer = no
+    random = yes
+}

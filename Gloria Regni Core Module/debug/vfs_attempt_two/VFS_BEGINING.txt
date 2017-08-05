@@ -1,0 +1,491 @@
+namespace = VFS
+
+character_event = {
+	id = VFS.1
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		independent = yes
+	} 
+	immediate = {
+		any_realm_province = {
+			limit = { religion = imperial }
+			set_province_flag = imperial_majority	
+		}
+		any_realm_province = {
+			limit = { religion = arian }
+			set_province_flag = arian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = donatism }
+			set_province_flag = donatism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = adoptionism }
+			set_province_flag = adoptionism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = sabellianism }
+			set_province_flag = sabellianism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = pelagianism }
+			set_province_flag = pelagianism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = macedonianism }
+			set_province_flag = macedonianism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = marcionism }
+			set_province_flag = marcionism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = priscillianism }
+			set_province_flag = priscillianism_majority	
+		}		
+		any_realm_province = {
+			limit = { religion = valentinianism }
+			set_province_flag = valentinianism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = catholic }
+			set_province_flag = catholic_majority	
+		}
+		any_realm_province = {
+			limit = { religion = cathar }
+			set_province_flag = cathar_majority	
+		}
+		any_realm_province = {
+			limit = { religion = fraticelli }
+			set_province_flag = fraticelli_majority	
+		}
+		any_realm_province = {
+			limit = { religion = waldensian }
+			set_province_flag = waldensian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = lollard }
+			set_province_flag = lollard_majority	
+		}
+		any_realm_province = {
+			limit = { religion = orthodox }
+			set_province_flag = orthodox_majority	
+		}
+		any_realm_province = {
+			limit = { religion = miaphysite }
+			set_province_flag = miaphysite_majority	
+		}
+		any_realm_province = {
+			limit = { religion = paulician }
+			set_province_flag = paulician_majority	
+		}
+		any_realm_province = {
+			limit = { religion = tondrakian }
+			set_province_flag = tondrakian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = monophysite }
+			set_province_flag = monophysite_majority	
+		}
+		any_realm_province = {
+			limit = { religion = bogomilist }
+			set_province_flag = bogomilist_majority	
+		}
+		any_realm_province = {
+			limit = { religion = monothelite }
+			set_province_flag = monothelite_majority	
+		}
+		any_realm_province = {
+			limit = { religion = iconoclast }
+			set_province_flag = iconoclast_majority	
+		}
+		any_realm_province = {
+			limit = { religion = nestorian }
+			set_province_flag = nestorian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = eutychian }
+			set_province_flag = eutychian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = messalian }
+			set_province_flag = messalian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = sunni }
+			set_province_flag = sunni_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zikri }
+			set_province_flag = zikri_majority	
+		}
+		any_realm_province = {
+			limit = { religion = yazidi }
+			set_province_flag = yazidi_majority	
+		}
+		any_realm_province = {
+			limit = { religion = ibadi }
+			set_province_flag = ibadi_majority	
+		}
+		any_realm_province = {
+			limit = { religion = kharijite }
+			set_province_flag = kharijite_majority	
+		}		
+		any_realm_province = {
+			limit = { religion = shiite }
+			set_province_flag = shiite_majority	
+		}		
+		any_realm_province = {
+			limit = { religion = druze }
+			set_province_flag = druze_majority	
+		}		
+		any_realm_province = {
+			limit = { religion = qarmatian }
+			set_province_flag = qarmatian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = hurufi }
+			set_province_flag = hurufi_majority	
+		}
+		any_realm_province = {
+			limit = { religion = pagan }
+			set_province_flag = pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = mesopotamian_paganism }
+			set_province_flag = mesopotamian_paganism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = norse_pagan_reformed }
+			set_province_flag = norse_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = norse_pagan }
+			set_province_flag = norse_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = tengri_pagan_reformed }
+			set_province_flag = tengri_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = tengri_pagan }
+			set_province_flag = tengri_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = baltic_pagan_reformed }
+			set_province_flag = baltic_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = baltic_pagan }
+			set_province_flag = baltic_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = finnish_pagan_reformed }
+			set_province_flag = finnish_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = finnish_pagan }
+			set_province_flag = finnish_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = aztec_reformed }
+			set_province_flag = aztec_majority	
+		}
+		any_realm_province = {
+			limit = { religion = slavic_pagan_reformed }
+			set_province_flag = slavic_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = slavic_pagan }
+			set_province_flag = slavic_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = west_african_pagan_reformed }
+			set_province_flag = west_african_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = west_african_pagan }
+			set_province_flag = west_african_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zalmoxism }
+			set_province_flag = zalmoxism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zun_pagan_reformed }
+			set_province_flag = zun_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zun_pagan }
+			set_province_flag = zun_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = hellenic_pagan }
+			set_province_flag = hellenic_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = hellenic_pagan_reformed }
+			set_province_flag = hellenic_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = sol_invictus }
+			set_province_flag = sol_invictus_majority	
+		}
+		any_realm_province = {
+			limit = { religion = egyptian_pagan }
+			set_province_flag = egyptian_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = egyptian_pagan_reformed }
+			set_province_flag = egyptian_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = basque_pagan_reformed }
+			set_province_flag = basque_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = basque_pagan }
+			set_province_flag = basque_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = germanic_pagan_reformed }
+			set_province_flag = germanic_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = germanic_pagan }
+			set_province_flag = germanic_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = semitic_pagan_reformed }
+			set_province_flag = semitic_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = semitic_pagan }
+			set_province_flag = semitic_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = east_african_pagan_reformed }
+			set_province_flag = east_african_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = east_african_pagan }
+			set_province_flag = east_african_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = ossetian_pagan_reformed }
+			set_province_flag = ossetian_pagan_reformed_majority	
+		}
+		any_realm_province = {
+			limit = { religion = ossetian_pagan }
+			set_province_flag = ossetian_pagan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zoroastrian }
+			set_province_flag = zoroastrian_majority	
+		}
+		any_realm_province = {
+			limit = { religion = mazdaki }
+			set_province_flag = mazdaki_majority	
+		}
+		any_realm_province = {
+			limit = { religion = manichean }
+			set_province_flag = manichean_majority	
+		}
+		any_realm_province = {
+			limit = { religion = jewish }
+			set_province_flag = jewish_majority	
+		}
+		any_realm_province = {
+			limit = { religion = samaritan }
+			set_province_flag = samaritan_majority	
+		}
+		any_realm_province = {
+			limit = { religion = karaite }
+			set_province_flag = karaite_majority	
+		}
+		any_realm_province = {
+			limit = { religion = hindu }
+			set_province_flag = hindu_majority	
+		}
+		any_realm_province = {
+			limit = { religion = jain }
+			set_province_flag = jain_majority	
+		}
+		any_realm_province = {
+			limit = { religion = buddhist }
+			set_province_flag = buddhist_majority	
+		}
+		any_realm_province = {
+			limit = { religion = zurvanite }
+			set_province_flag = zurvanite_majority	
+		}
+		any_realm_province = {
+			limit = { religion = mandean }
+			set_province_flag = mandean_majority	
+		}
+		any_realm_province = {
+			limit = { religion = grand_sanhedrin }
+			set_province_flag = grand_sanhedrin_majority	
+		}
+		any_realm_province = {
+			limit = { religion = temple_judaism }
+			set_province_flag = temple_judaism_majority	
+		}
+		any_realm_province = {
+			limit = { religion = melitianism }
+			set_province_flag = melitianism_majority
+		}
+		any_realm_province = {
+			limit = { religion = novatianism }
+			set_province_flag = novatianism_majority
+		}
+		any_realm_province = {
+			limit = { religion = encratites }
+			set_province_flag = encratites_majority
+		}
+		any_realm_province = {
+			limit = { religion = montanism }
+			set_province_flag = montanism_majority
+		}
+		any_realm_province = {
+			limit = { religion = serer }
+			set_province_flag = serer_majority
+		}
+		any_realm_province = {
+			limit = { religion = serer_reformed }
+			set_province_flag = serer_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = bori }
+			set_province_flag = bori_majority
+		}
+		any_realm_province = {
+			limit = { religion = bori_reformed }
+			set_province_flag = bori_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = sogdian_zoroastrian }
+			set_province_flag = sogdian_zoroastrian_majority
+		}
+		any_realm_province = {
+			limit = { religion = armenian_pagan }
+			set_province_flag = armenian_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = armenian_pagan_reformed }
+			set_province_flag = armenian_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = chinese_pagan }
+			set_province_flag = chinese_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = chinese_pagan_reformed }
+			set_province_flag = chinese_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = tibetan_pagan }
+			set_province_flag = tibetan_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = tibetan_pagan_reformed }
+			set_province_flag = tibetan_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = celtic_pagan }
+			set_province_flag = celtic_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = celtic_pagan_reformed }
+			set_province_flag = celtic_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = sanamahi }
+			set_province_flag = sanamahi_majority
+		}
+		any_realm_province = {
+			limit = { religion = sanamahi_reformed }
+			set_province_flag = sanamahi_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = dravidian_pagan }
+			set_province_flag = dravidian_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = dravidian_pagan_reformed }
+			set_province_flag = dravidian_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = georgian_pagan }
+			set_province_flag = georgian_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = georgian_pagan_reformed }
+			set_province_flag = georgian_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = berber_pagan }
+			set_province_flag = berber_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = berber_pagan_reformed }
+			set_province_flag = berber_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = canaanite_pagan }
+			set_province_flag = canaanite_pagan_majority
+		}
+		any_realm_province = {
+			limit = { religion = canaanite_pagan_reformed }
+			set_province_flag = canaanite_pagan_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = amidist }
+			set_province_flag = amidist_majority
+		}
+		any_realm_province = {
+			limit = { religion = confucian }
+			set_province_flag = confucian_majority
+		}
+		any_realm_province = {
+			limit = { religion = neoconfucian }
+			set_province_flag = neoconfucian_majority
+		}
+		any_realm_province = {
+			limit = { religion = taoist }
+			set_province_flag = taoist_majority
+		}
+		any_realm_province = {
+			limit = { religion = neotaoist }
+			set_province_flag = neotaoist_majority
+		}
+		any_realm_province = {
+			limit = { religion = hindukush }
+			set_province_flag = hindukush_majority
+		}
+		any_realm_province = {
+			limit = { religion = hindukush_reformed }
+			set_province_flag = hindukush_reformed_majority
+		}
+		any_realm_province = {
+			limit = { religion = sammitiya }
+			set_province_flag = sammitiya_majority
+		}
+		any_realm_province = {
+			limit = { religion = mahayana }
+			set_province_flag = mahayana_majority
+		}
+		any_realm_province = {
+			limit = { religion = vajrayana }
+			set_province_flag = vajrayana_majority
+		}
+		any_realm_province = {
+			limit = { religion = proto_islam }
+			set_province_flag = proto_islam_majority
+		}
+	}
+}

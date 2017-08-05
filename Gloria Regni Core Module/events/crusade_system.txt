@@ -1,0 +1,1018 @@
+namespace = Plus
+
+########################################
+# Mod-Specific Crusade Events
+########################################
+
+# Who to give crusade land to
+character_event = {
+	id = Plus.400 #formerly 1008900
+	desc = EVTDESC_Plus_400
+	picture = "GFX_evt_crusaders"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_Plus_400 #To my son
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			OR = {
+				ai = no
+				NOT = { religion_group = muslim }
+			}
+			any_child = {
+				is_adult = yes
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+		}
+		prestige = 500
+		random_child = {
+			limit = {
+				is_adult = yes
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+			tooltip = {
+				character_event = { id = Plus.400 tooltip = CUSTOMTOOLTIP3 }
+			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+					add_trait = crusader
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					add_trait = mujahid
+				}
+				if = {
+					limit = {
+						religion = sunni
+					}
+					add_trait = mujahid
+				}
+				ROOT = {
+					random_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_thrace }
+								ROOT = { religion = catholic }
+								e_latin_empire = { has_holder = no }
+							}
+							e_latin_empire = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_anatolia }
+								ROOT = { religion_group = muslim }
+								k_rum = { has_holder = no }
+							}
+							k_rum = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						kingdom = {
+							destroy_landed_title = yes
+							revoke_law = investiture_law_0
+							revoke_law = investiture_law_1
+							add_law = crown_authority_3
+							add_law = city_tax_0
+							add_law = temple_tax_0
+							gain_title = PREVPREVPREV
+							if = {
+								limit = {
+									ROOT = { religion_group = muslim }
+								}
+								add_law = iqta_tax_0
+								add_law = succ_turkish_succession
+								add_law = agnatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { religion_group = muslim } }
+								}
+								add_law = feudal_tax_0
+								add_law = succ_primogeniture
+								add_law = cognatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { religion = catholic }
+								}
+								add_law = investiture_law_0
+							}
+						}
+					}
+					any_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						gain_title = PREVPREV
+					}
+				}
+				treasury = 500
+				prestige = 500
+				piety = 100
+				set_defacto_liege = THIS
+			}
+		}
+		any_demesne_title = {
+			location = { clr_province_flag = previous_holding }
+		}
+	}
+	option = {
+		name = EVTOPTE_Plus_400 #To my brother
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			OR = {
+				ai = no
+				NOT = { religion_group = muslim }
+			}
+			any_sibling = {
+				is_adult = yes
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+		}
+		prestige = 500
+		random_sibling = {
+			limit = {
+				is_adult = yes
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+			tooltip = {
+				character_event = { id = Plus.400 tooltip = CUSTOMTOOLTIP3 }
+			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+					add_trait = crusader
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					add_trait = mujahid
+				}
+				if = {
+					limit = {
+						religion = sunni
+					}
+					add_trait = mujahid
+				}
+				ROOT = {
+					random_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_thrace }
+								ROOT = { religion = catholic }
+								e_latin_empire = { has_holder = no }
+							}
+							e_latin_empire = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_anatolia }
+								ROOT = { religion_group = muslim }
+								k_rum = { has_holder = no }
+							}
+							k_rum = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						kingdom = {
+							destroy_landed_title = yes
+							revoke_law = investiture_law_0
+							revoke_law = investiture_law_1
+							add_law = crown_authority_3
+							add_law = city_tax_0
+							add_law = temple_tax_0
+							gain_title = PREVPREVPREV
+							if = {
+								limit = {
+									ROOT = { religion_group = muslim }
+								}
+								add_law = iqta_tax_0
+								add_law = succ_turkish_succession
+								add_law = agnatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { religion_group = muslim } }
+								}
+								add_law = feudal_tax_0
+								add_law = succ_primogeniture
+								add_law = cognatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { religion = catholic }
+								}
+								add_law = investiture_law_0
+							}
+						}
+					}
+					any_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						gain_title = PREVPREV
+					}
+				}
+				treasury = 500
+				prestige = 500
+				piety = 100
+				set_defacto_liege = THIS
+			}
+		}
+		any_demesne_title = {
+			location = { clr_province_flag = previous_holding }
+		}
+	}
+	option = {
+		name = EVTOPTC_Plus_400 #To a capable relative
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			OR = {
+				ai = no
+				NOT = { religion_group = muslim }
+			}
+			any_realm_character = {
+				is_adult = yes
+				dynasty = ROOT
+				NOT = { is_close_relative = ROOT }
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+		}
+		prestige = 500
+		random_realm_character = {
+			limit = {
+				is_adult = yes
+				dynasty = ROOT
+				NOT = { is_close_relative = ROOT }
+				OR = {
+					NOT = { age = 45 }
+					any_child = { is_female = no is_ruler = no is_primary_heir = no }
+				}
+				NOT = { trait = incapable }
+				piety = 0
+				NOT = { spouse = { is_ruler = yes } }
+				is_ruler = no
+				is_female = no
+				is_primary_heir = no
+				religion = ROOT
+				is_alive = yes
+			}
+			tooltip = {
+				character_event = { id = Plus.400 tooltip = CUSTOMTOOLTIP3 }
+			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+					add_trait = crusader
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					add_trait = mujahid
+				}
+				if = {
+					limit = {
+						religion = sunni
+					}
+					add_trait = mujahid
+				}
+				ROOT = {
+					random_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_thrace }
+								ROOT = { religion = catholic }
+								e_latin_empire = { has_holder = no }
+							}
+							e_latin_empire = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_anatolia }
+								ROOT = { religion_group = muslim }
+								k_rum = { has_holder = no }
+							}
+							k_rum = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						kingdom = {
+							destroy_landed_title = yes
+							revoke_law = investiture_law_0
+							revoke_law = investiture_law_1
+							add_law = crown_authority_3
+							add_law = city_tax_0
+							add_law = temple_tax_0
+							gain_title = PREVPREVPREV
+							if = {
+								limit = {
+									ROOT = { religion_group = muslim }
+								}
+								add_law = iqta_tax_0
+								add_law = succ_turkish_succession
+								add_law = agnatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { religion_group = muslim } }
+								}
+								add_law = feudal_tax_0
+								add_law = succ_primogeniture
+								add_law = cognatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { religion = catholic }
+								}
+								add_law = investiture_law_0
+							}
+						}
+					}
+					any_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						gain_title = PREVPREV
+					}
+				}
+				treasury = 500
+				prestige = 500
+				piety = 100
+				set_defacto_liege = THIS
+			}
+		}
+		any_demesne_title = {
+			location = { clr_province_flag = previous_holding }
+		}
+	}
+	option = {
+		name = "EVTOPTF_Plus_400" #To a valiant retainer
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			OR = {
+				ai = no
+				NOT = { religion_group = muslim }
+			}
+			NOT = {
+				any_realm_character = {
+					is_adult = yes
+					dynasty = ROOT
+					NOT = { is_close_relative = ROOT }
+					OR = {
+						NOT = { age = 45 }
+						any_child = { is_female = no is_ruler = no is_primary_heir = no }
+					}
+					NOT = { trait = incapable }
+					piety = 0
+					NOT = { spouse = { is_ruler = yes } }
+					is_ruler = no
+					is_female = no
+					is_primary_heir = no
+					religion = ROOT
+					is_alive = yes
+				}
+			}
+		}
+		prestige = 500
+		custom_tooltip = { text = CUSTOMTOOLTIP36 }
+		hidden_tooltip = {
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 25
+				attributes = {
+					martial = 10
+				}
+			}
+			new_character = {
+				fertility = 0.5
+				if = {
+					limit = {
+						religion = catholic
+					}
+					add_trait = crusader
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					add_trait = mujahid
+				}
+				if = {
+					limit = {
+						religion = sunni
+					}
+					add_trait = mujahid
+				}
+				ROOT = {
+					random_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_thrace }
+								ROOT = { religion = catholic }
+								e_latin_empire = { has_holder = no }
+							}
+							e_latin_empire = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						if = {
+							limit = {
+								kingdom = { title = k_anatolia }
+								ROOT = { religion_group = muslim }
+								k_rum = { has_holder = no }
+							}
+							k_rum = {
+								revoke_law = investiture_law_0
+								revoke_law = investiture_law_1
+								add_law = crown_authority_3
+								add_law = city_tax_0
+								add_law = temple_tax_0
+								gain_title = PREVPREVPREV
+								if = {
+									limit = {
+										ROOT = { religion_group = muslim }
+									}
+									add_law = iqta_tax_0
+									add_law = succ_turkish_succession
+									add_law = agnatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { NOT = { religion_group = muslim } }
+									}
+									add_law = feudal_tax_0
+									add_law = succ_primogeniture
+									add_law = cognatic_succession
+								}
+								if = {
+									limit = {
+										ROOT = { religion = catholic }
+									}
+									add_law = investiture_law_0
+								}
+							}
+						}
+						kingdom = {
+							destroy_landed_title = yes
+							revoke_law = investiture_law_0
+							revoke_law = investiture_law_1
+							add_law = crown_authority_3
+							add_law = city_tax_0
+							add_law = temple_tax_0
+							gain_title = PREVPREVPREV
+							if = {
+								limit = {
+									ROOT = { religion_group = muslim }
+								}
+								add_law = iqta_tax_0
+								add_law = succ_turkish_succession
+								add_law = agnatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { NOT = { religion_group = muslim } }
+								}
+								add_law = feudal_tax_0
+								add_law = succ_primogeniture
+								add_law = cognatic_succession
+							}
+							if = {
+								limit = {
+									ROOT = { religion = catholic }
+								}
+								add_law = investiture_law_0
+							}
+						}
+					}
+					any_demesne_title = {
+						limit = {
+							OR = {
+								tier = COUNT
+								tier = BARON
+							}
+							location = { NOT = { has_province_flag = previous_holding } }
+						}
+						gain_title = PREVPREV
+					}
+				}
+				treasury = 500
+				prestige = 500
+				piety = 100
+				set_defacto_liege = THIS
+			}
+		}
+		any_demesne_title = {
+			location = { clr_province_flag = previous_holding }
+		}
+	}
+	option = {
+		name = EVTOPTD_Plus_400 #To myself
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			OR = {
+				ai = no
+				AND = {
+					independent = no
+					lower_tier_than = king
+				}
+				any_demesne_title = {
+					location = {
+						NOT = { has_province_flag = previous_holding }
+						any_neighbor_province = {
+							has_province_flag = previous_holding
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				independent = no
+			}
+			custom_tooltip = { text = CUSTOMTOOLTIP42 }
+		}
+		if = {
+			limit = {
+				independent = yes
+			}
+			custom_tooltip = { text = CUSTOMTOOLTIP43 }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					independent = no
+				}
+				liege = {
+					ROOT = {
+						any_demesne_title = {
+							limit = {
+								is_titular = no
+								is_landless_type_title = no
+								OR = {
+									higher_tier_than = count
+									location = {
+										has_province_flag = previous_holding
+									}
+								}
+							}
+							gain_title = PREVPREV
+						}
+					}
+					any_demesne_title = {
+						location = { clr_province_flag = previous_holding }
+					}
+				}
+				set_defacto_liege = ROOT
+			}
+			if = {
+				limit = {
+					religion = catholic
+				}
+				add_trait = crusader
+			}
+			if = {
+				limit = {
+					religion = shiite
+				}
+				add_trait = mujahid
+			}
+			if = {
+				limit = {
+					religion = sunni
+				}
+				add_trait = mujahid
+			}
+			random_demesne_title = {
+				limit = {
+					OR = {
+						tier = COUNT
+						tier = BARON
+					}
+					location = { NOT = { has_province_flag = previous_holding } }
+				}
+				if = {
+					limit = {
+						kingdom = { title = k_thrace }
+						ROOT = { religion = catholic }
+						e_latin_empire = { has_holder = no }
+					}
+					e_latin_empire = {
+						revoke_law = investiture_law_0
+						revoke_law = investiture_law_1
+						add_law = crown_authority_3
+						add_law = city_tax_0
+						add_law = temple_tax_0
+						gain_title = ROOT
+						if = {
+							limit = {
+								ROOT = { religion_group = muslim }
+							}
+							add_law = iqta_tax_0
+							add_law = succ_turkish_succession
+							add_law = agnatic_succession
+						}
+						if = {
+							limit = {
+								ROOT = { NOT = { religion_group = muslim } }
+							}
+							add_law = feudal_tax_0
+							add_law = succ_primogeniture
+							add_law = cognatic_succession
+						}
+						if = {
+							limit = {
+								ROOT = { religion = catholic }
+							}
+							add_law = investiture_law_0
+						}
+					}
+				}
+				if = {
+					limit = {
+						kingdom = { title = k_anatolia }
+						ROOT = { religion_group = muslim }
+						k_rum = { has_holder = no }
+					}
+					k_rum = {
+						revoke_law = investiture_law_0
+						revoke_law = investiture_law_1
+						add_law = crown_authority_3
+						add_law = city_tax_0
+						add_law = temple_tax_0
+						gain_title = ROOT
+						if = {
+							limit = {
+								ROOT = { religion_group = muslim }
+							}
+							add_law = iqta_tax_0
+							add_law = succ_turkish_succession
+							add_law = agnatic_succession
+						}
+						if = {
+							limit = {
+								ROOT = { NOT = { religion_group = muslim } }
+							}
+							add_law = feudal_tax_0
+							add_law = succ_primogeniture
+							add_law = cognatic_succession
+						}
+						if = {
+							limit = {
+								ROOT = { religion = catholic }
+							}
+							add_law = investiture_law_0
+						}
+					}
+				}
+				kingdom = {
+					destroy_landed_title = yes
+					revoke_law = investiture_law_0
+					revoke_law = investiture_law_1
+					add_law = crown_authority_3
+					add_law = city_tax_0
+					add_law = temple_tax_0
+					gain_title = ROOT
+					if = {
+						limit = {
+							ROOT = { religion_group = muslim }
+						}
+						add_law = iqta_tax_0
+						add_law = succ_turkish_succession
+						add_law = agnatic_succession
+					}
+					if = {
+						limit = {
+							ROOT = { NOT = { religion_group = muslim } }
+						}
+						add_law = feudal_tax_0
+						add_law = succ_primogeniture
+						add_law = cognatic_succession
+					}
+					if = {
+						limit = {
+							ROOT = { religion = catholic }
+						}
+						add_law = investiture_law_0
+					}
+				}
+			}
+			treasury = 500
+		}
+	}
+}

@@ -1,0 +1,116 @@
+namespace = FotR
+
+# narrative event to declare the foundation of the new republic
+narrative_event = {
+	id = FotR.1
+	title = FoTR.EVTNAME_RepublicFounded
+	desc = FoTR.EVTDESC_RepublicFounded
+	major = yes
+	picture = GFX_evt_busy_trading_dock_republic
+
+	is_triggered_only = yes
+
+	only_rulers = yes
+
+	major_trigger = {
+		ai = no
+	}
+
+	option = {
+		name = FoTR.EVTOPTA_WeFoundedRepublic
+		trigger = {
+			has_character_flag = founder_of_the_republic
+		}
+	}
+	option = {
+		name = FoTR.EVTOPTB_TheyFoundedRepublic_noble
+		trigger = {
+			NOT = {
+				OR = {
+					is_merchant_republic = yes
+					is_patrician = yes
+				}
+			}
+			NOT = { has_character_flag = founder_of_the_republic }
+		}
+	}
+	option = {
+		name = FoTR.EVTOPTC_TheyFoundedRepublic_merchant
+		trigger = {
+			OR = {
+				is_merchant_republic = yes
+				is_patrician = yes
+			}
+			NOT = { has_character_flag = founder_of_the_republic }
+		}
+	}
+}
+
+# an event to clean up the temporary title and make patricians better
+# disposed to the founder
+character_event = {
+	id = FotR.2
+
+	is_triggered_only = yes
+	hide_from = yes
+	hide_window = yes
+
+	trigger = {
+		ai = no
+		has_character_flag = founder_of_the_republic
+	}
+
+	immediate = {
+		# add a chronicle entry as per the tribal decision
+		chronicle = {
+			entry = FotR_chronicle
+			picture = GFX_evt_busy_trading_dock_republic
+		}
+
+		# the new patricans, and those vassals and courtiers with a high level stewardship education
+		# or vaishya caste like the founder for the first ten years
+		any_vassal = {
+			limit = {
+				OR = {
+					is_patrician = yes
+					trait = midas_touched
+					trait = fortune_builder
+					trait = vaishya
+				}
+			}
+			opinion = { modifier = FotR_founded_republic_positive who = ROOT }
+		}
+		any_courtier = {
+			limit = {
+				OR = {
+					trait = midas_touched
+					trait = fortune_builder
+					trait = vaishya
+				}
+			}
+			opinion = { modifier = FotR_founded_republic_positive who = ROOT }
+		}
+
+		# however the other adult feudal member's of the founder's dynasty dislike them
+		# permanently, unless they too have high level stewardship education or are of
+		# viashya caste
+		any_dynasty_member = {
+			limit = {
+				is_adult = yes
+				is_feudal = yes
+				NOT = { trait = midas_touched }
+				NOT = { trait = fortune_builder }
+				NOT = { trait = vaishya }
+			}
+			opinion = { modifier = FotR_founded_republic_negative who = ROOT }
+		}
+
+		# Any notion that a patrician might previously have been of higher caste than vaishya is surely illusion
+		any_vassal = {
+			limit = { is_patrician = yes OR = { trait = brahmin trait = kshatriya } }
+			add_trait = vaishya
+		}
+
+		clr_character_flag = founder_of_the_republic
+	}
+}

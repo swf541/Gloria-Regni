@@ -1,0 +1,226 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Lollard   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPlollard
+
+
+#Brother Angelo
+narrative_event = {
+	id = HPlollard.14000
+	title = EVTTITLE_HRP_14000
+	desc = EVTDESC_HRP_14000
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = wycliff }
+		year = 1370
+		has_landed_title = k_england
+		religion = catholic
+		NOT = { religion_authority = 0.60 }
+		
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+	option = {
+		name = EVTOPTA_HRP_14000
+		trigger = {
+			has_landed_title = k_england
+		}
+		set_global_flag = wycliff
+		piety = -100
+		random_realm_province = {
+			limit = {
+				religion = catholic 
+			}
+			religion = lollard
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_14000
+		trigger = {
+			NOT = { has_landed_title = k_england }
+			religion = catholic
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_14000
+		trigger = {
+			NOT = { has_landed_title = k_england }
+			NOT = { religion = catholic }
+		}
+	}
+}
+character_event = { 
+	id = HPlollard.14100
+	desc = EVTDESC_HRP_14100
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			religion = lollard
+			religion = paulician
+			religion = iconoclast
+		}
+		NOT = { trait = iconoclast_trait }
+		FROM = { 
+			holding_type = temple
+			owner = {
+				religion_group = christian
+				NOT = {
+					OR = {
+						religion = lollard
+						religion = paulician
+						religion = iconoclast
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTA_HRP_14100
+		add_trait = iconoclast_trait
+		add_character_modifier = { name = icono_looter duration = 365 }
+		scaled_wealth = 0.2
+	}
+	option = {
+		name = EVTOPTB_HRP_14100
+		piety = -50
+		add_character_modifier = { name = icono_saver duration = 365 }
+	}
+}
+#Bible Translate
+character_event = { 
+	id = HPlollard.14010
+	desc = EVTDESC_HRP_13010
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	trigger = {
+		religion = lollard
+		OR = {
+			tier = KING
+			tier = emperor
+		}
+		piety = 50
+		OR = {
+			has_focus = focus_theology
+			has_focus = focus_scholarship
+			has_focus = focus_rulership
+		}
+		NOT = { has_global_flag = loll_bible }
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = EVTOPTA_HRP_13010
+		hidden_tooltip = {
+			random_list = {
+				30 = {	
+					 character_event = { id = HPlollard.14011 days = 900 }
+					 }
+				70 = {
+					character_event = { id = HPlollard.14012 days = 720 }
+				}
+			}
+		}	
+	}
+	option = {
+		name = EVTOPTB_HRP_13010
+		scaled_wealth = -5.0
+		hidden_tooltip = {
+			random_list = {
+				70 = {	
+					 character_event = { id = HPlollard.14011 days = 900 }
+					 }
+				30 = {
+					character_event = { id = HPlollard.14012 days = 720 }
+				}
+			}
+		}	
+	}
+}
+character_event = { 
+	id = HPlollard.14011
+	desc = EVTDESC_HRP_13011
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	trigger = {
+		religion = lollard
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13011
+		piety = 200
+		prestige = 500
+		religion_authority = {
+			modifier = bible_translated
+			years = 20
+		}			
+		set_global_flag = loll_bible
+		hidden_tooltip = { narrative_event = { id = HPlollard.14013 days = 3 } }
+	}
+}
+character_event = { 
+	id = HPlollard.14012
+	desc = EVTDESC_HRP_13012
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	trigger = {
+		religion = lollard
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_13012
+		piety = 200
+		prestige = -200
+		religion_authority = {
+			modifier = bible_translated
+			years = 20
+		}			
+		set_global_flag = loll_bible
+		hidden_tooltip = { narrative_event = { id = HPlollard.14013 days = 3 } }
+	}
+}
+narrative_event = {
+	id = HPlollard.14013
+	title = EVTTITLE_HRP_13013
+	desc = EVTDESC_HRP_13013
+	major = yes
+	
+	picture = GFX_evt_book_carolingian_script
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_13013
+		trigger = { religion = lollard }
+	}
+	option = {
+		name = EVTOPTB_HRP_13013
+		trigger = { 
+			NOT = { religion = lollard }
+		}
+	}
+}

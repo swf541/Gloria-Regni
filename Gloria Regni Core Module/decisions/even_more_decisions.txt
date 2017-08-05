@@ -1,0 +1,115 @@
+decisions = {
+
+    # Reform Western Empire
+	reform_western_empire = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			culture_group = latin
+			NOT = { has_landed_title = e_western }
+			NOT = { has_global_flag = hre_formed }
+		}
+		
+		allow = {
+			completely_controls = k_sicily
+			completely_controls = k_lombardy
+			completely_controls = k_venice
+			completely_controls = k_croatia
+		}
+		
+		effect = {
+			activate_title = { title = e_western status = yes }
+			e_western = {
+				grant_title = ROOT
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	# Reform Macedonian Empire
+	reform_macedonian_empire = {
+		is_high_prio = yes
+		potential = {
+			tier = king
+			independent = yes
+			OR = {
+				culture = greek
+				culture = tsakonian
+			} 
+			has_landed_title = k_macedonia
+			NOT = { has_landed_title = e_macedonia }
+		}
+		
+		allow = {
+		 	completely_controls = k_thrace
+			completely_controls = k_macedon
+			completely_controls = k_bulgaria
+		 }
+		
+		 effect = {
+			activate_title = { title = e_macedonia status = yes }
+			e_macedonia = {
+				grant_title = ROOT
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	# Reform Carthaginian Empire
+	reform_carthaginian_empire = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			culture = neo_punic
+			NOT = { has_landed_title = e_carthage }
+		}
+		
+		allow = {
+		 	completely_controls = k_matmada
+			completely_controls = k_tripolitania
+		}
+		
+		effect = {
+			activate_title = { title = e_carthage status = yes }
+			e_carthage = {
+				grant_title = ROOT
+			}
+                }
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	# Reform Hunnic Empire
+	reform_hunnic_empire = {
+		is_high_prio = yes
+		potential = {
+			dynasty = 591
+			independent = yes
+				culture_group = altaic
+		        NOT = { has_landed_title = e_hunnicia }
+		}
+		
+		allow = {
+			completely_controls = k_hungary
+			completely_controls = k_slovakia
+			completely_controls = k_bulgaria
+			completely_controls = k_moldau
+			completely_controls = k_dacia
+		}         
+		
+		effect = {
+			activate_title = { title = e_hunnicia status = yes }
+			e_hunnicia = {
+				grant_title = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

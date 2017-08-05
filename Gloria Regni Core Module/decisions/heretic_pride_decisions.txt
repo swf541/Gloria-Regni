@@ -1,0 +1,101 @@
+targetted_decisions = {
+	request_conversion = {
+		filter = court
+		ai_target_filter = court
+		
+		from_potential = {
+			#NOT = { religion = ROOT }
+			war = no
+			
+		}
+		potential = { 
+			NOT = { is_liege_of = FROM }
+			NOT = { trait = tolerance }
+			NOT = { religion = FROM }
+			NOT = { has_character_flag = considering_conversion }
+			liege = { character = FROM }
+			#ai = yes
+		}
+		allow = {
+			FROM = { piety = 100 }
+			war = no
+			FROM = {
+				reverse_opinion = { who = ROOT value = 75 }
+			}
+		}
+		effect = {
+			letter_event = { id = HPfraticelli.15900 days = 3 tooltip = EVTTOOLTIP_HRP_15900 }
+			set_character_flag = considering_conversion
+			FROM = { piety = -100 }
+		}
+		revoke_allowed = {
+			always = no
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	take_the_vows_hp = {
+		filter = court
+		ai_target_filter = court
+		
+		from_potential = {
+			#NOT = { religion = ROOT }
+			war = no
+			OR = {
+				religion_group = christian
+				religion = buddhist
+				religion = manichean
+			}
+		}
+		potential = { 
+			NOT = { is_liege_of = FROM }
+			NOT = { trait = tolerance }
+			religion = FROM
+			NOT = { has_character_flag = considering_vows }
+			liege = { character = FROM }
+			NOT = { religion = lollard }
+		}
+		allow = {
+			FROM = { piety = 5 }
+			war = no
+			is_married = no
+		}
+		effect = {
+			letter_event = { id = HPfraticelli.15920 days = 3 tooltip = EVTTOOLTIP_HRP_15920 }
+			set_character_flag = considering_vows
+			FROM = { piety = -5 }
+		}
+		revoke_allowed = {
+			always = no
+			
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+                                factor = 0.05
+                        }
+			modifier = {
+                                factor = 0.1
+				learning = 12
+                        }
+			modifier = {
+                                factor = 0.5
+				prisoner = yes
+                        }
+			modifier = {
+                                factor = 1000
+				is_rival = FROM
+				prisoner = yes
+				#host = { character = FROM }
+                        }
+			modifier = {
+                                factor = 2000
+				sibling = FROM
+				prisoner = yes
+				#host = { character = FROM }
+                        }
+		}
+	}
+}

@@ -1,0 +1,37 @@
+#########################################################################
+# RELIGIOUS AUTHORITY MODIFIERS - fully scriptable
+# Heretic Pride -- Decadence
+##########################################################################
+
+decadent_ruler_count = {
+	authority = -1
+	years = 10
+}
+decadent_ruler_duke = {
+	authority = -5
+	years = 10
+}
+decadent_ruler_king = {
+	authority = -10
+	years = 10
+}
+decadent_ruler_emperor = {
+	authority = -20
+	years = 10
+}
+undecadent_ruler_count = {
+	authority = 1
+	years = 10
+}
+undecadent_ruler_duke = {
+	authority = 3
+	years = 10
+}
+undecadent_ruler_king = {
+	authority = 5
+	years = 10
+}
+undecadent_ruler_emperor = {
+	authority = 10
+	years = 10
+}

@@ -1,0 +1,17 @@
+# Scripted triggers should have _trigger suffix
+
+# trigger has character scope
+greek_dialect_trigger = {
+	OR = {
+		culture = greco_egyptian
+		culture = tsakonian
+		culture = sikelian
+		culture = italiote
+		culture = libyco_greek
+		culture = pontic
+		culture = indo_greek
+		culture = illyrian
+		culture = melkite
+		culture = lycaonian
+	}	
+}

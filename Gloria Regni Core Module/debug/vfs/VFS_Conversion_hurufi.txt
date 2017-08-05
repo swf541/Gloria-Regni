@@ -1,0 +1,97 @@
+namespace = VFS
+character_event = {	#hurufi Expulsion
+	id = VFS.335
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_job_action = action_inquisition
+		NOT = { religion = hurufi }
+		location = { religion = ROOT } 
+		location = {
+			owner = { same_realm = ROOT }
+		}
+		location = {
+			OR = {
+				any_province_holding = {
+					has_building = ct_hurufi_community_1
+				}
+				any_province_holding = {
+					has_building = ct_hurufi_community_2
+				}
+				any_province_holding = {
+					has_building = ct_hurufi_community_3
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				location = {
+					any_province_holding = {
+						has_building = ct_hurufi_community_1
+					}
+				}
+				NOT = {
+					OR = {
+						location = {
+							any_province_holding = {
+								has_building = ct_hurufi_community_2
+							}
+						}
+						location = {
+							any_province_holding = {
+								has_building = ct_hurufi_community_3
+							}
+						}
+					}
+				}
+			}
+			location = {
+				any_province_holding = {
+					limit = { holding_type = city } 
+					remove_building = ct_hurufi_community_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				location = {
+					any_province_holding = {
+						has_building = ct_hurufi_community_2
+					}
+				}
+				location = {
+					NOT = {
+						any_province_holding = {
+							has_building = ct_hurufi_community_3
+						}
+					}
+				}
+			}
+			location = {
+				any_province_holding = {
+					limit = { holding_type = city } 
+					remove_building = ct_hurufi_community_2
+				}
+			}
+		}
+		if = {
+			limit = {
+				location = {
+					any_province_holding = {
+						has_building = ct_hurufi_community_3
+					}
+				}
+			}
+			location = {
+				any_province_holding = {
+					limit = { holding_type = city } 
+					remove_building = ct_hurufi_community_3
+				}
+			}
+		}
+	}
+}

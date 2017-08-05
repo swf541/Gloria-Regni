@@ -1,0 +1,621 @@
+1000252000 = {
+	name="Adalgisel"
+	dynasty = 1000124404
+	religion = catholic
+	culture = old_frankish
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+
+1000252001 = {
+	name="Bobo"
+	dynasty = 1000124404
+	religion = catholic
+	culture = old_frankish
+	father = 1000252000
+	620.1.1 = {
+		birth = yes
+	}
+	656.1.1 = {
+		death = yes
+	}
+}
+1000252002 = {
+	name="Uro"
+	dynasty = 1000124412
+	religion = catholic
+	culture = old_frankish
+	580.1.1 = {
+		birth = yes
+	}
+	640.1.1 = {
+		death = yes
+	}
+}
+1000252003 = {
+	name="Otto"
+	dynasty = 1000124412
+	religion = catholic
+	culture = old_frankish
+	father = 1000252002
+	600.1.1 = {
+		birth = yes
+	}
+	644.1.1 = {
+		death = yes
+	}
+}
+1000253004 = {
+	name="Gundoland"
+	dynasty = 1000124413
+	religion = catholic
+	culture = old_frankish
+	550.1.1 = {
+		birth = yes
+	}
+	600.1.1 = {
+		death = yes
+	}
+}
+1000253005 = {
+	name="Landric"
+	dynasty = 1000124413
+	religion = catholic
+	culture = old_frankish
+	father = 1000253004
+	570.1.1 = {
+		birth = yes
+	}
+	613.1.1 = {
+		death = yes
+	}
+}
+1000253006 = {
+	name="Gundoland"
+	dynasty = 1000124413
+	religion = catholic
+	culture = old_frankish
+	father = 1000253004
+	580.1.1 = {
+		birth = yes
+	}
+	639.1.1 = {
+		death = yes
+	}
+}
+1000153007 = {
+	name="Aega"
+	dynasty = 1000124414
+	religion = catholic
+	culture = old_frankish
+	590.1.1 = {
+		birth = yes
+	}
+	641.1.1 = {
+		death = yes
+	}
+}
+1000153008 = {
+	name="Flaochad"
+	dynasty = 1000124416
+	religion = catholic
+	culture = old_frankish
+	600.1.1 = {
+		birth = yes
+	}
+	642.1.1 = {
+		death = yes
+	}
+}
+1000153009 = {
+	name="Waldo"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	540.1.1 = {
+		birth = yes
+	}
+	600.1.1 = {
+		death = yes
+	}
+}
+1000153010 = {
+	name="Eustacius"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153009
+	560.1.1 = {
+		birth = yes
+	}
+	629.1.1 = {
+		death = yes
+	}
+}
+1000153011 = {
+	name="Waldelenus"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153009
+	580.1.1 = {
+		birth = yes
+	}
+	640.1.1 = {
+		death = yes
+	}
+}
+1000153012 = {
+	name="Waldebert"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153009
+	590.1.1 = {
+		birth = yes
+	}
+	668.1.1 = {
+		death = yes
+	}
+}
+1000153013 = {
+	name="Donatus"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153011
+	600.1.1 = {
+		birth = yes
+	}
+	660.1.1 = {
+		death = yes
+	}
+}
+1000153014 = {
+	name="Chramnelenus"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153011
+	605.1.1 = {
+		birth = yes
+	}
+	660.1.1 = {
+		death = yes
+	}
+}
+1000153015 = {
+	name="Waldelenus"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153014
+	640.1.1 = {
+		birth = yes
+	}
+	700.1.1 = {
+		death = yes
+	}
+}
+1000153016 = {
+	name="Abbo"
+	dynasty = 1000124417
+	religion = catholic
+	culture = old_frankish
+	father = 1000153014
+	680.1.1 = {
+		birth = yes
+	}
+	740.1.1 = {
+		death = yes
+	}
+}
+1000153017 = {
+	name="Erchinoald"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153032
+	605.1.1 = {
+		birth = yes
+	}
+	631.1.1 = {
+		add_spouse = 1000153018
+	}
+	658.1.1 = {
+		death = yes
+	}
+}
+1000153018 = {
+	name="Leutsinde"
+	female = yes
+	religion = catholic
+	culture = old_frankish
+	female = yes
+	615.1.1 = {
+		birth = yes
+	}
+	631.1.1 = {
+		add_spouse = 1000153017
+	}
+	660.1.1 = {
+		death = yes
+	}
+}
+1000153019 = {
+	name="Leudesius"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153017
+	mother = 1000153018
+	632.1.1 = {
+		birth = yes
+	}
+	676.1.1 = {
+		death = yes
+	}
+}
+1000153020 = {
+	name="Radobert"
+	dynasty = 1000124420
+	religion = catholic
+	culture = old_frankish
+	610.1.1 = {
+		birth = yes
+	}
+	655.1.1 = {
+		death = yes
+	}
+}
+1000153021 = {
+	name="Wisimar"
+	dynasty = 1000124421
+	religion = catholic
+	culture = old_frankish
+	600.1.1 = {
+		birth = yes
+	}
+	655.1.1 = {
+		death = yes
+	}
+}
+1000153022 = {
+	name="Warato"
+	dynasty = 1000124421
+	religion = catholic
+	culture = old_frankish
+	father = 1000153021
+	620.1.1 = {
+		birth = yes
+	}
+	646.1.1 = {
+		add_spouse = 1000153024
+	}
+	686.1.1 = {
+		death = yes
+	}
+}
+1000153023 = {
+	name="Ebroin"
+	dynasty = 1000124421
+	religion = catholic
+	culture = old_frankish
+	father = 1000153021
+	630.1.1 = {
+		birth = yes
+	}
+	681.1.1 = {
+		death = yes
+	}
+}
+1000153024 = {
+	name="Ansfled"
+	religion = catholic
+	culture = old_frankish
+	female = yes
+	630.1.1 = {
+		birth = yes
+	}
+	646.1.1 = {
+		add_spouse = 1000153022
+	}
+	690.1.1 = {
+		death = yes
+	}
+}
+1000153025 = {
+	name="Giselmar"
+	dynasty = 1000124421
+	religion = catholic
+	culture = old_frankish
+	father = 1000153022
+	mother = 1000153024
+	640.1.1 = {
+		birth = yes
+	}
+	685.1.1 = {
+		death = yes
+	}
+}
+1000153026 = {
+	name="Anstrudis"
+	dynasty = 1000124421
+	religion = catholic
+	culture = old_frankish
+	father = 1000153022
+	mother = 1000153024
+	female = yes
+	645.1.1 = {
+		birth = yes
+	}
+	661.1.1 = {
+		add_spouse = 1000153028
+	}
+	710.1.1 = {
+		death = yes
+	}
+}
+1000153027 = {
+	name="Adalgard"
+	dynasty = 1000124422
+	religion = catholic
+	culture = old_frankish
+	600.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+1000153028 = {
+	name="Berchar"
+	dynasty = 1000124422
+	religion = catholic
+	culture = old_frankish
+	father = 1000153027
+	620.1.1 = {
+		birth = yes
+	}
+	661.1.1 = {
+		add_spouse = 1000153026
+	}
+	688.1.1 = {
+		death = yes
+	}
+}
+1000153029 = {
+	name="Adaltrudis"
+	dynasty = 1000124422
+	religion = catholic
+	culture = old_frankish
+	father = 1000153028
+	mother = 1000153026
+	660.1.1 = {
+		birth = yes
+	}
+	720.1.1 = {
+		death = yes
+	}
+}
+1000153030 = {
+	name="Arnebert"
+	dynasty = 1000124423
+	religion =  catholic
+	culture = old_frankish
+	580.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000153031 = {
+	name="Barontus"
+	dynasty = 1000124425
+	religion = catholic
+	culture = old_frankish
+	600.1.1 = {
+		birth = yes
+	}
+	640.1.1 = {
+		death = yes
+	}
+}
+1000153032 = {
+	name="Ansbert"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	580.1.1 = {
+		birth = yes
+	}
+	630.1.1 = {
+		death = yes
+	}
+}
+1000153033 = {
+	name="Adabald"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153032
+	600.1.1 = {
+		birth = yes
+	}
+	630.1.1 = {
+		add_spouse = 1000153034
+	}
+	660.1.1 = {
+		death = yes
+	}
+}
+1000153034 = {
+	name="Rictrudis"
+	female = yes
+	religion = catholic
+	culture = old_frankish
+	610.1.1 = {
+		birth = yes
+	}
+	630.1.1 = {
+		add_spouse = 1000153033
+	}
+	670.1.1 = {
+		death = yes
+	}
+}
+1000153035 = {
+	name="Maurontus"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153033
+	mother = 1000153034
+	632.1.1 = {
+		birth = yes
+	}
+	680.1.1 = {
+		death = yes
+	}
+}
+1000153036 = {
+	name="Closendis"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153033
+	mother = 1000153034
+	female = yes
+	635.1.1 = {
+		birth = yes
+	}
+	682.1.1 = {
+		death = yes
+	}
+}
+1000153037 = {
+	name="Eusebia"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153033
+	mother = 1000153034
+	female = yes
+	636.1.1 = {
+		birth = yes
+	}
+	685.1.1 = {
+		death = yes
+	}
+}
+1000153038 = {
+	name="Adalsendis"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153033
+	mother = 1000153034
+	female = yes
+	639.1.1 = {
+		birth = yes
+	}
+	690.1.1 = {
+		death = yes
+	}
+}
+1000153039 = {
+	name="Sigbert"
+	dynasty = 1000124419
+	religion = catholic
+	culture = old_frankish
+	father = 1000153032
+	610.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+1000153040 = {
+	name="Charibert"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	570.1.1 = {
+		birth = yes
+	}
+	635.1.1 = {
+		death = yes
+	}
+}
+1000153041 = {
+	name="Chrodbert"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	father = 1000153040
+	590.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+1000153042 = {
+	name="Angadrisma"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	father = 1000153041
+	female = yes
+	610.1.1 = {
+		birth = yes
+	}
+	660.1.1 = {
+		death = yes
+	}
+}
+1000153043 = {
+	name="Haltbert"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	father = 1000153040
+	595.1.1 = {
+		birth = yes
+	}
+	650.1.1 = {
+		death = yes
+	}
+}
+1000153044 = {
+	name="Erlebert"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	father = 1000153040
+	600.1.1 = {
+		birth = yes
+	}
+	665.1.1 = {
+		death = yes
+	}
+}
+1000153045 = {
+	name="Lambert"
+	dynasty = 1000124426
+	religion = catholic
+	culture = old_frankish
+	father = 1000153044
+	620.1.1 = {
+		birth = yes
+	}
+	675.1.1 = {
+		death = yes
+	}
+}

@@ -1,0 +1,313 @@
+title_patrikos = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 10
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.80
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_spatharios = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 5
+	opinion_effect = 5
+	revoke_allowed = yes
+	
+	monthly_salary = 0.01
+	monthly_prestige = 0.50
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_protospatharios = {
+	dignity = 0.075
+	realm_in_name = yes
+	grant_limit = 2
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.015
+	monthly_prestige = 0.65
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_hypatos = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 5
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.80
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_dromos = {
+	dignity = 0.075
+	realm_in_name = yes
+	grant_limit = 2
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.015
+	monthly_prestige = 0.65
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_kanikleios = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.80
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_parakoimomenos = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.80
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+		trait = eunuch
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_praipositos = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.80
+
+	
+	is_unique = no
+	
+	allowed_to_hold = {
+		is_female = no
+		is_adult = yes
+		trait = eunuch
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			has_landed_title = e_byzantium
+			has_landed_title = e_roman_empire
+			has_landed_title = e_latin_empire
+			has_landed_title = e_wre
+			has_landed_title = e_thessalonica
+			has_landed_title = e_trebizond
+			has_landed_title = e_nicaea
+		}
+	}
+	
+	gain_effect = {
+	set_character_flag = governor_canidate
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}

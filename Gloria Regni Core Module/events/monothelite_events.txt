@@ -1,0 +1,383 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Monothelite  	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPmonothelite
+
+
+#Sins of the Father
+narrative_event = {
+	id = HPmonothelite.9000
+	title = EVTTITLE_HRP_9000
+	desc = EVTDESC_HRP_9000
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = mono_haters }
+		year = 700
+		has_landed_title = k_papal_state
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = EVTOPTB_HRP_9000
+		trigger = {
+			has_landed_title = k_papal_state
+		}
+		set_global_flag = mono_haters
+		set_global_flag = mono_heretics
+		piety = 10
+	}
+	option = {
+		name = EVTOPTB_HRP_9000
+		trigger = {
+			NOT = { has_landed_title = k_papal_state }
+		}
+	}
+}
+character_event = { #10 yearly bounce
+	id = HPmonothelite.9001
+	desc = EVTDESC_HRP_9001
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = monothelite
+		has_landed_title = d_monothelite
+		has_global_flag = mono_heretics
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_9001
+		religion_authority = {
+			modifier = mono_heretic
+			years = 10
+		}
+		piety = -10
+	}
+}
+narrative_event = {
+	id = HPmonothelite.9005
+	title = EVTTITLE_HRP_9005
+	desc = EVTDESC_HRP_9005
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_9000
+		trigger = {
+			has_landed_title = d_monothelite
+		}
+		clr_global_flag = mono_heretics
+		piety = 100
+	}
+	option = {
+		name = EVTOPTB_HRP_9000
+		trigger = {
+			NOT = { has_landed_title = d_monothelite }
+		}
+	}
+}
+### The Great Schism Mended
+# Shameless stolen from schism_events.txt
+
+# The Schism Mended
+narrative_event = {
+	id = HPmonothelite.9010
+	title = EVTTITLE_HRP_9010
+	desc = EVTDESC_HRP_9010
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_9010
+		set_parent_religion = { religion = monophysite parent = monothelite }
+		set_parent_religion = { religion = miaphysite parent = monothelite }
+
+		set_global_flag = chalcedon_schism_mended
+		give_nickname = nick_the_saint
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					OR = {
+						religion = monophysite
+						religion = miaphysite
+					}
+					controls_religion = no
+				}
+				narrative_event = { id = HPmonothelite.9011 }
+			}
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = HPmonothelite.9011
+	title = EVTNAME_HRP_9010
+	desc = EVTDESC_HRP_9010
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = EVTOPTA_HRP_9011
+		ai_chance = { factor = 75 }
+		religion = FROM
+		any_courtier = {
+			religion = FROM
+		}
+		capital_scope = {
+			religion = FROM
+		}
+	}
+	option = { # No
+		name = EVTOPTBLoR.211
+		ai_chance = { factor = 25 }
+	}
+}
+
+# Flavor events
+# Pope Hate!
+character_event = { # yearly bounce
+	id = HPmonothelite.9100
+	desc = EVTDESC_HRP_9100
+	picture = GFX_evt_riots_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = monothelite
+		has_global_flag = mono_heretics
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_9100
+		any_independent_ruler = {
+			limit = {
+				has_landed_title = k_papal_state
+			}
+			opinion = {
+				who = ROOT
+				modifier = opinion_evil_tyrant
+			}
+		}
+		piety = -10
+	}
+}
+#Irate Monk
+character_event = { # yearly bounce
+	id = HPmonothelite.9101
+	desc = EVTDESC_HRP_9101
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = monothelite
+		has_global_flag = mono_heretics
+	}
+	
+	option = { 
+		name = EVTOPTA_HRP_9101
+		random_realm_province = {
+			limit = {
+				religion = orthodox
+			}
+			add_province_modifier = {
+					name = heretic_stronghold
+					duration = 3650
+            }
+		}
+		piety = -50
+	}
+}
+# Irate Monk x2
+character_event = { # yearly bounce
+	id = HPmonothelite.9102
+	desc = EVTDESC_HRP_9102
+	picture = GFX_evt_torture
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = monothelite
+		has_global_flag = mono_heretics
+	}
+	
+	option = { #Force him to recant
+		name = EVTOPTA_HRP_9102
+		add_trait = cruel
+		if = {
+			limit = {
+				trait = tolerance
+			}
+			remove_trait = tolerance
+		}
+	}
+	option = { #Exile him
+		name = EVTOPTB_HRP_9102
+		scaled_wealth = -0.2
+		piety = -50
+		prestige = -50
+	}
+	option = { #Exile him
+		trigger = {
+			has_focus = focus_theology
+		}
+		name = EVTOPTC_HRP_9102
+		piety = 50
+	}
+}
+#Education events
+#Child
+character_event = {
+	id = HPmonothelite.9103
+	desc = EVTDESC_HRP_9103
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	
+	min_age = 6
+	max_age = 16
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = tolerance }
+		has_guardian = yes
+		religion = monothelite
+	}
+	option = {
+		name = EVTOPTA_HRP_9103
+		add_trait = tolerance
+	}
+}
+character_event = {
+	id = HPmonothelite.9104
+	desc = EVTDESC_HRP_9103
+	picture = GFX_evt_bishop
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = tolerance }
+		religion = monothelite
+	}
+	option = {
+		name = EVTOPTA_HRP_9103
+		add_trait = tolerance
+	}
+}
+#Army brawl
+character_event = {
+	id = HPmonothelite.9105
+	desc = EVTDESC_HRP_9105
+	picture = GFX_evt_riots_byzantine
+	
+	is_triggered_only = yes
+
+	trigger = {
+		religion = monothelite
+	}
+	option = {
+		name = EVTOPTA_HRP_9105
+		random_demesne_province = {
+			add_province_modifier = {
+				name = monothelite_brawl
+				duration = 365
+			}
+		}
+	}
+	option = {
+		trigger = {
+			trait = tolerance
+		}
+		name = EVTOPTB_HRP_9105
+		prestige = -50
+	}
+}
+#court argument
+character_event = {
+	id = HPmonothelite.9106
+	desc = EVTDESC_HRP_9106
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+
+	trigger = {
+		religion = monothelite
+	}
+	option = {
+		name = EVTOPTA_HRP_9106
+		piety = -50
+	}
+	option = {
+		name = EVTOPTB_HRP_9106
+		add_trait = stressed
+		random_list = {
+			1 = {
+				add_trait = tolerance
+			}
+			1 = { }
+		}
+	}
+	option = {
+		trigger = { 
+			has_focus = focus_theology
+		}
+		name = EVTOPTC_HRP_9106
+		change_learning = 1
+		piety = 50
+	}
+}
+#tolerance leads to sympathy
+character_event = {
+	id = HPmonothelite.9110
+	desc = EVTDESC_HRP_9110
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = monothelite
+		trait = tolerance
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_9110
+		random_list = {
+			1 = { 
+				add_trait = sympathy_judaism
+			}
+			1 = { 
+				add_trait = sympathy_indian
+			}
+			1 = { 
+				add_trait = sympathy_islam
+			}
+			1 = { 
+				add_trait = sympathy_pagans
+			}
+			1 = { 
+				add_trait = sympathy_zoroastrianism
+			}
+		}
+	}
+}

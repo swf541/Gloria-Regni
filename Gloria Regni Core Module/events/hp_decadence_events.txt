@@ -1,0 +1,958 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Decadence   	  #
+# 50000 series events                     #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPdecadence
+
+
+# Increase Decadence level - always on year bounce
+
+#Level 1
+character_event = {
+	id = HPdecadence.50000
+	desc = EVTDESC_HRP_50000
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		decadence = 20
+		NOT = { decadence = 40 }
+		higher_tier_than = baron	
+		has_law = hp_decadence_0
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_50000
+		prestige = -50
+		piety = -100
+		any_demesne_title = { 
+			limit = {
+                                OR = { tier = count tier = duke tier = KING tier = EMPEROR    }
+			}
+			revoke_law = hp_decadence_0
+			add_law = hp_decadence_1 
+			if = { 
+				limit = { has_law = crown_authority_1 }
+				add_law = crown_authority_0
+			}
+			if = { 
+				limit = { has_law = crown_authority_2 }
+				add_law = crown_authority_1
+			}
+			if = { 
+				limit = { has_law = crown_authority_3 }
+				add_law = crown_authority_2
+			}
+			if = { 
+				limit = { has_law = crown_authority_4 }
+				add_law = crown_authority_3
+			}
+		}
+		if = {
+			limit = {
+				tier = count
+			}
+			religion_authority = {
+				modifier = decadent_ruler_count
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = duke
+			}
+			religion_authority = {
+				modifier = decadent_ruler_duke
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = king
+			}
+			religion_authority = {
+				modifier = decadent_ruler_king
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = emperor
+			}
+			religion_authority = {
+				modifier = decadent_ruler_emperor
+				years = 10
+			}
+		}
+		
+	}
+}
+#Level 2
+character_event = {
+	id = HPdecadence.50001
+	desc = EVTDESC_HRP_50001
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		decadence = 40
+		NOT = { decadence = 60 }
+		higher_tier_than = baron
+		OR = {	
+			has_law = hp_decadence_0
+			has_law = hp_decadence_1
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_50000
+		prestige = -75
+		piety = -150
+		any_demesne_title = { 
+			limit = {
+                                OR = { tier = count tier = duke tier = KING tier = EMPEROR    }
+			}
+			revoke_law = hp_decadence_0
+			revoke_law = hp_decadence_1
+			add_law = hp_decadence_2
+			if = { 
+				limit = { has_law = crown_authority_1 }
+				add_law = crown_authority_0
+			}
+			if = { 
+				limit = { has_law = crown_authority_2 }
+				add_law = crown_authority_1
+			}
+			if = { 
+				limit = { has_law = crown_authority_3 }
+				add_law = crown_authority_2
+			}
+			if = { 
+				limit = { has_law = crown_authority_4 }
+				add_law = crown_authority_3
+			}
+		}
+		if = {
+			limit = {
+				tier = count
+			}
+			religion_authority = {
+				modifier = decadent_ruler_count
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = duke
+			}
+			religion_authority = {
+				modifier = decadent_ruler_duke
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = king
+			}
+			religion_authority = {
+				modifier = decadent_ruler_king
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = emperor
+			}
+			religion_authority = {
+				modifier = decadent_ruler_emperor
+				years = 10
+			}
+		}
+	}
+}
+#Level 3
+character_event = {
+	id = HPdecadence.50002
+	desc = EVTDESC_HRP_50002
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		decadence = 60
+		NOT = { decadence = 80 }
+		higher_tier_than = baron
+		OR = {	
+			has_law = hp_decadence_0
+			has_law = hp_decadence_1
+			has_law = hp_decadence_2
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_50000
+		prestige = -100
+		piety = -200
+		any_demesne_title = { 
+			limit = {
+                                OR = { tier = count tier = duke tier = KING tier = EMPEROR    }
+			}
+			revoke_law = hp_decadence_0
+			revoke_law = hp_decadence_1
+			revoke_law = hp_decadence_2
+			add_law = hp_decadence_3
+			if = { 
+				limit = { has_law = crown_authority_1 }
+				add_law = crown_authority_0
+			}
+			if = { 
+				limit = { has_law = crown_authority_2 }
+				add_law = crown_authority_1
+			}
+			if = { 
+				limit = { has_law = crown_authority_3 }
+				add_law = crown_authority_2
+			}
+			if = { 
+				limit = { has_law = crown_authority_4 }
+				add_law = crown_authority_3
+			}
+		}
+		if = {
+			limit = {
+				tier = count
+			}
+			religion_authority = {
+				modifier = decadent_ruler_count
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = duke
+			}
+			religion_authority = {
+				modifier = decadent_ruler_duke
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = king
+			}
+			religion_authority = {
+				modifier = decadent_ruler_king
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = emperor
+			}
+			religion_authority = {
+				modifier = decadent_ruler_emperor
+				years = 10
+			}
+		}
+	}
+}
+#Level 4
+character_event = {
+	id = HPdecadence.50003
+	desc = EVTDESC_HRP_50003
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		decadence = 80
+		higher_tier_than = baron
+		OR = {	
+			has_law = hp_decadence_0
+			has_law = hp_decadence_1
+			has_law = hp_decadence_2
+			has_law = hp_decadence_3
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_50000
+		prestige = -150
+		piety = -300
+		any_demesne_title = { 
+			limit = {
+                                OR = { tier = count tier = duke tier = KING tier = EMPEROR    }
+			}
+			revoke_law = hp_decadence_0
+			revoke_law = hp_decadence_1
+			revoke_law = hp_decadence_2
+			revoke_law = hp_decadence_3
+			add_law = hp_decadence_4
+			if = { 
+				limit = { has_law = crown_authority_1 }
+				add_law = crown_authority_0
+			}
+			if = { 
+				limit = { has_law = crown_authority_2 }
+				add_law = crown_authority_1
+			}
+			if = { 
+				limit = { has_law = crown_authority_3 }
+				add_law = crown_authority_2
+			}
+			if = { 
+				limit = { has_law = crown_authority_4 }
+				add_law = crown_authority_3
+			}
+		}
+		if = {
+			limit = {
+				tier = count
+			}
+			religion_authority = {
+				modifier = decadent_ruler_count
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = duke
+			}
+			religion_authority = {
+				modifier = decadent_ruler_duke
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = king
+			}
+			religion_authority = {
+				modifier = decadent_ruler_king
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				tier = emperor
+			}
+			religion_authority = {
+				modifier = decadent_ruler_emperor
+				years = 10
+			}
+		}
+	}
+}
+#Tech events
+character_event = {
+        id = HPdecadence.50005
+        desc = EVTDESC_HRP_50005
+        picture = GFX_evt_throne_room
+        border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = { 
+	
+		religion_group = muslim
+		OR = {
+			has_law = hp_decadence_3
+			has_law = hp_decadence_4
+		}
+	}
+
+	option = {
+		name = EVTOPTA_HRP_50005
+		random_list = {
+			1 = { culture_techpoints = 50 }
+			1 = { military_techpoints = 50 }
+			1 = { economy_techpoints = 50 }
+		}
+	}
+}
+character_event = {
+        id = HPdecadence.50006
+        desc = EVTDESC_HRP_50006
+        picture = GFX_evt_throne_room
+        border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = { 
+		religion_group = muslim
+		OR = {
+
+			has_law = hp_decadence_0
+			has_law = hp_decadence_1
+		}
+	}
+
+	option = {
+		name = EVTOPTA_HRP_50006
+		random_list = {
+			1 = { culture_techpoints = -50 }
+			1 = { military_techpoints = -50 }
+			1 = { economy_techpoints = -50 }
+		}
+	}
+}
+#5yr bounce events
+#Heretic Spread 
+character_event = {
+        id = HPdecadence.50010
+        desc = EVTDESC_HRP_50010
+        picture = GFX_evt_peasants
+        border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	trigger = { 
+		OR = {
+			#has_law = hp_decadence_2
+			has_law = hp_decadence_3
+			has_law = hp_decadence_4
+		}
+		is_ruler = yes
+	}
+
+	option = {
+		name = EVTOPTA_HRP_50010
+		random_realm_province = {
+			limit = { 
+				religion = root
+			}
+			hidden_tooltip = {
+				#Sunni
+				if = {
+					limit = {
+						root = { religion = sunni }
+					}
+					random_list = {
+						60 = { religion = shiite }
+						25 = { religion = kharijite }
+						5 = { religion = zikri }
+						5 = { religion = yazidi }
+						5 = { religion = karramiya }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = sunni
+						}
+						religion = prev
+					}
+				}
+				#Zikri
+				if = {
+					limit = {
+						root = { religion = zikri }
+					}
+					random_list = {
+						60 = { religion = sunni }
+						25 = { religion = shiite }
+						5 = { religion = kharijite }
+						5 = { religion = yazidi }
+						5 = { religion = karramiya }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = zikri
+						}
+						religion = prev
+					}
+				}
+				#Yazidi
+				if = {
+					limit = {
+						root = { religion = yazidi }
+					}
+					random_list = {
+						60 = { religion = sunni }
+						25 = { religion = shiite }
+						5 = { religion = druze }
+						5 = { religion = zikri }
+						5 = { religion = karramiya }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = yazidi
+						}
+						religion = prev
+					}
+				}
+				#Shia
+				if = {
+					limit = {
+						root = { religion = shiite }
+					}
+					random_list = {
+						60 = { religion = sunni }
+						25 = { religion = qarmatian }
+						5 = { religion = druze }
+						5 = { religion = kharijite }
+						5 = { religion = hurufi }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = shiite
+						}
+						religion = prev
+					}
+				}
+				#Hurufi
+				if = {
+					limit = {
+						root = { religion = hurufi }
+					}
+					random_list = {
+						60 = { religion = shiite }
+						25 = { religion = sunni }
+						5 = { religion = druze }
+						5 = { religion = kharijite }
+						5 = { religion = qarmatian }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = hurufi
+						}
+						religion = prev
+					}
+				}
+				#Druze
+				if = {
+					limit = {
+						root = { religion = druze }
+					}
+					random_list = {
+						60 = { religion = shiite }
+						25 = { religion = hurufi }
+						5 = { religion = sunni }
+						5 = { religion = yazidi }
+						5 = { religion = qarmatian }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = druze
+						}
+						religion = prev
+					}
+				}
+				#ibadi
+				if = {
+					limit = {
+						root = { religion = ibadi }
+					}
+					random_list = {
+						60 = { religion = kharijite }
+						25 = { religion = shiite }
+						5 = { religion = sunni }
+						5 = { religion = zikri }
+						5 = { religion = karramiya }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = ibadi
+						}
+						religion = prev
+					}
+				}
+				#kharijite
+				if = {
+					limit = {
+						root = { religion = kharijite }
+					}
+					random_list = {
+						60 = { religion = ibadi }
+						25 = { religion = sunni }
+						5 = { religion = shiite }
+						5 = { religion = karramiya }
+						5 = { religion = hurufi }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = kharijite
+						}
+						religion = prev
+					}
+				}
+				#karramiya
+				if = {
+					limit = {
+						root = { religion = karramiya }
+					}
+					random_list = {
+						60 = { religion = sunni }
+						25 = { religion = shiite }
+						5 = { religion = zikri }
+						5 = { religion = yazidi }
+						5 = { religion = kharijite }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = karramiya
+						}
+						religion = prev
+					}
+				}
+				#qarmatian
+				if = {
+					limit = {
+						root = { religion = qarmatian }
+					}
+					random_list = {
+						60 = { religion = shiite }
+						25 = { religion = druze }
+						5 = { religion = sunni }
+						5 = { religion = yazidi }
+						5 = { religion = hurufi }
+					}
+					random_neighbor_province = {
+						limit = {
+							religion = qarmatian
+						}
+						religion = prev
+					}
+				}
+			}
+			add_province_modifier = {
+                                name = heretic_stronghold
+                                duration = 3650
+                        }
+		}
+	}
+}
+#Hidden Revolt spawner - 2yr always, 
+character_event = {
+	id = HPdecadence.50011
+	hide_window = yes
+
+	only_rulers = yes
+	
+	trigger = {
+		religion_group = muslim
+		OR = {
+			has_law = hp_decadence_3
+			has_law = hp_decadence_4
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			4 = {
+				random_realm_province = {
+					limit = { 
+						religion = root
+				                kingdom = {
+							has_holder = no
+							culture = ROOT
+							any_previous_holder = {
+								always = yes # Must have had a holder in the past
+							}
+						}
+
+					}
+					province_event = { id = TOG.1040 }
+					province_event = { id = TOG.1050 days = 60 } #Reinforcements
+				}
+			}
+			8 = {
+				random_realm_province = {
+					limit = { 
+						NOT = { religion = root }
+						religion_group = muslim
+					}
+					province_event = { id = TOG.1060 }
+					province_event = { id = TOG.1070 days = 60 } #Reinforcements
+					province_event = { id = TOG.1070 days = 120 } #Reinforcements
+				}
+			}
+			4 = {
+				primary_title = {
+					root = {
+						random_vassal = {
+							limit = { 
+								OR = {
+									has_claim = PREVPREV
+									has_job_title = job_chancellor
+								}
+
+								religion_group = muslim
+								NOT = { trait = decadent }
+							}
+							add_claim = PREVPREV
+							character_event = { id = HPdecadence.50012 }
+						}
+					}
+				}
+			}
+			50 = { }
+		}
+	}
+}
+character_event = {
+        id = HPdecadence.50012
+        desc = EVTDESC_HRP_50012
+        picture = GFX_evt_throne_room
+        border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_50012
+		set_defacto_liege = ROOT
+		create_title = {
+			tier = DUKE
+			landless = yes
+			temporary = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+			holder = ROOT
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = count
+				}
+			}
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = ROOT
+				troops = {
+					heavy_infantry = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					archers = { 300 300 }
+				}
+				disband_on_peace = yes
+				attrition = 0.0
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = duke
+				}
+			}
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = ROOT
+				troops = {
+					heavy_infantry = { 2500 2500 }
+					light_cavalry = { 500 500 }
+					archers = { 1500 1500 }
+				}
+				disband_on_peace = yes
+				attrition = 0.0
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = king
+				}
+			}
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = ROOT
+				troops = {
+					heavy_infantry = { 6000 6000 }
+					light_cavalry = { 2500 2500 }
+					archers = { 1500 1500 }
+				}
+				disband_on_peace = yes
+				attrition = 0.0
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = emperor
+				}
+			}
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = ROOT
+				troops = {
+					heavy_infantry = { 12000 12000 }
+					light_cavalry = { 5000 5000 }
+					archers = { 3000 3000 }
+				}
+				disband_on_peace = yes
+				attrition = 0.0
+			}
+		}
+		set_character_flag = claimant_adventurer
+		FROM = {
+			primary_title = {
+				holder_scope = {
+					reverse_war = {
+						target = root
+						casus_belli = claim
+						thirdparty_title = PREV
+					}
+					letter_event = { id = HPdecadence.50013 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = ambitious
+			}
+		}
+		
+	}
+	option = {
+		name = EVTOPTB_HRP_50012
+		piety = 100
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = content
+			}
+		}
+		
+	}
+}
+letter_event = {
+	id = HPdecadence.50013
+	desc = EVTDESC_HRP_50013
+	picture = GFX_evt_bishop
+	border = "GFX_event_letter_frame_intrigue"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_50013
+		
+	}
+}
+character_event = {
+        id = HPdecadence.50900
+
+        hide_window = yes
+        
+        is_triggered_only = yes
+        
+        trigger = {
+        	has_law = hp_decadence_4
+		higher_tier_than = duke
+		is_patrician = no
+		NOT = { has_law = crown_authority_0 }
+		current_heir = {
+			OR = {
+				NOT = { age = 15 }
+				NOT = { diplomacy = 8 }
+			}
+		}
+        }
+        
+        immediate = {
+                any_demesne_title = { 
+			if = { 
+				limit = { has_law = crown_authority_1 }
+				add_law = crown_authority_0
+			}
+			if = { 
+				limit = { has_law = crown_authority_2 }
+				add_law = crown_authority_1
+			}
+			if = { 
+				limit = { has_law = crown_authority_3 }
+				add_law = crown_authority_2
+			}
+			if = { 
+				limit = { has_law = crown_authority_4 }
+				add_law = crown_authority_3
+			}
+		}
+			
+        }
+}
+character_event = {
+        id = HPdecadence.50901
+
+        hide_window = yes
+        
+        is_triggered_only = yes
+        
+        trigger = {
+		higher_tier_than = duke
+		is_patrician = no
+        	has_law = hp_decadence_4
+		has_law = crown_authority_0
+		current_heir = {
+			OR = {
+				NOT = { age = 15 }
+				NOT = { diplomacy = 8 }
+			}
+		}
+        }
+        
+        immediate = {
+		
+                primary_title = {
+			destroy_landed_title = THIS
+		}
+		narrative_event = { id = HPdecadence.50902 }	
+        }
+}
+narrative_event = {
+	id = HPdecadence.50902
+	title = EVTTITLE_HRP_50902
+	desc = EVTDESC_HRP_50902
+	picture = GFX_evt_sultan
+
+	major = yes
+
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_50902
+		
+	}
+}
+
+#Dissolution
+character_event = {
+	id = HPdecadence.50910
+	desc = EVTDESC_HRP_50910
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_50910
+		
+		liege = {
+			letter_event = { id = HPdecadence.50911 }
+		}
+		set_defacto_liege = ROOT
+	}
+}
+letter_event = {
+	id = HPdecadence.50911
+	desc = EVTDESC_HRP_50911
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_50911
+		FROM = {
+			primary_title = {
+				root = { add_claim = PREV }
+			}
+		}
+	}
+}

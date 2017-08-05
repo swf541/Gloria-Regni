@@ -1,0 +1,39 @@
+namespace = VFS
+character_event = {	
+	id = VFS.801
+	desc = EVTDESCVFS_801
+	picture = GFX_evt_burning_house
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					trait = ambitious
+					trait = proud
+					trait = brave
+					trait = zealous
+				}
+			}
+		}
+		name = "EVTOPTA_VFS_801"
+		religion = FROM 
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.05
+				OR = {
+					trait = cynical
+					trait = slothful
+					trait = craven
+				}
+			}
+		}
+		name = "EVTOPTA_VFS_801"
+		ROOT = { banish = FROM }
+	}
+}

@@ -1,0 +1,158 @@
+namespace = PA
+
+# Auxillaries Arrive
+narrative_event = {
+	id = PA.10005
+	title = EVTNAMEPA.10005
+	desc = EVTDESCPA.10005
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		has_landed_title = e_roman_empire
+		has_global_flag = revived_roman_culture
+		NOT = { has_character_flag = no_auxiullaries }
+		NOT = { has_character_flag = has_auxillaries }
+		capital_scope = { province_id = 333 }
+	}
+	
+	mean_time_to_happen = {
+		months = 780
+	}
+	
+	option = {
+		name = OPTAPA_10005           
+		set_character_flag = has_auxillaries
+		ROOT = {
+			spawn_unit = {
+				province = 333
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 3000 3000 }
+					pikemen = { 500 500 }
+					archers = { 1000 1000 }
+					knights = { 500 500 }
+				}
+				earmark = auxillary_troops
+			}
+		}
+	}
+	option = {
+		name = OPTBPA_10005
+		set_character_flag = no_auxillaries
+
+	}
+}
+
+# More Auxillaries
+narrative_event = {
+	id = PA.10006
+	title = EVTNAMEPA.10006
+	desc = EVTDESCPA.10006
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		has_landed_title = e_roman_empire
+		has_character_flag = has_auxillaries
+		NOT = { has_character_flag = no_auxillaries }
+		NOT = { has_character_flag = more_auxillaries }
+		capital_scope = { province_id = 333 }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10006          
+		set_character_flag = more_auxillaries
+		ROOT = {
+			spawn_unit = {
+				province = 333
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 3000 3000 }
+					pikemen = { 500 500 }
+					archers = { 1000 1000 }
+					knights = { 500 500 }
+				}
+				earmark = more_auxillaries
+			}
+		}
+	}
+	option = {
+		name = OPTBPA_10006
+		set_character_flag = no_auxillaries
+
+	}
+}
+
+# Auxillaries Riots
+narrative_event = {
+	id = PA.10007
+	title = EVTNAMEPA.10007
+	desc = EVTDESCPA.10007
+	picture = GFX_evt_riots_byzantine
+	
+	ai = no
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		has_landed_title = e_roman_empire
+		has_character_flag = more_auxillaries
+		NOT = { has_character_flag = auxillaries_events }
+		capital_scope = { province_id = 333 }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = OPTAPA_10007
+		set_character_flag = auxillaries_events
+		hidden_tooltip = {
+			333 = {
+				create_random_soldier = {
+					random_traits = yes
+					dynasty = random
+					religion = ROOT
+					culture = ROOT
+					female = no
+					age = 30
+						employer = e_rebels
+					}
+					new_character = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							troops = {
+								light_infantry = { 6000 6000 }
+							}
+						}
+					}
+			}
+		}
+	}
+		
+	option = {
+		name = OPTBPA_10007
+		set_character_flag = auxillaries_events
+		disband_event_forces = auxillary_troops                        
+		disband_event_forces = more_auxillaries
+		prestige = -100
+	}
+}

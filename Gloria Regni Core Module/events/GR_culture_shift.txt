@@ -1,0 +1,244 @@
+namespace = GRC
+# Hispano-Roman Province turns to Andalusian
+province_event = {
+	id = GRC.1
+	desc = EVTDESC_GRC_1
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		culture = hispanic
+		owner = {
+			culture_group = arabic 
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = hispanic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			religion_group = muslim
+		}
+		#modifier = {
+		#	factor = 0.5
+		#	owner = {
+		#		culture_group = latin
+		#	}
+		#}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_1
+		culture = andalusian_arabic
+	}
+}
+
+# Galloroman province converts to French
+province_event = {
+	id = GRC.2
+	desc = EVTDESC_GRC_2
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		region = custom_catalan
+		culture = hispanic
+		owner = {
+			or = {
+				culture_group = latin
+				culture = visigothic
+			}
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = hispanic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_2
+		culture = catalan
+	}
+}
+
+# Hispano-Roman Province turns to Porgugese
+province_event = {
+	id = GRC.3
+	desc = EVTDESC_GRC_3
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		region = custom_portuguese
+		culture = hispanic
+		owner = {
+			or = {
+				culture_group = latin
+				culture = visigothic
+			}
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = hispanic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_3
+		culture = portuguese
+	}
+}
+
+# Hispano-Roman Province turns to Castillian
+province_event = {
+	id = GRC.4
+	desc = EVTDESC_GRC_4
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		NOR = {
+			region = custom_portuguese
+			region = custom_catalan
+		}
+		culture = hispanic
+		owner = {
+			or = {
+				culture_group = latin
+				culture = visigothic
+			}
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = hispanic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_4
+		culture = castillan
+	}
+}
+
+# Italo-Roman Province turns to Italian
+province_event = {
+	id = GRC.5
+	desc = EVTDESC_GRC_5
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		culture = old_italian
+		owner = {
+			or = {
+				culture_group = latin
+				culture = lombard
+			}
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = hispanic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = latin
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_5
+		culture = italian
+	}
+}
+# Ostrogothic turns into Gothic
+province_event = {
+	id = GRC.6
+	desc = EVTDESC_GRC_6
+	picture = GFX_evt_stone_church
+
+	trigger = {
+		NOT = { year = 1000 }
+		culture = ostrogothic
+		owner = {
+			culture_group = byzantine
+			
+		}
+		NOT = {
+			owner = { 
+				top_liege = { 
+					culture = ostrogothic 
+				} 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2000
+		modifier = {
+			factor = 0.5
+			owner = {
+				culture_group = byzantine
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_GRC_6
+		culture = gothic
+	}
+}

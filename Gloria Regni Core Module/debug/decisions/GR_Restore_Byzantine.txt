@@ -1,0 +1,117 @@
+decisions = {
+	restore_byzantine_empire = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			has_dlc = "Legacy of Rome"
+			NOT = { is_title_active  = e_byzantium }
+			or = {
+				religion = orthodox
+				religion = imperial
+			}
+			culture_group = byzantine
+			OR = {
+				has_landed_title = k_serbia
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus
+				has_landed_title = e_trebizond
+				has_landed_title = e_bulgaria
+				has_landed_title = k_rum
+				has_landed_title = k_georgia
+				has_landed_title = k_armenia
+				has_landed_title = e_thessalonica
+			}
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+		}
+		allow = {
+			realm_size = 50
+			completely_controls = d_thrace
+			completely_controls = d_adrianopolis
+		}
+		effect = {
+			set_global_flag = byz_restored
+			narrative_event = { id = BYZ.20 tooltip = EVTTOOLTIPLoR.20 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Vassalize Epirus
+	vassalize_epirus = {
+		is_high_prio = yes
+		potential = {
+			is_title_active = k_epirus
+			has_landed_title = e_byzantium
+			completely_controls = d_thrace
+			capital_scope = { province_id = 496 }
+			NOT = { has_global_flag = vassal_epirus }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			k_epirus = { 
+				holder_scope = {  
+					opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+			 
+		effect = {
+                        set_global_flag = vassal_epirus
+			hidden_tooltip = {
+                                       k_epirus = { holder_scope = { character_event = { id = PA.10248 }
+                                       }
+	                        }
+                        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Vassalize Trebizond
+	vassalize_trebizond = {
+		is_high_prio = yes
+		potential = {
+			is_title_active = e_trebizond
+			has_landed_title = e_byzantium
+			completely_controls = d_thrace
+			capital_scope = { province_id = 496 }
+			NOT = { has_global_flag = vassal_trebizond }
+			e_trebizond = { 
+				holder_scope = {  
+					opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }	    
+		}
+			 
+		effect = {
+			set_global_flag = vassal_trebizond
+			hidden_tooltip = {
+				e_trebizond = { holder_scope = { character_event = { id = PA.10249 } } }
+		    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

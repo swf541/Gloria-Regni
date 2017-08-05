@@ -1,0 +1,86 @@
+title_decisions = {
+	settle_european_immigrants = {
+		only_playable = yes
+		filter = realm_owned
+		ai_target_filter = realm_owned
+		
+		from_potential = {
+			OR = {
+				has_landed_title = k_jerusalem
+				has_landed_title = d_antioch
+				has_landed_title = d_edessa
+			}
+			religion = catholic
+			NOR = { 
+				culture_group = arabic 
+				culture_group = byzantine
+				
+			}
+			OR = {
+				culture_group = latin
+				culture_group = north_germanic
+				culture_group = east_germanic
+				culture_group = central_germanic
+				culture_group = west_germanic
+				culture_group = celtic
+				culture_group = finno_ugric
+				culture_group = baltic
+				culture_group = east_slavic
+				culture_group = west_slavic
+				culture_group = south_slavic
+				culture_group = magyar
+				culture_group = iberian
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			location = {
+				owner = {
+					same_realm = FROM
+				}
+				NOT = { culture_group = latin }
+				NOT = { culture = greek }
+				#OR = {
+				#	region = world_middle_east
+				#	region = asia_minor
+				#	region = world_africa_north
+				#}
+			}
+		}
+
+		allow = {
+			has_siege = no
+			FROM = { wealth = 500 }
+			FROM = {
+				war = no
+			}
+			location = {
+				NOT = { has_province_modifier = european_immigrants }
+			}
+		}
+		effect = {
+			FROM = { wealth = -500 }
+			location = {
+				add_province_modifier = {
+					modifier = european_immigrants
+					years = 10
+				}
+				change_variable = { which = "european_immigrants_value" value = 1 }
+				if = {
+					limit = {
+						check_variable = { which = "european_immigrants_value" value = 5 }
+					}
+					culture = FROM
+					religion = FROM
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

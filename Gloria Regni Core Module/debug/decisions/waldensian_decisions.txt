@@ -1,0 +1,61 @@
+decisions = {
+	choose_wald_path = {
+		potential = {
+			NOT = { 
+				OR = {
+					trait = sandaliati
+					trait = novellani
+					trait = doctores
+				}
+			}
+			religion = waldensian
+			age = 16
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			character_event = { id = HPwaldensian.13001 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wald_char	= {
+		potential = {
+			religion = waldensian
+			age = 16
+			demesne_size = 1
+			NOT = { has_character_flag = voluntary_charity }
+		}
+		allow = {
+			scaled_wealth = 3.0
+		}
+		effect = {
+			set_character_flag = voluntary_charity
+			add_trait = charitable
+			scaled_wealth = -2.0
+			piety = 50
+			random_realm_province = {
+				limit = {
+					religion = waldensian
+				}
+				add_province_modifier = {
+					name = wald_charity
+					duration = 1000
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ai = yes
+				OR = {
+					NOT = { scaled_wealth = 10.0 }
+					piety = 50
+				}
+			}
+		}
+	}
+}

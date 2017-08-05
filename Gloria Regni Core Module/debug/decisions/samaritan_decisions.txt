@@ -1,0 +1,298 @@
+decisions = {
+	create_samaria = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion = samaritan
+			k_israel = {
+				has_holder = no
+			}
+		}
+		allow = {
+			#completely_controls = d_jerusalem
+			#completely_controls = d_ascalon
+			completely_controls = d_galilee
+			completely_controls = d_tripoli
+			#completely_controls = d_oultrejourdain
+			773 = {
+				religion = ROOT
+			}
+			piety = 500
+			prestige = 500
+		}
+		effect = {
+			narrative_event = { id = SoA.102 tooltip = EVTTOOLTIP_SoA_102 }
+			prestige = 1000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	rebulid_the_altar = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion = samaritan
+			NOT = { has_global_flag = samaritan_altar_built }
+			NOT = { has_global_flag = building_samaritan_altar }
+		}
+		allow = {
+			completely_controls = c_tiberias
+			773 = {
+				religion = ROOT
+			}
+			wealth = 500
+			piety = 500
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = HPsamaritan.16500 }
+				773 = {	province_event = { id = HPsamaritan.16501 days = 1460 random = 50 }	}
+			}
+			set_global_flag = building_third_temple
+			wealth = -1500
+			prestige = 500
+			piety = 500
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	adopt_samaritan_tribe = {
+		potential = {
+			NOT = { 
+				OR = {
+					trait = tribe_of_benjamin
+					trait = tribe_of_levi
+					trait = tribe_of_ephraim
+					trait = tribe_of_manasseh
+				}
+			}
+			religion = samaritan
+			age = 16
+			is_female = no
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			character_event = { id = HPsamaritan.16001 }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	vassalize_high_priest = {
+		potential = {
+			religion = samaritan
+			has_landed_title = k_israel
+			has_global_flag = samaritan_altar_built
+			NOT = {
+				any_vassal = {
+					has_landed_title = d_samaritan
+				}
+			}
+
+		}
+		allow = {
+			 piety = 500
+		}
+		effect = {
+			d_samaritan = {
+				holder_scope = {
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+
+	#####
+	##### EXEILARCH DECISION
+	claim_throne_of_david = {
+		potential = {
+			religion_group = jewish_group
+			trait = house_of_david
+			NOT = { has_claim = k_israel }
+		}
+		allow = {
+			 is_title_active = k_israel
+			 piety = 50
+			 prestige = 50
+			 k_israel = {
+				holder_scope = {
+					NOT = { trait = house_of_david }
+				}
+			}
+		}
+		effect = {
+			add_claim = k_israel
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+####### Samaritan HOLY ORDER
+####### sons_of_jeroboam!
+	donate_money_to_sons_of_jeroboam = {
+		potential = {
+			OR = {
+				religion = samaritan
+			}
+			
+			is_title_active = d_sons_of_jeroboam
+			
+			NOT = { has_character_modifier = expelled_d_sons_of_jeroboam }
+			
+			d_sons_of_jeroboam = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_army }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_army
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_sons_of_jeroboam = {
+					holder_scope = {
+						character_event = {
+							id = HPsamaritan.16840
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					AND = {
+						NOT = { controls_religion = samaritan }
+					}
+				}
+			}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+	form_sons_of_jeroboam = {
+		potential = {
+			has_dlc = "Sons of Abraham"
+			religion = samaritan
+			NOT = { is_title_active = d_sons_of_jeroboam }
+			has_global_flag = samaritan_altar_built
+			is_heretic = no
+		}
+		allow = {
+			piety = 1000
+			wealth = 500
+			num_of_holy_sites = 2
+			religion_authority = 0.4
+		}
+		effect = {
+			piety = -1000
+			wealth = -500
+			narrative_event = { id = HPsamaritan.16809 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expel_sons_of_jeroboam = {
+		potential = {
+			ai = no
+			OR = {
+				religion = samaritan
+			}
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_sons_of_jeroboam
+			NOT = { has_character_modifier = expelled_d_sons_of_jeroboam }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_sons_of_jeroboam = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_army_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_sons_of_jeroboam = {
+					holder_scope = {
+						character_event = {
+							id = HPsamaritan.16860
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_sons_of_jeroboam
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}

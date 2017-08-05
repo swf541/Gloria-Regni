@@ -1,0 +1,37 @@
+decisions = {
+	latin_empire_formation = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			religion = catholic
+			has_landed_title = c_byzantion
+			NAND = {
+				has_landed_title = e_latin_empire
+				has_landed_title = e_byzantium
+			}
+			NOT = {
+				is_title_active = e_latin_empire
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			independent = yes
+		}
+		effect = {
+			activate_title = { title = e_latin_empire status = yes }
+			e_latin_empire = {
+				grant_title = ROOT
+			}
+			add_trait = crusader
+			set_character_flag = latin_emperor
+			prestige = 1000
+			piety = -300
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+}

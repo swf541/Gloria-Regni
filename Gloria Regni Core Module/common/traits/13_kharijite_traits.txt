@@ -1,0 +1,34 @@
+########################
+# Event Traits for Heretic Pride
+#
+# Verin Sedai
+########################
+
+# KHARIJITE
+
+kharijite_kafir  = {
+    potential = {
+        religion = kharijite
+		is_adult = yes
+    }
+	same_religion_opinion = -100
+	monthly_character_piety = -0.5
+	monthly_character_prestige = -0.5
+	#vassal_limit = -10
+    customizer = no
+    random = no
+	male_insult = INSULT_KAFIR
+}
+anarchy_at_samarra_trait  = {
+	monthly_character_prestige = -0.3
+	#vassal_limit = -10
+    customizer = no
+    random = no
+	incapacitating = yes
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	health = -2
+	general_opinion = -20
+}

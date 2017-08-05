@@ -1,0 +1,107 @@
+namespace = RRR
+character_event = {                        #Arrival at the Library of Athens
+	id = RRR.1
+        title = "EVTNAMERRR.1"
+	desc = "EVTDESCRRR.1"
+	picture = "GFX_evt_roman_city"
+
+        is_triggered_only = yes
+                        
+	option = {
+		name = "EVTOPTARRR.1" #
+                add_trait = cynical 
+                Prestige = 100
+                character_event = { id = RRR.2 }
+}
+	option = {
+		name = "EVTOPTBRRR.1" #
+                add_trait = zealous 
+                piety = 100 
+                remove_trait = on_pilgrimage
+         }
+}
+character_event = {                        #Arrival at the room with scrolls 
+        id = RRR.2
+        title = "EVTNAMERRR.2"
+        desc = "EVTDESCRRR.2"
+        picture = "GFX_evt_room_with_scrolls"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARRR.2" # 
+		Prestige = 100	
+                add_trait = sympathy_pagans
+                character_event = { id = RRR.3 }
+	}
+}
+character_event = {                        #On the way back home
+        id = RRR.3
+        title = "EVTNAMERRR.3"
+        desc = "EVTDESCRRR.3"
+        picture = "GFX_evt_roman_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARRR.3" # 
+		Prestige = 100	
+		character_event = { id = RRR.4 }
+	}
+}
+
+character_event = {                        #Back at the palace
+        id = RRR.4
+        title = "EVTNAMERRR.4"
+        desc = "EVTDESCRRR.4"
+        picture = "GFX_evt_roman_city"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARRR.4" # 
+		Prestige = 100
+                character_event = { id = RRR.5 }	
+}              
+        option = {
+                name = "EVTOPTBRRR.4" # 
+                add_trait = zealous
+                piety = 150 
+                
+        }
+  }
+character_event = {                        #In the senate for putting true the new laws 
+        id = RRR.5
+        title = "EVTNAMERRR.5"
+        desc = "EVTDESCRRR.5"
+        picture = "GFX_evt_roman_senate"
+  
+        is_triggered_only = yes
+       
+        option = {
+		name = "EVTOPTARRR.5" # 
+		piety = 100	
+                religion = hellenic_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous 
+                prestige = 50
+}
+        option = { 
+                name = "EVTOPTBRRR.5" # 
+		piety = 100	
+                religion = hellenic_pagan
+                remove_trait = on_pilgrimage	
+                add_trait = zealous
+                add_trait = cruel
+                Prestige = 10
+}
+        option = { 
+                name = "EVTOPTCRRR.5" # 
+		piety = 100	
+                religion = hellenic_pagan
+                remove_trait = on_pilgrimage
+				}
+}
+
+
+

@@ -1,0 +1,340 @@
+namespace = SER
+character_event = {		#Descent into the Temple
+	id = SER.1
+	title = "EVTNAMESER.1"
+	desc = "EVTDESCSER.1"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.1" # 
+		piety = 10
+		character_event = { id = SER.2 }
+	}
+}
+character_event = {		#Hallucinogen Given
+	id = SER.2
+	title = "EVTNAMESER.2"
+	desc = "EVTDESCSER.2"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.2" # 
+		piety = 10		
+		character_event = { id = SER.3 }
+	}
+}
+
+character_event = {		#Exploring the Labyrinth
+	id = SER.3
+	title = "EVTNAMESER.3"
+	desc = "EVTDESCSER.3"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.3" # Go Left
+		piety = 10
+		random_list = {
+			60 = {
+				character_event = { id = SER.3 }			
+			}
+			30 = {
+				character_event = { id = SER.4 }			
+			}
+			10 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBSER.3" # Go Right
+		piety = 10
+		random_list = {
+			60 = {
+				character_event = { id = SER.3 }			
+			}
+			30 = {
+				character_event = { id = SER.4 }			
+			}
+			10 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTCSER.3" # Go Forward
+		piety = 10
+		random_list = {
+			60 = {
+				character_event = { id = SER.3 }			
+			}
+			30 = {
+				character_event = { id = SER.4 }			
+			}
+			10 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+}
+
+character_event = {			#Advance to Next Chamber
+	id = SER.4
+	title = "EVTNAMESER.4"
+	desc = "EVTDESCSER.4"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.3" # Go Left
+		piety = 10
+		random_list = {
+			40 = {
+				character_event = { id = SER.4 }			
+			}
+			58 = {
+				character_event = { id = SER.5 }			
+			}
+			2 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBSER.3" # Go Right
+		piety = 10
+		random_list = {
+			40 = {
+				character_event = { id = SER.4 }			
+			}
+			58 = {
+				character_event = { id = SER.5 }			
+			}
+			2 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTCSER.3" # Go Forward
+		piety = 10
+		random_list = {
+			40 = {
+				character_event = { id = SER.4 }			
+			}
+			58 = {
+				character_event = { id = SER.5 }			
+			}
+			2 = {
+				character_event = { id = SER.9 }
+			}
+		}
+	}
+}
+
+
+character_event = {		#Divine Revelation
+	id = SER.5
+	title = "EVTNAMESER.5"
+	desc = "EVTDESCSER.5"
+	picture = "GFX_evt_holy_light"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.5" # 
+		piety = 50
+		random_list = {
+			40 = {
+				character_event = { id = SER.6 }			
+			}
+			35 = {
+				character_event = { id = SER.11 }
+			}
+			10 = {
+				character_event = { id = SER.12 }
+			}
+			15 = {
+				character_event = { id = SER.13 }
+			}
+		}
+	}
+}
+
+character_event = {		#Vision of the Deities (Good)
+	id = SER.6
+	title = "EVTNAMESER.6"
+	desc = "EVTDESCSER.6"
+	picture = "GFX_evt_holy_light"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.6" # 
+		piety = 10
+			random_list = {
+				33 = {
+					add_trait = humble
+				}
+				33 = {
+					add_trait = diligent
+				}
+				34 = {
+					add_trait = zealous
+				}
+			}
+		character_event = { id = SER.7 }
+	}
+}
+character_event = {		#Found Exit of Labyrinth
+	id = SER.7
+	title = "EVTNAMESER.7"
+	desc = "EVTDESCSER.7"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.7" # 
+		piety = 10
+		character_event = { id = SER.8 }
+	}
+}
+
+character_event = {		#Baptismal Rites
+	id = SER.8
+	title = "EVTNAMESER.8"
+	desc = "EVTDESCSER.8"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBSER.8" # 
+		piety = 50
+		prestige = 10
+		add_trait = cult_of_serapis_initiate
+		remove_trait = on_pilgrimage
+	}
+}
+
+character_event = {		#Fall in Chasm
+	id = SER.9
+	title = "EVTNAMESER.9"
+	desc = "EVTDESCSER.9"
+	picture = "GFX_evt_roman_great_temple"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.9" # 
+		death = {
+			death_reason = death_battle
+		}
+	}	
+}
+
+character_event = {		#Vision of the Underworld (Bad)
+	id = SER.11
+	title = "EVTNAMESER.11"
+	desc = "EVTDESCSER.11"
+	picture = "GFX_evt_fire_hill"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.11" # 
+		piety = 10
+			random_list = {
+				5 = {
+					add_trait = brave
+				}
+				25 = {
+					add_trait = craven
+				}
+				25 = {
+					piety = 10
+				}
+				5 = {
+					add_trait = cynical
+				}
+				20 = {
+					add_trait = stressed
+				}
+				20 = {
+					add_trait = depressed
+				}
+			}
+		character_event = { id = SER.7 }
+	}
+}
+
+character_event = {		#Heroic Blessings (Very Good)
+	id = SER.12
+	title = "EVTNAMESER.12"
+	desc = "EVTDESCSER.12"
+	picture = "GFX_evt_golden_fields"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.12" # 
+		piety = 10
+			random_list = {
+				25 = {
+					add_trait = brave
+				}
+				25 = {
+					add_trait = ambitious
+				}
+				25 = {
+					add_trait = diligent
+				}
+				25 = {
+					add_trait = zealous
+				}
+			}
+		character_event = { id = SER.7 }
+	}
+}
+
+character_event = {		#Cursed by the Deities (Very Bad)
+	id = SER.13
+	title = "EVTNAMESER.13"
+	desc = "EVTDESCSER.13"
+	picture = "GFX_evt_dark_valley"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTASER.13" # 
+		piety = 10
+			random_list = {
+				5 = {
+					add_trait = brave
+				}
+				25 = {
+					add_trait = craven
+				}
+				15 = {
+					add_trait = paranoid
+				}
+				5 = {
+					add_trait = cynical
+				}
+				25 = {
+					add_trait = stressed
+				}
+				25 = {
+					add_trait = depressed
+				}
+			}
+		character_event = { id = SER.7 }
+	}
+}

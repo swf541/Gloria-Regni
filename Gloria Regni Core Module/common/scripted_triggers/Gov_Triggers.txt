@@ -1,0 +1,42 @@
+# Scripted triggers should have _trigger suffix
+
+# trigger has character scope
+roman_government_trigger = {
+	OR = {
+		#ERE
+		has_landed_title = e_byzantium 
+		liege = { has_landed_title = e_byzantium }
+		top_liege = { has_landed_title = e_byzantium }
+		liege_before_war = { has_landed_title = e_byzantium }
+		
+		#WRE
+		has_landed_title = e_wre 
+		liege = { has_landed_title = e_wre }
+		top_liege = { has_landed_title = e_wre }
+		liege_before_war = { has_landed_title = e_wre }
+		
+		#RE
+		has_landed_title = e_roman_empire
+		liege = { has_landed_title = e_roman_empire }
+		top_liege = { has_landed_title = e_roman_empire }
+		liege_before_war = { has_landed_title = e_roman_empire }
+		
+		#Nicaea
+		has_landed_title = e_nicaea
+		liege = { has_landed_title = e_nicaea }
+		top_liege = { has_landed_title = e_nicaea }
+		liege_before_war = { has_landed_title = e_nicaea }
+		
+		#Trebizond
+		has_landed_title = e_trebizond
+		liege = { has_landed_title = e_trebizond }
+		top_liege = { has_landed_title = e_trebizond }
+		liege_before_war = { has_landed_title = e_trebizond }
+		
+		#Epirus
+		has_landed_title = k_epirus
+		liege = { has_landed_title = k_epirus }
+		top_liege = { has_landed_title = k_epirus }
+		liege_before_war = { has_landed_title = k_epirus }
+	}	
+}

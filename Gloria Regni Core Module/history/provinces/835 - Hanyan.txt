@@ -1,0 +1,32 @@
+# 835 - Hanyan
+
+# County Title
+title = c_hanyan
+
+# Settlements
+max_settlements = 2
+
+b_hanyan = castle
+
+#b_naama = city
+#b_saida = temple
+
+#b_alkasdir = castle
+#b_alancha = castle
+#b_magoura = castle
+#b_bougtob = castle
+#b_raselma = castle
+
+# Misc
+culture = african_latin
+religion = imperial
+
+# History
+1054.1.1 = { religion = catholic }
+1200.1.1 = { 
+	religion = sunni 
+	culture = maghreb_arabic
+}
+
+1187.1.1 = { b_naama = city }
+

@@ -1,0 +1,275 @@
+namespace = theme
+
+character_event = {
+	id = theme.1
+
+    hide_window = yes
+
+	trigger = {
+		is_feudal = yes
+        independent = yes
+        has_law = inactive_theme_system
+		any_realm_province =  {
+			NOT = { has_province_modifier = inactive_themes }
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                NOT = { has_province_modifier = inactive_themes }
+            }
+			add_province_modifier = { name = inactive_themes duration = -1 }
+        }
+    }
+}
+
+character_event = {
+	id = theme.2
+
+    hide_window = yes
+
+	trigger = {
+        has_law = active_theme_system
+		any_realm_province =  {
+			has_province_modifier = inactive_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = inactive_themes
+            }
+			remove_province_modifier = inactive_themes
+        }
+    }
+}
+
+character_event = {
+	id = theme.3
+
+    hide_window = yes
+
+	trigger = {
+		is_feudal = yes
+        independent = yes
+        has_law = active_theme_system
+		any_realm_province =  {
+			NOT = { has_province_modifier = active_themes }
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                NOT = { has_province_modifier = active_themes }
+            }
+			add_province_modifier = { name = active_themes duration = -1 }
+        }
+    }
+}
+
+character_event = {
+	id = theme.4
+
+    hide_window = yes
+
+	trigger = {
+        has_law = inactive_theme_system
+		any_realm_province =  {
+			has_province_modifier = active_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = active_themes
+            }
+			remove_province_modifier = active_themes
+        }
+    }
+}
+
+character_event = {
+	id = theme.5
+
+    hide_window = yes
+
+	trigger = {
+        has_law = degraded_theme_system
+		any_realm_province =  {
+			has_province_modifier = active_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = active_themes
+            }
+			remove_province_modifier = active_themes
+        }
+    }
+}
+
+character_event = {
+	id = theme.6
+
+    hide_window = yes
+
+	trigger = {
+       has_law = degraded_theme_system
+		any_realm_province =  {
+			has_province_modifier = inactive_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = inactive_themes
+            }
+			remove_province_modifier = inactive_themes
+        }
+    }
+}
+
+character_event = {
+	id = theme.7
+
+    hide_window = yes
+
+	trigger = {
+        independent = yes
+        NOT = { has_landed_title = k_morea }
+        NOT = { has_landed_title = k_epirus }
+        NOT = { has_landed_title = k_thrace }
+        NOT = { has_landed_title = k_macedon }
+        NOT = { has_landed_title = k_trebizond }
+        NOT = { has_landed_title = k_byzantium }
+		NOT = { has_landed_title = e_trebizond }
+		NOT = { has_landed_title = e_byzantium }
+        NOT = { has_landed_title = e_thessalonika }
+        NOT = { has_landed_title = e_roman_empire }
+		NOT = { has_landed_title = e_western }
+		any_realm_province =  {
+			has_province_modifier = inactive_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = inactive_themes
+            }
+			remove_province_modifier = inactive_themes
+        }
+    }
+}
+
+character_event = {
+	id = theme.8
+
+    hide_window = yes
+
+	trigger = {
+        independent = yes
+        NOT = { has_landed_title = k_morea }
+        NOT = { has_landed_title = k_epirus }
+        NOT = { has_landed_title = k_thrace }
+        NOT = { has_landed_title = k_macedon }
+        NOT = { has_landed_title = k_trebizond }
+        NOT = { has_landed_title = k_byzantium }
+		NOT = { has_landed_title = e_trebizond }
+		NOT = { has_landed_title = e_byzantium }
+        NOT = { has_landed_title = e_thessalonika }
+        NOT = { has_landed_title = e_roman_empire }
+		NOT = { has_landed_title = e_western }
+		any_realm_province =  {
+			has_province_modifier = active_themes
+        }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = OK
+		any_realm_province = {
+            limit = {
+                OR = { 
+				    owner = { any_liege = { character = ROOT } } 
+					owner = { character = ROOT } 
+				}
+                has_province_modifier = active_themes
+            }
+			remove_province_modifier = active_themes
+        }
+    }
+}

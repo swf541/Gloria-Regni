@@ -1,0 +1,98 @@
+################
+# HERETIC PRIDE
+# TRIGGERED ONLY
+################
+
+nick_the_miran = {}
+
+nick_diwan = {
+	allow = {
+		religion = hurufi
+		trait = hurufi_diwan
+		prestige = 1000
+	}
+	chance = {
+		factor = 1
+	}
+}
+
+nick_al_haqq = {
+	allow = {
+		religion = hurufi
+		trait = hurufi_mystic_c
+		piety = 1000
+	}
+	chance = {
+		factor = 1
+	}
+}
+nick_mahdi = { }
+
+nick_druze_m = {
+	allow = {
+		religion = druze
+		is_female = no
+		trait = druze_ajawid
+		piety = 1000
+		age = 35
+	}
+	chance = {
+		factor = 1
+	}
+}
+nick_druze_f = {
+	allow = {
+		religion = druze
+		is_female = yes
+		trait = druze_ajawid
+		piety = 1000
+		age = 35
+	}
+	chance = {
+		factor = 1
+	}
+}
+nick_kafir = {
+	allow = {
+		religion = kharijite
+		trait = kharijite_kafir
+		NOT = { piety = 0 }
+	}
+	chance = {
+		factor = 5
+	}
+}
+nick_ecumenical  = {
+	allow = {
+		religion = monothelite
+		trait = tolerance
+		piety = 100
+	}
+	chance = {
+		factor = 2
+	}
+}
+nick_the_perfect  = {
+	allow = {
+		religion = cathar
+		trait = perfecti
+		piety = 1000
+	}
+	chance = {
+		factor = 10
+	}
+}
+nick_the_orphen  = {
+	allow = {
+		religion = cathar
+		trait = adopted
+		NOT = { age = 20 }
+		is_ruler = yes
+	}
+	chance = {
+		factor = 10
+	}
+}
+nick_the_defiler  = { }
+nick_the_ballless = { }
+nick_the_martyr = { }

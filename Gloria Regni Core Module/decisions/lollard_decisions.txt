@@ -1,0 +1,55 @@
+decisions = {
+	dissolution_of_the_monastery = {
+		is_high_prio = yes
+		potential = {
+			year = 1300
+			tier = KING
+			is_adult = yes
+			prisoner = no
+			independent = yes
+			NOT = { trait = incapable }
+			religion = lollard
+			NOT = { has_dynasty_flag = dissolution_lollard }
+		}
+		allow = {
+			piety = 500
+		}
+		effect = {
+			piety = -500
+			set_dynasty_flag = dissolution_lollard
+			scaled_wealth = 10.0
+			add_character_modifier = { name = lollard_looter duration = -1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+
+	renounce_vows = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+				trait = monk
+				trait = nun
+			}
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			religion = lollard
+		}
+		allow = {
+			piety = 10
+		}
+		effect = {
+			piety = -50
+			add_character_modifier = { name = lollard_former_monk duration = -1 }
+			remove_trait = monk
+			remove_trait = nun
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

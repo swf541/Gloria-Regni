@@ -1,0 +1,124 @@
+decisions = {
+
+	celebrate_jashan_e_sadah = {
+		potential = {
+			is_ruler = yes
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			not = { religion = mandean }
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_sadah_feast_timer
+				liege = { has_character_flag = holding_sadah_feast }
+				has_character_flag = holding_sadah_feast
+				has_character_flag = planning_sadah_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 10 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_sadah_feast
+			custom_tooltip = {
+				text = prepare_sadah_feast
+				hidden_tooltip = { 
+					character_event = { id = JAS.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 3 }
+				month = 6
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}		
+	
+	celebrate_jashan_e_mihragan = {
+		potential = {
+			is_ruler = yes
+			religion_group = zoroastrian_group
+			not = { religion = manichean }
+			not = { religion = mandean }
+			month = 6
+			not = { month = 9 }
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_mihragan_feast_timer
+				liege = { has_character_flag = holding_mihragan_feast }
+				has_character_flag = holding_mihragan_feast
+				has_character_flag = planning_mihragan_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_mihragan_feast
+			custom_tooltip = {
+				text = prepare_mihragan_feast
+				hidden_tooltip = { 
+					character_event = { id = JAE.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 3 }
+				month = 6
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}		
+}

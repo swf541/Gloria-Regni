@@ -1,0 +1,460 @@
+rome_imperial_reconquest_kingdom = {
+	name = CB_NAME_IMPERIAL
+	war_name = WAR_NAME_IMPERIAL
+	sprite = 17
+	truce_days = 3650
+	is_permanent = yes
+	check_de_jure_tier = KING # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
+
+	allowed_to_target_tributaries = no
+	allowed_to_target_suzerains = no
+	
+	infamy_modifier = 0.15
+
+	can_use = {
+		ROOT = {
+			has_landed_title = e_roman_empire
+			independent = yes
+			NOT = { same_realm = FROM }
+			mercenary = no
+		}
+	}
+
+	can_use_title = {
+		OR = {
+			title = k_byzantium
+			title = k_anatolia
+			title = k_armenia
+			title = k_bulgaria
+			title = k_serbia
+			title = k_croatia
+			title = k_italy
+			title = k_sicily
+			title = k_bavaria
+			title = k_burgundy
+			title = k_france
+			title = k_aquitaine
+			title = k_brittany
+			title = k_england
+			title = k_wales
+			title = k_frisia
+			title = k_lotharingia
+			title = k_aragon
+			title = k_castille
+			title = k_andalusia
+			title = k_leon
+			title = k_spanish_galicia
+			title = k_portugal
+			title = k_navarra
+			title = k_syria
+			title = k_jerusalem
+			title = k_egypt
+			title = k_africa
+			title = k_mauretania
+			title = k_papal_state
+			title = k_venice
+			title = k_asturias
+			title = k_georgia
+		}
+	}
+	
+	is_valid = {
+		ROOT = {
+			independent = yes
+			NOT = { same_realm = FROM }
+		}
+	}
+	
+	on_success = {
+		any_attacker = {
+			limit = { character = ROOT }
+			participation_scaled_prestige = 100
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 100
+			}
+		}
+		
+		FROM = { prestige = -100 }
+	}
+
+	on_success_title = {
+		custom_tooltip = { 
+			text = other_invasion_succ_tip
+			hidden_tooltip = {
+				ROOT = {
+					vassalize_or_take_under_title = {
+						title = PREV
+						enemy = FROM
+						type = invasion
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				holder_scope = { character = FROM }
+			}
+			usurp_title_only = { target = ROOT type = invasion }
+		}
+	}
+
+	on_fail = {
+		ROOT = { prestige = -150 }
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 4.0
+			}
+			ROOT = { prestige = -200 }
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_piety = 100
+			participation_scaled_prestige = 200
+			if = {
+				limit = {
+					uses_decadence = yes
+				}
+				participation_scaled_decadence = -10
+			}
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { 
+				participation_scaled_piety = 100
+				participation_scaled_prestige = 200
+				if = {
+					limit = {
+						uses_decadence = yes
+					}
+					participation_scaled_decadence = -10
+				}
+			}
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+	ai_will_do = { 
+		factor = 5
+	}
+}
+
+
+ere_imperial_reconquest_kingdom = {
+	name = CB_NAME_IMPERIAL
+	war_name = WAR_NAME_IMPERIAL
+	sprite = 17
+	truce_days = 3650
+	is_permanent = yes
+	check_de_jure_tier = KING # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
+
+	allowed_to_target_tributaries = no
+	allowed_to_target_suzerains = no
+	
+		infamy_modifier = 0.25
+
+	can_use = {
+		ROOT = {
+			or = {
+				has_landed_title = e_nicaea
+				has_landed_title = k_epirus
+				has_landed_title = e_trebizond	
+				has_landed_title = e_thessalonica
+				has_landed_title = e_byzantium	
+				has_landed_title = e_latin_empire
+			}
+			independent = yes
+			NOT = { same_realm = FROM }
+			mercenary = no
+		}
+	}
+
+	can_use_title = {
+		OR = {
+			title = k_byzantium
+			title = k_anatolia
+			title = k_armenia
+			title = k_bulgaria
+			title = k_serbia
+			title = k_croatia
+			title = k_syria
+			title = k_jerusalem
+			title = k_egypt
+			title = k_africa
+			title = k_italy
+			title = k_sicily
+			title = k_georgia
+		}
+	}
+	
+	is_valid = {
+		ROOT = {
+			independent = yes
+			NOT = { same_realm = FROM }
+		}
+	}
+	
+	on_success = {
+		any_attacker = {
+			limit = { character = ROOT }
+			participation_scaled_prestige = 100
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 100
+			}
+		}
+		
+		FROM = { prestige = -100 }
+	}
+
+	on_success_title = {
+		custom_tooltip = { 
+			text = other_invasion_succ_tip
+			hidden_tooltip = {
+				ROOT = {
+					vassalize_or_take_under_title = {
+						title = PREV
+						enemy = FROM
+						type = invasion
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				holder_scope = { character = FROM }
+			}
+			usurp_title_only = { target = ROOT type = invasion }
+		}
+	}
+
+	on_fail = {
+		ROOT = { prestige = -150 }
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 4.0
+			}
+			ROOT = { prestige = -200 }
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_piety = 100
+			participation_scaled_prestige = 200
+			if = {
+				limit = {
+					uses_decadence = yes
+				}
+				participation_scaled_decadence = -10
+			}
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { 
+				participation_scaled_piety = 100
+				participation_scaled_prestige = 200
+				if = {
+					limit = {
+						uses_decadence = yes
+					}
+					participation_scaled_decadence = -10
+				}
+			}
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+	ai_will_do = { 
+		factor = 5
+	}
+}
+
+wre_imperial_reconquest_kingdom = {
+	name = CB_NAME_IMPERIAL
+	war_name = WAR_NAME_IMPERIAL
+	sprite = 17
+	truce_days = 3650
+	is_permanent = yes
+	check_de_jure_tier = KING # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
+
+	allowed_to_target_tributaries = no
+	allowed_to_target_suzerains = no
+	
+		infamy_modifier = 0.25
+
+	can_use = {
+		ROOT = {
+			has_landed_title = e_wre
+			independent = yes
+			NOT = { same_realm = FROM }
+			mercenary = no
+		}
+	}
+
+	can_use_title = {
+		OR = {
+			title = k_italy
+			title = k_sicily
+			title = k_bavaria
+			title = k_burgundy
+			title = k_france
+			title = k_aquitaine
+			title = k_brittany
+			title = k_england
+			title = k_wales
+			title = k_frisia
+			title = k_lotharingia
+			title = k_aragon
+			title = k_castille
+			title = k_andalusia
+			title = k_leon
+			title = k_spanish_galicia
+			title = k_portugal
+			title = k_navarra
+			title = k_mauretania
+			title = k_papal_state
+			title = k_venice
+			title = k_asturias
+		}
+	}
+	
+	is_valid = {
+		ROOT = {
+			independent = yes
+			NOT = { same_realm = FROM }
+		}
+	}
+	
+	on_success = {
+		any_attacker = {
+			limit = { character = ROOT }
+			participation_scaled_prestige = 100
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 100
+			}
+		}
+		
+		FROM = { prestige = -100 }
+	}
+
+	on_success_title = {
+		custom_tooltip = { 
+			text = other_invasion_succ_tip
+			hidden_tooltip = {
+				ROOT = {
+					vassalize_or_take_under_title = {
+						title = PREV
+						enemy = FROM
+						type = invasion
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				holder_scope = { character = FROM }
+			}
+			usurp_title_only = { target = ROOT type = invasion }
+		}
+	}
+
+	on_fail = {
+		ROOT = { prestige = -150 }
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 4.0
+			}
+			ROOT = { prestige = -200 }
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_piety = 100
+			participation_scaled_prestige = 200
+			if = {
+				limit = {
+					uses_decadence = yes
+				}
+				participation_scaled_decadence = -10
+			}
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { 
+				participation_scaled_piety = 100
+				participation_scaled_prestige = 200
+				if = {
+					limit = {
+						uses_decadence = yes
+					}
+					participation_scaled_decadence = -10
+				}
+			}
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+	ai_will_do = { 
+		factor = 5
+	}
+}
+

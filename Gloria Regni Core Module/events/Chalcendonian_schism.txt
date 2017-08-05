@@ -1,0 +1,929 @@
+namespace = CHALC
+character_event = {
+	id = CHALC.100
+	picture = GFX_evt_bishop_byzantine
+	desc = EVTDESCCHALC.1
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_bulgaria
+		has_landed_title = e_bulgaria 
+		religion = imperial
+	}     
+	
+	option = {
+		name = EVTOPTACHALC.1
+		
+		
+		add_trait = roman_rite
+		
+		set_global_flag = latin_bulgaria
+		
+		primary_title = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = e_bulgaria_2
+			}
+		}
+
+		k_bulgaria = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria_2
+			}
+		}
+		
+		k_bulgaria_2 = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = k_bulgaria	
+			copy_title_laws = k_bulgaria
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		
+		e_bulgaria_2 = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = k_bulgaria	
+			copy_title_laws = k_bulgaria
+		}
+		e_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+		activate_title = { title = e_bulgaria status = no }
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = roman_rite
+			remove_trait = ambrosian_rite
+			remove_trait = byzantine_rite
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}
+		k_imperial = { change_variable = { which = schism value = 20 } }
+	}
+	
+	option = {
+		name = EVTOPTBCHALC.1
+	
+		add_trait = byzantine_rite
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = byzantine_rite
+			remove_trait = ambrosian_rite
+			remove_trait = roman_rite 
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}	
+		
+	}
+}
+character_event = {
+	id = CHALC.1
+	picture = GFX_evt_bishop_byzantine
+	desc = EVTDESCCHALC.1
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_bulgaria
+		NOT = { has_landed_title = e_bulgaria }
+		religion = imperial
+	}     
+	
+	option = {
+		name = EVTOPTACHALC.1
+		
+		
+		add_trait = roman_rite
+		
+		set_global_flag = latin_bulgaria
+		
+		primary_title = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = k_bulgaria_2
+			}
+		}
+		
+		k_bulgaria_2 = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = k_bulgaria	
+			copy_title_laws = k_bulgaria
+		}
+		k_bulgaria = {
+			destroy_landed_title = THIS
+		}
+		activate_title = { title = k_bulgaria status = no }
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = roman_rite
+			remove_trait = ambrosian_rite
+			remove_trait = byzantine_rite
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}
+		k_imperial = { change_variable = { which = schism value = 20 } }
+	}
+	
+	option = {
+		name = EVTOPTBCHALC.1
+	
+		add_trait = byzantine_rite
+		any_realm_character ={
+			limit = { religion = imperial }
+			
+			add_trait = byzantine_rite
+			remove_trait = ambrosian_rite
+			remove_trait = roman_rite 
+			remove_trait = celtic_rite
+			remove_trait = alexandrian_rite
+			remove_trait = mozarabic_rite
+			remove_trait = antiochene_rite
+			remove_trait = african_rite
+			remove_trait = aquileian_rite
+		}	
+		
+	}
+}
+
+character_event = {
+	id = CHALC.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_imperial
+		religion = imperial
+		OR = {
+			d_rome = {
+				NOT = { opinion = { who = ROOT value = 0 } }
+				NOT = { reverse_opinion = { who = ROOT value = 0 } }
+			}
+			d_constantinople = {
+				NOT = { opinion = { who = ROOT value = 0 } }
+				NOT = { reverse_opinion = { who = ROOT value = 0 } }
+			}
+		}
+	}     
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		k_imperial = { change_variable = { which = schism value = 1 } }
+	}
+}
+
+character_event = {
+	id = CHALC.3
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = e_byzantium
+		religion = iconoclast
+	}     
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		k_imperial = { change_variable = { which = schism value = 1 } }
+	}
+}
+
+character_event = {
+	id = CHALC.5
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	
+	
+	immediate = {
+		k_papal_state = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = d_rome	
+			copy_title_laws = d_rome
+		}
+		d_rome = {
+			unsafe_destroy_landed_title = THIS
+		}
+		unsafe_religion = catholic
+		any_courtier = {
+			religion = catholic
+			character_event = { id = CHALC.7 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+		}
+	}
+}
+
+character_event = {
+	id = CHALC.6
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	
+	
+	immediate = {
+		k_orthodox = { 
+			grant_title = ROOT 
+			make_primary_title = yes
+			copy_title_history = d_constantinople	
+			copy_title_laws = d_constantinople
+		}
+		d_constantinople = {
+			unsafe_destroy_landed_title = THIS
+		}
+		unsafe_religion  = orthodox
+		any_courtier = {
+			religion = orthodox
+			character_event = { id = CHALC.8 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
+			religion = orthodox
+		}
+	}
+}
+character_event = {
+	id = CHALC.7
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+			}
+			any_courtier = {
+				limit = {
+					religion = imperial
+				}
+				religion = catholic
+				character_event = { id = CHALC.7 } 
+			} 
+		}
+	}
+	
+character_event = {
+	id = CHALC.8
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
+			}
+			any_courtier = {
+				limit = {
+					religion = imperial
+				}
+				religion = orthodox
+				character_event = { id = CHALC.8 } 
+			} 
+		}
+	}
+			
+			
+character_event = {
+	id = CHALC.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = k_imperial
+		check_variable = { which = "schism" value = 100 }
+	}     
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		set_global_flag = great_schism_in_effect
+		set_global_flag = great_schism_happened
+		k_imperial = {
+			unsafe_destroy_landed_title = THIS
+		}
+		d_rome = { holder_scope = { character_event = { id = CHALC.5 } } }
+		d_rome = { holder_scope = { save_global_event_target_as = roman_patriarch } }
+		d_constantinople = { holder_scope = { character_event = { id = CHALC.6 } } }
+		d_constantinople = { holder_scope = { save_global_event_target_as = constantinople_patriarch } }
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = roman_rite
+				controls_religion = no
+			}
+			religion = catholic
+			any_courtier = {
+				religion = catholic
+				 character_event = { id = CHALC.7 }  
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = byzantine_rite
+				controls_religion = no
+			}
+			religion = orthodox
+			any_courtier = {
+				religion = orthodox
+				character_event = { id = CHALC.8 } 
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
+			religion = orthodox
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = antiochene_rite
+				controls_religion = no
+			}
+			religion = orthodox
+			any_courtier = {
+				religion = orthodox
+				character_event = { id = CHALC.8 } 
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = alexandrian_rite
+				controls_religion = no
+			}
+			religion = orthodox
+			any_courtier = {
+				religion = orthodox
+				character_event = { id = CHALC.8 } 
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				NOT = { religion = imperial }
+				any_demesne_province = {
+					OR = {
+						religion = imperial
+						any_province_holding = {
+							has_building = ct_imperial_community_1
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}						
+					}				
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+				}
+			}
+			religion = catholic
+			any_courtier = {
+				limit = { religion = imperial }
+				religion = catholic
+				character_event = { id = CHALC.7 } 
+			}
+			any_demesne_province = {
+				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_1
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+			}
+			any_demesne_province = {
+				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_2
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+				add_building = ct_catholic_community_2
+			}
+			any_demesne_province = {
+				limit = {
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_3					
+					}
+				}
+				remove_building = ct_imperial_community_3
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_catholic_community_1
+				add_building = ct_catholic_community_2
+				add_building = ct_catholic_community_3
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+					OR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				NOT = { religion = imperial }
+				any_demesne_province = {
+					OR = {
+						religion = imperial
+						any_province_holding = {
+							has_building = ct_imperial_community_1
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}						
+					}	
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+				}
+			}
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_1
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_2
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+			}
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+					any_province_holding = {
+						has_building = ct_imperial_community_2
+					}	
+					NOT = {
+						any_province_holding = {
+							has_building = ct_imperial_community_3
+						}					
+					}
+				}
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+				add_building = ct_orthodox_community_2
+			}
+			any_demesne_province = {
+				limit = {
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}	
+					any_province_holding = {
+						has_building = ct_imperial_community_3					
+					}
+				}
+				remove_building = ct_imperial_community_3
+				remove_building = ct_imperial_community_2
+				remove_building = ct_imperial_community_1
+				add_building = ct_orthodox_community_1
+				add_building = ct_orthodox_community_2
+				add_building = ct_orthodox_community_3
+			}
+			any_courtier = {
+				limit = { religion = imperial }
+				religion = orthodox
+				character_event = { id = CHALC.8 } 
+			}
+			any_demesne_province = {
+				limit = {
+					religion = imperial
+					NOR = {
+						region = world_europe_south_italy
+						region = world_europe_north
+						region = world_europe_west
+						region = custom_world_africa_north
+					}
+				}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = ambrosian_rite
+				controls_religion = no
+			}
+			character_event = { id = CHALC.9 }
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = celtic_rite
+				controls_religion = no
+			}
+			character_event = { id = CHALC.10 }
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = african_rite
+				controls_religion = no
+			}
+			character_event = { id = CHALC.9 }
+		}
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = mozarabic_rite
+				controls_religion = no
+			}
+			character_event = { id = CHALC.9 }
+		}		
+		any_playable_ruler = {
+			limit = {
+				religion = imperial
+				trait = aquileian_rite
+				controls_religion = no
+			}
+			character_event = { id = CHALC.9 }
+		}			 
+	}
+}
+
+character_event = {
+	id = CHALC.9
+	picture = GFX_evt_bishop_byzantine
+	desc = EVTDESCCHALC.7
+
+	is_triggered_only = yes 
+	
+	option = {
+		name = EVTOPTACHALC.7
+		ai_chance = { 
+			factor = 50 
+			
+			modifier = {
+				factor = 100
+				opinion_diff = { first = event_target:roman_patriarch second = event_target:constantinople_patriarch value = 50 as_if_liege = no }
+			}
+			modifier = {
+				factor = 50
+				OR = {
+					location = { region = world_europe_south_italy }
+					location = { region = world_europe_north }
+					location = { region = world_europe_west }
+					location = { region = custom_world_africa_north }
+				}			
+			}
+		}
+		
+		religion = catholic
+		any_courtier = {
+			religion = catholic
+			character_event = { id = CHALC.8 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+		}
+	}
+	
+	option = {
+		name = EVTOPTBCHALC.7
+		ai_chance = { 
+			factor = 50 
+			
+			modifier = {
+				factor = 100
+				opinion_diff = { first = event_target:constantinople_patriarch second = event_target:roman_patriarch value = 50 as_if_liege = no }
+			}
+			modifier = {
+				factor = 50
+				NOR = {
+					location = { region = world_europe_south_italy }
+					location = { region = world_europe_north }
+					location = { region = world_europe_west }
+					location = { region = custom_world_africa_north }
+				}			
+			}
+			modifier = {
+				factor = 50
+				
+				trait = mozarabic_rite
+				has_global_flag = mozarabic_rite_condemnation
+			}
+			
+			modifier = {
+				factor = 50
+				
+				trait = ambrosian_rite
+				has_global_flag = ambrosian_rite_condemnation
+			}
+			modifier = {
+				factor = 50
+				
+				trait = aquileian_rite
+				has_global_flag = aquileian_rite_condemnation
+			}
+			modifier = {
+				factor = 50
+				
+				trait = african_rite
+				has_global_flag = african_rite_condemnation
+			}
+		}
+		
+		religion = orthodox
+		any_courtier = {
+			religion = orthodox
+			character_event = { id = CHALC.8 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+			clr_province_flag = imperial_majority
+			set_province_flag = orthodox_majority
+			add_province_modifier = { name = schism_province_conversion duration = 1 }
+			religion = orthodox
+		}
+	}
+}
+
+character_event = {
+	id = CHALC.10
+	picture = GFX_evt_bishop_byzantine
+	desc = EVTDESCCHALC.7
+
+	is_triggered_only = yes 
+	
+	option = {
+		name = EVTOPTACHALC.7
+		ai_chance = { 
+			factor = 45 
+			
+			modifier = {
+				factor = 100
+				opinion_diff = { first = event_target:roman_patriarch second = event_target:constantinople_patriarch value = 50 as_if_liege = no }
+			}
+			modifier = {
+				factor = 50
+				OR = {
+					location = { region = world_europe_south_italy }
+					location = { region = world_europe_north }
+					location = { region = world_europe_west }
+					location = { region = custom_world_africa_north }
+				}			
+			}
+		}
+		
+		religion = catholic
+		any_courtier = {
+			religion = catholic
+			character_event = { id = CHALC.7 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+				clr_province_flag = imperial_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+		}
+	}
+	
+	option = {
+		name = EVTOPTBCHALC.7
+		ai_chance = { 
+			factor = 45 
+			
+			modifier = {
+				factor = 100
+				opinion_diff = { first = event_target:constantinople_patriarch second = event_target:roman_patriarch value = 50 as_if_liege = no }
+			}
+			modifier = {
+				factor = 50
+				NOR = {
+					location = { region = world_europe_south_italy }
+					location = { region = world_europe_north }
+					location = { region = world_europe_west }
+					location = { region = custom_world_africa_north }
+				}			
+			}
+			modifier = {
+				factor = 50
+				
+				trait = celtic_rite
+				has_global_flag = celtic_rite_condemnation
+			}
+		}
+		
+		religion = orthodox
+		any_courtier = {
+			religion = orthodox
+			character_event = { id = CHALC.8 } 
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+				clr_province_flag = imperial_majority
+				set_province_flag = orthodox_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = orthodox
+		}
+	}
+	option = {
+		name = EVTOPTCCHALC.7
+		ai_chance = { 
+			factor = 10
+			
+			modifier = {
+				factor = 100
+				NOT = { opinion = { who = event_target:constantinople_patriarch value = 0 } }
+				NOT = { opinion = { who = event_target:roman_patriarch value = 0 } }
+			}
+			modifier = {
+				factor = 50
+				NOR = {
+					location = { region = world_europe_south_italy }
+					location = { region = world_europe_north }
+					location = { region = world_europe_west }
+					location = { region = custom_world_africa_north }
+				}			
+			}
+			modifier = {
+				factor = 50
+				
+				trait = celtic_rite
+				has_global_flag = celtic_rite_condemnation
+			}
+		}
+		
+		religion = insular_christian
+		any_courtier = {
+			religion = insular_christian
+		}
+		any_demesne_province = {
+			limit = {
+				religion = imperial
+			}
+			religion = insular_christian
+		}
+	}
+}

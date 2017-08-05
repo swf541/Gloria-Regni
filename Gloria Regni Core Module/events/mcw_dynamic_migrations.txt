@@ -1,0 +1,354 @@
+#############################################
+#			MULTICULTURAL WORLD MOD			#
+#			WRITTEN BY HARJIT SINGH			#
+#############################################
+namespace = MCW
+
+#############################################
+#			DYNAMIC MIGRATIONS				#
+#	MCW.8 - Urban culture colonises			#
+#	MCW.9 - Common culture colonises		#
+#	MCW.10 - Rural culture colonises		#
+#	MCW.11 - Nomad culture colonises		#
+#											#
+#############################################
+
+# Common culture colonises
+province_event = {
+	id = MCW.9
+	desc = EVTDESC_MCW_9
+	picture = GFX_evt_culture_change
+	
+	trigger = {
+
+		has_game_rule = {
+			name = mcw_dynamic_migrations
+			value = on
+		}
+
+		has_owner = yes # must be owned
+
+		owner = {
+			is_nomadic = no # Nomads always use the nomadic colonisation event
+			NOT = { # the people in the province must be foreign infidels
+				culture = ROOT
+				religion_group = ROOT
+			}
+			NOT = { # can't convert provinces away from the liege's culture
+				top_liege = {
+					culture = ROOT
+				}				
+			}
+			top_liege = { # rulers do not let infidels colonise
+				religion = PREV
+			}
+		}
+
+		any_neighbor_province = { # the province must have a land connection to a right culture/right religion province
+			ROOT = {
+				owner = {
+					culture = PREVPREV
+					religion = PREVPREV
+				}
+			}	
+			NOR = {
+				has_province_modifier = depopulated_1
+				has_province_modifier = depopulated_2
+				has_province_modifier = depopulated_3
+			}
+		}
+
+		OR = { # can only colonise hospitable land
+			terrain = plains
+			terrain = farmlands
+			terrain = hills
+			terrain = forest
+			terrain = mountain
+		}
+	
+	}
+
+	mean_time_to_happen = {
+		months = 6000
+
+		modifier = { # isolated cultures and small islands are very resilient
+			factor = 4
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}		
+		modifier = {
+			factor = 2 # half as frequent for marginal terrain
+			OR = {
+				terrain = hills
+				terrain = forest
+				terrain = mountain
+			}
+		}	
+		modifier = {
+			factor = 0.75 # moderate advantage for conquerors
+			owner = {
+				OR = {
+					primary_title = {
+						conquest_culture = PREV
+					}
+					ROOT = {
+						county = {
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						duchy = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						kingdom = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						empire = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.75
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.25
+			has_province_flag = recent_depopulation_3
+		}
+	}
+	option = {
+		name = EVTOPTA_MCW_9
+		owner = {
+			ROOT = {
+				culture = PREV # when this event fires the culture of the province will change to that of the owner
+				religion = PREV # and the religion of the province will change to the culture of the owner
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_MCW_9
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+# Nomad culture colonises
+province_event = {
+	id = MCW.11
+	desc = EVTDESC_MCW_11
+	picture = GFX_evt_culture_change
+	
+	trigger = {
+		has_game_rule = {
+			name = mcw_dynamic_migrations
+			value = on
+		}
+
+		owner = {
+			NOT = { # the people in the province must be foreign infidels
+				culture = ROOT
+				religion_group = ROOT
+			}
+			NOT = { # can't convert provinces away from the liege's culture
+				top_liege = {
+					culture = ROOT
+				}				
+			}
+			top_liege = { # rulers do not let infidels colonise
+				religion = PREV
+			}
+		}
+
+		any_neighbor_province = { # the province must have a land connection to a right culture/right religion province
+			ROOT = {
+				owner = {
+					culture = PREVPREV
+					religion = PREVPREV
+				}
+			}	
+			NOR = {
+				has_province_modifier = depopulated_1
+				has_province_modifier = depopulated_2
+				has_province_modifier = depopulated_3
+			}
+		}
+
+		OR = { # can only colonise hospitable land
+			terrain = plains
+			terrain = farmlands
+			terrain = hills
+			terrain = steppe
+			terrain = mountain
+			terrain = desert
+		}
+
+		owner = {
+			is_nomadic = yes
+		}		
+	}
+
+	mean_time_to_happen = {
+		months = 6000
+
+		modifier = { # isolated cultures and small islands are very resilient
+			factor = 4
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 2 # half as frequent for marginal terrain
+			OR = {
+				terrain = hills
+				terrain = mountain
+			}
+		}
+
+		modifier = {
+			factor = 2 # Desert nomads consider farmland to be marginal terrain
+			owner = {
+				OR = {
+					culture = maghreb_arabic
+					culture = bedouin_arabic
+				}
+			}
+			terrain = farmlands
+		}
+
+		modifier = {
+			factor = 2 # steppe nomads consider the desert to be marginal terrain
+			owner = {
+				NOR = {
+					culture = maghreb_arabic
+					culture = bedouin_arabic
+				}
+			}
+			terrain = desert
+		}
+
+		modifier = {
+			factor = 1.5 # Nomads struggle to colonise the coast
+			port = yes
+		}
+
+		modifier = {
+			factor = 0.5 # significant advantage for nomad conquerors
+			owner = {
+				OR = {
+					primary_title = {
+						conquest_culture = PREV
+					}
+					ROOT = {
+						county = {
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						duchy = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						kingdom = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+					ROOT = {
+						empire = {
+							holder_scope = {
+								character = PREVPREVPREV
+							}
+							conquest_culture = PREVPREV
+						}
+					}
+				}
+			}
+		}
+
+		modifier = { # depopulated provinces flip faster
+			factor = 0.75
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = { # depopulated provinces flip faster
+			factor = 0.25
+			has_province_flag = recent_depopulation_3
+		}
+		modifier = {
+			factor = 0.5 # Nomads rely on force to drive out the peasants
+			owner = {
+				martial = 15
+			}
+		}
+	}
+
+
+
+	option = {
+		name = EVTOPTA_MCW_11
+		owner = {
+			ROOT = {
+				culture = PREV # when this event fires the culture of the province will change to that of the owner
+				religion = PREV # and the religion of the province will change to the culture of the owner
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_MCW_11
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

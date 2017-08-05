@@ -1,0 +1,26 @@
+# 635 - Qohistan
+
+# County Title
+title = c_qohistan
+
+# Settlements
+max_settlements = 4
+b_torshiz = castle
+b_beyhaq = city
+b_gonabad = temple
+
+#b_torbatjam = temple
+#b_kalat = castle
+#b_bardaskan = castle
+#b_mahvalat = castle
+#b_fariman = castle
+
+# Misc
+culture = parthian
+religion = manichean
+
+# History
+860.1.1 = { culture = persian }
+1000.1.1 = {
+	religion = zoroastrian
+}

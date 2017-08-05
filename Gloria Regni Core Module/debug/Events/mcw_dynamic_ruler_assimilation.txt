@@ -1,0 +1,947 @@
+#############################################
+#			MULTICULTURAL WORLD MOD			#
+#			WRITTEN BY HARJIT SINGH			#
+#############################################
+namespace = MCW
+
+#####################################################
+#		DYNAMIC RULER ASSIMILATION					#
+#	MCW.4 - Ruler assimilates to prestige culture	#
+#	MCW.5 - Ruler assimilates to urban culture		#
+#	MCW.6 - Ruler assimilates to common culture		#
+#	MCW.7 - Ruler assimilates to rural culture		#
+#													#
+#####################################################
+
+# Ruler assimilates to prestige culture
+character_event = {
+	id = MCW.4
+	desc = EVTDESC_MCW_4
+	picture = GFX_evt_culture_change
+
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_independent = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = mcw_dynamic_ruler_assimilation
+			value = on
+		}
+		NOT = {
+			is_nomadic = yes # Nomads can't change culture
+		}
+		capital_scope = {
+			NOT = {
+				culture = ROOT # and the capital has a different culture
+			}
+		}
+		primary_title = { 
+			NOR = {
+				conquest_culture = ROOT
+				culture = ROOT # and the primary title has a different culture to its holder
+			}
+			any_previous_holder = {
+				NOT = {
+					character = ROOT # and the character is not the initial creator of the title
+				}
+			}
+		}
+		NOR = { # and the ruler doesn't already have a prestige culture
+			culture = frankish
+			culture = italian
+			culture = roman
+			culture = greek
+			culture = khazar
+			culture = mongol
+			culture = khitan
+			culture = andalusian_arabic
+			culture = persian
+			culture = ethiopian
+			culture = nahuatl
+			culture = bengali
+			culture = rajput
+			culture = tamil
+			culture = han
+		}
+		
+		capital_scope = { # and the capital has a prestige culture
+			OR = {
+				culture = frankish
+				culture = italian
+				culture = roman
+				culture = greek
+				culture = khazar
+				culture = mongol
+				culture = khitan
+				culture = andalusian_arabic
+				culture = persian
+				culture = ethiopian
+				culture = nahuatl
+				culture = bengali
+				culture = rajput
+				culture = tamil
+				culture = han
+				culture = indo_greek
+				culture = mandaic
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 250 # then there's a one in 250 years chance that an event will occur
+
+		modifier = {
+			factor = 0.5 # reduction if you're converting to the appropriate culture of your title
+			primary_title = {
+				ROOT = {
+					capital_scope = {
+						culture = PREVPREV
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.7 # reduction if you have a non-prestige urban culture
+			OR = {
+				culture = pannonian 
+				culture = romano_gothic
+				culture = romano_germanic
+				culture = rhaetian
+				culture = romansh
+				culture = catalan
+				culture = portuguese
+				culture = greek
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = sogdian
+				culture = tocharian
+				culture = gujurati
+				culture = kannada
+				culture = dutch
+				culture = bohemian
+				culture = sephardi
+				culture = hispanic
+				culture = dalmatian
+				culture = african_latin
+				culture = galloroman
+				culture = old_italian
+				culture = british
+				culture = coptic
+				culture = thracian
+				culture = illyrian
+				culture = mandaic
+				culture = aramean
+				culture = melkite
+				culture = maronite
+				culture = neo-punic
+				culture = mizrahi
+				culture = franj
+				culture = romanoarmenian
+				culture = romanogeorgian
+			}
+		}
+		modifier = {
+			factor = 0.5 # reduction if you have a non-prestige common culture
+			OR = {
+				culture = soninke
+				culture = songhai
+				culture = kanuri
+				culture = hausa
+				culture = sosso
+				culture = jolof
+				culture = bafour
+				culture = afar
+				culture = kushite
+				culture = anglonorse
+				culture = gepid
+				culture = vandal
+				culture = alemannic
+				culture = burgundian
+				culture = thuringian
+				culture = angle
+				culture = jute
+				culture = swedish
+				culture = norwegian
+				culture = danish
+				culture = german
+				culture = lombard
+				culture = old_frankish
+				culture = suebi
+				culture = english
+				culture = saxon
+				culture = frisian
+				culture = norman
+				culture = occitan
+				culture = castillan
+				culture = visigothic
+				culture = scottish
+				culture = prussian
+				culture = russian
+				culture = pommeranian
+				culture = polish
+				culture = bulgarian
+				culture = nubian
+				culture = manden
+				culture = assamese
+				culture = hindustani
+				culture = panjabi
+				culture = marathi
+				culture = telugu
+				culture = basque
+				culture = armenian
+				culture = georgian
+				culture = breton
+				culture = ugricbaltic
+				culture = lithuanian
+				culture = kurdish
+				culture = afghan
+				culture = ashkenazi
+				culture = sinhala	
+				culture = aghbanian
+				culture = bactrian
+				culture = ostrogothic
+				culture = indo_greek
+				culture = gothic				
+			}
+		}		
+		modifier = {
+			factor = 0.3 # reduction if you have a rural culture
+			OR = {
+				culture = norse
+				culture = old_saxon
+				culture = pictish
+				culture = finnish
+				culture = mordvin
+				culture = ilmenian
+				culture = somali
+				culture = irish
+				culture = welsh
+				culture = lappish
+				culture = komi
+				culture = khanty
+				culture = samoyed
+				culture = lettigallish
+				culture = croatian
+				culture = serbian
+				culture = romanian
+				culture = baloch
+				culture = oriya
+				culture = sindhi
+				culture = dacian
+				culture = assyrian
+				culture = karantanci
+				culture = choresmian
+				culture = parthian
+				culture = albanian
+				culture = britonic
+			}
+		}
+		modifier = {
+			factor = 0.1 # reduction if you have a non-prestige nomadic culture
+			OR = {
+				culture = turkish
+				culture = pecheneg
+				culture = avar
+				culture = cuman
+				culture = karluk
+				culture = hungarian
+				culture = horse
+				culture = alan
+				culture = bolghar
+				culture = kirghiz
+				culture = uyghur
+				culture = bedouin_arabic
+				culture = maghreb_arabic
+				culture = awaral
+				culture = himyarite
+				culture = khalan
+				culture = scythian
+				culture = beja
+				culture = hunnic
+				culture = daju
+				culture = zaghawa
+				culture = fur
+				culture = guanche
+				culture = numidian
+			}
+		}		
+	}
+
+	option = {
+		name = "EVTOPTA_MCW_4"
+		capital_scope = {
+			reverse_culture = ROOT
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_MCW_4"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Ruler assimilates to urban culture
+character_event = {
+	id = MCW.5
+	desc = EVTDESC_MCW_5
+	picture = GFX_evt_culture_change
+
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_independent = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = mcw_dynamic_ruler_assimilation
+			value = on
+		}
+		NOT = {
+			is_nomadic = yes # Nomads can't change culture
+		}
+		capital_scope = {
+			NOT = {
+				culture = ROOT # and the capital has a different culture
+			}
+		}
+		primary_title = { 
+			NOR = {
+				conquest_culture = ROOT
+				culture = ROOT # and the primary title has a different culture to its holder
+			}
+			any_previous_holder = {
+				NOT = {
+					character = ROOT # and the character is not the initial creator of the title
+				}
+			}
+		}
+		NOR = { # and the ruler doesn't already have a prestige culture
+			culture = frankish
+			culture = italian
+			culture = roman
+			culture = greek
+			culture = khazar
+			culture = mongol
+			culture = khitan
+			culture = andalusian_arabic
+			culture = persian
+			culture = ethiopian
+			culture = nahuatl
+			culture = bengali
+			culture = rajput
+			culture = tamil
+			culture = han
+		}
+		NOR = { # and the ruler doesn't already have an urban culture
+				culture = pannonian 
+				culture = romano_gothic
+				culture = romano_germanic
+				culture = rhaetian
+				culture = romansh
+				culture = catalan
+				culture = portuguese
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = sogdian
+				culture = tocharian
+				culture = gujurati
+				culture = kannada
+				culture = dutch
+				culture = bohemian
+				culture = sephardi
+				culture = hispanic
+				culture = dalmatian
+				culture = african_latin
+				culture = galloroman
+				culture = old_italian
+				culture = british
+				culture = coptic
+				culture = thracian
+				culture = illyrian
+				culture = mandaic
+				culture = aramean
+				culture = melkite
+				culture = maronite
+				culture = neo-punic
+				culture = han
+				culture = mizrahi
+				culture = franj
+				culture = romanoarmenian
+				culture = romanogeorgian
+		}
+		
+		capital_scope = { # and the capital has an urban culture
+			OR ={
+				culture = pannonian 
+				culture = romano_gothic
+				culture = romano_germanic
+				culture = rhaetian
+				culture = romansh
+				culture = catalan
+				culture = portuguese
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = sogdian
+				culture = tocharian
+				culture = gujurati
+				culture = kannada
+				culture = dutch
+				culture = bohemian
+				culture = sephardi
+				culture = hispanic
+				culture = dalmatian
+				culture = african_latin
+				culture = galloroman
+				culture = old_italian
+				culture = british
+				culture = coptic
+				culture = thracian
+				culture = illyrian
+				culture = mandaic
+				culture = aramean
+				culture = melkite
+				culture = maronite
+				culture = neo-punic
+				culture = han
+				culture = mizrahi
+				culture = franj
+				culture = romanoarmenian
+				culture = romanogeorgian
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 250 # then there's a one in 250 years chance that an event will occur
+
+		modifier = {
+			factor = 0.5 # reduction if you're converting to the appropriate culture of your title
+			primary_title = {
+				ROOT = {
+					capital_scope = {
+						culture = PREVPREV
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.7 # reduction if you have a non-prestige common culture
+			OR = {
+				culture = soninke
+				culture = songhai
+				culture = kanuri
+				culture = hausa
+				culture = sosso
+				culture = jolof
+				culture = bafour
+				culture = afar
+				culture = kushite
+				culture = anglonorse
+				culture = gepid
+				culture = vandal
+				culture = alemannic
+				culture = burgundian
+				culture = thuringian
+				culture = angle
+				culture = jute
+				culture = swedish
+				culture = norwegian
+				culture = danish
+				culture = german
+				culture = lombard
+				culture = old_frankish
+				culture = suebi
+				culture = english
+				culture = saxon
+				culture = frisian
+				culture = norman
+				culture = occitan
+				culture = castillan
+				culture = visigothic
+				culture = scottish
+				culture = prussian
+				culture = russian
+				culture = pommeranian
+				culture = polish
+				culture = bulgarian
+				culture = nubian
+				culture = manden
+				culture = assamese
+				culture = hindustani
+				culture = panjabi
+				culture = marathi
+				culture = telugu
+				culture = basque
+				culture = armenian
+				culture = georgian
+				culture = breton
+				culture = ugricbaltic
+				culture = lithuanian
+				culture = kurdish
+				culture = afghan
+				culture = ashkenazi
+				culture = sinhala		
+				culture = aghbanian
+				culture = bactrian
+				culture = ostrogothic
+				culture = gothic				
+			}
+		}		
+		modifier = {
+			factor = 0.5 # reduction if you have a rural culture
+			OR = {
+				culture = norse
+				culture = old_saxon
+				culture = pictish
+				culture = finnish
+				culture = mordvin
+				culture = ilmenian
+				culture = somali
+				culture = irish
+				culture = welsh
+				culture = lappish
+				culture = komi
+				culture = khanty
+				culture = samoyed
+				culture = lettigallish
+				culture = croatian
+				culture = serbian
+				culture = romanian
+				culture = baloch
+				culture = oriya
+				culture = sindhi
+				culture = dacian
+				culture = assyrian
+				culture = karantanci
+				culture = choresmian
+				culture = parthian
+				culture = albanian
+				culture = britonic
+			}
+		}
+		modifier = {
+			factor = 0.3 # reduction if you have a non-prestige nomadic culture
+			OR = {
+				culture = turkish
+				culture = pecheneg
+				culture = avar
+				culture = cuman
+				culture = karluk
+				culture = hungarian
+				culture = horse
+				culture = alan
+				culture = bolghar
+				culture = kirghiz
+				culture = uyghur
+				culture = bedouin_arabic
+				culture = maghreb_arabic
+				culture = awaral
+				culture = himyarite
+				culture = khalan
+				culture = scythian
+				culture = beja
+				culture = hunnic
+				culture = daju
+				culture = zaghawa
+				culture = fur
+				culture = guanche
+				culture = numidian
+			}
+		}
+		
+	}
+
+	option = {
+		name = "EVTOPTA_MCW_5"
+		capital_scope = {
+			reverse_culture = ROOT
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_MCW_5"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Ruler assimilates to a common culture
+character_event = {
+	id = MCW.6
+	desc = EVTDESC_MCW_6
+	picture = GFX_evt_culture_change
+
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_independent = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = mcw_dynamic_ruler_assimilation
+			value = on
+		}
+		NOT = {
+			is_nomadic = yes # Nomads can't change culture
+		}
+		capital_scope = {
+			NOT = {
+				culture = ROOT # and the capital has a different culture
+			}
+		}
+		primary_title = { 
+			NOR = {
+				conquest_culture = ROOT
+				culture = ROOT # and the primary title has a different culture to its holder
+			}
+			any_previous_holder = {
+				NOT = {
+					character = ROOT # and the character is not the initial creator of the title
+				}
+			}
+		}
+		OR = { # and the character has a non-prestige rural or nomadic culture
+			culture = norse
+			culture = old_saxon
+			culture = pictish
+			culture = finnish
+			culture = mordvin
+			culture = ilmenian
+			culture = somali
+			culture = irish
+			culture = welsh
+			culture = lappish
+			culture = komi
+			culture = khanty
+			culture = samoyed
+			culture = lettigallish
+			culture = croatian
+			culture = serbian
+			culture = romanian
+			culture = baloch
+			culture = oriya
+			culture = sindhi			
+			culture = turkish
+			culture = pecheneg
+			culture = avar
+			culture = cuman
+			culture = karluk
+			culture = hungarian
+			culture = horse
+			culture = alan
+			culture = bolghar
+			culture = kirghiz
+			culture = uyghur
+			culture = bedouin_arabic
+			culture = maghreb_arabic
+			culture = awaral
+			culture = himyarite
+			culture = khalan
+			culture = scythian
+			culture = beja
+			culture = hunnic
+			culture = dacian
+			culture = assyrian
+			culture = karantanci
+			culture = choresmian
+			culture = parthian
+			culture = albanian
+			culture = britonic
+			culture = daju
+			culture = zaghawa
+			culture = fur
+			culture = guanche
+			culture = numidian
+		}
+		
+		capital_scope = { # and the capital has a common culture
+			OR = {
+				culture = soninke
+				culture = songhai
+				culture = kanuri
+				culture = hausa
+				culture = sosso
+				culture = jolof
+				culture = bafour
+				culture = afar
+				culture = kushite
+				culture = anglonorse
+				culture = gepid
+				culture = vandal
+				culture = alemannic
+				culture = burgundian
+				culture = thuringian
+				culture = angle
+				culture = jute
+				culture = swedish
+				culture = norwegian
+				culture = danish
+				culture = german
+				culture = lombard
+				culture = old_frankish
+				culture = suebi
+				culture = english
+				culture = saxon
+				culture = frisian
+				culture = norman
+				culture = occitan
+				culture = castillan
+				culture = visigothic
+				culture = scottish
+				culture = prussian
+				culture = russian
+				culture = pommeranian
+				culture = polish
+				culture = bulgarian
+				culture = nubian
+				culture = manden
+				culture = assamese
+				culture = hindustani
+				culture = panjabi
+				culture = marathi
+				culture = telugu
+				culture = basque
+				culture = armenian
+				culture = georgian
+				culture = breton
+				culture = ugricbaltic
+				culture = lithuanian
+				culture = kurdish
+				culture = afghan
+				culture = ashkenazi
+				culture = sinhala	
+				culture = aghbanian
+				culture = bactrian
+				culture = ostrogothic
+				culture = indo_greek
+				culture = gothic				
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 250 # then there's a one in 250 years chance that an event will occur
+
+		modifier = {
+			factor = 0.5 # reduction if you're converting to the appropriate culture of your title
+			primary_title = {
+				ROOT = {
+					capital_scope = {
+						culture = PREVPREV
+					}
+				}
+			}
+		}		
+		modifier = {
+			factor = 0.7 # reduction if you have a rural culture
+			OR = {
+				culture = norse
+				culture = old_saxon
+				culture = pictish
+				culture = finnish
+				culture = mordvin
+				culture = ilmenian
+				culture = somali
+				culture = irish
+				culture = welsh
+				culture = lappish
+				culture = komi
+				culture = khanty
+				culture = samoyed
+				culture = lettigallish
+				culture = croatian
+				culture = serbian
+				culture = romanian
+				culture = baloch
+				culture = oriya
+				culture = sindhi
+				culture = dacian
+				culture = assyrian
+				culture = karantanci
+				culture = choresmian
+				culture = parthian
+				culture = albanian
+				culture = britonic
+			}
+		}
+		modifier = {
+			factor = 0.5 # reduction if you have a non-prestige nomadic culture
+			OR = {
+				culture = turkish
+				culture = pecheneg
+				culture = avar
+				culture = cuman
+				culture = karluk
+				culture = hungarian
+				culture = horse
+				culture = khazar
+				culture = mongol
+				culture = khitan
+				culture = alan
+				culture = bolghar
+				culture = kirghiz
+				culture = uyghur
+				culture = bedouin_arabic
+				culture = maghreb_arabic
+				culture = awaral
+				culture = himyarite
+				culture = khalan
+				culture = scythian
+				culture = beja
+				culture = hunnic
+				culture = daju
+				culture = zaghawa
+				culture = fur
+				culture = guanche
+				culture = numidian
+			}
+		}		
+	}
+	option = {
+		name = "EVTOPTA_MCW_6"
+		capital_scope = {
+			reverse_culture = ROOT
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_MCW_6"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Ruler assimilates to a rural culture
+character_event = {
+	id = MCW.7
+	desc = EVTDESC_MCW_7
+	picture = GFX_evt_culture_change
+
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_independent = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = mcw_dynamic_ruler_assimilation
+			value = on
+		}
+		NOT = {
+			is_nomadic = yes # Nomads can't change culture
+		}
+		capital_scope = {
+			NOT = {
+				culture = ROOT # and the capital has a different culture
+			}
+		}
+		primary_title = { 
+			NOR = {
+				conquest_culture = ROOT
+				culture = ROOT # and the primary title has a different culture to its holder
+			}
+			any_previous_holder = {
+				NOT = {
+					character = ROOT # and the character is not the initial creator of the title
+				}
+			}
+		}
+		OR = { # and the character has a non-prestige nomadic culture
+			culture = turkish
+			culture = pecheneg
+			culture = avar
+			culture = cuman
+			culture = karluk
+			culture = hungarian
+			culture = horse
+			culture = alan
+			culture = bolghar
+			culture = kirghiz
+			culture = uyghur
+			culture = bedouin_arabic
+			culture = maghreb_arabic
+			culture = awaral
+			culture = himyarite
+			culture = khalan
+			culture = scythian
+			culture = beja
+			culture = hunnic
+			culture = daju
+			culture = zaghawa
+			culture = fur
+			culture = guanche
+			culture = numidian
+		}
+		
+		capital_scope = { # and the capital has a rural culture
+			OR = {
+				culture = norse
+				culture = old_saxon
+				culture = pictish
+				culture = finnish
+				culture = mordvin
+				culture = ilmenian
+				culture = somali
+				culture = irish
+				culture = welsh
+				culture = lappish
+				culture = komi
+				culture = khanty
+				culture = samoyed
+				culture = lettigallish
+				culture = croatian
+				culture = serbian
+				culture = romanian
+				culture = baloch
+				culture = oriya
+				culture = sindhi
+				culture = dacian
+				culture = assyrian
+				culture = karantanci
+				culture = choresmian
+				culture = parthian
+				culture = albanian
+				culture = britonic
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 175 # then there's a one in 175 years chance that an event will occur
+
+		modifier = {
+			factor = 0.5 # reduction if you're converting to the appropriate culture of your title
+			primary_title = {
+				ROOT = {
+					capital_scope = {
+						culture = PREVPREV
+					}
+				}
+			}
+		}		
+	}
+
+	option = {
+		name = "EVTOPTA_MCW_7"
+		capital_scope = {
+			reverse_culture = ROOT
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB_MCW_7"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

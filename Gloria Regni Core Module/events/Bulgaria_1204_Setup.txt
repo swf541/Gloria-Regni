@@ -1,0 +1,33 @@
+namespace = BUL
+character_event = {
+	id = BUL.1
+
+        hide_window = yes
+
+        is_triggered_only = yes
+	
+		trigger = {
+			has_landed_title = e_bulgaria
+			year = 1204
+			NOT = { year = 1205 }
+        }     
+
+        immediate = {
+			religion = catholic
+			any_realm_character = {
+				limit = { religion = orthodox }
+					religion = catholic
+				}		
+			any_realm_province = {
+				limit = { religion = orthodox }
+				clr_province_flag = orthodox_majority
+				set_province_flag = catholic_majority
+				add_province_modifier = { name = schism_province_conversion duration = 1 }
+				religion = catholic
+				}					
+			}
+	
+	option = {
+		name = ok
+	}
+}

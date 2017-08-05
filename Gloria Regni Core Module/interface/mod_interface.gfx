@@ -1,0 +1,24 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_trait_succ_commander"
+		texturefile = "gfx/traits/succ_commander.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_plot_byzantine_coup"
+		texturefile = "gfx/ambitions/plot_gain_title.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_plot_byzantine_coup_decision"
+		texturefile = "gfx\\interface\\decision_icon_liegetitle.dds"
+	}
+	
+}

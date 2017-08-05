@@ -1,0 +1,1310 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Paulician   	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPpaul
+
+
+#Sergius-Tychus
+narrative_event = {
+	id = HPpaul.8000
+	title = EVTTITLE_HRP_8000
+	desc = EVTDESC_HRP_8000
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	trigger = {
+		NOT = { has_global_flag = sergius_tychus }
+		year = 800
+		NOT = { year = 820 }
+		has_landed_title = e_byzantium
+		NOT = { religion = paulician }
+		NOT = { religion_authority = 0.85 }
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = EVTOPTA_HRP_8000
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+		set_global_flag = sergius_tychus
+		piety = -100
+		hidden_tooltip = {
+			any_realm_province = {
+				limit = {
+					#NOT = { religion = paulician }
+					culture = armenian
+				}
+				religion = paulician
+				add_province_modifier = {
+						name = heretic_stronghold
+						duration = 3650
+				}
+			}
+			any_realm_province = {
+				limit = {
+					OR = {
+						province_id = 702
+						province_id = 703
+						province_id = 704
+						province_id = 705
+						province_id = 706
+						province_id = 707
+						province_id = 736
+					}
+					NOT = { religion = paulician }
+				}
+				religion = paulician
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_8000
+		trigger = {
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = d_paulician }
+		}
+	}
+	option = {
+		name = EVTOPTC_HRP_8000
+		trigger = {
+			has_landed_title = d_paulician
+		}
+		set_name = "Serigus-Tychus"
+		religion_authority = {
+			modifier = paul_serigus
+			years = 30
+		}
+	}
+}
+character_event = { 
+	id = HPpaul.8001
+	desc = EVTDESC_HRP_8001
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_8001
+		custom_tooltip = {
+			text = paul_shut_down
+			hidden_tooltip = {
+				any_realm_province = {
+					limit = {
+						religion = paulician
+					}
+					ROOT = {
+						scaled_wealth = 0.2
+					}
+					add_province_modifier = {
+						name = paulician_suppression
+						duration = 3650
+					}
+					#province_event = { id = HPpaul.8005 }
+				}
+				random_realm_province = {
+					limit = {
+						religion = paulician
+					}
+					random = {
+						chance = 25
+						religion = root
+					}
+				}
+				random_realm_province = {
+					limit = {
+						religion = paulician
+					}
+					random = {
+						chance = 25
+						religion = root
+					}
+				}
+				random_realm_province = {
+					limit = {
+						religion = paulician
+					}
+					random = {
+						chance = 25
+						religion = root
+					}
+				}
+			}
+		}
+	}
+}
+		
+
+province_event = { 
+	id = HPpaul.8002
+	desc = EVTDESC_HRP_8002
+	picture = "GFX_evt_siege"
+	border = GFX_event_normal_frame_war
+
+	trigger = {
+		has_dlc = "The Old Gods"
+		has_global_flag = paulician_supress
+		has_province_modifier = paulician_suppression
+		NOT = { has_global_flag = paulician_revolt }
+		NOT = { year = 870 }
+		religion = paulician
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		
+		set_global_flag = paulician_revolt
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			name = "Karbeas"
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 32
+			attributes = {
+				martial = 15
+				learning = 7
+			}
+			trait = heresiarch
+			trait = zealous
+			trait = scholar
+			trait = skilled_tactician
+		}
+		
+		new_character = {
+			set_character_flag = heretic_revolter
+			
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "HERETIC_REVOLT"
+				holder = THIS
+			}
+			
+			random_list = {
+				34 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 3.7
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							light_infantry = { 10 10 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 4 4 }
+								light_infantry = { 10 10 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 3.7
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 2 2 }
+							light_infantry = { 12 12 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_cavalry = { 2 2 }
+								light_infantry = { 12 12 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+				33 = {
+					spawn_unit = {
+						province = ROOT
+						home = ROOT
+						owner = THIS
+						leader = THIS
+						scaled_by_biggest_garrison = 3.7
+						troops = {
+							archers = { 6 6 }
+							light_infantry = { 14 14 }
+						}
+						attrition = 0.0
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 30
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
+						trait = peasant_leader
+						trait = tough_soldier
+					}
+					new_character = {
+						spawn_unit = {
+							province = ROOT
+							home = ROOT
+							owner = PREV
+							scaled_by_biggest_garrison = 3.7
+							troops = {
+								archers = { 6 6 }
+								light_infantry = { 14 14 }
+							}
+							attrition = 0.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = heretic_revolt
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = {
+					id = HPpaul.8010
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_TOG_1020"
+	}
+}
+
+character_event = {
+	id = HPpaul.8010
+	desc = EVTDESC_HRP_8010
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_1020
+		hidden_tooltip = { narrative_event = { id = HPpaul.8003 days = 3} }
+	}
+}
+#Karbeas
+narrative_event = {
+	id = HPpaul.8003
+	title = EVTTITLE_HRP_8003
+	desc = EVTDESC_HRP_8003
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_8003
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_8003
+		trigger = {
+			NOT = { has_landed_title = e_byzantium }
+		}
+	}
+}
+narrative_event = {
+	id = HPpaul.8007
+	title = EVTTITLE_HRP_8007
+	desc = EVTDESC_HRP_8007
+	picture = GFX_evt_book_carolingian_script
+
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_8007
+		trigger = {
+			has_landed_title = e_byzantium
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_8007
+		trigger = {
+			NOT = { has_landed_title = e_byzantium }
+		}
+	}
+}
+
+character_event = {
+	id = HPpaul.8110
+	desc = EVTDESC_HRP_8100
+	picture = GFX_evt_battle_byzantine
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		is_alive = yes
+		religion = paulician
+		NOT = { trait = fearless }
+		NOT = { trait = craven }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_8110
+		add_trait = fearless
+	}
+}
+character_event = {
+	id = HPpaul.8111
+	desc = EVTDESC_HRP_8111
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	
+	min_age = 6
+	max_age = 16
+
+	trigger = {
+		NOT = { personality_traits = 5 }
+		NOT = { trait = craven }
+		has_guardian = yes
+		religion = paulician
+	}
+	option = {
+		name = EVTOPTA_HRP_8111
+		add_trait = fearless
+		hidden_tooltip = {
+			guardian = {
+				character_event = {
+					id = HPpaul.8112
+					days = 3
+				}
+			}
+		}
+	}
+}
+character_event = {
+	id = HPpaul.8112
+	desc = EVTDESC_HRP_8112
+	picture = "GFX_evt_child_talking"
+	
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTA_HRP_8112
+	}
+}
+#On-action combat event: Becoming Fearless
+character_event = {
+	id = HPpaul.8100
+	desc = EVTDESC_HRP_8100
+	picture = GFX_evt_battle_byzantine
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		is_alive = yes
+		religion = paulician
+		NOT = { trait = fearless }
+		NOT = { trait = craven }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 5
+			has_ambition = become_fearless
+		}
+		modifier = {
+			trait = genius
+			factor = 0.5
+		}
+		modifier = {
+			trait = quick
+			factor = 0.8
+		}	
+		modifier = {
+			trait = slow
+			factor = 2
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 5
+		}
+		modifier = {
+			trait = inbred
+			factor = 0.2
+		}
+		modifier = {
+			trait = strong
+			factor = 1.5
+		}
+		modifier = {
+			trait = weak
+			factor = 0.8
+		}		
+		modifier = {
+			factor = 0.8
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.8
+			trait = depressed
+		}
+		modifier = {
+			factor = 1.75
+			trait = lunatic
+		}
+		modifier = {
+			factor = 1.75
+			trait = possessed
+		}
+		modifier = {
+			factor = 0.9
+			trait = ill
+		}
+		modifier = {
+			factor = 0.8
+			trait = pneumonic
+		}
+		modifier = {
+			factor = 0.8
+			trait = syphilitic
+		}
+		modifier = {
+			factor = 0.5
+			trait = leper
+		}
+		modifier = {
+			factor = 0.9
+			trait = wounded
+		}
+		modifier = {
+			factor = 0.8
+			trait = maimed
+		}
+		modifier = {
+			factor = 0.5
+			trait = infirm
+		}
+		modifier = {
+			factor = 0.4
+			trait = incapable
+		}
+		modifier = {
+			factor = 1.5
+			trait = drunkard
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 0.5
+			trait = has_small_pox
+		}
+
+	}
+
+	option = {
+		name = EVTOPTA_HRP_8110
+		add_trait = fearless
+	}
+}
+# Fearless is Maimed in battle
+character_event = {
+	id = HPpaul.8101
+	desc = EVTDESC_HRP_8101
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = fearless
+		NOT = { trait = maimed }
+		is_alive = yes
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			trait = clubfooted
+			factor = 1.25
+		}
+		modifier = {
+			trait = hunchback
+			factor = 1.25
+		}
+		modifier = {
+			trait = lisp
+			factor = 1.1
+		}
+		modifier = {
+			trait = stutter
+			factor = 1.1
+		}
+		modifier = {
+			trait = dwarf
+			factor = 1.25
+		}		
+		modifier = {
+			trait = genius
+			factor = 0.9
+		}
+		modifier = {
+			trait = quick
+			factor = 0.9
+		}	
+		modifier = {
+			trait = slow
+			factor = 2.0
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 3.0
+		}
+		modifier = {
+			trait = inbred
+			factor = 3.0
+		}
+		modifier = {
+			trait = strong
+			factor = 0.7
+		}
+		modifier = {
+			trait = weak
+			factor = 2.5
+		}		
+
+		modifier = {
+			factor = 1.25
+			trait = stressed
+		}
+		modifier = {
+			factor = 1.25
+			trait = depressed
+		}
+		modifier = {
+			factor = 1.5
+			trait = lunatic
+		}
+		modifier = {
+			factor = 1.5
+			trait = possessed
+		}
+		modifier = {
+			factor = 1.1
+			trait = ill
+		}
+		modifier = {
+			factor = 1.25
+			trait = pneumonic
+		}
+		modifier = {
+			factor = 1.25
+			trait = syphilitic
+		}
+		modifier = {
+			factor = 2.0
+			trait = leper
+		}
+		modifier = {
+			factor = 1.15
+			trait = wounded
+		}
+		modifier = {
+			factor = 2.0
+			trait = infirm
+		}
+		modifier = {
+			factor = 3.0
+			trait = incapable
+		}
+		modifier = {
+			factor = 1.1
+			trait = drunkard
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 1.1
+			trait = has_small_pox
+		}		
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_8101
+		add_trait = maimed
+	}
+}
+
+# Berserker is Wounded in battle
+character_event = {
+	id = HPpaul.8102
+	desc = EVTDESC_HRP_8102
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = fearless
+		NOT = { trait = wounded }
+		NOT = { trait = maimed }
+		is_alive = yes
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 5
+			has_character_modifier = proving_bravery
+		}
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			trait = clubfooted
+			factor = 1.25
+		}
+		modifier = {
+			trait = hunchback
+			factor = 1.25
+		}
+		modifier = {
+			trait = lisp
+			factor = 1.1
+		}
+		modifier = {
+			trait = stutter
+			factor = 1.1
+		}
+		modifier = {
+			trait = dwarf
+			factor = 1.25
+		}		
+		modifier = {
+			trait = genius
+			factor = 0.9
+		}
+		modifier = {
+			trait = quick
+			factor = 0.9
+		}	
+		modifier = {
+			trait = slow
+			factor = 2.0
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 3.0
+		}
+		modifier = {
+			trait = inbred
+			factor = 3.0
+		}
+		modifier = {
+			trait = strong
+			factor = 0.7
+		}
+		modifier = {
+			trait = weak
+			factor = 2.5
+		}		
+		
+		modifier = {
+			factor = 1.25
+			trait = stressed
+		}
+		modifier = {
+			factor = 1.25
+			trait = depressed
+		}
+		modifier = {
+			factor = 1.5
+			trait = lunatic
+		}
+		modifier = {
+			factor = 1.5
+			trait = possessed
+		}
+		modifier = {
+			factor = 1.1
+			trait = ill
+		}
+		modifier = {
+			factor = 1.25
+			trait = pneumonic
+		}
+		modifier = {
+			factor = 1.25
+			trait = syphilitic
+		}
+		modifier = {
+			factor = 2.0
+			trait = leper
+		}
+		modifier = {
+			factor = 1.25
+			trait = maimed
+		}
+		modifier = {
+			factor = 2.0
+			trait = infirm
+		}
+		modifier = {
+			factor = 3.0
+			trait = incapable
+		}
+		modifier = {
+			factor = 1.1
+			trait = drunkard
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 1.1
+			trait = has_small_pox
+		}			
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_8102
+		add_trait = wounded
+	}
+}
+
+# Berserker is Killed in battle
+character_event = {
+	id = HPpaul.8103
+	desc = EVTDESC_HRP_8103
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = fearless
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			trait = clubfooted
+			factor = 1.25
+		}
+		modifier = {
+			trait = hunchback
+			factor = 1.25
+		}
+		modifier = {
+			trait = lisp
+			factor = 1.1
+		}
+		modifier = {
+			trait = stutter
+			factor = 1.1
+		}
+		modifier = {
+			trait = dwarf
+			factor = 1.25
+		}		
+		modifier = {
+			trait = genius
+			factor = 0.9
+		}
+		modifier = {
+			trait = quick
+			factor = 0.9
+		}	
+		modifier = {
+			trait = slow
+			factor = 2.0
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 3.0
+		}
+		modifier = {
+			trait = inbred
+			factor = 3.0
+		}
+		modifier = {
+			trait = strong
+			factor = 0.7
+		}
+		modifier = {
+			trait = weak
+			factor = 2.5
+		}		
+		modifier = {
+			factor = 1.25
+			trait = stressed
+		}
+		modifier = {
+			factor = 1.25
+			trait = depressed
+		}
+		modifier = {
+			factor = 1.5
+			trait = lunatic
+		}
+		modifier = {
+			factor = 1.5
+			trait = possessed
+		}
+		modifier = {
+			factor = 1.1
+			trait = ill
+		}
+		modifier = {
+			factor = 1.25
+			trait = pneumonic
+		}
+		modifier = {
+			factor = 1.25
+			trait = syphilitic
+		}
+		modifier = {
+			factor = 2.0
+			trait = leper
+		}
+		modifier = {
+			factor = 1.15
+			trait = wounded
+		}
+		modifier = {
+			factor = 1.25
+			trait = maimed
+		}
+		modifier = {
+			factor = 2.0
+			trait = infirm
+		}
+		modifier = {
+			factor = 3.0
+			trait = incapable
+		}
+		modifier = {
+			factor = 1.1
+			trait = drunkard
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 1.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 1.1
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 1.1
+			trait = has_small_pox
+		}		
+	}
+	
+	immediate = {
+		death = {
+			death_reason = death_battle
+			killer = FROMFROM
+		}
+		FROMFROM = {
+			character_event = { id = 249 }
+			set_character_flag = temp_battle_kill_242
+		}
+		FROM = {
+			if = {
+				limit = { NOT = { has_character_flag = temp_battle_kill_242 } }
+				character_event = { id = 249 }
+			}
+		}
+		FROMFROM = {
+			clr_character_flag = temp_battle_kill_242
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_8103
+	}
+}
+
+# Berserker kills scores of enemies in battle
+character_event = {
+	id = HPpaul.8104
+	desc = EVTDESC_HRP_8104
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = fearless
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			trait = genius
+			factor = 1.2
+		}
+		modifier = {
+			trait = quick
+			factor = 1.1
+		}	
+		modifier = {
+			trait = slow
+			factor = 0.9
+		}
+		
+		modifier = {
+			trait = imbecile
+			factor = 0.2
+		}
+		modifier = {
+			trait = inbred
+			factor = 0.2
+		}
+		modifier = {
+			trait = strong
+			factor = 1.5
+		}
+		modifier = {
+			trait = weak
+			factor = 0.8
+		}			
+		modifier = {
+			factor = 0.8
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.8
+			trait = depressed
+		}
+		modifier = {
+			factor = 0.75
+			trait = lunatic
+		}
+		modifier = {
+			factor = 0.75
+			trait = possessed
+		}
+		modifier = {
+			factor = 0.9
+			trait = ill
+		}
+		modifier = {
+			factor = 0.8
+			trait = pneumonic
+		}
+		modifier = {
+			factor = 0.8
+			trait = syphilitic
+		}
+		modifier = {
+			factor = 0.5
+			trait = leper
+		}
+		modifier = {
+			factor = 0.9
+			trait = wounded
+		}
+		modifier = {
+			factor = 0.8
+			trait = maimed
+		}
+		modifier = {
+			factor = 0.5
+			trait = infirm
+		}
+		modifier = {
+			factor = 0.4
+			trait = incapable
+		}
+		modifier = {
+			factor = 0.5
+			trait = drunkard
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_tuberculosis
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_typhoid_fever
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_measles
+		}		
+		modifier = {
+			factor = 0.5
+			trait = has_small_pox
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_8104
+		prestige = 200
+		change_martial = 1
+		random_current_enemy = {
+			limit = { at_location = ROOT }
+			morale = -0.2
+		}
+	}
+}

@@ -1,0 +1,1691 @@
+decisions = {
+    # Embrace Roman Culture
+	revive_roman_culture = {
+		is_high_prio = yes
+		potential = {
+			NOT = { culture = roman }
+			has_dlc = "Legacy of Rome"	
+            has_landed_title = e_roman_empire
+			NOT = { has_global_flag = revived_roman_culture }
+			capital_scope = { province_id = 333 }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	    }
+					 
+		effect = {
+			custom_tooltip = {
+				text = roman_culture
+			}
+			hidden_tooltip = {
+				remove_trait = autokrator2
+				remove_trait = autokrateira2
+				ROOT = { culture = roman }
+				333 =  { culture = roman }
+				any_courtier = {
+					limit = { 
+						is_close_relative = ROOT
+					}
+					culture = roman
+				}
+				activate_title = { title = d_tagmata status = no }
+				activate_title = { title = d_tagmata2 status = no }
+				activate_title = { title = d_scholae status = yes }
+				activate_title = { title = d_foederati status = yes }
+				activate_title = { title = d_varangian_guard status = no }
+				activate_title = { title = d_imperial_fleet2 status = no }
+				activate_title = { title = d_imperial_fleet3 status = yes }
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_imperial_fleet3 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_scholae = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_foederati = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+				set_global_flag = revived_roman_culture
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Embrace Roman Culture
+	revive_roman_culture2 = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"	
+			NOT = { culture = roman }
+			has_landed_title = e_western
+			NOT = { has_global_flag = revived_roman_culture }
+			capital_scope = { province_id = 333 }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+	        }
+					 
+		effect = {
+			custom_tooltip = {
+				text = roman_culture
+		}
+		hidden_tooltip = {
+			ROOT = { culture = roman }
+			333 =  { culture = roman }
+			any_courtier = {
+				limit = { 
+					is_close_relative = ROOT
+				}
+				culture = roman
+				}
+                        }
+			set_global_flag = revived_roman_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Build Imperial Walls
+	build_imperial_walls = {
+		is_high_prio = yes
+		potential = {
+			NOT = { has_global_flag = imperial_walls }
+			capital_scope = { province_id = 333 }
+			OR = {
+                has_landed_title = e_western
+                has_landed_title = e_roman_empire
+            }
+        }
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			wealth = 300	    
+	    }			 
+		effect = {
+			wealth = -300
+            b_tivoli = { remove_building = ca_rom_wall_6 }
+			b_tivoli = { add_building = ca_imp_wall_6 }
+            b_tivoli = { add_building = ca_wall_5 }
+            clr_global_flag = aurelian_walls
+            set_global_flag = imperial_walls
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Unite Churches
+	unite_churches = {
+		is_high_prio = yes
+		potential = {	
+			has_landed_title = e_byzantium
+			religion = orthodox
+            realm_size = -100
+            year = 1054
+			NOT = { has_global_flag = churches_united }
+            k_papal_state = { 
+                holder_scope = {  
+                    opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+            }  
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = zealous }
+			NOT = { trait = incapable }
+	    }
+					 
+		effect = {
+		    custom_tooltip = {
+				text = united_churches
+		    }
+		    hidden_tooltip = {
+				narrative_event = { id = PA.10020 }
+			}
+			set_global_flag = churches_united
+            set_character_flag = reinforcements
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Form Latin Empire
+	form_latin_empire = {
+		is_high_prio = yes
+		potential = {
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+            NOT = { has_landed_title = e_latin_empire }
+            completely_controls = d_thrace
+			completely_controls = d_adrianopolis
+            culture_group = latin
+		    OR = {
+			    religion = catholic
+			    is_heresy_of = catholic
+		    }
+        }
+        allow = {
+            independent = yes
+        }
+		effect = {
+            prestige = 300
+            e_latin_empire = {
+                grant_title = ROOT
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Form Trebizond Empire
+	form_trebizond_empire = {
+		is_high_prio = yes
+		potential = {
+            NOT = { has_landed_title = e_trebizond }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+            NOT = { has_landed_title = e_latin_empire }
+            has_landed_title = d_trebizond
+            completely_controls = c_trapezous
+			religion_group = christian
+		    OR = {
+                culture = greek
+                culture = tsakonian
+            } 
+            tier = duke
+
+        }
+        allow = {
+            independent = yes
+		}
+		effect = {
+            prestige = 300
+            e_trebizond = {
+				grant_title = ROOT
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Form Epirus Despotate
+	form_epirus_despotate = {
+		is_high_prio = yes
+		potential = {
+            NOT = { has_landed_title = k_epirus }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+            NOT = { has_landed_title = e_latin_empire }
+            has_landed_title = d_epirus
+			religion_group = christian
+		    OR = {
+                culture = greek
+                culture = tsakonian
+            } 
+            tier = duke
+		}
+        allow = {
+            independent = yes    
+		}
+		effect = {
+            prestige = 200
+            k_epirus = {
+                grant_title = ROOT
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Form Bulgarian Empire
+	form_bulgarian_empire = {
+		is_high_prio = yes
+		potential = {
+            NOT = { has_landed_title = e_bulgaria }
+			OR = {
+                has_landed_title = k_bulgaria
+				has_landed_title = k_bulgaria2
+			}
+			independent = yes
+            culture = bulgarian
+			religion_group = christian
+        }
+        allow = {
+			completely_controls = k_bulgaria
+			completely_controls = d_adrianopolis
+            completely_controls = c_strymon
+        }
+		effect = {
+            prestige = 300
+		    e_bulgaria = {
+			    grant_title = ROOT
+			    copy_title_laws = k_bulgaria
+		     }
+		    k_bulgaria = {
+			    destroy_landed_title = THIS
+		    }
+        }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Form Serbian Empire
+	form_serbian_empire = {
+		is_high_prio = yes
+		potential = {
+            NOT = { has_landed_title = e_serbia }
+			OR = {
+                has_landed_title = k_serbia
+				has_landed_title = k_serbia2
+			}
+			independent = yes
+            culture = serbian
+			religion_group = christian
+        }
+        allow = {
+			completely_controls = k_serbia
+			completely_controls = d_dyrrachion
+			completely_controls = c_chalkidike
+		}
+		effect = {
+            prestige = 300
+		    e_serbia = {
+			    grant_title = ROOT
+			    copy_title_laws = k_serbia
+		    }
+		    k_serbia = {
+			    destroy_landed_title = THIS
+		    }
+        }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    expel_blaise_knights = {
+		potential = {
+			ai = no
+            religion = apostolic
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_saint_blaise
+			NOT = { has_character_modifier = expelled_d_saint_blaise }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_saint_blaise = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_saint_blaise = {
+					holder_scope = {
+						character_event = {
+							id = PA.10067
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_saint_blaise
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_blaise_knights = {
+		potential = {
+            has_dlc = "Sons of Abraham"
+			religion = apostolic
+			is_heretic = no
+			is_title_active = d_saint_blaise
+			
+			NOT = { has_character_modifier = expelled_d_saint_blaise }
+			
+			d_saint_blaise = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_saint_blaise = {
+					holder_scope = {
+						character_event = {
+							id = PA.10060
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = apostolic }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+    expel_peter_knights = {
+		potential = {
+			ai = no
+            religion = imperial
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_saint_peter
+			NOT = { has_character_modifier = expelled_d_saint_peter }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_saint_peter = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_saint_peter = {
+					holder_scope = {
+						character_event = {
+							id = PA.10054
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_saint_peter
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_peter_knights = {
+		potential = {
+            has_dlc = "Sons of Abraham"
+			religion = imperial
+			is_heretic = no
+			is_title_active = d_saint_peter
+			
+			NOT = { has_character_modifier = expelled_d_saint_peter }
+			
+			d_saint_peter = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_saint_peter = {
+					holder_scope = {
+						character_event = {
+							id = PA.10047
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = imperial }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+
+    # Form Thessalonika Kingdom
+	form_thessalonika_kingdom = {
+		is_high_prio = yes
+		potential = {
+            NOT = { has_landed_title = k_thessalonika }
+            has_landed_title = d_thessalonika
+            culture_group = latin
+			religion_group = christian
+            tier = duke
+		}
+
+        allow = {
+            independent = yes
+		}
+		effect = {
+            prestige = 200
+            k_thessalonika = {
+                grant_title = ROOT
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	reorganize_varangian_guard = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+				has_landed_title = e_trebizond
+				has_landed_title = e_latin_empire
+				has_landed_title = e_thessalonika
+			}
+			is_female = no
+			prisoner = no
+			age = 16
+            completely_controls = c_byzantion
+			has_global_flag = viking_age_started
+			has_global_flag = varangian_guard_founded
+		    NOT = { is_title_active = e_byzantium }
+		    NOT = { is_title_active = d_varangian_guard }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+            set_global_flag = varangian_guard_refounded
+			activate_title = { title = d_varangian_guard status = yes }
+			hidden_tooltip = {
+				narrative_event = { id = PA.10092 }
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_varangian_guard = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	request_papal_support = {
+		is_high_prio = yes
+		potential = {	
+            has_landed_title = e_latin_empire
+			religion = catholic
+            NOT = { realm_size = 50 }
+			NOT = { has_character_flag = reinforcements }
+            k_papal_state = { 
+                holder_scope = {  
+                    opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+            }  
+        }
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+	    }
+					 
+		effect = {
+		    custom_tooltip = {
+				text = papal_support
+			}
+			hidden_tooltip = {
+			    character_event = { id = PA.10093 }
+			}
+			set_character_flag = reinforcements
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	request_papal_support2 = {
+		is_high_prio = yes
+		potential = {	
+            has_landed_title = e_byzantium
+			religion = catholic
+            NOT = { realm_size = 50 }
+			NOT = { has_character_flag = reinforcements }
+            k_papal_state = { 
+                holder_scope = {  
+                    opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+            }  
+        }
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+	    }
+					 
+		effect = {
+		    custom_tooltip = {
+				text = papal_support
+			}
+			hidden_tooltip = {
+					character_event = { id = PA.10095 }
+				}
+			set_character_flag = reinforcements
+        }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	request_papal_support3 = {
+		is_high_prio = yes
+		potential = {	
+            has_landed_title = k_jerusalem
+			religion = catholic
+            NOT = { realm_size = 50 }
+			NOT = { has_character_flag = reinforcements }
+            k_papal_state = { 
+                holder_scope = {  
+                    opinion = {
+						who = ROOT
+						value = 100
+                    }
+                }
+            }  
+        }
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+	   }
+					 
+		effect = {
+		    custom_tooltip = {
+				text = papal_support
+			}
+			hidden_tooltip = {
+					character_event = { id = PA.10099 }
+			}
+			set_character_flag = reinforcements
+	    }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+   # Reform the Byzantine Empire
+	reform_the_byzantine_empire = {
+		is_high_prio = yes
+		potential = {
+  			e_byzantium = {
+				has_holder = no
+		    }
+  		    e_roman_empire = {
+				has_holder = no
+		    }
+		    OR = {
+                culture = greek
+                culture = tsakonian
+            } 
+			religion_group = christian
+                OR = {
+                    tier = emperor
+                    tier = king
+		       }
+		}
+        allow = {
+            independent = yes
+                completely_controls = k_cyprus
+                completely_controls = k_thrace
+                completely_controls = k_macedon
+                completely_controls = k_byzantium
+		}
+		effect = {
+            prestige = 500
+            e_byzantium = {
+                grant_title = ROOT
+            }
+			copy_title_laws = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Rulers can convert to the Hellenic faith if their wife or a concubine is a believer
+	convert_to_spouse_hellenic = {
+		potential = {
+			is_playable = yes
+			controls_religion = no
+		        has_dlc = "The Old Gods"
+			NOT = { religion_group = pagan_group }
+			NOT = { trait = zealous }
+			OR = {
+				any_spouse = {
+					religion = hellenic_pagan
+					hidden_tooltip = {
+						is_alive = yes
+					}
+				}
+				any_consort = {
+					religion = hellenic_pagan
+					hidden_tooltip = {
+						is_alive = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = -500
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+			
+			if = {
+				limit = {
+					trait = cynical
+				}
+				random = {
+					chance = 60
+					add_trait = sympathy_christendom
+				}
+			}
+			if = {
+				limit = {
+					NOT = { trait = cynical }
+				}
+				random = {
+					chance = 50
+					add_trait = sympathy_christendom
+				}
+			}		
+			
+			religion = hellenic_pagan
+			
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+			piety = 200
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	reform_imperial_fleet = {
+		is_high_prio = yes
+		potential = {
+            realm_size = 80
+            has_landed_title = e_byzantium
+		    NOT = { is_title_active = d_imperial_fleet }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_imperial_fleet status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_imperial_fleet = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reform_imperial_fleet2 = {
+		is_high_prio = yes
+		potential = {
+            realm_size = 80
+            has_landed_title = e_roman_empire
+		    NOT = { is_title_active = d_imperial_fleet2 }
+			NOT = { has_global_flag = revived_roman_culture }
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_imperial_fleet2 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_imperial_fleet2 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reform_imperial_fleet3 = {
+		is_high_prio = yes
+		potential = {
+            realm_size = 80
+			OR = {
+                has_landed_title = e_western
+                has_landed_title = e_roman_empire
+            }
+		    NOT = { is_title_active = d_imperial_fleet3 }
+			has_global_flag = revived_roman_culture
+		}
+		allow = {
+			prestige = 300
+			wealth = 300
+                        
+		}
+		effect = {
+			prestige = -300
+			wealth = -300
+			activate_title = { title = d_imperial_fleet3 status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_imperial_fleet3 = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    hold_tawusgeran = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			prisoner = no
+            religion = yazidi
+			NOT = { has_character_modifier = held_tawusgeran_timer }
+			NOT = {	has_character_flag = holding_tawusgeran }
+			NOT = {	has_character_flag = do_not_disturb }
+		}
+		allow = {
+			war = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			AND = {
+				NOT = { month = 11 }
+				month = 8
+			}
+			wealth = 50
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_tawusgeran
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = TOG.899 days = 150 } } # Safety catch flag clearing
+				hidden_tooltip = { 
+					character_event = { id = PA.10124 } 
+				}
+			}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+    yazidi_pilgrimage = {
+		is_high_prio = yes
+		potential = {
+            year = 1162
+			is_ruler = yes
+			religion = yazidi
+			NOT = { trait = pilgrim }
+			NOT = { has_character_flag = do_not_disturb }
+		}
+		allow = {
+			war = no
+			in_command = no
+			any_demesne_title = {
+				is_occupied = no
+			}
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			scaled_wealth = 0.2
+			age = 16
+			custom_tooltip = {
+				text = health_travel_condition
+				hidden_tooltip = {
+					NOT = {	trait = pregnant }
+					NOT = {	trait = incapable }
+					NOT = {	trait = blinded }
+					NOT = {	trait = has_tuberculosis }
+					NOT = {	trait = has_typhoid_fever }
+					NOT = {	trait = has_typhus }
+					NOT = {	trait = has_bubonic_plague }
+					NOT = {	trait = has_measles }
+					NOT = {	trait = has_small_pox }
+					NOT = {	trait = has_aztec_disease }
+				}
+			}
+		}
+		effect = {
+			scaled_wealth = -0.2
+			set_character_flag = activated_pilgrimage
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { id = PA.10163 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001 # Only a small minority of Yazidis ever go on a pilgrimage
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+			}			
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+    # Establish Companions
+	establish_companions = {
+		is_high_prio = yes
+		potential = {
+			NOT = { has_global_flag = companions_founded }
+			has_landed_title = e_macedonia
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+            prestige = 300
+			wealth = 300	    
+	    }			 
+		effect = {
+            prestige = -300
+			wealth = -300
+            set_global_flag = companions_founded
+			activate_title = { title = d_companions status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = yes
+					religion = ROOT
+					culture = ROOT
+					dynasty = NONE
+					female = no
+					age = 34
+					trait = skilled_tactician
+				}
+				new_character = {
+					d_companions = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+			    }
+		    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    expel_heroes = {
+		potential = {
+			ai = no
+            religion = hellenic_pagan
+			is_heretic = no
+			higher_tier_than = DUKE
+			independent = yes
+			is_title_active = d_heroes
+			NOT = { has_character_modifier = expelled_d_heroes }
+			
+			any_realm_province = {
+				any_province_lord = {
+					d_heroes = {
+						holder_scope = {
+							OR = {
+								character = PREVPREV
+								is_vassal_or_below = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			piety = 1000
+			NOT = { trait = zealous }
+		}
+		
+		effect = {
+			piety = -1000
+			
+			religion_authority = {
+				modifier = holy_order_expelled
+				years = 20
+			}
+			
+			hidden_tooltip = {
+				d_heroes = {
+					holder_scope = {
+						character_event = {
+							id = PA.10201
+						}
+					}
+				}
+				add_character_modifier = {
+					name = expelled_d_heroes
+					duration = -1
+					inherit = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	donate_money_to_heroes = {
+		potential = {
+            has_dlc = "Sons of Abraham"
+			religion = hellenic_pagan
+			is_heretic = no
+			is_title_active = d_heroes
+			
+			NOT = { has_character_modifier = expelled_d_heroes }
+			
+			d_heroes = {
+				holder_scope = {
+					liege = {
+						NOT = { character = ROOT }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_character_modifier = donated_to_holy_order }
+				}
+				add_character_modifier = {
+					name = donated_to_holy_order
+					duration = -1
+				}
+			}
+			
+			hidden_tooltip = {
+				d_heroes = {
+					holder_scope = {
+						character_event = {
+							id = PA.10194
+						}
+					}
+				}
+			}
+			
+			wealth = -300
+			piety = 300
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					piety = 1000
+					NOT = { wealth = 1000 }
+					NOT = { controls_religion = hellenic_pagan }
+					}
+				}
+			modifier = {
+				factor = 0.002 # Slow it down
+			}
+		}
+	}
+	
+	# Form Hellenic Church
+	form_hellenic_church = {
+		is_high_prio = yes
+		potential = {
+		    tier = emperor
+		    religion = hellenic_pagan
+			NOT = { has_global_flag = formed_hellenic_church }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }	    
+	        }			 
+		effect = {
+            set_global_flag = formed_hellenic_church
+			hidden_tooltip = {
+			    character_event = { id = PA.10205 }
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+   # Hellenic Sacrifice
+       hellenic_sacrifice = {
+        is_high_prio = yes
+	    potential = {
+            is_ruler = yes
+		    religion = hellenic_pagan
+		}
+
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+                NOT = { has_character_modifier = hellenic_sacrifice_decision }    
+	        }
+		
+		effect = {
+			hidden_tooltip = {
+                character_event = { id = PA.10216 }
+		    }
+            remove_character_modifier = hellenic_sacrifice_bull
+            remove_character_modifier = hellenic_sacrifice_lamb
+            remove_character_modifier = hellenic_sacrifice_nothing
+	        add_character_modifier = {
+	            name = hellenic_sacrifice_decision
+			    duration = 365
+	        }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+	# Vassalize Epirus
+	vassalize_epirus = {
+		is_high_prio = yes
+		potential = {
+		    is_title_active = k_epirus
+		    has_landed_title = e_byzantium
+			completely_controls = d_thrace
+			capital_scope = { province_id = 496 }
+			NOT = { has_global_flag = vassal_epirus }
+            k_epirus = { 
+                holder_scope = {  
+                    opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+            }	
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }	    
+	    }
+			 
+		effect = {
+            set_global_flag = vassal_epirus
+			hidden_tooltip = {
+				k_epirus = { holder_scope = { narrative_event = { id = PA.10258 } } }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+	# Vassalize Trebizond
+	vassalize_trebizond = {
+		is_high_prio = yes
+		potential = {
+		    is_title_active = e_trebizond
+		    has_landed_title = e_byzantium
+			completely_controls = d_thrace
+			capital_scope = { province_id = 496 }
+			NOT = { has_global_flag = vassal_trebizond }
+            e_trebizond = { 
+                holder_scope = {  
+                    opinion = {
+                        who = ROOT
+                        value = 100
+                    }
+                }
+            }
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }	    
+        }
+			 
+		effect = {
+            set_global_flag = vassal_trebizond
+			hidden_tooltip = {
+                e_trebizond = { holder_scope = { narrative_event = { id = PA.10259 } } }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Restore Visigothia
+	restore_visigothia = {
+		is_high_prio = yes
+		potential = {
+            OR = {
+                culture = hispanic
+                culture = visigothic
+            }
+			has_landed_title = k_asturias
+		        OR = {
+			        religion = imperial
+			        is_heresy_of = imperial
+                    religion = norse_pagan
+                    is_heresy_of = norse_pagan
+		        }
+            }
+        allow = {
+            independent = yes
+	        completely_controls = k_andalusia
+	        completely_controls = k_castille
+	        completely_controls = k_asturias
+			completely_controls = k_portugal
+			completely_controls = k_navarra
+			completely_controls = k_toledo
+			completely_controls = d_aragon
+			completely_controls = d_valencia
+			completely_controls = d_barcelona
+		}
+		effect = {
+			prestige = 300
+			k_visigoth = {
+				grant_title = ROOT
+				copy_title_laws = k_asturias
+			}
+			k_spanish_galicia = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_asturias = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_castille = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_andalusia = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_portugal = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_navarra = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_toledo = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			k_aragon = {
+				destroy_landed_title = THIS
+				any_direct_de_jure_vassal_title = {
+				    de_jure_liege = k_visigoth
+				}
+			}
+			set_global_flag = visigothia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Lombard Arian Conversion
+	lombard_arian_conversion = {
+		is_high_prio = yes
+		potential = {
+			is_feudal = yes
+			independent = yes
+			culture = lombard
+			OR = {
+				religion = imperial
+				religion = catholic
+			}
+			ROOT = {
+				NOT = { religion_authority = 0.4 }
+			}
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+		}
+					 
+		effect = {
+			ROOT = { religion = arian }
+			any_courtier = {
+				limit = { 
+					is_close_relative = ROOT
+				}
+				religion = arian
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Gothic Arian Conversion
+	gothic_arian_conversion = {
+		is_high_prio = yes
+		potential = {
+			is_feudal = yes
+			independent = yes
+			culture = gothic
+			OR = {
+				religion = imperial
+				religion = orthodox
+				religion = iconoclast
+				religion = paulician
+				religion = monothelite
+			}
+			ROOT = {
+				NOT = { religion_authority = 0.4 }
+			}
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+		}
+					 
+		effect = {
+			ROOT = { religion = arian }
+			any_courtier = {
+				limit = { 
+					is_close_relative = ROOT
+				}
+				religion = arian
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Italian Hellenic Conversion
+	italian_hellenic_conversion = {
+		is_high_prio = yes
+		potential = {
+			is_feudal = yes
+			independent = yes
+			OR = {
+				culture = italian
+				culture = old_italian
+			}
+			religion = catholic
+			ROOT = {
+				NOT = { religion_authority = 0.2 }
+			}
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+		}
+					 
+		effect = {
+			ROOT = { religion = hellenic_pagan }
+			any_courtier = {
+				limit = { 
+					is_close_relative = ROOT
+				}
+				religion = hellenic_pagan
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Greek Hellenic Conversion
+	greek_hellenic_conversion = {
+		is_high_prio = yes
+		potential = {
+			is_feudal = yes
+			independent = yes
+			OR = {
+				culture = greek
+				culture = tsakonian
+			} 
+			OR = {
+				religion = imperial
+				religion = orthodox
+				religion = iconoclast
+				religion = paulician
+				religion = monothelite
+			}
+			ROOT = {
+				NOT = { religion_authority = 0.2 }
+			}
+		}
+			
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }    
+		}
+					 
+		effect = {
+			ROOT = { religion = hellenic_pagan }
+			any_courtier = {
+				limit = { 
+					is_close_relative = ROOT
+				}
+				religion = hellenic_pagan
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,45 @@
+decisions = {
+	conscript_native_christians_en_masse = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = k_jerusalem
+			religion = catholic
+			NOR = { 
+				culture_group = arabic 
+				culture_group = byzantine
+				culture_group = postbabylonian
+			}
+			any_realm_province = {
+				culture_group = postbabylonian
+			}
+		}
+		allow = {
+			any_war = { NOT = { war_score = -40 } }
+		}
+		effect = {
+			add_character_modifier = { name = recruit_timer duration = 7200 }
+			capital_scope = {
+				spawn_unit = {
+				  owner = PREV
+				  province = PREV
+				  home = PREV
+				  troops = {
+					archers = { 1250 1250 }
+					light_infantry = { 7500 7500 }
+					heavy_infantry = { 1500 1500 }
+					light_cavalry = { 1000 1000 }
+					knights = { 1000 1000 }
+				  }
+				  attrition = 0
+				 #disband_on_peace = yes
+				  maintenance_multiplier = 0.5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

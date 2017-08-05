@@ -1,0 +1,192 @@
+# Founder of the Republic decisions
+
+decisions = {
+	FotR_declare_republic = {
+		is_high_prio = yes
+		potential = {
+			# obviously...
+			has_dlc = "The Republic"
+
+			# player only, it's unbalanced enough as it is without letting npcs try it
+			ai = no
+
+			# only if we're not already a republic
+			is_merchant_republic = no
+			is_patrician = no
+
+			# and not in the process of becoming one
+			NOT = { has_character_flag = founder_of_the_republic }
+
+			# impossible to create republics without a duke level title
+			higher_tier_than = COUNT
+
+			# from 2.2.x onward tribes have their own mechanic for becoming Republics
+			is_tribal = no
+
+			# duke tier only (for this version)
+			tier = DUKE
+		}
+
+		allow = {
+			# we're going to take 500 gold away to balance the 500 you get on becoming a prince-mayor
+			# so require that you have that amount initially so you still have cash after the transition
+			# and you have to save up some (or cheat!) to do this
+			wealth = 500
+
+			# alas, being female and prince-mayor/patrician gives you a family palace that can't be
+			# accessed from the republic screen if you have a valid heir, so it has to be males only.
+			# Grrrrr.
+			is_female = no
+
+			# the method that keeps you a valid player forces independence as a by-product, so
+			# require it upfront. It probably makes sense that a liege wouldn't let you just up
+			# and do this anyway
+			independent = yes
+
+			# has to be in charge and no distracted by war
+			war      = no
+			prisoner = no
+			NOT = { has_regent = yes }		# has_regent = no gives incorrect tooltip
+
+			# capital has to be in a coastal province
+			custom_tooltip = {
+				text = FotR_declare_republic_coastalcapital
+				hidden_tooltip = {
+					capital_scope = {		# NOTE: 'capital_scope' means we need 2.0
+						location = { port = yes }
+					}
+				}
+			}
+
+			# if using 'Way of Life' needs to be business focused, or if also
+			# using 'Raja's of India' a Vaishya.
+			OR = {
+				custom_tooltip = {
+					text = FotR_declare_republic_wayoflife_no
+					hidden_tooltip = {
+						NOT = { has_dlc = "Way of Life" }
+					}
+				}
+				custom_tooltip = {
+					text = FotR_declare_republic_wayoflife_yes
+					hidden_tooltip = {
+						AND = {
+							has_dlc = "Way of Life"
+							OR = {
+								has_focus = focus_business
+								trait = vaishya
+							}
+						}
+					}
+				}
+			}
+
+			# need to directly hold a city in that capital province, to serve as the new capital
+			custom_tooltip = {
+				text = FotR_declare_republic_cityincapital
+				hidden_tooltip = {
+					any_demesne_title = {
+						holding_type = city
+						location = {
+							is_capital = yes
+						}
+					}
+				}
+			}
+
+			# no trade posts in demesne (mainly because I'm not sure what to do with them)
+			custom_tooltip = {
+				text = FotR_declare_republic_notradeposts
+				hidden_tooltip = {
+					NOT = {
+						any_demesne_province = {
+							has_trade_post = yes
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			set_character_flag = founder_of_the_republic
+
+			# Going into trade is not very prestigious for someone as noble as a Duke.
+			prestige = -250
+
+			# And doesn't do much for your caste, if you're a character who has such a thing.
+			if = {
+				limit = { trait = brahmin }
+				remove_trait = brahmin
+				add_trait = vaishya
+			}
+
+			if = {
+				limit = { trait = kshatriya }
+				remove_trait = kshatriya
+				add_trait = vaishya
+			}
+
+
+			# we get 500 gold on becoming prince mayor so take 500 away to balance that out.
+			# Since there is no net change, don't show it as part of the tooltip
+			hidden_tooltip = {
+				wealth = -500
+			}
+
+			# Charlemagne introduced a command to convert to Republicanism, so use that
+			# rather than the old sneaky way with temporary titles
+			create_family_palace = yes
+
+			# we still however need to switch the capital or the change won't stick
+			any_demesne_title = {
+				limit = {
+					holding_type = city
+					location = {
+						is_capital = yes
+						port = yes
+					}
+				}
+				province_capital = yes
+				ROOT = { capital = PREV }
+			}
+
+			# the vanilla event that is used by tribes to become Republics has a section
+			# to create the patricians, however this doesn't seem to have any obvious effect
+			# when I use it here, so commented out and instead relying on the game to notice
+			# we need some new ones
+
+			#any_unique_dynasty_vassal = { # gives random vassals a family palace
+			#	count = 4
+			#	limit = {
+			#		is_female = no
+			#		OR = {
+			#			is_republic = yes
+			#			is_tribal = yes
+			#		}
+			#		prisoner = no
+			#		NOT = { trait = incapable }
+			#		is_adult = yes
+			#		NOT = {
+			#			dynasty = none
+			#		}
+			#	}
+			#	create_family_palace = yes
+			#}
+
+			custom_tooltip = {
+				text = FotR_declare_republic_becomerepublic
+			}
+
+			# here we fire off events to inform players what is happening, and
+			# clean up the temporary title, since despite it being temporary it
+			# it tends to persist.
+			hidden_tooltip = {
+				narrative_event = { id = FotR.1 }
+				character_event = { id = FotR.2 days = 1 }	# need to wait for the patricians to arrive
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
+}

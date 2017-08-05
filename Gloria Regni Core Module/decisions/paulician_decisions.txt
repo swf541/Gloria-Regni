@@ -1,0 +1,97 @@
+decisions = {
+	paul_pogrom = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			has_dlc = "The Old Gods"
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
+			has_landed_title = e_byzantium
+			NOT = { religion = paulician }
+			has_global_flag = sergius_tychus
+			NOT = { has_global_flag = paulician_supress }
+		}
+		allow = {
+			piety = 100
+		}
+		effect = {
+			piety = -100
+			set_global_flag = paulician_supress
+			narrative_event = { id = HPpaul.8001 }
+		}
+		ai_will_do = {
+			factor = 0.9
+		}
+	}
+	resettle_paul = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			prisoner = no
+			year = 970
+			NOT = { year = 1000 }
+			NOT = { trait = incapable }
+			has_landed_title = e_byzantium
+			NOT = { religion = paulician }
+			has_global_flag = sergius_tychus
+			NOT = { has_global_flag = pauls_in_thrace }
+			493 = {
+				NOT =  { religion = paulician }
+			}
+		}
+		allow = {
+			age = 16
+			493 = { 
+					owner = {
+						OR = {
+							is_liege_or_above = ROOT
+							character = ROOT
+						}
+					}
+				}
+		}
+		effect = {
+			piety = -50
+			set_global_flag = pauls_in_thrace
+			narrative_event = { id = HPpaul.8007 }
+			493 = {
+				add_province_modifier = {
+					name = paul_settlement
+					duration = -1
+				}
+				religion = paulician
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vassalize_paulician_patriarch = {
+		potential = {
+			religion = paulician
+			tier = EMPEROR
+			any_independent_ruler = {
+				religion = paulician
+				controls_religion = yes
+			}
+			completely_controls = c_byzantion
+		}
+		allow = {
+			 piety = 500
+		}
+		effect = {
+			d_paulician = {
+				holder_scope = {
+					set_defacto_liege = ROOT
+					b_hagiasophia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

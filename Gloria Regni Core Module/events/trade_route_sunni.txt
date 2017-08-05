@@ -1,0 +1,48 @@
+namespace = conv
+character_event = {	# Sunni Missionary
+	id = conv.0003
+	desc = EVTDESCconv.0003
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+	trigger = {
+		any_demesne_province = {
+			trade_route = silk_road
+		}
+		religion_group = pagan_group
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTBconv.0001
+		set_character_flag = preacher_arrives
+		create_character = {
+			random_traits = yes
+			culture = bedouin_arabic
+			dynasty = culture
+			religion = sunni
+			female = no
+			age = 25
+			trait = mastermind_theologian
+			attributes = {
+				learning = 10
+			}
+			flag = ai_flag_refuse_conversion
+			flag = preacher_arrives
+			flag = missionary_non_sanctioned
+			#location = { owner = { character_event = { id = 39600 days = 4 tooltip = EVTTOOLTIP39600 } } } 
+		}
+		PREV = {
+			set_character_flag = preacher_arrives
+			set_character_flag = missionary_non_sanctioned
+		}
+	}
+	option = {
+		name = EVTOPTCconv.0001
+		location = {
+			owner = {
+				piety = 50
+			}
+		}
+	}
+}

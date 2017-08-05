@@ -1,0 +1,1851 @@
+###########################################
+#                                         #
+# Heretic Pride Events -- Druze       	  #
+#                                         #
+###########################################
+
+# Written by Verin Sedai
+
+namespace = HPdruze
+
+character_event = {
+	id = HPdruze.4000
+	desc = EVTDESC_HRP_4000
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+		trigger = {
+			religion = druze
+			is_adult = yes
+			OR = { 
+				has_focus = focus_theology
+				has_ambition = obj_druze_esoteric_learning
+			}
+			piety = 100
+			learning = 10
+			NOT = { trait = decadent }
+			OR = {
+				trait = just
+				trait = temperate
+				trait = charitable
+				trait = humble
+			}
+			NOT = { trait = incapable } 
+			NOT = {
+				OR = {
+					trait = druze_uqqal
+					trait = druze_ajawid
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 0.9
+			piety = 200
+		}
+		modifier = {
+			factor = 0.9
+			piety = 300
+		}
+		modifier = {
+			factor = 0.9
+			piety = 400
+		}
+		modifier = {
+			factor = 0.9
+			piety = 500
+		}
+		modifier = {
+			factor = 0.7
+			piety = 1000
+		}
+		modifier = {
+			factor = 0.5
+			piety = 2000
+		}
+		modifier = {
+			factor = 0.75
+			AND = { 
+				has_focus = focus_theology
+				has_ambition = obj_druze_esoteric_learning
+			}
+		}
+
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4000
+		piety = -100
+		add_character_modifier = { name = recent_druze_learning duration = 3650 }
+		narrative_event = { id = HPdruze.4001 days = 2 random = 1}
+	}	
+	option = {
+		name = EVTOPTB_HRP_4000
+		piety = -200
+		prestige = -200
+	}
+
+}
+narrative_event = {
+	id = HPdruze.4001
+	title = EVTNAME_HRP_4001
+	desc = EVTDESC_HRP_4001
+	picture = GFX_evt_imam
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4001
+		add_trait = druze_uqqal
+	}
+}
+narrative_event = {
+	id = HPdruze.4010
+	title = EVTNAME_HRP_4010
+	desc = EVTDESC_HRP_4010
+	picture = GFX_evt_imam
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4010
+		add_trait = druze_taqiyya
+	}
+}
+character_event = {
+	id = HPdruze.4020
+	desc = EVTDESC_HRP_4020
+	picture = GFX_evt_imam
+	border = GFX_event_normal_frame_religion
+	
+		trigger = {
+			religion = druze
+			is_adult = yes
+			has_focus = focus_theology
+
+			piety = 500
+			learning = 20
+			NOT = { trait = decadent }
+			OR = {
+				trait = just
+				trait = temperate
+			}
+			OR = {
+				trait = charitable
+				trait = humble
+			}
+			trait = druze_uqqal
+			NOT = { has_character_modifier = recent_druze_learning }
+			NOT = { trait = incapable } 
+			NOT = {	trait = druze_ajawid }
+		}
+	
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			piety = 1000
+		}
+		modifier = {
+			factor = 0.9
+			piety = 1500
+		}
+		modifier = {
+			factor = 0.9
+			piety = 2000
+		}
+		modifier = {
+			factor = 0.7
+			piety = 5000
+		}
+		modifier = {
+			factor = 0.7
+			piety = 10000
+		}
+		modifier = {
+			factor = 0.5
+			piety = 20000
+		}
+
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4020
+		piety = -500
+		any_liege = {
+			limit = { 
+				religion = druze
+			}
+			letter_event = {
+				id = HPdruze.4021
+				days = 2
+			}
+		}
+		#narrative_event = { id = HPdruze.4021 days = 2 random = 1}
+		add_trait = druze_ajawid
+	}	
+
+}
+letter_event = {
+	id = HPdruze.4021
+	#title = EVTNAME_HRP_4021
+	desc = EVTDESC_HRP_4021
+	
+	is_triggered_only = yes
+	
+
+	option = {
+		name = EVTOPTA_HRP_4021
+	}
+}
+character_event = {
+        id = HPdruze.4100
+        desc = EVTDESC_HRP_4100
+        picture = GFX_evt_imam
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_4100
+                add_character_modifier = {
+                        name = patron_aql
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_4100
+                add_character_modifier = {
+                        name = patron_nafs
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTC_HRP_4100
+                add_character_modifier = {
+                        name = patron_kalima
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_4100
+                hidden_tooltip = { character_event = { id = HPdruze.4101 } }
+        }
+}
+character_event = {
+        id = HPdruze.4101
+        desc = EVTDESC_HRP_4100
+        picture = GFX_evt_imam
+        border = GFX_event_normal_frame_religion
+
+        is_triggered_only = yes
+        
+        option = {
+                name = EVTOPTA_HRP_4101
+                add_character_modifier = {
+                        name = patron_sabiq
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTB_HRP_4101
+                add_character_modifier = {
+                        name = patron_tali
+                        duration = -1
+                }
+        }
+        option = {
+                name = EVTOPTD_HRP_4100
+                hidden_tooltip = { character_event = { id = HPdruze.4100 } }
+        }
+}
+#Death of Al-Hakim, the Mad Caliph 
+character_event = {
+	id = HPdruze.4402
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		religion = shiite
+		controls_religion = yes # Let it happen for the Caliph, if he exists
+		NOT = { has_global_flag = al_hakim_dies }
+		OR = { 
+			trait = lunatic
+			trait = possessed
+			OR = {
+				trait = zealous
+				trait = cruel
+			}
+		}
+		trait = ismali
+	}
+	immediate = {
+		narrative_event = { id = HPdruze.4400 }
+	}
+}
+		
+# Hamza
+narrative_event = {
+	id = HPdruze.4400
+	desc = EVTDESC_HRP_4400
+	title = EVTTITLE_HRP_4400
+	picture = GFX_evt_throne_room
+
+	major = yes
+	
+	is_triggered_only = yes
+
+	major_trigger = {
+		is_ruler = yes
+		ai = no
+	}
+	
+	
+	immediate = {
+		set_global_flag = druze_hamza
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4400
+	}
+
+}
+narrative_event = {
+	id = HPdruze.4401
+	desc = EVTDESC_HRP_4401
+	title = EVTTITLE_HRP_4401
+	picture = GFX_evt_throne_room
+
+	major = yes
+	
+	trigger = {
+		has_global_flag = druze_hamza
+		NOT = { has_global_flag = druze_hamza_two }
+		religion = catholic
+		controls_religion = yes # Let it happen for the Pope - he's always around
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = druze_hamza_two
+		713 = {
+			religion = druze
+			}
+		768 = {
+			religion = druze
+		}
+		random_list = {
+			33 = {
+				770 = {
+					religion = druze
+				}
+			}
+			67 = { }
+		}
+		random_list = {
+			33 = {
+				769 = {
+					religion = druze
+				}
+			}
+			67 = { }
+		}
+		random_list = {
+			33 = {
+				766 = {
+					religion = druze
+				}
+			}
+			67 = { }
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4401
+	}
+
+}
+###########################################
+# Reincarnation Events - Modded for Druze
+###########################################
+# by Henrik Fåhraeus
+# I just tweaked for Muslim Localizations
+###########################################
+
+# [on_birth] Child might be a reincarnation
+character_event = {
+	id = HPdruze.4500
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_men = yes
+	
+	trigger = {
+		has_dlc = "Rajas of India"
+		religion = druze
+		OR = {
+			father = {
+				ai = no
+				is_reincarnated = no
+				father_even_if_dead = {
+					OR = {
+						is_alive = no
+						father_even_if_dead = {
+							is_alive = no
+						}
+					}
+				}
+				NOT = {
+					any_sibling = {
+						is_reincarnated = yes
+					}
+				}
+			}
+			mother = {
+				ai = no
+				is_reincarnated = no
+				father_even_if_dead = {
+					OR = {
+						is_alive = no
+						father_even_if_dead = {
+							is_alive = no
+						}
+					}
+				}
+				NOT = {
+					any_sibling = {
+						is_reincarnated = yes
+					}
+				}
+			}
+		}
+		NOT = {
+			any_sibling = {
+				is_reincarnated = yes
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				father = { 
+					ai = no
+				}
+			}
+			if = {
+				limit = {
+					father = {
+						father_even_if_dead = {
+							father_even_if_dead = {
+								is_alive = no
+							}
+						}
+					}
+				}
+				father = {
+					father_even_if_dead = {
+						father_even_if_dead = {
+							ROOT = {
+								set_reincarnation = THIS
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_reincarnated = no
+				}
+				father = {
+					father_even_if_dead = {
+						ROOT = {
+							set_reincarnation = THIS
+						}
+					}
+				}
+			}
+			
+			father = {
+				character_event = {
+					id = HPdruze.4501
+					days = 3
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = { ai = no }
+				is_reincarnated = no
+			}
+			if = {
+				limit = {
+					mother = {
+						father_even_if_dead = {
+							father_even_if_dead = {
+								is_alive = no
+							}
+						}
+					}
+				}
+				mother = {
+					father_even_if_dead = {
+						father_even_if_dead = {
+							ROOT = {
+								set_reincarnation = THIS
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_reincarnated = no
+				}
+				mother = {
+					father_even_if_dead = {
+						ROOT = {
+							set_reincarnation = THIS
+						}
+					}
+				}
+			}
+			
+			mother = {
+				character_event = {
+					id = RoI.10001
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Player notices the similarities
+character_event = {
+	id = HPdruze.4501
+	desc = EVTDESC_HRP_4501
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4501 # Yes, clearly
+		
+		hidden_tooltip = {
+			FROM = {
+				add_trait = reincarnation
+				character_event = {
+					id = HPdruze.4502
+					days = 912
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_HRP_4501 # Nonsense!
+		add_trait = cynical
+		hidden_tooltip = {
+			FROM = {
+				set_reincarnation = 0
+			}
+		}
+	}
+}
+
+# Reincarnation: Toddler thinks of the past life
+character_event = {
+	id = HPdruze.4502
+	desc = EVTDESC_HRP_4502
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4502
+		hidden_tooltip = {
+			FROM = {
+				character_event = {
+					id = HPdruze.4503
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Toddler speaks of the past life
+character_event = {
+	id = HPdruze.4503
+	desc = EVTDESC_HRP_4503
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4503
+		hidden_tooltip = {
+			FROM = {
+				set_character_flag = reincarnation_education
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_4503
+	}
+}
+
+# [on_yearly_childhood_pulse] Reincarnation: Youth picks up a personality trait from the previous life
+character_event = {
+	id = HPdruze.4510
+	desc = EVTDESC_HRP_4510
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = druze
+		has_dlc = "Rajas of India"
+		has_character_flag = reincarnation_education
+		NOT = { personality_traits = 5 }
+		reincarnation_scope = {
+			ROOT = {
+				can_copy_personality_trait_from = PREV
+			}
+		}
+	}
+	
+	option = {
+		name = EVTTITLE_HRP_4510
+		reincarnation_scope = {
+			ROOT = {
+				copy_random_personality_trait = PREV
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					father = {
+						ai = no
+					}
+				}
+				father = {
+					character_event = {
+						id = HPdruze.4511
+						days = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					mother = {
+						ai = no
+					}
+				}
+				mother = {
+					character_event = {
+						id = HPdruze.4511
+						days = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					guardian = {
+						ai = no
+					}
+				}
+				guardian = {
+					character_event = {
+						id = HPdruze.4511
+						days = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+# Reincarnation: Notification of a youth picking up a personality trait from the previous life
+character_event = {
+	id = HPdruze.4511
+	desc = EVTDESC_RHRP_4511
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_4511
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers his murderer
+character_event = {
+	id = HPdruze.4520
+	desc = EVTDESC_HRP_4520
+	picture = GFX_evt_shadow
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			OR = {
+				death_reason = death_murder
+				death_reason = death_murder_unknown
+				death_reason = death_execution
+			}
+			killer = {
+				always = yes
+			}
+		}
+		NOT = { has_character_flag = reinc_remembered_killer }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4520
+		
+		set_character_flag = reinc_remembered_killer
+		
+		if = {
+			limit = {
+				reincarnation_scope = {
+					killer = {
+						is_alive = yes
+					}
+				}
+			}
+			reincarnation_scope = {
+				killer = {
+					reverse_opinion = {
+						who = ROOT
+						years = 100
+						modifier = opinion_dishonorable
+					}
+				}
+			}
+		}
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers spouse
+character_event = {
+	id = HPdruze.4521
+	desc = EVTDESC_HRP_4521
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			spouse_even_if_dead = {
+				always = yes
+			} 
+		}
+		NOT = { has_character_flag = reinc_remembered_spouse }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4521
+		
+		set_character_flag = reinc_remembered_spouse
+	}
+}
+
+# [on_yearly_pulse] Reincarnation: Reincarnated player remembers birth of oldest child
+character_event = {
+	id = HPdruze.4522
+	desc = EVTDESC_HRP_4522
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	ai = no
+	min_age = 14
+	
+	trigger = {
+		is_reincarnated = yes
+		trait = reincarnation
+		has_dlc = "Rajas of India"
+		reincarnation_scope = {
+			num_of_children = 1
+		}
+		NOT = { has_character_flag = reinc_remembered_oldest_child }
+	}
+	
+	option = {
+		name = EVTOPTA_HRP_4522
+		
+		set_character_flag = reinc_remembered_oldest_child
+	}
+}
+
+character_event = {
+	id = HPdruze.4050
+	desc = EVTDESC_HRP_4050
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 25
+	#only_men = yes
+
+	trigger = {
+		religion = druze
+		NOT = {	has_character_modifier = druze_tajalli	}
+		NOT = { trait = cynical }
+		NOT = { trait = gluttonous }
+		NOT = { trait = greedy }
+		NOT = { trait = slothful }
+		NOT = { trait = proud }
+		NOT = { trait = cruel }
+		NOT = { trait = lunatic }
+		NOT = { trait = incapable }
+		NOT = { trait = drunkard }
+		NOT = { trait = inbred }
+		NOT = { trait = imbecile }
+		NOT = { trait = slow }	
+		
+		learning = 8
+		trait = charitable
+		trait = temperate
+		trait = brave
+		
+		piety = 200
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	option = {
+		name = EVTOPTA_HRP_4050
+		add_character_modifier = { name = druze_tajalli duration = -1 }
+		prestige = 100
+	} 
+
+}
+
+#Losing status
+character_event = {
+	id = HPdruze.4051
+	desc = EVTDESC_HRP_4051
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_religion
+	
+	min_age = 25
+	#only_men = yes
+
+	trigger = {
+		has_character_modifier = druze_tajalli
+		OR = {
+			NOT = { religion = druze }
+			trait = cynical
+			trait = gluttonous
+			trait = greedy
+			trait = slothful
+			trait = proud
+			trait = cruel
+			trait = lunatic
+			trait = incapable
+			trait = drunkard
+			trait = inbred
+			trait = imbecile
+			trait = slow
+		
+			NOT = { trait = brave }
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = {
+		name = EVTOPTA_HRP_4051
+		remove_character_modifier = druze_tajalli
+		add_character_modifier = { name = druze_fallen_tajalli duration = -1 }
+		prestige = -200
+	}
+}
+character_event = {
+	id = HPdruze.4800
+	desc = EVTDESC_HRP_4800
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4800
+		set_character_flag = al_bayada
+		hidden_tooltip = {
+			character_event = { id = HPdruze.4801 days = 7 }
+		}
+	}
+}
+# Setting out (also selects events for road)
+character_event = {
+	id = HPdruze.4801
+	desc = EVTDESC_HRP_4801
+	picture = GFX_evt_pilgrims_epic_journey
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_HRP_1601
+		clr_character_flag = preparing_pilgrimage
+		hidden_tooltip = {
+			add_trait = on_pilgrimage_druze
+			narrative_event = { id = HPdruze.4820 days = 24 }
+		}
+		hidden_tooltip = {
+			#narrative_event = { id = HPdruze.4820 days = 42 }
+			random_list = {
+				10 = {  character_event = { id = HPdruze.4821 days = 5 random = 9 } } # List for longer journeys only
+				10 = {  character_event = { id = HPdruze.4822 days = 5 random = 9 } }
+				10 = {  narrative_event = { id = HPdruze.4823 days = 5 random = 9 } }
+				10 = {  character_event = { id = HPdruze.4824 days = 5 random = 9 } }
+				10 = {  character_event = { id = HPdruze.4825 days = 5 random = 9 } }
+				10 = {  character_event = { id = HPdruze.4826 days = 5 random = 9 } }
+				10 = {  character_event = { id = HPdruze.4827 days = 5 random = 9 } }
+				30 = { } # No event
+			}
+		}
+	}
+}
+
+# Trouble on road - weather
+character_event = {
+	id = HPdruze.4821
+	desc = EVTDESC_HRP_1621
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1621
+		ai_chance = {
+			factor = 10
+		}
+		piety = 5
+		random_list = {
+			10 = {
+				add_trait = pneumonic
+			}
+			30 = {
+				add_trait = ill
+			}
+			60 = {
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1621
+		ai_chance = {
+			factor = 90
+		}
+		if = {
+			limit = { NOT = { trait = cynical } }
+			add_trait = cynical
+		}
+		set_character_flag = bad_pilgrimage
+		clr_character_flag = good_pilgrimage
+		random_list = {
+			5 = {
+				add_trait = pneumonic
+			}
+			15 = {
+				add_trait = ill
+			}
+			80 = {
+			}
+		}
+	}
+}
+
+# Trouble on road - lost
+character_event = {
+	id = HPdruze.4822
+	desc = EVTDESC_HRP_1622
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1622
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = { NOT = { trait = wroth } }
+			random = {
+				chance = 30
+				add_trait = wroth
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1622
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = { NOT = { trait = patient } }
+			random = {
+				chance = 30
+				add_trait = patient
+			}
+		}
+	}
+}
+
+# Trouble on road - inn on fire
+narrative_event = {
+	id = HPdruze.4823
+	title = EVTNAME_HRP_1623
+	desc = EVTDESC_HRP_1623
+	picture = GFX_evt_burning_house
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1623
+		ai_chance = {
+			factor = 80
+		}
+		random = {
+			chance = 10
+			add_trait = wounded
+			}
+		if = {
+			limit = { NOT = { trait = brave } }
+			random = {
+				chance = 30
+				add_trait = brave
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1623
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = { NOT = { trait = craven } }
+			add_trait = craven
+		}
+	}
+}
+
+# Danger on road - robbers
+character_event = {
+	id = HPdruze.4824
+	desc = EVTDESC_HRP_1624
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1624
+		ai_chance = {
+			factor = 90
+		}
+		wealth = -10
+	}
+	option = {
+		name = EVTOPTB_HRP_1624
+		tooltip_info = martial
+		trigger = {
+			martial = 10
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = { NOT = { trait = brave } }
+			add_trait = brave
+		}
+		random = {
+				chance = 10
+				add_trait = wounded
+		}
+	}
+}
+
+# Danger on road  - broken bridge
+character_event = {
+	id = HPdruze.4825
+	desc = EVTDESC_HRP_1625
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1625
+		ai_chance = {
+			factor = 10
+		}
+		random = {
+			chance = 20
+			add_trait = wounded
+			set_character_flag = bad_pilgrimage
+			clr_character_flag = good_pilgrimage
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1625
+		ai_chance = {
+			factor = 45
+		}
+		wealth = -10
+	}
+	option = {
+		name = EVTOPTC_HRP_1625
+		ai_chance = {
+			factor = 45
+		}
+		wealth = -30
+		if = {
+			limit = { NOT = { trait = charitable } }
+			add_trait = charitable
+		}
+	}
+}
+
+# Philosophical ponderings
+character_event = {
+	id = HPdruze.4826
+	desc = EVTDESC_HRP_1626
+	picture = GFX_evt_pilgrims_epic_journey
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1626
+		random_list = {
+			10 = {
+				modifier = {
+					factor = 0
+					has_dlc = "Way of Life"
+				}
+				modifier = {
+					factor = 0
+					lifestyle_traits = 1
+				}
+				add_trait = scholar
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_dlc = "Way of Life"
+				}
+				modifier = {
+					factor = 0
+					lifestyle_traits = 1
+				}
+				add_trait = mystic
+			}
+			10 = {
+				add_trait = poet
+			}
+			10 = {
+				add_trait = zealous
+			}
+			10 = {
+				add_trait = depressed
+			}
+			50 = {
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1626
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = {
+				chance = 20
+				add_trait = cynical
+			}
+		}
+	}
+}
+# Falls ill from trials on journey
+character_event = {
+	id = HPdruze.4827
+	desc = EVTDESC_HRP_1627
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_1627
+		ai_chance = {
+			factor = 10
+		}
+		piety = 10
+		random = {
+			chance = 40
+			add_trait = ill
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_1627
+		ai_chance = {
+			factor = 90
+		}
+		random = {
+			chance = 20
+			add_trait = ill
+		}
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = {
+				chance = 50
+				add_trait = cynical
+			}
+		}
+	}
+}
+##################################
+# Arrived!
+##################################
+narrative_event = {
+	id = HPdruze.4820
+	title = EVTNAME_HRP_4820
+	desc = EVTDESC_HRP_4820
+	picture = GFX_evt_druze_loc
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4820
+		hidden_tooltip = { 
+			random_list = {
+				8 = { character_event = { id = HPdruze.4830 days = 25 } }
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = stressed
+							trait = depressed
+						}
+					}
+					character_event = { id = HPdruze.4831 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = wroth
+					}
+					character_event = { id = HPdruze.4832 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = gluttonous
+					}
+					character_event = { id = HPdruze.4833 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = zealous
+					}
+					character_event = { id = HPdruze.4834 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = decadent
+							trait = drunkard
+							trait = hedonist
+						}
+					}
+					character_event = { id = HPdruze.4835 days = 25 }
+				}
+				8 = { character_event = { id = HPdruze.4836 days = 25 } }
+				8 = { character_event = { id = HPdruze.4837 days = 25 } }
+				8 = { character_event = { id = HPdruze.4838 days = 25 } }
+				8 = { character_event = { id = HPdruze.4839 days = 25 } }
+				40 = { }
+			}
+			#Next
+			character_event = { id = HPdruze.4840 days = 31 }
+		}	
+	}
+}
+# Level Up
+character_event = {
+	id = HPdruze.4830
+	desc = EVTDESC_HRP_4830
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4830
+		if = {
+			limit = {
+				trait = skilled_tactician
+			}
+			remove_trait = skilled_tactician
+			add_trait = brilliant_strategist
+		}
+		if = {
+			limit = {
+				trait = tough_soldier
+			}
+			remove_trait = tough_soldier
+			add_trait = skilled_tactician
+		}
+		if = {
+			limit = {
+				trait = misguided_warrior
+			}
+			remove_trait = misguided_warrior
+			add_trait = tough_soldier
+		}	
+		if = {
+			limit = {
+				trait = intricate_webweaver
+			}
+			remove_trait = intricate_webweaver
+			add_trait = elusive_shadow
+		}
+		if = {
+			limit = {
+				trait = flamboyant_schemer
+			}
+			remove_trait = flamboyant_schemer
+			add_trait = intricate_webweaver
+		}
+		if = {
+			limit = {
+				trait = amateurish_plotter
+			}
+			remove_trait = amateurish_plotter
+			add_trait = flamboyant_schemer
+		}	
+		if = {
+			limit = {
+				trait = charismatic_negotiator
+			}
+			remove_trait = charismatic_negotiator
+			add_trait = grey_eminence
+		}
+		if = {
+			limit = {
+				trait = underhanded_rogue
+			}
+			remove_trait = underhanded_rogue
+			add_trait = charismatic_negotiator
+		}
+		if = {
+			limit = {
+				trait = naive_appeaser
+			}
+			remove_trait = naive_appeaser
+			add_trait = underhanded_rogue
+		}		
+		if = {
+			limit = {
+				trait = fortune_builder
+			}
+			remove_trait = fortune_builder
+			add_trait = midas_touched
+		}
+		if = {
+			limit = {
+				trait = thrifty_clerk
+			}
+			remove_trait = thrifty_clerk
+			add_trait = fortune_builder
+		}
+		if = {
+			limit = {
+				trait = indulgent_wastrel
+			}
+			remove_trait = indulgent_wastrel
+			add_trait = thrifty_clerk
+		}
+		if = {
+			limit = {
+				trait = scholarly_theologian
+			}
+			remove_trait = scholarly_theologian
+			add_trait = mastermind_theologian
+		}
+		if = {
+			limit = {
+				trait = martial_cleric
+			}
+			remove_trait = martial_cleric
+			add_trait = scholarly_theologian
+		}
+		if = {
+			limit = {
+				trait = detached_priest
+			}
+			remove_trait = detached_priest
+			add_trait = martial_cleric
+		}
+	}
+}
+# Stress
+character_event = {
+	id = HPdruze.4831
+	desc = EVTDESC_HRP_4831
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4831
+		if = {
+			limit = {
+				NOT = {
+					OR = { 
+						trait = depressed
+						trait = stressed
+					}
+				}
+			}
+			add_trait = content
+			decadence = -1
+		}
+		if = {
+			limit = {
+				OR = { 
+					trait = depressed
+					trait = stressed
+				}
+			}
+			remove_trait = depressed
+			remove_trait = stressed
+		}
+	}
+}
+# wroth
+character_event = {
+	id = HPdruze.4832
+	desc = EVTDESC_HRP_4832
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4832
+		if = {
+			limit = {
+				NOT = { trait = wroth }
+			}
+			add_trait = patient
+			decadence = -1
+		}
+		if = {
+			limit = {
+				trait = wroth
+			}
+			remove_trait = wroth
+		}
+	}
+}
+# glut
+character_event = {
+	id = HPdruze.4833
+	desc = EVTDESC_HRP_4833
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4833
+		if = {
+			limit = {
+				NOT = { trait = gluttonous }
+			}
+			add_trait = temperate
+			decadence = -1
+		}
+		if = {
+			limit = {
+				trait = gluttonous
+			}
+			remove_trait = gluttonous
+		}
+	}
+}
+# zealous
+character_event = {
+	id = HPdruze.4834
+	desc = EVTDESC_HRP_4834
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4834
+		if = {
+			limit = {
+				NOT = { trait = zealous }
+			}
+			random_list = {
+				1 = { add_trait = sympathy_indian }
+				1 = { add_trait = sympathy_christendom }
+				1 = { add_trait = sympathy_pagans }
+				1 = { add_trait = sympathy_zoroastrianism }
+				1 = { add_trait = sympathy_judaism }
+			}	
+			decadence = -1
+		}
+		if = {
+			limit = {
+				trait = zealous
+			}
+			remove_trait = zealous
+		}
+	}
+}
+# decadence
+character_event = {
+	id = HPdruze.4835
+	desc = EVTDESC_HRP_4835
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4835
+		if = {
+			limit = {
+				NOT = {
+					OR = { 
+						trait = decadent
+						trait = hedonist
+						trait = drunkard
+					}
+				}
+			}
+			decadence = -5
+		}
+		if = {
+			limit = {
+				OR = { 
+					trait = decadent
+					trait = hedonist
+					trait = drunkard
+				}
+			}
+			remove_trait = decadent
+			remove_trait = hedonist
+			remove_trait = drunkard
+		}
+	}
+}
+# dumb
+character_event = {
+	id = HPdruze.4836
+	desc = EVTDESC_HRP_4836
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4836
+		change_learning = -1
+	}
+}
+# depressed
+character_event = {
+	id = HPdruze.4837
+	desc = EVTDESC_HRP_4837
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4837
+		add_trait = depressed
+	}
+}
+# sloth
+character_event = {
+	id = HPdruze.4838
+	desc = EVTDESC_HRP_4838
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4838
+		add_trait = slothful
+	}
+}
+# cynical
+character_event = {
+	id = HPdruze.4839
+	desc = EVTDESC_HRP_4839
+	picture = GFX_evt_druze_loc
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4839
+		add_trait = cynical
+	}
+}
+character_event = {
+	id = HPdruze.4840
+	desc = EVTDESC_HRP_4830
+	picture = GFX_evt_druze_loc
+	border = GFX_event_narrative_frame_religion
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_tooltip = { 
+			random_list = {
+				8 = { character_event = { id = HPdruze.4830 days = 25 } }
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = stressed
+							trait = depressed
+						}
+					}
+					character_event = { id = HPdruze.4831 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = wroth
+					}
+					character_event = { id = HPdruze.4832 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = gluttonous
+					}
+					character_event = { id = HPdruze.4833 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = zealous
+					}
+					character_event = { id = HPdruze.4834 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = decadent
+							trait = drunkard
+							trait = hedonist
+						}
+					}
+					character_event = { id = HPdruze.4835 days = 25 }
+				}
+				8 = { character_event = { id = HPdruze.4836 days = 25 } }
+				8 = { character_event = { id = HPdruze.4837 days = 25 } }
+				8 = { character_event = { id = HPdruze.4838 days = 25 } }
+				8 = { character_event = { id = HPdruze.4839 days = 25 } }
+				40 = { }
+			}
+			#Next
+			character_event = { id = HPdruze.4850 days = 31 }
+		}	
+	}
+}
+character_event = {
+	id = HPdruze.4850
+	desc = EVTDESC_HRP_4830
+	picture = GFX_evt_druze_loc
+	border = GFX_event_narrative_frame_religion
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_tooltip = { 
+			random_list = {
+				8 = { character_event = { id = HPdruze.4830 days = 25 } }
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = stressed
+							trait = depressed
+						}
+					}
+					character_event = { id = HPdruze.4831 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = wroth
+					}
+					character_event = { id = HPdruze.4832 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = gluttonous
+					}
+					character_event = { id = HPdruze.4833 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						trait = zealous
+					}
+					character_event = { id = HPdruze.4834 days = 25 }
+				}
+				8 = { 
+					modifier = {
+						factor = 5
+						OR = {
+							trait = decadent
+							trait = drunkard
+							trait = hedonist
+						}
+					}
+					character_event = { id = HPdruze.4835 days = 25 }
+				}
+				8 = { character_event = { id = HPdruze.4836 days = 25 } }
+				8 = { character_event = { id = HPdruze.4837 days = 25 } }
+				8 = { character_event = { id = HPdruze.4838 days = 25 } }
+				8 = { character_event = { id = HPdruze.4839 days = 25 } }
+				40 = { }
+			}
+			#Next
+			character_event = { id = HPdruze.4860 days = 31 }
+		}	
+	}
+}
+#DEPART
+narrative_event = {
+	id = HPdruze.4860
+	desc = EVTDESC_HRP_4860
+	title = EVTNAME_HRP_4860
+	picture = GFX_evt_druze_loc
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4860
+		hidden_tooltip = {
+			character_event = { id = HPdruze.4861 days = 30 }
+		}
+	}
+}
+# Home
+character_event = {
+	id = HPdruze.4861
+	desc = EVTDESC_HRP_4861
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4861
+		piety = 30
+		decadence = -1
+		remove_trait = on_pilgrimage_druze
+	}
+}
+character_event = {
+	id = HPdruze.4888
+	desc = EVTDESC_HRP_4888
+	picture = GFX_evt_castle_construction
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_HRP_4888
+		ai_will_do = 3
+		liege = {
+			letter_event = HPdruze.4889
+		}
+	}
+	option = {
+		name = EVTOPTB_HRP_4888
+		ai_will_do = 7
+		liege = {
+			letter_event = HPdruze.4890
+		}
+	}
+}
+letter_event = {
+	id = HPdruze.4889
+	desc = EVTDESC_HRP_4889
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_4889
+		set_character_flag = druze_invasion_grant
+		prestige = 10
+	}
+}
+letter_event = {
+	id = HPdruze.4890
+	desc = EVTDESC_HRP_4890
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_4890
+		set_character_flag = druze_invasion_grant
+		prestige = 10
+	}
+}

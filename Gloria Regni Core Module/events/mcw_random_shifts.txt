@@ -1,0 +1,382 @@
+#############################################
+#			MULTICULTURAL WORLD MOD			#
+#			WRITTEN BY HARJIT SINGH			#
+#############################################
+namespace = MCW
+
+#############################################
+#				RANDOM SHIFTS				#
+#	MCW.1 - Random culture shift			#
+#	MCW.2 - Culture border movement			#
+#	MCW.3 - Random migration event			#
+#											#
+#############################################
+
+#### RANDOM CULTURE SHIFT ####
+# Basic county assimilation event
+# Within culture group only
+# Requires right religion
+# Low base probability
+# Affected by terrain permeability, depopulation and adjacency
+province_event = {
+	id = MCW.1
+	desc = EVTDESC_MCW_1
+	picture = GFX_evt_culture_change
+
+	trigger = {
+		OR = {
+			has_game_rule = { # must have appropriate game rule
+				name = mcw_random_shifts
+				value = on
+			}
+			has_game_rule = {
+				name = mcw_random_shifts
+				value = fast
+			}
+		}
+
+		owner = {
+			NOT = { # must be a different culture to the province
+				culture = ROOT
+			}
+			culture_group = ROOT # must be the same culture group as the province
+			NOT = { # liege must not have the same culture as the province
+				top_liege = {
+					culture = ROOT
+				}
+			}
+		}
+		
+		NOT = {
+			AND = {
+				owner = { culture = norse }
+				ROOT = {
+					OR = {
+						culture = swedish
+						culture = norwegian
+						culture = danish
+						culture = norman
+					}
+				}
+				NOT = {	has_global_flag = norse_culture_flipping }
+			}
+		}
+
+		OR = {
+			any_neighbor_province = {
+				ROOT = {
+					owner = {
+						culture = PREVPREV
+					}
+				}	
+				NOR = {
+					has_province_modifier = depopulated_1
+					has_province_modifier = depopulated_2
+					has_province_modifier = depopulated_3
+				}
+			}
+			AND = {
+				port = yes
+				owner = {
+					any_realm_province = {
+						port = yes
+						culture = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 1000
+
+		modifier = {
+			factor = 0.5 # Fast game rule speeds things up
+			has_game_rule = {
+				name = mcw_random_shifts
+				value = fast
+			}
+		}
+		
+		modifier = { # isolated cultures and small islands are very resilient
+			factor = 4
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.25 # Slower penetration in rough terrain
+			OR = {
+				terrain = hills
+				terrain = forest
+			}
+		}
+		
+		modifier = {
+			factor = 1.5 # Very slow penetration in very rough terrain
+			OR = {
+				terrain = mountain
+				terrain = jungle
+				terrain = arctic
+			}
+		}
+		
+		modifier = {
+			factor = 1.5 # The steppes are deserts to non-nomads
+			terrain = steppe
+			owner = {
+				is_nomadic = no
+			}
+		}
+		
+		modifier = {
+			factor = 1.5 # Deserts are impermeable except to Bedouins and Berbers
+			terrain = desert
+			owner = {
+				NOR = {
+					culture = bedouin_arabic
+					culture = maghreb_arabic
+					culture = himyarite
+					culture = khalan
+					culture = beja
+					culture = daju
+					culture = zaghawa
+					culture = fur
+					culture = guanche
+					culture = numidian
+					culture = tuareg
+					culture = libyan
+				}
+			}
+		}
+		
+		modifier = { # faster with a land or sea connection to a right-culture province
+			factor = 0.75
+			OR = {
+				any_neighbor_province = {
+					ROOT = {
+						owner = {
+							culture = PREVPREV
+						}
+					}	
+					NOR = {
+						has_province_modifier = depopulated_1
+						has_province_modifier = depopulated_2
+						has_province_modifier = depopulated_3
+					}
+				}
+				AND = {
+					port = yes
+					owner = {
+						any_realm_province = {
+							port = yes
+							culture = PREV
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = {
+			factor = 1.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = {
+			factor = 1.75
+			has_province_flag = recent_depopulation_3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_MCW_1
+		owner = {
+			ROOT = {
+				culture = PREV
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_MCW_1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#### RANDOM MIGRATION ####
+# Basic migration event
+# Works across and within culture groups
+# Requires wrong religion group
+# Low base probability
+# Affected by terrain permeability, depopulation and adjacency
+# Replaces population, ie religion changes as well as culture
+province_event = {
+	id = MCW.3
+	desc = EVTDESC_MCW_3
+	picture = GFX_evt_culture_change
+
+	trigger = {
+		OR = {
+			has_game_rule = { # must have appropriate game rule
+				name = mcw_random_shifts
+				value = on
+			}
+			has_game_rule = {
+				name = mcw_random_shifts
+				value = fast
+			}
+		}
+		has_owner = yes
+		owner = {
+			NOT = { # the province must be wrong culture and wrong religion
+				culture = ROOT
+				religion_group = ROOT
+			}
+			top_liege = { # can only colonise when liege has the right culture and religion group
+				religion_group = PREV
+				culture = PREV
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 1000
+
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = mcw_random_shifts
+				value = fast
+			}
+		}
+
+		modifier = { # isolated cultures and small islands are very resilient
+			factor = 4
+			NOT = {
+				any_neighbor_province = {
+					has_owner = yes
+					culture = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			OR = {
+				terrain = hills
+				terrain = forest
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				terrain = mountain
+				terrain = jungle
+				terrain = arctic
+			}
+		}
+		modifier = {
+			factor = 1.5
+			terrain = steppe
+			owner = {
+				is_nomadic = no
+			}
+		}
+		modifier = {
+			factor = 1.5
+			terrain = desert
+			owner = {
+				NOR = {
+					culture = bedouin_arabic
+					culture = maghreb_arabic
+					culture = himyarite
+					culture = khalan
+					culture = beja
+					culture = daju
+					culture = zaghawa
+					culture = fur
+					culture = guanche
+					culture = numidian
+					culture = tuareg
+					culture = libyan
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				any_neighbor_province = {
+					ROOT = {
+						owner = {
+							culture = PREVPREV
+							religion = PREVPREV
+						}
+					}	
+					NOR = {
+						has_province_modifier = depopulated_1
+						has_province_modifier = depopulated_2
+						has_province_modifier = depopulated_3
+					}
+				}
+				AND = {
+					port = yes
+					owner = {
+						any_realm_province = {
+							port = yes
+							culture = PREV
+							religion = PREV
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_province_flag = recent_depopulation_1
+		}
+		modifier = {
+			factor = 0.5
+			has_province_flag = recent_depopulation_2
+		}
+		modifier = {
+			factor = 0.25
+			has_province_flag = recent_depopulation_3
+		}
+	}
+
+	option = {
+		name = EVTOPTA_MCW_3
+		owner = {
+			ROOT = {
+				culture = PREV
+				religion = PREV
+				if = {
+					limit = {
+						has_province_modifier = nomad_agitation
+					}
+					remove_province_modifier = nomad_agitation
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_MCW_3
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

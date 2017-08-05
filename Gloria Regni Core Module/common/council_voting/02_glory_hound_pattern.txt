@@ -1,0 +1,766 @@
+glory_hound_pattern_for = {
+	icon = 7
+	pattern_type = for
+	
+	declare_war_interaction = {
+		OR = { # Or gloriously attacking a powerful enemy
+			custom_tooltip = {
+				text = pattern_glory_hound_glorious_war_custom_tooltip
+				hidden_tooltip = {
+					FROMFROM = { # Defender
+						relative_power_including_allies_defender = {
+							who = ROOT_FROM # Attacker
+							power = 0.9
+						}
+					}
+				}
+			}
+			
+			custom_tooltip = {
+				text = pattern_glory_hound_preferred_war_custom_tooltip
+				hidden_tooltip = {
+					preferred_war_target = {
+						character = FROMFROM # Defender
+					}	
+				}
+			}
+			
+			custom_tooltip = {
+				text = pattern_glory_hound_land_grab_custom_tooltip
+				hidden_tooltip = {
+					AND = {
+						NOT = {
+							FROM = { # Attacker
+								relative_power_including_allies_attacker = {
+									who = ROOT_FROMFROM # Defender
+									power = 3
+								}
+							}
+						}
+						NOR = {
+							AND = {
+								stored_token_trigger = other_claim
+								NOT = {
+									FROMFROMFROM = { # Gainer
+										OR = {
+											is_landed = yes
+											dynasty = ROOT_FROM # Attacker
+										}
+										is_liege_or_above = ROOT_FROM
+										ROOT_FROM = { # Attacker
+											primary_title = {
+												higher_tier_than = ROOTFROMFROMFROMFROM # Thirdparty_title
+											}
+										}
+									}
+								}
+							}
+							stored_token_trigger = claim_on_liege
+							stored_token_trigger = other_claim_on_liege
+							stored_token_trigger = crusade
+							stored_token_trigger = excommunicated_ruler
+							stored_token_trigger = bid_for_independence
+							stored_token_trigger = depose_liege
+							stored_token_trigger = overthrow_ruler
+							stored_token_trigger = overthrow_ruler_no_calls
+							stored_token_trigger = embargo_cb
+							stored_token_trigger = depose_antipope
+							stored_token_trigger = cb_install_antiking
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	law_voting_power_0 = { always = no }
+	law_voting_power_1 = { always = yes }
+	banish_voting_power_0 = { always = no }
+	banish_voting_power_1 = { always = yes }
+	execution_voting_power_0 = { always = no }
+	execution_voting_power_1 = { always = yes }
+	revoke_title_voting_power_0 = { always = no }
+	revoke_title_voting_power_1 = { always = yes }
+	grant_title_voting_power_0 = { always = no }
+	grant_title_voting_power_1 = { always = yes }
+	imprison_voting_power_0 = { always = no }
+	imprison_voting_power_1 = { always = yes }
+	war_voting_power_0 = { always = no }
+	war_voting_power_1 = { always = yes }
+	succession_voting_power_0 = { always = no }
+	succession_voting_power_1 = { always = yes }
+	
+	centralization_0 = {
+		always = yes
+	}
+	centralization_1 = {
+		OR = {
+			liege = {
+				primary_title = {
+					has_law = centralization_2
+				}
+			}
+			opinion = {
+				who = liege
+				value = 20
+			}
+		}
+	}
+	centralization_2 = {
+		OR = {
+			liege = {
+				primary_title = {
+					has_law = centralization_3
+				}
+			}
+			opinion = {
+				who = liege
+				value = 20
+			}
+		}
+	}
+	centralization_3 = {
+		OR = {
+			liege = {
+				primary_title = {
+					has_law = centralization_4
+				}
+			}
+			opinion = {
+				who = liege
+				value = 20
+			}
+		}
+	}
+	centralization_4 = {
+		opinion = {
+			who = liege 
+			value = 20
+		}
+	}
+	vice_royalty_0 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				OR = {
+					has_law = vice_royalty_1
+					has_law = vice_royalty_2
+				}
+			}
+		}
+	}
+	vice_royalty_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vice_royalty_2
+			}
+		}
+	}
+	vice_royalty_2 = { always = no }
+	vassal_wars_0 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				OR = {
+					has_law = vassal_wars_1
+					has_law = vassal_wars_2
+				}
+			}
+		}
+	}
+	vassal_wars_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vassal_wars_2
+			}
+		}
+	}
+	vassal_wars_2 = { always = no }
+	legislature_2 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				OR = {
+					has_law = legislature_1
+					has_law = legislature_0
+				}
+			}
+		}
+	}
+	legislature_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = legislature_0
+			}
+		}
+	}
+	legislature_0 = { always = no }
+	active_theme_system = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				OR = {
+					has_law = inactive_theme_system
+					has_law = degraded_theme_system
+				}
+			}
+		}
+	}
+	degraded_theme_system = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = inactive_theme_system
+			}
+		}
+	}
+	inactive_theme_system = { always = no }
+	feudal_administration = { always = yes }
+	imperial_administration = { always = no }
+	
+	crown_levy_0 = { is_feudal = yes }
+	crown_levy_1 = { 
+		FROMFROM = { has_law = crown_levy_2 } 
+		is_feudal = yes 
+	}
+	crown_levy_2 = { 
+		FROMFROM = { has_law = crown_levy_3 } 
+		is_feudal = yes 
+	}
+	crown_levy_3 = { 
+		FROMFROM = { has_law = crown_levy_4 } 
+		is_feudal = yes 
+	}
+	crown_levy_4 = { is_feudal = yes }
+	feudal_tax_0 = { is_feudal = yes }
+	feudal_tax_1 = { 
+		FROMFROM = { has_law = feudal_tax_2 } 
+		is_feudal = yes 
+	}
+	feudal_tax_2 = { 
+		FROMFROM = { has_law = feudal_tax_3 } 
+		is_feudal = yes 
+	}
+	feudal_tax_3 = { 
+		FROMFROM = { has_law = feudal_tax_4 } 
+		is_feudal = yes 
+	}
+	feudal_tax_4 = { is_feudal = yes }
+	iqta_tax_0 = { is_feudal = yes }
+	iqta_tax_1 = { 
+		FROMFROM = { has_law = iqta_tax2 } 
+		is_feudal = yes 
+	}
+	iqta_tax_2 = { 
+		FROMFROM = { has_law = iqta_tax3 } 
+		is_feudal = yes 
+	}
+	iqta_tax_3 = { 
+		FROMFROM = { has_law = iqta_tax4 } 
+		is_feudal = yes 
+	}
+	iqta_tax = { is_feudal = yes }
+	city_tax_0 = { always = no }
+	city_tax_1 = {
+		FROMFROM = { has_law = city_tax_0 }
+		is_republic = yes
+	}
+	city_tax_2 = {
+		FROMFROM = { has_law = city_tax_1 }
+		is_republic = yes
+	}
+	city_tax_3 = {
+		FROMFROM = { has_law = city_tax_2 }
+		is_republic = yes
+	}
+	city_tax_4 = { is_republic = yes }
+	temple_tax_0 = { always = no }
+	temple_tax_1 = {
+		FROMFROM = { has_law = temple_tax_0 }
+		is_theocracy = yes
+	}
+	temple_tax_2 = {
+		FROMFROM = { has_law = temple_tax_1 }
+		is_theocracy = yes
+	}
+	temple_tax_3 = {
+		FROMFROM = { has_law = temple_tax_2 }
+		is_theocracy = yes
+	}
+	temple_tax_4 = { is_theocracy = yes }
+	tribal_tax_0 = { always = no }
+	tribal_tax_1 = {
+		FROMFROM = { has_law = tribal_tax_0 }
+		is_tribal = yes
+	}
+	tribal_tax_2 = {
+		FROMFROM = { has_law = tribal_tax_1 }
+		is_tribal = yes
+	}
+	tribal_tax_3 = {
+		FROMFROM = { has_law = tribal_tax_2 }
+		is_tribal = yes
+	}
+	tribal_tax_4 = { is_tribal = yes }
+	
+	tribal_organization_0 = {
+		OR = {
+			is_reformed_religion = no
+			is_tribal = yes
+		}
+	}
+	tribal_organization_1 = { 
+		OR = { 
+			FROMFROM = { has_law = tribal_organization_2 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_2 = { 
+		OR = { 
+			FROMFROM = { has_law = tribal_organization_3 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_3 = { 
+		OR = { 
+			FROMFROM = { has_law = tribal_organization_4 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_4 = {
+		OR = {
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+}
+
+glory_hound_pattern_against = {
+	icon = 7
+	pattern_type = against
+	
+	declare_war_interaction = {
+		custom_tooltip = {
+			text = pattern_glory_hound_opponent_too_weak_custom_tooltip
+			hidden_tooltip = {
+				OR = {
+					NOT = { # Attacking a weak enemy
+						FROMFROM = { # Defender
+							relative_power_including_allies_defender = {
+								who = ROOT_FROM # Attacker
+								power = 0.3
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+	
+	law_voting_power_0 = { always = yes }
+	law_voting_power_1 = { always = no }
+	banish_voting_power_0 = { always = yes }
+	banish_voting_power_1 = { always = no }
+	execution_voting_power_0 = { always = yes }
+	execution_voting_power_1 = { always = no }
+	revoke_title_voting_power_0 = {	always = yes }
+	revoke_title_voting_power_1 = {	always = no	}
+	grant_title_voting_power_0 = { always = yes	}
+	grant_title_voting_power_1 = { always = no }
+	imprison_voting_power_0 = {	always = yes }
+	imprison_voting_power_1 = {	always = no	}
+	war_voting_power_0 = { always = yes }
+	war_voting_power_1 = { always = no }
+	succession_voting_power_0 = { always = yes }
+	succession_voting_power_1 = { always = no }
+	
+	centralization_0 = { always = no }
+	centralization_1 = { always = no }
+	centralization_2 = { always = no }
+	centralization_3 = { always = no }
+	centralization_4 = { always = no }
+	vice_royalty_0 = { always = no }
+	vice_royalty_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vice_royalty_0
+			}
+		}
+	}
+	vice_royalty_2 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vice_royalty_1
+			}
+		}
+	}
+	vassal_wars_0 = { always = no }
+	vassal_wars_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vassal_wars_0
+			}
+		}
+	}
+	vassal_wars_2 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = vassal_wars_1
+			}
+		}
+	}
+	legislature_0 = { always = no }
+	legislature_1 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = legislature_0
+			}
+		}
+	}
+	legislature_2 = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = legislature_1
+			}
+		}
+	}
+	inactive_theme_system = { always = no }
+	degraded_theme_system = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = inactive_theme_system
+			}
+		}
+	}
+	active_theme_system = {
+		is_feudal = yes
+		liege = {
+			primary_title = {
+				has_law = degraded_theme_system
+			}
+		}
+	}
+	feudal_administration = { always = no }
+	imperial_administration = { always = yes }
+	
+	crown_levy_0 = { always = no }
+	crown_levy_1 = { 
+		FROMFROM = { has_law = crown_levy_0 } 
+		is_feudal = yes 
+	}
+	crown_levy_2 = { 
+		FROMFROM = { has_law = crown_levy_1 } 
+		is_feudal = yes 
+	}
+	crown_levy_3 = { 
+		FROMFROM = { has_law = crown_levy_2 } 
+		is_feudal = yes 
+	}
+	feudal_tax_0 = { always = no }
+	feudal_tax_1 = { 
+		FROMFROM = { has_law = feudal_tax_0 } 
+		is_feudal = yes 
+	}
+	feudal_tax_2 = { 
+		FROMFROM = { has_law = feudal_tax_1 } 
+		is_feudal = yes 
+	}
+	feudal_tax_3 = { 
+		FROMFROM = { has_law = feudal_tax_2 } 
+		is_feudal = yes 
+	}
+	iqta_tax_0 = { always = no}
+	iqta_tax_1 = { 
+		FROMFROM = { has_law = iqta_tax_0 } 
+		is_feudal = yes 
+	}
+	iqta_tax_2 = { 
+		FROMFROM = { has_law = iqta_tax_1 } 
+		is_feudal = yes 
+	}
+	iqta_tax_3 = { 
+		FROMFROM = { has_law = iqta_tax_2 } 
+		is_feudal = yes 
+	}
+	city_tax_0 = {	is_republic = yes }
+	city_tax_1 = {
+		FROMFROM = { has_law = city_tax_2 }
+		is_republic = yes
+	}
+	city_tax_2 = {
+		FROMFROM = { has_law = city_tax_3 }
+		is_republic = yes
+	}
+	city_tax_3 = { always = no }
+	temple_tax_0 = { is_theocracy = yes }
+	temple_tax_1 = {
+		FROMFROM = { has_law = temple_tax_2 }
+		is_theocracy = yes
+	}
+	temple_tax_2 = {
+		FROMFROM = { has_law = temple_tax_3 }
+		is_theocracy = yes
+	}
+	temple_tax_3 = {
+		FROMFROM = { has_law = temple_tax_4 }
+		is_theocracy = yes
+	}
+	tribal_tax_0 = { is_tribal = yes }
+	tribal_tax_1 = {
+		FROMFROM = { has_law = tribal_tax_2 }
+		is_tribal = yes
+	}
+	tribal_tax_2 = {
+		FROMFROM = { has_law = tribal_tax_3 }
+		is_tribal = yes
+	}
+	tribal_tax_3 = { always = no }
+	
+	tribal_organization_0 = {
+		NOR = {
+			is_reformed_religion = no
+			is_tribal = yes
+		}
+	}
+	tribal_organization_1 = { 
+		NOR = { 
+			FROMFROM = { has_law = tribal_organization_2 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_2 = { 
+		NOR = { 
+			FROMFROM = { has_law = tribal_organization_3 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_3 = { 
+		NOR = { 
+			FROMFROM = { has_law = tribal_organization_4 } 
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	tribal_organization_4 = { 
+		NOR = {
+			is_reformed_religion = yes
+			is_tribal = no
+		}
+	}
+	
+	imprison_character_interaction = {
+		OR = {
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_ruling_dynasty_tooltip
+				hidden_tooltip = {
+					liege = {
+						FROMFROM = {
+							dynasty = PREV
+						}
+					}	
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_defenseless_child_tooltip
+				hidden_tooltip = {
+					FROMFROM = {
+						is_adult = no
+					}
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_powerful_vassal_tooltip
+				hidden_tooltip = {
+					liege = {
+						OR = {
+							AND = {
+								primary_title = {
+									tier = emperor
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 6
+								}
+							}
+							AND = {
+								primary_title = {
+									tier = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 5
+								}
+							}
+							AND = {
+								primary_title = {
+									lower_tier_than = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	exile_imprisoned_interaction = {
+		OR = {
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_ruling_dynasty_tooltip
+				hidden_tooltip = {
+					liege = {
+						FROMFROM = {
+							dynasty = PREV
+						}
+					}	
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_defenseless_child_tooltip
+				hidden_tooltip = {
+					FROMFROM = {
+						is_adult = no
+					}
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_powerful_vassal_tooltip
+				hidden_tooltip = {
+					liege = {
+						OR = {
+							AND = {
+								primary_title = {
+									tier = emperor
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 6
+								}
+							}
+							AND = {
+								primary_title = {
+									tier = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 5
+								}
+							}
+							AND = {
+								primary_title = {
+									lower_tier_than = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	execute_imprisoned_interaction = {
+		OR = {
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_ruling_dynasty_tooltip
+				hidden_tooltip = {
+					liege = {
+						FROMFROM = {
+							dynasty = PREV
+						}
+					}	
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_defenseless_child_tooltip
+				hidden_tooltip = {
+					FROMFROM = {
+						is_adult = no
+					}
+				}
+			}
+			custom_tooltip = {
+				text = pattern_glory_hound_weakening_powerful_vassal_tooltip
+				hidden_tooltip = {
+					liege = {
+						OR = {
+							AND = {
+								primary_title = {
+									tier = emperor
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 6
+								}
+							}
+							AND = {
+								primary_title = {
+									tier = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 5
+								}
+							}
+							AND = {
+								primary_title = {
+									lower_tier_than = king
+								}
+								FROMFROM = {
+									among_most_powerful_vassals = 4
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	revoke_title_interaction = {
+		custom_tooltip = {
+			text = pattern_glory_hound_weakening_powerful_vassal_tooltip
+			hidden_tooltip = {
+				liege = {
+					OR = {
+						AND = {
+							primary_title = {
+								tier = emperor
+							}
+							FROMFROM = {
+								among_most_powerful_vassals = 6
+							}
+						}
+						AND = {
+							primary_title = {
+								tier = king
+							}
+							FROMFROM = {
+								among_most_powerful_vassals = 5
+							}
+						}
+						AND = {
+							primary_title = {
+								lower_tier_than = king
+							}
+							FROMFROM = {
+								among_most_powerful_vassals = 4
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

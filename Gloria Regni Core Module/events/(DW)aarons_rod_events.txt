@@ -1,0 +1,154 @@
+### AARON'S ROD EVENTS
+namespace = JR
+# All written by DingoWalley
+# Being Edited and Finished for GR by starwarsfan541
+
+# A Lone Tabernacle
+character_event = {
+	id = JR.250
+	desc = EVTDESCJR.250
+	
+	picture = "GFX_evt_desert"
+
+	min_age = 16
+	prisoner = no
+	capable_only = yes
+	
+	trigger = {
+		has_dlc = "Sons of Abraham"
+		religion_group = jewish_group
+		has_landed_title = k_israel
+		NOT = { has_global_flag = found_aarons_rod }
+	}
+
+	mean_time_to_happen = {
+		months = 9600
+		modifier = {
+			factor = 2.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 2.0
+			trait = theologian
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_christendom 
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_islam
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_zoroastrianism
+		}
+		modifier = {
+			factor = 0.5
+			trait = sympathy_indian
+		}
+		modifier = {
+			factor = 0.25
+			trait = sympathy_pagans
+		}
+		modifier = {
+			factor = 0.1
+			trait = cynical
+		}
+	}
+	
+	option = {
+		name = EVTOPTAJR.250
+		custom_tooltip = {
+			text = go_to_it
+			hidden_tooltip = {
+				random_list = {
+					25 = { character_event = { id = JR.251 days = 1 } }
+					25 = { character_event = { id = JR.252 days = 1 } }
+					50 = { character_event = { id = JR.253 days = 1 } }
+				}
+			}
+		}
+	}
+}
+
+# Aaron's Rod!
+character_event = {
+	id = JR.251
+	desc = EVTDESCJR.251
+	picture = "GFX_evt_synagogue_soa"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = found_aarons_rod
+	}
+	
+	option = {
+		name = EVTOPTAJR.251
+		prestige = 10000
+		piety = 2000
+		change_martial = 5
+		change_diplomacy = 5
+		change_learning = 2
+	}
+
+	option = {
+		name = EVTOPTBJR.251
+		prestige = 5000
+		piety = 8000
+		change_learning = 5
+		add_trait = zealous
+	}
+}
+
+# Moses's Rod!
+character_event = {
+	id = JR.252
+	desc = EVTDESCJR.252
+	picture = "GFX_evt_synagogue_soa"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = found_aarons_rod
+	}
+	
+	option = {
+		name = EVTOPTAJR.252
+		prestige = 5000
+		piety = 2000
+		change_martial = 5
+		change_diplomacy = 5
+		change_learning = 2
+		add_trait = mystic
+	}
+}
+
+# Empty Tabernacle
+character_event = {
+	id = JR.253
+	desc = EVTDESCJR.253
+	picture = "GFX_evt_bad_news_soa"
+	border = "GFX_event_narrative_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAJR.253
+		hidden_tooltip = {
+			random_list = {
+				25 = { wealth = 100 }
+				25 = { wealth = 25 }
+				25 = { wealth = 50 }
+				25 = { wealth = 0 }
+			}
+		}
+	}
+}
