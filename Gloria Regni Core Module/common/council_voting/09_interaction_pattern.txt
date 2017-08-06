@@ -1,3 +1,5 @@
+# -*- ck2.council_voting -*-
+
 interaction_pattern_for = {
 	icon = 9
 	pattern_type = for
@@ -44,11 +46,9 @@ interaction_pattern_for = {
 				hidden_tooltip = {
 					FROMFROM = {
 						is_landed = no
-						NOT = {
-							reverse_opinion = {
-								who = ROOT
-								value = -9
-							}
+						reverse_opinion = {
+							who = ROOT
+							value = -10
 						}
 					}
 				}
