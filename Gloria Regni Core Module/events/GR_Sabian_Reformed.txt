@@ -1,0 +1,58 @@
+###########################################
+#                                         #
+# Sabian Reformation          #
+#                                         #
+# ID SAB.1                        #
+#                                         #
+###########################################
+
+# Written by swf541
+
+namespace = SAB
+
+# Ossetian Reformation  
+character_event = {
+	id = SAB.1000
+    hide_window = yes
+
+        is_triggered_only = yes
+	
+	trigger = {
+		religion = sabian_pagan_reformed
+    }     
+
+    immediate = {
+			activate_title = { title = d_sabian_pagan_reformed status = yes }
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = sabian_pagan_reformed
+					culture = ROOT
+					dynasty = random
+					female = no
+					age = 30
+				}
+				new_character = {
+					d_sabian_pagan_reformed = {
+						grant_title = PREV
+					}
+				}
+			}
+			d_sabian_pagan_reformed = {
+				holder_scope = {
+					ROOT = {
+						holder_scope = {
+							set_defacto_vassal = ROOT
+						}
+					}
+				}
+				add_law = cognatic_succession
+				add_law = succ_primogeniture
+			}
+	}
+	
+	option = {
+		name = ok
+	}
+}
+

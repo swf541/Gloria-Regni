@@ -1,0 +1,111 @@
+decisions = {
+	remembrance_feast_of_st_george = {
+		potential = {
+			is_ruler = yes
+			AND = {
+				culture_group = postbabylonian
+				religion_group = christian
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_jirjis_feast_timer
+				liege = { has_character_flag = holding_jirjis_feast }
+				has_character_flag = holding_jirjis_feast
+				has_character_flag = planning_jirjis_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 6 }
+			month = 3
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_jirjis_feast
+			custom_tooltip = {
+				text = prepare_jirjis_feast
+				hidden_tooltip = { 
+					character_event = { id = JIR.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	celebrate_kha_b_nisan = {
+		potential = {
+			is_ruler = yes
+			culture_group = postbabylonian
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_kha_b_nisan_feast_timer
+				liege = { has_character_flag = holding_kha_b_nisan_feast }
+				has_character_flag = holding_kha_b_nisan_feast
+				has_character_flag = planning_kha_b_nisan_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 6 }
+			month = 3
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_kha_b_nisan_feast
+			custom_tooltip = {
+				text = prepare_kha_b_nisan_feast
+				hidden_tooltip = { 
+					character_event = { id = KBN.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+}

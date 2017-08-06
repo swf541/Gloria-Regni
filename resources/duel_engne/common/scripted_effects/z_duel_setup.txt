@@ -1,0 +1,113 @@
+duel_setup = {
+    set_variable = { which = z_assess value = 3 }
+    set_variable = { which = z_parry value = 3 }
+    set_variable = { which = z_dodge value = 3 }
+    set_variable = { which = z_insight value = 3}
+    set_variable = { which = z_sneak_value = 1}      
+    set_variable = { which = "dodge_timer" value = 0 }
+    set_variable = { which = "block_timer" value = 0 }
+    set_variable = { which = "can_dodge" value = 1 }
+    set_variable = { which = "can_block" value = 1 }
+    set_variable = { which = "sneak_attack" value = 0 }
+    set_variable = { which = "insightful_attack" value = 0 }
+    set_variable = { which = duledmgdicebase value = 1}  
+    trigger_switch = { 
+        on_trigger = trait
+
+
+
+       # Congenital traits
+       if = { limit = { trait = strong } 
+           change_variable = { which = "duel_att" value = 2 }
+       }
+       if = { limit = { trait = weak } 
+           change_variable = { which = "duel_att" value = -2 }
+       }
+
+
+       # just to be sure
+       if = { 
+           limit = { NOT = {  check_variable = { which = "duel_max_hp" value = 1 } }}
+           set_variable = { which = "duel_max_hp" value  = 1 }
+       }
+       
+       # Ok now here should be traits bonus but i left them for now
+       if = { 
+           limit = { trait = wounded  }
+           change_variable = { which = "duel_def" value = -1 }
+           change_variable = { which = "duel_att" value = -1 }
+           set_variable = { which = "duel_max_hp" value = 3 }
+       }
+       if = { 
+           limit = { trait = maimed  }
+           change_variable = { which = "duel_def" value = -2 }
+           change_variable = { which = "duel_att" value = -2 }
+           set_variable = { which = "duel_max_hp" value = 2 }
+       }
+ 
+    duel_engine_stat_bonus = yes    
+        # setting starting hit points 
+    set_variable = { which = "duel_hp" which = "duel_max_hp" }
+
+   
+}
+
+duel_engine_stat_bonus = {
+  export_to_variable = {
+    which = martial_skill_mod
+    value = martial
+  } 
+  divide_variable = { which = "martial_skill_mod" value = 10 }
+  if = { 
+    limit = {
+      not = {
+        check_variable = {which = "martial_skill_mod" value = 0}
+      }
+    }
+    set_variable = { which = "martial_skill_mod" value = 0 }
+  }
+  export_to_variable = {
+    which = diplomacy_skill_mod
+    value = diplomacy
+  } 
+  divide_variable = { which = "diplomacy_skill_mod" value = 10 }
+  if = { 
+    limit = {
+      not = {
+        check_variable = {which = "diplomacy_skill_mod" value = 0}
+      }
+    }
+    set_variable = { which = "diplomacy_skill_mod" value = 0 }
+  }  
+  export_to_variable = {
+    which = intrigue_skill_mod
+    value = intrigue
+  } 
+  divide_variable = { which = "intrigue_skill_mod" value = 10 }
+  if = { 
+    limit = {
+      not = {
+        check_variable = {which = "intrigue_skill_mod" value = 0}
+      }
+    }
+    set_variable = { which = "intrigue_skill_mod" value = 0 }
+  }
+  export_to_variable = {
+    which = learning_skill_mod
+    value = learning
+  } 
+  divide_variable = { which = "learning_skill_mod" value = 10 }
+  if = { 
+    limit = {
+      not = {
+        check_variable = {which = "diplomacy_skill_mod" value = 0}
+      }
+    }
+    set_variable = { which = "diplomacy_skill_mod" value = 0 }
+  }    
+  export_to_variable = {
+    which = health_mod
+    value = health
+  }
+  change_variable = { which = "duel_max_hp" which = "health_mod" }  
+}

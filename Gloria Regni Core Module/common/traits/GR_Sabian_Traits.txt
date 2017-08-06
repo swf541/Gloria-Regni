@@ -1,0 +1,40 @@
+followers_of_seth  = {
+	opposites = {
+		followers_of_yanbushad
+		followers_of_adam
+		followers_of_saghrìth
+	}
+	
+	intrigue = 2
+
+}
+followers_of_yanbushad  = {
+	opposites = {
+		followers_of_seth
+		followers_of_adam
+		followers_of_saghrìth
+	}
+	
+	learning = 2
+
+}
+followers_of_adam = {
+	opposites = {
+		followers_of_yanbushad
+		followers_of_seth
+		followers_of_saghrìth
+	}
+	
+	learning = 1
+	fertility = 0.05
+}
+followers_of_saghrìth = {
+	opposites = {
+		followers_of_yanbushad
+		followers_of_adam
+		followers_of_adam
+	}
+	
+	learning = 1
+	intrigue = 1
+}

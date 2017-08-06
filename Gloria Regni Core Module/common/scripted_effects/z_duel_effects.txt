@@ -1,0 +1,120 @@
+z_duel_menu_clr = { 
+	clr_character_flag = duel_action_meele
+    clr_character_flag = duel_action_dodge
+    clr_character_flag = duel_action_block
+    clr_character_flag = duel_action_assess
+    clr_character_flag = magic_channel
+    clr_character_flag = high_magic_duel_healing
+    clr_character_flag = high_magic_duel_shielding
+    clr_character_flag = high_magic_duel_fire
+    clr_character_flag = high_magic_duel_curse
+    set_variable = { which = "action_nr" value = 0 }
+    set_variable = { which = "action_picked" value = 0 }
+        # BASIC ACTIONS
+    set_variable = { which = "d_action_meele_strike" value = 0 } 
+    set_variable = { which = "d_action_dodge" value = 0 } 
+    set_variable = { which = "d_action_parry" value = 0 } 
+    set_variable = { which = "d_action_assess" value = 0 } 
+    set_variable = { which = "d_action_channel" value = 0 } 
+        #Magic Actions, High Magic    
+    set_variable = { which = "d_action_high_magic_healing" value = 0 } 
+    set_variable = { which = "d_action_high_magic_shielding" value = 0 }
+    set_variable = { which = "d_action_high_magic_mage_fire" value = 0 } 
+    set_variable = { which = "d_action_high_magic_curse" value = 0 } 
+}
+
+duel_test = { 
+    event_target:attacker = { 
+        set_variable = { which = dnum value = 1  }
+        z_d20 = yes
+        set_variable = { which = duel_attack_roll which = dresult}
+        if = {
+            limit = { 
+                NOT =  {
+                    check_variable = { which = duel_attack_roll value = 2}
+                }
+            }
+            change_variable = { which = duel_attack_roll value = -700} 
+        }
+        if = {
+            limit = { 
+                check_variable = { which = duel_attack_roll value = 20}
+            }
+            change_variable = { which = duel_attack_roll value = 500} 
+        }  
+        change_variable = { which = duel_attack_roll which = duel_att}
+        trigger_switch = { 
+            on_trigger = has_character_flag
+            duel_action_meele = {
+                change_variable = { which = duel_attack_roll which = martial_skill_mod}
+            }
+            duel_action_sneak_attack = {
+                change_variable = { which = duel_attack_roll which = martial_skill_mod}
+                change_variable = { which = duel_attack_roll which = intrigue_skill_mod}
+            }
+            duel_action_insightful_strike = {
+                change_variable = { which = duel_attack_roll which = martial_skill_mod}
+                change_variable = { which = duel_attack_roll which = learning_skill_mod}
+            }            
+        }
+    }        
+    event_target:defender = { 
+        set_variable = { which = dnum value = 1 }
+        z_d20 = yes
+        set_variable = { which = duel_defend_roll which = dresult} 
+        if = {
+            limit = {
+                not = { 
+                    check_variable = { which = duel_defend_roll value = 2}
+                }
+            }
+            change_variable = { which = duel_defend_roll value = -500} 
+        }
+        if = {
+            limit = { 
+                check_variable = { which = duel_defend_roll value = 20}
+            }
+            change_variable = { which = duel_defend_roll value = 500} 
+        }        
+        change_variable = { which = duel_defend_roll which = duel_def}
+        trigger_switch = { 
+            on_trigger = has_character_flag
+            high_magic_duel_shielding = { 
+                change_variable = { which = duel_defend_roll which = caster_level_spellpower }
+                change_variable = { which = duel_defend_roll which = martial_skill_mod}
+            }
+            duel_action_dodge = { 
+                change_variable = { which = duel_defend_roll which = intrigue_skill_mod}
+                change_variable = { which = duel_defend_roll which = martial_skill_mod}
+            }
+            duel_action_block = { 
+                change_variable = { which = duel_defend_roll which = martial_skill_mod}
+            }
+        } 
+    }   
+
+    if = { 
+        limit = {
+            event_target:defender = { 
+                check_variable = { which = duel_defend_roll which = duel_attack_roll which = event_target:attacker } 
+            }
+        }
+        duel_dmg = yes   
+    }
+}
+
+duel_dmg = { 
+    set_variable = { which = dnum which = duledmgdice}
+    zd3 = yes
+    set_variable = { which = duel_dmg which = dresult}
+    trigger_switch = { 
+        on_trigger = has_character_flag
+        duel_action_sneak_attack = {
+            change_variable = { which = dmgmod which = intrigue_skill_mod}
+        }
+        duel_action_insightful_strike = {
+            change_variable = { which = dmgmod which = learning_skill_mod}
+        }
+    }
+    change_variable = { which = duel_dmg which = dmgmod}
+}

@@ -1,0 +1,491 @@
+decisions = {
+	patrons_sabian_deities = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				has_character_modifier = patron_the_unspeakable_one
+				has_character_modifier = patron_ash_ahams
+				has_character_modifier = patron_al_qamar
+				has_character_modifier = patron_marduk
+				has_character_modifier = patron_nabu
+				has_character_modifier = patron_ishtar
+				has_character_modifier = patron_tammuz
+				has_character_modifier = patron_nergal
+				has_character_modifier = patron_ninurta
+			}
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_SBI.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+	patrons_sabian_sages = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				has_character_modifier = patron_yanbushad
+				has_character_modifier = patron_sardaya
+				has_character_modifier = patron_tamithra
+				has_character_modifier = patron_masa
+				has_character_modifier = patron_kamash
+				has_character_modifier = patron_nahri
+				has_character_modifier = patron_saghrith
+			}
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_SBS.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+	patrons_sabian_prophet = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				has_character_modifier = patron_adam
+				has_character_modifier = patron_dawanay
+				has_character_modifier = patron_seth
+				has_character_modifier = patron_abraham
+				has_character_modifier = patron_anuhua
+				has_character_modifier = patron_akhnukha
+			}
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_SBP.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+	select_sabian_sect = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			age = 16
+			NOT = { 
+				trait = incapable
+				trait = infirm
+				trait = possessed 
+			}
+			NOT = {
+				trait = followers_of_seth
+				trait = followers_of_yanbushad
+				trait = followers_of_adam
+				trait = followers_of_saghrìth
+			}
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			character_event = { id = PATRONS_SSE.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.1
+				trait = cynical
+			}
+		}
+	}
+	celebrate_the_birth_of_time = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_mìlad_az_zaman_feast_timer
+				liege = { has_character_flag = holding_mìlad_az_zaman_feast }
+				has_character_flag = holding_mìlad_az_zaman_feast
+				has_character_flag = planning_mìlad_az_zaman_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 10 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_mìlad_az_zaman_feast
+			custom_tooltip = {
+				text = prepare_mìlad_az_zaman_feast
+				hidden_tooltip = { 
+					character_event = { id = MIL.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 2 }
+				month = 11
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	celebrate_the_laylat_an_nur = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_laylat_an_nur_feast_timer
+				liege = { has_character_flag = holding_laylat_an_nur_feast }
+				has_character_flag = holding_laylat_an_nur_feast
+				has_character_flag = planning_laylat_an_nur_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 10
+			not = { month = 1 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_laylat_an_nur_feast
+			custom_tooltip = {
+				text = prepare_laylat_an_nur_feast
+				hidden_tooltip = { 
+					character_event = { id = NLI.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 2 }
+				month = 11
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	celebrate_the_ìd_tabrìk_al_annam = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_ìd_tabrìk_al_annam_feast_timer
+				liege = { has_character_flag = holding_ìd_tabrìk_al_annam_feast }
+				has_character_flag = holding_ìd_tabrìk_al_annam_feast
+				has_character_flag = planning_ìd_tabrìk_al_annam_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 9
+			not = { month = 12 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_ìd_tabrìk_al_annam_feast
+			custom_tooltip = {
+				text = prepare_ìd_tabrìk_al_annam_feast
+				hidden_tooltip = { 
+					character_event = { id = ITA.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 2 }
+				month = 11
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	remembrance_feast_of_tammuz_sabian = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_sabian_tammuz_feast_timer
+				liege = { has_character_flag = holding_sabian_tammuz_feast }
+				has_character_flag = holding_sabian_tammuz_feast
+				has_character_flag = planning_sabian_tammuz_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 9 }
+			month = 6
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_sabian_tammuz_feast
+			custom_tooltip = {
+				text = prepare_sabian_tammuz_feast
+				hidden_tooltip = { 
+					character_event = { id = STA.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	remembrance_feast_of_dawanay = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_dawanay_feast_timer
+				liege = { has_character_flag = holding_dawanay_feast }
+				has_character_flag = holding_dawanay_feast
+				has_character_flag = planning_dawanay_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 6 }
+			month = 3
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_dawanay_feast
+			custom_tooltip = {
+				text = prepare_dawanay_feast
+				hidden_tooltip = { 
+					character_event = { id = DAW.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+}

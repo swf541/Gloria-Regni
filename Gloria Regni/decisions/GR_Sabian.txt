@@ -1,0 +1,175 @@
+decisions = {
+	celebrate_the_birth_of_time = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_mìlad_az_zaman_feast_timer
+				liege = { has_character_flag = holding_mìlad_az_zaman_feast }
+				has_character_flag = holding_mìlad_az_zaman_feast
+				has_character_flag = planning_mìlad_az_zaman_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			month = 8
+			not = { month = 10 }
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_mìlad_az_zaman_feast
+			custom_tooltip = {
+				text = prepare_mìlad_az_zaman_feast
+				hidden_tooltip = { 
+					character_event = { id = MIL.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { month = 2 }
+				month = 11
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	remembrance_feast_of_tammuz_sabian = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_sabian_tammuz_feast_timer
+				liege = { has_character_flag = holding_sabian_tammuz_feast }
+				has_character_flag = holding_sabian_tammuz_feast
+				has_character_flag = planning_sabian_tammuz_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 9 }
+			month = 6
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_sabian_tammuz_feast
+			custom_tooltip = {
+				text = prepare_sabian_tammuz_feast
+				hidden_tooltip = { 
+					character_event = { id = STA.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+	remembrance_feast_of_dawanay = {
+		potential = {
+			is_ruler = yes
+			or = {
+				religion = sabian_pagan
+				religion = sabian_pagan_reformed
+			}
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_dawanay_feast_timer
+				liege = { has_character_flag = holding_dawanay_feast }
+				has_character_flag = holding_dawanay_feast
+				has_character_flag = planning_dawanay_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 6 }
+			month = 3
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_dawanay_feast
+			custom_tooltip = {
+				text = prepare_dawanay_feast
+				hidden_tooltip = { 
+					character_event = { id = DAW.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+}
