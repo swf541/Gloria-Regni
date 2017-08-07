@@ -5,7 +5,6 @@ decisions = {
 			religion_group = christian
 			NOT = {
 				trait = in_hiding
-				any_demesne_title = { is_occupied = yes }
 				has_character_modifier = held_annunciation_feast_timer
 				liege = { has_character_flag = holding_annunciation_feast }
 				has_character_flag = holding_annunciation_feast
