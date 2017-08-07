@@ -76,18 +76,18 @@ land_province = {
 }
 
 mild_winter = {
-	supply_limit = -2
-	max_attrition = 0.1
+	supply_limit = -4
+	max_attrition = 0.2
 }
 
 normal_winter = {
-	supply_limit = -3
-	max_attrition = 0.15
+	supply_limit = -6
+	max_attrition = 0.3
 }
 
 severe_winter = {
-	supply_limit = -5
-	max_attrition = 0.2
+	supply_limit = -10
+	max_attrition = 0.6
 }
 
 out_of_supply = 

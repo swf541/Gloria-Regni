@@ -1,0 +1,55 @@
+decisions = {
+	remembrance_feast_of_the_annunciation = {
+		potential = {
+			is_ruler = yes
+			religion_group = christian
+			NOT = {
+				trait = in_hiding
+				any_demesne_title = { is_occupied = yes }
+				has_character_modifier = held_annunciation_feast_timer
+				liege = { has_character_flag = holding_annunciation_feast }
+				has_character_flag = holding_annunciation_feast
+				has_character_flag = planning_annunciation_feast
+			}
+		}
+		allow = {
+			war = no
+			wealth = 50
+			prestige = 100
+			has_regent = no
+			NOT = { month = 6 }
+			month = 3
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = planning_annunciation_feast
+			custom_tooltip = {
+				text = prepare_annunciation_feast
+				hidden_tooltip = { 
+					character_event = { id = ANN.700 } 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_modifier = ai_austerity
+			}
+		}
+	}
+}
