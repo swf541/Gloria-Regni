@@ -1,5 +1,3 @@
-# -*- ck2.council_voting -*-
-
 malcontent_pattern_for = {
 	icon = 4
 	pattern_type = for
@@ -13,107 +11,51 @@ malcontent_pattern_for = {
 	centralization_2 = { NOT = { liege = { character = FROM } } }
 	centralization_3 = { NOT = { liege = { character = FROM } } }
 	centralization_4 = { NOT = { liege = { character = FROM } } }
+	vice_royalty_0 = { NOT = { liege = { character = FROM } } }
+	vice_royalty_1 = { NOT = { liege = { character = FROM } } }
+	vice_royalty_2 = { NOT = { liege = { character = FROM } } }
+	vassal_wars_0 = { NOT = { liege = { character = FROM } } }
+	vassal_wars_1 = { NOT = { liege = { character = FROM } } }
+	vassal_wars_2 = { NOT = { liege = { character = FROM } } }
+	legislature_0 = { NOT = { liege = { character = FROM } } }
+	legislature_1 = { NOT = { liege = { character = FROM } } }
+	legislature_2 = { NOT = { liege = { character = FROM } } }
+	inactive_theme_system = { NOT = { liege = { character = FROM } } }
+	degraded_theme_system_1 = { NOT = { liege = { character = FROM } } }
+	active_theme_system = { NOT = { liege = { character = FROM } } }
+	feudal_administration = { NOT = { liege = { character = FROM } } }
+	imperial_administration = { NOT = { liege = { character = FROM } } }
 	
-	status_of_women_0 = { NOT = { liege = { character = FROM } } }
-	status_of_women_1 = { NOT = { liege = { character = FROM } } }
-	status_of_women_2 = { NOT = { liege = { character = FROM } } }
-	status_of_women_3 = { NOT = { liege = { character = FROM } } }
-	status_of_women_4 = { NOT = { liege = { character = FROM } } }
-	
-	crown_authority_0 = { NOT = { liege = { character = FROM } } }
-	crown_authority_1 = { NOT = { liege = { character = FROM } } }
-	crown_authority_2 = { NOT = { liege = { character = FROM } } }
-	crown_authority_3 = { NOT = { liege = { character = FROM } } }
-	crown_authority_4 = { always = no }
-	
-	administration_0 = { NOT = { liege = { character = FROM } } }
-	administration_1 = { NOT = { liege = { character = FROM } } }
-	administration_2 = { NOT = { liege = { character = FROM } } }
-	inheritance_0 = { NOT = { liege = { character = FROM } } }
-	inheritance_1 = { NOT = { liege = { character = FROM } } }
-	king_peace_0 = { NOT = { liege = { character = FROM } } }
-	king_peace_1 = { NOT = { liege = { character = FROM } } }
-	king_peace_2 = { NOT = { liege = { character = FROM } } }
-	
-	feudal_obligations_0 = { NOT = { liege = { character = FROM } } }
-	feudal_obligations_1 = { NOT = { liege = { character = FROM } } }
-	feudal_obligations_2 = { NOT = { liege = { character = FROM } } }
-	feudal_obligations_3 = { NOT = { liege = { character = FROM } } }
-	feudal_obligations_4 = { NOT = { liege = { character = FROM } } }
-	temple_obligations_0 = { NOT = { liege = { character = FROM } } }
-	temple_obligations_1 = { NOT = { liege = { character = FROM } } }
-	temple_obligations_2 = { NOT = { liege = { character = FROM } } }
-	temple_obligations_3 = { NOT = { liege = { character = FROM } } }
-	temple_obligations_4 = { NOT = { liege = { character = FROM } } }
-	city_obligations_0 = { NOT = { liege = { character = FROM } } }
-	city_obligations_1 = { NOT = { liege = { character = FROM } } }
-	city_obligations_2 = { NOT = { liege = { character = FROM } } }
-	city_obligations_3 = { NOT = { liege = { character = FROM } } }
-	city_obligations_4 = { NOT = { liege = { character = FROM } } }
-	iqta_obligations_0 = { NOT = { liege = { character = FROM } } }
-	iqta_obligations_1 = { NOT = { liege = { character = FROM } } }
-	iqta_obligations_2 = { NOT = { liege = { character = FROM } } }
-	iqta_obligations_3 = { NOT = { liege = { character = FROM } } }
-	iqta_obligations_4 = { NOT = { liege = { character = FROM } } }
-	tribal_obligations_0 = { NOT = { liege = { character = FROM } } }
-	tribal_obligations_1 = { NOT = { liege = { character = FROM } } }
-	tribal_obligations_2 = { NOT = { liege = { character = FROM } } }
-	tribal_obligations_3 = { NOT = { liege = { character = FROM } } }
-	tribal_obligations_4 = { NOT = { liege = { character = FROM } } }
-	
-	feudal_slider_0 = { NOT = { liege = { character = FROM } } }
-	feudal_slider_1 = { NOT = { liege = { character = FROM } } }
-	feudal_slider_2 = { NOT = { liege = { character = FROM } } }
-	feudal_slider_3 = { NOT = { liege = { character = FROM } } }
-	feudal_slider_4 = { NOT = { liege = { character = FROM } } }
-	temple_slider_0 = { NOT = { liege = { character = FROM } } }
-	temple_slider_1 = { NOT = { liege = { character = FROM } } }
-	temple_slider_2 = { NOT = { liege = { character = FROM } } }
-	temple_slider_3 = { NOT = { liege = { character = FROM } } }
-	temple_slider_4 = { NOT = { liege = { character = FROM } } }
-	city_slider_0 = { NOT = { liege = { character = FROM } } }
-	city_slider_1 = { NOT = { liege = { character = FROM } } }
-	city_slider_2 = { NOT = { liege = { character = FROM } } }
-	city_slider_3 = { NOT = { liege = { character = FROM } } }
-	city_slider_4 = { NOT = { liege = { character = FROM } } }
-	iqta_slider_0 = { NOT = { liege = { character = FROM } } }
-	iqta_slider_1 = { NOT = { liege = { character = FROM } } }
-	iqta_slider_2 = { NOT = { liege = { character = FROM } } }
-	iqta_slider_3 = { NOT = { liege = { character = FROM } } }
-	iqta_slider_4 = { NOT = { liege = { character = FROM } } }
-	tribal_slider_0 = { NOT = { liege = { character = FROM } } }
-	tribal_slider_1 = { NOT = { liege = { character = FROM } } }
-	tribal_slider_2 = { NOT = { liege = { character = FROM } } }
-	tribal_slider_3 = { NOT = { liege = { character = FROM } } }
-	tribal_slider_4 = { NOT = { liege = { character = FROM } } }
+	crown_levy_0 = { NOT = { liege = { character = FROM } } }
+	crown_levy_1 = { NOT = { liege = { character = FROM } } }
+	crown_levy_2 = { NOT = { liege = { character = FROM } } }
+	crown_levy_3 = { NOT = { liege = { character = FROM } } }
+	feudal_tax_0 = { NOT = { liege = { character = FROM } } }
+	feudal_tax_1 = { NOT = { liege = { character = FROM } } }
+	feudal_tax_2 = { NOT = { liege = { character = FROM } } }
+	feudal_tax_3 = { NOT = { liege = { character = FROM } } }
+	iqta_tax_0 = { NOT = { liege = { character = FROM } } }
+	iqta_tax_1 = { NOT = { liege = { character = FROM } } }
+	iqta_tax_2 = { NOT = { liege = { character = FROM } } }
+	iqta_tax_3 = { NOT = { liege = { character = FROM } } }
+	city_tax_0 = { NOT = { liege = { character = FROM } } }
+	city_tax_1 = { NOT = { liege = { character = FROM } } }
+	city_tax_2 = { NOT = { liege = { character = FROM } } }
+	city_tax_3 = { NOT = { liege = { character = FROM } } }
+	temple_tax_0 = { NOT = { liege = { character = FROM } } }
+	temple_tax_1 = { NOT = { liege = { character = FROM } } }
+	temple_tax_2 = { NOT = { liege = { character = FROM } } }
+	temple_tax_3 = { NOT = { liege = { character = FROM } } }
+	tribal_tax_0 = { NOT = { liege = { character = FROM } } }
+	tribal_tax_1 = { NOT = { liege = { character = FROM } } }
+	tribal_tax_2 = { NOT = { liege = { character = FROM } } }
+	tribal_tax_3 = { NOT = { liege = { character = FROM } } }
 	
 	tribal_organization_0 = { NOT = { liege = { character = FROM } } }
 	tribal_organization_1 = { NOT = { liege = { character = FROM } } }
 	tribal_organization_2 = { NOT = { liege = { character = FROM } } }
 	tribal_organization_3 = { NOT = { liege = { character = FROM } } }
 	tribal_organization_4 = { NOT = { liege = { character = FROM } } }
-	
-	ze_revokation_0 = { NOT = { liege = { character = FROM } } }
-	ze_revokation_1 = { NOT = { liege = { character = FROM } } }
-	ze_revokation_2 = { NOT = { liege = { character = FROM } } }
-	
-	protected_appointment_0 = { NOT = { liege = { character = FROM } } }
-	protected_appointment_1 = { NOT = { liege = { character = FROM } } }
-	
-	law_voting_power_0 = { always = no }
-	law_voting_power_1 = { always = yes }
-	banish_voting_power_0 = { always = no }
-	banish_voting_power_1 = { always = yes }
-	execution_voting_power_0 = { always = no }
-	execution_voting_power_1 = { always = yes }
-	revoke_title_voting_power_0 = { always = no }
-	revoke_title_voting_power_1 = { always = yes }
-	grant_title_voting_power_0 = { always = no }
-	grant_title_voting_power_1 = { always = yes }
-	imprison_voting_power_0 = { always = no }
-	imprison_voting_power_1 = { always = yes }
-	war_voting_power_0 = { always = no }
-	war_voting_power_1 = { always = yes }
 }
 
 malcontent_pattern_against = {
@@ -142,6 +84,8 @@ malcontent_pattern_against = {
 	imprison_voting_power_1 = { always = no }
 	war_voting_power_0 = { always = yes }
 	war_voting_power_1 = { always = no }
+	succession_voting_power_0 = { always = yes }
+	succession_voting_power_1 = { always = no }
 	
 	# ROOT - Voter, FROM - Actor, FROMFROM - Recipient, FROMFROMFROM - Revoked title.
 	revoke_title_interaction = { 
@@ -190,27 +134,20 @@ malcontent_pattern_against = {
 	centralization_2 = { liege = { character = FROM } }
 	centralization_3 = { liege = { character = FROM } }
 	centralization_4 = { liege = { character = FROM } }
-	
-	crown_authority_0 = { liege = { character = FROM } }
-	crown_authority_1 = { liege = { character = FROM } }
-	crown_authority_2 = { liege = { character = FROM } }
-	crown_authority_3 = { liege = { character = FROM } }
-	crown_authority_4 = { always = yes }
-	
-	status_of_women_0 = { liege = { character = FROM } }
-	status_of_women_1 = { liege = { character = FROM } }
-	status_of_women_2 = { liege = { character = FROM } }
-	status_of_women_3 = { liege = { character = FROM } }
-	status_of_women_4 = { liege = { character = FROM } }
-	
-	administration_0 = { liege = { character = FROM } }
-	administration_1 = { liege = { character = FROM } }
-	administration_2 = { liege = { character = FROM } }
-	inheritance_0 = { liege = { character = FROM } }
-	inheritance_1 = { liege = { character = FROM } }
-	king_peace_0 = { liege = { character = FROM } }
-	king_peace_1 = { liege = { character = FROM } }
-	king_peace_2 = { liege = { character = FROM } }
+	vice_royalty_0 = { liege = { character = FROM } }
+	vice_royalty_1 = { liege = { character = FROM } }
+	vice_royalty_2 = { liege = { character = FROM } }
+	vassal_wars_0 = { liege = { character = FROM } }
+	vassal_wars_1 = { liege = { character = FROM } }
+	vassal_wars_2 = { liege = { character = FROM } }
+	legislature_0 = { liege = { character = FROM } }
+	legislature_1 = { liege = { character = FROM } }
+	legislature_2 = { liege = { character = FROM } }
+	inactive_theme_system = { liege = { character = FROM } }
+	degraded_theme_system = { liege = { character = FROM } }
+	active_theme_system = { liege = { character = FROM } }
+	feudal_administration = { liege = { character = FROM } }
+	imperial_administration = { liege = { character = FROM } }
 
 	enforce_peace = { 
 		custom_tooltip = {
@@ -221,68 +158,40 @@ malcontent_pattern_against = {
 		}
 	}
 	
-	feudal_obligations_0 = { liege = { character = FROM } }
-	feudal_obligations_1 = { liege = { character = FROM } }
-	feudal_obligations_2 = { liege = { character = FROM } }
-	feudal_obligations_3 = { liege = { character = FROM } }
-	feudal_obligations_4 = { liege = { character = FROM } }
-	temple_obligations_0 = { liege = { character = FROM } }
-	temple_obligations_1 = { liege = { character = FROM } }
-	temple_obligations_2 = { liege = { character = FROM } }
-	temple_obligations_3 = { liege = { character = FROM } }
-	temple_obligations_4 = { liege = { character = FROM } }
-	city_obligations_0 = { liege = { character = FROM } }
-	city_obligations_1 = { liege = { character = FROM } }
-	city_obligations_2 = { liege = { character = FROM } }
-	city_obligations_3 = { liege = { character = FROM } }
-	city_obligations_4 = { liege = { character = FROM } }
-	iqta_obligations_0 = { liege = { character = FROM } }
-	iqta_obligations_1 = { liege = { character = FROM } }
-	iqta_obligations_2 = { liege = { character = FROM } }
-	iqta_obligations_3 = { liege = { character = FROM } }
-	iqta_obligations_4 = { liege = { character = FROM } }
-	tribal_obligations_0 = { liege = { character = FROM } }
-	tribal_obligations_1 = { liege = { character = FROM } }
-	tribal_obligations_2 = { liege = { character = FROM } }
-	tribal_obligations_3 = { liege = { character = FROM } }
-	tribal_obligations_4 = { liege = { character = FROM } }
-	
-	feudal_slider_0 = { liege = { character = FROM } }
-	feudal_slider_1 = { liege = { character = FROM } }
-	feudal_slider_2 = { liege = { character = FROM } }
-	feudal_slider_3 = { liege = { character = FROM } }
-	feudal_slider_4 = { liege = { character = FROM } }
-	temple_slider_0 = { liege = { character = FROM } }
-	temple_slider_1 = { liege = { character = FROM } }
-	temple_slider_2 = { liege = { character = FROM } }
-	temple_slider_3 = { liege = { character = FROM } }
-	temple_slider_4 = { liege = { character = FROM } }
-	city_slider_0 = { liege = { character = FROM } }
-	city_slider_1 = { liege = { character = FROM } }
-	city_slider_2 = { liege = { character = FROM } }
-	city_slider_3 = { liege = { character = FROM } }
-	city_slider_4 = { liege = { character = FROM } }
-	iqta_slider_0 = { liege = { character = FROM } }
-	iqta_slider_1 = { liege = { character = FROM } }
-	iqta_slider_2 = { liege = { character = FROM } }
-	iqta_slider_3 = { liege = { character = FROM } }
-	iqta_slider_4 = { liege = { character = FROM } }
-	tribal_slider_0 = { liege = { character = FROM } }
-	tribal_slider_1 = { liege = { character = FROM } }
-	tribal_slider_2 = { liege = { character = FROM } }
-	tribal_slider_3 = { liege = { character = FROM } }
-	tribal_slider_4 = { liege = { character = FROM } }
+	crown_levy_0 = { liege = { character = FROM } }
+	crown_levy_1 = { liege = { character = FROM } }
+	crown_levy_2 = { liege = { character = FROM } }
+	crown_levy_3 = { liege = { character = FROM } }
+	crown_levy_4 = { liege = { character = FROM } }
+	feudal_tax_0 = { liege = { character = FROM } }
+	feudal_tax_1 = { liege = { character = FROM } }
+	feudal_tax_2 = { liege = { character = FROM } }
+	feudal_tax_3 = { liege = { character = FROM } }
+	feudal_tax_4 = { liege = { character = FROM } }
+	iqta_tax_0 = { liege = { character = FROM } }
+	iqta_tax_1 = { liege = { character = FROM } }
+	iqta_tax_2 = { liege = { character = FROM } }
+	iqta_tax_3 = { liege = { character = FROM } }
+	iqta_tax_4 = { liege = { character = FROM } }
+	city_tax_0 = { liege = { character = FROM } }
+	city_tax_1 = { liege = { character = FROM } }
+	city_tax_2 = { liege = { character = FROM } }
+	city_tax_3 = { liege = { character = FROM } }
+	city_tax_4 = { liege = { character = FROM } }
+	temple_tax_0 = { liege = { character = FROM } }
+	temple_tax_1 = { liege = { character = FROM } }
+	temple_tax_2 = { liege = { character = FROM } }
+	temple_tax_3 = { liege = { character = FROM } }
+	temple_tax_4 = { liege = { character = FROM } }
+	tribal_tax_0 = { liege = { character = FROM } }
+	tribal_tax_1 = { liege = { character = FROM } }
+	tribal_tax_2 = { liege = { character = FROM } }
+	tribal_tax_3 = { liege = { character = FROM } }
+	tribal_tax_4 = { liege = { character = FROM } }
 	
 	tribal_organization_0 = { liege = { character = FROM } }
 	tribal_organization_1 = { liege = { character = FROM } }
 	tribal_organization_2 = { liege = { character = FROM } }
 	tribal_organization_3 = { liege = { character = FROM } }
 	tribal_organization_4 = { liege = { character = FROM } }
-	
-	ze_revokation_0 = { liege = { character = FROM } }
-	ze_revokation_1 = { liege = { character = FROM } }
-	ze_revokation_2 = { liege = { character = FROM } }
-	
-	protected_appointment_0 = { liege = { character = FROM } }
-	protected_appointment_1 = { liege = { character = FROM } }
 }
