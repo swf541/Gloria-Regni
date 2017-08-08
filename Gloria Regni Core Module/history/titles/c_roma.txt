@@ -1,6 +1,5 @@
 ﻿42.1.1={
  holder = 145292
- liege = d_imperial
 } # Peter's first visit to Rome
 
 64.10.13={
@@ -99,6 +98,9 @@
 314.1.10={
 	holder = 7784
 }
+321.1.1 = {
+	holder = 70523
+}
 335.12.31={
 	holder = 7783
 }
@@ -135,7 +137,12 @@
 440.8.18={
 	holder = 7772
 }
+458.1.1 = {
+	holder = 5210043
+	liege = e_wre
+}
 461.11.10={
+	liege = 0
 	holder = 7771
 }
 468.2.28={
@@ -192,28 +199,30 @@
 590.1.1={
 	holder = 7893
 }
-604.3.15={
-	holder = 7892
+597.1.1 = {
+	holder = 1000257302 # Exarch Callinicus
+	liege = d_latium
 }
-606.2.22={
-	holder = 7891
-}
-607.11.12={
-	holder = 7890
-}
-615.5.25={
-	holder = 7889
-}
-618.11.8={
-	holder = 7888
-}
-625.10.25={
-	holder = 7887
-	liege = k_ravenna
+#604.3.15 = {
+#	holder = 7892 # Sabinien
+#}
+#606.2.22 = {
+#	holder = 7891 # Boniface III
+#}
+#607.11.12 = {
+#	holder = 7890 # St Boniface IV 
+#}
+#615.5.25 = {
+#	holder = 7889 # St Adéodat Ier
+#}
+#618.11.8 = {
+#	holder = 7888 # Boniface V
+#}
+633.1.1 = {
+	holder = 7887 # Honorius Ier
 }
 638.10.12={
 	holder = 7886
-	liege = 0
 }
 640.8.2={
 	holder = 7885
@@ -279,6 +288,7 @@
 	holder = 7895
 }
 757.4.29={
+	liege="k_papal_state"
 	holder = 7865
 }
 767.6.28={
@@ -459,7 +469,6 @@
 	holder = 1338
 }
 1054.4.19={
-	liege = "k_papal_state
 	holder = 7894
 }
 1057.8.3={
