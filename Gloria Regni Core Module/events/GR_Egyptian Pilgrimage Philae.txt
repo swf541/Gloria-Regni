@@ -166,8 +166,8 @@ character_event = {
 		}
                 random_list = {
 			50 = { hidden_tooltip = { character_event = { id = PHI.10170 } } }
-			30 = {	add_trait = brave hidden_tooltip = { ROOT = { character_event = { id = PHI.10170 } } } }
-			20 = {	death = { death_reason = death_battle } }
+			40 = {	add_trait = brave hidden_tooltip = { ROOT = { character_event = { id = PHI.10170 } } } }
+			10 = {	death = { death_reason = death_battle } }
 		}		
 	}
         option = {
