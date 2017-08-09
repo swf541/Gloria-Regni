@@ -23,7 +23,7 @@ character_event = {
 				war = no
 				NOT = { trait = incapable }
 			}
-			character_event = { id = ISE.701 tooltip = EVTTOOLTIP_ISE_701 }
+			character_event = { id = ISE.701 tooltip = EVTTOOLTIP_ISE_701 days = 9 }
 		}
 		hidden_tooltip = { character_event = { id = ISE.703 days = 10 } }
 	}
