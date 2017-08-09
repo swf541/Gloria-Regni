@@ -1,0 +1,22 @@
+namespace = GRC
+
+character_event = {
+	id = GRC.1
+       hide_window = yes
+	
+	only_playable = yes
+
+	
+	trigger = {
+		has_character_flag = councillor
+		NOT = { has_minor_title = title_councillor }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+    immediate = {
+		give_minor_title = title_councillor
+	}
+}

@@ -35,14 +35,17 @@ job_chancellor = {
 	gain_effect = {
 		character_event = { id = ROMEGOV.11 }
 		set_character_flag = governor_canidate
+		set_character_flag = councillor
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
 		opinion = { who = FROM modifier = opinion_recently_fired }
 		remove_title = title_councillor
+		clr_character_flag = councillor
 	}
 	retire_effect = {
 		remove_title = title_councillor
+		clr_character_flag = councillor
 	}
 	
 	action = action_statecraft
