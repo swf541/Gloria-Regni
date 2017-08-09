@@ -75,14 +75,6 @@ character_event = {
     weight_multiplier = {
         days = 1
 		#Game Rules
-		modifier = {
-			factor = 0.2
-			has_game_rule = { name = warhammer_battlefield_duels value = less_fequent }
-		}
-		modifier = {
-			factor = 5
-			has_game_rule = { name = warhammer_battlefield_duels value = more_frequent }
-		}
 		
         # greater chance for duel of warlike races
         modifier = {
