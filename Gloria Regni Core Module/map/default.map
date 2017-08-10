@@ -1,4 +1,4 @@
-max_provinces = 1499
+max_provinces = 1514
 definitions = "definition.csv"
 provinces = "provinces.bmp"
 positions = "positions.txt"
@@ -28,8 +28,8 @@ sea_zones = { 1409 1412 }
 sea_zones = { 1293 1293 }
 
 # Non-accessible sea zones
-sea_zones = { 944 944 }
 sea_zones = { 1466 1466 }
+sea_zones = { 1497 1497 }
 
 ocean_region = {	# European Ocean
 	sea_zones = { 1 2 3 4 }
@@ -73,6 +73,9 @@ major_rivers =
 	944 #Aral Sea
 	1466 #Lake Chad
 	1497 #Lake Van
+	1499 1501 1500 1502 1503 #Oxus River
+	1507 1506 1504 1505
+	1508 1509 1510 1511 1512 1513
 }
 
 externals = { 1464 1465 } # Paths to china
