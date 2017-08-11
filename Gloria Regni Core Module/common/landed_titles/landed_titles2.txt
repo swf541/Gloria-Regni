@@ -794,6 +794,20 @@ k_cordoba = {
 	}
 }
 
+k_umayyad = {
+	color={ 22 214 33 }
+	capital = 181 # Cordoba
+	
+	title = "Amir"
+	title_female "Amir"
+	title_prefix = "Amir of"
+	
+	allow = {
+		always = no
+	}
+}
+
+
 k_tangiers = {
 	color={ 243 218 164 }
 	capital = 841 # Tangiers
