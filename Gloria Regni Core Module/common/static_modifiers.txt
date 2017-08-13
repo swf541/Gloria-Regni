@@ -260,9 +260,10 @@ foreign_rebels = {
 }
 
 jizya_tax = {
-	local_tax_modifier = 0.50
+	local_tax_modifier = 0.25
 	levy_size = -0.50
-	local_revolt_risk = 0.05
+	garrison_size = -0.33
+	local_revolt_risk = 0.08
 	icon = 4
 }
 
