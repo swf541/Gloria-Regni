@@ -1,0 +1,28 @@
+join_prev_tutorial_society_society = { #join previous society
+	if = {
+		limit = { PREV = { society_member_of = tutorial_society } }
+		join_society = tutorial_society
+	}
+}
+
+join_from_tutorial_society_society = { #join the society of someone
+	FROM = {
+		if = {
+			limit = {
+				society_member_of = tutorial_society
+			}
+			ROOT = {
+				join_society = tutorial_society
+			}
+		}
+	}
+}
+
+is_tutorial_society_trigger = { #trigger for who members
+	custom_tooltip = {
+		text = IS_tutorial_society_TRIGGER
+		OR = {
+			society_member_of = tutorial_society
+		}
+	}
+}

@@ -1,0 +1,18 @@
+on_character_ask_to_join_society = { #when pressing the button to join
+	events = {
+		TUTOSOCI.100 #Join society, send an event to the leader
+	}
+}
+
+on_five_year_pulse = {
+	events = {
+		TUTOSOCI.110 #force AI characters join the society
+	}
+}
+
+# Fires every two years for characters who are members of any society
+on_society_bi_yearly_pulse = {
+	events = {
+		TUTOSOCI.130 #Quest tombola
+	}
+}
